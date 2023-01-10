@@ -41,6 +41,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     target_ = "";
     statusDetail_ = "";
     errorDetail_ = "";
+    verb_ = "";
   }
 
   @java.lang.Override
@@ -271,7 +272,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Human-readable status of any error that occurred during the operation.
+   * Output only. Human-readable status of any error that occurred during the
+   * operation.
    * </pre>
    *
    * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -294,7 +296,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Human-readable status of any error that occurred during the operation.
+   * Output only. Human-readable status of any error that occurred during the
+   * operation.
    * </pre>
    *
    * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -312,6 +315,79 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int VERB_FIELD_NUMBER = 7;
+  private volatile java.lang.Object verb_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The verb associated with the API method which triggered this
+   * operation. Possible values are "create", "delete", "update" and "import".
+   * </pre>
+   *
+   * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The verb.
+   */
+  @java.lang.Override
+  public java.lang.String getVerb() {
+    java.lang.Object ref = verb_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      verb_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The verb associated with the API method which triggered this
+   * operation. Possible values are "create", "delete", "update" and "import".
+   * </pre>
+   *
+   * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for verb.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVerbBytes() {
+    java.lang.Object ref = verb_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      verb_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUESTED_CANCELLATION_FIELD_NUMBER = 6;
+  private boolean requestedCancellation_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identifies whether it has been requested cancellation
+   * for the operation. Operations that have successfully been cancelled
+   * have [Operation.error][] value with a
+   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+   * `Code.CANCELLED`.
+   * </pre>
+   *
+   * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The requestedCancellation.
+   */
+  @java.lang.Override
+  public boolean getRequestedCancellation() {
+    return requestedCancellation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -343,6 +419,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorDetail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, errorDetail_);
     }
+    if (requestedCancellation_ != false) {
+      output.writeBool(6, requestedCancellation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verb_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, verb_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -366,6 +448,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorDetail_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, errorDetail_);
+    }
+    if (requestedCancellation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, requestedCancellation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(verb_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, verb_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -394,6 +482,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     if (!getTarget().equals(other.getTarget())) return false;
     if (!getStatusDetail().equals(other.getStatusDetail())) return false;
     if (!getErrorDetail().equals(other.getErrorDetail())) return false;
+    if (!getVerb().equals(other.getVerb())) return false;
+    if (getRequestedCancellation() != other.getRequestedCancellation()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -419,6 +509,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getStatusDetail().hashCode();
     hash = (37 * hash) + ERROR_DETAIL_FIELD_NUMBER;
     hash = (53 * hash) + getErrorDetail().hashCode();
+    hash = (37 * hash) + VERB_FIELD_NUMBER;
+    hash = (53 * hash) + getVerb().hashCode();
+    hash = (37 * hash) + REQUESTED_CANCELLATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequestedCancellation());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -575,6 +669,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
       errorDetail_ = "";
 
+      verb_ = "";
+
+      requestedCancellation_ = false;
+
       return this;
     }
 
@@ -615,6 +713,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       result.target_ = target_;
       result.statusDetail_ = statusDetail_;
       result.errorDetail_ = errorDetail_;
+      result.verb_ = verb_;
+      result.requestedCancellation_ = requestedCancellation_;
       onBuilt();
       return result;
     }
@@ -683,6 +783,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         errorDetail_ = other.errorDetail_;
         onChanged();
       }
+      if (!other.getVerb().isEmpty()) {
+        verb_ = other.verb_;
+        onChanged();
+      }
+      if (other.getRequestedCancellation() != false) {
+        setRequestedCancellation(other.getRequestedCancellation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -739,6 +846,18 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 42
+            case 48:
+              {
+                requestedCancellation_ = input.readBool();
+
+                break;
+              } // case 48
+            case 58:
+              {
+                verb_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1362,7 +1481,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of any error that occurred during the operation.
+     * Output only. Human-readable status of any error that occurred during the
+     * operation.
      * </pre>
      *
      * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1384,7 +1504,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of any error that occurred during the operation.
+     * Output only. Human-readable status of any error that occurred during the
+     * operation.
      * </pre>
      *
      * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1406,7 +1527,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of any error that occurred during the operation.
+     * Output only. Human-readable status of any error that occurred during the
+     * operation.
      * </pre>
      *
      * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1427,7 +1549,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of any error that occurred during the operation.
+     * Output only. Human-readable status of any error that occurred during the
+     * operation.
      * </pre>
      *
      * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1444,7 +1567,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of any error that occurred during the operation.
+     * Output only. Human-readable status of any error that occurred during the
+     * operation.
      * </pre>
      *
      * <code>string error_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1459,6 +1583,181 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
 
       errorDetail_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object verb_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The verb associated with the API method which triggered this
+     * operation. Possible values are "create", "delete", "update" and "import".
+     * </pre>
+     *
+     * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The verb.
+     */
+    public java.lang.String getVerb() {
+      java.lang.Object ref = verb_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        verb_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The verb associated with the API method which triggered this
+     * operation. Possible values are "create", "delete", "update" and "import".
+     * </pre>
+     *
+     * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for verb.
+     */
+    public com.google.protobuf.ByteString getVerbBytes() {
+      java.lang.Object ref = verb_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        verb_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The verb associated with the API method which triggered this
+     * operation. Possible values are "create", "delete", "update" and "import".
+     * </pre>
+     *
+     * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The verb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerb(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      verb_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The verb associated with the API method which triggered this
+     * operation. Possible values are "create", "delete", "update" and "import".
+     * </pre>
+     *
+     * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVerb() {
+
+      verb_ = getDefaultInstance().getVerb();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The verb associated with the API method which triggered this
+     * operation. Possible values are "create", "delete", "update" and "import".
+     * </pre>
+     *
+     * <code>string verb = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for verb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerbBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      verb_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean requestedCancellation_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identifies whether it has been requested cancellation
+     * for the operation. Operations that have successfully been cancelled
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
+     * </pre>
+     *
+     * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The requestedCancellation.
+     */
+    @java.lang.Override
+    public boolean getRequestedCancellation() {
+      return requestedCancellation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identifies whether it has been requested cancellation
+     * for the operation. Operations that have successfully been cancelled
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
+     * </pre>
+     *
+     * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The requestedCancellation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestedCancellation(boolean value) {
+
+      requestedCancellation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Identifies whether it has been requested cancellation
+     * for the operation. Operations that have successfully been cancelled
+     * have [Operation.error][] value with a
+     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
+     * `Code.CANCELLED`.
+     * </pre>
+     *
+     * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestedCancellation() {
+
+      requestedCancellation_ = false;
       onChanged();
       return this;
     }

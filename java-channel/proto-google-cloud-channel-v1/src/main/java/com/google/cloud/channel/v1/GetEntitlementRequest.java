@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
+ * Request message for
+ * [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.GetEntitlementRequest}
@@ -287,7 +288,8 @@ public final class GetEntitlementRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
+   * Request message for
+   * [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.GetEntitlementRequest}

@@ -519,6 +519,8 @@ public class AzureClustersClientHttpJsonTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -592,6 +594,8 @@ public class AzureClustersClientHttpJsonTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -665,6 +669,8 @@ public class AzureClustersClientHttpJsonTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -696,6 +702,8 @@ public class AzureClustersClientHttpJsonTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -747,6 +755,8 @@ public class AzureClustersClientHttpJsonTest {
               .setFleet(Fleet.newBuilder().build())
               .setManagedResources(AzureClusterResources.newBuilder().build())
               .setLoggingConfig(LoggingConfig.newBuilder().build())
+              .addAllErrors(new ArrayList<AzureClusterError>())
+              .setMonitoringConfig(MonitoringConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAzureClusterAsync(azureCluster, updateMask).get();
@@ -779,6 +789,8 @@ public class AzureClustersClientHttpJsonTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -842,6 +854,8 @@ public class AzureClustersClientHttpJsonTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1144,6 +1158,7 @@ public class AzureClustersClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1213,6 +1228,7 @@ public class AzureClustersClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1283,6 +1299,7 @@ public class AzureClustersClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1310,6 +1327,7 @@ public class AzureClustersClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1357,6 +1375,7 @@ public class AzureClustersClientHttpJsonTest {
               .putAllAnnotations(new HashMap<String, String>())
               .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
               .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+              .addAllErrors(new ArrayList<AzureNodePoolError>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAzureNodePoolAsync(azureNodePool, updateMask).get();
@@ -1385,6 +1404,7 @@ public class AzureClustersClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1446,6 +1466,7 @@ public class AzureClustersClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -516,6 +516,59 @@ public final class CatalogServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest,
+          com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+      getBatchRemoveCatalogAttributesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchRemoveCatalogAttributes",
+      requestType = com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest.class,
+      responseType = com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest,
+          com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+      getBatchRemoveCatalogAttributesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest,
+            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+        getBatchRemoveCatalogAttributesMethod;
+    if ((getBatchRemoveCatalogAttributesMethod =
+            CatalogServiceGrpc.getBatchRemoveCatalogAttributesMethod)
+        == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getBatchRemoveCatalogAttributesMethod =
+                CatalogServiceGrpc.getBatchRemoveCatalogAttributesMethod)
+            == null) {
+          CatalogServiceGrpc.getBatchRemoveCatalogAttributesMethod =
+              getBatchRemoveCatalogAttributesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest,
+                          com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchRemoveCatalogAttributes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CatalogServiceMethodDescriptorSupplier(
+                              "BatchRemoveCatalogAttributes"))
+                      .build();
+        }
+      }
+    }
+    return getBatchRemoveCatalogAttributesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2alpha.ReplaceCatalogAttributeRequest,
           com.google.cloud.retail.v2alpha.AttributesConfig>
       getReplaceCatalogAttributeMethod;
@@ -813,6 +866,24 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Removes all specified
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]s from the
+     * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig].
+     * </pre>
+     */
+    public void batchRemoveCatalogAttributes(
+        com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchRemoveCatalogAttributesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Replaces the specified
      * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] in the
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] by
@@ -901,6 +972,13 @@ public final class CatalogServiceGrpc {
                       com.google.cloud.retail.v2alpha.RemoveCatalogAttributeRequest,
                       com.google.cloud.retail.v2alpha.AttributesConfig>(
                       this, METHODID_REMOVE_CATALOG_ATTRIBUTE)))
+          .addMethod(
+              getBatchRemoveCatalogAttributesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest,
+                      com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>(
+                      this, METHODID_BATCH_REMOVE_CATALOG_ATTRIBUTES)))
           .addMethod(
               getReplaceCatalogAttributeMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1148,6 +1226,26 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Removes all specified
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]s from the
+     * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig].
+     * </pre>
+     */
+    public void batchRemoveCatalogAttributes(
+        com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchRemoveCatalogAttributesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Replaces the specified
      * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] in the
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] by
@@ -1361,6 +1459,22 @@ public final class CatalogServiceGrpc {
         com.google.cloud.retail.v2alpha.RemoveCatalogAttributeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemoveCatalogAttributeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes all specified
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]s from the
+     * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse
+        batchRemoveCatalogAttributes(
+            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchRemoveCatalogAttributesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1594,6 +1708,23 @@ public final class CatalogServiceGrpc {
      *
      *
      * <pre>
+     * Removes all specified
+     * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute]s from the
+     * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>
+        batchRemoveCatalogAttributes(
+            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchRemoveCatalogAttributesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Replaces the specified
      * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] in the
      * [AttributesConfig][google.cloud.retail.v2alpha.AttributesConfig] by
@@ -1622,7 +1753,8 @@ public final class CatalogServiceGrpc {
   private static final int METHODID_UPDATE_ATTRIBUTES_CONFIG = 7;
   private static final int METHODID_ADD_CATALOG_ATTRIBUTE = 8;
   private static final int METHODID_REMOVE_CATALOG_ATTRIBUTE = 9;
-  private static final int METHODID_REPLACE_CATALOG_ATTRIBUTE = 10;
+  private static final int METHODID_BATCH_REMOVE_CATALOG_ATTRIBUTES = 10;
+  private static final int METHODID_REPLACE_CATALOG_ATTRIBUTE = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1699,6 +1831,13 @@ public final class CatalogServiceGrpc {
           serviceImpl.removeCatalogAttribute(
               (com.google.cloud.retail.v2alpha.RemoveCatalogAttributeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.retail.v2alpha.AttributesConfig>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_REMOVE_CATALOG_ATTRIBUTES:
+          serviceImpl.batchRemoveCatalogAttributes(
+              (com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse>)
                   responseObserver);
           break;
         case METHODID_REPLACE_CATALOG_ATTRIBUTE:
@@ -1781,6 +1920,7 @@ public final class CatalogServiceGrpc {
                       .addMethod(getUpdateAttributesConfigMethod())
                       .addMethod(getAddCatalogAttributeMethod())
                       .addMethod(getRemoveCatalogAttributeMethod())
+                      .addMethod(getBatchRemoveCatalogAttributesMethod())
                       .addMethod(getReplaceCatalogAttributeMethod())
                       .build();
         }

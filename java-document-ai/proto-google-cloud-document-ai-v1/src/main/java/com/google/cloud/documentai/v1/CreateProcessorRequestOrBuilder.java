@@ -27,8 +27,8 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) under which to create the processor.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent (project and location) under which to create the
+   * processor. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) under which to create the processor.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent (project and location) under which to create the
+   * processor. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -58,8 +58,9 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor to be created, requires [processor_type] and [display_name]
-   * to be set. Also, the processor is under CMEK if CMEK fields are set.
+   * Required. The processor to be created, requires [processor_type] and
+   * [display_name] to be set. Also, the processor is under CMEK if CMEK fields
+   * are set.
    * </pre>
    *
    * <code>
@@ -73,8 +74,9 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor to be created, requires [processor_type] and [display_name]
-   * to be set. Also, the processor is under CMEK if CMEK fields are set.
+   * Required. The processor to be created, requires [processor_type] and
+   * [display_name] to be set. Also, the processor is under CMEK if CMEK fields
+   * are set.
    * </pre>
    *
    * <code>
@@ -88,8 +90,9 @@ public interface CreateProcessorRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The processor to be created, requires [processor_type] and [display_name]
-   * to be set. Also, the processor is under CMEK if CMEK fields are set.
+   * Required. The processor to be created, requires [processor_type] and
+   * [display_name] to be set. Also, the processor is under CMEK if CMEK fields
+   * are set.
    * </pre>
    *
    * <code>

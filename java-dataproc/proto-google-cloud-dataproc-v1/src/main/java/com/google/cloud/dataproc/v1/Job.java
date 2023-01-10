@@ -1284,8 +1284,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Indicates whether the job is completed. If the value is `false`,
-   * the job is still in progress. If `true`, the job is completed, and
+   * Output only. Indicates whether the job is completed. If the value is
+   * `false`, the job is still in progress. If `true`, the job is completed, and
    * `status.state` field will indicate if it was successful, failed,
    * or cancelled.
    * </pre>
@@ -1297,6 +1297,61 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getDone() {
     return done_;
+  }
+
+  public static final int DRIVER_SCHEDULING_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.dataproc.v1.DriverSchedulingConfig driverSchedulingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Driver scheduling configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the driverSchedulingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDriverSchedulingConfig() {
+    return driverSchedulingConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Driver scheduling configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The driverSchedulingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.DriverSchedulingConfig getDriverSchedulingConfig() {
+    return driverSchedulingConfig_ == null
+        ? com.google.cloud.dataproc.v1.DriverSchedulingConfig.getDefaultInstance()
+        : driverSchedulingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Driver scheduling configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder
+      getDriverSchedulingConfigOrBuilder() {
+    return getDriverSchedulingConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1368,6 +1423,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (done_ != false) {
       output.writeBool(24, done_);
+    }
+    if (driverSchedulingConfig_ != null) {
+      output.writeMessage(27, getDriverSchedulingConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1459,6 +1517,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (done_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, done_);
     }
+    if (driverSchedulingConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, getDriverSchedulingConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1497,6 +1559,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getJobUuid().equals(other.getJobUuid())) return false;
     if (getDone() != other.getDone()) return false;
+    if (hasDriverSchedulingConfig() != other.hasDriverSchedulingConfig()) return false;
+    if (hasDriverSchedulingConfig()) {
+      if (!getDriverSchedulingConfig().equals(other.getDriverSchedulingConfig())) return false;
+    }
     if (!getTypeJobCase().equals(other.getTypeJobCase())) return false;
     switch (typeJobCase_) {
       case 3:
@@ -1573,6 +1639,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getJobUuid().hashCode();
     hash = (37 * hash) + DONE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDone());
+    if (hasDriverSchedulingConfig()) {
+      hash = (37 * hash) + DRIVER_SCHEDULING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDriverSchedulingConfig().hashCode();
+    }
     switch (typeJobCase_) {
       case 3:
         hash = (37 * hash) + HADOOP_JOB_FIELD_NUMBER;
@@ -1837,6 +1907,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
       done_ = false;
 
+      if (driverSchedulingConfigBuilder_ == null) {
+        driverSchedulingConfig_ = null;
+      } else {
+        driverSchedulingConfig_ = null;
+        driverSchedulingConfigBuilder_ = null;
+      }
       typeJobCase_ = 0;
       typeJob_ = null;
       return this;
@@ -1966,6 +2042,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       result.jobUuid_ = jobUuid_;
       result.done_ = done_;
+      if (driverSchedulingConfigBuilder_ == null) {
+        result.driverSchedulingConfig_ = driverSchedulingConfig_;
+      } else {
+        result.driverSchedulingConfig_ = driverSchedulingConfigBuilder_.build();
+      }
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
       return result;
@@ -2097,6 +2178,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getDone() != false) {
         setDone(other.getDone());
+      }
+      if (other.hasDriverSchedulingConfig()) {
+        mergeDriverSchedulingConfig(other.getDriverSchedulingConfig());
       }
       switch (other.getTypeJobCase()) {
         case HADOOP_JOB:
@@ -2303,6 +2387,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 192
+            case 218:
+              {
+                input.readMessage(
+                    getDriverSchedulingConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6387,8 +6478,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is `false`,
-     * the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is
+     * `false`, the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6405,8 +6496,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is `false`,
-     * the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is
+     * `false`, the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6426,8 +6517,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether the job is completed. If the value is `false`,
-     * the job is still in progress. If `true`, the job is completed, and
+     * Output only. Indicates whether the job is completed. If the value is
+     * `false`, the job is still in progress. If `true`, the job is completed, and
      * `status.state` field will indicate if it was successful, failed,
      * or cancelled.
      * </pre>
@@ -6441,6 +6532,215 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       done_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dataproc.v1.DriverSchedulingConfig driverSchedulingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.DriverSchedulingConfig,
+            com.google.cloud.dataproc.v1.DriverSchedulingConfig.Builder,
+            com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder>
+        driverSchedulingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the driverSchedulingConfig field is set.
+     */
+    public boolean hasDriverSchedulingConfig() {
+      return driverSchedulingConfigBuilder_ != null || driverSchedulingConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The driverSchedulingConfig.
+     */
+    public com.google.cloud.dataproc.v1.DriverSchedulingConfig getDriverSchedulingConfig() {
+      if (driverSchedulingConfigBuilder_ == null) {
+        return driverSchedulingConfig_ == null
+            ? com.google.cloud.dataproc.v1.DriverSchedulingConfig.getDefaultInstance()
+            : driverSchedulingConfig_;
+      } else {
+        return driverSchedulingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDriverSchedulingConfig(
+        com.google.cloud.dataproc.v1.DriverSchedulingConfig value) {
+      if (driverSchedulingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        driverSchedulingConfig_ = value;
+        onChanged();
+      } else {
+        driverSchedulingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDriverSchedulingConfig(
+        com.google.cloud.dataproc.v1.DriverSchedulingConfig.Builder builderForValue) {
+      if (driverSchedulingConfigBuilder_ == null) {
+        driverSchedulingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        driverSchedulingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDriverSchedulingConfig(
+        com.google.cloud.dataproc.v1.DriverSchedulingConfig value) {
+      if (driverSchedulingConfigBuilder_ == null) {
+        if (driverSchedulingConfig_ != null) {
+          driverSchedulingConfig_ =
+              com.google.cloud.dataproc.v1.DriverSchedulingConfig.newBuilder(
+                      driverSchedulingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          driverSchedulingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        driverSchedulingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDriverSchedulingConfig() {
+      if (driverSchedulingConfigBuilder_ == null) {
+        driverSchedulingConfig_ = null;
+        onChanged();
+      } else {
+        driverSchedulingConfig_ = null;
+        driverSchedulingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.DriverSchedulingConfig.Builder
+        getDriverSchedulingConfigBuilder() {
+
+      onChanged();
+      return getDriverSchedulingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder
+        getDriverSchedulingConfigOrBuilder() {
+      if (driverSchedulingConfigBuilder_ != null) {
+        return driverSchedulingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return driverSchedulingConfig_ == null
+            ? com.google.cloud.dataproc.v1.DriverSchedulingConfig.getDefaultInstance()
+            : driverSchedulingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Driver scheduling configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.DriverSchedulingConfig,
+            com.google.cloud.dataproc.v1.DriverSchedulingConfig.Builder,
+            com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder>
+        getDriverSchedulingConfigFieldBuilder() {
+      if (driverSchedulingConfigBuilder_ == null) {
+        driverSchedulingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.DriverSchedulingConfig,
+                com.google.cloud.dataproc.v1.DriverSchedulingConfig.Builder,
+                com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder>(
+                getDriverSchedulingConfig(), getParentForChildren(), isClean());
+        driverSchedulingConfig_ = null;
+      }
+      return driverSchedulingConfigBuilder_;
     }
 
     @java.lang.Override

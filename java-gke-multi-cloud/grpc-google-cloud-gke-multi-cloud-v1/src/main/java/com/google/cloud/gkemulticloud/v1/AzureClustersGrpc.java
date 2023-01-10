@@ -844,8 +844,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource on a given Google Cloud project
-     * and region.
+     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource on a given Google Cloud project and region.
      * `AzureClient` resources hold client authentication
      * information needed by the Anthos Multicloud API to manage Azure resources
      * on your Azure subscription on your behalf.
@@ -865,7 +865,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Describes a specific
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
     public void getAzureClient(
@@ -880,8 +881,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public void listAzureClients(
@@ -896,7 +897,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource.
      * If the client is used by one or more clusters, deletion will
      * fail and a `FAILED_PRECONDITION` error will be returned.
      * If successful, the response contains a newly created
@@ -915,7 +917,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given GCP project and region.
+     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -946,7 +949,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Describes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
     public void getAzureCluster(
@@ -961,8 +965,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public void listAzureClusters(
@@ -977,9 +981,10 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
-     * Fails if the cluster has one or more associated [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
-     * resources.
+     * Deletes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Fails if the cluster has one or more associated
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1013,7 +1018,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool], attached to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool],
+     * attached to a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1044,7 +1051,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Describes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
     public void getAzureNodePool(
@@ -1059,7 +1067,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources on a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources on a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
     public void listAzureNodePools(
@@ -1074,7 +1084,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Deletes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1237,8 +1248,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource on a given Google Cloud project
-     * and region.
+     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource on a given Google Cloud project and region.
      * `AzureClient` resources hold client authentication
      * information needed by the Anthos Multicloud API to manage Azure resources
      * on your Azure subscription on your behalf.
@@ -1260,7 +1271,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Describes a specific
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
     public void getAzureClient(
@@ -1277,8 +1289,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public void listAzureClients(
@@ -1295,7 +1307,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource.
      * If the client is used by one or more clusters, deletion will
      * fail and a `FAILED_PRECONDITION` error will be returned.
      * If successful, the response contains a newly created
@@ -1316,7 +1329,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given GCP project and region.
+     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1351,7 +1365,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Describes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
     public void getAzureCluster(
@@ -1368,8 +1383,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public void listAzureClusters(
@@ -1386,9 +1401,10 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
-     * Fails if the cluster has one or more associated [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
-     * resources.
+     * Deletes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Fails if the cluster has one or more associated
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1426,7 +1442,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool], attached to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool],
+     * attached to a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1461,7 +1479,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Describes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
     public void getAzureNodePool(
@@ -1478,7 +1497,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources on a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources on a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
     public void listAzureNodePools(
@@ -1495,7 +1516,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Deletes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1553,8 +1575,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource on a given Google Cloud project
-     * and region.
+     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource on a given Google Cloud project and region.
      * `AzureClient` resources hold client authentication
      * information needed by the Anthos Multicloud API to manage Azure resources
      * on your Azure subscription on your behalf.
@@ -1573,7 +1595,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Describes a specific
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureClient getAzureClient(
@@ -1586,8 +1609,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse listAzureClients(
@@ -1600,7 +1623,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource.
      * If the client is used by one or more clusters, deletion will
      * fail and a `FAILED_PRECONDITION` error will be returned.
      * If successful, the response contains a newly created
@@ -1618,7 +1642,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given GCP project and region.
+     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1647,7 +1672,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Describes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureCluster getAzureCluster(
@@ -1660,8 +1686,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse listAzureClusters(
@@ -1674,9 +1700,10 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
-     * Fails if the cluster has one or more associated [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
-     * resources.
+     * Deletes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Fails if the cluster has one or more associated
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1707,7 +1734,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool], attached to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool],
+     * attached to a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1736,7 +1765,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Describes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool(
@@ -1749,7 +1779,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources on a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources on a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
     public com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse listAzureNodePools(
@@ -1762,7 +1794,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Deletes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1813,8 +1846,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource on a given Google Cloud project
-     * and region.
+     * Creates a new [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource on a given Google Cloud project and region.
      * `AzureClient` resources hold client authentication
      * information needed by the Anthos Multicloud API to manage Azure resources
      * on your Azure subscription on your behalf.
@@ -1833,7 +1866,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Describes a specific
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1847,8 +1881,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1862,7 +1896,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
+     * Deletes a specific [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resource.
      * If the client is used by one or more clusters, deletion will
      * fail and a `FAILED_PRECONDITION` error will be returned.
      * If successful, the response contains a newly created
@@ -1880,7 +1915,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource on a given GCP project and region.
+     * Creates a new [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resource on a given GCP project and region.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1909,7 +1945,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Describes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1923,8 +1960,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resources on a given Google Cloud project and
-     * region.
+     * Lists all [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]
+     * resources on a given Google Cloud project and region.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1938,9 +1975,10 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
-     * Fails if the cluster has one or more associated [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
-     * resources.
+     * Deletes a specific
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
+     * Fails if the cluster has one or more associated
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -1972,7 +2010,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool], attached to a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Creates a new [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool],
+     * attached to a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.
@@ -2001,7 +2041,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Describes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Describes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2015,7 +2056,9 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources on a given [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
+     * Lists all [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources on a given
+     * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2029,7 +2072,8 @@ public final class AzureClustersGrpc {
      *
      *
      * <pre>
-     * Deletes a specific [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
+     * Deletes a specific
+     * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * If successful, the response contains a newly created
      * [Operation][google.longrunning.Operation] resource that can be
      * described to track the status of the operation.

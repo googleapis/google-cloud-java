@@ -466,6 +466,107 @@ public final class ContactCenterInsightsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
+          com.google.longrunning.Operation>
+      getBulkAnalyzeConversationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BulkAnalyzeConversations",
+      requestType = com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
+          com.google.longrunning.Operation>
+      getBulkAnalyzeConversationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
+            com.google.longrunning.Operation>
+        getBulkAnalyzeConversationsMethod;
+    if ((getBulkAnalyzeConversationsMethod =
+            ContactCenterInsightsGrpc.getBulkAnalyzeConversationsMethod)
+        == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getBulkAnalyzeConversationsMethod =
+                ContactCenterInsightsGrpc.getBulkAnalyzeConversationsMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getBulkAnalyzeConversationsMethod =
+              getBulkAnalyzeConversationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BulkAnalyzeConversations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1
+                                  .BulkAnalyzeConversationsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier(
+                              "BulkAnalyzeConversations"))
+                      .build();
+        }
+      }
+    }
+    return getBulkAnalyzeConversationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+          com.google.longrunning.Operation>
+      getIngestConversationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "IngestConversations",
+      requestType = com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+          com.google.longrunning.Operation>
+      getIngestConversationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+            com.google.longrunning.Operation>
+        getIngestConversationsMethod;
+    if ((getIngestConversationsMethod = ContactCenterInsightsGrpc.getIngestConversationsMethod)
+        == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getIngestConversationsMethod = ContactCenterInsightsGrpc.getIngestConversationsMethod)
+            == null) {
+          ContactCenterInsightsGrpc.getIngestConversationsMethod =
+              getIngestConversationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "IngestConversations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("IngestConversations"))
+                      .build();
+        }
+      }
+    }
+    return getIngestConversationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest,
           com.google.longrunning.Operation>
       getExportInsightsDataMethod;
@@ -982,6 +1083,49 @@ public final class ContactCenterInsightsGrpc {
       }
     }
     return getUpdateIssueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest, com.google.protobuf.Empty>
+      getDeleteIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteIssue",
+      requestType = com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest, com.google.protobuf.Empty>
+      getDeleteIssueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest, com.google.protobuf.Empty>
+        getDeleteIssueMethod;
+    if ((getDeleteIssueMethod = ContactCenterInsightsGrpc.getDeleteIssueMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getDeleteIssueMethod = ContactCenterInsightsGrpc.getDeleteIssueMethod) == null) {
+          ContactCenterInsightsGrpc.getDeleteIssueMethod =
+              getDeleteIssueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteIssue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ContactCenterInsightsMethodDescriptorSupplier("DeleteIssue"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteIssueMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1842,6 +1986,35 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Analyzes multiple conversations in a single request.
+     * </pre>
+     */
+    public void bulkAnalyzeConversations(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBulkAnalyzeConversationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports conversations and processes them according to the user's
+     * configuration.
+     * </pre>
+     */
+    public void ingestConversations(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getIngestConversationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Export insights data to a destination defined in the request body.
      * </pre>
      */
@@ -1997,6 +2170,20 @@ public final class ContactCenterInsightsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateIssueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public void deleteIssue(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteIssueMethod(), responseObserver);
     }
 
     /**
@@ -2269,6 +2456,18 @@ public final class ContactCenterInsightsGrpc {
                       com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest,
                       com.google.protobuf.Empty>(this, METHODID_DELETE_ANALYSIS)))
           .addMethod(
+              getBulkAnalyzeConversationsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_BULK_ANALYZE_CONVERSATIONS)))
+          .addMethod(
+              getIngestConversationsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest,
+                      com.google.longrunning.Operation>(this, METHODID_INGEST_CONVERSATIONS)))
+          .addMethod(
               getExportInsightsDataMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -2339,6 +2538,12 @@ public final class ContactCenterInsightsGrpc {
                       com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest,
                       com.google.cloud.contactcenterinsights.v1.Issue>(
                       this, METHODID_UPDATE_ISSUE)))
+          .addMethod(
+              getDeleteIssueMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_ISSUE)))
           .addMethod(
               getCalculateIssueModelStatsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2611,6 +2816,39 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Analyzes multiple conversations in a single request.
+     * </pre>
+     */
+    public void bulkAnalyzeConversations(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBulkAnalyzeConversationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports conversations and processes them according to the user's
+     * configuration.
+     * </pre>
+     */
+    public void ingestConversations(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getIngestConversationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Export insights data to a destination defined in the request body.
      * </pre>
      */
@@ -2784,6 +3022,22 @@ public final class ContactCenterInsightsGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateIssueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public void deleteIssue(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteIssueMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3160,6 +3414,33 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Analyzes multiple conversations in a single request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkAnalyzeConversations(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkAnalyzeConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports conversations and processes them according to the user's
+     * configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation ingestConversations(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIngestConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Export insights data to a destination defined in the request body.
      * </pre>
      */
@@ -3299,6 +3580,19 @@ public final class ContactCenterInsightsGrpc {
         com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteIssue(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3637,6 +3931,35 @@ public final class ContactCenterInsightsGrpc {
      *
      *
      * <pre>
+     * Analyzes multiple conversations in a single request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        bulkAnalyzeConversations(
+            com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBulkAnalyzeConversationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports conversations and processes them according to the user's
+     * configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        ingestConversations(
+            com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getIngestConversationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Export insights data to a destination defined in the request body.
      * </pre>
      */
@@ -3788,6 +4111,19 @@ public final class ContactCenterInsightsGrpc {
         updateIssue(com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateIssueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteIssue(com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteIssueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4000,31 +4336,34 @@ public final class ContactCenterInsightsGrpc {
   private static final int METHODID_GET_ANALYSIS = 6;
   private static final int METHODID_LIST_ANALYSES = 7;
   private static final int METHODID_DELETE_ANALYSIS = 8;
-  private static final int METHODID_EXPORT_INSIGHTS_DATA = 9;
-  private static final int METHODID_CREATE_ISSUE_MODEL = 10;
-  private static final int METHODID_UPDATE_ISSUE_MODEL = 11;
-  private static final int METHODID_GET_ISSUE_MODEL = 12;
-  private static final int METHODID_LIST_ISSUE_MODELS = 13;
-  private static final int METHODID_DELETE_ISSUE_MODEL = 14;
-  private static final int METHODID_DEPLOY_ISSUE_MODEL = 15;
-  private static final int METHODID_UNDEPLOY_ISSUE_MODEL = 16;
-  private static final int METHODID_GET_ISSUE = 17;
-  private static final int METHODID_LIST_ISSUES = 18;
-  private static final int METHODID_UPDATE_ISSUE = 19;
-  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 20;
-  private static final int METHODID_CREATE_PHRASE_MATCHER = 21;
-  private static final int METHODID_GET_PHRASE_MATCHER = 22;
-  private static final int METHODID_LIST_PHRASE_MATCHERS = 23;
-  private static final int METHODID_DELETE_PHRASE_MATCHER = 24;
-  private static final int METHODID_UPDATE_PHRASE_MATCHER = 25;
-  private static final int METHODID_CALCULATE_STATS = 26;
-  private static final int METHODID_GET_SETTINGS = 27;
-  private static final int METHODID_UPDATE_SETTINGS = 28;
-  private static final int METHODID_CREATE_VIEW = 29;
-  private static final int METHODID_GET_VIEW = 30;
-  private static final int METHODID_LIST_VIEWS = 31;
-  private static final int METHODID_UPDATE_VIEW = 32;
-  private static final int METHODID_DELETE_VIEW = 33;
+  private static final int METHODID_BULK_ANALYZE_CONVERSATIONS = 9;
+  private static final int METHODID_INGEST_CONVERSATIONS = 10;
+  private static final int METHODID_EXPORT_INSIGHTS_DATA = 11;
+  private static final int METHODID_CREATE_ISSUE_MODEL = 12;
+  private static final int METHODID_UPDATE_ISSUE_MODEL = 13;
+  private static final int METHODID_GET_ISSUE_MODEL = 14;
+  private static final int METHODID_LIST_ISSUE_MODELS = 15;
+  private static final int METHODID_DELETE_ISSUE_MODEL = 16;
+  private static final int METHODID_DEPLOY_ISSUE_MODEL = 17;
+  private static final int METHODID_UNDEPLOY_ISSUE_MODEL = 18;
+  private static final int METHODID_GET_ISSUE = 19;
+  private static final int METHODID_LIST_ISSUES = 20;
+  private static final int METHODID_UPDATE_ISSUE = 21;
+  private static final int METHODID_DELETE_ISSUE = 22;
+  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 23;
+  private static final int METHODID_CREATE_PHRASE_MATCHER = 24;
+  private static final int METHODID_GET_PHRASE_MATCHER = 25;
+  private static final int METHODID_LIST_PHRASE_MATCHERS = 26;
+  private static final int METHODID_DELETE_PHRASE_MATCHER = 27;
+  private static final int METHODID_UPDATE_PHRASE_MATCHER = 28;
+  private static final int METHODID_CALCULATE_STATS = 29;
+  private static final int METHODID_GET_SETTINGS = 30;
+  private static final int METHODID_UPDATE_SETTINGS = 31;
+  private static final int METHODID_CREATE_VIEW = 32;
+  private static final int METHODID_GET_VIEW = 33;
+  private static final int METHODID_LIST_VIEWS = 34;
+  private static final int METHODID_UPDATE_VIEW = 35;
+  private static final int METHODID_DELETE_VIEW = 36;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4096,6 +4435,16 @@ public final class ContactCenterInsightsGrpc {
               (com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_BULK_ANALYZE_CONVERSATIONS:
+          serviceImpl.bulkAnalyzeConversations(
+              (com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_INGEST_CONVERSATIONS:
+          serviceImpl.ingestConversations(
+              (com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_EXPORT_INSIGHTS_DATA:
           serviceImpl.exportInsightsData(
               (com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest) request,
@@ -4158,6 +4507,11 @@ public final class ContactCenterInsightsGrpc {
               (com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Issue>)
                   responseObserver);
+          break;
+        case METHODID_DELETE_ISSUE:
+          serviceImpl.deleteIssue(
+              (com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CALCULATE_ISSUE_MODEL_STATS:
           serviceImpl.calculateIssueModelStats(
@@ -4318,6 +4672,8 @@ public final class ContactCenterInsightsGrpc {
                       .addMethod(getGetAnalysisMethod())
                       .addMethod(getListAnalysesMethod())
                       .addMethod(getDeleteAnalysisMethod())
+                      .addMethod(getBulkAnalyzeConversationsMethod())
+                      .addMethod(getIngestConversationsMethod())
                       .addMethod(getExportInsightsDataMethod())
                       .addMethod(getCreateIssueModelMethod())
                       .addMethod(getUpdateIssueModelMethod())
@@ -4329,6 +4685,7 @@ public final class ContactCenterInsightsGrpc {
                       .addMethod(getGetIssueMethod())
                       .addMethod(getListIssuesMethod())
                       .addMethod(getUpdateIssueMethod())
+                      .addMethod(getDeleteIssueMethod())
                       .addMethod(getCalculateIssueModelStatsMethod())
                       .addMethod(getCreatePhraseMatcherMethod())
                       .addMethod(getGetPhraseMatcherMethod())

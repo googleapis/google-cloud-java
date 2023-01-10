@@ -80,7 +80,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Fleet host project where this cluster will be registered.
+   * Required. The name of the Fleet host project where this cluster will be
+   * registered.
    * Project names are formatted as
    * `projects/&lt;project-number&gt;`.
    * </pre>
@@ -105,7 +106,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Fleet host project where this cluster will be registered.
+   * Required. The name of the Fleet host project where this cluster will be
+   * registered.
    * Project names are formatted as
    * `projects/&lt;project-number&gt;`.
    * </pre>
@@ -133,7 +135,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the managed Hub Membership resource associated to this cluster.
+   * Output only. The name of the managed Hub Membership resource associated to
+   * this cluster.
    * Membership names are formatted as
    * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
    * </pre>
@@ -158,7 +161,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the managed Hub Membership resource associated to this cluster.
+   * Output only. The name of the managed Hub Membership resource associated to
+   * this cluster.
    * Membership names are formatted as
    * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
    * </pre>
@@ -541,7 +545,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Fleet host project where this cluster will be registered.
+     * Required. The name of the Fleet host project where this cluster will be
+     * registered.
      * Project names are formatted as
      * `projects/&lt;project-number&gt;`.
      * </pre>
@@ -565,7 +570,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Fleet host project where this cluster will be registered.
+     * Required. The name of the Fleet host project where this cluster will be
+     * registered.
      * Project names are formatted as
      * `projects/&lt;project-number&gt;`.
      * </pre>
@@ -589,7 +595,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Fleet host project where this cluster will be registered.
+     * Required. The name of the Fleet host project where this cluster will be
+     * registered.
      * Project names are formatted as
      * `projects/&lt;project-number&gt;`.
      * </pre>
@@ -612,7 +619,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Fleet host project where this cluster will be registered.
+     * Required. The name of the Fleet host project where this cluster will be
+     * registered.
      * Project names are formatted as
      * `projects/&lt;project-number&gt;`.
      * </pre>
@@ -631,7 +639,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Fleet host project where this cluster will be registered.
+     * Required. The name of the Fleet host project where this cluster will be
+     * registered.
      * Project names are formatted as
      * `projects/&lt;project-number&gt;`.
      * </pre>
@@ -657,7 +666,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the managed Hub Membership resource associated to this cluster.
+     * Output only. The name of the managed Hub Membership resource associated to
+     * this cluster.
      * Membership names are formatted as
      * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
      * </pre>
@@ -681,7 +691,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the managed Hub Membership resource associated to this cluster.
+     * Output only. The name of the managed Hub Membership resource associated to
+     * this cluster.
      * Membership names are formatted as
      * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
      * </pre>
@@ -705,7 +716,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the managed Hub Membership resource associated to this cluster.
+     * Output only. The name of the managed Hub Membership resource associated to
+     * this cluster.
      * Membership names are formatted as
      * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
      * </pre>
@@ -728,7 +740,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the managed Hub Membership resource associated to this cluster.
+     * Output only. The name of the managed Hub Membership resource associated to
+     * this cluster.
      * Membership names are formatted as
      * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
      * </pre>
@@ -747,7 +760,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the managed Hub Membership resource associated to this cluster.
+     * Output only. The name of the managed Hub Membership resource associated to
+     * this cluster.
      * Membership names are formatted as
      * `projects/&lt;project-number&gt;/locations/global/membership/&lt;cluster-id&gt;`.
      * </pre>

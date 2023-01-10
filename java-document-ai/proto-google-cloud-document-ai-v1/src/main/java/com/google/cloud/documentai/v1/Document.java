@@ -112,7 +112,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The index of the first character in [Document.text][google.cloud.documentai.v1.Document.text] in the overall
+     * The index of the first character in
+     * [Document.text][google.cloud.documentai.v1.Document.text] in the overall
      * document global text.
      * </pre>
      *
@@ -213,7 +214,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The index of the first character in [Document.text][google.cloud.documentai.v1.Document.text] in the overall
+     * The index of the first character in
+     * [Document.text][google.cloud.documentai.v1.Document.text] in the overall
      * document global text.
      * </pre>
      *
@@ -712,7 +714,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The index of the first character in [Document.text][google.cloud.documentai.v1.Document.text] in the overall
+       * The index of the first character in
+       * [Document.text][google.cloud.documentai.v1.Document.text] in the overall
        * document global text.
        * </pre>
        *
@@ -728,7 +731,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The index of the first character in [Document.text][google.cloud.documentai.v1.Document.text] in the overall
+       * The index of the first character in
+       * [Document.text][google.cloud.documentai.v1.Document.text] in the overall
        * document global text.
        * </pre>
        *
@@ -747,7 +751,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The index of the first character in [Document.text][google.cloud.documentai.v1.Document.text] in the overall
+       * The index of the first character in
+       * [Document.text][google.cloud.documentai.v1.Document.text] in the overall
        * document global text.
        * </pre>
        *
@@ -835,7 +840,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -847,7 +853,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -859,7 +866,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -1878,7 +1886,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -1893,7 +1902,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -1910,7 +1920,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2816,7 +2827,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2830,7 +2842,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2850,7 +2863,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2872,7 +2886,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2892,7 +2907,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2918,7 +2934,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2938,7 +2955,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2952,7 +2970,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -2970,7 +2989,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -4053,9 +4073,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 1-based index for current [Page][google.cloud.documentai.v1.Document.Page] in a parent [Document][google.cloud.documentai.v1.Document].
-     * Useful when a page is taken out of a [Document][google.cloud.documentai.v1.Document] for individual
-     * processing.
+     * 1-based index for current
+     * [Page][google.cloud.documentai.v1.Document.Page] in a parent
+     * [Document][google.cloud.documentai.v1.Document]. Useful when a page is
+     * taken out of a [Document][google.cloud.documentai.v1.Document] for
+     * individual processing.
      * </pre>
      *
      * <code>int32 page_number = 1;</code>
@@ -4860,7 +4882,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=463
+     *     google/cloud/documentai/v1/document.proto;l=488
      * @return Whether the provenance field is set.
      */
     @java.lang.Deprecated
@@ -4876,7 +4898,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=463
+     *     google/cloud/documentai/v1/document.proto;l=488
      * @return The provenance.
      */
     @java.lang.Deprecated
@@ -7621,7 +7643,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -7633,7 +7656,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -7645,7 +7669,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -7656,9 +7681,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Confidence of the current [Layout][google.cloud.documentai.v1.Document.Page.Layout] within context of the object this
-       * layout is for. e.g. confidence can be for a single token, a table,
-       * a visual element, etc. depending on context. Range `[0, 1]`.
+       * Confidence of the current
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
+       * context of the object this layout is for. e.g. confidence can be for a
+       * single token, a table, a visual element, etc. depending on context.
+       * Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -7671,7 +7698,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * The bounding polygon for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -7683,7 +7711,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * The bounding polygon for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -7695,7 +7724,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * The bounding polygon for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -7706,7 +7736,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * Detected orientation for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;</code>
@@ -7718,7 +7749,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * Detected orientation for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;</code>
@@ -7994,7 +8026,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8009,7 +8042,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8026,7 +8060,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8042,9 +8077,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Confidence of the current [Layout][google.cloud.documentai.v1.Document.Page.Layout] within context of the object this
-       * layout is for. e.g. confidence can be for a single token, a table,
-       * a visual element, etc. depending on context. Range `[0, 1]`.
+       * Confidence of the current
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
+       * context of the object this layout is for. e.g. confidence can be for a
+       * single token, a table, a visual element, etc. depending on context.
+       * Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -8062,7 +8099,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * The bounding polygon for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8077,7 +8115,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * The bounding polygon for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8094,7 +8133,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * The bounding polygon for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8110,7 +8150,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * Detected orientation for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;</code>
@@ -8125,7 +8166,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+       * Detected orientation for the
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;</code>
@@ -8583,7 +8625,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8597,7 +8640,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8617,7 +8661,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8639,7 +8684,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8659,7 +8705,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8685,7 +8732,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8705,7 +8753,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8719,7 +8768,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8738,7 +8788,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+         * Text anchor indexing into the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.TextAnchor text_anchor = 1;</code>
@@ -8765,9 +8816,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of the current [Layout][google.cloud.documentai.v1.Document.Page.Layout] within context of the object this
-         * layout is for. e.g. confidence can be for a single token, a table,
-         * a visual element, etc. depending on context. Range `[0, 1]`.
+         * Confidence of the current
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
+         * context of the object this layout is for. e.g. confidence can be for a
+         * single token, a table, a visual element, etc. depending on context.
+         * Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -8782,9 +8835,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of the current [Layout][google.cloud.documentai.v1.Document.Page.Layout] within context of the object this
-         * layout is for. e.g. confidence can be for a single token, a table,
-         * a visual element, etc. depending on context. Range `[0, 1]`.
+         * Confidence of the current
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
+         * context of the object this layout is for. e.g. confidence can be for a
+         * single token, a table, a visual element, etc. depending on context.
+         * Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -8802,9 +8857,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Confidence of the current [Layout][google.cloud.documentai.v1.Document.Page.Layout] within context of the object this
-         * layout is for. e.g. confidence can be for a single token, a table,
-         * a visual element, etc. depending on context. Range `[0, 1]`.
+         * Confidence of the current
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
+         * context of the object this layout is for. e.g. confidence can be for a
+         * single token, a table, a visual element, etc. depending on context.
+         * Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -8828,7 +8885,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8842,7 +8900,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8862,7 +8921,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8884,7 +8944,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8904,7 +8965,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8930,7 +8992,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8950,7 +9013,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8964,7 +9028,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -8982,7 +9047,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The bounding polygon for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * The bounding polygon for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_poly = 3;</code>
@@ -9009,7 +9075,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * Detected orientation for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;
@@ -9025,7 +9092,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * Detected orientation for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;
@@ -9044,7 +9112,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * Detected orientation for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;
@@ -9065,7 +9134,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * Detected orientation for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;
@@ -9088,7 +9158,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected orientation for the [Layout][google.cloud.documentai.v1.Document.Page.Layout].
+         * Detected orientation for the
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout.Orientation orientation = 4;
@@ -9176,7 +9247,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Block][google.cloud.documentai.v1.Document.Page.Block].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -9188,7 +9260,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Block][google.cloud.documentai.v1.Document.Page.Block].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -9200,7 +9273,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Block][google.cloud.documentai.v1.Document.Page.Block].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -9283,7 +9357,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=195
+       *     google/cloud/documentai/v1/document.proto;l=203
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -9299,7 +9373,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=195
+       *     google/cloud/documentai/v1/document.proto;l=203
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -9373,7 +9447,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Block][google.cloud.documentai.v1.Document.Page.Block].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -9388,7 +9463,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Block][google.cloud.documentai.v1.Document.Page.Block].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -9405,7 +9481,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Block][google.cloud.documentai.v1.Document.Page.Block].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -9512,7 +9589,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=195
+       *     google/cloud/documentai/v1/document.proto;l=203
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -9531,7 +9608,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=195
+       *     google/cloud/documentai/v1/document.proto;l=203
        * @return The provenance.
        */
       @java.lang.Override
@@ -10022,7 +10099,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10036,7 +10114,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10056,7 +10135,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10078,7 +10158,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10098,7 +10179,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10124,7 +10206,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10144,7 +10227,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10158,7 +10242,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10176,7 +10261,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Block][google.cloud.documentai.v1.Document.Page.Block].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Block][google.cloud.documentai.v1.Document.Page.Block].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10626,7 +10712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=195
+         *     google/cloud/documentai/v1/document.proto;l=203
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -10644,7 +10730,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=195
+         *     google/cloud/documentai/v1/document.proto;l=203
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -10890,7 +10976,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10902,7 +10989,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10914,7 +11002,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -10997,7 +11086,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=207
+       *     See google/cloud/documentai/v1/document.proto;l=216
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -11013,7 +11102,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=207
+       *     See google/cloud/documentai/v1/document.proto;l=216
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -11086,7 +11175,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11101,7 +11191,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11118,7 +11209,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11225,7 +11317,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=207
+       *     See google/cloud/documentai/v1/document.proto;l=216
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -11244,7 +11336,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=207
+       *     See google/cloud/documentai/v1/document.proto;l=216
        * @return The provenance.
        */
       @java.lang.Override
@@ -11734,7 +11826,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11748,7 +11841,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11768,7 +11862,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11790,7 +11885,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11810,7 +11906,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11836,7 +11933,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11856,7 +11954,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11870,7 +11969,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -11888,7 +11988,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Paragraph][google.cloud.documentai.v1.Document.Page.Paragraph].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12338,7 +12439,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-         *     See google/cloud/documentai/v1/document.proto;l=207
+         *     See google/cloud/documentai/v1/document.proto;l=216
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -12356,7 +12457,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-         *     See google/cloud/documentai/v1/document.proto;l=207
+         *     See google/cloud/documentai/v1/document.proto;l=216
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -12602,7 +12703,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Line][google.cloud.documentai.v1.Document.Page.Line].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12614,7 +12716,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Line][google.cloud.documentai.v1.Document.Page.Line].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12626,7 +12729,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Line][google.cloud.documentai.v1.Document.Page.Line].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12709,7 +12813,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=220
+       *     google/cloud/documentai/v1/document.proto;l=230
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -12725,7 +12829,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=220
+       *     google/cloud/documentai/v1/document.proto;l=230
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -12799,7 +12903,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Line][google.cloud.documentai.v1.Document.Page.Line].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12814,7 +12919,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Line][google.cloud.documentai.v1.Document.Page.Line].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12831,7 +12937,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Line][google.cloud.documentai.v1.Document.Page.Line].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -12938,7 +13045,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=220
+       *     google/cloud/documentai/v1/document.proto;l=230
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -12957,7 +13064,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=220
+       *     google/cloud/documentai/v1/document.proto;l=230
        * @return The provenance.
        */
       @java.lang.Override
@@ -13448,7 +13555,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13462,7 +13570,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13482,7 +13591,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13504,7 +13614,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13524,7 +13635,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13550,7 +13662,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13570,7 +13683,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13584,7 +13698,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -13602,7 +13717,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Line][google.cloud.documentai.v1.Document.Page.Line].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Line][google.cloud.documentai.v1.Document.Page.Line].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -14052,7 +14168,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=220
+         *     google/cloud/documentai/v1/document.proto;l=230
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -14070,7 +14186,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=220
+         *     google/cloud/documentai/v1/document.proto;l=230
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -14316,7 +14432,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -14328,7 +14445,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -14340,7 +14458,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -14351,7 +14470,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -14364,7 +14484,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -14377,7 +14498,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -14462,7 +14584,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=256
+       *     google/cloud/documentai/v1/document.proto;l=269
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -14478,7 +14600,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=256
+       *     google/cloud/documentai/v1/document.proto;l=269
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -14579,7 +14701,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * Protobuf type {@code google.cloud.documentai.v1.Document.Page.Token.DetectedBreak}
@@ -15019,7 +15142,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * Protobuf type {@code google.cloud.documentai.v1.Document.Page.Token.DetectedBreak}
@@ -15368,7 +15492,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -15383,7 +15508,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -15400,7 +15526,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -15416,7 +15543,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -15432,7 +15560,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -15450,7 +15579,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+       * Detected break at the end of a
+       * [Token][google.cloud.documentai.v1.Document.Page.Token].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -15559,7 +15689,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=256
+       *     google/cloud/documentai/v1/document.proto;l=269
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -15578,7 +15708,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=256
+       *     google/cloud/documentai/v1/document.proto;l=269
        * @return The provenance.
        */
       @java.lang.Override
@@ -16103,7 +16233,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16117,7 +16248,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16137,7 +16269,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16159,7 +16292,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16179,7 +16313,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16205,7 +16340,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16225,7 +16361,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16239,7 +16376,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16257,7 +16395,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -16289,7 +16428,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16304,7 +16444,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16326,7 +16467,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16350,7 +16492,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16372,7 +16515,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16401,7 +16545,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16422,7 +16567,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16438,7 +16584,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16459,7 +16606,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detected break at the end of a [Token][google.cloud.documentai.v1.Document.Page.Token].
+         * Detected break at the end of a
+         * [Token][google.cloud.documentai.v1.Document.Page.Token].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Token.DetectedBreak detected_break = 2;
@@ -16910,7 +17058,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=256
+         *     google/cloud/documentai/v1/document.proto;l=269
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -16928,7 +17076,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=256
+         *     google/cloud/documentai/v1/document.proto;l=269
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -17174,7 +17322,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17186,7 +17335,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17198,7 +17348,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17325,7 +17476,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17340,7 +17492,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17357,7 +17510,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17881,7 +18035,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17895,7 +18050,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17915,7 +18071,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17937,7 +18094,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17957,7 +18115,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -17983,7 +18142,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18003,7 +18163,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18017,7 +18178,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18035,7 +18197,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Symbol][google.cloud.documentai.v1.Document.Page.Symbol].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18541,7 +18704,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18553,7 +18717,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18565,7 +18730,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18576,7 +18742,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * Type of the
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>string type = 2;</code>
@@ -18588,7 +18755,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * Type of the
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>string type = 2;</code>
@@ -18719,7 +18887,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18734,7 +18903,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18751,7 +18921,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -18767,7 +18938,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * Type of the
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>string type = 2;</code>
@@ -18790,7 +18962,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+       * Type of the
+       * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
        * </pre>
        *
        * <code>string type = 2;</code>
@@ -19349,7 +19522,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19363,7 +19537,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19383,7 +19558,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19405,7 +19581,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19425,7 +19602,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19451,7 +19629,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19471,7 +19650,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19485,7 +19665,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19503,7 +19684,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -19530,7 +19712,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * Type of the
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>string type = 2;</code>
@@ -19552,7 +19735,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * Type of the
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>string type = 2;</code>
@@ -19574,7 +19758,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * Type of the
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>string type = 2;</code>
@@ -19595,7 +19780,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * Type of the
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>string type = 2;</code>
@@ -19612,7 +19798,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Type of the [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
+         * Type of the
+         * [VisualElement][google.cloud.documentai.v1.Document.Page.VisualElement].
          * </pre>
          *
          * <code>string type = 2;</code>
@@ -20118,7 +20305,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Table][google.cloud.documentai.v1.Document.Page.Table].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -20130,7 +20318,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Table][google.cloud.documentai.v1.Document.Page.Table].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -20142,7 +20331,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Table][google.cloud.documentai.v1.Document.Page.Table].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -21467,7 +21657,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -21479,7 +21670,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -21491,7 +21683,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -21645,7 +21838,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -21660,7 +21854,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -21677,7 +21872,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22290,7 +22486,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22304,7 +22501,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22324,7 +22522,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22346,7 +22545,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22366,7 +22566,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22392,7 +22593,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22412,7 +22614,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22426,7 +22629,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -22444,7 +22648,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
+           * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+           * [TableCell][google.cloud.documentai.v1.Document.Page.Table.TableCell].
            * </pre>
            *
            * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -23058,7 +23263,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Table][google.cloud.documentai.v1.Document.Page.Table].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -23073,7 +23279,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Table][google.cloud.documentai.v1.Document.Page.Table].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -23090,7 +23297,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [Table][google.cloud.documentai.v1.Document.Page.Table].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -23987,7 +24195,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24001,7 +24210,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24021,7 +24231,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24043,7 +24254,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24063,7 +24275,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24089,7 +24302,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24109,7 +24323,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24123,7 +24338,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -24141,7 +24357,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [Table][google.cloud.documentai.v1.Document.Page.Table].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [Table][google.cloud.documentai.v1.Document.Page.Table].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -25610,8 +25827,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-       * `Grand total`, `Phone number`, etc.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -25623,8 +25841,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-       * `Grand total`, `Phone number`, etc.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -25636,8 +25855,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-       * `Grand total`, `Phone number`, etc.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -25648,7 +25868,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -25660,7 +25881,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -25672,7 +25894,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -25817,9 +26040,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
-       * - blank (this indicates the field_value is normal text)
-       * - "unfilled_checkbox"
-       * - "filled_checkbox"
+       * - blank (this indicates the `field_value` is normal text)
+       * - `unfilled_checkbox`
+       * - `filled_checkbox`
        * </pre>
        *
        * <code>string value_type = 5;</code>
@@ -25833,9 +26056,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
-       * - blank (this indicates the field_value is normal text)
-       * - "unfilled_checkbox"
-       * - "filled_checkbox"
+       * - blank (this indicates the `field_value` is normal text)
+       * - `unfilled_checkbox`
+       * - `filled_checkbox`
        * </pre>
        *
        * <code>string value_type = 5;</code>
@@ -25996,8 +26219,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-       * `Grand total`, `Phone number`, etc.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -26012,8 +26236,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-       * `Grand total`, `Phone number`, etc.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -26030,8 +26255,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-       * `Grand total`, `Phone number`, etc.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -26047,7 +26273,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -26062,7 +26289,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -26079,7 +26307,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+       * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -26265,9 +26494,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
-       * - blank (this indicates the field_value is normal text)
-       * - "unfilled_checkbox"
-       * - "filled_checkbox"
+       * - blank (this indicates the `field_value` is normal text)
+       * - `unfilled_checkbox`
+       * - `filled_checkbox`
        * </pre>
        *
        * <code>string value_type = 5;</code>
@@ -26292,9 +26521,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * If the value is non-textual, this field represents the type. Current
        * valid values are:
-       * - blank (this indicates the field_value is normal text)
-       * - "unfilled_checkbox"
-       * - "filled_checkbox"
+       * - blank (this indicates the `field_value` is normal text)
+       * - `unfilled_checkbox`
+       * - `filled_checkbox`
        * </pre>
        *
        * <code>string value_type = 5;</code>
@@ -27106,8 +27335,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27121,8 +27351,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27142,8 +27373,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27165,8 +27397,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27186,8 +27419,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27213,8 +27447,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27234,8 +27469,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27249,8 +27485,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27269,8 +27506,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] name. e.g. `Address`, `Email`,
-         * `Grand total`, `Phone number`, etc.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
+         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -27302,7 +27540,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27316,7 +27555,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27336,7 +27576,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27358,7 +27599,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27378,7 +27620,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27404,7 +27647,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27424,7 +27668,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27438,7 +27683,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -27457,7 +27703,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
+         * [FormField][google.cloud.documentai.v1.Document.Page.FormField] value.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_value = 2;</code>
@@ -28308,9 +28555,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
-         * - blank (this indicates the field_value is normal text)
-         * - "unfilled_checkbox"
-         * - "filled_checkbox"
+         * - blank (this indicates the `field_value` is normal text)
+         * - `unfilled_checkbox`
+         * - `filled_checkbox`
          * </pre>
          *
          * <code>string value_type = 5;</code>
@@ -28334,9 +28581,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
-         * - blank (this indicates the field_value is normal text)
-         * - "unfilled_checkbox"
-         * - "filled_checkbox"
+         * - blank (this indicates the `field_value` is normal text)
+         * - `unfilled_checkbox`
+         * - `filled_checkbox`
          * </pre>
          *
          * <code>string value_type = 5;</code>
@@ -28360,9 +28607,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
-         * - blank (this indicates the field_value is normal text)
-         * - "unfilled_checkbox"
-         * - "filled_checkbox"
+         * - blank (this indicates the `field_value` is normal text)
+         * - `unfilled_checkbox`
+         * - `filled_checkbox`
          * </pre>
          *
          * <code>string value_type = 5;</code>
@@ -28385,9 +28632,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
-         * - blank (this indicates the field_value is normal text)
-         * - "unfilled_checkbox"
-         * - "filled_checkbox"
+         * - blank (this indicates the `field_value` is normal text)
+         * - `unfilled_checkbox`
+         * - `filled_checkbox`
          * </pre>
          *
          * <code>string value_type = 5;</code>
@@ -28406,9 +28653,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * If the value is non-textual, this field represents the type. Current
          * valid values are:
-         * - blank (this indicates the field_value is normal text)
-         * - "unfilled_checkbox"
-         * - "filled_checkbox"
+         * - blank (this indicates the `field_value` is normal text)
+         * - `unfilled_checkbox`
+         * - `filled_checkbox`
          * </pre>
          *
          * <code>string value_type = 5;</code>
@@ -28919,7 +29166,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -28931,7 +29179,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -28943,7 +29192,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -28954,7 +29204,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * Detailed barcode information of the
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -28966,7 +29217,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * Detailed barcode information of the
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -28978,7 +29230,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * Detailed barcode information of the
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29038,7 +29291,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29053,7 +29307,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29070,7 +29325,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29086,7 +29342,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * Detailed barcode information of the
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29101,7 +29358,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * Detailed barcode information of the
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29118,7 +29376,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+       * Detailed barcode information of the
+       * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29522,7 +29781,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29536,7 +29796,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29556,7 +29817,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29578,7 +29840,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29598,7 +29861,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29624,7 +29888,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29644,7 +29909,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29658,7 +29924,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29676,7 +29943,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout layout = 1;</code>
@@ -29708,7 +29976,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29722,7 +29991,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29742,7 +30012,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29764,7 +30035,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29783,7 +30055,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29809,7 +30082,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29829,7 +30103,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29843,7 +30118,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -29861,7 +30137,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Detailed barcode information of the [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
+         * Detailed barcode information of the
+         * [DetectedBarcode][google.cloud.documentai.v1.Document.Page.DetectedBarcode].
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Barcode barcode = 2;</code>
@@ -32787,9 +33064,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 1-based index for current [Page][google.cloud.documentai.v1.Document.Page] in a parent [Document][google.cloud.documentai.v1.Document].
-     * Useful when a page is taken out of a [Document][google.cloud.documentai.v1.Document] for individual
-     * processing.
+     * 1-based index for current
+     * [Page][google.cloud.documentai.v1.Document.Page] in a parent
+     * [Document][google.cloud.documentai.v1.Document]. Useful when a page is
+     * taken out of a [Document][google.cloud.documentai.v1.Document] for
+     * individual processing.
      * </pre>
      *
      * <code>int32 page_number = 1;</code>
@@ -33853,7 +34132,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=463
+     *     google/cloud/documentai/v1/document.proto;l=488
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
@@ -33872,7 +34151,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=463
+     *     google/cloud/documentai/v1/document.proto;l=488
      * @return The provenance.
      */
     @java.lang.Override
@@ -35160,9 +35439,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * 1-based index for current [Page][google.cloud.documentai.v1.Document.Page] in a parent [Document][google.cloud.documentai.v1.Document].
-       * Useful when a page is taken out of a [Document][google.cloud.documentai.v1.Document] for individual
-       * processing.
+       * 1-based index for current
+       * [Page][google.cloud.documentai.v1.Document.Page] in a parent
+       * [Document][google.cloud.documentai.v1.Document]. Useful when a page is
+       * taken out of a [Document][google.cloud.documentai.v1.Document] for
+       * individual processing.
        * </pre>
        *
        * <code>int32 page_number = 1;</code>
@@ -35177,9 +35458,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * 1-based index for current [Page][google.cloud.documentai.v1.Document.Page] in a parent [Document][google.cloud.documentai.v1.Document].
-       * Useful when a page is taken out of a [Document][google.cloud.documentai.v1.Document] for individual
-       * processing.
+       * 1-based index for current
+       * [Page][google.cloud.documentai.v1.Document.Page] in a parent
+       * [Document][google.cloud.documentai.v1.Document]. Useful when a page is
+       * taken out of a [Document][google.cloud.documentai.v1.Document] for
+       * individual processing.
        * </pre>
        *
        * <code>int32 page_number = 1;</code>
@@ -35197,9 +35480,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * 1-based index for current [Page][google.cloud.documentai.v1.Document.Page] in a parent [Document][google.cloud.documentai.v1.Document].
-       * Useful when a page is taken out of a [Document][google.cloud.documentai.v1.Document] for individual
-       * processing.
+       * 1-based index for current
+       * [Page][google.cloud.documentai.v1.Document.Page] in a parent
+       * [Document][google.cloud.documentai.v1.Document]. Useful when a page is
+       * taken out of a [Document][google.cloud.documentai.v1.Document] for
+       * individual processing.
        * </pre>
        *
        * <code>int32 page_number = 1;</code>
@@ -40201,7 +40486,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=463
+       *     google/cloud/documentai/v1/document.proto;l=488
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -40219,7 +40504,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=463
+       *     google/cloud/documentai/v1/document.proto;l=488
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -40465,7 +40750,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Provenance of the entity.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>
@@ -40480,7 +40766,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Provenance of the entity.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>
@@ -40495,7 +40782,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Provenance of the entity.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>
@@ -40596,8 +40884,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents the provenance of this entity wrt. the location on the
-     * page where it was found.
+     * Optional. Represents the provenance of this entity wrt. the location on
+     * the page where it was found.
      * </pre>
      *
      * <code>
@@ -40611,8 +40899,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents the provenance of this entity wrt. the location on the
-     * page where it was found.
+     * Optional. Represents the provenance of this entity wrt. the location on
+     * the page where it was found.
      * </pre>
      *
      * <code>
@@ -40626,8 +40914,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents the provenance of this entity wrt. the location on the
-     * page where it was found.
+     * Optional. Represents the provenance of this entity wrt. the location on
+     * the page where it was found.
      * </pre>
      *
      * <code>
@@ -40667,8 +40955,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Normalized entity value. Absent if the extracted value could not be
-     * converted or the type (e.g. address) is not supported for certain
+     * Optional. Normalized entity value. Absent if the extracted value could
+     * not be converted or the type (e.g. address) is not supported for certain
      * parsers. This field is also only populated for certain supported document
      * types.
      * </pre>
@@ -40684,8 +40972,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Normalized entity value. Absent if the extracted value could not be
-     * converted or the type (e.g. address) is not supported for certain
+     * Optional. Normalized entity value. Absent if the extracted value could
+     * not be converted or the type (e.g. address) is not supported for certain
      * parsers. This field is also only populated for certain supported document
      * types.
      * </pre>
@@ -40701,8 +40989,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Normalized entity value. Absent if the extracted value could not be
-     * converted or the type (e.g. address) is not supported for certain
+     * Optional. Normalized entity value. Absent if the extracted value could
+     * not be converted or the type (e.g. address) is not supported for certain
      * parsers. This field is also only populated for certain supported document
      * types.
      * </pre>
@@ -40718,8 +41006,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -40731,8 +41019,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -40744,8 +41032,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -40757,8 +41045,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -40771,8 +41059,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -40826,7 +41114,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether the entity will be redacted for de-identification purposes.
+     * Optional. Whether the entity will be redacted for de-identification
+     * purposes.
      * </pre>
      *
      * <code>bool redacted = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -41131,8 +41420,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * Optional. An optional field to store a normalized string.
        * For some entity types, one of respective `structured_value` fields may
        * also be populated. Also not all the types of `structured_value` will be
-       * normalized. For example, some processors may not generate float
-       * or int normalized text by default.
+       * normalized. For example, some processors may not generate `float`
+       * or `integer` normalized text by default.
        * Below are sample formats mapped to structured values.
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -41151,8 +41440,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * Optional. An optional field to store a normalized string.
        * For some entity types, one of respective `structured_value` fields may
        * also be populated. Also not all the types of `structured_value` will be
-       * normalized. For example, some processors may not generate float
-       * or int normalized text by default.
+       * normalized. For example, some processors may not generate `float`
+       * or `integer` normalized text by default.
        * Below are sample formats mapped to structured values.
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -41611,8 +41900,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * Optional. An optional field to store a normalized string.
        * For some entity types, one of respective `structured_value` fields may
        * also be populated. Also not all the types of `structured_value` will be
-       * normalized. For example, some processors may not generate float
-       * or int normalized text by default.
+       * normalized. For example, some processors may not generate `float`
+       * or `integer` normalized text by default.
        * Below are sample formats mapped to structured values.
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -41642,8 +41931,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * Optional. An optional field to store a normalized string.
        * For some entity types, one of respective `structured_value` fields may
        * also be populated. Also not all the types of `structured_value` will be
-       * normalized. For example, some processors may not generate float
-       * or int normalized text by default.
+       * normalized. For example, some processors may not generate `float`
+       * or `integer` normalized text by default.
        * Below are sample formats mapped to structured values.
        * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
        * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -43354,8 +43643,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * Optional. An optional field to store a normalized string.
          * For some entity types, one of respective `structured_value` fields may
          * also be populated. Also not all the types of `structured_value` will be
-         * normalized. For example, some processors may not generate float
-         * or int normalized text by default.
+         * normalized. For example, some processors may not generate `float`
+         * or `integer` normalized text by default.
          * Below are sample formats mapped to structured values.
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -43384,8 +43673,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * Optional. An optional field to store a normalized string.
          * For some entity types, one of respective `structured_value` fields may
          * also be populated. Also not all the types of `structured_value` will be
-         * normalized. For example, some processors may not generate float
-         * or int normalized text by default.
+         * normalized. For example, some processors may not generate `float`
+         * or `integer` normalized text by default.
          * Below are sample formats mapped to structured values.
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -43414,8 +43703,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * Optional. An optional field to store a normalized string.
          * For some entity types, one of respective `structured_value` fields may
          * also be populated. Also not all the types of `structured_value` will be
-         * normalized. For example, some processors may not generate float
-         * or int normalized text by default.
+         * normalized. For example, some processors may not generate `float`
+         * or `integer` normalized text by default.
          * Below are sample formats mapped to structured values.
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -43443,8 +43732,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * Optional. An optional field to store a normalized string.
          * For some entity types, one of respective `structured_value` fields may
          * also be populated. Also not all the types of `structured_value` will be
-         * normalized. For example, some processors may not generate float
-         * or int normalized text by default.
+         * normalized. For example, some processors may not generate `float`
+         * or `integer` normalized text by default.
          * Below are sample formats mapped to structured values.
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -43468,8 +43757,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * Optional. An optional field to store a normalized string.
          * For some entity types, one of respective `structured_value` fields may
          * also be populated. Also not all the types of `structured_value` will be
-         * normalized. For example, some processors may not generate float
-         * or int normalized text by default.
+         * normalized. For example, some processors may not generate `float`
+         * or `integer` normalized text by default.
          * Below are sample formats mapped to structured values.
          * - Money/Currency type (`money_value`) is in the ISO 4217 text format.
          * - Date type (`date_value`) is in the ISO 8601 text format.
@@ -43566,7 +43855,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Provenance of the entity.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>
@@ -43584,7 +43874,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Provenance of the entity.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>
@@ -43604,7 +43895,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Provenance of the entity.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>
@@ -43787,8 +44079,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents the provenance of this entity wrt. the location on the
-     * page where it was found.
+     * Optional. Represents the provenance of this entity wrt. the location on
+     * the page where it was found.
      * </pre>
      *
      * <code>
@@ -43805,8 +44097,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents the provenance of this entity wrt. the location on the
-     * page where it was found.
+     * Optional. Represents the provenance of this entity wrt. the location on
+     * the page where it was found.
      * </pre>
      *
      * <code>
@@ -43825,8 +44117,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Represents the provenance of this entity wrt. the location on the
-     * page where it was found.
+     * Optional. Represents the provenance of this entity wrt. the location on
+     * the page where it was found.
      * </pre>
      *
      * <code>
@@ -43895,8 +44187,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Normalized entity value. Absent if the extracted value could not be
-     * converted or the type (e.g. address) is not supported for certain
+     * Optional. Normalized entity value. Absent if the extracted value could
+     * not be converted or the type (e.g. address) is not supported for certain
      * parsers. This field is also only populated for certain supported document
      * types.
      * </pre>
@@ -43915,8 +44207,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Normalized entity value. Absent if the extracted value could not be
-     * converted or the type (e.g. address) is not supported for certain
+     * Optional. Normalized entity value. Absent if the extracted value could
+     * not be converted or the type (e.g. address) is not supported for certain
      * parsers. This field is also only populated for certain supported document
      * types.
      * </pre>
@@ -43937,8 +44229,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Normalized entity value. Absent if the extracted value could not be
-     * converted or the type (e.g. address) is not supported for certain
+     * Optional. Normalized entity value. Absent if the extracted value could
+     * not be converted or the type (e.g. address) is not supported for certain
      * parsers. This field is also only populated for certain supported document
      * types.
      * </pre>
@@ -43959,8 +44251,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -43975,8 +44267,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -43992,8 +44284,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -44008,8 +44300,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -44024,8 +44316,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entities can be nested to form a hierarchical data structure representing
-     * the content in the document.
+     * Optional. Entities can be nested to form a hierarchical data structure
+     * representing the content in the document.
      * </pre>
      *
      * <code>
@@ -44098,7 +44390,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether the entity will be redacted for de-identification purposes.
+     * Optional. Whether the entity will be redacted for de-identification
+     * purposes.
      * </pre>
      *
      * <code>bool redacted = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -44774,7 +45067,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44791,7 +45085,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44814,7 +45109,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44839,7 +45135,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44862,7 +45159,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44891,7 +45189,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44914,7 +45213,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44931,7 +45231,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -44952,7 +45253,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. Provenance of the entity.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -45356,8 +45658,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45373,8 +45675,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45396,8 +45698,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45421,8 +45723,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45444,8 +45746,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45473,8 +45775,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45496,8 +45798,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45513,8 +45815,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45534,8 +45836,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Represents the provenance of this entity wrt. the location on the
-       * page where it was found.
+       * Optional. Represents the provenance of this entity wrt. the location on
+       * the page where it was found.
        * </pre>
        *
        * <code>
@@ -45680,8 +45982,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45699,8 +46001,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45724,8 +46026,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45752,8 +46054,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45777,8 +46079,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45810,8 +46112,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45835,8 +46137,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45855,8 +46157,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45879,8 +46181,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Normalized entity value. Absent if the extracted value could not be
-       * converted or the type (e.g. address) is not supported for certain
+       * Optional. Normalized entity value. Absent if the extracted value could
+       * not be converted or the type (e.g. address) is not supported for certain
        * parsers. This field is also only populated for certain supported document
        * types.
        * </pre>
@@ -45927,8 +46229,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -45946,8 +46248,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -45965,8 +46267,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -45984,8 +46286,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46010,8 +46312,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46033,8 +46335,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46058,8 +46360,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46084,8 +46386,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46107,8 +46409,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46130,8 +46432,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46153,8 +46455,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46175,8 +46477,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46197,8 +46499,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46213,8 +46515,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46233,8 +46535,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46253,8 +46555,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46269,8 +46571,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46286,8 +46588,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Entities can be nested to form a hierarchical data structure representing
-       * the content in the document.
+       * Optional. Entities can be nested to form a hierarchical data structure
+       * representing the content in the document.
        * </pre>
        *
        * <code>
@@ -46525,7 +46827,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether the entity will be redacted for de-identification purposes.
+       * Optional. Whether the entity will be redacted for de-identification
+       * purposes.
        * </pre>
        *
        * <code>bool redacted = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46540,7 +46843,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether the entity will be redacted for de-identification purposes.
+       * Optional. Whether the entity will be redacted for de-identification
+       * purposes.
        * </pre>
        *
        * <code>bool redacted = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46558,7 +46862,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether the entity will be redacted for de-identification purposes.
+       * Optional. Whether the entity will be redacted for de-identification
+       * purposes.
        * </pre>
        *
        * <code>bool redacted = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -46720,7 +47025,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Relationship between [Entities][google.cloud.documentai.v1.Document.Entity].
+   * Relationship between
+   * [Entities][google.cloud.documentai.v1.Document.Entity].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.Document.EntityRelation}
@@ -47097,7 +47403,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Relationship between [Entities][google.cloud.documentai.v1.Document.Entity].
+     * Relationship between
+     * [Entities][google.cloud.documentai.v1.Document.Entity].
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.Document.EntityRelation}
@@ -47684,7 +47991,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -47696,7 +48004,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -47707,7 +48016,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -47718,7 +48028,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -47731,7 +48042,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -47773,7 +48085,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Text reference indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+   * Text reference indexing into the
+   * [Document.text][google.cloud.documentai.v1.Document.text].
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.Document.TextAnchor}
@@ -47828,7 +48141,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1.Document.text].
+       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+       * start UTF-8 char index in the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>int64 start_index = 1;</code>
@@ -47841,7 +48156,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
+       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+       * half open end UTF-8 char index in the
        * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
@@ -47855,9 +48171,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A text segment in the [Document.text][google.cloud.documentai.v1.Document.text]. The indices may be out of bounds
-     * which indicate that the text extends into another document shard for
-     * large sharded documents. See [ShardInfo.text_offset][google.cloud.documentai.v1.Document.ShardInfo.text_offset]
+     * A text segment in the
+     * [Document.text][google.cloud.documentai.v1.Document.text]. The indices
+     * may be out of bounds which indicate that the text extends into another
+     * document shard for large sharded documents. See
+     * [ShardInfo.text_offset][google.cloud.documentai.v1.Document.ShardInfo.text_offset]
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.Document.TextAnchor.TextSegment}
@@ -47906,7 +48224,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1.Document.text].
+       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+       * start UTF-8 char index in the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>int64 start_index = 1;</code>
@@ -47924,7 +48244,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
+       * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+       * half open end UTF-8 char index in the
        * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
@@ -48113,9 +48434,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A text segment in the [Document.text][google.cloud.documentai.v1.Document.text]. The indices may be out of bounds
-       * which indicate that the text extends into another document shard for
-       * large sharded documents. See [ShardInfo.text_offset][google.cloud.documentai.v1.Document.ShardInfo.text_offset]
+       * A text segment in the
+       * [Document.text][google.cloud.documentai.v1.Document.text]. The indices
+       * may be out of bounds which indicate that the text extends into another
+       * document shard for large sharded documents. See
+       * [ShardInfo.text_offset][google.cloud.documentai.v1.Document.ShardInfo.text_offset]
        * </pre>
        *
        * Protobuf type {@code google.cloud.documentai.v1.Document.TextAnchor.TextSegment}
@@ -48307,7 +48630,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1.Document.text].
+         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+         * start UTF-8 char index in the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>int64 start_index = 1;</code>
@@ -48322,7 +48647,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1.Document.text].
+         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+         * start UTF-8 char index in the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>int64 start_index = 1;</code>
@@ -48340,7 +48667,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] start UTF-8 char index in the [Document.text][google.cloud.documentai.v1.Document.text].
+         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+         * start UTF-8 char index in the
+         * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
          * <code>int64 start_index = 1;</code>
@@ -48359,7 +48688,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
+         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+         * half open end UTF-8 char index in the
          * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
@@ -48375,7 +48705,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
+         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+         * half open end UTF-8 char index in the
          * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
@@ -48394,7 +48725,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment] half open end UTF-8 char index in the
+         * [TextSegment][google.cloud.documentai.v1.Document.TextAnchor.TextSegment]
+         * half open end UTF-8 char index in the
          * [Document.text][google.cloud.documentai.v1.Document.text].
          * </pre>
          *
@@ -48483,7 +48815,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -48498,7 +48831,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -48514,7 +48848,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -48528,7 +48863,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -48543,7 +48879,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+     * The text segments from the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextAnchor.TextSegment text_segments = 1;
@@ -48783,7 +49120,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Text reference indexing into the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Text reference indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.Document.TextAnchor}
@@ -49035,7 +49373,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49054,7 +49393,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49072,7 +49412,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49091,7 +49432,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49116,7 +49458,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49139,7 +49482,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49164,7 +49508,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49189,7 +49534,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49211,7 +49557,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49234,7 +49581,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49258,7 +49606,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49279,7 +49628,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49300,7 +49650,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49315,7 +49666,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49334,7 +49686,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49354,7 +49707,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49372,7 +49726,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49391,7 +49746,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The text segments from the [Document.text][google.cloud.documentai.v1.Document.text].
+       * The text segments from the
+       * [Document.text][google.cloud.documentai.v1.Document.text].
        * </pre>
        *
        * <code>
@@ -49665,9 +50021,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Referencing the visual context of the entity in the [Document.pages][google.cloud.documentai.v1.Document.pages].
-   * Page anchors can be cross-page, consist of multiple bounding polygons and
-   * optionally reference specific layout element types.
+   * Referencing the visual context of the entity in the
+   * [Document.pages][google.cloud.documentai.v1.Document.pages]. Page anchors
+   * can be cross-page, consist of multiple bounding polygons and optionally
+   * reference specific layout element types.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1.Document.PageAnchor}
@@ -49721,9 +50078,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
-       * [Document.pages][page_refs.page] to locate the related page element.
-       * This field is skipped when its value is the default 0. See
+       * Required. Index into the
+       * [Document.pages][google.cloud.documentai.v1.Document.pages] element,
+       * for example using
+       * `[Document.pages][page_refs.page]` to locate the related page element.
+       * This field is skipped when its value is the default `0`. See
        * https://developers.google.com/protocol-buffers/docs/proto3#json.
        * </pre>
        *
@@ -49737,7 +50096,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the layout element that is being referenced if any.
+       * Optional. The type of the layout element that is being referenced if
+       * any.
        * </pre>
        *
        * <code>
@@ -49751,7 +50111,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the layout element that is being referenced if any.
+       * Optional. The type of the layout element that is being referenced if
+       * any.
        * </pre>
        *
        * <code>
@@ -49766,14 +50127,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+       * Optional. Deprecated.  Use
+       * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+       * instead.
        * </pre>
        *
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=637
+       *     See google/cloud/documentai/v1/document.proto;l=692
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -49782,14 +50145,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+       * Optional. Deprecated.  Use
+       * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+       * instead.
        * </pre>
        *
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=637
+       *     See google/cloud/documentai/v1/document.proto;l=692
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -49799,7 +50164,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Identifies the bounding polygon of a layout element on the page.
+       * Optional. Identifies the bounding polygon of a layout element on the
+       * page.
        * </pre>
        *
        * <code>
@@ -49813,7 +50179,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Identifies the bounding polygon of a layout element on the page.
+       * Optional. Identifies the bounding polygon of a layout element on the
+       * page.
        * </pre>
        *
        * <code>
@@ -49827,7 +50194,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Identifies the bounding polygon of a layout element on the page.
+       * Optional. Identifies the bounding polygon of a layout element on the
+       * page.
        * </pre>
        *
        * <code>
@@ -49840,7 +50208,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+       * Optional. Confidence of detected page element, if applicable. Range
+       * `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49923,7 +50292,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.blocks][google.cloud.documentai.v1.Document.Page.blocks] element.
+         * References a
+         * [Page.blocks][google.cloud.documentai.v1.Document.Page.blocks]
+         * element.
          * </pre>
          *
          * <code>BLOCK = 1;</code>
@@ -49933,7 +50304,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.paragraphs][google.cloud.documentai.v1.Document.Page.paragraphs] element.
+         * References a
+         * [Page.paragraphs][google.cloud.documentai.v1.Document.Page.paragraphs]
+         * element.
          * </pre>
          *
          * <code>PARAGRAPH = 2;</code>
@@ -49943,7 +50316,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.lines][google.cloud.documentai.v1.Document.Page.lines] element.
+         * References a
+         * [Page.lines][google.cloud.documentai.v1.Document.Page.lines] element.
          * </pre>
          *
          * <code>LINE = 3;</code>
@@ -49953,7 +50327,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.tokens][google.cloud.documentai.v1.Document.Page.tokens] element.
+         * References a
+         * [Page.tokens][google.cloud.documentai.v1.Document.Page.tokens]
+         * element.
          * </pre>
          *
          * <code>TOKEN = 4;</code>
@@ -49963,7 +50339,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.visual_elements][google.cloud.documentai.v1.Document.Page.visual_elements] element.
+         * References a
+         * [Page.visual_elements][google.cloud.documentai.v1.Document.Page.visual_elements]
+         * element.
          * </pre>
          *
          * <code>VISUAL_ELEMENT = 5;</code>
@@ -49973,7 +50351,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Refrrences a [Page.tables][google.cloud.documentai.v1.Document.Page.tables] element.
+         * Refrrences a
+         * [Page.tables][google.cloud.documentai.v1.Document.Page.tables]
+         * element.
          * </pre>
          *
          * <code>TABLE = 6;</code>
@@ -49983,7 +50363,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.form_fields][google.cloud.documentai.v1.Document.Page.form_fields] element.
+         * References a
+         * [Page.form_fields][google.cloud.documentai.v1.Document.Page.form_fields]
+         * element.
          * </pre>
          *
          * <code>FORM_FIELD = 7;</code>
@@ -50006,7 +50388,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.blocks][google.cloud.documentai.v1.Document.Page.blocks] element.
+         * References a
+         * [Page.blocks][google.cloud.documentai.v1.Document.Page.blocks]
+         * element.
          * </pre>
          *
          * <code>BLOCK = 1;</code>
@@ -50016,7 +50400,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.paragraphs][google.cloud.documentai.v1.Document.Page.paragraphs] element.
+         * References a
+         * [Page.paragraphs][google.cloud.documentai.v1.Document.Page.paragraphs]
+         * element.
          * </pre>
          *
          * <code>PARAGRAPH = 2;</code>
@@ -50026,7 +50412,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.lines][google.cloud.documentai.v1.Document.Page.lines] element.
+         * References a
+         * [Page.lines][google.cloud.documentai.v1.Document.Page.lines] element.
          * </pre>
          *
          * <code>LINE = 3;</code>
@@ -50036,7 +50423,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.tokens][google.cloud.documentai.v1.Document.Page.tokens] element.
+         * References a
+         * [Page.tokens][google.cloud.documentai.v1.Document.Page.tokens]
+         * element.
          * </pre>
          *
          * <code>TOKEN = 4;</code>
@@ -50046,7 +50435,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.visual_elements][google.cloud.documentai.v1.Document.Page.visual_elements] element.
+         * References a
+         * [Page.visual_elements][google.cloud.documentai.v1.Document.Page.visual_elements]
+         * element.
          * </pre>
          *
          * <code>VISUAL_ELEMENT = 5;</code>
@@ -50056,7 +50447,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Refrrences a [Page.tables][google.cloud.documentai.v1.Document.Page.tables] element.
+         * Refrrences a
+         * [Page.tables][google.cloud.documentai.v1.Document.Page.tables]
+         * element.
          * </pre>
          *
          * <code>TABLE = 6;</code>
@@ -50066,7 +50459,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * References a [Page.form_fields][google.cloud.documentai.v1.Document.Page.form_fields] element.
+         * References a
+         * [Page.form_fields][google.cloud.documentai.v1.Document.Page.form_fields]
+         * element.
          * </pre>
          *
          * <code>FORM_FIELD = 7;</code>
@@ -50175,9 +50570,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
-       * [Document.pages][page_refs.page] to locate the related page element.
-       * This field is skipped when its value is the default 0. See
+       * Required. Index into the
+       * [Document.pages][google.cloud.documentai.v1.Document.pages] element,
+       * for example using
+       * `[Document.pages][page_refs.page]` to locate the related page element.
+       * This field is skipped when its value is the default `0`. See
        * https://developers.google.com/protocol-buffers/docs/proto3#json.
        * </pre>
        *
@@ -50196,7 +50593,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the layout element that is being referenced if any.
+       * Optional. The type of the layout element that is being referenced if
+       * any.
        * </pre>
        *
        * <code>
@@ -50213,7 +50611,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The type of the layout element that is being referenced if any.
+       * Optional. The type of the layout element that is being referenced if
+       * any.
        * </pre>
        *
        * <code>
@@ -50239,14 +50638,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+       * Optional. Deprecated.  Use
+       * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+       * instead.
        * </pre>
        *
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=637
+       *     See google/cloud/documentai/v1/document.proto;l=692
        * @return The layoutId.
        */
       @java.lang.Override
@@ -50266,14 +50667,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+       * Optional. Deprecated.  Use
+       * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+       * instead.
        * </pre>
        *
        * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=637
+       *     See google/cloud/documentai/v1/document.proto;l=692
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -50296,7 +50699,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Identifies the bounding polygon of a layout element on the page.
+       * Optional. Identifies the bounding polygon of a layout element on the
+       * page.
        * </pre>
        *
        * <code>
@@ -50313,7 +50717,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Identifies the bounding polygon of a layout element on the page.
+       * Optional. Identifies the bounding polygon of a layout element on the
+       * page.
        * </pre>
        *
        * <code>
@@ -50332,7 +50737,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Identifies the bounding polygon of a layout element on the page.
+       * Optional. Identifies the bounding polygon of a layout element on the
+       * page.
        * </pre>
        *
        * <code>
@@ -50350,7 +50756,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+       * Optional. Confidence of detected page element, if applicable. Range
+       * `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50809,9 +51216,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
-         * [Document.pages][page_refs.page] to locate the related page element.
-         * This field is skipped when its value is the default 0. See
+         * Required. Index into the
+         * [Document.pages][google.cloud.documentai.v1.Document.pages] element,
+         * for example using
+         * `[Document.pages][page_refs.page]` to locate the related page element.
+         * This field is skipped when its value is the default `0`. See
          * https://developers.google.com/protocol-buffers/docs/proto3#json.
          * </pre>
          *
@@ -50827,9 +51236,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
-         * [Document.pages][page_refs.page] to locate the related page element.
-         * This field is skipped when its value is the default 0. See
+         * Required. Index into the
+         * [Document.pages][google.cloud.documentai.v1.Document.pages] element,
+         * for example using
+         * `[Document.pages][page_refs.page]` to locate the related page element.
+         * This field is skipped when its value is the default `0`. See
          * https://developers.google.com/protocol-buffers/docs/proto3#json.
          * </pre>
          *
@@ -50848,9 +51259,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Index into the [Document.pages][google.cloud.documentai.v1.Document.pages] element, for example using
-         * [Document.pages][page_refs.page] to locate the related page element.
-         * This field is skipped when its value is the default 0. See
+         * Required. Index into the
+         * [Document.pages][google.cloud.documentai.v1.Document.pages] element,
+         * for example using
+         * `[Document.pages][page_refs.page]` to locate the related page element.
+         * This field is skipped when its value is the default `0`. See
          * https://developers.google.com/protocol-buffers/docs/proto3#json.
          * </pre>
          *
@@ -50870,7 +51283,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The type of the layout element that is being referenced if any.
+         * Optional. The type of the layout element that is being referenced if
+         * any.
          * </pre>
          *
          * <code>
@@ -50887,7 +51301,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The type of the layout element that is being referenced if any.
+         * Optional. The type of the layout element that is being referenced if
+         * any.
          * </pre>
          *
          * <code>
@@ -50907,7 +51322,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The type of the layout element that is being referenced if any.
+         * Optional. The type of the layout element that is being referenced if
+         * any.
          * </pre>
          *
          * <code>
@@ -50931,7 +51347,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The type of the layout element that is being referenced if any.
+         * Optional. The type of the layout element that is being referenced if
+         * any.
          * </pre>
          *
          * <code>
@@ -50955,7 +51372,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The type of the layout element that is being referenced if any.
+         * Optional. The type of the layout element that is being referenced if
+         * any.
          * </pre>
          *
          * <code>
@@ -50976,14 +51394,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+         * Optional. Deprecated.  Use
+         * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+         * instead.
          * </pre>
          *
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=637
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -51002,14 +51422,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+         * Optional. Deprecated.  Use
+         * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+         * instead.
          * </pre>
          *
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=637
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -51028,14 +51450,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+         * Optional. Deprecated.  Use
+         * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+         * instead.
          * </pre>
          *
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=637
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -51053,14 +51477,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+         * Optional. Deprecated.  Use
+         * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+         * instead.
          * </pre>
          *
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=637
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -51074,14 +51500,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Deprecated.  Use [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly] instead.
+         * Optional. Deprecated.  Use
+         * [PageRef.bounding_poly][google.cloud.documentai.v1.Document.PageAnchor.PageRef.bounding_poly]
+         * instead.
          * </pre>
          *
          * <code>string layout_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=637
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=692
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -51107,7 +51535,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51123,7 +51552,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51145,7 +51575,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51169,7 +51600,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51191,7 +51623,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51219,7 +51652,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51241,7 +51675,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51257,7 +51692,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51277,7 +51713,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Identifies the bounding polygon of a layout element on the page.
+         * Optional. Identifies the bounding polygon of a layout element on the
+         * page.
          * </pre>
          *
          * <code>
@@ -51306,7 +51743,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+         * Optional. Confidence of detected page element, if applicable. Range
+         * `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51321,7 +51759,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+         * Optional. Confidence of detected page element, if applicable. Range
+         * `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51339,7 +51778,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+         * Optional. Confidence of detected page element, if applicable. Range
+         * `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -51658,9 +52098,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Referencing the visual context of the entity in the [Document.pages][google.cloud.documentai.v1.Document.pages].
-     * Page anchors can be cross-page, consist of multiple bounding polygons and
-     * optionally reference specific layout element types.
+     * Referencing the visual context of the entity in the
+     * [Document.pages][google.cloud.documentai.v1.Document.pages]. Page anchors
+     * can be cross-page, consist of multiple bounding polygons and optionally
+     * reference specific layout element types.
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.Document.PageAnchor}
@@ -52354,7 +52795,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=701
+     *     google/cloud/documentai/v1/document.proto;l=756
      * @return The id.
      */
     @java.lang.Deprecated
@@ -52784,7 +53225,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=667
+       *     google/cloud/documentai/v1/document.proto;l=722
        * @return The id.
        */
       @java.lang.Deprecated
@@ -52887,7 +53328,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=667
+       *     google/cloud/documentai/v1/document.proto;l=722
        * @return The id.
        */
       @java.lang.Override
@@ -53393,7 +53834,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=667
+         *     google/cloud/documentai/v1/document.proto;l=722
          * @return The id.
          */
         @java.lang.Override
@@ -53411,7 +53852,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=667
+         *     google/cloud/documentai/v1/document.proto;l=722
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -53432,7 +53873,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=667
+         *     google/cloud/documentai/v1/document.proto;l=722
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -53539,7 +53980,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=701
+     *     google/cloud/documentai/v1/document.proto;l=756
      * @return The id.
      */
     @java.lang.Override
@@ -54175,7 +54616,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=701
+       *     google/cloud/documentai/v1/document.proto;l=756
        * @return The id.
        */
       @java.lang.Override
@@ -54194,7 +54635,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=701
+       *     google/cloud/documentai/v1/document.proto;l=756
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -54216,7 +54657,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=701
+       *     google/cloud/documentai/v1/document.proto;l=756
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -54872,7 +55313,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=739
+     *     google/cloud/documentai/v1/document.proto;l=794
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -54889,7 +55330,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=739
+     *     google/cloud/documentai/v1/document.proto;l=794
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -54906,7 +55347,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=739
+     *     google/cloud/documentai/v1/document.proto;l=794
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -56202,7 +56643,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=739
+     *     google/cloud/documentai/v1/document.proto;l=794
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -56222,7 +56663,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=739
+     *     google/cloud/documentai/v1/document.proto;l=794
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -56241,7 +56682,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=739
+     *     google/cloud/documentai/v1/document.proto;l=794
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -57420,7 +57861,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -57441,7 +57882,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -57460,7 +57901,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -57480,7 +57921,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -57504,7 +57945,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -57527,7 +57968,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -57550,7 +57991,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=739
+       *     google/cloud/documentai/v1/document.proto;l=794
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -58197,8 +58638,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provenance of the correction.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-     * single `TextAnchor.text_segments` element.  If the start and
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+     * only be a single `TextAnchor.text_segments` element.  If the start and
      * end index of the text segment are the same, the text change is inserted
      * before that index.
      * </pre>
@@ -58213,8 +58655,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provenance of the correction.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-     * single `TextAnchor.text_segments` element.  If the start and
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+     * only be a single `TextAnchor.text_segments` element.  If the start and
      * end index of the text segment are the same, the text change is inserted
      * before that index.
      * </pre>
@@ -58229,8 +58672,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provenance of the correction.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-     * single `TextAnchor.text_segments` element.  If the start and
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+     * only be a single `TextAnchor.text_segments` element.  If the start and
      * end index of the text segment are the same, the text change is inserted
      * before that index.
      * </pre>
@@ -58388,8 +58832,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provenance of the correction.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-     * single `TextAnchor.text_segments` element.  If the start and
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+     * only be a single `TextAnchor.text_segments` element.  If the start and
      * end index of the text segment are the same, the text change is inserted
      * before that index.
      * </pre>
@@ -58407,8 +58852,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provenance of the correction.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-     * single `TextAnchor.text_segments` element.  If the start and
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+     * only be a single `TextAnchor.text_segments` element.  If the start and
      * end index of the text segment are the same, the text change is inserted
      * before that index.
      * </pre>
@@ -58428,8 +58874,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Provenance of the correction.
-     * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-     * single `TextAnchor.text_segments` element.  If the start and
+     * Text anchor indexing into the
+     * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+     * only be a single `TextAnchor.text_segments` element.  If the start and
      * end index of the text segment are the same, the text change is inserted
      * before that index.
      * </pre>
@@ -59025,8 +59472,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59043,8 +59491,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59067,8 +59516,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59093,8 +59543,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59117,8 +59568,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59147,8 +59599,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59171,8 +59624,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59189,8 +59643,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -59211,8 +59666,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Provenance of the correction.
-       * Text anchor indexing into the [Document.text][google.cloud.documentai.v1.Document.text].  There can only be a
-       * single `TextAnchor.text_segments` element.  If the start and
+       * Text anchor indexing into the
+       * [Document.text][google.cloud.documentai.v1.Document.text].  There can
+       * only be a single `TextAnchor.text_segments` element.  If the start and
        * end index of the text segment are the same, the text change is inserted
        * before that index.
        * </pre>
@@ -60095,12 +60551,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+   * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
    * </pre>
    *
-   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.documentai.v1.Document.Style> getTextStylesList() {
     return textStyles_;
   }
@@ -60108,12 +60566,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+   * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
    * </pre>
    *
-   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.cloud.documentai.v1.Document.StyleOrBuilder>
       getTextStylesOrBuilderList() {
     return textStyles_;
@@ -60122,12 +60582,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+   * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
    * </pre>
    *
-   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getTextStylesCount() {
     return textStyles_.size();
   }
@@ -60135,12 +60597,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+   * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
    * </pre>
    *
-   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1.Document.Style getTextStyles(int index) {
     return textStyles_.get(index);
   }
@@ -60148,12 +60612,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+   * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
    * </pre>
    *
-   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+   * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1.Document.StyleOrBuilder getTextStylesOrBuilder(int index) {
     return textStyles_.get(index);
   }
@@ -60233,8 +60699,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+   * shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -60247,8 +60714,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+   * shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -60262,8 +60730,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+   * shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -60276,8 +60745,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+   * shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -60290,8 +60760,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-   * entities in this list may cross shard boundaries.
+   * A list of entities detected on
+   * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+   * shards, entities in this list may cross shard boundaries.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -60307,7 +60778,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;</code>
@@ -60321,7 +60793,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;</code>
@@ -60335,7 +60808,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;</code>
@@ -60348,7 +60822,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;</code>
@@ -60361,7 +60836,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+   * Placeholder.  Relationship among
+   * [Document.entities][google.cloud.documentai.v1.Document.entities].
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;</code>
@@ -60378,9 +60854,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-   * is usually used for annotating corrections to OCR mistakes.  Text changes
-   * for a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to
+   * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+   * used for annotating corrections to OCR mistakes.  Text changes for a given
+   * revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -60393,9 +60870,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-   * is usually used for annotating corrections to OCR mistakes.  Text changes
-   * for a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to
+   * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+   * used for annotating corrections to OCR mistakes.  Text changes for a given
+   * revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -60409,9 +60887,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-   * is usually used for annotating corrections to OCR mistakes.  Text changes
-   * for a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to
+   * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+   * used for annotating corrections to OCR mistakes.  Text changes for a given
+   * revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -60424,9 +60903,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-   * is usually used for annotating corrections to OCR mistakes.  Text changes
-   * for a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to
+   * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+   * used for annotating corrections to OCR mistakes.  Text changes for a given
+   * revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -60439,9 +60919,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-   * is usually used for annotating corrections to OCR mistakes.  Text changes
-   * for a given revision may not overlap with each other.
+   * Placeholder.  A list of text corrections made to
+   * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+   * used for annotating corrections to OCR mistakes.  Text changes for a given
+   * revision may not overlap with each other.
    * </pre>
    *
    * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -62020,11 +62501,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.documentai.v1.Document.Style> getTextStylesList() {
       if (textStylesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(textStyles_);
@@ -62036,11 +62520,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public int getTextStylesCount() {
       if (textStylesBuilder_ == null) {
         return textStyles_.size();
@@ -62052,11 +62539,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1.Document.Style getTextStyles(int index) {
       if (textStylesBuilder_ == null) {
         return textStyles_.get(index);
@@ -62068,11 +62558,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTextStyles(int index, com.google.cloud.documentai.v1.Document.Style value) {
       if (textStylesBuilder_ == null) {
         if (value == null) {
@@ -62090,11 +62583,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTextStyles(
         int index, com.google.cloud.documentai.v1.Document.Style.Builder builderForValue) {
       if (textStylesBuilder_ == null) {
@@ -62110,11 +62606,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addTextStyles(com.google.cloud.documentai.v1.Document.Style value) {
       if (textStylesBuilder_ == null) {
         if (value == null) {
@@ -62132,11 +62631,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addTextStyles(int index, com.google.cloud.documentai.v1.Document.Style value) {
       if (textStylesBuilder_ == null) {
         if (value == null) {
@@ -62154,11 +62656,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addTextStyles(
         com.google.cloud.documentai.v1.Document.Style.Builder builderForValue) {
       if (textStylesBuilder_ == null) {
@@ -62174,11 +62679,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addTextStyles(
         int index, com.google.cloud.documentai.v1.Document.Style.Builder builderForValue) {
       if (textStylesBuilder_ == null) {
@@ -62194,11 +62702,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllTextStyles(
         java.lang.Iterable<? extends com.google.cloud.documentai.v1.Document.Style> values) {
       if (textStylesBuilder_ == null) {
@@ -62214,11 +62725,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearTextStyles() {
       if (textStylesBuilder_ == null) {
         textStyles_ = java.util.Collections.emptyList();
@@ -62233,11 +62747,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder removeTextStyles(int index) {
       if (textStylesBuilder_ == null) {
         ensureTextStylesIsMutable();
@@ -62252,11 +62769,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1.Document.Style.Builder getTextStylesBuilder(int index) {
       return getTextStylesFieldBuilder().getBuilder(index);
     }
@@ -62264,11 +62784,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1.Document.StyleOrBuilder getTextStylesOrBuilder(
         int index) {
       if (textStylesBuilder_ == null) {
@@ -62281,11 +62804,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.cloud.documentai.v1.Document.StyleOrBuilder>
         getTextStylesOrBuilderList() {
       if (textStylesBuilder_ != null) {
@@ -62298,11 +62824,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1.Document.Style.Builder addTextStylesBuilder() {
       return getTextStylesFieldBuilder()
           .addBuilder(com.google.cloud.documentai.v1.Document.Style.getDefaultInstance());
@@ -62311,11 +62840,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1.Document.Style.Builder addTextStylesBuilder(int index) {
       return getTextStylesFieldBuilder()
           .addBuilder(index, com.google.cloud.documentai.v1.Document.Style.getDefaultInstance());
@@ -62324,11 +62856,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
+     * Styles for the [Document.text][google.cloud.documentai.v1.Document.text].
      * </pre>
      *
-     * <code>repeated .google.cloud.documentai.v1.Document.Style text_styles = 5;</code>
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.Style text_styles = 5 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.documentai.v1.Document.Style.Builder>
         getTextStylesBuilderList() {
       return getTextStylesFieldBuilder().getBuilderList();
@@ -62721,8 +63256,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62738,8 +63274,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62755,8 +63292,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62772,8 +63310,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62795,8 +63334,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62816,8 +63356,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62839,8 +63380,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62862,8 +63404,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62883,8 +63426,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62904,8 +63448,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62925,8 +63470,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62945,8 +63491,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62965,8 +63512,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62978,8 +63526,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -62995,8 +63544,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -63013,8 +63563,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -63027,8 +63578,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -63041,8 +63593,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of entities detected on [Document.text][google.cloud.documentai.v1.Document.text]. For document shards,
-     * entities in this list may cross shard boundaries.
+     * A list of entities detected on
+     * [Document.text][google.cloud.documentai.v1.Document.text]. For document
+     * shards, entities in this list may cross shard boundaries.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.Entity entities = 7;</code>
@@ -63091,7 +63644,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63109,7 +63663,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63126,7 +63681,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63143,7 +63699,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63167,7 +63724,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63188,7 +63746,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63212,7 +63771,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63236,7 +63796,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63257,7 +63818,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63278,7 +63840,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63300,7 +63863,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63320,7 +63884,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63340,7 +63905,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63354,7 +63920,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63372,7 +63939,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63390,7 +63958,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63405,7 +63974,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63421,7 +63991,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  Relationship among [Document.entities][google.cloud.documentai.v1.Document.entities].
+     * Placeholder.  Relationship among
+     * [Document.entities][google.cloud.documentai.v1.Document.entities].
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.EntityRelation entity_relations = 8;
@@ -63474,9 +64045,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63492,9 +64064,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63510,9 +64083,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63528,9 +64102,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63553,9 +64128,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63575,9 +64151,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63599,9 +64176,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63624,9 +64202,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63646,9 +64225,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63668,9 +64248,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63690,9 +64271,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63711,9 +64293,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63732,9 +64315,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63747,9 +64331,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63766,9 +64351,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63785,9 +64371,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63800,9 +64387,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>
@@ -63817,9 +64405,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Placeholder.  A list of text corrections made to [Document.text][google.cloud.documentai.v1.Document.text].  This
-     * is usually used for annotating corrections to OCR mistakes.  Text changes
-     * for a given revision may not overlap with each other.
+     * Placeholder.  A list of text corrections made to
+     * [Document.text][google.cloud.documentai.v1.Document.text].  This is usually
+     * used for annotating corrections to OCR mistakes.  Text changes for a given
+     * revision may not overlap with each other.
      * </pre>
      *
      * <code>repeated .google.cloud.documentai.v1.Document.TextChange text_changes = 14;</code>

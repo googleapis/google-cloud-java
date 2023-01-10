@@ -56,8 +56,8 @@ public interface ChannelPartnerRepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The configuration for bill modifications made by a reseller before
-   * sending it to ChannelPartner.
+   * Required. The configuration for bill modifications made by a reseller
+   * before sending it to ChannelPartner.
    * </pre>
    *
    * <code>
@@ -71,8 +71,8 @@ public interface ChannelPartnerRepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The configuration for bill modifications made by a reseller before
-   * sending it to ChannelPartner.
+   * Required. The configuration for bill modifications made by a reseller
+   * before sending it to ChannelPartner.
    * </pre>
    *
    * <code>
@@ -86,8 +86,8 @@ public interface ChannelPartnerRepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The configuration for bill modifications made by a reseller before
-   * sending it to ChannelPartner.
+   * Required. The configuration for bill modifications made by a reseller
+   * before sending it to ChannelPartner.
    * </pre>
    *
    * <code>
@@ -100,9 +100,10 @@ public interface ChannelPartnerRepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-   * mid-month.
+   * Output only. Timestamp of an update to the repricing rule. If `update_time`
+   * is after
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * then it indicates this was set mid-month.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -115,9 +116,10 @@ public interface ChannelPartnerRepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-   * mid-month.
+   * Output only. Timestamp of an update to the repricing rule. If `update_time`
+   * is after
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * then it indicates this was set mid-month.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -130,9 +132,10 @@ public interface ChannelPartnerRepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Timestamp of an update to the repricing rule. If `update_time` is after
-   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month] then it indicates this was set
-   * mid-month.
+   * Output only. Timestamp of an update to the repricing rule. If `update_time`
+   * is after
+   * [RepricingConfig.effective_invoice_month][google.cloud.channel.v1.RepricingConfig.effective_invoice_month]
+   * then it indicates this was set mid-month.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

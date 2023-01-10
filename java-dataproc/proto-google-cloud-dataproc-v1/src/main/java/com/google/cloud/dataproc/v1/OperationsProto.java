@@ -47,6 +47,14 @@ public final class OperationsProto {
       internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -89,10 +97,26 @@ public final class OperationsProto {
           + "le.cloud.dataproc.v1.ClusterOperationMet"
           + "adata.LabelsEntryB\003\340A\003\022\025\n\010warnings\030\016 \003(\t"
           + "B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
-          + "ue\030\002 \001(\t:\0028\001Bs\n\034com.google.cloud.datapro"
-          + "c.v1B\017OperationsProtoP\001Z@google.golang.o"
-          + "rg/genproto/googleapis/cloud/dataproc/v1"
-          + ";dataprocb\006proto3"
+          + "ue\030\002 \001(\t:\0028\001\"\372\004\n\032NodeGroupOperationMetad"
+          + "ata\022\032\n\rnode_group_id\030\001 \001(\tB\003\340A\003\022\031\n\014clust"
+          + "er_uuid\030\002 \001(\tB\003\340A\003\022E\n\006status\030\003 \001(\01320.goo"
+          + "gle.cloud.dataproc.v1.ClusterOperationSt"
+          + "atusB\003\340A\003\022M\n\016status_history\030\004 \003(\01320.goog"
+          + "le.cloud.dataproc.v1.ClusterOperationSta"
+          + "tusB\003\340A\003\022c\n\016operation_type\030\005 \001(\0162K.googl"
+          + "e.cloud.dataproc.v1.NodeGroupOperationMe"
+          + "tadata.NodeGroupOperationType\022\030\n\013descrip"
+          + "tion\030\006 \001(\tB\003\340A\003\022U\n\006labels\030\007 \003(\0132@.google"
+          + ".cloud.dataproc.v1.NodeGroupOperationMet"
+          + "adata.LabelsEntryB\003\340A\003\022\025\n\010warnings\030\010 \003(\t"
+          + "B\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"s\n\026NodeGroupOperationType\022)"
+          + "\n%NODE_GROUP_OPERATION_TYPE_UNSPECIFIED\020"
+          + "\000\022\n\n\006CREATE\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\022\n\n"
+          + "\006RESIZE\020\004Bs\n\034com.google.cloud.dataproc.v"
+          + "1B\017OperationsProtoP\001Z@google.golang.org/"
+          + "genproto/googleapis/cloud/dataproc/v1;da"
+          + "taprocb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -156,6 +180,31 @@ public final class OperationsProto {
     internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ClusterOperationMetadata_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "NodeGroupId",
+              "ClusterUuid",
+              "Status",
+              "StatusHistory",
+              "OperationType",
+              "Description",
+              "Labels",
+              "Warnings",
+            });
+    internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_LabelsEntry_descriptor =
+        internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_NodeGroupOperationMetadata_LabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

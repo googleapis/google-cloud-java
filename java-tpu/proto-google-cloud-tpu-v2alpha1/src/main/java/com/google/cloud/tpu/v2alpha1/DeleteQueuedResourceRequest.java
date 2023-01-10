@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for [DeleteQueuedResource][google.cloud.tpu.v2alpha1.Tpu.DeleteQueuedResource].
+ * Request for
+ * [DeleteQueuedResource][google.cloud.tpu.v2alpha1.Tpu.DeleteQueuedResource].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest}
@@ -343,7 +344,8 @@ public final class DeleteQueuedResourceRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request for [DeleteQueuedResource][google.cloud.tpu.v2alpha1.Tpu.DeleteQueuedResource].
+   * Request for
+   * [DeleteQueuedResource][google.cloud.tpu.v2alpha1.Tpu.DeleteQueuedResource].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.DeleteQueuedResourceRequest}

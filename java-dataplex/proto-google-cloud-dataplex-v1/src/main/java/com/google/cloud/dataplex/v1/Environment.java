@@ -134,7 +134,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Software Runtime Configuration for analyze interactive workloads.
+     * Required. Software Runtime Configuration for analyze interactive
+     * workloads.
      * </pre>
      *
      * <code>
@@ -148,7 +149,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Software Runtime Configuration for analyze interactive workloads.
+     * Required. Software Runtime Configuration for analyze interactive
+     * workloads.
      * </pre>
      *
      * <code>
@@ -162,7 +164,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Software Runtime Configuration for analyze interactive workloads.
+     * Required. Software Runtime Configuration for analyze interactive
+     * workloads.
      * </pre>
      *
      * <code>
@@ -246,7 +249,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Total number of nodes in the sessions created for this environment.
+       * Optional. Total number of nodes in the sessions created for this
+       * environment.
        * </pre>
        *
        * <code>int32 node_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -342,7 +346,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Total number of nodes in the sessions created for this environment.
+       * Optional. Total number of nodes in the sessions created for this
+       * environment.
        * </pre>
        *
        * <code>int32 node_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -832,7 +837,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Total number of nodes in the sessions created for this environment.
+         * Optional. Total number of nodes in the sessions created for this
+         * environment.
          * </pre>
          *
          * <code>int32 node_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -847,7 +853,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Total number of nodes in the sessions created for this environment.
+         * Optional. Total number of nodes in the sessions created for this
+         * environment.
          * </pre>
          *
          * <code>int32 node_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -865,7 +872,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Total number of nodes in the sessions created for this environment.
+         * Optional. Total number of nodes in the sessions created for this
+         * environment.
          * </pre>
          *
          * <code>int32 node_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1155,10 +1163,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1169,10 +1177,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1186,10 +1194,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1200,10 +1208,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1219,10 +1227,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1511,10 +1519,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1537,10 +1545,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1554,10 +1562,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -1576,10 +1584,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Spark properties to provide configuration for use in sessions created
-       * for this environment. The properties to set on daemon config files.
-       * Property keys are specified in `prefix:property` format.
-       * The prefix must be "spark".
+       * Optional. Spark properties to provide configuration for use in sessions
+       * created for this environment. The properties to set on daemon config
+       * files. Property keys are specified in `prefix:property` format. The
+       * prefix must be "spark".
        * </pre>
        *
        * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2617,10 +2625,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2643,10 +2651,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2660,10 +2668,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2682,10 +2690,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2711,10 +2719,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2736,10 +2744,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2760,10 +2768,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. Spark properties to provide configuration for use in sessions created
-         * for this environment. The properties to set on daemon config files.
-         * Property keys are specified in `prefix:property` format.
-         * The prefix must be "spark".
+         * Optional. Spark properties to provide configuration for use in sessions
+         * created for this environment. The properties to set on daemon config
+         * files. Property keys are specified in `prefix:property` format. The
+         * prefix must be "spark".
          * </pre>
          *
          * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -2999,7 +3007,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Software Runtime Configuration for analyze interactive workloads.
+     * Required. Software Runtime Configuration for analyze interactive
+     * workloads.
      * </pre>
      *
      * <code>
@@ -3016,7 +3025,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Software Runtime Configuration for analyze interactive workloads.
+     * Required. Software Runtime Configuration for analyze interactive
+     * workloads.
      * </pre>
      *
      * <code>
@@ -3038,7 +3048,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Software Runtime Configuration for analyze interactive workloads.
+     * Required. Software Runtime Configuration for analyze interactive
+     * workloads.
      * </pre>
      *
      * <code>
@@ -3774,7 +3785,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3791,7 +3803,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3822,7 +3835,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3847,7 +3861,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3870,7 +3885,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3909,7 +3925,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3936,7 +3953,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3951,7 +3969,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -3976,7 +3995,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Software Runtime Configuration for analyze interactive workloads.
+       * Required. Software Runtime Configuration for analyze interactive
+       * workloads.
        * </pre>
        *
        * <code>
@@ -4131,11 +4151,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If True, this causes sessions to be pre-created and available for faster
-     * startup to enable interactive exploration use-cases. This defaults to
-     * False to avoid additional billed charges.
-     * These can only be set to True for the environment with name set to
-     * "default", and with default configuration.
+     * Optional. If True, this causes sessions to be pre-created and available
+     * for faster startup to enable interactive exploration use-cases. This
+     * defaults to False to avoid additional billed charges. These can only be
+     * set to True for the environment with name set to "default", and with
+     * default configuration.
      * </pre>
      *
      * <code>bool enable_fast_startup = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4246,11 +4266,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If True, this causes sessions to be pre-created and available for faster
-     * startup to enable interactive exploration use-cases. This defaults to
-     * False to avoid additional billed charges.
-     * These can only be set to True for the environment with name set to
-     * "default", and with default configuration.
+     * Optional. If True, this causes sessions to be pre-created and available
+     * for faster startup to enable interactive exploration use-cases. This
+     * defaults to False to avoid additional billed charges. These can only be
+     * set to True for the environment with name set to "default", and with
+     * default configuration.
      * </pre>
      *
      * <code>bool enable_fast_startup = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4840,11 +4860,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If True, this causes sessions to be pre-created and available for faster
-       * startup to enable interactive exploration use-cases. This defaults to
-       * False to avoid additional billed charges.
-       * These can only be set to True for the environment with name set to
-       * "default", and with default configuration.
+       * Optional. If True, this causes sessions to be pre-created and available
+       * for faster startup to enable interactive exploration use-cases. This
+       * defaults to False to avoid additional billed charges. These can only be
+       * set to True for the environment with name set to "default", and with
+       * default configuration.
        * </pre>
        *
        * <code>bool enable_fast_startup = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4859,11 +4879,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If True, this causes sessions to be pre-created and available for faster
-       * startup to enable interactive exploration use-cases. This defaults to
-       * False to avoid additional billed charges.
-       * These can only be set to True for the environment with name set to
-       * "default", and with default configuration.
+       * Optional. If True, this causes sessions to be pre-created and available
+       * for faster startup to enable interactive exploration use-cases. This
+       * defaults to False to avoid additional billed charges. These can only be
+       * set to True for the environment with name set to "default", and with
+       * default configuration.
        * </pre>
        *
        * <code>bool enable_fast_startup = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4881,11 +4901,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If True, this causes sessions to be pre-created and available for faster
-       * startup to enable interactive exploration use-cases. This defaults to
-       * False to avoid additional billed charges.
-       * These can only be set to True for the environment with name set to
-       * "default", and with default configuration.
+       * Optional. If True, this causes sessions to be pre-created and available
+       * for faster startup to enable interactive exploration use-cases. This
+       * defaults to False to avoid additional billed charges. These can only be
+       * set to True for the environment with name set to "default", and with
+       * default configuration.
        * </pre>
        *
        * <code>bool enable_fast_startup = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4972,8 +4992,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Queries over sessions to mark whether the environment is currently
-     * active or not
+     * Output only. Queries over sessions to mark whether the environment is
+     * currently active or not
      * </pre>
      *
      * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5027,8 +5047,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Queries over sessions to mark whether the environment is currently
-     * active or not
+     * Output only. Queries over sessions to mark whether the environment is
+     * currently active or not
      * </pre>
      *
      * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5371,8 +5391,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Queries over sessions to mark whether the environment is currently
-       * active or not
+       * Output only. Queries over sessions to mark whether the environment is
+       * currently active or not
        * </pre>
        *
        * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5387,8 +5407,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Queries over sessions to mark whether the environment is currently
-       * active or not
+       * Output only. Queries over sessions to mark whether the environment is
+       * currently active or not
        * </pre>
        *
        * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5406,8 +5426,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Queries over sessions to mark whether the environment is currently
-       * active or not
+       * Output only. Queries over sessions to mark whether the environment is
+       * currently active or not
        * </pre>
        *
        * <code>bool active = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6414,8 +6434,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the environment. This ID will be
-   * different if the environment is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the environment. This
+   * ID will be different if the environment is deleted and re-created with the
+   * same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6438,8 +6459,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the environment. This ID will be
-   * different if the environment is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the environment. This
+   * ID will be different if the environment is deleted and re-created with the
+   * same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6911,7 +6933,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URI Endpoints to access sessions associated with the Environment.
+   * Output only. URI Endpoints to access sessions associated with the
+   * Environment.
    * </pre>
    *
    * <code>
@@ -6928,7 +6951,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URI Endpoints to access sessions associated with the Environment.
+   * Output only. URI Endpoints to access sessions associated with the
+   * Environment.
    * </pre>
    *
    * <code>
@@ -6947,7 +6971,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URI Endpoints to access sessions associated with the Environment.
+   * Output only. URI Endpoints to access sessions associated with the
+   * Environment.
    * </pre>
    *
    * <code>
@@ -7868,8 +7893,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the environment. This ID will be
-     * different if the environment is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the environment. This
+     * ID will be different if the environment is deleted and re-created with the
+     * same name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7891,8 +7917,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the environment. This ID will be
-     * different if the environment is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the environment. This
+     * ID will be different if the environment is deleted and re-created with the
+     * same name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7914,8 +7941,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the environment. This ID will be
-     * different if the environment is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the environment. This
+     * ID will be different if the environment is deleted and re-created with the
+     * same name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7936,8 +7964,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the environment. This ID will be
-     * different if the environment is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the environment. This
+     * ID will be different if the environment is deleted and re-created with the
+     * same name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7954,8 +7983,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the environment. This ID will be
-     * different if the environment is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the environment. This
+     * ID will be different if the environment is deleted and re-created with the
+     * same name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9366,7 +9396,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9382,7 +9413,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9404,7 +9436,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9428,7 +9461,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9450,7 +9484,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9478,7 +9513,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9500,7 +9536,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9516,7 +9553,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>
@@ -9536,7 +9574,8 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI Endpoints to access sessions associated with the Environment.
+     * Output only. URI Endpoints to access sessions associated with the
+     * Environment.
      * </pre>
      *
      * <code>

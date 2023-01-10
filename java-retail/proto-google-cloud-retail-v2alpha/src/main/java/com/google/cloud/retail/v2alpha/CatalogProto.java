@@ -52,6 +52,10 @@ public final class CatalogProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_MerchantCenterLink_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_MerchantCenterFeedFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_MerchantCenterFeedFilter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2alpha_MerchantCenterLinkingConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_MerchantCenterLinkingConfig_fieldAccessorTable;
@@ -76,7 +80,7 @@ public final class CatalogProto {
           + "pha/import_config.proto\"^\n\022ProductLevelC"
           + "onfig\022\036\n\026ingestion_product_type\030\001 \001(\t\022(\n"
           + " merchant_center_product_id_field\030\002 \001(\t\""
-          + "\226\007\n\020CatalogAttribute\022\020\n\003key\030\001 \001(\tB\003\340A\002\022\023"
+          + "\304\n\n\020CatalogAttribute\022\020\n\003key\030\001 \001(\tB\003\340A\002\022\023"
           + "\n\006in_use\030\t \001(\010B\003\340A\003\022N\n\004type\030\n \001(\0162;.goog"
           + "le.cloud.retail.v2alpha.CatalogAttribute"
           + ".AttributeTypeB\003\340A\003\022W\n\020indexable_option\030"
@@ -89,65 +93,80 @@ public final class CatalogProto {
           + "ribute.SearchableOption\022e\n recommendatio"
           + "ns_filtering_option\030\010 \001(\0162;.google.cloud"
           + ".retail.v2alpha.RecommendationsFiltering"
-          + "Option\"8\n\rAttributeType\022\013\n\007UNKNOWN\020\000\022\013\n\007"
-          + "TEXTUAL\020\001\022\r\n\tNUMERICAL\020\002\"b\n\017IndexableOpt"
-          + "ion\022 \n\034INDEXABLE_OPTION_UNSPECIFIED\020\000\022\025\n"
-          + "\021INDEXABLE_ENABLED\020\001\022\026\n\022INDEXABLE_DISABL"
-          + "ED\020\002\"\201\001\n\026DynamicFacetableOption\022(\n$DYNAM"
-          + "IC_FACETABLE_OPTION_UNSPECIFIED\020\000\022\035\n\031DYN"
-          + "AMIC_FACETABLE_ENABLED\020\001\022\036\n\032DYNAMIC_FACE"
-          + "TABLE_DISABLED\020\002\"f\n\020SearchableOption\022!\n\035"
-          + "SEARCHABLE_OPTION_UNSPECIFIED\020\000\022\026\n\022SEARC"
-          + "HABLE_ENABLED\020\001\022\027\n\023SEARCHABLE_DISABLED\020\002"
-          + "\"\305\003\n\020AttributesConfig\022\024\n\004name\030\001 \001(\tB\006\340A\002"
-          + "\340A\005\022`\n\022catalog_attributes\030\002 \003(\0132D.google"
-          + ".cloud.retail.v2alpha.AttributesConfig.C"
-          + "atalogAttributesEntry\022V\n\026attribute_confi"
-          + "g_level\030\003 \001(\01621.google.cloud.retail.v2al"
-          + "pha.AttributeConfigLevelB\003\340A\003\032g\n\026Catalog"
-          + "AttributesEntry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 "
-          + "\001(\0132-.google.cloud.retail.v2alpha.Catalo"
-          + "gAttribute:\0028\001:x\352Au\n&retail.googleapis.c"
-          + "om/AttributesConfig\022Kprojects/{project}/"
-          + "locations/{location}/catalogs/{catalog}/"
-          + "attributesConfig\"\250\005\n\020CompletionConfig\022\024\n"
-          + "\004name\030\001 \001(\tB\006\340A\002\340A\005\022\026\n\016matching_order\030\002 "
-          + "\001(\t\022\027\n\017max_suggestions\030\003 \001(\005\022\031\n\021min_pref"
-          + "ix_length\030\004 \001(\005\022\025\n\rauto_learning\030\013 \001(\010\022]"
-          + "\n\030suggestions_input_config\030\005 \001(\01326.googl"
-          + "e.cloud.retail.v2alpha.CompletionDataInp"
-          + "utConfigB\003\340A\003\022.\n!last_suggestions_import"
-          + "_operation\030\006 \001(\tB\003\340A\003\022Z\n\025denylist_input_"
-          + "config\030\007 \001(\01326.google.cloud.retail.v2alp"
-          + "ha.CompletionDataInputConfigB\003\340A\003\022+\n\036las"
-          + "t_denylist_import_operation\030\010 \001(\tB\003\340A\003\022["
-          + "\n\026allowlist_input_config\030\t \001(\01326.google."
-          + "cloud.retail.v2alpha.CompletionDataInput"
-          + "ConfigB\003\340A\003\022,\n\037last_allowlist_import_ope"
-          + "ration\030\n \001(\tB\003\340A\003:x\352Au\n&retail.googleapi"
-          + "s.com/CompletionConfig\022Kprojects/{projec"
-          + "t}/locations/{location}/catalogs/{catalo"
-          + "g}/completionConfig\"\222\001\n\022MerchantCenterLi"
-          + "nk\022\'\n\032merchant_center_account_id\030\001 \001(\003B\003"
-          + "\340A\002\022\021\n\tbranch_id\030\002 \001(\t\022\024\n\014destinations\030\003"
-          + " \003(\t\022\023\n\013region_code\030\004 \001(\t\022\025\n\rlanguage_co"
-          + "de\030\005 \001(\t\"]\n\033MerchantCenterLinkingConfig\022"
-          + ">\n\005links\030\001 \003(\0132/.google.cloud.retail.v2a"
-          + "lpha.MerchantCenterLink\"\323\002\n\007Catalog\022\024\n\004n"
-          + "ame\030\001 \001(\tB\006\340A\002\340A\005\022\034\n\014display_name\030\002 \001(\tB"
-          + "\006\340A\002\340A\005\022R\n\024product_level_config\030\004 \001(\0132/."
-          + "google.cloud.retail.v2alpha.ProductLevel"
-          + "ConfigB\003\340A\002\022`\n\036merchant_center_linking_c"
-          + "onfig\030\006 \001(\01328.google.cloud.retail.v2alph"
-          + "a.MerchantCenterLinkingConfig:^\352A[\n\035reta"
-          + "il.googleapis.com/Catalog\022:projects/{pro"
-          + "ject}/locations/{location}/catalogs/{cat"
-          + "alog}B\332\001\n\037com.google.cloud.retail.v2alph"
-          + "aB\014CatalogProtoP\001ZAgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/retail/v2alpha;re"
-          + "tail\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2Al"
-          + "pha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Goog"
-          + "le::Cloud::Retail::V2alphab\006proto3"
+          + "Option\022d\n\027exact_searchable_option\030\013 \001(\0162"
+          + "C.google.cloud.retail.v2alpha.CatalogAtt"
+          + "ribute.ExactSearchableOption\022[\n\022retrieva"
+          + "ble_option\030\014 \001(\0162?.google.cloud.retail.v"
+          + "2alpha.CatalogAttribute.RetrievableOptio"
+          + "n\"8\n\rAttributeType\022\013\n\007UNKNOWN\020\000\022\013\n\007TEXTU"
+          + "AL\020\001\022\r\n\tNUMERICAL\020\002\"b\n\017IndexableOption\022 "
+          + "\n\034INDEXABLE_OPTION_UNSPECIFIED\020\000\022\025\n\021INDE"
+          + "XABLE_ENABLED\020\001\022\026\n\022INDEXABLE_DISABLED\020\002\""
+          + "\201\001\n\026DynamicFacetableOption\022(\n$DYNAMIC_FA"
+          + "CETABLE_OPTION_UNSPECIFIED\020\000\022\035\n\031DYNAMIC_"
+          + "FACETABLE_ENABLED\020\001\022\036\n\032DYNAMIC_FACETABLE"
+          + "_DISABLED\020\002\"f\n\020SearchableOption\022!\n\035SEARC"
+          + "HABLE_OPTION_UNSPECIFIED\020\000\022\026\n\022SEARCHABLE"
+          + "_ENABLED\020\001\022\027\n\023SEARCHABLE_DISABLED\020\002\"}\n\025E"
+          + "xactSearchableOption\022\'\n#EXACT_SEARCHABLE"
+          + "_OPTION_UNSPECIFIED\020\000\022\034\n\030EXACT_SEARCHABL"
+          + "E_ENABLED\020\001\022\035\n\031EXACT_SEARCHABLE_DISABLED"
+          + "\020\002\"j\n\021RetrievableOption\022\"\n\036RETRIEVABLE_O"
+          + "PTION_UNSPECIFIED\020\000\022\027\n\023RETRIEVABLE_ENABL"
+          + "ED\020\001\022\030\n\024RETRIEVABLE_DISABLED\020\002\"\305\003\n\020Attri"
+          + "butesConfig\022\024\n\004name\030\001 \001(\tB\006\340A\002\340A\005\022`\n\022cat"
+          + "alog_attributes\030\002 \003(\0132D.google.cloud.ret"
+          + "ail.v2alpha.AttributesConfig.CatalogAttr"
+          + "ibutesEntry\022V\n\026attribute_config_level\030\003 "
+          + "\001(\01621.google.cloud.retail.v2alpha.Attrib"
+          + "uteConfigLevelB\003\340A\003\032g\n\026CatalogAttributes"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022<\n\005value\030\002 \001(\0132-.goog"
+          + "le.cloud.retail.v2alpha.CatalogAttribute"
+          + ":\0028\001:x\352Au\n&retail.googleapis.com/Attribu"
+          + "tesConfig\022Kprojects/{project}/locations/"
+          + "{location}/catalogs/{catalog}/attributes"
+          + "Config\"\250\005\n\020CompletionConfig\022\024\n\004name\030\001 \001("
+          + "\tB\006\340A\002\340A\005\022\026\n\016matching_order\030\002 \001(\t\022\027\n\017max"
+          + "_suggestions\030\003 \001(\005\022\031\n\021min_prefix_length\030"
+          + "\004 \001(\005\022\025\n\rauto_learning\030\013 \001(\010\022]\n\030suggesti"
+          + "ons_input_config\030\005 \001(\01326.google.cloud.re"
+          + "tail.v2alpha.CompletionDataInputConfigB\003"
+          + "\340A\003\022.\n!last_suggestions_import_operation"
+          + "\030\006 \001(\tB\003\340A\003\022Z\n\025denylist_input_config\030\007 \001"
+          + "(\01326.google.cloud.retail.v2alpha.Complet"
+          + "ionDataInputConfigB\003\340A\003\022+\n\036last_denylist"
+          + "_import_operation\030\010 \001(\tB\003\340A\003\022[\n\026allowlis"
+          + "t_input_config\030\t \001(\01326.google.cloud.reta"
+          + "il.v2alpha.CompletionDataInputConfigB\003\340A"
+          + "\003\022,\n\037last_allowlist_import_operation\030\n \001"
+          + "(\tB\003\340A\003:x\352Au\n&retail.googleapis.com/Comp"
+          + "letionConfig\022Kprojects/{project}/locatio"
+          + "ns/{location}/catalogs/{catalog}/complet"
+          + "ionConfig\"\330\001\n\022MerchantCenterLink\022\'\n\032merc"
+          + "hant_center_account_id\030\001 \001(\003B\003\340A\002\022\021\n\tbra"
+          + "nch_id\030\002 \001(\t\022\024\n\014destinations\030\003 \003(\t\022\023\n\013re"
+          + "gion_code\030\004 \001(\t\022\025\n\rlanguage_code\030\005 \001(\t\022D"
+          + "\n\005feeds\030\006 \003(\01325.google.cloud.retail.v2al"
+          + "pha.MerchantCenterFeedFilter\"N\n\030Merchant"
+          + "CenterFeedFilter\022\027\n\017primary_feed_id\030\001 \001("
+          + "\003\022\031\n\021primary_feed_name\030\002 \001(\t\"]\n\033Merchant"
+          + "CenterLinkingConfig\022>\n\005links\030\001 \003(\0132/.goo"
+          + "gle.cloud.retail.v2alpha.MerchantCenterL"
+          + "ink\"\323\002\n\007Catalog\022\024\n\004name\030\001 \001(\tB\006\340A\002\340A\005\022\034\n"
+          + "\014display_name\030\002 \001(\tB\006\340A\002\340A\005\022R\n\024product_l"
+          + "evel_config\030\004 \001(\0132/.google.cloud.retail."
+          + "v2alpha.ProductLevelConfigB\003\340A\002\022`\n\036merch"
+          + "ant_center_linking_config\030\006 \001(\01328.google"
+          + ".cloud.retail.v2alpha.MerchantCenterLink"
+          + "ingConfig:^\352A[\n\035retail.googleapis.com/Ca"
+          + "talog\022:projects/{project}/locations/{loc"
+          + "ation}/catalogs/{catalog}B\332\001\n\037com.google"
+          + ".cloud.retail.v2alphaB\014CatalogProtoP\001ZAg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/retail/v2alpha;retail\242\002\006RETAIL\252\002\033Goog"
+          + "le.Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\R"
+          + "etail\\V2alpha\352\002\036Google::Cloud::Retail::V"
+          + "2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -179,6 +198,8 @@ public final class CatalogProto {
               "DynamicFacetableOption",
               "SearchableOption",
               "RecommendationsFilteringOption",
+              "ExactSearchableOption",
+              "RetrievableOption",
             });
     internal_static_google_cloud_retail_v2alpha_AttributesConfig_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -222,10 +243,23 @@ public final class CatalogProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_MerchantCenterLink_descriptor,
             new java.lang.String[] {
-              "MerchantCenterAccountId", "BranchId", "Destinations", "RegionCode", "LanguageCode",
+              "MerchantCenterAccountId",
+              "BranchId",
+              "Destinations",
+              "RegionCode",
+              "LanguageCode",
+              "Feeds",
+            });
+    internal_static_google_cloud_retail_v2alpha_MerchantCenterFeedFilter_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_retail_v2alpha_MerchantCenterFeedFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_MerchantCenterFeedFilter_descriptor,
+            new java.lang.String[] {
+              "PrimaryFeedId", "PrimaryFeedName",
             });
     internal_static_google_cloud_retail_v2alpha_MerchantCenterLinkingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_retail_v2alpha_MerchantCenterLinkingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_MerchantCenterLinkingConfig_descriptor,
@@ -233,7 +267,7 @@ public final class CatalogProto {
               "Links",
             });
     internal_static_google_cloud_retail_v2alpha_Catalog_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_retail_v2alpha_Catalog_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_Catalog_descriptor,

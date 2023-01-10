@@ -22,9 +22,9 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * Dataproc cluster config for a cluster that does not directly control the
+ * The Dataproc cluster config for a cluster that does not directly control the
  * underlying compute resources, such as a [Dataproc-on-GKE
- * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+ * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.VirtualClusterConfig}
@@ -119,7 +119,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
@@ -152,7 +152,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
@@ -187,7 +187,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The configuration for running the Dataproc cluster on Kubernetes.
+   * Required. The configuration for running the Dataproc cluster on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -204,7 +205,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The configuration for running the Dataproc cluster on Kubernetes.
+   * Required. The configuration for running the Dataproc cluster on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -224,7 +226,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The configuration for running the Dataproc cluster on Kubernetes.
+   * Required. The configuration for running the Dataproc cluster on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -498,9 +501,9 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Dataproc cluster config for a cluster that does not directly control the
+   * The Dataproc cluster config for a cluster that does not directly control the
    * underlying compute resources, such as a [Dataproc-on-GKE
-   * cluster](https://cloud.google.com/dataproc/docs/concepts/jobs/dataproc-gke#create-a-dataproc-on-gke-cluster).
+   * cluster](https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.VirtualClusterConfig}
@@ -738,7 +741,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
@@ -770,7 +773,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
@@ -802,7 +805,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
@@ -833,7 +836,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
@@ -860,7 +863,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A Storage bucket used to stage job
+     * Optional. A Cloud Storage bucket used to stage job
      * dependencies, config files, and job driver console output.
      * If you do not specify a staging bucket, Cloud
      * Dataproc will determine a Cloud Storage location (US,
@@ -898,7 +901,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -915,7 +919,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -942,7 +947,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -967,7 +973,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -989,7 +996,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -1025,7 +1033,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -1052,7 +1061,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -1067,7 +1077,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>
@@ -1090,7 +1101,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The configuration for running the Dataproc cluster on Kubernetes.
+     * Required. The configuration for running the Dataproc cluster on
+     * Kubernetes.
      * </pre>
      *
      * <code>

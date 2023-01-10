@@ -380,9 +380,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/tasks/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/nodes/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -420,9 +417,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/tasks/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/nodes/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -457,9 +451,6 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/tasks/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/nodes/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

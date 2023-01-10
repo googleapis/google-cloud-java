@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for [SimulateMaintenanceEvent][google.cloud.tpu.v2alpha1.Tpu.SimulateMaintenanceEvent].
+ * Request for
+ * [SimulateMaintenanceEvent][google.cloud.tpu.v2alpha1.Tpu.SimulateMaintenanceEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest}
@@ -375,7 +376,8 @@ public final class SimulateMaintenanceEventRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request for [SimulateMaintenanceEvent][google.cloud.tpu.v2alpha1.Tpu.SimulateMaintenanceEvent].
+   * Request for
+   * [SimulateMaintenanceEvent][google.cloud.tpu.v2alpha1.Tpu.SimulateMaintenanceEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest}

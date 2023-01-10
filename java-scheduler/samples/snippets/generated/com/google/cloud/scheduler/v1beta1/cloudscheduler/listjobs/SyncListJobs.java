@@ -38,8 +38,10 @@ public class SyncListJobs {
       ListJobsRequest request =
           ListJobsRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setLegacyAppEngineCron(true)
               .build();
       for (Job element : cloudSchedulerClient.listJobs(request).iterateAll()) {
         // doThingsWith(element);

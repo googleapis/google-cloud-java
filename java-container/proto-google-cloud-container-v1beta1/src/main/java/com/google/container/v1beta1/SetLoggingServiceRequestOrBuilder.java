@@ -36,7 +36,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2610
+   *     google/container/v1beta1/cluster_service.proto;l=2675
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2610
+   *     google/container/v1beta1/cluster_service.proto;l=2675
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2619
+   *     google/container/v1beta1/cluster_service.proto;l=2684
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2619
+   *     google/container/v1beta1/cluster_service.proto;l=2684
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2626
+   *     google/container/v1beta1/cluster_service.proto;l=2691
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetLoggingServiceRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2626
+   *     google/container/v1beta1/cluster_service.proto;l=2691
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

@@ -27,7 +27,7 @@ public interface VirtualClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
@@ -49,7 +49,7 @@ public interface VirtualClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. A Storage bucket used to stage job
+   * Optional. A Cloud Storage bucket used to stage job
    * dependencies, config files, and job driver console output.
    * If you do not specify a staging bucket, Cloud
    * Dataproc will determine a Cloud Storage location (US,
@@ -72,7 +72,8 @@ public interface VirtualClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The configuration for running the Dataproc cluster on Kubernetes.
+   * Required. The configuration for running the Dataproc cluster on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -86,7 +87,8 @@ public interface VirtualClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The configuration for running the Dataproc cluster on Kubernetes.
+   * Required. The configuration for running the Dataproc cluster on
+   * Kubernetes.
    * </pre>
    *
    * <code>
@@ -100,7 +102,8 @@ public interface VirtualClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The configuration for running the Dataproc cluster on Kubernetes.
+   * Required. The configuration for running the Dataproc cluster on
+   * Kubernetes.
    * </pre>
    *
    * <code>

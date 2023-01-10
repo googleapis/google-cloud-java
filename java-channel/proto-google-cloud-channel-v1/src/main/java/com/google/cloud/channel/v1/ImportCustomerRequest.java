@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ImportCustomer][google.cloud.channel.v1.CloudChannelService.ImportCustomer]
+ * Request message for
+ * [CloudChannelService.ImportCustomer][google.cloud.channel.v1.CloudChannelService.ImportCustomer]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ImportCustomerRequest}
@@ -391,9 +392,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-   * the customer's order. This field is required for 2-tier transfer scenarios
-   * and can be provided via the request Parent binding as well.
+   * Optional. Cloud Identity ID of a channel partner who will be the direct
+   * reseller for the customer's order. This field is required for 2-tier
+   * transfer scenarios and can be provided via the request Parent binding as
+   * well.
    * </pre>
    *
    * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -416,9 +418,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-   * the customer's order. This field is required for 2-tier transfer scenarios
-   * and can be provided via the request Parent binding as well.
+   * Optional. Cloud Identity ID of a channel partner who will be the direct
+   * reseller for the customer's order. This field is required for 2-tier
+   * transfer scenarios and can be provided via the request Parent binding as
+   * well.
    * </pre>
    *
    * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -729,7 +732,8 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ImportCustomer][google.cloud.channel.v1.CloudChannelService.ImportCustomer]
+   * Request message for
+   * [CloudChannelService.ImportCustomer][google.cloud.channel.v1.CloudChannelService.ImportCustomer]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ImportCustomerRequest}
@@ -1572,9 +1576,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-     * the customer's order. This field is required for 2-tier transfer scenarios
-     * and can be provided via the request Parent binding as well.
+     * Optional. Cloud Identity ID of a channel partner who will be the direct
+     * reseller for the customer's order. This field is required for 2-tier
+     * transfer scenarios and can be provided via the request Parent binding as
+     * well.
      * </pre>
      *
      * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1596,9 +1601,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-     * the customer's order. This field is required for 2-tier transfer scenarios
-     * and can be provided via the request Parent binding as well.
+     * Optional. Cloud Identity ID of a channel partner who will be the direct
+     * reseller for the customer's order. This field is required for 2-tier
+     * transfer scenarios and can be provided via the request Parent binding as
+     * well.
      * </pre>
      *
      * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1620,9 +1626,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-     * the customer's order. This field is required for 2-tier transfer scenarios
-     * and can be provided via the request Parent binding as well.
+     * Optional. Cloud Identity ID of a channel partner who will be the direct
+     * reseller for the customer's order. This field is required for 2-tier
+     * transfer scenarios and can be provided via the request Parent binding as
+     * well.
      * </pre>
      *
      * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1643,9 +1650,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-     * the customer's order. This field is required for 2-tier transfer scenarios
-     * and can be provided via the request Parent binding as well.
+     * Optional. Cloud Identity ID of a channel partner who will be the direct
+     * reseller for the customer's order. This field is required for 2-tier
+     * transfer scenarios and can be provided via the request Parent binding as
+     * well.
      * </pre>
      *
      * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1662,9 +1670,10 @@ public final class ImportCustomerRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Cloud Identity ID of a channel partner who will be the direct reseller for
-     * the customer's order. This field is required for 2-tier transfer scenarios
-     * and can be provided via the request Parent binding as well.
+     * Optional. Cloud Identity ID of a channel partner who will be the direct
+     * reseller for the customer's order. This field is required for 2-tier
+     * transfer scenarios and can be provided via the request Parent binding as
+     * well.
      * </pre>
      *
      * <code>string channel_partner_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

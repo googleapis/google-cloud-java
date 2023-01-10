@@ -2,3 +2,8 @@ primaryBranch: main
 releaseType: java-yoshi
 manifest: true
 handleGHRelease: true
+branches:
+  - releaseType: java-backport
+    bumpMinorPreMajor: true
+    handleGHRelease: true
+    branch: 1.0.x

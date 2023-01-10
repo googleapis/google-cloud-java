@@ -27,6 +27,46 @@ public interface CollectUserEventRequestOrBuilder
    *
    *
    * <pre>
+   * The prebuilt rule name that can convert a specific type of raw_json.
+   * For example: "default_schema/v1.0"
+   * </pre>
+   *
+   * <code>string prebuilt_rule = 6;</code>
+   *
+   * @return Whether the prebuiltRule field is set.
+   */
+  boolean hasPrebuiltRule();
+  /**
+   *
+   *
+   * <pre>
+   * The prebuilt rule name that can convert a specific type of raw_json.
+   * For example: "default_schema/v1.0"
+   * </pre>
+   *
+   * <code>string prebuilt_rule = 6;</code>
+   *
+   * @return The prebuiltRule.
+   */
+  java.lang.String getPrebuiltRule();
+  /**
+   *
+   *
+   * <pre>
+   * The prebuilt rule name that can convert a specific type of raw_json.
+   * For example: "default_schema/v1.0"
+   * </pre>
+   *
+   * <code>string prebuilt_rule = 6;</code>
+   *
+   * @return The bytes for prebuiltRule.
+   */
+  com.google.protobuf.ByteString getPrebuiltRuleBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent catalog name, such as
    * `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
@@ -122,4 +162,38 @@ public interface CollectUserEventRequestOrBuilder
    * @return The ets.
    */
   long getEts();
+
+  /**
+   *
+   *
+   * <pre>
+   * An arbitrary serialized JSON string that contains necessary information
+   * that can comprise a user event. When this field is specified, the
+   * user_event field will be ignored. Note: line-delimited JSON is not
+   * supported, a single JSON only.
+   * </pre>
+   *
+   * <code>string raw_json = 5;</code>
+   *
+   * @return The rawJson.
+   */
+  java.lang.String getRawJson();
+  /**
+   *
+   *
+   * <pre>
+   * An arbitrary serialized JSON string that contains necessary information
+   * that can comprise a user event. When this field is specified, the
+   * user_event field will be ignored. Note: line-delimited JSON is not
+   * supported, a single JSON only.
+   * </pre>
+   *
+   * <code>string raw_json = 5;</code>
+   *
+   * @return The bytes for rawJson.
+   */
+  com.google.protobuf.ByteString getRawJsonBytes();
+
+  public com.google.cloud.retail.v2alpha.CollectUserEventRequest.ConversionRuleCase
+      getConversionRuleCase();
 }

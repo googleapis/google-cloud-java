@@ -76,7 +76,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The resource states of the request in the form of
-   * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+   * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -100,7 +100,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * The resource states of the request in the form of
-   * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+   * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -794,7 +794,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The resource states of the request in the form of
-     * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+     * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -817,7 +817,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The resource states of the request in the form of
-     * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+     * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -840,7 +840,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The resource states of the request in the form of
-     * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+     * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -862,7 +862,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The resource states of the request in the form of
-     * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+     * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -880,7 +880,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * The resource states of the request in the form of
-     * projects/&#42;&#47;locations/&#42;&#47;voices/&#42;.
+     * `projects/&#42;&#47;locations/&#42;&#47;voices/&#42;`.
      * </pre>
      *
      * <code>string parent = 1;</code>

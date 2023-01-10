@@ -193,6 +193,7 @@ public class SecretManagerServiceClientTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -244,6 +245,7 @@ public class SecretManagerServiceClientTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -387,6 +389,7 @@ public class SecretManagerServiceClientTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -432,6 +435,7 @@ public class SecretManagerServiceClientTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 
@@ -477,6 +481,7 @@ public class SecretManagerServiceClientTest {
             .setEtag("etag3123477")
             .setRotation(Rotation.newBuilder().build())
             .putAllVersionAliases(new HashMap<String, Long>())
+            .putAllAnnotations(new HashMap<String, String>())
             .build();
     mockSecretManagerService.addResponse(expectedResponse);
 

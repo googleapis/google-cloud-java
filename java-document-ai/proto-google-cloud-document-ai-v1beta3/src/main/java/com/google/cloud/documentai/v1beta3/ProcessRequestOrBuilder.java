@@ -97,11 +97,15 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * Required. The resource name of the
+   * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-   * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-   * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * to use for processing. If a
+   * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+   * server will use its [default
+   * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -116,11 +120,15 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * Required. The resource name of the
+   * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-   * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-   * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * to use for processing. If a
+   * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+   * server will use its [default
+   * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -142,7 +150,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=351
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -157,7 +165,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=351
    * @return The document.
    */
   @java.lang.Deprecated
@@ -228,6 +236,41 @@ public interface ProcessRequestOrBuilder
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   *
+   * @return Whether the processOptions field is set.
+   */
+  boolean hasProcessOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   *
+   * @return The processOptions.
+   */
+  com.google.cloud.documentai.v1beta3.ProcessOptions getProcessOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   */
+  com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder getProcessOptionsOrBuilder();
 
   public com.google.cloud.documentai.v1beta3.ProcessRequest.SourceCase getSourceCase();
 }

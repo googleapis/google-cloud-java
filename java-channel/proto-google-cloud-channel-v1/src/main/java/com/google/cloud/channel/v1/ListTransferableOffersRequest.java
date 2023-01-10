@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+ * Request message for
+ * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListTransferableOffersRequest}
@@ -337,8 +338,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
    * <pre>
    * A token for a page of results other than the first page.
    * Obtained using
-   * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-   * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+   * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -363,8 +366,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
    * <pre>
    * A token for a page of results other than the first page.
    * Obtained using
-   * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-   * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+   * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -724,7 +729,8 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+   * Request message for
+   * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListTransferableOffersRequest}
@@ -1444,8 +1450,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1469,8 +1477,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1494,8 +1504,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1518,8 +1530,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1538,8 +1552,10 @@ public final class ListTransferableOffersRequest extends com.google.protobuf.Gen
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers] call.
+     * [ListTransferableOffersResponse.next_page_token][google.cloud.channel.v1.ListTransferableOffersResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>

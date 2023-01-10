@@ -213,7 +213,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+       * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
        * regex format. This is only specified when requesting a single node.
        * In case of multi-node requests, multi_node_params must be populated
        * instead. It's an error to specify both node_id and multi_node_params.
@@ -228,7 +228,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+       * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
        * regex format. This is only specified when requesting a single node.
        * In case of multi-node requests, multi_node_params must be populated
        * instead. It's an error to specify both node_id and multi_node_params.
@@ -389,7 +389,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+       * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
        * regex format. This is only specified when requesting a single node.
        * In case of multi-node requests, multi_node_params must be populated
        * instead. It's an error to specify both node_id and multi_node_params.
@@ -415,7 +415,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+       * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
        * regex format. This is only specified when requesting a single node.
        * In case of multi-node requests, multi_node_params must be populated
        * instead. It's an error to specify both node_id and multi_node_params.
@@ -1003,7 +1003,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+         * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
          * regex format. This is only specified when requesting a single node.
          * In case of multi-node requests, multi_node_params must be populated
          * instead. It's an error to specify both node_id and multi_node_params.
@@ -1028,7 +1028,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+         * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
          * regex format. This is only specified when requesting a single node.
          * In case of multi-node requests, multi_node_params must be populated
          * instead. It's an error to specify both node_id and multi_node_params.
@@ -1053,7 +1053,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+         * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
          * regex format. This is only specified when requesting a single node.
          * In case of multi-node requests, multi_node_params must be populated
          * instead. It's an error to specify both node_id and multi_node_params.
@@ -1077,7 +1077,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+         * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
          * regex format. This is only specified when requesting a single node.
          * In case of multi-node requests, multi_node_params must be populated
          * instead. It's an error to specify both node_id and multi_node_params.
@@ -1097,7 +1097,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+         * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
          * regex format. This is only specified when requesting a single node.
          * In case of multi-node requests, multi_node_params must be populated
          * instead. It's an error to specify both node_id and multi_node_params.

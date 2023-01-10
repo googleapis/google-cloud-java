@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.DeleteCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.DeleteCustomerRepricingConfig].
+ * Request message for
+ * [CloudChannelService.DeleteCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.DeleteCustomerRepricingConfig].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest}
@@ -75,8 +76,8 @@ public final class DeleteCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Required. The resource name of the customer repricing config rule to delete.
-   * Format:
+   * Required. The resource name of the customer repricing config rule to
+   * delete. Format:
    * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
    * </pre>
    *
@@ -102,8 +103,8 @@ public final class DeleteCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Required. The resource name of the customer repricing config rule to delete.
-   * Format:
+   * Required. The resource name of the customer repricing config rule to
+   * delete. Format:
    * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
    * </pre>
    *
@@ -290,7 +291,8 @@ public final class DeleteCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.DeleteCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.DeleteCustomerRepricingConfig].
+   * Request message for
+   * [CloudChannelService.DeleteCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.DeleteCustomerRepricingConfig].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest}
@@ -465,8 +467,8 @@ public final class DeleteCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer repricing config rule to delete.
-     * Format:
+     * Required. The resource name of the customer repricing config rule to
+     * delete. Format:
      * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
      * </pre>
      *
@@ -491,8 +493,8 @@ public final class DeleteCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer repricing config rule to delete.
-     * Format:
+     * Required. The resource name of the customer repricing config rule to
+     * delete. Format:
      * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
      * </pre>
      *
@@ -517,8 +519,8 @@ public final class DeleteCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer repricing config rule to delete.
-     * Format:
+     * Required. The resource name of the customer repricing config rule to
+     * delete. Format:
      * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
      * </pre>
      *
@@ -542,8 +544,8 @@ public final class DeleteCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer repricing config rule to delete.
-     * Format:
+     * Required. The resource name of the customer repricing config rule to
+     * delete. Format:
      * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
      * </pre>
      *
@@ -563,8 +565,8 @@ public final class DeleteCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer repricing config rule to delete.
-     * Format:
+     * Required. The resource name of the customer repricing config rule to
+     * delete. Format:
      * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
      * </pre>
      *

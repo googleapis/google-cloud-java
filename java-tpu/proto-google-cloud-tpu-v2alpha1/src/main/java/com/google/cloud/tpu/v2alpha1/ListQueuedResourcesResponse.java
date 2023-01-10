@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Response for [ListQueuedResources][google.cloud.tpu.v2alpha1.Tpu.ListQueuedResources].
+ * Response for
+ * [ListQueuedResources][google.cloud.tpu.v2alpha1.Tpu.ListQueuedResources].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse}
@@ -440,7 +441,8 @@ public final class ListQueuedResourcesResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response for [ListQueuedResources][google.cloud.tpu.v2alpha1.Tpu.ListQueuedResources].
+   * Response for
+   * [ListQueuedResources][google.cloud.tpu.v2alpha1.Tpu.ListQueuedResources].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse}

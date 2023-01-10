@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Metadata related to the progress of the Import operation. This will be
+ * Metadata related to the progress of the Import operation. This is
  * returned by the google.longrunning.Operation.metadata field.
  * </pre>
  *
@@ -212,7 +212,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-   *     google/cloud/retail/v2alpha/import_config.proto;l=357
+   *     google/cloud/retail/v2alpha/import_config.proto;l=339
    * @return The requestId.
    */
   @java.lang.Override
@@ -238,7 +238,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    * <code>string request_id = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-   *     google/cloud/retail/v2alpha/import_config.proto;l=357
+   *     google/cloud/retail/v2alpha/import_config.proto;l=339
    * @return The bytes for requestId.
    */
   @java.lang.Override
@@ -262,8 +262,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Pub/Sub topic for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
    * </pre>
@@ -289,8 +289,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Pub/Sub topic for receiving notification. If this field is set,
-   * when the import is finished, a notification will be sent to
-   * specified Pub/Sub topic. The message data will be JSON string of a
+   * when the import is finished, a notification is sent to
+   * specified Pub/Sub topic. The message data is JSON string of a
    * [Operation][google.longrunning.Operation].
    * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
    * </pre>
@@ -310,6 +310,63 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TRANSFORMED_USER_EVENTS_METADATA_FIELD_NUMBER = 7;
+  private com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata
+      transformedUserEventsMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to transform user events.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+   * </code>
+   *
+   * @return Whether the transformedUserEventsMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasTransformedUserEventsMetadata() {
+    return transformedUserEventsMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to transform user events.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+   * </code>
+   *
+   * @return The transformedUserEventsMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata
+      getTransformedUserEventsMetadata() {
+    return transformedUserEventsMetadata_ == null
+        ? com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.getDefaultInstance()
+        : transformedUserEventsMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to transform user events.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.TransformedUserEventsMetadataOrBuilder
+      getTransformedUserEventsMetadataOrBuilder() {
+    return getTransformedUserEventsMetadata();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -344,6 +401,9 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, notificationPubsubTopic_);
     }
+    if (transformedUserEventsMetadata_ != null) {
+      output.writeMessage(7, getTransformedUserEventsMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -370,6 +430,11 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, notificationPubsubTopic_);
+    }
+    if (transformedUserEventsMetadata_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getTransformedUserEventsMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -399,6 +464,12 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     if (getFailureCount() != other.getFailureCount()) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getNotificationPubsubTopic().equals(other.getNotificationPubsubTopic())) return false;
+    if (hasTransformedUserEventsMetadata() != other.hasTransformedUserEventsMetadata())
+      return false;
+    if (hasTransformedUserEventsMetadata()) {
+      if (!getTransformedUserEventsMetadata().equals(other.getTransformedUserEventsMetadata()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -426,6 +497,10 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (37 * hash) + NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER;
     hash = (53 * hash) + getNotificationPubsubTopic().hashCode();
+    if (hasTransformedUserEventsMetadata()) {
+      hash = (37 * hash) + TRANSFORMED_USER_EVENTS_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getTransformedUserEventsMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -530,7 +605,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to the progress of the Import operation. This will be
+   * Metadata related to the progress of the Import operation. This is
    * returned by the google.longrunning.Operation.metadata field.
    * </pre>
    *
@@ -585,6 +660,12 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
       notificationPubsubTopic_ = "";
 
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        transformedUserEventsMetadata_ = null;
+      } else {
+        transformedUserEventsMetadata_ = null;
+        transformedUserEventsMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -626,6 +707,11 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       result.failureCount_ = failureCount_;
       result.requestId_ = requestId_;
       result.notificationPubsubTopic_ = notificationPubsubTopic_;
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        result.transformedUserEventsMetadata_ = transformedUserEventsMetadata_;
+      } else {
+        result.transformedUserEventsMetadata_ = transformedUserEventsMetadataBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -695,6 +781,9 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
         notificationPubsubTopic_ = other.notificationPubsubTopic_;
         onChanged();
       }
+      if (other.hasTransformedUserEventsMetadata()) {
+        mergeTransformedUserEventsMetadata(other.getTransformedUserEventsMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -757,6 +846,13 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getTransformedUserEventsMetadataFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1264,7 +1360,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=357
+     *     google/cloud/retail/v2alpha/import_config.proto;l=339
      * @return The requestId.
      */
     @java.lang.Deprecated
@@ -1289,7 +1385,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=357
+     *     google/cloud/retail/v2alpha/import_config.proto;l=339
      * @return The bytes for requestId.
      */
     @java.lang.Deprecated
@@ -1314,7 +1410,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=357
+     *     google/cloud/retail/v2alpha/import_config.proto;l=339
      * @param value The requestId to set.
      * @return This builder for chaining.
      */
@@ -1338,7 +1434,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=357
+     *     google/cloud/retail/v2alpha/import_config.proto;l=339
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1358,7 +1454,7 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>string request_id = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportMetadata.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=357
+     *     google/cloud/retail/v2alpha/import_config.proto;l=339
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
      */
@@ -1380,8 +1476,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1406,8 +1502,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1432,8 +1528,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1457,8 +1553,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1478,8 +1574,8 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Pub/Sub topic for receiving notification. If this field is set,
-     * when the import is finished, a notification will be sent to
-     * specified Pub/Sub topic. The message data will be JSON string of a
+     * when the import is finished, a notification is sent to
+     * specified Pub/Sub topic. The message data is JSON string of a
      * [Operation][google.longrunning.Operation].
      * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
      * </pre>
@@ -1498,6 +1594,218 @@ public final class ImportMetadata extends com.google.protobuf.GeneratedMessageV3
       notificationPubsubTopic_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata
+        transformedUserEventsMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata,
+            com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.Builder,
+            com.google.cloud.retail.v2alpha.TransformedUserEventsMetadataOrBuilder>
+        transformedUserEventsMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     *
+     * @return Whether the transformedUserEventsMetadata field is set.
+     */
+    public boolean hasTransformedUserEventsMetadata() {
+      return transformedUserEventsMetadataBuilder_ != null
+          || transformedUserEventsMetadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     *
+     * @return The transformedUserEventsMetadata.
+     */
+    public com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata
+        getTransformedUserEventsMetadata() {
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        return transformedUserEventsMetadata_ == null
+            ? com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.getDefaultInstance()
+            : transformedUserEventsMetadata_;
+      } else {
+        return transformedUserEventsMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    public Builder setTransformedUserEventsMetadata(
+        com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata value) {
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transformedUserEventsMetadata_ = value;
+        onChanged();
+      } else {
+        transformedUserEventsMetadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    public Builder setTransformedUserEventsMetadata(
+        com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.Builder builderForValue) {
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        transformedUserEventsMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        transformedUserEventsMetadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    public Builder mergeTransformedUserEventsMetadata(
+        com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata value) {
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        if (transformedUserEventsMetadata_ != null) {
+          transformedUserEventsMetadata_ =
+              com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.newBuilder(
+                      transformedUserEventsMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transformedUserEventsMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        transformedUserEventsMetadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    public Builder clearTransformedUserEventsMetadata() {
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        transformedUserEventsMetadata_ = null;
+        onChanged();
+      } else {
+        transformedUserEventsMetadata_ = null;
+        transformedUserEventsMetadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.Builder
+        getTransformedUserEventsMetadataBuilder() {
+
+      onChanged();
+      return getTransformedUserEventsMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.TransformedUserEventsMetadataOrBuilder
+        getTransformedUserEventsMetadataOrBuilder() {
+      if (transformedUserEventsMetadataBuilder_ != null) {
+        return transformedUserEventsMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return transformedUserEventsMetadata_ == null
+            ? com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.getDefaultInstance()
+            : transformedUserEventsMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to transform user events.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2alpha.TransformedUserEventsMetadata transformed_user_events_metadata = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata,
+            com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.Builder,
+            com.google.cloud.retail.v2alpha.TransformedUserEventsMetadataOrBuilder>
+        getTransformedUserEventsMetadataFieldBuilder() {
+      if (transformedUserEventsMetadataBuilder_ == null) {
+        transformedUserEventsMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata,
+                com.google.cloud.retail.v2alpha.TransformedUserEventsMetadata.Builder,
+                com.google.cloud.retail.v2alpha.TransformedUserEventsMetadataOrBuilder>(
+                getTransformedUserEventsMetadata(), getParentForChildren(), isClean());
+        transformedUserEventsMetadata_ = null;
+      }
+      return transformedUserEventsMetadataBuilder_;
     }
 
     @java.lang.Override

@@ -308,8 +308,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will be
-   * reviewed with.
+   * Required. The resource name of the HumanReviewConfig that the document will
+   * be reviewed with.
    * </pre>
    *
    * <code>
@@ -334,8 +334,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the HumanReviewConfig that the document will be
-   * reviewed with.
+   * Required. The resource name of the HumanReviewConfig that the document will
+   * be reviewed with.
    * </pre>
    *
    * <code>
@@ -369,7 +369,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=920
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -387,7 +387,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=920
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
    * @return The document.
    */
   @java.lang.Override
@@ -1242,8 +1242,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1267,8 +1267,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1292,8 +1292,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1316,8 +1316,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1336,8 +1336,8 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the HumanReviewConfig that the document will be
-     * reviewed with.
+     * Required. The resource name of the HumanReviewConfig that the document will
+     * be reviewed with.
      * </pre>
      *
      * <code>
@@ -1374,7 +1374,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=920
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -1391,7 +1391,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=920
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=948
      * @return The document.
      */
     @java.lang.Deprecated

@@ -48,6 +48,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     uid_ = "";
     etag_ = "";
     clusterCaCertificate_ = "";
+    errors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -511,8 +512,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The ARM ID of the resource group where the cluster resources are deployed.
-   * For example:
+   * Required. The ARM ID of the resource group where the cluster resources are
+   * deployed. For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
    * </pre>
    *
@@ -536,8 +537,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The ARM ID of the resource group where the cluster resources are deployed.
-   * For example:
+   * Required. The ARM ID of the resource group where the cluster resources are
+   * deployed. For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
    * </pre>
    *
@@ -564,8 +565,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-   * how the Anthos Multi-Cloud API connects to Azure APIs.
+   * Required. Name of the
+   * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+   * authentication configuration for how the Anthos Multi-Cloud API connects to
+   * Azure APIs.
    * The `AzureClient` resource must reside on the same GCP project and region
    * as the `AzureCluster`.
    * `AzureClient` names are formatted as
@@ -594,8 +597,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-   * how the Anthos Multi-Cloud API connects to Azure APIs.
+   * Required. Name of the
+   * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+   * authentication configuration for how the Anthos Multi-Cloud API connects to
+   * Azure APIs.
    * The `AzureClient` resource must reside on the same GCP project and region
    * as the `AzureCluster`.
    * `AzureClient` names are formatted as
@@ -1337,11 +1342,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the fleet field is set.
@@ -1354,11 +1359,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The fleet.
@@ -1371,11 +1376,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1389,7 +1394,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Mananged Azure resources for this cluster.
+   * Output only. Managed Azure resources for this cluster.
    * </pre>
    *
    * <code>
@@ -1406,7 +1411,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Mananged Azure resources for this cluster.
+   * Output only. Managed Azure resources for this cluster.
    * </pre>
    *
    * <code>
@@ -1425,7 +1430,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Mananged Azure resources for this cluster.
+   * Output only. Managed Azure resources for this cluster.
    * </pre>
    *
    * <code>
@@ -1490,6 +1495,141 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
     return getLoggingConfig();
+  }
+
+  public static final int ERRORS_FIELD_NUMBER = 24;
+  private java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError> errors_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError> getErrorsList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>
+      getErrorsOrBuilderList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getErrorsCount() {
+    return errors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AzureClusterError getErrors(int index) {
+    return errors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder getErrorsOrBuilder(
+      int index) {
+    return errors_.get(index);
+  }
+
+  public static final int MONITORING_CONFIG_FIELD_NUMBER = 25;
+  private com.google.cloud.gkemulticloud.v1.MonitoringConfig monitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMonitoringConfig() {
+    return monitoringConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The monitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig() {
+    return monitoringConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.MonitoringConfig.getDefaultInstance()
+        : monitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder
+      getMonitoringConfigOrBuilder() {
+    return getMonitoringConfig();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1568,6 +1708,12 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (loggingConfig_ != null) {
       output.writeMessage(23, getLoggingConfig());
+    }
+    for (int i = 0; i < errors_.size(); i++) {
+      output.writeMessage(24, errors_.get(i));
+    }
+    if (monitoringConfig_ != null) {
+      output.writeMessage(25, getMonitoringConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1650,6 +1796,12 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getLoggingConfig());
     }
+    for (int i = 0; i < errors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, errors_.get(i));
+    }
+    if (monitoringConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getMonitoringConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1713,6 +1865,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
+    }
+    if (!getErrorsList().equals(other.getErrorsList())) return false;
+    if (hasMonitoringConfig() != other.hasMonitoringConfig()) return false;
+    if (hasMonitoringConfig()) {
+      if (!getMonitoringConfig().equals(other.getMonitoringConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1786,6 +1943,14 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
     if (hasLoggingConfig()) {
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
+    }
+    if (getErrorsCount() > 0) {
+      hash = (37 * hash) + ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorsList().hashCode();
+    }
+    if (hasMonitoringConfig()) {
+      hash = (37 * hash) + MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2022,6 +2187,19 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
         loggingConfig_ = null;
         loggingConfigBuilder_ = null;
       }
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+      } else {
+        errors_ = null;
+        errorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = null;
+      } else {
+        monitoringConfig_ = null;
+        monitoringConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2107,6 +2285,20 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
         result.loggingConfig_ = loggingConfig_;
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
+      }
+      if (errorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          errors_ = java.util.Collections.unmodifiableList(errors_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.errors_ = errors_;
+      } else {
+        result.errors_ = errorsBuilder_.build();
+      }
+      if (monitoringConfigBuilder_ == null) {
+        result.monitoringConfig_ = monitoringConfig_;
+      } else {
+        result.monitoringConfig_ = monitoringConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2226,6 +2418,36 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
+      }
+      if (errorsBuilder_ == null) {
+        if (!other.errors_.isEmpty()) {
+          if (errors_.isEmpty()) {
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureErrorsIsMutable();
+            errors_.addAll(other.errors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.errors_.isEmpty()) {
+          if (errorsBuilder_.isEmpty()) {
+            errorsBuilder_.dispose();
+            errorsBuilder_ = null;
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            errorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorsFieldBuilder()
+                    : null;
+          } else {
+            errorsBuilder_.addAllMessages(other.errors_);
+          }
+        }
+      }
+      if (other.hasMonitoringConfig()) {
+        mergeMonitoringConfig(other.getMonitoringConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2386,6 +2608,27 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 186
+            case 194:
+              {
+                com.google.cloud.gkemulticloud.v1.AzureClusterError m =
+                    input.readMessage(
+                        com.google.cloud.gkemulticloud.v1.AzureClusterError.parser(),
+                        extensionRegistry);
+                if (errorsBuilder_ == null) {
+                  ensureErrorsIsMutable();
+                  errors_.add(m);
+                } else {
+                  errorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(
+                    getMonitoringConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2773,8 +3016,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ARM ID of the resource group where the cluster resources are deployed.
-     * For example:
+     * Required. The ARM ID of the resource group where the cluster resources are
+     * deployed. For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
      * </pre>
      *
@@ -2797,8 +3040,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ARM ID of the resource group where the cluster resources are deployed.
-     * For example:
+     * Required. The ARM ID of the resource group where the cluster resources are
+     * deployed. For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
      * </pre>
      *
@@ -2821,8 +3064,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ARM ID of the resource group where the cluster resources are deployed.
-     * For example:
+     * Required. The ARM ID of the resource group where the cluster resources are
+     * deployed. For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
      * </pre>
      *
@@ -2844,8 +3087,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ARM ID of the resource group where the cluster resources are deployed.
-     * For example:
+     * Required. The ARM ID of the resource group where the cluster resources are
+     * deployed. For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
      * </pre>
      *
@@ -2863,8 +3106,8 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ARM ID of the resource group where the cluster resources are deployed.
-     * For example:
+     * Required. The ARM ID of the resource group where the cluster resources are
+     * deployed. For example:
      * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
      * </pre>
      *
@@ -2889,8 +3132,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-     * how the Anthos Multi-Cloud API connects to Azure APIs.
+     * Required. Name of the
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+     * authentication configuration for how the Anthos Multi-Cloud API connects to
+     * Azure APIs.
      * The `AzureClient` resource must reside on the same GCP project and region
      * as the `AzureCluster`.
      * `AzureClient` names are formatted as
@@ -2918,8 +3163,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-     * how the Anthos Multi-Cloud API connects to Azure APIs.
+     * Required. Name of the
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+     * authentication configuration for how the Anthos Multi-Cloud API connects to
+     * Azure APIs.
      * The `AzureClient` resource must reside on the same GCP project and region
      * as the `AzureCluster`.
      * `AzureClient` names are formatted as
@@ -2947,8 +3194,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-     * how the Anthos Multi-Cloud API connects to Azure APIs.
+     * Required. Name of the
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+     * authentication configuration for how the Anthos Multi-Cloud API connects to
+     * Azure APIs.
      * The `AzureClient` resource must reside on the same GCP project and region
      * as the `AzureCluster`.
      * `AzureClient` names are formatted as
@@ -2975,8 +3224,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-     * how the Anthos Multi-Cloud API connects to Azure APIs.
+     * Required. Name of the
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+     * authentication configuration for how the Anthos Multi-Cloud API connects to
+     * Azure APIs.
      * The `AzureClient` resource must reside on the same GCP project and region
      * as the `AzureCluster`.
      * `AzureClient` names are formatted as
@@ -2999,8 +3250,10 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-     * how the Anthos Multi-Cloud API connects to Azure APIs.
+     * Required. Name of the
+     * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+     * authentication configuration for how the Anthos Multi-Cloud API connects to
+     * Azure APIs.
      * The `AzureClient` resource must reside on the same GCP project and region
      * as the `AzureCluster`.
      * `AzureClient` names are formatted as
@@ -5071,11 +5324,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the fleet field is set.
@@ -5087,11 +5340,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The fleet.
@@ -5109,11 +5362,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setFleet(com.google.cloud.gkemulticloud.v1.Fleet value) {
@@ -5133,11 +5386,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setFleet(com.google.cloud.gkemulticloud.v1.Fleet.Builder builderForValue) {
@@ -5154,11 +5407,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeFleet(com.google.cloud.gkemulticloud.v1.Fleet value) {
@@ -5182,11 +5435,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearFleet() {
@@ -5204,11 +5457,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.Fleet.Builder getFleetBuilder() {
@@ -5220,11 +5473,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.FleetOrBuilder getFleetOrBuilder() {
@@ -5240,11 +5493,11 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Fleet configuration.
+     * Required. Fleet configuration.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5274,7 +5527,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5290,7 +5543,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5312,7 +5565,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5337,7 +5590,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5359,7 +5612,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5388,7 +5641,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5410,7 +5663,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5427,7 +5680,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5448,7 +5701,7 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Mananged Azure resources for this cluster.
+     * Output only. Managed Azure resources for this cluster.
      * </pre>
      *
      * <code>
@@ -5674,6 +5927,600 @@ public final class AzureCluster extends com.google.protobuf.GeneratedMessageV3
         loggingConfig_ = null;
       }
       return loggingConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError> errors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        errors_ =
+            new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.AzureClusterError>(errors_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AzureClusterError,
+            com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder,
+            com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>
+        errorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError> getErrorsList() {
+      if (errorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(errors_);
+      } else {
+        return errorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getErrorsCount() {
+      if (errorsBuilder_ == null) {
+        return errors_.size();
+      } else {
+        return errorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureClusterError getErrors(int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setErrors(int index, com.google.cloud.gkemulticloud.v1.AzureClusterError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.set(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setErrors(
+        int index, com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(com.google.cloud.gkemulticloud.v1.AzureClusterError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(int index, com.google.cloud.gkemulticloud.v1.AzureClusterError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(
+        com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(
+        int index, com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllErrors(
+        java.lang.Iterable<? extends com.google.cloud.gkemulticloud.v1.AzureClusterError> values) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errors_);
+        onChanged();
+      } else {
+        errorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearErrors() {
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        errorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeErrors(int index) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.remove(index);
+        onChanged();
+      } else {
+        errorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder getErrorsBuilder(int index) {
+      return getErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder getErrorsOrBuilder(
+        int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>
+        getErrorsOrBuilderList() {
+      if (errorsBuilder_ != null) {
+        return errorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(errors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder addErrorsBuilder() {
+      return getErrorsFieldBuilder()
+          .addBuilder(com.google.cloud.gkemulticloud.v1.AzureClusterError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder addErrorsBuilder(int index) {
+      return getErrorsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.gkemulticloud.v1.AzureClusterError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder>
+        getErrorsBuilderList() {
+      return getErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AzureClusterError,
+            com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder,
+            com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>
+        getErrorsFieldBuilder() {
+      if (errorsBuilder_ == null) {
+        errorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AzureClusterError,
+                com.google.cloud.gkemulticloud.v1.AzureClusterError.Builder,
+                com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>(
+                errors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        errors_ = null;
+      }
+      return errorsBuilder_;
+    }
+
+    private com.google.cloud.gkemulticloud.v1.MonitoringConfig monitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.MonitoringConfig,
+            com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder>
+        monitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the monitoringConfig field is set.
+     */
+    public boolean hasMonitoringConfig() {
+      return monitoringConfigBuilder_ != null || monitoringConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The monitoringConfig.
+     */
+    public com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        return monitoringConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.MonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      } else {
+        return monitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMonitoringConfig(com.google.cloud.gkemulticloud.v1.MonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        monitoringConfig_ = value;
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMonitoringConfig(
+        com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder builderForValue) {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMonitoringConfig(com.google.cloud.gkemulticloud.v1.MonitoringConfig value) {
+      if (monitoringConfigBuilder_ == null) {
+        if (monitoringConfig_ != null) {
+          monitoringConfig_ =
+              com.google.cloud.gkemulticloud.v1.MonitoringConfig.newBuilder(monitoringConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          monitoringConfig_ = value;
+        }
+        onChanged();
+      } else {
+        monitoringConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMonitoringConfig() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfig_ = null;
+        onChanged();
+      } else {
+        monitoringConfig_ = null;
+        monitoringConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder getMonitoringConfigBuilder() {
+
+      onChanged();
+      return getMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder
+        getMonitoringConfigOrBuilder() {
+      if (monitoringConfigBuilder_ != null) {
+        return monitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return monitoringConfig_ == null
+            ? com.google.cloud.gkemulticloud.v1.MonitoringConfig.getDefaultInstance()
+            : monitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Monitoring configuration for this cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.MonitoringConfig,
+            com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder,
+            com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder>
+        getMonitoringConfigFieldBuilder() {
+      if (monitoringConfigBuilder_ == null) {
+        monitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.MonitoringConfig,
+                com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder,
+                com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder>(
+                getMonitoringConfig(), getParentForChildren(), isClean());
+        monitoringConfig_ = null;
+      }
+      return monitoringConfigBuilder_;
     }
 
     @java.lang.Override

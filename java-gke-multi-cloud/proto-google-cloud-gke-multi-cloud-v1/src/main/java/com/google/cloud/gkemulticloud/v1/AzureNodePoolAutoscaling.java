@@ -73,8 +73,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Minimum number of nodes in the node pool. Must be greater than or equal to
-   * 1 and less than or equal to max_node_count.
+   * Required. Minimum number of nodes in the node pool. Must be greater than or
+   * equal to 1 and less than or equal to max_node_count.
    * </pre>
    *
    * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,8 +92,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Maximum number of nodes in the node pool. Must be greater than or equal to
-   * min_node_count and less than or equal to 50.
+   * Required. Maximum number of nodes in the node pool. Must be greater than or
+   * equal to min_node_count and less than or equal to 50.
    * </pre>
    *
    * <code>int32 max_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -463,8 +463,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Minimum number of nodes in the node pool. Must be greater than or equal to
-     * 1 and less than or equal to max_node_count.
+     * Required. Minimum number of nodes in the node pool. Must be greater than or
+     * equal to 1 and less than or equal to max_node_count.
      * </pre>
      *
      * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -479,8 +479,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Minimum number of nodes in the node pool. Must be greater than or equal to
-     * 1 and less than or equal to max_node_count.
+     * Required. Minimum number of nodes in the node pool. Must be greater than or
+     * equal to 1 and less than or equal to max_node_count.
      * </pre>
      *
      * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -498,8 +498,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Minimum number of nodes in the node pool. Must be greater than or equal to
-     * 1 and less than or equal to max_node_count.
+     * Required. Minimum number of nodes in the node pool. Must be greater than or
+     * equal to 1 and less than or equal to max_node_count.
      * </pre>
      *
      * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -518,8 +518,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Maximum number of nodes in the node pool. Must be greater than or equal to
-     * min_node_count and less than or equal to 50.
+     * Required. Maximum number of nodes in the node pool. Must be greater than or
+     * equal to min_node_count and less than or equal to 50.
      * </pre>
      *
      * <code>int32 max_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -534,8 +534,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Maximum number of nodes in the node pool. Must be greater than or equal to
-     * min_node_count and less than or equal to 50.
+     * Required. Maximum number of nodes in the node pool. Must be greater than or
+     * equal to min_node_count and less than or equal to 50.
      * </pre>
      *
      * <code>int32 max_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -553,8 +553,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Maximum number of nodes in the node pool. Must be greater than or equal to
-     * min_node_count and less than or equal to 50.
+     * Required. Maximum number of nodes in the node pool. Must be greater than or
+     * equal to min_node_count and less than or equal to 50.
      * </pre>
      *
      * <code>int32 max_node_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>

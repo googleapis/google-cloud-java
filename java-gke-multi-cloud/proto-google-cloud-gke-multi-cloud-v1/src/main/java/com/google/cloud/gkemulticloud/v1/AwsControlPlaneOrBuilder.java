@@ -253,8 +253,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM instance profile to assign to each control
-   * plane replica.
+   * Required. The name or ARN of the AWS IAM instance profile to assign to each
+   * control plane replica.
    * </pre>
    *
    * <code>string iam_instance_profile = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -266,8 +266,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM instance profile to assign to each control
-   * plane replica.
+   * Required. The name or ARN of the AWS IAM instance profile to assign to each
+   * control plane replica.
    * </pre>
    *
    * <code>string iam_instance_profile = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -430,8 +430,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of AWS resource tags to propagate to all underlying managed AWS
-   * resources.
+   * Optional. A set of AWS resource tags to propagate to all underlying managed
+   * AWS resources.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -444,8 +444,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of AWS resource tags to propagate to all underlying managed AWS
-   * resources.
+   * Optional. A set of AWS resource tags to propagate to all underlying managed
+   * AWS resources.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -461,8 +461,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of AWS resource tags to propagate to all underlying managed AWS
-   * resources.
+   * Optional. A set of AWS resource tags to propagate to all underlying managed
+   * AWS resources.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -475,8 +475,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of AWS resource tags to propagate to all underlying managed AWS
-   * resources.
+   * Optional. A set of AWS resource tags to propagate to all underlying managed
+   * AWS resources.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.
@@ -494,8 +494,8 @@ public interface AwsControlPlaneOrBuilder
    *
    *
    * <pre>
-   * Optional. A set of AWS resource tags to propagate to all underlying managed AWS
-   * resources.
+   * Optional. A set of AWS resource tags to propagate to all underlying managed
+   * AWS resources.
    * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
    * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
    * 255 Unicode characters.

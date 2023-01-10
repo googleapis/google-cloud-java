@@ -89,7 +89,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2456
+   *     google/container/v1beta1/cluster_service.proto;l=2518
    * @return The projectId.
    */
   @java.lang.Override
@@ -118,7 +118,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2456
+   *     google/container/v1beta1/cluster_service.proto;l=2518
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -150,7 +150,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2465
+   *     google/container/v1beta1/cluster_service.proto;l=2527
    * @return The zone.
    */
   @java.lang.Override
@@ -179,7 +179,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2465
+   *     google/container/v1beta1/cluster_service.proto;l=2527
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -210,7 +210,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2472
+   *     google/container/v1beta1/cluster_service.proto;l=2534
    * @return The clusterId.
    */
   @java.lang.Override
@@ -238,7 +238,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2472
+   *     google/container/v1beta1/cluster_service.proto;l=2534
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -269,7 +269,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2479
+   *     google/container/v1beta1/cluster_service.proto;l=2541
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -297,7 +297,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2479
+   *     google/container/v1beta1/cluster_service.proto;l=2541
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1248,6 +1248,54 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getResourceLabels();
   }
 
+  public static final int WINDOWS_NODE_CONFIG_FIELD_NUMBER = 34;
+  private com.google.container.v1beta1.WindowsNodeConfig windowsNodeConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+   *
+   * @return Whether the windowsNodeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWindowsNodeConfig() {
+    return windowsNodeConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+   *
+   * @return The windowsNodeConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig() {
+    return windowsNodeConfig_ == null
+        ? com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()
+        : windowsNodeConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder() {
+    return getWindowsNodeConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1327,6 +1375,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (resourceLabels_ != null) {
       output.writeMessage(33, getResourceLabels());
+    }
+    if (windowsNodeConfig_ != null) {
+      output.writeMessage(34, getWindowsNodeConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1409,6 +1460,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (resourceLabels_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getResourceLabels());
     }
+    if (windowsNodeConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getWindowsNodeConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1488,6 +1542,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasResourceLabels() != other.hasResourceLabels()) return false;
     if (hasResourceLabels()) {
       if (!getResourceLabels().equals(other.getResourceLabels())) return false;
+    }
+    if (hasWindowsNodeConfig() != other.hasWindowsNodeConfig()) return false;
+    if (hasWindowsNodeConfig()) {
+      if (!getWindowsNodeConfig().equals(other.getWindowsNodeConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1573,6 +1631,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasResourceLabels()) {
       hash = (37 * hash) + RESOURCE_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceLabels().hashCode();
+    }
+    if (hasWindowsNodeConfig()) {
+      hash = (37 * hash) + WINDOWS_NODE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWindowsNodeConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1812,6 +1874,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         resourceLabels_ = null;
         resourceLabelsBuilder_ = null;
       }
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfig_ = null;
+      } else {
+        windowsNodeConfig_ = null;
+        windowsNodeConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1921,6 +1989,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         result.resourceLabels_ = resourceLabels_;
       } else {
         result.resourceLabels_ = resourceLabelsBuilder_.build();
+      }
+      if (windowsNodeConfigBuilder_ == null) {
+        result.windowsNodeConfig_ = windowsNodeConfig_;
+      } else {
+        result.windowsNodeConfig_ = windowsNodeConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2051,6 +2124,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasResourceLabels()) {
         mergeResourceLabels(other.getResourceLabels());
+      }
+      if (other.hasWindowsNodeConfig()) {
+        mergeWindowsNodeConfig(other.getWindowsNodeConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2214,6 +2290,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
                 break;
               } // case 266
+            case 274:
+              {
+                input.readMessage(
+                    getWindowsNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 274
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2247,7 +2330,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2456
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2275,7 +2358,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2456
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2303,7 +2386,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2456
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2330,7 +2413,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2456
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2353,7 +2436,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2456
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2383,7 +2466,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2465
+     *     google/container/v1beta1/cluster_service.proto;l=2527
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2411,7 +2494,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2465
+     *     google/container/v1beta1/cluster_service.proto;l=2527
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2439,7 +2522,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2465
+     *     google/container/v1beta1/cluster_service.proto;l=2527
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2466,7 +2549,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2465
+     *     google/container/v1beta1/cluster_service.proto;l=2527
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2489,7 +2572,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2465
+     *     google/container/v1beta1/cluster_service.proto;l=2527
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2518,7 +2601,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2472
+     *     google/container/v1beta1/cluster_service.proto;l=2534
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2545,7 +2628,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2472
+     *     google/container/v1beta1/cluster_service.proto;l=2534
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2572,7 +2655,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2472
+     *     google/container/v1beta1/cluster_service.proto;l=2534
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2598,7 +2681,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2472
+     *     google/container/v1beta1/cluster_service.proto;l=2534
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2620,7 +2703,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2472
+     *     google/container/v1beta1/cluster_service.proto;l=2534
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2649,7 +2732,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2479
+     *     google/container/v1beta1/cluster_service.proto;l=2541
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2676,7 +2759,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2479
+     *     google/container/v1beta1/cluster_service.proto;l=2541
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2703,7 +2786,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2479
+     *     google/container/v1beta1/cluster_service.proto;l=2541
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2729,7 +2812,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2479
+     *     google/container/v1beta1/cluster_service.proto;l=2541
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2751,7 +2834,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2479
+     *     google/container/v1beta1/cluster_service.proto;l=2541
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -6015,6 +6098,192 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         resourceLabels_ = null;
       }
       return resourceLabelsBuilder_;
+    }
+
+    private com.google.container.v1beta1.WindowsNodeConfig windowsNodeConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.WindowsNodeConfig,
+            com.google.container.v1beta1.WindowsNodeConfig.Builder,
+            com.google.container.v1beta1.WindowsNodeConfigOrBuilder>
+        windowsNodeConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     *
+     * @return Whether the windowsNodeConfig field is set.
+     */
+    public boolean hasWindowsNodeConfig() {
+      return windowsNodeConfigBuilder_ != null || windowsNodeConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     *
+     * @return The windowsNodeConfig.
+     */
+    public com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig() {
+      if (windowsNodeConfigBuilder_ == null) {
+        return windowsNodeConfig_ == null
+            ? com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()
+            : windowsNodeConfig_;
+      } else {
+        return windowsNodeConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    public Builder setWindowsNodeConfig(com.google.container.v1beta1.WindowsNodeConfig value) {
+      if (windowsNodeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        windowsNodeConfig_ = value;
+        onChanged();
+      } else {
+        windowsNodeConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    public Builder setWindowsNodeConfig(
+        com.google.container.v1beta1.WindowsNodeConfig.Builder builderForValue) {
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        windowsNodeConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    public Builder mergeWindowsNodeConfig(com.google.container.v1beta1.WindowsNodeConfig value) {
+      if (windowsNodeConfigBuilder_ == null) {
+        if (windowsNodeConfig_ != null) {
+          windowsNodeConfig_ =
+              com.google.container.v1beta1.WindowsNodeConfig.newBuilder(windowsNodeConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          windowsNodeConfig_ = value;
+        }
+        onChanged();
+      } else {
+        windowsNodeConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    public Builder clearWindowsNodeConfig() {
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfig_ = null;
+        onChanged();
+      } else {
+        windowsNodeConfig_ = null;
+        windowsNodeConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    public com.google.container.v1beta1.WindowsNodeConfig.Builder getWindowsNodeConfigBuilder() {
+
+      onChanged();
+      return getWindowsNodeConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    public com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder() {
+      if (windowsNodeConfigBuilder_ != null) {
+        return windowsNodeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return windowsNodeConfig_ == null
+            ? com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()
+            : windowsNodeConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 34;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.WindowsNodeConfig,
+            com.google.container.v1beta1.WindowsNodeConfig.Builder,
+            com.google.container.v1beta1.WindowsNodeConfigOrBuilder>
+        getWindowsNodeConfigFieldBuilder() {
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.WindowsNodeConfig,
+                com.google.container.v1beta1.WindowsNodeConfig.Builder,
+                com.google.container.v1beta1.WindowsNodeConfigOrBuilder>(
+                getWindowsNodeConfig(), getParentForChildren(), isClean());
+        windowsNodeConfig_ = null;
+      }
+      return windowsNodeConfigBuilder_;
     }
 
     @java.lang.Override

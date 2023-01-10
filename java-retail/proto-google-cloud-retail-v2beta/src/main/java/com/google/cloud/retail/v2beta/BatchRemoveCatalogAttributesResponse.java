@@ -77,8 +77,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were deleted. Only attributes that are not [in
-   * use][CatalogAttribute.in_use] by products can be deleted.
+   * Catalog attributes that were deleted. Only pre-loaded [catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+   * neither [in
+   * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+   * products nor predefined can be deleted.
    * </pre>
    *
    * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -92,8 +95,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were deleted. Only attributes that are not [in
-   * use][CatalogAttribute.in_use] by products can be deleted.
+   * Catalog attributes that were deleted. Only pre-loaded [catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+   * neither [in
+   * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+   * products nor predefined can be deleted.
    * </pre>
    *
    * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -107,8 +113,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were deleted. Only attributes that are not [in
-   * use][CatalogAttribute.in_use] by products can be deleted.
+   * Catalog attributes that were deleted. Only pre-loaded [catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+   * neither [in
+   * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+   * products nor predefined can be deleted.
    * </pre>
    *
    * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -123,8 +132,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were deleted. Only attributes that are not [in
-   * use][CatalogAttribute.in_use] by products can be deleted.
+   * Catalog attributes that were deleted. Only pre-loaded [catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+   * neither [in
+   * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+   * products nor predefined can be deleted.
    * </pre>
    *
    * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -142,9 +154,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were reset. Attributes that are [in
-   * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-   * configuration properties will reset to default values upon removal request.
+   * Catalog attributes that were reset. [Catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+   * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+   * are predefined attributes cannot be deleted; however, their configuration
+   * properties will reset to default values upon removal request.
    * </pre>
    *
    * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -158,9 +172,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were reset. Attributes that are [in
-   * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-   * configuration properties will reset to default values upon removal request.
+   * Catalog attributes that were reset. [Catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+   * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+   * are predefined attributes cannot be deleted; however, their configuration
+   * properties will reset to default values upon removal request.
    * </pre>
    *
    * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -174,9 +190,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were reset. Attributes that are [in
-   * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-   * configuration properties will reset to default values upon removal request.
+   * Catalog attributes that were reset. [Catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+   * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+   * are predefined attributes cannot be deleted; however, their configuration
+   * properties will reset to default values upon removal request.
    * </pre>
    *
    * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -191,9 +209,11 @@ public final class BatchRemoveCatalogAttributesResponse
    *
    *
    * <pre>
-   * Catalog attributes that were reset. Attributes that are [in
-   * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-   * configuration properties will reset to default values upon removal request.
+   * Catalog attributes that were reset. [Catalog
+   * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+   * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+   * are predefined attributes cannot be deleted; however, their configuration
+   * properties will reset to default values upon removal request.
    * </pre>
    *
    * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -623,8 +643,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -638,8 +661,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -653,8 +679,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -669,8 +698,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -685,8 +717,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -708,8 +743,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -730,8 +768,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -749,8 +790,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -767,8 +811,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were deleted. Only attributes that are not [in
-     * use][CatalogAttribute.in_use] by products can be deleted.
+     * Catalog attributes that were deleted. Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are
+     * neither [in
+     * use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by
+     * products nor predefined can be deleted.
      * </pre>
      *
      * <code>repeated string deleted_catalog_attributes = 1;</code>
@@ -801,9 +848,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -817,9 +866,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -833,9 +884,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -850,9 +903,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -867,9 +922,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -891,9 +948,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -914,9 +973,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -934,9 +995,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>
@@ -953,9 +1016,11 @@ public final class BatchRemoveCatalogAttributesResponse
      *
      *
      * <pre>
-     * Catalog attributes that were reset. Attributes that are [in
-     * use][CatalogAttribute.in_use] by products cannot be deleted, however their
-     * configuration properties will reset to default values upon removal request.
+     * Catalog attributes that were reset. [Catalog
+     * attributes][google.cloud.retail.v2beta.CatalogAttribute] that are either
+     * [in use][google.cloud.retail.v2beta.CatalogAttribute.in_use] by products or
+     * are predefined attributes cannot be deleted; however, their configuration
+     * properties will reset to default values upon removal request.
      * </pre>
      *
      * <code>repeated string reset_catalog_attributes = 2;</code>

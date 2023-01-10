@@ -44,6 +44,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     uid_ = "";
     etag_ = "";
+    errors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -397,7 +398,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+   * Required. The Kubernetes version to run on this node pool (e.g.
+   * `1.19.10-gke.1000`).
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -423,7 +425,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+   * Required. The Kubernetes version to run on this node pool (e.g.
+   * `1.19.10-gke.1000`).
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1057,6 +1060,85 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     return getMaxPodsConstraint();
   }
 
+  public static final int ERRORS_FIELD_NUMBER = 29;
+  private java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError> errors_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError> getErrorsList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>
+      getErrorsOrBuilderList() {
+    return errors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getErrorsCount() {
+    return errors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AwsNodePoolError getErrors(int index) {
+    return errors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder getErrorsOrBuilder(int index) {
+    return errors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1109,6 +1191,9 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (config_ != null) {
       output.writeMessage(28, getConfig());
+    }
+    for (int i = 0; i < errors_.size(); i++) {
+      output.writeMessage(29, errors_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1166,6 +1251,9 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     if (config_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getConfig());
     }
+    for (int i = 0; i < errors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, errors_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1210,6 +1298,7 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasMaxPodsConstraint()) {
       if (!getMaxPodsConstraint().equals(other.getMaxPodsConstraint())) return false;
     }
+    if (!getErrorsList().equals(other.getErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1258,6 +1347,10 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasMaxPodsConstraint()) {
       hash = (37 * hash) + MAX_PODS_CONSTRAINT_FIELD_NUMBER;
       hash = (53 * hash) + getMaxPodsConstraint().hashCode();
+    }
+    if (getErrorsCount() > 0) {
+      hash = (37 * hash) + ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getErrorsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1462,6 +1555,13 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         maxPodsConstraint_ = null;
         maxPodsConstraintBuilder_ = null;
       }
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+      } else {
+        errors_ = null;
+        errorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1523,6 +1623,15 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         result.maxPodsConstraint_ = maxPodsConstraint_;
       } else {
         result.maxPodsConstraint_ = maxPodsConstraintBuilder_.build();
+      }
+      if (errorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          errors_ = java.util.Collections.unmodifiableList(errors_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.errors_ = errors_;
+      } else {
+        result.errors_ = errorsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1614,6 +1723,33 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       if (other.hasMaxPodsConstraint()) {
         mergeMaxPodsConstraint(other.getMaxPodsConstraint());
+      }
+      if (errorsBuilder_ == null) {
+        if (!other.errors_.isEmpty()) {
+          if (errors_.isEmpty()) {
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureErrorsIsMutable();
+            errors_.addAll(other.errors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.errors_.isEmpty()) {
+          if (errorsBuilder_.isEmpty()) {
+            errorsBuilder_.dispose();
+            errorsBuilder_ = null;
+            errors_ = other.errors_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            errorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorsFieldBuilder()
+                    : null;
+          } else {
+            errorsBuilder_.addAllMessages(other.errors_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1725,6 +1861,20 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 226
+            case 234:
+              {
+                com.google.cloud.gkemulticloud.v1.AwsNodePoolError m =
+                    input.readMessage(
+                        com.google.cloud.gkemulticloud.v1.AwsNodePoolError.parser(),
+                        extensionRegistry);
+                if (errorsBuilder_ == null) {
+                  ensureErrorsIsMutable();
+                  errors_.add(m);
+                } else {
+                  errorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1875,7 +2025,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+     * Required. The Kubernetes version to run on this node pool (e.g.
+     * `1.19.10-gke.1000`).
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1900,7 +2051,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+     * Required. The Kubernetes version to run on this node pool (e.g.
+     * `1.19.10-gke.1000`).
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1925,7 +2077,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+     * Required. The Kubernetes version to run on this node pool (e.g.
+     * `1.19.10-gke.1000`).
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1949,7 +2102,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+     * Required. The Kubernetes version to run on this node pool (e.g.
+     * `1.19.10-gke.1000`).
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -1969,7 +2123,8 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+     * Required. The Kubernetes version to run on this node pool (e.g.
+     * `1.19.10-gke.1000`).
      * You can list all supported versions on a given Google Cloud region by
      * calling
      * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -3726,6 +3881,395 @@ public final class AwsNodePool extends com.google.protobuf.GeneratedMessageV3
         maxPodsConstraint_ = null;
       }
       return maxPodsConstraintBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError> errors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        errors_ =
+            new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.AwsNodePoolError>(errors_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AwsNodePoolError,
+            com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder,
+            com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>
+        errorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError> getErrorsList() {
+      if (errorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(errors_);
+      } else {
+        return errorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getErrorsCount() {
+      if (errorsBuilder_ == null) {
+        return errors_.size();
+      } else {
+        return errorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodePoolError getErrors(int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setErrors(int index, com.google.cloud.gkemulticloud.v1.AwsNodePoolError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.set(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setErrors(
+        int index, com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(com.google.cloud.gkemulticloud.v1.AwsNodePoolError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(int index, com.google.cloud.gkemulticloud.v1.AwsNodePoolError value) {
+      if (errorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureErrorsIsMutable();
+        errors_.add(index, value);
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(
+        com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addErrors(
+        int index, com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder builderForValue) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        errorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllErrors(
+        java.lang.Iterable<? extends com.google.cloud.gkemulticloud.v1.AwsNodePoolError> values) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errors_);
+        onChanged();
+      } else {
+        errorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearErrors() {
+      if (errorsBuilder_ == null) {
+        errors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        errorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeErrors(int index) {
+      if (errorsBuilder_ == null) {
+        ensureErrorsIsMutable();
+        errors_.remove(index);
+        onChanged();
+      } else {
+        errorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder getErrorsBuilder(int index) {
+      return getErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder getErrorsOrBuilder(
+        int index) {
+      if (errorsBuilder_ == null) {
+        return errors_.get(index);
+      } else {
+        return errorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>
+        getErrorsOrBuilderList() {
+      if (errorsBuilder_ != null) {
+        return errorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(errors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder addErrorsBuilder() {
+      return getErrorsFieldBuilder()
+          .addBuilder(com.google.cloud.gkemulticloud.v1.AwsNodePoolError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder addErrorsBuilder(int index) {
+      return getErrorsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.gkemulticloud.v1.AwsNodePoolError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A set of errors found in the node pool.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder>
+        getErrorsBuilderList() {
+      return getErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.gkemulticloud.v1.AwsNodePoolError,
+            com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder,
+            com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>
+        getErrorsFieldBuilder() {
+      if (errorsBuilder_ == null) {
+        errorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.gkemulticloud.v1.AwsNodePoolError,
+                com.google.cloud.gkemulticloud.v1.AwsNodePoolError.Builder,
+                com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>(
+                errors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        errors_ = null;
+      }
+      return errorsBuilder_;
     }
 
     @java.lang.Override

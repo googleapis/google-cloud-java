@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "ContactCenterInsightsClient",
           "rpcs": {
+            "BulkAnalyzeConversations": {
+              "methods": ["bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsOperationCallable", "bulkAnalyzeConversationsCallable"]
+            },
             "CalculateIssueModelStats": {
               "methods": ["calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStatsCallable"]
             },
@@ -36,6 +39,9 @@
             },
             "DeleteConversation": {
               "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteIssue": {
+              "methods": ["deleteIssue", "deleteIssue", "deleteIssue", "deleteIssueCallable"]
             },
             "DeleteIssueModel": {
               "methods": ["deleteIssueModelAsync", "deleteIssueModelAsync", "deleteIssueModelAsync", "deleteIssueModelOperationCallable", "deleteIssueModelCallable"]
@@ -72,6 +78,9 @@
             },
             "GetView": {
               "methods": ["getView", "getView", "getView", "getViewCallable"]
+            },
+            "IngestConversations": {
+              "methods": ["ingestConversationsAsync", "ingestConversationsAsync", "ingestConversationsAsync", "ingestConversationsOperationCallable", "ingestConversationsCallable"]
             },
             "ListAnalyses": {
               "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]

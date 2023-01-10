@@ -27,7 +27,8 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+   * Required. The resource name the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
    * `AwsNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -45,7 +46,8 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
+   * Required. The resource name the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] to delete.
    * `AwsNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;/awsNodePools/&lt;node-pool-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -78,9 +80,10 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, and the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource is not found,
-   * the request will succeed but no action will be taken on the server and a
-   * completed [Operation][google.longrunning.Operation] will be returned.
+   * If set to true, and the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource is not
+   * found, the request will succeed but no action will be taken on the server
+   * and a completed [Operation][google.longrunning.Operation] will be returned.
    * Useful for idempotent deletion.
    * </pre>
    *
@@ -94,7 +97,8 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * The current ETag of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+   * The current ETag of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
    * Allows clients to perform deletions through optimistic concurrency control.
    * If the provided ETag does not match the current etag of the node pool,
    * the request will fail and an ABORTED error will be returned.
@@ -109,7 +113,8 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * The current ETag of the [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
+   * The current ETag of the
+   * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
    * Allows clients to perform deletions through optimistic concurrency control.
    * If the provided ETag does not match the current etag of the node pool,
    * the request will fail and an ABORTED error will be returned.

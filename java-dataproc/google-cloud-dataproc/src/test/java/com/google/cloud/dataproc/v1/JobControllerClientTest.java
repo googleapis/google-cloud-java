@@ -101,6 +101,7 @@ public class JobControllerClientTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -155,6 +156,7 @@ public class JobControllerClientTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -217,6 +219,7 @@ public class JobControllerClientTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -368,6 +371,7 @@ public class JobControllerClientTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockJobController.addResponse(expectedResponse);
 
@@ -434,6 +438,7 @@ public class JobControllerClientTest {
             .setScheduling(JobScheduling.newBuilder().build())
             .setJobUuid("jobUuid-1437868776")
             .setDone(true)
+            .setDriverSchedulingConfig(DriverSchedulingConfig.newBuilder().build())
             .build();
     mockJobController.addResponse(expectedResponse);
 

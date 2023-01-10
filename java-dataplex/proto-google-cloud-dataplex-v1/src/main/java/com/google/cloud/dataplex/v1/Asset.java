@@ -1415,11 +1415,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1431,11 +1431,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1447,11 +1447,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1464,11 +1464,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1482,9 +1482,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -1497,9 +1497,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -1512,9 +1512,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -1528,9 +1528,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -1627,15 +1627,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * discovery periodically. Successive discovery runs must be scheduled at
-     * least 60 minutes apart.
-     * The default value is to run discovery every 60 minutes.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running discovery periodically. Successive discovery runs must be
+     * scheduled at least 60 minutes apart. The default value is to run
+     * discovery every 60 minutes. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+     * from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1647,15 +1647,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * discovery periodically. Successive discovery runs must be scheduled at
-     * least 60 minutes apart.
-     * The default value is to run discovery every 60 minutes.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running discovery periodically. Successive discovery runs must be
+     * scheduled at least 60 minutes apart. The default value is to run
+     * discovery every 60 minutes. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+     * from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1667,15 +1667,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * discovery periodically. Successive discovery runs must be scheduled at
-     * least 60 minutes apart.
-     * The default value is to run discovery every 60 minutes.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running discovery periodically. Successive discovery runs must be
+     * scheduled at least 60 minutes apart. The default value is to run
+     * discovery every 60 minutes. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+     * from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1745,8 +1745,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows.
+       * Optional. The number of rows to interpret as header rows that should be
+       * skipped when reading data rows.
        * </pre>
        *
        * <code>int32 header_rows = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1759,7 +1759,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The delimiter being used to separate values. This defaults to ','.
+       * Optional. The delimiter being used to separate values. This defaults to
+       * ','.
        * </pre>
        *
        * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1771,7 +1772,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The delimiter being used to separate values. This defaults to ','.
+       * Optional. The delimiter being used to separate values. This defaults to
+       * ','.
        * </pre>
        *
        * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1875,8 +1877,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The number of rows to interpret as header rows that should be skipped
-       * when reading data rows.
+       * Optional. The number of rows to interpret as header rows that should be
+       * skipped when reading data rows.
        * </pre>
        *
        * <code>int32 header_rows = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1894,7 +1896,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The delimiter being used to separate values. This defaults to ','.
+       * Optional. The delimiter being used to separate values. This defaults to
+       * ','.
        * </pre>
        *
        * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1917,7 +1920,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The delimiter being used to separate values. This defaults to ','.
+       * Optional. The delimiter being used to separate values. This defaults to
+       * ','.
        * </pre>
        *
        * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2412,8 +2416,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The number of rows to interpret as header rows that should be skipped
-         * when reading data rows.
+         * Optional. The number of rows to interpret as header rows that should be
+         * skipped when reading data rows.
          * </pre>
          *
          * <code>int32 header_rows = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2428,8 +2432,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The number of rows to interpret as header rows that should be skipped
-         * when reading data rows.
+         * Optional. The number of rows to interpret as header rows that should be
+         * skipped when reading data rows.
          * </pre>
          *
          * <code>int32 header_rows = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2447,8 +2451,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The number of rows to interpret as header rows that should be skipped
-         * when reading data rows.
+         * Optional. The number of rows to interpret as header rows that should be
+         * skipped when reading data rows.
          * </pre>
          *
          * <code>int32 header_rows = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2467,7 +2471,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The delimiter being used to separate values. This defaults to ','.
+         * Optional. The delimiter being used to separate values. This defaults to
+         * ','.
          * </pre>
          *
          * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2489,7 +2494,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The delimiter being used to separate values. This defaults to ','.
+         * Optional. The delimiter being used to separate values. This defaults to
+         * ','.
          * </pre>
          *
          * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2511,7 +2517,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The delimiter being used to separate values. This defaults to ','.
+         * Optional. The delimiter being used to separate values. This defaults to
+         * ','.
          * </pre>
          *
          * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2532,7 +2539,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The delimiter being used to separate values. This defaults to ','.
+         * Optional. The delimiter being used to separate values. This defaults to
+         * ','.
          * </pre>
          *
          * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2549,7 +2557,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Optional. The delimiter being used to separate values. This defaults to ','.
+         * Optional. The delimiter being used to separate values. This defaults to
+         * ','.
          * </pre>
          *
          * <code>string delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3617,11 +3626,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3635,11 +3644,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3653,11 +3662,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3672,11 +3681,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to include during
-     * discovery if only a subset of the data should considered.  For Cloud
-     * Storage bucket assets, these are interpreted as glob patterns used to
-     * match object names. For BigQuery dataset assets, these are interpreted as
-     * patterns to match table names.
+     * Optional. The list of patterns to apply for selecting data to include
+     * during discovery if only a subset of the data should considered.  For
+     * Cloud Storage bucket assets, these are interpreted as glob patterns used
+     * to match object names. For BigQuery dataset assets, these are interpreted
+     * as patterns to match table names.
      * </pre>
      *
      * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3694,9 +3703,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -3711,9 +3720,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -3728,9 +3737,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -3746,9 +3755,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The list of patterns to apply for selecting data to exclude during
-     * discovery.  For Cloud Storage bucket assets, these are interpreted as
-     * glob patterns used to match object names. For BigQuery dataset assets,
+     * Optional. The list of patterns to apply for selecting data to exclude
+     * during discovery.  For Cloud Storage bucket assets, these are interpreted
+     * as glob patterns used to match object names. For BigQuery dataset assets,
      * these are interpreted as patterns to match table names.
      * </pre>
      *
@@ -3876,15 +3885,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * discovery periodically. Successive discovery runs must be scheduled at
-     * least 60 minutes apart.
-     * The default value is to run discovery every 60 minutes.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running discovery periodically. Successive discovery runs must be
+     * scheduled at least 60 minutes apart. The default value is to run
+     * discovery every 60 minutes. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+     * from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3898,15 +3907,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * discovery periodically. Successive discovery runs must be scheduled at
-     * least 60 minutes apart.
-     * The default value is to run discovery every 60 minutes.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running discovery periodically. Successive discovery runs must be
+     * scheduled at least 60 minutes apart. The default value is to run
+     * discovery every 60 minutes. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+     * from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3933,15 +3942,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-     * discovery periodically. Successive discovery runs must be scheduled at
-     * least 60 minutes apart.
-     * The default value is to run discovery every 60 minutes.
-     * To explicitly set a timezone to the cron tab, apply a prefix in the
-     * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-     * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-     * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-     * "TZ=America/New_York 1 * * * *".
+     * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+     * running discovery periodically. Successive discovery runs must be
+     * scheduled at least 60 minutes apart. The default value is to run
+     * discovery every 60 minutes. To explicitly set a timezone to the cron
+     * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+     * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+     * from IANA time zone database. For example,
+     * `CRON_TZ=America/New_York 1 * * * *`,
+     * or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4576,11 +4585,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4595,11 +4604,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4614,11 +4623,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4634,11 +4643,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4654,11 +4663,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4681,11 +4690,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4707,11 +4716,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4730,11 +4739,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4752,11 +4761,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to include during
-       * discovery if only a subset of the data should considered.  For Cloud
-       * Storage bucket assets, these are interpreted as glob patterns used to
-       * match object names. For BigQuery dataset assets, these are interpreted as
-       * patterns to match table names.
+       * Optional. The list of patterns to apply for selecting data to include
+       * during discovery if only a subset of the data should considered.  For
+       * Cloud Storage bucket assets, these are interpreted as glob patterns used
+       * to match object names. For BigQuery dataset assets, these are interpreted
+       * as patterns to match table names.
        * </pre>
        *
        * <code>repeated string include_patterns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4789,9 +4798,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4807,9 +4816,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4825,9 +4834,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4844,9 +4853,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4863,9 +4872,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4889,9 +4898,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4914,9 +4923,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4936,9 +4945,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -4957,9 +4966,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The list of patterns to apply for selecting data to exclude during
-       * discovery.  For Cloud Storage bucket assets, these are interpreted as
-       * glob patterns used to match object names. For BigQuery dataset assets,
+       * Optional. The list of patterns to apply for selecting data to exclude
+       * during discovery.  For Cloud Storage bucket assets, these are interpreted
+       * as glob patterns used to match object names. For BigQuery dataset assets,
        * these are interpreted as patterns to match table names.
        * </pre>
        *
@@ -5401,15 +5410,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * discovery periodically. Successive discovery runs must be scheduled at
-       * least 60 minutes apart.
-       * The default value is to run discovery every 60 minutes.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running discovery periodically. Successive discovery runs must be
+       * scheduled at least 60 minutes apart. The default value is to run
+       * discovery every 60 minutes. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+       * from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5424,15 +5433,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * discovery periodically. Successive discovery runs must be scheduled at
-       * least 60 minutes apart.
-       * The default value is to run discovery every 60 minutes.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running discovery periodically. Successive discovery runs must be
+       * scheduled at least 60 minutes apart. The default value is to run
+       * discovery every 60 minutes. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+       * from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5460,15 +5469,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * discovery periodically. Successive discovery runs must be scheduled at
-       * least 60 minutes apart.
-       * The default value is to run discovery every 60 minutes.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running discovery periodically. Successive discovery runs must be
+       * scheduled at least 60 minutes apart. The default value is to run
+       * discovery every 60 minutes. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+       * from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5496,15 +5505,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * discovery periodically. Successive discovery runs must be scheduled at
-       * least 60 minutes apart.
-       * The default value is to run discovery every 60 minutes.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running discovery periodically. Successive discovery runs must be
+       * scheduled at least 60 minutes apart. The default value is to run
+       * discovery every 60 minutes. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+       * from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5525,15 +5534,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * discovery periodically. Successive discovery runs must be scheduled at
-       * least 60 minutes apart.
-       * The default value is to run discovery every 60 minutes.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running discovery periodically. Successive discovery runs must be
+       * scheduled at least 60 minutes apart. The default value is to run
+       * discovery every 60 minutes. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+       * from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5552,15 +5561,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running
-       * discovery periodically. Successive discovery runs must be scheduled at
-       * least 60 minutes apart.
-       * The default value is to run discovery every 60 minutes.
-       * To explicitly set a timezone to the cron tab, apply a prefix in the
-       * cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or TZ=${IANA_TIME_ZONE}".
-       * The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone
-       * database. For example, "CRON_TZ=America/New_York 1 * * * *", or
-       * "TZ=America/New_York 1 * * * *".
+       * Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for
+       * running discovery periodically. Successive discovery runs must be
+       * scheduled at least 60 minutes apart. The default value is to run
+       * discovery every 60 minutes. To explicitly set a timezone to the cron
+       * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
+       * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
+       * from IANA time zone database. For example,
+       * `CRON_TZ=America/New_York 1 * * * *`,
+       * or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5652,8 +5661,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Relative name of the cloud resource that contains the data that is
-     * being managed within a lake. For example:
+     * Immutable. Relative name of the cloud resource that contains the data
+     * that is being managed within a lake. For example:
      *   `projects/{project_number}/buckets/{bucket_id}`
      *   `projects/{project_number}/datasets/{dataset_id}`
      * </pre>
@@ -5667,8 +5676,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Relative name of the cloud resource that contains the data that is
-     * being managed within a lake. For example:
+     * Immutable. Relative name of the cloud resource that contains the data
+     * that is being managed within a lake. For example:
      *   `projects/{project_number}/buckets/{bucket_id}`
      *   `projects/{project_number}/datasets/{dataset_id}`
      * </pre>
@@ -5923,8 +5932,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Relative name of the cloud resource that contains the data that is
-     * being managed within a lake. For example:
+     * Immutable. Relative name of the cloud resource that contains the data
+     * that is being managed within a lake. For example:
      *   `projects/{project_number}/buckets/{bucket_id}`
      *   `projects/{project_number}/datasets/{dataset_id}`
      * </pre>
@@ -5949,8 +5958,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Relative name of the cloud resource that contains the data that is
-     * being managed within a lake. For example:
+     * Immutable. Relative name of the cloud resource that contains the data
+     * that is being managed within a lake. For example:
      *   `projects/{project_number}/buckets/{bucket_id}`
      *   `projects/{project_number}/datasets/{dataset_id}`
      * </pre>
@@ -6376,8 +6385,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Relative name of the cloud resource that contains the data that is
-       * being managed within a lake. For example:
+       * Immutable. Relative name of the cloud resource that contains the data
+       * that is being managed within a lake. For example:
        *   `projects/{project_number}/buckets/{bucket_id}`
        *   `projects/{project_number}/datasets/{dataset_id}`
        * </pre>
@@ -6401,8 +6410,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Relative name of the cloud resource that contains the data that is
-       * being managed within a lake. For example:
+       * Immutable. Relative name of the cloud resource that contains the data
+       * that is being managed within a lake. For example:
        *   `projects/{project_number}/buckets/{bucket_id}`
        *   `projects/{project_number}/datasets/{dataset_id}`
        * </pre>
@@ -6426,8 +6435,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Relative name of the cloud resource that contains the data that is
-       * being managed within a lake. For example:
+       * Immutable. Relative name of the cloud resource that contains the data
+       * that is being managed within a lake. For example:
        *   `projects/{project_number}/buckets/{bucket_id}`
        *   `projects/{project_number}/datasets/{dataset_id}`
        * </pre>
@@ -6450,8 +6459,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Relative name of the cloud resource that contains the data that is
-       * being managed within a lake. For example:
+       * Immutable. Relative name of the cloud resource that contains the data
+       * that is being managed within a lake. For example:
        *   `projects/{project_number}/buckets/{bucket_id}`
        *   `projects/{project_number}/datasets/{dataset_id}`
        * </pre>
@@ -6470,8 +6479,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. Relative name of the cloud resource that contains the data that is
-       * being managed within a lake. For example:
+       * Immutable. Relative name of the cloud resource that contains the data
+       * that is being managed within a lake. For example:
        *   `projects/{project_number}/buckets/{bucket_id}`
        *   `projects/{project_number}/datasets/{dataset_id}`
        * </pre>
@@ -11117,8 +11126,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the asset. This ID will be
-   * different if the asset is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the asset. This ID
+   * will be different if the asset is deleted and re-created with the same
+   * name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -11141,8 +11151,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the asset. This ID will be
-   * different if the asset is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the asset. This ID
+   * will be different if the asset is deleted and re-created with the same
+   * name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -11558,7 +11569,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Status of the security policy applied to resource referenced by this asset.
+   * Output only. Status of the security policy applied to resource referenced
+   * by this asset.
    * </pre>
    *
    * <code>
@@ -11575,7 +11587,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Status of the security policy applied to resource referenced by this asset.
+   * Output only. Status of the security policy applied to resource referenced
+   * by this asset.
    * </pre>
    *
    * <code>
@@ -11594,7 +11607,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Status of the security policy applied to resource referenced by this asset.
+   * Output only. Status of the security policy applied to resource referenced
+   * by this asset.
    * </pre>
    *
    * <code>
@@ -11612,10 +11626,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data referenced by this
-   * asset.
-   * When this spec is left unset, the asset will use the spec set on the parent
-   * zone.
+   * Optional. Specification of the discovery feature applied to data referenced
+   * by this asset. When this spec is left unset, the asset will use the spec
+   * set on the parent zone.
    * </pre>
    *
    * <code>
@@ -11632,10 +11645,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data referenced by this
-   * asset.
-   * When this spec is left unset, the asset will use the spec set on the parent
-   * zone.
+   * Optional. Specification of the discovery feature applied to data referenced
+   * by this asset. When this spec is left unset, the asset will use the spec
+   * set on the parent zone.
    * </pre>
    *
    * <code>
@@ -11654,10 +11666,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data referenced by this
-   * asset.
-   * When this spec is left unset, the asset will use the spec set on the parent
-   * zone.
+   * Optional. Specification of the discovery feature applied to data referenced
+   * by this asset. When this spec is left unset, the asset will use the spec
+   * set on the parent zone.
    * </pre>
    *
    * <code>
@@ -11675,7 +11686,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Status of the discovery feature applied to data referenced by this asset.
+   * Output only. Status of the discovery feature applied to data referenced by
+   * this asset.
    * </pre>
    *
    * <code>
@@ -11692,7 +11704,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Status of the discovery feature applied to data referenced by this asset.
+   * Output only. Status of the discovery feature applied to data referenced by
+   * this asset.
    * </pre>
    *
    * <code>
@@ -11711,7 +11724,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Status of the discovery feature applied to data referenced by this asset.
+   * Output only. Status of the discovery feature applied to data referenced by
+   * this asset.
    * </pre>
    *
    * <code>
@@ -12662,8 +12676,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the asset. This ID will be
-     * different if the asset is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the asset. This ID
+     * will be different if the asset is deleted and re-created with the same
+     * name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -12685,8 +12700,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the asset. This ID will be
-     * different if the asset is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the asset. This ID
+     * will be different if the asset is deleted and re-created with the same
+     * name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -12708,8 +12724,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the asset. This ID will be
-     * different if the asset is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the asset. This ID
+     * will be different if the asset is deleted and re-created with the same
+     * name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -12730,8 +12747,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the asset. This ID will be
-     * different if the asset is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the asset. This ID
+     * will be different if the asset is deleted and re-created with the same
+     * name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -12748,8 +12766,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. System generated globally unique ID for the asset. This ID will be
-     * different if the asset is deleted and re-created with the same name.
+     * Output only. System generated globally unique ID for the asset. This ID
+     * will be different if the asset is deleted and re-created with the same
+     * name.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13948,7 +13967,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -13964,7 +13984,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -13986,7 +14007,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14010,7 +14032,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14032,7 +14055,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14060,7 +14084,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14082,7 +14107,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14098,7 +14124,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14118,7 +14145,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the security policy applied to resource referenced by this asset.
+     * Output only. Status of the security policy applied to resource referenced
+     * by this asset.
      * </pre>
      *
      * <code>
@@ -14152,10 +14180,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14171,10 +14198,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14196,10 +14222,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14223,10 +14248,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14248,10 +14272,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14279,10 +14302,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14304,10 +14326,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14323,10 +14344,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14346,10 +14366,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specification of the discovery feature applied to data referenced by this
-     * asset.
-     * When this spec is left unset, the asset will use the spec set on the parent
-     * zone.
+     * Optional. Specification of the discovery feature applied to data referenced
+     * by this asset. When this spec is left unset, the asset will use the spec
+     * set on the parent zone.
      * </pre>
      *
      * <code>
@@ -14383,7 +14402,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14399,7 +14419,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14421,7 +14442,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14445,7 +14467,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14467,7 +14490,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14495,7 +14519,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14517,7 +14542,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14533,7 +14559,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>
@@ -14554,7 +14581,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Status of the discovery feature applied to data referenced by this asset.
+     * Output only. Status of the discovery feature applied to data referenced by
+     * this asset.
      * </pre>
      *
      * <code>

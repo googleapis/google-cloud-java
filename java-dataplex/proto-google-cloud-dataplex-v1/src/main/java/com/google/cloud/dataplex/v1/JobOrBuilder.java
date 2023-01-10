@@ -231,7 +231,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The full resource name for the job run under a particular service.
+   * Output only. The full resource name for the job run under a particular
+   * service.
    * </pre>
    *
    * <code>string service_job = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -243,7 +244,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The full resource name for the job run under a particular service.
+   * Output only. The full resource name for the job run under a particular
+   * service.
    * </pre>
    *
    * <code>string service_job = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

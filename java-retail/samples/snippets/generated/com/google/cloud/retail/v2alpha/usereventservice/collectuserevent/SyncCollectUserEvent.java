@@ -40,6 +40,7 @@ public class SyncCollectUserEvent {
               .setUserEvent("userEvent315571599")
               .setUri("uri116076")
               .setEts(100772)
+              .setRawJson("rawJson985449776")
               .build();
       HttpBody response = userEventServiceClient.collectUserEvent(request);
     }

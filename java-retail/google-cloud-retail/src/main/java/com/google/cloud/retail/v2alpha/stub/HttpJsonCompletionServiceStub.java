@@ -86,6 +86,10 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             serializer.putQueryParam(fields, "dataset", request.getDataset());
                             serializer.putQueryParam(fields, "deviceType", request.getDeviceType());
                             serializer.putQueryParam(
+                                fields,
+                                "enableAttributeSuggestions",
+                                request.getEnableAttributeSuggestions());
+                            serializer.putQueryParam(
                                 fields, "languageCodes", request.getLanguageCodesList());
                             serializer.putQueryParam(
                                 fields, "maxSuggestions", request.getMaxSuggestions());

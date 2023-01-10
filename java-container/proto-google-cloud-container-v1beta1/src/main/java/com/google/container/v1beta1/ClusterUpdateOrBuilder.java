@@ -1721,4 +1721,33 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder
       getDesiredNodePoolLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired stack type of the cluster.
+   * If a stack type is provided and does not match the current stack type of
+   * the cluster, update will attempt to change the stack type to the new type.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.StackType desired_stack_type = 119;</code>
+   *
+   * @return The enum numeric value on the wire for desiredStackType.
+   */
+  int getDesiredStackTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The desired stack type of the cluster.
+   * If a stack type is provided and does not match the current stack type of
+   * the cluster, update will attempt to change the stack type to the new type.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.StackType desired_stack_type = 119;</code>
+   *
+   * @return The desiredStackType.
+   */
+  com.google.container.v1beta1.StackType getDesiredStackType();
 }

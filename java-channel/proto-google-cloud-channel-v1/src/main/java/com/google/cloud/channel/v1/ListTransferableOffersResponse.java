@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers].
+ * Response message for
+ * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListTransferableOffersResponse}
@@ -151,8 +152,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-   * that page.
+   * Pass to
+   * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -176,8 +178,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-   * that page.
+   * Pass to
+   * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -373,7 +376,8 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers].
+   * Response message for
+   * [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListTransferableOffersResponse}
@@ -984,8 +988,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1008,8 +1013,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1032,8 +1038,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1055,8 +1062,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1074,8 +1082,9 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableOffersRequest.page_token][google.cloud.channel.v1.ListTransferableOffersRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

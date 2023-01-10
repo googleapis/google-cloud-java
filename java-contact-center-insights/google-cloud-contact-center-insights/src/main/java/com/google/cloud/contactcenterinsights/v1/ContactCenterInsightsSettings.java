@@ -138,6 +138,36 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     return ((ContactCenterInsightsStubSettings) getStubSettings()).deleteAnalysisSettings();
   }
 
+  /** Returns the object with the settings used for calls to bulkAnalyzeConversations. */
+  public UnaryCallSettings<BulkAnalyzeConversationsRequest, Operation>
+      bulkAnalyzeConversationsSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .bulkAnalyzeConversationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bulkAnalyzeConversations. */
+  public OperationCallSettings<
+          BulkAnalyzeConversationsRequest,
+          BulkAnalyzeConversationsResponse,
+          BulkAnalyzeConversationsMetadata>
+      bulkAnalyzeConversationsOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .bulkAnalyzeConversationsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to ingestConversations. */
+  public UnaryCallSettings<IngestConversationsRequest, Operation> ingestConversationsSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).ingestConversationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to ingestConversations. */
+  public OperationCallSettings<
+          IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+      ingestConversationsOperationSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings())
+        .ingestConversationsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to exportInsightsData. */
   public UnaryCallSettings<ExportInsightsDataRequest, Operation> exportInsightsDataSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).exportInsightsDataSettings();
@@ -230,6 +260,11 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
   /** Returns the object with the settings used for calls to updateIssue. */
   public UnaryCallSettings<UpdateIssueRequest, Issue> updateIssueSettings() {
     return ((ContactCenterInsightsStubSettings) getStubSettings()).updateIssueSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteIssue. */
+  public UnaryCallSettings<DeleteIssueRequest, Empty> deleteIssueSettings() {
+    return ((ContactCenterInsightsStubSettings) getStubSettings()).deleteIssueSettings();
   }
 
   /** Returns the object with the settings used for calls to calculateIssueModelStats. */
@@ -485,6 +520,34 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
       return getStubSettingsBuilder().deleteAnalysisSettings();
     }
 
+    /** Returns the builder for the settings used for calls to bulkAnalyzeConversations. */
+    public UnaryCallSettings.Builder<BulkAnalyzeConversationsRequest, Operation>
+        bulkAnalyzeConversationsSettings() {
+      return getStubSettingsBuilder().bulkAnalyzeConversationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bulkAnalyzeConversations. */
+    public OperationCallSettings.Builder<
+            BulkAnalyzeConversationsRequest,
+            BulkAnalyzeConversationsResponse,
+            BulkAnalyzeConversationsMetadata>
+        bulkAnalyzeConversationsOperationSettings() {
+      return getStubSettingsBuilder().bulkAnalyzeConversationsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to ingestConversations. */
+    public UnaryCallSettings.Builder<IngestConversationsRequest, Operation>
+        ingestConversationsSettings() {
+      return getStubSettingsBuilder().ingestConversationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to ingestConversations. */
+    public OperationCallSettings.Builder<
+            IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
+        ingestConversationsOperationSettings() {
+      return getStubSettingsBuilder().ingestConversationsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to exportInsightsData. */
     public UnaryCallSettings.Builder<ExportInsightsDataRequest, Operation>
         exportInsightsDataSettings() {
@@ -579,6 +642,11 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
     /** Returns the builder for the settings used for calls to updateIssue. */
     public UnaryCallSettings.Builder<UpdateIssueRequest, Issue> updateIssueSettings() {
       return getStubSettingsBuilder().updateIssueSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteIssue. */
+    public UnaryCallSettings.Builder<DeleteIssueRequest, Empty> deleteIssueSettings() {
+      return getStubSettingsBuilder().deleteIssueSettings();
     }
 
     /** Returns the builder for the settings used for calls to calculateIssueModelStats. */

@@ -250,6 +250,16 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * DNS records are accessible from within the cluster.
+     * </pre>
+     *
+     * <code>CLUSTER_SCOPE = 1;</code>
+     */
+    CLUSTER_SCOPE(1),
+    /**
+     *
+     *
+     * <pre>
      * DNS records are accessible from within the VPC.
      * </pre>
      *
@@ -269,6 +279,16 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DNS_SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int DNS_SCOPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * DNS records are accessible from within the cluster.
+     * </pre>
+     *
+     * <code>CLUSTER_SCOPE = 1;</code>
+     */
+    public static final int CLUSTER_SCOPE_VALUE = 1;
     /**
      *
      *
@@ -306,6 +326,8 @@ public final class DNSConfig extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return DNS_SCOPE_UNSPECIFIED;
+        case 1:
+          return CLUSTER_SCOPE;
         case 2:
           return VPC_SCOPE;
         default:

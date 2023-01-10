@@ -538,7 +538,8 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * Optional. Shielded Instance Config for clusters using [Compute Engine
+   * Shielded
    * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
    * </pre>
    *
@@ -553,7 +554,8 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * Optional. Shielded Instance Config for clusters using [Compute Engine
+   * Shielded
    * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
    * </pre>
    *
@@ -568,7 +570,8 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Shielded Instance Config for clusters using [Compute Engine Shielded
+   * Optional. Shielded Instance Config for clusters using [Compute Engine
+   * Shielded
    * VMs](https://cloud.google.com/security/shielded-cloud/shielded-vm).
    * </pre>
    *

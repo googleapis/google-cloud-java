@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for [GetAcceleratorType][google.cloud.tpu.v2alpha1.Tpu.GetAcceleratorType].
+ * Request for
+ * [GetAcceleratorType][google.cloud.tpu.v2alpha1.Tpu.GetAcceleratorType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.GetAcceleratorTypeRequest}
@@ -284,7 +285,8 @@ public final class GetAcceleratorTypeRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request for [GetAcceleratorType][google.cloud.tpu.v2alpha1.Tpu.GetAcceleratorType].
+   * Request for
+   * [GetAcceleratorType][google.cloud.tpu.v2alpha1.Tpu.GetAcceleratorType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.GetAcceleratorTypeRequest}

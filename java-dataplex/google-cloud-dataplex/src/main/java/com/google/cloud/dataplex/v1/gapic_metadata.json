@@ -44,6 +44,45 @@
         }
       }
     },
+    "DataScanService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataScanServiceClient",
+          "rpcs": {
+            "CreateDataScan": {
+              "methods": ["createDataScanAsync", "createDataScanAsync", "createDataScanAsync", "createDataScanOperationCallable", "createDataScanCallable"]
+            },
+            "DeleteDataScan": {
+              "methods": ["deleteDataScanAsync", "deleteDataScanAsync", "deleteDataScanAsync", "deleteDataScanOperationCallable", "deleteDataScanCallable"]
+            },
+            "GetDataScan": {
+              "methods": ["getDataScan", "getDataScan", "getDataScan", "getDataScanCallable"]
+            },
+            "GetDataScanJob": {
+              "methods": ["getDataScanJob", "getDataScanJob", "getDataScanJob", "getDataScanJobCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDataScanJobs": {
+              "methods": ["listDataScanJobs", "listDataScanJobs", "listDataScanJobs", "listDataScanJobsPagedCallable", "listDataScanJobsCallable"]
+            },
+            "ListDataScans": {
+              "methods": ["listDataScans", "listDataScans", "listDataScans", "listDataScansPagedCallable", "listDataScansCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RunDataScan": {
+              "methods": ["runDataScan", "runDataScan", "runDataScan", "runDataScanCallable"]
+            },
+            "UpdateDataScan": {
+              "methods": ["updateDataScanAsync", "updateDataScanAsync", "updateDataScanOperationCallable", "updateDataScanCallable"]
+            }
+          }
+        }
+      }
+    },
     "MetadataService": {
       "clients": {
         "grpc": {

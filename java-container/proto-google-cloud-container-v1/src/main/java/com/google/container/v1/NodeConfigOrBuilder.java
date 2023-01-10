@@ -1365,4 +1365,119 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1.NodePoolLoggingConfig logging_config = 38;</code>
    */
   com.google.container.v1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 39;</code>
+   *
+   * @return Whether the windowsNodeConfig field is set.
+   */
+  boolean hasWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 39;</code>
+   *
+   * @return The windowsNodeConfig.
+   */
+  com.google.container.v1.WindowsNodeConfig getWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 39;</code>
+   */
+  com.google.container.v1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;</code>
+   *
+   * @return Whether the localNvmeSsdBlockConfig field is set.
+   */
+  boolean hasLocalNvmeSsdBlockConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;</code>
+   *
+   * @return The localNvmeSsdBlockConfig.
+   */
+  com.google.container.v1.LocalNvmeSsdBlockConfig getLocalNvmeSsdBlockConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;</code>
+   */
+  com.google.container.v1.LocalNvmeSsdBlockConfigOrBuilder getLocalNvmeSsdBlockConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   *
+   * @return Whether the ephemeralStorageLocalSsdConfig field is set.
+   */
+  boolean hasEphemeralStorageLocalSsdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   *
+   * @return The ephemeralStorageLocalSsdConfig.
+   */
+  com.google.container.v1.EphemeralStorageLocalSsdConfig getEphemeralStorageLocalSsdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   */
+  com.google.container.v1.EphemeralStorageLocalSsdConfigOrBuilder
+      getEphemeralStorageLocalSsdConfigOrBuilder();
 }

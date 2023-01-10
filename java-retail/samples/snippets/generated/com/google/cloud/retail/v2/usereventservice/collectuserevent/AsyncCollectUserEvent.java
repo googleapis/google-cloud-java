@@ -41,6 +41,7 @@ public class AsyncCollectUserEvent {
               .setUserEvent("userEvent315571599")
               .setUri("uri116076")
               .setEts(100772)
+              .setRawJson("rawJson985449776")
               .build();
       ApiFuture<HttpBody> future =
           userEventServiceClient.collectUserEventCallable().futureCall(request);

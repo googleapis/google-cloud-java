@@ -72,7 +72,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Defines whether the instance should have confidential compute enabled.
+   * Optional. Defines whether the instance should have confidential compute
+   * enabled.
    * </pre>
    *
    * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -420,7 +421,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Defines whether the instance should have confidential compute enabled.
+     * Optional. Defines whether the instance should have confidential compute
+     * enabled.
      * </pre>
      *
      * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -435,7 +437,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Defines whether the instance should have confidential compute enabled.
+     * Optional. Defines whether the instance should have confidential compute
+     * enabled.
      * </pre>
      *
      * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -453,7 +456,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Defines whether the instance should have confidential compute enabled.
+     * Optional. Defines whether the instance should have confidential compute
+     * enabled.
      * </pre>
      *
      * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

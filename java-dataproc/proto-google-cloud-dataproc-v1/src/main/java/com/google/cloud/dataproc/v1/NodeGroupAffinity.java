@@ -23,6 +23,8 @@ package com.google.cloud.dataproc.v1;
  *
  * <pre>
  * Node Group Affinity for clusters using sole-tenant node groups.
+ * **The Dataproc `NodeGroupAffinity` resource is not related to the
+ * Dataproc [NodeGroup][google.cloud.dataproc.v1.NodeGroup] resource.**
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.NodeGroupAffinity}
@@ -294,6 +296,8 @@ public final class NodeGroupAffinity extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Node Group Affinity for clusters using sole-tenant node groups.
+   * **The Dataproc `NodeGroupAffinity` resource is not related to the
+   * Dataproc [NodeGroup][google.cloud.dataproc.v1.NodeGroup] resource.**
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.NodeGroupAffinity}

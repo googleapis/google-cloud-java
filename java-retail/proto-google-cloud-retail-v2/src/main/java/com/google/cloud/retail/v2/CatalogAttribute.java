@@ -44,6 +44,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     indexableOption_ = 0;
     dynamicFacetableOption_ = 0;
     searchableOption_ = 0;
+    exactSearchableOption_ = 0;
+    retrievableOption_ = 0;
   }
 
   @java.lang.Override
@@ -247,8 +249,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [INDEXABLE_ENABLED][google.cloud.retail.v2.CatalogAttribute.IndexableOption.INDEXABLE_ENABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>INDEXABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -281,8 +282,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [INDEXABLE_ENABLED][google.cloud.retail.v2.CatalogAttribute.IndexableOption.INDEXABLE_ENABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>INDEXABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -408,8 +408,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [DYNAMIC_FACETABLE_ENABLED][google.cloud.retail.v2.CatalogAttribute.DynamicFacetableOption.DYNAMIC_FACETABLE_ENABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -442,8 +441,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [DYNAMIC_FACETABLE_ENABLED][google.cloud.retail.v2.CatalogAttribute.DynamicFacetableOption.DYNAMIC_FACETABLE_ENABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -570,8 +568,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.SearchableOption.SEARCHABLE_DISABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -604,8 +601,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.SearchableOption.SEARCHABLE_DISABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -717,6 +713,330 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.CatalogAttribute.SearchableOption)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The status of the exact-searchable option of a catalog attribute.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption}
+   */
+  public enum ExactSearchableOption implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Value used when unset. Defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
+     * </pre>
+     *
+     * <code>EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    EXACT_SEARCHABLE_OPTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Exact searchable option enabled for an attribute.
+     * </pre>
+     *
+     * <code>EXACT_SEARCHABLE_ENABLED = 1;</code>
+     */
+    EXACT_SEARCHABLE_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Exact searchable option disabled for an attribute.
+     * </pre>
+     *
+     * <code>EXACT_SEARCHABLE_DISABLED = 2;</code>
+     */
+    EXACT_SEARCHABLE_DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Value used when unset. Defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
+     * </pre>
+     *
+     * <code>EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int EXACT_SEARCHABLE_OPTION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Exact searchable option enabled for an attribute.
+     * </pre>
+     *
+     * <code>EXACT_SEARCHABLE_ENABLED = 1;</code>
+     */
+    public static final int EXACT_SEARCHABLE_ENABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Exact searchable option disabled for an attribute.
+     * </pre>
+     *
+     * <code>EXACT_SEARCHABLE_DISABLED = 2;</code>
+     */
+    public static final int EXACT_SEARCHABLE_DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExactSearchableOption valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ExactSearchableOption forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EXACT_SEARCHABLE_OPTION_UNSPECIFIED;
+        case 1:
+          return EXACT_SEARCHABLE_ENABLED;
+        case 2:
+          return EXACT_SEARCHABLE_DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExactSearchableOption>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExactSearchableOption>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ExactSearchableOption>() {
+              public ExactSearchableOption findValueByNumber(int number) {
+                return ExactSearchableOption.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.retail.v2.CatalogAttribute.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final ExactSearchableOption[] VALUES = values();
+
+    public static ExactSearchableOption valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExactSearchableOption(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the retrievable option of a catalog attribute.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2.CatalogAttribute.RetrievableOption}
+   */
+  public enum RetrievableOption implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Value used when unset. Defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
+     * </pre>
+     *
+     * <code>RETRIEVABLE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    RETRIEVABLE_OPTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Retrievable option enabled for an attribute.
+     * </pre>
+     *
+     * <code>RETRIEVABLE_ENABLED = 1;</code>
+     */
+    RETRIEVABLE_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Retrievable option disabled for an attribute.
+     * </pre>
+     *
+     * <code>RETRIEVABLE_DISABLED = 2;</code>
+     */
+    RETRIEVABLE_DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Value used when unset. Defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
+     * </pre>
+     *
+     * <code>RETRIEVABLE_OPTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int RETRIEVABLE_OPTION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Retrievable option enabled for an attribute.
+     * </pre>
+     *
+     * <code>RETRIEVABLE_ENABLED = 1;</code>
+     */
+    public static final int RETRIEVABLE_ENABLED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Retrievable option disabled for an attribute.
+     * </pre>
+     *
+     * <code>RETRIEVABLE_DISABLED = 2;</code>
+     */
+    public static final int RETRIEVABLE_DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RetrievableOption valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RetrievableOption forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RETRIEVABLE_OPTION_UNSPECIFIED;
+        case 1:
+          return RETRIEVABLE_ENABLED;
+        case 2:
+          return RETRIEVABLE_DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RetrievableOption>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RetrievableOption>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RetrievableOption>() {
+              public RetrievableOption findValueByNumber(int number) {
+                return RetrievableOption.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.retail.v2.CatalogAttribute.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final RetrievableOption[] VALUES = values();
+
+    public static RetrievableOption valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RetrievableOption(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.CatalogAttribute.RetrievableOption)
+  }
+
   public static final int KEY_FIELD_NUMBER = 1;
   private volatile java.lang.Object key_;
   /**
@@ -796,13 +1116,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
    * APIs. This field is `False` for pre-loaded
    * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
-   * Only pre-loaded
-   * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-   * neither in use by products nor predefined can be deleted.
-   * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-   * either in use by products or are predefined cannot be deleted; however,
-   * their configuration properties will reset to default values upon removal
-   * request.
+   * Only pre-loaded [catalog
+   * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
+   * use by products nor predefined can be deleted. [Catalog
+   * attributes][google.cloud.retail.v2.CatalogAttribute] that are
+   * either in use by products or are predefined attributes cannot be deleted;
+   * however, their configuration properties will reset to default values upon
+   * removal request.
    * After catalog changes, it takes about 10 minutes for this field to update.
    * </pre>
    *
@@ -870,6 +1190,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -889,6 +1210,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
    * are indexed so that it can be filtered, faceted, or boosted in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -915,6 +1237,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
    * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
    * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>
@@ -935,6 +1258,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
    * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
    * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>
@@ -970,6 +1294,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * will not be searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
    * there are no text values associated to numerical attributes.
+   * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -993,6 +1318,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * will not be searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
    * there are no text values associated to numerical attributes.
+   * Must be specified, otherwise throws INVALID_FORMAT error.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -1006,6 +1332,96 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         com.google.cloud.retail.v2.CatalogAttribute.SearchableOption.valueOf(searchableOption_);
     return result == null
         ? com.google.cloud.retail.v2.CatalogAttribute.SearchableOption.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EXACT_SEARCHABLE_OPTION_FIELD_NUMBER = 11;
+  private int exactSearchableOption_;
+  /**
+   *
+   *
+   * <pre>
+   * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+   * This property only applies to textual custom attributes and requires
+   * indexable set to enabled to enable exact-searchable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for exactSearchableOption.
+   */
+  @java.lang.Override
+  public int getExactSearchableOptionValue() {
+    return exactSearchableOption_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+   * This property only applies to textual custom attributes and requires
+   * indexable set to enabled to enable exact-searchable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+   * </code>
+   *
+   * @return The exactSearchableOption.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption
+      getExactSearchableOption() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption result =
+        com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.valueOf(
+            exactSearchableOption_);
+    return result == null
+        ? com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int RETRIEVABLE_OPTION_FIELD_NUMBER = 12;
+  private int retrievableOption_;
+  /**
+   *
+   *
+   * <pre>
+   * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for retrievableOption.
+   */
+  @java.lang.Override
+  public int getRetrievableOptionValue() {
+    return retrievableOption_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+   * results.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+   * </code>
+   *
+   * @return The retrievableOption.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption getRetrievableOption() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption result =
+        com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption.valueOf(retrievableOption_);
+    return result == null
+        ? com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption.UNRECOGNIZED
         : result;
   }
 
@@ -1049,6 +1465,18 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     if (type_ != com.google.cloud.retail.v2.CatalogAttribute.AttributeType.UNKNOWN.getNumber()) {
       output.writeEnum(10, type_);
     }
+    if (exactSearchableOption_
+        != com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption
+            .EXACT_SEARCHABLE_OPTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(11, exactSearchableOption_);
+    }
+    if (retrievableOption_
+        != com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption
+            .RETRIEVABLE_OPTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, retrievableOption_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1084,6 +1512,18 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     if (type_ != com.google.cloud.retail.v2.CatalogAttribute.AttributeType.UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, type_);
     }
+    if (exactSearchableOption_
+        != com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption
+            .EXACT_SEARCHABLE_OPTION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, exactSearchableOption_);
+    }
+    if (retrievableOption_
+        != com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption
+            .RETRIEVABLE_OPTION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, retrievableOption_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1106,6 +1546,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     if (indexableOption_ != other.indexableOption_) return false;
     if (dynamicFacetableOption_ != other.dynamicFacetableOption_) return false;
     if (searchableOption_ != other.searchableOption_) return false;
+    if (exactSearchableOption_ != other.exactSearchableOption_) return false;
+    if (retrievableOption_ != other.retrievableOption_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1129,6 +1571,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + dynamicFacetableOption_;
     hash = (37 * hash) + SEARCHABLE_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + searchableOption_;
+    hash = (37 * hash) + EXACT_SEARCHABLE_OPTION_FIELD_NUMBER;
+    hash = (53 * hash) + exactSearchableOption_;
+    hash = (37 * hash) + RETRIEVABLE_OPTION_FIELD_NUMBER;
+    hash = (53 * hash) + retrievableOption_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1280,6 +1726,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       searchableOption_ = 0;
 
+      exactSearchableOption_ = 0;
+
+      retrievableOption_ = 0;
+
       return this;
     }
 
@@ -1313,6 +1763,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       result.indexableOption_ = indexableOption_;
       result.dynamicFacetableOption_ = dynamicFacetableOption_;
       result.searchableOption_ = searchableOption_;
+      result.exactSearchableOption_ = exactSearchableOption_;
+      result.retrievableOption_ = retrievableOption_;
       onBuilt();
       return result;
     }
@@ -1381,6 +1833,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (other.searchableOption_ != 0) {
         setSearchableOptionValue(other.getSearchableOptionValue());
       }
+      if (other.exactSearchableOption_ != 0) {
+        setExactSearchableOptionValue(other.getExactSearchableOptionValue());
+      }
+      if (other.retrievableOption_ != 0) {
+        setRetrievableOptionValue(other.getRetrievableOptionValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1443,6 +1901,18 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
                 break;
               } // case 80
+            case 88:
+              {
+                exactSearchableOption_ = input.readEnum();
+
+                break;
+              } // case 88
+            case 96:
+              {
+                retrievableOption_ = input.readEnum();
+
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1613,13 +2083,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
-     * Only pre-loaded
-     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-     * neither in use by products nor predefined can be deleted.
-     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-     * either in use by products or are predefined cannot be deleted; however,
-     * their configuration properties will reset to default values upon removal
-     * request.
+     * Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
+     * use by products nor predefined can be deleted. [Catalog
+     * attributes][google.cloud.retail.v2.CatalogAttribute] that are
+     * either in use by products or are predefined attributes cannot be deleted;
+     * however, their configuration properties will reset to default values upon
+     * removal request.
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -1647,13 +2117,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
-     * Only pre-loaded
-     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-     * neither in use by products nor predefined can be deleted.
-     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-     * either in use by products or are predefined cannot be deleted; however,
-     * their configuration properties will reset to default values upon removal
-     * request.
+     * Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
+     * use by products nor predefined can be deleted. [Catalog
+     * attributes][google.cloud.retail.v2.CatalogAttribute] that are
+     * either in use by products or are predefined attributes cannot be deleted;
+     * however, their configuration properties will reset to default values upon
+     * removal request.
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -1684,13 +2154,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s.
-     * Only pre-loaded
-     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-     * neither in use by products nor predefined can be deleted.
-     * [CatalogAttribute][google.cloud.retail.v2.CatalogAttribute]s that are
-     * either in use by products or are predefined cannot be deleted; however,
-     * their configuration properties will reset to default values upon removal
-     * request.
+     * Only pre-loaded [catalog
+     * attributes][google.cloud.retail.v2.CatalogAttribute] that are neither in
+     * use by products nor predefined can be deleted. [Catalog
+     * attributes][google.cloud.retail.v2.CatalogAttribute] that are
+     * either in use by products or are predefined attributes cannot be deleted;
+     * however, their configuration properties will reset to default values upon
+     * removal request.
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -1823,6 +2293,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -1842,6 +2313,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -1864,6 +2336,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -1888,6 +2361,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -1914,6 +2388,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if INDEXABLE_ENABLED attribute values
      * are indexed so that it can be filtered, faceted, or boosted in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.IndexableOption indexable_option = 5;</code>
@@ -1936,6 +2411,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>
@@ -1956,6 +2432,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>
@@ -1979,6 +2456,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>
@@ -2006,6 +2484,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>
@@ -2033,6 +2512,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * facet. Could only be DYNAMIC_FACETABLE_DISABLED if
      * [CatalogAttribute.indexable_option][google.cloud.retail.v2.CatalogAttribute.indexable_option]
      * is INDEXABLE_DISABLED. Otherwise, an INVALID_ARGUMENT error is returned.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>
@@ -2062,6 +2542,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -2085,6 +2566,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -2111,6 +2593,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -2139,6 +2622,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -2169,6 +2653,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * will not be searchable by text queries in
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search], as
      * there are no text values associated to numerical attributes.
+     * Must be specified, otherwise throws INVALID_FORMAT error.
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.SearchableOption searchable_option = 7;</code>
@@ -2178,6 +2663,226 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public Builder clearSearchableOption() {
 
       searchableOption_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int exactSearchableOption_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+     * This property only applies to textual custom attributes and requires
+     * indexable set to enabled to enable exact-searchable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for exactSearchableOption.
+     */
+    @java.lang.Override
+    public int getExactSearchableOptionValue() {
+      return exactSearchableOption_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+     * This property only applies to textual custom attributes and requires
+     * indexable set to enabled to enable exact-searchable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for exactSearchableOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExactSearchableOptionValue(int value) {
+
+      exactSearchableOption_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+     * This property only applies to textual custom attributes and requires
+     * indexable set to enabled to enable exact-searchable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+     * </code>
+     *
+     * @return The exactSearchableOption.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption
+        getExactSearchableOption() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption result =
+          com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.valueOf(
+              exactSearchableOption_);
+      return result == null
+          ? com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+     * This property only applies to textual custom attributes and requires
+     * indexable set to enabled to enable exact-searchable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+     * </code>
+     *
+     * @param value The exactSearchableOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExactSearchableOption(
+        com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      exactSearchableOption_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
+     * This property only applies to textual custom attributes and requires
+     * indexable set to enabled to enable exact-searchable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption exact_searchable_option = 11;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExactSearchableOption() {
+
+      exactSearchableOption_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int retrievableOption_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+     * results.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for retrievableOption.
+     */
+    @java.lang.Override
+    public int getRetrievableOptionValue() {
+      return retrievableOption_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+     * results.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for retrievableOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRetrievableOptionValue(int value) {
+
+      retrievableOption_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+     * results.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+     * </code>
+     *
+     * @return The retrievableOption.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption getRetrievableOption() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption result =
+          com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption.valueOf(retrievableOption_);
+      return result == null
+          ? com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+     * results.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+     * </code>
+     *
+     * @param value The retrievableOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRetrievableOption(
+        com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      retrievableOption_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
+     * results.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRetrievableOption() {
+
+      retrievableOption_ = 0;
       onChanged();
       return this;
     }

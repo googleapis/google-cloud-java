@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
+ * Request message for
+ * [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.UpdateChannelPartnerLinkRequest}
@@ -127,8 +128,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The channel partner link to update. Only channel_partner_link.link_state
-   * is allowed for updates.
+   * Required. The channel partner link to update. Only
+   * channel_partner_link.link_state is allowed for updates.
    * </pre>
    *
    * <code>
@@ -145,8 +146,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The channel partner link to update. Only channel_partner_link.link_state
-   * is allowed for updates.
+   * Required. The channel partner link to update. Only
+   * channel_partner_link.link_state is allowed for updates.
    * </pre>
    *
    * <code>
@@ -165,8 +166,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The channel partner link to update. Only channel_partner_link.link_state
-   * is allowed for updates.
+   * Required. The channel partner link to update. Only
+   * channel_partner_link.link_state is allowed for updates.
    * </pre>
    *
    * <code>
@@ -425,7 +426,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
+   * Request message for
+   * [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.UpdateChannelPartnerLinkRequest}
@@ -759,8 +761,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -776,8 +778,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -799,8 +801,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -824,8 +826,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -847,8 +849,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -876,8 +878,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -899,8 +901,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -916,8 +918,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>
@@ -938,8 +940,8 @@ public final class UpdateChannelPartnerLinkRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The channel partner link to update. Only channel_partner_link.link_state
-     * is allowed for updates.
+     * Required. The channel partner link to update. Only
+     * channel_partner_link.link_state is allowed for updates.
      * </pre>
      *
      * <code>

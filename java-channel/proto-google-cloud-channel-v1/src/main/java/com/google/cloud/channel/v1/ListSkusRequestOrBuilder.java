@@ -87,9 +87,9 @@ public interface ListSkusRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, returns at most 100 SKUs.
-   * The maximum value is 1000; the server will coerce values above 1000.
+   * Optional. Requested page size. Server might return fewer results than
+   * requested. If unspecified, returns at most 100 SKUs. The maximum value is
+   * 1000; the server will coerce values above 1000.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

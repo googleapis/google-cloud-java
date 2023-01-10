@@ -298,8 +298,7 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * Environment variables to set before running the Task.
-   * You can set up to 100 environments.
+   * Deprecated: please use environment(non-plural) instead.
    * </pre>
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
@@ -310,8 +309,7 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * Environment variables to set before running the Task.
-   * You can set up to 100 environments.
+   * Deprecated: please use environment(non-plural) instead.
    * </pre>
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
@@ -325,8 +323,7 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * Environment variables to set before running the Task.
-   * You can set up to 100 environments.
+   * Deprecated: please use environment(non-plural) instead.
    * </pre>
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
@@ -337,8 +334,7 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * Environment variables to set before running the Task.
-   * You can set up to 100 environments.
+   * Deprecated: please use environment(non-plural) instead.
    * </pre>
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>
@@ -353,8 +349,7 @@ public interface TaskSpecOrBuilder
    *
    *
    * <pre>
-   * Environment variables to set before running the Task.
-   * You can set up to 100 environments.
+   * Deprecated: please use environment(non-plural) instead.
    * </pre>
    *
    * <code>map&lt;string, string&gt; environments = 6 [deprecated = true];</code>

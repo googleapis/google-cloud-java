@@ -95,6 +95,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<WriteUserEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "writeAsync", request.getWriteAsync());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -133,6 +134,9 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             ProtoRestSerializer<CollectUserEventRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "ets", request.getEts());
+                            serializer.putQueryParam(
+                                fields, "prebuiltRule", request.getPrebuiltRule());
+                            serializer.putQueryParam(fields, "rawJson", request.getRawJson());
                             serializer.putQueryParam(fields, "uri", request.getUri());
                             serializer.putQueryParam(fields, "userEvent", request.getUserEvent());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");

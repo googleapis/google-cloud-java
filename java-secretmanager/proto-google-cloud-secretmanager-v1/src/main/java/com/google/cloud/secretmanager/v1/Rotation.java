@@ -22,9 +22,11 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * The rotation time and period for a [Secret][google.cloud.secretmanager.v1.Secret]. At next_rotation_time, Secret
+ * The rotation time and period for a
+ * [Secret][google.cloud.secretmanager.v1.Secret]. At next_rotation_time, Secret
  * Manager will send a Pub/Sub notification to the topics configured on the
- * Secret. [Secret.topics][google.cloud.secretmanager.v1.Secret.topics] must be set to configure rotation.
+ * Secret. [Secret.topics][google.cloud.secretmanager.v1.Secret.topics] must be
+ * set to configure rotation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.Rotation}
@@ -73,10 +75,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-   * set to less than 300s (5 min) in the future and at most 3153600000s (100
-   * years).
-   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+   * Optional. Timestamp in UTC at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+   * Cannot be set to less than 300s (5 min) in the future and at most
+   * 3153600000s (100 years).
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * MUST  be set if
+   * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+   * is set.
    * </pre>
    *
    * <code>
@@ -93,10 +99,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-   * set to less than 300s (5 min) in the future and at most 3153600000s (100
-   * years).
-   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+   * Optional. Timestamp in UTC at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+   * Cannot be set to less than 300s (5 min) in the future and at most
+   * 3153600000s (100 years).
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * MUST  be set if
+   * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+   * is set.
    * </pre>
    *
    * <code>
@@ -115,10 +125,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-   * set to less than 300s (5 min) in the future and at most 3153600000s (100
-   * years).
-   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+   * Optional. Timestamp in UTC at which the
+   * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+   * Cannot be set to less than 300s (5 min) in the future and at most
+   * 3153600000s (100 years).
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * MUST  be set if
+   * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+   * is set.
    * </pre>
    *
    * <code>
@@ -138,9 +152,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. The Duration between rotation notifications. Must be in seconds
    * and at least 3600s (1h) and at most 3153600000s (100 years).
-   * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-   * automatically sends rotation notifications.
+   * If
+   * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+   * is set,
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * must be set.
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * will be advanced by this period when the service automatically sends
+   * rotation notifications.
    * </pre>
    *
    * <code>
@@ -159,9 +178,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. The Duration between rotation notifications. Must be in seconds
    * and at least 3600s (1h) and at most 3153600000s (100 years).
-   * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-   * automatically sends rotation notifications.
+   * If
+   * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+   * is set,
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * must be set.
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * will be advanced by this period when the service automatically sends
+   * rotation notifications.
    * </pre>
    *
    * <code>
@@ -182,9 +206,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. The Duration between rotation notifications. Must be in seconds
    * and at least 3600s (1h) and at most 3153600000s (100 years).
-   * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-   * automatically sends rotation notifications.
+   * If
+   * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+   * is set,
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * must be set.
+   * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+   * will be advanced by this period when the service automatically sends
+   * rotation notifications.
    * </pre>
    *
    * <code>
@@ -378,9 +407,11 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The rotation time and period for a [Secret][google.cloud.secretmanager.v1.Secret]. At next_rotation_time, Secret
+   * The rotation time and period for a
+   * [Secret][google.cloud.secretmanager.v1.Secret]. At next_rotation_time, Secret
    * Manager will send a Pub/Sub notification to the topics configured on the
-   * Secret. [Secret.topics][google.cloud.secretmanager.v1.Secret.topics] must be set to configure rotation.
+   * Secret. [Secret.topics][google.cloud.secretmanager.v1.Secret.topics] must be
+   * set to configure rotation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.Rotation}
@@ -584,10 +615,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -603,10 +638,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -628,10 +667,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -655,10 +698,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -679,10 +726,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -710,10 +761,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -735,10 +790,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -754,10 +813,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -777,10 +840,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Timestamp in UTC at which the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate. Cannot be
-     * set to less than 300s (5 min) in the future and at most 3153600000s (100
-     * years).
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] MUST  be set if [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set.
+     * Optional. Timestamp in UTC at which the
+     * [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to rotate.
+     * Cannot be set to less than 300s (5 min) in the future and at most
+     * 3153600000s (100 years).
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * MUST  be set if
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set.
      * </pre>
      *
      * <code>
@@ -816,9 +883,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -836,9 +908,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -862,9 +939,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -890,9 +972,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -915,9 +1002,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -947,9 +1039,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -973,9 +1070,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -993,9 +1095,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>
@@ -1017,9 +1124,14 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. The Duration between rotation notifications. Must be in seconds
      * and at least 3600s (1h) and at most 3153600000s (100 years).
-     * If [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period] is set, [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] must be set.
-     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time] will be advanced by this period when the service
-     * automatically sends rotation notifications.
+     * If
+     * [rotation_period][google.cloud.secretmanager.v1.Rotation.rotation_period]
+     * is set,
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * must be set.
+     * [next_rotation_time][google.cloud.secretmanager.v1.Rotation.next_rotation_time]
+     * will be advanced by this period when the service automatically sends
+     * rotation notifications.
      * </pre>
      *
      * <code>

@@ -119,7 +119,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1054
+   *     google/container/v1beta1/cluster_service.proto;l=1111
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -140,7 +140,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1054
+   *     google/container/v1beta1/cluster_service.proto;l=1111
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated
@@ -215,7 +215,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1063
+   *     google/container/v1beta1/cluster_service.proto;l=1120
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Deprecated
@@ -231,7 +231,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1063
+   *     google/container/v1beta1/cluster_service.proto;l=1120
    * @return The istioConfig.
    */
   @java.lang.Deprecated
@@ -417,7 +417,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1082
+   *     google/container/v1beta1/cluster_service.proto;l=1139
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Deprecated
@@ -433,7 +433,7 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1082
+   *     google/container/v1beta1/cluster_service.proto;l=1139
    * @return The kalmConfig.
    */
   @java.lang.Deprecated

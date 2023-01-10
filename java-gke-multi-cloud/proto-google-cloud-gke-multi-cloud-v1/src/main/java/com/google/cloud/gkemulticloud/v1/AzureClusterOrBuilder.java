@@ -120,8 +120,8 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The ARM ID of the resource group where the cluster resources are deployed.
-   * For example:
+   * Required. The ARM ID of the resource group where the cluster resources are
+   * deployed. For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
    * </pre>
    *
@@ -134,8 +134,8 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The ARM ID of the resource group where the cluster resources are deployed.
-   * For example:
+   * Required. The ARM ID of the resource group where the cluster resources are
+   * deployed. For example:
    * `/subscriptions/&lt;subscription-id&gt;/resourceGroups/&lt;resource-group-name&gt;`
    * </pre>
    *
@@ -149,8 +149,10 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-   * how the Anthos Multi-Cloud API connects to Azure APIs.
+   * Required. Name of the
+   * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+   * authentication configuration for how the Anthos Multi-Cloud API connects to
+   * Azure APIs.
    * The `AzureClient` resource must reside on the same GCP project and region
    * as the `AzureCluster`.
    * `AzureClient` names are formatted as
@@ -168,8 +170,10 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains authentication configuration for
-   * how the Anthos Multi-Cloud API connects to Azure APIs.
+   * Required. Name of the
+   * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] that contains
+   * authentication configuration for how the Anthos Multi-Cloud API connects to
+   * Azure APIs.
    * The `AzureClient` resource must reside on the same GCP project and region
    * as the `AzureCluster`.
    * `AzureClient` names are formatted as
@@ -676,11 +680,11 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the fleet field is set.
@@ -690,11 +694,11 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The fleet.
@@ -704,11 +708,11 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 20 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.FleetOrBuilder getFleetOrBuilder();
@@ -717,7 +721,7 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Mananged Azure resources for this cluster.
+   * Output only. Managed Azure resources for this cluster.
    * </pre>
    *
    * <code>
@@ -731,7 +735,7 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Mananged Azure resources for this cluster.
+   * Output only. Managed Azure resources for this cluster.
    * </pre>
    *
    * <code>
@@ -745,7 +749,7 @@ public interface AzureClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. Mananged Azure resources for this cluster.
+   * Output only. Managed Azure resources for this cluster.
    * </pre>
    *
    * <code>
@@ -794,4 +798,107 @@ public interface AzureClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterError> getErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AzureClusterError getErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder>
+      getErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AzureClusterError errors = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AzureClusterErrorOrBuilder getErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  boolean hasMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The monitoringConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
 }

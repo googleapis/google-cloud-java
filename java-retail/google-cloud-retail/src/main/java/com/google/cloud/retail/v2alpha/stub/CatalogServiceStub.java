@@ -23,6 +23,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.AddCatalogAttributeRequest;
 import com.google.cloud.retail.v2alpha.AttributesConfig;
+import com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest;
+import com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse;
 import com.google.cloud.retail.v2alpha.Catalog;
 import com.google.cloud.retail.v2alpha.CompletionConfig;
 import com.google.cloud.retail.v2alpha.GetAttributesConfigRequest;
@@ -96,6 +98,12 @@ public abstract class CatalogServiceStub implements BackgroundResource {
   public UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeCallable() {
     throw new UnsupportedOperationException("Not implemented: removeCatalogAttributeCallable()");
+  }
+
+  public UnaryCallable<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchRemoveCatalogAttributesCallable()");
   }
 
   public UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>

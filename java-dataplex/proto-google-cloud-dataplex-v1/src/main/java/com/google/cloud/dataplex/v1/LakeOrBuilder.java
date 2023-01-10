@@ -83,8 +83,8 @@ public interface LakeOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the lake. This ID will be
-   * different if the lake is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the lake. This ID will
+   * be different if the lake is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,8 +96,8 @@ public interface LakeOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the lake. This ID will be
-   * different if the lake is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the lake. This ID will
+   * be different if the lake is deleted and re-created with the same name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -297,8 +297,9 @@ public interface LakeOrBuilder
    *
    *
    * <pre>
-   * Output only. Service account associated with this lake. This service account must be
-   * authorized to access or operate on resources managed by the lake.
+   * Output only. Service account associated with this lake. This service
+   * account must be authorized to access or operate on resources managed by the
+   * lake.
    * </pre>
    *
    * <code>string service_account = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -310,8 +311,9 @@ public interface LakeOrBuilder
    *
    *
    * <pre>
-   * Output only. Service account associated with this lake. This service account must be
-   * authorized to access or operate on resources managed by the lake.
+   * Output only. Service account associated with this lake. This service
+   * account must be authorized to access or operate on resources managed by the
+   * lake.
    * </pre>
    *
    * <code>string service_account = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

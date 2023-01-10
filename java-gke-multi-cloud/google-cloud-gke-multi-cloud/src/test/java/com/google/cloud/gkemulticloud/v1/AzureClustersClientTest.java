@@ -491,6 +491,8 @@ public class AzureClustersClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -563,6 +565,8 @@ public class AzureClustersClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -635,6 +639,8 @@ public class AzureClustersClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -703,6 +709,8 @@ public class AzureClustersClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockAzureClusters.addResponse(expectedResponse);
 
@@ -760,6 +768,8 @@ public class AzureClustersClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setManagedResources(AzureClusterResources.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
+            .addAllErrors(new ArrayList<AzureClusterError>())
+            .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .build();
     mockAzureClusters.addResponse(expectedResponse);
 
@@ -1033,6 +1043,7 @@ public class AzureClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1101,6 +1112,7 @@ public class AzureClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1169,6 +1181,7 @@ public class AzureClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1233,6 +1246,7 @@ public class AzureClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     mockAzureClusters.addResponse(expectedResponse);
 
@@ -1288,6 +1302,7 @@ public class AzureClustersClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setMaxPodsConstraint(MaxPodsConstraint.newBuilder().build())
             .setAzureAvailabilityZone("azureAvailabilityZone-304222122")
+            .addAllErrors(new ArrayList<AzureNodePoolError>())
             .build();
     mockAzureClusters.addResponse(expectedResponse);
 

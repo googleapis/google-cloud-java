@@ -27,8 +27,9 @@ public interface ListProcessorVersionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to list all versions.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * Required. The parent (project, location and processor) to list all
+   * versions. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface ListProcessorVersionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project, location and processor) to list all versions.
-   * Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * Required. The parent (project, location and processor) to list all
+   * versions. Format:
+   * `projects/{project}/locations/{location}/processors/{processor}`
    * </pre>
    *
    * <code>

@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Response message for RejoinUserEvents method.
+ * Response message for `RejoinUserEvents` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.RejoinUserEventsResponse}
@@ -247,7 +247,7 @@ public final class RejoinUserEventsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for RejoinUserEvents method.
+   * Response message for `RejoinUserEvents` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.RejoinUserEventsResponse}

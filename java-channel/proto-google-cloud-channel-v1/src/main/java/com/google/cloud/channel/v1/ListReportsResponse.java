@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
+ * Response message for
+ * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListReportsResponse}
@@ -143,8 +144,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-   * the next page of results.
+   * Pass this token to
+   * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -167,8 +169,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-   * the next page of results.
+   * Pass this token to
+   * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -362,7 +365,8 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
+   * Response message for
+   * [CloudChannelReportsService.ListReports][google.cloud.channel.v1.CloudChannelReportsService.ListReports].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListReportsResponse}
@@ -941,8 +945,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -964,8 +969,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -987,8 +993,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1009,8 +1016,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1027,8 +1035,9 @@ public final class ListReportsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

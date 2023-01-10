@@ -86,8 +86,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * Value cannot be empty.
      * Value can have at most 3 terms if specified as a partial match. Each
      * space separated string is considered as one term.
-     * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-     * allowed for partial match.
+     * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+     * and not allowed for a partial match.
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -103,8 +103,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * Value cannot be empty.
      * Value can have at most 3 terms if specified as a partial match. Each
      * space separated string is considered as one term.
-     * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-     * allowed for partial match.
+     * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+     * and not allowed for a partial match.
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -185,8 +185,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * Value cannot be empty.
      * Value can have at most 3 terms if specified as a partial match. Each
      * space separated string is considered as one term.
-     * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-     * allowed for partial match.
+     * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+     * and not allowed for a partial match.
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -213,8 +213,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * Value cannot be empty.
      * Value can have at most 3 terms if specified as a partial match. Each
      * space separated string is considered as one term.
-     * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-     * allowed for partial match.
+     * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+     * and not allowed for a partial match.
      * </pre>
      *
      * <code>string value = 1;</code>
@@ -617,8 +617,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
        * Value cannot be empty.
        * Value can have at most 3 terms if specified as a partial match. Each
        * space separated string is considered as one term.
-       * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-       * allowed for partial match.
+       * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+       * and not allowed for a partial match.
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -644,8 +644,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
        * Value cannot be empty.
        * Value can have at most 3 terms if specified as a partial match. Each
        * space separated string is considered as one term.
-       * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-       * allowed for partial match.
+       * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+       * and not allowed for a partial match.
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -671,8 +671,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
        * Value cannot be empty.
        * Value can have at most 3 terms if specified as a partial match. Each
        * space separated string is considered as one term.
-       * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-       * allowed for partial match.
+       * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+       * and not allowed for a partial match.
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -697,8 +697,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
        * Value cannot be empty.
        * Value can have at most 3 terms if specified as a partial match. Each
        * space separated string is considered as one term.
-       * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-       * allowed for partial match.
+       * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+       * and not allowed for a partial match.
        * </pre>
        *
        * <code>string value = 1;</code>
@@ -719,8 +719,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
        * Value cannot be empty.
        * Value can have at most 3 terms if specified as a partial match. Each
        * space separated string is considered as one term.
-       * Example) "a b c" is 3 terms and allowed, " a b c d" is 4 terms and not
-       * allowed for partial match.
+       * For example, "a b c" is 3 terms and allowed, but " a b c d" is 4 terms
+       * and not allowed for a partial match.
        * </pre>
        *
        * <code>string value = 1;</code>

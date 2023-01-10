@@ -73,7 +73,7 @@ public interface DiskConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Number of attached SSDs, from 0 to 4 (default is 0).
+   * Optional. Number of attached SSDs, from 0 to 8 (default is 0).
    * If SSDs are not attached, the boot disk is used to store runtime logs and
    * [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_user_guide.html) data.
    * If one or more SSDs are attached, this runtime bulk

@@ -55,6 +55,10 @@ public final class DocumentIoProto {
       internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -76,18 +80,22 @@ public final class DocumentIoProto {
           + "_prefix\030\001 \001(\0132%.google.cloud.documentai."
           + "v1.GcsPrefixH\000\022A\n\rgcs_documents\030\002 \001(\0132(."
           + "google.cloud.documentai.v1.GcsDocumentsH"
-          + "\000B\010\n\006source\"\330\001\n\024DocumentOutputConfig\022]\n\021"
+          + "\000B\010\n\006source\"\205\003\n\024DocumentOutputConfig\022]\n\021"
           + "gcs_output_config\030\001 \001(\0132@.google.cloud.d"
           + "ocumentai.v1.DocumentOutputConfig.GcsOut"
-          + "putConfigH\000\032R\n\017GcsOutputConfig\022\017\n\007gcs_ur"
-          + "i\030\001 \001(\t\022.\n\nfield_mask\030\002 \001(\0132\032.google.pro"
-          + "tobuf.FieldMaskB\r\n\013destinationB\323\001\n\036com.g"
-          + "oogle.cloud.documentai.v1B\017DocumentIoPro"
-          + "toP\001ZDgoogle.golang.org/genproto/googlea"
-          + "pis/cloud/documentai/v1;documentai\252\002\032Goo"
-          + "gle.Cloud.DocumentAI.V1\312\002\032Google\\Cloud\\D"
-          + "ocumentAI\\V1\352\002\035Google::Cloud::DocumentAI"
-          + "::V1b\006proto3"
+          + "putConfigH\000\032\376\001\n\017GcsOutputConfig\022\017\n\007gcs_u"
+          + "ri\030\001 \001(\t\022.\n\nfield_mask\030\002 \001(\0132\032.google.pr"
+          + "otobuf.FieldMask\022h\n\017sharding_config\030\003 \001("
+          + "\0132O.google.cloud.documentai.v1.DocumentO"
+          + "utputConfig.GcsOutputConfig.ShardingConf"
+          + "ig\032@\n\016ShardingConfig\022\027\n\017pages_per_shard\030"
+          + "\001 \001(\005\022\025\n\rpages_overlap\030\002 \001(\005B\r\n\013destinat"
+          + "ionB\323\001\n\036com.google.cloud.documentai.v1B\017"
+          + "DocumentIoProtoP\001ZDgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/documentai/v1;doc"
+          + "umentai\252\002\032Google.Cloud.DocumentAI.V1\312\002\032G"
+          + "oogle\\Cloud\\DocumentAI\\V1\352\002\035Google::Clou"
+          + "d::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,7 +159,17 @@ public final class DocumentIoProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_descriptor,
             new java.lang.String[] {
-              "GcsUri", "FieldMask",
+              "GcsUri", "FieldMask", "ShardingConfig",
+            });
+    internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor =
+        internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_DocumentOutputConfig_GcsOutputConfig_ShardingConfig_descriptor,
+            new java.lang.String[] {
+              "PagesPerShard", "PagesOverlap",
             });
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

@@ -220,6 +220,61 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     }
   }
 
+  public static final int ANNOTATOR_SELECTOR_FIELD_NUMBER = 4;
+  private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The annotator selector used for the analysis (if any).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the annotatorSelector field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnnotatorSelector() {
+    return annotatorSelector_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The annotator selector used for the analysis (if any).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The annotatorSelector.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector() {
+    return annotatorSelector_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
+        : annotatorSelector_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The annotator selector used for the analysis (if any).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
+      getAnnotatorSelectorOrBuilder() {
+    return getAnnotatorSelector();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -243,6 +298,9 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, conversation_);
     }
+    if (annotatorSelector_ != null) {
+      output.writeMessage(4, getAnnotatorSelector());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -260,6 +318,9 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(conversation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, conversation_);
+    }
+    if (annotatorSelector_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAnnotatorSelector());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -287,6 +348,10 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (!getConversation().equals(other.getConversation())) return false;
+    if (hasAnnotatorSelector() != other.hasAnnotatorSelector()) return false;
+    if (hasAnnotatorSelector()) {
+      if (!getAnnotatorSelector().equals(other.getAnnotatorSelector())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -308,6 +373,10 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
     }
     hash = (37 * hash) + CONVERSATION_FIELD_NUMBER;
     hash = (53 * hash) + getConversation().hashCode();
+    if (hasAnnotatorSelector()) {
+      hash = (37 * hash) + ANNOTATOR_SELECTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getAnnotatorSelector().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,6 +533,12 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       }
       conversation_ = "";
 
+      if (annotatorSelectorBuilder_ == null) {
+        annotatorSelector_ = null;
+      } else {
+        annotatorSelector_ = null;
+        annotatorSelectorBuilder_ = null;
+      }
       return this;
     }
 
@@ -506,6 +581,11 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         result.endTime_ = endTimeBuilder_.build();
       }
       result.conversation_ = conversation_;
+      if (annotatorSelectorBuilder_ == null) {
+        result.annotatorSelector_ = annotatorSelector_;
+      } else {
+        result.annotatorSelector_ = annotatorSelectorBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -570,6 +650,9 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
         conversation_ = other.conversation_;
         onChanged();
       }
+      if (other.hasAnnotatorSelector()) {
+        mergeAnnotatorSelector(other.getAnnotatorSelector());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -614,6 +697,13 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
 
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getAnnotatorSelectorFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1134,6 +1224,215 @@ public final class CreateAnalysisOperationMetadata extends com.google.protobuf.G
       conversation_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>
+        annotatorSelectorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the annotatorSelector field is set.
+     */
+    public boolean hasAnnotatorSelector() {
+      return annotatorSelectorBuilder_ != null || annotatorSelector_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The annotatorSelector.
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector() {
+      if (annotatorSelectorBuilder_ == null) {
+        return annotatorSelector_ == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
+            : annotatorSelector_;
+      } else {
+        return annotatorSelectorBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAnnotatorSelector(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
+      if (annotatorSelectorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        annotatorSelector_ = value;
+        onChanged();
+      } else {
+        annotatorSelectorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAnnotatorSelector(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder builderForValue) {
+      if (annotatorSelectorBuilder_ == null) {
+        annotatorSelector_ = builderForValue.build();
+        onChanged();
+      } else {
+        annotatorSelectorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAnnotatorSelector(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector value) {
+      if (annotatorSelectorBuilder_ == null) {
+        if (annotatorSelector_ != null) {
+          annotatorSelector_ =
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.newBuilder(
+                      annotatorSelector_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          annotatorSelector_ = value;
+        }
+        onChanged();
+      } else {
+        annotatorSelectorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAnnotatorSelector() {
+      if (annotatorSelectorBuilder_ == null) {
+        annotatorSelector_ = null;
+        onChanged();
+      } else {
+        annotatorSelector_ = null;
+        annotatorSelectorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder
+        getAnnotatorSelectorBuilder() {
+
+      onChanged();
+      return getAnnotatorSelectorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
+        getAnnotatorSelectorOrBuilder() {
+      if (annotatorSelectorBuilder_ != null) {
+        return annotatorSelectorBuilder_.getMessageOrBuilder();
+      } else {
+        return annotatorSelector_ == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
+            : annotatorSelector_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The annotator selector used for the analysis (if any).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>
+        getAnnotatorSelectorFieldBuilder() {
+      if (annotatorSelectorBuilder_ == null) {
+        annotatorSelectorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>(
+                getAnnotatorSelector(), getParentForChildren(), isClean());
+        annotatorSelector_ = null;
+      }
+      return annotatorSelectorBuilder_;
     }
 
     @java.lang.Override

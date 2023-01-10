@@ -370,7 +370,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3065
+   *     google/container/v1/cluster_service.proto;l=3118
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -387,7 +387,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3065
+   *     google/container/v1/cluster_service.proto;l=3118
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -682,4 +682,33 @@ public interface NodePoolOrBuilder
    * </code>
    */
   com.google.container.v1.NodePool.UpdateInfoOrBuilder getUpdateInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of node pool
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 110;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of node pool
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 110;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

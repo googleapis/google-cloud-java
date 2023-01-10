@@ -38,6 +38,7 @@ public class SyncDeleteJob {
       DeleteJobRequest request =
           DeleteJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setLegacyAppEngineCron(true)
               .build();
       cloudSchedulerClient.deleteJob(request);
     }

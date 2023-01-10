@@ -17,10 +17,15 @@
 package com.google.cloud.scheduler.v1beta1.stub;
 
 import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListJobsPagedResponse;
+import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.scheduler.v1beta1.CreateJobRequest;
 import com.google.cloud.scheduler.v1beta1.DeleteJobRequest;
 import com.google.cloud.scheduler.v1beta1.GetJobRequest;
@@ -78,6 +83,19 @@ public abstract class CloudSchedulerStub implements BackgroundResource {
 
   public UnaryCallable<RunJobRequest, Job> runJobCallable() {
     throw new UnsupportedOperationException("Not implemented: runJobCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

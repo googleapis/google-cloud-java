@@ -22,7 +22,8 @@ package com.google.cloud.tpu.v2alpha1;
  *
  *
  * <pre>
- * Request for [CreateQueuedResource][google.cloud.tpu.v2alpha1.Tpu.CreateQueuedResource].
+ * Request for
+ * [CreateQueuedResource][google.cloud.tpu.v2alpha1.Tpu.CreateQueuedResource].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tpu.v2alpha1.CreateQueuedResourceRequest}
@@ -128,7 +129,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+   * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
    * regex format.
    * </pre>
    *
@@ -152,7 +153,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+   * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
    * regex format.
    * </pre>
    *
@@ -472,7 +473,8 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request for [CreateQueuedResource][google.cloud.tpu.v2alpha1.Tpu.CreateQueuedResource].
+   * Request for
+   * [CreateQueuedResource][google.cloud.tpu.v2alpha1.Tpu.CreateQueuedResource].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tpu.v2alpha1.CreateQueuedResourceRequest}
@@ -806,7 +808,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
      * regex format.
      * </pre>
      *
@@ -829,7 +831,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
      * regex format.
      * </pre>
      *
@@ -852,7 +854,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
      * regex format.
      * </pre>
      *
@@ -874,7 +876,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
      * regex format.
      * </pre>
      *
@@ -892,7 +894,7 @@ public final class CreateQueuedResourceRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+     * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
      * regex format.
      * </pre>
      *

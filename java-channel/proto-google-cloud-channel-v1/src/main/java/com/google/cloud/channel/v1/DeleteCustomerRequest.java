@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.DeleteCustomer][google.cloud.channel.v1.CloudChannelService.DeleteCustomer].
+ * Request message for
+ * [CloudChannelService.DeleteCustomer][google.cloud.channel.v1.CloudChannelService.DeleteCustomer].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.DeleteCustomerRequest}
@@ -283,7 +284,8 @@ public final class DeleteCustomerRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.DeleteCustomer][google.cloud.channel.v1.CloudChannelService.DeleteCustomer].
+   * Request message for
+   * [CloudChannelService.DeleteCustomer][google.cloud.channel.v1.CloudChannelService.DeleteCustomer].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.DeleteCustomerRequest}

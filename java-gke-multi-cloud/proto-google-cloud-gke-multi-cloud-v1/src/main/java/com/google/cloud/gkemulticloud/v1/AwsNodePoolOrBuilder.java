@@ -60,7 +60,8 @@ public interface AwsNodePoolOrBuilder
    *
    *
    * <pre>
-   * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+   * Required. The Kubernetes version to run on this node pool (e.g.
+   * `1.19.10-gke.1000`).
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -75,7 +76,8 @@ public interface AwsNodePoolOrBuilder
    *
    *
    * <pre>
-   * Required. The Kubernetes version to run on this node pool (e.g. `1.19.10-gke.1000`).
+   * Required. The Kubernetes version to run on this node pool (e.g.
+   * `1.19.10-gke.1000`).
    * You can list all supported versions on a given Google Cloud region by
    * calling
    * [GetAwsServerConfig][google.cloud.gkemulticloud.v1.AwsClusters.GetAwsServerConfig].
@@ -511,4 +513,66 @@ public interface AwsNodePoolOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.MaxPodsConstraintOrBuilder getMaxPodsConstraintOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkemulticloud.v1.AwsNodePoolError> getErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AwsNodePoolError getErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder>
+      getErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the node pool.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsNodePoolError errors = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AwsNodePoolErrorOrBuilder getErrorsOrBuilder(int index);
 }

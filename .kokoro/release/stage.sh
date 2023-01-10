@@ -27,6 +27,12 @@ pushd $(dirname "$0")/../../
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
+echo "Deploying artifacts to staging repositories"
+
+excludedMapsModule=$(find java-maps-* -name 'pom.xml'  \
+    |sed -e 's/^/!/' -e 's|/pom.xml$||' |xargs  |sed -e 's/ /,/g')
+echo "Excluded modules: ${excludedMapsModule}"
+
 mvn clean deploy -B \
   -DskipTests=true \
   -Dclirr.skip=true \
@@ -34,12 +40,14 @@ mvn clean deploy -B \
   -Dgpg.executable=gpg \
   -Dgpg.passphrase=${GPG_PASSPHRASE} \
   -Dgpg.homedir=${GPG_HOMEDIR} \
+  --projects "${excludedMapsModule}" \
   -P release
 
 # The job triggered by Release Please (release-trigger) has this AUTORELEASE_PR
 # environment variable. Fusion also lets us to specify this variable.
 if [[ -n "${AUTORELEASE_PR}" ]]
 then
+  echo "Releasing the staging repositories"
   mvn nexus-staging:release -B \
     -DperformRelease=true \
     --settings=${MAVEN_SETTINGS_FILE}

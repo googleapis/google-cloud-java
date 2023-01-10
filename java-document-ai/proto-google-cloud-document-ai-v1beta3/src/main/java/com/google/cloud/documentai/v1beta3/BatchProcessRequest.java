@@ -1609,7 +1609,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * Required. The resource name of
+   * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * Format: `projects/{project}/locations/{location}/processors/{processor}`,
    * or
@@ -1638,7 +1639,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * Required. The resource name of
+   * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
    * Format: `projects/{project}/locations/{location}/processors/{processor}`,
    * or
@@ -1768,7 +1770,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=426
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
@@ -1788,7 +1790,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=426
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
    * @return The outputConfig.
    */
   @java.lang.Override
@@ -1935,6 +1937,54 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     return skipHumanReview_;
   }
 
+  public static final int PROCESS_OPTIONS_FIELD_NUMBER = 7;
+  private com.google.cloud.documentai.v1beta3.ProcessOptions processOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   *
+   * @return Whether the processOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessOptions() {
+    return processOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   *
+   * @return The processOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessOptions getProcessOptions() {
+    return processOptions_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+        : processOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder getProcessOptionsOrBuilder() {
+    return getProcessOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1967,6 +2017,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (documentOutputConfig_ != null) {
       output.writeMessage(6, getDocumentOutputConfig());
     }
+    if (processOptions_ != null) {
+      output.writeMessage(7, getProcessOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1994,6 +2047,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (documentOutputConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDocumentOutputConfig());
+    }
+    if (processOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProcessOptions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2026,6 +2082,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (!getDocumentOutputConfig().equals(other.getDocumentOutputConfig())) return false;
     }
     if (getSkipHumanReview() != other.getSkipHumanReview()) return false;
+    if (hasProcessOptions() != other.hasProcessOptions()) return false;
+    if (hasProcessOptions()) {
+      if (!getProcessOptions().equals(other.getProcessOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2057,6 +2117,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + SKIP_HUMAN_REVIEW_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHumanReview());
+    if (hasProcessOptions()) {
+      hash = (37 * hash) + PROCESS_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessOptions().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2225,6 +2289,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       skipHumanReview_ = false;
 
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = null;
+      } else {
+        processOptions_ = null;
+        processOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -2279,6 +2349,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         result.documentOutputConfig_ = documentOutputConfigBuilder_.build();
       }
       result.skipHumanReview_ = skipHumanReview_;
+      if (processOptionsBuilder_ == null) {
+        result.processOptions_ = processOptions_;
+      } else {
+        result.processOptions_ = processOptionsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -2372,6 +2447,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (other.getSkipHumanReview() != false) {
         setSkipHumanReview(other.getSkipHumanReview());
       }
+      if (other.hasProcessOptions()) {
+        mergeProcessOptions(other.getProcessOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2444,6 +2522,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getProcessOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2468,7 +2552,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * Format: `projects/{project}/locations/{location}/processors/{processor}`,
      * or
@@ -2496,7 +2581,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * Format: `projects/{project}/locations/{location}/processors/{processor}`,
      * or
@@ -2524,7 +2610,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * Format: `projects/{project}/locations/{location}/processors/{processor}`,
      * or
@@ -2551,7 +2638,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * Format: `projects/{project}/locations/{location}/processors/{processor}`,
      * or
@@ -2574,7 +2662,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion].
      * Format: `projects/{project}/locations/{location}/processors/{processor}`,
      * or
@@ -3048,7 +3137,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=426
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
      * @return Whether the outputConfig field is set.
      */
     @java.lang.Deprecated
@@ -3067,7 +3156,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=426
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
      * @return The outputConfig.
      */
     @java.lang.Deprecated
@@ -3699,6 +3788,193 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       skipHumanReview_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.documentai.v1beta3.ProcessOptions processOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessOptions,
+            com.google.cloud.documentai.v1beta3.ProcessOptions.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder>
+        processOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     *
+     * @return Whether the processOptions field is set.
+     */
+    public boolean hasProcessOptions() {
+      return processOptionsBuilder_ != null || processOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     *
+     * @return The processOptions.
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessOptions getProcessOptions() {
+      if (processOptionsBuilder_ == null) {
+        return processOptions_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+            : processOptions_;
+      } else {
+        return processOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder setProcessOptions(com.google.cloud.documentai.v1beta3.ProcessOptions value) {
+      if (processOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processOptions_ = value;
+        onChanged();
+      } else {
+        processOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder setProcessOptions(
+        com.google.cloud.documentai.v1beta3.ProcessOptions.Builder builderForValue) {
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        processOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder mergeProcessOptions(com.google.cloud.documentai.v1beta3.ProcessOptions value) {
+      if (processOptionsBuilder_ == null) {
+        if (processOptions_ != null) {
+          processOptions_ =
+              com.google.cloud.documentai.v1beta3.ProcessOptions.newBuilder(processOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          processOptions_ = value;
+        }
+        onChanged();
+      } else {
+        processOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder clearProcessOptions() {
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = null;
+        onChanged();
+      } else {
+        processOptions_ = null;
+        processOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessOptions.Builder getProcessOptionsBuilder() {
+
+      onChanged();
+      return getProcessOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder
+        getProcessOptionsOrBuilder() {
+      if (processOptionsBuilder_ != null) {
+        return processOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return processOptions_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+            : processOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessOptions,
+            com.google.cloud.documentai.v1beta3.ProcessOptions.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder>
+        getProcessOptionsFieldBuilder() {
+      if (processOptionsBuilder_ == null) {
+        processOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.ProcessOptions,
+                com.google.cloud.documentai.v1beta3.ProcessOptions.Builder,
+                com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder>(
+                getProcessOptions(), getParentForChildren(), isClean());
+        processOptions_ = null;
+      }
+      return processOptionsBuilder_;
     }
 
     @java.lang.Override

@@ -23,7 +23,8 @@ package com.google.cloud.channel.v1;
  *
  * <pre>
  * The features describing the data. Returned by
- * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob] and
+ * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob]
+ * and
  * [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
  * </pre>
  *
@@ -445,7 +446,8 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * The features describing the data. Returned by
-   * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob] and
+   * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob]
+   * and
    * [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
    * </pre>
    *

@@ -27,8 +27,8 @@ public interface CreateChannelPartnerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ChannelPartner that will receive the repricing
-   * config. Parent uses the format:
+   * Required. The resource name of the ChannelPartner that will receive the
+   * repricing config. Parent uses the format:
    * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface CreateChannelPartnerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the ChannelPartner that will receive the repricing
-   * config. Parent uses the format:
+   * Required. The resource name of the ChannelPartner that will receive the
+   * repricing config. Parent uses the format:
    * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}
    * </pre>
    *

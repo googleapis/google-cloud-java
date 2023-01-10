@@ -274,6 +274,41 @@ public interface CallAnnotationOrBuilder
    *
    *
    * <pre>
+   * Data specifying an issue match.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+   *
+   * @return Whether the issueMatchData field is set.
+   */
+  boolean hasIssueMatchData();
+  /**
+   *
+   *
+   * <pre>
+   * Data specifying an issue match.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+   *
+   * @return The issueMatchData.
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueMatchData getIssueMatchData();
+  /**
+   *
+   *
+   * <pre>
+   * Data specifying an issue match.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.IssueMatchData issue_match_data = 18;</code>
+   */
+  com.google.cloud.contactcenterinsights.v1.IssueMatchDataOrBuilder getIssueMatchDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The channel of the audio where the annotation occurs. For single-channel
    * audio, this field is not populated.
    * </pre>

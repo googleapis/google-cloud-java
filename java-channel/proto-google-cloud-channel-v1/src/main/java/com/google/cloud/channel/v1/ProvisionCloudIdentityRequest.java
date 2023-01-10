@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
+ * Request message for
+ * [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ProvisionCloudIdentityRequest}
@@ -435,7 +436,8 @@ public final class ProvisionCloudIdentityRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
+   * Request message for
+   * [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ProvisionCloudIdentityRequest}

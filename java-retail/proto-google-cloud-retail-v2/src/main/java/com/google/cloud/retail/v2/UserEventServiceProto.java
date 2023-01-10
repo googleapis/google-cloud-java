@@ -60,61 +60,64 @@ public final class UserEventServiceProto {
           + "ice.proto\022\026google.cloud.retail.v2\032\034googl"
           + "e/api/annotations.proto\032\027google/api/clie"
           + "nt.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/httpbody.proto\032*google/clo"
-          + "ud/retail/v2/import_config.proto\032)google"
-          + "/cloud/retail/v2/purge_config.proto\032\'goo"
-          + "gle/cloud/retail/v2/user_event.proto\032#go"
-          + "ogle/longrunning/operations.proto\"h\n\025Wri"
-          + "teUserEventRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022"
-          + ":\n\nuser_event\030\002 \001(\0132!.google.cloud.retai"
-          + "l.v2.UserEventB\003\340A\002\"a\n\027CollectUserEventR"
-          + "equest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\027\n\nuser_even"
-          + "t\030\002 \001(\tB\003\340A\002\022\013\n\003uri\030\003 \001(\t\022\013\n\003ets\030\004 \001(\003\"\376"
-          + "\001\n\027RejoinUserEventsRequest\022\023\n\006parent\030\001 \001"
-          + "(\tB\003\340A\002\022e\n\027user_event_rejoin_scope\030\002 \001(\016"
-          + "2D.google.cloud.retail.v2.RejoinUserEven"
-          + "tsRequest.UserEventRejoinScope\"g\n\024UserEv"
-          + "entRejoinScope\022\'\n#USER_EVENT_REJOIN_SCOP"
-          + "E_UNSPECIFIED\020\000\022\021\n\rJOINED_EVENTS\020\001\022\023\n\017UN"
-          + "JOINED_EVENTS\020\002\">\n\030RejoinUserEventsRespo"
-          + "nse\022\"\n\032rejoined_user_events_count\030\001 \001(\003\""
-          + "\032\n\030RejoinUserEventsMetadata2\277\t\n\020UserEven"
-          + "tService\022\267\001\n\016WriteUserEvent\022-.google.clo"
-          + "ud.retail.v2.WriteUserEventRequest\032!.goo"
-          + "gle.cloud.retail.v2.UserEvent\"S\202\323\344\223\002M\"?/"
+          + "o\032\031google/api/httpbody.proto\032\031google/api"
+          + "/resource.proto\032*google/cloud/retail/v2/"
+          + "import_config.proto\032)google/cloud/retail"
+          + "/v2/purge_config.proto\032\'google/cloud/ret"
+          + "ail/v2/user_event.proto\032#google/longrunn"
+          + "ing/operations.proto\"}\n\025WriteUserEventRe"
+          + "quest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022:\n\nuser_event"
+          + "\030\002 \001(\0132!.google.cloud.retail.v2.UserEven"
+          + "tB\003\340A\002\022\023\n\013write_async\030\003 \001(\010\"\237\001\n\027CollectU"
+          + "serEventRequest\022\027\n\rprebuilt_rule\030\006 \001(\tH\000"
+          + "\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\027\n\nuser_event\030\002 \001("
+          + "\tB\003\340A\002\022\013\n\003uri\030\003 \001(\t\022\013\n\003ets\030\004 \001(\003\022\020\n\010raw_"
+          + "json\030\005 \001(\tB\021\n\017conversion_rule\"\376\001\n\027Rejoin"
+          + "UserEventsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022e"
+          + "\n\027user_event_rejoin_scope\030\002 \001(\0162D.google"
+          + ".cloud.retail.v2.RejoinUserEventsRequest"
+          + ".UserEventRejoinScope\"g\n\024UserEventRejoin"
+          + "Scope\022\'\n#USER_EVENT_REJOIN_SCOPE_UNSPECI"
+          + "FIED\020\000\022\021\n\rJOINED_EVENTS\020\001\022\023\n\017UNJOINED_EV"
+          + "ENTS\020\002\">\n\030RejoinUserEventsResponse\022\"\n\032re"
+          + "joined_user_events_count\030\001 \001(\003\"\032\n\030Rejoin"
+          + "UserEventsMetadata2\277\t\n\020UserEventService\022"
+          + "\267\001\n\016WriteUserEvent\022-.google.cloud.retail"
+          + ".v2.WriteUserEventRequest\032!.google.cloud"
+          + ".retail.v2.UserEvent\"S\202\323\344\223\002M\"?/v2/{paren"
+          + "t=projects/*/locations/*/catalogs/*}/use"
+          + "rEvents:write:\nuser_event\022\244\001\n\020CollectUse"
+          + "rEvent\022/.google.cloud.retail.v2.CollectU"
+          + "serEventRequest\032\024.google.api.HttpBody\"I\202"
+          + "\323\344\223\002C\022A/v2/{parent=projects/*/locations/"
+          + "*/catalogs/*}/userEvents:collect\022\206\002\n\017Pur"
+          + "geUserEvents\022..google.cloud.retail.v2.Pu"
+          + "rgeUserEventsRequest\032\035.google.longrunnin"
+          + "g.Operation\"\243\001\202\323\344\223\002D\"?/v2/{parent=projec"
+          + "ts/*/locations/*/catalogs/*}/userEvents:"
+          + "purge:\001*\312AV\n.google.cloud.retail.v2.Purg"
+          + "eUserEventsResponse\022$google.cloud.retail"
+          + ".v2.PurgeMetadata\022\213\002\n\020ImportUserEvents\022/"
+          + ".google.cloud.retail.v2.ImportUserEvents"
+          + "Request\032\035.google.longrunning.Operation\"\246"
+          + "\001\202\323\344\223\002E\"@/v2/{parent=projects/*/location"
+          + "s/*/catalogs/*}/userEvents:import:\001*\312AX\n"
+          + "/google.cloud.retail.v2.ImportUserEvents"
+          + "Response\022%google.cloud.retail.v2.ImportM"
+          + "etadata\022\347\001\n\020RejoinUserEvents\022/.google.cl"
+          + "oud.retail.v2.RejoinUserEventsRequest\032\035."
+          + "google.longrunning.Operation\"\202\001\202\323\344\223\002E\"@/"
           + "v2/{parent=projects/*/locations/*/catalo"
-          + "gs/*}/userEvents:write:\nuser_event\022\244\001\n\020C"
-          + "ollectUserEvent\022/.google.cloud.retail.v2"
-          + ".CollectUserEventRequest\032\024.google.api.Ht"
-          + "tpBody\"I\202\323\344\223\002C\022A/v2/{parent=projects/*/l"
-          + "ocations/*/catalogs/*}/userEvents:collec"
-          + "t\022\206\002\n\017PurgeUserEvents\022..google.cloud.ret"
-          + "ail.v2.PurgeUserEventsRequest\032\035.google.l"
-          + "ongrunning.Operation\"\243\001\202\323\344\223\002D\"?/v2/{pare"
-          + "nt=projects/*/locations/*/catalogs/*}/us"
-          + "erEvents:purge:\001*\312AV\n.google.cloud.retai"
-          + "l.v2.PurgeUserEventsResponse\022$google.clo"
-          + "ud.retail.v2.PurgeMetadata\022\213\002\n\020ImportUse"
-          + "rEvents\022/.google.cloud.retail.v2.ImportU"
-          + "serEventsRequest\032\035.google.longrunning.Op"
-          + "eration\"\246\001\202\323\344\223\002E\"@/v2/{parent=projects/*"
-          + "/locations/*/catalogs/*}/userEvents:impo"
-          + "rt:\001*\312AX\n/google.cloud.retail.v2.ImportU"
-          + "serEventsResponse\022%google.cloud.retail.v"
-          + "2.ImportMetadata\022\347\001\n\020RejoinUserEvents\022/."
-          + "google.cloud.retail.v2.RejoinUserEventsR"
-          + "equest\032\035.google.longrunning.Operation\"\202\001"
-          + "\202\323\344\223\002E\"@/v2/{parent=projects/*/locations"
-          + "/*/catalogs/*}/userEvents:rejoin:\001*\312A4\n\030"
-          + "RejoinUserEventsResponse\022\030RejoinUserEven"
-          + "tsMetadata\032I\312A\025retail.googleapis.com\322A.h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\312\001\n\032com.google.cloud.retail.v2B\025Us"
-          + "erEventServiceProtoP\001Z<google.golang.org"
-          + "/genproto/googleapis/cloud/retail/v2;ret"
-          + "ail\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026"
-          + "Google\\Cloud\\Retail\\V2\352\002\031Google::Cloud::"
-          + "Retail::V2b\006proto3"
+          + "gs/*}/userEvents:rejoin:\001*\312A4\n\030RejoinUse"
+          + "rEventsResponse\022\030RejoinUserEventsMetadat"
+          + "a\032I\312A\025retail.googleapis.com\322A.https://ww"
+          + "w.googleapis.com/auth/cloud-platformB\312\001\n"
+          + "\032com.google.cloud.retail.v2B\025UserEventSe"
+          + "rviceProtoP\001Z<google.golang.org/genproto"
+          + "/googleapis/cloud/retail/v2;retail\242\002\006RET"
+          + "AIL\252\002\026Google.Cloud.Retail.V2\312\002\026Google\\Cl"
+          + "oud\\Retail\\V2\352\002\031Google::Cloud::Retail::V"
+          + "2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -124,6 +127,7 @@ public final class UserEventServiceProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.HttpBodyProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.retail.v2.ImportConfigProto.getDescriptor(),
               com.google.cloud.retail.v2.PurgeConfigProto.getDescriptor(),
               com.google.cloud.retail.v2.UserEventProto.getDescriptor(),
@@ -135,7 +139,7 @@ public final class UserEventServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2_WriteUserEventRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "UserEvent",
+              "Parent", "UserEvent", "WriteAsync",
             });
     internal_static_google_cloud_retail_v2_CollectUserEventRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -143,7 +147,7 @@ public final class UserEventServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2_CollectUserEventRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "UserEvent", "Uri", "Ets",
+              "PrebuiltRule", "Parent", "UserEvent", "Uri", "Ets", "RawJson", "ConversionRule",
             });
     internal_static_google_cloud_retail_v2_RejoinUserEventsRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -180,6 +184,7 @@ public final class UserEventServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.HttpBodyProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2.ImportConfigProto.getDescriptor();
     com.google.cloud.retail.v2.PurgeConfigProto.getDescriptor();
     com.google.cloud.retail.v2.UserEventProto.getDescriptor();

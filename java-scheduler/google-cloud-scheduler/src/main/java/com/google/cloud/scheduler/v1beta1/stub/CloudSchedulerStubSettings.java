@@ -17,6 +17,7 @@
 package com.google.cloud.scheduler.v1beta1.stub;
 
 import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListJobsPagedResponse;
+import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -43,6 +44,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.scheduler.v1beta1.CreateJobRequest;
 import com.google.cloud.scheduler.v1beta1.DeleteJobRequest;
 import com.google.cloud.scheduler.v1beta1.GetJobRequest;
@@ -114,6 +119,10 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   private final UnaryCallSettings<PauseJobRequest, Job> pauseJobSettings;
   private final UnaryCallSettings<ResumeJobRequest, Job> resumeJobSettings;
   private final UnaryCallSettings<RunJobRequest, Job> runJobSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
       LIST_JOBS_PAGE_STR_DESC =
@@ -151,6 +160,42 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       LIST_JOBS_PAGE_STR_FACT =
@@ -164,6 +209,23 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               PageContext<ListJobsRequest, ListJobsResponse, Job> pageContext =
                   PageContext.create(callable, LIST_JOBS_PAGE_STR_DESC, request, context);
               return ListJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -206,6 +268,17 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
   /** Returns the object with the settings used for calls to runJob. */
   public UnaryCallSettings<RunJobRequest, Job> runJobSettings() {
     return runJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public CloudSchedulerStub createStub() throws IOException {
@@ -322,6 +395,8 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     pauseJobSettings = settingsBuilder.pauseJobSettings().build();
     resumeJobSettings = settingsBuilder.resumeJobSettings().build();
     runJobSettings = settingsBuilder.runJobSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for CloudSchedulerStubSettings. */
@@ -337,6 +412,10 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     private final UnaryCallSettings.Builder<PauseJobRequest, Job> pauseJobSettings;
     private final UnaryCallSettings.Builder<ResumeJobRequest, Job> resumeJobSettings;
     private final UnaryCallSettings.Builder<RunJobRequest, Job> runJobSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -350,6 +429,7 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -377,6 +457,8 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -395,6 +477,8 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
       pauseJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resumeJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -405,7 +489,9 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               deleteJobSettings,
               pauseJobSettings,
               resumeJobSettings,
-              runJobSettings);
+              runJobSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -420,6 +506,8 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
       pauseJobSettings = settings.pauseJobSettings.toBuilder();
       resumeJobSettings = settings.resumeJobSettings.toBuilder();
       runJobSettings = settings.runJobSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -430,7 +518,9 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
               deleteJobSettings,
               pauseJobSettings,
               resumeJobSettings,
-              runJobSettings);
+              runJobSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -500,6 +590,16 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -557,6 +657,18 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     /** Returns the builder for the settings used for calls to runJob. */
     public UnaryCallSettings.Builder<RunJobRequest, Job> runJobSettings() {
       return runJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override
