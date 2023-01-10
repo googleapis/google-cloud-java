@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1.MetadataService.PurgeArtifacts].
+ * Request message for
+ * [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1.MetadataService.PurgeArtifacts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.PurgeArtifactsRequest}
@@ -377,7 +378,8 @@ public final class PurgeArtifactsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1.MetadataService.PurgeArtifacts].
+   * Request message for
+   * [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1.MetadataService.PurgeArtifacts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.PurgeArtifactsRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryArtifactLineageSubgraph].
+ * Request message for
+ * [MetadataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryArtifactLineageSubgraph].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest}
@@ -76,9 +77,8 @@ public final class QueryArtifactLineageSubgraphRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-   * LineageSubgraph.
-   * Format:
+   * Required. The resource name of the Artifact whose Lineage needs to be
+   * retrieved as a LineageSubgraph. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
@@ -107,9 +107,8 @@ public final class QueryArtifactLineageSubgraphRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-   * LineageSubgraph.
-   * Format:
+   * Required. The resource name of the Artifact whose Lineage needs to be
+   * retrieved as a LineageSubgraph. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * The request may error with FAILED_PRECONDITION if the number of Artifacts,
    * the number of Executions, or the number of Events that would be returned
@@ -425,7 +424,8 @@ public final class QueryArtifactLineageSubgraphRequest
    *
    *
    * <pre>
-   * Request message for [MetadataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryArtifactLineageSubgraph].
+   * Request message for
+   * [MetadataService.QueryArtifactLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryArtifactLineageSubgraph].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest}
@@ -631,9 +631,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-     * LineageSubgraph.
-     * Format:
+     * Required. The resource name of the Artifact whose Lineage needs to be
+     * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
@@ -661,9 +660,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-     * LineageSubgraph.
-     * Format:
+     * Required. The resource name of the Artifact whose Lineage needs to be
+     * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
@@ -691,9 +689,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-     * LineageSubgraph.
-     * Format:
+     * Required. The resource name of the Artifact whose Lineage needs to be
+     * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
@@ -720,9 +717,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-     * LineageSubgraph.
-     * Format:
+     * Required. The resource name of the Artifact whose Lineage needs to be
+     * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned
@@ -745,9 +741,8 @@ public final class QueryArtifactLineageSubgraphRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Artifact whose Lineage needs to be retrieved as a
-     * LineageSubgraph.
-     * Format:
+     * Required. The resource name of the Artifact whose Lineage needs to be
+     * retrieved as a LineageSubgraph. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
      * The request may error with FAILED_PRECONDITION if the number of Artifacts,
      * the number of Executions, or the number of Events that would be returned

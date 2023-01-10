@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems].
+ * Request message for
+ * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.SearchDataItemsRequest}
@@ -83,8 +84,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Saved query of the Annotation. Only Annotations belong to this saved
-     * query will be considered for ordering.
+     * Required. Saved query of the Annotation. Only Annotations belong to this
+     * saved query will be considered for ordering.
      * </pre>
      *
      * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -96,8 +97,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Saved query of the Annotation. Only Annotations belong to this saved
-     * query will be considered for ordering.
+     * Required. Saved query of the Annotation. Only Annotations belong to this
+     * saved query will be considered for ordering.
      * </pre>
      *
      * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -192,8 +193,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Saved query of the Annotation. Only Annotations belong to this saved
-     * query will be considered for ordering.
+     * Required. Saved query of the Annotation. Only Annotations belong to this
+     * saved query will be considered for ordering.
      * </pre>
      *
      * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -216,8 +217,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Saved query of the Annotation. Only Annotations belong to this saved
-     * query will be considered for ordering.
+     * Required. Saved query of the Annotation. Only Annotations belong to this
+     * saved query will be considered for ordering.
      * </pre>
      *
      * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -672,8 +673,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Saved query of the Annotation. Only Annotations belong to this saved
-       * query will be considered for ordering.
+       * Required. Saved query of the Annotation. Only Annotations belong to this
+       * saved query will be considered for ordering.
        * </pre>
        *
        * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -695,8 +696,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Saved query of the Annotation. Only Annotations belong to this saved
-       * query will be considered for ordering.
+       * Required. Saved query of the Annotation. Only Annotations belong to this
+       * saved query will be considered for ordering.
        * </pre>
        *
        * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -718,8 +719,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Saved query of the Annotation. Only Annotations belong to this saved
-       * query will be considered for ordering.
+       * Required. Saved query of the Annotation. Only Annotations belong to this
+       * saved query will be considered for ordering.
        * </pre>
        *
        * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,8 +741,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Saved query of the Annotation. Only Annotations belong to this saved
-       * query will be considered for ordering.
+       * Required. Saved query of the Annotation. Only Annotations belong to this
+       * saved query will be considered for ordering.
        * </pre>
        *
        * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -758,8 +759,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. Saved query of the Annotation. Only Annotations belong to this saved
-       * query will be considered for ordering.
+       * Required. Saved query of the Annotation. Only Annotations belong to this
+       * saved query will be considered for ordering.
        * </pre>
        *
        * <code>string saved_query = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1217,7 +1218,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
    * @return The savedQuery.
    */
   @java.lang.Override
@@ -1247,7 +1248,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
    * @return The bytes for savedQuery.
    */
   @java.lang.Override
@@ -1400,7 +1401,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
    * @return The annotationsFilter.
    */
   @java.lang.Override
@@ -1428,7 +1429,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
    * @return The bytes for annotationsFilter.
    */
   @java.lang.Override
@@ -1528,7 +1529,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+   * Mask specifying which fields of
+   * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1543,7 +1545,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+   * Mask specifying which fields of
+   * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1558,7 +1561,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+   * Mask specifying which fields of
+   * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -1620,7 +1624,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
    * @return The orderBy.
    */
   @java.lang.Override
@@ -1647,7 +1651,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
    * @return The bytes for orderBy.
    */
   @java.lang.Override
@@ -1672,8 +1676,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+   * of the previous
+   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+   * call.
    * </pre>
    *
    * <code>string page_token = 10;</code>
@@ -1698,8 +1704,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+   * of the previous
+   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+   * call.
    * </pre>
    *
    * <code>string page_token = 10;</code>
@@ -2026,7 +2034,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems].
+   * Request message for
+   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.SearchDataItemsRequest}
@@ -2933,7 +2942,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
      * @return The savedQuery.
      */
     @java.lang.Deprecated
@@ -2962,7 +2971,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
      * @return The bytes for savedQuery.
      */
     @java.lang.Deprecated
@@ -2991,7 +3000,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
      * @param value The savedQuery to set.
      * @return This builder for chaining.
      */
@@ -3019,7 +3028,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3043,7 +3052,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=414
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=436
      * @param value The bytes for savedQuery to set.
      * @return This builder for chaining.
      */
@@ -3344,7 +3353,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
      * @return The annotationsFilter.
      */
     @java.lang.Deprecated
@@ -3371,7 +3380,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
      * @return The bytes for annotationsFilter.
      */
     @java.lang.Deprecated
@@ -3398,7 +3407,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
      * @param value The annotationsFilter to set.
      * @return This builder for chaining.
      */
@@ -3424,7 +3433,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3446,7 +3455,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string annotations_filter = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=445
+     *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=467
      * @param value The bytes for annotationsFilter to set.
      * @return This builder for chaining.
      */
@@ -3676,7 +3685,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3690,7 +3700,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3708,7 +3719,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3730,7 +3742,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3749,7 +3762,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3773,7 +3787,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3793,7 +3808,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3807,7 +3823,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3823,7 +3840,8 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
+     * Mask specifying which fields of
+     * [DataItemView][google.cloud.aiplatform.v1beta1.DataItemView] to read.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -3970,7 +3988,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string order_by = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
      * @return The orderBy.
      */
     @java.lang.Deprecated
@@ -3996,7 +4014,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string order_by = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
      * @return The bytes for orderBy.
      */
     @java.lang.Deprecated
@@ -4022,7 +4040,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string order_by = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
      * @param value The orderBy to set.
      * @return This builder for chaining.
      */
@@ -4047,7 +4065,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string order_by = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4068,7 +4086,7 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <code>string order_by = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+     *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=491
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
      */
@@ -4091,8 +4109,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+     * of the previous
+     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+     * call.
      * </pre>
      *
      * <code>string page_token = 10;</code>
@@ -4116,8 +4136,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+     * of the previous
+     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+     * call.
      * </pre>
      *
      * <code>string page_token = 10;</code>
@@ -4141,8 +4163,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+     * of the previous
+     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+     * call.
      * </pre>
      *
      * <code>string page_token = 10;</code>
@@ -4165,8 +4189,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+     * of the previous
+     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+     * call.
      * </pre>
      *
      * <code>string page_token = 10;</code>
@@ -4185,8 +4211,10 @@ public final class SearchDataItemsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * A token identifying a page of results for the server to return
      * Typically obtained via
-     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token] of the previous
-     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems] call.
+     * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsResponse.next_page_token]
+     * of the previous
+     * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1beta1.DatasetService.SearchDataItems]
+     * call.
      * </pre>
      *
      * <code>string page_token = 10;</code>

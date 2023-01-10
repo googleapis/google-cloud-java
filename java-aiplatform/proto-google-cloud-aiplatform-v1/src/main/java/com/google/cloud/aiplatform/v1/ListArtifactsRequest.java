@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts].
+ * Request message for
+ * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListArtifactsRequest}
@@ -152,7 +153,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+   * A page token, received from a previous
+   * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
    * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
@@ -179,7 +181,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+   * A page token, received from a previous
+   * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
    * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
@@ -558,7 +561,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts].
+   * Request message for
+   * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListArtifactsRequest}
@@ -962,7 +966,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+     * A page token, received from a previous
+     * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
      * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
@@ -988,7 +993,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+     * A page token, received from a previous
+     * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
      * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
@@ -1014,7 +1020,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+     * A page token, received from a previous
+     * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
      * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
@@ -1039,7 +1046,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+     * A page token, received from a previous
+     * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
      * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
@@ -1060,7 +1068,8 @@ public final class ListArtifactsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
+     * A page token, received from a previous
+     * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1.MetadataService.ListArtifacts]
      * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with

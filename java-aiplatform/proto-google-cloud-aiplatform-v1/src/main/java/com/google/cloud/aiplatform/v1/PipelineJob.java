@@ -92,12 +92,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -110,12 +112,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -131,12 +135,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -149,12 +155,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -171,12 +179,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -190,8 +200,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A path in a Cloud Storage bucket, which will be treated as the root
-     * output directory of the pipeline. It is used by the system to
+     * Required. A path in a Cloud Storage bucket, which will be treated as the
+     * root output directory of the pipeline. It is used by the system to
      * generate the paths of output artifacts. The artifact paths are generated
      * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
      * specified output directory. The service account specified in this
@@ -208,8 +218,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A path in a Cloud Storage bucket, which will be treated as the root
-     * output directory of the pipeline. It is used by the system to
+     * Required. A path in a Cloud Storage bucket, which will be treated as the
+     * root output directory of the pipeline. It is used by the system to
      * generate the paths of output artifacts. The artifact paths are generated
      * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
      * specified output directory. The service account specified in this
@@ -228,10 +238,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -242,10 +254,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -259,10 +273,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -273,10 +289,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -292,10 +310,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1371,12 +1391,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -1401,12 +1423,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -1423,12 +1447,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -1450,12 +1476,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-     * parameters of the PipelineJob. The parameters will be passed into
-     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-     * This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+     * Deprecated. Use
+     * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+     * instead. The runtime parameters of the PipelineJob. The parameters will
+     * be passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+     * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>
@@ -1482,8 +1510,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A path in a Cloud Storage bucket, which will be treated as the root
-     * output directory of the pipeline. It is used by the system to
+     * Required. A path in a Cloud Storage bucket, which will be treated as the
+     * root output directory of the pipeline. It is used by the system to
      * generate the paths of output artifacts. The artifact paths are generated
      * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
      * specified output directory. The service account specified in this
@@ -1511,8 +1539,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A path in a Cloud Storage bucket, which will be treated as the root
-     * output directory of the pipeline. It is used by the system to
+     * Required. A path in a Cloud Storage bucket, which will be treated as the
+     * root output directory of the pipeline. It is used by the system to
      * generate the paths of output artifacts. The artifact paths are generated
      * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
      * specified output directory. The service account specified in this
@@ -1572,10 +1600,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1598,10 +1628,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1615,10 +1647,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1638,10 +1672,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
-     * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime. This field is used by pipelines built using
-     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+     * passed into
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+     * to replace the placeholders at runtime. This field is used by pipelines
+     * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+     * DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2383,12 +2419,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2413,12 +2451,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2435,12 +2475,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2462,12 +2504,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2497,12 +2541,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2527,12 +2573,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2556,12 +2604,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
-       * parameters of the PipelineJob. The parameters will be passed into
-       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
-       * This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
-       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
+       * Deprecated. Use
+       * [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values]
+       * instead. The runtime parameters of the PipelineJob. The parameters will
+       * be passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower,
+       * such as pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>
@@ -2580,8 +2630,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A path in a Cloud Storage bucket, which will be treated as the root
-       * output directory of the pipeline. It is used by the system to
+       * Required. A path in a Cloud Storage bucket, which will be treated as the
+       * root output directory of the pipeline. It is used by the system to
        * generate the paths of output artifacts. The artifact paths are generated
        * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
        * specified output directory. The service account specified in this
@@ -2608,8 +2658,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A path in a Cloud Storage bucket, which will be treated as the root
-       * output directory of the pipeline. It is used by the system to
+       * Required. A path in a Cloud Storage bucket, which will be treated as the
+       * root output directory of the pipeline. It is used by the system to
        * generate the paths of output artifacts. The artifact paths are generated
        * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
        * specified output directory. The service account specified in this
@@ -2636,8 +2686,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A path in a Cloud Storage bucket, which will be treated as the root
-       * output directory of the pipeline. It is used by the system to
+       * Required. A path in a Cloud Storage bucket, which will be treated as the
+       * root output directory of the pipeline. It is used by the system to
        * generate the paths of output artifacts. The artifact paths are generated
        * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
        * specified output directory. The service account specified in this
@@ -2663,8 +2713,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A path in a Cloud Storage bucket, which will be treated as the root
-       * output directory of the pipeline. It is used by the system to
+       * Required. A path in a Cloud Storage bucket, which will be treated as the
+       * root output directory of the pipeline. It is used by the system to
        * generate the paths of output artifacts. The artifact paths are generated
        * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
        * specified output directory. The service account specified in this
@@ -2686,8 +2736,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. A path in a Cloud Storage bucket, which will be treated as the root
-       * output directory of the pipeline. It is used by the system to
+       * Required. A path in a Cloud Storage bucket, which will be treated as the
+       * root output directory of the pipeline. It is used by the system to
        * generate the paths of output artifacts. The artifact paths are generated
        * with a sub-path pattern `{job_id}/{task_id}/{output_key}` under the
        * specified output directory. The service account specified in this
@@ -2746,10 +2796,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2772,10 +2824,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2789,10 +2843,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2812,10 +2868,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2842,10 +2900,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2868,10 +2928,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -2892,10 +2954,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
-       * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime. This field is used by pipelines built using
-       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
-       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
+       * passed into
+       * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec]
+       * to replace the placeholders at runtime. This field is used by pipelines
+       * built using `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.9 or higher and the v2
+       * DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -4143,8 +4207,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-   * be downloaded.
+   * A template uri from where the
+   * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+   * if empty, will be downloaded.
    * </pre>
    *
    * <code>string template_uri = 19;</code>
@@ -4167,8 +4232,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-   * be downloaded.
+   * A template uri from where the
+   * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+   * if empty, will be downloaded.
    * </pre>
    *
    * <code>string template_uri = 19;</code>
@@ -4195,7 +4261,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Pipeline template metadata. Will fill up fields if
-   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+   * is from supported template registry.
    * </pre>
    *
    * <code>
@@ -4213,7 +4280,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Pipeline template metadata. Will fill up fields if
-   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+   * is from supported template registry.
    * </pre>
    *
    * <code>
@@ -4233,7 +4301,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Pipeline template metadata. Will fill up fields if
-   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+   * is from supported template registry.
    * </pre>
    *
    * <code>
@@ -7630,8 +7699,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-     * be downloaded.
+     * A template uri from where the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+     * if empty, will be downloaded.
      * </pre>
      *
      * <code>string template_uri = 19;</code>
@@ -7653,8 +7723,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-     * be downloaded.
+     * A template uri from where the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+     * if empty, will be downloaded.
      * </pre>
      *
      * <code>string template_uri = 19;</code>
@@ -7676,8 +7747,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-     * be downloaded.
+     * A template uri from where the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+     * if empty, will be downloaded.
      * </pre>
      *
      * <code>string template_uri = 19;</code>
@@ -7698,8 +7770,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-     * be downloaded.
+     * A template uri from where the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+     * if empty, will be downloaded.
      * </pre>
      *
      * <code>string template_uri = 19;</code>
@@ -7716,8 +7789,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-     * be downloaded.
+     * A template uri from where the
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+     * if empty, will be downloaded.
      * </pre>
      *
      * <code>string template_uri = 19;</code>
@@ -7747,7 +7821,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7764,7 +7839,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7787,7 +7863,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7813,7 +7890,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7836,7 +7914,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7866,7 +7945,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7889,7 +7969,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7907,7 +7988,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>
@@ -7929,7 +8011,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Pipeline template metadata. Will fill up fields if
-     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+     * is from supported template registry.
      * </pre>
      *
      * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
+ * Response message for
+ * [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.BatchReadFeatureValuesResponse}
@@ -221,7 +222,8 @@ public final class BatchReadFeatureValuesResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Response message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
+   * Response message for
+   * [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.BatchReadFeatureValuesResponse}

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.GetTrial][google.cloud.aiplatform.v1beta1.VizierService.GetTrial].
+ * Request message for
+ * [VizierService.GetTrial][google.cloud.aiplatform.v1beta1.VizierService.GetTrial].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetTrialRequest}
@@ -287,7 +288,8 @@ public final class GetTrialRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for [VizierService.GetTrial][google.cloud.aiplatform.v1beta1.VizierService.GetTrial].
+   * Request message for
+   * [VizierService.GetTrial][google.cloud.aiplatform.v1beta1.VizierService.GetTrial].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetTrialRequest}

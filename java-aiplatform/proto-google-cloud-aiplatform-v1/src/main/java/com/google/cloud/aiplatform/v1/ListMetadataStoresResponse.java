@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
+ * Response message for
+ * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListMetadataStoresResponse}
@@ -145,8 +146,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -170,8 +172,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -366,7 +369,8 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Response message for [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
+   * Response message for
+   * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListMetadataStoresResponse}
@@ -957,8 +961,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -981,8 +986,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1005,8 +1011,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1028,8 +1035,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1047,8 +1055,9 @@ public final class ListMetadataStoresResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1.ListMetadataStoresRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

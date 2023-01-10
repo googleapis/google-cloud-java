@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.AddContextChildren][google.cloud.aiplatform.v1.MetadataService.AddContextChildren].
+ * Request message for
+ * [MetadataService.AddContextChildren][google.cloud.aiplatform.v1.MetadataService.AddContextChildren].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.AddContextChildrenRequest}
@@ -366,7 +367,8 @@ public final class AddContextChildrenRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [MetadataService.AddContextChildren][google.cloud.aiplatform.v1.MetadataService.AddContextChildren].
+   * Request message for
+   * [MetadataService.AddContextChildren][google.cloud.aiplatform.v1.MetadataService.AddContextChildren].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.AddContextChildrenRequest}

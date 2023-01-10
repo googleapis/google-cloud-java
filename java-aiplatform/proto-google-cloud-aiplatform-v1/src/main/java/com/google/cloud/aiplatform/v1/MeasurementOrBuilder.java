@@ -27,7 +27,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * Output only. Time that the Trial has been running at the point of this
+   * Measurement.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * Output only. Time that the Trial has been running at the point of this
+   * Measurement.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. Time that the Trial has been running at the point of this Measurement.
+   * Output only. Time that the Trial has been running at the point of this
+   * Measurement.
    * </pre>
    *
    * <code>
@@ -68,8 +71,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. The number of steps the machine learning model has been trained for.
-   * Must be non-negative.
+   * Output only. The number of steps the machine learning model has been
+   * trained for. Must be non-negative.
    * </pre>
    *
    * <code>int64 step_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -82,8 +85,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of metrics got by evaluating the objective functions using suggested
-   * Parameter values.
+   * Output only. A list of metrics got by evaluating the objective functions
+   * using suggested Parameter values.
    * </pre>
    *
    * <code>
@@ -95,8 +98,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of metrics got by evaluating the objective functions using suggested
-   * Parameter values.
+   * Output only. A list of metrics got by evaluating the objective functions
+   * using suggested Parameter values.
    * </pre>
    *
    * <code>
@@ -108,8 +111,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of metrics got by evaluating the objective functions using suggested
-   * Parameter values.
+   * Output only. A list of metrics got by evaluating the objective functions
+   * using suggested Parameter values.
    * </pre>
    *
    * <code>
@@ -121,8 +124,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of metrics got by evaluating the objective functions using suggested
-   * Parameter values.
+   * Output only. A list of metrics got by evaluating the objective functions
+   * using suggested Parameter values.
    * </pre>
    *
    * <code>
@@ -135,8 +138,8 @@ public interface MeasurementOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of metrics got by evaluating the objective functions using suggested
-   * Parameter values.
+   * Output only. A list of metrics got by evaluating the objective functions
+   * using suggested Parameter values.
    * </pre>
    *
    * <code>

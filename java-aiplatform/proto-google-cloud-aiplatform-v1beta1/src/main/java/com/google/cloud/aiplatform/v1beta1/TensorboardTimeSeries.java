@@ -269,7 +269,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Max step index of all data points within a TensorboardTimeSeries.
+     * Output only. Max step index of all data points within a
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>int64 max_step = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -326,8 +327,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. The largest blob sequence length (number of blobs) of all data points in
-     * this time series, if its ValueType is BLOB_SEQUENCE.
+     * Output only. The largest blob sequence length (number of blobs) of all
+     * data points in this time series, if its ValueType is BLOB_SEQUENCE.
      * </pre>
      *
      * <code>int64 max_blob_sequence_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -389,7 +390,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Max step index of all data points within a TensorboardTimeSeries.
+     * Output only. Max step index of all data points within a
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>int64 max_step = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -464,8 +466,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. The largest blob sequence length (number of blobs) of all data points in
-     * this time series, if its ValueType is BLOB_SEQUENCE.
+     * Output only. The largest blob sequence length (number of blobs) of all
+     * data points in this time series, if its ValueType is BLOB_SEQUENCE.
      * </pre>
      *
      * <code>int64 max_blob_sequence_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -878,7 +880,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Output only. Max step index of all data points within a TensorboardTimeSeries.
+       * Output only. Max step index of all data points within a
+       * TensorboardTimeSeries.
        * </pre>
        *
        * <code>int64 max_step = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -893,7 +896,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Output only. Max step index of all data points within a TensorboardTimeSeries.
+       * Output only. Max step index of all data points within a
+       * TensorboardTimeSeries.
        * </pre>
        *
        * <code>int64 max_step = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -911,7 +915,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Output only. Max step index of all data points within a TensorboardTimeSeries.
+       * Output only. Max step index of all data points within a
+       * TensorboardTimeSeries.
        * </pre>
        *
        * <code>int64 max_step = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1142,8 +1147,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Output only. The largest blob sequence length (number of blobs) of all data points in
-       * this time series, if its ValueType is BLOB_SEQUENCE.
+       * Output only. The largest blob sequence length (number of blobs) of all
+       * data points in this time series, if its ValueType is BLOB_SEQUENCE.
        * </pre>
        *
        * <code>int64 max_blob_sequence_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1159,8 +1164,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Output only. The largest blob sequence length (number of blobs) of all data points in
-       * this time series, if its ValueType is BLOB_SEQUENCE.
+       * Output only. The largest blob sequence length (number of blobs) of all
+       * data points in this time series, if its ValueType is BLOB_SEQUENCE.
        * </pre>
        *
        * <code>int64 max_blob_sequence_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1179,8 +1184,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
        *
        *
        * <pre>
-       * Output only. The largest blob sequence length (number of blobs) of all data points in
-       * this time series, if its ValueType is BLOB_SEQUENCE.
+       * Output only. The largest blob sequence length (number of blobs) of all
+       * data points in this time series, if its ValueType is BLOB_SEQUENCE.
        * </pre>
        *
        * <code>int64 max_blob_sequence_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1610,8 +1615,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-   * Blob
+   * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+   * Tensor, Blob
    * </pre>
    *
    * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1634,8 +1639,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-   * Blob
+   * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+   * Tensor, Blob
    * </pre>
    *
    * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1679,7 +1684,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+   * Output only. Scalar, Tensor, or Blob metadata for this
+   * TensorboardTimeSeries.
    * </pre>
    *
    * <code>
@@ -1696,7 +1702,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+   * Output only. Scalar, Tensor, or Blob metadata for this
+   * TensorboardTimeSeries.
    * </pre>
    *
    * <code>
@@ -1715,7 +1722,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+   * Output only. Scalar, Tensor, or Blob metadata for this
+   * TensorboardTimeSeries.
    * </pre>
    *
    * <code>
@@ -3247,8 +3255,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-     * Blob
+     * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+     * Tensor, Blob
      * </pre>
      *
      * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3270,8 +3278,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-     * Blob
+     * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+     * Tensor, Blob
      * </pre>
      *
      * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3293,8 +3301,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-     * Blob
+     * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+     * Tensor, Blob
      * </pre>
      *
      * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3315,8 +3323,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-     * Blob
+     * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+     * Tensor, Blob
      * </pre>
      *
      * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3333,8 +3341,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-     * Blob
+     * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+     * Tensor, Blob
      * </pre>
      *
      * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3418,7 +3426,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3434,7 +3443,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3457,7 +3467,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3482,7 +3493,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3505,7 +3517,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3535,7 +3548,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3557,7 +3571,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3574,7 +3589,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>
@@ -3596,7 +3612,8 @@ public final class TensorboardTimeSeries extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+     * Output only. Scalar, Tensor, or Blob metadata for this
+     * TensorboardTimeSeries.
      * </pre>
      *
      * <code>

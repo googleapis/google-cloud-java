@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.GetExecution][google.cloud.aiplatform.v1beta1.MetadataService.GetExecution].
+ * Request message for
+ * [MetadataService.GetExecution][google.cloud.aiplatform.v1beta1.MetadataService.GetExecution].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetExecutionRequest}
@@ -288,7 +289,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [MetadataService.GetExecution][google.cloud.aiplatform.v1beta1.MetadataService.GetExecution].
+   * Request message for
+   * [MetadataService.GetExecution][google.cloud.aiplatform.v1beta1.MetadataService.GetExecution].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetExecutionRequest}

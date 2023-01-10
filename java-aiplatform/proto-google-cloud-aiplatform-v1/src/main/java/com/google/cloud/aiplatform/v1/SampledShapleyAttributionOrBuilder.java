@@ -27,8 +27,8 @@ public interface SampledShapleyAttributionOrBuilder
    *
    *
    * <pre>
-   * Required. The number of feature permutations to consider when approximating the
-   * Shapley values.
+   * Required. The number of feature permutations to consider when approximating
+   * the Shapley values.
    * Valid range of its value is [1, 50], inclusively.
    * </pre>
    *

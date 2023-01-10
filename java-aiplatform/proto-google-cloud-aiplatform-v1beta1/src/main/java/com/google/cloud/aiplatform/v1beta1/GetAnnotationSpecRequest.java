@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [DatasetService.GetAnnotationSpec][google.cloud.aiplatform.v1beta1.DatasetService.GetAnnotationSpec].
+ * Request message for
+ * [DatasetService.GetAnnotationSpec][google.cloud.aiplatform.v1beta1.DatasetService.GetAnnotationSpec].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetAnnotationSpecRequest}
@@ -348,7 +349,8 @@ public final class GetAnnotationSpecRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [DatasetService.GetAnnotationSpec][google.cloud.aiplatform.v1beta1.DatasetService.GetAnnotationSpec].
+   * Request message for
+   * [DatasetService.GetAnnotationSpec][google.cloud.aiplatform.v1beta1.DatasetService.GetAnnotationSpec].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetAnnotationSpecRequest}

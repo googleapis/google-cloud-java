@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
+ * Request message for
+ * [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest}
@@ -74,8 +75,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the BatchPredictionJob in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the
+   * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -100,8 +101,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the BatchPredictionJob in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the
+   * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -356,7 +357,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request message for [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
+   * Request message for
+   * [JobService.CreateBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CreateBatchPredictionJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateBatchPredictionJobRequest}
@@ -551,8 +553,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the BatchPredictionJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -576,8 +578,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the BatchPredictionJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -601,8 +603,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the BatchPredictionJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -625,8 +627,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the BatchPredictionJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -645,8 +647,8 @@ public final class CreateBatchPredictionJobRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the BatchPredictionJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * BatchPredictionJob in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

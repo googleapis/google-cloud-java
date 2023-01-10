@@ -80,7 +80,9 @@ public interface ListModelEvaluationsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelEvaluationsRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListModelEvaluationsRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -93,7 +95,9 @@ public interface ListModelEvaluationsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelEvaluationsRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListModelEvaluationsRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

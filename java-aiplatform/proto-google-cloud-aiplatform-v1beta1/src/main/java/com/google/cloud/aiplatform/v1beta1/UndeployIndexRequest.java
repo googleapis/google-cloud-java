@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.UndeployIndex].
+ * Request message for
+ * [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.UndeployIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UndeployIndexRequest}
@@ -74,8 +75,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource from which to undeploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -101,8 +102,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource from which to undeploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -131,7 +132,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+   * Required. The ID of the DeployedIndex to be undeployed from the
+   * IndexEndpoint.
    * </pre>
    *
    * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -154,7 +156,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+   * Required. The ID of the DeployedIndex to be undeployed from the
+   * IndexEndpoint.
    * </pre>
    *
    * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -347,7 +350,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.UndeployIndex].
+   * Request message for
+   * [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.UndeployIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UndeployIndexRequest}
@@ -532,8 +536,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource from which to undeploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -558,8 +562,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource from which to undeploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -584,8 +588,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource from which to undeploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -609,8 +613,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource from which to undeploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -630,8 +634,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource from which to undeploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -658,7 +662,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+     * Required. The ID of the DeployedIndex to be undeployed from the
+     * IndexEndpoint.
      * </pre>
      *
      * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -680,7 +685,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+     * Required. The ID of the DeployedIndex to be undeployed from the
+     * IndexEndpoint.
      * </pre>
      *
      * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -702,7 +708,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+     * Required. The ID of the DeployedIndex to be undeployed from the
+     * IndexEndpoint.
      * </pre>
      *
      * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -723,7 +730,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+     * Required. The ID of the DeployedIndex to be undeployed from the
+     * IndexEndpoint.
      * </pre>
      *
      * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,7 +748,8 @@ public final class UndeployIndexRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+     * Required. The ID of the DeployedIndex to be undeployed from the
+     * IndexEndpoint.
      * </pre>
      *
      * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.UpdateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeaturestore].
+ * Request message for
+ * [FeaturestoreService.UpdateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeaturestore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest}
@@ -71,9 +72,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-   * updated.
-   * Format:
+   * Required. The Featurestore's `name` field is used to identify the
+   * Featurestore to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -91,9 +91,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-   * updated.
-   * Format:
+   * Required. The Featurestore's `name` field is used to identify the
+   * Featurestore to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -113,9 +112,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-   * updated.
-   * Format:
+   * Required. The Featurestore's `name` field is used to identify the
+   * Featurestore to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -145,7 +143,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
-   *   * `online_storage_ttl_days`
+   *   * `online_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -171,7 +169,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
-   *   * `online_storage_ttl_days`
+   *   * `online_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -197,7 +195,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
-   *   * `online_storage_ttl_days`
+   *   * `online_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -390,7 +388,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.UpdateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeaturestore].
+   * Request message for
+   * [FeaturestoreService.UpdateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateFeaturestore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest}
@@ -596,9 +595,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -615,9 +613,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -640,9 +637,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -667,9 +663,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -692,9 +687,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -723,9 +717,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -748,9 +741,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -767,9 +759,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -790,9 +781,8 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-     * updated.
-     * Format:
+     * Required. The Featurestore's `name` field is used to identify the
+     * Featurestore to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -838,7 +828,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -863,7 +853,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -894,7 +884,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -927,7 +917,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -957,7 +947,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -992,7 +982,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1023,7 +1013,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1048,7 +1038,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1077,7 +1067,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
      *   * `online_serving_config.scaling`
-     *   * `online_storage_ttl_days`
+     *   * `online_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

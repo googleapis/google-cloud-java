@@ -74,7 +74,8 @@ public interface ListContextsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous [MetadataService.ListContexts][google.cloud.aiplatform.v1.MetadataService.ListContexts]
+   * A page token, received from a previous
+   * [MetadataService.ListContexts][google.cloud.aiplatform.v1.MetadataService.ListContexts]
    * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
@@ -90,7 +91,8 @@ public interface ListContextsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous [MetadataService.ListContexts][google.cloud.aiplatform.v1.MetadataService.ListContexts]
+   * A page token, received from a previous
+   * [MetadataService.ListContexts][google.cloud.aiplatform.v1.MetadataService.ListContexts]
    * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with

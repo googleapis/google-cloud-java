@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.CancelTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CancelTrainingPipeline].
+ * Request message for
+ * [PipelineService.CancelTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CancelTrainingPipeline].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CancelTrainingPipelineRequest}
@@ -288,7 +289,8 @@ public final class CancelTrainingPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [PipelineService.CancelTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CancelTrainingPipeline].
+   * Request message for
+   * [PipelineService.CancelTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CancelTrainingPipeline].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CancelTrainingPipelineRequest}

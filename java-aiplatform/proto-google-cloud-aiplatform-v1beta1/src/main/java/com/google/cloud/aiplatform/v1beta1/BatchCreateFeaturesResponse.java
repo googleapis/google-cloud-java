@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchCreateFeatures].
+ * Response message for
+ * [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchCreateFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse}
@@ -302,7 +303,8 @@ public final class BatchCreateFeaturesResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchCreateFeatures].
+   * Response message for
+   * [FeaturestoreService.BatchCreateFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.BatchCreateFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse}

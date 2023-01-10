@@ -27,11 +27,12 @@ public interface ExplanationMetadataOverrideOrBuilder
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of
+   * the features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -43,11 +44,12 @@ public interface ExplanationMetadataOverrideOrBuilder
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of
+   * the features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -65,11 +67,12 @@ public interface ExplanationMetadataOverrideOrBuilder
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of
+   * the features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -84,11 +87,12 @@ public interface ExplanationMetadataOverrideOrBuilder
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of
+   * the features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -107,11 +111,12 @@ public interface ExplanationMetadataOverrideOrBuilder
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs] of
+   * the features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>

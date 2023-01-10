@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryContextLineageSubgraph].
+ * Request message for
+ * [MetadataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryContextLineageSubgraph].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest}
@@ -298,7 +299,8 @@ public final class QueryContextLineageSubgraphRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Request message for [MetadataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryContextLineageSubgraph].
+   * Request message for
+   * [MetadataService.QueryContextLineageSubgraph][google.cloud.aiplatform.v1beta1.MetadataService.QueryContextLineageSubgraph].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest}

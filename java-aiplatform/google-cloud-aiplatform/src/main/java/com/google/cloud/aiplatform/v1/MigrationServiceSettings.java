@@ -74,7 +74,10 @@ import javax.annotation.Generated;
  * migrationServiceSettingsBuilder
  *     .getLocationSettings()
  *     .setRetrySettings(
- *         migrationServiceSettingsBuilder.getLocationSettings().getRetrySettings().toBuilder()
+ *         migrationServiceSettingsBuilder
+ *             .getLocationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MigrationServiceSettings migrationServiceSettings = migrationServiceSettingsBuilder.build();

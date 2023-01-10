@@ -147,8 +147,8 @@ public interface TensorboardOrBuilder
    *
    *
    * <pre>
-   * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-   * can either be a bucket or directory. Does not end with a '/'.
+   * Output only. Consumer project Cloud Storage path prefix used to store blob
+   * data, which can either be a bucket or directory. Does not end with a '/'.
    * </pre>
    *
    * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -160,8 +160,8 @@ public interface TensorboardOrBuilder
    *
    *
    * <pre>
-   * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-   * can either be a bucket or directory. Does not end with a '/'.
+   * Output only. Consumer project Cloud Storage path prefix used to store blob
+   * data, which can either be a bucket or directory. Does not end with a '/'.
    * </pre>
    *
    * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
+ * Request message for
+ * [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDatasetRequest}
@@ -354,7 +355,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
+   * Request message for
+   * [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDatasetRequest}

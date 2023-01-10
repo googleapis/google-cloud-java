@@ -157,7 +157,8 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+   * be specified via Endpoint's DeployedModels' [Model's
+   * ][google.cloud.aiplatform.v1.DeployedModel.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -172,7 +173,8 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+   * be specified via Endpoint's DeployedModels' [Model's
+   * ][google.cloud.aiplatform.v1.DeployedModel.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -187,7 +189,8 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+   * be specified via Endpoint's DeployedModels' [Model's
+   * ][google.cloud.aiplatform.v1.DeployedModel.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -201,9 +204,9 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * If specified, overrides the
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of the DeployedModel.
-   * Can be used for explaining prediction results with different
-   * configurations, such as:
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * of the DeployedModel. Can be used for explaining prediction results with
+   * different configurations, such as:
    *  - Explaining top-5 predictions results as opposed to top-1;
    *  - Increasing path count or step count of the attribution methods to reduce
    *    approximate errors;
@@ -220,9 +223,9 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * If specified, overrides the
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of the DeployedModel.
-   * Can be used for explaining prediction results with different
-   * configurations, such as:
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * of the DeployedModel. Can be used for explaining prediction results with
+   * different configurations, such as:
    *  - Explaining top-5 predictions results as opposed to top-1;
    *  - Increasing path count or step count of the attribution methods to reduce
    *    approximate errors;
@@ -239,9 +242,9 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * If specified, overrides the
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] of the DeployedModel.
-   * Can be used for explaining prediction results with different
-   * configurations, such as:
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * of the DeployedModel. Can be used for explaining prediction results with
+   * different configurations, such as:
    *  - Explaining top-5 predictions results as opposed to top-1;
    *  - Increasing path count or step count of the attribution methods to reduce
    *    approximate errors;
@@ -258,7 +261,8 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * If specified, this ExplainRequest will be served by the chosen
-   * DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
+   * DeployedModel, overriding
+   * [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
    * </pre>
    *
    * <code>string deployed_model_id = 3;</code>
@@ -271,7 +275,8 @@ public interface ExplainRequestOrBuilder
    *
    * <pre>
    * If specified, this ExplainRequest will be served by the chosen
-   * DeployedModel, overriding [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
+   * DeployedModel, overriding
+   * [Endpoint.traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split].
    * </pre>
    *
    * <code>string deployed_model_id = 3;</code>

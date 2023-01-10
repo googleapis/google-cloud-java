@@ -854,9 +854,12 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
-     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
-     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
+     * A model cannot be deleted if any
+     * [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the
+     * model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models]
+     * field.
      * </pre>
      */
     public void deleteModel(
@@ -873,7 +876,8 @@ public final class ModelServiceGrpc {
      * Deletes a Model version.
      * Model version can only be deleted if there are no [DeployedModels][]
      * created from it. Deleting the only version in the Model is not allowed. Use
-     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
+     * deleting the Model instead.
      * </pre>
      */
     public void deleteModelVersion(
@@ -903,7 +907,8 @@ public final class ModelServiceGrpc {
      * <pre>
      * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
+     * [supported export
+     * format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
      */
     public void exportModel(
@@ -1211,9 +1216,12 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
-     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
-     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
+     * A model cannot be deleted if any
+     * [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the
+     * model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models]
+     * field.
      * </pre>
      */
     public void deleteModel(
@@ -1232,7 +1240,8 @@ public final class ModelServiceGrpc {
      * Deletes a Model version.
      * Model version can only be deleted if there are no [DeployedModels][]
      * created from it. Deleting the only version in the Model is not allowed. Use
-     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
+     * deleting the Model instead.
      * </pre>
      */
     public void deleteModelVersion(
@@ -1266,7 +1275,8 @@ public final class ModelServiceGrpc {
      * <pre>
      * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
+     * [supported export
+     * format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
      */
     public void exportModel(
@@ -1472,9 +1482,12 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
-     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
-     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
+     * A model cannot be deleted if any
+     * [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the
+     * model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models]
+     * field.
      * </pre>
      */
     public com.google.longrunning.Operation deleteModel(
@@ -1490,7 +1503,8 @@ public final class ModelServiceGrpc {
      * Deletes a Model version.
      * Model version can only be deleted if there are no [DeployedModels][]
      * created from it. Deleting the only version in the Model is not allowed. Use
-     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
+     * deleting the Model instead.
      * </pre>
      */
     public com.google.longrunning.Operation deleteModelVersion(
@@ -1518,7 +1532,8 @@ public final class ModelServiceGrpc {
      * <pre>
      * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
+     * [supported export
+     * format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
      */
     public com.google.longrunning.Operation exportModel(
@@ -1699,9 +1714,12 @@ public final class ModelServiceGrpc {
      *
      * <pre>
      * Deletes a Model.
-     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
-     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
-     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
+     * A model cannot be deleted if any
+     * [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the
+     * model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models]
+     * field.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1717,7 +1735,8 @@ public final class ModelServiceGrpc {
      * Deletes a Model version.
      * Model version can only be deleted if there are no [DeployedModels][]
      * created from it. Deleting the only version in the Model is not allowed. Use
-     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for
+     * deleting the Model instead.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1745,7 +1764,8 @@ public final class ModelServiceGrpc {
      * <pre>
      * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
-     * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
+     * [supported export
+     * format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

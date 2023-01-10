@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.CreateTensorboard][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboard].
+ * Request message for
+ * [TensorboardService.CreateTensorboard][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboard].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateTensorboardRequest}
@@ -354,7 +355,8 @@ public final class CreateTensorboardRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [TensorboardService.CreateTensorboard][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboard].
+   * Request message for
+   * [TensorboardService.CreateTensorboard][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboard].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateTensorboardRequest}

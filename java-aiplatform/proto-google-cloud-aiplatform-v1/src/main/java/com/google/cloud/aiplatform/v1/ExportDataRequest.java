@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [DatasetService.ExportData][google.cloud.aiplatform.v1.DatasetService.ExportData].
+ * Request message for
+ * [DatasetService.ExportData][google.cloud.aiplatform.v1.DatasetService.ExportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ExportDataRequest}
@@ -355,7 +356,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [DatasetService.ExportData][google.cloud.aiplatform.v1.DatasetService.ExportData].
+   * Request message for
+   * [DatasetService.ExportData][google.cloud.aiplatform.v1.DatasetService.ExportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ExportDataRequest}

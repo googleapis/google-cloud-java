@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Details of operations that perform [MetadataService.PurgeContexts][google.cloud.aiplatform.v1.MetadataService.PurgeContexts].
+ * Details of operations that perform
+ * [MetadataService.PurgeContexts][google.cloud.aiplatform.v1.MetadataService.PurgeContexts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.PurgeContextsMetadata}
@@ -282,7 +283,8 @@ public final class PurgeContextsMetadata extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Details of operations that perform [MetadataService.PurgeContexts][google.cloud.aiplatform.v1.MetadataService.PurgeContexts].
+   * Details of operations that perform
+   * [MetadataService.PurgeContexts][google.cloud.aiplatform.v1.MetadataService.PurgeContexts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.PurgeContextsMetadata}

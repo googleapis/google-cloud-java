@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ExportTensorboardTimeSeriesData].
+ * Response message for
+ * [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ExportTensorboardTimeSeriesData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataResponse}
@@ -390,7 +391,8 @@ public final class ExportTensorboardTimeSeriesDataResponse
    *
    *
    * <pre>
-   * Response message for [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ExportTensorboardTimeSeriesData].
+   * Response message for
+   * [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ExportTensorboardTimeSeriesData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataResponse}

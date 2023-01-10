@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
+ * Request message for
+ * [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateFeatureRequest}
@@ -185,8 +186,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The ID to use for the Feature, which will become the final component of
-   * the Feature's resource name.
+   * Required. The ID to use for the Feature, which will become the final
+   * component of the Feature's resource name.
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    * The value must be unique within an EntityType.
@@ -212,8 +213,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The ID to use for the Feature, which will become the final component of
-   * the Feature's resource name.
+   * Required. The ID to use for the Feature, which will become the final
+   * component of the Feature's resource name.
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    * The value must be unique within an EntityType.
@@ -423,7 +424,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
+   * Request message for
+   * [FeaturestoreService.CreateFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateFeatureRequest}
@@ -957,8 +959,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID to use for the Feature, which will become the final component of
-     * the Feature's resource name.
+     * Required. The ID to use for the Feature, which will become the final
+     * component of the Feature's resource name.
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within an EntityType.
@@ -983,8 +985,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID to use for the Feature, which will become the final component of
-     * the Feature's resource name.
+     * Required. The ID to use for the Feature, which will become the final
+     * component of the Feature's resource name.
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within an EntityType.
@@ -1009,8 +1011,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID to use for the Feature, which will become the final component of
-     * the Feature's resource name.
+     * Required. The ID to use for the Feature, which will become the final
+     * component of the Feature's resource name.
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within an EntityType.
@@ -1034,8 +1036,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID to use for the Feature, which will become the final component of
-     * the Feature's resource name.
+     * Required. The ID to use for the Feature, which will become the final
+     * component of the Feature's resource name.
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within an EntityType.
@@ -1055,8 +1057,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The ID to use for the Feature, which will become the final component of
-     * the Feature's resource name.
+     * Required. The ID to use for the Feature, which will become the final
+     * component of the Feature's resource name.
      * This value may be up to 128 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within an EntityType.

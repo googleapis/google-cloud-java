@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
+ * Request message for
+ * [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.PurgeContextsRequest}
@@ -378,7 +379,8 @@ public final class PurgeContextsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
+   * Request message for
+   * [MetadataService.PurgeContexts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeContexts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.PurgeContextsRequest}

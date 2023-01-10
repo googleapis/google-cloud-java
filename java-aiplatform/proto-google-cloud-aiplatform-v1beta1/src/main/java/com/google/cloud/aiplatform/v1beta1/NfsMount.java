@@ -177,8 +177,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Destination mount path. The NFS will be mounted for the user under
-   * /mnt/nfs/&lt;mount_point&gt;
+   * Required. Destination mount path. The NFS will be mounted for the user
+   * under /mnt/nfs/&lt;mount_point&gt;
    * </pre>
    *
    * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -201,8 +201,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Destination mount path. The NFS will be mounted for the user under
-   * /mnt/nfs/&lt;mount_point&gt;
+   * Required. Destination mount path. The NFS will be mounted for the user
+   * under /mnt/nfs/&lt;mount_point&gt;
    * </pre>
    *
    * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -822,8 +822,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Destination mount path. The NFS will be mounted for the user under
-     * /mnt/nfs/&lt;mount_point&gt;
+     * Required. Destination mount path. The NFS will be mounted for the user
+     * under /mnt/nfs/&lt;mount_point&gt;
      * </pre>
      *
      * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -845,8 +845,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Destination mount path. The NFS will be mounted for the user under
-     * /mnt/nfs/&lt;mount_point&gt;
+     * Required. Destination mount path. The NFS will be mounted for the user
+     * under /mnt/nfs/&lt;mount_point&gt;
      * </pre>
      *
      * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -868,8 +868,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Destination mount path. The NFS will be mounted for the user under
-     * /mnt/nfs/&lt;mount_point&gt;
+     * Required. Destination mount path. The NFS will be mounted for the user
+     * under /mnt/nfs/&lt;mount_point&gt;
      * </pre>
      *
      * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -890,8 +890,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Destination mount path. The NFS will be mounted for the user under
-     * /mnt/nfs/&lt;mount_point&gt;
+     * Required. Destination mount path. The NFS will be mounted for the user
+     * under /mnt/nfs/&lt;mount_point&gt;
      * </pre>
      *
      * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -908,8 +908,8 @@ public final class NfsMount extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Destination mount path. The NFS will be mounted for the user under
-     * /mnt/nfs/&lt;mount_point&gt;
+     * Required. Destination mount path. The NFS will be mounted for the user
+     * under /mnt/nfs/&lt;mount_point&gt;
      * </pre>
      *
      * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>

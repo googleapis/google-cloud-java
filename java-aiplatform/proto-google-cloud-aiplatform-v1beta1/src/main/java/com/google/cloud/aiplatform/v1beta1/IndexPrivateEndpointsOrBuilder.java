@@ -52,8 +52,8 @@ public interface IndexPrivateEndpointsOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the service attachment resource. Populated if private service
-   * connect is enabled.
+   * Output only. The name of the service attachment resource. Populated if
+   * private service connect is enabled.
    * </pre>
    *
    * <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -65,8 +65,8 @@ public interface IndexPrivateEndpointsOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the service attachment resource. Populated if private service
-   * connect is enabled.
+   * Output only. The name of the service attachment resource. Populated if
+   * private service connect is enabled.
    * </pre>
    *
    * <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

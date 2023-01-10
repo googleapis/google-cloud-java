@@ -457,8 +457,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -474,8 +474,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -491,8 +491,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -509,8 +509,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -2306,8 +2306,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2323,8 +2323,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2340,8 +2340,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2358,8 +2358,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2376,8 +2376,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2401,8 +2401,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2425,8 +2425,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2446,8 +2446,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>
@@ -2466,8 +2466,8 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A list of resource names of Contexts that are parents of this Context.
-     * A Context may have at most 10 parent_contexts.
+     * Output only. A list of resource names of Contexts that are parents of this
+     * Context. A Context may have at most 10 parent_contexts.
      * </pre>
      *
      * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [TensorboardService.ListTensorboardRuns][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardRuns].
+ * Response message for
+ * [TensorboardService.ListTensorboardRuns][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardRuns].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListTensorboardRunsResponse}
@@ -145,9 +146,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -170,9 +172,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -367,7 +370,8 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [TensorboardService.ListTensorboardRuns][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardRuns].
+   * Response message for
+   * [TensorboardService.ListTensorboardRuns][google.cloud.aiplatform.v1beta1.TensorboardService.ListTensorboardRuns].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListTensorboardRunsResponse}
@@ -964,9 +968,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -988,9 +993,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1012,9 +1018,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1035,9 +1042,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1054,9 +1062,10 @@ public final class ListTensorboardRunsResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListTensorboardRunsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

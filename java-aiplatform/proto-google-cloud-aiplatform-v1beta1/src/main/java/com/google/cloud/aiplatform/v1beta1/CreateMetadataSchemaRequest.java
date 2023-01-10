@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.CreateMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataSchema].
+ * Request message for
+ * [MetadataService.CreateMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataSchema].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest}
@@ -74,9 +75,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The resource name of the MetadataStore where the MetadataSchema should
-   * be created.
-   * Format:
+   * Required. The resource name of the MetadataStore where the MetadataSchema
+   * should be created. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
@@ -102,9 +102,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The resource name of the MetadataStore where the MetadataSchema should
-   * be created.
-   * Format:
+   * Required. The resource name of the MetadataStore where the MetadataSchema
+   * should be created. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
@@ -431,7 +430,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [MetadataService.CreateMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataSchema].
+   * Request message for
+   * [MetadataService.CreateMetadataSchema][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataSchema].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest}
@@ -639,9 +639,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the MetadataSchema should
-     * be created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the MetadataSchema
+     * should be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -666,9 +665,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the MetadataSchema should
-     * be created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the MetadataSchema
+     * should be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -693,9 +691,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the MetadataSchema should
-     * be created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the MetadataSchema
+     * should be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -719,9 +716,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the MetadataSchema should
-     * be created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the MetadataSchema
+     * should be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -741,9 +737,8 @@ public final class CreateMetadataSchemaRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the MetadataSchema should
-     * be created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the MetadataSchema
+     * should be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *

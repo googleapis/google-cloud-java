@@ -58,8 +58,8 @@ public interface UploadModelRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource name of the model into which to upload the version. Only
-   * specify this field when uploading a new version.
+   * Optional. The resource name of the model into which to upload the version.
+   * Only specify this field when uploading a new version.
    * </pre>
    *
    * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -71,8 +71,8 @@ public interface UploadModelRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The resource name of the model into which to upload the version. Only
-   * specify this field when uploading a new version.
+   * Optional. The resource name of the model into which to upload the version.
+   * Only specify this field when uploading a new version.
    * </pre>
    *
    * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

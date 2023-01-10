@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Details of operations that perform [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
+ * Details of operations that perform
+ * [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata}
@@ -287,7 +288,8 @@ public final class CreateMetadataStoreOperationMetadata
    *
    *
    * <pre>
-   * Details of operations that perform [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
+   * Details of operations that perform
+   * [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1beta1.MetadataService.CreateMetadataStore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata}

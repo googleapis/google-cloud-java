@@ -40,8 +40,8 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
-   * Output only. The id of the parent task if the task is within a component scope.
-   * Empty if the task is at the root level.
+   * Output only. The id of the parent task if the task is within a component
+   * scope. Empty if the task is at the root level.
    * </pre>
    *
    * <code>int64 parent_task_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -344,8 +344,8 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -358,8 +358,8 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -372,8 +372,8 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -385,8 +385,8 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -400,8 +400,8 @@ public interface PipelineTaskDetailOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>

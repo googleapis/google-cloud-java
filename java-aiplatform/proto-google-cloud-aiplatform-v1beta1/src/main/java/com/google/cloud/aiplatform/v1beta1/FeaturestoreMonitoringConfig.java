@@ -148,7 +148,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * running interval. The value indicates number of days.
      * If both
      * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-     * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+     * and
+     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
      * are set when creating/updating EntityTypes/Features,
      * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
      * will be used.
@@ -326,7 +327,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * running interval. The value indicates number of days.
      * If both
      * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-     * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+     * and
+     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
      * are set when creating/updating EntityTypes/Features,
      * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
      * will be used.
@@ -1100,7 +1102,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * running interval. The value indicates number of days.
        * If both
        * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+       * and
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
        * are set when creating/updating EntityTypes/Features,
        * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
        * will be used.
@@ -1122,7 +1125,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * running interval. The value indicates number of days.
        * If both
        * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+       * and
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
        * are set when creating/updating EntityTypes/Features,
        * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
        * will be used.
@@ -1147,7 +1151,8 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
        * running interval. The value indicates number of days.
        * If both
        * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
-       * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+       * and
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
        * are set when creating/updating EntityTypes/Features,
        * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
        * will be used.
@@ -3505,7 +3510,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Threshold for numerical features of anomaly detection.
    * This is shared by all objectives of Featurestore Monitoring for numerical
-   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+   * features (i.e. Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * DOUBLE or INT64).
    * </pre>
    *
    * <code>
@@ -3524,7 +3531,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Threshold for numerical features of anomaly detection.
    * This is shared by all objectives of Featurestore Monitoring for numerical
-   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+   * features (i.e. Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * DOUBLE or INT64).
    * </pre>
    *
    * <code>
@@ -3547,7 +3556,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Threshold for numerical features of anomaly detection.
    * This is shared by all objectives of Featurestore Monitoring for numerical
-   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+   * features (i.e. Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * DOUBLE or INT64).
    * </pre>
    *
    * <code>
@@ -3569,7 +3580,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Threshold for categorical features of anomaly detection.
    * This is shared by all types of Featurestore Monitoring for categorical
-   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+   * features (i.e. Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL or STRING).
    * </pre>
    *
    * <code>
@@ -3588,7 +3601,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Threshold for categorical features of anomaly detection.
    * This is shared by all types of Featurestore Monitoring for categorical
-   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+   * features (i.e. Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL or STRING).
    * </pre>
    *
    * <code>
@@ -3611,7 +3626,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
    * <pre>
    * Threshold for categorical features of anomaly detection.
    * This is shared by all types of Featurestore Monitoring for categorical
-   * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+   * features (i.e. Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL or STRING).
    * </pre>
    *
    * <code>
@@ -4544,7 +4561,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4562,7 +4581,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4588,7 +4609,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4615,7 +4638,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4640,7 +4665,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4672,7 +4699,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4696,7 +4725,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4715,7 +4746,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4739,7 +4772,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for numerical features of anomaly detection.
      * This is shared by all objectives of Featurestore Monitoring for numerical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) DOUBLE or INT64).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * DOUBLE or INT64).
      * </pre>
      *
      * <code>
@@ -4782,7 +4817,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4800,7 +4837,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4826,7 +4865,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4853,7 +4894,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4878,7 +4921,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4910,7 +4955,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4934,7 +4981,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4953,7 +5002,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>
@@ -4977,7 +5028,9 @@ public final class FeaturestoreMonitoringConfig extends com.google.protobuf.Gene
      * <pre>
      * Threshold for categorical features of anomaly detection.
      * This is shared by all types of Featurestore Monitoring for categorical
-     * features (i.e. Features with type ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL or STRING).
+     * features (i.e. Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL or STRING).
      * </pre>
      *
      * <code>

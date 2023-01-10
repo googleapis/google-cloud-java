@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
+ * Response message for
+ * [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchMigrateResourcesResponse}
@@ -321,7 +322,8 @@ public final class BatchMigrateResourcesResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response message for [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
+   * Response message for
+   * [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchMigrateResourcesResponse}

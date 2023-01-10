@@ -384,8 +384,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The minimum number of nodes to scale down to. Must be greater than or
-       * equal to 1.
+       * Required. The minimum number of nodes to scale down to. Must be greater
+       * than or equal to 1.
        * </pre>
        *
        * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -464,8 +464,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The minimum number of nodes to scale down to. Must be greater than or
-       * equal to 1.
+       * Required. The minimum number of nodes to scale down to. Must be greater
+       * than or equal to 1.
        * </pre>
        *
        * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -877,8 +877,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The minimum number of nodes to scale down to. Must be greater than or
-         * equal to 1.
+         * Required. The minimum number of nodes to scale down to. Must be greater
+         * than or equal to 1.
          * </pre>
          *
          * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -893,8 +893,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The minimum number of nodes to scale down to. Must be greater than or
-         * equal to 1.
+         * Required. The minimum number of nodes to scale down to. Must be greater
+         * than or equal to 1.
          * </pre>
          *
          * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -912,8 +912,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The minimum number of nodes to scale down to. Must be greater than or
-         * equal to 1.
+         * Required. The minimum number of nodes to scale down to. Must be greater
+         * than or equal to 1.
          * </pre>
          *
          * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2008,8 +2008,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2032,8 +2032,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2082,7 +2082,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Featurestore.
+   * Optional. The labels with user-defined metadata to organize your
+   * Featurestore.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -2112,7 +2113,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Featurestore.
+   * Optional. The labels with user-defined metadata to organize your
+   * Featurestore.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -2133,7 +2135,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Featurestore.
+   * Optional. The labels with user-defined metadata to organize your
+   * Featurestore.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -2158,7 +2161,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Featurestore.
+   * Optional. The labels with user-defined metadata to organize your
+   * Featurestore.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -2189,10 +2193,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Config for online storage resources. The field should not co-exist with the
-   * field of `OnlineStoreReplicationConfig`. If both of it and
-   * OnlineStoreReplicationConfig are unset, the feature store will not have an
-   * online store and cannot be used for online serving.
+   * Optional. Config for online storage resources. The field should not
+   * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+   * and OnlineStoreReplicationConfig are unset, the feature store will not have
+   * an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
@@ -2209,10 +2213,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Config for online storage resources. The field should not co-exist with the
-   * field of `OnlineStoreReplicationConfig`. If both of it and
-   * OnlineStoreReplicationConfig are unset, the feature store will not have an
-   * online store and cannot be used for online serving.
+   * Optional. Config for online storage resources. The field should not
+   * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+   * and OnlineStoreReplicationConfig are unset, the feature store will not have
+   * an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
@@ -2231,10 +2235,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Config for online storage resources. The field should not co-exist with the
-   * field of `OnlineStoreReplicationConfig`. If both of it and
-   * OnlineStoreReplicationConfig are unset, the feature store will not have an
-   * online store and cannot be used for online serving.
+   * Optional. Config for online storage resources. The field should not
+   * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+   * and OnlineStoreReplicationConfig are unset, the feature store will not have
+   * an online store and cannot be used for online serving.
    * </pre>
    *
    * <code>
@@ -2293,8 +2297,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-   * online and offline data storage will be secured by this key.
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * both of the online and offline data storage will be secured by this key.
    * </pre>
    *
    * <code>
@@ -2311,8 +2315,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-   * online and offline data storage will be secured by this key.
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * both of the online and offline data storage will be secured by this key.
    * </pre>
    *
    * <code>
@@ -2331,8 +2335,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-   * online and offline data storage will be secured by this key.
+   * Optional. Customer-managed encryption key spec for data storage. If set,
+   * both of the online and offline data storage will be secured by this key.
    * </pre>
    *
    * <code>
@@ -3428,8 +3432,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3451,8 +3455,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3474,8 +3478,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3496,8 +3500,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3514,8 +3518,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3563,7 +3567,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3593,7 +3598,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3614,7 +3620,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3640,7 +3647,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3673,7 +3681,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3702,7 +3711,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3730,7 +3740,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your Featurestore.
+     * Optional. The labels with user-defined metadata to organize your
+     * Featurestore.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -3758,10 +3769,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3777,10 +3788,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3803,10 +3814,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3831,10 +3842,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3856,10 +3867,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3889,10 +3900,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3914,10 +3925,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3934,10 +3945,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -3958,10 +3969,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Config for online storage resources. The field should not co-exist with the
-     * field of `OnlineStoreReplicationConfig`. If both of it and
-     * OnlineStoreReplicationConfig are unset, the feature store will not have an
-     * online store and cannot be used for online serving.
+     * Optional. Config for online storage resources. The field should not
+     * co-exist with the field of `OnlineStoreReplicationConfig`. If both of it
+     * and OnlineStoreReplicationConfig are unset, the feature store will not have
+     * an online store and cannot be used for online serving.
      * </pre>
      *
      * <code>
@@ -4098,8 +4109,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4115,8 +4126,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4138,8 +4149,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4163,8 +4174,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4186,8 +4197,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4215,8 +4226,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4238,8 +4249,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4255,8 +4266,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>
@@ -4276,8 +4287,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Customer-managed encryption key spec for data storage. If set, both of the
-     * online and offline data storage will be secured by this key.
+     * Optional. Customer-managed encryption key spec for data storage. If set,
+     * both of the online and offline data storage will be secured by this key.
      * </pre>
      *
      * <code>

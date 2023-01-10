@@ -156,7 +156,7 @@ public final class StudyProto {
           + "\022\014\n\010STOPPING\020\003\022\r\n\tSUCCEEDED\020\004\022\016\n\nINFEASI"
           + "BLE\020\005:l\352Ai\n\037aiplatform.googleapis.com/Tr"
           + "ial\022Fprojects/{project}/locations/{locat"
-          + "ion}/studies/{study}/trials/{trial}\"\300\032\n\t"
+          + "ion}/studies/{study}/trials/{trial}\"\206\033\n\t"
           + "StudySpec\022j\n\031decay_curve_stopping_spec\030\004"
           + " \001(\0132E.google.cloud.aiplatform.v1.StudyS"
           + "pec.DecayCurveAutomatedStoppingSpecH\000\022k\n"
@@ -229,30 +229,32 @@ public final class StudyProto {
           + "_SCALE\020\003B\026\n\024parameter_value_spec\032?\n\037Deca"
           + "yCurveAutomatedStoppingSpec\022\034\n\024use_elaps"
           + "ed_duration\030\001 \001(\010\032;\n\033MedianAutomatedStop"
-          + "pingSpec\022\034\n\024use_elapsed_duration\030\001 \001(\010\032\260"
+          + "pingSpec\022\034\n\024use_elapsed_duration\030\001 \001(\010\032\366"
           + "\001\n\033ConvexAutomatedStoppingSpec\022\026\n\016max_st"
           + "ep_count\030\001 \001(\003\022\026\n\016min_step_count\030\002 \001(\003\022\035"
           + "\n\025min_measurement_count\030\003 \001(\003\022$\n\034learnin"
           + "g_rate_parameter_name\030\004 \001(\t\022\034\n\024use_elaps"
-          + "ed_duration\030\005 \001(\010\"J\n\tAlgorithm\022\031\n\025ALGORI"
-          + "THM_UNSPECIFIED\020\000\022\017\n\013GRID_SEARCH\020\002\022\021\n\rRA"
-          + "NDOM_SEARCH\020\003\"H\n\020ObservationNoise\022!\n\035OBS"
-          + "ERVATION_NOISE_UNSPECIFIED\020\000\022\007\n\003LOW\020\001\022\010\n"
-          + "\004HIGH\020\002\"r\n\030MeasurementSelectionType\022*\n&M"
-          + "EASUREMENT_SELECTION_TYPE_UNSPECIFIED\020\000\022"
-          + "\024\n\020LAST_MEASUREMENT\020\001\022\024\n\020BEST_MEASUREMEN"
-          + "T\020\002B\031\n\027automated_stopping_spec\"\334\001\n\013Measu"
-          + "rement\0228\n\020elapsed_duration\030\001 \001(\0132\031.googl"
-          + "e.protobuf.DurationB\003\340A\003\022\027\n\nstep_count\030\002"
-          + " \001(\003B\003\340A\003\022D\n\007metrics\030\003 \003(\0132..google.clou"
-          + "d.aiplatform.v1.Measurement.MetricB\003\340A\003\032"
-          + "4\n\006Metric\022\026\n\tmetric_id\030\001 \001(\tB\003\340A\003\022\022\n\005val"
-          + "ue\030\002 \001(\001B\003\340A\003B\316\001\n\036com.google.cloud.aipla"
-          + "tform.v1B\nStudyProtoP\001ZDgoogle.golang.or"
-          + "g/genproto/googleapis/cloud/aiplatform/v"
-          + "1;aiplatform\252\002\032Google.Cloud.AIPlatform.V"
-          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
-          + ":Cloud::AIPlatform::V1b\006proto3"
+          + "ed_duration\030\005 \001(\010\022&\n\031update_all_stopped_"
+          + "trials\030\006 \001(\010H\000\210\001\001B\034\n\032_update_all_stopped"
+          + "_trials\"J\n\tAlgorithm\022\031\n\025ALGORITHM_UNSPEC"
+          + "IFIED\020\000\022\017\n\013GRID_SEARCH\020\002\022\021\n\rRANDOM_SEARC"
+          + "H\020\003\"H\n\020ObservationNoise\022!\n\035OBSERVATION_N"
+          + "OISE_UNSPECIFIED\020\000\022\007\n\003LOW\020\001\022\010\n\004HIGH\020\002\"r\n"
+          + "\030MeasurementSelectionType\022*\n&MEASUREMENT"
+          + "_SELECTION_TYPE_UNSPECIFIED\020\000\022\024\n\020LAST_ME"
+          + "ASUREMENT\020\001\022\024\n\020BEST_MEASUREMENT\020\002B\031\n\027aut"
+          + "omated_stopping_spec\"\334\001\n\013Measurement\0228\n\020"
+          + "elapsed_duration\030\001 \001(\0132\031.google.protobuf"
+          + ".DurationB\003\340A\003\022\027\n\nstep_count\030\002 \001(\003B\003\340A\003\022"
+          + "D\n\007metrics\030\003 \003(\0132..google.cloud.aiplatfo"
+          + "rm.v1.Measurement.MetricB\003\340A\003\0324\n\006Metric\022"
+          + "\026\n\tmetric_id\030\001 \001(\tB\003\340A\003\022\022\n\005value\030\002 \001(\001B\003"
+          + "\340A\003B\316\001\n\036com.google.cloud.aiplatform.v1B\n"
+          + "StudyProtoP\001ZDgoogle.golang.org/genproto"
+          + "/googleapis/cloud/aiplatform/v1;aiplatfo"
+          + "rm\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
+          + "Platform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -457,6 +459,8 @@ public final class StudyProto {
               "MinMeasurementCount",
               "LearningRateParameterName",
               "UseElapsedDuration",
+              "UpdateAllStoppedTrials",
+              "UpdateAllStoppedTrials",
             });
     internal_static_google_cloud_aiplatform_v1_Measurement_descriptor =
         getDescriptor().getMessageTypes().get(3);

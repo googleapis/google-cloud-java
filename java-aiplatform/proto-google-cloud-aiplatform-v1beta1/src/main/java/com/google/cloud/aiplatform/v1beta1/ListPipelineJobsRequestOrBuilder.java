@@ -154,8 +154,10 @@ public interface ListPipelineJobsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse.next_page_token] of the previous
-   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs] call.
+   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse.next_page_token]
+   * of the previous
+   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -169,8 +171,10 @@ public interface ListPipelineJobsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse.next_page_token] of the previous
-   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs] call.
+   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse.next_page_token]
+   * of the previous
+   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>

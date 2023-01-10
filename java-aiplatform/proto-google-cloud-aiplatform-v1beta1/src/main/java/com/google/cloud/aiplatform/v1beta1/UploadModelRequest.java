@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
+ * Request message for
+ * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UploadModelRequest}
@@ -131,8 +132,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The resource name of the model into which to upload the version. Only
-   * specify this field when uploading a new version.
+   * Optional. The resource name of the model into which to upload the version.
+   * Only specify this field when uploading a new version.
    * </pre>
    *
    * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -155,8 +156,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The resource name of the model into which to upload the version. Only
-   * specify this field when uploading a new version.
+   * Optional. The resource name of the model into which to upload the version.
+   * Only specify this field when uploading a new version.
    * </pre>
    *
    * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -549,7 +550,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
+   * Request message for
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UploadModelRequest}
@@ -901,8 +903,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -924,8 +926,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -947,8 +949,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -969,8 +971,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -987,8 +989,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

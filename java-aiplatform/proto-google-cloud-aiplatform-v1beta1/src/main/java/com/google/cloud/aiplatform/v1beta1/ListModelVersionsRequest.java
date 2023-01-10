@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions].
+ * Request message for
+ * [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListModelVersionsRequest}
@@ -41,6 +42,7 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
     name_ = "";
     pageToken_ = "";
     filter_ = "";
+    orderBy_ = "";
   }
 
   @java.lang.Override
@@ -148,8 +150,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-   * [ModelService.ListModelversions][] call.
+   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+   * of the previous [ModelService.ListModelversions][] call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -174,8 +176,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-   * [ModelService.ListModelversions][] call.
+   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+   * of the previous [ModelService.ListModelversions][] call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -304,6 +306,65 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
     return getReadMask();
   }
 
+  public static final int ORDER_BY_FIELD_NUMBER = 6;
+  private volatile java.lang.Object orderBy_;
+  /**
+   *
+   *
+   * <pre>
+   * A comma-separated list of fields to order by, sorted in ascending order.
+   * Use "desc" after a field name for descending.
+   * Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   * Example: `update_time asc, create_time desc`.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A comma-separated list of fields to order by, sorted in ascending order.
+   * Use "desc" after a field name for descending.
+   * Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   * Example: `update_time asc, create_time desc`.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -333,6 +394,9 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
     if (readMask_ != null) {
       output.writeMessage(5, getReadMask());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orderBy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -356,6 +420,9 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
     }
     if (readMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getReadMask());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orderBy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -381,6 +448,7 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
     if (hasReadMask()) {
       if (!getReadMask().equals(other.getReadMask())) return false;
     }
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -404,6 +472,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
       hash = (37 * hash) + READ_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getReadMask().hashCode();
     }
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -509,7 +579,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions].
+   * Request message for
+   * [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListModelVersionsRequest}
@@ -557,6 +628,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
         readMask_ = null;
         readMaskBuilder_ = null;
       }
+      orderBy_ = "";
+
       return this;
     }
 
@@ -594,6 +667,7 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
       } else {
         result.readMask_ = readMaskBuilder_.build();
       }
+      result.orderBy_ = orderBy_;
       onBuilt();
       return result;
     }
@@ -663,6 +737,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
       if (other.hasReadMask()) {
         mergeReadMask(other.getReadMask());
       }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -719,6 +797,12 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
 
                 break;
               } // case 42
+            case 50:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -911,8 +995,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-     * [ModelService.ListModelversions][] call.
+     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+     * of the previous [ModelService.ListModelversions][] call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -936,8 +1020,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-     * [ModelService.ListModelversions][] call.
+     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+     * of the previous [ModelService.ListModelversions][] call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -961,8 +1045,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-     * [ModelService.ListModelversions][] call.
+     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+     * of the previous [ModelService.ListModelversions][] call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -985,8 +1069,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-     * [ModelService.ListModelversions][] call.
+     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+     * of the previous [ModelService.ListModelversions][] call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1005,8 +1089,8 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token] of the previous
-     * [ModelService.ListModelversions][] call.
+     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsResponse.next_page_token]
+     * of the previous [ModelService.ListModelversions][] call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1343,6 +1427,137 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
         readMask_ = null;
       }
       return readMaskBuilder_;
+    }
+
+    private java.lang.Object orderBy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A comma-separated list of fields to order by, sorted in ascending order.
+     * Use "desc" after a field name for descending.
+     * Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     * Example: `update_time asc, create_time desc`.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A comma-separated list of fields to order by, sorted in ascending order.
+     * Use "desc" after a field name for descending.
+     * Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     * Example: `update_time asc, create_time desc`.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A comma-separated list of fields to order by, sorted in ascending order.
+     * Use "desc" after a field name for descending.
+     * Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     * Example: `update_time asc, create_time desc`.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A comma-separated list of fields to order by, sorted in ascending order.
+     * Use "desc" after a field name for descending.
+     * Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     * Example: `update_time asc, create_time desc`.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+
+      orderBy_ = getDefaultInstance().getOrderBy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A comma-separated list of fields to order by, sorted in ascending order.
+     * Use "desc" after a field name for descending.
+     * Supported fields:
+     *   * `create_time`
+     *   * `update_time`
+     * Example: `update_time asc, create_time desc`.
+     * </pre>
+     *
+     * <code>string order_by = 6;</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderBy_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

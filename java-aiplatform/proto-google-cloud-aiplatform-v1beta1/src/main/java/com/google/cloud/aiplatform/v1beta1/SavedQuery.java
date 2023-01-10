@@ -513,8 +513,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If the Annotations belonging to the SavedQuery can be used for AutoML
-   * training.
+   * Output only. If the Annotations belonging to the SavedQuery can be used for
+   * AutoML training.
    * </pre>
    *
    * <code>bool support_automl_training = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2326,8 +2326,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the Annotations belonging to the SavedQuery can be used for AutoML
-     * training.
+     * Output only. If the Annotations belonging to the SavedQuery can be used for
+     * AutoML training.
      * </pre>
      *
      * <code>bool support_automl_training = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2342,8 +2342,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the Annotations belonging to the SavedQuery can be used for AutoML
-     * training.
+     * Output only. If the Annotations belonging to the SavedQuery can be used for
+     * AutoML training.
      * </pre>
      *
      * <code>bool support_automl_training = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2361,8 +2361,8 @@ public final class SavedQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If the Annotations belonging to the SavedQuery can be used for AutoML
-     * training.
+     * Output only. If the Annotations belonging to the SavedQuery can be used for
+     * AutoML training.
      * </pre>
      *
      * <code>bool support_automl_training = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

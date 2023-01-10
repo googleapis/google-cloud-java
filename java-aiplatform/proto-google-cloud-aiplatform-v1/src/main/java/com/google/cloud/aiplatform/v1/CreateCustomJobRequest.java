@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
+ * Request message for
+ * [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateCustomJobRequest}
@@ -354,7 +355,8 @@ public final class CreateCustomJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
+   * Request message for
+   * [JobService.CreateCustomJob][google.cloud.aiplatform.v1.JobService.CreateCustomJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateCustomJobRequest}

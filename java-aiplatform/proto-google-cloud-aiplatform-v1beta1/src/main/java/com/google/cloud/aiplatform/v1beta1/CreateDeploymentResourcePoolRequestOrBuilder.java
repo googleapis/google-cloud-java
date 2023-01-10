@@ -27,8 +27,8 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location resource where this DeploymentResourcePool will be
-   * created. Format: `projects/{project}/locations/{location}`
+   * Required. The parent location resource where this DeploymentResourcePool
+   * will be created. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateDeploymentResourcePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location resource where this DeploymentResourcePool will be
-   * created. Format: `projects/{project}/locations/{location}`
+   * Required. The parent location resource where this DeploymentResourcePool
+   * will be created. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

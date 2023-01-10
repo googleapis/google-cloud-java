@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.GetTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.GetTensorboardExperiment].
+ * Request message for
+ * [TensorboardService.GetTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.GetTensorboardExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetTensorboardExperimentRequest}
@@ -289,7 +290,8 @@ public final class GetTensorboardExperimentRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request message for [TensorboardService.GetTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.GetTensorboardExperiment].
+   * Request message for
+   * [TensorboardService.GetTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.GetTensorboardExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetTensorboardExperimentRequest}

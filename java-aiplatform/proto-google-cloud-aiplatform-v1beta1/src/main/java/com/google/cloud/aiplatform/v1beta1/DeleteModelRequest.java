@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel].
+ * Request message for
+ * [ModelService.DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteModelRequest}
@@ -286,7 +287,8 @@ public final class DeleteModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [ModelService.DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel].
+   * Request message for
+   * [ModelService.DeleteModel][google.cloud.aiplatform.v1beta1.ModelService.DeleteModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteModelRequest}

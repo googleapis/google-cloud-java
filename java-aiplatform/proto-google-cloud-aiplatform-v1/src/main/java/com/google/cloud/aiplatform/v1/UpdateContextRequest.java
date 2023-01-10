@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.UpdateContext][google.cloud.aiplatform.v1.MetadataService.UpdateContext].
+ * Request message for
+ * [MetadataService.UpdateContext][google.cloud.aiplatform.v1.MetadataService.UpdateContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateContextRequest}
@@ -72,9 +73,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The Context containing updates.
-   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-   * updated.
-   * Format:
+   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+   * is used to identify the Context to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -93,9 +93,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The Context containing updates.
-   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-   * updated.
-   * Format:
+   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+   * is used to identify the Context to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -116,9 +115,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The Context containing updates.
-   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-   * updated.
-   * Format:
+   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+   * is used to identify the Context to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -189,8 +187,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is not found, a new [Context][google.cloud.aiplatform.v1.Context] is
-   * created.
+   * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is
+   * not found, a new [Context][google.cloud.aiplatform.v1.Context] is created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>
@@ -393,7 +391,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [MetadataService.UpdateContext][google.cloud.aiplatform.v1.MetadataService.UpdateContext].
+   * Request message for
+   * [MetadataService.UpdateContext][google.cloud.aiplatform.v1.MetadataService.UpdateContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateContextRequest}
@@ -610,9 +609,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -630,9 +628,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -656,9 +653,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -684,9 +680,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -709,9 +704,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -741,9 +735,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -767,9 +760,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -787,9 +779,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -811,9 +802,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The Context containing updates.
-     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-     * updated.
-     * Format:
+     * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+     * is used to identify the Context to be updated. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -1044,8 +1034,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is not found, a new [Context][google.cloud.aiplatform.v1.Context] is
-     * created.
+     * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is
+     * not found, a new [Context][google.cloud.aiplatform.v1.Context] is created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -1060,8 +1050,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is not found, a new [Context][google.cloud.aiplatform.v1.Context] is
-     * created.
+     * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is
+     * not found, a new [Context][google.cloud.aiplatform.v1.Context] is created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>
@@ -1079,8 +1069,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is not found, a new [Context][google.cloud.aiplatform.v1.Context] is
-     * created.
+     * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is
+     * not found, a new [Context][google.cloud.aiplatform.v1.Context] is created.
      * </pre>
      *
      * <code>bool allow_missing = 3;</code>

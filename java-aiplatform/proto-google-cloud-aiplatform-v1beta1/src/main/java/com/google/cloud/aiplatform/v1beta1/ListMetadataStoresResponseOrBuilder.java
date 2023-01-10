@@ -80,8 +80,9 @@ public interface ListMetadataStoresResponseOrBuilder
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -94,8 +95,9 @@ public interface ListMetadataStoresResponseOrBuilder
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataStoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

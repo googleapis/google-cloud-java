@@ -153,7 +153,10 @@ import org.threeten.bp.Duration;
  * metadataServiceSettingsBuilder
  *     .getMetadataStoreSettings()
  *     .setRetrySettings(
- *         metadataServiceSettingsBuilder.getMetadataStoreSettings().getRetrySettings().toBuilder()
+ *         metadataServiceSettingsBuilder
+ *             .getMetadataStoreSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetadataServiceStubSettings metadataServiceSettings = metadataServiceSettingsBuilder.build();

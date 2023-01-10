@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [TensorboardService.ListTensorboards][google.cloud.aiplatform.v1.TensorboardService.ListTensorboards].
+ * Response message for
+ * [TensorboardService.ListTensorboards][google.cloud.aiplatform.v1.TensorboardService.ListTensorboards].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListTensorboardsResponse}
@@ -143,7 +144,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+   * A token, which can be sent as
+   * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
    * to retrieve the next page. If this field is omitted, there are no
    * subsequent pages.
    * </pre>
@@ -168,7 +170,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+   * A token, which can be sent as
+   * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
    * to retrieve the next page. If this field is omitted, there are no
    * subsequent pages.
    * </pre>
@@ -365,7 +368,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for [TensorboardService.ListTensorboards][google.cloud.aiplatform.v1.TensorboardService.ListTensorboards].
+   * Response message for
+   * [TensorboardService.ListTensorboards][google.cloud.aiplatform.v1.TensorboardService.ListTensorboards].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListTensorboardsResponse}
@@ -947,7 +951,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+     * A token, which can be sent as
+     * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
      * to retrieve the next page. If this field is omitted, there are no
      * subsequent pages.
      * </pre>
@@ -971,7 +976,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+     * A token, which can be sent as
+     * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
      * to retrieve the next page. If this field is omitted, there are no
      * subsequent pages.
      * </pre>
@@ -995,7 +1001,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+     * A token, which can be sent as
+     * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
      * to retrieve the next page. If this field is omitted, there are no
      * subsequent pages.
      * </pre>
@@ -1018,7 +1025,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+     * A token, which can be sent as
+     * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
      * to retrieve the next page. If this field is omitted, there are no
      * subsequent pages.
      * </pre>
@@ -1037,7 +1045,8 @@ public final class ListTensorboardsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
+     * A token, which can be sent as
+     * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1.ListTensorboardsRequest.page_token]
      * to retrieve the next page. If this field is omitted, there are no
      * subsequent pages.
      * </pre>

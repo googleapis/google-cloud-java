@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
+ * Request message for
+ * [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest}
@@ -291,7 +292,8 @@ public final class DeleteHyperparameterTuningJobRequest
    *
    *
    * <pre>
-   * Request message for [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
+   * Request message for
+   * [JobService.DeleteHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.DeleteHyperparameterTuningJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteHyperparameterTuningJobRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
+ * Response message for
+ * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturestoresResponse}
@@ -144,9 +145,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -169,9 +171,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -366,7 +369,8 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Response message for [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
+   * Response message for
+   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturestoresResponse}
@@ -960,9 +964,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -984,9 +989,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1008,9 +1014,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1031,9 +1038,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1050,9 +1058,10 @@ public final class ListFeaturestoresResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A token, which can be sent as [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListFeaturestoresRequest.page_token][google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

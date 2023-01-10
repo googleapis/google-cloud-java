@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [VizierService.CheckTrialEarlyStoppingState][google.cloud.aiplatform.v1beta1.VizierService.CheckTrialEarlyStoppingState].
+ * Response message for
+ * [VizierService.CheckTrialEarlyStoppingState][google.cloud.aiplatform.v1beta1.VizierService.CheckTrialEarlyStoppingState].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse}
@@ -251,7 +252,8 @@ public final class CheckTrialEarlyStoppingStateResponse
    *
    *
    * <pre>
-   * Response message for [VizierService.CheckTrialEarlyStoppingState][google.cloud.aiplatform.v1beta1.VizierService.CheckTrialEarlyStoppingState].
+   * Response message for
+   * [VizierService.CheckTrialEarlyStoppingState][google.cloud.aiplatform.v1beta1.VizierService.CheckTrialEarlyStoppingState].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse}

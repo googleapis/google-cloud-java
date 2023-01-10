@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.AddTrialMeasurement][google.cloud.aiplatform.v1beta1.VizierService.AddTrialMeasurement].
+ * Request message for
+ * [VizierService.AddTrialMeasurement][google.cloud.aiplatform.v1beta1.VizierService.AddTrialMeasurement].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest}
@@ -356,7 +357,8 @@ public final class AddTrialMeasurementRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [VizierService.AddTrialMeasurement][google.cloud.aiplatform.v1beta1.VizierService.AddTrialMeasurement].
+   * Request message for
+   * [VizierService.AddTrialMeasurement][google.cloud.aiplatform.v1beta1.VizierService.AddTrialMeasurement].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest}

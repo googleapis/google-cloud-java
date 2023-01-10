@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData].
+ * Request message for
+ * [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest}
@@ -78,8 +79,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource name of the TensorboardTimeSeries to export data from.
-   * Format:
+   * Required. The resource name of the TensorboardTimeSeries to export data
+   * from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
@@ -105,8 +106,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource name of the TensorboardTimeSeries to export data from.
-   * Format:
+   * Required. The resource name of the TensorboardTimeSeries to export data
+   * from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
@@ -185,8 +186,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * The maximum number of data points to return per page.
-   * The default page_size will be 1000. Values must be between 1 and 10000.
-   * Values above 10000 will be coerced to 10000.
+   * The default page_size is 1000. Values must be between 1 and 10000.
+   * Values above 10000 are coerced to 10000.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -264,7 +265,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * Field to use to sort the TensorboardTimeSeries' data.
-   * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+   * By default, TensorboardTimeSeries' data is returned in a pseudo random
    * order.
    * </pre>
    *
@@ -289,7 +290,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    * <pre>
    * Field to use to sort the TensorboardTimeSeries' data.
-   * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+   * By default, TensorboardTimeSeries' data is returned in a pseudo random
    * order.
    * </pre>
    *
@@ -511,7 +512,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Request message for [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData].
+   * Request message for
+   * [TensorboardService.ExportTensorboardTimeSeriesData][google.cloud.aiplatform.v1.TensorboardService.ExportTensorboardTimeSeriesData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest}
@@ -740,8 +742,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardTimeSeries to export data from.
-     * Format:
+     * Required. The resource name of the TensorboardTimeSeries to export data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -766,8 +768,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardTimeSeries to export data from.
-     * Format:
+     * Required. The resource name of the TensorboardTimeSeries to export data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -792,8 +794,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardTimeSeries to export data from.
-     * Format:
+     * Required. The resource name of the TensorboardTimeSeries to export data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -817,8 +819,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardTimeSeries to export data from.
-     * Format:
+     * Required. The resource name of the TensorboardTimeSeries to export data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -838,8 +840,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardTimeSeries to export data from.
-     * Format:
+     * Required. The resource name of the TensorboardTimeSeries to export data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -973,8 +975,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of data points to return per page.
-     * The default page_size will be 1000. Values must be between 1 and 10000.
-     * Values above 10000 will be coerced to 10000.
+     * The default page_size is 1000. Values must be between 1 and 10000.
+     * Values above 10000 are coerced to 10000.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -990,8 +992,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of data points to return per page.
-     * The default page_size will be 1000. Values must be between 1 and 10000.
-     * Values above 10000 will be coerced to 10000.
+     * The default page_size is 1000. Values must be between 1 and 10000.
+     * Values above 10000 are coerced to 10000.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1010,8 +1012,8 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * The maximum number of data points to return per page.
-     * The default page_size will be 1000. Values must be between 1 and 10000.
-     * Values above 10000 will be coerced to 10000.
+     * The default page_size is 1000. Values must be between 1 and 10000.
+     * Values above 10000 are coerced to 10000.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1162,7 +1164,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * Field to use to sort the TensorboardTimeSeries' data.
-     * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+     * By default, TensorboardTimeSeries' data is returned in a pseudo random
      * order.
      * </pre>
      *
@@ -1186,7 +1188,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * Field to use to sort the TensorboardTimeSeries' data.
-     * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+     * By default, TensorboardTimeSeries' data is returned in a pseudo random
      * order.
      * </pre>
      *
@@ -1210,7 +1212,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * Field to use to sort the TensorboardTimeSeries' data.
-     * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+     * By default, TensorboardTimeSeries' data is returned in a pseudo random
      * order.
      * </pre>
      *
@@ -1233,7 +1235,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * Field to use to sort the TensorboardTimeSeries' data.
-     * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+     * By default, TensorboardTimeSeries' data is returned in a pseudo random
      * order.
      * </pre>
      *
@@ -1252,7 +1254,7 @@ public final class ExportTensorboardTimeSeriesDataRequest
      *
      * <pre>
      * Field to use to sort the TensorboardTimeSeries' data.
-     * By default, TensorboardTimeSeries' data will be returned in a pseudo random
+     * By default, TensorboardTimeSeries' data is returned in a pseudo random
      * order.
      * </pre>
      *

@@ -84,6 +84,8 @@ import com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse;
+import com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageRequest;
+import com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse;
 import com.google.cloud.aiplatform.v1beta1.Tensorboard;
 import com.google.cloud.aiplatform.v1beta1.TensorboardExperiment;
 import com.google.cloud.aiplatform.v1beta1.TensorboardRun;
@@ -168,6 +170,8 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           CreateTensorboardRequest, Tensorboard, CreateTensorboardOperationMetadata>
       createTensorboardOperationSettings;
   private final UnaryCallSettings<GetTensorboardRequest, Tensorboard> getTensorboardSettings;
+  private final UnaryCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageSettings;
   private final UnaryCallSettings<UpdateTensorboardRequest, Operation> updateTensorboardSettings;
   private final OperationCallSettings<
           UpdateTensorboardRequest, Tensorboard, UpdateTensorboardOperationMetadata>
@@ -683,6 +687,12 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     return getTensorboardSettings;
   }
 
+  /** Returns the object with the settings used for calls to readTensorboardUsage. */
+  public UnaryCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageSettings() {
+    return readTensorboardUsageSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateTensorboard. */
   public UnaryCallSettings<UpdateTensorboardRequest, Operation> updateTensorboardSettings() {
     return updateTensorboardSettings;
@@ -988,6 +998,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     createTensorboardOperationSettings =
         settingsBuilder.createTensorboardOperationSettings().build();
     getTensorboardSettings = settingsBuilder.getTensorboardSettings().build();
+    readTensorboardUsageSettings = settingsBuilder.readTensorboardUsageSettings().build();
     updateTensorboardSettings = settingsBuilder.updateTensorboardSettings().build();
     updateTensorboardOperationSettings =
         settingsBuilder.updateTensorboardOperationSettings().build();
@@ -1055,6 +1066,9 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
         createTensorboardOperationSettings;
     private final UnaryCallSettings.Builder<GetTensorboardRequest, Tensorboard>
         getTensorboardSettings;
+    private final UnaryCallSettings.Builder<
+            ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+        readTensorboardUsageSettings;
     private final UnaryCallSettings.Builder<UpdateTensorboardRequest, Operation>
         updateTensorboardSettings;
     private final OperationCallSettings.Builder<
@@ -1184,6 +1198,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
       createTensorboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTensorboardOperationSettings = OperationCallSettings.newBuilder();
       getTensorboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      readTensorboardUsageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTensorboardSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTensorboardOperationSettings = OperationCallSettings.newBuilder();
       listTensorboardsSettings = PagedCallSettings.newBuilder(LIST_TENSORBOARDS_PAGE_STR_FACT);
@@ -1229,6 +1244,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTensorboardSettings,
               getTensorboardSettings,
+              readTensorboardUsageSettings,
               updateTensorboardSettings,
               listTensorboardsSettings,
               deleteTensorboardSettings,
@@ -1268,6 +1284,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
       createTensorboardSettings = settings.createTensorboardSettings.toBuilder();
       createTensorboardOperationSettings = settings.createTensorboardOperationSettings.toBuilder();
       getTensorboardSettings = settings.getTensorboardSettings.toBuilder();
+      readTensorboardUsageSettings = settings.readTensorboardUsageSettings.toBuilder();
       updateTensorboardSettings = settings.updateTensorboardSettings.toBuilder();
       updateTensorboardOperationSettings = settings.updateTensorboardOperationSettings.toBuilder();
       listTensorboardsSettings = settings.listTensorboardsSettings.toBuilder();
@@ -1323,6 +1340,7 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createTensorboardSettings,
               getTensorboardSettings,
+              readTensorboardUsageSettings,
               updateTensorboardSettings,
               listTensorboardsSettings,
               deleteTensorboardSettings,
@@ -1376,6 +1394,11 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
 
       builder
           .getTensorboardSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .readTensorboardUsageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1718,6 +1741,12 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     /** Returns the builder for the settings used for calls to getTensorboard. */
     public UnaryCallSettings.Builder<GetTensorboardRequest, Tensorboard> getTensorboardSettings() {
       return getTensorboardSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to readTensorboardUsage. */
+    public UnaryCallSettings.Builder<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+        readTensorboardUsageSettings() {
+      return readTensorboardUsageSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateTensorboard. */

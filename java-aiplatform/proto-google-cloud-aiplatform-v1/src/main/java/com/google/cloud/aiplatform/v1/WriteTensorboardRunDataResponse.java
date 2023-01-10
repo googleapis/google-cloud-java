@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [TensorboardService.WriteTensorboardRunData][google.cloud.aiplatform.v1.TensorboardService.WriteTensorboardRunData].
+ * Response message for
+ * [TensorboardService.WriteTensorboardRunData][google.cloud.aiplatform.v1.TensorboardService.WriteTensorboardRunData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse}
@@ -221,7 +222,8 @@ public final class WriteTensorboardRunDataResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Response message for [TensorboardService.WriteTensorboardRunData][google.cloud.aiplatform.v1.TensorboardService.WriteTensorboardRunData].
+   * Response message for
+   * [TensorboardService.WriteTensorboardRunData][google.cloud.aiplatform.v1.TensorboardService.WriteTensorboardRunData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse}

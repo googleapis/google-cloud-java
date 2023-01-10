@@ -853,6 +853,9 @@
             "ReadTensorboardTimeSeriesData": {
               "methods": ["readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesDataCallable"]
             },
+            "ReadTensorboardUsage": {
+              "methods": ["readTensorboardUsage", "readTensorboardUsage", "readTensorboardUsage", "readTensorboardUsageCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.GetEntityType][google.cloud.aiplatform.v1.FeaturestoreService.GetEntityType].
+ * Request message for
+ * [FeaturestoreService.GetEntityType][google.cloud.aiplatform.v1.FeaturestoreService.GetEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetEntityTypeRequest}
@@ -287,7 +288,8 @@ public final class GetEntityTypeRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.GetEntityType][google.cloud.aiplatform.v1.FeaturestoreService.GetEntityType].
+   * Request message for
+   * [FeaturestoreService.GetEntityType][google.cloud.aiplatform.v1.FeaturestoreService.GetEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetEntityTypeRequest}

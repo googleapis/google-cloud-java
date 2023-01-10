@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
+ * Request message for
+ * [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest}
@@ -387,7 +388,8 @@ public final class BatchImportModelEvaluationSlicesRequest
    *
    *
    * <pre>
-   * Request message for [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
+   * Request message for
+   * [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest}

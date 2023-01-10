@@ -139,7 +139,10 @@ import org.threeten.bp.Duration;
  * jobServiceSettingsBuilder
  *     .createCustomJobSettings()
  *     .setRetrySettings(
- *         jobServiceSettingsBuilder.createCustomJobSettings().getRetrySettings().toBuilder()
+ *         jobServiceSettingsBuilder
+ *             .createCustomJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobServiceStubSettings jobServiceSettings = jobServiceSettingsBuilder.build();

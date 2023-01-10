@@ -107,7 +107,10 @@ import org.threeten.bp.Duration;
  * indexServiceSettingsBuilder
  *     .getIndexSettings()
  *     .setRetrySettings(
- *         indexServiceSettingsBuilder.getIndexSettings().getRetrySettings().toBuilder()
+ *         indexServiceSettingsBuilder
+ *             .getIndexSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IndexServiceStubSettings indexServiceSettings = indexServiceSettingsBuilder.build();

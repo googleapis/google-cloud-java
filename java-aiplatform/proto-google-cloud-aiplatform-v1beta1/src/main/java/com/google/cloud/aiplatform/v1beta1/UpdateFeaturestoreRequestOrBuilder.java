@@ -27,9 +27,8 @@ public interface UpdateFeaturestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-   * updated.
-   * Format:
+   * Required. The Featurestore's `name` field is used to identify the
+   * Featurestore to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -44,9 +43,8 @@ public interface UpdateFeaturestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-   * updated.
-   * Format:
+   * Required. The Featurestore's `name` field is used to identify the
+   * Featurestore to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -61,9 +59,8 @@ public interface UpdateFeaturestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Featurestore's `name` field is used to identify the Featurestore to be
-   * updated.
-   * Format:
+   * Required. The Featurestore's `name` field is used to identify the
+   * Featurestore to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -88,7 +85,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
-   *   * `online_storage_ttl_days`
+   *   * `online_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -111,7 +108,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
-   *   * `online_storage_ttl_days`
+   *   * `online_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -134,7 +131,7 @@ public interface UpdateFeaturestoreRequestOrBuilder
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
    *   * `online_serving_config.scaling`
-   *   * `online_storage_ttl_days`
+   *   * `online_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

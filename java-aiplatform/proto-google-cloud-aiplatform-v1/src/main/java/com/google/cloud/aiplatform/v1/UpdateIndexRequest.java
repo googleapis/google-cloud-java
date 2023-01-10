@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
+ * Request message for
+ * [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateIndexRequest}
@@ -121,7 +122,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -137,7 +139,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -153,7 +156,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -345,7 +349,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
+   * Request message for
+   * [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateIndexRequest}
@@ -740,7 +745,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -755,7 +761,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -776,7 +783,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -799,7 +807,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -819,7 +828,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -844,7 +854,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -865,7 +876,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -880,7 +892,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -899,7 +912,8 @@ public final class UpdateIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

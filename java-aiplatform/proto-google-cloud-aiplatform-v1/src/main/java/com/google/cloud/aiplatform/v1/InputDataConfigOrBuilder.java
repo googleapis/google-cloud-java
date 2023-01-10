@@ -368,9 +368,9 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the Dataset in the same Project and Location which data will be
-   * used to train the Model. The Dataset must use schema compatible with
-   * Model being trained, and what is compatible should be described in the
+   * Required. The ID of the Dataset in the same Project and Location which data
+   * will be used to train the Model. The Dataset must use schema compatible
+   * with Model being trained, and what is compatible should be described in the
    * used TrainingPipeline's [training_task_definition]
    * [google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition].
    * For tabular Datasets, all their data is exported to training, to pick
@@ -386,9 +386,9 @@ public interface InputDataConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the Dataset in the same Project and Location which data will be
-   * used to train the Model. The Dataset must use schema compatible with
-   * Model being trained, and what is compatible should be described in the
+   * Required. The ID of the Dataset in the same Project and Location which data
+   * will be used to train the Model. The Dataset must use schema compatible
+   * with Model being trained, and what is compatible should be described in the
    * used TrainingPipeline's [training_task_definition]
    * [google.cloud.aiplatform.v1.TrainingPipeline.training_task_definition].
    * For tabular Datasets, all their data is exported to training, to pick
@@ -411,9 +411,9 @@ public interface InputDataConfigOrBuilder
    * are used in respectively training, validation or test role, depending on
    * the role of the DataItem they are on (for the auto-assigned that role is
    * decided by Vertex AI). A filter with same syntax as the one used in
-   * [ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations] may be used, but note
-   * here it filters across all Annotations of the Dataset, and not just within
-   * a single DataItem.
+   * [ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations]
+   * may be used, but note here it filters across all Annotations of the
+   * Dataset, and not just within a single DataItem.
    * </pre>
    *
    * <code>string annotations_filter = 6;</code>
@@ -431,9 +431,9 @@ public interface InputDataConfigOrBuilder
    * are used in respectively training, validation or test role, depending on
    * the role of the DataItem they are on (for the auto-assigned that role is
    * decided by Vertex AI). A filter with same syntax as the one used in
-   * [ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations] may be used, but note
-   * here it filters across all Annotations of the Dataset, and not just within
-   * a single DataItem.
+   * [ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations]
+   * may be used, but note here it filters across all Annotations of the
+   * Dataset, and not just within a single DataItem.
    * </pre>
    *
    * <code>string annotations_filter = 6;</code>
@@ -454,13 +454,17 @@ public interface InputDataConfigOrBuilder
    * The schema files that can be used here are found in
    * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
    * chosen schema must be consistent with
-   * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the Dataset specified by
+   * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
+   * Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id].
    * Only Annotations that both match this schema and belong to DataItems not
    * ignored by the split method are used in respectively training, validation
    * or test role, depending on the role of the DataItem they are on.
-   * When used in conjunction with [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter], the Annotations used
-   * for training are filtered by both [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter] and
+   * When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter]
+   * and
    * [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri].
    * </pre>
    *
@@ -481,13 +485,17 @@ public interface InputDataConfigOrBuilder
    * The schema files that can be used here are found in
    * gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
    * chosen schema must be consistent with
-   * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the Dataset specified by
+   * [metadata][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] of the
+   * Dataset specified by
    * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id].
    * Only Annotations that both match this schema and belong to DataItems not
    * ignored by the split method are used in respectively training, validation
    * or test role, depending on the role of the DataItem they are on.
-   * When used in conjunction with [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter], the Annotations used
-   * for training are filtered by both [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter] and
+   * When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter]
+   * and
    * [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri].
    * </pre>
    *
@@ -503,13 +511,20 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Only applicable to Datasets that have SavedQueries.
    * The ID of a SavedQuery (annotation set) under the Dataset specified by
-   * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+   * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id] used
+   * for filtering Annotations for training.
    * Only Annotations that are associated with this SavedQuery are used in
    * respectively training. When used in conjunction with
-   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
-   * both [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter].
-   * Only one of [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri] should be
-   * specified as both of them represent the same thing: problem type.
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id]
+   * and
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter].
+   * Only one of
+   * [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id]
+   * and
+   * [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri]
+   * should be specified as both of them represent the same thing: problem type.
    * </pre>
    *
    * <code>string saved_query_id = 7;</code>
@@ -523,13 +538,20 @@ public interface InputDataConfigOrBuilder
    * <pre>
    * Only applicable to Datasets that have SavedQueries.
    * The ID of a SavedQuery (annotation set) under the Dataset specified by
-   * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+   * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id] used
+   * for filtering Annotations for training.
    * Only Annotations that are associated with this SavedQuery are used in
    * respectively training. When used in conjunction with
-   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
-   * both [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter].
-   * Only one of [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri] should be
-   * specified as both of them represent the same thing: problem type.
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter],
+   * the Annotations used for training are filtered by both
+   * [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id]
+   * and
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter].
+   * Only one of
+   * [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id]
+   * and
+   * [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri]
+   * should be specified as both of them represent the same thing: problem type.
    * </pre>
    *
    * <code>string saved_query_id = 7;</code>

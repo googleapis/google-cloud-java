@@ -275,8 +275,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -299,8 +299,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1390,8 +1390,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1413,8 +1413,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1436,8 +1436,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1458,8 +1458,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1476,8 +1476,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

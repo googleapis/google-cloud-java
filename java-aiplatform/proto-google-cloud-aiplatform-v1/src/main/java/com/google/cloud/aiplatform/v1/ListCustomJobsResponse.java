@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs]
+ * Response message for
+ * [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListCustomJobsResponse}
@@ -144,7 +145,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,7 +171,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -363,7 +368,8 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs]
+   * Response message for
+   * [JobService.ListCustomJobs][google.cloud.aiplatform.v1.JobService.ListCustomJobs]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListCustomJobsResponse}
@@ -945,7 +951,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -968,7 +976,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -991,7 +1001,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1013,7 +1025,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1031,7 +1045,9 @@ public final class ListCustomJobsResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

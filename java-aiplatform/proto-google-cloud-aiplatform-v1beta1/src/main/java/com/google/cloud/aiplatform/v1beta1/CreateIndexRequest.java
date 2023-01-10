@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
+ * Request message for
+ * [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateIndexRequest}
@@ -352,7 +353,8 @@ public final class CreateIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
+   * Request message for
+   * [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateIndexRequest}

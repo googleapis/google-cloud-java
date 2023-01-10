@@ -27,8 +27,9 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType for the entities being written.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
+   * Required. The resource name of the EntityType for the entities being
+   * written. Value format:
+   * `projects/{project}/locations/{location}/featurestores/
    * {featurestore}/entityTypes/{entityType}`. For example,
    * for a machine learning model predicting user clicks on a website, an
    * EntityType ID could be `user`.
@@ -45,8 +46,9 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType for the entities being written.
-   * Value format: `projects/{project}/locations/{location}/featurestores/
+   * Required. The resource name of the EntityType for the entities being
+   * written. Value format:
+   * `projects/{project}/locations/{location}/featurestores/
    * {featurestore}/entityTypes/{entityType}`. For example,
    * for a machine learning model predicting user clicks on a website, an
    * EntityType ID could be `user`.
@@ -64,8 +66,8 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entities to be written. Up to 100,000 feature values can be written
-   * across all `payloads`.
+   * Required. The entities to be written. Up to 100,000 feature values can be
+   * written across all `payloads`.
    * </pre>
    *
    * <code>
@@ -77,8 +79,8 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entities to be written. Up to 100,000 feature values can be written
-   * across all `payloads`.
+   * Required. The entities to be written. Up to 100,000 feature values can be
+   * written across all `payloads`.
    * </pre>
    *
    * <code>
@@ -90,8 +92,8 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entities to be written. Up to 100,000 feature values can be written
-   * across all `payloads`.
+   * Required. The entities to be written. Up to 100,000 feature values can be
+   * written across all `payloads`.
    * </pre>
    *
    * <code>
@@ -103,8 +105,8 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entities to be written. Up to 100,000 feature values can be written
-   * across all `payloads`.
+   * Required. The entities to be written. Up to 100,000 feature values can be
+   * written across all `payloads`.
    * </pre>
    *
    * <code>
@@ -117,8 +119,8 @@ public interface WriteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The entities to be written. Up to 100,000 feature values can be written
-   * across all `payloads`.
+   * Required. The entities to be written. Up to 100,000 feature values can be
+   * written across all `payloads`.
    * </pre>
    *
    * <code>

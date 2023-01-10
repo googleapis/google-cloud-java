@@ -80,7 +80,9 @@ public interface SearchDataItemsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [SearchDataItemsRequest.page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.page_token] to obtain that page.
+   * Pass to
+   * [SearchDataItemsRequest.page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -93,7 +95,9 @@ public interface SearchDataItemsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [SearchDataItemsRequest.page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.page_token] to obtain that page.
+   * Pass to
+   * [SearchDataItemsRequest.page_token][google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

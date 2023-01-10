@@ -157,7 +157,8 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+   * be specified via Endpoint's DeployedModels' [Model's
+   * ][google.cloud.aiplatform.v1.DeployedModel.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -172,7 +173,8 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+   * be specified via Endpoint's DeployedModels' [Model's
+   * ][google.cloud.aiplatform.v1.DeployedModel.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -187,7 +189,8 @@ public interface PredictRequestOrBuilder
    *
    * <pre>
    * The parameters that govern the prediction. The schema of the parameters may
-   * be specified via Endpoint's DeployedModels' [Model's ][google.cloud.aiplatform.v1.DeployedModel.model]
+   * be specified via Endpoint's DeployedModels' [Model's
+   * ][google.cloud.aiplatform.v1.DeployedModel.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1.PredictSchemata.parameters_schema_uri].
    * </pre>

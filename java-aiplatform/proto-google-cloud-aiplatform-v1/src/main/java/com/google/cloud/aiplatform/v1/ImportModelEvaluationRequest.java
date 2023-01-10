@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [ModelService.ImportModelEvaluation][google.cloud.aiplatform.v1.ModelService.ImportModelEvaluation]
+ * Request message for
+ * [ModelService.ImportModelEvaluation][google.cloud.aiplatform.v1.ModelService.ImportModelEvaluation]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ImportModelEvaluationRequest}
@@ -354,7 +355,8 @@ public final class ImportModelEvaluationRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [ModelService.ImportModelEvaluation][google.cloud.aiplatform.v1.ModelService.ImportModelEvaluation]
+   * Request message for
+   * [ModelService.ImportModelEvaluation][google.cloud.aiplatform.v1.ModelService.ImportModelEvaluation]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ImportModelEvaluationRequest}

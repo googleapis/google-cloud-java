@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [IndexEndpointService.CreateIndexEndpoint][google.cloud.aiplatform.v1.IndexEndpointService.CreateIndexEndpoint].
+ * Request message for
+ * [IndexEndpointService.CreateIndexEndpoint][google.cloud.aiplatform.v1.IndexEndpointService.CreateIndexEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateIndexEndpointRequest}
@@ -354,7 +355,8 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [IndexEndpointService.CreateIndexEndpoint][google.cloud.aiplatform.v1.IndexEndpointService.CreateIndexEndpoint].
+   * Request message for
+   * [IndexEndpointService.CreateIndexEndpoint][google.cloud.aiplatform.v1.IndexEndpointService.CreateIndexEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateIndexEndpointRequest}

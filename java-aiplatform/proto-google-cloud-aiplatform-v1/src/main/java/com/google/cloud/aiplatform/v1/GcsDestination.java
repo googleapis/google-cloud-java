@@ -73,7 +73,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+   * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+   * end with
    * '/', a '/' will be automatically appended. The directory is created if it
    * doesn't exist.
    * </pre>
@@ -98,7 +99,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+   * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+   * end with
    * '/', a '/' will be automatically appended. The directory is created if it
    * doesn't exist.
    * </pre>
@@ -454,7 +456,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+     * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+     * end with
      * '/', a '/' will be automatically appended. The directory is created if it
      * doesn't exist.
      * </pre>
@@ -478,7 +481,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+     * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+     * end with
      * '/', a '/' will be automatically appended. The directory is created if it
      * doesn't exist.
      * </pre>
@@ -502,7 +506,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+     * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+     * end with
      * '/', a '/' will be automatically appended. The directory is created if it
      * doesn't exist.
      * </pre>
@@ -525,7 +530,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+     * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+     * end with
      * '/', a '/' will be automatically appended. The directory is created if it
      * doesn't exist.
      * </pre>
@@ -544,7 +550,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Google Cloud Storage URI to output directory. If the uri doesn't end with
+     * Required. Google Cloud Storage URI to output directory. If the uri doesn't
+     * end with
      * '/', a '/' will be automatically appended. The directory is created if it
      * doesn't exist.
      * </pre>

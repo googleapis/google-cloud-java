@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
+ * Request message for
+ * [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest}
@@ -378,7 +379,8 @@ public final class PurgeExecutionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
+   * Request message for
+   * [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1beta1.MetadataService.PurgeExecutions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest}

@@ -98,8 +98,10 @@ public interface ListIndexesRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListIndexesResponse.next_page_token][google.cloud.aiplatform.v1.ListIndexesResponse.next_page_token] of the previous
-   * [IndexService.ListIndexes][google.cloud.aiplatform.v1.IndexService.ListIndexes] call.
+   * [ListIndexesResponse.next_page_token][google.cloud.aiplatform.v1.ListIndexesResponse.next_page_token]
+   * of the previous
+   * [IndexService.ListIndexes][google.cloud.aiplatform.v1.IndexService.ListIndexes]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -113,8 +115,10 @@ public interface ListIndexesRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListIndexesResponse.next_page_token][google.cloud.aiplatform.v1.ListIndexesResponse.next_page_token] of the previous
-   * [IndexService.ListIndexes][google.cloud.aiplatform.v1.IndexService.ListIndexes] call.
+   * [ListIndexesResponse.next_page_token][google.cloud.aiplatform.v1.ListIndexesResponse.next_page_token]
+   * of the previous
+   * [IndexService.ListIndexes][google.cloud.aiplatform.v1.IndexService.ListIndexes]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>

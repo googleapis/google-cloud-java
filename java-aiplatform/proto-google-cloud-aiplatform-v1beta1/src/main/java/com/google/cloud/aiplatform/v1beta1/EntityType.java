@@ -319,7 +319,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -349,7 +350,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -370,7 +372,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -395,7 +398,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -426,8 +430,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform a consistent read-modify-write updates. If not
+   * set, a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -450,8 +454,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform a consistent read-modify-write updates. If not
+   * set, a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -477,9 +481,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-   * EntityType.
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 under this EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -500,9 +505,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-   * EntityType.
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 under this EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -525,9 +531,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-   * EntityType.
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 under this EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -1793,7 +1800,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1823,7 +1831,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1844,7 +1853,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1870,7 +1880,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1903,7 +1914,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1932,7 +1944,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1960,7 +1973,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The labels with user-defined metadata to organize your EntityTypes.
+     * Optional. The labels with user-defined metadata to organize your
+     * EntityTypes.
      * Label keys and values can be no longer than 64 characters
      * (Unicode codepoints), can only contain lowercase letters, numeric
      * characters, underscores and dashes. International characters are allowed.
@@ -1983,8 +1997,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform a consistent read-modify-write updates. If not
+     * set, a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2006,8 +2020,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform a consistent read-modify-write updates. If not
+     * set, a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2029,8 +2043,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform a consistent read-modify-write updates. If not
+     * set, a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2051,8 +2065,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform a consistent read-modify-write updates. If not
+     * set, a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2069,8 +2083,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform a consistent read-modify-write updates. If not
+     * set, a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2099,9 +2113,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2121,9 +2136,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2149,9 +2165,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2180,9 +2197,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2208,9 +2226,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2244,9 +2263,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2272,9 +2292,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2295,9 +2316,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -2322,9 +2344,10 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The default monitoring configuration for all Features with value type
-     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-     * EntityType.
+     * Optional. The default monitoring configuration for all Features with value
+     * type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+     * BOOL, STRING, DOUBLE or INT64 under this EntityType.
      * If this is populated with
      * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
      * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is

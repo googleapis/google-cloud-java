@@ -217,7 +217,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -249,7 +251,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -272,7 +276,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -300,7 +306,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * considered identical if their content bytes are identical (e.g. image bytes
    * or pdf bytes).
    * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -350,11 +358,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels that will be applied to newly imported Annotations. If two
    * Annotations are identical, one of them will be deduped. Two Annotations are
-   * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-   * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-   * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * considered identical if their
+   * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+   * the same. These labels will be overridden by Annotation labels specified
+   * inside index file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -378,11 +389,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels that will be applied to newly imported Annotations. If two
    * Annotations are identical, one of them will be deduped. Two Annotations are
-   * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-   * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-   * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * considered identical if their
+   * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+   * the same. These labels will be overridden by Annotation labels specified
+   * inside index file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -397,11 +411,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels that will be applied to newly imported Annotations. If two
    * Annotations are identical, one of them will be deduped. Two Annotations are
-   * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-   * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-   * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * considered identical if their
+   * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+   * the same. These labels will be overridden by Annotation labels specified
+   * inside index file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -421,11 +438,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Labels that will be applied to newly imported Annotations. If two
    * Annotations are identical, one of them will be deduped. Two Annotations are
-   * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-   * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-   * These labels will be overridden by Annotation labels specified inside index
-   * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+   * considered identical if their
+   * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+   * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+   * the same. These labels will be overridden by Annotation labels specified
+   * inside index file referenced by
+   * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+   * e.g. jsonl file.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -448,9 +468,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-   * format. Validation will be done against the schema. The schema is defined
-   * as an [OpenAPI 3.0.2 Schema
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * the import format. Validation will be done against the schema. The schema
+   * is defined as an [OpenAPI 3.0.2 Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
@@ -474,9 +494,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-   * format. Validation will be done against the schema. The schema is defined
-   * as an [OpenAPI 3.0.2 Schema
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * the import format. Validation will be done against the schema. The schema
+   * is defined as an [OpenAPI 3.0.2 Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
@@ -1239,7 +1259,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1271,7 +1293,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1294,7 +1318,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1322,7 +1348,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1357,7 +1385,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1388,7 +1418,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1418,7 +1450,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * considered identical if their content bytes are identical (e.g. image bytes
      * or pdf bytes).
      * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; data_item_labels = 2;</code>
@@ -1463,11 +1497,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1491,11 +1528,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1510,11 +1550,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1535,11 +1578,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1567,11 +1613,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1594,11 +1643,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1620,11 +1672,14 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Labels that will be applied to newly imported Annotations. If two
      * Annotations are identical, one of them will be deduped. Two Annotations are
-     * considered identical if their [payload][google.cloud.aiplatform.v1.Annotation.payload],
-     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri] and all of their
-     * [labels][google.cloud.aiplatform.v1.Annotation.labels] are the same.
-     * These labels will be overridden by Annotation labels specified inside index
-     * file referenced by [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri], e.g. jsonl file.
+     * considered identical if their
+     * [payload][google.cloud.aiplatform.v1.Annotation.payload],
+     * [payload_schema_uri][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+     * and all of their [labels][google.cloud.aiplatform.v1.Annotation.labels] are
+     * the same. These labels will be overridden by Annotation labels specified
+     * inside index file referenced by
+     * [import_schema_uri][google.cloud.aiplatform.v1.ImportDataConfig.import_schema_uri],
+     * e.g. jsonl file.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotation_labels = 3;</code>
@@ -1640,9 +1695,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-     * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * the import format. Validation will be done against the schema. The schema
+     * is defined as an [OpenAPI 3.0.2 Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
@@ -1665,9 +1720,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-     * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * the import format. Validation will be done against the schema. The schema
+     * is defined as an [OpenAPI 3.0.2 Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
@@ -1690,9 +1745,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-     * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * the import format. Validation will be done against the schema. The schema
+     * is defined as an [OpenAPI 3.0.2 Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
@@ -1714,9 +1769,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-     * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * the import format. Validation will be done against the schema. The schema
+     * is defined as an [OpenAPI 3.0.2 Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *
@@ -1734,9 +1789,9 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing the import
-     * format. Validation will be done against the schema. The schema is defined
-     * as an [OpenAPI 3.0.2 Schema
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * the import format. Validation will be done against the schema. The schema
+     * is defined as an [OpenAPI 3.0.2 Schema
      * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
      * </pre>
      *

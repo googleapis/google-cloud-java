@@ -98,8 +98,10 @@ public interface ListModelEvaluationsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelEvaluationsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse.next_page_token] of the previous
-   * [ModelService.ListModelEvaluations][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluations] call.
+   * [ListModelEvaluationsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse.next_page_token]
+   * of the previous
+   * [ModelService.ListModelEvaluations][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluations]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -113,8 +115,10 @@ public interface ListModelEvaluationsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelEvaluationsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse.next_page_token] of the previous
-   * [ModelService.ListModelEvaluations][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluations] call.
+   * [ListModelEvaluationsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse.next_page_token]
+   * of the previous
+   * [ModelService.ListModelEvaluations][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluations]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
+ * Request message for
+ * [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest}
@@ -143,8 +144,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -160,8 +161,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -178,8 +179,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -194,8 +195,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -211,8 +212,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -407,7 +408,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
    *
    *
    * <pre>
-   * Request message for [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
+   * Request message for
+   * [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesRequest}
@@ -813,8 +815,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -833,8 +835,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -852,8 +854,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -872,8 +874,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -898,8 +900,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -923,8 +925,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -949,8 +951,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -975,8 +977,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -999,8 +1001,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1024,8 +1026,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1049,8 +1051,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1071,8 +1073,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1093,8 +1095,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1109,8 +1111,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1129,8 +1131,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1151,8 +1153,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1170,8 +1172,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>
@@ -1190,8 +1192,8 @@ public final class BatchCreateTensorboardTimeSeriesRequest
      *
      *
      * <pre>
-     * Required. The request message specifying the TensorboardTimeSeries to create.
-     * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+     * Required. The request message specifying the TensorboardTimeSeries to
+     * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
      * </pre>
      *
      * <code>

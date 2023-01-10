@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [IndexService.RemoveDatapoints][google.cloud.aiplatform.v1beta1.IndexService.RemoveDatapoints]
+ * Response message for
+ * [IndexService.RemoveDatapoints][google.cloud.aiplatform.v1beta1.IndexService.RemoveDatapoints]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse}
@@ -220,7 +221,8 @@ public final class RemoveDatapointsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for [IndexService.RemoveDatapoints][google.cloud.aiplatform.v1beta1.IndexService.RemoveDatapoints]
+   * Response message for
+   * [IndexService.RemoveDatapoints][google.cloud.aiplatform.v1beta1.IndexService.RemoveDatapoints]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse}

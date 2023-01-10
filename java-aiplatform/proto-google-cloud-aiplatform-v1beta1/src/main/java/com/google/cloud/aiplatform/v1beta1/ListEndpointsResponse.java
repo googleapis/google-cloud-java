@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints].
+ * Response message for
+ * [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListEndpointsResponse}
@@ -144,7 +145,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,7 +171,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -363,7 +368,8 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints].
+   * Response message for
+   * [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListEndpointsResponse}
@@ -946,7 +952,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -969,7 +977,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -992,7 +1002,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1014,7 +1026,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1032,7 +1046,9 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListEndpointsRequest.page_token][google.cloud.aiplatform.v1beta1.ListEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

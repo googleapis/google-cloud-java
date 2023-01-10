@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob].
+ * Request message for
+ * [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest}
@@ -288,7 +289,8 @@ public final class GetBatchPredictionJobRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob].
+   * Request message for
+   * [JobService.GetBatchPredictionJob][google.cloud.aiplatform.v1beta1.JobService.GetBatchPredictionJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest}

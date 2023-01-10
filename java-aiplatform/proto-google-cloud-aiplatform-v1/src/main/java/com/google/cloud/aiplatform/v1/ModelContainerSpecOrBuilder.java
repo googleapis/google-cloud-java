@@ -27,13 +27,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. URI of the Docker image to be used as the custom container for serving
-   * predictions. This URI must identify an image in Artifact Registry or
-   * Container Registry. Learn more about the [container publishing
+   * Required. Immutable. URI of the Docker image to be used as the custom
+   * container for serving predictions. This URI must identify an image in
+   * Artifact Registry or Container Registry. Learn more about the [container
+   * publishing
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
    * including permissions requirements for the Vertex AI Service Agent.
-   * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
-   * internally, and this original path is afterwards not used.
+   * The container image is ingested upon
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
+   * stored internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
    * [Custom container
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
@@ -53,13 +55,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. URI of the Docker image to be used as the custom container for serving
-   * predictions. This URI must identify an image in Artifact Registry or
-   * Container Registry. Learn more about the [container publishing
+   * Required. Immutable. URI of the Docker image to be used as the custom
+   * container for serving predictions. This URI must identify an image in
+   * Artifact Registry or Container Registry. Learn more about the [container
+   * publishing
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#publishing),
    * including permissions requirements for the Vertex AI Service Agent.
-   * The container image is ingested upon [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel], stored
-   * internally, and this original path is afterwards not used.
+   * The container image is ingested upon
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel],
+   * stored internally, and this original path is afterwards not used.
    * To learn about the requirements for the Docker image itself, see
    * [Custom container
    * requirements](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#).
@@ -80,13 +84,14 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies the command that runs when the container starts. This overrides
-   * the container's
+   * Immutable. Specifies the command that runs when the container starts. This
+   * overrides the container's
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
-   * in conjunction with the [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
+   * in conjunction with the
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
    * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
    * if either exists. If this field is not specified and the container does not
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
@@ -100,18 +105,16 @@ public interface ModelContainerSpecOrBuilder
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `command` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `command` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -124,13 +127,14 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies the command that runs when the container starts. This overrides
-   * the container's
+   * Immutable. Specifies the command that runs when the container starts. This
+   * overrides the container's
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
-   * in conjunction with the [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
+   * in conjunction with the
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
    * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
    * if either exists. If this field is not specified and the container does not
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
@@ -144,18 +148,16 @@ public interface ModelContainerSpecOrBuilder
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `command` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `command` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -168,13 +170,14 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies the command that runs when the container starts. This overrides
-   * the container's
+   * Immutable. Specifies the command that runs when the container starts. This
+   * overrides the container's
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
-   * in conjunction with the [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
+   * in conjunction with the
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
    * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
    * if either exists. If this field is not specified and the container does not
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
@@ -188,18 +191,16 @@ public interface ModelContainerSpecOrBuilder
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `command` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `command` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -213,13 +214,14 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies the command that runs when the container starts. This overrides
-   * the container's
+   * Immutable. Specifies the command that runs when the container starts. This
+   * overrides the container's
    * [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint).
    * Specify this field as an array of executable and arguments, similar to a
    * Docker `ENTRYPOINT`'s "exec" form, not its "shell" form.
    * If you do not specify this field, then the container's `ENTRYPOINT` runs,
-   * in conjunction with the [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
+   * in conjunction with the
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] field or the
    * container's [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd),
    * if either exists. If this field is not specified and the container does not
    * have an `ENTRYPOINT`, then refer to the Docker documentation about [how
@@ -233,18 +235,16 @@ public interface ModelContainerSpecOrBuilder
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * In this field, you can reference [environment variables set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `command` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `command` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -259,16 +259,16 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies arguments for the command that runs when the container starts.
-   * This overrides the container's
+   * Immutable. Specifies arguments for the command that runs when the container
+   * starts. This overrides the container's
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
    * If you don't specify this field but do specify the
-   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field, then the command from the
-   * `command` field runs without any additional arguments. See the
-   * [Kubernetes documentation about how the
-   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
+   * then the command from the `command` field runs without any additional
+   * arguments. See the [Kubernetes documentation about how the `command` and
+   * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
@@ -279,18 +279,16 @@ public interface ModelContainerSpecOrBuilder
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `args` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `args` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -303,16 +301,16 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies arguments for the command that runs when the container starts.
-   * This overrides the container's
+   * Immutable. Specifies arguments for the command that runs when the container
+   * starts. This overrides the container's
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
    * If you don't specify this field but do specify the
-   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field, then the command from the
-   * `command` field runs without any additional arguments. See the
-   * [Kubernetes documentation about how the
-   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
+   * then the command from the `command` field runs without any additional
+   * arguments. See the [Kubernetes documentation about how the `command` and
+   * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
@@ -323,18 +321,16 @@ public interface ModelContainerSpecOrBuilder
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `args` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `args` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -347,16 +343,16 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies arguments for the command that runs when the container starts.
-   * This overrides the container's
+   * Immutable. Specifies arguments for the command that runs when the container
+   * starts. This overrides the container's
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
    * If you don't specify this field but do specify the
-   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field, then the command from the
-   * `command` field runs without any additional arguments. See the
-   * [Kubernetes documentation about how the
-   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
+   * then the command from the `command` field runs without any additional
+   * arguments. See the [Kubernetes documentation about how the `command` and
+   * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
@@ -367,18 +363,16 @@ public interface ModelContainerSpecOrBuilder
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `args` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `args` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -392,16 +386,16 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. Specifies arguments for the command that runs when the container starts.
-   * This overrides the container's
+   * Immutable. Specifies arguments for the command that runs when the container
+   * starts. This overrides the container's
    * [`CMD`](https://docs.docker.com/engine/reference/builder/#cmd). Specify
    * this field as an array of executable and arguments, similar to a Docker
    * `CMD`'s "default parameters" form.
    * If you don't specify this field but do specify the
-   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field, then the command from the
-   * `command` field runs without any additional arguments. See the
-   * [Kubernetes documentation about how the
-   * `command` and `args` fields interact with a container's `ENTRYPOINT` and
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] field,
+   * then the command from the `command` field runs without any additional
+   * arguments. See the [Kubernetes documentation about how the `command` and
+   * `args` fields interact with a container's `ENTRYPOINT` and
    * `CMD`](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#notes).
    * If you don't specify this field and don't specify the `command` field,
    * then the container's
@@ -412,18 +406,16 @@ public interface ModelContainerSpecOrBuilder
    * In this field, you can reference [environment variables
    * set by Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables)
-   * and environment variables set in the [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field.
-   * You cannot reference environment variables set in the Docker image. In
-   * order for environment variables to be expanded, reference them by using the
-   * following syntax:
-   * &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * Note that this differs from Bash variable expansion, which does not use
-   * parentheses. If a variable cannot be resolved, the reference in the input
-   * string is used unchanged. To avoid variable expansion, you can escape this
-   * syntax with `$$`; for example:
-   * &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt;
-   * This field corresponds to the `args` field of the Kubernetes Containers
-   * [v1 core
+   * and environment variables set in the
+   * [env][google.cloud.aiplatform.v1.ModelContainerSpec.env] field. You cannot
+   * reference environment variables set in the Docker image. In order for
+   * environment variables to be expanded, reference them by using the following
+   * syntax: &lt;code&gt;$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; Note that this differs
+   * from Bash variable expansion, which does not use parentheses. If a variable
+   * cannot be resolved, the reference in the input string is used unchanged. To
+   * avoid variable expansion, you can escape this syntax with `$$`; for
+   * example: &lt;code&gt;$$(&lt;var&gt;VARIABLE_NAME&lt;/var&gt;)&lt;/code&gt; This field corresponds
+   * to the `args` field of the Kubernetes Containers [v1 core
    * API](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core).
    * </pre>
    *
@@ -438,13 +430,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. List of environment variables to set in the container. After the container
-   * starts running, code running in the container can read these environment
-   * variables.
-   * Additionally, the [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
-   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can reference these variables. Later
-   * entries in this list can also reference earlier entries. For example, the
-   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * Immutable. List of environment variables to set in the container. After the
+   * container starts running, code running in the container can read these
+   * environment variables.
+   * Additionally, the
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
+   * reference these variables. Later entries in this list can also reference
+   * earlier entries. For example, the following example sets the variable
+   * `VAR_2` to have the value `foo bar`:
    * ```json
    * [
    *   {
@@ -473,13 +467,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. List of environment variables to set in the container. After the container
-   * starts running, code running in the container can read these environment
-   * variables.
-   * Additionally, the [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
-   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can reference these variables. Later
-   * entries in this list can also reference earlier entries. For example, the
-   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * Immutable. List of environment variables to set in the container. After the
+   * container starts running, code running in the container can read these
+   * environment variables.
+   * Additionally, the
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
+   * reference these variables. Later entries in this list can also reference
+   * earlier entries. For example, the following example sets the variable
+   * `VAR_2` to have the value `foo bar`:
    * ```json
    * [
    *   {
@@ -508,13 +504,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. List of environment variables to set in the container. After the container
-   * starts running, code running in the container can read these environment
-   * variables.
-   * Additionally, the [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
-   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can reference these variables. Later
-   * entries in this list can also reference earlier entries. For example, the
-   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * Immutable. List of environment variables to set in the container. After the
+   * container starts running, code running in the container can read these
+   * environment variables.
+   * Additionally, the
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
+   * reference these variables. Later entries in this list can also reference
+   * earlier entries. For example, the following example sets the variable
+   * `VAR_2` to have the value `foo bar`:
    * ```json
    * [
    *   {
@@ -543,13 +541,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. List of environment variables to set in the container. After the container
-   * starts running, code running in the container can read these environment
-   * variables.
-   * Additionally, the [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
-   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can reference these variables. Later
-   * entries in this list can also reference earlier entries. For example, the
-   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * Immutable. List of environment variables to set in the container. After the
+   * container starts running, code running in the container can read these
+   * environment variables.
+   * Additionally, the
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
+   * reference these variables. Later entries in this list can also reference
+   * earlier entries. For example, the following example sets the variable
+   * `VAR_2` to have the value `foo bar`:
    * ```json
    * [
    *   {
@@ -578,13 +578,15 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. List of environment variables to set in the container. After the container
-   * starts running, code running in the container can read these environment
-   * variables.
-   * Additionally, the [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
-   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can reference these variables. Later
-   * entries in this list can also reference earlier entries. For example, the
-   * following example sets the variable `VAR_2` to have the value `foo bar`:
+   * Immutable. List of environment variables to set in the container. After the
+   * container starts running, code running in the container can read these
+   * environment variables.
+   * Additionally, the
+   * [command][google.cloud.aiplatform.v1.ModelContainerSpec.command] and
+   * [args][google.cloud.aiplatform.v1.ModelContainerSpec.args] fields can
+   * reference these variables. Later entries in this list can also reference
+   * earlier entries. For example, the following example sets the variable
+   * `VAR_2` to have the value `foo bar`:
    * ```json
    * [
    *   {
@@ -760,18 +762,19 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. HTTP path on the container to send prediction requests to. Vertex AI
-   * forwards requests sent using
-   * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict] to this
-   * path on the container's IP address and port. Vertex AI then returns the
-   * container's response in the API response.
+   * Immutable. HTTP path on the container to send prediction requests to.
+   * Vertex AI forwards requests sent using
+   * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
+   * to this path on the container's IP address and port. Vertex AI then returns
+   * the container's response in the API response.
    * For example, if you set this field to `/foo`, then when Vertex AI
    * receives a prediction request, it forwards the request body in a POST
    * request to the `/foo` path on the port of your container specified by the
    * first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
-   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
+   * you [deploy this Model to an
+   * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
@@ -779,7 +782,9 @@ public interface ModelContainerSpecOrBuilder
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
-   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the `DeployedModel`.
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
+   * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
+   * `DeployedModel`.
    *   (Vertex AI makes this value available to your container code
    *   as the [`AIP_DEPLOYED_MODEL_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
@@ -794,18 +799,19 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
-   * Immutable. HTTP path on the container to send prediction requests to. Vertex AI
-   * forwards requests sent using
-   * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict] to this
-   * path on the container's IP address and port. Vertex AI then returns the
-   * container's response in the API response.
+   * Immutable. HTTP path on the container to send prediction requests to.
+   * Vertex AI forwards requests sent using
+   * [projects.locations.endpoints.predict][google.cloud.aiplatform.v1.PredictionService.Predict]
+   * to this path on the container's IP address and port. Vertex AI then returns
+   * the container's response in the API response.
    * For example, if you set this field to `/foo`, then when Vertex AI
    * receives a prediction request, it forwards the request body in a POST
    * request to the `/foo` path on the port of your container specified by the
    * first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
-   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
+   * you [deploy this Model to an
+   * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
@@ -813,7 +819,9 @@ public interface ModelContainerSpecOrBuilder
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *  variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
-   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the `DeployedModel`.
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
+   * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
+   * `DeployedModel`.
    *   (Vertex AI makes this value available to your container code
    *   as the [`AIP_DEPLOYED_MODEL_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
@@ -839,7 +847,8 @@ public interface ModelContainerSpecOrBuilder
    * container specified by the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
-   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
+   * you [deploy this Model to an
+   * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
@@ -847,7 +856,9 @@ public interface ModelContainerSpecOrBuilder
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
-   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the `DeployedModel`.
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
+   * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
+   * `DeployedModel`.
    *   (Vertex AI makes this value available to your container code as the
    *   [`AIP_DEPLOYED_MODEL_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
@@ -872,7 +883,8 @@ public interface ModelContainerSpecOrBuilder
    * container specified by the first value of this `ModelContainerSpec`'s
    * [ports][google.cloud.aiplatform.v1.ModelContainerSpec.ports] field.
    * If you don't specify this field, it defaults to the following value when
-   * you [deploy this Model to an Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
+   * you [deploy this Model to an
+   * Endpoint][google.cloud.aiplatform.v1.EndpointService.DeployModel]:
    * &lt;code&gt;/v1/endpoints/&lt;var&gt;ENDPOINT&lt;/var&gt;/deployedModels/&lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:predict&lt;/code&gt;
    * The placeholders in this value are replaced as follows:
    * * &lt;var&gt;ENDPOINT&lt;/var&gt;: The last segment (following `endpoints/`)of the
@@ -880,7 +892,9 @@ public interface ModelContainerSpecOrBuilder
    *   deployed. (Vertex AI makes this value available to your container code
    *   as the [`AIP_ENDPOINT_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
-   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;: [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the `DeployedModel`.
+   * * &lt;var&gt;DEPLOYED_MODEL&lt;/var&gt;:
+   * [DeployedModel.id][google.cloud.aiplatform.v1.DeployedModel.id] of the
+   * `DeployedModel`.
    *   (Vertex AI makes this value available to your container code as the
    *   [`AIP_DEPLOYED_MODEL_ID` environment
    *   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)

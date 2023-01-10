@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1.MetadataService.AddContextArtifactsAndExecutions].
+ * Response message for
+ * [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1.MetadataService.AddContextArtifactsAndExecutions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse}
@@ -223,7 +224,8 @@ public final class AddContextArtifactsAndExecutionsResponse
    *
    *
    * <pre>
-   * Response message for [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1.MetadataService.AddContextArtifactsAndExecutions].
+   * Response message for
+   * [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1.MetadataService.AddContextArtifactsAndExecutions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse}

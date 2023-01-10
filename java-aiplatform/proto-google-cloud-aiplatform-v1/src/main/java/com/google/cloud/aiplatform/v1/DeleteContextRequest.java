@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.DeleteContext][google.cloud.aiplatform.v1.MetadataService.DeleteContext].
+ * Request message for
+ * [MetadataService.DeleteContext][google.cloud.aiplatform.v1.MetadataService.DeleteContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteContextRequest}
@@ -378,7 +379,8 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [MetadataService.DeleteContext][google.cloud.aiplatform.v1.MetadataService.DeleteContext].
+   * Request message for
+   * [MetadataService.DeleteContext][google.cloud.aiplatform.v1.MetadataService.DeleteContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteContextRequest}

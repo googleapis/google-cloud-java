@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
+ * Request message for
+ * [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.SearchMigratableResourcesRequest}
@@ -76,10 +77,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The location that the migratable resources should be searched from.
-   * It's the Vertex AI location that the resources can be migrated to, not
-   * the resources' original location.
-   * Format:
+   * Required. The location that the migratable resources should be searched
+   * from. It's the Vertex AI location that the resources can be migrated to,
+   * not the resources' original location. Format:
    * `projects/{project}/locations/{location}`
    * </pre>
    *
@@ -105,10 +105,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The location that the migratable resources should be searched from.
-   * It's the Vertex AI location that the resources can be migrated to, not
-   * the resources' original location.
-   * Format:
+   * Required. The location that the migratable resources should be searched
+   * from. It's the Vertex AI location that the resources can be migrated to,
+   * not the resources' original location. Format:
    * `projects/{project}/locations/{location}`
    * </pre>
    *
@@ -459,7 +458,8 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
+   * Request message for
+   * [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.SearchMigratableResourcesRequest}
@@ -672,10 +672,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The location that the migratable resources should be searched from.
-     * It's the Vertex AI location that the resources can be migrated to, not
-     * the resources' original location.
-     * Format:
+     * Required. The location that the migratable resources should be searched
+     * from. It's the Vertex AI location that the resources can be migrated to,
+     * not the resources' original location. Format:
      * `projects/{project}/locations/{location}`
      * </pre>
      *
@@ -700,10 +699,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The location that the migratable resources should be searched from.
-     * It's the Vertex AI location that the resources can be migrated to, not
-     * the resources' original location.
-     * Format:
+     * Required. The location that the migratable resources should be searched
+     * from. It's the Vertex AI location that the resources can be migrated to,
+     * not the resources' original location. Format:
      * `projects/{project}/locations/{location}`
      * </pre>
      *
@@ -728,10 +726,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The location that the migratable resources should be searched from.
-     * It's the Vertex AI location that the resources can be migrated to, not
-     * the resources' original location.
-     * Format:
+     * Required. The location that the migratable resources should be searched
+     * from. It's the Vertex AI location that the resources can be migrated to,
+     * not the resources' original location. Format:
      * `projects/{project}/locations/{location}`
      * </pre>
      *
@@ -755,10 +752,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The location that the migratable resources should be searched from.
-     * It's the Vertex AI location that the resources can be migrated to, not
-     * the resources' original location.
-     * Format:
+     * Required. The location that the migratable resources should be searched
+     * from. It's the Vertex AI location that the resources can be migrated to,
+     * not the resources' original location. Format:
      * `projects/{project}/locations/{location}`
      * </pre>
      *
@@ -778,10 +774,9 @@ public final class SearchMigratableResourcesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The location that the migratable resources should be searched from.
-     * It's the Vertex AI location that the resources can be migrated to, not
-     * the resources' original location.
-     * Format:
+     * Required. The location that the migratable resources should be searched
+     * from. It's the Vertex AI location that the resources can be migrated to,
+     * not the resources' original location. Format:
      * `projects/{project}/locations/{location}`
      * </pre>
      *

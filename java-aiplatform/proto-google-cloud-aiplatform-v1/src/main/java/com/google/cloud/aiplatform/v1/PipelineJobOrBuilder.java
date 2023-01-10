@@ -614,8 +614,9 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
-   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-   * be downloaded.
+   * A template uri from where the
+   * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+   * if empty, will be downloaded.
    * </pre>
    *
    * <code>string template_uri = 19;</code>
@@ -627,8 +628,9 @@ public interface PipelineJobOrBuilder
    *
    *
    * <pre>
-   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
-   * be downloaded.
+   * A template uri from where the
+   * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec],
+   * if empty, will be downloaded.
    * </pre>
    *
    * <code>string template_uri = 19;</code>
@@ -642,7 +644,8 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * Output only. Pipeline template metadata. Will fill up fields if
-   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+   * is from supported template registry.
    * </pre>
    *
    * <code>
@@ -657,7 +660,8 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * Output only. Pipeline template metadata. Will fill up fields if
-   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+   * is from supported template registry.
    * </pre>
    *
    * <code>
@@ -672,7 +676,8 @@ public interface PipelineJobOrBuilder
    *
    * <pre>
    * Output only. Pipeline template metadata. Will fill up fields if
-   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri]
+   * is from supported template registry.
    * </pre>
    *
    * <code>

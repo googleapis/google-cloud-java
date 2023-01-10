@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [VizierService.ListStudies][google.cloud.aiplatform.v1.VizierService.ListStudies].
+ * Response message for
+ * [VizierService.ListStudies][google.cloud.aiplatform.v1.VizierService.ListStudies].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListStudiesResponse}
@@ -364,7 +365,8 @@ public final class ListStudiesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [VizierService.ListStudies][google.cloud.aiplatform.v1.VizierService.ListStudies].
+   * Response message for
+   * [VizierService.ListStudies][google.cloud.aiplatform.v1.VizierService.ListStudies].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListStudiesResponse}

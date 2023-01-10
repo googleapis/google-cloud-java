@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [ModelService.MergeVersionAliases][google.cloud.aiplatform.v1.ModelService.MergeVersionAliases].
+ * Request message for
+ * [ModelService.MergeVersionAliases][google.cloud.aiplatform.v1.ModelService.MergeVersionAliases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.MergeVersionAliasesRequest}
@@ -406,7 +407,8 @@ public final class MergeVersionAliasesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [ModelService.MergeVersionAliases][google.cloud.aiplatform.v1.ModelService.MergeVersionAliases].
+   * Request message for
+   * [ModelService.MergeVersionAliases][google.cloud.aiplatform.v1.ModelService.MergeVersionAliases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.MergeVersionAliasesRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [VizierService.ListOptimalTrials][google.cloud.aiplatform.v1.VizierService.ListOptimalTrials].
+ * Response message for
+ * [VizierService.ListOptimalTrials][google.cloud.aiplatform.v1.VizierService.ListOptimalTrials].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListOptimalTrialsResponse}
@@ -317,7 +318,8 @@ public final class ListOptimalTrialsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Response message for [VizierService.ListOptimalTrials][google.cloud.aiplatform.v1.VizierService.ListOptimalTrials].
+   * Response message for
+   * [VizierService.ListOptimalTrials][google.cloud.aiplatform.v1.VizierService.ListOptimalTrials].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListOptimalTrialsResponse}

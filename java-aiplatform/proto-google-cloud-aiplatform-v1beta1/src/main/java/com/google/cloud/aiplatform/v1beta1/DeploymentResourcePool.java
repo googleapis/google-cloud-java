@@ -127,7 +127,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+   * Required. The underlying DedicatedResources that the DeploymentResourcePool
+   * uses.
    * </pre>
    *
    * <code>
@@ -144,7 +145,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+   * Required. The underlying DedicatedResources that the DeploymentResourcePool
+   * uses.
    * </pre>
    *
    * <code>
@@ -163,7 +165,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+   * Required. The underlying DedicatedResources that the DeploymentResourcePool
+   * uses.
    * </pre>
    *
    * <code>
@@ -752,7 +755,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -768,7 +772,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -790,7 +795,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -815,7 +821,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -837,7 +844,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -866,7 +874,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -888,7 +897,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -905,7 +915,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>
@@ -926,7 +937,8 @@ public final class DeploymentResourcePool extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+     * Required. The underlying DedicatedResources that the DeploymentResourcePool
+     * uses.
      * </pre>
      *
      * <code>

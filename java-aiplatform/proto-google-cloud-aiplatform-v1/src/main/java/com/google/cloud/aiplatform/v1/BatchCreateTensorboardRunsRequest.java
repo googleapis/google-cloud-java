@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.BatchCreateTensorboardRuns][google.cloud.aiplatform.v1.TensorboardService.BatchCreateTensorboardRuns].
+ * Request message for
+ * [TensorboardService.BatchCreateTensorboardRuns][google.cloud.aiplatform.v1.TensorboardService.BatchCreateTensorboardRuns].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest}
@@ -392,7 +393,8 @@ public final class BatchCreateTensorboardRunsRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request message for [TensorboardService.BatchCreateTensorboardRuns][google.cloud.aiplatform.v1.TensorboardService.BatchCreateTensorboardRuns].
+   * Request message for
+   * [TensorboardService.BatchCreateTensorboardRuns][google.cloud.aiplatform.v1.TensorboardService.BatchCreateTensorboardRuns].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest}

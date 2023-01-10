@@ -79,7 +79,8 @@ public interface ListArtifactsResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1.ListArtifactsRequest.page_token]
+   * A token, which can be sent as
+   * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1.ListArtifactsRequest.page_token]
    * to retrieve the next page.
    * If this field is not populated, there are no subsequent pages.
    * </pre>
@@ -93,7 +94,8 @@ public interface ListArtifactsResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1.ListArtifactsRequest.page_token]
+   * A token, which can be sent as
+   * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1.ListArtifactsRequest.page_token]
    * to retrieve the next page.
    * If this field is not populated, there are no subsequent pages.
    * </pre>

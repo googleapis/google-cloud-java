@@ -27,8 +27,9 @@ public interface ListHyperparameterTuningJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location to list the HyperparameterTuningJobs
-   * from. Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to list the
+   * HyperparameterTuningJobs from. Format:
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface ListHyperparameterTuningJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location to list the HyperparameterTuningJobs
-   * from. Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to list the
+   * HyperparameterTuningJobs from. Format:
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -128,8 +130,10 @@ public interface ListHyperparameterTuningJobsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListHyperparameterTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse.next_page_token] of the previous
-   * [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs] call.
+   * [ListHyperparameterTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse.next_page_token]
+   * of the previous
+   * [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -143,8 +147,10 @@ public interface ListHyperparameterTuningJobsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListHyperparameterTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse.next_page_token] of the previous
-   * [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs] call.
+   * [ListHyperparameterTuningJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListHyperparameterTuningJobsResponse.next_page_token]
+   * of the previous
+   * [JobService.ListHyperparameterTuningJobs][google.cloud.aiplatform.v1.JobService.ListHyperparameterTuningJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>

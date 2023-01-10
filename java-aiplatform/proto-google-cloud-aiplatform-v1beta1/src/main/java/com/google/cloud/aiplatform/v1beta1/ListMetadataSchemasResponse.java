@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
+ * Response message for
+ * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListMetadataSchemasResponse}
@@ -146,8 +147,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -171,8 +173,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -367,7 +370,8 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
+   * Response message for
+   * [MetadataService.ListMetadataSchemas][google.cloud.aiplatform.v1beta1.MetadataService.ListMetadataSchemas].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListMetadataSchemasResponse}
@@ -965,8 +969,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -989,8 +994,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1013,8 +1019,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1036,8 +1043,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1055,8 +1063,9 @@ public final class ListMetadataSchemasResponse extends com.google.protobuf.Gener
      *
      * <pre>
      * A token, which can be sent as
-     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-     * page. If this field is not populated, there are no subsequent pages.
+     * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+     * to retrieve the next page. If this field is not populated, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

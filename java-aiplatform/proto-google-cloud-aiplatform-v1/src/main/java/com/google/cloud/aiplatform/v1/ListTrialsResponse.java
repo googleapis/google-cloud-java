@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [VizierService.ListTrials][google.cloud.aiplatform.v1.VizierService.ListTrials].
+ * Response message for
+ * [VizierService.ListTrials][google.cloud.aiplatform.v1.VizierService.ListTrials].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListTrialsResponse}
@@ -364,7 +365,8 @@ public final class ListTrialsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Response message for [VizierService.ListTrials][google.cloud.aiplatform.v1.VizierService.ListTrials].
+   * Response message for
+   * [VizierService.ListTrials][google.cloud.aiplatform.v1.VizierService.ListTrials].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListTrialsResponse}

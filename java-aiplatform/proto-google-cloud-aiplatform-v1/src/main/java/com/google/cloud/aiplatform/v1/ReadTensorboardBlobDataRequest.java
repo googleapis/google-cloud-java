@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.ReadTensorboardBlobData][google.cloud.aiplatform.v1.TensorboardService.ReadTensorboardBlobData].
+ * Request message for
+ * [TensorboardService.ReadTensorboardBlobData][google.cloud.aiplatform.v1.TensorboardService.ReadTensorboardBlobData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest}
@@ -367,7 +368,8 @@ public final class ReadTensorboardBlobDataRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [TensorboardService.ReadTensorboardBlobData][google.cloud.aiplatform.v1.TensorboardService.ReadTensorboardBlobData].
+   * Request message for
+   * [TensorboardService.ReadTensorboardBlobData][google.cloud.aiplatform.v1.TensorboardService.ReadTensorboardBlobData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest}

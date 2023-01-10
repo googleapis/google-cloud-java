@@ -71,8 +71,8 @@ public interface ListModelVersionsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token] of the previous
-   * [ModelService.ListModelversions][] call.
+   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+   * of the previous [ModelService.ListModelversions][] call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -86,8 +86,8 @@ public interface ListModelVersionsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token] of the previous
-   * [ModelService.ListModelversions][] call.
+   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+   * of the previous [ModelService.ListModelversions][] call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -169,4 +169,39 @@ public interface ListModelVersionsRequestOrBuilder
    * <code>.google.protobuf.FieldMask read_mask = 5;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A comma-separated list of fields to order by, sorted in ascending order.
+   * Use "desc" after a field name for descending.
+   * Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   * Example: `update_time asc, create_time desc`.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * A comma-separated list of fields to order by, sorted in ascending order.
+   * Use "desc" after a field name for descending.
+   * Supported fields:
+   *   * `create_time`
+   *   * `update_time`
+   * Example: `update_time asc, create_time desc`.
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

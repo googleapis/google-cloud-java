@@ -27,7 +27,8 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -70,7 +73,8 @@ public interface BatchImportModelEvaluationSlicesResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>

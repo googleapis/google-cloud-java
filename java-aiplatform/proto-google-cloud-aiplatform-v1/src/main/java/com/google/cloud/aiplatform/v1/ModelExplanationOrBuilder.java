@@ -27,21 +27,25 @@ public interface ModelExplanationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
-   * set of instances. The attributions are grouped by outputs.
+   * Output only. Aggregated attributions explaining the Model's prediction
+   * outputs over the set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
    * multiclass Models that predict multiple classes, each element explains one
-   * specific item. [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index] can be used to identify which
-   * output this attribution is explaining.
-   * The [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
-   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value] and
-   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions] fields are
-   * averaged over the test data.
+   * specific item.
+   * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+   * can be used to identify which output this attribution is explaining.
+   * The
+   * [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
+   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value]
+   * and
+   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
+   * fields are averaged over the test data.
    * NOTE: Currently AutoML tabular classification Models produce only one
    * attribution, which averages attributions over all the classes it predicts.
-   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error] is not populated.
+   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error]
+   * is not populated.
    * </pre>
    *
    * <code>
@@ -53,21 +57,25 @@ public interface ModelExplanationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
-   * set of instances. The attributions are grouped by outputs.
+   * Output only. Aggregated attributions explaining the Model's prediction
+   * outputs over the set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
    * multiclass Models that predict multiple classes, each element explains one
-   * specific item. [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index] can be used to identify which
-   * output this attribution is explaining.
-   * The [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
-   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value] and
-   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions] fields are
-   * averaged over the test data.
+   * specific item.
+   * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+   * can be used to identify which output this attribution is explaining.
+   * The
+   * [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
+   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value]
+   * and
+   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
+   * fields are averaged over the test data.
    * NOTE: Currently AutoML tabular classification Models produce only one
    * attribution, which averages attributions over all the classes it predicts.
-   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error] is not populated.
+   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error]
+   * is not populated.
    * </pre>
    *
    * <code>
@@ -79,21 +87,25 @@ public interface ModelExplanationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
-   * set of instances. The attributions are grouped by outputs.
+   * Output only. Aggregated attributions explaining the Model's prediction
+   * outputs over the set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
    * multiclass Models that predict multiple classes, each element explains one
-   * specific item. [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index] can be used to identify which
-   * output this attribution is explaining.
-   * The [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
-   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value] and
-   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions] fields are
-   * averaged over the test data.
+   * specific item.
+   * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+   * can be used to identify which output this attribution is explaining.
+   * The
+   * [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
+   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value]
+   * and
+   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
+   * fields are averaged over the test data.
    * NOTE: Currently AutoML tabular classification Models produce only one
    * attribution, which averages attributions over all the classes it predicts.
-   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error] is not populated.
+   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error]
+   * is not populated.
    * </pre>
    *
    * <code>
@@ -105,21 +117,25 @@ public interface ModelExplanationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
-   * set of instances. The attributions are grouped by outputs.
+   * Output only. Aggregated attributions explaining the Model's prediction
+   * outputs over the set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
    * multiclass Models that predict multiple classes, each element explains one
-   * specific item. [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index] can be used to identify which
-   * output this attribution is explaining.
-   * The [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
-   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value] and
-   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions] fields are
-   * averaged over the test data.
+   * specific item.
+   * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+   * can be used to identify which output this attribution is explaining.
+   * The
+   * [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
+   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value]
+   * and
+   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
+   * fields are averaged over the test data.
    * NOTE: Currently AutoML tabular classification Models produce only one
    * attribution, which averages attributions over all the classes it predicts.
-   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error] is not populated.
+   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error]
+   * is not populated.
    * </pre>
    *
    * <code>
@@ -132,21 +148,25 @@ public interface ModelExplanationOrBuilder
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
-   * set of instances. The attributions are grouped by outputs.
+   * Output only. Aggregated attributions explaining the Model's prediction
+   * outputs over the set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
    * predicted output. For Models that predict multiple outputs, such as
    * multiclass Models that predict multiple classes, each element explains one
-   * specific item. [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index] can be used to identify which
-   * output this attribution is explaining.
-   * The [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
-   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value] and
-   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions] fields are
-   * averaged over the test data.
+   * specific item.
+   * [Attribution.output_index][google.cloud.aiplatform.v1.Attribution.output_index]
+   * can be used to identify which output this attribution is explaining.
+   * The
+   * [baselineOutputValue][google.cloud.aiplatform.v1.Attribution.baseline_output_value],
+   * [instanceOutputValue][google.cloud.aiplatform.v1.Attribution.instance_output_value]
+   * and
+   * [featureAttributions][google.cloud.aiplatform.v1.Attribution.feature_attributions]
+   * fields are averaged over the test data.
    * NOTE: Currently AutoML tabular classification Models produce only one
    * attribution, which averages attributions over all the classes it predicts.
-   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error] is not populated.
+   * [Attribution.approximation_error][google.cloud.aiplatform.v1.Attribution.approximation_error]
+   * is not populated.
    * </pre>
    *
    * <code>

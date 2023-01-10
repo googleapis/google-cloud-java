@@ -75,9 +75,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ml.googleapis.com endpoint that this model version should be migrated
-     * from.
-     * Example values:
+     * Required. The ml.googleapis.com endpoint that this model version should
+     * be migrated from. Example values:
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -93,9 +92,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ml.googleapis.com endpoint that this model version should be migrated
-     * from.
-     * Example values:
+     * Required. The ml.googleapis.com endpoint that this model version should
+     * be migrated from. Example values:
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -228,9 +226,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ml.googleapis.com endpoint that this model version should be migrated
-     * from.
-     * Example values:
+     * Required. The ml.googleapis.com endpoint that this model version should
+     * be migrated from. Example values:
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -257,9 +254,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The ml.googleapis.com endpoint that this model version should be migrated
-     * from.
-     * Example values:
+     * Required. The ml.googleapis.com endpoint that this model version should
+     * be migrated from. Example values:
      * * ml.googleapis.com
      * * us-centrall-ml.googleapis.com
      * * europe-west4-ml.googleapis.com
@@ -823,9 +819,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. The ml.googleapis.com endpoint that this model version should be migrated
-       * from.
-       * Example values:
+       * Required. The ml.googleapis.com endpoint that this model version should
+       * be migrated from. Example values:
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -851,9 +846,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. The ml.googleapis.com endpoint that this model version should be migrated
-       * from.
-       * Example values:
+       * Required. The ml.googleapis.com endpoint that this model version should
+       * be migrated from. Example values:
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -879,9 +873,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. The ml.googleapis.com endpoint that this model version should be migrated
-       * from.
-       * Example values:
+       * Required. The ml.googleapis.com endpoint that this model version should
+       * be migrated from. Example values:
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -906,9 +899,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. The ml.googleapis.com endpoint that this model version should be migrated
-       * from.
-       * Example values:
+       * Required. The ml.googleapis.com endpoint that this model version should
+       * be migrated from. Example values:
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -929,9 +921,8 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Required. The ml.googleapis.com endpoint that this model version should be migrated
-       * from.
-       * Example values:
+       * Required. The ml.googleapis.com endpoint that this model version should
+       * be migrated from. Example values:
        * * ml.googleapis.com
        * * us-centrall-ml.googleapis.com
        * * europe-west4-ml.googleapis.com
@@ -3192,9 +3183,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -3209,9 +3200,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -3225,9 +3216,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -3239,9 +3230,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -3258,9 +3249,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -4194,9 +4185,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -4214,9 +4205,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -4236,9 +4227,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -4253,9 +4244,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -4272,9 +4263,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-     * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-     * to the datalabeling Dataset.
+     * Optional. Configs for migrating AnnotatedDataset in
+     * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+     * AnnotatedDatasets have to belong to the datalabeling Dataset.
      * </pre>
      *
      * <code>
@@ -5050,9 +5041,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5074,9 +5065,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5094,9 +5085,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5116,9 +5107,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5146,9 +5137,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5175,9 +5166,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5204,9 +5195,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5234,9 +5225,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5261,9 +5252,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5290,9 +5281,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5320,9 +5311,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5343,9 +5334,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5366,9 +5357,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5384,9 +5375,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5406,9 +5397,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5432,9 +5423,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5454,9 +5445,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>
@@ -5477,9 +5468,9 @@ public final class MigrateResourceRequest extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Configs for migrating AnnotatedDataset in datalabeling.googleapis.com to
-       * Vertex AI's SavedQuery. The specified AnnotatedDatasets have to belong
-       * to the datalabeling Dataset.
+       * Optional. Configs for migrating AnnotatedDataset in
+       * datalabeling.googleapis.com to Vertex AI's SavedQuery. The specified
+       * AnnotatedDatasets have to belong to the datalabeling Dataset.
        * </pre>
        *
        * <code>

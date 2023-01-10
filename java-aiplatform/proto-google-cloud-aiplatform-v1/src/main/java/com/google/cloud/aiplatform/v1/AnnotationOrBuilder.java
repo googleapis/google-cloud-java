@@ -52,8 +52,9 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URI points to a YAML file describing [payload][google.cloud.aiplatform.v1.Annotation.payload]. The
-   * schema is defined as an [OpenAPI 3.0.2 Schema
+   * Required. Google Cloud Storage URI points to a YAML file describing
+   * [payload][google.cloud.aiplatform.v1.Annotation.payload]. The schema is
+   * defined as an [OpenAPI 3.0.2 Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * The schema files that can be used here are found in
    * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
@@ -70,8 +71,9 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URI points to a YAML file describing [payload][google.cloud.aiplatform.v1.Annotation.payload]. The
-   * schema is defined as an [OpenAPI 3.0.2 Schema
+   * Required. Google Cloud Storage URI points to a YAML file describing
+   * [payload][google.cloud.aiplatform.v1.Annotation.payload]. The schema is
+   * defined as an [OpenAPI 3.0.2 Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * The schema files that can be used here are found in
    * gs://google-cloud-aiplatform/schema/dataset/annotation/, note that the
@@ -203,8 +205,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -216,8 +218,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -271,7 +273,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Annotations.
+   * Optional. The labels with user-defined metadata to organize your
+   * Annotations.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -284,7 +287,8 @@ public interface AnnotationOrBuilder
    *   optional, name of the UI's annotation set this Annotation belongs to.
    *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
-   *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   *   output only, its value is the
+   *   [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
    *   title.
    * </pre>
    *
@@ -295,7 +299,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Annotations.
+   * Optional. The labels with user-defined metadata to organize your
+   * Annotations.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -308,7 +313,8 @@ public interface AnnotationOrBuilder
    *   optional, name of the UI's annotation set this Annotation belongs to.
    *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
-   *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   *   output only, its value is the
+   *   [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
    *   title.
    * </pre>
    *
@@ -322,7 +328,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Annotations.
+   * Optional. The labels with user-defined metadata to organize your
+   * Annotations.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -335,7 +342,8 @@ public interface AnnotationOrBuilder
    *   optional, name of the UI's annotation set this Annotation belongs to.
    *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
-   *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   *   output only, its value is the
+   *   [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
    *   title.
    * </pre>
    *
@@ -346,7 +354,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Annotations.
+   * Optional. The labels with user-defined metadata to organize your
+   * Annotations.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -359,7 +368,8 @@ public interface AnnotationOrBuilder
    *   optional, name of the UI's annotation set this Annotation belongs to.
    *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
-   *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   *   output only, its value is the
+   *   [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
    *   title.
    * </pre>
    *
@@ -375,7 +385,8 @@ public interface AnnotationOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your Annotations.
+   * Optional. The labels with user-defined metadata to organize your
+   * Annotations.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -388,7 +399,8 @@ public interface AnnotationOrBuilder
    *   optional, name of the UI's annotation set this Annotation belongs to.
    *   If not set, the Annotation is not visible in the UI.
    * * "aiplatform.googleapis.com/payload_schema":
-   *   output only, its value is the [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
+   *   output only, its value is the
+   *   [payload_schema's][google.cloud.aiplatform.v1.Annotation.payload_schema_uri]
    *   title.
    * </pre>
    *

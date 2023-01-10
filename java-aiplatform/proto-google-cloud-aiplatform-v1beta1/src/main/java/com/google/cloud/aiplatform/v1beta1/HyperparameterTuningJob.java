@@ -302,8 +302,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-   * in all the trials.
+   * Required. The spec of a trial job. The same spec applies to the CustomJobs
+   * created in all the trials.
    * </pre>
    *
    * <code>
@@ -320,8 +320,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-   * in all the trials.
+   * Required. The spec of a trial job. The same spec applies to the CustomJobs
+   * created in all the trials.
    * </pre>
    *
    * <code>
@@ -340,8 +340,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-   * in all the trials.
+   * Required. The spec of a trial job. The same spec applies to the CustomJobs
+   * created in all the trials.
    * </pre>
    *
    * <code>
@@ -527,8 +527,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
+   * Output only. Time when the HyperparameterTuningJob for the first time
+   * entered the `JOB_STATE_RUNNING` state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -544,8 +544,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
+   * Output only. Time when the HyperparameterTuningJob for the first time
+   * entered the `JOB_STATE_RUNNING` state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -561,8 +561,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
+   * Output only. Time when the HyperparameterTuningJob for the first time
+   * entered the `JOB_STATE_RUNNING` state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -579,8 +579,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+   * Output only. Time when the HyperparameterTuningJob entered any of the
+   * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+   * `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -596,8 +597,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+   * Output only. Time when the HyperparameterTuningJob entered any of the
+   * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+   * `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -613,8 +615,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+   * Output only. Time when the HyperparameterTuningJob entered any of the
+   * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+   * `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -631,7 +634,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob was most recently updated.
+   * Output only. Time when the HyperparameterTuningJob was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -647,7 +651,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob was most recently updated.
+   * Output only. Time when the HyperparameterTuningJob was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -663,7 +668,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Time when the HyperparameterTuningJob was most recently updated.
+   * Output only. Time when the HyperparameterTuningJob was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2325,8 +2331,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2342,8 +2348,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2365,8 +2371,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2390,8 +2396,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2413,8 +2419,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2442,8 +2448,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2465,8 +2471,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2482,8 +2488,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -2503,8 +2509,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The spec of a trial job. The same spec applies to the CustomJobs created
-     * in all the trials.
+     * Required. The spec of a trial job. The same spec applies to the CustomJobs
+     * created in all the trials.
      * </pre>
      *
      * <code>
@@ -3225,8 +3231,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3242,8 +3248,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3263,8 +3269,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3288,8 +3294,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3310,8 +3316,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3337,8 +3343,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3360,8 +3366,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3377,8 +3383,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3396,8 +3402,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob for the first time entered the
-     * `JOB_STATE_RUNNING` state.
+     * Output only. Time when the HyperparameterTuningJob for the first time
+     * entered the `JOB_STATE_RUNNING` state.
      * </pre>
      *
      * <code>
@@ -3431,8 +3437,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3447,8 +3454,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3467,8 +3475,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3491,8 +3500,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3512,8 +3522,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3538,8 +3549,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3560,8 +3572,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3576,8 +3589,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3594,8 +3608,9 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob entered any of the following states:
-     * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+     * Output only. Time when the HyperparameterTuningJob entered any of the
+     * following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`,
+     * `JOB_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3628,7 +3643,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3644,7 +3660,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3666,7 +3683,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3690,7 +3708,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3711,7 +3730,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3737,7 +3757,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3759,7 +3780,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3775,7 +3797,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -3795,7 +3818,8 @@ public final class HyperparameterTuningJob extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Time when the HyperparameterTuningJob was most recently updated.
+     * Output only. Time when the HyperparameterTuningJob was most recently
+     * updated.
      * </pre>
      *
      * <code>

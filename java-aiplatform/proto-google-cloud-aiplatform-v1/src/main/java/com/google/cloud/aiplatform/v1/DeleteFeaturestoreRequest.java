@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.DeleteFeaturestore][google.cloud.aiplatform.v1.FeaturestoreService.DeleteFeaturestore].
+ * Request message for
+ * [FeaturestoreService.DeleteFeaturestore][google.cloud.aiplatform.v1.FeaturestoreService.DeleteFeaturestore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteFeaturestoreRequest}
@@ -317,7 +318,8 @@ public final class DeleteFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.DeleteFeaturestore][google.cloud.aiplatform.v1.FeaturestoreService.DeleteFeaturestore].
+   * Request message for
+   * [FeaturestoreService.DeleteFeaturestore][google.cloud.aiplatform.v1.FeaturestoreService.DeleteFeaturestore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteFeaturestoreRequest}

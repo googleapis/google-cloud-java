@@ -188,7 +188,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Specifies that the task was not triggered because the task's trigger
      * policy is not satisfied. The trigger policy is specified in the
-     * `condition` field of [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec].
+     * `condition` field of
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>NOT_TRIGGERED = 9;</code>
@@ -293,7 +294,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Specifies that the task was not triggered because the task's trigger
      * policy is not satisfied. The trigger policy is specified in the
-     * `condition` field of [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec].
+     * `condition` field of
+     * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>NOT_TRIGGERED = 9;</code>
@@ -478,12 +480,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The error that occurred during the state. May be set when the state is
-     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-     * If the state is FAILED, the error here is final and not going to be
-     * retried.
-     * If the state is a non-final state, the error indicates a system-error
-     * being retried.
+     * Output only. The error that occurred during the state. May be set when
+     * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+     * FAILED state. If the state is FAILED, the error here is final and not
+     * going to be retried. If the state is a non-final state, the error
+     * indicates a system-error being retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -495,12 +496,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The error that occurred during the state. May be set when the state is
-     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-     * If the state is FAILED, the error here is final and not going to be
-     * retried.
-     * If the state is a non-final state, the error indicates a system-error
-     * being retried.
+     * Output only. The error that occurred during the state. May be set when
+     * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+     * FAILED state. If the state is FAILED, the error here is final and not
+     * going to be retried. If the state is a non-final state, the error
+     * indicates a system-error being retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -512,12 +512,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The error that occurred during the state. May be set when the state is
-     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-     * If the state is FAILED, the error here is final and not going to be
-     * retried.
-     * If the state is a non-final state, the error indicates a system-error
-     * being retried.
+     * Output only. The error that occurred during the state. May be set when
+     * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+     * FAILED state. If the state is FAILED, the error here is final and not
+     * going to be retried. If the state is a non-final state, the error
+     * indicates a system-error being retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -673,12 +672,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The error that occurred during the state. May be set when the state is
-     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-     * If the state is FAILED, the error here is final and not going to be
-     * retried.
-     * If the state is a non-final state, the error indicates a system-error
-     * being retried.
+     * Output only. The error that occurred during the state. May be set when
+     * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+     * FAILED state. If the state is FAILED, the error here is final and not
+     * going to be retried. If the state is a non-final state, the error
+     * indicates a system-error being retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -693,12 +691,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The error that occurred during the state. May be set when the state is
-     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-     * If the state is FAILED, the error here is final and not going to be
-     * retried.
-     * If the state is a non-final state, the error indicates a system-error
-     * being retried.
+     * Output only. The error that occurred during the state. May be set when
+     * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+     * FAILED state. If the state is FAILED, the error here is final and not
+     * going to be retried. If the state is a non-final state, the error
+     * indicates a system-error being retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -713,12 +710,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The error that occurred during the state. May be set when the state is
-     * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-     * If the state is FAILED, the error here is final and not going to be
-     * retried.
-     * If the state is a non-final state, the error indicates a system-error
-     * being retried.
+     * Output only. The error that occurred during the state. May be set when
+     * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+     * FAILED state. If the state is FAILED, the error here is final and not
+     * going to be retried. If the state is a non-final state, the error
+     * indicates a system-error being retried.
      * </pre>
      *
      * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1456,12 +1452,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1475,12 +1470,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1498,12 +1492,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1525,12 +1518,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1549,12 +1541,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1577,12 +1568,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1602,12 +1592,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1621,12 +1610,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1642,12 +1630,11 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Output only. The error that occurred during the state. May be set when the state is
-       * any of the non-final state (PENDING/RUNNING/CANCELLING) or FAILED state.
-       * If the state is FAILED, the error here is final and not going to be
-       * retried.
-       * If the state is a non-final state, the error indicates a system-error
-       * being retried.
+       * Output only. The error that occurred during the state. May be set when
+       * the state is any of the non-final state (PENDING/RUNNING/CANCELLING) or
+       * FAILED state. If the state is FAILED, the error here is final and not
+       * going to be retried. If the state is a non-final state, the error
+       * indicates a system-error being retried.
        * </pre>
        *
        * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2790,8 +2777,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The id of the parent task if the task is within a component scope.
-   * Empty if the task is at the root level.
+   * Output only. The id of the parent task if the task is within a component
+   * scope. Empty if the task is at the root level.
    * </pre>
    *
    * <code>int64 parent_task_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3208,8 +3195,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -3225,8 +3212,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -3243,8 +3230,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -3259,8 +3246,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -3276,8 +3263,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A list of task status. This field keeps a record of task status evolving
-   * over time.
+   * Output only. A list of task status. This field keeps a record of task
+   * status evolving over time.
    * </pre>
    *
    * <code>
@@ -4367,8 +4354,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The id of the parent task if the task is within a component scope.
-     * Empty if the task is at the root level.
+     * Output only. The id of the parent task if the task is within a component
+     * scope. Empty if the task is at the root level.
      * </pre>
      *
      * <code>int64 parent_task_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4383,8 +4370,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The id of the parent task if the task is within a component scope.
-     * Empty if the task is at the root level.
+     * Output only. The id of the parent task if the task is within a component
+     * scope. Empty if the task is at the root level.
      * </pre>
      *
      * <code>int64 parent_task_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4402,8 +4389,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The id of the parent task if the task is within a component scope.
-     * Empty if the task is at the root level.
+     * Output only. The id of the parent task if the task is within a component
+     * scope. Empty if the task is at the root level.
      * </pre>
      *
      * <code>int64 parent_task_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5824,8 +5811,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5844,8 +5831,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5863,8 +5850,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5883,8 +5870,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5909,8 +5896,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5934,8 +5921,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5960,8 +5947,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -5986,8 +5973,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6010,8 +5997,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6035,8 +6022,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6060,8 +6047,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6082,8 +6069,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6104,8 +6091,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6120,8 +6107,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6140,8 +6127,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6161,8 +6148,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6180,8 +6167,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>
@@ -6200,8 +6187,8 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A list of task status. This field keeps a record of task status evolving
-     * over time.
+     * Output only. A list of task status. This field keeps a record of task
+     * status evolving over time.
      * </pre>
      *
      * <code>

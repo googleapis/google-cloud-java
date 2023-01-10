@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
+ * Request message for
+ * [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest}
@@ -75,8 +76,9 @@ public final class CreateHyperparameterTuningJobRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the
+   * HyperparameterTuningJob in. Format:
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -101,8 +103,9 @@ public final class CreateHyperparameterTuningJobRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the
+   * HyperparameterTuningJob in. Format:
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -359,7 +362,8 @@ public final class CreateHyperparameterTuningJobRequest
    *
    *
    * <pre>
-   * Request message for [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
+   * Request message for
+   * [JobService.CreateHyperparameterTuningJob][google.cloud.aiplatform.v1.JobService.CreateHyperparameterTuningJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateHyperparameterTuningJobRequest}
@@ -558,8 +562,9 @@ public final class CreateHyperparameterTuningJobRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * HyperparameterTuningJob in. Format:
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -583,8 +588,9 @@ public final class CreateHyperparameterTuningJobRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * HyperparameterTuningJob in. Format:
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -608,8 +614,9 @@ public final class CreateHyperparameterTuningJobRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * HyperparameterTuningJob in. Format:
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -632,8 +639,9 @@ public final class CreateHyperparameterTuningJobRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * HyperparameterTuningJob in. Format:
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -652,8 +660,9 @@ public final class CreateHyperparameterTuningJobRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the
+     * HyperparameterTuningJob in. Format:
+     * `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

@@ -22,9 +22,10 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Pipeline template metadata if [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is from supported
- * template registry. Currently, the only supported registry is Artifact
- * Registry.
+ * Pipeline template metadata if
+ * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+ * is from supported template registry. Currently, the only supported registry
+ * is Artifact Registry.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata}
@@ -76,8 +77,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * The version_name in artifact registry.
-   * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-   * from supported template registry.
+   * Will always be presented in output if the
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+   * is from supported template registry.
    * Format is "sha256:abcdef123456...".
    * </pre>
    *
@@ -102,8 +104,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * The version_name in artifact registry.
-   * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-   * from supported template registry.
+   * Will always be presented in output if the
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+   * is from supported template registry.
    * Format is "sha256:abcdef123456...".
    * </pre>
    *
@@ -288,9 +291,10 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Pipeline template metadata if [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is from supported
-   * template registry. Currently, the only supported registry is Artifact
-   * Registry.
+   * Pipeline template metadata if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+   * is from supported template registry. Currently, the only supported registry
+   * is Artifact Registry.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata}
@@ -465,8 +469,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * The version_name in artifact registry.
-     * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-     * from supported template registry.
+     * Will always be presented in output if the
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+     * is from supported template registry.
      * Format is "sha256:abcdef123456...".
      * </pre>
      *
@@ -490,8 +495,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * The version_name in artifact registry.
-     * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-     * from supported template registry.
+     * Will always be presented in output if the
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+     * is from supported template registry.
      * Format is "sha256:abcdef123456...".
      * </pre>
      *
@@ -515,8 +521,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * The version_name in artifact registry.
-     * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-     * from supported template registry.
+     * Will always be presented in output if the
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+     * is from supported template registry.
      * Format is "sha256:abcdef123456...".
      * </pre>
      *
@@ -539,8 +546,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * The version_name in artifact registry.
-     * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-     * from supported template registry.
+     * Will always be presented in output if the
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+     * is from supported template registry.
      * Format is "sha256:abcdef123456...".
      * </pre>
      *
@@ -559,8 +567,9 @@ public final class PipelineTemplateMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * The version_name in artifact registry.
-     * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-     * from supported template registry.
+     * Will always be presented in output if the
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+     * is from supported template registry.
      * Format is "sha256:abcdef123456...".
      * </pre>
      *

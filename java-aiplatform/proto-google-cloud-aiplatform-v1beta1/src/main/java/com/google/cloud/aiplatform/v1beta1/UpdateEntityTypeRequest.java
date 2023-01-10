@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.UpdateEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateEntityType].
+ * Request message for
+ * [FeaturestoreService.UpdateEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest}
@@ -71,9 +72,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The EntityType's `name` field is used to identify the EntityType to be
-   * updated.
-   * Format:
+   * Required. The EntityType's `name` field is used to identify the EntityType
+   * to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -91,9 +91,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The EntityType's `name` field is used to identify the EntityType to be
-   * updated.
-   * Format:
+   * Required. The EntityType's `name` field is used to identify the EntityType
+   * to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -113,9 +112,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The EntityType's `name` field is used to identify the EntityType to be
-   * updated.
-   * Format:
+   * Required. The EntityType's `name` field is used to identify the EntityType
+   * to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -151,7 +149,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
-   *   * `offline_storage_ttl_days`
+   *   * `offline_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -183,7 +181,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
-   *   * `offline_storage_ttl_days`
+   *   * `offline_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -215,7 +213,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
-   *   * `offline_storage_ttl_days`
+   *   * `offline_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -408,7 +406,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.UpdateEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateEntityType].
+   * Request message for
+   * [FeaturestoreService.UpdateEntityType][google.cloud.aiplatform.v1beta1.FeaturestoreService.UpdateEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest}
@@ -612,9 +611,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -631,9 +629,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -656,9 +653,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -683,9 +679,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -708,9 +703,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -739,9 +733,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -764,9 +757,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -783,9 +775,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -806,9 +797,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The EntityType's `name` field is used to identify the EntityType to be
-     * updated.
-     * Format:
+     * Required. The EntityType's `name` field is used to identify the EntityType
+     * to be updated. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -860,7 +850,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -891,7 +881,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -928,7 +918,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -967,7 +957,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1003,7 +993,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1044,7 +1034,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1081,7 +1071,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1112,7 +1102,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1147,7 +1137,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days`
+     *   * `offline_storage_ttl_days` (available in Preview)
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

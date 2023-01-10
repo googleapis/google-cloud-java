@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.GetArtifact][google.cloud.aiplatform.v1.MetadataService.GetArtifact].
+ * Request message for
+ * [MetadataService.GetArtifact][google.cloud.aiplatform.v1.MetadataService.GetArtifact].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetArtifactRequest}
@@ -287,7 +288,8 @@ public final class GetArtifactRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [MetadataService.GetArtifact][google.cloud.aiplatform.v1.MetadataService.GetArtifact].
+   * Request message for
+   * [MetadataService.GetArtifact][google.cloud.aiplatform.v1.MetadataService.GetArtifact].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetArtifactRequest}

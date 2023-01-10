@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.UpdateModel][google.cloud.aiplatform.v1beta1.ModelService.UpdateModel].
+ * Request message for
+ * [ModelService.UpdateModel][google.cloud.aiplatform.v1beta1.ModelService.UpdateModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateModelRequest}
@@ -175,7 +176,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -192,7 +194,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -209,7 +212,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -403,7 +407,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [ModelService.UpdateModel][google.cloud.aiplatform.v1beta1.ModelService.UpdateModel].
+   * Request message for
+   * [ModelService.UpdateModel][google.cloud.aiplatform.v1beta1.ModelService.UpdateModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateModelRequest}
@@ -964,7 +969,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -980,7 +986,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1002,7 +1009,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1026,7 +1034,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1047,7 +1056,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1073,7 +1083,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1095,7 +1106,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1111,7 +1123,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1131,7 +1144,8 @@ public final class UpdateModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The update mask applies to the resource.
-     * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * For the `FieldMask` definition, see
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.DeletePipelineJob][google.cloud.aiplatform.v1.PipelineService.DeletePipelineJob].
+ * Request message for
+ * [PipelineService.DeletePipelineJob][google.cloud.aiplatform.v1.PipelineService.DeletePipelineJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeletePipelineJobRequest}
@@ -288,7 +289,8 @@ public final class DeletePipelineJobRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [PipelineService.DeletePipelineJob][google.cloud.aiplatform.v1.PipelineService.DeletePipelineJob].
+   * Request message for
+   * [PipelineService.DeletePipelineJob][google.cloud.aiplatform.v1.PipelineService.DeletePipelineJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeletePipelineJobRequest}

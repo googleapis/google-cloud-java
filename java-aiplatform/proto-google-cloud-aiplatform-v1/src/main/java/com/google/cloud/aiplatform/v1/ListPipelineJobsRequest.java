@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs].
+ * Request message for
+ * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListPipelineJobsRequest}
@@ -256,8 +257,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+   * of the previous
+   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -282,8 +285,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+   * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+   * of the previous
+   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -634,7 +639,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs].
+   * Request message for
+   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListPipelineJobsRequest}
@@ -1298,8 +1304,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+     * of the previous
+     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1323,8 +1331,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+     * of the previous
+     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1348,8 +1358,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+     * of the previous
+     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1372,8 +1384,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+     * of the previous
+     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1392,8 +1406,10 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token] of the previous
-     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs] call.
+     * [ListPipelineJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListPipelineJobsResponse.next_page_token]
+     * of the previous
+     * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1.PipelineService.ListPipelineJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>

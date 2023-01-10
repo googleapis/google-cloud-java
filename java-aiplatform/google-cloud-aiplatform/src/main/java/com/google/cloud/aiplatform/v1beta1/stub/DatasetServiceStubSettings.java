@@ -126,7 +126,10 @@ import org.threeten.bp.Duration;
  * datasetServiceSettingsBuilder
  *     .getDatasetSettings()
  *     .setRetrySettings(
- *         datasetServiceSettingsBuilder.getDatasetSettings().getRetrySettings().toBuilder()
+ *         datasetServiceSettingsBuilder
+ *             .getDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DatasetServiceStubSettings datasetServiceSettings = datasetServiceSettingsBuilder.build();

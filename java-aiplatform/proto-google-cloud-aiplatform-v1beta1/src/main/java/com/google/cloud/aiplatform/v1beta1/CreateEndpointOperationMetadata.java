@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
+ * Runtime operation information for
+ * [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateEndpointOperationMetadata}
@@ -285,7 +286,8 @@ public final class CreateEndpointOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Runtime operation information for [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
+   * Runtime operation information for
+   * [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateEndpointOperationMetadata}

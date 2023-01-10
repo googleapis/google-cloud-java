@@ -65,45 +65,48 @@ public final class DatasetProto {
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\0325google/cloud/aipla"
           + "tform/v1beta1/encryption_spec.proto\032(goo"
-          + "gle/cloud/aiplatform/v1beta1/io.proto\032\034g"
-          + "oogle/protobuf/struct.proto\032\037google/prot"
-          + "obuf/timestamp.proto\"\332\004\n\007Dataset\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022\023"
-          + "\n\013description\030\020 \001(\t\022 \n\023metadata_schema_u"
-          + "ri\030\003 \001(\tB\003\340A\002\022-\n\010metadata\030\010 \001(\0132\026.google"
-          + ".protobuf.ValueB\003\340A\002\0224\n\013create_time\030\004 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
-          + "date_time\030\005 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\022\014\n\004etag\030\006 \001(\t\022D\n\006labels\030\007 \003(\01324"
-          + ".google.cloud.aiplatform.v1beta1.Dataset"
-          + ".LabelsEntry\022H\n\017encryption_spec\030\013 \001(\0132/."
-          + "google.cloud.aiplatform.v1beta1.Encrypti"
-          + "onSpec\022\036\n\021metadata_artifact\030\021 \001(\tB\003\340A\003\032-"
-          + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\001:b\352A_\n!aiplatform.googleapis.com/Da"
-          + "taset\022:projects/{project}/locations/{loc"
-          + "ation}/datasets/{dataset}\"\263\003\n\020ImportData"
-          + "Config\022@\n\ngcs_source\030\001 \001(\0132*.google.clou"
-          + "d.aiplatform.v1beta1.GcsSourceH\000\022_\n\020data"
-          + "_item_labels\030\002 \003(\0132E.google.cloud.aiplat"
-          + "form.v1beta1.ImportDataConfig.DataItemLa"
-          + "belsEntry\022b\n\021annotation_labels\030\003 \003(\0132G.g"
-          + "oogle.cloud.aiplatform.v1beta1.ImportDat"
-          + "aConfig.AnnotationLabelsEntry\022\036\n\021import_"
-          + "schema_uri\030\004 \001(\tB\003\340A\002\0325\n\023DataItemLabelsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0327\n\025"
-          + "AnnotationLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001B\010\n\006source\"\211\001\n\020ExportDataCo"
-          + "nfig\022J\n\017gcs_destination\030\001 \001(\0132/.google.c"
-          + "loud.aiplatform.v1beta1.GcsDestinationH\000"
-          + "\022\032\n\022annotations_filter\030\002 \001(\tB\r\n\013destinat"
-          + "ionB\351\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\014DatasetProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "gle/cloud/aiplatform/v1beta1/io.proto\0321g"
+          + "oogle/cloud/aiplatform/v1beta1/saved_que"
+          + "ry.proto\032\034google/protobuf/struct.proto\032\037"
+          + "google/protobuf/timestamp.proto\"\236\005\n\007Data"
+          + "set\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002"
+          + " \001(\tB\003\340A\002\022\023\n\013description\030\020 \001(\t\022 \n\023metada"
+          + "ta_schema_uri\030\003 \001(\tB\003\340A\002\022-\n\010metadata\030\010 \001"
+          + "(\0132\026.google.protobuf.ValueB\003\340A\002\0224\n\013creat"
+          + "e_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\022\014\n\004etag\030\006 \001(\t\022D\n\006lab"
+          + "els\030\007 \003(\01324.google.cloud.aiplatform.v1be"
+          + "ta1.Dataset.LabelsEntry\022B\n\rsaved_queries"
+          + "\030\t \003(\0132+.google.cloud.aiplatform.v1beta1"
+          + ".SavedQuery\022H\n\017encryption_spec\030\013 \001(\0132/.g"
+          + "oogle.cloud.aiplatform.v1beta1.Encryptio"
+          + "nSpec\022\036\n\021metadata_artifact\030\021 \001(\tB\003\340A\003\032-\n"
+          + "\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001:b\352A_\n!aiplatform.googleapis.com/Dat"
+          + "aset\022:projects/{project}/locations/{loca"
+          + "tion}/datasets/{dataset}\"\263\003\n\020ImportDataC"
+          + "onfig\022@\n\ngcs_source\030\001 \001(\0132*.google.cloud"
+          + ".aiplatform.v1beta1.GcsSourceH\000\022_\n\020data_"
+          + "item_labels\030\002 \003(\0132E.google.cloud.aiplatf"
+          + "orm.v1beta1.ImportDataConfig.DataItemLab"
+          + "elsEntry\022b\n\021annotation_labels\030\003 \003(\0132G.go"
+          + "ogle.cloud.aiplatform.v1beta1.ImportData"
+          + "Config.AnnotationLabelsEntry\022\036\n\021import_s"
+          + "chema_uri\030\004 \001(\tB\003\340A\002\0325\n\023DataItemLabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0327\n\025A"
+          + "nnotationLabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001B\010\n\006source\"\211\001\n\020ExportDataCon"
+          + "fig\022J\n\017gcs_destination\030\001 \001(\0132/.google.cl"
+          + "oud.aiplatform.v1beta1.GcsDestinationH\000\022"
+          + "\032\n\022annotations_filter\030\002 \001(\tB\r\n\013destinati"
+          + "onB\351\001\n#com.google.cloud.aiplatform.v1bet"
+          + "a1B\014DatasetProtoP\001ZIgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/aiplatform/v1bet"
+          + "a1;aiplatform\252\002\037Google.Cloud.AIPlatform."
+          + "V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta"
+          + "1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,6 +116,7 @@ public final class DatasetProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.SavedQueryProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -131,6 +135,7 @@ public final class DatasetProto {
               "UpdateTime",
               "Etag",
               "Labels",
+              "SavedQueries",
               "EncryptionSpec",
               "MetadataArtifact",
             });
@@ -188,6 +193,7 @@ public final class DatasetProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.SavedQueryProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

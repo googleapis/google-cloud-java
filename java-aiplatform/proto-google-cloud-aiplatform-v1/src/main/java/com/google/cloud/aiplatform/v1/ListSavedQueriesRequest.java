@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
+ * Request message for
+ * [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListSavedQueriesRequest}
@@ -554,7 +555,8 @@ public final class ListSavedQueriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
+   * Request message for
+   * [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListSavedQueriesRequest}

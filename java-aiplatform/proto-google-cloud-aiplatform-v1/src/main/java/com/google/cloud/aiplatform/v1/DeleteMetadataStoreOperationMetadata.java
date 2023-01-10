@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Details of operations that perform [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1.MetadataService.DeleteMetadataStore].
+ * Details of operations that perform
+ * [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1.MetadataService.DeleteMetadataStore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteMetadataStoreOperationMetadata}
@@ -286,7 +287,8 @@ public final class DeleteMetadataStoreOperationMetadata
    *
    *
    * <pre>
-   * Details of operations that perform [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1.MetadataService.DeleteMetadataStore].
+   * Details of operations that perform
+   * [MetadataService.DeleteMetadataStore][google.cloud.aiplatform.v1.MetadataService.DeleteMetadataStore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteMetadataStoreOperationMetadata}

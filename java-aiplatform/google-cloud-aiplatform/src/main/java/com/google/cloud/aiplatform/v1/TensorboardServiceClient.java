@@ -457,6 +457,128 @@ public class TensorboardServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   TensorboardName tensorboard = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
+   *   ReadTensorboardUsageResponse response =
+   *       tensorboardServiceClient.readTensorboardUsage(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The name of the Tensorboard resource. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardUsageResponse readTensorboardUsage(TensorboardName tensorboard) {
+    ReadTensorboardUsageRequest request =
+        ReadTensorboardUsageRequest.newBuilder()
+            .setTensorboard(tensorboard == null ? null : tensorboard.toString())
+            .build();
+    return readTensorboardUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   String tensorboard =
+   *       TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString();
+   *   ReadTensorboardUsageResponse response =
+   *       tensorboardServiceClient.readTensorboardUsage(tensorboard);
+   * }
+   * }</pre>
+   *
+   * @param tensorboard Required. The name of the Tensorboard resource. Format:
+   *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardUsageResponse readTensorboardUsage(String tensorboard) {
+    ReadTensorboardUsageRequest request =
+        ReadTensorboardUsageRequest.newBuilder().setTensorboard(tensorboard).build();
+    return readTensorboardUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   ReadTensorboardUsageRequest request =
+   *       ReadTensorboardUsageRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .build();
+   *   ReadTensorboardUsageResponse response =
+   *       tensorboardServiceClient.readTensorboardUsage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReadTensorboardUsageResponse readTensorboardUsage(
+      ReadTensorboardUsageRequest request) {
+    return readTensorboardUsageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of monthly active users for a given TensorBoard instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
+   *   ReadTensorboardUsageRequest request =
+   *       ReadTensorboardUsageRequest.newBuilder()
+   *           .setTensorboard(
+   *               TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]").toString())
+   *           .build();
+   *   ApiFuture<ReadTensorboardUsageResponse> future =
+   *       tensorboardServiceClient.readTensorboardUsageCallable().futureCall(request);
+   *   // Do something.
+   *   ReadTensorboardUsageResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable() {
+    return stub.readTensorboardUsageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates a Tensorboard.
    *
    * <p>Sample code:
@@ -479,9 +601,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     to be updated. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     Tensorboard resource by the update. The fields specified in the update_mask are relative to
-   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
-   *     the user does not provide a mask then all fields will be overwritten if new values are
-   *     specified.
+   *     the resource, not the full request. A field is overwritten if it's in the mask. If the user
+   *     does not provide a mask then all fields are overwritten if new values are specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Tensorboard, UpdateTensorboardOperationMetadata>
@@ -932,7 +1053,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param tensorboardExperiment The TensorboardExperiment to create.
    * @param tensorboardExperimentId Required. The ID to use for the Tensorboard experiment, which
-   *     will become the final component of the Tensorboard experiment's resource name.
+   *     becomes the final component of the Tensorboard experiment's resource name.
    *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -978,7 +1099,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @param tensorboardExperiment The TensorboardExperiment to create.
    * @param tensorboardExperimentId Required. The ID to use for the Tensorboard experiment, which
-   *     will become the final component of the Tensorboard experiment's resource name.
+   *     becomes the final component of the Tensorboard experiment's resource name.
    *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1212,9 +1333,9 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     TensorboardExperiment resource by the update. The fields specified in the update_mask are
-   *     relative to the resource, not the full request. A field will be overwritten if it is in the
-   *     mask. If the user does not provide a mask then all fields will be overwritten if new values
-   *     are specified.
+   *     relative to the resource, not the full request. A field is overwritten if it's in the mask.
+   *     If the user does not provide a mask then all fields are overwritten if new values are
+   *     specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardExperiment updateTensorboardExperiment(
@@ -1658,7 +1779,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     TensorboardRun in. Format:
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @param tensorboardRun Required. The TensorboardRun to create.
-   * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which will become the
+   * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which becomes the
    *     final component of the Tensorboard run's resource name.
    *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1701,7 +1822,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     TensorboardRun in. Format:
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @param tensorboardRun Required. The TensorboardRun to create.
-   * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which will become the
+   * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which becomes the
    *     final component of the Tensorboard run's resource name.
    *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2078,9 +2199,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     TensorboardRun resource by the update. The fields specified in the update_mask are relative
-   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
-   *     the user does not provide a mask then all fields will be overwritten if new values are
-   *     specified.
+   *     to the resource, not the full request. A field is overwritten if it's in the mask. If the
+   *     user does not provide a mask then all fields are overwritten if new values are specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardRun updateTensorboardRun(
@@ -2986,9 +3106,9 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
    *     TensorboardTimeSeries resource by the update. The fields specified in the update_mask are
-   *     relative to the resource, not the full request. A field will be overwritten if it is in the
-   *     mask. If the user does not provide a mask then all fields will be overwritten if new values
-   *     are specified.
+   *     relative to the resource, not the full request. A field is overwritten if it's in the mask.
+   *     If the user does not provide a mask then all fields are overwritten if new values are
+   *     specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardTimeSeries updateTensorboardTimeSeries(
@@ -3446,8 +3566,8 @@ public class TensorboardServiceClient implements BackgroundResource {
   /**
    * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
    * 100 for tensors and blob references. If the number of data points stored is less than the
-   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
-   * selected from this time series and returned.
+   * limit, all data is returned. Otherwise, the number limit of data points is randomly selected
+   * from this time series and returned.
    *
    * <p>Sample code:
    *
@@ -3485,8 +3605,8 @@ public class TensorboardServiceClient implements BackgroundResource {
   /**
    * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
    * 100 for tensors and blob references. If the number of data points stored is less than the
-   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
-   * selected from this time series and returned.
+   * limit, all data is returned. Otherwise, the number limit of data points is randomly selected
+   * from this time series and returned.
    *
    * <p>Sample code:
    *
@@ -3523,8 +3643,8 @@ public class TensorboardServiceClient implements BackgroundResource {
   /**
    * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
    * 100 for tensors and blob references. If the number of data points stored is less than the
-   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
-   * selected from this time series and returned.
+   * limit, all data is returned. Otherwise, the number limit of data points is randomly selected
+   * from this time series and returned.
    *
    * <p>Sample code:
    *
@@ -3558,8 +3678,8 @@ public class TensorboardServiceClient implements BackgroundResource {
   /**
    * Reads multiple TensorboardTimeSeries' data. The data point number limit is 1000 for scalars,
    * 100 for tensors and blob references. If the number of data points stored is less than the
-   * limit, all data will be returned. Otherwise, that limit number of data points will be randomly
-   * selected from this time series and returned.
+   * limit, all data is returned. Otherwise, the number limit of data points is randomly selected
+   * from this time series and returned.
    *
    * <p>Sample code:
    *
@@ -3592,9 +3712,9 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
-   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
-   * from this time series and returned. This value can be changed by changing max_data_points,
-   * which can't be greater than 10k.
+   * than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this
+   * time series and returned. This value can be changed by changing max_data_points, which can't be
+   * greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3631,9 +3751,9 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
-   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
-   * from this time series and returned. This value can be changed by changing max_data_points,
-   * which can't be greater than 10k.
+   * than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this
+   * time series and returned. This value can be changed by changing max_data_points, which can't be
+   * greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3675,9 +3795,9 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
-   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
-   * from this time series and returned. This value can be changed by changing max_data_points,
-   * which can't be greater than 10k.
+   * than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this
+   * time series and returned. This value can be changed by changing max_data_points, which can't be
+   * greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3718,9 +3838,9 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Reads a TensorboardTimeSeries' data. By default, if the number of data points stored is less
-   * than 1000, all data will be returned. Otherwise, 1000 data points will be randomly selected
-   * from this time series and returned. This value can be changed by changing max_data_points,
-   * which can't be greater than 10k.
+   * than 1000, all data is returned. Otherwise, 1000 data points is randomly selected from this
+   * time series and returned. This value can be changed by changing max_data_points, which can't be
+   * greater than 10k.
    *
    * <p>Sample code:
    *
@@ -3802,7 +3922,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
-   * If any data fail to be ingested, an error will be returned.
+   * If any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -3844,7 +3964,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
-   * If any data fail to be ingested, an error will be returned.
+   * If any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -3885,7 +4005,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
-   * If any data fail to be ingested, an error will be returned.
+   * If any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -3920,7 +4040,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points of multiple TensorboardTimeSeries in multiple TensorboardRun's.
-   * If any data fail to be ingested, an error will be returned.
+   * If any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -3955,7 +4075,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If
-   * any data fail to be ingested, an error will be returned.
+   * any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -3996,7 +4116,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If
-   * any data fail to be ingested, an error will be returned.
+   * any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -4037,7 +4157,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If
-   * any data fail to be ingested, an error will be returned.
+   * any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *
@@ -4072,7 +4192,7 @@ public class TensorboardServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Write time series data points into multiple TensorboardTimeSeries under a TensorboardRun. If
-   * any data fail to be ingested, an error will be returned.
+   * any data fail to be ingested, an error is returned.
    *
    * <p>Sample code:
    *

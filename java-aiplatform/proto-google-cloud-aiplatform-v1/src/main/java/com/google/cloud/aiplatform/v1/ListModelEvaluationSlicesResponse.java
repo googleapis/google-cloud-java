@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices].
+ * Response message for
+ * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse}
@@ -153,8 +154,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -178,8 +180,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -376,7 +379,8 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
    *
    *
    * <pre>
-   * Response message for [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices].
+   * Response message for
+   * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.ListModelEvaluationSlices].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse}
@@ -994,8 +998,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1018,8 +1023,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1042,8 +1048,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1065,8 +1072,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1084,8 +1092,9 @@ public final class ListModelEvaluationSlicesResponse extends com.google.protobuf
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
+ * Request message for
+ * [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest}
@@ -76,8 +77,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be deleted from
-     * the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be
+     * deleted from the EntityType.
      * </pre>
      *
      * <code>
@@ -91,8 +92,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be deleted from
-     * the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be
+     * deleted from the EntityType.
      * </pre>
      *
      * <code>
@@ -106,8 +107,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be deleted from
-     * the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be
+     * deleted from the EntityType.
      * </pre>
      *
      * <code>
@@ -172,8 +173,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be deleted from
-     * the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be
+     * deleted from the EntityType.
      * </pre>
      *
      * <code>
@@ -190,8 +191,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be deleted from
-     * the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be
+     * deleted from the EntityType.
      * </pre>
      *
      * <code>
@@ -210,8 +211,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Selectors choosing feature values of which entity id to be deleted from
-     * the EntityType.
+     * Required. Selectors choosing feature values of which entity id to be
+     * deleted from the EntityType.
      * </pre>
      *
      * <code>
@@ -602,8 +603,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -619,8 +620,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -642,8 +643,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -668,8 +669,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -691,8 +692,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -721,8 +722,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -744,8 +745,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -762,8 +763,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -784,8 +785,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. Selectors choosing feature values of which entity id to be deleted from
-       * the EntityType.
+       * Required. Selectors choosing feature values of which entity id to be
+       * deleted from the EntityType.
        * </pre>
        *
        * <code>
@@ -2345,8 +2346,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for which values
-   * are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for
+   * which values are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -2372,8 +2373,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for which values
-   * are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for
+   * which values are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -2611,7 +2612,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
+   * Request message for
+   * [FeaturestoreService.DeleteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.DeleteFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteFeatureValuesRequest}
@@ -3371,8 +3373,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3397,8 +3399,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3423,8 +3425,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3448,8 +3450,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3469,8 +3471,8 @@ public final class DeleteFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being deleted from. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being deleted from. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *

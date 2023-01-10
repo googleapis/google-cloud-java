@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
+ * Request message for
+ * [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest}
@@ -78,8 +79,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the field in the CSV header or the name of the column in
-     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+     * Required. The name of the field in the CSV header or the name of the
+     * column in BigQuery table. The naming restriction is the same as
+     * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
      * </pre>
      *
      * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,8 +93,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the field in the CSV header or the name of the column in
-     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+     * Required. The name of the field in the CSV header or the name of the
+     * column in BigQuery table. The naming restriction is the same as
+     * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
      * </pre>
      *
      * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -157,8 +160,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the field in the CSV header or the name of the column in
-     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+     * Required. The name of the field in the CSV header or the name of the
+     * column in BigQuery table. The naming restriction is the same as
+     * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
      * </pre>
      *
      * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -181,8 +185,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The name of the field in the CSV header or the name of the column in
-     * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+     * Required. The name of the field in the CSV header or the name of the
+     * column in BigQuery table. The naming restriction is the same as
+     * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
      * </pre>
      *
      * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -563,8 +568,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The name of the field in the CSV header or the name of the column in
-       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+       * Required. The name of the field in the CSV header or the name of the
+       * column in BigQuery table. The naming restriction is the same as
+       * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
        * </pre>
        *
        * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -586,8 +592,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The name of the field in the CSV header or the name of the column in
-       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+       * Required. The name of the field in the CSV header or the name of the
+       * column in BigQuery table. The naming restriction is the same as
+       * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
        * </pre>
        *
        * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -609,8 +616,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The name of the field in the CSV header or the name of the column in
-       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+       * Required. The name of the field in the CSV header or the name of the
+       * column in BigQuery table. The naming restriction is the same as
+       * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
        * </pre>
        *
        * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -631,8 +639,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The name of the field in the CSV header or the name of the column in
-       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+       * Required. The name of the field in the CSV header or the name of the
+       * column in BigQuery table. The naming restriction is the same as
+       * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
        * </pre>
        *
        * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -649,8 +658,9 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The name of the field in the CSV header or the name of the column in
-       * BigQuery table. The naming restriction is the same as [Feature.name][google.cloud.aiplatform.v1.Feature.name].
+       * Required. The name of the field in the CSV header or the name of the
+       * column in BigQuery table. The naming restriction is the same as
+       * [Feature.name][google.cloud.aiplatform.v1.Feature.name].
        * </pre>
        *
        * <code>string field_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -747,9 +757,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. ID of the EntityType to select Features. The EntityType id is the
-     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-     * during EntityType creation.
+     * Required. ID of the EntityType to select Features. The EntityType id is
+     * the
+     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+     * specified during EntityType creation.
      * </pre>
      *
      * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -761,9 +772,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. ID of the EntityType to select Features. The EntityType id is the
-     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-     * during EntityType creation.
+     * Required. ID of the EntityType to select Features. The EntityType id is
+     * the
+     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+     * specified during EntityType creation.
      * </pre>
      *
      * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -776,7 +788,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Selectors choosing which Feature values to read from the EntityType.
+     * Required. Selectors choosing which Feature values to read from the
+     * EntityType.
      * </pre>
      *
      * <code>
@@ -790,7 +803,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Selectors choosing which Feature values to read from the EntityType.
+     * Required. Selectors choosing which Feature values to read from the
+     * EntityType.
      * </pre>
      *
      * <code>
@@ -804,7 +818,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Selectors choosing which Feature values to read from the EntityType.
+     * Required. Selectors choosing which Feature values to read from the
+     * EntityType.
      * </pre>
      *
      * <code>
@@ -924,9 +939,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. ID of the EntityType to select Features. The EntityType id is the
-     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-     * during EntityType creation.
+     * Required. ID of the EntityType to select Features. The EntityType id is
+     * the
+     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+     * specified during EntityType creation.
      * </pre>
      *
      * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -949,9 +965,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. ID of the EntityType to select Features. The EntityType id is the
-     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-     * during EntityType creation.
+     * Required. ID of the EntityType to select Features. The EntityType id is
+     * the
+     * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+     * specified during EntityType creation.
      * </pre>
      *
      * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -977,7 +994,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Selectors choosing which Feature values to read from the EntityType.
+     * Required. Selectors choosing which Feature values to read from the
+     * EntityType.
      * </pre>
      *
      * <code>
@@ -994,7 +1012,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Selectors choosing which Feature values to read from the EntityType.
+     * Required. Selectors choosing which Feature values to read from the
+     * EntityType.
      * </pre>
      *
      * <code>
@@ -1013,7 +1032,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Selectors choosing which Feature values to read from the EntityType.
+     * Required. Selectors choosing which Feature values to read from the
+     * EntityType.
      * </pre>
      *
      * <code>
@@ -1562,9 +1582,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. ID of the EntityType to select Features. The EntityType id is the
-       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-       * during EntityType creation.
+       * Required. ID of the EntityType to select Features. The EntityType id is
+       * the
+       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+       * specified during EntityType creation.
        * </pre>
        *
        * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1586,9 +1607,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. ID of the EntityType to select Features. The EntityType id is the
-       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-       * during EntityType creation.
+       * Required. ID of the EntityType to select Features. The EntityType id is
+       * the
+       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+       * specified during EntityType creation.
        * </pre>
        *
        * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1610,9 +1632,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. ID of the EntityType to select Features. The EntityType id is the
-       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-       * during EntityType creation.
+       * Required. ID of the EntityType to select Features. The EntityType id is
+       * the
+       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+       * specified during EntityType creation.
        * </pre>
        *
        * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1633,9 +1656,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. ID of the EntityType to select Features. The EntityType id is the
-       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-       * during EntityType creation.
+       * Required. ID of the EntityType to select Features. The EntityType id is
+       * the
+       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+       * specified during EntityType creation.
        * </pre>
        *
        * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1652,9 +1676,10 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. ID of the EntityType to select Features. The EntityType id is the
-       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id] specified
-       * during EntityType creation.
+       * Required. ID of the EntityType to select Features. The EntityType id is
+       * the
+       * [entity_type_id][google.cloud.aiplatform.v1.CreateEntityTypeRequest.entity_type_id]
+       * specified during EntityType creation.
        * </pre>
        *
        * <code>string entity_type_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1683,7 +1708,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1699,7 +1725,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1721,7 +1748,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1745,7 +1773,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1767,7 +1796,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1795,7 +1825,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1817,7 +1848,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1833,7 +1865,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -1853,7 +1886,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. Selectors choosing which Feature values to read from the EntityType.
+       * Required. Selectors choosing which Feature values to read from the
+       * EntityType.
        * </pre>
        *
        * <code>
@@ -2514,8 +2548,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name of the Featurestore from which to query Feature values.
-   * Format:
+   * Required. The resource name of the Featurestore from which to query Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -2541,8 +2575,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name of the Featurestore from which to query Feature values.
-   * Format:
+   * Required. The resource name of the Featurestore from which to query Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -2740,8 +2774,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -2760,8 +2794,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -2782,8 +2816,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -2801,8 +2835,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -2821,8 +2855,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -2844,8 +2878,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Optional. Excludes Feature values with feature generation timestamp before
+   * this timestamp. If not set, retrieve oldest values kept in Feature Store.
    * Timestamp, if present, must not have higher than millisecond precision.
    * </pre>
    *
@@ -2862,8 +2896,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Optional. Excludes Feature values with feature generation timestamp before
+   * this timestamp. If not set, retrieve oldest values kept in Feature Store.
    * Timestamp, if present, must not have higher than millisecond precision.
    * </pre>
    *
@@ -2880,8 +2914,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Optional. Excludes Feature values with feature generation timestamp before
+   * this timestamp. If not set, retrieve oldest values kept in Feature Store.
    * Timestamp, if present, must not have higher than millisecond precision.
    * </pre>
    *
@@ -3147,7 +3181,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
+   * Request message for
+   * [FeaturestoreService.BatchReadFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.BatchReadFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest}
@@ -4112,8 +4147,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Featurestore from which to query Feature values.
-     * Format:
+     * Required. The resource name of the Featurestore from which to query Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -4138,8 +4173,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Featurestore from which to query Feature values.
-     * Format:
+     * Required. The resource name of the Featurestore from which to query Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -4164,8 +4199,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Featurestore from which to query Feature values.
-     * Format:
+     * Required. The resource name of the Featurestore from which to query Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -4189,8 +4224,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Featurestore from which to query Feature values.
-     * Format:
+     * Required. The resource name of the Featurestore from which to query Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -4210,8 +4245,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Featurestore from which to query Feature values.
-     * Format:
+     * Required. The resource name of the Featurestore from which to query Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}`
      * </pre>
      *
@@ -4976,8 +5011,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5000,8 +5035,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5022,8 +5057,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5045,8 +5080,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5075,8 +5110,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5103,8 +5138,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5132,8 +5167,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5162,8 +5197,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5189,8 +5224,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5217,8 +5252,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5246,8 +5281,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5271,8 +5306,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5296,8 +5331,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5315,8 +5350,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5338,8 +5373,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5364,8 +5399,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5386,8 +5421,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5409,8 +5444,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. Specifies EntityType grouping Features to read values of and settings.
-     * Each EntityType referenced in
+     * Required. Specifies EntityType grouping Features to read values of and
+     * settings. Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
      * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
@@ -5457,8 +5492,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5474,8 +5509,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5495,8 +5530,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5520,8 +5555,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5542,8 +5577,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5569,8 +5604,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5592,8 +5627,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5609,8 +5644,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *
@@ -5628,8 +5663,8 @@ public final class BatchReadFeatureValuesRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Excludes Feature values with feature generation timestamp before this
-     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Optional. Excludes Feature values with feature generation timestamp before
+     * this timestamp. If not set, retrieve oldest values kept in Feature Store.
      * Timestamp, if present, must not have higher than millisecond precision.
      * </pre>
      *

@@ -79,7 +79,10 @@ import javax.annotation.Generated;
  * datasetServiceSettingsBuilder
  *     .getDatasetSettings()
  *     .setRetrySettings(
- *         datasetServiceSettingsBuilder.getDatasetSettings().getRetrySettings().toBuilder()
+ *         datasetServiceSettingsBuilder
+ *             .getDatasetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DatasetServiceSettings datasetServiceSettings = datasetServiceSettingsBuilder.build();

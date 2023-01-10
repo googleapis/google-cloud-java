@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.CreateStudy][google.cloud.aiplatform.v1beta1.VizierService.CreateStudy].
+ * Request message for
+ * [VizierService.CreateStudy][google.cloud.aiplatform.v1beta1.VizierService.CreateStudy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateStudyRequest}
@@ -352,7 +353,8 @@ public final class CreateStudyRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [VizierService.CreateStudy][google.cloud.aiplatform.v1beta1.VizierService.CreateStudy].
+   * Request message for
+   * [VizierService.CreateStudy][google.cloud.aiplatform.v1beta1.VizierService.CreateStudy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateStudyRequest}

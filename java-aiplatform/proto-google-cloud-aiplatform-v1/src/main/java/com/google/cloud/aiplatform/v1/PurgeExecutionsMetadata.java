@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Details of operations that perform [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1.MetadataService.PurgeExecutions].
+ * Details of operations that perform
+ * [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1.MetadataService.PurgeExecutions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.PurgeExecutionsMetadata}
@@ -283,7 +284,8 @@ public final class PurgeExecutionsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Details of operations that perform [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1.MetadataService.PurgeExecutions].
+   * Details of operations that perform
+   * [MetadataService.PurgeExecutions][google.cloud.aiplatform.v1.MetadataService.PurgeExecutions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.PurgeExecutionsMetadata}

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [IndexService.UpsertDatapoints][google.cloud.aiplatform.v1.IndexService.UpsertDatapoints]
+ * Response message for
+ * [IndexService.UpsertDatapoints][google.cloud.aiplatform.v1.IndexService.UpsertDatapoints]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpsertDatapointsResponse}
@@ -220,7 +221,8 @@ public final class UpsertDatapointsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for [IndexService.UpsertDatapoints][google.cloud.aiplatform.v1.IndexService.UpsertDatapoints]
+   * Response message for
+   * [IndexService.UpsertDatapoints][google.cloud.aiplatform.v1.IndexService.UpsertDatapoints]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpsertDatapointsResponse}

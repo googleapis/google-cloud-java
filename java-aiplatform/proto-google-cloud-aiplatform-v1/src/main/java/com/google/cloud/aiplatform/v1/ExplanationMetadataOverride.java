@@ -22,8 +22,9 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * The [ExplanationMetadata][google.cloud.aiplatform.v1.ExplanationMetadata] entries that can be overridden at
- * [online explanation][google.cloud.aiplatform.v1.PredictionService.Explain] time.
+ * The [ExplanationMetadata][google.cloud.aiplatform.v1.ExplanationMetadata]
+ * entries that can be overridden at [online
+ * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] time.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ExplanationMetadataOverride}
@@ -157,8 +158,9 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata] entries to be
-   * overridden.
+   * The [input
+   * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata]
+   * entries to be overridden.
    * </pre>
    *
    * Protobuf type {@code
@@ -471,8 +473,9 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata] entries to be
-     * overridden.
+     * The [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.InputMetadata]
+     * entries to be overridden.
      * </pre>
      *
      * Protobuf type {@code
@@ -1238,11 +1241,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+   * features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -1269,11 +1273,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+   * features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -1291,11 +1296,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+   * features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -1321,11 +1327,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-   * The key is the name of the feature to be overridden. The keys specified
-   * here must exist in the input metadata to be overridden. If a feature is
-   * not specified here, the corresponding feature's input metadata is not
-   * overridden.
+   * Required. Overrides the [input
+   * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+   * features. The key is the name of the feature to be overridden. The keys
+   * specified here must exist in the input metadata to be overridden. If a
+   * feature is not specified here, the corresponding feature's input metadata
+   * is not overridden.
    * </pre>
    *
    * <code>
@@ -1525,8 +1532,9 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The [ExplanationMetadata][google.cloud.aiplatform.v1.ExplanationMetadata] entries that can be overridden at
-   * [online explanation][google.cloud.aiplatform.v1.PredictionService.Explain] time.
+   * The [ExplanationMetadata][google.cloud.aiplatform.v1.ExplanationMetadata]
+   * entries that can be overridden at [online
+   * explanation][google.cloud.aiplatform.v1.PredictionService.Explain] time.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ExplanationMetadataOverride}
@@ -1759,11 +1767,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>
@@ -1790,11 +1799,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>
@@ -1812,11 +1822,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>
@@ -1842,11 +1853,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>
@@ -1877,11 +1889,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>
@@ -1907,11 +1920,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>
@@ -1935,11 +1949,12 @@ public final class ExplanationMetadataOverride extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Overrides the [input metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the features.
-     * The key is the name of the feature to be overridden. The keys specified
-     * here must exist in the input metadata to be overridden. If a feature is
-     * not specified here, the corresponding feature's input metadata is not
-     * overridden.
+     * Required. Overrides the [input
+     * metadata][google.cloud.aiplatform.v1.ExplanationMetadata.inputs] of the
+     * features. The key is the name of the feature to be overridden. The keys
+     * specified here must exist in the input metadata to be overridden. If a
+     * feature is not specified here, the corresponding feature's input metadata
+     * is not overridden.
      * </pre>
      *
      * <code>

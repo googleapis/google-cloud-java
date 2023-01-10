@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [SpecialistPoolService.ListSpecialistPools][google.cloud.aiplatform.v1beta1.SpecialistPoolService.ListSpecialistPools].
+ * Response message for
+ * [SpecialistPoolService.ListSpecialistPools][google.cloud.aiplatform.v1beta1.SpecialistPoolService.ListSpecialistPools].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse}
@@ -363,7 +364,8 @@ public final class ListSpecialistPoolsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [SpecialistPoolService.ListSpecialistPools][google.cloud.aiplatform.v1beta1.SpecialistPoolService.ListSpecialistPools].
+   * Response message for
+   * [SpecialistPoolService.ListSpecialistPools][google.cloud.aiplatform.v1beta1.SpecialistPoolService.ListSpecialistPools].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse}

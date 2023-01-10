@@ -75,8 +75,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The parent Location which owns this collection of DeploymentResourcePools.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent Location which owns this collection of
+   * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. The parent Location which owns this collection of DeploymentResourcePools.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent Location which owns this collection of
+   * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -587,8 +587,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The parent Location which owns this collection of DeploymentResourcePools.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent Location which owns this collection of
+     * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -612,8 +612,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The parent Location which owns this collection of DeploymentResourcePools.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent Location which owns this collection of
+     * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -637,8 +637,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The parent Location which owns this collection of DeploymentResourcePools.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent Location which owns this collection of
+     * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -661,8 +661,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The parent Location which owns this collection of DeploymentResourcePools.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent Location which owns this collection of
+     * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -681,8 +681,8 @@ public final class ListDeploymentResourcePoolsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. The parent Location which owns this collection of DeploymentResourcePools.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The parent Location which owns this collection of
+     * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

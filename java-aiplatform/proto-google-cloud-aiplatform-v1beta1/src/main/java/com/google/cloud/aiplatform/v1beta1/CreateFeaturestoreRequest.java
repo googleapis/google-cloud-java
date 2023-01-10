@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.CreateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeaturestore].
+ * Request message for
+ * [FeaturestoreService.CreateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeaturestore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest}
@@ -185,8 +186,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The ID to use for this Featurestore, which will become the final component
-   * of the Featurestore's resource name.
+   * Required. The ID to use for this Featurestore, which will become the final
+   * component of the Featurestore's resource name.
    * This value may be up to 60 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    * The value must be unique within the project and location.
@@ -212,8 +213,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The ID to use for this Featurestore, which will become the final component
-   * of the Featurestore's resource name.
+   * Required. The ID to use for this Featurestore, which will become the final
+   * component of the Featurestore's resource name.
    * This value may be up to 60 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    * The value must be unique within the project and location.
@@ -423,7 +424,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.CreateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeaturestore].
+   * Request message for
+   * [FeaturestoreService.CreateFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.CreateFeaturestore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest}
@@ -960,8 +962,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID to use for this Featurestore, which will become the final component
-     * of the Featurestore's resource name.
+     * Required. The ID to use for this Featurestore, which will become the final
+     * component of the Featurestore's resource name.
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within the project and location.
@@ -986,8 +988,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID to use for this Featurestore, which will become the final component
-     * of the Featurestore's resource name.
+     * Required. The ID to use for this Featurestore, which will become the final
+     * component of the Featurestore's resource name.
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within the project and location.
@@ -1012,8 +1014,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID to use for this Featurestore, which will become the final component
-     * of the Featurestore's resource name.
+     * Required. The ID to use for this Featurestore, which will become the final
+     * component of the Featurestore's resource name.
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within the project and location.
@@ -1037,8 +1039,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID to use for this Featurestore, which will become the final component
-     * of the Featurestore's resource name.
+     * Required. The ID to use for this Featurestore, which will become the final
+     * component of the Featurestore's resource name.
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within the project and location.
@@ -1058,8 +1060,8 @@ public final class CreateFeaturestoreRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The ID to use for this Featurestore, which will become the final component
-     * of the Featurestore's resource name.
+     * Required. The ID to use for this Featurestore, which will become the final
+     * component of the Featurestore's resource name.
      * This value may be up to 60 characters, and valid characters are
      * `[a-z0-9_]`. The first character cannot be a number.
      * The value must be unique within the project and location.

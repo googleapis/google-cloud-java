@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [VizierService.SuggestTrials][google.cloud.aiplatform.v1.VizierService.SuggestTrials].
+ * Request message for
+ * [VizierService.SuggestTrials][google.cloud.aiplatform.v1.VizierService.SuggestTrials].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.SuggestTrialsRequest}
@@ -377,7 +378,8 @@ public final class SuggestTrialsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [VizierService.SuggestTrials][google.cloud.aiplatform.v1.VizierService.SuggestTrials].
+   * Request message for
+   * [VizierService.SuggestTrials][google.cloud.aiplatform.v1.VizierService.SuggestTrials].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.SuggestTrialsRequest}

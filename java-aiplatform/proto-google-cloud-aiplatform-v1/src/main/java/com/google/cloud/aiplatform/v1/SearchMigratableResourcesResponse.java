@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
+ * Response message for
+ * [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.SearchMigratableResourcesResponse}
@@ -374,7 +375,8 @@ public final class SearchMigratableResourcesResponse extends com.google.protobuf
    *
    *
    * <pre>
-   * Response message for [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
+   * Response message for
+   * [MigrationService.SearchMigratableResources][google.cloud.aiplatform.v1.MigrationService.SearchMigratableResources].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.SearchMigratableResourcesResponse}

@@ -69,8 +69,8 @@ public interface UpdateDatasetRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * Updatable fields:
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
    *   * `display_name`
    *   * `description`
    *   * `labels`
@@ -87,8 +87,8 @@ public interface UpdateDatasetRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * Updatable fields:
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
    *   * `display_name`
    *   * `description`
    *   * `labels`
@@ -105,8 +105,8 @@ public interface UpdateDatasetRequestOrBuilder
    *
    * <pre>
    * Required. The update mask applies to the resource.
-   * For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
-   * Updatable fields:
+   * For the `FieldMask` definition, see
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask]. Updatable fields:
    *   * `display_name`
    *   * `description`
    *   * `labels`

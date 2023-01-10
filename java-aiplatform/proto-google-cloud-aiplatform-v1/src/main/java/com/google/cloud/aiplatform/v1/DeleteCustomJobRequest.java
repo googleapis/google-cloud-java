@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
+ * Request message for
+ * [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteCustomJobRequest}
@@ -288,7 +289,8 @@ public final class DeleteCustomJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
+   * Request message for
+   * [JobService.DeleteCustomJob][google.cloud.aiplatform.v1.JobService.DeleteCustomJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteCustomJobRequest}

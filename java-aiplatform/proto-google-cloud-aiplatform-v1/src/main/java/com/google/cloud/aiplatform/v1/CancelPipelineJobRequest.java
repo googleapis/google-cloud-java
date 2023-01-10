@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.CancelPipelineJob][google.cloud.aiplatform.v1.PipelineService.CancelPipelineJob].
+ * Request message for
+ * [PipelineService.CancelPipelineJob][google.cloud.aiplatform.v1.PipelineService.CancelPipelineJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CancelPipelineJobRequest}
@@ -288,7 +289,8 @@ public final class CancelPipelineJobRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [PipelineService.CancelPipelineJob][google.cloud.aiplatform.v1.PipelineService.CancelPipelineJob].
+   * Request message for
+   * [PipelineService.CancelPipelineJob][google.cloud.aiplatform.v1.PipelineService.CancelPipelineJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CancelPipelineJobRequest}

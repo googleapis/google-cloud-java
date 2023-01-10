@@ -152,7 +152,7 @@ public interface SearchDataItemsRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.SearchDataItemsRequest.saved_query is deprecated. See
-   *     google/cloud/aiplatform/v1/dataset_service.proto;l=414
+   *     google/cloud/aiplatform/v1/dataset_service.proto;l=436
    * @return The savedQuery.
    */
   @java.lang.Deprecated
@@ -171,7 +171,7 @@ public interface SearchDataItemsRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.SearchDataItemsRequest.saved_query is deprecated. See
-   *     google/cloud/aiplatform/v1/dataset_service.proto;l=414
+   *     google/cloud/aiplatform/v1/dataset_service.proto;l=436
    * @return The bytes for savedQuery.
    */
   @java.lang.Deprecated
@@ -263,7 +263,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.SearchDataItemsRequest.annotations_filter is deprecated.
-   *     See google/cloud/aiplatform/v1/dataset_service.proto;l=445
+   *     See google/cloud/aiplatform/v1/dataset_service.proto;l=467
    * @return The annotationsFilter.
    */
   @java.lang.Deprecated
@@ -280,7 +280,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.SearchDataItemsRequest.annotations_filter is deprecated.
-   *     See google/cloud/aiplatform/v1/dataset_service.proto;l=445
+   *     See google/cloud/aiplatform/v1/dataset_service.proto;l=467
    * @return The bytes for annotationsFilter.
    */
   @java.lang.Deprecated
@@ -357,7 +357,8 @@ public interface SearchDataItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1.DataItemView] to read.
+   * Mask specifying which fields of
+   * [DataItemView][google.cloud.aiplatform.v1.DataItemView] to read.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -369,7 +370,8 @@ public interface SearchDataItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1.DataItemView] to read.
+   * Mask specifying which fields of
+   * [DataItemView][google.cloud.aiplatform.v1.DataItemView] to read.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -381,7 +383,8 @@ public interface SearchDataItemsRequestOrBuilder
    *
    *
    * <pre>
-   * Mask specifying which fields of [DataItemView][google.cloud.aiplatform.v1.DataItemView] to read.
+   * Mask specifying which fields of
+   * [DataItemView][google.cloud.aiplatform.v1.DataItemView] to read.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
@@ -428,7 +431,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1/dataset_service.proto;l=468
+   *     google/cloud/aiplatform/v1/dataset_service.proto;l=491
    * @return The orderBy.
    */
   @java.lang.Deprecated
@@ -444,7 +447,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1/dataset_service.proto;l=468
+   *     google/cloud/aiplatform/v1/dataset_service.proto;l=491
    * @return The bytes for orderBy.
    */
   @java.lang.Deprecated
@@ -456,8 +459,10 @@ public interface SearchDataItemsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1.SearchDataItemsResponse.next_page_token] of the previous
-   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1.DatasetService.SearchDataItems] call.
+   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1.SearchDataItemsResponse.next_page_token]
+   * of the previous
+   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1.DatasetService.SearchDataItems]
+   * call.
    * </pre>
    *
    * <code>string page_token = 10;</code>
@@ -471,8 +476,10 @@ public interface SearchDataItemsRequestOrBuilder
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
-   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1.SearchDataItemsResponse.next_page_token] of the previous
-   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1.DatasetService.SearchDataItems] call.
+   * [SearchDataItemsResponse.next_page_token][google.cloud.aiplatform.v1.SearchDataItemsResponse.next_page_token]
+   * of the previous
+   * [DatasetService.SearchDataItems][google.cloud.aiplatform.v1.DatasetService.SearchDataItems]
+   * call.
    * </pre>
    *
    * <code>string page_token = 10;</code>

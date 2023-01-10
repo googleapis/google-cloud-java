@@ -227,9 +227,11 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Required. The data that the DataItem represents (for example, an image or a text
-   * snippet). The schema of the payload is stored in the parent Dataset's
-   * [metadata schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] dataItemSchemaUri field.
+   * Required. The data that the DataItem represents (for example, an image or a
+   * text snippet). The schema of the payload is stored in the parent Dataset's
+   * [metadata
+   * schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri]
+   * dataItemSchemaUri field.
    * </pre>
    *
    * <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -241,9 +243,11 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Required. The data that the DataItem represents (for example, an image or a text
-   * snippet). The schema of the payload is stored in the parent Dataset's
-   * [metadata schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] dataItemSchemaUri field.
+   * Required. The data that the DataItem represents (for example, an image or a
+   * text snippet). The schema of the payload is stored in the parent Dataset's
+   * [metadata
+   * schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri]
+   * dataItemSchemaUri field.
    * </pre>
    *
    * <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -255,9 +259,11 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Required. The data that the DataItem represents (for example, an image or a text
-   * snippet). The schema of the payload is stored in the parent Dataset's
-   * [metadata schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] dataItemSchemaUri field.
+   * Required. The data that the DataItem represents (for example, an image or a
+   * text snippet). The schema of the payload is stored in the parent Dataset's
+   * [metadata
+   * schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri]
+   * dataItemSchemaUri field.
    * </pre>
    *
    * <code>.google.protobuf.Value payload = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -268,8 +274,8 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -281,8 +287,8 @@ public interface DataItemOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

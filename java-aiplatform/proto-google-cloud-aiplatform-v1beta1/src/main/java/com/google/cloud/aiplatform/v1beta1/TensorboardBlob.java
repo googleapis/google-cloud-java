@@ -74,8 +74,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-   * stored in the Cloud Storage bucket of the consumer project.
+   * Output only. A URI safe key uniquely identifying a blob. Can be used to
+   * locate the blob stored in the Cloud Storage bucket of the consumer project.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -98,8 +98,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-   * stored in the Cloud Storage bucket of the consumer project.
+   * Output only. A URI safe key uniquely identifying a blob. Can be used to
+   * locate the blob stored in the Cloud Storage bucket of the consumer project.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -494,8 +494,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-     * stored in the Cloud Storage bucket of the consumer project.
+     * Output only. A URI safe key uniquely identifying a blob. Can be used to
+     * locate the blob stored in the Cloud Storage bucket of the consumer project.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -517,8 +517,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-     * stored in the Cloud Storage bucket of the consumer project.
+     * Output only. A URI safe key uniquely identifying a blob. Can be used to
+     * locate the blob stored in the Cloud Storage bucket of the consumer project.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -540,8 +540,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-     * stored in the Cloud Storage bucket of the consumer project.
+     * Output only. A URI safe key uniquely identifying a blob. Can be used to
+     * locate the blob stored in the Cloud Storage bucket of the consumer project.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -562,8 +562,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-     * stored in the Cloud Storage bucket of the consumer project.
+     * Output only. A URI safe key uniquely identifying a blob. Can be used to
+     * locate the blob stored in the Cloud Storage bucket of the consumer project.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -580,8 +580,8 @@ public final class TensorboardBlob extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A URI safe key uniquely identifying a blob. Can be used to locate the blob
-     * stored in the Cloud Storage bucket of the consumer project.
+     * Output only. A URI safe key uniquely identifying a blob. Can be used to
+     * locate the blob stored in the Cloud Storage bucket of the consumer project.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob].
+ * Request message for
+ * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetPipelineJobRequest}
@@ -287,7 +288,8 @@ public final class GetPipelineJobRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob].
+   * Request message for
+   * [PipelineService.GetPipelineJob][google.cloud.aiplatform.v1.PipelineService.GetPipelineJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetPipelineJobRequest}

@@ -56,7 +56,8 @@ public interface DeploymentResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+   * Required. The underlying DedicatedResources that the DeploymentResourcePool
+   * uses.
    * </pre>
    *
    * <code>
@@ -70,7 +71,8 @@ public interface DeploymentResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+   * Required. The underlying DedicatedResources that the DeploymentResourcePool
+   * uses.
    * </pre>
    *
    * <code>
@@ -84,7 +86,8 @@ public interface DeploymentResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+   * Required. The underlying DedicatedResources that the DeploymentResourcePool
+   * uses.
    * </pre>
    *
    * <code>

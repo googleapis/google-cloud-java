@@ -157,8 +157,8 @@ public interface AnnotationSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -170,8 +170,8 @@ public interface AnnotationSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

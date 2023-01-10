@@ -81,8 +81,9 @@ public interface ListMetadataSchemasResponseOrBuilder
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -95,8 +96,9 @@ public interface ListMetadataSchemasResponseOrBuilder
    *
    * <pre>
    * A token, which can be sent as
-   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token] to retrieve the next
-   * page. If this field is not populated, there are no subsequent pages.
+   * [ListMetadataSchemasRequest.page_token][google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest.page_token]
+   * to retrieve the next page. If this field is not populated, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

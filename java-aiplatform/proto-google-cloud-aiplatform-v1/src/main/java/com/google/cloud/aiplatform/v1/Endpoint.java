@@ -245,8 +245,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The models deployed in this Endpoint.
-   * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+   * To add or remove DeployedModels use
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+   * and
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+   * respectively.
    * </pre>
    *
    * <code>
@@ -262,8 +265,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The models deployed in this Endpoint.
-   * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+   * To add or remove DeployedModels use
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+   * and
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+   * respectively.
    * </pre>
    *
    * <code>
@@ -280,8 +286,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The models deployed in this Endpoint.
-   * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+   * To add or remove DeployedModels use
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+   * and
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+   * respectively.
    * </pre>
    *
    * <code>
@@ -297,8 +306,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The models deployed in this Endpoint.
-   * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+   * To add or remove DeployedModels use
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+   * and
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+   * respectively.
    * </pre>
    *
    * <code>
@@ -314,8 +326,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The models deployed in this Endpoint.
-   * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+   * To add or remove DeployedModels use
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+   * and
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+   * respectively.
    * </pre>
    *
    * <code>
@@ -776,7 +791,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+   * Only one of the fields,
+   * [network][google.cloud.aiplatform.v1.Endpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
    * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -810,7 +826,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+   * Only one of the fields,
+   * [network][google.cloud.aiplatform.v1.Endpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
    * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -843,7 +860,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Deprecated: If true, expose the Endpoint via private service connect.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+   * Only one of the fields,
+   * [network][google.cloud.aiplatform.v1.Endpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
    * can be set.
    * </pre>
@@ -851,7 +869,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-   *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
+   *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -866,9 +884,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-   * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-   * Format:
+   * Output only. Resource name of the Model Monitoring job associated with this
+   * Endpoint if monitoring is enabled by
+   * [CreateModelDeploymentMonitoringJob][]. Format:
    * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
    * </pre>
    *
@@ -894,9 +912,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-   * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-   * Format:
+   * Output only. Resource name of the Model Monitoring job associated with this
+   * Endpoint if monitoring is enabled by
+   * [CreateModelDeploymentMonitoringJob][]. Format:
    * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
    * </pre>
    *
@@ -2091,8 +2109,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2111,8 +2132,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2131,8 +2155,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2151,8 +2178,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2178,8 +2208,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2202,8 +2235,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2228,8 +2264,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2255,8 +2294,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2279,8 +2321,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2303,8 +2348,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2327,8 +2375,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2350,8 +2401,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2373,8 +2427,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2390,8 +2447,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2411,8 +2471,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2432,8 +2495,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2449,8 +2515,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -2467,8 +2536,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The models deployed in this Endpoint.
-     * To add or remove DeployedModels use [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel] and
-     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel] respectively.
+     * To add or remove DeployedModels use
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel]
+     * and
+     * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel]
+     * respectively.
      * </pre>
      *
      * <code>
@@ -3605,7 +3677,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -3638,7 +3711,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -3671,7 +3745,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -3703,7 +3778,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -3731,7 +3807,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
@@ -3762,7 +3839,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated: If true, expose the Endpoint via private service connect.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * </pre>
@@ -3770,7 +3848,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -3783,7 +3861,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated: If true, expose the Endpoint via private service connect.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * </pre>
@@ -3791,7 +3870,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -3807,7 +3886,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Deprecated: If true, expose the Endpoint via private service connect.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
      * can be set.
      * </pre>
@@ -3815,7 +3895,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-     *     See google/cloud/aiplatform/v1/endpoint.proto;l=116
+     *     See google/cloud/aiplatform/v1/endpoint.proto;l=124
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3831,9 +3911,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-     * Format:
+     * Output only. Resource name of the Model Monitoring job associated with this
+     * Endpoint if monitoring is enabled by
+     * [CreateModelDeploymentMonitoringJob][]. Format:
      * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
      * </pre>
      *
@@ -3858,9 +3938,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-     * Format:
+     * Output only. Resource name of the Model Monitoring job associated with this
+     * Endpoint if monitoring is enabled by
+     * [CreateModelDeploymentMonitoringJob][]. Format:
      * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
      * </pre>
      *
@@ -3885,9 +3965,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-     * Format:
+     * Output only. Resource name of the Model Monitoring job associated with this
+     * Endpoint if monitoring is enabled by
+     * [CreateModelDeploymentMonitoringJob][]. Format:
      * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
      * </pre>
      *
@@ -3911,9 +3991,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-     * Format:
+     * Output only. Resource name of the Model Monitoring job associated with this
+     * Endpoint if monitoring is enabled by
+     * [CreateModelDeploymentMonitoringJob][]. Format:
      * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
      * </pre>
      *
@@ -3933,9 +4013,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Resource name of the Model Monitoring job associated with this Endpoint
-     * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
-     * Format:
+     * Output only. Resource name of the Model Monitoring job associated with this
+     * Endpoint if monitoring is enabled by
+     * [CreateModelDeploymentMonitoringJob][]. Format:
      * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
      * </pre>
      *

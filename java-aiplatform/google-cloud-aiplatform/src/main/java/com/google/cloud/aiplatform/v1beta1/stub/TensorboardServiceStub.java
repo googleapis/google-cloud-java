@@ -62,6 +62,8 @@ import com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse;
+import com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageRequest;
+import com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageResponse;
 import com.google.cloud.aiplatform.v1beta1.Tensorboard;
 import com.google.cloud.aiplatform.v1beta1.TensorboardExperiment;
 import com.google.cloud.aiplatform.v1beta1.TensorboardRun;
@@ -116,6 +118,11 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetTensorboardRequest, Tensorboard> getTensorboardCallable() {
     throw new UnsupportedOperationException("Not implemented: getTensorboardCallable()");
+  }
+
+  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable() {
+    throw new UnsupportedOperationException("Not implemented: readTensorboardUsageCallable()");
   }
 
   public OperationCallable<
