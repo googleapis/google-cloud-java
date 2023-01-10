@@ -206,4 +206,45 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1.CustomClass custom_classes = 3;</code>
    */
   com.google.cloud.speech.v1.CustomClassOrBuilder getCustomClassesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+   * comprised by a set of derivation rules.
+   * See specifications: https://www.w3.org/TR/speech-grammar
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+   *
+   * @return Whether the abnfGrammar field is set.
+   */
+  boolean hasAbnfGrammar();
+  /**
+   *
+   *
+   * <pre>
+   * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+   * comprised by a set of derivation rules.
+   * See specifications: https://www.w3.org/TR/speech-grammar
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+   *
+   * @return The abnfGrammar.
+   */
+  com.google.cloud.speech.v1.SpeechAdaptation.ABNFGrammar getAbnfGrammar();
+  /**
+   *
+   *
+   * <pre>
+   * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+   * comprised by a set of derivation rules.
+   * See specifications: https://www.w3.org/TR/speech-grammar
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+   */
+  com.google.cloud.speech.v1.SpeechAdaptation.ABNFGrammarOrBuilder getAbnfGrammarOrBuilder();
 }

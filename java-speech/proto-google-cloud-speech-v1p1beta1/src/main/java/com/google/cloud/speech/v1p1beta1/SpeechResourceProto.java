@@ -48,6 +48,10 @@ public final class SpeechResourceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_fieldAccessorTable;
@@ -79,12 +83,15 @@ public final class SpeechResourceProto {
           + "hrase\022\r\n\005value\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002:e\352Ab"
           + "\n\037speech.googleapis.com/PhraseSet\022?proje"
           + "cts/{project}/locations/{location}/phras"
-          + "eSets/{phrase_set}\"\332\001\n\020SpeechAdaptation\022"
+          + "eSets/{phrase_set}\"\322\002\n\020SpeechAdaptation\022"
           + "=\n\013phrase_sets\030\001 \003(\0132(.google.cloud.spee"
           + "ch.v1p1beta1.PhraseSet\022C\n\025phrase_set_ref"
           + "erences\030\002 \003(\tB$\372A!\n\037speech.googleapis.co"
           + "m/PhraseSet\022B\n\016custom_classes\030\003 \003(\0132*.go"
-          + "ogle.cloud.speech.v1p1beta1.CustomClass\""
+          + "ogle.cloud.speech.v1p1beta1.CustomClass\022"
+          + "Q\n\014abnf_grammar\030\004 \001(\0132;.google.cloud.spe"
+          + "ech.v1p1beta1.SpeechAdaptation.ABNFGramm"
+          + "ar\032#\n\013ABNFGrammar\022\024\n\014abnf_strings\030\001 \003(\t\""
           + "\252\001\n\027TranscriptNormalization\022M\n\007entries\030\001"
           + " \003(\0132<.google.cloud.speech.v1p1beta1.Tra"
           + "nscriptNormalization.Entry\032@\n\005Entry\022\016\n\006s"
@@ -140,7 +147,17 @@ public final class SpeechResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_descriptor,
             new java.lang.String[] {
-              "PhraseSets", "PhraseSetReferences", "CustomClasses",
+              "PhraseSets", "PhraseSetReferences", "CustomClasses", "AbnfGrammar",
+            });
+    internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_descriptor =
+        internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_descriptor,
+            new java.lang.String[] {
+              "AbnfStrings",
             });
     internal_static_google_cloud_speech_v1p1beta1_TranscriptNormalization_descriptor =
         getDescriptor().getMessageTypes().get(3);

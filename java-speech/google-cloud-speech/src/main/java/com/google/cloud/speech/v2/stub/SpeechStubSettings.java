@@ -121,7 +121,10 @@ import org.threeten.bp.Duration;
  * speechSettingsBuilder
  *     .getRecognizerSettings()
  *     .setRetrySettings(
- *         speechSettingsBuilder.getRecognizerSettings().getRetrySettings().toBuilder()
+ *         speechSettingsBuilder
+ *             .getRecognizerSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SpeechStubSettings speechSettings = speechSettingsBuilder.build();
