@@ -70,7 +70,10 @@ import javax.annotation.Generated;
  * tagValuesSettingsBuilder
  *     .getTagValueSettings()
  *     .setRetrySettings(
- *         tagValuesSettingsBuilder.getTagValueSettings().getRetrySettings().toBuilder()
+ *         tagValuesSettingsBuilder
+ *             .getTagValueSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TagValuesSettings tagValuesSettings = tagValuesSettingsBuilder.build();

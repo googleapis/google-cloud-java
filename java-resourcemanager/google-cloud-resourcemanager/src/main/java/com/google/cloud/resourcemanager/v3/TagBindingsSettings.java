@@ -66,7 +66,10 @@ import javax.annotation.Generated;
  * tagBindingsSettingsBuilder
  *     .listTagBindingsSettings()
  *     .setRetrySettings(
- *         tagBindingsSettingsBuilder.listTagBindingsSettings().getRetrySettings().toBuilder()
+ *         tagBindingsSettingsBuilder
+ *             .listTagBindingsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TagBindingsSettings tagBindingsSettings = tagBindingsSettingsBuilder.build();

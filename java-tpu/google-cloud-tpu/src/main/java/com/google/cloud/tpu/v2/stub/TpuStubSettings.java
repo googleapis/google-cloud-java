@@ -114,7 +114,10 @@ import org.threeten.bp.Duration;
  * tpuSettingsBuilder
  *     .getNodeSettings()
  *     .setRetrySettings(
- *         tpuSettingsBuilder.getNodeSettings().getRetrySettings().toBuilder()
+ *         tpuSettingsBuilder
+ *             .getNodeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TpuStubSettings tpuSettings = tpuSettingsBuilder.build();

@@ -36,7 +36,10 @@ public class SyncCompleteQuery {
     completionSettingsBuilder
         .completeQuerySettings()
         .setRetrySettings(
-            completionSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
+            completionSettingsBuilder
+                .completeQuerySettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CompletionSettings completionSettings = completionSettingsBuilder.build();

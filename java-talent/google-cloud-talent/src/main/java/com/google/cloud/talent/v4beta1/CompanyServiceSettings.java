@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * companyServiceSettingsBuilder
  *     .createCompanySettings()
  *     .setRetrySettings(
- *         companyServiceSettingsBuilder.createCompanySettings().getRetrySettings().toBuilder()
+ *         companyServiceSettingsBuilder
+ *             .createCompanySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CompanyServiceSettings companyServiceSettings = companyServiceSettingsBuilder.build();

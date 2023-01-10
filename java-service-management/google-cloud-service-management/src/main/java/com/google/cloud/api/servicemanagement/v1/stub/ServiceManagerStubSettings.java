@@ -112,7 +112,10 @@ import org.threeten.bp.Duration;
  * serviceManagerSettingsBuilder
  *     .getServiceSettings()
  *     .setRetrySettings(
- *         serviceManagerSettingsBuilder.getServiceSettings().getRetrySettings().toBuilder()
+ *         serviceManagerSettingsBuilder
+ *             .getServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceManagerStubSettings serviceManagerSettings = serviceManagerSettingsBuilder.build();

@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * cloudShellServiceSettingsBuilder
  *     .getEnvironmentSettings()
  *     .setRetrySettings(
- *         cloudShellServiceSettingsBuilder.getEnvironmentSettings().getRetrySettings().toBuilder()
+ *         cloudShellServiceSettingsBuilder
+ *             .getEnvironmentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudShellServiceSettings cloudShellServiceSettings = cloudShellServiceSettingsBuilder.build();

@@ -94,7 +94,10 @@ import org.threeten.bp.Duration;
  * tagBindingsSettingsBuilder
  *     .listTagBindingsSettings()
  *     .setRetrySettings(
- *         tagBindingsSettingsBuilder.listTagBindingsSettings().getRetrySettings().toBuilder()
+ *         tagBindingsSettingsBuilder
+ *             .listTagBindingsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TagBindingsStubSettings tagBindingsSettings = tagBindingsSettingsBuilder.build();

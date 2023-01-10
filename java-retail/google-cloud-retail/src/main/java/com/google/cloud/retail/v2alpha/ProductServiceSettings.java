@@ -66,7 +66,10 @@ import javax.annotation.Generated;
  * productServiceSettingsBuilder
  *     .createProductSettings()
  *     .setRetrySettings(
- *         productServiceSettingsBuilder.createProductSettings().getRetrySettings().toBuilder()
+ *         productServiceSettingsBuilder
+ *             .createProductSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProductServiceSettings productServiceSettings = productServiceSettingsBuilder.build();

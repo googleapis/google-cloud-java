@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * cloudSchedulerSettingsBuilder
  *     .getJobSettings()
  *     .setRetrySettings(
- *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *         cloudSchedulerSettingsBuilder
+ *             .getJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudSchedulerStubSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();

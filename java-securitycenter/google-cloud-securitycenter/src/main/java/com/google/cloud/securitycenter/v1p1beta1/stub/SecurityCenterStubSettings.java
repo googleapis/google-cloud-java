@@ -130,7 +130,10 @@ import org.threeten.bp.Duration;
  * securityCenterSettingsBuilder
  *     .createSourceSettings()
  *     .setRetrySettings(
- *         securityCenterSettingsBuilder.createSourceSettings().getRetrySettings().toBuilder()
+ *         securityCenterSettingsBuilder
+ *             .createSourceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();

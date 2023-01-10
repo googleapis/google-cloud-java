@@ -36,7 +36,10 @@ public class SyncGetInstance {
     cloudRedisSettingsBuilder
         .getInstanceSettings()
         .setRetrySettings(
-            cloudRedisSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+            cloudRedisSettingsBuilder
+                .getInstanceSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudRedisStubSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();

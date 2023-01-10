@@ -71,7 +71,10 @@ import javax.annotation.Generated;
  * foldersSettingsBuilder
  *     .getFolderSettings()
  *     .setRetrySettings(
- *         foldersSettingsBuilder.getFolderSettings().getRetrySettings().toBuilder()
+ *         foldersSettingsBuilder
+ *             .getFolderSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FoldersSettings foldersSettings = foldersSettingsBuilder.build();

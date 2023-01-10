@@ -69,7 +69,10 @@ import javax.annotation.Generated;
  * jobsSettingsBuilder
  *     .getJobSettings()
  *     .setRetrySettings(
- *         jobsSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *         jobsSettingsBuilder
+ *             .getJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobsSettings jobsSettings = jobsSettingsBuilder.build();

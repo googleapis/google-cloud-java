@@ -86,7 +86,10 @@ import org.threeten.bp.Duration;
  * traceServiceSettingsBuilder
  *     .getTraceSettings()
  *     .setRetrySettings(
- *         traceServiceSettingsBuilder.getTraceSettings().getRetrySettings().toBuilder()
+ *         traceServiceSettingsBuilder
+ *             .getTraceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TraceServiceStubSettings traceServiceSettings = traceServiceSettingsBuilder.build();

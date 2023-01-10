@@ -61,7 +61,10 @@ import javax.annotation.Generated;
  * serviceControllerSettingsBuilder
  *     .checkSettings()
  *     .setRetrySettings(
- *         serviceControllerSettingsBuilder.checkSettings().getRetrySettings().toBuilder()
+ *         serviceControllerSettingsBuilder
+ *             .checkSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceControllerSettings serviceControllerSettings = serviceControllerSettingsBuilder.build();

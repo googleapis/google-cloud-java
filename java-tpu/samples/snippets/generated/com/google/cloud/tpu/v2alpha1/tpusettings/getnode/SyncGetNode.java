@@ -36,7 +36,10 @@ public class SyncGetNode {
     tpuSettingsBuilder
         .getNodeSettings()
         .setRetrySettings(
-            tpuSettingsBuilder.getNodeSettings().getRetrySettings().toBuilder()
+            tpuSettingsBuilder
+                .getNodeSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     TpuSettings tpuSettings = tpuSettingsBuilder.build();

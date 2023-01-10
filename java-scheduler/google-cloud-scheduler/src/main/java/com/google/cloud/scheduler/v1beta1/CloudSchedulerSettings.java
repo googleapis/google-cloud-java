@@ -70,7 +70,10 @@ import javax.annotation.Generated;
  * cloudSchedulerSettingsBuilder
  *     .getJobSettings()
  *     .setRetrySettings(
- *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *         cloudSchedulerSettingsBuilder
+ *             .getJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudSchedulerSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();

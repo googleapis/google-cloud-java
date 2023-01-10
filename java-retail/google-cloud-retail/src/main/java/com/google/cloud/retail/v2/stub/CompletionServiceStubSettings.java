@@ -81,7 +81,10 @@ import org.threeten.bp.Duration;
  * completionServiceSettingsBuilder
  *     .completeQuerySettings()
  *     .setRetrySettings(
- *         completionServiceSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
+ *         completionServiceSettingsBuilder
+ *             .completeQuerySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CompletionServiceStubSettings completionServiceSettings =

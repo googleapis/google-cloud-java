@@ -74,7 +74,10 @@ import org.threeten.bp.Duration;
  * lookupServiceSettingsBuilder
  *     .resolveServiceSettings()
  *     .setRetrySettings(
- *         lookupServiceSettingsBuilder.resolveServiceSettings().getRetrySettings().toBuilder()
+ *         lookupServiceSettingsBuilder
+ *             .resolveServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LookupServiceStubSettings lookupServiceSettings = lookupServiceSettingsBuilder.build();

@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * serviceUsageSettingsBuilder
  *     .getServiceSettings()
  *     .setRetrySettings(
- *         serviceUsageSettingsBuilder.getServiceSettings().getRetrySettings().toBuilder()
+ *         serviceUsageSettingsBuilder
+ *             .getServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceUsageSettings serviceUsageSettings = serviceUsageSettingsBuilder.build();

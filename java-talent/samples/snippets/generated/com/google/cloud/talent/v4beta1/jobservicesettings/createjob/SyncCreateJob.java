@@ -36,7 +36,10 @@ public class SyncCreateJob {
     jobServiceSettingsBuilder
         .createJobSettings()
         .setRetrySettings(
-            jobServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
+            jobServiceSettingsBuilder
+                .createJobSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     JobServiceSettings jobServiceSettings = jobServiceSettingsBuilder.build();

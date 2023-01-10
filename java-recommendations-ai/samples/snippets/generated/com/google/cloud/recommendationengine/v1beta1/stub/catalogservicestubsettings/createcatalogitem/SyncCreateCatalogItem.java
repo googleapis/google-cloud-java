@@ -37,7 +37,10 @@ public class SyncCreateCatalogItem {
     catalogServiceSettingsBuilder
         .createCatalogItemSettings()
         .setRetrySettings(
-            catalogServiceSettingsBuilder.createCatalogItemSettings().getRetrySettings().toBuilder()
+            catalogServiceSettingsBuilder
+                .createCatalogItemSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();

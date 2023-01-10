@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>1.8.0</version>
+  <version>1.9.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-resourcemanager:1.8.0'
+implementation 'com.google.cloud:google-cloud-resourcemanager:1.9.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "1.8.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "1.9.0"
 ```
 
 ## Authentication
