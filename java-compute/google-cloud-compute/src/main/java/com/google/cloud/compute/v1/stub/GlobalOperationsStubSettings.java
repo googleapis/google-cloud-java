@@ -90,7 +90,10 @@ import org.threeten.bp.Duration;
  * globalOperationsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         globalOperationsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         globalOperationsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GlobalOperationsStubSettings globalOperationsSettings = globalOperationsSettingsBuilder.build();

@@ -94,7 +94,10 @@ import org.threeten.bp.Duration;
  * vpnTunnelsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         vpnTunnelsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         vpnTunnelsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VpnTunnelsStubSettings vpnTunnelsSettings = vpnTunnelsSettingsBuilder.build();

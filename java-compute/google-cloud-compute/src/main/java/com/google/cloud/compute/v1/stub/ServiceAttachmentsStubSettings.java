@@ -100,7 +100,10 @@ import org.threeten.bp.Duration;
  * serviceAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         serviceAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         serviceAttachmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceAttachmentsStubSettings serviceAttachmentsSettings =

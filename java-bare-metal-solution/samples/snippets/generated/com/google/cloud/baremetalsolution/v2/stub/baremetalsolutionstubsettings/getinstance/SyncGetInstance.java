@@ -37,7 +37,10 @@ public class SyncGetInstance {
     bareMetalSolutionSettingsBuilder
         .getInstanceSettings()
         .setRetrySettings(
-            bareMetalSolutionSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+            bareMetalSolutionSettingsBuilder
+                .getInstanceSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     BareMetalSolutionStubSettings bareMetalSolutionSettings =

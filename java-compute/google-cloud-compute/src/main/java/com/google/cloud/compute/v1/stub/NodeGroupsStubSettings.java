@@ -106,7 +106,10 @@ import org.threeten.bp.Duration;
  * nodeGroupsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         nodeGroupsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         nodeGroupsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NodeGroupsStubSettings nodeGroupsSettings = nodeGroupsSettingsBuilder.build();

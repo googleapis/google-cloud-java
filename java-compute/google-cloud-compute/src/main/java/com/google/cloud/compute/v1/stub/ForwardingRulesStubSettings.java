@@ -97,7 +97,10 @@ import org.threeten.bp.Duration;
  * forwardingRulesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         forwardingRulesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         forwardingRulesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ForwardingRulesStubSettings forwardingRulesSettings = forwardingRulesSettingsBuilder.build();

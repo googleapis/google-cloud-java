@@ -87,7 +87,10 @@ import org.threeten.bp.Duration;
  * machineTypesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         machineTypesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         machineTypesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MachineTypesStubSettings machineTypesSettings = machineTypesSettingsBuilder.build();

@@ -103,7 +103,10 @@ import org.threeten.bp.Duration;
  * disksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         disksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         disksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DisksStubSettings disksSettings = disksSettingsBuilder.build();

@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * routersSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         routersSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         routersSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RoutersSettings routersSettings = routersSettingsBuilder.build();

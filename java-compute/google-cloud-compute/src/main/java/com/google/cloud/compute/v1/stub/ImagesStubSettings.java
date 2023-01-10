@@ -96,7 +96,10 @@ import org.threeten.bp.Duration;
  * imagesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         imagesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         imagesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImagesStubSettings imagesSettings = imagesSettingsBuilder.build();

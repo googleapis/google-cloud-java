@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * urlMapsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         urlMapsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         urlMapsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * UrlMapsSettings urlMapsSettings = urlMapsSettingsBuilder.build();

@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * interconnectsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         interconnectsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         interconnectsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InterconnectsSettings interconnectsSettings = interconnectsSettingsBuilder.build();

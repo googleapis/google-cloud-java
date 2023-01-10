@@ -85,7 +85,10 @@ import javax.annotation.Generated;
  * tablesServiceSettingsBuilder
  *     .getTableSettings()
  *     .setRetrySettings(
- *         tablesServiceSettingsBuilder.getTableSettings().getRetrySettings().toBuilder()
+ *         tablesServiceSettingsBuilder
+ *             .getTableSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TablesServiceSettings tablesServiceSettings = tablesServiceSettingsBuilder.build();

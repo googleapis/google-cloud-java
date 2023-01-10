@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionNotificationEndpointsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionNotificationEndpointsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionNotificationEndpointsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionNotificationEndpointsSettings regionNotificationEndpointsSettings =

@@ -80,7 +80,10 @@ import org.threeten.bp.Duration;
  * zonesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         zonesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         zonesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ZonesStubSettings zonesSettings = zonesSettingsBuilder.build();

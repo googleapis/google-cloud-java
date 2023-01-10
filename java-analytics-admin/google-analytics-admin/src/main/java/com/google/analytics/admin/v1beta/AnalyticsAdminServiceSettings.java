@@ -75,7 +75,10 @@ import javax.annotation.Generated;
  * analyticsAdminServiceSettingsBuilder
  *     .getAccountSettings()
  *     .setRetrySettings(
- *         analyticsAdminServiceSettingsBuilder.getAccountSettings().getRetrySettings().toBuilder()
+ *         analyticsAdminServiceSettingsBuilder
+ *             .getAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AnalyticsAdminServiceSettings analyticsAdminServiceSettings =

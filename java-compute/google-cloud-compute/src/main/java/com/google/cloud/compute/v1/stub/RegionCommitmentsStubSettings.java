@@ -94,7 +94,10 @@ import org.threeten.bp.Duration;
  * regionCommitmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionCommitmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionCommitmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionCommitmentsStubSettings regionCommitmentsSettings =

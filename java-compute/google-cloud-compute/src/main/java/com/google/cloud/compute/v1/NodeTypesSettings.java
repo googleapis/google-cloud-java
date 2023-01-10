@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * nodeTypesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         nodeTypesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         nodeTypesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NodeTypesSettings nodeTypesSettings = nodeTypesSettingsBuilder.build();

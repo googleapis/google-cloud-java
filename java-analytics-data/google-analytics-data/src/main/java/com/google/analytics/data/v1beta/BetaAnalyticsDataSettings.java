@@ -60,7 +60,10 @@ import javax.annotation.Generated;
  * betaAnalyticsDataSettingsBuilder
  *     .runReportSettings()
  *     .setRetrySettings(
- *         betaAnalyticsDataSettingsBuilder.runReportSettings().getRetrySettings().toBuilder()
+ *         betaAnalyticsDataSettingsBuilder
+ *             .runReportSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BetaAnalyticsDataSettings betaAnalyticsDataSettings = betaAnalyticsDataSettingsBuilder.build();

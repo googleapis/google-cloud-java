@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionSecurityPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionSecurityPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionSecurityPoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionSecurityPoliciesSettings regionSecurityPoliciesSettings =

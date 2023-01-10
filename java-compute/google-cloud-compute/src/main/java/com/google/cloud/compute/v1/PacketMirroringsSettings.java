@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * packetMirroringsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         packetMirroringsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         packetMirroringsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PacketMirroringsSettings packetMirroringsSettings = packetMirroringsSettingsBuilder.build();

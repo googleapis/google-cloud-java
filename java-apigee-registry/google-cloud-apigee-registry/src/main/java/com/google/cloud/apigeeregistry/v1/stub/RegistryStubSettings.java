@@ -145,7 +145,10 @@ import org.threeten.bp.Duration;
  * registrySettingsBuilder
  *     .getApiSettings()
  *     .setRetrySettings(
- *         registrySettingsBuilder.getApiSettings().getRetrySettings().toBuilder()
+ *         registrySettingsBuilder
+ *             .getApiSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegistryStubSettings registrySettings = registrySettingsBuilder.build();

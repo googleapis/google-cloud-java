@@ -61,7 +61,10 @@ import javax.annotation.Generated;
  * applicationsSettingsBuilder
  *     .getApplicationSettings()
  *     .setRetrySettings(
- *         applicationsSettingsBuilder.getApplicationSettings().getRetrySettings().toBuilder()
+ *         applicationsSettingsBuilder
+ *             .getApplicationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApplicationsSettings applicationsSettings = applicationsSettingsBuilder.build();

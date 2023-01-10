@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * targetGrpcProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetGrpcProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetGrpcProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetGrpcProxiesSettings targetGrpcProxiesSettings = targetGrpcProxiesSettingsBuilder.build();

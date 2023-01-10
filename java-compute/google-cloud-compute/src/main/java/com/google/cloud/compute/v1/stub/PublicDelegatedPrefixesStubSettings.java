@@ -95,7 +95,10 @@ import org.threeten.bp.Duration;
  * publicDelegatedPrefixesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         publicDelegatedPrefixesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         publicDelegatedPrefixesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PublicDelegatedPrefixesStubSettings publicDelegatedPrefixesSettings =

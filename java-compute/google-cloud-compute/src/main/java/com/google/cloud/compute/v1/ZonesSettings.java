@@ -61,7 +61,10 @@ import javax.annotation.Generated;
  * zonesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         zonesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         zonesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ZonesSettings zonesSettings = zonesSettingsBuilder.build();

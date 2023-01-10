@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * vpnGatewaysSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         vpnGatewaysSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         vpnGatewaysSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VpnGatewaysStubSettings vpnGatewaysSettings = vpnGatewaysSettingsBuilder.build();

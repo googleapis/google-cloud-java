@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionAutoscalersSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionAutoscalersSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionAutoscalersSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionAutoscalersSettings regionAutoscalersSettings = regionAutoscalersSettingsBuilder.build();

@@ -37,7 +37,10 @@ public class SyncPredict {
     predictionServiceSettingsBuilder
         .predictSettings()
         .setRetrySettings(
-            predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
+            predictionServiceSettingsBuilder
+                .predictSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     PredictionServiceSettings predictionServiceSettings = predictionServiceSettingsBuilder.build();

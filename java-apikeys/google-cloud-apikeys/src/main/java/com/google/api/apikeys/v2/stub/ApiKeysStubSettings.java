@@ -97,7 +97,10 @@ import org.threeten.bp.Duration;
  * apiKeysSettingsBuilder
  *     .getKeySettings()
  *     .setRetrySettings(
- *         apiKeysSettingsBuilder.getKeySettings().getRetrySettings().toBuilder()
+ *         apiKeysSettingsBuilder
+ *             .getKeySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApiKeysStubSettings apiKeysSettings = apiKeysSettingsBuilder.build();

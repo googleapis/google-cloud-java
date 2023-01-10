@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
  * machineImagesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         machineImagesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         machineImagesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MachineImagesStubSettings machineImagesSettings = machineImagesSettingsBuilder.build();

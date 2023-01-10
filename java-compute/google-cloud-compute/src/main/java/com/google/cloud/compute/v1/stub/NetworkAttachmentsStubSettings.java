@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * networkAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         networkAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         networkAttachmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NetworkAttachmentsStubSettings networkAttachmentsSettings =

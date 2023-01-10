@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * targetGrpcProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetGrpcProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetGrpcProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetGrpcProxiesStubSettings targetGrpcProxiesSettings =

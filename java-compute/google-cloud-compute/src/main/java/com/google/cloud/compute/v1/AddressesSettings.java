@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * addressesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         addressesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         addressesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AddressesSettings addressesSettings = addressesSettingsBuilder.build();

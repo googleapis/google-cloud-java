@@ -88,7 +88,10 @@ import org.threeten.bp.Duration;
  * regionNotificationEndpointsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionNotificationEndpointsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionNotificationEndpointsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionNotificationEndpointsStubSettings regionNotificationEndpointsSettings =

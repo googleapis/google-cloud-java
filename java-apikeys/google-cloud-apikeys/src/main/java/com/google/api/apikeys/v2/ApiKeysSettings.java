@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * apiKeysSettingsBuilder
  *     .getKeySettings()
  *     .setRetrySettings(
- *         apiKeysSettingsBuilder.getKeySettings().getRetrySettings().toBuilder()
+ *         apiKeysSettingsBuilder
+ *             .getKeySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApiKeysSettings apiKeysSettings = apiKeysSettingsBuilder.build();

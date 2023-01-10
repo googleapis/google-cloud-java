@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * regionOperationsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         regionOperationsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         regionOperationsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionOperationsSettings regionOperationsSettings = regionOperationsSettingsBuilder.build();

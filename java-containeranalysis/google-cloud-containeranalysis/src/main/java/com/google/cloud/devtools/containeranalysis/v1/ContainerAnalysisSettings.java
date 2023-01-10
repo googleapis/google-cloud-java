@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * containerAnalysisSettingsBuilder
  *     .setIamPolicySettings()
  *     .setRetrySettings(
- *         containerAnalysisSettingsBuilder.setIamPolicySettings().getRetrySettings().toBuilder()
+ *         containerAnalysisSettingsBuilder
+ *             .setIamPolicySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ContainerAnalysisSettings containerAnalysisSettings = containerAnalysisSettingsBuilder.build();

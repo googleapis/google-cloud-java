@@ -37,7 +37,10 @@ public class SyncListServices {
     cloudCatalogSettingsBuilder
         .listServicesSettings()
         .setRetrySettings(
-            cloudCatalogSettingsBuilder.listServicesSettings().getRetrySettings().toBuilder()
+            cloudCatalogSettingsBuilder
+                .listServicesSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudCatalogStubSettings cloudCatalogSettings = cloudCatalogSettingsBuilder.build();

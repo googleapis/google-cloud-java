@@ -37,7 +37,10 @@ public class SyncGetSystemPolicy {
     systemPolicyV1SettingsBuilder
         .getSystemPolicySettings()
         .setRetrySettings(
-            systemPolicyV1SettingsBuilder.getSystemPolicySettings().getRetrySettings().toBuilder()
+            systemPolicyV1SettingsBuilder
+                .getSystemPolicySettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     SystemPolicyV1StubSettings systemPolicyV1Settings = systemPolicyV1SettingsBuilder.build();

@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * instanceTemplatesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         instanceTemplatesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         instanceTemplatesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InstanceTemplatesSettings instanceTemplatesSettings = instanceTemplatesSettingsBuilder.build();

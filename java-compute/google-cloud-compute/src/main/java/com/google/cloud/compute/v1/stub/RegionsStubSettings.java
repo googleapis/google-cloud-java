@@ -80,7 +80,10 @@ import org.threeten.bp.Duration;
  * regionsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionsStubSettings regionsSettings = regionsSettingsBuilder.build();

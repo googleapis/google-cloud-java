@@ -107,7 +107,10 @@ import org.threeten.bp.Duration;
  * firewallPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         firewallPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         firewallPoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FirewallPoliciesStubSettings firewallPoliciesSettings = firewallPoliciesSettingsBuilder.build();

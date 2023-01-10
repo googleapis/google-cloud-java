@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * routesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         routesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         routesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RoutesSettings routesSettings = routesSettingsBuilder.build();

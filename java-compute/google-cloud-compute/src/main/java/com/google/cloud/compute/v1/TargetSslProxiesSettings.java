@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * targetSslProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetSslProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetSslProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetSslProxiesSettings targetSslProxiesSettings = targetSslProxiesSettingsBuilder.build();

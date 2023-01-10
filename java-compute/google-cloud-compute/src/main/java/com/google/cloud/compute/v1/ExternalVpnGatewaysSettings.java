@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * externalVpnGatewaysSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         externalVpnGatewaysSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         externalVpnGatewaysSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExternalVpnGatewaysSettings externalVpnGatewaysSettings =

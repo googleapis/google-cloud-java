@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * interconnectsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         interconnectsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         interconnectsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InterconnectsStubSettings interconnectsSettings = interconnectsSettingsBuilder.build();

@@ -75,7 +75,10 @@ import javax.annotation.Generated;
  * provisioningSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         provisioningSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         provisioningSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProvisioningSettings provisioningSettings = provisioningSettingsBuilder.build();

@@ -96,7 +96,10 @@ import javax.annotation.Generated;
  * cloudBuildSettingsBuilder
  *     .getBuildSettings()
  *     .setRetrySettings(
- *         cloudBuildSettingsBuilder.getBuildSettings().getRetrySettings().toBuilder()
+ *         cloudBuildSettingsBuilder
+ *             .getBuildSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudBuildSettings cloudBuildSettings = cloudBuildSettingsBuilder.build();

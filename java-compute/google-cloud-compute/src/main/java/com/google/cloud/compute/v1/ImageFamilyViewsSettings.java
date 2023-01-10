@@ -59,7 +59,10 @@ import javax.annotation.Generated;
  * imageFamilyViewsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         imageFamilyViewsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         imageFamilyViewsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImageFamilyViewsSettings imageFamilyViewsSettings = imageFamilyViewsSettingsBuilder.build();

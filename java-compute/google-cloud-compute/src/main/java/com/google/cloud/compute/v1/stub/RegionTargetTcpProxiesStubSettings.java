@@ -88,7 +88,10 @@ import org.threeten.bp.Duration;
  * regionTargetTcpProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionTargetTcpProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionTargetTcpProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionTargetTcpProxiesStubSettings regionTargetTcpProxiesSettings =

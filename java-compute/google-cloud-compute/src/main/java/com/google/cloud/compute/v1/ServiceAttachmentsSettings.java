@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * serviceAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         serviceAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         serviceAttachmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceAttachmentsSettings serviceAttachmentsSettings =

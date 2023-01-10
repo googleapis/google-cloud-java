@@ -60,7 +60,10 @@ import javax.annotation.Generated;
  * regionInstancesSettingsBuilder
  *     .bulkInsertSettings()
  *     .setRetrySettings(
- *         regionInstancesSettingsBuilder.bulkInsertSettings().getRetrySettings().toBuilder()
+ *         regionInstancesSettingsBuilder
+ *             .bulkInsertSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionInstancesSettings regionInstancesSettings = regionInstancesSettingsBuilder.build();

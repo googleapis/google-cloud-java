@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * nodeTemplatesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         nodeTemplatesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         nodeTemplatesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NodeTemplatesStubSettings nodeTemplatesSettings = nodeTemplatesSettingsBuilder.build();

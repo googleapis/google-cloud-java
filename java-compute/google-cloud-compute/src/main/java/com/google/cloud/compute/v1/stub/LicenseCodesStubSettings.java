@@ -72,7 +72,10 @@ import org.threeten.bp.Duration;
  * licenseCodesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         licenseCodesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         licenseCodesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LicenseCodesStubSettings licenseCodesSettings = licenseCodesSettingsBuilder.build();

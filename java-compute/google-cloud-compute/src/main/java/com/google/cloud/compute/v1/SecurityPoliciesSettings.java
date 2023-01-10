@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * securityPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         securityPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         securityPoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SecurityPoliciesSettings securityPoliciesSettings = securityPoliciesSettingsBuilder.build();

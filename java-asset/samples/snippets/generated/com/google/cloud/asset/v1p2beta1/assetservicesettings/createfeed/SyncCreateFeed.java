@@ -36,7 +36,10 @@ public class SyncCreateFeed {
     assetServiceSettingsBuilder
         .createFeedSettings()
         .setRetrySettings(
-            assetServiceSettingsBuilder.createFeedSettings().getRetrySettings().toBuilder()
+            assetServiceSettingsBuilder
+                .createFeedSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();

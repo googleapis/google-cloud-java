@@ -96,7 +96,10 @@ import org.threeten.bp.Duration;
  * healthChecksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         healthChecksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         healthChecksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * HealthChecksStubSettings healthChecksSettings = healthChecksSettingsBuilder.build();

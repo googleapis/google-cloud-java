@@ -96,7 +96,10 @@ import org.threeten.bp.Duration;
  * autoscalersSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         autoscalersSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         autoscalersSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AutoscalersStubSettings autoscalersSettings = autoscalersSettingsBuilder.build();

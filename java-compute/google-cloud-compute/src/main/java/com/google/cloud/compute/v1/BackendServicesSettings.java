@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * backendServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         backendServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         backendServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BackendServicesSettings backendServicesSettings = backendServicesSettingsBuilder.build();

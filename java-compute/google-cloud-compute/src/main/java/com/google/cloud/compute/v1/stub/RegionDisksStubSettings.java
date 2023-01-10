@@ -98,7 +98,10 @@ import org.threeten.bp.Duration;
  * regionDisksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionDisksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionDisksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionDisksStubSettings regionDisksSettings = regionDisksSettingsBuilder.build();

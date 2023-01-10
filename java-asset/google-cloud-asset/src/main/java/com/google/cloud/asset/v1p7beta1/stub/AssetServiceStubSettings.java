@@ -75,7 +75,10 @@ import org.threeten.bp.Duration;
  * assetServiceSettingsBuilder
  *     .exportAssetsSettings()
  *     .setRetrySettings(
- *         assetServiceSettingsBuilder.exportAssetsSettings().getRetrySettings().toBuilder()
+ *         assetServiceSettingsBuilder
+ *             .exportAssetsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();

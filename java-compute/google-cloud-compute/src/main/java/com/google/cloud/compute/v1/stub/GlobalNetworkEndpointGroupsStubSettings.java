@@ -94,7 +94,10 @@ import org.threeten.bp.Duration;
  * globalNetworkEndpointGroupsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         globalNetworkEndpointGroupsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         globalNetworkEndpointGroupsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GlobalNetworkEndpointGroupsStubSettings globalNetworkEndpointGroupsSettings =

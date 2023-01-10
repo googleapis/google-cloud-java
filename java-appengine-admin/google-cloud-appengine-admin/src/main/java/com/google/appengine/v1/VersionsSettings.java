@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * versionsSettingsBuilder
  *     .getVersionSettings()
  *     .setRetrySettings(
- *         versionsSettingsBuilder.getVersionSettings().getRetrySettings().toBuilder()
+ *         versionsSettingsBuilder
+ *             .getVersionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VersionsSettings versionsSettings = versionsSettingsBuilder.build();

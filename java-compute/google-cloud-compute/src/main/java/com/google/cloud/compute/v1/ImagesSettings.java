@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * imagesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         imagesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         imagesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImagesSettings imagesSettings = imagesSettingsBuilder.build();

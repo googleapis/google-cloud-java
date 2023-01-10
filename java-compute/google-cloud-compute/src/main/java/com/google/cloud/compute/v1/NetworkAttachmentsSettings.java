@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * networkAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         networkAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         networkAttachmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NetworkAttachmentsSettings networkAttachmentsSettings =

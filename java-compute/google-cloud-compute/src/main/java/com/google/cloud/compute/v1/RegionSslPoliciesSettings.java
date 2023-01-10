@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionSslPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionSslPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionSslPoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionSslPoliciesSettings regionSslPoliciesSettings = regionSslPoliciesSettingsBuilder.build();

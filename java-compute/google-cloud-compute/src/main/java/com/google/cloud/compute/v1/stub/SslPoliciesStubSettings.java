@@ -97,7 +97,10 @@ import org.threeten.bp.Duration;
  * sslPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         sslPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         sslPoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SslPoliciesStubSettings sslPoliciesSettings = sslPoliciesSettingsBuilder.build();

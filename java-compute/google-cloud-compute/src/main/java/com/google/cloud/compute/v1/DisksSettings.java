@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * disksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         disksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         disksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DisksSettings disksSettings = disksSettingsBuilder.build();

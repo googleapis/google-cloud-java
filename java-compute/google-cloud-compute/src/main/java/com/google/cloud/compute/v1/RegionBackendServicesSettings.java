@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionBackendServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionBackendServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionBackendServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionBackendServicesSettings regionBackendServicesSettings =

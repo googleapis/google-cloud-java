@@ -72,7 +72,10 @@ import javax.annotation.Generated;
  * tetherSettingsBuilder
  *     .egressSettings()
  *     .setRetrySettings(
- *         tetherSettingsBuilder.egressSettings().getRetrySettings().toBuilder()
+ *         tetherSettingsBuilder
+ *             .egressSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TetherStubSettings tetherSettings = tetherSettingsBuilder.build();

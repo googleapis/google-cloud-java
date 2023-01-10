@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
  * backendBucketsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         backendBucketsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         backendBucketsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BackendBucketsStubSettings backendBucketsSettings = backendBucketsSettingsBuilder.build();
