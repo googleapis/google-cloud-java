@@ -81,7 +81,10 @@ import javax.annotation.Generated;
  * vmwareEngineSettingsBuilder
  *     .getPrivateCloudSettings()
  *     .setRetrySettings(
- *         vmwareEngineSettingsBuilder.getPrivateCloudSettings().getRetrySettings().toBuilder()
+ *         vmwareEngineSettingsBuilder
+ *             .getPrivateCloudSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VmwareEngineSettings vmwareEngineSettings = vmwareEngineSettingsBuilder.build();

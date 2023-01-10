@@ -149,7 +149,10 @@ import org.threeten.bp.Duration;
  * vmwareEngineSettingsBuilder
  *     .getPrivateCloudSettings()
  *     .setRetrySettings(
- *         vmwareEngineSettingsBuilder.getPrivateCloudSettings().getRetrySettings().toBuilder()
+ *         vmwareEngineSettingsBuilder
+ *             .getPrivateCloudSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VmwareEngineStubSettings vmwareEngineSettings = vmwareEngineSettingsBuilder.build();

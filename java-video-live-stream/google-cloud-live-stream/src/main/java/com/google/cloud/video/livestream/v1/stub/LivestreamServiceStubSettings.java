@@ -112,7 +112,10 @@ import org.threeten.bp.Duration;
  * livestreamServiceSettingsBuilder
  *     .getChannelSettings()
  *     .setRetrySettings(
- *         livestreamServiceSettingsBuilder.getChannelSettings().getRetrySettings().toBuilder()
+ *         livestreamServiceSettingsBuilder
+ *             .getChannelSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LivestreamServiceStubSettings livestreamServiceSettings =
