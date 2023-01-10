@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.13.2](https://github.com/googleapis/java-datastore/compare/v2.13.1...v2.13.2) (2023-01-10)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.1 ([#953](https://github.com/googleapis/java-datastore/issues/953)) ([fdffe1e](https://github.com/googleapis/java-datastore/commit/fdffe1e6b84fa58d7bf4210016d814642cbd45a2))
+* Update dependency com.google.errorprone:error_prone_core to v2.18.0 ([#951](https://github.com/googleapis/java-datastore/issues/951)) ([ac5c83e](https://github.com/googleapis/java-datastore/commit/ac5c83e03f3ea1ef6a66373b80858cd68dda0c80))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.2 ([#954](https://github.com/googleapis/java-datastore/issues/954)) ([b0b72bb](https://github.com/googleapis/java-datastore/commit/b0b72bb8ba3c6382f3d5883cd302a0d0756ccb71))
+
 ## [2.13.1](https://github.com/googleapis/java-datastore/compare/v2.13.0...v2.13.1) (2023-01-03)
 
 
