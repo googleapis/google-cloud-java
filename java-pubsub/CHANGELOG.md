@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.123.0](https://github.com/googleapis/java-pubsub/compare/v1.122.2...v1.123.0) (2023-01-10)
+
+
+### Features
+
+* Add schema evolution methods and fields ([#1384](https://github.com/googleapis/java-pubsub/issues/1384)) ([746a6e0](https://github.com/googleapis/java-pubsub/commit/746a6e040eb94d73bfbaece051d08c60c9885326))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.1 ([#1450](https://github.com/googleapis/java-pubsub/issues/1450)) ([2dcbcad](https://github.com/googleapis/java-pubsub/commit/2dcbcadfa56282733ab7998ec9cf360f0a71eaca))
+
 ## [1.122.2](https://github.com/googleapis/java-pubsub/compare/v1.122.1...v1.122.2) (2022-12-15)
 
 
