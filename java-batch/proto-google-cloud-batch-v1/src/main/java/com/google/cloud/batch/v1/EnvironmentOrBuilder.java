@@ -81,4 +81,111 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; variables = 1;</code>
    */
   java.lang.String getVariablesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * A map of environment variable names to Secret Manager secret names.
+   * The VM will access the named secrets to set the value of each environment
+   * variable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; secret_variables = 2;</code>
+   */
+  int getSecretVariablesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A map of environment variable names to Secret Manager secret names.
+   * The VM will access the named secrets to set the value of each environment
+   * variable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; secret_variables = 2;</code>
+   */
+  boolean containsSecretVariables(java.lang.String key);
+  /** Use {@link #getSecretVariablesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getSecretVariables();
+  /**
+   *
+   *
+   * <pre>
+   * A map of environment variable names to Secret Manager secret names.
+   * The VM will access the named secrets to set the value of each environment
+   * variable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; secret_variables = 2;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getSecretVariablesMap();
+  /**
+   *
+   *
+   * <pre>
+   * A map of environment variable names to Secret Manager secret names.
+   * The VM will access the named secrets to set the value of each environment
+   * variable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; secret_variables = 2;</code>
+   */
+
+  /* nullable */
+  java.lang.String getSecretVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * A map of environment variable names to Secret Manager secret names.
+   * The VM will access the named secrets to set the value of each environment
+   * variable.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; secret_variables = 2;</code>
+   */
+  java.lang.String getSecretVariablesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * An encrypted JSON dictionary where the key/value pairs correspond to
+   * environment variable names and their values.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment.KMSEnvMap encrypted_variables = 3;</code>
+   *
+   * @return Whether the encryptedVariables field is set.
+   */
+  boolean hasEncryptedVariables();
+  /**
+   *
+   *
+   * <pre>
+   * An encrypted JSON dictionary where the key/value pairs correspond to
+   * environment variable names and their values.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment.KMSEnvMap encrypted_variables = 3;</code>
+   *
+   * @return The encryptedVariables.
+   */
+  com.google.cloud.batch.v1.Environment.KMSEnvMap getEncryptedVariables();
+  /**
+   *
+   *
+   * <pre>
+   * An encrypted JSON dictionary where the key/value pairs correspond to
+   * environment variable names and their values.
+   * </pre>
+   *
+   * <code>.google.cloud.batch.v1.Environment.KMSEnvMap encrypted_variables = 3;</code>
+   */
+  com.google.cloud.batch.v1.Environment.KMSEnvMapOrBuilder getEncryptedVariablesOrBuilder();
 }
