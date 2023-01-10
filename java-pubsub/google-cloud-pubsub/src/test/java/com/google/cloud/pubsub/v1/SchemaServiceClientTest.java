@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemaRevisionsPagedResponse;
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -38,13 +39,19 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
+import com.google.pubsub.v1.CommitSchemaRequest;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
+import com.google.pubsub.v1.DeleteSchemaRevisionRequest;
 import com.google.pubsub.v1.Encoding;
 import com.google.pubsub.v1.GetSchemaRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsResponse;
 import com.google.pubsub.v1.ListSchemasRequest;
 import com.google.pubsub.v1.ListSchemasResponse;
 import com.google.pubsub.v1.ProjectName;
+import com.google.pubsub.v1.RollbackSchemaRequest;
 import com.google.pubsub.v1.Schema;
 import com.google.pubsub.v1.SchemaName;
 import com.google.pubsub.v1.ValidateMessageRequest;
@@ -112,6 +119,8 @@ public class SchemaServiceClientTest {
         Schema.newBuilder()
             .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
             .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
             .build();
     mockSchemaService.addResponse(expectedResponse);
 
@@ -157,6 +166,8 @@ public class SchemaServiceClientTest {
         Schema.newBuilder()
             .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
             .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
             .build();
     mockSchemaService.addResponse(expectedResponse);
 
@@ -202,6 +213,8 @@ public class SchemaServiceClientTest {
         Schema.newBuilder()
             .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
             .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
             .build();
     mockSchemaService.addResponse(expectedResponse);
 
@@ -241,6 +254,8 @@ public class SchemaServiceClientTest {
         Schema.newBuilder()
             .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
             .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
             .build();
     mockSchemaService.addResponse(expectedResponse);
 
@@ -356,6 +371,360 @@ public class SchemaServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSchemaRevisionsTest() throws Exception {
+    Schema responsesElement = Schema.newBuilder().build();
+    ListSchemaRevisionsResponse expectedResponse =
+        ListSchemaRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+
+    ListSchemaRevisionsPagedResponse pagedListResponse = client.listSchemaRevisions(name);
+
+    List<Schema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSchemaRevisionsRequest actualRequest = ((ListSchemaRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSchemaRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+      client.listSchemaRevisions(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSchemaRevisionsTest2() throws Exception {
+    Schema responsesElement = Schema.newBuilder().build();
+    ListSchemaRevisionsResponse expectedResponse =
+        ListSchemaRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ListSchemaRevisionsPagedResponse pagedListResponse = client.listSchemaRevisions(name);
+
+    List<Schema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSchemaRevisionsRequest actualRequest = ((ListSchemaRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSchemaRevisionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.listSchemaRevisions(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void commitSchemaTest() throws Exception {
+    Schema expectedResponse =
+        Schema.newBuilder()
+            .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+            .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+    Schema schema = Schema.newBuilder().build();
+
+    Schema actualResponse = client.commitSchema(name, schema);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CommitSchemaRequest actualRequest = ((CommitSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(schema, actualRequest.getSchema());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void commitSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+      Schema schema = Schema.newBuilder().build();
+      client.commitSchema(name, schema);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void commitSchemaTest2() throws Exception {
+    Schema expectedResponse =
+        Schema.newBuilder()
+            .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+            .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    Schema schema = Schema.newBuilder().build();
+
+    Schema actualResponse = client.commitSchema(name, schema);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CommitSchemaRequest actualRequest = ((CommitSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(schema, actualRequest.getSchema());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void commitSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      Schema schema = Schema.newBuilder().build();
+      client.commitSchema(name, schema);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rollbackSchemaTest() throws Exception {
+    Schema expectedResponse =
+        Schema.newBuilder()
+            .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+            .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+    String revisionId = "revisionId-1507445162";
+
+    Schema actualResponse = client.rollbackSchema(name, revisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackSchemaRequest actualRequest = ((RollbackSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(revisionId, actualRequest.getRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+      String revisionId = "revisionId-1507445162";
+      client.rollbackSchema(name, revisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void rollbackSchemaTest2() throws Exception {
+    Schema expectedResponse =
+        Schema.newBuilder()
+            .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+            .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String revisionId = "revisionId-1507445162";
+
+    Schema actualResponse = client.rollbackSchema(name, revisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RollbackSchemaRequest actualRequest = ((RollbackSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(revisionId, actualRequest.getRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rollbackSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String revisionId = "revisionId-1507445162";
+      client.rollbackSchema(name, revisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSchemaRevisionTest() throws Exception {
+    Schema expectedResponse =
+        Schema.newBuilder()
+            .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+            .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+    String revisionId = "revisionId-1507445162";
+
+    Schema actualResponse = client.deleteSchemaRevision(name, revisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSchemaRevisionRequest actualRequest =
+        ((DeleteSchemaRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(revisionId, actualRequest.getRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSchemaRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+      String revisionId = "revisionId-1507445162";
+      client.deleteSchemaRevision(name, revisionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSchemaRevisionTest2() throws Exception {
+    Schema expectedResponse =
+        Schema.newBuilder()
+            .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+            .setDefinition("definition-1014418093")
+            .setRevisionId("revisionId-1507445162")
+            .setRevisionCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockSchemaService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String revisionId = "revisionId-1507445162";
+
+    Schema actualResponse = client.deleteSchemaRevision(name, revisionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSchemaService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSchemaRevisionRequest actualRequest =
+        ((DeleteSchemaRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(revisionId, actualRequest.getRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSchemaRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSchemaService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String revisionId = "revisionId-1507445162";
+      client.deleteSchemaRevision(name, revisionId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

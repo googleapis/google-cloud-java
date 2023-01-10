@@ -22,30 +22,31 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * Request for the GetSchema method.
+ * Request for the `ListSchemaRevisions` method.
  * </pre>
  *
- * Protobuf type {@code google.pubsub.v1.GetSchemaRequest}
+ * Protobuf type {@code google.pubsub.v1.ListSchemaRevisionsRequest}
  */
-public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessageV3
+public final class ListSchemaRevisionsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.pubsub.v1.GetSchemaRequest)
-    GetSchemaRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.pubsub.v1.ListSchemaRevisionsRequest)
+    ListSchemaRevisionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetSchemaRequest.newBuilder() to construct.
-  private GetSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ListSchemaRevisionsRequest.newBuilder() to construct.
+  private ListSchemaRevisionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetSchemaRequest() {
+  private ListSchemaRevisionsRequest() {
     name_ = "";
     view_ = 0;
+    pageToken_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetSchemaRequest();
+    return new ListSchemaRevisionsRequest();
   }
 
   @java.lang.Override
@@ -55,17 +56,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
-        .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+        .internal_static_google_pubsub_v1_ListSchemaRevisionsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.pubsub.v1.SchemaProto
-        .internal_static_google_pubsub_v1_GetSchemaRequest_fieldAccessorTable
+        .internal_static_google_pubsub_v1_ListSchemaRevisionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.GetSchemaRequest.class,
-            com.google.pubsub.v1.GetSchemaRequest.Builder.class);
+            com.google.pubsub.v1.ListSchemaRevisionsRequest.class,
+            com.google.pubsub.v1.ListSchemaRevisionsRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -74,8 +75,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The name of the schema to list revisions for.
    * </pre>
    *
    * <code>
@@ -100,8 +100,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The name of the schema to list revisions for.
    * </pre>
    *
    * <code>
@@ -129,8 +128,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * The set of Schema fields to return in the response. If not set, returns
+   * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+   * retrieve all fields.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -145,8 +145,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * The set of Schema fields to return in the response. If not set, returns
+   * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+   * retrieve all fields.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -158,6 +159,75 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("deprecation")
     com.google.pubsub.v1.SchemaView result = com.google.pubsub.v1.SchemaView.valueOf(view_);
     return result == null ? com.google.pubsub.v1.SchemaView.UNRECOGNIZED : result;
+  }
+
+  public static final int PAGE_SIZE_FIELD_NUMBER = 3;
+  private int pageSize_;
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of revisions to return per page.
+   * </pre>
+   *
+   * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
+   */
+  @java.lang.Override
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
+  private volatile java.lang.Object pageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * The page token, received from a previous ListSchemaRevisions call.
+   * Provide this to retrieve the subsequent page.
+   * </pre>
+   *
+   * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The page token, received from a previous ListSchemaRevisions call.
+   * Provide this to retrieve the subsequent page.
+   * </pre>
+   *
+   * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -180,6 +250,12 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (view_ != com.google.pubsub.v1.SchemaView.SCHEMA_VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, view_);
     }
+    if (pageSize_ != 0) {
+      output.writeInt32(3, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -195,6 +271,12 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (view_ != com.google.pubsub.v1.SchemaView.SCHEMA_VIEW_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
     }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -205,13 +287,16 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.pubsub.v1.GetSchemaRequest)) {
+    if (!(obj instanceof com.google.pubsub.v1.ListSchemaRevisionsRequest)) {
       return super.equals(obj);
     }
-    com.google.pubsub.v1.GetSchemaRequest other = (com.google.pubsub.v1.GetSchemaRequest) obj;
+    com.google.pubsub.v1.ListSchemaRevisionsRequest other =
+        (com.google.pubsub.v1.ListSchemaRevisionsRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (view_ != other.view_) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -227,75 +312,80 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(byte[] data)
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseDelimitedFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,7 +402,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.pubsub.v1.GetSchemaRequest prototype) {
+  public static Builder newBuilder(com.google.pubsub.v1.ListSchemaRevisionsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -330,31 +420,31 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request for the GetSchema method.
+   * Request for the `ListSchemaRevisions` method.
    * </pre>
    *
-   * Protobuf type {@code google.pubsub.v1.GetSchemaRequest}
+   * Protobuf type {@code google.pubsub.v1.ListSchemaRevisionsRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.GetSchemaRequest)
-      com.google.pubsub.v1.GetSchemaRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.ListSchemaRevisionsRequest)
+      com.google.pubsub.v1.ListSchemaRevisionsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+          .internal_static_google_pubsub_v1_ListSchemaRevisionsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_fieldAccessorTable
+          .internal_static_google_pubsub_v1_ListSchemaRevisionsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.GetSchemaRequest.class,
-              com.google.pubsub.v1.GetSchemaRequest.Builder.class);
+              com.google.pubsub.v1.ListSchemaRevisionsRequest.class,
+              com.google.pubsub.v1.ListSchemaRevisionsRequest.Builder.class);
     }
 
-    // Construct using com.google.pubsub.v1.GetSchemaRequest.newBuilder()
+    // Construct using com.google.pubsub.v1.ListSchemaRevisionsRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -368,23 +458,27 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
       view_ = 0;
 
+      pageSize_ = 0;
+
+      pageToken_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+          .internal_static_google_pubsub_v1_ListSchemaRevisionsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest getDefaultInstanceForType() {
-      return com.google.pubsub.v1.GetSchemaRequest.getDefaultInstance();
+    public com.google.pubsub.v1.ListSchemaRevisionsRequest getDefaultInstanceForType() {
+      return com.google.pubsub.v1.ListSchemaRevisionsRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest build() {
-      com.google.pubsub.v1.GetSchemaRequest result = buildPartial();
+    public com.google.pubsub.v1.ListSchemaRevisionsRequest build() {
+      com.google.pubsub.v1.ListSchemaRevisionsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -392,11 +486,13 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest buildPartial() {
-      com.google.pubsub.v1.GetSchemaRequest result =
-          new com.google.pubsub.v1.GetSchemaRequest(this);
+    public com.google.pubsub.v1.ListSchemaRevisionsRequest buildPartial() {
+      com.google.pubsub.v1.ListSchemaRevisionsRequest result =
+          new com.google.pubsub.v1.ListSchemaRevisionsRequest(this);
       result.name_ = name_;
       result.view_ = view_;
+      result.pageSize_ = pageSize_;
+      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
     }
@@ -436,22 +532,30 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.pubsub.v1.GetSchemaRequest) {
-        return mergeFrom((com.google.pubsub.v1.GetSchemaRequest) other);
+      if (other instanceof com.google.pubsub.v1.ListSchemaRevisionsRequest) {
+        return mergeFrom((com.google.pubsub.v1.ListSchemaRevisionsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.pubsub.v1.GetSchemaRequest other) {
-      if (other == com.google.pubsub.v1.GetSchemaRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.pubsub.v1.ListSchemaRevisionsRequest other) {
+      if (other == com.google.pubsub.v1.ListSchemaRevisionsRequest.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
+      }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -491,6 +595,18 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
                 break;
               } // case 16
+            case 24:
+              {
+                pageSize_ = input.readInt32();
+
+                break;
+              } // case 24
+            case 34:
+              {
+                pageToken_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -513,8 +629,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The name of the schema to list revisions for.
      * </pre>
      *
      * <code>
@@ -538,8 +653,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The name of the schema to list revisions for.
      * </pre>
      *
      * <code>
@@ -563,8 +677,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The name of the schema to list revisions for.
      * </pre>
      *
      * <code>
@@ -587,8 +700,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The name of the schema to list revisions for.
      * </pre>
      *
      * <code>
@@ -607,8 +719,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The name of the schema to list revisions for.
      * </pre>
      *
      * <code>
@@ -634,8 +745,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * The set of Schema fields to return in the response. If not set, returns
+     * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+     * retrieve all fields.
      * </pre>
      *
      * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -650,8 +762,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * The set of Schema fields to return in the response. If not set, returns
+     * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+     * retrieve all fields.
      * </pre>
      *
      * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -669,8 +782,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * The set of Schema fields to return in the response. If not set, returns
+     * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+     * retrieve all fields.
      * </pre>
      *
      * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -687,8 +801,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * The set of Schema fields to return in the response. If not set, returns
+     * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+     * retrieve all fields.
      * </pre>
      *
      * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -709,8 +824,9 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * The set of Schema fields to return in the response. If not set, returns
+     * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+     * retrieve all fields.
      * </pre>
      *
      * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -720,6 +836,169 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     public Builder clearView() {
 
       view_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pageSize_;
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of revisions to return per page.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     *
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of revisions to return per page.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     *
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageSize(int value) {
+
+      pageSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The maximum number of revisions to return per page.
+     * </pre>
+     *
+     * <code>int32 page_size = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageSize() {
+
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The page token, received from a previous ListSchemaRevisions call.
+     * Provide this to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The page token, received from a previous ListSchemaRevisions call.
+     * Provide this to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return The bytes for pageToken.
+     */
+    public com.google.protobuf.ByteString getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The page token, received from a previous ListSchemaRevisions call.
+     * Provide this to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      pageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The page token, received from a previous ListSchemaRevisions call.
+     * Provide this to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPageToken() {
+
+      pageToken_ = getDefaultInstance().getPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The page token, received from a previous ListSchemaRevisions call.
+     * Provide this to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 4;</code>
+     *
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      pageToken_ = value;
       onChanged();
       return this;
     }
@@ -735,24 +1014,24 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.GetSchemaRequest)
+    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.ListSchemaRevisionsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.pubsub.v1.GetSchemaRequest)
-  private static final com.google.pubsub.v1.GetSchemaRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.pubsub.v1.ListSchemaRevisionsRequest)
+  private static final com.google.pubsub.v1.ListSchemaRevisionsRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.pubsub.v1.GetSchemaRequest();
+    DEFAULT_INSTANCE = new com.google.pubsub.v1.ListSchemaRevisionsRequest();
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest getDefaultInstance() {
+  public static com.google.pubsub.v1.ListSchemaRevisionsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetSchemaRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetSchemaRequest>() {
+  private static final com.google.protobuf.Parser<ListSchemaRevisionsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListSchemaRevisionsRequest>() {
         @java.lang.Override
-        public GetSchemaRequest parsePartialFrom(
+        public ListSchemaRevisionsRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -771,17 +1050,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
         }
       };
 
-  public static com.google.protobuf.Parser<GetSchemaRequest> parser() {
+  public static com.google.protobuf.Parser<ListSchemaRevisionsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetSchemaRequest> getParserForType() {
+  public com.google.protobuf.Parser<ListSchemaRevisionsRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.pubsub.v1.GetSchemaRequest getDefaultInstanceForType() {
+  public com.google.pubsub.v1.ListSchemaRevisionsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

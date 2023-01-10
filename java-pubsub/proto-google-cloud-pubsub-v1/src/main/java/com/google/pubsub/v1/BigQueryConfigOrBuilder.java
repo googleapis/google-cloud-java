@@ -102,8 +102,8 @@ public interface BigQueryConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. An output-only field that indicates whether or not the subscription can
-   * receive messages.
+   * Output only. An output-only field that indicates whether or not the
+   * subscription can receive messages.
    * </pre>
    *
    * <code>
@@ -117,8 +117,8 @@ public interface BigQueryConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. An output-only field that indicates whether or not the subscription can
-   * receive messages.
+   * Output only. An output-only field that indicates whether or not the
+   * subscription can receive messages.
    * </pre>
    *
    * <code>

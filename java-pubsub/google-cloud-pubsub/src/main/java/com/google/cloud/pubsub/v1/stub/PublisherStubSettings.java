@@ -111,7 +111,10 @@ import org.threeten.bp.Duration;
  * topicAdminSettingsBuilder
  *     .createTopicSettings()
  *     .setRetrySettings(
- *         topicAdminSettingsBuilder.createTopicSettings().getRetrySettings().toBuilder()
+ *         topicAdminSettingsBuilder
+ *             .createTopicSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PublisherStubSettings topicAdminSettings = topicAdminSettingsBuilder.build();

@@ -18,16 +18,16 @@
 
 package com.google.pubsub.v1;
 
-public interface GetSchemaRequestOrBuilder
+public interface CommitSchemaRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetSchemaRequest)
+    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.CommitSchemaRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
+   * Required. The name of the schema we are revising.
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
+   * Required. The name of the schema we are revising.
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -58,26 +58,34 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The schema revision to commit.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return Whether the schema field is set.
    */
-  int getViewValue();
+  boolean hasSchema();
   /**
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The schema revision to commit.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The view.
+   * @return The schema.
    */
-  com.google.pubsub.v1.SchemaView getView();
+  com.google.pubsub.v1.Schema getSchema();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The schema revision to commit.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  com.google.pubsub.v1.SchemaOrBuilder getSchemaOrBuilder();
 }

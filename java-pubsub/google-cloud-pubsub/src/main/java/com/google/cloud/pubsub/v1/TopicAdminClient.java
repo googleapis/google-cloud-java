@@ -139,11 +139,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * TopicAdminSettings topicAdminSettings =
- *     TopicAdminSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             TopicAdminSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ * TopicAdminSettings topicAdminSettings = TopicAdminSettings.newHttpJsonBuilder().build();
  * TopicAdminClient topicAdminClient = TopicAdminClient.create(topicAdminSettings);
  * }</pre>
  *

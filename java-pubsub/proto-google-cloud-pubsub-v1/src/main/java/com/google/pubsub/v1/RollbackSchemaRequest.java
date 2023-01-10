@@ -22,30 +22,30 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * Request for the GetSchema method.
+ * Request for the `RollbackSchema` method.
  * </pre>
  *
- * Protobuf type {@code google.pubsub.v1.GetSchemaRequest}
+ * Protobuf type {@code google.pubsub.v1.RollbackSchemaRequest}
  */
-public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessageV3
+public final class RollbackSchemaRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.pubsub.v1.GetSchemaRequest)
-    GetSchemaRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.pubsub.v1.RollbackSchemaRequest)
+    RollbackSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetSchemaRequest.newBuilder() to construct.
-  private GetSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use RollbackSchemaRequest.newBuilder() to construct.
+  private RollbackSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetSchemaRequest() {
+  private RollbackSchemaRequest() {
     name_ = "";
-    view_ = 0;
+    revisionId_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetSchemaRequest();
+    return new RollbackSchemaRequest();
   }
 
   @java.lang.Override
@@ -55,17 +55,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
-        .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+        .internal_static_google_pubsub_v1_RollbackSchemaRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.pubsub.v1.SchemaProto
-        .internal_static_google_pubsub_v1_GetSchemaRequest_fieldAccessorTable
+        .internal_static_google_pubsub_v1_RollbackSchemaRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.GetSchemaRequest.class,
-            com.google.pubsub.v1.GetSchemaRequest.Builder.class);
+            com.google.pubsub.v1.RollbackSchemaRequest.class,
+            com.google.pubsub.v1.RollbackSchemaRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -74,8 +74,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The schema being rolled back with revision id.
    * </pre>
    *
    * <code>
@@ -100,8 +99,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The schema being rolled back with revision id.
    * </pre>
    *
    * <code>
@@ -123,41 +121,57 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int VIEW_FIELD_NUMBER = 2;
-  private int view_;
+  public static final int REVISION_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object revisionId_;
   /**
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The revision ID to roll back to.
+   * It must be a revision of the same schema.
+   *   Example: c7cfa2a8
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return The revisionId.
    */
   @java.lang.Override
-  public int getViewValue() {
-    return view_;
+  public java.lang.String getRevisionId() {
+    java.lang.Object ref = revisionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      revisionId_ = s;
+      return s;
+    }
   }
   /**
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The revision ID to roll back to.
+   * It must be a revision of the same schema.
+   *   Example: c7cfa2a8
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The view.
+   * @return The bytes for revisionId.
    */
   @java.lang.Override
-  public com.google.pubsub.v1.SchemaView getView() {
-    @SuppressWarnings("deprecation")
-    com.google.pubsub.v1.SchemaView result = com.google.pubsub.v1.SchemaView.valueOf(view_);
-    return result == null ? com.google.pubsub.v1.SchemaView.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString getRevisionIdBytes() {
+    java.lang.Object ref = revisionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      revisionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -177,8 +191,8 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (view_ != com.google.pubsub.v1.SchemaView.SCHEMA_VIEW_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, view_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, revisionId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -192,8 +206,8 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (view_ != com.google.pubsub.v1.SchemaView.SCHEMA_VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, revisionId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -205,13 +219,14 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.pubsub.v1.GetSchemaRequest)) {
+    if (!(obj instanceof com.google.pubsub.v1.RollbackSchemaRequest)) {
       return super.equals(obj);
     }
-    com.google.pubsub.v1.GetSchemaRequest other = (com.google.pubsub.v1.GetSchemaRequest) obj;
+    com.google.pubsub.v1.RollbackSchemaRequest other =
+        (com.google.pubsub.v1.RollbackSchemaRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (view_ != other.view_) return false;
+    if (!getRevisionId().equals(other.getRevisionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -225,77 +240,78 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
+    hash = (37 * hash) + REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRevisionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(byte[] data)
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseDelimitedFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.RollbackSchemaRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,7 +328,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.pubsub.v1.GetSchemaRequest prototype) {
+  public static Builder newBuilder(com.google.pubsub.v1.RollbackSchemaRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -330,31 +346,31 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request for the GetSchema method.
+   * Request for the `RollbackSchema` method.
    * </pre>
    *
-   * Protobuf type {@code google.pubsub.v1.GetSchemaRequest}
+   * Protobuf type {@code google.pubsub.v1.RollbackSchemaRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.GetSchemaRequest)
-      com.google.pubsub.v1.GetSchemaRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.RollbackSchemaRequest)
+      com.google.pubsub.v1.RollbackSchemaRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+          .internal_static_google_pubsub_v1_RollbackSchemaRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_fieldAccessorTable
+          .internal_static_google_pubsub_v1_RollbackSchemaRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.GetSchemaRequest.class,
-              com.google.pubsub.v1.GetSchemaRequest.Builder.class);
+              com.google.pubsub.v1.RollbackSchemaRequest.class,
+              com.google.pubsub.v1.RollbackSchemaRequest.Builder.class);
     }
 
-    // Construct using com.google.pubsub.v1.GetSchemaRequest.newBuilder()
+    // Construct using com.google.pubsub.v1.RollbackSchemaRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -366,7 +382,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       super.clear();
       name_ = "";
 
-      view_ = 0;
+      revisionId_ = "";
 
       return this;
     }
@@ -374,17 +390,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+          .internal_static_google_pubsub_v1_RollbackSchemaRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest getDefaultInstanceForType() {
-      return com.google.pubsub.v1.GetSchemaRequest.getDefaultInstance();
+    public com.google.pubsub.v1.RollbackSchemaRequest getDefaultInstanceForType() {
+      return com.google.pubsub.v1.RollbackSchemaRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest build() {
-      com.google.pubsub.v1.GetSchemaRequest result = buildPartial();
+    public com.google.pubsub.v1.RollbackSchemaRequest build() {
+      com.google.pubsub.v1.RollbackSchemaRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -392,11 +408,11 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest buildPartial() {
-      com.google.pubsub.v1.GetSchemaRequest result =
-          new com.google.pubsub.v1.GetSchemaRequest(this);
+    public com.google.pubsub.v1.RollbackSchemaRequest buildPartial() {
+      com.google.pubsub.v1.RollbackSchemaRequest result =
+          new com.google.pubsub.v1.RollbackSchemaRequest(this);
       result.name_ = name_;
-      result.view_ = view_;
+      result.revisionId_ = revisionId_;
       onBuilt();
       return result;
     }
@@ -436,22 +452,23 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.pubsub.v1.GetSchemaRequest) {
-        return mergeFrom((com.google.pubsub.v1.GetSchemaRequest) other);
+      if (other instanceof com.google.pubsub.v1.RollbackSchemaRequest) {
+        return mergeFrom((com.google.pubsub.v1.RollbackSchemaRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.pubsub.v1.GetSchemaRequest other) {
-      if (other == com.google.pubsub.v1.GetSchemaRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.pubsub.v1.RollbackSchemaRequest other) {
+      if (other == com.google.pubsub.v1.RollbackSchemaRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
+      if (!other.getRevisionId().isEmpty()) {
+        revisionId_ = other.revisionId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -485,12 +502,12 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
                 break;
               } // case 10
-            case 16:
+            case 18:
               {
-                view_ = input.readEnum();
+                revisionId_ = input.readStringRequireUtf8();
 
                 break;
-              } // case 16
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -513,8 +530,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The schema being rolled back with revision id.
      * </pre>
      *
      * <code>
@@ -538,8 +554,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The schema being rolled back with revision id.
      * </pre>
      *
      * <code>
@@ -563,8 +578,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The schema being rolled back with revision id.
      * </pre>
      *
      * <code>
@@ -587,8 +601,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The schema being rolled back with revision id.
      * </pre>
      *
      * <code>
@@ -607,8 +620,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
-     * Format is `projects/{project}/schemas/{schema}`.
+     * Required. The schema being rolled back with revision id.
      * </pre>
      *
      * <code>
@@ -629,79 +641,75 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private int view_ = 0;
+    private java.lang.Object revisionId_ = "";
     /**
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The revision ID to roll back to.
+     * It must be a revision of the same schema.
+     *   Example: c7cfa2a8
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The enum numeric value on the wire for view.
+     * @return The revisionId.
      */
-    @java.lang.Override
-    public int getViewValue() {
-      return view_;
+    public java.lang.String getRevisionId() {
+      java.lang.Object ref = revisionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revisionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The revision ID to roll back to.
+     * It must be a revision of the same schema.
+     *   Example: c7cfa2a8
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The enum numeric value on the wire for view to set.
+     * @return The bytes for revisionId.
+     */
+    public com.google.protobuf.ByteString getRevisionIdBytes() {
+      java.lang.Object ref = revisionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The revision ID to roll back to.
+     * It must be a revision of the same schema.
+     *   Example: c7cfa2a8
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The revisionId to set.
      * @return This builder for chaining.
      */
-    public Builder setViewValue(int value) {
-
-      view_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
-     * </pre>
-     *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
-     *
-     * @return The view.
-     */
-    @java.lang.Override
-    public com.google.pubsub.v1.SchemaView getView() {
-      @SuppressWarnings("deprecation")
-      com.google.pubsub.v1.SchemaView result = com.google.pubsub.v1.SchemaView.valueOf(view_);
-      return result == null ? com.google.pubsub.v1.SchemaView.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
-     * </pre>
-     *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
-     *
-     * @param value The view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setView(com.google.pubsub.v1.SchemaView value) {
+    public Builder setRevisionId(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      view_ = value.getNumber();
+      revisionId_ = value;
       onChanged();
       return this;
     }
@@ -709,17 +717,42 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The revision ID to roll back to.
+     * It must be a revision of the same schema.
+     *   Example: c7cfa2a8
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearView() {
+    public Builder clearRevisionId() {
 
-      view_ = 0;
+      revisionId_ = getDefaultInstance().getRevisionId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The revision ID to roll back to.
+     * It must be a revision of the same schema.
+     *   Example: c7cfa2a8
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for revisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      revisionId_ = value;
       onChanged();
       return this;
     }
@@ -735,24 +768,24 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.GetSchemaRequest)
+    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.RollbackSchemaRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.pubsub.v1.GetSchemaRequest)
-  private static final com.google.pubsub.v1.GetSchemaRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.pubsub.v1.RollbackSchemaRequest)
+  private static final com.google.pubsub.v1.RollbackSchemaRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.pubsub.v1.GetSchemaRequest();
+    DEFAULT_INSTANCE = new com.google.pubsub.v1.RollbackSchemaRequest();
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest getDefaultInstance() {
+  public static com.google.pubsub.v1.RollbackSchemaRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetSchemaRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetSchemaRequest>() {
+  private static final com.google.protobuf.Parser<RollbackSchemaRequest> PARSER =
+      new com.google.protobuf.AbstractParser<RollbackSchemaRequest>() {
         @java.lang.Override
-        public GetSchemaRequest parsePartialFrom(
+        public RollbackSchemaRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -771,17 +804,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
         }
       };
 
-  public static com.google.protobuf.Parser<GetSchemaRequest> parser() {
+  public static com.google.protobuf.Parser<RollbackSchemaRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetSchemaRequest> getParserForType() {
+  public com.google.protobuf.Parser<RollbackSchemaRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.pubsub.v1.GetSchemaRequest getDefaultInstanceForType() {
+  public com.google.pubsub.v1.RollbackSchemaRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

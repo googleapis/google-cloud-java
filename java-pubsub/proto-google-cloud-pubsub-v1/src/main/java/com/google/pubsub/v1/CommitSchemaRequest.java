@@ -22,30 +22,29 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * Request for the GetSchema method.
+ * Request for CommitSchema method.
  * </pre>
  *
- * Protobuf type {@code google.pubsub.v1.GetSchemaRequest}
+ * Protobuf type {@code google.pubsub.v1.CommitSchemaRequest}
  */
-public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessageV3
+public final class CommitSchemaRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.pubsub.v1.GetSchemaRequest)
-    GetSchemaRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.pubsub.v1.CommitSchemaRequest)
+    CommitSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use GetSchemaRequest.newBuilder() to construct.
-  private GetSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CommitSchemaRequest.newBuilder() to construct.
+  private CommitSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private GetSchemaRequest() {
+  private CommitSchemaRequest() {
     name_ = "";
-    view_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new GetSchemaRequest();
+    return new CommitSchemaRequest();
   }
 
   @java.lang.Override
@@ -55,17 +54,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.SchemaProto
-        .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+        .internal_static_google_pubsub_v1_CommitSchemaRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.pubsub.v1.SchemaProto
-        .internal_static_google_pubsub_v1_GetSchemaRequest_fieldAccessorTable
+        .internal_static_google_pubsub_v1_CommitSchemaRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.GetSchemaRequest.class,
-            com.google.pubsub.v1.GetSchemaRequest.Builder.class);
+            com.google.pubsub.v1.CommitSchemaRequest.class,
+            com.google.pubsub.v1.CommitSchemaRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -74,7 +73,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
+   * Required. The name of the schema we are revising.
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -100,7 +99,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
+   * Required. The name of the schema we are revising.
    * Format is `projects/{project}/schemas/{schema}`.
    * </pre>
    *
@@ -123,41 +122,50 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int VIEW_FIELD_NUMBER = 2;
-  private int view_;
+  public static final int SCHEMA_FIELD_NUMBER = 2;
+  private com.google.pubsub.v1.Schema schema_;
   /**
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The schema revision to commit.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return Whether the schema field is set.
    */
   @java.lang.Override
-  public int getViewValue() {
-    return view_;
+  public boolean hasSchema() {
+    return schema_ != null;
   }
   /**
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The schema revision to commit.
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The view.
+   * @return The schema.
    */
   @java.lang.Override
-  public com.google.pubsub.v1.SchemaView getView() {
-    @SuppressWarnings("deprecation")
-    com.google.pubsub.v1.SchemaView result = com.google.pubsub.v1.SchemaView.valueOf(view_);
-    return result == null ? com.google.pubsub.v1.SchemaView.UNRECOGNIZED : result;
+  public com.google.pubsub.v1.Schema getSchema() {
+    return schema_ == null ? com.google.pubsub.v1.Schema.getDefaultInstance() : schema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. The schema revision to commit.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.SchemaOrBuilder getSchemaOrBuilder() {
+    return getSchema();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -177,8 +185,8 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (view_ != com.google.pubsub.v1.SchemaView.SCHEMA_VIEW_UNSPECIFIED.getNumber()) {
-      output.writeEnum(2, view_);
+    if (schema_ != null) {
+      output.writeMessage(2, getSchema());
     }
     getUnknownFields().writeTo(output);
   }
@@ -192,8 +200,8 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (view_ != com.google.pubsub.v1.SchemaView.SCHEMA_VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
+    if (schema_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSchema());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -205,13 +213,16 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.pubsub.v1.GetSchemaRequest)) {
+    if (!(obj instanceof com.google.pubsub.v1.CommitSchemaRequest)) {
       return super.equals(obj);
     }
-    com.google.pubsub.v1.GetSchemaRequest other = (com.google.pubsub.v1.GetSchemaRequest) obj;
+    com.google.pubsub.v1.CommitSchemaRequest other = (com.google.pubsub.v1.CommitSchemaRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (view_ != other.view_) return false;
+    if (hasSchema() != other.hasSchema()) return false;
+    if (hasSchema()) {
+      if (!getSchema().equals(other.getSchema())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -225,77 +236,80 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
+    if (hasSchema()) {
+      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getSchema().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(byte[] data)
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(java.io.InputStream input)
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.pubsub.v1.CommitSchemaRequest parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseDelimitedFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest parseFrom(
+  public static com.google.pubsub.v1.CommitSchemaRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -312,7 +326,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.pubsub.v1.GetSchemaRequest prototype) {
+  public static Builder newBuilder(com.google.pubsub.v1.CommitSchemaRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -330,31 +344,31 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request for the GetSchema method.
+   * Request for CommitSchema method.
    * </pre>
    *
-   * Protobuf type {@code google.pubsub.v1.GetSchemaRequest}
+   * Protobuf type {@code google.pubsub.v1.CommitSchemaRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.GetSchemaRequest)
-      com.google.pubsub.v1.GetSchemaRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.pubsub.v1.CommitSchemaRequest)
+      com.google.pubsub.v1.CommitSchemaRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+          .internal_static_google_pubsub_v1_CommitSchemaRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_fieldAccessorTable
+          .internal_static_google_pubsub_v1_CommitSchemaRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.GetSchemaRequest.class,
-              com.google.pubsub.v1.GetSchemaRequest.Builder.class);
+              com.google.pubsub.v1.CommitSchemaRequest.class,
+              com.google.pubsub.v1.CommitSchemaRequest.Builder.class);
     }
 
-    // Construct using com.google.pubsub.v1.GetSchemaRequest.newBuilder()
+    // Construct using com.google.pubsub.v1.CommitSchemaRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -366,25 +380,29 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       super.clear();
       name_ = "";
 
-      view_ = 0;
-
+      if (schemaBuilder_ == null) {
+        schema_ = null;
+      } else {
+        schema_ = null;
+        schemaBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.pubsub.v1.SchemaProto
-          .internal_static_google_pubsub_v1_GetSchemaRequest_descriptor;
+          .internal_static_google_pubsub_v1_CommitSchemaRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest getDefaultInstanceForType() {
-      return com.google.pubsub.v1.GetSchemaRequest.getDefaultInstance();
+    public com.google.pubsub.v1.CommitSchemaRequest getDefaultInstanceForType() {
+      return com.google.pubsub.v1.CommitSchemaRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest build() {
-      com.google.pubsub.v1.GetSchemaRequest result = buildPartial();
+    public com.google.pubsub.v1.CommitSchemaRequest build() {
+      com.google.pubsub.v1.CommitSchemaRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -392,11 +410,15 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.pubsub.v1.GetSchemaRequest buildPartial() {
-      com.google.pubsub.v1.GetSchemaRequest result =
-          new com.google.pubsub.v1.GetSchemaRequest(this);
+    public com.google.pubsub.v1.CommitSchemaRequest buildPartial() {
+      com.google.pubsub.v1.CommitSchemaRequest result =
+          new com.google.pubsub.v1.CommitSchemaRequest(this);
       result.name_ = name_;
-      result.view_ = view_;
+      if (schemaBuilder_ == null) {
+        result.schema_ = schema_;
+      } else {
+        result.schema_ = schemaBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -436,22 +458,22 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.pubsub.v1.GetSchemaRequest) {
-        return mergeFrom((com.google.pubsub.v1.GetSchemaRequest) other);
+      if (other instanceof com.google.pubsub.v1.CommitSchemaRequest) {
+        return mergeFrom((com.google.pubsub.v1.CommitSchemaRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.pubsub.v1.GetSchemaRequest other) {
-      if (other == com.google.pubsub.v1.GetSchemaRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.pubsub.v1.CommitSchemaRequest other) {
+      if (other == com.google.pubsub.v1.CommitSchemaRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
       }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
+      if (other.hasSchema()) {
+        mergeSchema(other.getSchema());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -485,12 +507,12 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
 
                 break;
               } // case 10
-            case 16:
+            case 18:
               {
-                view_ = input.readEnum();
+                input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
 
                 break;
-              } // case 16
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -513,7 +535,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
+     * Required. The name of the schema we are revising.
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -538,7 +560,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
+     * Required. The name of the schema we are revising.
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -563,7 +585,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
+     * Required. The name of the schema we are revising.
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -587,7 +609,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
+     * Required. The name of the schema we are revising.
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -607,7 +629,7 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the schema to get.
+     * Required. The name of the schema we are revising.
      * Format is `projects/{project}/schemas/{schema}`.
      * </pre>
      *
@@ -629,99 +651,182 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private int view_ = 0;
+    private com.google.pubsub.v1.Schema schema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.Schema,
+            com.google.pubsub.v1.Schema.Builder,
+            com.google.pubsub.v1.SchemaOrBuilder>
+        schemaBuilder_;
     /**
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The schema revision to commit.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @return The enum numeric value on the wire for view.
+     * @return Whether the schema field is set.
      */
-    @java.lang.Override
-    public int getViewValue() {
-      return view_;
+    public boolean hasSchema() {
+      return schemaBuilder_ != null || schema_ != null;
     }
     /**
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The schema revision to commit.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
-     * @param value The enum numeric value on the wire for view to set.
-     * @return This builder for chaining.
+     * @return The schema.
      */
-    public Builder setViewValue(int value) {
-
-      view_ = value;
-      onChanged();
-      return this;
+    public com.google.pubsub.v1.Schema getSchema() {
+      if (schemaBuilder_ == null) {
+        return schema_ == null ? com.google.pubsub.v1.Schema.getDefaultInstance() : schema_;
+      } else {
+        return schemaBuilder_.getMessage();
+      }
     }
     /**
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The schema revision to commit.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
-     *
-     * @return The view.
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    @java.lang.Override
-    public com.google.pubsub.v1.SchemaView getView() {
-      @SuppressWarnings("deprecation")
-      com.google.pubsub.v1.SchemaView result = com.google.pubsub.v1.SchemaView.valueOf(view_);
-      return result == null ? com.google.pubsub.v1.SchemaView.UNRECOGNIZED : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
-     * </pre>
-     *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
-     *
-     * @param value The view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setView(com.google.pubsub.v1.SchemaView value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public Builder setSchema(com.google.pubsub.v1.Schema value) {
+      if (schemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schema_ = value;
+        onChanged();
+      } else {
+        schemaBuilder_.setMessage(value);
       }
 
-      view_ = value.getNumber();
-      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The set of fields to return in the response. If not set, returns a Schema
-     * with all fields filled out. Set to `BASIC` to omit the `definition`.
+     * Required. The schema revision to commit.
      * </pre>
      *
-     * <code>.google.pubsub.v1.SchemaView view = 2;</code>
-     *
-     * @return This builder for chaining.
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
-    public Builder clearView() {
+    public Builder setSchema(com.google.pubsub.v1.Schema.Builder builderForValue) {
+      if (schemaBuilder_ == null) {
+        schema_ = builderForValue.build();
+        onChanged();
+      } else {
+        schemaBuilder_.setMessage(builderForValue.build());
+      }
 
-      view_ = 0;
-      onChanged();
       return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema revision to commit.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder mergeSchema(com.google.pubsub.v1.Schema value) {
+      if (schemaBuilder_ == null) {
+        if (schema_ != null) {
+          schema_ = com.google.pubsub.v1.Schema.newBuilder(schema_).mergeFrom(value).buildPartial();
+        } else {
+          schema_ = value;
+        }
+        onChanged();
+      } else {
+        schemaBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema revision to commit.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public Builder clearSchema() {
+      if (schemaBuilder_ == null) {
+        schema_ = null;
+        onChanged();
+      } else {
+        schema_ = null;
+        schemaBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema revision to commit.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.pubsub.v1.Schema.Builder getSchemaBuilder() {
+
+      onChanged();
+      return getSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema revision to commit.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    public com.google.pubsub.v1.SchemaOrBuilder getSchemaOrBuilder() {
+      if (schemaBuilder_ != null) {
+        return schemaBuilder_.getMessageOrBuilder();
+      } else {
+        return schema_ == null ? com.google.pubsub.v1.Schema.getDefaultInstance() : schema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The schema revision to commit.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.Schema schema = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.Schema,
+            com.google.pubsub.v1.Schema.Builder,
+            com.google.pubsub.v1.SchemaOrBuilder>
+        getSchemaFieldBuilder() {
+      if (schemaBuilder_ == null) {
+        schemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.Schema,
+                com.google.pubsub.v1.Schema.Builder,
+                com.google.pubsub.v1.SchemaOrBuilder>(
+                getSchema(), getParentForChildren(), isClean());
+        schema_ = null;
+      }
+      return schemaBuilder_;
     }
 
     @java.lang.Override
@@ -735,24 +840,24 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.GetSchemaRequest)
+    // @@protoc_insertion_point(builder_scope:google.pubsub.v1.CommitSchemaRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.pubsub.v1.GetSchemaRequest)
-  private static final com.google.pubsub.v1.GetSchemaRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.pubsub.v1.CommitSchemaRequest)
+  private static final com.google.pubsub.v1.CommitSchemaRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.pubsub.v1.GetSchemaRequest();
+    DEFAULT_INSTANCE = new com.google.pubsub.v1.CommitSchemaRequest();
   }
 
-  public static com.google.pubsub.v1.GetSchemaRequest getDefaultInstance() {
+  public static com.google.pubsub.v1.CommitSchemaRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GetSchemaRequest> PARSER =
-      new com.google.protobuf.AbstractParser<GetSchemaRequest>() {
+  private static final com.google.protobuf.Parser<CommitSchemaRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CommitSchemaRequest>() {
         @java.lang.Override
-        public GetSchemaRequest parsePartialFrom(
+        public CommitSchemaRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -771,17 +876,17 @@ public final class GetSchemaRequest extends com.google.protobuf.GeneratedMessage
         }
       };
 
-  public static com.google.protobuf.Parser<GetSchemaRequest> parser() {
+  public static com.google.protobuf.Parser<CommitSchemaRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetSchemaRequest> getParserForType() {
+  public com.google.protobuf.Parser<CommitSchemaRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.pubsub.v1.GetSchemaRequest getDefaultInstanceForType() {
+  public com.google.pubsub.v1.CommitSchemaRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

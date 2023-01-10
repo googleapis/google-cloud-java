@@ -156,6 +156,180 @@ public final class SchemaServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.ListSchemaRevisionsRequest,
+          com.google.pubsub.v1.ListSchemaRevisionsResponse>
+      getListSchemaRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSchemaRevisions",
+      requestType = com.google.pubsub.v1.ListSchemaRevisionsRequest.class,
+      responseType = com.google.pubsub.v1.ListSchemaRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.ListSchemaRevisionsRequest,
+          com.google.pubsub.v1.ListSchemaRevisionsResponse>
+      getListSchemaRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.pubsub.v1.ListSchemaRevisionsRequest,
+            com.google.pubsub.v1.ListSchemaRevisionsResponse>
+        getListSchemaRevisionsMethod;
+    if ((getListSchemaRevisionsMethod = SchemaServiceGrpc.getListSchemaRevisionsMethod) == null) {
+      synchronized (SchemaServiceGrpc.class) {
+        if ((getListSchemaRevisionsMethod = SchemaServiceGrpc.getListSchemaRevisionsMethod)
+            == null) {
+          SchemaServiceGrpc.getListSchemaRevisionsMethod =
+              getListSchemaRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.pubsub.v1.ListSchemaRevisionsRequest,
+                          com.google.pubsub.v1.ListSchemaRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSchemaRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.ListSchemaRevisionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.ListSchemaRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SchemaServiceMethodDescriptorSupplier("ListSchemaRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListSchemaRevisionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>
+      getCommitSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CommitSchema",
+      requestType = com.google.pubsub.v1.CommitSchemaRequest.class,
+      responseType = com.google.pubsub.v1.Schema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>
+      getCommitSchemaMethod() {
+    io.grpc.MethodDescriptor<com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>
+        getCommitSchemaMethod;
+    if ((getCommitSchemaMethod = SchemaServiceGrpc.getCommitSchemaMethod) == null) {
+      synchronized (SchemaServiceGrpc.class) {
+        if ((getCommitSchemaMethod = SchemaServiceGrpc.getCommitSchemaMethod) == null) {
+          SchemaServiceGrpc.getCommitSchemaMethod =
+              getCommitSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CommitSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.CommitSchemaRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.Schema.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SchemaServiceMethodDescriptorSupplier("CommitSchema"))
+                      .build();
+        }
+      }
+    }
+    return getCommitSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>
+      getRollbackSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RollbackSchema",
+      requestType = com.google.pubsub.v1.RollbackSchemaRequest.class,
+      responseType = com.google.pubsub.v1.Schema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>
+      getRollbackSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>
+        getRollbackSchemaMethod;
+    if ((getRollbackSchemaMethod = SchemaServiceGrpc.getRollbackSchemaMethod) == null) {
+      synchronized (SchemaServiceGrpc.class) {
+        if ((getRollbackSchemaMethod = SchemaServiceGrpc.getRollbackSchemaMethod) == null) {
+          SchemaServiceGrpc.getRollbackSchemaMethod =
+              getRollbackSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RollbackSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.RollbackSchemaRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.Schema.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SchemaServiceMethodDescriptorSupplier("RollbackSchema"))
+                      .build();
+        }
+      }
+    }
+    return getRollbackSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.DeleteSchemaRevisionRequest, com.google.pubsub.v1.Schema>
+      getDeleteSchemaRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSchemaRevision",
+      requestType = com.google.pubsub.v1.DeleteSchemaRevisionRequest.class,
+      responseType = com.google.pubsub.v1.Schema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.pubsub.v1.DeleteSchemaRevisionRequest, com.google.pubsub.v1.Schema>
+      getDeleteSchemaRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.pubsub.v1.DeleteSchemaRevisionRequest, com.google.pubsub.v1.Schema>
+        getDeleteSchemaRevisionMethod;
+    if ((getDeleteSchemaRevisionMethod = SchemaServiceGrpc.getDeleteSchemaRevisionMethod) == null) {
+      synchronized (SchemaServiceGrpc.class) {
+        if ((getDeleteSchemaRevisionMethod = SchemaServiceGrpc.getDeleteSchemaRevisionMethod)
+            == null) {
+          SchemaServiceGrpc.getDeleteSchemaRevisionMethod =
+              getDeleteSchemaRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.pubsub.v1.DeleteSchemaRevisionRequest,
+                          com.google.pubsub.v1.Schema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteSchemaRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.DeleteSchemaRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.pubsub.v1.Schema.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SchemaServiceMethodDescriptorSupplier("DeleteSchemaRevision"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSchemaRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.pubsub.v1.DeleteSchemaRequest, com.google.protobuf.Empty>
       getDeleteSchemaMethod;
 
@@ -375,6 +549,63 @@ public final class SchemaServiceGrpc {
      *
      *
      * <pre>
+     * Lists all schema revisions for the named schema.
+     * </pre>
+     */
+    public void listSchemaRevisions(
+        com.google.pubsub.v1.ListSchemaRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemaRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSchemaRevisionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commits a new schema revision to an existing schema.
+     * </pre>
+     */
+    public void commitSchema(
+        com.google.pubsub.v1.CommitSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCommitSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema revision that is a copy of the provided revision_id.
+     * </pre>
+     */
+    public void rollbackSchema(
+        com.google.pubsub.v1.RollbackSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRollbackSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific schema revision.
+     * </pre>
+     */
+    public void deleteSchemaRevision(
+        com.google.pubsub.v1.DeleteSchemaRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSchemaRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a schema.
      * </pre>
      */
@@ -435,6 +666,31 @@ public final class SchemaServiceGrpc {
                   new MethodHandlers<
                       com.google.pubsub.v1.ListSchemasRequest,
                       com.google.pubsub.v1.ListSchemasResponse>(this, METHODID_LIST_SCHEMAS)))
+          .addMethod(
+              getListSchemaRevisionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.pubsub.v1.ListSchemaRevisionsRequest,
+                      com.google.pubsub.v1.ListSchemaRevisionsResponse>(
+                      this, METHODID_LIST_SCHEMA_REVISIONS)))
+          .addMethod(
+              getCommitSchemaMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.pubsub.v1.CommitSchemaRequest, com.google.pubsub.v1.Schema>(
+                      this, METHODID_COMMIT_SCHEMA)))
+          .addMethod(
+              getRollbackSchemaMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.pubsub.v1.RollbackSchemaRequest, com.google.pubsub.v1.Schema>(
+                      this, METHODID_ROLLBACK_SCHEMA)))
+          .addMethod(
+              getDeleteSchemaRevisionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.pubsub.v1.DeleteSchemaRevisionRequest,
+                      com.google.pubsub.v1.Schema>(this, METHODID_DELETE_SCHEMA_REVISION)))
           .addMethod(
               getDeleteSchemaMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -518,6 +774,71 @@ public final class SchemaServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemasResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListSchemasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all schema revisions for the named schema.
+     * </pre>
+     */
+    public void listSchemaRevisions(
+        com.google.pubsub.v1.ListSchemaRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemaRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSchemaRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commits a new schema revision to an existing schema.
+     * </pre>
+     */
+    public void commitSchema(
+        com.google.pubsub.v1.CommitSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCommitSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema revision that is a copy of the provided revision_id.
+     * </pre>
+     */
+    public void rollbackSchema(
+        com.google.pubsub.v1.RollbackSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRollbackSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific schema revision.
+     * </pre>
+     */
+    public void deleteSchemaRevision(
+        com.google.pubsub.v1.DeleteSchemaRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSchemaRevisionMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -633,6 +954,58 @@ public final class SchemaServiceGrpc {
      *
      *
      * <pre>
+     * Lists all schema revisions for the named schema.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListSchemaRevisionsResponse listSchemaRevisions(
+        com.google.pubsub.v1.ListSchemaRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSchemaRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commits a new schema revision to an existing schema.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Schema commitSchema(
+        com.google.pubsub.v1.CommitSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCommitSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema revision that is a copy of the provided revision_id.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Schema rollbackSchema(
+        com.google.pubsub.v1.RollbackSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific schema revision.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Schema deleteSchemaRevision(
+        com.google.pubsub.v1.DeleteSchemaRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSchemaRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a schema.
      * </pre>
      */
@@ -732,6 +1105,59 @@ public final class SchemaServiceGrpc {
      *
      *
      * <pre>
+     * Lists all schema revisions for the named schema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.pubsub.v1.ListSchemaRevisionsResponse>
+        listSchemaRevisions(com.google.pubsub.v1.ListSchemaRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSchemaRevisionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commits a new schema revision to an existing schema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Schema>
+        commitSchema(com.google.pubsub.v1.CommitSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCommitSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new schema revision that is a copy of the provided revision_id.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Schema>
+        rollbackSchema(com.google.pubsub.v1.RollbackSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRollbackSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific schema revision.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Schema>
+        deleteSchemaRevision(com.google.pubsub.v1.DeleteSchemaRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSchemaRevisionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a schema.
      * </pre>
      */
@@ -773,9 +1199,13 @@ public final class SchemaServiceGrpc {
   private static final int METHODID_CREATE_SCHEMA = 0;
   private static final int METHODID_GET_SCHEMA = 1;
   private static final int METHODID_LIST_SCHEMAS = 2;
-  private static final int METHODID_DELETE_SCHEMA = 3;
-  private static final int METHODID_VALIDATE_SCHEMA = 4;
-  private static final int METHODID_VALIDATE_MESSAGE = 5;
+  private static final int METHODID_LIST_SCHEMA_REVISIONS = 3;
+  private static final int METHODID_COMMIT_SCHEMA = 4;
+  private static final int METHODID_ROLLBACK_SCHEMA = 5;
+  private static final int METHODID_DELETE_SCHEMA_REVISION = 6;
+  private static final int METHODID_DELETE_SCHEMA = 7;
+  private static final int METHODID_VALIDATE_SCHEMA = 8;
+  private static final int METHODID_VALIDATE_MESSAGE = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -809,6 +1239,27 @@ public final class SchemaServiceGrpc {
               (com.google.pubsub.v1.ListSchemasRequest) request,
               (io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemasResponse>)
                   responseObserver);
+          break;
+        case METHODID_LIST_SCHEMA_REVISIONS:
+          serviceImpl.listSchemaRevisions(
+              (com.google.pubsub.v1.ListSchemaRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.ListSchemaRevisionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_COMMIT_SCHEMA:
+          serviceImpl.commitSchema(
+              (com.google.pubsub.v1.CommitSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema>) responseObserver);
+          break;
+        case METHODID_ROLLBACK_SCHEMA:
+          serviceImpl.rollbackSchema(
+              (com.google.pubsub.v1.RollbackSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema>) responseObserver);
+          break;
+        case METHODID_DELETE_SCHEMA_REVISION:
+          serviceImpl.deleteSchemaRevision(
+              (com.google.pubsub.v1.DeleteSchemaRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.pubsub.v1.Schema>) responseObserver);
           break;
         case METHODID_DELETE_SCHEMA:
           serviceImpl.deleteSchema(
@@ -894,6 +1345,10 @@ public final class SchemaServiceGrpc {
                       .addMethod(getCreateSchemaMethod())
                       .addMethod(getGetSchemaMethod())
                       .addMethod(getListSchemasMethod())
+                      .addMethod(getListSchemaRevisionsMethod())
+                      .addMethod(getCommitSchemaMethod())
+                      .addMethod(getRollbackSchemaMethod())
+                      .addMethod(getDeleteSchemaRevisionMethod())
                       .addMethod(getDeleteSchemaMethod())
                       .addMethod(getValidateSchemaMethod())
                       .addMethod(getValidateMessageMethod())

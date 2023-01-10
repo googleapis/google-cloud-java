@@ -33,12 +33,17 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.pubsub.v1.CommitSchemaRequest;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
+import com.google.pubsub.v1.DeleteSchemaRevisionRequest;
 import com.google.pubsub.v1.GetSchemaRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsResponse;
 import com.google.pubsub.v1.ListSchemasRequest;
 import com.google.pubsub.v1.ListSchemasResponse;
 import com.google.pubsub.v1.ProjectName;
+import com.google.pubsub.v1.RollbackSchemaRequest;
 import com.google.pubsub.v1.Schema;
 import com.google.pubsub.v1.SchemaName;
 import com.google.pubsub.v1.ValidateMessageRequest;
@@ -135,10 +140,7 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * SchemaServiceSettings schemaServiceSettings =
- *     SchemaServiceSettings.newBuilder()
- *         .setTransportChannelProvider(
- *             SchemaServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
- *         .build();
+ *     SchemaServiceSettings.newHttpJsonBuilder().build();
  * SchemaServiceClient schemaServiceClient = SchemaServiceClient.create(schemaServiceSettings);
  * }</pre>
  *
@@ -611,6 +613,544 @@ public class SchemaServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListSchemasRequest, ListSchemasResponse> listSchemasCallable() {
     return stub.listSchemasCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema revisions for the named schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+   *   for (Schema element : schemaServiceClient.listSchemaRevisions(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the schema to list revisions for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(SchemaName name) {
+    ListSchemaRevisionsRequest request =
+        ListSchemaRevisionsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return listSchemaRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema revisions for the named schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   String name = SchemaName.of("[PROJECT]", "[SCHEMA]").toString();
+   *   for (Schema element : schemaServiceClient.listSchemaRevisions(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the schema to list revisions for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(String name) {
+    ListSchemaRevisionsRequest request =
+        ListSchemaRevisionsRequest.newBuilder().setName(name).build();
+    return listSchemaRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema revisions for the named schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   ListSchemaRevisionsRequest request =
+   *       ListSchemaRevisionsRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Schema element : schemaServiceClient.listSchemaRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(
+      ListSchemaRevisionsRequest request) {
+    return listSchemaRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema revisions for the named schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   ListSchemaRevisionsRequest request =
+   *       ListSchemaRevisionsRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Schema> future =
+   *       schemaServiceClient.listSchemaRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Schema element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSchemaRevisionsRequest, ListSchemaRevisionsPagedResponse>
+      listSchemaRevisionsPagedCallable() {
+    return stub.listSchemaRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all schema revisions for the named schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   ListSchemaRevisionsRequest request =
+   *       ListSchemaRevisionsRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setView(SchemaView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSchemaRevisionsResponse response =
+   *         schemaServiceClient.listSchemaRevisionsCallable().call(request);
+   *     for (Schema element : response.getSchemasList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse>
+      listSchemaRevisionsCallable() {
+    return stub.listSchemaRevisionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Commits a new schema revision to an existing schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+   *   Schema schema = Schema.newBuilder().build();
+   *   Schema response = schemaServiceClient.commitSchema(name, schema);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the schema we are revising. Format is
+   *     `projects/{project}/schemas/{schema}`.
+   * @param schema Required. The schema revision to commit.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema commitSchema(SchemaName name, Schema schema) {
+    CommitSchemaRequest request =
+        CommitSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSchema(schema)
+            .build();
+    return commitSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Commits a new schema revision to an existing schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   String name = SchemaName.of("[PROJECT]", "[SCHEMA]").toString();
+   *   Schema schema = Schema.newBuilder().build();
+   *   Schema response = schemaServiceClient.commitSchema(name, schema);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the schema we are revising. Format is
+   *     `projects/{project}/schemas/{schema}`.
+   * @param schema Required. The schema revision to commit.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema commitSchema(String name, Schema schema) {
+    CommitSchemaRequest request =
+        CommitSchemaRequest.newBuilder().setName(name).setSchema(schema).build();
+    return commitSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Commits a new schema revision to an existing schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   CommitSchemaRequest request =
+   *       CommitSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setSchema(Schema.newBuilder().build())
+   *           .build();
+   *   Schema response = schemaServiceClient.commitSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema commitSchema(CommitSchemaRequest request) {
+    return commitSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Commits a new schema revision to an existing schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   CommitSchemaRequest request =
+   *       CommitSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setSchema(Schema.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Schema> future = schemaServiceClient.commitSchemaCallable().futureCall(request);
+   *   // Do something.
+   *   Schema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CommitSchemaRequest, Schema> commitSchemaCallable() {
+    return stub.commitSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema revision that is a copy of the provided revision_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+   *   String revisionId = "revisionId-1507445162";
+   *   Schema response = schemaServiceClient.rollbackSchema(name, revisionId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The schema being rolled back with revision id.
+   * @param revisionId Required. The revision ID to roll back to. It must be a revision of the same
+   *     schema.
+   *     <p>Example: c7cfa2a8
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema rollbackSchema(SchemaName name, String revisionId) {
+    RollbackSchemaRequest request =
+        RollbackSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRevisionId(revisionId)
+            .build();
+    return rollbackSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema revision that is a copy of the provided revision_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   String name = SchemaName.of("[PROJECT]", "[SCHEMA]").toString();
+   *   String revisionId = "revisionId-1507445162";
+   *   Schema response = schemaServiceClient.rollbackSchema(name, revisionId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The schema being rolled back with revision id.
+   * @param revisionId Required. The revision ID to roll back to. It must be a revision of the same
+   *     schema.
+   *     <p>Example: c7cfa2a8
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema rollbackSchema(String name, String revisionId) {
+    RollbackSchemaRequest request =
+        RollbackSchemaRequest.newBuilder().setName(name).setRevisionId(revisionId).build();
+    return rollbackSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema revision that is a copy of the provided revision_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   RollbackSchemaRequest request =
+   *       RollbackSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setRevisionId("revisionId-1507445162")
+   *           .build();
+   *   Schema response = schemaServiceClient.rollbackSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema rollbackSchema(RollbackSchemaRequest request) {
+    return rollbackSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new schema revision that is a copy of the provided revision_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   RollbackSchemaRequest request =
+   *       RollbackSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setRevisionId("revisionId-1507445162")
+   *           .build();
+   *   ApiFuture<Schema> future = schemaServiceClient.rollbackSchemaCallable().futureCall(request);
+   *   // Do something.
+   *   Schema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RollbackSchemaRequest, Schema> rollbackSchemaCallable() {
+    return stub.rollbackSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific schema revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   SchemaName name = SchemaName.of("[PROJECT]", "[SCHEMA]");
+   *   String revisionId = "revisionId-1507445162";
+   *   Schema response = schemaServiceClient.deleteSchemaRevision(name, revisionId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the schema revision to be deleted, with a revision ID
+   *     explicitly included.
+   *     <p>Example: projects/123/schemas/my-schema{@literal @}c7cfa2a8
+   * @param revisionId Required. The revision ID to roll back to. It must be a revision of the same
+   *     schema.
+   *     <p>Example: c7cfa2a8
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema deleteSchemaRevision(SchemaName name, String revisionId) {
+    DeleteSchemaRevisionRequest request =
+        DeleteSchemaRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRevisionId(revisionId)
+            .build();
+    return deleteSchemaRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific schema revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   String name = SchemaName.of("[PROJECT]", "[SCHEMA]").toString();
+   *   String revisionId = "revisionId-1507445162";
+   *   Schema response = schemaServiceClient.deleteSchemaRevision(name, revisionId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the schema revision to be deleted, with a revision ID
+   *     explicitly included.
+   *     <p>Example: projects/123/schemas/my-schema{@literal @}c7cfa2a8
+   * @param revisionId Required. The revision ID to roll back to. It must be a revision of the same
+   *     schema.
+   *     <p>Example: c7cfa2a8
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema deleteSchemaRevision(String name, String revisionId) {
+    DeleteSchemaRevisionRequest request =
+        DeleteSchemaRevisionRequest.newBuilder().setName(name).setRevisionId(revisionId).build();
+    return deleteSchemaRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific schema revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   DeleteSchemaRevisionRequest request =
+   *       DeleteSchemaRevisionRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setRevisionId("revisionId-1507445162")
+   *           .build();
+   *   Schema response = schemaServiceClient.deleteSchemaRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Schema deleteSchemaRevision(DeleteSchemaRevisionRequest request) {
+    return deleteSchemaRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific schema revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+   *   DeleteSchemaRevisionRequest request =
+   *       DeleteSchemaRevisionRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
+   *           .setRevisionId("revisionId-1507445162")
+   *           .build();
+   *   ApiFuture<Schema> future =
+   *       schemaServiceClient.deleteSchemaRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   Schema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSchemaRevisionRequest, Schema> deleteSchemaRevisionCallable() {
+    return stub.deleteSchemaRevisionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1197,6 +1737,86 @@ public class SchemaServiceClient implements BackgroundResource {
     protected ListSchemasFixedSizeCollection createCollection(
         List<ListSchemasPage> pages, int collectionSize) {
       return new ListSchemasFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSchemaRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSchemaRevisionsRequest,
+          ListSchemaRevisionsResponse,
+          Schema,
+          ListSchemaRevisionsPage,
+          ListSchemaRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSchemaRevisionsPagedResponse> createAsync(
+        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
+        ApiFuture<ListSchemaRevisionsResponse> futureResponse) {
+      ApiFuture<ListSchemaRevisionsPage> futurePage =
+          ListSchemaRevisionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSchemaRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSchemaRevisionsPagedResponse(ListSchemaRevisionsPage page) {
+      super(page, ListSchemaRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSchemaRevisionsPage
+      extends AbstractPage<
+          ListSchemaRevisionsRequest,
+          ListSchemaRevisionsResponse,
+          Schema,
+          ListSchemaRevisionsPage> {
+
+    private ListSchemaRevisionsPage(
+        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
+        ListSchemaRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSchemaRevisionsPage createEmptyPage() {
+      return new ListSchemaRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListSchemaRevisionsPage createPage(
+        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
+        ListSchemaRevisionsResponse response) {
+      return new ListSchemaRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSchemaRevisionsPage> createPageAsync(
+        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
+        ApiFuture<ListSchemaRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSchemaRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSchemaRevisionsRequest,
+          ListSchemaRevisionsResponse,
+          Schema,
+          ListSchemaRevisionsPage,
+          ListSchemaRevisionsFixedSizeCollection> {
+
+    private ListSchemaRevisionsFixedSizeCollection(
+        List<ListSchemaRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSchemaRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListSchemaRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSchemaRevisionsFixedSizeCollection createCollection(
+        List<ListSchemaRevisionsPage> pages, int collectionSize) {
+      return new ListSchemaRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

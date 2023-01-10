@@ -389,8 +389,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An output-only field that indicates whether or not the subscription can
-   * receive messages.
+   * Output only. An output-only field that indicates whether or not the
+   * subscription can receive messages.
    * </pre>
    *
    * <code>
@@ -407,8 +407,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. An output-only field that indicates whether or not the subscription can
-   * receive messages.
+   * Output only. An output-only field that indicates whether or not the
+   * subscription can receive messages.
    * </pre>
    *
    * <code>
@@ -1134,8 +1134,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An output-only field that indicates whether or not the subscription can
-     * receive messages.
+     * Output only. An output-only field that indicates whether or not the
+     * subscription can receive messages.
      * </pre>
      *
      * <code>
@@ -1152,8 +1152,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An output-only field that indicates whether or not the subscription can
-     * receive messages.
+     * Output only. An output-only field that indicates whether or not the
+     * subscription can receive messages.
      * </pre>
      *
      * <code>
@@ -1173,8 +1173,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An output-only field that indicates whether or not the subscription can
-     * receive messages.
+     * Output only. An output-only field that indicates whether or not the
+     * subscription can receive messages.
      * </pre>
      *
      * <code>
@@ -1194,8 +1194,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An output-only field that indicates whether or not the subscription can
-     * receive messages.
+     * Output only. An output-only field that indicates whether or not the
+     * subscription can receive messages.
      * </pre>
      *
      * <code>
@@ -1218,8 +1218,8 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. An output-only field that indicates whether or not the subscription can
-     * receive messages.
+     * Output only. An output-only field that indicates whether or not the
+     * subscription can receive messages.
      * </pre>
      *
      * <code>

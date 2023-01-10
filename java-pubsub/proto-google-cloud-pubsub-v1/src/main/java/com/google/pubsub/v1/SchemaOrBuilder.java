@@ -103,4 +103,74 @@ public interface SchemaOrBuilder
    * @return The bytes for definition.
    */
   com.google.protobuf.ByteString getDefinitionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. The revision ID of the schema.
+   * </pre>
+   *
+   * <code>
+   * string revision_id = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The revisionId.
+   */
+  java.lang.String getRevisionId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. The revision ID of the schema.
+   * </pre>
+   *
+   * <code>
+   * string revision_id = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for revisionId.
+   */
+  com.google.protobuf.ByteString getRevisionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp that the revision was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp revision_create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the revisionCreateTime field is set.
+   */
+  boolean hasRevisionCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp that the revision was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp revision_create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The revisionCreateTime.
+   */
+  com.google.protobuf.Timestamp getRevisionCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp that the revision was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp revision_create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getRevisionCreateTimeOrBuilder();
 }

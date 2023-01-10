@@ -18,17 +18,16 @@
 
 package com.google.pubsub.v1;
 
-public interface GetSchemaRequestOrBuilder
+public interface RollbackSchemaRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetSchemaRequest)
+    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.RollbackSchemaRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The schema being rolled back with revision id.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The schema being rolled back with revision id.
    * </pre>
    *
    * <code>
@@ -58,26 +56,28 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The revision ID to roll back to.
+   * It must be a revision of the same schema.
+   *   Example: c7cfa2a8
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The enum numeric value on the wire for view.
+   * @return The revisionId.
    */
-  int getViewValue();
+  java.lang.String getRevisionId();
   /**
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * Required. The revision ID to roll back to.
+   * It must be a revision of the same schema.
+   *   Example: c7cfa2a8
    * </pre>
    *
-   * <code>.google.pubsub.v1.SchemaView view = 2;</code>
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The view.
+   * @return The bytes for revisionId.
    */
-  com.google.pubsub.v1.SchemaView getView();
+  com.google.protobuf.ByteString getRevisionIdBytes();
 }

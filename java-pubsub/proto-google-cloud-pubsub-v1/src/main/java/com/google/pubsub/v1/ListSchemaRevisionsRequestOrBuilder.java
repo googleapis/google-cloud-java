@@ -18,17 +18,16 @@
 
 package com.google.pubsub.v1;
 
-public interface GetSchemaRequestOrBuilder
+public interface ListSchemaRevisionsRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetSchemaRequest)
+    // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListSchemaRevisionsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The name of the schema to list revisions for.
    * </pre>
    *
    * <code>
@@ -42,8 +41,7 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the schema to get.
-   * Format is `projects/{project}/schemas/{schema}`.
+   * Required. The name of the schema to list revisions for.
    * </pre>
    *
    * <code>
@@ -58,8 +56,9 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * The set of Schema fields to return in the response. If not set, returns
+   * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+   * retrieve all fields.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -71,8 +70,9 @@ public interface GetSchemaRequestOrBuilder
    *
    *
    * <pre>
-   * The set of fields to return in the response. If not set, returns a Schema
-   * with all fields filled out. Set to `BASIC` to omit the `definition`.
+   * The set of Schema fields to return in the response. If not set, returns
+   * Schemas with `name` and `type`, but not `definition`. Set to `FULL` to
+   * retrieve all fields.
    * </pre>
    *
    * <code>.google.pubsub.v1.SchemaView view = 2;</code>
@@ -80,4 +80,44 @@ public interface GetSchemaRequestOrBuilder
    * @return The view.
    */
   com.google.pubsub.v1.SchemaView getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of revisions to return per page.
+   * </pre>
+   *
+   * <code>int32 page_size = 3;</code>
+   *
+   * @return The pageSize.
+   */
+  int getPageSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * The page token, received from a previous ListSchemaRevisions call.
+   * Provide this to retrieve the subsequent page.
+   * </pre>
+   *
+   * <code>string page_token = 4;</code>
+   *
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * The page token, received from a previous ListSchemaRevisions call.
+   * Provide this to retrieve the subsequent page.
+   * </pre>
+   *
+   * <code>string page_token = 4;</code>
+   *
+   * @return The bytes for pageToken.
+   */
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

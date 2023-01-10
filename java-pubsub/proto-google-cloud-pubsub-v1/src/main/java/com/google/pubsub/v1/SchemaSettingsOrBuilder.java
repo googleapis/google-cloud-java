@@ -82,4 +82,62 @@ public interface SchemaSettingsOrBuilder
    * @return The encoding.
    */
   com.google.pubsub.v1.Encoding getEncoding();
+
+  /**
+   *
+   *
+   * <pre>
+   * The minimum (inclusive) revision allowed for validating messages. If empty
+   * or not present, allow any revision to be validated against last_revision or
+   * any revision created before.
+   * </pre>
+   *
+   * <code>string first_revision_id = 3;</code>
+   *
+   * @return The firstRevisionId.
+   */
+  java.lang.String getFirstRevisionId();
+  /**
+   *
+   *
+   * <pre>
+   * The minimum (inclusive) revision allowed for validating messages. If empty
+   * or not present, allow any revision to be validated against last_revision or
+   * any revision created before.
+   * </pre>
+   *
+   * <code>string first_revision_id = 3;</code>
+   *
+   * @return The bytes for firstRevisionId.
+   */
+  com.google.protobuf.ByteString getFirstRevisionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum (inclusive) revision allowed for validating messages. If empty
+   * or not present, allow any revision to be validated against first_revision
+   * or any revision created after.
+   * </pre>
+   *
+   * <code>string last_revision_id = 4;</code>
+   *
+   * @return The lastRevisionId.
+   */
+  java.lang.String getLastRevisionId();
+  /**
+   *
+   *
+   * <pre>
+   * The maximum (inclusive) revision allowed for validating messages. If empty
+   * or not present, allow any revision to be validated against first_revision
+   * or any revision created after.
+   * </pre>
+   *
+   * <code>string last_revision_id = 4;</code>
+   *
+   * @return The bytes for lastRevisionId.
+   */
+  com.google.protobuf.ByteString getLastRevisionIdBytes();
 }

@@ -640,8 +640,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * Output only. An output-only field indicating whether or not the subscription can receive
-   * messages.
+   * Output only. An output-only field indicating whether or not the
+   * subscription can receive messages.
    * </pre>
    *
    * <code>
@@ -655,8 +655,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * Output only. An output-only field indicating whether or not the subscription can receive
-   * messages.
+   * Output only. An output-only field indicating whether or not the
+   * subscription can receive messages.
    * </pre>
    *
    * <code>

@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1.stub;
 
+import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemaRevisionsPagedResponse;
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -26,11 +27,16 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.pubsub.v1.CommitSchemaRequest;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
+import com.google.pubsub.v1.DeleteSchemaRevisionRequest;
 import com.google.pubsub.v1.GetSchemaRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsResponse;
 import com.google.pubsub.v1.ListSchemasRequest;
 import com.google.pubsub.v1.ListSchemasResponse;
+import com.google.pubsub.v1.RollbackSchemaRequest;
 import com.google.pubsub.v1.Schema;
 import com.google.pubsub.v1.ValidateMessageRequest;
 import com.google.pubsub.v1.ValidateMessageResponse;
@@ -61,6 +67,28 @@ public abstract class SchemaServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListSchemasRequest, ListSchemasResponse> listSchemasCallable() {
     throw new UnsupportedOperationException("Not implemented: listSchemasCallable()");
+  }
+
+  public UnaryCallable<ListSchemaRevisionsRequest, ListSchemaRevisionsPagedResponse>
+      listSchemaRevisionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSchemaRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse>
+      listSchemaRevisionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSchemaRevisionsCallable()");
+  }
+
+  public UnaryCallable<CommitSchemaRequest, Schema> commitSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: commitSchemaCallable()");
+  }
+
+  public UnaryCallable<RollbackSchemaRequest, Schema> rollbackSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: rollbackSchemaCallable()");
+  }
+
+  public UnaryCallable<DeleteSchemaRevisionRequest, Schema> deleteSchemaRevisionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSchemaRevisionCallable()");
   }
 
   public UnaryCallable<DeleteSchemaRequest, Empty> deleteSchemaCallable() {

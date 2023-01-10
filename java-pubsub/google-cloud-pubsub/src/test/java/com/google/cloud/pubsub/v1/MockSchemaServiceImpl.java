@@ -19,11 +19,16 @@ package com.google.cloud.pubsub.v1;
 import com.google.api.core.BetaApi;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.pubsub.v1.CommitSchemaRequest;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
+import com.google.pubsub.v1.DeleteSchemaRevisionRequest;
 import com.google.pubsub.v1.GetSchemaRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsResponse;
 import com.google.pubsub.v1.ListSchemasRequest;
 import com.google.pubsub.v1.ListSchemasResponse;
+import com.google.pubsub.v1.RollbackSchemaRequest;
 import com.google.pubsub.v1.Schema;
 import com.google.pubsub.v1.SchemaServiceGrpc.SchemaServiceImplBase;
 import com.google.pubsub.v1.ValidateMessageRequest;
@@ -126,6 +131,90 @@ public class MockSchemaServiceImpl extends SchemaServiceImplBase {
                   "Unrecognized response type %s for method ListSchemas, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSchemasResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSchemaRevisions(
+      ListSchemaRevisionsRequest request,
+      StreamObserver<ListSchemaRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSchemaRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSchemaRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSchemaRevisions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSchemaRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void commitSchema(CommitSchemaRequest request, StreamObserver<Schema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Schema) {
+      requests.add(request);
+      responseObserver.onNext(((Schema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CommitSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Schema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void rollbackSchema(
+      RollbackSchemaRequest request, StreamObserver<Schema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Schema) {
+      requests.add(request);
+      responseObserver.onNext(((Schema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RollbackSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Schema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSchemaRevision(
+      DeleteSchemaRevisionRequest request, StreamObserver<Schema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Schema) {
+      requests.add(request);
+      responseObserver.onNext(((Schema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSchemaRevision, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Schema.class.getName(),
                   Exception.class.getName())));
     }
   }

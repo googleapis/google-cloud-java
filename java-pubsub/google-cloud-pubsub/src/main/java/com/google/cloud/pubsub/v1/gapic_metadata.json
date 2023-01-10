@@ -121,11 +121,17 @@
         "grpc": {
           "libraryClient": "SchemaServiceClient",
           "rpcs": {
+            "CommitSchema": {
+              "methods": ["commitSchema", "commitSchema", "commitSchema", "commitSchemaCallable"]
+            },
             "CreateSchema": {
               "methods": ["createSchema", "createSchema", "createSchema", "createSchemaCallable"]
             },
             "DeleteSchema": {
               "methods": ["deleteSchema", "deleteSchema", "deleteSchema", "deleteSchemaCallable"]
+            },
+            "DeleteSchemaRevision": {
+              "methods": ["deleteSchemaRevision", "deleteSchemaRevision", "deleteSchemaRevision", "deleteSchemaRevisionCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -133,8 +139,14 @@
             "GetSchema": {
               "methods": ["getSchema", "getSchema", "getSchema", "getSchemaCallable"]
             },
+            "ListSchemaRevisions": {
+              "methods": ["listSchemaRevisions", "listSchemaRevisions", "listSchemaRevisions", "listSchemaRevisionsPagedCallable", "listSchemaRevisionsCallable"]
+            },
             "ListSchemas": {
               "methods": ["listSchemas", "listSchemas", "listSchemas", "listSchemasPagedCallable", "listSchemasCallable"]
+            },
+            "RollbackSchema": {
+              "methods": ["rollbackSchema", "rollbackSchema", "rollbackSchema", "rollbackSchemaCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

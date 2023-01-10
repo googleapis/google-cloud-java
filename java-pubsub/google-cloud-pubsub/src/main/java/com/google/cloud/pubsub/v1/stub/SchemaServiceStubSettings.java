@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1.stub;
 
+import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemaRevisionsPagedResponse;
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -53,11 +54,16 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.pubsub.v1.CommitSchemaRequest;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
+import com.google.pubsub.v1.DeleteSchemaRevisionRequest;
 import com.google.pubsub.v1.GetSchemaRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsResponse;
 import com.google.pubsub.v1.ListSchemasRequest;
 import com.google.pubsub.v1.ListSchemasResponse;
+import com.google.pubsub.v1.RollbackSchemaRequest;
 import com.google.pubsub.v1.Schema;
 import com.google.pubsub.v1.ValidateMessageRequest;
 import com.google.pubsub.v1.ValidateMessageResponse;
@@ -95,7 +101,10 @@ import javax.annotation.Generated;
  * schemaServiceSettingsBuilder
  *     .createSchemaSettings()
  *     .setRetrySettings(
- *         schemaServiceSettingsBuilder.createSchemaSettings().getRetrySettings().toBuilder()
+ *         schemaServiceSettingsBuilder
+ *             .createSchemaSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SchemaServiceStubSettings schemaServiceSettings = schemaServiceSettingsBuilder.build();
@@ -114,6 +123,12 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
   private final UnaryCallSettings<GetSchemaRequest, Schema> getSchemaSettings;
   private final PagedCallSettings<ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
       listSchemasSettings;
+  private final PagedCallSettings<
+          ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, ListSchemaRevisionsPagedResponse>
+      listSchemaRevisionsSettings;
+  private final UnaryCallSettings<CommitSchemaRequest, Schema> commitSchemaSettings;
+  private final UnaryCallSettings<RollbackSchemaRequest, Schema> rollbackSchemaSettings;
+  private final UnaryCallSettings<DeleteSchemaRevisionRequest, Schema> deleteSchemaRevisionSettings;
   private final UnaryCallSettings<DeleteSchemaRequest, Empty> deleteSchemaSettings;
   private final UnaryCallSettings<ValidateSchemaRequest, ValidateSchemaResponse>
       validateSchemaSettings;
@@ -160,6 +175,46 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
             }
           };
 
+  private static final PagedListDescriptor<
+          ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema>
+      LIST_SCHEMA_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSchemaRevisionsRequest injectToken(
+                ListSchemaRevisionsRequest payload, String token) {
+              return ListSchemaRevisionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSchemaRevisionsRequest injectPageSize(
+                ListSchemaRevisionsRequest payload, int pageSize) {
+              return ListSchemaRevisionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSchemaRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSchemaRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Schema> extractResources(ListSchemaRevisionsResponse payload) {
+              return payload.getSchemasList() == null
+                  ? ImmutableList.<Schema>of()
+                  : payload.getSchemasList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
       LIST_SCHEMAS_PAGE_STR_FACT =
@@ -177,6 +232,27 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, ListSchemaRevisionsPagedResponse>
+      LIST_SCHEMA_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSchemaRevisionsRequest,
+              ListSchemaRevisionsResponse,
+              ListSchemaRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSchemaRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse> callable,
+                ListSchemaRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSchemaRevisionsResponse> futureResponse) {
+              PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SCHEMA_REVISIONS_PAGE_STR_DESC, request, context);
+              return ListSchemaRevisionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to createSchema. */
   public UnaryCallSettings<CreateSchemaRequest, Schema> createSchemaSettings() {
     return createSchemaSettings;
@@ -191,6 +267,28 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
   public PagedCallSettings<ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
       listSchemasSettings() {
     return listSchemasSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSchemaRevisions. */
+  public PagedCallSettings<
+          ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, ListSchemaRevisionsPagedResponse>
+      listSchemaRevisionsSettings() {
+    return listSchemaRevisionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to commitSchema. */
+  public UnaryCallSettings<CommitSchemaRequest, Schema> commitSchemaSettings() {
+    return commitSchemaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rollbackSchema. */
+  public UnaryCallSettings<RollbackSchemaRequest, Schema> rollbackSchemaSettings() {
+    return rollbackSchemaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSchemaRevision. */
+  public UnaryCallSettings<DeleteSchemaRevisionRequest, Schema> deleteSchemaRevisionSettings() {
+    return deleteSchemaRevisionSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteSchema. */
@@ -334,6 +432,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     createSchemaSettings = settingsBuilder.createSchemaSettings().build();
     getSchemaSettings = settingsBuilder.getSchemaSettings().build();
     listSchemasSettings = settingsBuilder.listSchemasSettings().build();
+    listSchemaRevisionsSettings = settingsBuilder.listSchemaRevisionsSettings().build();
+    commitSchemaSettings = settingsBuilder.commitSchemaSettings().build();
+    rollbackSchemaSettings = settingsBuilder.rollbackSchemaSettings().build();
+    deleteSchemaRevisionSettings = settingsBuilder.deleteSchemaRevisionSettings().build();
     deleteSchemaSettings = settingsBuilder.deleteSchemaSettings().build();
     validateSchemaSettings = settingsBuilder.validateSchemaSettings().build();
     validateMessageSettings = settingsBuilder.validateMessageSettings().build();
@@ -350,6 +452,15 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     private final PagedCallSettings.Builder<
             ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
         listSchemasSettings;
+    private final PagedCallSettings.Builder<
+            ListSchemaRevisionsRequest,
+            ListSchemaRevisionsResponse,
+            ListSchemaRevisionsPagedResponse>
+        listSchemaRevisionsSettings;
+    private final UnaryCallSettings.Builder<CommitSchemaRequest, Schema> commitSchemaSettings;
+    private final UnaryCallSettings.Builder<RollbackSchemaRequest, Schema> rollbackSchemaSettings;
+    private final UnaryCallSettings.Builder<DeleteSchemaRevisionRequest, Schema>
+        deleteSchemaRevisionSettings;
     private final UnaryCallSettings.Builder<DeleteSchemaRequest, Empty> deleteSchemaSettings;
     private final UnaryCallSettings.Builder<ValidateSchemaRequest, ValidateSchemaResponse>
         validateSchemaSettings;
@@ -389,6 +500,11 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       createSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSchemasSettings = PagedCallSettings.newBuilder(LIST_SCHEMAS_PAGE_STR_FACT);
+      listSchemaRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_SCHEMA_REVISIONS_PAGE_STR_FACT);
+      commitSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rollbackSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSchemaRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       validateSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       validateMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -401,6 +517,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
               createSchemaSettings,
               getSchemaSettings,
               listSchemasSettings,
+              listSchemaRevisionsSettings,
+              commitSchemaSettings,
+              rollbackSchemaSettings,
+              deleteSchemaRevisionSettings,
               deleteSchemaSettings,
               validateSchemaSettings,
               validateMessageSettings,
@@ -416,6 +536,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       createSchemaSettings = settings.createSchemaSettings.toBuilder();
       getSchemaSettings = settings.getSchemaSettings.toBuilder();
       listSchemasSettings = settings.listSchemasSettings.toBuilder();
+      listSchemaRevisionsSettings = settings.listSchemaRevisionsSettings.toBuilder();
+      commitSchemaSettings = settings.commitSchemaSettings.toBuilder();
+      rollbackSchemaSettings = settings.rollbackSchemaSettings.toBuilder();
+      deleteSchemaRevisionSettings = settings.deleteSchemaRevisionSettings.toBuilder();
       deleteSchemaSettings = settings.deleteSchemaSettings.toBuilder();
       validateSchemaSettings = settings.validateSchemaSettings.toBuilder();
       validateMessageSettings = settings.validateMessageSettings.toBuilder();
@@ -428,6 +552,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
               createSchemaSettings,
               getSchemaSettings,
               listSchemasSettings,
+              listSchemaRevisionsSettings,
+              commitSchemaSettings,
+              rollbackSchemaSettings,
+              deleteSchemaRevisionSettings,
               deleteSchemaSettings,
               validateSchemaSettings,
               validateMessageSettings,
@@ -475,6 +603,26 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
 
       builder
           .listSchemasSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listSchemaRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .commitSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rollbackSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteSchemaRevisionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -541,6 +689,31 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
             ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
         listSchemasSettings() {
       return listSchemasSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSchemaRevisions. */
+    public PagedCallSettings.Builder<
+            ListSchemaRevisionsRequest,
+            ListSchemaRevisionsResponse,
+            ListSchemaRevisionsPagedResponse>
+        listSchemaRevisionsSettings() {
+      return listSchemaRevisionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to commitSchema. */
+    public UnaryCallSettings.Builder<CommitSchemaRequest, Schema> commitSchemaSettings() {
+      return commitSchemaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackSchema. */
+    public UnaryCallSettings.Builder<RollbackSchemaRequest, Schema> rollbackSchemaSettings() {
+      return rollbackSchemaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSchemaRevision. */
+    public UnaryCallSettings.Builder<DeleteSchemaRevisionRequest, Schema>
+        deleteSchemaRevisionSettings() {
+      return deleteSchemaRevisionSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSchema. */

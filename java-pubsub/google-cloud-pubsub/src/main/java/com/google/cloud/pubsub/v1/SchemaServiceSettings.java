@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemaRevisionsPagedResponse;
 import static com.google.cloud.pubsub.v1.SchemaServiceClient.ListSchemasPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -37,11 +38,16 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.pubsub.v1.CommitSchemaRequest;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
+import com.google.pubsub.v1.DeleteSchemaRevisionRequest;
 import com.google.pubsub.v1.GetSchemaRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsRequest;
+import com.google.pubsub.v1.ListSchemaRevisionsResponse;
 import com.google.pubsub.v1.ListSchemasRequest;
 import com.google.pubsub.v1.ListSchemasResponse;
+import com.google.pubsub.v1.RollbackSchemaRequest;
 import com.google.pubsub.v1.Schema;
 import com.google.pubsub.v1.ValidateMessageRequest;
 import com.google.pubsub.v1.ValidateMessageResponse;
@@ -78,7 +84,10 @@ import javax.annotation.Generated;
  * schemaServiceSettingsBuilder
  *     .createSchemaSettings()
  *     .setRetrySettings(
- *         schemaServiceSettingsBuilder.createSchemaSettings().getRetrySettings().toBuilder()
+ *         schemaServiceSettingsBuilder
+ *             .createSchemaSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SchemaServiceSettings schemaServiceSettings = schemaServiceSettingsBuilder.build();
@@ -101,6 +110,28 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
   public PagedCallSettings<ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
       listSchemasSettings() {
     return ((SchemaServiceStubSettings) getStubSettings()).listSchemasSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSchemaRevisions. */
+  public PagedCallSettings<
+          ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, ListSchemaRevisionsPagedResponse>
+      listSchemaRevisionsSettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).listSchemaRevisionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to commitSchema. */
+  public UnaryCallSettings<CommitSchemaRequest, Schema> commitSchemaSettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).commitSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rollbackSchema. */
+  public UnaryCallSettings<RollbackSchemaRequest, Schema> rollbackSchemaSettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).rollbackSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSchemaRevision. */
+  public UnaryCallSettings<DeleteSchemaRevisionRequest, Schema> deleteSchemaRevisionSettings() {
+    return ((SchemaServiceStubSettings) getStubSettings()).deleteSchemaRevisionSettings();
   }
 
   /** Returns the object with the settings used for calls to deleteSchema. */
@@ -265,6 +296,31 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
             ListSchemasRequest, ListSchemasResponse, ListSchemasPagedResponse>
         listSchemasSettings() {
       return getStubSettingsBuilder().listSchemasSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSchemaRevisions. */
+    public PagedCallSettings.Builder<
+            ListSchemaRevisionsRequest,
+            ListSchemaRevisionsResponse,
+            ListSchemaRevisionsPagedResponse>
+        listSchemaRevisionsSettings() {
+      return getStubSettingsBuilder().listSchemaRevisionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to commitSchema. */
+    public UnaryCallSettings.Builder<CommitSchemaRequest, Schema> commitSchemaSettings() {
+      return getStubSettingsBuilder().commitSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackSchema. */
+    public UnaryCallSettings.Builder<RollbackSchemaRequest, Schema> rollbackSchemaSettings() {
+      return getStubSettingsBuilder().rollbackSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSchemaRevision. */
+    public UnaryCallSettings.Builder<DeleteSchemaRevisionRequest, Schema>
+        deleteSchemaRevisionSettings() {
+      return getStubSettingsBuilder().deleteSchemaRevisionSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteSchema. */
