@@ -78,7 +78,10 @@ import javax.annotation.Generated;
  * datastoreAdminSettingsBuilder
  *     .getIndexSettings()
  *     .setRetrySettings(
- *         datastoreAdminSettingsBuilder.getIndexSettings().getRetrySettings().toBuilder()
+ *         datastoreAdminSettingsBuilder
+ *             .getIndexSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DatastoreAdminSettings datastoreAdminSettings = datastoreAdminSettingsBuilder.build();

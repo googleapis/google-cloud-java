@@ -98,7 +98,10 @@ import org.threeten.bp.Duration;
  * datastoreAdminSettingsBuilder
  *     .getIndexSettings()
  *     .setRetrySettings(
- *         datastoreAdminSettingsBuilder.getIndexSettings().getRetrySettings().toBuilder()
+ *         datastoreAdminSettingsBuilder
+ *             .getIndexSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DatastoreAdminStubSettings datastoreAdminSettings = datastoreAdminSettingsBuilder.build();
