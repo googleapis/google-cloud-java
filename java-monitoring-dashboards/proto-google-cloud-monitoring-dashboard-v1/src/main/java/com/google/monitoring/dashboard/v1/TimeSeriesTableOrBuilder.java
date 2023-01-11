@@ -85,4 +85,98 @@ public interface TimeSeriesTableOrBuilder
    */
   com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSetOrBuilder getDataSetsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Store rendering strategy
+   * </pre>
+   *
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for metricVisualization.
+   */
+  int getMetricVisualizationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Store rendering strategy
+   * </pre>
+   *
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metricVisualization.
+   */
+  com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization getMetricVisualization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
+      getColumnSettingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings getColumnSettings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getColumnSettingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>
+      getColumnSettingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder
+      getColumnSettingsOrBuilder(int index);
 }

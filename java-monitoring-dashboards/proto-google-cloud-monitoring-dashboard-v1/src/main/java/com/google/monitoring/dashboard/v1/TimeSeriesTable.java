@@ -39,6 +39,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
 
   private TimeSeriesTable() {
     dataSets_ = java.util.Collections.emptyList();
+    metricVisualization_ = 0;
+    columnSettings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -65,6 +67,168 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         .ensureFieldAccessorsInitialized(
             com.google.monitoring.dashboard.v1.TimeSeriesTable.class,
             com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enum for metric metric_visualization
+   * </pre>
+   *
+   * Protobuf enum {@code google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization}
+   */
+  public enum MetricVisualization implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified state
+     * </pre>
+     *
+     * <code>METRIC_VISUALIZATION_UNSPECIFIED = 0;</code>
+     */
+    METRIC_VISUALIZATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Default text rendering
+     * </pre>
+     *
+     * <code>NUMBER = 1;</code>
+     */
+    NUMBER(1),
+    /**
+     *
+     *
+     * <pre>
+     * Horizontal bar rendering
+     * </pre>
+     *
+     * <code>BAR = 2;</code>
+     */
+    BAR(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified state
+     * </pre>
+     *
+     * <code>METRIC_VISUALIZATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int METRIC_VISUALIZATION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Default text rendering
+     * </pre>
+     *
+     * <code>NUMBER = 1;</code>
+     */
+    public static final int NUMBER_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Horizontal bar rendering
+     * </pre>
+     *
+     * <code>BAR = 2;</code>
+     */
+    public static final int BAR_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MetricVisualization valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MetricVisualization forNumber(int value) {
+      switch (value) {
+        case 0:
+          return METRIC_VISUALIZATION_UNSPECIFIED;
+        case 1:
+          return NUMBER;
+        case 2:
+          return BAR;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MetricVisualization>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MetricVisualization>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MetricVisualization>() {
+              public MetricVisualization findValueByNumber(int number) {
+                return MetricVisualization.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final MetricVisualization[] VALUES = values();
+
+    public static MetricVisualization valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MetricVisualization(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization)
   }
 
   public interface TableDataSetOrBuilder
@@ -120,9 +284,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form `${label_name}`,
-     * which will resolve to the label's value i.e.
+     * Optional. A template string for naming `TimeSeries` in the resulting data
+     * set. This should be a string with interpolations of the form
+     * `${label_name}`, which will resolve to the label's value i.e.
      * "${resource.labels.project_id}."
      * </pre>
      *
@@ -135,9 +299,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form `${label_name}`,
-     * which will resolve to the label's value i.e.
+     * Optional. A template string for naming `TimeSeries` in the resulting data
+     * set. This should be a string with interpolations of the form
+     * `${label_name}`, which will resolve to the label's value i.e.
      * "${resource.labels.project_id}."
      * </pre>
      *
@@ -151,10 +315,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set, implemented by
-     * specifying the minimum alignment period to use in a time series query
-     * For example, if the data is published once every 10 minutes, the
-     * `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set,
+     * implemented by specifying the minimum alignment period to use in a time
+     * series query For example, if the data is published once every 10 minutes,
+     * the `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -169,10 +333,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set, implemented by
-     * specifying the minimum alignment period to use in a time series query
-     * For example, if the data is published once every 10 minutes, the
-     * `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set,
+     * implemented by specifying the minimum alignment period to use in a time
+     * series query For example, if the data is published once every 10 minutes,
+     * the `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -187,10 +351,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set, implemented by
-     * specifying the minimum alignment period to use in a time series query
-     * For example, if the data is published once every 10 minutes, the
-     * `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set,
+     * implemented by specifying the minimum alignment period to use in a time
+     * series query For example, if the data is published once every 10 minutes,
+     * the `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -204,7 +368,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Table display options for configuring how the table is rendered.
+     * Optional. Table display options for configuring how the table is
+     * rendered.
      * </pre>
      *
      * <code>
@@ -218,7 +383,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Table display options for configuring how the table is rendered.
+     * Optional. Table display options for configuring how the table is
+     * rendered.
      * </pre>
      *
      * <code>
@@ -232,7 +398,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Table display options for configuring how the table is rendered.
+     * Optional. Table display options for configuring how the table is
+     * rendered.
      * </pre>
      *
      * <code>
@@ -355,9 +522,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form `${label_name}`,
-     * which will resolve to the label's value i.e.
+     * Optional. A template string for naming `TimeSeries` in the resulting data
+     * set. This should be a string with interpolations of the form
+     * `${label_name}`, which will resolve to the label's value i.e.
      * "${resource.labels.project_id}."
      * </pre>
      *
@@ -381,9 +548,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. A template string for naming `TimeSeries` in the resulting data set.
-     * This should be a string with interpolations of the form `${label_name}`,
-     * which will resolve to the label's value i.e.
+     * Optional. A template string for naming `TimeSeries` in the resulting data
+     * set. This should be a string with interpolations of the form
+     * `${label_name}`, which will resolve to the label's value i.e.
      * "${resource.labels.project_id}."
      * </pre>
      *
@@ -410,10 +577,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set, implemented by
-     * specifying the minimum alignment period to use in a time series query
-     * For example, if the data is published once every 10 minutes, the
-     * `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set,
+     * implemented by specifying the minimum alignment period to use in a time
+     * series query For example, if the data is published once every 10 minutes,
+     * the `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -431,10 +598,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set, implemented by
-     * specifying the minimum alignment period to use in a time series query
-     * For example, if the data is published once every 10 minutes, the
-     * `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set,
+     * implemented by specifying the minimum alignment period to use in a time
+     * series query For example, if the data is published once every 10 minutes,
+     * the `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -454,10 +621,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. The lower bound on data point frequency for this data set, implemented by
-     * specifying the minimum alignment period to use in a time series query
-     * For example, if the data is published once every 10 minutes, the
-     * `min_alignment_period` should be at least 10 minutes. It would not
+     * Optional. The lower bound on data point frequency for this data set,
+     * implemented by specifying the minimum alignment period to use in a time
+     * series query For example, if the data is published once every 10 minutes,
+     * the `min_alignment_period` should be at least 10 minutes. It would not
      * make sense to fetch and align data at one minute intervals.
      * </pre>
      *
@@ -476,7 +643,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Table display options for configuring how the table is rendered.
+     * Optional. Table display options for configuring how the table is
+     * rendered.
      * </pre>
      *
      * <code>
@@ -493,7 +661,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Table display options for configuring how the table is rendered.
+     * Optional. Table display options for configuring how the table is
+     * rendered.
      * </pre>
      *
      * <code>
@@ -512,7 +681,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Table display options for configuring how the table is rendered.
+     * Optional. Table display options for configuring how the table is
+     * rendered.
      * </pre>
      *
      * <code>
@@ -1193,9 +1363,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form `${label_name}`,
-       * which will resolve to the label's value i.e.
+       * Optional. A template string for naming `TimeSeries` in the resulting data
+       * set. This should be a string with interpolations of the form
+       * `${label_name}`, which will resolve to the label's value i.e.
        * "${resource.labels.project_id}."
        * </pre>
        *
@@ -1218,9 +1388,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form `${label_name}`,
-       * which will resolve to the label's value i.e.
+       * Optional. A template string for naming `TimeSeries` in the resulting data
+       * set. This should be a string with interpolations of the form
+       * `${label_name}`, which will resolve to the label's value i.e.
        * "${resource.labels.project_id}."
        * </pre>
        *
@@ -1243,9 +1413,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form `${label_name}`,
-       * which will resolve to the label's value i.e.
+       * Optional. A template string for naming `TimeSeries` in the resulting data
+       * set. This should be a string with interpolations of the form
+       * `${label_name}`, which will resolve to the label's value i.e.
        * "${resource.labels.project_id}."
        * </pre>
        *
@@ -1267,9 +1437,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form `${label_name}`,
-       * which will resolve to the label's value i.e.
+       * Optional. A template string for naming `TimeSeries` in the resulting data
+       * set. This should be a string with interpolations of the form
+       * `${label_name}`, which will resolve to the label's value i.e.
        * "${resource.labels.project_id}."
        * </pre>
        *
@@ -1287,9 +1457,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. A template string for naming `TimeSeries` in the resulting data set.
-       * This should be a string with interpolations of the form `${label_name}`,
-       * which will resolve to the label's value i.e.
+       * Optional. A template string for naming `TimeSeries` in the resulting data
+       * set. This should be a string with interpolations of the form
+       * `${label_name}`, which will resolve to the label's value i.e.
        * "${resource.labels.project_id}."
        * </pre>
        *
@@ -1319,10 +1489,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1339,10 +1509,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1365,10 +1535,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1393,10 +1563,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1418,10 +1588,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1450,10 +1620,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1476,10 +1646,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1496,10 +1666,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1520,10 +1690,10 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. The lower bound on data point frequency for this data set, implemented by
-       * specifying the minimum alignment period to use in a time series query
-       * For example, if the data is published once every 10 minutes, the
-       * `min_alignment_period` should be at least 10 minutes. It would not
+       * Optional. The lower bound on data point frequency for this data set,
+       * implemented by specifying the minimum alignment period to use in a time
+       * series query For example, if the data is published once every 10 minutes,
+       * the `min_alignment_period` should be at least 10 minutes. It would not
        * make sense to fetch and align data at one minute intervals.
        * </pre>
        *
@@ -1558,7 +1728,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1574,7 +1745,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1596,7 +1768,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1621,7 +1794,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1643,7 +1817,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1673,7 +1848,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1695,7 +1871,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1712,7 +1889,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1733,7 +1911,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Optional. Table display options for configuring how the table is rendered.
+       * Optional. Table display options for configuring how the table is
+       * rendered.
        * </pre>
        *
        * <code>
@@ -1824,6 +2003,753 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface ColumnSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the column.
+     * </pre>
+     *
+     * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The column.
+     */
+    java.lang.String getColumn();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the column.
+     * </pre>
+     *
+     * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for column.
+     */
+    com.google.protobuf.ByteString getColumnBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Whether the column should be visible on page load.
+     * </pre>
+     *
+     * <code>bool visible = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The visible.
+     */
+    boolean getVisible();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The persistent settings for a table's columns.
+   * </pre>
+   *
+   * Protobuf type {@code google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings}
+   */
+  public static final class ColumnSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings)
+      ColumnSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ColumnSettings.newBuilder() to construct.
+    private ColumnSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ColumnSettings() {
+      column_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ColumnSettings();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.dashboard.v1.TableProto
+          .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_ColumnSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.monitoring.dashboard.v1.TableProto
+          .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_ColumnSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.class,
+              com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder.class);
+    }
+
+    public static final int COLUMN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object column_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the column.
+     * </pre>
+     *
+     * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The column.
+     */
+    @java.lang.Override
+    public java.lang.String getColumn() {
+      java.lang.Object ref = column_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        column_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The id of the column.
+     * </pre>
+     *
+     * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for column.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getColumnBytes() {
+      java.lang.Object ref = column_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        column_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VISIBLE_FIELD_NUMBER = 2;
+    private boolean visible_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Whether the column should be visible on page load.
+     * </pre>
+     *
+     * <code>bool visible = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The visible.
+     */
+    @java.lang.Override
+    public boolean getVisible() {
+      return visible_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, column_);
+      }
+      if (visible_ != false) {
+        output.writeBool(2, visible_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(column_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, column_);
+      }
+      if (visible_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, visible_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings)) {
+        return super.equals(obj);
+      }
+      com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings other =
+          (com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings) obj;
+
+      if (!getColumn().equals(other.getColumn())) return false;
+      if (getVisible() != other.getVisible()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + COLUMN_FIELD_NUMBER;
+      hash = (53 * hash) + getColumn().hashCode();
+      hash = (37 * hash) + VISIBLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVisible());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The persistent settings for a table's columns.
+     * </pre>
+     *
+     * Protobuf type {@code google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings)
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.dashboard.v1.TableProto
+            .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_ColumnSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.monitoring.dashboard.v1.TableProto
+            .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_ColumnSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.class,
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        column_ = "";
+
+        visible_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.dashboard.v1.TableProto
+            .internal_static_google_monitoring_dashboard_v1_TimeSeriesTable_ColumnSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+          getDefaultInstanceForType() {
+        return com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings build() {
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings buildPartial() {
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings result =
+            new com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings(this);
+        result.column_ = column_;
+        result.visible_ = visible_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings) {
+          return mergeFrom(
+              (com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings other) {
+        if (other
+            == com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+                .getDefaultInstance()) return this;
+        if (!other.getColumn().isEmpty()) {
+          column_ = other.column_;
+          onChanged();
+        }
+        if (other.getVisible() != false) {
+          setVisible(other.getVisible());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  column_ = input.readStringRequireUtf8();
+
+                  break;
+                } // case 10
+              case 16:
+                {
+                  visible_ = input.readBool();
+
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private java.lang.Object column_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the column.
+       * </pre>
+       *
+       * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The column.
+       */
+      public java.lang.String getColumn() {
+        java.lang.Object ref = column_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          column_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the column.
+       * </pre>
+       *
+       * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for column.
+       */
+      public com.google.protobuf.ByteString getColumnBytes() {
+        java.lang.Object ref = column_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          column_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the column.
+       * </pre>
+       *
+       * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The column to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumn(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        column_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the column.
+       * </pre>
+       *
+       * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearColumn() {
+
+        column_ = getDefaultInstance().getColumn();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The id of the column.
+       * </pre>
+       *
+       * <code>string column = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for column to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumnBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        column_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean visible_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. Whether the column should be visible on page load.
+       * </pre>
+       *
+       * <code>bool visible = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The visible.
+       */
+      @java.lang.Override
+      public boolean getVisible() {
+        return visible_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Whether the column should be visible on page load.
+       * </pre>
+       *
+       * <code>bool visible = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The visible to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVisible(boolean value) {
+
+        visible_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. Whether the column should be visible on page load.
+       * </pre>
+       *
+       * <code>bool visible = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVisible() {
+
+        visible_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings)
+    private static final com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings();
+    }
+
+    public static com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ColumnSettings> PARSER =
+        new com.google.protobuf.AbstractParser<ColumnSettings>() {
+          @java.lang.Override
+          public ColumnSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ColumnSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ColumnSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int DATA_SETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet> dataSets_;
   /**
@@ -1906,6 +2832,134 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     return dataSets_.get(index);
   }
 
+  public static final int METRIC_VISUALIZATION_FIELD_NUMBER = 2;
+  private int metricVisualization_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Store rendering strategy
+   * </pre>
+   *
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for metricVisualization.
+   */
+  @java.lang.Override
+  public int getMetricVisualizationValue() {
+    return metricVisualization_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Store rendering strategy
+   * </pre>
+   *
+   * <code>
+   * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metricVisualization.
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization
+      getMetricVisualization() {
+    @SuppressWarnings("deprecation")
+    com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization result =
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.valueOf(
+            metricVisualization_);
+    return result == null
+        ? com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int COLUMN_SETTINGS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
+      columnSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
+      getColumnSettingsList() {
+    return columnSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>
+      getColumnSettingsOrBuilderList() {
+    return columnSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getColumnSettingsCount() {
+    return columnSettings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings getColumnSettings(
+      int index) {
+    return columnSettings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of the persistent column settings for the table.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder
+      getColumnSettingsOrBuilder(int index) {
+    return columnSettings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1923,6 +2977,15 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < dataSets_.size(); i++) {
       output.writeMessage(1, dataSets_.get(i));
     }
+    if (metricVisualization_
+        != com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization
+            .METRIC_VISUALIZATION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, metricVisualization_);
+    }
+    for (int i = 0; i < columnSettings_.size(); i++) {
+      output.writeMessage(4, columnSettings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1934,6 +2997,15 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     size = 0;
     for (int i = 0; i < dataSets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, dataSets_.get(i));
+    }
+    if (metricVisualization_
+        != com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization
+            .METRIC_VISUALIZATION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, metricVisualization_);
+    }
+    for (int i = 0; i < columnSettings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, columnSettings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1952,6 +3024,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         (com.google.monitoring.dashboard.v1.TimeSeriesTable) obj;
 
     if (!getDataSetsList().equals(other.getDataSetsList())) return false;
+    if (metricVisualization_ != other.metricVisualization_) return false;
+    if (!getColumnSettingsList().equals(other.getColumnSettingsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1966,6 +3040,12 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     if (getDataSetsCount() > 0) {
       hash = (37 * hash) + DATA_SETS_FIELD_NUMBER;
       hash = (53 * hash) + getDataSetsList().hashCode();
+    }
+    hash = (37 * hash) + METRIC_VISUALIZATION_FIELD_NUMBER;
+    hash = (53 * hash) + metricVisualization_;
+    if (getColumnSettingsCount() > 0) {
+      hash = (37 * hash) + COLUMN_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getColumnSettingsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2112,6 +3192,15 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         dataSetsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      metricVisualization_ = 0;
+
+      if (columnSettingsBuilder_ == null) {
+        columnSettings_ = java.util.Collections.emptyList();
+      } else {
+        columnSettings_ = null;
+        columnSettingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -2148,6 +3237,16 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         result.dataSets_ = dataSets_;
       } else {
         result.dataSets_ = dataSetsBuilder_.build();
+      }
+      result.metricVisualization_ = metricVisualization_;
+      if (columnSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          columnSettings_ = java.util.Collections.unmodifiableList(columnSettings_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.columnSettings_ = columnSettings_;
+      } else {
+        result.columnSettings_ = columnSettingsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2226,6 +3325,36 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           }
         }
       }
+      if (other.metricVisualization_ != 0) {
+        setMetricVisualizationValue(other.getMetricVisualizationValue());
+      }
+      if (columnSettingsBuilder_ == null) {
+        if (!other.columnSettings_.isEmpty()) {
+          if (columnSettings_.isEmpty()) {
+            columnSettings_ = other.columnSettings_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureColumnSettingsIsMutable();
+            columnSettings_.addAll(other.columnSettings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.columnSettings_.isEmpty()) {
+          if (columnSettingsBuilder_.isEmpty()) {
+            columnSettingsBuilder_.dispose();
+            columnSettingsBuilder_ = null;
+            columnSettings_ = other.columnSettings_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            columnSettingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getColumnSettingsFieldBuilder()
+                    : null;
+          } else {
+            columnSettingsBuilder_.addAllMessages(other.columnSettings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2266,6 +3395,26 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
                 }
                 break;
               } // case 10
+            case 16:
+              {
+                metricVisualization_ = input.readEnum();
+
+                break;
+              } // case 16
+            case 34:
+              {
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings m =
+                    input.readMessage(
+                        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.parser(),
+                        extensionRegistry);
+                if (columnSettingsBuilder_ == null) {
+                  ensureColumnSettingsIsMutable();
+                  columnSettings_.add(m);
+                } else {
+                  columnSettingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2687,6 +3836,522 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         dataSets_ = null;
       }
       return dataSetsBuilder_;
+    }
+
+    private int metricVisualization_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Store rendering strategy
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for metricVisualization.
+     */
+    @java.lang.Override
+    public int getMetricVisualizationValue() {
+      return metricVisualization_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Store rendering strategy
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for metricVisualization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetricVisualizationValue(int value) {
+
+      metricVisualization_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Store rendering strategy
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The metricVisualization.
+     */
+    @java.lang.Override
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization
+        getMetricVisualization() {
+      @SuppressWarnings("deprecation")
+      com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization result =
+          com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.valueOf(
+              metricVisualization_);
+      return result == null
+          ? com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Store rendering strategy
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The metricVisualization to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetricVisualization(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      metricVisualization_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Store rendering strategy
+     * </pre>
+     *
+     * <code>
+     * .google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization metric_visualization = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMetricVisualization() {
+
+      metricVisualization_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
+        columnSettings_ = java.util.Collections.emptyList();
+
+    private void ensureColumnSettingsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        columnSettings_ =
+            new java.util.ArrayList<
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>(columnSettings_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings,
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder,
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>
+        columnSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
+        getColumnSettingsList() {
+      if (columnSettingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(columnSettings_);
+      } else {
+        return columnSettingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getColumnSettingsCount() {
+      if (columnSettingsBuilder_ == null) {
+        return columnSettings_.size();
+      } else {
+        return columnSettingsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings getColumnSettings(
+        int index) {
+      if (columnSettingsBuilder_ == null) {
+        return columnSettings_.get(index);
+      } else {
+        return columnSettingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setColumnSettings(
+        int index, com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings value) {
+      if (columnSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureColumnSettingsIsMutable();
+        columnSettings_.set(index, value);
+        onChanged();
+      } else {
+        columnSettingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setColumnSettings(
+        int index,
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder builderForValue) {
+      if (columnSettingsBuilder_ == null) {
+        ensureColumnSettingsIsMutable();
+        columnSettings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        columnSettingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addColumnSettings(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings value) {
+      if (columnSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureColumnSettingsIsMutable();
+        columnSettings_.add(value);
+        onChanged();
+      } else {
+        columnSettingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addColumnSettings(
+        int index, com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings value) {
+      if (columnSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureColumnSettingsIsMutable();
+        columnSettings_.add(index, value);
+        onChanged();
+      } else {
+        columnSettingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addColumnSettings(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder builderForValue) {
+      if (columnSettingsBuilder_ == null) {
+        ensureColumnSettingsIsMutable();
+        columnSettings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        columnSettingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addColumnSettings(
+        int index,
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder builderForValue) {
+      if (columnSettingsBuilder_ == null) {
+        ensureColumnSettingsIsMutable();
+        columnSettings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        columnSettingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllColumnSettings(
+        java.lang.Iterable<
+                ? extends com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
+            values) {
+      if (columnSettingsBuilder_ == null) {
+        ensureColumnSettingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, columnSettings_);
+        onChanged();
+      } else {
+        columnSettingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearColumnSettings() {
+      if (columnSettingsBuilder_ == null) {
+        columnSettings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        columnSettingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeColumnSettings(int index) {
+      if (columnSettingsBuilder_ == null) {
+        ensureColumnSettingsIsMutable();
+        columnSettings_.remove(index);
+        onChanged();
+      } else {
+        columnSettingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder
+        getColumnSettingsBuilder(int index) {
+      return getColumnSettingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder
+        getColumnSettingsOrBuilder(int index) {
+      if (columnSettingsBuilder_ == null) {
+        return columnSettings_.get(index);
+      } else {
+        return columnSettingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>
+        getColumnSettingsOrBuilderList() {
+      if (columnSettingsBuilder_ != null) {
+        return columnSettingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(columnSettings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder
+        addColumnSettingsBuilder() {
+      return getColumnSettingsFieldBuilder()
+          .addBuilder(
+              com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder
+        addColumnSettingsBuilder(int index) {
+      return getColumnSettingsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of the persistent column settings for the table.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings column_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder>
+        getColumnSettingsBuilderList() {
+      return getColumnSettingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings,
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder,
+            com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>
+        getColumnSettingsFieldBuilder() {
+      if (columnSettingsBuilder_ == null) {
+        columnSettingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings,
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder,
+                com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>(
+                columnSettings_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        columnSettings_ = null;
+      }
+      return columnSettingsBuilder_;
     }
 
     @java.lang.Override
