@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grafeas-bom</artifactId>
-  <version>2.8.0</version><!-- {x-version-update:grafeas:current} -->
+  <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -65,7 +65,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grafeas</artifactId>
-        <version>2.8.0</version><!-- {x-version-update:grafeas:current} -->
+        <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

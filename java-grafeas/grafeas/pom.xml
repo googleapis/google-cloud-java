@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grafeas</artifactId>
-  <version>2.8.0</version><!-- {x-version-update:grafeas:current} -->
+  <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
   <packaging>jar</packaging>
   <name>Google Grafeas</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>io.grafeas</groupId>
     <artifactId>grafeas-parent</artifactId>
-    <version>2.8.0</version><!-- {x-version-update:grafeas:current} -->
+    <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
   </parent>
   <properties>
     <site.installationModule>grafeas</site.installationModule>
