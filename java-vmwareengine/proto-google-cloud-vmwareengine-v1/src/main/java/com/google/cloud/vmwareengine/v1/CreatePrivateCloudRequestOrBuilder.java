@@ -31,7 +31,7 @@ public interface CreatePrivateCloudRequestOrBuilder
    * private cloud in. Resource names are schemeless URIs that follow the
    * conventions in https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface CreatePrivateCloudRequestOrBuilder
    * private cloud in. Resource names are schemeless URIs that follow the
    * conventions in https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -148,8 +148,8 @@ public interface CreatePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -161,8 +161,8 @@ public interface CreatePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -175,8 +175,8 @@ public interface CreatePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. True if you want the request to be validated and not executed; false
-   * otherwise.
+   * Optional. True if you want the request to be validated and not executed;
+   * false otherwise.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

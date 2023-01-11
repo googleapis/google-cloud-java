@@ -31,7 +31,7 @@ public interface DeletePrivateCloudRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface DeletePrivateCloudRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -64,8 +64,8 @@ public interface DeletePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,8 +77,8 @@ public interface DeletePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,10 +91,11 @@ public interface DeletePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, cascade delete is enabled and all children of this private
-   * cloud resource are also deleted. When this flag is set to false, the
-   * private cloud will not be deleted if there are any children other than the
-   * management cluster. The management cluster is always deleted.
+   * Optional. If set to true, cascade delete is enabled and all children of
+   * this private cloud resource are also deleted. When this flag is set to
+   * false, the private cloud will not be deleted if there are any children
+   * other than the management cluster. The management cluster is always
+   * deleted.
    * </pre>
    *
    * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -111,10 +112,10 @@ public interface DeletePrivateCloudRequestOrBuilder
    * is `3`. Specifying a non-zero value for this field changes the value of
    * `PrivateCloud.state` to `DELETED` and sets `expire_time` to the planned
    * deletion time. Deletion can be cancelled before `expire_time` elapses using
-   * [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud]. Specifying a value of `0` for
-   * this field instead begins the deletion process and ceases billing
-   * immediately. During the final deletion process, the value of
-   * `PrivateCloud.state` becomes `PURGING`.
+   * [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud].
+   * Specifying a value of `0` for this field instead begins the deletion
+   * process and ceases billing immediately. During the final deletion process,
+   * the value of `PrivateCloud.state` becomes `PURGING`.
    * </pre>
    *
    * <code>optional int32 delay_hours = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -130,10 +131,10 @@ public interface DeletePrivateCloudRequestOrBuilder
    * is `3`. Specifying a non-zero value for this field changes the value of
    * `PrivateCloud.state` to `DELETED` and sets `expire_time` to the planned
    * deletion time. Deletion can be cancelled before `expire_time` elapses using
-   * [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud]. Specifying a value of `0` for
-   * this field instead begins the deletion process and ceases billing
-   * immediately. During the final deletion process, the value of
-   * `PrivateCloud.state` becomes `PURGING`.
+   * [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud].
+   * Specifying a value of `0` for this field instead begins the deletion
+   * process and ceases billing immediately. During the final deletion process,
+   * the value of `PrivateCloud.state` becomes `PURGING`.
    * </pre>
    *
    * <code>optional int32 delay_hours = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

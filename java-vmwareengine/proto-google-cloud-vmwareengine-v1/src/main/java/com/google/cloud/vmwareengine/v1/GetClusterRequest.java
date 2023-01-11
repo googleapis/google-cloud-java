@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.GetCluster][google.cloud.vmwareengine.v1.VmwareEngine.GetCluster]
+ * Request message for
+ * [VmwareEngine.GetCluster][google.cloud.vmwareengine.v1.VmwareEngine.GetCluster]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.GetClusterRequest}
@@ -77,7 +78,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * </pre>
    *
    * <code>
@@ -106,7 +107,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * </pre>
    *
    * <code>
@@ -291,7 +292,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.GetCluster][google.cloud.vmwareengine.v1.VmwareEngine.GetCluster]
+   * Request message for
+   * [VmwareEngine.GetCluster][google.cloud.vmwareengine.v1.VmwareEngine.GetCluster]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.GetClusterRequest}
@@ -467,7 +469,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
      * </pre>
      *
      * <code>
@@ -495,7 +497,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
      * </pre>
      *
      * <code>
@@ -523,7 +525,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
      * </pre>
      *
      * <code>
@@ -550,7 +552,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
      * </pre>
      *
      * <code>
@@ -573,7 +575,7 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
      * </pre>
      *
      * <code>

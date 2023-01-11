@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Response message for [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
+ * Response message for
+ * [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListPrivateCloudsResponse}
@@ -446,7 +447,8 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Response message for [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
+   * Response message for
+   * [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListPrivateCloudsResponse}

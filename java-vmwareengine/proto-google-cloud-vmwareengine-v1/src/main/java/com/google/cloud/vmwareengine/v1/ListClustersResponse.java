@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Response message for [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
+ * Response message for
+ * [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListClustersResponse}
@@ -445,7 +446,8 @@ public final class ListClustersResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response message for [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
+   * Response message for
+   * [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListClustersResponse}

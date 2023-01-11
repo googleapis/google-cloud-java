@@ -31,7 +31,7 @@ public interface UndeletePrivateCloudRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface UndeletePrivateCloudRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -64,8 +64,8 @@ public interface UndeletePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,8 +77,8 @@ public interface UndeletePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

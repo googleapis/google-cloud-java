@@ -233,7 +233,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to be queried for clusters.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a`
+   *     `projects/my-project/locations/us-central1-a`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPrivateCloudsPagedResponse listPrivateClouds(LocationName parent) {
@@ -267,7 +267,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to be queried for clusters.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a`
+   *     `projects/my-project/locations/us-central1-a`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPrivateCloudsPagedResponse listPrivateClouds(String parent) {
@@ -408,7 +408,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the private cloud to retrieve. Resource names are
    *     schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PrivateCloud getPrivateCloud(PrivateCloudName name) {
@@ -438,7 +438,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the private cloud to retrieve. Resource names are
    *     schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PrivateCloud getPrivateCloud(String name) {
@@ -531,7 +531,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the location to create the new private cloud in.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a`
+   *     `projects/my-project/locations/us-central1-a`
    * @param privateCloud Required. The initial description of the new private cloud.
    * @param privateCloudId Required. The user-provided identifier of the private cloud to be
    *     created. This identifier must be unique among each `PrivateCloud` within the parent and
@@ -587,7 +587,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the location to create the new private cloud in.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a`
+   *     `projects/my-project/locations/us-central1-a`
    * @param privateCloud Required. The initial description of the new private cloud.
    * @param privateCloudId Required. The user-provided identifier of the private cloud to be
    *     created. This identifier must be unique among each `PrivateCloud` within the parent and
@@ -908,7 +908,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the private cloud to delete. Resource names are
    *     schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> deletePrivateCloudAsync(
@@ -952,7 +952,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the private cloud to delete. Resource names are
    *     schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> deletePrivateCloudAsync(
@@ -1113,7 +1113,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the private cloud scheduled for deletion. Resource
    *     names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> undeletePrivateCloudAsync(
@@ -1148,7 +1148,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the private cloud scheduled for deletion. Resource
    *     names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> undeletePrivateCloudAsync(
@@ -1277,7 +1277,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to query for clusters. Resource
    *     names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersPagedResponse listClusters(PrivateCloudName parent) {
@@ -1311,7 +1311,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to query for clusters. Resource
    *     names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersPagedResponse listClusters(String parent) {
@@ -1452,7 +1452,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The cluster resource name to retrieve. Resource names are schemeless URIs
    *     that follow the conventions in https://cloud.google.com/apis/design/resource_names. For
    *     example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(ClusterName name) {
@@ -1483,7 +1483,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The cluster resource name to retrieve. Resource names are schemeless URIs
    *     that follow the conventions in https://cloud.google.com/apis/design/resource_names. For
    *     example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String name) {
@@ -1575,7 +1575,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to create a new cluster in.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @param cluster Required. The initial description of the new cluster.
    * @param clusterId Required. The user-provided identifier of the new `Cluster`. This identifier
    *     must be unique among clusters within the parent and becomes the final token in the name
@@ -1626,7 +1626,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to create a new cluster in.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @param cluster Required. The initial description of the new cluster.
    * @param clusterId Required. The user-provided identifier of the new `Cluster`. This identifier
    *     must be unique among clusters within the parent and becomes the final token in the name
@@ -1928,7 +1928,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the cluster to delete. Resource names are schemeless
    *     URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
    *     For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(ClusterName name) {
@@ -1961,7 +1961,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the cluster to delete. Resource names are schemeless
    *     URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names.
    *     For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(String name) {
@@ -2092,7 +2092,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to be queried for subnets.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubnetsPagedResponse listSubnets(PrivateCloudName parent) {
@@ -2126,7 +2126,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the private cloud to be queried for subnets.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubnetsPagedResponse listSubnets(String parent) {
@@ -2262,7 +2262,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the location to be queried for node types.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a`
+   *     `projects/my-project/locations/us-central1-a`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNodeTypesPagedResponse listNodeTypes(LocationName parent) {
@@ -2296,7 +2296,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param parent Required. The resource name of the location to be queried for node types.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a`
+   *     `projects/my-project/locations/us-central1-a`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNodeTypesPagedResponse listNodeTypes(String parent) {
@@ -2431,7 +2431,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the node type to retrieve. Resource names are
    *     schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+   *     `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NodeType getNodeType(NodeTypeName name) {
@@ -2461,7 +2461,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the node type to retrieve. Resource names are
    *     schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+   *     `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NodeType getNodeType(String name) {
@@ -2546,7 +2546,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to be queried for
    *     credentials. Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Credentials showNsxCredentials(PrivateCloudName privateCloud) {
@@ -2579,7 +2579,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to be queried for
    *     credentials. Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Credentials showNsxCredentials(String privateCloud) {
@@ -2668,7 +2668,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to be queried for
    *     credentials. Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Credentials showVcenterCredentials(PrivateCloudName privateCloud) {
@@ -2701,7 +2701,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to be queried for
    *     credentials. Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Credentials showVcenterCredentials(String privateCloud) {
@@ -2791,7 +2791,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to reset credentials for.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> resetNsxCredentialsAsync(
@@ -2825,7 +2825,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to reset credentials for.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> resetNsxCredentialsAsync(
@@ -2949,7 +2949,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to reset credentials for.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> resetVcenterCredentialsAsync(
@@ -2983,7 +2983,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param privateCloud Required. The resource name of the private cloud to reset credentials for.
    *     Resource names are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> resetVcenterCredentialsAsync(
@@ -3494,7 +3494,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the HCX activation key to retrieve. Resource names
    *     are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1/privateClouds/my-cloud/hcxActivationKeys/my-key`
+   *     `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HcxActivationKey getHcxActivationKey(HcxActivationKeyName name) {
@@ -3529,7 +3529,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @param name Required. The resource name of the HCX activation key to retrieve. Resource names
    *     are schemeless URIs that follow the conventions in
    *     https://cloud.google.com/apis/design/resource_names. For example:
-   *     `projects/my-project/locations/us-west1/privateClouds/my-cloud/hcxActivationKeys/my-key`
+   *     `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HcxActivationKey getHcxActivationKey(String name) {
@@ -4465,7 +4465,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     <ul>
    *       <li>For networks of type LEGACY, adheres to the format: `{region-id}-default`. Replace
    *           `{region-id}` with the region where you want to create the VMware Engine network. For
-   *           example, "us-west1-default".
+   *           example, "us-central1-default".
    *       <li>Only contains 1-63 alphanumeric characters and hyphens
    *       <li>Begins with an alphabetical character
    *       <li>Ends with a non-hyphen character
@@ -4525,7 +4525,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     <ul>
    *       <li>For networks of type LEGACY, adheres to the format: `{region-id}-default`. Replace
    *           `{region-id}` with the region where you want to create the VMware Engine network. For
-   *           example, "us-west1-default".
+   *           example, "us-central1-default".
    *       <li>Only contains 1-63 alphanumeric characters and hyphens
    *       <li>Begins with an alphabetical character
    *       <li>Ends with a non-hyphen character

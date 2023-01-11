@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.CreateNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.CreateNetworkPolicy]
+ * Request message for
+ * [VmwareEngine.CreateNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.CreateNetworkPolicy]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest}
@@ -522,7 +523,8 @@ public final class CreateNetworkPolicyRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.CreateNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.CreateNetworkPolicy]
+   * Request message for
+   * [VmwareEngine.CreateNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.CreateNetworkPolicy]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest}

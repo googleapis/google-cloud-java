@@ -145,8 +145,8 @@ public interface UpdateClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. True if you want the request to be validated and not executed; false
-   * otherwise.
+   * Optional. True if you want the request to be validated and not executed;
+   * false otherwise.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

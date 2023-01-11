@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
+ * Request message for
+ * [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListNodeTypesRequest}
@@ -79,7 +80,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -108,7 +109,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -488,7 +489,8 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
+   * Request message for
+   * [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListNodeTypesRequest}
@@ -702,7 +704,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -730,7 +732,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -758,7 +760,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -785,7 +787,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -808,7 +810,7 @@ public final class ListNodeTypesRequest extends com.google.protobuf.GeneratedMes
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>

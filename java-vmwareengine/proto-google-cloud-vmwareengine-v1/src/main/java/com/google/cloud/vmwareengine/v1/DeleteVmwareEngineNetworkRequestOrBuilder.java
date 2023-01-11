@@ -111,10 +111,10 @@ public interface DeleteVmwareEngineNetworkRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Checksum used to ensure that the user-provided value is up to date before
-   * the server processes the request. The server compares provided checksum
-   * with the current checksum of the resource. If the user-provided value is
-   * out of date, this request returns an `ABORTED` error.
+   * Optional. Checksum used to ensure that the user-provided value is up to
+   * date before the server processes the request. The server compares provided
+   * checksum with the current checksum of the resource. If the user-provided
+   * value is out of date, this request returns an `ABORTED` error.
    * </pre>
    *
    * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -126,10 +126,10 @@ public interface DeleteVmwareEngineNetworkRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Checksum used to ensure that the user-provided value is up to date before
-   * the server processes the request. The server compares provided checksum
-   * with the current checksum of the resource. If the user-provided value is
-   * out of date, this request returns an `ABORTED` error.
+   * Optional. Checksum used to ensure that the user-provided value is up to
+   * date before the server processes the request. The server compares provided
+   * checksum with the current checksum of the resource. If the user-provided
+   * value is out of date, this request returns an `ABORTED` error.
    * </pre>
    *
    * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

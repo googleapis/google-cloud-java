@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ShowVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ShowVcenterCredentials]
+ * Request message for
+ * [VmwareEngine.ShowVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ShowVcenterCredentials]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest}
@@ -78,7 +79,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -108,7 +109,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -294,7 +295,8 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ShowVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ShowVcenterCredentials]
+   * Request message for
+   * [VmwareEngine.ShowVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ShowVcenterCredentials]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest}
@@ -473,7 +475,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -502,7 +504,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -531,7 +533,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -559,7 +561,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -583,7 +585,7 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>

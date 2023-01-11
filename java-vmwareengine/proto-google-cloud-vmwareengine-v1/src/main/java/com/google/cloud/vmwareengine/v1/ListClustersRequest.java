@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
+ * Request message for
+ * [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListClustersRequest}
@@ -80,7 +81,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -109,7 +110,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -534,7 +535,8 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
+   * Request message for
+   * [VmwareEngine.ListClusters][google.cloud.vmwareengine.v1.VmwareEngine.ListClusters]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListClustersRequest}
@@ -761,7 +763,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -789,7 +791,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -817,7 +819,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -844,7 +846,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -867,7 +869,7 @@ public final class ListClustersRequest extends com.google.protobuf.GeneratedMess
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>

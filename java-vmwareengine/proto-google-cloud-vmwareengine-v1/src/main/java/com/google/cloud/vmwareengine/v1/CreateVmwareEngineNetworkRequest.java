@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.CreateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.CreateVmwareEngineNetwork]
+ * Request message for
+ * [VmwareEngine.CreateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.CreateVmwareEngineNetwork]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest}
@@ -147,7 +148,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    * identifier must meet the following requirements:
    * * For networks of type LEGACY, adheres to the format:
    * `{region-id}-default`. Replace `{region-id}` with the region where you want
-   * to create the VMware Engine network. For example, "us-west1-default".
+   * to create the VMware Engine network. For example, "us-central1-default".
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -182,7 +183,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    * identifier must meet the following requirements:
    * * For networks of type LEGACY, adheres to the format:
    * `{region-id}-default`. Replace `{region-id}` with the region where you want
-   * to create the VMware Engine network. For example, "us-west1-default".
+   * to create the VMware Engine network. For example, "us-central1-default".
    * * Only contains 1-63 alphanumeric characters and hyphens
    * * Begins with an alphabetical character
    * * Ends with a non-hyphen character
@@ -531,7 +532,8 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.CreateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.CreateVmwareEngineNetwork]
+   * Request message for
+   * [VmwareEngine.CreateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.CreateVmwareEngineNetwork]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest}
@@ -906,7 +908,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * identifier must meet the following requirements:
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
-     * to create the VMware Engine network. For example, "us-west1-default".
+     * to create the VMware Engine network. For example, "us-central1-default".
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -940,7 +942,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * identifier must meet the following requirements:
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
-     * to create the VMware Engine network. For example, "us-west1-default".
+     * to create the VMware Engine network. For example, "us-central1-default".
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -974,7 +976,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * identifier must meet the following requirements:
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
-     * to create the VMware Engine network. For example, "us-west1-default".
+     * to create the VMware Engine network. For example, "us-central1-default".
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1007,7 +1009,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * identifier must meet the following requirements:
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
-     * to create the VMware Engine network. For example, "us-west1-default".
+     * to create the VMware Engine network. For example, "us-central1-default".
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character
@@ -1036,7 +1038,7 @@ public final class CreateVmwareEngineNetworkRequest extends com.google.protobuf.
      * identifier must meet the following requirements:
      * * For networks of type LEGACY, adheres to the format:
      * `{region-id}-default`. Replace `{region-id}` with the region where you want
-     * to create the VMware Engine network. For example, "us-west1-default".
+     * to create the VMware Engine network. For example, "us-central1-default".
      * * Only contains 1-63 alphanumeric characters and hyphens
      * * Begins with an alphabetical character
      * * Ends with a non-hyphen character

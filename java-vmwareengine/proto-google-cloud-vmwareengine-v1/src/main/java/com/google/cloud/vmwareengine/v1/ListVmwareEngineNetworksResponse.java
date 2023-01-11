@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Response message for [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
+ * Response message for
+ * [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse}
@@ -452,7 +453,8 @@ public final class ListVmwareEngineNetworksResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Response message for [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
+   * Response message for
+   * [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse}

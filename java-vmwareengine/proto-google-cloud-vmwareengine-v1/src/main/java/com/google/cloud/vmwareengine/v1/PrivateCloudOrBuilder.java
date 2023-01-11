@@ -31,7 +31,7 @@ public interface PrivateCloudOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -47,7 +47,7 @@ public interface PrivateCloudOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
+ * Request message for
+ * [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest}
@@ -555,7 +556,8 @@ public final class ListVmwareEngineNetworksRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
+   * Request message for
+   * [VmwareEngine.ListVmwareEngineNetworks][google.cloud.vmwareengine.v1.VmwareEngine.ListVmwareEngineNetworks]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.UpdateCluster][google.cloud.vmwareengine.v1.VmwareEngine.UpdateCluster]
+ * Request message for
+ * [VmwareEngine.UpdateCluster][google.cloud.vmwareengine.v1.VmwareEngine.UpdateCluster]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.UpdateClusterRequest}
@@ -239,8 +240,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. True if you want the request to be validated and not executed; false
-   * otherwise.
+   * Optional. True if you want the request to be validated and not executed;
+   * false otherwise.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -453,7 +454,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.UpdateCluster][google.cloud.vmwareengine.v1.VmwareEngine.UpdateCluster]
+   * Request message for
+   * [VmwareEngine.UpdateCluster][google.cloud.vmwareengine.v1.VmwareEngine.UpdateCluster]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.UpdateClusterRequest}
@@ -1219,8 +1221,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. True if you want the request to be validated and not executed; false
-     * otherwise.
+     * Optional. True if you want the request to be validated and not executed;
+     * false otherwise.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1235,8 +1237,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. True if you want the request to be validated and not executed; false
-     * otherwise.
+     * Optional. True if you want the request to be validated and not executed;
+     * false otherwise.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1254,8 +1256,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. True if you want the request to be validated and not executed; false
-     * otherwise.
+     * Optional. True if you want the request to be validated and not executed;
+     * false otherwise.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.GetNodeType][google.cloud.vmwareengine.v1.VmwareEngine.GetNodeType]
+ * Request message for
+ * [VmwareEngine.GetNodeType][google.cloud.vmwareengine.v1.VmwareEngine.GetNodeType]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.GetNodeTypeRequest}
@@ -77,7 +78,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+   * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * </pre>
    *
    * <code>
@@ -106,7 +107,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+   * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * </pre>
    *
    * <code>
@@ -291,7 +292,8 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.GetNodeType][google.cloud.vmwareengine.v1.VmwareEngine.GetNodeType]
+   * Request message for
+   * [VmwareEngine.GetNodeType][google.cloud.vmwareengine.v1.VmwareEngine.GetNodeType]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.GetNodeTypeRequest}
@@ -467,7 +469,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+     * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
      * </pre>
      *
      * <code>
@@ -495,7 +497,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+     * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
      * </pre>
      *
      * <code>
@@ -523,7 +525,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+     * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
      * </pre>
      *
      * <code>
@@ -550,7 +552,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+     * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
      * </pre>
      *
      * <code>
@@ -573,7 +575,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+     * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
      * </pre>
      *
      * <code>

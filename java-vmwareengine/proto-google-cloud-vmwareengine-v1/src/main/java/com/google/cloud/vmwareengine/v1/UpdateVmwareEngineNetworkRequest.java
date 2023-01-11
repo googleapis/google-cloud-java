@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.UpdateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.UpdateVmwareEngineNetwork]
+ * Request message for
+ * [VmwareEngine.UpdateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.UpdateVmwareEngineNetwork]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest}
@@ -451,7 +452,8 @@ public final class UpdateVmwareEngineNetworkRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.UpdateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.UpdateVmwareEngineNetwork]
+   * Request message for
+   * [VmwareEngine.UpdateVmwareEngineNetwork][google.cloud.vmwareengine.v1.VmwareEngine.UpdateVmwareEngineNetwork]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest}

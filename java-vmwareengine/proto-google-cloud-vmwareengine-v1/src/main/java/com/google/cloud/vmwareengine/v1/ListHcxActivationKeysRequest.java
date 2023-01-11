@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ListHcxActivationKeys][google.cloud.vmwareengine.v1.VmwareEngine.ListHcxActivationKeys]
+ * Request message for
+ * [VmwareEngine.ListHcxActivationKeys][google.cloud.vmwareengine.v1.VmwareEngine.ListHcxActivationKeys]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest}
@@ -391,7 +392,8 @@ public final class ListHcxActivationKeysRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ListHcxActivationKeys][google.cloud.vmwareengine.v1.VmwareEngine.ListHcxActivationKeys]
+   * Request message for
+   * [VmwareEngine.ListHcxActivationKeys][google.cloud.vmwareengine.v1.VmwareEngine.ListHcxActivationKeys]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest}

@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
+ * Request message for
+ * [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListPrivateCloudsRequest}
@@ -80,7 +81,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
    * clusters. Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -109,7 +110,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
    * clusters. Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -555,7 +556,8 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
+   * Request message for
+   * [VmwareEngine.ListPrivateClouds][google.cloud.vmwareengine.v1.VmwareEngine.ListPrivateClouds]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListPrivateCloudsRequest}
@@ -782,7 +784,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
      * clusters. Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -810,7 +812,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
      * clusters. Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -838,7 +840,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
      * clusters. Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -865,7 +867,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
      * clusters. Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -888,7 +890,7 @@ public final class ListPrivateCloudsRequest extends com.google.protobuf.Generate
      * clusters. Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>

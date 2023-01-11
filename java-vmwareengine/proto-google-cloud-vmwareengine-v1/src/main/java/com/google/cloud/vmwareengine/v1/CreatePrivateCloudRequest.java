@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.CreatePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.CreatePrivateCloud]
+ * Request message for
+ * [VmwareEngine.CreatePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.CreatePrivateCloud]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.CreatePrivateCloudRequest}
@@ -79,7 +80,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    * private cloud in. Resource names are schemeless URIs that follow the
    * conventions in https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -108,7 +109,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    * private cloud in. Resource names are schemeless URIs that follow the
    * conventions in https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -257,8 +258,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -281,8 +282,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -308,8 +309,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Optional. True if you want the request to be validated and not executed; false
-   * otherwise.
+   * Optional. True if you want the request to be validated and not executed;
+   * false otherwise.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -526,7 +527,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.CreatePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.CreatePrivateCloud]
+   * Request message for
+   * [VmwareEngine.CreatePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.CreatePrivateCloud]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.CreatePrivateCloudRequest}
@@ -760,7 +762,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * private cloud in. Resource names are schemeless URIs that follow the
      * conventions in https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -788,7 +790,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * private cloud in. Resource names are schemeless URIs that follow the
      * conventions in https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -816,7 +818,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * private cloud in. Resource names are schemeless URIs that follow the
      * conventions in https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -843,7 +845,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * private cloud in. Resource names are schemeless URIs that follow the
      * conventions in https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -866,7 +868,7 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      * private cloud in. Resource names are schemeless URIs that follow the
      * conventions in https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a`
+     * `projects/my-project/locations/us-central1-a`
      * </pre>
      *
      * <code>
@@ -1247,8 +1249,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1270,8 +1272,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1293,8 +1295,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1315,8 +1317,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1333,8 +1335,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1358,8 +1360,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. True if you want the request to be validated and not executed; false
-     * otherwise.
+     * Optional. True if you want the request to be validated and not executed;
+     * false otherwise.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1374,8 +1376,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. True if you want the request to be validated and not executed; false
-     * otherwise.
+     * Optional. True if you want the request to be validated and not executed;
+     * false otherwise.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1393,8 +1395,8 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. True if you want the request to be validated and not executed; false
-     * otherwise.
+     * Optional. True if you want the request to be validated and not executed;
+     * false otherwise.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

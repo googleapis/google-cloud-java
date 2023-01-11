@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ResetVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetVcenterCredentials]
+ * Request message for
+ * [VmwareEngine.ResetVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetVcenterCredentials]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest}
@@ -80,7 +81,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -110,7 +111,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -376,7 +377,8 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ResetVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetVcenterCredentials]
+   * Request message for
+   * [VmwareEngine.ResetVcenterCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetVcenterCredentials]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest}
@@ -569,7 +571,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -598,7 +600,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -627,7 +629,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -655,7 +657,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -679,7 +681,7 @@ public final class ResetVcenterCredentialsRequest extends com.google.protobuf.Ge
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>

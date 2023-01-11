@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Response message for [VmwareEngine.ListSubnets][google.cloud.vmwareengine.v1.VmwareEngine.ListSubnets]
+ * Response message for
+ * [VmwareEngine.ListSubnets][google.cloud.vmwareengine.v1.VmwareEngine.ListSubnets]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListSubnetsResponse}
@@ -362,7 +363,8 @@ public final class ListSubnetsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [VmwareEngine.ListSubnets][google.cloud.vmwareengine.v1.VmwareEngine.ListSubnets]
+   * Response message for
+   * [VmwareEngine.ListSubnets][google.cloud.vmwareengine.v1.VmwareEngine.ListSubnets]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListSubnetsResponse}

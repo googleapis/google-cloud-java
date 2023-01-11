@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.ResetNsxCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetNsxCredentials]
+ * Request message for
+ * [VmwareEngine.ResetNsxCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetNsxCredentials]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest}
@@ -79,7 +80,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -109,7 +110,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -375,7 +376,8 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.ResetNsxCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetNsxCredentials]
+   * Request message for
+   * [VmwareEngine.ResetNsxCredentials][google.cloud.vmwareengine.v1.VmwareEngine.ResetNsxCredentials]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest}
@@ -565,7 +567,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -594,7 +596,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -623,7 +625,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -651,7 +653,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -675,7 +677,7 @@ public final class ResetNsxCredentialsRequest extends com.google.protobuf.Genera
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>

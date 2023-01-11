@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.DeleteNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.DeleteNetworkPolicy]
+ * Request message for
+ * [VmwareEngine.DeleteNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.DeleteNetworkPolicy]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest}
@@ -373,7 +374,8 @@ public final class DeleteNetworkPolicyRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.DeleteNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.DeleteNetworkPolicy]
+   * Request message for
+   * [VmwareEngine.DeleteNetworkPolicy][google.cloud.vmwareengine.v1.VmwareEngine.DeleteNetworkPolicy]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest}

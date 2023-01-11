@@ -31,7 +31,7 @@ public interface ListNodeTypesRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface ListNodeTypesRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a`
+   * `projects/my-project/locations/us-central1-a`
    * </pre>
    *
    * <code>

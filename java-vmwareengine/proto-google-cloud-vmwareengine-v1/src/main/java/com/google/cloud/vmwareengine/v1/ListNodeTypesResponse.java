@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Response message for [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
+ * Response message for
+ * [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.ListNodeTypesResponse}
@@ -445,7 +446,8 @@ public final class ListNodeTypesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
+   * Response message for
+   * [VmwareEngine.ListNodeTypes][google.cloud.vmwareengine.v1.VmwareEngine.ListNodeTypes]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.ListNodeTypesResponse}

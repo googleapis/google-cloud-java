@@ -31,7 +31,7 @@ public interface ClusterOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -47,7 +47,7 @@ public interface ClusterOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/clusters/my-cluster`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -205,8 +205,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The map of cluster node types in this cluster, where the key is canonical
-   * identifier of the node type (corresponds to the `NodeType`).
+   * Required. The map of cluster node types in this cluster, where the key is
+   * canonical identifier of the node type (corresponds to the `NodeType`).
    * </pre>
    *
    * <code>
@@ -218,8 +218,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The map of cluster node types in this cluster, where the key is canonical
-   * identifier of the node type (corresponds to the `NodeType`).
+   * Required. The map of cluster node types in this cluster, where the key is
+   * canonical identifier of the node type (corresponds to the `NodeType`).
    * </pre>
    *
    * <code>
@@ -235,8 +235,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The map of cluster node types in this cluster, where the key is canonical
-   * identifier of the node type (corresponds to the `NodeType`).
+   * Required. The map of cluster node types in this cluster, where the key is
+   * canonical identifier of the node type (corresponds to the `NodeType`).
    * </pre>
    *
    * <code>
@@ -249,8 +249,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The map of cluster node types in this cluster, where the key is canonical
-   * identifier of the node type (corresponds to the `NodeType`).
+   * Required. The map of cluster node types in this cluster, where the key is
+   * canonical identifier of the node type (corresponds to the `NodeType`).
    * </pre>
    *
    * <code>
@@ -267,8 +267,8 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Required. The map of cluster node types in this cluster, where the key is canonical
-   * identifier of the node type (corresponds to the `NodeType`).
+   * Required. The map of cluster node types in this cluster, where the key is
+   * canonical identifier of the node type (corresponds to the `NodeType`).
    * </pre>
    *
    * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.vmwareengine.v1;
  *
  *
  * <pre>
- * Request message for [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud]
+ * Request message for
+ * [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud]
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest}
@@ -78,7 +79,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -107,7 +108,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * </pre>
    *
    * <code>
@@ -135,8 +136,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -159,8 +160,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -353,7 +354,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud]
+   * Request message for
+   * [VmwareEngine.UndeletePrivateCloud][google.cloud.vmwareengine.v1.VmwareEngine.UndeletePrivateCloud]
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest}
@@ -544,7 +546,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -572,7 +574,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -600,7 +602,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -627,7 +629,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -650,7 +652,7 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      * Resource names are schemeless URIs that follow the conventions in
      * https://cloud.google.com/apis/design/resource_names.
      * For example:
-     * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud`
+     * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
      * </pre>
      *
      * <code>
@@ -676,8 +678,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -699,8 +701,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -722,8 +724,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -744,8 +746,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -762,8 +764,8 @@ public final class UndeletePrivateCloudRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-     * not supported (00000000-0000-0000-0000-000000000000).
+     * Optional. The request ID must be a valid UUID with the exception that zero
+     * UUID is not supported (00000000-0000-0000-0000-000000000000).
      * </pre>
      *
      * <code>string request_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

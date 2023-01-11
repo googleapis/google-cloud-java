@@ -31,7 +31,7 @@ public interface SubnetOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/subnets/my-subnet`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -47,7 +47,7 @@ public interface SubnetOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1-a/privateClouds/my-cloud/subnets/my-subnet`
+   * `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -112,7 +112,8 @@ public interface SubnetOrBuilder
    *
    *
    * <pre>
-   * Output only. The type of the subnet. For example "management" or "userDefined".
+   * Output only. The type of the subnet. For example "management" or
+   * "userDefined".
    * </pre>
    *
    * <code>string type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -124,7 +125,8 @@ public interface SubnetOrBuilder
    *
    *
    * <pre>
-   * Output only. The type of the subnet. For example "management" or "userDefined".
+   * Output only. The type of the subnet. For example "management" or
+   * "userDefined".
    * </pre>
    *
    * <code>string type = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

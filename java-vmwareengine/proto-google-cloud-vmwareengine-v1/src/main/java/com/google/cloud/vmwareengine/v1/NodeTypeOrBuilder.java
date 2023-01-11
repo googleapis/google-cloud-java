@@ -31,7 +31,7 @@ public interface NodeTypeOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+   * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -47,7 +47,7 @@ public interface NodeTypeOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-proj/locations/us-west1-a/nodeTypes/standard-72`
+   * `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

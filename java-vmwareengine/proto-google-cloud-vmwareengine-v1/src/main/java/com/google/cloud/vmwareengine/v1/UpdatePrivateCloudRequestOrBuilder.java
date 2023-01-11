@@ -118,8 +118,8 @@ public interface UpdatePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,8 +131,8 @@ public interface UpdatePrivateCloudRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The request ID must be a valid UUID with the exception that zero UUID is
-   * not supported (00000000-0000-0000-0000-000000000000).
+   * Optional. The request ID must be a valid UUID with the exception that zero
+   * UUID is not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
    * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

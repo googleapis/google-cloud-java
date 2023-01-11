@@ -31,7 +31,7 @@ public interface GetHcxActivationKeyRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1/privateClouds/my-cloud/hcxActivationKeys/my-key`
+   * `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key`
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface GetHcxActivationKeyRequestOrBuilder
    * Resource names are schemeless URIs that follow the conventions in
    * https://cloud.google.com/apis/design/resource_names.
    * For example:
-   * `projects/my-project/locations/us-west1/privateClouds/my-cloud/hcxActivationKeys/my-key`
+   * `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key`
    * </pre>
    *
    * <code>
