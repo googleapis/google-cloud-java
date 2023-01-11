@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-vmwareengine/grpc-google-.*/src"
 - "/java-vmwareengine/proto-google-.*/src"
 - "/java-vmwareengine/google-.*/src"
+- "/java-vmwareengine/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-vmwareengine/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,6 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-vmwareengine/$1/grpc-google-cloud-vmwareengine-$1/src"
 - source: "/google/cloud/vmwareengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-vmwareengine/$1/google-cloud-vmwareengine/src"
-
+- source: "/google/cloud/vmwareengine/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-vmwareengine/$1/samples/snippets/generated"
 
 api-name: java-vmwareengine
