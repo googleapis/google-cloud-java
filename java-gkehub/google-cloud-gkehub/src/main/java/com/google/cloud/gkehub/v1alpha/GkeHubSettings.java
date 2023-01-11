@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * gkeHubSettingsBuilder
  *     .getFeatureSettings()
  *     .setRetrySettings(
- *         gkeHubSettingsBuilder.getFeatureSettings().getRetrySettings().toBuilder()
+ *         gkeHubSettingsBuilder
+ *             .getFeatureSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GkeHubSettings gkeHubSettings = gkeHubSettingsBuilder.build();

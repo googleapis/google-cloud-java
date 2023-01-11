@@ -37,7 +37,10 @@ public class SyncGetInstance {
     cloudMemcacheSettingsBuilder
         .getInstanceSettings()
         .setRetrySettings(
-            cloudMemcacheSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+            cloudMemcacheSettingsBuilder
+                .getInstanceSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudMemcacheStubSettings cloudMemcacheSettings = cloudMemcacheSettingsBuilder.build();

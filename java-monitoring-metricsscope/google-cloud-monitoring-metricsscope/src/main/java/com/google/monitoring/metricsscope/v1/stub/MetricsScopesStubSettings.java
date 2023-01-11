@@ -82,7 +82,10 @@ import org.threeten.bp.Duration;
  * metricsScopesSettingsBuilder
  *     .getMetricsScopeSettings()
  *     .setRetrySettings(
- *         metricsScopesSettingsBuilder.getMetricsScopeSettings().getRetrySettings().toBuilder()
+ *         metricsScopesSettingsBuilder
+ *             .getMetricsScopeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsScopesStubSettings metricsScopesSettings = metricsScopesSettingsBuilder.build();

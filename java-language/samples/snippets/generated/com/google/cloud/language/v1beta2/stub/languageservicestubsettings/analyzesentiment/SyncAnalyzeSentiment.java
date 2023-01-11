@@ -37,7 +37,10 @@ public class SyncAnalyzeSentiment {
     languageServiceSettingsBuilder
         .analyzeSentimentSettings()
         .setRetrySettings(
-            languageServiceSettingsBuilder.analyzeSentimentSettings().getRetrySettings().toBuilder()
+            languageServiceSettingsBuilder
+                .analyzeSentimentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     LanguageServiceStubSettings languageServiceSettings = languageServiceSettingsBuilder.build();

@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * orgPolicySettingsBuilder
  *     .getPolicySettings()
  *     .setRetrySettings(
- *         orgPolicySettingsBuilder.getPolicySettings().getRetrySettings().toBuilder()
+ *         orgPolicySettingsBuilder
+ *             .getPolicySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * OrgPolicySettings orgPolicySettings = orgPolicySettingsBuilder.build();

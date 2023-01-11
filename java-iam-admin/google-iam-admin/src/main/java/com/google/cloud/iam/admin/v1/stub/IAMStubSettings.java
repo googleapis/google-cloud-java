@@ -126,7 +126,10 @@ import org.threeten.bp.Duration;
  * iAMSettingsBuilder
  *     .getServiceAccountSettings()
  *     .setRetrySettings(
- *         iAMSettingsBuilder.getServiceAccountSettings().getRetrySettings().toBuilder()
+ *         iAMSettingsBuilder
+ *             .getServiceAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IAMStubSettings iAMSettings = iAMSettingsBuilder.build();

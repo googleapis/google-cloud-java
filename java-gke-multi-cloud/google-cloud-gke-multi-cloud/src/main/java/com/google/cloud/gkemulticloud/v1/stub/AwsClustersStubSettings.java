@@ -106,7 +106,10 @@ import org.threeten.bp.Duration;
  * awsClustersSettingsBuilder
  *     .getAwsClusterSettings()
  *     .setRetrySettings(
- *         awsClustersSettingsBuilder.getAwsClusterSettings().getRetrySettings().toBuilder()
+ *         awsClustersSettingsBuilder
+ *             .getAwsClusterSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AwsClustersStubSettings awsClustersSettings = awsClustersSettingsBuilder.build();

@@ -110,7 +110,10 @@ import javax.annotation.Generated;
  * iAMSettingsBuilder
  *     .getServiceAccountSettings()
  *     .setRetrySettings(
- *         iAMSettingsBuilder.getServiceAccountSettings().getRetrySettings().toBuilder()
+ *         iAMSettingsBuilder
+ *             .getServiceAccountSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IAMSettings iAMSettings = iAMSettingsBuilder.build();

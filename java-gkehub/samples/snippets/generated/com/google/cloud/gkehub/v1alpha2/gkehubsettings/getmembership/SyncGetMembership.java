@@ -36,7 +36,10 @@ public class SyncGetMembership {
     gkeHubSettingsBuilder
         .getMembershipSettings()
         .setRetrySettings(
-            gkeHubSettingsBuilder.getMembershipSettings().getRetrySettings().toBuilder()
+            gkeHubSettingsBuilder
+                .getMembershipSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     GkeHubSettings gkeHubSettings = gkeHubSettingsBuilder.build();

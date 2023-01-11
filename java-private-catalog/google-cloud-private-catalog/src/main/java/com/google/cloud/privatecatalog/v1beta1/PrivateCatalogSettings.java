@@ -66,7 +66,10 @@ import javax.annotation.Generated;
  * privateCatalogSettingsBuilder
  *     .searchCatalogsSettings()
  *     .setRetrySettings(
- *         privateCatalogSettingsBuilder.searchCatalogsSettings().getRetrySettings().toBuilder()
+ *         privateCatalogSettingsBuilder
+ *             .searchCatalogsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PrivateCatalogSettings privateCatalogSettings = privateCatalogSettingsBuilder.build();

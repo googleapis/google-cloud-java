@@ -36,7 +36,10 @@ public class SyncGetEkmConnection {
     ekmServiceSettingsBuilder
         .getEkmConnectionSettings()
         .setRetrySettings(
-            ekmServiceSettingsBuilder.getEkmConnectionSettings().getRetrySettings().toBuilder()
+            ekmServiceSettingsBuilder
+                .getEkmConnectionSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     EkmServiceStubSettings ekmServiceSettings = ekmServiceSettingsBuilder.build();

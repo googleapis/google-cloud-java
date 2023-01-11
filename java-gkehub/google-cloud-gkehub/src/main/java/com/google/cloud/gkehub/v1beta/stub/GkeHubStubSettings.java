@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
  * gkeHubSettingsBuilder
  *     .getFeatureSettings()
  *     .setRetrySettings(
- *         gkeHubSettingsBuilder.getFeatureSettings().getRetrySettings().toBuilder()
+ *         gkeHubSettingsBuilder
+ *             .getFeatureSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GkeHubStubSettings gkeHubSettings = gkeHubSettingsBuilder.build();

@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * gSuiteAddOnsSettingsBuilder
  *     .getAuthorizationSettings()
  *     .setRetrySettings(
- *         gSuiteAddOnsSettingsBuilder.getAuthorizationSettings().getRetrySettings().toBuilder()
+ *         gSuiteAddOnsSettingsBuilder
+ *             .getAuthorizationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GSuiteAddOnsSettings gSuiteAddOnsSettings = gSuiteAddOnsSettingsBuilder.build();

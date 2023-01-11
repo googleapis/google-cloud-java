@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * iDSSettingsBuilder
  *     .getEndpointSettings()
  *     .setRetrySettings(
- *         iDSSettingsBuilder.getEndpointSettings().getRetrySettings().toBuilder()
+ *         iDSSettingsBuilder
+ *             .getEndpointSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IDSStubSettings iDSSettings = iDSSettingsBuilder.build();

@@ -66,7 +66,10 @@ import javax.annotation.Generated;
  * awsClustersSettingsBuilder
  *     .getAwsClusterSettings()
  *     .setRetrySettings(
- *         awsClustersSettingsBuilder.getAwsClusterSettings().getRetrySettings().toBuilder()
+ *         awsClustersSettingsBuilder
+ *             .getAwsClusterSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AwsClustersSettings awsClustersSettings = awsClustersSettingsBuilder.build();

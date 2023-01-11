@@ -37,7 +37,10 @@ public class SyncGetAuthorization {
     gSuiteAddOnsSettingsBuilder
         .getAuthorizationSettings()
         .setRetrySettings(
-            gSuiteAddOnsSettingsBuilder.getAuthorizationSettings().getRetrySettings().toBuilder()
+            gSuiteAddOnsSettingsBuilder
+                .getAuthorizationSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     GSuiteAddOnsStubSettings gSuiteAddOnsSettings = gSuiteAddOnsSettingsBuilder.build();

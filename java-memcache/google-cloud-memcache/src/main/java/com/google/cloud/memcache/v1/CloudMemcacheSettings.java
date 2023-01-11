@@ -70,7 +70,10 @@ import javax.annotation.Generated;
  * cloudMemcacheSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         cloudMemcacheSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         cloudMemcacheSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudMemcacheSettings cloudMemcacheSettings = cloudMemcacheSettingsBuilder.build();
