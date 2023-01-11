@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
+ * The request message for
+ * [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeletePageRequest}
@@ -323,7 +324,8 @@ public final class DeletePageRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
+   * The request message for
+   * [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeletePageRequest}

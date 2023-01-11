@@ -23,7 +23,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * The top-level message returned from the
- * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent] method.
+ * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent]
+ * method.
  * Multiple response messages (N) can be returned in order.
  * The first (N-1) responses set either the `recognition_result` or
  * `detect_intent_response` field, depending on the request:
@@ -31,15 +32,19 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *     set, and the `StreamingDetectIntentRequest.enable_partial_response`
  *     field was false, the `recognition_result` field is populated for each
  *     of the (N-1) responses.
- *     See the [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult] message for details
- *     about the result message sequence.
+ *     See the
+ *     [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult]
+ *     message for details about the result message sequence.
  * *   If the `StreamingDetectIntentRequest.enable_partial_response` field was
  *     true, the `detect_intent_response` field is populated for each
  *     of the (N-1) responses, where 1 &lt;= N &lt;= 4.
- *     These responses set the [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type] field
- *     to `PARTIAL`.
+ *     These responses set the
+ *     [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type]
+ *     field to `PARTIAL`.
  * For the final Nth response message, the `detect_intent_response` is fully
- * populated, and [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type] is set to `FINAL`.
+ * populated, and
+ * [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type]
+ * is set to `FINAL`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse}
@@ -437,7 +442,8 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *
    * <pre>
    * The top-level message returned from the
-   * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent] method.
+   * [StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent]
+   * method.
    * Multiple response messages (N) can be returned in order.
    * The first (N-1) responses set either the `recognition_result` or
    * `detect_intent_response` field, depending on the request:
@@ -445,15 +451,19 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
    *     set, and the `StreamingDetectIntentRequest.enable_partial_response`
    *     field was false, the `recognition_result` field is populated for each
    *     of the (N-1) responses.
-   *     See the [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult] message for details
-   *     about the result message sequence.
+   *     See the
+   *     [StreamingRecognitionResult][google.cloud.dialogflow.cx.v3beta1.StreamingRecognitionResult]
+   *     message for details about the result message sequence.
    * *   If the `StreamingDetectIntentRequest.enable_partial_response` field was
    *     true, the `detect_intent_response` field is populated for each
    *     of the (N-1) responses, where 1 &lt;= N &lt;= 4.
-   *     These responses set the [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type] field
-   *     to `PARTIAL`.
+   *     These responses set the
+   *     [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type]
+   *     field to `PARTIAL`.
    * For the final Nth response message, the `detect_intent_response` is fully
-   * populated, and [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type] is set to `FINAL`.
+   * populated, and
+   * [DetectIntentResponse.response_type][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse.response_type]
+   * is set to `FINAL`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse}

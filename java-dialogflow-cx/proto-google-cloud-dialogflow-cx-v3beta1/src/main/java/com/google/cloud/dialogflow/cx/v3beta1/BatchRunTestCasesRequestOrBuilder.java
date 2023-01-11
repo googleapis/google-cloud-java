@@ -27,8 +27,8 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-   * &lt;AgentID&gt;`.
+   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/ &lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
-   * &lt;AgentID&gt;`.
+   * Required. Agent name. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/ &lt;AgentID&gt;`.
    * </pre>
    *
    * <code>
@@ -58,9 +58,9 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Optional. If not set, draft environment is assumed. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>
@@ -74,9 +74,9 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If not set, draft environment is assumed. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Optional. If not set, draft environment is assumed. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>
@@ -91,8 +91,8 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -106,8 +106,8 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -121,8 +121,8 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>
@@ -137,8 +137,8 @@ public interface BatchRunTestCasesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/testCases/&lt;TestCase ID&gt;`.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/testCases/&lt;TestCase ID&gt;`.
    * </pre>
    *
    * <code>

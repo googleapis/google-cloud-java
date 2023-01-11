@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3beta1.Versions.DeleteVersion].
+ * The request message for
+ * [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3beta1.Versions.DeleteVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest}
@@ -73,8 +74,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
@@ -100,8 +102,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
@@ -288,7 +291,8 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3beta1.Versions.DeleteVersion].
+   * The request message for
+   * [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3beta1.Versions.DeleteVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest}
@@ -460,8 +464,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
@@ -486,8 +491,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
@@ -512,8 +518,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
@@ -537,8 +544,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
@@ -558,8 +566,9 @@ public final class DeleteVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] to delete. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *

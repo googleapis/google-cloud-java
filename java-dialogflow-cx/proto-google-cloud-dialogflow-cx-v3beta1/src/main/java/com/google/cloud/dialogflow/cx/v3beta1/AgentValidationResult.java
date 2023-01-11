@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3beta1.Agents.GetAgentValidationResult].
+ * The response message for
+ * [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3beta1.Agents.GetAgentValidationResult].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.AgentValidationResult}
@@ -382,7 +383,8 @@ public final class AgentValidationResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The response message for [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3beta1.Agents.GetAgentValidationResult].
+   * The response message for
+   * [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3beta1.Agents.GetAgentValidationResult].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.AgentValidationResult}

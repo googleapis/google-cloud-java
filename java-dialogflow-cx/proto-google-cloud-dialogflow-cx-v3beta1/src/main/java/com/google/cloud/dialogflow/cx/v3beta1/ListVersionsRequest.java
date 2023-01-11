@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Versions.ListVersions][google.cloud.dialogflow.cx.v3beta1.Versions.ListVersions].
+ * The request message for
+ * [Versions.ListVersions][google.cloud.dialogflow.cx.v3beta1.Versions.ListVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest}
@@ -74,9 +75,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+   * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -101,9 +102,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+   * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -375,7 +376,8 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [Versions.ListVersions][google.cloud.dialogflow.cx.v3beta1.Versions.ListVersions].
+   * The request message for
+   * [Versions.ListVersions][google.cloud.dialogflow.cx.v3beta1.Versions.ListVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest}
@@ -572,9 +574,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+     * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -598,9 +600,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+     * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -624,9 +626,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+     * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -649,9 +651,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+     * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -670,9 +672,9 @@ public final class ListVersionsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
+     * versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>

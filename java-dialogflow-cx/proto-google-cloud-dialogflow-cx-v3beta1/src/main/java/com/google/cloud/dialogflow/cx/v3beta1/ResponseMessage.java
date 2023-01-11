@@ -50,7 +50,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     super(builder);
   }
 
-  private ResponseMessage() {}
+  private ResponseMessage() {
+    channel_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -138,8 +140,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
@@ -266,8 +268,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
@@ -834,8 +836,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -852,8 +854,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -873,8 +875,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -1007,7 +1009,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * to a human agent for measurement purposes. What else to do with this signal
    * is up to you and your handoff procedures.
    * You may set this, for example:
-   * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+   * * In the
+   * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+   * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
    *   entering the page indicates something went extremely wrong in the
    *   conversation.
    * * In a webhook response when you determine that the customer issue can only
@@ -1281,7 +1285,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * to a human agent for measurement purposes. What else to do with this signal
      * is up to you and your handoff procedures.
      * You may set this, for example:
-     * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+     * * In the
+     * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+     * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
      *   entering the page indicates something went extremely wrong in the
      *   conversation.
      * * In a webhook response when you determine that the customer issue can only
@@ -1780,7 +1786,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * conversation end page as successful even if they don't return
    * [ConversationSuccess][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess].
    * You may set this, for example:
-   * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+   * * In the
+   * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+   * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
    *   entering the page indicates that the conversation succeeded.
    * * In a webhook response when you determine that you handled the customer
    *   issue.
@@ -2058,7 +2066,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * conversation end page as successful even if they don't return
      * [ConversationSuccess][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess].
      * You may set this, for example:
-     * * In the [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment] of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
+     * * In the
+     * [entry_fulfillment][google.cloud.dialogflow.cx.v3beta1.Page.entry_fulfillment]
+     * of a [Page][google.cloud.dialogflow.cx.v3beta1.Page] if
      *   entering the page indicates that the conversation succeeded.
      * * In a webhook response when you determine that you handled the customer
      *   issue.
@@ -2581,8 +2591,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
@@ -2840,8 +2850,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
@@ -3573,8 +3583,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -3591,8 +3601,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -3612,8 +3622,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -4152,8 +4162,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
      * </pre>
      *
      * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4165,8 +4175,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
      * </pre>
      *
      * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4179,8 +4189,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
@@ -4246,8 +4256,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
      * </pre>
      *
      * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4270,8 +4280,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-     * value. It is specific to the client that reads it.
+     * Required. URI of the audio clip. Dialogflow does not impose any
+     * validation on this value. It is specific to the client that reads it.
      * </pre>
      *
      * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4297,8 +4307,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. Whether the playback of this message can be interrupted by the end
-     * user's speech and the client can then starts the next Dialogflow
+     * Output only. Whether the playback of this message can be interrupted by
+     * the end user's speech and the client can then starts the next Dialogflow
      * request.
      * </pre>
      *
@@ -4681,8 +4691,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
        * </pre>
        *
        * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4704,8 +4714,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
        * </pre>
        *
        * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4727,8 +4737,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
        * </pre>
        *
        * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4749,8 +4759,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
        * </pre>
        *
        * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4767,8 +4777,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Required. URI of the audio clip. Dialogflow does not impose any validation on this
-       * value. It is specific to the client that reads it.
+       * Required. URI of the audio clip. Dialogflow does not impose any
+       * validation on this value. It is specific to the client that reads it.
        * </pre>
        *
        * <code>string audio_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4792,8 +4802,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -4810,8 +4820,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -4831,8 +4841,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this message can be interrupted by the end
-       * user's speech and the client can then starts the next Dialogflow
+       * Output only. Whether the playback of this message can be interrupted by
+       * the end user's speech and the client can then starts the next Dialogflow
        * request.
        * </pre>
        *
@@ -5118,9 +5128,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this segment can be interrupted by the end
-       * user's speech and the client should then start the next Dialogflow
-       * request.
+       * Output only. Whether the playback of this segment can be interrupted by
+       * the end user's speech and the client should then start the next
+       * Dialogflow request.
        * </pre>
        *
        * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -5344,9 +5354,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * Output only. Whether the playback of this segment can be interrupted by the end
-       * user's speech and the client should then start the next Dialogflow
-       * request.
+       * Output only. Whether the playback of this segment can be interrupted by
+       * the end user's speech and the client should then start the next
+       * Dialogflow request.
        * </pre>
        *
        * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6027,9 +6037,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          *
          * <pre>
-         * Output only. Whether the playback of this segment can be interrupted by the end
-         * user's speech and the client should then start the next Dialogflow
-         * request.
+         * Output only. Whether the playback of this segment can be interrupted by
+         * the end user's speech and the client should then start the next
+         * Dialogflow request.
          * </pre>
          *
          * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6045,9 +6055,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          *
          * <pre>
-         * Output only. Whether the playback of this segment can be interrupted by the end
-         * user's speech and the client should then start the next Dialogflow
-         * request.
+         * Output only. Whether the playback of this segment can be interrupted by
+         * the end user's speech and the client should then start the next
+         * Dialogflow request.
          * </pre>
          *
          * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -6066,9 +6076,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
          *
          *
          * <pre>
-         * Output only. Whether the playback of this segment can be interrupted by the end
-         * user's speech and the client should then start the next Dialogflow
-         * request.
+         * Output only. Whether the playback of this segment can be interrupted by
+         * the end user's speech and the client should then start the next
+         * Dialogflow request.
          * </pre>
          *
          * <code>bool allow_playback_interruption = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -8302,10 +8312,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A signal that indicates the interaction with the Dialogflow agent has
-   * ended.
-   * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+   * Output only. A signal that indicates the interaction with the Dialogflow
+   * agent has ended. This message is generated by Dialogflow only when the
+   * conversation reaches `END_SESSION` page. It is not supposed to be defined
+   * by the user.
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -8323,10 +8333,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A signal that indicates the interaction with the Dialogflow agent has
-   * ended.
-   * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+   * Output only. A signal that indicates the interaction with the Dialogflow
+   * agent has ended. This message is generated by Dialogflow only when the
+   * conversation reaches `END_SESSION` page. It is not supposed to be defined
+   * by the user.
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -8348,10 +8358,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. A signal that indicates the interaction with the Dialogflow agent has
-   * ended.
-   * This message is generated by Dialogflow only when the conversation
-   * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+   * Output only. A signal that indicates the interaction with the Dialogflow
+   * agent has ended. This message is generated by Dialogflow only when the
+   * conversation reaches `END_SESSION` page. It is not supposed to be defined
+   * by the user.
    * It's guaranteed that there is at most one such message in each response.
    * </pre>
    *
@@ -8376,8 +8386,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Signal that the client should play an audio clip hosted at a
    * client-specific URI. Dialogflow uses this to construct
-   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-   * does not try to read or process the URI in any way.
+   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+   * However, Dialogflow itself does not try to read or process the URI in any
+   * way.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -8394,8 +8405,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Signal that the client should play an audio clip hosted at a
    * client-specific URI. Dialogflow uses this to construct
-   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-   * does not try to read or process the URI in any way.
+   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+   * However, Dialogflow itself does not try to read or process the URI in any
+   * way.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -8415,8 +8427,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * Signal that the client should play an audio clip hosted at a
    * client-specific URI. Dialogflow uses this to construct
-   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-   * does not try to read or process the URI in any way.
+   * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+   * However, Dialogflow itself does not try to read or process the URI in any
+   * way.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -8435,8 +8448,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. An audio response message composed of both the synthesized Dialogflow
-   * agent responses and responses defined via
+   * Output only. An audio response message composed of both the synthesized
+   * Dialogflow agent responses and responses defined via
    * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
    * This message is generated by Dialogflow only and not supposed to be
    * defined by the user.
@@ -8456,8 +8469,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. An audio response message composed of both the synthesized Dialogflow
-   * agent responses and responses defined via
+   * Output only. An audio response message composed of both the synthesized
+   * Dialogflow agent responses and responses defined via
    * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
    * This message is generated by Dialogflow only and not supposed to be
    * defined by the user.
@@ -8480,8 +8493,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. An audio response message composed of both the synthesized Dialogflow
-   * agent responses and responses defined via
+   * Output only. An audio response message composed of both the synthesized
+   * Dialogflow agent responses and responses defined via
    * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
    * This message is generated by Dialogflow only and not supposed to be
    * defined by the user.
@@ -8566,6 +8579,61 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         .getDefaultInstance();
   }
 
+  public static final int CHANNEL_FIELD_NUMBER = 19;
+  private volatile java.lang.Object channel_;
+  /**
+   *
+   *
+   * <pre>
+   * The channel which the response is associated with. Clients can specify the
+   * channel via
+   * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+   * and only associated channel response will be returned.
+   * </pre>
+   *
+   * <code>string channel = 19;</code>
+   *
+   * @return The channel.
+   */
+  @java.lang.Override
+  public java.lang.String getChannel() {
+    java.lang.Object ref = channel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      channel_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The channel which the response is associated with. Clients can specify the
+   * channel via
+   * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+   * and only associated channel response will be returned.
+   * </pre>
+   *
+   * <code>string channel = 19;</code>
+   *
+   * @return The bytes for channel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getChannelBytes() {
+    java.lang.Object ref = channel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      channel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8615,6 +8683,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           18,
           (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.TelephonyTransferCall) message_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, channel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -8675,6 +8746,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
               (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.TelephonyTransferCall)
                   message_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, channel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8691,6 +8765,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage other =
         (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage) obj;
 
+    if (!getChannel().equals(other.getChannel())) return false;
     if (!getMessageCase().equals(other.getMessageCase())) return false;
     switch (messageCase_) {
       case 1:
@@ -8734,6 +8809,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getChannel().hashCode();
     switch (messageCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -8953,6 +9030,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (telephonyTransferCallBuilder_ != null) {
         telephonyTransferCallBuilder_.clear();
       }
+      channel_ = "";
+
       messageCase_ = 0;
       message_ = null;
       return this;
@@ -9045,6 +9124,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           result.message_ = telephonyTransferCallBuilder_.build();
         }
       }
+      result.channel_ = channel_;
       result.messageCase_ = messageCase_;
       onBuilt();
       return result;
@@ -9096,6 +9176,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     public Builder mergeFrom(com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage other) {
       if (other == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.getDefaultInstance())
         return this;
+      if (!other.getChannel().isEmpty()) {
+        channel_ = other.channel_;
+        onChanged();
+      }
       switch (other.getMessageCase()) {
         case TEXT:
           {
@@ -9230,6 +9314,12 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
                 messageCase_ = 18;
                 break;
               } // case 146
+            case 154:
+              {
+                channel_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10427,10 +10517,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10448,10 +10538,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10482,10 +10572,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10511,10 +10601,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10538,10 +10628,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10580,10 +10670,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10611,10 +10701,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10630,10 +10720,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10658,10 +10748,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. A signal that indicates the interaction with the Dialogflow agent has
-     * ended.
-     * This message is generated by Dialogflow only when the conversation
-     * reaches `END_SESSION` page. It is not supposed to be defined by the user.
+     * Output only. A signal that indicates the interaction with the Dialogflow
+     * agent has ended. This message is generated by Dialogflow only when the
+     * conversation reaches `END_SESSION` page. It is not supposed to be defined
+     * by the user.
      * It's guaranteed that there is at most one such message in each response.
      * </pre>
      *
@@ -10707,8 +10797,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10725,8 +10816,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10755,8 +10847,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10781,8 +10874,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10804,8 +10898,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10842,8 +10937,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10870,8 +10966,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10886,8 +10983,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10911,8 +11009,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Signal that the client should play an audio clip hosted at a
      * client-specific URI. Dialogflow uses this to construct
-     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio]. However, Dialogflow itself
-     * does not try to read or process the URI in any way.
+     * [mixed_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.mixed_audio].
+     * However, Dialogflow itself does not try to read or process the URI in any
+     * way.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio play_audio = 12;</code>
@@ -10952,8 +11051,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -10973,8 +11072,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11006,8 +11105,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11035,8 +11134,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11061,8 +11160,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11102,8 +11201,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11133,8 +11232,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11152,8 +11251,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11180,8 +11279,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. An audio response message composed of both the synthesized Dialogflow
-     * agent responses and responses defined via
+     * Output only. An audio response message composed of both the synthesized
+     * Dialogflow agent responses and responses defined via
      * [play_audio][google.cloud.dialogflow.cx.v3beta1.ResponseMessage.play_audio].
      * This message is generated by Dialogflow only and not supposed to be
      * defined by the user.
@@ -11473,6 +11572,127 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return telephonyTransferCallBuilder_;
+    }
+
+    private java.lang.Object channel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The channel which the response is associated with. Clients can specify the
+     * channel via
+     * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+     * and only associated channel response will be returned.
+     * </pre>
+     *
+     * <code>string channel = 19;</code>
+     *
+     * @return The channel.
+     */
+    public java.lang.String getChannel() {
+      java.lang.Object ref = channel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which the response is associated with. Clients can specify the
+     * channel via
+     * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+     * and only associated channel response will be returned.
+     * </pre>
+     *
+     * <code>string channel = 19;</code>
+     *
+     * @return The bytes for channel.
+     */
+    public com.google.protobuf.ByteString getChannelBytes() {
+      java.lang.Object ref = channel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        channel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which the response is associated with. Clients can specify the
+     * channel via
+     * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+     * and only associated channel response will be returned.
+     * </pre>
+     *
+     * <code>string channel = 19;</code>
+     *
+     * @param value The channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      channel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which the response is associated with. Clients can specify the
+     * channel via
+     * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+     * and only associated channel response will be returned.
+     * </pre>
+     *
+     * <code>string channel = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChannel() {
+
+      channel_ = getDefaultInstance().getChannel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which the response is associated with. Clients can specify the
+     * channel via
+     * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],
+     * and only associated channel response will be returned.
+     * </pre>
+     *
+     * <code>string channel = 19;</code>
+     *
+     * @param value The bytes for channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      channel_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

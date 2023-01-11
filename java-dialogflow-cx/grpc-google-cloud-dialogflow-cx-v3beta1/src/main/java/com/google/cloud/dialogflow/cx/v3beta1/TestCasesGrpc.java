@@ -21,8 +21,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Test Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and
- * [Test Case Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
+ * Service for managing [Test
+ * Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and [Test Case
+ * Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -631,8 +632,9 @@ public final class TestCasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [Test Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and
-   * [Test Case Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
+   * Service for managing [Test
+   * Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and [Test Case
+   * Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
    * </pre>
    */
   public abstract static class TestCasesImplBase implements io.grpc.BindableService {
@@ -719,8 +721,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
-     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
+     * - `metadata`:
+     * [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`:
+     * [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public void runTestCase(
@@ -738,8 +742,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
-     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
+     * - `metadata`:
+     * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
+     * - `response`:
+     * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
      * </pre>
      */
     public void batchRunTestCases(
@@ -775,8 +781,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
-     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
+     * - `metadata`:
+     * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
+     * - `response`:
+     * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
      * </pre>
      */
     public void importTestCases(
@@ -795,8 +803,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
-     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
+     * - `metadata`:
+     * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
+     * - `response`:
+     * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
      * </pre>
      */
     public void exportTestCases(
@@ -927,8 +937,9 @@ public final class TestCasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [Test Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and
-   * [Test Case Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
+   * Service for managing [Test
+   * Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and [Test Case
+   * Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
    * </pre>
    */
   public static final class TestCasesStub extends io.grpc.stub.AbstractAsyncStub<TestCasesStub> {
@@ -1033,8 +1044,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
-     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
+     * - `metadata`:
+     * [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`:
+     * [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public void runTestCase(
@@ -1054,8 +1067,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
-     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
+     * - `metadata`:
+     * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
+     * - `response`:
+     * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
      * </pre>
      */
     public void batchRunTestCases(
@@ -1095,8 +1110,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
-     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
+     * - `metadata`:
+     * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
+     * - `response`:
+     * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
      * </pre>
      */
     public void importTestCases(
@@ -1117,8 +1134,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
-     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
+     * - `metadata`:
+     * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
+     * - `response`:
+     * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
      * </pre>
      */
     public void exportTestCases(
@@ -1170,8 +1189,9 @@ public final class TestCasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [Test Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and
-   * [Test Case Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
+   * Service for managing [Test
+   * Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and [Test Case
+   * Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
    * </pre>
    */
   public static final class TestCasesBlockingStub
@@ -1259,8 +1279,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
-     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
+     * - `metadata`:
+     * [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`:
+     * [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public com.google.longrunning.Operation runTestCase(
@@ -1277,8 +1299,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
-     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
+     * - `metadata`:
+     * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
+     * - `response`:
+     * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
      * </pre>
      */
     public com.google.longrunning.Operation batchRunTestCases(
@@ -1310,8 +1334,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
-     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
+     * - `metadata`:
+     * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
+     * - `response`:
+     * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
      * </pre>
      */
     public com.google.longrunning.Operation importTestCases(
@@ -1329,8 +1355,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
-     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
+     * - `metadata`:
+     * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
+     * - `response`:
+     * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
      * </pre>
      */
     public com.google.longrunning.Operation exportTestCases(
@@ -1370,8 +1398,9 @@ public final class TestCasesGrpc {
    *
    *
    * <pre>
-   * Service for managing [Test Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and
-   * [Test Case Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
+   * Service for managing [Test
+   * Cases][google.cloud.dialogflow.cx.v3beta1.TestCase] and [Test Case
+   * Results][google.cloud.dialogflow.cx.v3beta1.TestCaseResult].
    * </pre>
    */
   public static final class TestCasesFutureStub
@@ -1463,8 +1492,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
-     * - `response`: [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
+     * - `metadata`:
+     * [RunTestCaseMetadata][google.cloud.dialogflow.cx.v3beta1.RunTestCaseMetadata]
+     * - `response`:
+     * [RunTestCaseResponse][google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1481,8 +1512,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
-     * - `response`: [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
+     * - `metadata`:
+     * [BatchRunTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata]
+     * - `response`:
+     * [BatchRunTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1515,8 +1548,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
-     * - `response`: [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
+     * - `metadata`:
+     * [ImportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata]
+     * - `response`:
+     * [ImportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ImportTestCasesResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1534,8 +1569,10 @@ public final class TestCasesGrpc {
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
-     * - `response`: [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
+     * - `metadata`:
+     * [ExportTestCasesMetadata][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesMetadata]
+     * - `response`:
+     * [ExportTestCasesResponse][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

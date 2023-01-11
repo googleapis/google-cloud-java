@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Versions.LoadVersion][google.cloud.dialogflow.cx.v3beta1.Versions.LoadVersion].
+ * The request message for
+ * [Versions.LoadVersion][google.cloud.dialogflow.cx.v3beta1.Versions.LoadVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest}
@@ -73,9 +74,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+   * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>
@@ -100,9 +101,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+   * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>
@@ -319,7 +320,8 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [Versions.LoadVersion][google.cloud.dialogflow.cx.v3beta1.Versions.LoadVersion].
+   * The request message for
+   * [Versions.LoadVersion][google.cloud.dialogflow.cx.v3beta1.Versions.LoadVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest}
@@ -503,9 +505,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+     * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -529,9 +531,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+     * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -555,9 +557,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+     * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -580,9 +582,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+     * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>
@@ -601,9 +603,9 @@ public final class LoadVersionRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to draft flow.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+     * Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be
+     * loaded to draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>

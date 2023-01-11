@@ -27,7 +27,8 @@ public interface DeleteEnvironmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+   * Required. The name of the
+   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
@@ -43,7 +44,8 @@ public interface DeleteEnvironmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+   * Required. The name of the
+   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>

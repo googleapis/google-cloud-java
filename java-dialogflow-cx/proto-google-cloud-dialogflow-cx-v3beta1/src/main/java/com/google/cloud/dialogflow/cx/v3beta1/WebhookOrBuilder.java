@@ -28,10 +28,12 @@ public interface WebhookOrBuilder
    *
    * <pre>
    * The unique identifier of the webhook.
-   * Required for the [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.UpdateWebhook] method.
-   * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.CreateWebhook] populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/webhooks/&lt;Webhook ID&gt;`.
+   * Required for the
+   * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.UpdateWebhook]
+   * method.
+   * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.CreateWebhook]
+   * populates the name automatically. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/webhooks/&lt;Webhook ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -44,10 +46,12 @@ public interface WebhookOrBuilder
    *
    * <pre>
    * The unique identifier of the webhook.
-   * Required for the [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.UpdateWebhook] method.
-   * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.CreateWebhook] populates the name automatically.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/webhooks/&lt;Webhook ID&gt;`.
+   * Required for the
+   * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.UpdateWebhook]
+   * method.
+   * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3beta1.Webhooks.CreateWebhook]
+   * populates the name automatically. Format: `projects/&lt;Project
+   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/webhooks/&lt;Webhook ID&gt;`.
    * </pre>
    *
    * <code>string name = 1;</code>

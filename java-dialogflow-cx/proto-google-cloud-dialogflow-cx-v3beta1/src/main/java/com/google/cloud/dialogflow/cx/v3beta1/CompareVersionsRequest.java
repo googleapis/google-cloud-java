@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3beta1.Versions.CompareVersions].
+ * The request message for
+ * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3beta1.Versions.CompareVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CompareVersionsRequest}
@@ -75,8 +76,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the base flow version to compare with the target version. Use
-   * version ID `0` to indicate the draft version of the specified flow.
+   * Required. Name of the base flow version to compare with the target version.
+   * Use version ID `0` to indicate the draft version of the specified flow.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -103,8 +104,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. Name of the base flow version to compare with the target version. Use
-   * version ID `0` to indicate the draft version of the specified flow.
+   * Required. Name of the base flow version to compare with the target version.
+   * Use version ID `0` to indicate the draft version of the specified flow.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
    * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
@@ -428,7 +429,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3beta1.Versions.CompareVersions].
+   * The request message for
+   * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3beta1.Versions.CompareVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CompareVersionsRequest}
@@ -628,8 +630,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -655,8 +657,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -682,8 +684,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -708,8 +710,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
@@ -730,8 +732,8 @@ public final class CompareVersionsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. Name of the base flow version to compare with the target version. Use
-     * version ID `0` to indicate the draft version of the specified flow.
+     * Required. Name of the base flow version to compare with the target version.
+     * Use version ID `0` to indicate the draft version of the specified flow.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
      * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings].
+ * The request message for
+ * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateSecuritySettingsRequest}
@@ -129,8 +130,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -146,8 +147,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -163,8 +164,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. If the mask is not present,
-   * all fields will be updated.
+   * Required. The mask to control which fields get updated. If the mask is not
+   * present, all fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -359,7 +360,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The request message for [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings].
+   * The request message for
+   * [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateSecuritySettingsRequest}
@@ -787,8 +789,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -803,8 +805,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -825,8 +827,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -849,8 +851,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -870,8 +872,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -896,8 +898,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -918,8 +920,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -934,8 +936,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -954,8 +956,8 @@ public final class UpdateSecuritySettingsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. If the mask is not present,
-     * all fields will be updated.
+     * Required. The mask to control which fields get updated. If the mask is not
+     * present, all fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

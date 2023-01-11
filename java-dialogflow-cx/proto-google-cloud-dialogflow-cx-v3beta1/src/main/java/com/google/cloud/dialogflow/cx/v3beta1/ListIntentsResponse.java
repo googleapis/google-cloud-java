@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for [Intents.ListIntents][google.cloud.dialogflow.cx.v3beta1.Intents.ListIntents].
+ * The response message for
+ * [Intents.ListIntents][google.cloud.dialogflow.cx.v3beta1.Intents.ListIntents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse}
@@ -368,7 +369,8 @@ public final class ListIntentsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response message for [Intents.ListIntents][google.cloud.dialogflow.cx.v3beta1.Intents.ListIntents].
+   * The response message for
+   * [Intents.ListIntents][google.cloud.dialogflow.cx.v3beta1.Intents.ListIntents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse}

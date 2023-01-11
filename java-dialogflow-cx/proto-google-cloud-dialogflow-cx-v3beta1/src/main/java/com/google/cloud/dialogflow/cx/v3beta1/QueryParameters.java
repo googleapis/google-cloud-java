@@ -42,6 +42,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     sessionEntityTypes_ = java.util.Collections.emptyList();
     currentPage_ = "";
     flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    channel_ = "";
   }
 
   @java.lang.Override
@@ -451,7 +452,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+   * The unique identifier of the
+   * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
    * page][QueryResult.current_page] in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -459,9 +461,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-   * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-   * direct a session to a specific state.
+   * In most cases,
+   * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+   * and
+   * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+   * should be configured together to direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -484,7 +488,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+   * The unique identifier of the
+   * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
    * page][QueryResult.current_page] in the session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -492,9 +497,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * ignored by Dialogflow, including the [previous
    * page][QueryResult.current_page] and the [previous session
    * parameters][QueryResult.parameters].
-   * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-   * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-   * direct a session to a specific state.
+   * In most cases,
+   * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+   * and
+   * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+   * should be configured together to direct a session to a specific state.
    * </pre>
    *
    * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -765,6 +772,75 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return flowVersions_.getByteString(index);
   }
 
+  public static final int CHANNEL_FIELD_NUMBER = 15;
+  private volatile java.lang.Object channel_;
+  /**
+   *
+   *
+   * <pre>
+   * The channel which this query is for.
+   * If specified, only the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+   * associated with the channel will be returned. If no
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+   * associated with the channel, it falls back to the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+   * unspecified channel.
+   * If unspecified, the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+   * unspecified channel will be returned.
+   * </pre>
+   *
+   * <code>string channel = 15;</code>
+   *
+   * @return The channel.
+   */
+  @java.lang.Override
+  public java.lang.String getChannel() {
+    java.lang.Object ref = channel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      channel_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The channel which this query is for.
+   * If specified, only the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+   * associated with the channel will be returned. If no
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+   * associated with the channel, it falls back to the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+   * unspecified channel.
+   * If unspecified, the
+   * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+   * unspecified channel will be returned.
+   * </pre>
+   *
+   * <code>string channel = 15;</code>
+   *
+   * @return The bytes for channel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getChannelBytes() {
+    java.lang.Object ref = channel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      channel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -807,6 +883,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         output, internalGetWebhookHeaders(), WebhookHeadersDefaultEntryHolder.defaultEntry, 10);
     for (int i = 0; i < flowVersions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, flowVersions_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, channel_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -860,6 +939,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       size += dataSize;
       size += 1 * getFlowVersionsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, channel_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -895,6 +977,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (getAnalyzeQueryTextSentiment() != other.getAnalyzeQueryTextSentiment()) return false;
     if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
     if (!getFlowVersionsList().equals(other.getFlowVersionsList())) return false;
+    if (!getChannel().equals(other.getChannel())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -938,6 +1021,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + FLOW_VERSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getFlowVersionsList().hashCode();
     }
+    hash = (37 * hash) + CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getChannel().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1133,6 +1218,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       internalGetMutableWebhookHeaders().clear();
       flowVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      channel_ = "";
+
       return this;
     }
 
@@ -1196,6 +1283,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.flowVersions_ = flowVersions_;
+      result.channel_ = channel_;
       onBuilt();
       return result;
     }
@@ -1307,6 +1395,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         }
         onChanged();
       }
+      if (!other.getChannel().isEmpty()) {
+        channel_ = other.channel_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1407,6 +1499,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 flowVersions_.add(s);
                 break;
               } // case 114
+            case 122:
+              {
+                channel_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2779,7 +2877,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * The unique identifier of the
+     * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -2787,9 +2886,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+     * and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2811,7 +2912,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * The unique identifier of the
+     * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -2819,9 +2921,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+     * and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2843,7 +2947,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * The unique identifier of the
+     * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -2851,9 +2956,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+     * and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2874,7 +2981,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * The unique identifier of the
+     * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -2882,9 +2990,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+     * and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2901,7 +3011,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The unique identifier of the [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
+     * The unique identifier of the
+     * [page][google.cloud.dialogflow.cx.v3beta1.Page] to override the [current
      * page][QueryResult.current_page] in the session.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
@@ -2909,9 +3020,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * ignored by Dialogflow, including the [previous
      * page][QueryResult.current_page] and the [previous session
      * parameters][QueryResult.parameters].
-     * In most cases, [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page] and
-     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters] should be configured together to
-     * direct a session to a specific state.
+     * In most cases,
+     * [current_page][google.cloud.dialogflow.cx.v3beta1.QueryParameters.current_page]
+     * and
+     * [parameters][google.cloud.dialogflow.cx.v3beta1.QueryParameters.parameters]
+     * should be configured together to direct a session to a specific state.
      * </pre>
      *
      * <code>string current_page = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -3465,6 +3578,162 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       ensureFlowVersionsIsMutable();
       flowVersions_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object channel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The channel which this query is for.
+     * If specified, only the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+     * associated with the channel will be returned. If no
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+     * associated with the channel, it falls back to the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel.
+     * If unspecified, the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel will be returned.
+     * </pre>
+     *
+     * <code>string channel = 15;</code>
+     *
+     * @return The channel.
+     */
+    public java.lang.String getChannel() {
+      java.lang.Object ref = channel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which this query is for.
+     * If specified, only the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+     * associated with the channel will be returned. If no
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+     * associated with the channel, it falls back to the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel.
+     * If unspecified, the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel will be returned.
+     * </pre>
+     *
+     * <code>string channel = 15;</code>
+     *
+     * @return The bytes for channel.
+     */
+    public com.google.protobuf.ByteString getChannelBytes() {
+      java.lang.Object ref = channel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        channel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which this query is for.
+     * If specified, only the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+     * associated with the channel will be returned. If no
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+     * associated with the channel, it falls back to the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel.
+     * If unspecified, the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel will be returned.
+     * </pre>
+     *
+     * <code>string channel = 15;</code>
+     *
+     * @param value The channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      channel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which this query is for.
+     * If specified, only the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+     * associated with the channel will be returned. If no
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+     * associated with the channel, it falls back to the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel.
+     * If unspecified, the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel will be returned.
+     * </pre>
+     *
+     * <code>string channel = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChannel() {
+
+      channel_ = getDefaultInstance().getChannel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The channel which this query is for.
+     * If specified, only the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage]
+     * associated with the channel will be returned. If no
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] is
+     * associated with the channel, it falls back to the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel.
+     * If unspecified, the
+     * [ResponseMessage][google.cloud.dialogflow.cx.v3beta1.ResponseMessage] with
+     * unspecified channel will be returned.
+     * </pre>
+     *
+     * <code>string channel = 15;</code>
+     *
+     * @param value The bytes for channel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChannelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      channel_ = value;
       onChanged();
       return this;
     }

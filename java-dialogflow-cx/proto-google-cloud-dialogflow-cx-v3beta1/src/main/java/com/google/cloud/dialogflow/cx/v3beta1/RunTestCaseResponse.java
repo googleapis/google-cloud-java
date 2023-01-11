@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.RunTestCase].
+ * The response message for
+ * [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.RunTestCase].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse}
@@ -282,7 +283,8 @@ public final class RunTestCaseResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response message for [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.RunTestCase].
+   * The response message for
+   * [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.RunTestCase].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.RunTestCaseResponse}

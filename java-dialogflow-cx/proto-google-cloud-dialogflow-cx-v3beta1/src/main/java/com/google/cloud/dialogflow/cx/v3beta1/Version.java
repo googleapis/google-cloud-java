@@ -511,8 +511,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The state of this version. This field is read-only and cannot be set by
-   * create and update methods.
+   * Output only. The state of this version. This field is read-only and cannot
+   * be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -529,8 +529,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The state of this version. This field is read-only and cannot be set by
-   * create and update methods.
+   * Output only. The state of this version. This field is read-only and cannot
+   * be set by create and update methods.
    * </pre>
    *
    * <code>
@@ -1756,8 +1756,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The state of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1774,8 +1774,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The state of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1795,8 +1795,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The state of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1818,8 +1818,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The state of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>
@@ -1842,8 +1842,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of this version. This field is read-only and cannot be set by
-     * create and update methods.
+     * Output only. The state of this version. This field is read-only and cannot
+     * be set by create and update methods.
      * </pre>
      *
      * <code>

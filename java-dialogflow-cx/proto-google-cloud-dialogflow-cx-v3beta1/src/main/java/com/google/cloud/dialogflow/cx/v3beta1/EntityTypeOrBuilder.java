@@ -28,7 +28,8 @@ public interface EntityTypeOrBuilder
    *
    * <pre>
    * The unique identifier of the entity type.
-   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+   * Required for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
@@ -43,7 +44,8 @@ public interface EntityTypeOrBuilder
    *
    * <pre>
    * The unique identifier of the entity type.
-   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+   * Required for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
@@ -58,7 +60,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The human-readable name of the entity type, unique within the agent.
+   * Required. The human-readable name of the entity type, unique within the
+   * agent.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -70,7 +73,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Required. The human-readable name of the entity type, unique within the agent.
+   * Required. The human-readable name of the entity type, unique within the
+   * agent.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

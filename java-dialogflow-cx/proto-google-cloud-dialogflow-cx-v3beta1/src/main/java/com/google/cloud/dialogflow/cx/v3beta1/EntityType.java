@@ -40,7 +40,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *     entity is represented by the `EntityType` type.
  * *   **User** - entities that are built for an individual user such as
  *     favorites, preferences, playlists, and so on. A user entity is
- *     represented by the [SessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityType] type.
+ *     represented by the
+ *     [SessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityType]
+ *     type.
  * For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
  * </pre>
@@ -2163,7 +2165,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the entity type.
-   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+   * Required for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
@@ -2189,7 +2192,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the entity type.
-   * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+   * Required for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
    * </pre>
@@ -2217,7 +2221,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The human-readable name of the entity type, unique within the agent.
+   * Required. The human-readable name of the entity type, unique within the
+   * agent.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2240,7 +2245,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The human-readable name of the entity type, unique within the agent.
+   * Required. The human-readable name of the entity type, unique within the
+   * agent.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2813,7 +2819,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *     entity is represented by the `EntityType` type.
    * *   **User** - entities that are built for an individual user such as
    *     favorites, preferences, playlists, and so on. A user entity is
-   *     represented by the [SessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityType] type.
+   *     represented by the
+   *     [SessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityType]
+   *     type.
    * For more information about entity types, see the [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
    * </pre>
@@ -3166,7 +3174,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the entity type.
-     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+     * Required for
+     * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
@@ -3191,7 +3200,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the entity type.
-     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+     * Required for
+     * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
@@ -3216,7 +3226,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the entity type.
-     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+     * Required for
+     * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
@@ -3240,7 +3251,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the entity type.
-     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+     * Required for
+     * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
@@ -3260,7 +3272,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the entity type.
-     * Required for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
+     * Required for
+     * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/entityTypes/&lt;Entity Type ID&gt;`.
      * </pre>
@@ -3286,7 +3299,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the entity type, unique within the agent.
+     * Required. The human-readable name of the entity type, unique within the
+     * agent.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3308,7 +3322,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the entity type, unique within the agent.
+     * Required. The human-readable name of the entity type, unique within the
+     * agent.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3330,7 +3345,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the entity type, unique within the agent.
+     * Required. The human-readable name of the entity type, unique within the
+     * agent.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3351,7 +3367,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the entity type, unique within the agent.
+     * Required. The human-readable name of the entity type, unique within the
+     * agent.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3368,7 +3385,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The human-readable name of the entity type, unique within the agent.
+     * Required. The human-readable name of the entity type, unique within the
+     * agent.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

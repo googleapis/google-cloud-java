@@ -22,8 +22,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Metadata returned for the [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ImportTestCases] long running
- * operation.
+ * Metadata returned for the
+ * [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ImportTestCases]
+ * long running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata}
@@ -304,8 +305,9 @@ public final class ImportTestCasesMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Metadata returned for the [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ImportTestCases] long running
-   * operation.
+   * Metadata returned for the
+   * [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ImportTestCases]
+   * long running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ImportTestCasesMetadata}

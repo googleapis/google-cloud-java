@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Versions.CreateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.CreateVersion].
+ * The request message for
+ * [Versions.CreateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.CreateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest}
@@ -73,8 +74,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+   * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
@@ -100,8 +102,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+   * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
@@ -356,7 +359,8 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.CreateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.CreateVersion].
+   * The request message for
+   * [Versions.CreateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.CreateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest}
@@ -548,8 +552,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
@@ -574,8 +579,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
@@ -600,8 +606,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
@@ -625,8 +632,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
@@ -646,8 +654,9 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an [Version][google.cloud.dialogflow.cx.v3beta1.Version] for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *

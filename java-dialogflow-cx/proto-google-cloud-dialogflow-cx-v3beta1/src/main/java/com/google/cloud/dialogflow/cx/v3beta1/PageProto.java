@@ -181,13 +181,12 @@ public final class PageProto {
           + "ws/*/pages/*}\332A\004name\032x\312A\031dialogflow.goog"
           + "leapis.com\322AYhttps://www.googleapis.com/"
           + "auth/cloud-platform,https://www.googleap"
-          + "is.com/auth/dialogflowB\321\001\n&com.google.cl"
-          + "oud.dialogflow.cx.v3beta1B\tPageProtoP\001ZD"
-          + "google.golang.org/genproto/googleapis/cl"
-          + "oud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"G"
-          + "oogle.Cloud.Dialogflow.Cx.V3Beta1\352\002&Goog"
-          + "le::Cloud::Dialogflow::CX::V3beta1b\006prot"
-          + "o3"
+          + "is.com/auth/dialogflowB\303\001\n&com.google.cl"
+          + "oud.dialogflow.cx.v3beta1B\tPageProtoP\001Z6"
+          + "cloud.google.com/go/dialogflow/cx/apiv3b"
+          + "eta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Di"
+          + "alogflow.Cx.V3Beta1\352\002&Google::Cloud::Dia"
+          + "logflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
