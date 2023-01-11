@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.GetContext][google.cloud.aiplatform.v1.MetadataService.GetContext].
+ * Request message for
+ * [MetadataService.GetContext][google.cloud.aiplatform.v1.MetadataService.GetContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetContextRequest}
@@ -287,7 +288,8 @@ public final class GetContextRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [MetadataService.GetContext][google.cloud.aiplatform.v1.MetadataService.GetContext].
+   * Request message for
+   * [MetadataService.GetContext][google.cloud.aiplatform.v1.MetadataService.GetContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetContextRequest}

@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * executionsSettingsBuilder
  *     .getExecutionSettings()
  *     .setRetrySettings(
- *         executionsSettingsBuilder.getExecutionSettings().getRetrySettings().toBuilder()
+ *         executionsSettingsBuilder
+ *             .getExecutionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExecutionsStubSettings executionsSettings = executionsSettingsBuilder.build();

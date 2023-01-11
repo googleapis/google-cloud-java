@@ -28,7 +28,8 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * List of HyperparameterTuningJobs in the requested page.
-   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials] of the jobs will be not be returned.
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]
+   * of the jobs will be not be returned.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * List of HyperparameterTuningJobs in the requested page.
-   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials] of the jobs will be not be returned.
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]
+   * of the jobs will be not be returned.
    * </pre>
    *
    * <code>
@@ -56,7 +58,8 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * List of HyperparameterTuningJobs in the requested page.
-   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials] of the jobs will be not be returned.
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]
+   * of the jobs will be not be returned.
    * </pre>
    *
    * <code>
@@ -69,7 +72,8 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * List of HyperparameterTuningJobs in the requested page.
-   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials] of the jobs will be not be returned.
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]
+   * of the jobs will be not be returned.
    * </pre>
    *
    * <code>
@@ -83,7 +87,8 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * List of HyperparameterTuningJobs in the requested page.
-   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials] of the jobs will be not be returned.
+   * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]
+   * of the jobs will be not be returned.
    * </pre>
    *
    * <code>
@@ -98,8 +103,9 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -112,8 +118,9 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListHyperparameterTuningJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

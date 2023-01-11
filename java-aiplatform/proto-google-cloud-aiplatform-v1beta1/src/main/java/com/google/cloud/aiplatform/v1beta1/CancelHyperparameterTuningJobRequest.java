@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.CancelHyperparameterTuningJob].
+ * Request message for
+ * [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.CancelHyperparameterTuningJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest}
@@ -292,7 +293,8 @@ public final class CancelHyperparameterTuningJobRequest
    *
    *
    * <pre>
-   * Request message for [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.CancelHyperparameterTuningJob].
+   * Request message for
+   * [JobService.CancelHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.CancelHyperparameterTuningJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest}

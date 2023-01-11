@@ -124,7 +124,10 @@ import org.threeten.bp.Duration;
  * modelServiceSettingsBuilder
  *     .getModelSettings()
  *     .setRetrySettings(
- *         modelServiceSettingsBuilder.getModelSettings().getRetrySettings().toBuilder()
+ *         modelServiceSettingsBuilder
+ *             .getModelSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ModelServiceStubSettings modelServiceSettings = modelServiceSettingsBuilder.build();

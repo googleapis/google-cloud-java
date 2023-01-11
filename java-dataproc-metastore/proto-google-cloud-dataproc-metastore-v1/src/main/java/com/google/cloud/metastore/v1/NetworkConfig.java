@@ -82,7 +82,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
-     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>
@@ -102,7 +102,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
-     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>
@@ -122,7 +122,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
-     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>
@@ -265,7 +265,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
-     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>
@@ -287,7 +287,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
-     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>
@@ -322,7 +322,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
      * subnet is specified in the following form:
-     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+     * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
      * </pre>
      *
      * <code>
@@ -804,7 +804,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
-       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
        * <code>
@@ -827,7 +827,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
-       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
        * <code>
@@ -863,7 +863,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
-       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
        * <code>
@@ -899,7 +899,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
-       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
        * <code>
@@ -928,7 +928,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
-       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
        * <code>
@@ -955,7 +955,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
        * subnet is specified in the following form:
-       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+       * `projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}`
        * </pre>
        *
        * <code>

@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * tasksSettingsBuilder
  *     .getTaskSettings()
  *     .setRetrySettings(
- *         tasksSettingsBuilder.getTaskSettings().getRetrySettings().toBuilder()
+ *         tasksSettingsBuilder
+ *             .getTaskSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TasksSettings tasksSettings = tasksSettingsBuilder.build();

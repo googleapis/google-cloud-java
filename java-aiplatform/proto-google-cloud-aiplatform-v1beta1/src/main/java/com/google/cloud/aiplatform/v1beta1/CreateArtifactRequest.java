@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.CreateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.CreateArtifact].
+ * Request message for
+ * [MetadataService.CreateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.CreateArtifact].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateArtifactRequest}
@@ -429,7 +430,8 @@ public final class CreateArtifactRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [MetadataService.CreateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.CreateArtifact].
+   * Request message for
+   * [MetadataService.CreateArtifact][google.cloud.aiplatform.v1beta1.MetadataService.CreateArtifact].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateArtifactRequest}

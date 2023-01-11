@@ -37,7 +37,10 @@ public class SyncPauseModel {
     modelServiceSettingsBuilder
         .pauseModelSettings()
         .setRetrySettings(
-            modelServiceSettingsBuilder.pauseModelSettings().getRetrySettings().toBuilder()
+            modelServiceSettingsBuilder
+                .pauseModelSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ModelServiceStubSettings modelServiceSettings = modelServiceSettingsBuilder.build();

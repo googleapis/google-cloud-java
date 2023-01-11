@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * metricsV1Beta3SettingsBuilder
  *     .getJobMetricsSettings()
  *     .setRetrySettings(
- *         metricsV1Beta3SettingsBuilder.getJobMetricsSettings().getRetrySettings().toBuilder()
+ *         metricsV1Beta3SettingsBuilder
+ *             .getJobMetricsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsV1Beta3Settings metricsV1Beta3Settings = metricsV1Beta3SettingsBuilder.build();

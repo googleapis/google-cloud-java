@@ -37,7 +37,10 @@ public class SyncGetJob {
     cloudSchedulerSettingsBuilder
         .getJobSettings()
         .setRetrySettings(
-            cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+            cloudSchedulerSettingsBuilder
+                .getJobSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudSchedulerStubSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();

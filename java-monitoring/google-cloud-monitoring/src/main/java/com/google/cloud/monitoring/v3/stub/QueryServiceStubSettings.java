@@ -79,7 +79,10 @@ import javax.annotation.Generated;
  * queryServiceSettingsBuilder
  *     .queryTimeSeriesSettings()
  *     .setRetrySettings(
- *         queryServiceSettingsBuilder.queryTimeSeriesSettings().getRetrySettings().toBuilder()
+ *         queryServiceSettingsBuilder
+ *             .queryTimeSeriesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * QueryServiceStubSettings queryServiceSettings = queryServiceSettingsBuilder.build();

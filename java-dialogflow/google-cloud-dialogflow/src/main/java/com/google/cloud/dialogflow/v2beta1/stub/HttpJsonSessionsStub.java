@@ -82,12 +82,13 @@ public class HttpJsonSessionsStub extends SessionsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DetectIntentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearSession().build(), false))
+                                  .toBody("*", request.toBuilder().clearSession().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DetectIntentResponse>newBuilder()
@@ -118,6 +119,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -151,6 +153,7 @@ public class HttpJsonSessionsStub extends SessionsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

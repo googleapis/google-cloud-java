@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.DeleteTensorboard][google.cloud.aiplatform.v1.TensorboardService.DeleteTensorboard].
+ * Request message for
+ * [TensorboardService.DeleteTensorboard][google.cloud.aiplatform.v1.TensorboardService.DeleteTensorboard].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteTensorboardRequest}
@@ -288,7 +289,8 @@ public final class DeleteTensorboardRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [TensorboardService.DeleteTensorboard][google.cloud.aiplatform.v1.TensorboardService.DeleteTensorboard].
+   * Request message for
+   * [TensorboardService.DeleteTensorboard][google.cloud.aiplatform.v1.TensorboardService.DeleteTensorboard].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteTensorboardRequest}

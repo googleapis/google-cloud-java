@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * webhooksSettingsBuilder
  *     .getWebhookSettings()
  *     .setRetrySettings(
- *         webhooksSettingsBuilder.getWebhookSettings().getRetrySettings().toBuilder()
+ *         webhooksSettingsBuilder
+ *             .getWebhookSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WebhooksSettings webhooksSettings = webhooksSettingsBuilder.build();

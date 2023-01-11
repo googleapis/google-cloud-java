@@ -2214,12 +2214,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full name of the Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the Job should be peered. For example,
+     * `projects/12345/global/networks/myVPC`.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
      * is of the form `projects/{project}/global/networks/{network}`.
-     * Where {project} is a project number, as in `12345`, and {network} is a
-     * network name.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * a network name.
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2234,12 +2235,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full name of the Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the Job should be peered. For example,
+     * `projects/12345/global/networks/myVPC`.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
      * is of the form `projects/{project}/global/networks/{network}`.
-     * Where {project} is a project number, as in `12345`, and {network} is a
-     * network name.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * a network name.
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2255,8 +2257,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2267,8 +2269,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2282,8 +2284,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2294,8 +2296,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2311,8 +2313,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2386,12 +2388,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full name of the Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the Job should be peered. For example,
+     * `projects/12345/global/networks/myVPC`.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
      * is of the form `projects/{project}/global/networks/{network}`.
-     * Where {project} is a project number, as in `12345`, and {network} is a
-     * network name.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * a network name.
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2417,12 +2420,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The full name of the Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-     * should be peered. For example, `projects/12345/global/networks/myVPC`.
+     * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+     * to which the Job should be peered. For example,
+     * `projects/12345/global/networks/myVPC`.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
      * is of the form `projects/{project}/global/networks/{network}`.
-     * Where {project} is a project number, as in `12345`, and {network} is a
-     * network name.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
+     * a network name.
      * Private services access must already be configured for the network. If
      * left unspecified, the job is not peered with any network.
      * </pre>
@@ -2474,8 +2478,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2498,8 +2502,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2513,8 +2517,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2532,8 +2536,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Environment variables.
-     *  At most 100 environment variables can be specified and unique.
-     * Example: GCP_BUCKET=gs://my-bucket/samples/
+     * At most 100 environment variables can be specified and unique.
+     * Example: `GCP_BUCKET=gs://my-bucket/samples/`
      * </pre>
      *
      * <code>map&lt;string, string&gt; env = 2;</code>
@@ -2950,12 +2954,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The full name of the Compute Engine
-       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+       * to which the Job should be peered. For example,
+       * `projects/12345/global/networks/myVPC`.
        * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
        * is of the form `projects/{project}/global/networks/{network}`.
-       * Where {project} is a project number, as in `12345`, and {network} is a
-       * network name.
+       * Where `{project}` is a project number, as in `12345`, and `{network}` is
+       * a network name.
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -2980,12 +2985,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The full name of the Compute Engine
-       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+       * to which the Job should be peered. For example,
+       * `projects/12345/global/networks/myVPC`.
        * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
        * is of the form `projects/{project}/global/networks/{network}`.
-       * Where {project} is a project number, as in `12345`, and {network} is a
-       * network name.
+       * Where `{project}` is a project number, as in `12345`, and `{network}` is
+       * a network name.
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3010,12 +3016,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The full name of the Compute Engine
-       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+       * to which the Job should be peered. For example,
+       * `projects/12345/global/networks/myVPC`.
        * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
        * is of the form `projects/{project}/global/networks/{network}`.
-       * Where {project} is a project number, as in `12345`, and {network} is a
-       * network name.
+       * Where `{project}` is a project number, as in `12345`, and `{network}` is
+       * a network name.
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3039,12 +3046,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The full name of the Compute Engine
-       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+       * to which the Job should be peered. For example,
+       * `projects/12345/global/networks/myVPC`.
        * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
        * is of the form `projects/{project}/global/networks/{network}`.
-       * Where {project} is a project number, as in `12345`, and {network} is a
-       * network name.
+       * Where `{project}` is a project number, as in `12345`, and `{network}` is
+       * a network name.
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3064,12 +3072,13 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * The full name of the Compute Engine
-       * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-       * should be peered. For example, `projects/12345/global/networks/myVPC`.
+       * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
+       * to which the Job should be peered. For example,
+       * `projects/12345/global/networks/myVPC`.
        * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
        * is of the form `projects/{project}/global/networks/{network}`.
-       * Where {project} is a project number, as in `12345`, and {network} is a
-       * network name.
+       * Where `{project}` is a project number, as in `12345`, and `{network}` is
+       * a network name.
        * Private services access must already be configured for the network. If
        * left unspecified, the job is not peered with any network.
        * </pre>
@@ -3120,8 +3129,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3144,8 +3153,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3159,8 +3168,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3178,8 +3187,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3205,8 +3214,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3228,8 +3237,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3250,8 +3259,8 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Environment variables.
-       *  At most 100 environment variables can be specified and unique.
-       * Example: GCP_BUCKET=gs://my-bucket/samples/
+       * At most 100 environment variables can be specified and unique.
+       * Example: `GCP_BUCKET=gs://my-bucket/samples/`
        * </pre>
        *
        * <code>map&lt;string, string&gt; env = 2;</code>
@@ -3390,7 +3399,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-   *     google/cloud/notebooks/v1/execution.proto;l=150
+   *     google/cloud/notebooks/v1/execution.proto;l=151
    * @return The enum numeric value on the wire for scaleTier.
    */
   @java.lang.Override
@@ -3411,7 +3420,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-   *     google/cloud/notebooks/v1/execution.proto;l=150
+   *     google/cloud/notebooks/v1/execution.proto;l=151
    * @return The scaleTier.
    */
   @java.lang.Override
@@ -5084,7 +5093,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-     *     google/cloud/notebooks/v1/execution.proto;l=150
+     *     google/cloud/notebooks/v1/execution.proto;l=151
      * @return The enum numeric value on the wire for scaleTier.
      */
     @java.lang.Override
@@ -5105,7 +5114,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-     *     google/cloud/notebooks/v1/execution.proto;l=150
+     *     google/cloud/notebooks/v1/execution.proto;l=151
      * @param value The enum numeric value on the wire for scaleTier to set.
      * @return This builder for chaining.
      */
@@ -5129,7 +5138,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-     *     google/cloud/notebooks/v1/execution.proto;l=150
+     *     google/cloud/notebooks/v1/execution.proto;l=151
      * @return The scaleTier.
      */
     @java.lang.Override
@@ -5155,7 +5164,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-     *     google/cloud/notebooks/v1/execution.proto;l=150
+     *     google/cloud/notebooks/v1/execution.proto;l=151
      * @param value The scaleTier to set.
      * @return This builder for chaining.
      */
@@ -5182,7 +5191,7 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-     *     google/cloud/notebooks/v1/execution.proto;l=150
+     *     google/cloud/notebooks/v1/execution.proto;l=151
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

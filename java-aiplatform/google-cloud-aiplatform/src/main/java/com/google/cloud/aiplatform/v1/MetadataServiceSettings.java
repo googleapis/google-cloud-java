@@ -79,7 +79,10 @@ import javax.annotation.Generated;
  * metadataServiceSettingsBuilder
  *     .getMetadataStoreSettings()
  *     .setRetrySettings(
- *         metadataServiceSettingsBuilder.getMetadataStoreSettings().getRetrySettings().toBuilder()
+ *         metadataServiceSettingsBuilder
+ *             .getMetadataStoreSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetadataServiceSettings metadataServiceSettings = metadataServiceSettingsBuilder.build();

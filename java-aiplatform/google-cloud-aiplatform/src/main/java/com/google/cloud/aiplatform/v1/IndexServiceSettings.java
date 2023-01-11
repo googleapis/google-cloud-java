@@ -74,7 +74,10 @@ import javax.annotation.Generated;
  * indexServiceSettingsBuilder
  *     .getIndexSettings()
  *     .setRetrySettings(
- *         indexServiceSettingsBuilder.getIndexSettings().getRetrySettings().toBuilder()
+ *         indexServiceSettingsBuilder
+ *             .getIndexSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IndexServiceSettings indexServiceSettings = indexServiceSettingsBuilder.build();

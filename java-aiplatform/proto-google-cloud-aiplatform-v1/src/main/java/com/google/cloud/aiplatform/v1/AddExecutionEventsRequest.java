@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1.MetadataService.AddExecutionEvents].
+ * Request message for
+ * [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1.MetadataService.AddExecutionEvents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.AddExecutionEventsRequest}
@@ -371,7 +372,8 @@ public final class AddExecutionEventsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1.MetadataService.AddExecutionEvents].
+   * Request message for
+   * [MetadataService.AddExecutionEvents][google.cloud.aiplatform.v1.MetadataService.AddExecutionEvents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.AddExecutionEventsRequest}

@@ -58,6 +58,43 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
+   * `filter` can be used to specify a subset of jobs.
+   * If `filter` equals `target_config="HttpConfig"`, then the http
+   * target jobs are retrieved. If `filter` equals
+   * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+   * retrieved. If `filter` equals `labels.foo=value1
+   * labels.foo=value2` then only jobs which are labeled with
+   * foo=value1 AND foo=value2 will be returned.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * `filter` can be used to specify a subset of jobs.
+   * If `filter` equals `target_config="HttpConfig"`, then the http
+   * target jobs are retrieved. If `filter` equals
+   * `target_config="PubSubConfig"`, then the Pub/Sub target jobs are
+   * retrieved. If `filter` equals `labels.foo=value1
+   * labels.foo=value2` then only jobs which are labeled with
+   * foo=value1 AND foo=value2 will be returned.
+   * </pre>
+   *
+   * <code>string filter = 4;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Requested page size.
    * The maximum page size is 500. If unspecified, the page size will
    * be the maximum. Fewer jobs than requested might be returned,
@@ -78,10 +115,13 @@ public interface ListJobsRequestOrBuilder
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-   * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-   * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+   * returned from the previous call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+   * an error to switch the value of
+   * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -96,10 +136,13 @@ public interface ListJobsRequestOrBuilder
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token] returned from
-   * the previous call to [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is an error to
-   * switch the value of [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
-   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while iterating through pages.
+   * [next_page_token][google.cloud.scheduler.v1beta1.ListJobsResponse.next_page_token]
+   * returned from the previous call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs]. It is
+   * an error to switch the value of
+   * [filter][google.cloud.scheduler.v1beta1.ListJobsRequest.filter] or
+   * [order_by][google.cloud.scheduler.v1beta1.ListJobsRequest.order_by] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 6;</code>
@@ -107,4 +150,19 @@ public interface ListJobsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field is used to manage the legacy App Engine Cron jobs using the
+   * Cloud Scheduler API. If the field is set to true, the jobs in the __cron
+   * queue will be listed instead.
+   * </pre>
+   *
+   * <code>bool legacy_app_engine_cron = 7;</code>
+   *
+   * @return The legacyAppEngineCron.
+   */
+  boolean getLegacyAppEngineCron();
 }

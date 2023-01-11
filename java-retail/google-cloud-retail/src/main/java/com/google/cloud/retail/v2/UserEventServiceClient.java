@@ -48,6 +48,7 @@ import javax.annotation.Generated;
  *       WriteUserEventRequest.newBuilder()
  *           .setParent("parent-995424086")
  *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setWriteAsync(true)
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
  * }
@@ -219,6 +220,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *       WriteUserEventRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setWriteAsync(true)
    *           .build();
    *   UserEvent response = userEventServiceClient.writeUserEvent(request);
    * }
@@ -248,6 +250,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *       WriteUserEventRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setWriteAsync(true)
    *           .build();
    *   ApiFuture<UserEvent> future =
    *       userEventServiceClient.writeUserEventCallable().futureCall(request);
@@ -283,6 +286,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *           .setUserEvent("userEvent315571599")
    *           .setUri("uri116076")
    *           .setEts(100772)
+   *           .setRawJson("rawJson985449776")
    *           .build();
    *   HttpBody response = userEventServiceClient.collectUserEvent(request);
    * }
@@ -318,6 +322,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *           .setUserEvent("userEvent315571599")
    *           .setUri("uri116076")
    *           .setEts(100772)
+   *           .setRawJson("rawJson985449776")
    *           .build();
    *   ApiFuture<HttpBody> future =
    *       userEventServiceClient.collectUserEventCallable().futureCall(request);
@@ -535,11 +540,11 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starts a user event rejoin operation with latest product catalog. Events will not be annotated
-   * with detailed product information if product is missing from the catalog at the time the user
-   * event is ingested, and these events are stored as unjoined events with a limited usage on
-   * training and serving. This method can be used to start a join operation on specified events
-   * with latest version of product catalog. It can also be used to correct events joined with the
+   * Starts a user-event rejoin operation with latest product catalog. Events are not annotated with
+   * detailed product information for products that are missing from the catalog when the user event
+   * is ingested. These events are stored as unjoined events with limited usage on training and
+   * serving. You can use this method to start a join operation on specified events with the latest
+   * version of product catalog. You can also use this method to correct events joined with the
    * wrong product catalog. A rejoin operation can take hours or days to complete.
    *
    * <p>Sample code:
@@ -568,11 +573,11 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starts a user event rejoin operation with latest product catalog. Events will not be annotated
-   * with detailed product information if product is missing from the catalog at the time the user
-   * event is ingested, and these events are stored as unjoined events with a limited usage on
-   * training and serving. This method can be used to start a join operation on specified events
-   * with latest version of product catalog. It can also be used to correct events joined with the
+   * Starts a user-event rejoin operation with latest product catalog. Events are not annotated with
+   * detailed product information for products that are missing from the catalog when the user event
+   * is ingested. These events are stored as unjoined events with limited usage on training and
+   * serving. You can use this method to start a join operation on specified events with the latest
+   * version of product catalog. You can also use this method to correct events joined with the
    * wrong product catalog. A rejoin operation can take hours or days to complete.
    *
    * <p>Sample code:
@@ -601,11 +606,11 @@ public class UserEventServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Starts a user event rejoin operation with latest product catalog. Events will not be annotated
-   * with detailed product information if product is missing from the catalog at the time the user
-   * event is ingested, and these events are stored as unjoined events with a limited usage on
-   * training and serving. This method can be used to start a join operation on specified events
-   * with latest version of product catalog. It can also be used to correct events joined with the
+   * Starts a user-event rejoin operation with latest product catalog. Events are not annotated with
+   * detailed product information for products that are missing from the catalog when the user event
+   * is ingested. These events are stored as unjoined events with limited usage on training and
+   * serving. You can use this method to start a join operation on specified events with the latest
+   * version of product catalog. You can also use this method to correct events joined with the
    * wrong product catalog. A rejoin operation can take hours or days to complete.
    *
    * <p>Sample code:

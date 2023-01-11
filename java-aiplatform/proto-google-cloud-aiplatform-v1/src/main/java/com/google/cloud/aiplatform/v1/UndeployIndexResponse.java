@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
+ * Response message for
+ * [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UndeployIndexResponse}
@@ -219,7 +220,8 @@ public final class UndeployIndexResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
+   * Response message for
+   * [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UndeployIndexResponse}

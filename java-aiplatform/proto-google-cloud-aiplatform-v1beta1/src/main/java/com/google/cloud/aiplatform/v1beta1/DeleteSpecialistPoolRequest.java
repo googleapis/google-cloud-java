@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [SpecialistPoolService.DeleteSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.DeleteSpecialistPool].
+ * Request message for
+ * [SpecialistPoolService.DeleteSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.DeleteSpecialistPool].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest}
@@ -315,7 +316,8 @@ public final class DeleteSpecialistPoolRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [SpecialistPoolService.DeleteSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.DeleteSpecialistPool].
+   * Request message for
+   * [SpecialistPoolService.DeleteSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.DeleteSpecialistPool].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest}

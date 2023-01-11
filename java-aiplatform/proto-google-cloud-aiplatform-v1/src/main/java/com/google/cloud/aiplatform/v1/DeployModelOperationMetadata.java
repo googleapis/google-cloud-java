@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Runtime operation information for [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel].
+ * Runtime operation information for
+ * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeployModelOperationMetadata}
@@ -283,7 +284,8 @@ public final class DeployModelOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Runtime operation information for [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel].
+   * Runtime operation information for
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeployModelOperationMetadata}

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
+ * Runtime operation information for
+ * [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata}
@@ -285,7 +286,8 @@ public final class CreateDatasetOperationMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Runtime operation information for [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
+   * Runtime operation information for
+   * [DatasetService.CreateDataset][google.cloud.aiplatform.v1beta1.DatasetService.CreateDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata}

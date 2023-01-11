@@ -95,7 +95,10 @@ import org.threeten.bp.Duration;
  * experimentsSettingsBuilder
  *     .getExperimentSettings()
  *     .setRetrySettings(
- *         experimentsSettingsBuilder.getExperimentSettings().getRetrySettings().toBuilder()
+ *         experimentsSettingsBuilder
+ *             .getExperimentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExperimentsStubSettings experimentsSettings = experimentsSettingsBuilder.build();

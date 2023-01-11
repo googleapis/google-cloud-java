@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * regionHealthCheckServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionHealthCheckServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionHealthCheckServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionHealthCheckServicesStubSettings regionHealthCheckServicesSettings =

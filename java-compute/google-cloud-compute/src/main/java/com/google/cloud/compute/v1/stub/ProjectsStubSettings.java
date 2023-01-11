@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * projectsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         projectsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         projectsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProjectsStubSettings projectsSettings = projectsSettingsBuilder.build();

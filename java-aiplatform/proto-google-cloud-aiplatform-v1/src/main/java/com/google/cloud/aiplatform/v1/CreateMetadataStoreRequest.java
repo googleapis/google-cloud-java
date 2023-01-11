@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1.MetadataService.CreateMetadataStore].
+ * Request message for
+ * [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1.MetadataService.CreateMetadataStore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateMetadataStoreRequest}
@@ -429,7 +430,8 @@ public final class CreateMetadataStoreRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1.MetadataService.CreateMetadataStore].
+   * Request message for
+   * [MetadataService.CreateMetadataStore][google.cloud.aiplatform.v1.MetadataService.CreateMetadataStore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateMetadataStoreRequest}

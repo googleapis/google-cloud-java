@@ -266,6 +266,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParentModel("parentModel998431903")
    *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
+   *           .setServiceAccount("serviceAccount1079137720")
    *           .build();
    *   UploadModelResponse response = modelServiceClient.uploadModelAsync(request).get();
    * }
@@ -298,6 +299,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParentModel("parentModel998431903")
    *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
+   *           .setServiceAccount("serviceAccount1079137720")
    *           .build();
    *   OperationFuture<UploadModelResponse, UploadModelOperationMetadata> future =
    *       modelServiceClient.uploadModelOperationCallable().futureCall(request);
@@ -331,6 +333,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParentModel("parentModel998431903")
    *           .setModelId("modelId1226956324")
    *           .setModel(Model.newBuilder().build())
+   *           .setServiceAccount("serviceAccount1079137720")
    *           .build();
    *   ApiFuture<Operation> future = modelServiceClient.uploadModelCallable().futureCall(request);
    *   // Do something.
@@ -714,6 +717,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Model element : modelServiceClient.listModelVersions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -748,6 +752,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Model> future =
    *       modelServiceClient.listModelVersionsPagedCallable().futureCall(request);
@@ -783,6 +788,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListModelVersionsResponse response =

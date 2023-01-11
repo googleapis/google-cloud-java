@@ -35,7 +35,7 @@ public interface BinaryAuthorizationOrBuilder
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1478
+   *     google/container/v1beta1/cluster_service.proto;l=1538
    * @return The enabled.
    */
   @java.lang.Deprecated
@@ -45,9 +45,8 @@ public interface BinaryAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Mode of operation for binauthz policy evaluation. Currently the only
-   * options are equivalent to enable/disable. If unspecified, defaults to
-   * DISABLED.
+   * Mode of operation for binauthz policy evaluation. If unspecified, defaults
+   * to DISABLED.
    * </pre>
    *
    * <code>.google.container.v1beta1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
@@ -59,9 +58,8 @@ public interface BinaryAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Mode of operation for binauthz policy evaluation. Currently the only
-   * options are equivalent to enable/disable. If unspecified, defaults to
-   * DISABLED.
+   * Mode of operation for binauthz policy evaluation. If unspecified, defaults
+   * to DISABLED.
    * </pre>
    *
    * <code>.google.container.v1beta1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>

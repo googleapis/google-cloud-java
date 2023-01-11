@@ -665,8 +665,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
-   * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+   * Optional. Deprecated: If true, expose the IndexEndpoint via private service
+   * connect.
+   * Only one of the fields,
+   * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
    * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
    * can be set.
    * </pre>
@@ -676,7 +678,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
+   *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=102
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -2935,8 +2937,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service
+     * connect.
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
@@ -2946,7 +2950,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
+     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=102
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -2958,8 +2962,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service
+     * connect.
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
@@ -2969,7 +2975,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
+     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=102
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -2984,8 +2990,10 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Deprecated: If true, expose the IndexEndpoint via private service connect.
-     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * Optional. Deprecated: If true, expose the IndexEndpoint via private service
+     * connect.
+     * Only one of the fields,
+     * [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
      * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
      * can be set.
      * </pre>
@@ -2995,7 +3003,7 @@ public final class IndexEndpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=97
+     *     deprecated. See google/cloud/aiplatform/v1beta1/index_endpoint.proto;l=102
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

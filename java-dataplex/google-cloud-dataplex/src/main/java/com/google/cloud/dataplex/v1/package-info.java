@@ -38,6 +38,22 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataScanServiceClient =======================
+ *
+ * <p>Sample for DataScanServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+ *   DataScanName name = DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]");
+ *   DataScan response = dataScanServiceClient.getDataScan(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= MetadataServiceClient =======================
  *
  * <p>Service Description: Metadata service manages metadata resources such as tables, filesets and

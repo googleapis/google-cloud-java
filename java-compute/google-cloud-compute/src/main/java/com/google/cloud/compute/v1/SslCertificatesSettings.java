@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * sslCertificatesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         sslCertificatesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         sslCertificatesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SslCertificatesSettings sslCertificatesSettings = sslCertificatesSettingsBuilder.build();

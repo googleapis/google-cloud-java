@@ -37,7 +37,10 @@ public class SyncUpdateAnswerRecord {
     answerRecordsSettingsBuilder
         .updateAnswerRecordSettings()
         .setRetrySettings(
-            answerRecordsSettingsBuilder.updateAnswerRecordSettings().getRetrySettings().toBuilder()
+            answerRecordsSettingsBuilder
+                .updateAnswerRecordSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AnswerRecordsStubSettings answerRecordsSettings = answerRecordsSettingsBuilder.build();

@@ -53,7 +53,7 @@ public interface DataLabelingJobOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the DataLabelingJob.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * Display name of a DataLabelingJob.
    * </pre>
@@ -68,7 +68,7 @@ public interface DataLabelingJobOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the DataLabelingJob.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * Display name of a DataLabelingJob.
    * </pre>
@@ -83,9 +83,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. Dataset resource names. Right now we only support labeling from a single
-   * Dataset.
-   * Format:
+   * Required. Dataset resource names. Right now we only support labeling from a
+   * single Dataset. Format:
    * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
@@ -100,9 +99,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. Dataset resource names. Right now we only support labeling from a single
-   * Dataset.
-   * Format:
+   * Required. Dataset resource names. Right now we only support labeling from a
+   * single Dataset. Format:
    * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
@@ -117,9 +115,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. Dataset resource names. Right now we only support labeling from a single
-   * Dataset.
-   * Format:
+   * Required. Dataset resource names. Right now we only support labeling from a
+   * single Dataset. Format:
    * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
@@ -135,9 +132,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. Dataset resource names. Right now we only support labeling from a single
-   * Dataset.
-   * Format:
+   * Required. Dataset resource names. Right now we only support labeling from a
+   * single Dataset. Format:
    * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
@@ -256,9 +252,9 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the instruction pdf. This pdf is
-   * shared with labelers, and provides detailed description on how to label
-   * DataItems in Datasets.
+   * Required. The Google Cloud Storage location of the instruction pdf. This
+   * pdf is shared with labelers, and provides detailed description on how to
+   * label DataItems in Datasets.
    * </pre>
    *
    * <code>string instruction_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -270,9 +266,9 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the instruction pdf. This pdf is
-   * shared with labelers, and provides detailed description on how to label
-   * DataItems in Datasets.
+   * Required. The Google Cloud Storage location of the instruction pdf. This
+   * pdf is shared with labelers, and provides detailed description on how to
+   * label DataItems in Datasets.
    * </pre>
    *
    * <code>string instruction_uri = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -285,9 +281,9 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing the
-   * config for a specific type of DataLabelingJob.
-   * The schema files that can be used here are found in the
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * the config for a specific type of DataLabelingJob. The schema files that
+   * can be used here are found in the
    * https://storage.googleapis.com/google-cloud-aiplatform bucket in the
    * /schema/datalabelingjob/inputs/ folder.
    * </pre>
@@ -301,9 +297,9 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing the
-   * config for a specific type of DataLabelingJob.
-   * The schema files that can be used here are found in the
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * the config for a specific type of DataLabelingJob. The schema files that
+   * can be used here are found in the
    * https://storage.googleapis.com/google-cloud-aiplatform bucket in the
    * /schema/datalabelingjob/inputs/ folder.
    * </pre>
@@ -382,8 +378,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Current labeling job progress percentage scaled in interval [0, 100],
-   * indicating the percentage of DataItems that has been finished.
+   * Output only. Current labeling job progress percentage scaled in interval
+   * [0, 100], indicating the percentage of DataItems that has been finished.
    * </pre>
    *
    * <code>int32 labeling_progress = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -396,8 +392,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Estimated cost(in US dollars) that the DataLabelingJob has incurred to
-   * date.
+   * Output only. Estimated cost(in US dollars) that the DataLabelingJob has
+   * incurred to date.
    * </pre>
    *
    * <code>.google.type.Money current_spend = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -410,8 +406,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Estimated cost(in US dollars) that the DataLabelingJob has incurred to
-   * date.
+   * Output only. Estimated cost(in US dollars) that the DataLabelingJob has
+   * incurred to date.
    * </pre>
    *
    * <code>.google.type.Money current_spend = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -424,8 +420,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Estimated cost(in US dollars) that the DataLabelingJob has incurred to
-   * date.
+   * Output only. Estimated cost(in US dollars) that the DataLabelingJob has
+   * incurred to date.
    * </pre>
    *
    * <code>.google.type.Money current_spend = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -513,8 +509,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataLabelingJob errors. It is only populated when job's state is
-   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * Output only. DataLabelingJob errors. It is only populated when job's state
+   * is `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -526,8 +522,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataLabelingJob errors. It is only populated when job's state is
-   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * Output only. DataLabelingJob errors. It is only populated when job's state
+   * is `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -539,8 +535,8 @@ public interface DataLabelingJobOrBuilder
    *
    *
    * <pre>
-   * Output only. DataLabelingJob errors. It is only populated when job's state is
-   * `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
+   * Output only. DataLabelingJob errors. It is only populated when job's state
+   * is `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -559,7 +555,8 @@ public interface DataLabelingJobOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each DataLabelingJob:
    * * "aiplatform.googleapis.com/schema": output only, its value is the
-   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s title.
+   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -577,7 +574,8 @@ public interface DataLabelingJobOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each DataLabelingJob:
    * * "aiplatform.googleapis.com/schema": output only, its value is the
-   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s title.
+   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -598,7 +596,8 @@ public interface DataLabelingJobOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each DataLabelingJob:
    * * "aiplatform.googleapis.com/schema": output only, its value is the
-   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s title.
+   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -616,7 +615,8 @@ public interface DataLabelingJobOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each DataLabelingJob:
    * * "aiplatform.googleapis.com/schema": output only, its value is the
-   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s title.
+   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
@@ -639,7 +639,8 @@ public interface DataLabelingJobOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each DataLabelingJob:
    * * "aiplatform.googleapis.com/schema": output only, its value is the
-   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s title.
+   *   [inputs_schema][google.cloud.aiplatform.v1beta1.DataLabelingJob.inputs_schema_uri]'s
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>

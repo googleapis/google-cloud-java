@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
+ * Request message for
+ * [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeployIndexRequest}
@@ -73,8 +74,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource into which to deploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -100,8 +101,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource into which to deploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -355,7 +356,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
+   * Request message for
+   * [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeployIndexRequest}
@@ -547,8 +549,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -573,8 +575,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -599,8 +601,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -624,8 +626,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -645,8 +647,8 @@ public final class DeployIndexRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *

@@ -77,9 +77,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the worker pools including machine type and Docker image.
-   * All worker pools except the first one are optional and can be skipped by
-   * providing an empty value.
+   * Required. The spec of the worker pools including machine type and Docker
+   * image. All worker pools except the first one are optional and can be
+   * skipped by providing an empty value.
    * </pre>
    *
    * <code>
@@ -95,9 +95,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the worker pools including machine type and Docker image.
-   * All worker pools except the first one are optional and can be skipped by
-   * providing an empty value.
+   * Required. The spec of the worker pools including machine type and Docker
+   * image. All worker pools except the first one are optional and can be
+   * skipped by providing an empty value.
    * </pre>
    *
    * <code>
@@ -113,9 +113,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the worker pools including machine type and Docker image.
-   * All worker pools except the first one are optional and can be skipped by
-   * providing an empty value.
+   * Required. The spec of the worker pools including machine type and Docker
+   * image. All worker pools except the first one are optional and can be
+   * skipped by providing an empty value.
    * </pre>
    *
    * <code>
@@ -130,9 +130,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the worker pools including machine type and Docker image.
-   * All worker pools except the first one are optional and can be skipped by
-   * providing an empty value.
+   * Required. The spec of the worker pools including machine type and Docker
+   * image. All worker pools except the first one are optional and can be
+   * skipped by providing an empty value.
    * </pre>
    *
    * <code>
@@ -147,9 +147,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The spec of the worker pools including machine type and Docker image.
-   * All worker pools except the first one are optional and can be skipped by
-   * providing an empty value.
+   * Required. The spec of the worker pools including machine type and Docker
+   * image. All worker pools except the first one are optional and can be
+   * skipped by providing an empty value.
    * </pre>
    *
    * <code>
@@ -431,8 +431,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * HyperparameterTuningJob. For HyperparameterTuningJob,
    * the baseOutputDirectory of
    * each child CustomJob backing a Trial is set to a subdirectory of name
-   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-   * baseOutputDirectory.
+   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+   * HyperparameterTuningJob's baseOutputDirectory.
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
@@ -461,8 +461,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * HyperparameterTuningJob. For HyperparameterTuningJob,
    * the baseOutputDirectory of
    * each child CustomJob backing a Trial is set to a subdirectory of name
-   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-   * baseOutputDirectory.
+   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+   * HyperparameterTuningJob's baseOutputDirectory.
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
@@ -493,8 +493,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * HyperparameterTuningJob. For HyperparameterTuningJob,
    * the baseOutputDirectory of
    * each child CustomJob backing a Trial is set to a subdirectory of name
-   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-   * baseOutputDirectory.
+   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+   * HyperparameterTuningJob's baseOutputDirectory.
    * The following Vertex AI environment variables will be passed to
    * containers or python modules when this field is set:
    *   For CustomJob:
@@ -521,9 +521,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-   * will upload Tensorboard logs.
-   * Format:
+   * Optional. The name of a Vertex AI
+   * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+   * which this CustomJob will upload Tensorboard logs. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * </pre>
    *
@@ -549,9 +549,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-   * will upload Tensorboard logs.
-   * Format:
+   * Optional. The name of a Vertex AI
+   * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+   * which this CustomJob will upload Tensorboard logs. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * </pre>
    *
@@ -584,7 +584,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * to training containers.
    * If set to `true`, you can access interactive shells at the URIs given
-   * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+   * by
+   * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
+   * or
+   * [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris]
+   * (within
    * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
    * </pre>
    *
@@ -1194,9 +1198,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1215,9 +1219,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1235,9 +1239,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1255,9 +1259,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1282,9 +1286,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1306,9 +1310,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1332,9 +1336,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1359,9 +1363,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1383,9 +1387,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1407,9 +1411,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1431,9 +1435,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1454,9 +1458,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1477,9 +1481,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1494,9 +1498,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1515,9 +1519,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1536,9 +1540,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1553,9 +1557,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -1572,9 +1576,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The spec of the worker pools including machine type and Docker image.
-     * All worker pools except the first one are optional and can be skipped by
-     * providing an empty value.
+     * Required. The spec of the worker pools including machine type and Docker
+     * image. All worker pools except the first one are optional and can be
+     * skipped by providing an empty value.
      * </pre>
      *
      * <code>
@@ -2320,8 +2324,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2349,8 +2353,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2384,8 +2388,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2422,8 +2426,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2457,8 +2461,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2499,8 +2503,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2534,8 +2538,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2564,8 +2568,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2598,8 +2602,8 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * HyperparameterTuningJob. For HyperparameterTuningJob,
      * the baseOutputDirectory of
      * each child CustomJob backing a Trial is set to a subdirectory of name
-     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
-     * baseOutputDirectory.
+     * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent
+     * HyperparameterTuningJob's baseOutputDirectory.
      * The following Vertex AI environment variables will be passed to
      * containers or python modules when this field is set:
      *   For CustomJob:
@@ -2636,9 +2640,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-     * will upload Tensorboard logs.
-     * Format:
+     * Optional. The name of a Vertex AI
+     * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+     * which this CustomJob will upload Tensorboard logs. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      * </pre>
      *
@@ -2663,9 +2667,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-     * will upload Tensorboard logs.
-     * Format:
+     * Optional. The name of a Vertex AI
+     * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+     * which this CustomJob will upload Tensorboard logs. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      * </pre>
      *
@@ -2690,9 +2694,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-     * will upload Tensorboard logs.
-     * Format:
+     * Optional. The name of a Vertex AI
+     * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+     * which this CustomJob will upload Tensorboard logs. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      * </pre>
      *
@@ -2716,9 +2720,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-     * will upload Tensorboard logs.
-     * Format:
+     * Optional. The name of a Vertex AI
+     * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+     * which this CustomJob will upload Tensorboard logs. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      * </pre>
      *
@@ -2738,9 +2742,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to which this CustomJob
-     * will upload Tensorboard logs.
-     * Format:
+     * Optional. The name of a Vertex AI
+     * [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
+     * which this CustomJob will upload Tensorboard logs. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
      * </pre>
      *
@@ -2771,7 +2775,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
      * If set to `true`, you can access interactive shells at the URIs given
-     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * by
+     * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
+     * or
+     * [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris]
+     * (within
      * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * </pre>
      *
@@ -2791,7 +2799,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
      * If set to `true`, you can access interactive shells at the URIs given
-     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * by
+     * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
+     * or
+     * [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris]
+     * (within
      * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * </pre>
      *
@@ -2814,7 +2826,11 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * access](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
      * to training containers.
      * If set to `true`, you can access interactive shells at the URIs given
-     * by [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris] or [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris] (within
+     * by
+     * [CustomJob.web_access_uris][google.cloud.aiplatform.v1beta1.CustomJob.web_access_uris]
+     * or
+     * [Trial.web_access_uris][google.cloud.aiplatform.v1beta1.Trial.web_access_uris]
+     * (within
      * [HyperparameterTuningJob.trials][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob.trials]).
      * </pre>
      *

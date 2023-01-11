@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [DatasetService.ListAnnotations][google.cloud.aiplatform.v1beta1.DatasetService.ListAnnotations].
+ * Response message for
+ * [DatasetService.ListAnnotations][google.cloud.aiplatform.v1beta1.DatasetService.ListAnnotations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListAnnotationsResponse}
@@ -362,7 +363,8 @@ public final class ListAnnotationsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Response message for [DatasetService.ListAnnotations][google.cloud.aiplatform.v1beta1.DatasetService.ListAnnotations].
+   * Response message for
+   * [DatasetService.ListAnnotations][google.cloud.aiplatform.v1beta1.DatasetService.ListAnnotations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListAnnotationsResponse}

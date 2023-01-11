@@ -36,7 +36,10 @@ public class SyncGetFolder {
     foldersSettingsBuilder
         .getFolderSettings()
         .setRetrySettings(
-            foldersSettingsBuilder.getFolderSettings().getRetrySettings().toBuilder()
+            foldersSettingsBuilder
+                .getFolderSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     FoldersStubSettings foldersSettings = foldersSettingsBuilder.build();

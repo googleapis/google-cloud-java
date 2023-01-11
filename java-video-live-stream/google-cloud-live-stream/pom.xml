@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-live-stream</artifactId>
-  <version>0.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Live Stream</name>
   <description>Cloud Live Stream transcodes mezzanine live signals into direct-to-consumer streaming formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and HTTP Live Streaming (HLS), for multiple device platforms.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-live-stream-parent</artifactId>
-    <version>0.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-live-stream</site.installationModule>

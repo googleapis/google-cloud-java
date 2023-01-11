@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1.IndexEndpointService.ListIndexEndpoints].
+ * Response message for
+ * [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1.IndexEndpointService.ListIndexEndpoints].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListIndexEndpointsResponse}
@@ -145,7 +146,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -169,7 +172,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -364,7 +369,8 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Response message for [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1.IndexEndpointService.ListIndexEndpoints].
+   * Response message for
+   * [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1.IndexEndpointService.ListIndexEndpoints].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListIndexEndpointsResponse}
@@ -955,7 +961,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -978,7 +986,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1001,7 +1011,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1023,7 +1035,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1041,7 +1055,9 @@ public final class ListIndexEndpointsResponse extends com.google.protobuf.Genera
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexEndpointsRequest.page_token][google.cloud.aiplatform.v1.ListIndexEndpointsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

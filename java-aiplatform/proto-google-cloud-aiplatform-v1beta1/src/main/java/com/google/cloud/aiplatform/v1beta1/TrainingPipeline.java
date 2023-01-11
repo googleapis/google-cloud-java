@@ -25,8 +25,8 @@ package com.google.cloud.aiplatform.v1beta1;
  * The TrainingPipeline orchestrates tasks associated with training a Model. It
  * always executes the training task, and optionally may also
  * export data from Vertex AI's Dataset which becomes the training input,
- * [upload][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] the Model to Vertex AI, and evaluate the
- * Model.
+ * [upload][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] the Model
+ * to Vertex AI, and evaluate the Model.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.TrainingPipeline}
@@ -192,11 +192,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Specifies Vertex AI owned input data that may be used for training the
-   * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-   * clear whether this config is used and if there are any special requirements
-   * on how it should be filled. If nothing about this config is mentioned in
-   * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-   * TrainingPipeline does not depend on this configuration.
+   * Model. The TrainingPipeline's
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * should make clear whether this config is used and if there are any special
+   * requirements on how it should be filled. If nothing about this config is
+   * mentioned in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+   * then it should be assumed that the TrainingPipeline does not depend on this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -212,11 +215,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Specifies Vertex AI owned input data that may be used for training the
-   * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-   * clear whether this config is used and if there are any special requirements
-   * on how it should be filled. If nothing about this config is mentioned in
-   * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-   * TrainingPipeline does not depend on this configuration.
+   * Model. The TrainingPipeline's
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * should make clear whether this config is used and if there are any special
+   * requirements on how it should be filled. If nothing about this config is
+   * mentioned in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+   * then it should be assumed that the TrainingPipeline does not depend on this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -234,11 +240,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Specifies Vertex AI owned input data that may be used for training the
-   * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-   * clear whether this config is used and if there are any special requirements
-   * on how it should be filled. If nothing about this config is mentioned in
-   * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-   * TrainingPipeline does not depend on this configuration.
+   * Model. The TrainingPipeline's
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * should make clear whether this config is used and if there are any special
+   * requirements on how it should be filled. If nothing about this config is
+   * mentioned in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+   * then it should be assumed that the TrainingPipeline does not depend on this
+   * configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -255,10 +264,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. A Google Cloud Storage path to the YAML file that defines the training task
-   * which is responsible for producing the model artifact, and may also include
-   * additional auxiliary work.
-   * The definition files that can be used here are found in
+   * Required. A Google Cloud Storage path to the YAML file that defines the
+   * training task which is responsible for producing the model artifact, and
+   * may also include additional auxiliary work. The definition files that can
+   * be used here are found in
    * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
@@ -285,10 +294,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. A Google Cloud Storage path to the YAML file that defines the training task
-   * which is responsible for producing the model artifact, and may also include
-   * additional auxiliary work.
-   * The definition files that can be used here are found in
+   * Required. A Google Cloud Storage path to the YAML file that defines the
+   * training task which is responsible for producing the model artifact, and
+   * may also include additional auxiliary work. The definition files that can
+   * be used here are found in
    * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
    * Note: The URI given on output will be immutable and probably different,
    * including the URI scheme, than the one given on input. The output URI will
@@ -319,7 +328,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The training task's parameter(s), as specified in the
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+   * `inputs`.
    * </pre>
    *
    * <code>
@@ -337,7 +347,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The training task's parameter(s), as specified in the
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+   * `inputs`.
    * </pre>
    *
    * <code>
@@ -357,7 +368,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The training task's parameter(s), as specified in the
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+   * `inputs`.
    * </pre>
    *
    * <code>
@@ -375,11 +387,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+   * Output only. The metadata information as specified in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
    * `metadata`. This metadata is an auxiliary runtime and final information
    * about the training task. While the pipeline is running this information is
    * populated only at a best effort basis. Only present if the
-   * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+   * pipeline's
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * contains `metadata` object.
    * </pre>
    *
    * <code>
@@ -396,11 +411,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+   * Output only. The metadata information as specified in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
    * `metadata`. This metadata is an auxiliary runtime and final information
    * about the training task. While the pipeline is running this information is
    * populated only at a best effort basis. Only present if the
-   * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+   * pipeline's
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * contains `metadata` object.
    * </pre>
    *
    * <code>
@@ -419,11 +437,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+   * Output only. The metadata information as specified in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
    * `metadata`. This metadata is an auxiliary runtime and final information
    * about the training task. While the pipeline is running this information is
    * populated only at a best effort basis. Only present if the
-   * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+   * pipeline's
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * contains `metadata` object.
    * </pre>
    *
    * <code>
@@ -441,18 +462,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+   * Describes the Model that may be uploaded (via
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-   * description should be populated, and if there are any special requirements
-   * regarding how it should be filled. If nothing is mentioned in the
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-   * should not be filled and the training task either uploads the Model without
-   * a need of this information, or that training task does not support
-   * uploading a Model as part of the pipeline.
-   * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * should make clear whether this Model description should be populated, and
+   * if there are any special requirements regarding how it should be filled. If
+   * nothing is mentioned in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+   * then it should be assumed that this field should not be filled and the
+   * training task either uploads the Model without a need of this information,
+   * or that training task does not support uploading a Model as part of the
+   * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
    * the trained Model had been uploaded into Vertex AI, then the
-   * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+   * model_to_upload's resource
+   * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
    * is always uploaded into the Project and Location in which this pipeline
    * is.
    * </pre>
@@ -469,18 +493,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+   * Describes the Model that may be uploaded (via
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-   * description should be populated, and if there are any special requirements
-   * regarding how it should be filled. If nothing is mentioned in the
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-   * should not be filled and the training task either uploads the Model without
-   * a need of this information, or that training task does not support
-   * uploading a Model as part of the pipeline.
-   * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * should make clear whether this Model description should be populated, and
+   * if there are any special requirements regarding how it should be filled. If
+   * nothing is mentioned in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+   * then it should be assumed that this field should not be filled and the
+   * training task either uploads the Model without a need of this information,
+   * or that training task does not support uploading a Model as part of the
+   * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
    * the trained Model had been uploaded into Vertex AI, then the
-   * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+   * model_to_upload's resource
+   * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
    * is always uploaded into the Project and Location in which this pipeline
    * is.
    * </pre>
@@ -499,18 +526,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+   * Describes the Model that may be uploaded (via
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-   * description should be populated, and if there are any special requirements
-   * regarding how it should be filled. If nothing is mentioned in the
-   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-   * should not be filled and the training task either uploads the Model without
-   * a need of this information, or that training task does not support
-   * uploading a Model as part of the pipeline.
-   * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+   * should make clear whether this Model description should be populated, and
+   * if there are any special requirements regarding how it should be filled. If
+   * nothing is mentioned in the
+   * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+   * then it should be assumed that this field should not be filled and the
+   * training task either uploads the Model without a need of this information,
+   * or that training task does not support uploading a Model as part of the
+   * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
    * the trained Model had been uploaded into Vertex AI, then the
-   * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+   * model_to_upload's resource
+   * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
    * is always uploaded into the Project and Location in which this pipeline
    * is.
    * </pre>
@@ -583,8 +613,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-   * new model, instead, it will become a new version of this `parent_model`.
+   * Optional. When specify this field, the `model_to_upload` will not be
+   * uploaded as a new model, instead, it will become a new version of this
+   * `parent_model`.
    * </pre>
    *
    * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -607,8 +638,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-   * new model, instead, it will become a new version of this `parent_model`.
+   * Optional. When specify this field, the `model_to_upload` will not be
+   * uploaded as a new model, instead, it will become a new version of this
+   * `parent_model`.
    * </pre>
    *
    * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -674,8 +706,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-   * `PIPELINE_STATE_CANCELLED`.
+   * Output only. Only populated when the pipeline's state is
+   * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -690,8 +722,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-   * `PIPELINE_STATE_CANCELLED`.
+   * Output only. Only populated when the pipeline's state is
+   * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -706,8 +738,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-   * `PIPELINE_STATE_CANCELLED`.
+   * Output only. Only populated when the pipeline's state is
+   * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -824,8 +856,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the TrainingPipeline entered any of the following states:
-   * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+   * Output only. Time when the TrainingPipeline entered any of the following
+   * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
    * `PIPELINE_STATE_CANCELLED`.
    * </pre>
    *
@@ -842,8 +874,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the TrainingPipeline entered any of the following states:
-   * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+   * Output only. Time when the TrainingPipeline entered any of the following
+   * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
    * `PIPELINE_STATE_CANCELLED`.
    * </pre>
    *
@@ -860,8 +892,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Time when the TrainingPipeline entered any of the following states:
-   * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+   * Output only. Time when the TrainingPipeline entered any of the following
+   * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
    * `PIPELINE_STATE_CANCELLED`.
    * </pre>
    *
@@ -1045,7 +1077,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * Customer-managed encryption key spec for a TrainingPipeline. If set, this
    * TrainingPipeline will be secured by this key.
    * Note: Model trained by this TrainingPipeline is also secured by this key if
-   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+   * is not set separately.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -1063,7 +1096,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * Customer-managed encryption key spec for a TrainingPipeline. If set, this
    * TrainingPipeline will be secured by this key.
    * Note: Model trained by this TrainingPipeline is also secured by this key if
-   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+   * is not set separately.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -1083,7 +1117,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * Customer-managed encryption key spec for a TrainingPipeline. If set, this
    * TrainingPipeline will be secured by this key.
    * Note: Model trained by this TrainingPipeline is also secured by this key if
-   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+   * is not set separately.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -1466,8 +1501,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    * The TrainingPipeline orchestrates tasks associated with training a Model. It
    * always executes the training task, and optionally may also
    * export data from Vertex AI's Dataset which becomes the training input,
-   * [upload][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] the Model to Vertex AI, and evaluate the
-   * Model.
+   * [upload][google.cloud.aiplatform.v1beta1.ModelService.UploadModel] the Model
+   * to Vertex AI, and evaluate the Model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.TrainingPipeline}
@@ -2161,11 +2196,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2180,11 +2218,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2205,11 +2246,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2232,11 +2276,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2257,11 +2304,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2288,11 +2338,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2313,11 +2366,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2332,11 +2388,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2356,11 +2415,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Specifies Vertex AI owned input data that may be used for training the
-     * Model. The TrainingPipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make
-     * clear whether this config is used and if there are any special requirements
-     * on how it should be filled. If nothing about this config is mentioned in
-     * the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that the
-     * TrainingPipeline does not depend on this configuration.
+     * Model. The TrainingPipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this config is used and if there are any special
+     * requirements on how it should be filled. If nothing about this config is
+     * mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that the TrainingPipeline does not depend on this
+     * configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.InputDataConfig input_data_config = 3;</code>
@@ -2387,10 +2449,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A Google Cloud Storage path to the YAML file that defines the training task
-     * which is responsible for producing the model artifact, and may also include
-     * additional auxiliary work.
-     * The definition files that can be used here are found in
+     * Required. A Google Cloud Storage path to the YAML file that defines the
+     * training task which is responsible for producing the model artifact, and
+     * may also include additional auxiliary work. The definition files that can
+     * be used here are found in
      * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -2416,10 +2478,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A Google Cloud Storage path to the YAML file that defines the training task
-     * which is responsible for producing the model artifact, and may also include
-     * additional auxiliary work.
-     * The definition files that can be used here are found in
+     * Required. A Google Cloud Storage path to the YAML file that defines the
+     * training task which is responsible for producing the model artifact, and
+     * may also include additional auxiliary work. The definition files that can
+     * be used here are found in
      * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -2445,10 +2507,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A Google Cloud Storage path to the YAML file that defines the training task
-     * which is responsible for producing the model artifact, and may also include
-     * additional auxiliary work.
-     * The definition files that can be used here are found in
+     * Required. A Google Cloud Storage path to the YAML file that defines the
+     * training task which is responsible for producing the model artifact, and
+     * may also include additional auxiliary work. The definition files that can
+     * be used here are found in
      * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -2473,10 +2535,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A Google Cloud Storage path to the YAML file that defines the training task
-     * which is responsible for producing the model artifact, and may also include
-     * additional auxiliary work.
-     * The definition files that can be used here are found in
+     * Required. A Google Cloud Storage path to the YAML file that defines the
+     * training task which is responsible for producing the model artifact, and
+     * may also include additional auxiliary work. The definition files that can
+     * be used here are found in
      * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -2497,10 +2559,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A Google Cloud Storage path to the YAML file that defines the training task
-     * which is responsible for producing the model artifact, and may also include
-     * additional auxiliary work.
-     * The definition files that can be used here are found in
+     * Required. A Google Cloud Storage path to the YAML file that defines the
+     * training task which is responsible for producing the model artifact, and
+     * may also include additional auxiliary work. The definition files that can
+     * be used here are found in
      * gs://google-cloud-aiplatform/schema/trainingjob/definition/.
      * Note: The URI given on output will be immutable and probably different,
      * including the URI scheme, than the one given on input. The output URI will
@@ -2534,7 +2596,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2551,7 +2614,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2574,7 +2638,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2599,7 +2664,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2621,7 +2687,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2650,7 +2717,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2673,7 +2741,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2690,7 +2759,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2711,7 +2781,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The training task's parameter(s), as specified in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s `inputs`.
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * `inputs`.
      * </pre>
      *
      * <code>
@@ -2745,11 +2816,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2765,11 +2839,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2791,11 +2868,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2819,11 +2899,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2844,11 +2927,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2876,11 +2962,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2902,11 +2991,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2922,11 +3014,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2946,11 +3041,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The metadata information as specified in the [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
+     * Output only. The metadata information as specified in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]'s
      * `metadata`. This metadata is an auxiliary runtime and final information
      * about the training task. While the pipeline is running this information is
      * populated only at a best effort basis. Only present if the
-     * pipeline's [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] contains `metadata` object.
+     * pipeline's
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * contains `metadata` object.
      * </pre>
      *
      * <code>
@@ -2984,18 +3082,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3011,18 +3112,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3044,18 +3148,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3079,18 +3186,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3112,18 +3222,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3151,18 +3264,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3184,18 +3300,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3211,18 +3330,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3242,18 +3364,21 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
+     * Describes the Model that may be uploaded (via
+     * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
-     * description should be populated, and if there are any special requirements
-     * regarding how it should be filled. If nothing is mentioned in the
-     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition], then it should be assumed that this field
-     * should not be filled and the training task either uploads the Model without
-     * a need of this information, or that training task does not support
-     * uploading a Model as part of the pipeline.
-     * When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition]
+     * should make clear whether this Model description should be populated, and
+     * if there are any special requirements regarding how it should be filled. If
+     * nothing is mentioned in the
+     * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition],
+     * then it should be assumed that this field should not be filled and the
+     * training task either uploads the Model without a need of this information,
+     * or that training task does not support uploading a Model as part of the
+     * pipeline. When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
      * the trained Model had been uploaded into Vertex AI, then the
-     * model_to_upload's resource [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
+     * model_to_upload's resource
+     * [name][google.cloud.aiplatform.v1beta1.Model.name] is populated. The Model
      * is always uploaded into the Project and Location in which this pipeline
      * is.
      * </pre>
@@ -3403,8 +3528,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-     * new model, instead, it will become a new version of this `parent_model`.
+     * Optional. When specify this field, the `model_to_upload` will not be
+     * uploaded as a new model, instead, it will become a new version of this
+     * `parent_model`.
      * </pre>
      *
      * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3426,8 +3552,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-     * new model, instead, it will become a new version of this `parent_model`.
+     * Optional. When specify this field, the `model_to_upload` will not be
+     * uploaded as a new model, instead, it will become a new version of this
+     * `parent_model`.
      * </pre>
      *
      * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3449,8 +3576,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-     * new model, instead, it will become a new version of this `parent_model`.
+     * Optional. When specify this field, the `model_to_upload` will not be
+     * uploaded as a new model, instead, it will become a new version of this
+     * `parent_model`.
      * </pre>
      *
      * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3471,8 +3599,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-     * new model, instead, it will become a new version of this `parent_model`.
+     * Optional. When specify this field, the `model_to_upload` will not be
+     * uploaded as a new model, instead, it will become a new version of this
+     * `parent_model`.
      * </pre>
      *
      * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3489,8 +3618,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
-     * new model, instead, it will become a new version of this `parent_model`.
+     * Optional. When specify this field, the `model_to_upload` will not be
+     * uploaded as a new model, instead, it will become a new version of this
+     * `parent_model`.
      * </pre>
      *
      * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3620,8 +3750,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3635,8 +3765,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3654,8 +3784,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3677,8 +3807,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3697,8 +3827,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3721,8 +3851,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3742,8 +3872,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3757,8 +3887,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3774,8 +3904,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Only populated when the pipeline's state is `PIPELINE_STATE_FAILED` or
-     * `PIPELINE_STATE_CANCELLED`.
+     * Output only. Only populated when the pipeline's state is
+     * `PIPELINE_STATE_FAILED` or `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
      * <code>.google.rpc.Status error = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4211,8 +4341,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4228,8 +4358,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4249,8 +4379,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4274,8 +4404,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4296,8 +4426,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4323,8 +4453,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4346,8 +4476,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4363,8 +4493,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4382,8 +4512,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Time when the TrainingPipeline entered any of the following states:
-     * `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
+     * Output only. Time when the TrainingPipeline entered any of the following
+     * states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`,
      * `PIPELINE_STATE_CANCELLED`.
      * </pre>
      *
@@ -4807,7 +4937,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4824,7 +4955,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4847,7 +4979,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4872,7 +5005,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4895,7 +5029,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4924,7 +5059,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4947,7 +5083,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4964,7 +5101,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
@@ -4986,7 +5124,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      * Customer-managed encryption key spec for a TrainingPipeline. If set, this
      * TrainingPipeline will be secured by this key.
      * Note: Model trained by this TrainingPipeline is also secured by this key if
-     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec]
+     * is not set separately.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>

@@ -81,8 +81,9 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -95,8 +96,9 @@ public interface ListBatchPredictionJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

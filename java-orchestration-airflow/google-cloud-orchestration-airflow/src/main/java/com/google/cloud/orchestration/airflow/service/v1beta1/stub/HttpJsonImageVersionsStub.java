@@ -79,6 +79,7 @@ public class HttpJsonImageVersionsStub extends ImageVersionsStub {
                                 fields, "includePastReleases", request.getIncludePastReleases());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

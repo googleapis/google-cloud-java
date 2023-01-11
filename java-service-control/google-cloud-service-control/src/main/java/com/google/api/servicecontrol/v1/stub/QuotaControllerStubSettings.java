@@ -73,7 +73,10 @@ import javax.annotation.Generated;
  * quotaControllerSettingsBuilder
  *     .allocateQuotaSettings()
  *     .setRetrySettings(
- *         quotaControllerSettingsBuilder.allocateQuotaSettings().getRetrySettings().toBuilder()
+ *         quotaControllerSettingsBuilder
+ *             .allocateQuotaSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * QuotaControllerStubSettings quotaControllerSettings = quotaControllerSettingsBuilder.build();

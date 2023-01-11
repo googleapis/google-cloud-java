@@ -201,8 +201,9 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The device type context for completion suggestions.
-   * It is useful to apply different suggestions on different device types, e.g.
+   * The device type context for completion suggestions. We recommend that you
+   * leave this field empty.
+   * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
    * Supported formats:
@@ -221,8 +222,9 @@ public interface CompleteQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The device type context for completion suggestions.
-   * It is useful to apply different suggestions on different device types, e.g.
+   * The device type context for completion suggestions. We recommend that you
+   * leave this field empty.
+   * It can apply different suggestions on different device types, e.g.
    * `DESKTOP`, `MOBILE`. If it is empty, the suggestions are across all device
    * types.
    * Supported formats:

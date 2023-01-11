@@ -101,7 +101,10 @@ import org.threeten.bp.Duration;
  * reservationsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         reservationsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         reservationsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ReservationsStubSettings reservationsSettings = reservationsSettingsBuilder.build();

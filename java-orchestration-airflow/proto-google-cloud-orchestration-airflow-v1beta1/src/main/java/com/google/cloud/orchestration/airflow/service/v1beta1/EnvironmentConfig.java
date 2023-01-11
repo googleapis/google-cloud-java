@@ -367,6 +367,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The number of nodes in the Kubernetes Engine cluster that will be
    * used to run this environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 node_count = 3;</code>
@@ -664,6 +666,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>
@@ -681,6 +685,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>
@@ -702,6 +708,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The configuration settings for the Airflow web server App Engine instance.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>
@@ -1034,6 +1042,138 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+      masterAuthorizedNetworksConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the masterAuthorizedNetworksConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMasterAuthorizedNetworksConfig() {
+    return masterAuthorizedNetworksConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The masterAuthorizedNetworksConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+      getMasterAuthorizedNetworksConfig() {
+    return masterAuthorizedNetworksConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            .getDefaultInstance()
+        : masterAuthorizedNetworksConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration options for GKE cluster master authorized networks.
+   * By default master authorized networks feature is:
+   * - in case of private environment: enabled with no external networks
+   * allowlisted.
+   * - in case of public environment: disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1beta1
+          .MasterAuthorizedNetworksConfigOrBuilder
+      getMasterAuthorizedNetworksConfigOrBuilder() {
+    return getMasterAuthorizedNetworksConfig();
+  }
+
+  public static final int RECOVERY_CONFIG_FIELD_NUMBER = 18;
+  private com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recoveryConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the recoveryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecoveryConfig() {
+    return recoveryConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The recoveryConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig getRecoveryConfig() {
+    return recoveryConfig_ == null
+        ? com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.getDefaultInstance()
+        : recoveryConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Recovery settings configuration of an environment.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-2.*.*-airflow-*.*.* and newer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder
+      getRecoveryConfigOrBuilder() {
+    return getRecoveryConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1093,6 +1233,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getNumber()) {
       output.writeEnum(16, environmentSize_);
     }
+    if (masterAuthorizedNetworksConfig_ != null) {
+      output.writeMessage(17, getMasterAuthorizedNetworksConfig());
+    }
+    if (recoveryConfig_ != null) {
+      output.writeMessage(18, getRecoveryConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1150,6 +1296,14 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .ENVIRONMENT_SIZE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, environmentSize_);
+    }
+    if (masterAuthorizedNetworksConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, getMasterAuthorizedNetworksConfig());
+    }
+    if (recoveryConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getRecoveryConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1211,6 +1365,16 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       if (!getWorkloadsConfig().equals(other.getWorkloadsConfig())) return false;
     }
     if (environmentSize_ != other.environmentSize_) return false;
+    if (hasMasterAuthorizedNetworksConfig() != other.hasMasterAuthorizedNetworksConfig())
+      return false;
+    if (hasMasterAuthorizedNetworksConfig()) {
+      if (!getMasterAuthorizedNetworksConfig().equals(other.getMasterAuthorizedNetworksConfig()))
+        return false;
+    }
+    if (hasRecoveryConfig() != other.hasRecoveryConfig()) return false;
+    if (hasRecoveryConfig()) {
+      if (!getRecoveryConfig().equals(other.getRecoveryConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1268,6 +1432,14 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + ENVIRONMENT_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + environmentSize_;
+    if (hasMasterAuthorizedNetworksConfig()) {
+      hash = (37 * hash) + MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMasterAuthorizedNetworksConfig().hashCode();
+    }
+    if (hasRecoveryConfig()) {
+      hash = (37 * hash) + RECOVERY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRecoveryConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1474,6 +1646,18 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       environmentSize_ = 0;
 
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfig_ = null;
+      } else {
+        masterAuthorizedNetworksConfig_ = null;
+        masterAuthorizedNetworksConfigBuilder_ = null;
+      }
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfig_ = null;
+      } else {
+        recoveryConfig_ = null;
+        recoveryConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1554,6 +1738,16 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         result.workloadsConfig_ = workloadsConfigBuilder_.build();
       }
       result.environmentSize_ = environmentSize_;
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        result.masterAuthorizedNetworksConfig_ = masterAuthorizedNetworksConfig_;
+      } else {
+        result.masterAuthorizedNetworksConfig_ = masterAuthorizedNetworksConfigBuilder_.build();
+      }
+      if (recoveryConfigBuilder_ == null) {
+        result.recoveryConfig_ = recoveryConfig_;
+      } else {
+        result.recoveryConfig_ = recoveryConfigBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1652,6 +1846,12 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.environmentSize_ != 0) {
         setEnvironmentSizeValue(other.getEnvironmentSizeValue());
+      }
+      if (other.hasMasterAuthorizedNetworksConfig()) {
+        mergeMasterAuthorizedNetworksConfig(other.getMasterAuthorizedNetworksConfig());
+      }
+      if (other.hasRecoveryConfig()) {
+        mergeRecoveryConfig(other.getRecoveryConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1767,6 +1967,20 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 128
+            case 138:
+              {
+                input.readMessage(
+                    getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getRecoveryConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2018,6 +2232,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 node_count = 3;</code>
@@ -2034,6 +2250,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 node_count = 3;</code>
@@ -2053,6 +2271,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The number of nodes in the Kubernetes Engine cluster that will be
      * used to run this environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 node_count = 3;</code>
@@ -3147,6 +3367,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3163,6 +3385,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3187,6 +3411,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3212,6 +3438,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3235,6 +3463,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3265,6 +3495,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3287,6 +3519,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3304,6 +3538,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -3326,6 +3562,8 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The configuration settings for the Airflow web server App Engine instance.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>
@@ -4358,6 +4596,500 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       environmentSize_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+        masterAuthorizedNetworksConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig,
+            com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                .Builder,
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                .MasterAuthorizedNetworksConfigOrBuilder>
+        masterAuthorizedNetworksConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the masterAuthorizedNetworksConfig field is set.
+     */
+    public boolean hasMasterAuthorizedNetworksConfig() {
+      return masterAuthorizedNetworksConfigBuilder_ != null
+          || masterAuthorizedNetworksConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The masterAuthorizedNetworksConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+        getMasterAuthorizedNetworksConfig() {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        return masterAuthorizedNetworksConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                .getDefaultInstance()
+            : masterAuthorizedNetworksConfig_;
+      } else {
+        return masterAuthorizedNetworksConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMasterAuthorizedNetworksConfig(
+        com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            value) {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        masterAuthorizedNetworksConfig_ = value;
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMasterAuthorizedNetworksConfig(
+        com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                .Builder
+            builderForValue) {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMasterAuthorizedNetworksConfig(
+        com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            value) {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        if (masterAuthorizedNetworksConfig_ != null) {
+          masterAuthorizedNetworksConfig_ =
+              com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                  .newBuilder(masterAuthorizedNetworksConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          masterAuthorizedNetworksConfig_ = value;
+        }
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMasterAuthorizedNetworksConfig() {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfig_ = null;
+        onChanged();
+      } else {
+        masterAuthorizedNetworksConfig_ = null;
+        masterAuthorizedNetworksConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+            .Builder
+        getMasterAuthorizedNetworksConfigBuilder() {
+
+      onChanged();
+      return getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1
+            .MasterAuthorizedNetworksConfigOrBuilder
+        getMasterAuthorizedNetworksConfigOrBuilder() {
+      if (masterAuthorizedNetworksConfigBuilder_ != null) {
+        return masterAuthorizedNetworksConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return masterAuthorizedNetworksConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                .getDefaultInstance()
+            : masterAuthorizedNetworksConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration options for GKE cluster master authorized networks.
+     * By default master authorized networks feature is:
+     * - in case of private environment: enabled with no external networks
+     * allowlisted.
+     * - in case of public environment: disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig master_authorized_networks_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig,
+            com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
+                .Builder,
+            com.google.cloud.orchestration.airflow.service.v1beta1
+                .MasterAuthorizedNetworksConfigOrBuilder>
+        getMasterAuthorizedNetworksConfigFieldBuilder() {
+      if (masterAuthorizedNetworksConfigBuilder_ == null) {
+        masterAuthorizedNetworksConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .MasterAuthorizedNetworksConfig,
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .MasterAuthorizedNetworksConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1beta1
+                    .MasterAuthorizedNetworksConfigOrBuilder>(
+                getMasterAuthorizedNetworksConfig(), getParentForChildren(), isClean());
+        masterAuthorizedNetworksConfig_ = null;
+      }
+      return masterAuthorizedNetworksConfigBuilder_;
+    }
+
+    private com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recoveryConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig,
+            com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder>
+        recoveryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the recoveryConfig field is set.
+     */
+    public boolean hasRecoveryConfig() {
+      return recoveryConfigBuilder_ != null || recoveryConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The recoveryConfig.
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig
+        getRecoveryConfig() {
+      if (recoveryConfigBuilder_ == null) {
+        return recoveryConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig
+                .getDefaultInstance()
+            : recoveryConfig_;
+      } else {
+        return recoveryConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRecoveryConfig(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig value) {
+      if (recoveryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        recoveryConfig_ = value;
+        onChanged();
+      } else {
+        recoveryConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRecoveryConfig(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder
+            builderForValue) {
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        recoveryConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRecoveryConfig(
+        com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig value) {
+      if (recoveryConfigBuilder_ == null) {
+        if (recoveryConfig_ != null) {
+          recoveryConfig_ =
+              com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.newBuilder(
+                      recoveryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          recoveryConfig_ = value;
+        }
+        onChanged();
+      } else {
+        recoveryConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRecoveryConfig() {
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfig_ = null;
+        onChanged();
+      } else {
+        recoveryConfig_ = null;
+        recoveryConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder
+        getRecoveryConfigBuilder() {
+
+      onChanged();
+      return getRecoveryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder
+        getRecoveryConfigOrBuilder() {
+      if (recoveryConfigBuilder_ != null) {
+        return recoveryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return recoveryConfig_ == null
+            ? com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig
+                .getDefaultInstance()
+            : recoveryConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Recovery settings configuration of an environment.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-2.*.*-airflow-*.*.* and newer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recovery_config = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig,
+            com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder,
+            com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder>
+        getRecoveryConfigFieldBuilder() {
+      if (recoveryConfigBuilder_ == null) {
+        recoveryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig,
+                com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder,
+                com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder>(
+                getRecoveryConfig(), getParentForChildren(), isClean());
+        recoveryConfig_ = null;
+      }
+      return recoveryConfigBuilder_;
     }
 
     @java.lang.Override

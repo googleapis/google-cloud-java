@@ -99,6 +99,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -131,6 +132,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetQueueRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -163,11 +165,12 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CreateQueueRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("queue", request.getQueue(), false))
+                          ProtoRestSerializer.create().toBody("queue", request.getQueue(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Queue>newBuilder()
@@ -198,11 +201,12 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         ProtoRestSerializer<UpdateQueueRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("queue", request.getQueue(), false))
+                          ProtoRestSerializer.create().toBody("queue", request.getQueue(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Queue>newBuilder()
@@ -232,6 +236,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteQueueRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -264,12 +269,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<PurgeQueueRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Queue>newBuilder()
@@ -299,12 +305,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<PauseQueueRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Queue>newBuilder()
@@ -334,12 +341,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<ResumeQueueRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Queue>newBuilder()
@@ -370,12 +378,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -406,12 +415,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -442,12 +452,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()
@@ -482,6 +493,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "responseView", request.getResponseViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -516,6 +528,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(
                             fields, "responseView", request.getResponseViewValue());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -548,12 +561,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CreateTaskRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearParent().build(), false))
+                              .toBody("*", request.toBuilder().clearParent().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Task>newBuilder()
@@ -583,6 +597,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteTaskRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -615,12 +630,13 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<RunTaskRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Task>newBuilder()

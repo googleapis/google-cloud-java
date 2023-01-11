@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * regionSecurityPoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionSecurityPoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionSecurityPoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionSecurityPoliciesStubSettings regionSecurityPoliciesSettings =

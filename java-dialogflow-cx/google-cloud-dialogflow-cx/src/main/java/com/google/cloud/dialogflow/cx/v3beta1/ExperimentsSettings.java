@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * experimentsSettingsBuilder
  *     .getExperimentSettings()
  *     .setRetrySettings(
- *         experimentsSettingsBuilder.getExperimentSettings().getRetrySettings().toBuilder()
+ *         experimentsSettingsBuilder
+ *             .getExperimentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExperimentsSettings experimentsSettings = experimentsSettingsBuilder.build();

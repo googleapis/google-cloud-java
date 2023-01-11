@@ -37,7 +37,10 @@ public class SyncGetCluster {
     clusterControllerSettingsBuilder
         .getClusterSettings()
         .setRetrySettings(
-            clusterControllerSettingsBuilder.getClusterSettings().getRetrySettings().toBuilder()
+            clusterControllerSettingsBuilder
+                .getClusterSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ClusterControllerStubSettings clusterControllerSettings =

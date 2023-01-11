@@ -103,7 +103,10 @@ import org.threeten.bp.Duration;
  * tablesServiceSettingsBuilder
  *     .getTableSettings()
  *     .setRetrySettings(
- *         tablesServiceSettingsBuilder.getTableSettings().getRetrySettings().toBuilder()
+ *         tablesServiceSettingsBuilder
+ *             .getTableSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TablesServiceStubSettings tablesServiceSettings = tablesServiceSettingsBuilder.build();

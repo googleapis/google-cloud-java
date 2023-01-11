@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * licensesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         licensesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         licensesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LicensesSettings licensesSettings = licensesSettingsBuilder.build();

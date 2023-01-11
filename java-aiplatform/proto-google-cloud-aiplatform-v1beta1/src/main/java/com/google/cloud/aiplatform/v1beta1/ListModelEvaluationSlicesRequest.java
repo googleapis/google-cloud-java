@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices].
+ * Request message for
+ * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest}
@@ -76,8 +77,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-   * from. Format:
+   * Required. The resource name of the ModelEvaluation to list the
+   * ModelEvaluationSlices from. Format:
    * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * </pre>
    *
@@ -103,8 +104,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-   * from. Format:
+   * Required. The resource name of the ModelEvaluation to list the
+   * ModelEvaluationSlices from. Format:
    * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * </pre>
    *
@@ -204,8 +205,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-   * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+   * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+   * of the previous
+   * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -230,8 +233,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-   * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+   * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+   * of the previous
+   * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -503,7 +508,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices].
+   * Request message for
+   * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest}
@@ -739,8 +745,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-     * from. Format:
+     * Required. The resource name of the ModelEvaluation to list the
+     * ModelEvaluationSlices from. Format:
      * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * </pre>
      *
@@ -765,8 +771,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-     * from. Format:
+     * Required. The resource name of the ModelEvaluation to list the
+     * ModelEvaluationSlices from. Format:
      * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * </pre>
      *
@@ -791,8 +797,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-     * from. Format:
+     * Required. The resource name of the ModelEvaluation to list the
+     * ModelEvaluationSlices from. Format:
      * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * </pre>
      *
@@ -816,8 +822,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-     * from. Format:
+     * Required. The resource name of the ModelEvaluation to list the
+     * ModelEvaluationSlices from. Format:
      * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * </pre>
      *
@@ -837,8 +843,8 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices
-     * from. Format:
+     * Required. The resource name of the ModelEvaluation to list the
+     * ModelEvaluationSlices from. Format:
      * `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
      * </pre>
      *
@@ -1030,8 +1036,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+     * of the previous
+     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1055,8 +1063,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+     * of the previous
+     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1080,8 +1090,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+     * of the previous
+     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1104,8 +1116,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+     * of the previous
+     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1124,8 +1138,10 @@ public final class ListModelEvaluationSlicesRequest extends com.google.protobuf.
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token] of the previous
-     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices] call.
+     * [ListModelEvaluationSlicesResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse.next_page_token]
+     * of the previous
+     * [ModelService.ListModelEvaluationSlices][google.cloud.aiplatform.v1beta1.ModelService.ListModelEvaluationSlices]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>

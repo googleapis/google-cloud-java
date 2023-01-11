@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * interconnectAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         interconnectAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         interconnectAttachmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =

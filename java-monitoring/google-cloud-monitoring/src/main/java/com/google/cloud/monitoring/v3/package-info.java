@@ -164,6 +164,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= SnoozeServiceClient =======================
+ *
+ * <p>Service Description: The SnoozeService API is used to temporarily prevent an alert policy from
+ * generating alerts. A Snooze is a description of the criteria under which one or more alert
+ * policies should not fire alerts for the specified duration.
+ *
+ * <p>Sample for SnoozeServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SnoozeServiceClient snoozeServiceClient = SnoozeServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Snooze snooze = Snooze.newBuilder().build();
+ *   Snooze response = snoozeServiceClient.createSnooze(parent, snooze);
+ * }
+ * }</pre>
+ *
  * <p>======================= UptimeCheckServiceClient =======================
  *
  * <p>Service Description: The UptimeCheckService API is used to manage (list, create, delete, edit)

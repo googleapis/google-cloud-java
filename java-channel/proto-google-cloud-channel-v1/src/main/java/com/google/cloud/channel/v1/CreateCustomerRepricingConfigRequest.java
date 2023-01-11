@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig].
+ * Request message for
+ * [CloudChannelService.CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.CreateCustomerRepricingConfigRequest}
@@ -75,8 +76,9 @@ public final class CreateCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Required. The resource name of the customer that will receive this repricing config.
-   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+   * Required. The resource name of the customer that will receive this
+   * repricing config. Parent uses the format:
+   * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>
@@ -101,8 +103,9 @@ public final class CreateCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Required. The resource name of the customer that will receive this repricing config.
-   * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+   * Required. The resource name of the customer that will receive this
+   * repricing config. Parent uses the format:
+   * accounts/{account_id}/customers/{customer_id}
    * </pre>
    *
    * <code>
@@ -358,7 +361,8 @@ public final class CreateCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig].
+   * Request message for
+   * [CloudChannelService.CreateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.CreateCustomerRepricingConfig].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.CreateCustomerRepricingConfigRequest}
@@ -554,8 +558,9 @@ public final class CreateCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer that will receive this repricing config.
-     * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+     * Required. The resource name of the customer that will receive this
+     * repricing config. Parent uses the format:
+     * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
      * <code>
@@ -579,8 +584,9 @@ public final class CreateCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer that will receive this repricing config.
-     * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+     * Required. The resource name of the customer that will receive this
+     * repricing config. Parent uses the format:
+     * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
      * <code>
@@ -604,8 +610,9 @@ public final class CreateCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer that will receive this repricing config.
-     * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+     * Required. The resource name of the customer that will receive this
+     * repricing config. Parent uses the format:
+     * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
      * <code>
@@ -628,8 +635,9 @@ public final class CreateCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer that will receive this repricing config.
-     * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+     * Required. The resource name of the customer that will receive this
+     * repricing config. Parent uses the format:
+     * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
      * <code>
@@ -648,8 +656,9 @@ public final class CreateCustomerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the customer that will receive this repricing config.
-     * Parent uses the format: accounts/{account_id}/customers/{customer_id}
+     * Required. The resource name of the customer that will receive this
+     * repricing config. Parent uses the format:
+     * accounts/{account_id}/customers/{customer_id}
      * </pre>
      *
      * <code>

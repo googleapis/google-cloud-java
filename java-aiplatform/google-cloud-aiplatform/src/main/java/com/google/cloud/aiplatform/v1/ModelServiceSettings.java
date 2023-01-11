@@ -77,7 +77,10 @@ import javax.annotation.Generated;
  * modelServiceSettingsBuilder
  *     .getModelSettings()
  *     .setRetrySettings(
- *         modelServiceSettingsBuilder.getModelSettings().getRetrySettings().toBuilder()
+ *         modelServiceSettingsBuilder
+ *             .getModelSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ModelServiceSettings modelServiceSettings = modelServiceSettingsBuilder.build();

@@ -454,7 +454,8 @@ public final class IndexServiceGrpc {
      * <pre>
      * Deletes an Index.
      * An Index can only be deleted when all its
-     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had been undeployed.
+     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had
+     * been undeployed.
      * </pre>
      */
     public void deleteIndex(
@@ -633,7 +634,8 @@ public final class IndexServiceGrpc {
      * <pre>
      * Deletes an Index.
      * An Index can only be deleted when all its
-     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had been undeployed.
+     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had
+     * been undeployed.
      * </pre>
      */
     public void deleteIndex(
@@ -757,7 +759,8 @@ public final class IndexServiceGrpc {
      * <pre>
      * Deletes an Index.
      * An Index can only be deleted when all its
-     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had been undeployed.
+     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had
+     * been undeployed.
      * </pre>
      */
     public com.google.longrunning.Operation deleteIndex(
@@ -871,7 +874,8 @@ public final class IndexServiceGrpc {
      * <pre>
      * Deletes an Index.
      * An Index can only be deleted when all its
-     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had been undeployed.
+     * [DeployedIndexes][google.cloud.aiplatform.v1.Index.deployed_indexes] had
+     * been undeployed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

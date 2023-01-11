@@ -841,8 +841,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether the job is completed. If the value is `false`,
-   * the job is still in progress. If `true`, the job is completed, and
+   * Output only. Indicates whether the job is completed. If the value is
+   * `false`, the job is still in progress. If `true`, the job is completed, and
    * `status.state` field will indicate if it was successful, failed,
    * or cancelled.
    * </pre>
@@ -852,6 +852,47 @@ public interface JobOrBuilder
    * @return The done.
    */
   boolean getDone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Driver scheduling configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the driverSchedulingConfig field is set.
+   */
+  boolean hasDriverSchedulingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Driver scheduling configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The driverSchedulingConfig.
+   */
+  com.google.cloud.dataproc.v1.DriverSchedulingConfig getDriverSchedulingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Driver scheduling configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.DriverSchedulingConfig driver_scheduling_config = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.DriverSchedulingConfigOrBuilder getDriverSchedulingConfigOrBuilder();
 
   public com.google.cloud.dataproc.v1.Job.TypeJobCase getTypeJobCase();
 }

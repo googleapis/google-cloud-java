@@ -99,6 +99,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -133,12 +134,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             ProtoRestSerializer<CreateSecretRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "secretId", request.getSecretId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("secret", request.getSecret(), false))
+                                  .toBody("secret", request.getSecret(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Secret>newBuilder()
@@ -170,12 +172,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AddSecretVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecretVersion>newBuilder()
@@ -205,6 +208,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSecretRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -240,12 +244,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             ProtoRestSerializer<UpdateSecretRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("secret", request.getSecret(), false))
+                                  .toBody("secret", request.getSecret(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Secret>newBuilder()
@@ -277,6 +282,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             ProtoRestSerializer<DeleteSecretRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -314,6 +320,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -348,6 +355,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSecretVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -382,6 +390,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AccessSecretVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -416,12 +425,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DisableSecretVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecretVersion>newBuilder()
@@ -453,12 +463,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<EnableSecretVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecretVersion>newBuilder()
@@ -490,12 +501,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DestroySecretVersionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecretVersion>newBuilder()
@@ -526,12 +538,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -563,6 +576,7 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -597,12 +611,13 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

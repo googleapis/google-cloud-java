@@ -100,7 +100,10 @@ import org.threeten.bp.Duration;
  * tagKeysSettingsBuilder
  *     .getTagKeySettings()
  *     .setRetrySettings(
- *         tagKeysSettingsBuilder.getTagKeySettings().getRetrySettings().toBuilder()
+ *         tagKeysSettingsBuilder
+ *             .getTagKeySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TagKeysStubSettings tagKeysSettings = tagKeysSettingsBuilder.build();

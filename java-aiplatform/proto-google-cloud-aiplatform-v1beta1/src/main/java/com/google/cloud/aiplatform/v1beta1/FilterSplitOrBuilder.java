@@ -29,10 +29,11 @@ public interface FilterSplitOrBuilder
    * <pre>
    * Required. A filter on DataItems of the Dataset. DataItems that match
    * this filter are used to train the Model. A filter with same syntax
-   * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
-   * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
-   * training, validation, test order.
+   * as the one used in
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems]
+   * may be used. If a single DataItem is matched by more than one of the
+   * FilterSplit filters, then it is assigned to the first set that applies to
+   * it in the training, validation, test order.
    * </pre>
    *
    * <code>string training_filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,10 +47,11 @@ public interface FilterSplitOrBuilder
    * <pre>
    * Required. A filter on DataItems of the Dataset. DataItems that match
    * this filter are used to train the Model. A filter with same syntax
-   * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
-   * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
-   * training, validation, test order.
+   * as the one used in
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems]
+   * may be used. If a single DataItem is matched by more than one of the
+   * FilterSplit filters, then it is assigned to the first set that applies to
+   * it in the training, validation, test order.
    * </pre>
    *
    * <code>string training_filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -64,10 +66,11 @@ public interface FilterSplitOrBuilder
    * <pre>
    * Required. A filter on DataItems of the Dataset. DataItems that match
    * this filter are used to validate the Model. A filter with same syntax
-   * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
-   * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
-   * training, validation, test order.
+   * as the one used in
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems]
+   * may be used. If a single DataItem is matched by more than one of the
+   * FilterSplit filters, then it is assigned to the first set that applies to
+   * it in the training, validation, test order.
    * </pre>
    *
    * <code>string validation_filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -81,10 +84,11 @@ public interface FilterSplitOrBuilder
    * <pre>
    * Required. A filter on DataItems of the Dataset. DataItems that match
    * this filter are used to validate the Model. A filter with same syntax
-   * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
-   * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
-   * training, validation, test order.
+   * as the one used in
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems]
+   * may be used. If a single DataItem is matched by more than one of the
+   * FilterSplit filters, then it is assigned to the first set that applies to
+   * it in the training, validation, test order.
    * </pre>
    *
    * <code>string validation_filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,10 +103,11 @@ public interface FilterSplitOrBuilder
    * <pre>
    * Required. A filter on DataItems of the Dataset. DataItems that match
    * this filter are used to test the Model. A filter with same syntax
-   * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
-   * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
-   * training, validation, test order.
+   * as the one used in
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems]
+   * may be used. If a single DataItem is matched by more than one of the
+   * FilterSplit filters, then it is assigned to the first set that applies to
+   * it in the training, validation, test order.
    * </pre>
    *
    * <code>string test_filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -116,10 +121,11 @@ public interface FilterSplitOrBuilder
    * <pre>
    * Required. A filter on DataItems of the Dataset. DataItems that match
    * this filter are used to test the Model. A filter with same syntax
-   * as the one used in [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems] may be used. If a
-   * single DataItem is matched by more than one of the FilterSplit filters,
-   * then it is assigned to the first set that applies to it in the
-   * training, validation, test order.
+   * as the one used in
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems]
+   * may be used. If a single DataItem is matched by more than one of the
+   * FilterSplit filters, then it is assigned to the first set that applies to
+   * it in the training, validation, test order.
    * </pre>
    *
    * <code>string test_filter = 3 [(.google.api.field_behavior) = REQUIRED];</code>

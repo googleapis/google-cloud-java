@@ -73,7 +73,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The state of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion], indicating if it can be accessed.
+   * The state of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion], indicating if
+   * it can be accessed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.secretmanager.v1.SecretVersion.State}
@@ -93,7 +95,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may be accessed.
+     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may be
+     * accessed.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -103,8 +106,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may not be accessed, but the secret data
-     * is still available and can be placed back into the [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED]
+     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may not
+     * be accessed, but the secret data is still available and can be placed
+     * back into the
+     * [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED]
      * state.
      * </pre>
      *
@@ -115,8 +120,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] is destroyed and the secret data is no longer
-     * stored. A version may not leave this state once entered.
+     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] is
+     * destroyed and the secret data is no longer stored. A version may not
+     * leave this state once entered.
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -139,7 +145,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may be accessed.
+     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may be
+     * accessed.
      * </pre>
      *
      * <code>ENABLED = 1;</code>
@@ -149,8 +156,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may not be accessed, but the secret data
-     * is still available and can be placed back into the [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED]
+     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] may not
+     * be accessed, but the secret data is still available and can be placed
+     * back into the
+     * [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED]
      * state.
      * </pre>
      *
@@ -161,8 +170,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] is destroyed and the secret data is no longer
-     * stored. A version may not leave this state once entered.
+     * The [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] is
+     * destroyed and the secret data is no longer stored. A version may not
+     * leave this state once entered.
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -260,10 +270,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-   * are incremented for each subsequent version of the secret.
+   * Output only. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+   * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+   * incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -286,10 +298,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-   * are incremented for each subsequent version of the secret.
+   * Output only. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+   * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+   * incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -315,7 +329,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -331,7 +346,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -347,7 +363,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -364,8 +381,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+   * is
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
    * </pre>
    *
@@ -382,8 +401,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+   * is
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
    * </pre>
    *
@@ -400,8 +421,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+   * is
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
    * </pre>
    *
@@ -419,7 +442,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. The current state of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -436,7 +460,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. The current state of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -461,7 +486,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -476,7 +502,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -493,7 +520,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -510,7 +538,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. Etag of the currently stored
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -533,7 +562,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. Etag of the currently stored
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -559,8 +589,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
-   * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+   * Output only. True if payload checksum specified in
+   * [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has
+   * been received by
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+   * on
    * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
    * </pre>
    *
@@ -1081,10 +1114,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-     * are incremented for each subsequent version of the secret.
+     * Output only. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+     * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+     * incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1106,10 +1141,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-     * are incremented for each subsequent version of the secret.
+     * Output only. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+     * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+     * incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1131,10 +1168,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-     * are incremented for each subsequent version of the secret.
+     * Output only. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+     * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+     * incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1155,10 +1194,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-     * are incremented for each subsequent version of the secret.
+     * Output only. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+     * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+     * incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1175,10 +1216,12 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-     * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-     * are incremented for each subsequent version of the secret.
+     * Output only. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+     * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+     * incremented for each subsequent version of the secret.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1207,7 +1250,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1223,7 +1267,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1245,7 +1290,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1269,7 +1315,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1290,7 +1337,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1316,7 +1364,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1338,7 +1387,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1354,7 +1404,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1374,7 +1425,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+     * Output only. The time at which the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
      * </pre>
      *
      * <code>
@@ -1408,8 +1460,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1426,8 +1480,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1450,8 +1506,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1476,8 +1534,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1499,8 +1559,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1529,8 +1591,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1553,8 +1617,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1571,8 +1637,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1593,8 +1661,10 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+     * Output only. The time this
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+     * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+     * is
      * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
      * </pre>
      *
@@ -1624,7 +1694,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The current state of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1641,7 +1712,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The current state of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1661,7 +1733,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The current state of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1683,7 +1756,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The current state of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1706,7 +1780,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The current state of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -1732,7 +1807,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1746,7 +1822,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1766,7 +1843,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1788,7 +1866,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1808,7 +1887,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1835,7 +1915,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1855,7 +1936,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1870,7 +1952,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1889,7 +1972,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * The replication status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -1916,7 +2000,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. Etag of the currently stored
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1938,7 +2023,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. Etag of the currently stored
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1960,7 +2046,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. Etag of the currently stored
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1981,7 +2068,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. Etag of the currently stored
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1998,7 +2086,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. Etag of the currently stored
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2022,8 +2111,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
-     * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+     * Output only. True if payload checksum specified in
+     * [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has
+     * been received by
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * on
      * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
      * </pre>
      *
@@ -2041,8 +2133,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
-     * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+     * Output only. True if payload checksum specified in
+     * [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has
+     * been received by
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * on
      * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
      * </pre>
      *
@@ -2063,8 +2158,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
-     * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+     * Output only. True if payload checksum specified in
+     * [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has
+     * been received by
+     * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+     * on
      * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
      * </pre>
      *

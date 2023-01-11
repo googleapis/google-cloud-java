@@ -130,11 +130,11 @@ public interface ListEntityTypesRequestOrBuilder
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes] must
-   * match the call that provided the page token.
+   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -147,11 +147,11 @@ public interface ListEntityTypesRequestOrBuilder
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes] must
-   * match the call that provided the page token.
+   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>

@@ -75,7 +75,10 @@ import org.threeten.bp.Duration;
  * profilerServiceSettingsBuilder
  *     .createProfileSettings()
  *     .setRetrySettings(
- *         profilerServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *         profilerServiceSettingsBuilder
+ *             .createProfileSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProfilerServiceStubSettings profilerServiceSettings = profilerServiceSettingsBuilder.build();

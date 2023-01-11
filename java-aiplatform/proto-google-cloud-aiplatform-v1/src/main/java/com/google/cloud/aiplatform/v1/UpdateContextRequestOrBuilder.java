@@ -28,9 +28,8 @@ public interface UpdateContextRequestOrBuilder
    *
    * <pre>
    * Required. The Context containing updates.
-   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-   * updated.
-   * Format:
+   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+   * is used to identify the Context to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -46,9 +45,8 @@ public interface UpdateContextRequestOrBuilder
    *
    * <pre>
    * Required. The Context containing updates.
-   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-   * updated.
-   * Format:
+   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+   * is used to identify the Context to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -64,9 +62,8 @@ public interface UpdateContextRequestOrBuilder
    *
    * <pre>
    * Required. The Context containing updates.
-   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field is used to identify the Context to be
-   * updated.
-   * Format:
+   * The Context's [Context.name][google.cloud.aiplatform.v1.Context.name] field
+   * is used to identify the Context to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -121,8 +118,8 @@ public interface UpdateContextRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is not found, a new [Context][google.cloud.aiplatform.v1.Context] is
-   * created.
+   * If set to true, and the [Context][google.cloud.aiplatform.v1.Context] is
+   * not found, a new [Context][google.cloud.aiplatform.v1.Context] is created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>

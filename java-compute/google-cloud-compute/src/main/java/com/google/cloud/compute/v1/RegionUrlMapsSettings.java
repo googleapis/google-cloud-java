@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * regionUrlMapsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionUrlMapsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionUrlMapsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionUrlMapsSettings regionUrlMapsSettings = regionUrlMapsSettingsBuilder.build();

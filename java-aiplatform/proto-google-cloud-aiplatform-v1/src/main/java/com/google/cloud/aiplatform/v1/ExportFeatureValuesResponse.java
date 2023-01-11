@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ExportFeatureValues].
+ * Response message for
+ * [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ExportFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ExportFeatureValuesResponse}
@@ -220,7 +221,8 @@ public final class ExportFeatureValuesResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ExportFeatureValues].
+   * Response message for
+   * [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ExportFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ExportFeatureValuesResponse}

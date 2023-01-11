@@ -114,7 +114,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The version ID of the Model that produces the predictions via this job.
+   * Output only. The version ID of the Model that produces the predictions via
+   * this job.
    * </pre>
    *
    * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -126,7 +127,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The version ID of the Model that produces the predictions via this job.
+   * Output only. The version ID of the Model that produces the predictions via
+   * this job.
    * </pre>
    *
    * <code>string model_version_id = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -184,9 +186,9 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Required. Input configuration of the instances on which predictions are performed.
-   * The schema of any single instance may be specified via
-   * the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
+   * Required. Input configuration of the instances on which predictions are
+   * performed. The schema of any single instance may be specified via the
+   * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    * [instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri].
    * </pre>
@@ -202,9 +204,9 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Required. Input configuration of the instances on which predictions are performed.
-   * The schema of any single instance may be specified via
-   * the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
+   * Required. Input configuration of the instances on which predictions are
+   * performed. The schema of any single instance may be specified via the
+   * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    * [instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri].
    * </pre>
@@ -220,9 +222,9 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Required. Input configuration of the instances on which predictions are performed.
-   * The schema of any single instance may be specified via
-   * the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
+   * Required. Input configuration of the instances on which predictions are
+   * performed. The schema of any single instance may be specified via the
+   * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    * [instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri].
    * </pre>
@@ -281,7 +283,8 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The parameters that govern the predictions. The schema of the parameters
-   * may be specified via the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
+   * may be specified via the
+   * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -296,7 +299,8 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The parameters that govern the predictions. The schema of the parameters
-   * may be specified via the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
+   * may be specified via the
+   * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -311,7 +315,8 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The parameters that govern the predictions. The schema of the parameters
-   * may be specified via the [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
+   * may be specified via the
+   * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]
    * [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
    * [parameters_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.parameters_schema_uri].
    * </pre>
@@ -388,7 +393,8 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The config of resources used by the Model during the batch prediction. If
-   * the Model [supports][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types]
+   * the Model
+   * [supports][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types]
    * DEDICATED_RESOURCES this config may be provided (and the job will use these
    * resources), if the Model doesn't support AUTOMATIC_RESOURCES, this config
    * must be provided.
@@ -404,7 +410,8 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The config of resources used by the Model during the batch prediction. If
-   * the Model [supports][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types]
+   * the Model
+   * [supports][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types]
    * DEDICATED_RESOURCES this config may be provided (and the job will use these
    * resources), if the Model doesn't support AUTOMATIC_RESOURCES, this config
    * must be provided.
@@ -420,7 +427,8 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * The config of resources used by the Model during the batch prediction. If
-   * the Model [supports][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types]
+   * the Model
+   * [supports][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types]
    * DEDICATED_RESOURCES this config may be provided (and the job will use these
    * resources), if the Model doesn't support AUTOMATIC_RESOURCES, this config
    * must be provided.
@@ -438,7 +446,7 @@ public interface BatchPredictionJobOrBuilder
    * The service account that the DeployedModel's container runs as. If not
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
-   * enough permission to access other GCP resources.
+   * enough permission to access other Google Cloud resources.
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -455,7 +463,7 @@ public interface BatchPredictionJobOrBuilder
    * The service account that the DeployedModel's container runs as. If not
    * specified, a system generated one will be used, which
    * has minimal permissions and the custom container, if used, may not have
-   * enough permission to access other GCP resources.
+   * enough permission to access other Google Cloud resources.
    * Users deploying the Model must have the `iam.serviceAccounts.actAs`
    * permission on this service account.
    * </pre>
@@ -470,9 +478,10 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
-   * the tuning itself).
+   * Immutable. Parameters configuring the batch behavior. Currently only
+   * applicable when
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources]
+   * are used (in other cases Vertex AI does the tuning itself).
    * </pre>
    *
    * <code>
@@ -486,9 +495,10 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
-   * the tuning itself).
+   * Immutable. Parameters configuring the batch behavior. Currently only
+   * applicable when
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources]
+   * are used (in other cases Vertex AI does the tuning itself).
    * </pre>
    *
    * <code>
@@ -502,9 +512,10 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Immutable. Parameters configuring the batch behavior. Currently only applicable when
-   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources] are used (in other cases Vertex AI does
-   * the tuning itself).
+   * Immutable. Parameters configuring the batch behavior. Currently only
+   * applicable when
+   * [dedicated_resources][google.cloud.aiplatform.v1beta1.BatchPredictionJob.dedicated_resources]
+   * are used (in other cases Vertex AI does the tuning itself).
    * </pre>
    *
    * <code>
@@ -521,15 +532,21 @@ public interface BatchPredictionJobOrBuilder
    * Generate explanation with the batch prediction results.
    * When set to `true`, the batch prediction output changes based on the
    * `predictions_format` field of the
-   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config] object:
+   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config]
+   * object:
    *  * `bigquery`: output includes a column named `explanation`. The value
-   *    is a struct that conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+   *    is a struct that conforms to the
+   *    [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
    *  * `jsonl`: The JSON objects on each line include an additional entry
    *    keyed `explanation`. The value of the entry is a JSON object that
-   *    conforms to the [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
+   *    conforms to the
+   *    [Explanation][google.cloud.aiplatform.v1beta1.Explanation] object.
    *  * `csv`: Generating explanations for CSV format is not supported.
-   * If this field is set to true, either the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] or
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] must be populated.
+   * If this field is set to true, either the
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * must be populated.
    * </pre>
    *
    * <code>bool generate_explanation = 23;</code>
@@ -543,11 +560,18 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * Explanation configuration for this BatchPredictionJob. Can be
-   * specified only if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`.
-   * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
-   * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
+   * specified only if
+   * [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * is set to `true`.
+   * This value overrides the value of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec].
+   * All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * are optional in the request. If a field of the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * object is not populated, the corresponding field of the
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+   * object is inherited.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
@@ -560,11 +584,18 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * Explanation configuration for this BatchPredictionJob. Can be
-   * specified only if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`.
-   * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
-   * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
+   * specified only if
+   * [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * is set to `true`.
+   * This value overrides the value of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec].
+   * All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * are optional in the request. If a field of the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * object is not populated, the corresponding field of the
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+   * object is inherited.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
@@ -577,11 +608,18 @@ public interface BatchPredictionJobOrBuilder
    *
    * <pre>
    * Explanation configuration for this BatchPredictionJob. Can be
-   * specified only if [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation] is set to `true`.
-   * This value overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] are optional in the request. If a field of the
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] object is not populated, the corresponding field of
-   * the [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec] object is inherited.
+   * specified only if
+   * [generate_explanation][google.cloud.aiplatform.v1beta1.BatchPredictionJob.generate_explanation]
+   * is set to `true`.
+   * This value overrides the value of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec].
+   * All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * are optional in the request. If a field of the
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * object is not populated, the corresponding field of the
+   * [Model.explanation_spec][google.cloud.aiplatform.v1beta1.Model.explanation_spec]
+   * object is inherited.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationSpec explanation_spec = 25;</code>
@@ -704,7 +742,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -719,7 +757,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -734,7 +772,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -749,7 +787,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -764,7 +802,7 @@ public interface BatchPredictionJobOrBuilder
    * Output only. Partial failures encountered.
    * For example, single files that can't be read.
    * This field never exceeds 20 entries.
-   * Status details fields contain standard GCP error details.
+   * Status details fields contain standard Google Cloud error details.
    * </pre>
    *
    * <code>
@@ -777,8 +815,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about resources that had been consumed by this job.
-   * Provided in real time at best effort basis, as well as a final value
+   * Output only. Information about resources that had been consumed by this
+   * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
@@ -795,8 +833,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about resources that had been consumed by this job.
-   * Provided in real time at best effort basis, as well as a final value
+   * Output only. Information about resources that had been consumed by this
+   * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
@@ -813,8 +851,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Information about resources that had been consumed by this job.
-   * Provided in real time at best effort basis, as well as a final value
+   * Output only. Information about resources that had been consumed by this
+   * job. Provided in real time at best effort basis, as well as a final value
    * once the job completes.
    * Note: This field currently may be not populated for batch predictions that
    * use AutoML Models.
@@ -909,8 +947,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the BatchPredictionJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
+   * Output only. Time when the BatchPredictionJob for the first time entered
+   * the `JOB_STATE_RUNNING` state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -923,8 +961,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the BatchPredictionJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
+   * Output only. Time when the BatchPredictionJob for the first time entered
+   * the `JOB_STATE_RUNNING` state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -937,8 +975,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the BatchPredictionJob for the first time entered the
-   * `JOB_STATE_RUNNING` state.
+   * Output only. Time when the BatchPredictionJob for the first time entered
+   * the `JOB_STATE_RUNNING` state.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -950,8 +988,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the BatchPredictionJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+   * Output only. Time when the BatchPredictionJob entered any of the following
+   * states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -964,8 +1002,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the BatchPredictionJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+   * Output only. Time when the BatchPredictionJob entered any of the following
+   * states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -978,8 +1016,8 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the BatchPredictionJob entered any of the following states:
-   * `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
+   * Output only. Time when the BatchPredictionJob entered any of the following
+   * states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];

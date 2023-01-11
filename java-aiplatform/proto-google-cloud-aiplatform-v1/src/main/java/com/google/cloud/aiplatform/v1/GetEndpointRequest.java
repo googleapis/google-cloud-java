@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [EndpointService.GetEndpoint][google.cloud.aiplatform.v1.EndpointService.GetEndpoint]
+ * Request message for
+ * [EndpointService.GetEndpoint][google.cloud.aiplatform.v1.EndpointService.GetEndpoint]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetEndpointRequest}
@@ -287,7 +288,8 @@ public final class GetEndpointRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [EndpointService.GetEndpoint][google.cloud.aiplatform.v1.EndpointService.GetEndpoint]
+   * Request message for
+   * [EndpointService.GetEndpoint][google.cloud.aiplatform.v1.EndpointService.GetEndpoint]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetEndpointRequest}

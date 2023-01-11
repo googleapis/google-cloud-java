@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+ * Request message for
+ * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListTransferableSkusRequest}
@@ -346,9 +347,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
    * <pre>
    * A token for a page of results other than the first page.
    * Obtained using
-   * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-   * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-   * Optional.
+   * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+   * call. Optional.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -373,9 +375,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
    * <pre>
    * A token for a page of results other than the first page.
    * Obtained using
-   * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-   * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-   * Optional.
+   * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+   * call. Optional.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -743,7 +746,8 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+   * Request message for
+   * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListTransferableSkusRequest}
@@ -1483,9 +1487,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-     * Optional.
+     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+     * call. Optional.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1509,9 +1514,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-     * Optional.
+     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+     * call. Optional.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1535,9 +1541,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-     * Optional.
+     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+     * call. Optional.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1560,9 +1567,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-     * Optional.
+     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+     * call. Optional.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1581,9 +1589,10 @@ public final class ListTransferableSkusRequest extends com.google.protobuf.Gener
      * <pre>
      * A token for a page of results other than the first page.
      * Obtained using
-     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token] of the previous
-     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus] call.
-     * Optional.
+     * [ListTransferableSkusResponse.next_page_token][google.cloud.channel.v1.ListTransferableSkusResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+     * call. Optional.
      * </pre>
      *
      * <code>string page_token = 3;</code>

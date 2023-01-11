@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * networksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         networksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         networksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NetworksSettings networksSettings = networksSettingsBuilder.build();

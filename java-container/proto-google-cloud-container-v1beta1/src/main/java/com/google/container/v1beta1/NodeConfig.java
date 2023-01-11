@@ -96,6 +96,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NodeConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MACHINE_TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object machineType_;
   /**
@@ -1780,6 +1781,56 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getConfidentialNodes();
   }
 
+  public static final int FAST_SOCKET_FIELD_NUMBER = 36;
+  private com.google.container.v1beta1.FastSocket fastSocket_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+   *
+   * @return Whether the fastSocket field is set.
+   */
+  @java.lang.Override
+  public boolean hasFastSocket() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+   *
+   * @return The fastSocket.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.FastSocket getFastSocket() {
+    return fastSocket_ == null
+        ? com.google.container.v1beta1.FastSocket.getDefaultInstance()
+        : fastSocket_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.FastSocketOrBuilder getFastSocketOrBuilder() {
+    return fastSocket_ == null
+        ? com.google.container.v1beta1.FastSocket.getDefaultInstance()
+        : fastSocket_;
+  }
+
   public static final int RESOURCE_LABELS_FIELD_NUMBER = 37;
 
   private static final class ResourceLabelsDefaultEntryHolder {
@@ -1933,6 +1984,169 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return getLoggingConfig();
   }
 
+  public static final int WINDOWS_NODE_CONFIG_FIELD_NUMBER = 39;
+  private com.google.container.v1beta1.WindowsNodeConfig windowsNodeConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+   *
+   * @return Whether the windowsNodeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWindowsNodeConfig() {
+    return windowsNodeConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+   *
+   * @return The windowsNodeConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig() {
+    return windowsNodeConfig_ == null
+        ? com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()
+        : windowsNodeConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder() {
+    return getWindowsNodeConfig();
+  }
+
+  public static final int LOCAL_NVME_SSD_BLOCK_CONFIG_FIELD_NUMBER = 40;
+  private com.google.container.v1beta1.LocalNvmeSsdBlockConfig localNvmeSsdBlockConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+   * </code>
+   *
+   * @return Whether the localNvmeSsdBlockConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalNvmeSsdBlockConfig() {
+    return localNvmeSsdBlockConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+   * </code>
+   *
+   * @return The localNvmeSsdBlockConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LocalNvmeSsdBlockConfig getLocalNvmeSsdBlockConfig() {
+    return localNvmeSsdBlockConfig_ == null
+        ? com.google.container.v1beta1.LocalNvmeSsdBlockConfig.getDefaultInstance()
+        : localNvmeSsdBlockConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LocalNvmeSsdBlockConfigOrBuilder
+      getLocalNvmeSsdBlockConfigOrBuilder() {
+    return getLocalNvmeSsdBlockConfig();
+  }
+
+  public static final int EPHEMERAL_STORAGE_LOCAL_SSD_CONFIG_FIELD_NUMBER = 41;
+  private com.google.container.v1beta1.EphemeralStorageLocalSsdConfig
+      ephemeralStorageLocalSsdConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * This field is functionally equivalent to the ephemeral_storage_config
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   *
+   * @return Whether the ephemeralStorageLocalSsdConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEphemeralStorageLocalSsdConfig() {
+    return ephemeralStorageLocalSsdConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * This field is functionally equivalent to the ephemeral_storage_config
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   *
+   * @return The ephemeralStorageLocalSsdConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EphemeralStorageLocalSsdConfig
+      getEphemeralStorageLocalSsdConfig() {
+    return ephemeralStorageLocalSsdConfig_ == null
+        ? com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.getDefaultInstance()
+        : ephemeralStorageLocalSsdConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * This field is functionally equivalent to the ephemeral_storage_config
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.EphemeralStorageLocalSsdConfigOrBuilder
+      getEphemeralStorageLocalSsdConfigOrBuilder() {
+    return getEphemeralStorageLocalSsdConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2029,10 +2243,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       output.writeMessage(35, getConfidentialNodes());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(36, getFastSocket());
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 37);
     if (loggingConfig_ != null) {
       output.writeMessage(38, getLoggingConfig());
+    }
+    if (windowsNodeConfig_ != null) {
+      output.writeMessage(39, getWindowsNodeConfig());
+    }
+    if (localNvmeSsdBlockConfig_ != null) {
+      output.writeMessage(40, getLocalNvmeSsdBlockConfig());
+    }
+    if (ephemeralStorageLocalSsdConfig_ != null) {
+      output.writeMessage(41, getEphemeralStorageLocalSsdConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2157,6 +2383,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (confidentialNodes_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getConfidentialNodes());
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getFastSocket());
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetResourceLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
@@ -2169,6 +2398,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (loggingConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getLoggingConfig());
+    }
+    if (windowsNodeConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, getWindowsNodeConfig());
+    }
+    if (localNvmeSsdBlockConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              40, getLocalNvmeSsdBlockConfig());
+    }
+    if (ephemeralStorageLocalSsdConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              41, getEphemeralStorageLocalSsdConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2246,10 +2488,28 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasConfidentialNodes()) {
       if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
     }
+    if (hasFastSocket() != other.hasFastSocket()) return false;
+    if (hasFastSocket()) {
+      if (!getFastSocket().equals(other.getFastSocket())) return false;
+    }
     if (!internalGetResourceLabels().equals(other.internalGetResourceLabels())) return false;
     if (hasLoggingConfig() != other.hasLoggingConfig()) return false;
     if (hasLoggingConfig()) {
       if (!getLoggingConfig().equals(other.getLoggingConfig())) return false;
+    }
+    if (hasWindowsNodeConfig() != other.hasWindowsNodeConfig()) return false;
+    if (hasWindowsNodeConfig()) {
+      if (!getWindowsNodeConfig().equals(other.getWindowsNodeConfig())) return false;
+    }
+    if (hasLocalNvmeSsdBlockConfig() != other.hasLocalNvmeSsdBlockConfig()) return false;
+    if (hasLocalNvmeSsdBlockConfig()) {
+      if (!getLocalNvmeSsdBlockConfig().equals(other.getLocalNvmeSsdBlockConfig())) return false;
+    }
+    if (hasEphemeralStorageLocalSsdConfig() != other.hasEphemeralStorageLocalSsdConfig())
+      return false;
+    if (hasEphemeralStorageLocalSsdConfig()) {
+      if (!getEphemeralStorageLocalSsdConfig().equals(other.getEphemeralStorageLocalSsdConfig()))
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2352,6 +2612,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getConfidentialNodes().hashCode();
     }
+    if (hasFastSocket()) {
+      hash = (37 * hash) + FAST_SOCKET_FIELD_NUMBER;
+      hash = (53 * hash) + getFastSocket().hashCode();
+    }
     if (!internalGetResourceLabels().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResourceLabels().hashCode();
@@ -2359,6 +2623,18 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasLoggingConfig()) {
       hash = (37 * hash) + LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLoggingConfig().hashCode();
+    }
+    if (hasWindowsNodeConfig()) {
+      hash = (37 * hash) + WINDOWS_NODE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWindowsNodeConfig().hashCode();
+    }
+    if (hasLocalNvmeSsdBlockConfig()) {
+      hash = (37 * hash) + LOCAL_NVME_SSD_BLOCK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalNvmeSsdBlockConfig().hashCode();
+    }
+    if (hasEphemeralStorageLocalSsdConfig()) {
+      hash = (37 * hash) + EPHEMERAL_STORAGE_LOCAL_SSD_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEphemeralStorageLocalSsdConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2521,10 +2797,21 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.container.v1beta1.NodeConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAcceleratorsFieldBuilder();
+        getTaintsFieldBuilder();
+        getFastSocketFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2638,12 +2925,36 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         confidentialNodes_ = null;
         confidentialNodesBuilder_ = null;
       }
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = null;
+      } else {
+        fastSocketBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableResourceLabels().clear();
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = null;
       } else {
         loggingConfig_ = null;
         loggingConfigBuilder_ = null;
+      }
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfig_ = null;
+      } else {
+        windowsNodeConfig_ = null;
+        windowsNodeConfigBuilder_ = null;
+      }
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        localNvmeSsdBlockConfig_ = null;
+      } else {
+        localNvmeSsdBlockConfig_ = null;
+        localNvmeSsdBlockConfigBuilder_ = null;
+      }
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        ephemeralStorageLocalSsdConfig_ = null;
+      } else {
+        ephemeralStorageLocalSsdConfig_ = null;
+        ephemeralStorageLocalSsdConfigBuilder_ = null;
       }
       return this;
     }
@@ -2673,6 +2984,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.container.v1beta1.NodeConfig result =
           new com.google.container.v1beta1.NodeConfig(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.machineType_ = machineType_;
       result.diskSizeGb_ = diskSizeGb_;
       if (((bitField0_ & 0x00000001) != 0)) {
@@ -2771,6 +3083,14 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.confidentialNodes_ = confidentialNodesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (fastSocketBuilder_ == null) {
+          result.fastSocket_ = fastSocket_;
+        } else {
+          result.fastSocket_ = fastSocketBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
       result.resourceLabels_ = internalGetResourceLabels();
       result.resourceLabels_.makeImmutable();
       if (loggingConfigBuilder_ == null) {
@@ -2778,6 +3098,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.loggingConfig_ = loggingConfigBuilder_.build();
       }
+      if (windowsNodeConfigBuilder_ == null) {
+        result.windowsNodeConfig_ = windowsNodeConfig_;
+      } else {
+        result.windowsNodeConfig_ = windowsNodeConfigBuilder_.build();
+      }
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        result.localNvmeSsdBlockConfig_ = localNvmeSsdBlockConfig_;
+      } else {
+        result.localNvmeSsdBlockConfig_ = localNvmeSsdBlockConfigBuilder_.build();
+      }
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        result.ephemeralStorageLocalSsdConfig_ = ephemeralStorageLocalSsdConfig_;
+      } else {
+        result.ephemeralStorageLocalSsdConfig_ = ephemeralStorageLocalSsdConfigBuilder_.build();
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -2976,9 +3312,21 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.hasConfidentialNodes()) {
         mergeConfidentialNodes(other.getConfidentialNodes());
       }
+      if (other.hasFastSocket()) {
+        mergeFastSocket(other.getFastSocket());
+      }
       internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
+      }
+      if (other.hasWindowsNodeConfig()) {
+        mergeWindowsNodeConfig(other.getWindowsNodeConfig());
+      }
+      if (other.hasLocalNvmeSsdBlockConfig()) {
+        mergeLocalNvmeSsdBlockConfig(other.getLocalNvmeSsdBlockConfig());
+      }
+      if (other.hasEphemeralStorageLocalSsdConfig()) {
+        mergeEphemeralStorageLocalSsdConfig(other.getEphemeralStorageLocalSsdConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3206,6 +3554,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 282
+            case 290:
+              {
+                input.readMessage(getFastSocketFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 290
             case 298:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLabels__ =
@@ -3223,6 +3577,28 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 306
+            case 314:
+              {
+                input.readMessage(
+                    getWindowsNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 314
+            case 322:
+              {
+                input.readMessage(
+                    getLocalNvmeSsdBlockConfigFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 322
+            case 330:
+              {
+                input.readMessage(
+                    getEphemeralStorageLocalSsdConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 330
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8243,6 +8619,192 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       return confidentialNodesBuilder_;
     }
 
+    private com.google.container.v1beta1.FastSocket fastSocket_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.FastSocket,
+            com.google.container.v1beta1.FastSocket.Builder,
+            com.google.container.v1beta1.FastSocketOrBuilder>
+        fastSocketBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     *
+     * @return Whether the fastSocket field is set.
+     */
+    public boolean hasFastSocket() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     *
+     * @return The fastSocket.
+     */
+    public com.google.container.v1beta1.FastSocket getFastSocket() {
+      if (fastSocketBuilder_ == null) {
+        return fastSocket_ == null
+            ? com.google.container.v1beta1.FastSocket.getDefaultInstance()
+            : fastSocket_;
+      } else {
+        return fastSocketBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder setFastSocket(com.google.container.v1beta1.FastSocket value) {
+      if (fastSocketBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fastSocket_ = value;
+        onChanged();
+      } else {
+        fastSocketBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder setFastSocket(com.google.container.v1beta1.FastSocket.Builder builderForValue) {
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = builderForValue.build();
+        onChanged();
+      } else {
+        fastSocketBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder mergeFastSocket(com.google.container.v1beta1.FastSocket value) {
+      if (fastSocketBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && fastSocket_ != null
+            && fastSocket_ != com.google.container.v1beta1.FastSocket.getDefaultInstance()) {
+          fastSocket_ =
+              com.google.container.v1beta1.FastSocket.newBuilder(fastSocket_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          fastSocket_ = value;
+        }
+        onChanged();
+      } else {
+        fastSocketBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    public Builder clearFastSocket() {
+      if (fastSocketBuilder_ == null) {
+        fastSocket_ = null;
+        onChanged();
+      } else {
+        fastSocketBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    public com.google.container.v1beta1.FastSocket.Builder getFastSocketBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getFastSocketFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    public com.google.container.v1beta1.FastSocketOrBuilder getFastSocketOrBuilder() {
+      if (fastSocketBuilder_ != null) {
+        return fastSocketBuilder_.getMessageOrBuilder();
+      } else {
+        return fastSocket_ == null
+            ? com.google.container.v1beta1.FastSocket.getDefaultInstance()
+            : fastSocket_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable or disable NCCL fast socket for the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.FastSocket,
+            com.google.container.v1beta1.FastSocket.Builder,
+            com.google.container.v1beta1.FastSocketOrBuilder>
+        getFastSocketFieldBuilder() {
+      if (fastSocketBuilder_ == null) {
+        fastSocketBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.FastSocket,
+                com.google.container.v1beta1.FastSocket.Builder,
+                com.google.container.v1beta1.FastSocketOrBuilder>(
+                getFastSocket(), getParentForChildren(), isClean());
+        fastSocket_ = null;
+      }
+      return fastSocketBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLabels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -8595,6 +9157,622 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         loggingConfig_ = null;
       }
       return loggingConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.WindowsNodeConfig windowsNodeConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.WindowsNodeConfig,
+            com.google.container.v1beta1.WindowsNodeConfig.Builder,
+            com.google.container.v1beta1.WindowsNodeConfigOrBuilder>
+        windowsNodeConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     *
+     * @return Whether the windowsNodeConfig field is set.
+     */
+    public boolean hasWindowsNodeConfig() {
+      return windowsNodeConfigBuilder_ != null || windowsNodeConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     *
+     * @return The windowsNodeConfig.
+     */
+    public com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig() {
+      if (windowsNodeConfigBuilder_ == null) {
+        return windowsNodeConfig_ == null
+            ? com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()
+            : windowsNodeConfig_;
+      } else {
+        return windowsNodeConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    public Builder setWindowsNodeConfig(com.google.container.v1beta1.WindowsNodeConfig value) {
+      if (windowsNodeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        windowsNodeConfig_ = value;
+        onChanged();
+      } else {
+        windowsNodeConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    public Builder setWindowsNodeConfig(
+        com.google.container.v1beta1.WindowsNodeConfig.Builder builderForValue) {
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        windowsNodeConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    public Builder mergeWindowsNodeConfig(com.google.container.v1beta1.WindowsNodeConfig value) {
+      if (windowsNodeConfigBuilder_ == null) {
+        if (windowsNodeConfig_ != null) {
+          windowsNodeConfig_ =
+              com.google.container.v1beta1.WindowsNodeConfig.newBuilder(windowsNodeConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          windowsNodeConfig_ = value;
+        }
+        onChanged();
+      } else {
+        windowsNodeConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    public Builder clearWindowsNodeConfig() {
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfig_ = null;
+        onChanged();
+      } else {
+        windowsNodeConfig_ = null;
+        windowsNodeConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    public com.google.container.v1beta1.WindowsNodeConfig.Builder getWindowsNodeConfigBuilder() {
+
+      onChanged();
+      return getWindowsNodeConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    public com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder() {
+      if (windowsNodeConfigBuilder_ != null) {
+        return windowsNodeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return windowsNodeConfig_ == null
+            ? com.google.container.v1beta1.WindowsNodeConfig.getDefaultInstance()
+            : windowsNodeConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters that can be configured on Windows nodes.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.WindowsNodeConfig,
+            com.google.container.v1beta1.WindowsNodeConfig.Builder,
+            com.google.container.v1beta1.WindowsNodeConfigOrBuilder>
+        getWindowsNodeConfigFieldBuilder() {
+      if (windowsNodeConfigBuilder_ == null) {
+        windowsNodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.WindowsNodeConfig,
+                com.google.container.v1beta1.WindowsNodeConfig.Builder,
+                com.google.container.v1beta1.WindowsNodeConfigOrBuilder>(
+                getWindowsNodeConfig(), getParentForChildren(), isClean());
+        windowsNodeConfig_ = null;
+      }
+      return windowsNodeConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.LocalNvmeSsdBlockConfig localNvmeSsdBlockConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.LocalNvmeSsdBlockConfig,
+            com.google.container.v1beta1.LocalNvmeSsdBlockConfig.Builder,
+            com.google.container.v1beta1.LocalNvmeSsdBlockConfigOrBuilder>
+        localNvmeSsdBlockConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     *
+     * @return Whether the localNvmeSsdBlockConfig field is set.
+     */
+    public boolean hasLocalNvmeSsdBlockConfig() {
+      return localNvmeSsdBlockConfigBuilder_ != null || localNvmeSsdBlockConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     *
+     * @return The localNvmeSsdBlockConfig.
+     */
+    public com.google.container.v1beta1.LocalNvmeSsdBlockConfig getLocalNvmeSsdBlockConfig() {
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        return localNvmeSsdBlockConfig_ == null
+            ? com.google.container.v1beta1.LocalNvmeSsdBlockConfig.getDefaultInstance()
+            : localNvmeSsdBlockConfig_;
+      } else {
+        return localNvmeSsdBlockConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    public Builder setLocalNvmeSsdBlockConfig(
+        com.google.container.v1beta1.LocalNvmeSsdBlockConfig value) {
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        localNvmeSsdBlockConfig_ = value;
+        onChanged();
+      } else {
+        localNvmeSsdBlockConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    public Builder setLocalNvmeSsdBlockConfig(
+        com.google.container.v1beta1.LocalNvmeSsdBlockConfig.Builder builderForValue) {
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        localNvmeSsdBlockConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        localNvmeSsdBlockConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    public Builder mergeLocalNvmeSsdBlockConfig(
+        com.google.container.v1beta1.LocalNvmeSsdBlockConfig value) {
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        if (localNvmeSsdBlockConfig_ != null) {
+          localNvmeSsdBlockConfig_ =
+              com.google.container.v1beta1.LocalNvmeSsdBlockConfig.newBuilder(
+                      localNvmeSsdBlockConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          localNvmeSsdBlockConfig_ = value;
+        }
+        onChanged();
+      } else {
+        localNvmeSsdBlockConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    public Builder clearLocalNvmeSsdBlockConfig() {
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        localNvmeSsdBlockConfig_ = null;
+        onChanged();
+      } else {
+        localNvmeSsdBlockConfig_ = null;
+        localNvmeSsdBlockConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    public com.google.container.v1beta1.LocalNvmeSsdBlockConfig.Builder
+        getLocalNvmeSsdBlockConfigBuilder() {
+
+      onChanged();
+      return getLocalNvmeSsdBlockConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    public com.google.container.v1beta1.LocalNvmeSsdBlockConfigOrBuilder
+        getLocalNvmeSsdBlockConfigOrBuilder() {
+      if (localNvmeSsdBlockConfigBuilder_ != null) {
+        return localNvmeSsdBlockConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return localNvmeSsdBlockConfig_ == null
+            ? com.google.container.v1beta1.LocalNvmeSsdBlockConfig.getDefaultInstance()
+            : localNvmeSsdBlockConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for using raw-block Local NVMe SSDs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.LocalNvmeSsdBlockConfig,
+            com.google.container.v1beta1.LocalNvmeSsdBlockConfig.Builder,
+            com.google.container.v1beta1.LocalNvmeSsdBlockConfigOrBuilder>
+        getLocalNvmeSsdBlockConfigFieldBuilder() {
+      if (localNvmeSsdBlockConfigBuilder_ == null) {
+        localNvmeSsdBlockConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.LocalNvmeSsdBlockConfig,
+                com.google.container.v1beta1.LocalNvmeSsdBlockConfig.Builder,
+                com.google.container.v1beta1.LocalNvmeSsdBlockConfigOrBuilder>(
+                getLocalNvmeSsdBlockConfig(), getParentForChildren(), isClean());
+        localNvmeSsdBlockConfig_ = null;
+      }
+      return localNvmeSsdBlockConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.EphemeralStorageLocalSsdConfig
+        ephemeralStorageLocalSsdConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EphemeralStorageLocalSsdConfig,
+            com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.Builder,
+            com.google.container.v1beta1.EphemeralStorageLocalSsdConfigOrBuilder>
+        ephemeralStorageLocalSsdConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     *
+     * @return Whether the ephemeralStorageLocalSsdConfig field is set.
+     */
+    public boolean hasEphemeralStorageLocalSsdConfig() {
+      return ephemeralStorageLocalSsdConfigBuilder_ != null
+          || ephemeralStorageLocalSsdConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     *
+     * @return The ephemeralStorageLocalSsdConfig.
+     */
+    public com.google.container.v1beta1.EphemeralStorageLocalSsdConfig
+        getEphemeralStorageLocalSsdConfig() {
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        return ephemeralStorageLocalSsdConfig_ == null
+            ? com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.getDefaultInstance()
+            : ephemeralStorageLocalSsdConfig_;
+      } else {
+        return ephemeralStorageLocalSsdConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    public Builder setEphemeralStorageLocalSsdConfig(
+        com.google.container.v1beta1.EphemeralStorageLocalSsdConfig value) {
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ephemeralStorageLocalSsdConfig_ = value;
+        onChanged();
+      } else {
+        ephemeralStorageLocalSsdConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    public Builder setEphemeralStorageLocalSsdConfig(
+        com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.Builder builderForValue) {
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        ephemeralStorageLocalSsdConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        ephemeralStorageLocalSsdConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    public Builder mergeEphemeralStorageLocalSsdConfig(
+        com.google.container.v1beta1.EphemeralStorageLocalSsdConfig value) {
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        if (ephemeralStorageLocalSsdConfig_ != null) {
+          ephemeralStorageLocalSsdConfig_ =
+              com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.newBuilder(
+                      ephemeralStorageLocalSsdConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          ephemeralStorageLocalSsdConfig_ = value;
+        }
+        onChanged();
+      } else {
+        ephemeralStorageLocalSsdConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    public Builder clearEphemeralStorageLocalSsdConfig() {
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        ephemeralStorageLocalSsdConfig_ = null;
+        onChanged();
+      } else {
+        ephemeralStorageLocalSsdConfig_ = null;
+        ephemeralStorageLocalSsdConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    public com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.Builder
+        getEphemeralStorageLocalSsdConfigBuilder() {
+
+      onChanged();
+      return getEphemeralStorageLocalSsdConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    public com.google.container.v1beta1.EphemeralStorageLocalSsdConfigOrBuilder
+        getEphemeralStorageLocalSsdConfigOrBuilder() {
+      if (ephemeralStorageLocalSsdConfigBuilder_ != null) {
+        return ephemeralStorageLocalSsdConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ephemeralStorageLocalSsdConfig_ == null
+            ? com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.getDefaultInstance()
+            : ephemeralStorageLocalSsdConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for the node ephemeral storage using Local SSDs.
+     * If unspecified, ephemeral storage is backed by the boot disk.
+     * This field is functionally equivalent to the ephemeral_storage_config
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.EphemeralStorageLocalSsdConfig,
+            com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.Builder,
+            com.google.container.v1beta1.EphemeralStorageLocalSsdConfigOrBuilder>
+        getEphemeralStorageLocalSsdConfigFieldBuilder() {
+      if (ephemeralStorageLocalSsdConfigBuilder_ == null) {
+        ephemeralStorageLocalSsdConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.EphemeralStorageLocalSsdConfig,
+                com.google.container.v1beta1.EphemeralStorageLocalSsdConfig.Builder,
+                com.google.container.v1beta1.EphemeralStorageLocalSsdConfigOrBuilder>(
+                getEphemeralStorageLocalSsdConfig(), getParentForChildren(), isClean());
+        ephemeralStorageLocalSsdConfig_ = null;
+      }
+      return ephemeralStorageLocalSsdConfigBuilder_;
     }
 
     @java.lang.Override

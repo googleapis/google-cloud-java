@@ -145,8 +145,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Featurestore from which to query Feature values.
-   * Format:
+   * Required. The resource name of the Featurestore from which to query Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -161,8 +161,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Featurestore from which to query Feature values.
-   * Format:
+   * Required. The resource name of the Featurestore from which to query Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}`
    * </pre>
    *
@@ -312,8 +312,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -329,8 +329,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -346,8 +346,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -362,8 +362,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -381,8 +381,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Specifies EntityType grouping Features to read values of and settings.
-   * Each EntityType referenced in
+   * Required. Specifies EntityType grouping Features to read values of and
+   * settings. Each EntityType referenced in
    * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
    * specifying entity IDs in the EntityType in
    * [BatchReadFeatureValuesRequest.request][] .
@@ -399,8 +399,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Optional. Excludes Feature values with feature generation timestamp before
+   * this timestamp. If not set, retrieve oldest values kept in Feature Store.
    * Timestamp, if present, must not have higher than millisecond precision.
    * </pre>
    *
@@ -414,8 +414,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Optional. Excludes Feature values with feature generation timestamp before
+   * this timestamp. If not set, retrieve oldest values kept in Feature Store.
    * Timestamp, if present, must not have higher than millisecond precision.
    * </pre>
    *
@@ -429,8 +429,8 @@ public interface BatchReadFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Excludes Feature values with feature generation timestamp before this
-   * timestamp. If not set, retrieve oldest values kept in Feature Store.
+   * Optional. Excludes Feature values with feature generation timestamp before
+   * this timestamp. If not set, retrieve oldest values kept in Feature Store.
    * Timestamp, if present, must not have higher than millisecond precision.
    * </pre>
    *

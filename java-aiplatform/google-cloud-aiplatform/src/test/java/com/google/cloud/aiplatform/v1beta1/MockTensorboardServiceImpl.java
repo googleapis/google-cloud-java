@@ -102,6 +102,28 @@ public class MockTensorboardServiceImpl extends TensorboardServiceImplBase {
   }
 
   @Override
+  public void readTensorboardUsage(
+      ReadTensorboardUsageRequest request,
+      StreamObserver<ReadTensorboardUsageResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReadTensorboardUsageResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReadTensorboardUsageResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReadTensorboardUsage, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReadTensorboardUsageResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateTensorboard(
       UpdateTensorboardRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

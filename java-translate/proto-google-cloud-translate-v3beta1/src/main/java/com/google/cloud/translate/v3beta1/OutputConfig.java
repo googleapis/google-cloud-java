@@ -145,7 +145,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * that may avoid file updating.
    * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
    * The format of translations_file (for target language code 'trg') is:
-   * gs://translation_test/a_b_c_'trg'_translations.[extension]
+   * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
    * If the input file extension is tsv, the output has the following
    * columns:
    * Column 1: ID of the request provided in the input, if it's not
@@ -218,7 +218,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * that may avoid file updating.
    * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
    * The format of translations_file (for target language code 'trg') is:
-   * gs://translation_test/a_b_c_'trg'_translations.[extension]
+   * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
    * If the input file extension is tsv, the output has the following
    * columns:
    * Column 1: ID of the request provided in the input, if it's not
@@ -294,7 +294,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * that may avoid file updating.
    * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
    * The format of translations_file (for target language code 'trg') is:
-   * gs://translation_test/a_b_c_'trg'_translations.[extension]
+   * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
    * If the input file extension is tsv, the output has the following
    * columns:
    * Column 1: ID of the request provided in the input, if it's not
@@ -750,7 +750,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -823,7 +823,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -906,7 +906,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -986,7 +986,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1064,7 +1064,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1155,7 +1155,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1238,7 +1238,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1308,7 +1308,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1386,7 +1386,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * that may avoid file updating.
      * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
      * The format of translations_file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
      * If the input file extension is tsv, the output has the following
      * columns:
      * Column 1: ID of the request provided in the input, if it's not

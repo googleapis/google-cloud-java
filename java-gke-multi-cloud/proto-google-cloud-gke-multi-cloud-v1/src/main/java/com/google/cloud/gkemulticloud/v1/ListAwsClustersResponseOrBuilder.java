@@ -27,8 +27,8 @@ public interface ListAwsClustersResponseOrBuilder
    *
    *
    * <pre>
-   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources in the specified GCP
-   * project and region region.
+   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+   * in the specified GCP project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
@@ -38,8 +38,8 @@ public interface ListAwsClustersResponseOrBuilder
    *
    *
    * <pre>
-   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources in the specified GCP
-   * project and region region.
+   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+   * in the specified GCP project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
@@ -49,8 +49,8 @@ public interface ListAwsClustersResponseOrBuilder
    *
    *
    * <pre>
-   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources in the specified GCP
-   * project and region region.
+   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+   * in the specified GCP project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
@@ -60,8 +60,8 @@ public interface ListAwsClustersResponseOrBuilder
    *
    *
    * <pre>
-   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources in the specified GCP
-   * project and region region.
+   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+   * in the specified GCP project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>
@@ -72,8 +72,8 @@ public interface ListAwsClustersResponseOrBuilder
    *
    *
    * <pre>
-   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources in the specified GCP
-   * project and region region.
+   * A list of [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resources
+   * in the specified GCP project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AwsCluster aws_clusters = 1;</code>

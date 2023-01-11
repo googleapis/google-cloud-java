@@ -1330,9 +1330,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Definition of a hardware accelerator. Note that not all combinations
-   * of `type` and `core_count` are valid. Check [GPUs on
-   * Compute Engine](/compute/docs/gpus/#gpus-list) to find a valid
-   * combination. TPUs are not supported.
+   * of `type` and `core_count` are valid. Check [GPUs on Compute
+   * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+   * valid combination. TPUs are not supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig}
@@ -1614,9 +1614,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Definition of a hardware accelerator. Note that not all combinations
-     * of `type` and `core_count` are valid. Check [GPUs on
-     * Compute Engine](/compute/docs/gpus/#gpus-list) to find a valid
-     * combination. TPUs are not supported.
+     * of `type` and `core_count` are valid. Check [GPUs on Compute
+     * Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a
+     * valid combination. TPUs are not supported.
      * </pre>
      *
      * Protobuf type {@code google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig}
@@ -2220,7 +2220,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Path to a Bash script that automatically runs after a notebook instance
    * fully boots up. The path must be a URL or
-   * Cloud Storage path (gs://path-to-file/file-name).
+   * Cloud Storage path (`gs://path-to-file/file-name`).
    * </pre>
    *
    * <code>string post_startup_script = 4;</code>
@@ -2245,7 +2245,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Path to a Bash script that automatically runs after a notebook instance
    * fully boots up. The path must be a URL or
-   * Cloud Storage path (gs://path-to-file/file-name).
+   * Cloud Storage path (`gs://path-to-file/file-name`).
    * </pre>
    *
    * <code>string post_startup_script = 4;</code>
@@ -2454,7 +2454,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -2478,7 +2479,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+   * Required. The [Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) of this
    * instance.
    * </pre>
    *
@@ -2507,8 +2509,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -2525,8 +2527,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -2545,8 +2547,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The hardware accelerator used on this instance. If you use
    * accelerators, make sure that your configuration has
-   * [enough vCPUs and memory to support the `machine_type` you
-   * have selected](/compute/docs/gpus/#gpus-list).
+   * [enough vCPUs and memory to support the `machine_type` you have
+   * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
    * </pre>
    *
    * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;</code>
@@ -2720,8 +2722,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-   * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+   * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+   * specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2784,9 +2786,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-   * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-   * based on how big your notebooks and data are. If not specified, this
-   * defaults to 100.
+   * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+   * big your notebooks and data are. If not specified, this defaults to 100.
    * </pre>
    *
    * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2868,7 +2869,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+   * Learn more about [using your own encryption
+   * keys](https://cloud.google.com/kms/docs/quickstart).
    * </pre>
    *
    * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2895,7 +2897,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    * is CMEK.
    * Format:
    * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-   * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+   * Learn more about [using your own encryption
+   * keys](https://cloud.google.com/kms/docs/quickstart).
    * </pre>
    *
    * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -5162,7 +5165,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -5186,7 +5189,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -5210,7 +5213,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -5233,7 +5236,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -5252,7 +5255,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Path to a Bash script that automatically runs after a notebook instance
      * fully boots up. The path must be a URL or
-     * Cloud Storage path (gs://path-to-file/file-name).
+     * Cloud Storage path (`gs://path-to-file/file-name`).
      * </pre>
      *
      * <code>string post_startup_script = 4;</code>
@@ -5713,7 +5716,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5736,7 +5740,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5759,7 +5764,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5781,7 +5787,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5799,7 +5806,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The [Compute Engine machine type](/compute/docs/machine-types) of this
+     * Required. The [Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) of this
      * instance.
      * </pre>
      *
@@ -5831,8 +5839,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5849,8 +5857,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5873,8 +5881,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5900,8 +5908,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5924,8 +5932,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5956,8 +5964,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5980,8 +5988,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -5999,8 +6007,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -6022,8 +6030,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The hardware accelerator used on this instance. If you use
      * accelerators, make sure that your configuration has
-     * [enough vCPUs and memory to support the `machine_type` you
-     * have selected](/compute/docs/gpus/#gpus-list).
+     * [enough vCPUs and memory to support the `machine_type` you have
+     * selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
      * </pre>
      *
      * <code>.google.cloud.notebooks.v1beta1.Instance.AcceleratorConfig accelerator_config = 9;
@@ -6435,8 +6443,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+     * specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6452,8 +6460,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+     * specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6472,8 +6480,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the boot disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). The minimum recommended value is
-     * 100&amp;nbsp;GB. If not specified, this defaults to 100.
+     * of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not
+     * specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 boot_disk_size_gb = 14 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6601,9 +6609,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+     * big your notebooks and data are. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6619,9 +6626,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+     * big your notebooks and data are. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6640,9 +6646,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Input only. The size of the data disk in GB attached to this instance, up to a maximum
-     * of 64000&amp;nbsp;GB (64&amp;nbsp;TB). You can choose the size of the data disk
-     * based on how big your notebooks and data are. If not specified, this
-     * defaults to 100.
+     * of 64000 GB (64 TB). You can choose the size of the data disk based on how
+     * big your notebooks and data are. If not specified, this defaults to 100.
      * </pre>
      *
      * <code>int64 data_disk_size_gb = 26 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6821,7 +6826,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+     * Learn more about [using your own encryption
+     * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6847,7 +6853,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+     * Learn more about [using your own encryption
+     * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6873,7 +6880,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+     * Learn more about [using your own encryption
+     * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6898,7 +6906,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+     * Learn more about [using your own encryption
+     * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -6919,7 +6928,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * is CMEK.
      * Format:
      * `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}`
-     * Learn more about [using your own encryption keys](/kms/docs/quickstart).
+     * Learn more about [using your own encryption
+     * keys](https://cloud.google.com/kms/docs/quickstart).
      * </pre>
      *
      * <code>string kms_key = 16 [(.google.api.field_behavior) = INPUT_ONLY];</code>

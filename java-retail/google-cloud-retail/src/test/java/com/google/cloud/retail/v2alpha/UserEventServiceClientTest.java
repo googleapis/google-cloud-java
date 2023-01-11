@@ -116,6 +116,7 @@ public class UserEventServiceClientTest {
         WriteUserEventRequest.newBuilder()
             .setParent("parent-995424086")
             .setUserEvent(UserEvent.newBuilder().build())
+            .setWriteAsync(true)
             .build();
 
     UserEvent actualResponse = client.writeUserEvent(request);
@@ -127,6 +128,7 @@ public class UserEventServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getUserEvent(), actualRequest.getUserEvent());
+    Assert.assertEquals(request.getWriteAsync(), actualRequest.getWriteAsync());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -143,6 +145,7 @@ public class UserEventServiceClientTest {
           WriteUserEventRequest.newBuilder()
               .setParent("parent-995424086")
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       client.writeUserEvent(request);
       Assert.fail("No exception raised");
@@ -167,6 +170,7 @@ public class UserEventServiceClientTest {
             .setUserEvent("userEvent315571599")
             .setUri("uri116076")
             .setEts(100772)
+            .setRawJson("rawJson985449776")
             .build();
 
     HttpBody actualResponse = client.collectUserEvent(request);
@@ -176,10 +180,12 @@ public class UserEventServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     CollectUserEventRequest actualRequest = ((CollectUserEventRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getPrebuiltRule(), actualRequest.getPrebuiltRule());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getUserEvent(), actualRequest.getUserEvent());
     Assert.assertEquals(request.getUri(), actualRequest.getUri());
     Assert.assertEquals(request.getEts(), actualRequest.getEts());
+    Assert.assertEquals(request.getRawJson(), actualRequest.getRawJson());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -198,6 +204,7 @@ public class UserEventServiceClientTest {
               .setUserEvent("userEvent315571599")
               .setUri("uri116076")
               .setEts(100772)
+              .setRawJson("rawJson985449776")
               .build();
       client.collectUserEvent(request);
       Assert.fail("No exception raised");

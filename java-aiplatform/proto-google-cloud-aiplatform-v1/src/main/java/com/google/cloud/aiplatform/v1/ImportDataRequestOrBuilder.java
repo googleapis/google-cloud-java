@@ -60,8 +60,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input locations. The contents of all input locations will be
-   * imported in one batch.
+   * Required. The desired input locations. The contents of all input locations
+   * will be imported in one batch.
    * </pre>
    *
    * <code>
@@ -73,8 +73,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input locations. The contents of all input locations will be
-   * imported in one batch.
+   * Required. The desired input locations. The contents of all input locations
+   * will be imported in one batch.
    * </pre>
    *
    * <code>
@@ -86,8 +86,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input locations. The contents of all input locations will be
-   * imported in one batch.
+   * Required. The desired input locations. The contents of all input locations
+   * will be imported in one batch.
    * </pre>
    *
    * <code>
@@ -99,8 +99,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input locations. The contents of all input locations will be
-   * imported in one batch.
+   * Required. The desired input locations. The contents of all input locations
+   * will be imported in one batch.
    * </pre>
    *
    * <code>
@@ -113,8 +113,8 @@ public interface ImportDataRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The desired input locations. The contents of all input locations will be
-   * imported in one batch.
+   * Required. The desired input locations. The contents of all input locations
+   * will be imported in one batch.
    * </pre>
    *
    * <code>

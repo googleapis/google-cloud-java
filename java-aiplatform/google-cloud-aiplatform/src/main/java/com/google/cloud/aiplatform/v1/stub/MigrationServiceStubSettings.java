@@ -98,7 +98,10 @@ import org.threeten.bp.Duration;
  * migrationServiceSettingsBuilder
  *     .getLocationSettings()
  *     .setRetrySettings(
- *         migrationServiceSettingsBuilder.getLocationSettings().getRetrySettings().toBuilder()
+ *         migrationServiceSettingsBuilder
+ *             .getLocationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MigrationServiceStubSettings migrationServiceSettings = migrationServiceSettingsBuilder.build();

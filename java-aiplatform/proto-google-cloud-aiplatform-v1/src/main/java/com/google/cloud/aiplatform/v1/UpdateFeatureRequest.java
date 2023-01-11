@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1.FeaturestoreService.UpdateFeature].
+ * Request message for
+ * [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1.FeaturestoreService.UpdateFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateFeatureRequest}
@@ -386,7 +387,8 @@ public final class UpdateFeatureRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1.FeaturestoreService.UpdateFeature].
+   * Request message for
+   * [FeaturestoreService.UpdateFeature][google.cloud.aiplatform.v1.FeaturestoreService.UpdateFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateFeatureRequest}

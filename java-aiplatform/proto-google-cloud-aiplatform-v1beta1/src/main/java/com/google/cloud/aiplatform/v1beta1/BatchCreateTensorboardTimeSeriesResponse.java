@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
+ * Response message for
+ * [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse}
@@ -329,7 +330,8 @@ public final class BatchCreateTensorboardTimeSeriesResponse
    *
    *
    * <pre>
-   * Response message for [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
+   * Response message for
+   * [TensorboardService.BatchCreateTensorboardTimeSeries][google.cloud.aiplatform.v1beta1.TensorboardService.BatchCreateTensorboardTimeSeries].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchCreateTensorboardTimeSeriesResponse}

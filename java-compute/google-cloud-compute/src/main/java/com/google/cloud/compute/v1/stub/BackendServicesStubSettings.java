@@ -105,7 +105,10 @@ import org.threeten.bp.Duration;
  * backendServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         backendServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         backendServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BackendServicesStubSettings backendServicesSettings = backendServicesSettingsBuilder.build();

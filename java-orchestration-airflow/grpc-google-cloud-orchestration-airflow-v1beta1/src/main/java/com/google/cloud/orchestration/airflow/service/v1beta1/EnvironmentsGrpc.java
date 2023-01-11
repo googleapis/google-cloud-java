@@ -374,6 +374,98 @@ public final class EnvironmentsGrpc {
     return getCheckUpgradeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest,
+          com.google.longrunning.Operation>
+      getSaveSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SaveSnapshot",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest,
+          com.google.longrunning.Operation>
+      getSaveSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest,
+            com.google.longrunning.Operation>
+        getSaveSnapshotMethod;
+    if ((getSaveSnapshotMethod = EnvironmentsGrpc.getSaveSnapshotMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getSaveSnapshotMethod = EnvironmentsGrpc.getSaveSnapshotMethod) == null) {
+          EnvironmentsGrpc.getSaveSnapshotMethod =
+              getSaveSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SaveSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .SaveSnapshotRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EnvironmentsMethodDescriptorSupplier("SaveSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getSaveSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest,
+          com.google.longrunning.Operation>
+      getLoadSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LoadSnapshot",
+      requestType =
+          com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest,
+          com.google.longrunning.Operation>
+      getLoadSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest,
+            com.google.longrunning.Operation>
+        getLoadSnapshotMethod;
+    if ((getLoadSnapshotMethod = EnvironmentsGrpc.getLoadSnapshotMethod) == null) {
+      synchronized (EnvironmentsGrpc.class) {
+        if ((getLoadSnapshotMethod = EnvironmentsGrpc.getLoadSnapshotMethod) == null) {
+          EnvironmentsGrpc.getLoadSnapshotMethod =
+              getLoadSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LoadSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.orchestration.airflow.service.v1beta1
+                                  .LoadSnapshotRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EnvironmentsMethodDescriptorSupplier("LoadSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getLoadSnapshotMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EnvironmentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EnvironmentsStub> factory =
@@ -527,6 +619,38 @@ public final class EnvironmentsGrpc {
           getCheckUpgradeMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshots of a Cloud Composer environment.
+     * As a result of this operation, snapshot of environment's state is stored
+     * in a location specified in the SaveSnapshotRequest.
+     * </pre>
+     */
+    public void saveSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSaveSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads a snapshot of a Cloud Composer environment.
+     * As a result of this operation, a snapshot of environment's specified in
+     * LoadSnapshotRequest is loaded into the environment.
+     * </pre>
+     */
+    public void loadSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLoadSnapshotMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -579,6 +703,18 @@ public final class EnvironmentsGrpc {
                   new MethodHandlers<
                       com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest,
                       com.google.longrunning.Operation>(this, METHODID_CHECK_UPGRADE)))
+          .addMethod(
+              getSaveSnapshotMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest,
+                      com.google.longrunning.Operation>(this, METHODID_SAVE_SNAPSHOT)))
+          .addMethod(
+              getLoadSnapshotMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest,
+                      com.google.longrunning.Operation>(this, METHODID_LOAD_SNAPSHOT)))
           .build();
     }
   }
@@ -717,6 +853,42 @@ public final class EnvironmentsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshots of a Cloud Composer environment.
+     * As a result of this operation, snapshot of environment's state is stored
+     * in a location specified in the SaveSnapshotRequest.
+     * </pre>
+     */
+    public void saveSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSaveSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads a snapshot of a Cloud Composer environment.
+     * As a result of this operation, a snapshot of environment's specified in
+     * LoadSnapshotRequest is loaded into the environment.
+     * </pre>
+     */
+    public void loadSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLoadSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -830,6 +1002,36 @@ public final class EnvironmentsGrpc {
         com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckUpgradeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshots of a Cloud Composer environment.
+     * As a result of this operation, snapshot of environment's state is stored
+     * in a location specified in the SaveSnapshotRequest.
+     * </pre>
+     */
+    public com.google.longrunning.Operation saveSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSaveSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads a snapshot of a Cloud Composer environment.
+     * As a result of this operation, a snapshot of environment's specified in
+     * LoadSnapshotRequest is loaded into the environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation loadSnapshot(
+        com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLoadSnapshotMethod(), getCallOptions(), request);
     }
   }
 
@@ -957,6 +1159,38 @@ public final class EnvironmentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckUpgradeMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshots of a Cloud Composer environment.
+     * As a result of this operation, snapshot of environment's state is stored
+     * in a location specified in the SaveSnapshotRequest.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        saveSnapshot(
+            com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSaveSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Loads a snapshot of a Cloud Composer environment.
+     * As a result of this operation, a snapshot of environment's specified in
+     * LoadSnapshotRequest is loaded into the environment.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        loadSnapshot(
+            com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLoadSnapshotMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENVIRONMENT = 0;
@@ -966,6 +1200,8 @@ public final class EnvironmentsGrpc {
   private static final int METHODID_DELETE_ENVIRONMENT = 4;
   private static final int METHODID_RESTART_WEB_SERVER = 5;
   private static final int METHODID_CHECK_UPGRADE = 6;
+  private static final int METHODID_SAVE_SNAPSHOT = 7;
+  private static final int METHODID_LOAD_SNAPSHOT = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1028,6 +1264,16 @@ public final class EnvironmentsGrpc {
         case METHODID_CHECK_UPGRADE:
           serviceImpl.checkUpgrade(
               (com.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SAVE_SNAPSHOT:
+          serviceImpl.saveSnapshot(
+              (com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LOAD_SNAPSHOT:
+          serviceImpl.loadSnapshot(
+              (com.google.cloud.orchestration.airflow.service.v1beta1.LoadSnapshotRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1102,6 +1348,8 @@ public final class EnvironmentsGrpc {
                       .addMethod(getDeleteEnvironmentMethod())
                       .addMethod(getRestartWebServerMethod())
                       .addMethod(getCheckUpgradeMethod())
+                      .addMethod(getSaveSnapshotMethod())
+                      .addMethod(getLoadSnapshotMethod())
                       .build();
         }
       }

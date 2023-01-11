@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * searchServiceSettingsBuilder
  *     .searchSettings()
  *     .setRetrySettings(
- *         searchServiceSettingsBuilder.searchSettings().getRetrySettings().toBuilder()
+ *         searchServiceSettingsBuilder
+ *             .searchSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SearchServiceSettings searchServiceSettings = searchServiceSettingsBuilder.build();

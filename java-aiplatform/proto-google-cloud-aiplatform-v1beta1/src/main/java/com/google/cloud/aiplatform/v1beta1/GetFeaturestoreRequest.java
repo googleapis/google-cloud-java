@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.GetFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeaturestore].
+ * Request message for
+ * [FeaturestoreService.GetFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeaturestore].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest}
@@ -284,7 +285,8 @@ public final class GetFeaturestoreRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.GetFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeaturestore].
+   * Request message for
+   * [FeaturestoreService.GetFeaturestore][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeaturestore].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest}

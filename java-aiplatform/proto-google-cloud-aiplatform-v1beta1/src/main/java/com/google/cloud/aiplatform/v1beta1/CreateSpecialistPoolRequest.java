@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [SpecialistPoolService.CreateSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.CreateSpecialistPool].
+ * Request message for
+ * [SpecialistPoolService.CreateSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.CreateSpecialistPool].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest}
@@ -354,7 +355,8 @@ public final class CreateSpecialistPoolRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [SpecialistPoolService.CreateSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.CreateSpecialistPool].
+   * Request message for
+   * [SpecialistPoolService.CreateSpecialistPool][google.cloud.aiplatform.v1beta1.SpecialistPoolService.CreateSpecialistPool].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest}

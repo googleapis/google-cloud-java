@@ -36,7 +36,10 @@ public class SyncGetBillingAccount {
     cloudBillingSettingsBuilder
         .getBillingAccountSettings()
         .setRetrySettings(
-            cloudBillingSettingsBuilder.getBillingAccountSettings().getRetrySettings().toBuilder()
+            cloudBillingSettingsBuilder
+                .getBillingAccountSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudBillingSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();

@@ -77,7 +77,10 @@ import org.threeten.bp.Duration;
  * controller2SettingsBuilder
  *     .registerDebuggeeSettings()
  *     .setRetrySettings(
- *         controller2SettingsBuilder.registerDebuggeeSettings().getRetrySettings().toBuilder()
+ *         controller2SettingsBuilder
+ *             .registerDebuggeeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * Controller2StubSettings controller2Settings = controller2SettingsBuilder.build();

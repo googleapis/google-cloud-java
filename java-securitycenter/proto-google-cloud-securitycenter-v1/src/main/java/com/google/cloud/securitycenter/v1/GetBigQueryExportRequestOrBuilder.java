@@ -27,7 +27,7 @@ public interface GetBigQueryExportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the big query export to retrieve. Its format is
+   * Required. Name of the BigQuery export to retrieve. Its format is
    * organizations/{organization}/bigQueryExports/{export_id},
    * folders/{folder}/bigQueryExports/{export_id}, or
    * projects/{project}/bigQueryExports/{export_id}
@@ -44,7 +44,7 @@ public interface GetBigQueryExportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the big query export to retrieve. Its format is
+   * Required. Name of the BigQuery export to retrieve. Its format is
    * organizations/{organization}/bigQueryExports/{export_id},
    * folders/{folder}/bigQueryExports/{export_id}, or
    * projects/{project}/bigQueryExports/{export_id}

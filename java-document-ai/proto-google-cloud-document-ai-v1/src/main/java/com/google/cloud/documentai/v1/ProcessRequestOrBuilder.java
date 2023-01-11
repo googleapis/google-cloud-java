@@ -97,11 +97,15 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+   * Required. The resource name of the
+   * [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
-   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
-   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * to use for processing. If a
+   * [Processor][google.cloud.documentai.v1.Processor] is specified, the server
+   * will use its [default
+   * version][google.cloud.documentai.v1.Processor.default_processor_version].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -116,11 +120,15 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Processor][google.cloud.documentai.v1.Processor] or
+   * Required. The resource name of the
+   * [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
-   * to use for processing. If a [Processor][google.cloud.documentai.v1.Processor] is specified, the server will use
-   * its [default version][google.cloud.documentai.v1.Processor.default_processor_version]. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * to use for processing. If a
+   * [Processor][google.cloud.documentai.v1.Processor] is specified, the server
+   * will use its [default
+   * version][google.cloud.documentai.v1.Processor.default_processor_version].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *

@@ -38,6 +38,7 @@ public class SyncWriteUserEvent {
           WriteUserEventRequest.newBuilder()
               .setParent("parent-995424086")
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       UserEvent response = userEventServiceClient.writeUserEvent(request);
     }

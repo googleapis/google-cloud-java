@@ -49,6 +49,9 @@
             "ListSavedQueries": {
               "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
             },
+            "SearchDataItems": {
+              "methods": ["searchDataItems", "searchDataItemsPagedCallable", "searchDataItemsCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -894,6 +897,9 @@
             },
             "ReadTensorboardTimeSeriesData": {
               "methods": ["readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesData", "readTensorboardTimeSeriesDataCallable"]
+            },
+            "ReadTensorboardUsage": {
+              "methods": ["readTensorboardUsage", "readTensorboardUsage", "readTensorboardUsage", "readTensorboardUsageCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

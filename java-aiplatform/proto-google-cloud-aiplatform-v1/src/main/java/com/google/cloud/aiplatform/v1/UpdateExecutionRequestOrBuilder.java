@@ -28,9 +28,8 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * Required. The Execution containing updates.
-   * The Execution's [Execution.name][google.cloud.aiplatform.v1.Execution.name] field is used to identify the Execution
-   * to be updated.
-   * Format:
+   * The Execution's [Execution.name][google.cloud.aiplatform.v1.Execution.name]
+   * field is used to identify the Execution to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
@@ -46,9 +45,8 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * Required. The Execution containing updates.
-   * The Execution's [Execution.name][google.cloud.aiplatform.v1.Execution.name] field is used to identify the Execution
-   * to be updated.
-   * Format:
+   * The Execution's [Execution.name][google.cloud.aiplatform.v1.Execution.name]
+   * field is used to identify the Execution to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
@@ -64,9 +62,8 @@ public interface UpdateExecutionRequestOrBuilder
    *
    * <pre>
    * Required. The Execution containing updates.
-   * The Execution's [Execution.name][google.cloud.aiplatform.v1.Execution.name] field is used to identify the Execution
-   * to be updated.
-   * Format:
+   * The Execution's [Execution.name][google.cloud.aiplatform.v1.Execution.name]
+   * field is used to identify the Execution to be updated. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * </pre>
    *
@@ -121,8 +118,9 @@ public interface UpdateExecutionRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, and the [Execution][google.cloud.aiplatform.v1.Execution] is not found, a new [Execution][google.cloud.aiplatform.v1.Execution]
-   * is created.
+   * If set to true, and the [Execution][google.cloud.aiplatform.v1.Execution]
+   * is not found, a new [Execution][google.cloud.aiplatform.v1.Execution] is
+   * created.
    * </pre>
    *
    * <code>bool allow_missing = 3;</code>

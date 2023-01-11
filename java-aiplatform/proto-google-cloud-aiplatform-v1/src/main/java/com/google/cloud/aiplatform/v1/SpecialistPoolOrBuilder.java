@@ -53,7 +53,7 @@ public interface SpecialistPoolOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the SpecialistPool.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * This field should be unique on project-level.
    * </pre>
@@ -68,7 +68,7 @@ public interface SpecialistPoolOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the SpecialistPool.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * This field should be unique on project-level.
    * </pre>

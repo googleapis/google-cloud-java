@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
+ * Request message for
+ * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest}
@@ -234,11 +235,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-   * match the call that provided the page token.
+   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -262,11 +263,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-   * match the call that provided the page token.
+   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -605,7 +606,8 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
+   * Request message for
+   * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest}
@@ -1219,11 +1221,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1246,11 +1248,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1273,11 +1275,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1299,11 +1301,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1321,11 +1323,11 @@ public final class ListFeaturestoresRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeaturestores][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeaturestores]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>

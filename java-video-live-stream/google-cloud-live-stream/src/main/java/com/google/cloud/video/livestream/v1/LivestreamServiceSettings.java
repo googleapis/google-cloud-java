@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * livestreamServiceSettingsBuilder
  *     .getChannelSettings()
  *     .setRetrySettings(
- *         livestreamServiceSettingsBuilder.getChannelSettings().getRetrySettings().toBuilder()
+ *         livestreamServiceSettingsBuilder
+ *             .getChannelSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LivestreamServiceSettings livestreamServiceSettings = livestreamServiceSettingsBuilder.build();

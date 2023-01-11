@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * firewallsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         firewallsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         firewallsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FirewallsSettings firewallsSettings = firewallsSettingsBuilder.build();

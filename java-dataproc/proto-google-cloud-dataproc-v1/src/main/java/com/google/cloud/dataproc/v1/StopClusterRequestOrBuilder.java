@@ -135,8 +135,8 @@ public interface StopClusterRequestOrBuilder
    * receives two
    * [StopClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StopClusterRequest)s
    * with the same id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),
@@ -156,8 +156,8 @@ public interface StopClusterRequestOrBuilder
    * receives two
    * [StopClusterRequest](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#google.cloud.dataproc.v1.StopClusterRequest)s
    * with the same id, then the second request will be ignored and the
-   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
-   * backend is returned.
+   * first [google.longrunning.Operation][google.longrunning.Operation] created
+   * and stored in the backend is returned.
    * Recommendation: Set this value to a
    * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
    * The ID must contain only letters (a-z, A-Z), numbers (0-9),

@@ -85,7 +85,10 @@ import javax.annotation.Generated;
  * executionsSettingsBuilder
  *     .createExecutionSettings()
  *     .setRetrySettings(
- *         executionsSettingsBuilder.createExecutionSettings().getRetrySettings().toBuilder()
+ *         executionsSettingsBuilder
+ *             .createExecutionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ExecutionsStubSettings executionsSettings = executionsSettingsBuilder.build();

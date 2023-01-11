@@ -1603,8 +1603,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -1620,8 +1620,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -1639,8 +1639,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -1655,8 +1655,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -1672,8 +1672,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. Input/Output information each purchase model, such as file paths and data
-   * formats.
+   * Required. Input/Output information each purchase model, such as file paths
+   * and data formats.
    * </pre>
    *
    * <code>
@@ -2233,8 +2233,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2254,8 +2254,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2273,8 +2273,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2293,8 +2293,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2320,8 +2320,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2345,8 +2345,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2371,8 +2371,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2398,8 +2398,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2422,8 +2422,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2447,8 +2447,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2473,8 +2473,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2495,8 +2495,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2517,8 +2517,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2533,8 +2533,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2553,8 +2553,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2576,8 +2576,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2595,8 +2595,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>
@@ -2615,8 +2615,8 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. Input/Output information each purchase model, such as file paths and data
-     * formats.
+     * Required. Input/Output information each purchase model, such as file paths
+     * and data formats.
      * </pre>
      *
      * <code>

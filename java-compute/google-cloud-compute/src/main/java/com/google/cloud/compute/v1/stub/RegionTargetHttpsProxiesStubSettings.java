@@ -91,7 +91,10 @@ import org.threeten.bp.Duration;
  * regionTargetHttpsProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionTargetHttpsProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionTargetHttpsProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionTargetHttpsProxiesStubSettings regionTargetHttpsProxiesSettings =

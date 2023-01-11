@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
+ * Request message for
+ * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturesRequest}
@@ -236,11 +237,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-   * match the call that provided the page token.
+   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -264,11 +265,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-   * match the call that provided the page token.
+   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -401,10 +402,12 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If set, return the most recent [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
+   * If set, return the most recent
+   * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
    * of stats for each Feature in response. Valid value is [0, 10]. If number of
-   * stats exists &lt; [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count], return all
-   * existing stats.
+   * stats exists &lt;
+   * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count],
+   * return all existing stats.
    * </pre>
    *
    * <code>int32 latest_stats_count = 7;</code>
@@ -639,7 +642,8 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
+   * Request message for
+   * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturesRequest}
@@ -1268,11 +1272,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1295,11 +1299,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1322,11 +1326,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1348,11 +1352,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1370,11 +1374,11 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures] must
-     * match the call that provided the page token.
+     * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1713,10 +1717,12 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set, return the most recent [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
+     * If set, return the most recent
+     * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
      * of stats for each Feature in response. Valid value is [0, 10]. If number of
-     * stats exists &lt; [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count], return all
-     * existing stats.
+     * stats exists &lt;
+     * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count],
+     * return all existing stats.
      * </pre>
      *
      * <code>int32 latest_stats_count = 7;</code>
@@ -1731,10 +1737,12 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set, return the most recent [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
+     * If set, return the most recent
+     * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
      * of stats for each Feature in response. Valid value is [0, 10]. If number of
-     * stats exists &lt; [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count], return all
-     * existing stats.
+     * stats exists &lt;
+     * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count],
+     * return all existing stats.
      * </pre>
      *
      * <code>int32 latest_stats_count = 7;</code>
@@ -1752,10 +1760,12 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set, return the most recent [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
+     * If set, return the most recent
+     * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count]
      * of stats for each Feature in response. Valid value is [0, 10]. If number of
-     * stats exists &lt; [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count], return all
-     * existing stats.
+     * stats exists &lt;
+     * [ListFeaturesRequest.latest_stats_count][google.cloud.aiplatform.v1beta1.ListFeaturesRequest.latest_stats_count],
+     * return all existing stats.
      * </pre>
      *
      * <code>int32 latest_stats_count = 7;</code>

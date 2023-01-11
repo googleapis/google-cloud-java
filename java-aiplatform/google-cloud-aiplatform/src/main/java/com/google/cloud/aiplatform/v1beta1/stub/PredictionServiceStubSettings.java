@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * predictionServiceSettingsBuilder
  *     .predictSettings()
  *     .setRetrySettings(
- *         predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
+ *         predictionServiceSettingsBuilder
+ *             .predictSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PredictionServiceStubSettings predictionServiceSettings =

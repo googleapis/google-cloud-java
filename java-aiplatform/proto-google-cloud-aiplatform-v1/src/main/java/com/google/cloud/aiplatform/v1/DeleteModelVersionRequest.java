@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [ModelService.DeleteModelVersion][google.cloud.aiplatform.v1.ModelService.DeleteModelVersion].
+ * Request message for
+ * [ModelService.DeleteModelVersion][google.cloud.aiplatform.v1.ModelService.DeleteModelVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteModelVersionRequest}
@@ -73,8 +74,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The name of the model version to be deleted, with a version ID explicitly
-   * included.
+   * Required. The name of the model version to be deleted, with a version ID
+   * explicitly included.
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -100,8 +101,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The name of the model version to be deleted, with a version ID explicitly
-   * included.
+   * Required. The name of the model version to be deleted, with a version ID
+   * explicitly included.
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -288,7 +289,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [ModelService.DeleteModelVersion][google.cloud.aiplatform.v1.ModelService.DeleteModelVersion].
+   * Request message for
+   * [ModelService.DeleteModelVersion][google.cloud.aiplatform.v1.ModelService.DeleteModelVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteModelVersionRequest}
@@ -460,8 +462,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the model version to be deleted, with a version ID explicitly
-     * included.
+     * Required. The name of the model version to be deleted, with a version ID
+     * explicitly included.
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -486,8 +488,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the model version to be deleted, with a version ID explicitly
-     * included.
+     * Required. The name of the model version to be deleted, with a version ID
+     * explicitly included.
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -512,8 +514,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the model version to be deleted, with a version ID explicitly
-     * included.
+     * Required. The name of the model version to be deleted, with a version ID
+     * explicitly included.
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -537,8 +539,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the model version to be deleted, with a version ID explicitly
-     * included.
+     * Required. The name of the model version to be deleted, with a version ID
+     * explicitly included.
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *
@@ -558,8 +560,8 @@ public final class DeleteModelVersionRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The name of the model version to be deleted, with a version ID explicitly
-     * included.
+     * Required. The name of the model version to be deleted, with a version ID
+     * explicitly included.
      * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
      * </pre>
      *

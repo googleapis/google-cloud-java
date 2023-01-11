@@ -608,11 +608,11 @@ public interface AwsClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 18 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the fleet field is set.
@@ -622,11 +622,11 @@ public interface AwsClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 18 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The fleet.
@@ -636,11 +636,11 @@ public interface AwsClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Fleet configuration.
+   * Required. Fleet configuration.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkemulticloud.v1.Fleet fleet = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.gkemulticloud.v1.Fleet fleet = 18 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.FleetOrBuilder getFleetOrBuilder();
@@ -685,4 +685,107 @@ public interface AwsClusterOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsClusterError errors = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterError> getErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsClusterError errors = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AwsClusterError getErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsClusterError errors = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsClusterError errors = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsClusterErrorOrBuilder>
+      getErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A set of errors found in the cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gkemulticloud.v1.AwsClusterError errors = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AwsClusterErrorOrBuilder getErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the monitoringConfig field is set.
+   */
+  boolean hasMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The monitoringConfig.
+   */
+  com.google.cloud.gkemulticloud.v1.MonitoringConfig getMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Monitoring configuration for this cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.MonitoringConfig monitoring_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder getMonitoringConfigOrBuilder();
 }

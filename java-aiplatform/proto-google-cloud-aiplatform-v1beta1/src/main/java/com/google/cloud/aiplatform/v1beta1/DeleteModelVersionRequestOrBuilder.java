@@ -27,8 +27,8 @@ public interface DeleteModelVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the model version to be deleted, with a version ID explicitly
-   * included.
+   * Required. The name of the model version to be deleted, with a version ID
+   * explicitly included.
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface DeleteModelVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the model version to be deleted, with a version ID explicitly
-   * included.
+   * Required. The name of the model version to be deleted, with a version ID
+   * explicitly included.
    * Example: `projects/{project}/locations/{location}/models/{model}&#64;1234`
    * </pre>
    *

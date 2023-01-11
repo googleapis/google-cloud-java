@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * intentsSettingsBuilder
  *     .getIntentSettings()
  *     .setRetrySettings(
- *         intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
+ *         intentsSettingsBuilder
+ *             .getIntentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IntentsSettings intentsSettings = intentsSettingsBuilder.build();

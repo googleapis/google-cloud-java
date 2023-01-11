@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ExportFeatureValues].
+ * Request message for
+ * [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ExportFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest}
@@ -2472,8 +2473,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType from which to export Feature values.
-   * Format:
+   * Required. The resource name of the EntityType from which to export Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -2499,8 +2500,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType from which to export Feature values.
-   * Format:
+   * Required. The resource name of the EntityType from which to export Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -2951,7 +2952,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ExportFeatureValues].
+   * Request message for
+   * [FeaturestoreService.ExportFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreService.ExportFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest}
@@ -3790,8 +3792,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType from which to export Feature values.
-     * Format:
+     * Required. The resource name of the EntityType from which to export Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -3816,8 +3818,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType from which to export Feature values.
-     * Format:
+     * Required. The resource name of the EntityType from which to export Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -3842,8 +3844,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType from which to export Feature values.
-     * Format:
+     * Required. The resource name of the EntityType from which to export Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -3867,8 +3869,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType from which to export Feature values.
-     * Format:
+     * Required. The resource name of the EntityType from which to export Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *
@@ -3888,8 +3890,8 @@ public final class ExportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType from which to export Feature values.
-     * Format:
+     * Required. The resource name of the EntityType from which to export Feature
+     * values. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
      * </pre>
      *

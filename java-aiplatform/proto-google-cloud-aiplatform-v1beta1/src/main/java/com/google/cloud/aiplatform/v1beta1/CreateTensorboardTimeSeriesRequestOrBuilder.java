@@ -62,10 +62,10 @@ public interface CreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-   * will become the final component of the TensorboardTimeSeries's resource
-   * name.
-   * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+   * Optional. The user specified unique ID to use for the
+   * TensorboardTimeSeries, which becomes the final component of the
+   * TensorboardTimeSeries's resource name. This value should match
+   * "[a-z0-9][a-z0-9-]{0, 127}"
    * </pre>
    *
    * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,10 +77,10 @@ public interface CreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-   * will become the final component of the TensorboardTimeSeries's resource
-   * name.
-   * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+   * Optional. The user specified unique ID to use for the
+   * TensorboardTimeSeries, which becomes the final component of the
+   * TensorboardTimeSeries's resource name. This value should match
+   * "[a-z0-9][a-z0-9-]{0, 127}"
    * </pre>
    *
    * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

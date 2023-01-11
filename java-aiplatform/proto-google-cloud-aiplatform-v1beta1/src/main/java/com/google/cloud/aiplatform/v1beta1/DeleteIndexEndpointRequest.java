@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [IndexEndpointService.DeleteIndexEndpoint][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeleteIndexEndpoint].
+ * Request message for
+ * [IndexEndpointService.DeleteIndexEndpoint][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeleteIndexEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest}
@@ -288,7 +289,8 @@ public final class DeleteIndexEndpointRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [IndexEndpointService.DeleteIndexEndpoint][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeleteIndexEndpoint].
+   * Request message for
+   * [IndexEndpointService.DeleteIndexEndpoint][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeleteIndexEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest}

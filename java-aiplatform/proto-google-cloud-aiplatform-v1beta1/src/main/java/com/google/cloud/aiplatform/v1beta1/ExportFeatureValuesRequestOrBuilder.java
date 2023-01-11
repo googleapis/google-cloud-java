@@ -114,8 +114,8 @@ public interface ExportFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType from which to export Feature values.
-   * Format:
+   * Required. The resource name of the EntityType from which to export Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -130,8 +130,8 @@ public interface ExportFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType from which to export Feature values.
-   * Format:
+   * Required. The resource name of the EntityType from which to export Feature
+   * values. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *

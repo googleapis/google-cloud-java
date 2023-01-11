@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [IndexService.GetIndex][google.cloud.aiplatform.v1.IndexService.GetIndex]
+ * Request message for
+ * [IndexService.GetIndex][google.cloud.aiplatform.v1.IndexService.GetIndex]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetIndexRequest}
@@ -287,7 +288,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for [IndexService.GetIndex][google.cloud.aiplatform.v1.IndexService.GetIndex]
+   * Request message for
+   * [IndexService.GetIndex][google.cloud.aiplatform.v1.IndexService.GetIndex]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetIndexRequest}

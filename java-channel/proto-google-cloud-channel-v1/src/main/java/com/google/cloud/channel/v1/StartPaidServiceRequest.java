@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
+ * Request message for
+ * [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.StartPaidServiceRequest}
@@ -127,8 +128,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. You can specify an optional unique request ID, and if you need to retry
-   * your request, the server will know to ignore the request if it's complete.
+   * Optional. You can specify an optional unique request ID, and if you need to
+   * retry your request, the server will know to ignore the request if it's
+   * complete.
    * For example, you make an initial request and the request times out. If you
    * make the request again with the same request ID, the server can check if
    * it received the original operation with the same request ID. If it did, it
@@ -158,8 +160,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. You can specify an optional unique request ID, and if you need to retry
-   * your request, the server will know to ignore the request if it's complete.
+   * Optional. You can specify an optional unique request ID, and if you need to
+   * retry your request, the server will know to ignore the request if it's
+   * complete.
    * For example, you make an initial request and the request times out. If you
    * make the request again with the same request ID, the server can check if
    * it received the original operation with the same request ID. If it did, it
@@ -358,7 +361,8 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
+   * Request message for
+   * [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.StartPaidServiceRequest}
@@ -659,8 +663,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. You can specify an optional unique request ID, and if you need to retry
-     * your request, the server will know to ignore the request if it's complete.
+     * Optional. You can specify an optional unique request ID, and if you need to
+     * retry your request, the server will know to ignore the request if it's
+     * complete.
      * For example, you make an initial request and the request times out. If you
      * make the request again with the same request ID, the server can check if
      * it received the original operation with the same request ID. If it did, it
@@ -689,8 +694,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. You can specify an optional unique request ID, and if you need to retry
-     * your request, the server will know to ignore the request if it's complete.
+     * Optional. You can specify an optional unique request ID, and if you need to
+     * retry your request, the server will know to ignore the request if it's
+     * complete.
      * For example, you make an initial request and the request times out. If you
      * make the request again with the same request ID, the server can check if
      * it received the original operation with the same request ID. If it did, it
@@ -719,8 +725,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. You can specify an optional unique request ID, and if you need to retry
-     * your request, the server will know to ignore the request if it's complete.
+     * Optional. You can specify an optional unique request ID, and if you need to
+     * retry your request, the server will know to ignore the request if it's
+     * complete.
      * For example, you make an initial request and the request times out. If you
      * make the request again with the same request ID, the server can check if
      * it received the original operation with the same request ID. If it did, it
@@ -748,8 +755,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. You can specify an optional unique request ID, and if you need to retry
-     * your request, the server will know to ignore the request if it's complete.
+     * Optional. You can specify an optional unique request ID, and if you need to
+     * retry your request, the server will know to ignore the request if it's
+     * complete.
      * For example, you make an initial request and the request times out. If you
      * make the request again with the same request ID, the server can check if
      * it received the original operation with the same request ID. If it did, it
@@ -773,8 +781,9 @@ public final class StartPaidServiceRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. You can specify an optional unique request ID, and if you need to retry
-     * your request, the server will know to ignore the request if it's complete.
+     * Optional. You can specify an optional unique request ID, and if you need to
+     * retry your request, the server will know to ignore the request if it's
+     * complete.
      * For example, you make an initial request and the request times out. If you
      * make the request again with the same request ID, the server can check if
      * it received the original operation with the same request ID. If it did, it

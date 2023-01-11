@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-monitoring-metricsscope-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
+  <name>Google Monitoring Metrics Scopes Parent</name>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud-monitoring-metricsscope-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-monitoring-metricsscope</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-metricsscope:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-monitoring-metricsscope-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-metricsscope-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-monitoring-metricsscope-v1</artifactId>
+        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-metricsscope-v1:current} -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>google-cloud-monitoring-metricsscope</module>
+    <module>grpc-google-cloud-monitoring-metricsscope-v1</module>
+    <module>proto-google-cloud-monitoring-metricsscope-v1</module>
+    <module>google-cloud-monitoring-metricsscope-bom</module>
+  </modules>
+
+  </project>

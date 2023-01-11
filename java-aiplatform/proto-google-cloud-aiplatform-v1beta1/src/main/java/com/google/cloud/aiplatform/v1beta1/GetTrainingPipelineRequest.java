@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline].
+ * Request message for
+ * [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest}
@@ -288,7 +289,8 @@ public final class GetTrainingPipelineRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline].
+   * Request message for
+   * [PipelineService.GetTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.GetTrainingPipeline].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest}

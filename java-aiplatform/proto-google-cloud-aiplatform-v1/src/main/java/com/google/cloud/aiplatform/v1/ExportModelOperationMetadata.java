@@ -22,7 +22,9 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Details of [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel] operation.
+ * Details of
+ * [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel]
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ExportModelOperationMetadata}
@@ -74,9 +76,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-     * the full path of the directory created, into which the Model files are
-     * being written to.
+     * Output only. If the Model artifact is being exported to Google Cloud
+     * Storage this is the full path of the directory created, into which the
+     * Model files are being written to.
      * </pre>
      *
      * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -88,9 +90,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-     * the full path of the directory created, into which the Model files are
-     * being written to.
+     * Output only. If the Model artifact is being exported to Google Cloud
+     * Storage this is the full path of the directory created, into which the
+     * Model files are being written to.
      * </pre>
      *
      * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -103,8 +105,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model image is being exported to Google Container Registry or
-     * Artifact Registry this is the full path of the image created.
+     * Output only. If the Model image is being exported to Google Container
+     * Registry or Artifact Registry this is the full path of the image created.
      * </pre>
      *
      * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -116,8 +118,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model image is being exported to Google Container Registry or
-     * Artifact Registry this is the full path of the image created.
+     * Output only. If the Model image is being exported to Google Container
+     * Registry or Artifact Registry this is the full path of the image created.
      * </pre>
      *
      * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -183,9 +185,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-     * the full path of the directory created, into which the Model files are
-     * being written to.
+     * Output only. If the Model artifact is being exported to Google Cloud
+     * Storage this is the full path of the directory created, into which the
+     * Model files are being written to.
      * </pre>
      *
      * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -208,9 +210,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-     * the full path of the directory created, into which the Model files are
-     * being written to.
+     * Output only. If the Model artifact is being exported to Google Cloud
+     * Storage this is the full path of the directory created, into which the
+     * Model files are being written to.
      * </pre>
      *
      * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -236,8 +238,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model image is being exported to Google Container Registry or
-     * Artifact Registry this is the full path of the image created.
+     * Output only. If the Model image is being exported to Google Container
+     * Registry or Artifact Registry this is the full path of the image created.
      * </pre>
      *
      * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -260,8 +262,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. If the Model image is being exported to Google Container Registry or
-     * Artifact Registry this is the full path of the image created.
+     * Output only. If the Model image is being exported to Google Container
+     * Registry or Artifact Registry this is the full path of the image created.
      * </pre>
      *
      * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -655,9 +657,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-       * the full path of the directory created, into which the Model files are
-       * being written to.
+       * Output only. If the Model artifact is being exported to Google Cloud
+       * Storage this is the full path of the directory created, into which the
+       * Model files are being written to.
        * </pre>
        *
        * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -679,9 +681,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-       * the full path of the directory created, into which the Model files are
-       * being written to.
+       * Output only. If the Model artifact is being exported to Google Cloud
+       * Storage this is the full path of the directory created, into which the
+       * Model files are being written to.
        * </pre>
        *
        * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -703,9 +705,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-       * the full path of the directory created, into which the Model files are
-       * being written to.
+       * Output only. If the Model artifact is being exported to Google Cloud
+       * Storage this is the full path of the directory created, into which the
+       * Model files are being written to.
        * </pre>
        *
        * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -726,9 +728,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-       * the full path of the directory created, into which the Model files are
-       * being written to.
+       * Output only. If the Model artifact is being exported to Google Cloud
+       * Storage this is the full path of the directory created, into which the
+       * Model files are being written to.
        * </pre>
        *
        * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -745,9 +747,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model artifact is being exported to Google Cloud Storage this is
-       * the full path of the directory created, into which the Model files are
-       * being written to.
+       * Output only. If the Model artifact is being exported to Google Cloud
+       * Storage this is the full path of the directory created, into which the
+       * Model files are being written to.
        * </pre>
        *
        * <code>string artifact_output_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -771,8 +773,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model image is being exported to Google Container Registry or
-       * Artifact Registry this is the full path of the image created.
+       * Output only. If the Model image is being exported to Google Container
+       * Registry or Artifact Registry this is the full path of the image created.
        * </pre>
        *
        * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -794,8 +796,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model image is being exported to Google Container Registry or
-       * Artifact Registry this is the full path of the image created.
+       * Output only. If the Model image is being exported to Google Container
+       * Registry or Artifact Registry this is the full path of the image created.
        * </pre>
        *
        * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -817,8 +819,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model image is being exported to Google Container Registry or
-       * Artifact Registry this is the full path of the image created.
+       * Output only. If the Model image is being exported to Google Container
+       * Registry or Artifact Registry this is the full path of the image created.
        * </pre>
        *
        * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -839,8 +841,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model image is being exported to Google Container Registry or
-       * Artifact Registry this is the full path of the image created.
+       * Output only. If the Model image is being exported to Google Container
+       * Registry or Artifact Registry this is the full path of the image created.
        * </pre>
        *
        * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -857,8 +859,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Output only. If the Model image is being exported to Google Container Registry or
-       * Artifact Registry this is the full path of the image created.
+       * Output only. If the Model image is being exported to Google Container
+       * Registry or Artifact Registry this is the full path of the image created.
        * </pre>
        *
        * <code>string image_output_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1000,7 +1002,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Information further describing the output of this Model export.
+   * Output only. Information further describing the output of this Model
+   * export.
    * </pre>
    *
    * <code>
@@ -1017,7 +1020,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Information further describing the output of this Model export.
+   * Output only. Information further describing the output of this Model
+   * export.
    * </pre>
    *
    * <code>
@@ -1037,7 +1041,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. Information further describing the output of this Model export.
+   * Output only. Information further describing the output of this Model
+   * export.
    * </pre>
    *
    * <code>
@@ -1233,7 +1238,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Details of [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel] operation.
+   * Details of
+   * [ModelService.ExportModel][google.cloud.aiplatform.v1.ModelService.ExportModel]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ExportModelOperationMetadata}
@@ -1627,7 +1634,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1643,7 +1651,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1666,7 +1675,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1691,7 +1701,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1714,7 +1725,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1744,7 +1756,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1766,7 +1779,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1783,7 +1797,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>
@@ -1805,7 +1820,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. Information further describing the output of this Model export.
+     * Output only. Information further describing the output of this Model
+     * export.
      * </pre>
      *
      * <code>

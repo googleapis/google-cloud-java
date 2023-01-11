@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
+ * Response message for
+ * [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
  * Contains a tabular representation of the report results.
  * </pre>
  *
@@ -199,8 +200,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-   * the next page of results.
+   * Pass this token to
+   * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -223,8 +225,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-   * the next page of results.
+   * Pass this token to
+   * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+   * to retrieve the next page of results.
    * </pre>
    *
    * <code>string next_page_token = 3;</code>
@@ -433,7 +436,8 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Response message for [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
+   * Response message for
+   * [CloudChannelReportsService.FetchReportResults][google.cloud.channel.v1.CloudChannelReportsService.FetchReportResults].
    * Contains a tabular representation of the report results.
    * </pre>
    *
@@ -1242,8 +1246,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1265,8 +1270,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1288,8 +1294,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1310,8 +1317,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>
@@ -1328,8 +1336,9 @@ public final class FetchReportResultsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Pass this token to [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token] to retrieve
-     * the next page of results.
+     * Pass this token to
+     * [FetchReportResultsRequest.page_token][google.cloud.channel.v1.FetchReportResultsRequest.page_token]
+     * to retrieve the next page of results.
      * </pre>
      *
      * <code>string next_page_token = 3;</code>

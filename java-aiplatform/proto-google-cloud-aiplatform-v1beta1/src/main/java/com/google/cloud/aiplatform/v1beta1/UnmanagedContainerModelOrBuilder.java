@@ -89,8 +89,8 @@ public interface UnmanagedContainerModelOrBuilder
    *
    *
    * <pre>
-   * Input only. The specification of the container that is to be used when deploying
-   * this Model.
+   * Input only. The specification of the container that is to be used when
+   * deploying this Model.
    * </pre>
    *
    * <code>
@@ -104,8 +104,8 @@ public interface UnmanagedContainerModelOrBuilder
    *
    *
    * <pre>
-   * Input only. The specification of the container that is to be used when deploying
-   * this Model.
+   * Input only. The specification of the container that is to be used when
+   * deploying this Model.
    * </pre>
    *
    * <code>
@@ -119,8 +119,8 @@ public interface UnmanagedContainerModelOrBuilder
    *
    *
    * <pre>
-   * Input only. The specification of the container that is to be used when deploying
-   * this Model.
+   * Input only. The specification of the container that is to be used when
+   * deploying this Model.
    * </pre>
    *
    * <code>

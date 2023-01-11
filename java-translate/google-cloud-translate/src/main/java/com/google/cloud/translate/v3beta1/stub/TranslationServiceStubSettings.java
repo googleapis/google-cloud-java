@@ -108,7 +108,10 @@ import org.threeten.bp.Duration;
  * translationServiceSettingsBuilder
  *     .translateTextSettings()
  *     .setRetrySettings(
- *         translationServiceSettingsBuilder.translateTextSettings().getRetrySettings().toBuilder()
+ *         translationServiceSettingsBuilder
+ *             .translateTextSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TranslationServiceStubSettings translationServiceSettings =

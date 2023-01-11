@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataplex</artifactId>
-  <version>1.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
+  <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Dataplex</name>
   <description>Cloud Dataplex provides intelligent data fabric that enables organizations to centrally manage, monitor, and govern their data across data lakes, data warehouses, and data marts with consistent controls, providing access to trusted data and powering analytics at scale.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataplex-parent</artifactId>
-    <version>1.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
+    <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataplex:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataplex</site.installationModule>

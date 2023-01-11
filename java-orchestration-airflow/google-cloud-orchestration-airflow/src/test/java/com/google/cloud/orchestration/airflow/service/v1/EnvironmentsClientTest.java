@@ -325,4 +325,125 @@ public class EnvironmentsClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void saveSnapshotTest() throws Exception {
+    SaveSnapshotResponse expectedResponse =
+        SaveSnapshotResponse.newBuilder().setSnapshotPath("snapshotPath-931648503").build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("saveSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEnvironments.addResponse(resultOperation);
+
+    SaveSnapshotRequest request =
+        SaveSnapshotRequest.newBuilder()
+            .setEnvironment("environment-85904877")
+            .setSnapshotLocation("snapshotLocation1625609625")
+            .build();
+
+    SaveSnapshotResponse actualResponse = client.saveSnapshotAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SaveSnapshotRequest actualRequest = ((SaveSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getSnapshotLocation(), actualRequest.getSnapshotLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void saveSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      SaveSnapshotRequest request =
+          SaveSnapshotRequest.newBuilder()
+              .setEnvironment("environment-85904877")
+              .setSnapshotLocation("snapshotLocation1625609625")
+              .build();
+      client.saveSnapshotAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void loadSnapshotTest() throws Exception {
+    LoadSnapshotResponse expectedResponse = LoadSnapshotResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("loadSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEnvironments.addResponse(resultOperation);
+
+    LoadSnapshotRequest request =
+        LoadSnapshotRequest.newBuilder()
+            .setEnvironment("environment-85904877")
+            .setSnapshotPath("snapshotPath-931648503")
+            .setSkipPypiPackagesInstallation(true)
+            .setSkipEnvironmentVariablesSetting(true)
+            .setSkipAirflowOverridesSetting(true)
+            .setSkipGcsDataCopying(true)
+            .build();
+
+    LoadSnapshotResponse actualResponse = client.loadSnapshotAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEnvironments.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LoadSnapshotRequest actualRequest = ((LoadSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
+    Assert.assertEquals(request.getSnapshotPath(), actualRequest.getSnapshotPath());
+    Assert.assertEquals(
+        request.getSkipPypiPackagesInstallation(), actualRequest.getSkipPypiPackagesInstallation());
+    Assert.assertEquals(
+        request.getSkipEnvironmentVariablesSetting(),
+        actualRequest.getSkipEnvironmentVariablesSetting());
+    Assert.assertEquals(
+        request.getSkipAirflowOverridesSetting(), actualRequest.getSkipAirflowOverridesSetting());
+    Assert.assertEquals(request.getSkipGcsDataCopying(), actualRequest.getSkipGcsDataCopying());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void loadSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEnvironments.addException(exception);
+
+    try {
+      LoadSnapshotRequest request =
+          LoadSnapshotRequest.newBuilder()
+              .setEnvironment("environment-85904877")
+              .setSnapshotPath("snapshotPath-931648503")
+              .setSkipPypiPackagesInstallation(true)
+              .setSkipEnvironmentVariablesSetting(true)
+              .setSkipAirflowOverridesSetting(true)
+              .setSkipGcsDataCopying(true)
+              .build();
+      client.loadSnapshotAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
 }

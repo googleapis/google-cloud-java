@@ -75,7 +75,10 @@ import org.threeten.bp.Duration;
  * errorGroupServiceSettingsBuilder
  *     .getGroupSettings()
  *     .setRetrySettings(
- *         errorGroupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
+ *         errorGroupServiceSettingsBuilder
+ *             .getGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ErrorGroupServiceStubSettings errorGroupServiceSettings =

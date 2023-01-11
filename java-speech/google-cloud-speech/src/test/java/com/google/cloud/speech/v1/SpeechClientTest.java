@@ -91,6 +91,8 @@ public class SpeechClientTest {
         RecognizeResponse.newBuilder()
             .addAllResults(new ArrayList<SpeechRecognitionResult>())
             .setTotalBilledTime(Duration.newBuilder().build())
+            .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
+            .setRequestId(37109963)
             .build();
     mockSpeech.addResponse(expectedResponse);
 
@@ -135,6 +137,8 @@ public class SpeechClientTest {
             .setTotalBilledTime(Duration.newBuilder().build())
             .setOutputConfig(TranscriptOutputConfig.newBuilder().build())
             .setOutputError(Status.newBuilder().build())
+            .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
+            .setRequestId(37109963)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -188,6 +192,8 @@ public class SpeechClientTest {
             .setError(Status.newBuilder().build())
             .addAllResults(new ArrayList<StreamingRecognitionResult>())
             .setTotalBilledTime(Duration.newBuilder().build())
+            .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
+            .setRequestId(37109963)
             .build();
     mockSpeech.addResponse(expectedResponse);
     StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();

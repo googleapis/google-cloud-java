@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [IndexService.ListIndexes][google.cloud.aiplatform.v1beta1.IndexService.ListIndexes].
+ * Response message for
+ * [IndexService.ListIndexes][google.cloud.aiplatform.v1beta1.IndexService.ListIndexes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListIndexesResponse}
@@ -144,7 +145,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,7 +171,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -363,7 +368,8 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [IndexService.ListIndexes][google.cloud.aiplatform.v1beta1.IndexService.ListIndexes].
+   * Response message for
+   * [IndexService.ListIndexes][google.cloud.aiplatform.v1beta1.IndexService.ListIndexes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListIndexesResponse}
@@ -944,7 +950,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -967,7 +975,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -990,7 +1000,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1012,7 +1024,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1030,7 +1044,9 @@ public final class ListIndexesResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve next page of results.
-     * Pass to [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListIndexesRequest.page_token][google.cloud.aiplatform.v1beta1.ListIndexesRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

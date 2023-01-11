@@ -64,8 +64,8 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The set of values representing the partition, which correspond to the
-   * partition schema defined in the parent entity.
+   * Required. Immutable. The set of values representing the partition, which
+   * correspond to the partition schema defined in the parent entity.
    * </pre>
    *
    * <code>
@@ -79,8 +79,8 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The set of values representing the partition, which correspond to the
-   * partition schema defined in the parent entity.
+   * Required. Immutable. The set of values representing the partition, which
+   * correspond to the partition schema defined in the parent entity.
    * </pre>
    *
    * <code>
@@ -94,8 +94,8 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The set of values representing the partition, which correspond to the
-   * partition schema defined in the parent entity.
+   * Required. Immutable. The set of values representing the partition, which
+   * correspond to the partition schema defined in the parent entity.
    * </pre>
    *
    * <code>
@@ -110,8 +110,8 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The set of values representing the partition, which correspond to the
-   * partition schema defined in the parent entity.
+   * Required. Immutable. The set of values representing the partition, which
+   * correspond to the partition schema defined in the parent entity.
    * </pre>
    *
    * <code>
@@ -127,9 +127,9 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The location of the entity data within the partition, for example,
-   * `gs://bucket/path/to/entity/key1=value1/key2=value2`.
-   * Or `projects/&lt;project_id&gt;/datasets/&lt;dataset_id&gt;/tables/&lt;table_id&gt;`
+   * Required. Immutable. The location of the entity data within the partition,
+   * for example, `gs://bucket/path/to/entity/key1=value1/key2=value2`. Or
+   * `projects/&lt;project_id&gt;/datasets/&lt;dataset_id&gt;/tables/&lt;table_id&gt;`
    * </pre>
    *
    * <code>
@@ -143,9 +143,9 @@ public interface PartitionOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The location of the entity data within the partition, for example,
-   * `gs://bucket/path/to/entity/key1=value1/key2=value2`.
-   * Or `projects/&lt;project_id&gt;/datasets/&lt;dataset_id&gt;/tables/&lt;table_id&gt;`
+   * Required. Immutable. The location of the entity data within the partition,
+   * for example, `gs://bucket/path/to/entity/key1=value1/key2=value2`. Or
+   * `projects/&lt;project_id&gt;/datasets/&lt;dataset_id&gt;/tables/&lt;table_id&gt;`
    * </pre>
    *
    * <code>
@@ -166,7 +166,7 @@ public interface PartitionOrBuilder
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=515
+   *     google/cloud/dataplex/v1/metadata.proto;l=506
    * @return The etag.
    */
   @java.lang.Deprecated
@@ -181,7 +181,7 @@ public interface PartitionOrBuilder
    * <code>string etag = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.dataplex.v1.Partition.etag is deprecated. See
-   *     google/cloud/dataplex/v1/metadata.proto;l=515
+   *     google/cloud/dataplex/v1/metadata.proto;l=506
    * @return The bytes for etag.
    */
   @java.lang.Deprecated

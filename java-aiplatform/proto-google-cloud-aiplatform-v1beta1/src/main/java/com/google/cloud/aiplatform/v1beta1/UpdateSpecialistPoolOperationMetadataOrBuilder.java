@@ -27,8 +27,8 @@ public interface UpdateSpecialistPoolOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the SpecialistPool to which the specialists are being added.
-   * Format:
+   * Output only. The name of the SpecialistPool to which the specialists are
+   * being added. Format:
    * `projects/{project_id}/locations/{location_id}/specialistPools/{specialist_pool}`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface UpdateSpecialistPoolOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the SpecialistPool to which the specialists are being added.
-   * Format:
+   * Output only. The name of the SpecialistPool to which the specialists are
+   * being added. Format:
    * `projects/{project_id}/locations/{location_id}/specialistPools/{specialist_pool}`
    * </pre>
    *

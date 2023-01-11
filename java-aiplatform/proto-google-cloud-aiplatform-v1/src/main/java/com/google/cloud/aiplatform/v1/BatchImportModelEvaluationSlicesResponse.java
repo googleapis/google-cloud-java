@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
+ * Response message for
+ * [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse}
@@ -75,7 +76,8 @@ public final class BatchImportModelEvaluationSlicesResponse
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -91,7 +93,8 @@ public final class BatchImportModelEvaluationSlicesResponse
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -107,7 +110,8 @@ public final class BatchImportModelEvaluationSlicesResponse
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -124,7 +128,8 @@ public final class BatchImportModelEvaluationSlicesResponse
    *
    *
    * <pre>
-   * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+   * Output only. List of imported
+   * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
    * </pre>
    *
    * <code>
@@ -312,7 +317,8 @@ public final class BatchImportModelEvaluationSlicesResponse
    *
    *
    * <pre>
-   * Response message for [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
+   * Response message for
+   * [ModelService.BatchImportModelEvaluationSlices][google.cloud.aiplatform.v1.ModelService.BatchImportModelEvaluationSlices]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse}
@@ -516,7 +522,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -532,7 +539,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -548,7 +556,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -565,7 +574,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -582,7 +592,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -606,7 +617,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -629,7 +641,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -651,7 +664,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>
@@ -670,7 +684,8 @@ public final class BatchImportModelEvaluationSlicesResponse
      *
      *
      * <pre>
-     * Output only. List of imported [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
+     * Output only. List of imported
+     * [ModelEvaluationSlice.name][google.cloud.aiplatform.v1.ModelEvaluationSlice.name].
      * </pre>
      *
      * <code>

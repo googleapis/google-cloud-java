@@ -74,7 +74,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resources in the specified `AzureCluster`.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -87,7 +88,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resources in the specified `AzureCluster`.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -101,7 +103,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resources in the specified `AzureCluster`.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -114,7 +117,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resources in the specified `AzureCluster`.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -127,7 +131,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+   * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+   * resources in the specified `AzureCluster`.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -615,7 +620,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -631,7 +637,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -647,7 +654,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -663,7 +671,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -686,7 +695,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -706,7 +716,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -728,7 +739,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -751,7 +763,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -771,7 +784,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -791,7 +805,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -811,7 +826,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -830,7 +846,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -849,7 +866,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -862,7 +880,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -879,7 +898,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -896,7 +916,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -909,7 +930,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>
@@ -923,7 +945,8 @@ public final class ListAzureNodePoolsResponse extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resources in the specified `AzureCluster`.
+     * A list of [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]
+     * resources in the specified `AzureCluster`.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureNodePool azure_node_pools = 1;</code>

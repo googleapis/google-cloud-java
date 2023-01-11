@@ -266,8 +266,8 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -281,8 +281,8 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -296,8 +296,8 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>
@@ -312,8 +312,8 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Output only. A list of resource names of Contexts that are parents of this Context.
-   * A Context may have at most 10 parent_contexts.
+   * Output only. A list of resource names of Contexts that are parents of this
+   * Context. A Context may have at most 10 parent_contexts.
    * </pre>
    *
    * <code>

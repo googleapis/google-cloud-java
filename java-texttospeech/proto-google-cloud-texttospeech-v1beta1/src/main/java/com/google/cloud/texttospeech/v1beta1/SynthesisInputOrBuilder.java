@@ -66,7 +66,7 @@ public interface SynthesisInputOrBuilder
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
-   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For more information, see
    * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface SynthesisInputOrBuilder
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
-   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For more information, see
    * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
    * </pre>
    *
@@ -96,7 +96,7 @@ public interface SynthesisInputOrBuilder
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
-   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For more information, see
    * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
    * </pre>
    *

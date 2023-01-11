@@ -95,7 +95,10 @@ import org.threeten.bp.Duration;
  * targetVpnGatewaysSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetVpnGatewaysSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetVpnGatewaysSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetVpnGatewaysStubSettings targetVpnGatewaysSettings =

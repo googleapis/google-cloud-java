@@ -41,6 +41,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     configBucket_ = "";
     tempBucket_ = "";
     initializationActions_ = java.util.Collections.emptyList();
+    auxiliaryNodeGroups_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -144,15 +145,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-   * such as Spark and MapReduce history files.
-   * If you do not specify a temp bucket,
-   * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's temp bucket according to the
-   * Compute Engine zone where your cluster is deployed, and then create
-   * and manage this project-level, per-location bucket. The default bucket has
-   * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-   * bucket (see
+   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+   * data, such as Spark and MapReduce history files. If you do not specify a
+   * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+   * EU) for your cluster's temp bucket according to the Compute Engine zone
+   * where your cluster is deployed, and then create and manage this
+   * project-level, per-location bucket. The default bucket has a TTL of 90
+   * days, but you can use any TTL (or none) if you specify a bucket (see
    * [Dataproc staging and temp
    * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -179,15 +178,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-   * such as Spark and MapReduce history files.
-   * If you do not specify a temp bucket,
-   * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's temp bucket according to the
-   * Compute Engine zone where your cluster is deployed, and then create
-   * and manage this project-level, per-location bucket. The default bucket has
-   * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-   * bucket (see
+   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+   * data, such as Spark and MapReduce history files. If you do not specify a
+   * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+   * EU) for your cluster's temp bucket according to the Compute Engine zone
+   * where your cluster is deployed, and then create and manage this
+   * project-level, per-location bucket. The default bucket has a TTL of 90
+   * days, but you can use any TTL (or none) if you specify a bucket (see
    * [Dataproc staging and temp
    * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
    * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -1013,6 +1010,87 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     return getDataprocMetricConfig();
   }
 
+  public static final int AUXILIARY_NODE_GROUPS_FIELD_NUMBER = 25;
+  private java.util.List<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup> auxiliaryNodeGroups_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node group settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup>
+      getAuxiliaryNodeGroupsList() {
+    return auxiliaryNodeGroups_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node group settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder>
+      getAuxiliaryNodeGroupsOrBuilderList() {
+    return auxiliaryNodeGroups_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node group settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAuxiliaryNodeGroupsCount() {
+    return auxiliaryNodeGroups_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node group settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AuxiliaryNodeGroup getAuxiliaryNodeGroups(int index) {
+    return auxiliaryNodeGroups_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node group settings.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder getAuxiliaryNodeGroupsOrBuilder(
+      int index) {
+    return auxiliaryNodeGroups_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1072,6 +1150,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (dataprocMetricConfig_ != null) {
       output.writeMessage(23, getDataprocMetricConfig());
     }
+    for (int i = 0; i < auxiliaryNodeGroups_.size(); i++) {
+      output.writeMessage(25, auxiliaryNodeGroups_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1129,6 +1210,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (dataprocMetricConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getDataprocMetricConfig());
+    }
+    for (int i = 0; i < auxiliaryNodeGroups_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(25, auxiliaryNodeGroups_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1197,6 +1282,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasDataprocMetricConfig()) {
       if (!getDataprocMetricConfig().equals(other.getDataprocMetricConfig())) return false;
     }
+    if (!getAuxiliaryNodeGroupsList().equals(other.getAuxiliaryNodeGroupsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1263,6 +1349,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasDataprocMetricConfig()) {
       hash = (37 * hash) + DATAPROC_METRIC_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDataprocMetricConfig().hashCode();
+    }
+    if (getAuxiliaryNodeGroupsCount() > 0) {
+      hash = (37 * hash) + AUXILIARY_NODE_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getAuxiliaryNodeGroupsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1485,6 +1575,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         dataprocMetricConfig_ = null;
         dataprocMetricConfigBuilder_ = null;
       }
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        auxiliaryNodeGroups_ = java.util.Collections.emptyList();
+      } else {
+        auxiliaryNodeGroups_ = null;
+        auxiliaryNodeGroupsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1583,6 +1680,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         result.dataprocMetricConfig_ = dataprocMetricConfig_;
       } else {
         result.dataprocMetricConfig_ = dataprocMetricConfigBuilder_.build();
+      }
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          auxiliaryNodeGroups_ = java.util.Collections.unmodifiableList(auxiliaryNodeGroups_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.auxiliaryNodeGroups_ = auxiliaryNodeGroups_;
+      } else {
+        result.auxiliaryNodeGroups_ = auxiliaryNodeGroupsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1703,6 +1809,33 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDataprocMetricConfig()) {
         mergeDataprocMetricConfig(other.getDataprocMetricConfig());
+      }
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        if (!other.auxiliaryNodeGroups_.isEmpty()) {
+          if (auxiliaryNodeGroups_.isEmpty()) {
+            auxiliaryNodeGroups_ = other.auxiliaryNodeGroups_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureAuxiliaryNodeGroupsIsMutable();
+            auxiliaryNodeGroups_.addAll(other.auxiliaryNodeGroups_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.auxiliaryNodeGroups_.isEmpty()) {
+          if (auxiliaryNodeGroupsBuilder_.isEmpty()) {
+            auxiliaryNodeGroupsBuilder_.dispose();
+            auxiliaryNodeGroupsBuilder_ = null;
+            auxiliaryNodeGroups_ = other.auxiliaryNodeGroups_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            auxiliaryNodeGroupsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAuxiliaryNodeGroupsFieldBuilder()
+                    : null;
+          } else {
+            auxiliaryNodeGroupsBuilder_.addAllMessages(other.auxiliaryNodeGroups_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1833,6 +1966,20 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 186
+            case 202:
+              {
+                com.google.cloud.dataproc.v1.AuxiliaryNodeGroup m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.parser(),
+                        extensionRegistry);
+                if (auxiliaryNodeGroupsBuilder_ == null) {
+                  ensureAuxiliaryNodeGroupsIsMutable();
+                  auxiliaryNodeGroups_.add(m);
+                } else {
+                  auxiliaryNodeGroupsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2013,15 +2160,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket (see
      * [Dataproc staging and temp
      * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -2047,15 +2192,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket (see
      * [Dataproc staging and temp
      * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -2081,15 +2224,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket (see
      * [Dataproc staging and temp
      * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -2114,15 +2255,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket (see
      * [Dataproc staging and temp
      * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -2143,15 +2282,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
+     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs
+     * data, such as Spark and MapReduce history files. If you do not specify a
+     * temp bucket, Dataproc will determine a Cloud Storage location (US, ASIA, or
+     * EU) for your cluster's temp bucket according to the Compute Engine zone
+     * where your cluster is deployed, and then create and manage this
+     * project-level, per-location bucket. The default bucket has a TTL of 90
+     * days, but you can use any TTL (or none) if you specify a bucket (see
      * [Dataproc staging and temp
      * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
      * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
@@ -5273,6 +5410,403 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
         dataprocMetricConfig_ = null;
       }
       return dataprocMetricConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup> auxiliaryNodeGroups_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAuxiliaryNodeGroupsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        auxiliaryNodeGroups_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup>(
+                auxiliaryNodeGroups_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1.AuxiliaryNodeGroup,
+            com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder,
+            com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder>
+        auxiliaryNodeGroupsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup>
+        getAuxiliaryNodeGroupsList() {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(auxiliaryNodeGroups_);
+      } else {
+        return auxiliaryNodeGroupsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAuxiliaryNodeGroupsCount() {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        return auxiliaryNodeGroups_.size();
+      } else {
+        return auxiliaryNodeGroupsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuxiliaryNodeGroup getAuxiliaryNodeGroups(int index) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        return auxiliaryNodeGroups_.get(index);
+      } else {
+        return auxiliaryNodeGroupsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAuxiliaryNodeGroups(
+        int index, com.google.cloud.dataproc.v1.AuxiliaryNodeGroup value) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.set(index, value);
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAuxiliaryNodeGroups(
+        int index, com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder builderForValue) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAuxiliaryNodeGroups(com.google.cloud.dataproc.v1.AuxiliaryNodeGroup value) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.add(value);
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAuxiliaryNodeGroups(
+        int index, com.google.cloud.dataproc.v1.AuxiliaryNodeGroup value) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.add(index, value);
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAuxiliaryNodeGroups(
+        com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder builderForValue) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.add(builderForValue.build());
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAuxiliaryNodeGroups(
+        int index, com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder builderForValue) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAuxiliaryNodeGroups(
+        java.lang.Iterable<? extends com.google.cloud.dataproc.v1.AuxiliaryNodeGroup> values) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        ensureAuxiliaryNodeGroupsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, auxiliaryNodeGroups_);
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAuxiliaryNodeGroups() {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        auxiliaryNodeGroups_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAuxiliaryNodeGroups(int index) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        ensureAuxiliaryNodeGroupsIsMutable();
+        auxiliaryNodeGroups_.remove(index);
+        onChanged();
+      } else {
+        auxiliaryNodeGroupsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder getAuxiliaryNodeGroupsBuilder(
+        int index) {
+      return getAuxiliaryNodeGroupsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder getAuxiliaryNodeGroupsOrBuilder(
+        int index) {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        return auxiliaryNodeGroups_.get(index);
+      } else {
+        return auxiliaryNodeGroupsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder>
+        getAuxiliaryNodeGroupsOrBuilderList() {
+      if (auxiliaryNodeGroupsBuilder_ != null) {
+        return auxiliaryNodeGroupsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(auxiliaryNodeGroups_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder addAuxiliaryNodeGroupsBuilder() {
+      return getAuxiliaryNodeGroupsFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder addAuxiliaryNodeGroupsBuilder(
+        int index) {
+      return getAuxiliaryNodeGroupsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The node group settings.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.AuxiliaryNodeGroup auxiliary_node_groups = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder>
+        getAuxiliaryNodeGroupsBuilderList() {
+      return getAuxiliaryNodeGroupsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1.AuxiliaryNodeGroup,
+            com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder,
+            com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder>
+        getAuxiliaryNodeGroupsFieldBuilder() {
+      if (auxiliaryNodeGroupsBuilder_ == null) {
+        auxiliaryNodeGroupsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1.AuxiliaryNodeGroup,
+                com.google.cloud.dataproc.v1.AuxiliaryNodeGroup.Builder,
+                com.google.cloud.dataproc.v1.AuxiliaryNodeGroupOrBuilder>(
+                auxiliaryNodeGroups_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        auxiliaryNodeGroups_ = null;
+      }
+      return auxiliaryNodeGroupsBuilder_;
     }
 
     @java.lang.Override

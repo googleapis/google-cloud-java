@@ -94,6 +94,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -132,6 +133,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSessionEntityTypeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -170,13 +172,14 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSessionEntityTypeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "sessionEntityType", request.getSessionEntityType(), false))
+                                      "sessionEntityType", request.getSessionEntityType(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SessionEntityType>newBuilder()
@@ -216,13 +219,14 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                             ProtoRestSerializer<UpdateSessionEntityTypeRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "sessionEntityType", request.getSessionEntityType(), false))
+                                      "sessionEntityType", request.getSessionEntityType(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SessionEntityType>newBuilder()
@@ -258,6 +262,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSessionEntityTypeRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -291,6 +296,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -324,6 +330,7 @@ public class HttpJsonSessionEntityTypesStub extends SessionEntityTypesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

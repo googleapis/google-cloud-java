@@ -116,7 +116,10 @@ import org.threeten.bp.Duration;
  * cloudBuildSettingsBuilder
  *     .getBuildSettings()
  *     .setRetrySettings(
- *         cloudBuildSettingsBuilder.getBuildSettings().getRetrySettings().toBuilder()
+ *         cloudBuildSettingsBuilder
+ *             .getBuildSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudBuildStubSettings cloudBuildSettings = cloudBuildSettingsBuilder.build();

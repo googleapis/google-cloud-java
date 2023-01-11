@@ -5220,6 +5220,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
@@ -5256,6 +5257,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
@@ -5291,6 +5293,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
@@ -5367,6 +5370,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SuspendInstanceRequest request =
    *       SuspendInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
@@ -5405,6 +5409,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SuspendInstanceRequest request =
    *       SuspendInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
@@ -5442,6 +5447,7 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SuspendInstanceRequest request =
    *       SuspendInstanceRequest.newBuilder()
+   *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")

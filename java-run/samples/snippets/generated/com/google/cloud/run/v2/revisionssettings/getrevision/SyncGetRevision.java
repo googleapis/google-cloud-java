@@ -36,7 +36,10 @@ public class SyncGetRevision {
     revisionsSettingsBuilder
         .getRevisionSettings()
         .setRetrySettings(
-            revisionsSettingsBuilder.getRevisionSettings().getRetrySettings().toBuilder()
+            revisionsSettingsBuilder
+                .getRevisionSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     RevisionsSettings revisionsSettings = revisionsSettingsBuilder.build();

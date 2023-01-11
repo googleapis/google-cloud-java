@@ -60,9 +60,9 @@ public interface ListEntitlementsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested page size. Server might return fewer results than requested.
-   * If unspecified, return at most 50 entitlements.
-   * The maximum value is 100; the server will coerce values above 100.
+   * Optional. Requested page size. Server might return fewer results than
+   * requested. If unspecified, return at most 50 entitlements. The maximum
+   * value is 100; the server will coerce values above 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,8 +77,10 @@ public interface ListEntitlementsRequestOrBuilder
    * <pre>
    * Optional. A token for a page of results other than the first page.
    * Obtained using
-   * [ListEntitlementsResponse.next_page_token][google.cloud.channel.v1.ListEntitlementsResponse.next_page_token] of the previous
-   * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements] call.
+   * [ListEntitlementsResponse.next_page_token][google.cloud.channel.v1.ListEntitlementsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -92,8 +94,10 @@ public interface ListEntitlementsRequestOrBuilder
    * <pre>
    * Optional. A token for a page of results other than the first page.
    * Obtained using
-   * [ListEntitlementsResponse.next_page_token][google.cloud.channel.v1.ListEntitlementsResponse.next_page_token] of the previous
-   * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements] call.
+   * [ListEntitlementsResponse.next_page_token][google.cloud.channel.v1.ListEntitlementsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

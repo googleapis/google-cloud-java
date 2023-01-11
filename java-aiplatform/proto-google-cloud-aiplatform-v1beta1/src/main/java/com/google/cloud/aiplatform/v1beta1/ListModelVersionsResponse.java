@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions]
+ * Response message for
+ * [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListModelVersionsResponse}
@@ -154,7 +155,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -178,7 +181,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -373,7 +378,8 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Response message for [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions]
+   * Response message for
+   * [ModelService.ListModelVersions][google.cloud.aiplatform.v1beta1.ModelService.ListModelVersions]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListModelVersionsResponse}
@@ -992,7 +998,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1015,7 +1023,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1038,7 +1048,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1060,7 +1072,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1078,7 +1092,9 @@ public final class ListModelVersionsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListModelVersionsRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelVersionsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

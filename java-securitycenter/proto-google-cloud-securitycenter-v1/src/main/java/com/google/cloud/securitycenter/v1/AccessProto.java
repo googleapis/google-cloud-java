@@ -49,7 +49,7 @@ public final class AccessProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/securitycenter/v1/access."
-          + "proto\022\036google.cloud.securitycenter.v1\"\342\002"
+          + "proto\022\036google.cloud.securitycenter.v1\"\365\002"
           + "\n\006Access\022\027\n\017principal_email\030\001 \001(\t\022\021\n\tcal"
           + "ler_ip\030\002 \001(\t\022B\n\rcaller_ip_geo\030\003 \001(\0132+.go"
           + "ogle.cloud.securitycenter.v1.Geolocation"
@@ -58,16 +58,17 @@ public final class AccessProto {
           + "pal_subject\030\007 \001(\t\022 \n\030service_account_key"
           + "_name\030\010 \001(\t\022e\n\037service_account_delegatio"
           + "n_info\030\t \003(\0132<.google.cloud.securitycent"
-          + "er.v1.ServiceAccountDelegationInfo\"R\n\034Se"
-          + "rviceAccountDelegationInfo\022\027\n\017principal_"
-          + "email\030\001 \001(\t\022\031\n\021principal_subject\030\002 \001(\t\"\""
-          + "\n\013Geolocation\022\023\n\013region_code\030\001 \001(\tB\347\001\n\"c"
-          + "om.google.cloud.securitycenter.v1B\013Acces"
-          + "sProtoP\001ZLgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/securitycenter/v1;security"
-          + "center\252\002\036Google.Cloud.SecurityCenter.V1\312"
-          + "\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Googl"
-          + "e::Cloud::SecurityCenter::V1b\006proto3"
+          + "er.v1.ServiceAccountDelegationInfo\022\021\n\tus"
+          + "er_name\030\013 \001(\t\"R\n\034ServiceAccountDelegatio"
+          + "nInfo\022\027\n\017principal_email\030\001 \001(\t\022\031\n\021princi"
+          + "pal_subject\030\002 \001(\t\"\"\n\013Geolocation\022\023\n\013regi"
+          + "on_code\030\001 \001(\tB\347\001\n\"com.google.cloud.secur"
+          + "itycenter.v1B\013AccessProtoP\001ZLgoogle.gola"
+          + "ng.org/genproto/googleapis/cloud/securit"
+          + "ycenter/v1;securitycenter\252\002\036Google.Cloud"
+          + ".SecurityCenter.V1\312\002\036Google\\Cloud\\Securi"
+          + "tyCenter\\V1\352\002!Google::Cloud::SecurityCen"
+          + "ter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -87,6 +88,7 @@ public final class AccessProto {
               "PrincipalSubject",
               "ServiceAccountKeyName",
               "ServiceAccountDelegationInfo",
+              "UserName",
             });
     internal_static_google_cloud_securitycenter_v1_ServiceAccountDelegationInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);

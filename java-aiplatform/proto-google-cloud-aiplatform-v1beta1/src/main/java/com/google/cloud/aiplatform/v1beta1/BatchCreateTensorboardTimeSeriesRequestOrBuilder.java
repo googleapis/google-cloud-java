@@ -68,8 +68,8 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -82,8 +82,8 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -95,8 +95,8 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -108,8 +108,8 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>
@@ -123,8 +123,8 @@ public interface BatchCreateTensorboardTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request message specifying the TensorboardTimeSeries to create.
-   * A maximum of 1000 TensorboardTimeSeries can be created in a batch.
+   * Required. The request message specifying the TensorboardTimeSeries to
+   * create. A maximum of 1000 TensorboardTimeSeries can be created in a batch.
    * </pre>
    *
    * <code>

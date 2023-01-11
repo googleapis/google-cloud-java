@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -77,6 +79,18 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   ProtoUtils.marshaller(StreamingReadFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReadFeatureValuesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesMethodDescriptor =
+          MethodDescriptor.<WriteFeatureValuesRequest, WriteFeatureValuesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.FeaturestoreOnlineServingService/WriteFeatureValues")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(WriteFeatureValuesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(WriteFeatureValuesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -130,6 +144,8 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
   private final ServerStreamingCallable<
           StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
       streamingReadFeatureValuesCallable;
+  private final UnaryCallable<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -209,6 +225,17 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+        writeFeatureValuesTransportSettings =
+            GrpcCallSettings.<WriteFeatureValuesRequest, WriteFeatureValuesResponse>newBuilder()
+                .setMethodDescriptor(writeFeatureValuesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("entity_type", String.valueOf(request.getEntityType()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -271,6 +298,11 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
             streamingReadFeatureValuesTransportSettings,
             settings.streamingReadFeatureValuesSettings(),
             clientContext);
+    this.writeFeatureValuesCallable =
+        callableFactory.createUnaryCallable(
+            writeFeatureValuesTransportSettings,
+            settings.writeFeatureValuesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -310,6 +342,12 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
   public ServerStreamingCallable<StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
       streamingReadFeatureValuesCallable() {
     return streamingReadFeatureValuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
+      writeFeatureValuesCallable() {
+    return writeFeatureValuesCallable;
   }
 
   @Override

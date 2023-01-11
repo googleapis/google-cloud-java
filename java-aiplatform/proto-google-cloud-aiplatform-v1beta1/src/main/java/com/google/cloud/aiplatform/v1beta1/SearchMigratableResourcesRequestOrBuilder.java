@@ -27,10 +27,9 @@ public interface SearchMigratableResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The location that the migratable resources should be searched from.
-   * It's the Vertex AI location that the resources can be migrated to, not
-   * the resources' original location.
-   * Format:
+   * Required. The location that the migratable resources should be searched
+   * from. It's the Vertex AI location that the resources can be migrated to,
+   * not the resources' original location. Format:
    * `projects/{project}/locations/{location}`
    * </pre>
    *
@@ -45,10 +44,9 @@ public interface SearchMigratableResourcesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The location that the migratable resources should be searched from.
-   * It's the Vertex AI location that the resources can be migrated to, not
-   * the resources' original location.
-   * Format:
+   * Required. The location that the migratable resources should be searched
+   * from. It's the Vertex AI location that the resources can be migrated to,
+   * not the resources' original location. Format:
    * `projects/{project}/locations/{location}`
    * </pre>
    *
@@ -105,7 +103,8 @@ public interface SearchMigratableResourcesRequestOrBuilder
    * <pre>
    * A filter for your search. You can use the following types of filters:
    * *   Resource type filters. The following strings filter for a specific type
-   *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+   *     of
+   *     [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
    *     *   `ml_engine_model_version:*`
    *     *   `automl_model:*`
    *     *   `automl_dataset:*`
@@ -127,7 +126,8 @@ public interface SearchMigratableResourcesRequestOrBuilder
    * <pre>
    * A filter for your search. You can use the following types of filters:
    * *   Resource type filters. The following strings filter for a specific type
-   *     of [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
+   *     of
+   *     [MigratableResource][google.cloud.aiplatform.v1beta1.MigratableResource]:
    *     *   `ml_engine_model_version:*`
    *     *   `automl_model:*`
    *     *   `automl_dataset:*`

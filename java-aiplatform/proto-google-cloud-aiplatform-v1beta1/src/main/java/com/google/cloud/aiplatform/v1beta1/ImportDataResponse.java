@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
+ * Response message for
+ * [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportDataResponse}
@@ -220,7 +221,8 @@ public final class ImportDataResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Response message for [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
+   * Response message for
+   * [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportDataResponse}

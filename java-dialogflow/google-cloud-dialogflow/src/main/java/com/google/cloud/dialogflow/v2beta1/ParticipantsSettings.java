@@ -69,7 +69,10 @@ import javax.annotation.Generated;
  * participantsSettingsBuilder
  *     .createParticipantSettings()
  *     .setRetrySettings(
- *         participantsSettingsBuilder.createParticipantSettings().getRetrySettings().toBuilder()
+ *         participantsSettingsBuilder
+ *             .createParticipantSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ParticipantsSettings participantsSettings = participantsSettingsBuilder.build();

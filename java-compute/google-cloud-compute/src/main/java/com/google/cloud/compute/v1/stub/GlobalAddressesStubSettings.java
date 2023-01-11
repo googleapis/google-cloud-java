@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * globalAddressesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         globalAddressesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         globalAddressesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GlobalAddressesStubSettings globalAddressesSettings = globalAddressesSettingsBuilder.build();

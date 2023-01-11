@@ -27,7 +27,8 @@ public interface RunReportJobResponseOrBuilder
    *
    *
    * <pre>
-   * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * Pass `report_job.name` to
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
    * to retrieve the report's results.
    * </pre>
    *
@@ -40,7 +41,8 @@ public interface RunReportJobResponseOrBuilder
    *
    *
    * <pre>
-   * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * Pass `report_job.name` to
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
    * to retrieve the report's results.
    * </pre>
    *
@@ -53,7 +55,8 @@ public interface RunReportJobResponseOrBuilder
    *
    *
    * <pre>
-   * Pass `report_job.name` to [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
+   * Pass `report_job.name` to
+   * [FetchReportResultsRequest.report_job][google.cloud.channel.v1.FetchReportResultsRequest.report_job]
    * to retrieve the report's results.
    * </pre>
    *

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob].
+ * Request message for
+ * [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest}
@@ -290,7 +291,8 @@ public final class GetHyperparameterTuningJobRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request message for [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob].
+   * Request message for
+   * [JobService.GetHyperparameterTuningJob][google.cloud.aiplatform.v1beta1.JobService.GetHyperparameterTuningJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest}

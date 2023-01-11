@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for creating a big query export.
+ * Request message for creating a BigQuery export.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.CreateBigQueryExportRequest}
@@ -74,8 +74,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the new big query export's parent. Its format is
-   * "organizations/[organization_id]", "folders/[folder_id]", or
+   * Required. The name of the parent resource of the new BigQuery export. Its
+   * format is "organizations/[organization_id]", "folders/[folder_id]", or
    * "projects/[project_id]".
    * </pre>
    *
@@ -101,8 +101,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. Resource name of the new big query export's parent. Its format is
-   * "organizations/[organization_id]", "folders/[folder_id]", or
+   * Required. The name of the parent resource of the new BigQuery export. Its
+   * format is "organizations/[organization_id]", "folders/[folder_id]", or
    * "projects/[project_id]".
    * </pre>
    *
@@ -131,7 +131,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The big query export being created.
+   * Required. The BigQuery export being created.
    * </pre>
    *
    * <code>
@@ -148,7 +148,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The big query export being created.
+   * Required. The BigQuery export being created.
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The big query export being created.
+   * Required. The BigQuery export being created.
    * </pre>
    *
    * <code>
@@ -421,7 +421,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for creating a big query export.
+   * Request message for creating a BigQuery export.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.CreateBigQueryExportRequest}
@@ -628,8 +628,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the new big query export's parent. Its format is
-     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * Required. The name of the parent resource of the new BigQuery export. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]", or
      * "projects/[project_id]".
      * </pre>
      *
@@ -654,8 +654,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the new big query export's parent. Its format is
-     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * Required. The name of the parent resource of the new BigQuery export. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]", or
      * "projects/[project_id]".
      * </pre>
      *
@@ -680,8 +680,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the new big query export's parent. Its format is
-     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * Required. The name of the parent resource of the new BigQuery export. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]", or
      * "projects/[project_id]".
      * </pre>
      *
@@ -705,8 +705,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the new big query export's parent. Its format is
-     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * Required. The name of the parent resource of the new BigQuery export. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]", or
      * "projects/[project_id]".
      * </pre>
      *
@@ -726,8 +726,8 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. Resource name of the new big query export's parent. Its format is
-     * "organizations/[organization_id]", "folders/[folder_id]", or
+     * Required. The name of the parent resource of the new BigQuery export. Its
+     * format is "organizations/[organization_id]", "folders/[folder_id]", or
      * "projects/[project_id]".
      * </pre>
      *
@@ -759,7 +759,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -775,7 +775,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -797,7 +797,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -821,7 +821,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -843,7 +843,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -871,7 +871,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -893,7 +893,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -909,7 +909,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>
@@ -929,7 +929,7 @@ public final class CreateBigQueryExportRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The big query export being created.
+     * Required. The BigQuery export being created.
      * </pre>
      *
      * <code>

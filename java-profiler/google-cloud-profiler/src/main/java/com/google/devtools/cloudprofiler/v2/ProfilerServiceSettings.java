@@ -60,7 +60,10 @@ import javax.annotation.Generated;
  * profilerServiceSettingsBuilder
  *     .createProfileSettings()
  *     .setRetrySettings(
- *         profilerServiceSettingsBuilder.createProfileSettings().getRetrySettings().toBuilder()
+ *         profilerServiceSettingsBuilder
+ *             .createProfileSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProfilerServiceSettings profilerServiceSettings = profilerServiceSettingsBuilder.build();

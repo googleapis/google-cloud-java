@@ -75,12 +75,13 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<SearchRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearPlacement().build(), false))
+                              .toBody("*", request.toBuilder().clearPlacement().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<SearchResponse>newBuilder()

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Details of operations that perform [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
+ * Details of operations that perform
+ * [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata}
@@ -283,7 +284,8 @@ public final class PurgeArtifactsMetadata extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Details of operations that perform [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
+   * Details of operations that perform
+   * [MetadataService.PurgeArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.PurgeArtifacts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata}

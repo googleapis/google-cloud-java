@@ -319,7 +319,8 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
+   * Output only. Time when the Trial's status changed to `SUCCEEDED` or
+   * `INFEASIBLE`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -332,7 +333,8 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
+   * Output only. Time when the Trial's status changed to `SUCCEEDED` or
+   * `INFEASIBLE`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -345,7 +347,8 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`.
+   * Output only. Time when the Trial's status changed to `SUCCEEDED` or
+   * `INFEASIBLE`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -357,9 +360,9 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
-   * Output only. The identifier of the client that originally requested this Trial.
-   * Each client is identified by a unique client_id. When a client
-   * asks for a suggestion, Vertex AI Vizier will assign it a Trial. The client
+   * Output only. The identifier of the client that originally requested this
+   * Trial. Each client is identified by a unique client_id. When a client asks
+   * for a suggestion, Vertex AI Vizier will assign it a Trial. The client
    * should evaluate the Trial, complete it, and report back to Vertex AI
    * Vizier. If suggestion is asked again by same client_id before the Trial is
    * completed, the same Trial will be returned. Multiple clients with
@@ -376,9 +379,9 @@ public interface TrialOrBuilder
    *
    *
    * <pre>
-   * Output only. The identifier of the client that originally requested this Trial.
-   * Each client is identified by a unique client_id. When a client
-   * asks for a suggestion, Vertex AI Vizier will assign it a Trial. The client
+   * Output only. The identifier of the client that originally requested this
+   * Trial. Each client is identified by a unique client_id. When a client asks
+   * for a suggestion, Vertex AI Vizier will assign it a Trial. The client
    * should evaluate the Trial, complete it, and report back to Vertex AI
    * Vizier. If suggestion is asked again by same client_id before the Trial is
    * completed, the same Trial will be returned. Multiple clients with
@@ -457,9 +460,11 @@ public interface TrialOrBuilder
    * Output only. URIs for accessing [interactive
    * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * (one URI for each training node). Only available if this trial is part of
-   * a [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob] and the job's
-   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access] field
-   * is `true`.
+   * a
+   * [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob]
+   * and the job's
+   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access]
+   * field is `true`.
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
@@ -479,9 +484,11 @@ public interface TrialOrBuilder
    * Output only. URIs for accessing [interactive
    * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * (one URI for each training node). Only available if this trial is part of
-   * a [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob] and the job's
-   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access] field
-   * is `true`.
+   * a
+   * [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob]
+   * and the job's
+   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access]
+   * field is `true`.
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
@@ -504,9 +511,11 @@ public interface TrialOrBuilder
    * Output only. URIs for accessing [interactive
    * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * (one URI for each training node). Only available if this trial is part of
-   * a [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob] and the job's
-   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access] field
-   * is `true`.
+   * a
+   * [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob]
+   * and the job's
+   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access]
+   * field is `true`.
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
@@ -526,9 +535,11 @@ public interface TrialOrBuilder
    * Output only. URIs for accessing [interactive
    * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * (one URI for each training node). Only available if this trial is part of
-   * a [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob] and the job's
-   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access] field
-   * is `true`.
+   * a
+   * [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob]
+   * and the job's
+   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access]
+   * field is `true`.
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the
@@ -553,9 +564,11 @@ public interface TrialOrBuilder
    * Output only. URIs for accessing [interactive
    * shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell)
    * (one URI for each training node). Only available if this trial is part of
-   * a [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob] and the job's
-   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access] field
-   * is `true`.
+   * a
+   * [HyperparameterTuningJob][google.cloud.aiplatform.v1beta1.HyperparameterTuningJob]
+   * and the job's
+   * [trial_job_spec.enable_web_access][google.cloud.aiplatform.v1beta1.CustomJobSpec.enable_web_access]
+   * field is `true`.
    * The keys are names of each node used for the trial; for example,
    * `workerpool0-0` for the primary node, `workerpool1-0` for the first node in
    * the second worker pool, and `workerpool1-1` for the second node in the

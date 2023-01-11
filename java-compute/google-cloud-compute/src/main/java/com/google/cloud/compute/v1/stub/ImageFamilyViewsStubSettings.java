@@ -70,7 +70,10 @@ import org.threeten.bp.Duration;
  * imageFamilyViewsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         imageFamilyViewsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         imageFamilyViewsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImageFamilyViewsStubSettings imageFamilyViewsSettings = imageFamilyViewsSettingsBuilder.build();

@@ -19,6 +19,26 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AttachedClustersClient =======================
+ *
+ * <p>Service Description: The AttachedClusters API provides a single centrally managed service to
+ * register and manage Anthos attached clusters that run on customer's owned infrastructure.
+ *
+ * <p>Sample for AttachedClustersClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AttachedClustersClient attachedClustersClient = AttachedClustersClient.create()) {
+ *   AttachedClusterName name =
+ *       AttachedClusterName.of("[PROJECT]", "[LOCATION]", "[ATTACHED_CLUSTER]");
+ *   AttachedCluster response = attachedClustersClient.getAttachedCluster(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= AwsClustersClient =======================
  *
  * <p>Service Description: The AwsClusters API provides a single centrally managed service to create

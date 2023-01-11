@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [EndpointService.DeleteEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeleteEndpoint].
+ * Request message for
+ * [EndpointService.DeleteEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeleteEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteEndpointRequest}
@@ -288,7 +289,8 @@ public final class DeleteEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [EndpointService.DeleteEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeleteEndpoint].
+   * Request message for
+   * [EndpointService.DeleteEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.DeleteEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteEndpointRequest}

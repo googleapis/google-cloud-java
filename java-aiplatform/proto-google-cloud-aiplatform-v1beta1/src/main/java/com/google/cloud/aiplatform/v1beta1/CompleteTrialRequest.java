@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.CompleteTrial][google.cloud.aiplatform.v1beta1.VizierService.CompleteTrial].
+ * Request message for
+ * [VizierService.CompleteTrial][google.cloud.aiplatform.v1beta1.VizierService.CompleteTrial].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CompleteTrialRequest}
@@ -451,7 +452,8 @@ public final class CompleteTrialRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [VizierService.CompleteTrial][google.cloud.aiplatform.v1beta1.VizierService.CompleteTrial].
+   * Request message for
+   * [VizierService.CompleteTrial][google.cloud.aiplatform.v1beta1.VizierService.CompleteTrial].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CompleteTrialRequest}

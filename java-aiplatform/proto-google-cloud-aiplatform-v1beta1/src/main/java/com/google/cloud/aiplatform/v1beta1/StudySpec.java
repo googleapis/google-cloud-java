@@ -582,8 +582,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the metric. Must not contain whitespaces and must be unique
-     * amongst all MetricSpecs.
+     * Required. The ID of the metric. Must not contain whitespaces and must be
+     * unique amongst all MetricSpecs.
      * </pre>
      *
      * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -595,8 +595,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the metric. Must not contain whitespaces and must be unique
-     * amongst all MetricSpecs.
+     * Required. The ID of the metric. Must not contain whitespaces and must be
+     * unique amongst all MetricSpecs.
      * </pre>
      *
      * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -849,8 +849,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the metric. Must not contain whitespaces and must be unique
-     * amongst all MetricSpecs.
+     * Required. The ID of the metric. Must not contain whitespaces and must be
+     * unique amongst all MetricSpecs.
      * </pre>
      *
      * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -873,8 +873,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the metric. Must not contain whitespaces and must be unique
-     * amongst all MetricSpecs.
+     * Required. The ID of the metric. Must not contain whitespaces and must be
+     * unique amongst all MetricSpecs.
      * </pre>
      *
      * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1301,8 +1301,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the metric. Must not contain whitespaces and must be unique
-       * amongst all MetricSpecs.
+       * Required. The ID of the metric. Must not contain whitespaces and must be
+       * unique amongst all MetricSpecs.
        * </pre>
        *
        * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1324,8 +1324,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the metric. Must not contain whitespaces and must be unique
-       * amongst all MetricSpecs.
+       * Required. The ID of the metric. Must not contain whitespaces and must be
+       * unique amongst all MetricSpecs.
        * </pre>
        *
        * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1347,8 +1347,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the metric. Must not contain whitespaces and must be unique
-       * amongst all MetricSpecs.
+       * Required. The ID of the metric. Must not contain whitespaces and must be
+       * unique amongst all MetricSpecs.
        * </pre>
        *
        * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1369,8 +1369,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the metric. Must not contain whitespaces and must be unique
-       * amongst all MetricSpecs.
+       * Required. The ID of the metric. Must not contain whitespaces and must be
+       * unique amongst all MetricSpecs.
        * </pre>
        *
        * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1387,8 +1387,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the metric. Must not contain whitespaces and must be unique
-       * amongst all MetricSpecs.
+       * Required. The ID of the metric. Must not contain whitespaces and must be
+       * unique amongst all MetricSpecs.
        * </pre>
        *
        * <code>string metric_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1756,8 +1756,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-     * amongst all ParameterSpecs.
+     * Required. The ID of the parameter. Must not contain whitespaces and must
+     * be unique amongst all ParameterSpecs.
      * </pre>
      *
      * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1769,8 +1769,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-     * amongst all ParameterSpecs.
+     * Required. The ID of the parameter. Must not contain whitespaces and must
+     * be unique amongst all ParameterSpecs.
      * </pre>
      *
      * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7789,8 +7789,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7803,8 +7803,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7817,8 +7817,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7832,8 +7832,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7904,8 +7904,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7920,8 +7920,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7936,8 +7936,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -7953,8 +7953,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-         * All values must exist in `categorical_value_spec` of parent
+         * Required. Matches values of the parent parameter of 'CATEGORICAL'
+         * type. All values must exist in `categorical_value_spec` of parent
          * parameter.
          * </pre>
          *
@@ -8396,8 +8396,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8412,8 +8412,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8428,8 +8428,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8445,8 +8445,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8462,8 +8462,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8486,8 +8486,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8509,8 +8509,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8529,8 +8529,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -8548,8 +8548,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
            *
            *
            * <pre>
-           * Required. Matches values of the parent parameter of 'CATEGORICAL' type.
-           * All values must exist in `categorical_value_spec` of parent
+           * Required. Matches values of the parent parameter of 'CATEGORICAL'
+           * type. All values must exist in `categorical_value_spec` of parent
            * parameter.
            * </pre>
            *
@@ -10934,8 +10934,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-     * amongst all ParameterSpecs.
+     * Required. The ID of the parameter. Must not contain whitespaces and must
+     * be unique amongst all ParameterSpecs.
      * </pre>
      *
      * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10958,8 +10958,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-     * amongst all ParameterSpecs.
+     * Required. The ID of the parameter. Must not contain whitespaces and must
+     * be unique amongst all ParameterSpecs.
      * </pre>
      *
      * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12778,8 +12778,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-       * amongst all ParameterSpecs.
+       * Required. The ID of the parameter. Must not contain whitespaces and must
+       * be unique amongst all ParameterSpecs.
        * </pre>
        *
        * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12801,8 +12801,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-       * amongst all ParameterSpecs.
+       * Required. The ID of the parameter. Must not contain whitespaces and must
+       * be unique amongst all ParameterSpecs.
        * </pre>
        *
        * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12824,8 +12824,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-       * amongst all ParameterSpecs.
+       * Required. The ID of the parameter. Must not contain whitespaces and must
+       * be unique amongst all ParameterSpecs.
        * </pre>
        *
        * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12846,8 +12846,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-       * amongst all ParameterSpecs.
+       * Required. The ID of the parameter. Must not contain whitespaces and must
+       * be unique amongst all ParameterSpecs.
        * </pre>
        *
        * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -12864,8 +12864,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The ID of the parameter. Must not contain whitespaces and must be unique
-       * amongst all ParameterSpecs.
+       * Required. The ID of the parameter. Must not contain whitespaces and must
+       * be unique amongst all ParameterSpecs.
        * </pre>
        *
        * <code>string parameter_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -13559,9 +13559,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration] is used as the x-axis of each
-     * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count] will be used
-     * as the x-axis.
+     * True if
+     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]
+     * is used as the x-axis of each Trials Decay Curve. Otherwise,
+     * [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count]
+     * will be used as the x-axis.
      * </pre>
      *
      * <code>bool use_elapsed_duration = 1;</code>
@@ -13630,9 +13632,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration] is used as the x-axis of each
-     * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count] will be used
-     * as the x-axis.
+     * True if
+     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]
+     * is used as the x-axis of each Trials Decay Curve. Otherwise,
+     * [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count]
+     * will be used as the x-axis.
      * </pre>
      *
      * <code>bool use_elapsed_duration = 1;</code>
@@ -14008,9 +14012,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration] is used as the x-axis of each
-       * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count] will be used
-       * as the x-axis.
+       * True if
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]
+       * is used as the x-axis of each Trials Decay Curve. Otherwise,
+       * [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count]
+       * will be used as the x-axis.
        * </pre>
        *
        * <code>bool use_elapsed_duration = 1;</code>
@@ -14025,9 +14031,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration] is used as the x-axis of each
-       * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count] will be used
-       * as the x-axis.
+       * True if
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]
+       * is used as the x-axis of each Trials Decay Curve. Otherwise,
+       * [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count]
+       * will be used as the x-axis.
        * </pre>
        *
        * <code>bool use_elapsed_duration = 1;</code>
@@ -14045,9 +14053,11 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * True if [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration] is used as the x-axis of each
-       * Trials Decay Curve. Otherwise, [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count] will be used
-       * as the x-axis.
+       * True if
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]
+       * is used as the x-axis of each Trials Decay Curve. Otherwise,
+       * [Measurement.step_count][google.cloud.aiplatform.v1beta1.Measurement.step_count]
+       * will be used as the x-axis.
        * </pre>
        *
        * <code>bool use_elapsed_duration = 1;</code>
@@ -14140,9 +14150,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * True if median automated stopping rule applies on
-     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]. It means that elapsed_duration
-     * field of latest measurement of current Trial is used to compute median
-     * objective value for each completed Trials.
+     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration].
+     * It means that elapsed_duration field of latest measurement of current
+     * Trial is used to compute median objective value for each completed
+     * Trials.
      * </pre>
      *
      * <code>bool use_elapsed_duration = 1;</code>
@@ -14211,9 +14222,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * True if median automated stopping rule applies on
-     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]. It means that elapsed_duration
-     * field of latest measurement of current Trial is used to compute median
-     * objective value for each completed Trials.
+     * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration].
+     * It means that elapsed_duration field of latest measurement of current
+     * Trial is used to compute median objective value for each completed
+     * Trials.
      * </pre>
      *
      * <code>bool use_elapsed_duration = 1;</code>
@@ -14586,9 +14598,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * True if median automated stopping rule applies on
-       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]. It means that elapsed_duration
-       * field of latest measurement of current Trial is used to compute median
-       * objective value for each completed Trials.
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration].
+       * It means that elapsed_duration field of latest measurement of current
+       * Trial is used to compute median objective value for each completed
+       * Trials.
        * </pre>
        *
        * <code>bool use_elapsed_duration = 1;</code>
@@ -14604,9 +14617,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * True if median automated stopping rule applies on
-       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]. It means that elapsed_duration
-       * field of latest measurement of current Trial is used to compute median
-       * objective value for each completed Trials.
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration].
+       * It means that elapsed_duration field of latest measurement of current
+       * Trial is used to compute median objective value for each completed
+       * Trials.
        * </pre>
        *
        * <code>bool use_elapsed_duration = 1;</code>
@@ -14625,9 +14639,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * True if median automated stopping rule applies on
-       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration]. It means that elapsed_duration
-       * field of latest measurement of current Trial is used to compute median
-       * objective value for each completed Trials.
+       * [Measurement.elapsed_duration][google.cloud.aiplatform.v1beta1.Measurement.elapsed_duration].
+       * It means that elapsed_duration field of latest measurement of current
+       * Trial is used to compute median objective value for each completed
+       * Trials.
        * </pre>
        *
        * <code>bool use_elapsed_duration = 1;</code>
@@ -14814,6 +14829,43 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * @return The useElapsedDuration.
      */
     boolean getUseElapsedDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+     * to be early stopped using a newly trained auto-regressive model. When
+     * this flag is set to True, all stopped trials from the beginning are
+     * potentially updated in terms of their `final_measurement`. Also, note
+     * that the training logic of autoregressive models is different in this
+     * case. Enabling this option has shown better results and this may be the
+     * default option in the future.
+     * </pre>
+     *
+     * <code>optional bool update_all_stopped_trials = 6;</code>
+     *
+     * @return Whether the updateAllStoppedTrials field is set.
+     */
+    boolean hasUpdateAllStoppedTrials();
+    /**
+     *
+     *
+     * <pre>
+     * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+     * to be early stopped using a newly trained auto-regressive model. When
+     * this flag is set to True, all stopped trials from the beginning are
+     * potentially updated in terms of their `final_measurement`. Also, note
+     * that the training logic of autoregressive models is different in this
+     * case. Enabling this option has shown better results and this may be the
+     * default option in the future.
+     * </pre>
+     *
+     * <code>optional bool update_all_stopped_trials = 6;</code>
+     *
+     * @return The updateAllStoppedTrials.
+     */
+    boolean getUpdateAllStoppedTrials();
   }
   /**
    *
@@ -14875,6 +14927,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
                   .class);
     }
 
+    private int bitField0_;
     public static final int MAX_STEP_COUNT_FIELD_NUMBER = 1;
     private long maxStepCount_;
     /**
@@ -15020,6 +15073,51 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       return useElapsedDuration_;
     }
 
+    public static final int UPDATE_ALL_STOPPED_TRIALS_FIELD_NUMBER = 6;
+    private boolean updateAllStoppedTrials_;
+    /**
+     *
+     *
+     * <pre>
+     * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+     * to be early stopped using a newly trained auto-regressive model. When
+     * this flag is set to True, all stopped trials from the beginning are
+     * potentially updated in terms of their `final_measurement`. Also, note
+     * that the training logic of autoregressive models is different in this
+     * case. Enabling this option has shown better results and this may be the
+     * default option in the future.
+     * </pre>
+     *
+     * <code>optional bool update_all_stopped_trials = 6;</code>
+     *
+     * @return Whether the updateAllStoppedTrials field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateAllStoppedTrials() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+     * to be early stopped using a newly trained auto-regressive model. When
+     * this flag is set to True, all stopped trials from the beginning are
+     * potentially updated in terms of their `final_measurement`. Also, note
+     * that the training logic of autoregressive models is different in this
+     * case. Enabling this option has shown better results and this may be the
+     * default option in the future.
+     * </pre>
+     *
+     * <code>optional bool update_all_stopped_trials = 6;</code>
+     *
+     * @return The updateAllStoppedTrials.
+     */
+    @java.lang.Override
+    public boolean getUpdateAllStoppedTrials() {
+      return updateAllStoppedTrials_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -15049,6 +15147,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         output.writeBool(5, useElapsedDuration_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(6, updateAllStoppedTrials_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -15074,6 +15175,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (useElapsedDuration_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, useElapsedDuration_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, updateAllStoppedTrials_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -15097,6 +15201,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       if (!getLearningRateParameterName().equals(other.getLearningRateParameterName()))
         return false;
       if (getUseElapsedDuration() != other.getUseElapsedDuration()) return false;
+      if (hasUpdateAllStoppedTrials() != other.hasUpdateAllStoppedTrials()) return false;
+      if (hasUpdateAllStoppedTrials()) {
+        if (getUpdateAllStoppedTrials() != other.getUpdateAllStoppedTrials()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -15118,6 +15226,10 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getLearningRateParameterName().hashCode();
       hash = (37 * hash) + USE_ELAPSED_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseElapsedDuration());
+      if (hasUpdateAllStoppedTrials()) {
+        hash = (37 * hash) + UPDATE_ALL_STOPPED_TRIALS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpdateAllStoppedTrials());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -15286,6 +15398,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
         useElapsedDuration_ = false;
 
+        updateAllStoppedTrials_ = false;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -15317,11 +15431,18 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec result =
             new com.google.cloud.aiplatform.v1beta1.StudySpec.ConvexAutomatedStoppingSpec(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.maxStepCount_ = maxStepCount_;
         result.minStepCount_ = minStepCount_;
         result.minMeasurementCount_ = minMeasurementCount_;
         result.learningRateParameterName_ = learningRateParameterName_;
         result.useElapsedDuration_ = useElapsedDuration_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.updateAllStoppedTrials_ = updateAllStoppedTrials_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -15394,6 +15515,9 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         if (other.getUseElapsedDuration() != false) {
           setUseElapsedDuration(other.getUseElapsedDuration());
         }
+        if (other.hasUpdateAllStoppedTrials()) {
+          setUpdateAllStoppedTrials(other.getUpdateAllStoppedTrials());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -15450,6 +15574,12 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
 
                   break;
                 } // case 40
+              case 48:
+                {
+                  updateAllStoppedTrials_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15466,6 +15596,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long maxStepCount_;
       /**
@@ -15846,6 +15978,97 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
       public Builder clearUseElapsedDuration() {
 
         useElapsedDuration_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean updateAllStoppedTrials_;
+      /**
+       *
+       *
+       * <pre>
+       * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+       * to be early stopped using a newly trained auto-regressive model. When
+       * this flag is set to True, all stopped trials from the beginning are
+       * potentially updated in terms of their `final_measurement`. Also, note
+       * that the training logic of autoregressive models is different in this
+       * case. Enabling this option has shown better results and this may be the
+       * default option in the future.
+       * </pre>
+       *
+       * <code>optional bool update_all_stopped_trials = 6;</code>
+       *
+       * @return Whether the updateAllStoppedTrials field is set.
+       */
+      @java.lang.Override
+      public boolean hasUpdateAllStoppedTrials() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+       * to be early stopped using a newly trained auto-regressive model. When
+       * this flag is set to True, all stopped trials from the beginning are
+       * potentially updated in terms of their `final_measurement`. Also, note
+       * that the training logic of autoregressive models is different in this
+       * case. Enabling this option has shown better results and this may be the
+       * default option in the future.
+       * </pre>
+       *
+       * <code>optional bool update_all_stopped_trials = 6;</code>
+       *
+       * @return The updateAllStoppedTrials.
+       */
+      @java.lang.Override
+      public boolean getUpdateAllStoppedTrials() {
+        return updateAllStoppedTrials_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+       * to be early stopped using a newly trained auto-regressive model. When
+       * this flag is set to True, all stopped trials from the beginning are
+       * potentially updated in terms of their `final_measurement`. Also, note
+       * that the training logic of autoregressive models is different in this
+       * case. Enabling this option has shown better results and this may be the
+       * default option in the future.
+       * </pre>
+       *
+       * <code>optional bool update_all_stopped_trials = 6;</code>
+       *
+       * @param value The updateAllStoppedTrials to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUpdateAllStoppedTrials(boolean value) {
+        bitField0_ |= 0x00000001;
+        updateAllStoppedTrials_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ConvexAutomatedStoppingSpec by default only updates the trials that needs
+       * to be early stopped using a newly trained auto-regressive model. When
+       * this flag is set to True, all stopped trials from the beginning are
+       * potentially updated in terms of their `final_measurement`. Also, note
+       * that the training logic of autoregressive models is different in this
+       * case. Enabling this option has shown better results and this may be the
+       * default option in the future.
+       * </pre>
+       *
+       * <code>optional bool update_all_stopped_trials = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUpdateAllStoppedTrials() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        updateAllStoppedTrials_ = false;
         onChanged();
         return this;
       }
@@ -18178,7 +18401,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=588
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Override
@@ -18199,7 +18422,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=588
    * @return The convexStopConfig.
    */
   @java.lang.Override
@@ -19917,7 +20140,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=566
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=588
      * @return Whether the convexStopConfig field is set.
      */
     @java.lang.Override
@@ -19938,7 +20161,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/study.proto;l=566
+     *     google/cloud/aiplatform/v1beta1/study.proto;l=588
      * @return The convexStopConfig.
      */
     @java.lang.Override

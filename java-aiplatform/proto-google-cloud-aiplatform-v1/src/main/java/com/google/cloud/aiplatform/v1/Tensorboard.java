@@ -23,7 +23,7 @@ package com.google.cloud.aiplatform.v1;
  *
  * <pre>
  * Tensorboard is a physical database that stores users' training metrics.
- * A default Tensorboard is provided in each region of a GCP project.
+ * A default Tensorboard is provided in each region of a Google Cloud project.
  * If needed users can also create extra Tensorboards in their projects.
  * </pre>
  *
@@ -295,8 +295,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-   * can either be a bucket or directory. Does not end with a '/'.
+   * Output only. Consumer project Cloud Storage path prefix used to store blob
+   * data, which can either be a bucket or directory. Does not end with a '/'.
    * </pre>
    *
    * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -319,8 +319,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-   * can either be a bucket or directory. Does not end with a '/'.
+   * Output only. Consumer project Cloud Storage path prefix used to store blob
+   * data, which can either be a bucket or directory. Does not end with a '/'.
    * </pre>
    *
    * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -905,7 +905,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Tensorboard is a physical database that stores users' training metrics.
-   * A default Tensorboard is provided in each region of a GCP project.
+   * A default Tensorboard is provided in each region of a Google Cloud project.
    * If needed users can also create extra Tensorboards in their projects.
    * </pre>
    *
@@ -1771,8 +1771,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-     * can either be a bucket or directory. Does not end with a '/'.
+     * Output only. Consumer project Cloud Storage path prefix used to store blob
+     * data, which can either be a bucket or directory. Does not end with a '/'.
      * </pre>
      *
      * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1795,8 +1795,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-     * can either be a bucket or directory. Does not end with a '/'.
+     * Output only. Consumer project Cloud Storage path prefix used to store blob
+     * data, which can either be a bucket or directory. Does not end with a '/'.
      * </pre>
      *
      * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1819,8 +1819,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-     * can either be a bucket or directory. Does not end with a '/'.
+     * Output only. Consumer project Cloud Storage path prefix used to store blob
+     * data, which can either be a bucket or directory. Does not end with a '/'.
      * </pre>
      *
      * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1842,8 +1842,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-     * can either be a bucket or directory. Does not end with a '/'.
+     * Output only. Consumer project Cloud Storage path prefix used to store blob
+     * data, which can either be a bucket or directory. Does not end with a '/'.
      * </pre>
      *
      * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1861,8 +1861,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Consumer project Cloud Storage path prefix used to store blob data, which
-     * can either be a bucket or directory. Does not end with a '/'.
+     * Output only. Consumer project Cloud Storage path prefix used to store blob
+     * data, which can either be a bucket or directory. Does not end with a '/'.
      * </pre>
      *
      * <code>string blob_storage_path_prefix = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];

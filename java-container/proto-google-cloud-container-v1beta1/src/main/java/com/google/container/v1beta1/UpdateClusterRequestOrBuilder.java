@@ -36,7 +36,7 @@ public interface UpdateClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2420
+   *     google/container/v1beta1/cluster_service.proto;l=2494
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2420
+   *     google/container/v1beta1/cluster_service.proto;l=2494
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2429
+   *     google/container/v1beta1/cluster_service.proto;l=2503
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2429
+   *     google/container/v1beta1/cluster_service.proto;l=2503
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2436
+   *     google/container/v1beta1/cluster_service.proto;l=2510
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2436
+   *     google/container/v1beta1/cluster_service.proto;l=2510
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

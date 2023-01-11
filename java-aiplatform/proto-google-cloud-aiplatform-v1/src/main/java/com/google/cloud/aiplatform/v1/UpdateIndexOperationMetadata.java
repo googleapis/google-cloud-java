@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Runtime operation information for [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
+ * Runtime operation information for
+ * [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateIndexOperationMetadata}
@@ -358,7 +359,8 @@ public final class UpdateIndexOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Runtime operation information for [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
+   * Runtime operation information for
+   * [IndexService.UpdateIndex][google.cloud.aiplatform.v1.IndexService.UpdateIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateIndexOperationMetadata}

@@ -73,6 +73,7 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetGroupRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -108,12 +109,13 @@ public class HttpJsonErrorGroupServiceStub extends ErrorGroupServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateGroupRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("group", request.getGroup(), false))
+                                  .toBody("group", request.getGroup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ErrorGroup>newBuilder()

@@ -531,7 +531,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+   * Immutable. Source of the TensorboardExperiment. Example: a custom training
+   * job.
    * </pre>
    *
    * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -554,7 +555,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+   * Immutable. Source of the TensorboardExperiment. Example: a custom training
+   * job.
    * </pre>
    *
    * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2198,7 +2200,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+     * Immutable. Source of the TensorboardExperiment. Example: a custom training
+     * job.
      * </pre>
      *
      * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2220,7 +2223,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+     * Immutable. Source of the TensorboardExperiment. Example: a custom training
+     * job.
      * </pre>
      *
      * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2242,7 +2246,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+     * Immutable. Source of the TensorboardExperiment. Example: a custom training
+     * job.
      * </pre>
      *
      * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2263,7 +2268,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+     * Immutable. Source of the TensorboardExperiment. Example: a custom training
+     * job.
      * </pre>
      *
      * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2280,7 +2286,8 @@ public final class TensorboardExperiment extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Immutable. Source of the TensorboardExperiment. Example: a custom training job.
+     * Immutable. Source of the TensorboardExperiment. Example: a custom training
+     * job.
      * </pre>
      *
      * <code>string source = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>

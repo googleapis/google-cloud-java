@@ -36,7 +36,10 @@ public class SyncGetInsight {
     recommenderSettingsBuilder
         .getInsightSettings()
         .setRetrySettings(
-            recommenderSettingsBuilder.getInsightSettings().getRetrySettings().toBuilder()
+            recommenderSettingsBuilder
+                .getInsightSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();

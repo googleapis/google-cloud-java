@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-phishingprotection-v1beta1</artifactId>
-  <version>0.38.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-phishingprotection-v1beta1:current} -->
+  <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-phishingprotection-v1beta1:current} -->
   <name>proto-google-cloud-phishingprotection-v1beta1</name>
   <description>PROTO library for proto-google-cloud-phishingprotection-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-phishingprotection-parent</artifactId>
-    <version>0.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
+    <version>0.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
   </parent>
   <dependencies>
     <dependency>

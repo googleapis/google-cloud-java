@@ -390,6 +390,53 @@ public final class DatasetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.SearchDataItemsRequest,
+          com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+      getSearchDataItemsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchDataItems",
+      requestType = com.google.cloud.aiplatform.v1.SearchDataItemsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.SearchDataItemsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.SearchDataItemsRequest,
+          com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+      getSearchDataItemsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.SearchDataItemsRequest,
+            com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+        getSearchDataItemsMethod;
+    if ((getSearchDataItemsMethod = DatasetServiceGrpc.getSearchDataItemsMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getSearchDataItemsMethod = DatasetServiceGrpc.getSearchDataItemsMethod) == null) {
+          DatasetServiceGrpc.getSearchDataItemsMethod =
+              getSearchDataItemsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.SearchDataItemsRequest,
+                          com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchDataItems"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.SearchDataItemsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.SearchDataItemsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("SearchDataItems"))
+                      .build();
+        }
+      }
+    }
+    return getSearchDataItemsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
           com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
       getListSavedQueriesMethod;
@@ -695,6 +742,21 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Searches DataItems in a Dataset.
+     * </pre>
+     */
+    public void searchDataItems(
+        com.google.cloud.aiplatform.v1.SearchDataItemsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchDataItemsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists SavedQueries in a Dataset.
      * </pre>
      */
@@ -789,6 +851,13 @@ public final class DatasetServiceGrpc {
                       com.google.cloud.aiplatform.v1.ListDataItemsRequest,
                       com.google.cloud.aiplatform.v1.ListDataItemsResponse>(
                       this, METHODID_LIST_DATA_ITEMS)))
+          .addMethod(
+              getSearchDataItemsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.SearchDataItemsRequest,
+                      com.google.cloud.aiplatform.v1.SearchDataItemsResponse>(
+                      this, METHODID_SEARCH_DATA_ITEMS)))
           .addMethod(
               getListSavedQueriesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -953,6 +1022,23 @@ public final class DatasetServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDataItemsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches DataItems in a Dataset.
+     * </pre>
+     */
+    public void searchDataItems(
+        com.google.cloud.aiplatform.v1.SearchDataItemsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchDataItemsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1137,6 +1223,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Searches DataItems in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.SearchDataItemsResponse searchDataItems(
+        com.google.cloud.aiplatform.v1.SearchDataItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchDataItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists SavedQueries in a Dataset.
      * </pre>
      */
@@ -1305,6 +1404,20 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Searches DataItems in a Dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.SearchDataItemsResponse>
+        searchDataItems(com.google.cloud.aiplatform.v1.SearchDataItemsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchDataItemsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists SavedQueries in a Dataset.
      * </pre>
      */
@@ -1352,9 +1465,10 @@ public final class DatasetServiceGrpc {
   private static final int METHODID_IMPORT_DATA = 5;
   private static final int METHODID_EXPORT_DATA = 6;
   private static final int METHODID_LIST_DATA_ITEMS = 7;
-  private static final int METHODID_LIST_SAVED_QUERIES = 8;
-  private static final int METHODID_GET_ANNOTATION_SPEC = 9;
-  private static final int METHODID_LIST_ANNOTATIONS = 10;
+  private static final int METHODID_SEARCH_DATA_ITEMS = 8;
+  private static final int METHODID_LIST_SAVED_QUERIES = 9;
+  private static final int METHODID_GET_ANNOTATION_SPEC = 10;
+  private static final int METHODID_LIST_ANNOTATIONS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1415,6 +1529,12 @@ public final class DatasetServiceGrpc {
           serviceImpl.listDataItems(
               (com.google.cloud.aiplatform.v1.ListDataItemsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDataItemsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_DATA_ITEMS:
+          serviceImpl.searchDataItems(
+              (com.google.cloud.aiplatform.v1.SearchDataItemsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchDataItemsResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_SAVED_QUERIES:
@@ -1507,6 +1627,7 @@ public final class DatasetServiceGrpc {
                       .addMethod(getImportDataMethod())
                       .addMethod(getExportDataMethod())
                       .addMethod(getListDataItemsMethod())
+                      .addMethod(getSearchDataItemsMethod())
                       .addMethod(getListSavedQueriesMethod())
                       .addMethod(getGetAnnotationSpecMethod())
                       .addMethod(getListAnnotationsMethod())

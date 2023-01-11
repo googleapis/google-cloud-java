@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
+ * Response message for
+ * [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeployIndexResponse}
@@ -281,7 +282,8 @@ public final class DeployIndexResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
+   * Response message for
+   * [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.DeployIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeployIndexResponse}

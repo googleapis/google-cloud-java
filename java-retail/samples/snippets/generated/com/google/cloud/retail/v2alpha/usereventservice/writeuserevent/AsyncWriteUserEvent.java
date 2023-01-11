@@ -39,6 +39,7 @@ public class AsyncWriteUserEvent {
           WriteUserEventRequest.newBuilder()
               .setParent("parent-995424086")
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       ApiFuture<UserEvent> future =
           userEventServiceClient.writeUserEventCallable().futureCall(request);

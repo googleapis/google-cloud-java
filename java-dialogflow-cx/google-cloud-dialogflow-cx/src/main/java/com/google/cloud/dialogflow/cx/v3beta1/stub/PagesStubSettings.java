@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * pagesSettingsBuilder
  *     .getPageSettings()
  *     .setRetrySettings(
- *         pagesSettingsBuilder.getPageSettings().getRetrySettings().toBuilder()
+ *         pagesSettingsBuilder
+ *             .getPageSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PagesStubSettings pagesSettings = pagesSettingsBuilder.build();

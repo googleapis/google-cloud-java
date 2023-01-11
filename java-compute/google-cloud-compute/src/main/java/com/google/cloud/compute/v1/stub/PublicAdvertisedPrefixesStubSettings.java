@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * publicAdvertisedPrefixesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         publicAdvertisedPrefixesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         publicAdvertisedPrefixesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PublicAdvertisedPrefixesStubSettings publicAdvertisedPrefixesSettings =

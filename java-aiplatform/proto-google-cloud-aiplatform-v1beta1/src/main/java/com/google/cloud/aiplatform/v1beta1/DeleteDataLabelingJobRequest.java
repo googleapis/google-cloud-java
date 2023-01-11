@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.DeleteDataLabelingJob].
+ * Request message for
+ * [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.DeleteDataLabelingJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest}
@@ -288,7 +289,8 @@ public final class DeleteDataLabelingJobRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.DeleteDataLabelingJob].
+   * Request message for
+   * [JobService.DeleteDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.DeleteDataLabelingJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest}

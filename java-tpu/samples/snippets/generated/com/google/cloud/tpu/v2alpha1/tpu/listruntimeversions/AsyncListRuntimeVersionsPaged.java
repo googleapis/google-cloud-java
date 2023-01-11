@@ -19,8 +19,8 @@ package com.google.cloud.tpu.v2alpha1.samples;
 // [START tpu_v2alpha1_generated_Tpu_ListRuntimeVersions_Paged_async]
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
+import com.google.cloud.tpu.v2alpha1.LocationName;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
-import com.google.cloud.tpu.v2alpha1.RuntimeVersionName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
 import com.google.common.base.Strings;
 
@@ -39,8 +39,7 @@ public class AsyncListRuntimeVersionsPaged {
     try (TpuClient tpuClient = TpuClient.create()) {
       ListRuntimeVersionsRequest request =
           ListRuntimeVersionsRequest.newBuilder()
-              .setParent(
-                  RuntimeVersionName.of("[PROJECT]", "[LOCATION]", "[RUNTIME_VERSION]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

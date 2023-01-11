@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * targetHttpProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetHttpProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetHttpProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetHttpProxiesSettings targetHttpProxiesSettings = targetHttpProxiesSettingsBuilder.build();

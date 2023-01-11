@@ -83,8 +83,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the asset. This ID will be
-   * different if the asset is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the asset. This ID
+   * will be different if the asset is deleted and re-created with the same
+   * name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,8 +97,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the asset. This ID will be
-   * different if the asset is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the asset. This ID
+   * will be different if the asset is deleted and re-created with the same
+   * name.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -379,7 +381,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. Status of the security policy applied to resource referenced by this asset.
+   * Output only. Status of the security policy applied to resource referenced
+   * by this asset.
    * </pre>
    *
    * <code>
@@ -393,7 +396,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. Status of the security policy applied to resource referenced by this asset.
+   * Output only. Status of the security policy applied to resource referenced
+   * by this asset.
    * </pre>
    *
    * <code>
@@ -407,7 +411,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. Status of the security policy applied to resource referenced by this asset.
+   * Output only. Status of the security policy applied to resource referenced
+   * by this asset.
    * </pre>
    *
    * <code>
@@ -420,10 +425,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data referenced by this
-   * asset.
-   * When this spec is left unset, the asset will use the spec set on the parent
-   * zone.
+   * Optional. Specification of the discovery feature applied to data referenced
+   * by this asset. When this spec is left unset, the asset will use the spec
+   * set on the parent zone.
    * </pre>
    *
    * <code>
@@ -437,10 +441,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data referenced by this
-   * asset.
-   * When this spec is left unset, the asset will use the spec set on the parent
-   * zone.
+   * Optional. Specification of the discovery feature applied to data referenced
+   * by this asset. When this spec is left unset, the asset will use the spec
+   * set on the parent zone.
    * </pre>
    *
    * <code>
@@ -454,10 +457,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Optional. Specification of the discovery feature applied to data referenced by this
-   * asset.
-   * When this spec is left unset, the asset will use the spec set on the parent
-   * zone.
+   * Optional. Specification of the discovery feature applied to data referenced
+   * by this asset. When this spec is left unset, the asset will use the spec
+   * set on the parent zone.
    * </pre>
    *
    * <code>
@@ -470,7 +472,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. Status of the discovery feature applied to data referenced by this asset.
+   * Output only. Status of the discovery feature applied to data referenced by
+   * this asset.
    * </pre>
    *
    * <code>
@@ -484,7 +487,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. Status of the discovery feature applied to data referenced by this asset.
+   * Output only. Status of the discovery feature applied to data referenced by
+   * this asset.
    * </pre>
    *
    * <code>
@@ -498,7 +502,8 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Output only. Status of the discovery feature applied to data referenced by this asset.
+   * Output only. Status of the discovery feature applied to data referenced by
+   * this asset.
    * </pre>
    *
    * <code>

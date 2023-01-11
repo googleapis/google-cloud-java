@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.CreateTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CreateTrainingPipeline].
+ * Request message for
+ * [PipelineService.CreateTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CreateTrainingPipeline].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateTrainingPipelineRequest}
@@ -73,8 +74,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the TrainingPipeline in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the TrainingPipeline
+   * in. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -99,8 +100,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the TrainingPipeline in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the TrainingPipeline
+   * in. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -354,7 +355,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [PipelineService.CreateTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CreateTrainingPipeline].
+   * Request message for
+   * [PipelineService.CreateTrainingPipeline][google.cloud.aiplatform.v1.PipelineService.CreateTrainingPipeline].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateTrainingPipelineRequest}
@@ -549,8 +551,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the TrainingPipeline in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the TrainingPipeline
+     * in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -574,8 +576,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the TrainingPipeline in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the TrainingPipeline
+     * in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -599,8 +601,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the TrainingPipeline in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the TrainingPipeline
+     * in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -623,8 +625,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the TrainingPipeline in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the TrainingPipeline
+     * in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -643,8 +645,8 @@ public final class CreateTrainingPipelineRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The resource name of the Location to create the TrainingPipeline in.
-     * Format: `projects/{project}/locations/{location}`
+     * Required. The resource name of the Location to create the TrainingPipeline
+     * in. Format: `projects/{project}/locations/{location}`
      * </pre>
      *
      * <code>

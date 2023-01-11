@@ -38,6 +38,7 @@ public class SyncRunJob {
       RunJobRequest request =
           RunJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setLegacyAppEngineCron(true)
               .build();
       Job response = cloudSchedulerClient.runJob(request);
     }

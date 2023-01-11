@@ -68,8 +68,8 @@ public interface BatchDedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Immutable. The number of machine replicas used at the start of the batch operation.
-   * If not set, Vertex AI decides starting number, not greater than
+   * Immutable. The number of machine replicas used at the start of the batch
+   * operation. If not set, Vertex AI decides starting number, not greater than
    * [max_replica_count][google.cloud.aiplatform.v1.BatchDedicatedResources.max_replica_count]
    * </pre>
    *
@@ -83,8 +83,8 @@ public interface BatchDedicatedResourcesOrBuilder
    *
    *
    * <pre>
-   * Immutable. The maximum number of machine replicas the batch operation may be scaled
-   * to. The default value is 10.
+   * Immutable. The maximum number of machine replicas the batch operation may
+   * be scaled to. The default value is 10.
    * </pre>
    *
    * <code>int32 max_replica_count = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>

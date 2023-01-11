@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreOnlineServingService.ReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.ReadFeatureValues].
+ * Request message for
+ * [FeaturestoreOnlineServingService.ReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.ReadFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest}
@@ -424,7 +425,8 @@ public final class ReadFeatureValuesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [FeaturestoreOnlineServingService.ReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.ReadFeatureValues].
+   * Request message for
+   * [FeaturestoreOnlineServingService.ReadFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.ReadFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest}

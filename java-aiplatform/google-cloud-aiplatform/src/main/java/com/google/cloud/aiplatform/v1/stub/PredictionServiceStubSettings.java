@@ -91,7 +91,10 @@ import javax.annotation.Generated;
  * predictionServiceSettingsBuilder
  *     .predictSettings()
  *     .setRetrySettings(
- *         predictionServiceSettingsBuilder.predictSettings().getRetrySettings().toBuilder()
+ *         predictionServiceSettingsBuilder
+ *             .predictSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PredictionServiceStubSettings predictionServiceSettings =

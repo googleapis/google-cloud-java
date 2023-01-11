@@ -27,8 +27,8 @@ public interface ListDeploymentResourcePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent Location which owns this collection of DeploymentResourcePools.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent Location which owns this collection of
+   * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListDeploymentResourcePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent Location which owns this collection of DeploymentResourcePools.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The parent Location which owns this collection of
+   * DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

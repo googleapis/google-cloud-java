@@ -53,7 +53,7 @@ public interface DatasetOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface DatasetOrBuilder
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -81,10 +81,10 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The description.
    */
@@ -93,10 +93,10 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The bytes for description.
    */
@@ -106,11 +106,10 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-   * information about the Dataset.
-   * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-   * The schema files that can be used here are found in
-   * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * additional information about the Dataset. The schema is defined as an
+   * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+   * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
    * </pre>
    *
    * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -122,11 +121,10 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-   * information about the Dataset.
-   * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-   * The schema files that can be used here are found in
-   * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * additional information about the Dataset. The schema is defined as an
+   * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+   * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
    * </pre>
    *
    * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -287,7 +285,9 @@ public interface DatasetOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -307,7 +307,9 @@ public interface DatasetOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -330,7 +332,9 @@ public interface DatasetOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -350,7 +354,9 @@ public interface DatasetOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -375,12 +381,96 @@ public interface DatasetOrBuilder
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> getSavedQueriesList();
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  com.google.cloud.aiplatform.v1.SavedQuery getSavedQueries(int index);
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  int getSavedQueriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.SavedQueryOrBuilder>
+      getSavedQueriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  com.google.cloud.aiplatform.v1.SavedQueryOrBuilder getSavedQueriesOrBuilder(int index);
 
   /**
    *
@@ -419,4 +509,35 @@ public interface DatasetOrBuilder
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
    */
   com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in
+   * MetadataStore when creating the Dataset. The Artifact resource name pattern
+   * is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadataArtifact.
+   */
+  java.lang.String getMetadataArtifact();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in
+   * MetadataStore when creating the Dataset. The Artifact resource name pattern
+   * is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for metadataArtifact.
+   */
+  com.google.protobuf.ByteString getMetadataArtifactBytes();
 }

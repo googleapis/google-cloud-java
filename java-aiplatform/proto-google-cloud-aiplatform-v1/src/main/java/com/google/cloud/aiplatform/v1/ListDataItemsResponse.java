@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [DatasetService.ListDataItems][google.cloud.aiplatform.v1.DatasetService.ListDataItems].
+ * Response message for
+ * [DatasetService.ListDataItems][google.cloud.aiplatform.v1.DatasetService.ListDataItems].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListDataItemsResponse}
@@ -360,7 +361,8 @@ public final class ListDataItemsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [DatasetService.ListDataItems][google.cloud.aiplatform.v1.DatasetService.ListDataItems].
+   * Response message for
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1.DatasetService.ListDataItems].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListDataItemsResponse}

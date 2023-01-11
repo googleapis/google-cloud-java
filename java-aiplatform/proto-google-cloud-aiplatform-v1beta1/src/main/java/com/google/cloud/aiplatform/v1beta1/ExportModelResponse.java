@@ -22,7 +22,9 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message of [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel] operation.
+ * Response message of
+ * [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel]
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportModelResponse}
@@ -220,7 +222,9 @@ public final class ExportModelResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message of [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel] operation.
+   * Response message of
+   * [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportModelResponse}

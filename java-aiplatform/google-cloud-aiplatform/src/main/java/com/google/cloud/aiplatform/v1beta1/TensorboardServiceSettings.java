@@ -112,6 +112,12 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
     return ((TensorboardServiceStubSettings) getStubSettings()).getTensorboardSettings();
   }
 
+  /** Returns the object with the settings used for calls to readTensorboardUsage. */
+  public UnaryCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageSettings() {
+    return ((TensorboardServiceStubSettings) getStubSettings()).readTensorboardUsageSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateTensorboard. */
   public UnaryCallSettings<UpdateTensorboardRequest, Operation> updateTensorboardSettings() {
     return ((TensorboardServiceStubSettings) getStubSettings()).updateTensorboardSettings();
@@ -469,6 +475,12 @@ public class TensorboardServiceSettings extends ClientSettings<TensorboardServic
     /** Returns the builder for the settings used for calls to getTensorboard. */
     public UnaryCallSettings.Builder<GetTensorboardRequest, Tensorboard> getTensorboardSettings() {
       return getStubSettingsBuilder().getTensorboardSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to readTensorboardUsage. */
+    public UnaryCallSettings.Builder<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+        readTensorboardUsageSettings() {
+      return getStubSettingsBuilder().readTensorboardUsageSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateTensorboard. */

@@ -121,6 +121,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -155,12 +156,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchDeleteTestCasesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -191,6 +193,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetTestCaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -224,12 +227,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateTestCaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("testCase", request.getTestCase(), false))
+                                  .toBody("testCase", request.getTestCase(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestCase>newBuilder()
@@ -262,12 +266,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             ProtoRestSerializer<UpdateTestCaseRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("testCase", request.getTestCase(), false))
+                                  .toBody("testCase", request.getTestCase(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestCase>newBuilder()
@@ -298,12 +303,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunTestCaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -337,12 +343,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchRunTestCasesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -377,6 +384,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             ProtoRestSerializer<CalculateCoverageRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "type", request.getTypeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -410,12 +418,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportTestCasesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -449,12 +458,13 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportTestCasesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -491,6 +501,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -524,6 +535,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetTestCaseResultRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -557,6 +569,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -590,6 +603,7 @@ public class HttpJsonTestCasesStub extends TestCasesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

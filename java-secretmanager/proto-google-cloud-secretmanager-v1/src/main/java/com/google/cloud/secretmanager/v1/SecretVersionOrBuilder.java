@@ -27,10 +27,12 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-   * are incremented for each subsequent version of the secret.
+   * Output only. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+   * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+   * incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,10 +44,12 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
-   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
-   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and
-   * are incremented for each subsequent version of the secret.
+   * Output only. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] IDs in a
+   * [Secret][google.cloud.secretmanager.v1.Secret] start at 1 and are
+   * incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -58,7 +62,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -71,7 +76,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -84,7 +90,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -96,8 +103,10 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+   * is
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
    * </pre>
    *
@@ -111,8 +120,10 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+   * is
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
    * </pre>
    *
@@ -126,8 +137,10 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state] is
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secretmanager.v1.SecretVersion.state]
+   * is
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED].
    * </pre>
    *
@@ -140,7 +153,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. The current state of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -154,7 +168,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The current state of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. The current state of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -169,7 +184,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -181,7 +197,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -193,7 +210,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * The replication status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
@@ -204,7 +222,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. Etag of the currently stored
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -216,7 +235,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. Etag of the currently stored [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * Output only. Etag of the currently stored
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * <code>string etag = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -229,8 +249,11 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. True if payload checksum specified in [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has been
-   * received by [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService] on
+   * Output only. True if payload checksum specified in
+   * [SecretPayload][google.cloud.secretmanager.v1.SecretPayload] object has
+   * been received by
+   * [SecretManagerService][google.cloud.secretmanager.v1.SecretManagerService]
+   * on
    * [SecretManagerService.AddSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AddSecretVersion].
    * </pre>
    *

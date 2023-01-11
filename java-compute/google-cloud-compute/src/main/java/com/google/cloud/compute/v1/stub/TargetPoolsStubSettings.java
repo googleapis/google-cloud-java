@@ -101,7 +101,10 @@ import org.threeten.bp.Duration;
  * targetPoolsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetPoolsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetPoolsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetPoolsStubSettings targetPoolsSettings = targetPoolsSettingsBuilder.build();

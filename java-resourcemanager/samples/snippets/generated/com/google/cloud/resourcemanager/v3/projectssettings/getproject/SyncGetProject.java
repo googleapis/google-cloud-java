@@ -36,7 +36,10 @@ public class SyncGetProject {
     projectsSettingsBuilder
         .getProjectSettings()
         .setRetrySettings(
-            projectsSettingsBuilder.getProjectSettings().getRetrySettings().toBuilder()
+            projectsSettingsBuilder
+                .getProjectSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ProjectsSettings projectsSettings = projectsSettingsBuilder.build();

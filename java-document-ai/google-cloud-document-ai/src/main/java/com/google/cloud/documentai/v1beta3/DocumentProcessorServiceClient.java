@@ -310,6 +310,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocument(Document.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .build();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
    * }
@@ -342,6 +343,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setDocument(Document.newBuilder().build())
    *           .setSkipHumanReview(true)
    *           .setFieldMask(FieldMask.newBuilder().build())
+   *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<ProcessResponse> future =
    *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
@@ -449,6 +451,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
+   *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .build();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();
@@ -486,6 +489,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
+   *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .build();
    *   OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
    *       documentProcessorServiceClient
@@ -524,6 +528,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
    *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
    *           .setSkipHumanReview(true)
+   *           .setProcessOptions(ProcessOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);

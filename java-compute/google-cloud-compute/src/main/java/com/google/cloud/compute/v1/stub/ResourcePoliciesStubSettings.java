@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * resourcePoliciesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         resourcePoliciesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         resourcePoliciesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ResourcePoliciesStubSettings resourcePoliciesSettings = resourcePoliciesSettingsBuilder.build();

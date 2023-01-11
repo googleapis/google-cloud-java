@@ -37,7 +37,10 @@ public class SyncListAssets {
     assetServiceSettingsBuilder
         .listAssetsSettings()
         .setRetrySettings(
-            assetServiceSettingsBuilder.listAssetsSettings().getRetrySettings().toBuilder()
+            assetServiceSettingsBuilder
+                .listAssetsSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();

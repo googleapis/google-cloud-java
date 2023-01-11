@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CreateDataLabelingJob].
+ * Request message for
+ * [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CreateDataLabelingJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest}
@@ -355,7 +356,8 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Request message for [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CreateDataLabelingJob].
+   * Request message for
+   * [JobService.CreateDataLabelingJob][google.cloud.aiplatform.v1beta1.JobService.CreateDataLabelingJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest}

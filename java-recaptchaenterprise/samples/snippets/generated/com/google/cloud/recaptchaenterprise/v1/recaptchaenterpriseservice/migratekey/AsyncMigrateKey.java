@@ -40,6 +40,7 @@ public class AsyncMigrateKey {
       MigrateKeyRequest request =
           MigrateKeyRequest.newBuilder()
               .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+              .setSkipBillingCheck(true)
               .build();
       ApiFuture<Key> future =
           recaptchaEnterpriseServiceClient.migrateKeyCallable().futureCall(request);

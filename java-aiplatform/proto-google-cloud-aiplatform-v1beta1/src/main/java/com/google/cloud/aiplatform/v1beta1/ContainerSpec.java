@@ -76,8 +76,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The URI of a container image in the Container Registry that is to be run on
-   * each worker replica.
+   * Required. The URI of a container image in the Container Registry that is to
+   * be run on each worker replica.
    * </pre>
    *
    * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,8 +100,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The URI of a container image in the Container Registry that is to be run on
-   * each worker replica.
+   * Required. The URI of a container image in the Container Registry that is to
+   * be run on each worker replica.
    * </pre>
    *
    * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -806,8 +806,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI of a container image in the Container Registry that is to be run on
-     * each worker replica.
+     * Required. The URI of a container image in the Container Registry that is to
+     * be run on each worker replica.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -829,8 +829,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI of a container image in the Container Registry that is to be run on
-     * each worker replica.
+     * Required. The URI of a container image in the Container Registry that is to
+     * be run on each worker replica.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -852,8 +852,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI of a container image in the Container Registry that is to be run on
-     * each worker replica.
+     * Required. The URI of a container image in the Container Registry that is to
+     * be run on each worker replica.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -874,8 +874,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI of a container image in the Container Registry that is to be run on
-     * each worker replica.
+     * Required. The URI of a container image in the Container Registry that is to
+     * be run on each worker replica.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -892,8 +892,8 @@ public final class ContainerSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The URI of a container image in the Container Registry that is to be run on
-     * each worker replica.
+     * Required. The URI of a container image in the Container Registry that is to
+     * be run on each worker replica.
      * </pre>
      *
      * <code>string image_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

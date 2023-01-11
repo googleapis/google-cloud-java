@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
+ * Request message for
+ * [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest}
@@ -344,7 +345,8 @@ public final class CheckCloudIdentityAccountsExistRequest
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
+   * Request message for
+   * [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest}

@@ -88,7 +88,10 @@ import org.threeten.bp.Duration;
  * regionSslCertificatesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionSslCertificatesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionSslCertificatesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionSslCertificatesStubSettings regionSslCertificatesSettings =

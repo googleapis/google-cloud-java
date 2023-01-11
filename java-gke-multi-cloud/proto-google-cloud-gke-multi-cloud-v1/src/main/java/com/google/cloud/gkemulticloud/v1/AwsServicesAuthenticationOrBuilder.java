@@ -27,8 +27,8 @@ public interface AwsServicesAuthenticationOrBuilder
    *
    *
    * <pre>
-   * Required. The Amazon Resource Name (ARN) of the role that the Anthos Multi-Cloud API
-   * will assume when managing AWS resources on your account.
+   * Required. The Amazon Resource Name (ARN) of the role that the Anthos
+   * Multi-Cloud API will assume when managing AWS resources on your account.
    * </pre>
    *
    * <code>string role_arn = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface AwsServicesAuthenticationOrBuilder
    *
    *
    * <pre>
-   * Required. The Amazon Resource Name (ARN) of the role that the Anthos Multi-Cloud API
-   * will assume when managing AWS resources on your account.
+   * Required. The Amazon Resource Name (ARN) of the role that the Anthos
+   * Multi-Cloud API will assume when managing AWS resources on your account.
    * </pre>
    *
    * <code>string role_arn = 1 [(.google.api.field_behavior) = REQUIRED];</code>

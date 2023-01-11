@@ -53,7 +53,11 @@ import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -119,6 +123,12 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   private final UnaryCallSettings<DeleteEnvironmentRequest, Operation> deleteEnvironmentSettings;
   private final OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationSettings;
+  private final UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings;
+  private final OperationCallSettings<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationSettings;
+  private final UnaryCallSettings<LoadSnapshotRequest, Operation> loadSnapshotSettings;
+  private final OperationCallSettings<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationSettings;
 
   private static final PagedListDescriptor<
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
@@ -222,6 +232,28 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   public OperationCallSettings<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationSettings() {
     return deleteEnvironmentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to saveSnapshot. */
+  public UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
+    return saveSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to saveSnapshot. */
+  public OperationCallSettings<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationSettings() {
+    return saveSnapshotOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to loadSnapshot. */
+  public UnaryCallSettings<LoadSnapshotRequest, Operation> loadSnapshotSettings() {
+    return loadSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to loadSnapshot. */
+  public OperationCallSettings<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationSettings() {
+    return loadSnapshotOperationSettings;
   }
 
   public EnvironmentsStub createStub() throws IOException {
@@ -341,6 +373,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     deleteEnvironmentSettings = settingsBuilder.deleteEnvironmentSettings().build();
     deleteEnvironmentOperationSettings =
         settingsBuilder.deleteEnvironmentOperationSettings().build();
+    saveSnapshotSettings = settingsBuilder.saveSnapshotSettings().build();
+    saveSnapshotOperationSettings = settingsBuilder.saveSnapshotOperationSettings().build();
+    loadSnapshotSettings = settingsBuilder.loadSnapshotSettings().build();
+    loadSnapshotOperationSettings = settingsBuilder.loadSnapshotOperationSettings().build();
   }
 
   /** Builder for EnvironmentsStubSettings. */
@@ -365,6 +401,14 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
         deleteEnvironmentSettings;
     private final OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings;
+    private final UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings;
+    private final OperationCallSettings.Builder<
+            SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+        saveSnapshotOperationSettings;
+    private final UnaryCallSettings.Builder<LoadSnapshotRequest, Operation> loadSnapshotSettings;
+    private final OperationCallSettings.Builder<
+            LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+        loadSnapshotOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -400,6 +444,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       updateEnvironmentOperationSettings = OperationCallSettings.newBuilder();
       deleteEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEnvironmentOperationSettings = OperationCallSettings.newBuilder();
+      saveSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      saveSnapshotOperationSettings = OperationCallSettings.newBuilder();
+      loadSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      loadSnapshotOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -407,7 +455,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               getEnvironmentSettings,
               listEnvironmentsSettings,
               updateEnvironmentSettings,
-              deleteEnvironmentSettings);
+              deleteEnvironmentSettings,
+              saveSnapshotSettings,
+              loadSnapshotSettings);
       initDefaults(this);
     }
 
@@ -422,6 +472,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       updateEnvironmentOperationSettings = settings.updateEnvironmentOperationSettings.toBuilder();
       deleteEnvironmentSettings = settings.deleteEnvironmentSettings.toBuilder();
       deleteEnvironmentOperationSettings = settings.deleteEnvironmentOperationSettings.toBuilder();
+      saveSnapshotSettings = settings.saveSnapshotSettings.toBuilder();
+      saveSnapshotOperationSettings = settings.saveSnapshotOperationSettings.toBuilder();
+      loadSnapshotSettings = settings.loadSnapshotSettings.toBuilder();
+      loadSnapshotOperationSettings = settings.loadSnapshotOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -429,7 +483,9 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               getEnvironmentSettings,
               listEnvironmentsSettings,
               updateEnvironmentSettings,
-              deleteEnvironmentSettings);
+              deleteEnvironmentSettings,
+              saveSnapshotSettings,
+              loadSnapshotSettings);
     }
 
     private static Builder createDefault() {
@@ -481,6 +537,16 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
       builder
           .deleteEnvironmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .saveSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .loadSnapshotSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -542,6 +608,54 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .saveSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SaveSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SaveSnapshotResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .loadSnapshotOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<LoadSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LoadSnapshotResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -626,6 +740,34 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return deleteEnvironmentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to saveSnapshot. */
+    public UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
+      return saveSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to saveSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+        saveSnapshotOperationSettings() {
+      return saveSnapshotOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to loadSnapshot. */
+    public UnaryCallSettings.Builder<LoadSnapshotRequest, Operation> loadSnapshotSettings() {
+      return loadSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to loadSnapshot. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+        loadSnapshotOperationSettings() {
+      return loadSnapshotOperationSettings;
     }
 
     @Override

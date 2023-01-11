@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * metricsV1Beta3SettingsBuilder
  *     .getJobMetricsSettings()
  *     .setRetrySettings(
- *         metricsV1Beta3SettingsBuilder.getJobMetricsSettings().getRetrySettings().toBuilder()
+ *         metricsV1Beta3SettingsBuilder
+ *             .getJobMetricsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsV1Beta3StubSettings metricsV1Beta3Settings = metricsV1Beta3SettingsBuilder.build();

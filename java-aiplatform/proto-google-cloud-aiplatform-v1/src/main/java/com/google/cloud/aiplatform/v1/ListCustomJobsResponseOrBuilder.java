@@ -80,7 +80,9 @@ public interface ListCustomJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -93,7 +95,9 @@ public interface ListCustomJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListCustomJobsRequest.page_token][google.cloud.aiplatform.v1.ListCustomJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

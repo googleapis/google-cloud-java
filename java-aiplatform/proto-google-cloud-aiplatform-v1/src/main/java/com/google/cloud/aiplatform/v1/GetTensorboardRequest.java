@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.GetTensorboard][google.cloud.aiplatform.v1.TensorboardService.GetTensorboard].
+ * Request message for
+ * [TensorboardService.GetTensorboard][google.cloud.aiplatform.v1.TensorboardService.GetTensorboard].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetTensorboardRequest}
@@ -287,7 +288,8 @@ public final class GetTensorboardRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [TensorboardService.GetTensorboard][google.cloud.aiplatform.v1.TensorboardService.GetTensorboard].
+   * Request message for
+   * [TensorboardService.GetTensorboard][google.cloud.aiplatform.v1.TensorboardService.GetTensorboard].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetTensorboardRequest}

@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * budgetServiceSettingsBuilder
  *     .createBudgetSettings()
  *     .setRetrySettings(
- *         budgetServiceSettingsBuilder.createBudgetSettings().getRetrySettings().toBuilder()
+ *         budgetServiceSettingsBuilder
+ *             .createBudgetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BudgetServiceSettings budgetServiceSettings = budgetServiceSettingsBuilder.build();

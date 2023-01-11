@@ -119,7 +119,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+   * match NearestNeighborSearchConfig.
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -135,7 +136,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+   * match NearestNeighborSearchConfig.
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -154,7 +156,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+   * match NearestNeighborSearchConfig.
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -766,7 +769,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -782,7 +786,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -808,7 +813,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -831,7 +837,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -852,7 +859,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -883,7 +891,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -909,7 +918,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -922,7 +932,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -943,7 +954,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
+     * match NearestNeighborSearchConfig.
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>

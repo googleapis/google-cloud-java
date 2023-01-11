@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * globalNetworkEndpointGroupsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         globalNetworkEndpointGroupsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         globalNetworkEndpointGroupsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GlobalNetworkEndpointGroupsSettings globalNetworkEndpointGroupsSettings =

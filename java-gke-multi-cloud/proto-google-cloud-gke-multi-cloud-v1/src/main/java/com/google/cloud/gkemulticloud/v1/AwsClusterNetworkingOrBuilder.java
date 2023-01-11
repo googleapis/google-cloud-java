@@ -56,9 +56,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All pods in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All pods in the cluster are assigned an IPv4 address from these
+   * ranges. Only a single range is supported. This field cannot be changed
+   * after creation.
    * </pre>
    *
    * <code>repeated string pod_address_cidr_blocks = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -71,9 +71,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All pods in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All pods in the cluster are assigned an IPv4 address from these
+   * ranges. Only a single range is supported. This field cannot be changed
+   * after creation.
    * </pre>
    *
    * <code>repeated string pod_address_cidr_blocks = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -86,9 +86,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All pods in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All pods in the cluster are assigned an IPv4 address from these
+   * ranges. Only a single range is supported. This field cannot be changed
+   * after creation.
    * </pre>
    *
    * <code>repeated string pod_address_cidr_blocks = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -102,9 +102,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All pods in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All pods in the cluster are assigned an IPv4 address from these
+   * ranges. Only a single range is supported. This field cannot be changed
+   * after creation.
    * </pre>
    *
    * <code>repeated string pod_address_cidr_blocks = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -119,9 +119,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All services in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All services in the cluster are assigned an IPv4 address from
+   * these ranges. Only a single range is supported. This field cannot be
+   * changed after creation.
    * </pre>
    *
    * <code>
@@ -135,9 +135,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All services in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All services in the cluster are assigned an IPv4 address from
+   * these ranges. Only a single range is supported. This field cannot be
+   * changed after creation.
    * </pre>
    *
    * <code>
@@ -151,9 +151,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All services in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All services in the cluster are assigned an IPv4 address from
+   * these ranges. Only a single range is supported. This field cannot be
+   * changed after creation.
    * </pre>
    *
    * <code>
@@ -168,9 +168,9 @@ public interface AwsClusterNetworkingOrBuilder
    *
    *
    * <pre>
-   * Required. All services in the cluster are assigned an IPv4 address from these ranges.
-   * Only a single range is supported.
-   * This field cannot be changed after creation.
+   * Required. All services in the cluster are assigned an IPv4 address from
+   * these ranges. Only a single range is supported. This field cannot be
+   * changed after creation.
    * </pre>
    *
    * <code>

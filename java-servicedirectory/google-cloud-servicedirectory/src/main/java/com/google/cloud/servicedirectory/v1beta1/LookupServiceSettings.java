@@ -60,7 +60,10 @@ import javax.annotation.Generated;
  * lookupServiceSettingsBuilder
  *     .resolveServiceSettings()
  *     .setRetrySettings(
- *         lookupServiceSettingsBuilder.resolveServiceSettings().getRetrySettings().toBuilder()
+ *         lookupServiceSettingsBuilder
+ *             .resolveServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LookupServiceSettings lookupServiceSettings = lookupServiceSettingsBuilder.build();

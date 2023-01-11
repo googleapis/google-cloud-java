@@ -196,7 +196,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Locations that could not be reached. For example,
-   * ['us-west1', 'us-central1'].
+   * `['us-west1', 'us-central1']`.
    * A ListRuntimesResponse will only contain either runtimes or unreachables,
    * </pre>
    *
@@ -212,7 +212,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Locations that could not be reached. For example,
-   * ['us-west1', 'us-central1'].
+   * `['us-west1', 'us-central1']`.
    * A ListRuntimesResponse will only contain either runtimes or unreachables,
    * </pre>
    *
@@ -228,7 +228,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Locations that could not be reached. For example,
-   * ['us-west1', 'us-central1'].
+   * `['us-west1', 'us-central1']`.
    * A ListRuntimesResponse will only contain either runtimes or unreachables,
    * </pre>
    *
@@ -245,7 +245,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Locations that could not be reached. For example,
-   * ['us-west1', 'us-central1'].
+   * `['us-west1', 'us-central1']`.
    * A ListRuntimesResponse will only contain either runtimes or unreachables,
    * </pre>
    *
@@ -1171,7 +1171,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1187,7 +1187,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1203,7 +1203,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1220,7 +1220,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1237,7 +1237,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1261,7 +1261,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1284,7 +1284,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1304,7 +1304,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *
@@ -1323,7 +1323,7 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Locations that could not be reached. For example,
-     * ['us-west1', 'us-central1'].
+     * `['us-west1', 'us-central1']`.
      * A ListRuntimesResponse will only contain either runtimes or unreachables,
      * </pre>
      *

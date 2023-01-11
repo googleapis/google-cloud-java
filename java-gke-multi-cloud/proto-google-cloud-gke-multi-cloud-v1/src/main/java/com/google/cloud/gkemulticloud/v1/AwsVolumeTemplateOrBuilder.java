@@ -73,7 +73,8 @@ public interface AwsVolumeTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The number of I/O operations per second (IOPS) to provision for GP3 volume.
+   * Optional. The number of I/O operations per second (IOPS) to provision for
+   * GP3 volume.
    * </pre>
    *
    * <code>int32 iops = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86,8 +87,8 @@ public interface AwsVolumeTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK) used to
-   * encrypt AWS EBS volumes.
+   * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
+   * used to encrypt AWS EBS volumes.
    * If not specified, the default Amazon managed key associated to
    * the AWS region where this cluster runs will be used.
    * </pre>
@@ -101,8 +102,8 @@ public interface AwsVolumeTemplateOrBuilder
    *
    *
    * <pre>
-   * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK) used to
-   * encrypt AWS EBS volumes.
+   * Optional. The Amazon Resource Name (ARN) of the Customer Managed Key (CMK)
+   * used to encrypt AWS EBS volumes.
    * If not specified, the default Amazon managed key associated to
    * the AWS region where this cluster runs will be used.
    * </pre>

@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-control-bom</artifactId>
-  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
+  <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -27,27 +27,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-control</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
+        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-control-v1</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v1:current} -->
+        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-control-v2</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v2:current} -->
+        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-control-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-control-v1</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v1:current} -->
+        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-control-v2</artifactId>
-        <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
+        <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-control-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

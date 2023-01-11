@@ -27,8 +27,8 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization assets should belong to. Its format is
-   * "organizations/[organization_id], folders/[folder_id], or
+   * Required. The name of the parent that the listed assets belong to. Its
+   * format is "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the organization assets should belong to. Its format is
-   * "organizations/[organization_id], folders/[folder_id], or
+   * Required. The name of the parent that the listed assets belong to. Its
+   * format is "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
    *

@@ -101,8 +101,8 @@ public interface CreateFeaturestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for this Featurestore, which will become the final component
-   * of the Featurestore's resource name.
+   * Required. The ID to use for this Featurestore, which will become the final
+   * component of the Featurestore's resource name.
    * This value may be up to 60 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    * The value must be unique within the project and location.
@@ -117,8 +117,8 @@ public interface CreateFeaturestoreRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for this Featurestore, which will become the final component
-   * of the Featurestore's resource name.
+   * Required. The ID to use for this Featurestore, which will become the final
+   * component of the Featurestore's resource name.
    * This value may be up to 60 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    * The value must be unique within the project and location.

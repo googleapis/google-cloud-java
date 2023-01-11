@@ -111,6 +111,10 @@ public final class MetadataProto {
       internal_static_google_cloud_dataplex_v1_StorageFormat_JsonOptions_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_StorageFormat_JsonOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -225,7 +229,7 @@ public final class MetadataProto {
           + "D\020\016\022\010\n\004NULL\020d\"F\n\004Mode\022\024\n\020MODE_UNSPECIFIE"
           + "D\020\000\022\014\n\010REQUIRED\020\001\022\014\n\010NULLABLE\020\002\022\014\n\010REPEA"
           + "TED\020\003\"F\n\016PartitionStyle\022\037\n\033PARTITION_STY"
-          + "LE_UNSPECIFIED\020\000\022\023\n\017HIVE_COMPATIBLE\020\001\"\362\005"
+          + "LE_UNSPECIFIED\020\000\022\023\n\017HIVE_COMPATIBLE\020\001\"\364\006"
           + "\n\rStorageFormat\022C\n\006format\030\001 \001(\0162..google"
           + ".cloud.dataplex.v1.StorageFormat.FormatB"
           + "\003\340A\003\022Z\n\022compression_format\030\002 \001(\01629.googl"
@@ -234,68 +238,71 @@ public final class MetadataProto {
           + "\022F\n\003csv\030\n \001(\01322.google.cloud.dataplex.v1"
           + ".StorageFormat.CsvOptionsB\003\340A\001H\000\022H\n\004json"
           + "\030\013 \001(\01323.google.cloud.dataplex.v1.Storag"
-          + "eFormat.JsonOptionsB\003\340A\001H\000\032i\n\nCsvOptions"
+          + "eFormat.JsonOptionsB\003\340A\001H\000\022N\n\007iceberg\030\014 "
+          + "\001(\01326.google.cloud.dataplex.v1.StorageFo"
+          + "rmat.IcebergOptionsB\003\340A\001H\000\032i\n\nCsvOptions"
           + "\022\025\n\010encoding\030\001 \001(\tB\003\340A\001\022\030\n\013header_rows\030\002"
           + " \001(\005B\003\340A\001\022\026\n\tdelimiter\030\003 \001(\tB\003\340A\001\022\022\n\005quo"
           + "te\030\004 \001(\tB\003\340A\001\032$\n\013JsonOptions\022\025\n\010encoding"
-          + "\030\001 \001(\tB\003\340A\001\"\253\001\n\006Format\022\026\n\022FORMAT_UNSPECI"
-          + "FIED\020\000\022\013\n\007PARQUET\020\001\022\010\n\004AVRO\020\002\022\007\n\003ORC\020\003\022\007"
-          + "\n\003CSV\020d\022\010\n\004JSON\020e\022\n\n\005IMAGE\020\310\001\022\n\n\005AUDIO\020\311"
-          + "\001\022\n\n\005VIDEO\020\312\001\022\t\n\004TEXT\020\313\001\022\r\n\010TFRECORD\020\314\001\022"
-          + "\n\n\005OTHER\020\350\007\022\014\n\007UNKNOWN\020\351\007\"L\n\021Compression"
-          + "Format\022\"\n\036COMPRESSION_FORMAT_UNSPECIFIED"
-          + "\020\000\022\010\n\004GZIP\020\002\022\t\n\005BZIP2\020\003B\t\n\007options*P\n\rSt"
-          + "orageSystem\022\036\n\032STORAGE_SYSTEM_UNSPECIFIE"
-          + "D\020\000\022\021\n\rCLOUD_STORAGE\020\001\022\014\n\010BIGQUERY\020\0022\211\016\n"
-          + "\017MetadataService\022\275\001\n\014CreateEntity\022-.goog"
-          + "le.cloud.dataplex.v1.CreateEntityRequest"
-          + "\032 .google.cloud.dataplex.v1.Entity\"\\\202\323\344\223"
-          + "\002F\"</v1/{parent=projects/*/locations/*/l"
-          + "akes/*/zones/*}/entities:\006entity\332A\rparen"
-          + "t,entity\022\264\001\n\014UpdateEntity\022-.google.cloud"
-          + ".dataplex.v1.UpdateEntityRequest\032 .googl"
-          + "e.cloud.dataplex.v1.Entity\"S\202\323\344\223\002M\032C/v1/"
-          + "{entity.name=projects/*/locations/*/lake"
-          + "s/*/zones/*/entities/*}:\006entity\022\242\001\n\014Dele"
-          + "teEntity\022-.google.cloud.dataplex.v1.Dele"
-          + "teEntityRequest\032\026.google.protobuf.Empty\""
-          + "K\202\323\344\223\002>*</v1/{name=projects/*/locations/"
-          + "*/lakes/*/zones/*/entities/*}\332A\004name\022\246\001\n"
-          + "\tGetEntity\022*.google.cloud.dataplex.v1.Ge"
-          + "tEntityRequest\032 .google.cloud.dataplex.v"
-          + "1.Entity\"K\202\323\344\223\002>\022</v1/{name=projects/*/l"
-          + "ocations/*/lakes/*/zones/*/entities/*}\332A"
-          + "\004name\022\274\001\n\014ListEntities\022-.google.cloud.da"
-          + "taplex.v1.ListEntitiesRequest\032..google.c"
-          + "loud.dataplex.v1.ListEntitiesResponse\"M\202"
-          + "\323\344\223\002>\022</v1/{parent=projects/*/locations/"
-          + "*/lakes/*/zones/*}/entities\332A\006parent\022\331\001\n"
-          + "\017CreatePartition\0220.google.cloud.dataplex"
-          + ".v1.CreatePartitionRequest\032#.google.clou"
-          + "d.dataplex.v1.Partition\"o\202\323\344\223\002V\"I/v1/{pa"
-          + "rent=projects/*/locations/*/lakes/*/zone"
-          + "s/*/entities/*}/partitions:\tpartition\332A\020"
-          + "parent,partition\022\266\001\n\017DeletePartition\0220.g"
-          + "oogle.cloud.dataplex.v1.DeletePartitionR"
-          + "equest\032\026.google.protobuf.Empty\"Y\202\323\344\223\002L*J"
-          + "/v1/{name=projects/*/locations/*/lakes/*"
-          + "/zones/*/entities/*/partitions/**}\332A\004nam"
-          + "e\022\275\001\n\014GetPartition\022-.google.cloud.datapl"
-          + "ex.v1.GetPartitionRequest\032#.google.cloud"
-          + ".dataplex.v1.Partition\"Y\202\323\344\223\002L\022J/v1/{nam"
-          + "e=projects/*/locations/*/lakes/*/zones/*"
-          + "/entities/*/partitions/**}\332A\004name\022\317\001\n\016Li"
-          + "stPartitions\022/.google.cloud.dataplex.v1."
-          + "ListPartitionsRequest\0320.google.cloud.dat"
-          + "aplex.v1.ListPartitionsResponse\"Z\202\323\344\223\002K\022"
-          + "I/v1/{parent=projects/*/locations/*/lake"
-          + "s/*/zones/*/entities/*}/partitions\332A\006par"
-          + "ent\032K\312A\027dataplex.googleapis.com\322A.https:"
-          + "//www.googleapis.com/auth/cloud-platform"
-          + "Bq\n\034com.google.cloud.dataplex.v1B\rMetada"
-          + "taProtoP\001Z@google.golang.org/genproto/go"
-          + "ogleapis/cloud/dataplex/v1;dataplexb\006pro"
-          + "to3"
+          + "\030\001 \001(\tB\003\340A\001\0320\n\016IcebergOptions\022\036\n\021metadat"
+          + "a_location\030\001 \001(\tB\003\340A\001\"\253\001\n\006Format\022\026\n\022FORM"
+          + "AT_UNSPECIFIED\020\000\022\013\n\007PARQUET\020\001\022\010\n\004AVRO\020\002\022"
+          + "\007\n\003ORC\020\003\022\007\n\003CSV\020d\022\010\n\004JSON\020e\022\n\n\005IMAGE\020\310\001\022"
+          + "\n\n\005AUDIO\020\311\001\022\n\n\005VIDEO\020\312\001\022\t\n\004TEXT\020\313\001\022\r\n\010TF"
+          + "RECORD\020\314\001\022\n\n\005OTHER\020\350\007\022\014\n\007UNKNOWN\020\351\007\"L\n\021C"
+          + "ompressionFormat\022\"\n\036COMPRESSION_FORMAT_U"
+          + "NSPECIFIED\020\000\022\010\n\004GZIP\020\002\022\t\n\005BZIP2\020\003B\t\n\007opt"
+          + "ions*P\n\rStorageSystem\022\036\n\032STORAGE_SYSTEM_"
+          + "UNSPECIFIED\020\000\022\021\n\rCLOUD_STORAGE\020\001\022\014\n\010BIGQ"
+          + "UERY\020\0022\211\016\n\017MetadataService\022\275\001\n\014CreateEnt"
+          + "ity\022-.google.cloud.dataplex.v1.CreateEnt"
+          + "ityRequest\032 .google.cloud.dataplex.v1.En"
+          + "tity\"\\\202\323\344\223\002F\"</v1/{parent=projects/*/loc"
+          + "ations/*/lakes/*/zones/*}/entities:\006enti"
+          + "ty\332A\rparent,entity\022\264\001\n\014UpdateEntity\022-.go"
+          + "ogle.cloud.dataplex.v1.UpdateEntityReque"
+          + "st\032 .google.cloud.dataplex.v1.Entity\"S\202\323"
+          + "\344\223\002M\032C/v1/{entity.name=projects/*/locati"
+          + "ons/*/lakes/*/zones/*/entities/*}:\006entit"
+          + "y\022\242\001\n\014DeleteEntity\022-.google.cloud.datapl"
+          + "ex.v1.DeleteEntityRequest\032\026.google.proto"
+          + "buf.Empty\"K\202\323\344\223\002>*</v1/{name=projects/*/"
+          + "locations/*/lakes/*/zones/*/entities/*}\332"
+          + "A\004name\022\246\001\n\tGetEntity\022*.google.cloud.data"
+          + "plex.v1.GetEntityRequest\032 .google.cloud."
+          + "dataplex.v1.Entity\"K\202\323\344\223\002>\022</v1/{name=pr"
+          + "ojects/*/locations/*/lakes/*/zones/*/ent"
+          + "ities/*}\332A\004name\022\274\001\n\014ListEntities\022-.googl"
+          + "e.cloud.dataplex.v1.ListEntitiesRequest\032"
+          + "..google.cloud.dataplex.v1.ListEntitiesR"
+          + "esponse\"M\202\323\344\223\002>\022</v1/{parent=projects/*/"
+          + "locations/*/lakes/*/zones/*}/entities\332A\006"
+          + "parent\022\331\001\n\017CreatePartition\0220.google.clou"
+          + "d.dataplex.v1.CreatePartitionRequest\032#.g"
+          + "oogle.cloud.dataplex.v1.Partition\"o\202\323\344\223\002"
+          + "V\"I/v1/{parent=projects/*/locations/*/la"
+          + "kes/*/zones/*/entities/*}/partitions:\tpa"
+          + "rtition\332A\020parent,partition\022\266\001\n\017DeletePar"
+          + "tition\0220.google.cloud.dataplex.v1.Delete"
+          + "PartitionRequest\032\026.google.protobuf.Empty"
+          + "\"Y\202\323\344\223\002L*J/v1/{name=projects/*/locations"
+          + "/*/lakes/*/zones/*/entities/*/partitions"
+          + "/**}\332A\004name\022\275\001\n\014GetPartition\022-.google.cl"
+          + "oud.dataplex.v1.GetPartitionRequest\032#.go"
+          + "ogle.cloud.dataplex.v1.Partition\"Y\202\323\344\223\002L"
+          + "\022J/v1/{name=projects/*/locations/*/lakes"
+          + "/*/zones/*/entities/*/partitions/**}\332A\004n"
+          + "ame\022\317\001\n\016ListPartitions\022/.google.cloud.da"
+          + "taplex.v1.ListPartitionsRequest\0320.google"
+          + ".cloud.dataplex.v1.ListPartitionsRespons"
+          + "e\"Z\202\323\344\223\002K\022I/v1/{parent=projects/*/locati"
+          + "ons/*/lakes/*/zones/*/entities/*}/partit"
+          + "ions\332A\006parent\032K\312A\027dataplex.googleapis.co"
+          + "m\322A.https://www.googleapis.com/auth/clou"
+          + "d-platformBq\n\034com.google.cloud.dataplex."
+          + "v1B\rMetadataProtoP\001Z@google.golang.org/g"
+          + "enproto/googleapis/cloud/dataplex/v1;dat"
+          + "aplexb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -475,7 +482,7 @@ public final class MetadataProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_StorageFormat_descriptor,
             new java.lang.String[] {
-              "Format", "CompressionFormat", "MimeType", "Csv", "Json", "Options",
+              "Format", "CompressionFormat", "MimeType", "Csv", "Json", "Iceberg", "Options",
             });
     internal_static_google_cloud_dataplex_v1_StorageFormat_CsvOptions_descriptor =
         internal_static_google_cloud_dataplex_v1_StorageFormat_descriptor.getNestedTypes().get(0);
@@ -492,6 +499,14 @@ public final class MetadataProto {
             internal_static_google_cloud_dataplex_v1_StorageFormat_JsonOptions_descriptor,
             new java.lang.String[] {
               "Encoding",
+            });
+    internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor =
+        internal_static_google_cloud_dataplex_v1_StorageFormat_descriptor.getNestedTypes().get(2);
+    internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_StorageFormat_IcebergOptions_descriptor,
+            new java.lang.String[] {
+              "MetadataLocation",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

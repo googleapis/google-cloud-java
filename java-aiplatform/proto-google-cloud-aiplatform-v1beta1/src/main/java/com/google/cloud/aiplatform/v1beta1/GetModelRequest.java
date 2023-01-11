@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.GetModel][google.cloud.aiplatform.v1beta1.ModelService.GetModel].
+ * Request message for
+ * [ModelService.GetModel][google.cloud.aiplatform.v1beta1.ModelService.GetModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetModelRequest}
@@ -303,7 +304,8 @@ public final class GetModelRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for [ModelService.GetModel][google.cloud.aiplatform.v1beta1.ModelService.GetModel].
+   * Request message for
+   * [ModelService.GetModel][google.cloud.aiplatform.v1beta1.ModelService.GetModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetModelRequest}

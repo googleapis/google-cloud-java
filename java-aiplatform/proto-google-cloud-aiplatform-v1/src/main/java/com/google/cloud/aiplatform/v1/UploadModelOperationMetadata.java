@@ -22,7 +22,9 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Details of [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel] operation.
+ * Details of
+ * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel]
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UploadModelOperationMetadata}
@@ -283,7 +285,9 @@ public final class UploadModelOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Details of [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel] operation.
+   * Details of
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UploadModelOperationMetadata}

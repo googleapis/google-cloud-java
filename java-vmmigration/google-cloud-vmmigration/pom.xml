@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vmmigration</artifactId>
-  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
+  <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
   <packaging>jar</packaging>
   <name>Google VM Migration</name>
   <description>VM Migration helps customers migrating VMs to GCP at no additional cost, as well as an extensive ecosystem of partners to help with discovery and assessment, planning, migration, special use cases, and more.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vmmigration-parent</artifactId>
-    <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
+    <version>1.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vmmigration:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vmmigration</site.installationModule>

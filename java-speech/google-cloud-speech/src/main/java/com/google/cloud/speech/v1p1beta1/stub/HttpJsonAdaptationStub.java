@@ -88,12 +88,13 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreatePhraseSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PhraseSet>newBuilder()
@@ -124,6 +125,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetPhraseSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -159,6 +161,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -194,12 +197,13 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             ProtoRestSerializer<UpdatePhraseSetRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("phraseSet", request.getPhraseSet(), false))
+                                  .toBody("phraseSet", request.getPhraseSet(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<PhraseSet>newBuilder()
@@ -230,6 +234,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeletePhraseSetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -263,12 +268,13 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateCustomClassRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomClass>newBuilder()
@@ -299,6 +305,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCustomClassRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -334,6 +341,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -369,12 +377,13 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             ProtoRestSerializer<UpdateCustomClassRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("customClass", request.getCustomClass(), false))
+                                  .toBody("customClass", request.getCustomClass(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<CustomClass>newBuilder()
@@ -405,6 +414,7 @@ public class HttpJsonAdaptationStub extends AdaptationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCustomClassRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

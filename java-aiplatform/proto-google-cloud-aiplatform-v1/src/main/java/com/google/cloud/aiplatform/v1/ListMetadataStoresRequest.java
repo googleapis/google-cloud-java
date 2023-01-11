@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
+ * Request message for
+ * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListMetadataStoresRequest}
@@ -152,8 +153,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * A page token, received from a previous
-   * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-   * subsequent page.
+   * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -180,8 +181,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * A page token, received from a previous
-   * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-   * subsequent page.
+   * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other provided parameters must match the call that
    * provided the page token. (Otherwise the request will fail with
    * INVALID_ARGUMENT error.)
@@ -386,7 +387,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
+   * Request message for
+   * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListMetadataStoresRequest}
@@ -768,8 +770,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * A page token, received from a previous
-     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-     * subsequent page.
+     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -795,8 +797,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * A page token, received from a previous
-     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-     * subsequent page.
+     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -822,8 +824,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * A page token, received from a previous
-     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-     * subsequent page.
+     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -848,8 +850,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * A page token, received from a previous
-     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-     * subsequent page.
+     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)
@@ -870,8 +872,8 @@ public final class ListMetadataStoresRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * A page token, received from a previous
-     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores] call. Provide this to retrieve the
-     * subsequent page.
+     * [MetadataService.ListMetadataStores][google.cloud.aiplatform.v1.MetadataService.ListMetadataStores]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other provided parameters must match the call that
      * provided the page token. (Otherwise the request will fail with
      * INVALID_ARGUMENT error.)

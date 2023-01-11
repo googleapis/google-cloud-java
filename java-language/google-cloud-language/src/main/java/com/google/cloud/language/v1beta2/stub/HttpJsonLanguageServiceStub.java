@@ -81,12 +81,13 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnalyzeSentimentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnalyzeSentimentResponse>newBuilder()
@@ -116,12 +117,13 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnalyzeEntitiesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnalyzeEntitiesResponse>newBuilder()
@@ -154,12 +156,13 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnalyzeEntitySentimentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnalyzeEntitySentimentResponse>newBuilder()
@@ -189,12 +192,13 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnalyzeSyntaxRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnalyzeSyntaxResponse>newBuilder()
@@ -224,12 +228,13 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ClassifyTextRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ClassifyTextResponse>newBuilder()
@@ -259,12 +264,13 @@ public class HttpJsonLanguageServiceStub extends LanguageServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnnotateTextRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AnnotateTextResponse>newBuilder()

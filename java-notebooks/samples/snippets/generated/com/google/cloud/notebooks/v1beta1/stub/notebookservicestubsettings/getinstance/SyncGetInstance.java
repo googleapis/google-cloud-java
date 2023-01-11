@@ -37,7 +37,10 @@ public class SyncGetInstance {
     notebookServiceSettingsBuilder
         .getInstanceSettings()
         .setRetrySettings(
-            notebookServiceSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+            notebookServiceSettingsBuilder
+                .getInstanceSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     NotebookServiceStubSettings notebookServiceSettings = notebookServiceSettingsBuilder.build();

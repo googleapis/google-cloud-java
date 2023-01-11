@@ -22,7 +22,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+ * The replication status of a
+ * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus}
@@ -74,7 +75,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * Output only. The customer-managed encryption status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used.
      * </pre>
      *
@@ -89,7 +91,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * Output only. The customer-managed encryption status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used.
      * </pre>
      *
@@ -105,7 +108,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * Output only. The customer-managed encryption status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used.
      * </pre>
      *
@@ -120,9 +124,11 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * The replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using
+   * automatic replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret]
+   * has an automatic replication policy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus}
@@ -172,7 +178,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * Output only. The customer-managed encryption status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used.
      * </pre>
      *
@@ -190,7 +197,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * Output only. The customer-managed encryption status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used.
      * </pre>
      *
@@ -211,7 +219,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+     * Output only. The customer-managed encryption status of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
      * populated if customer-managed encryption is used.
      * </pre>
      *
@@ -399,9 +408,11 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * The replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using
+     * automatic replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret]
+     * has an automatic replication policy.
      * </pre>
      *
      * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus}
@@ -596,7 +607,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -613,7 +625,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -638,7 +651,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -664,7 +678,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -688,7 +703,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -719,7 +735,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -742,7 +759,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -760,7 +778,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -783,7 +802,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -884,7 +904,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -898,7 +919,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -911,7 +933,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -923,7 +946,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -939,7 +963,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -953,10 +978,11 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using user-managed
-   * replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * The replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using
+   * user-managed replication.
+   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret]
+   * has a user-managed replication policy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus}
@@ -1037,7 +1063,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -1052,7 +1079,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -1068,7 +1096,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -1083,7 +1112,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the status of a user-managed replica for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Describes the status of a user-managed replica for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * Protobuf type {@code
@@ -1189,7 +1219,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -1207,7 +1238,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -1228,7 +1260,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+       * Output only. The customer-managed encryption status of the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
        * populated if customer-managed encryption is used.
        * </pre>
        *
@@ -1448,7 +1481,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Describes the status of a user-managed replica for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Describes the status of a user-managed replica for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * Protobuf type {@code
@@ -1781,7 +1815,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1798,7 +1833,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1823,7 +1859,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1849,7 +1886,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1873,7 +1911,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1904,7 +1943,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1927,7 +1967,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1945,7 +1986,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -1968,7 +2010,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Output only. The customer-managed encryption status of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
+         * Output only. The customer-managed encryption status of the
+         * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. Only
          * populated if customer-managed encryption is used.
          * </pre>
          *
@@ -2072,7 +2115,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -2089,7 +2133,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -2108,7 +2153,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -2123,7 +2169,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -2139,7 +2186,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+     * Output only. The list of replica statuses for the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
      * </pre>
      *
      * <code>
@@ -2321,10 +2369,11 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using user-managed
-     * replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * The replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] using
+     * user-managed replication.
+     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret]
+     * has a user-managed replication policy.
      * </pre>
      *
      * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus}
@@ -2579,7 +2628,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2599,7 +2649,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2617,7 +2668,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2636,7 +2688,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2663,7 +2716,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2688,7 +2742,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2714,7 +2769,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2741,7 +2797,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2765,7 +2822,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2790,7 +2848,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2816,7 +2875,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2837,7 +2897,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2858,7 +2919,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2874,7 +2936,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2894,7 +2957,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2916,7 +2980,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2935,7 +3000,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -2955,7 +3021,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Output only. The list of replica statuses for the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+       * Output only. The list of replica statuses for the
+       * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
        * </pre>
        *
        * <code>
@@ -3111,10 +3178,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3129,10 +3198,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3151,10 +3222,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * automatic replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3174,10 +3247,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -3193,10 +3268,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -3217,10 +3294,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+   * Describes the replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
    * user-managed replication.
-   * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-   * policy.
+   * Only populated if the parent
+   * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+   * replication policy.
    * </pre>
    *
    * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -3439,7 +3518,8 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   * The replication status of a
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.ReplicationStatus}
@@ -3667,10 +3747,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3685,10 +3767,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3716,10 +3800,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3742,10 +3828,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3766,10 +3854,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3805,10 +3895,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3833,10 +3925,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3849,10 +3943,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3875,10 +3971,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * automatic replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has an automatic replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has an automatic
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.AutomaticStatus automatic = 1;</code>
@@ -3920,10 +4018,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -3939,10 +4039,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -3971,10 +4073,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -3998,10 +4102,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -4023,10 +4129,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -4063,10 +4171,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -4092,10 +4202,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -4109,10 +4221,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;
@@ -4136,10 +4250,12 @@ public final class ReplicationStatus extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Describes the replication status of a [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
+     * Describes the replication status of a
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] with
      * user-managed replication.
-     * Only populated if the parent [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed replication
-     * policy.
+     * Only populated if the parent
+     * [Secret][google.cloud.secretmanager.v1.Secret] has a user-managed
+     * replication policy.
      * </pre>
      *
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus.UserManagedStatus user_managed = 2;

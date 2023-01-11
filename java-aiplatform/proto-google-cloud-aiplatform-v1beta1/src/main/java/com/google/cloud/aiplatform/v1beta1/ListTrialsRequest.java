@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.ListTrials][google.cloud.aiplatform.v1beta1.VizierService.ListTrials].
+ * Request message for
+ * [VizierService.ListTrials][google.cloud.aiplatform.v1beta1.VizierService.ListTrials].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListTrialsRequest}
@@ -375,7 +376,8 @@ public final class ListTrialsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [VizierService.ListTrials][google.cloud.aiplatform.v1beta1.VizierService.ListTrials].
+   * Request message for
+   * [VizierService.ListTrials][google.cloud.aiplatform.v1beta1.VizierService.ListTrials].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListTrialsRequest}

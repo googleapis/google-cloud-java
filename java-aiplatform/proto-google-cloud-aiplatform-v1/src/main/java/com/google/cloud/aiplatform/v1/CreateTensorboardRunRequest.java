@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.CreateTensorboardRun][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardRun].
+ * Request message for
+ * [TensorboardService.CreateTensorboardRun][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardRun].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateTensorboardRunRequest}
@@ -74,8 +75,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-   * in. Format:
+   * Required. The resource name of the TensorboardExperiment to create the
+   * TensorboardRun in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
@@ -101,8 +102,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-   * in. Format:
+   * Required. The resource name of the TensorboardExperiment to create the
+   * TensorboardRun in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * </pre>
    *
@@ -185,7 +186,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The ID to use for the Tensorboard run, which will become the final
+   * Required. The ID to use for the Tensorboard run, which becomes the final
    * component of the Tensorboard run's resource name.
    * This value should be 1-128 characters, and valid characters
    * are /[a-z][0-9]-/.
@@ -211,7 +212,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The ID to use for the Tensorboard run, which will become the final
+   * Required. The ID to use for the Tensorboard run, which becomes the final
    * component of the Tensorboard run's resource name.
    * This value should be 1-128 characters, and valid characters
    * are /[a-z][0-9]-/.
@@ -421,7 +422,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [TensorboardService.CreateTensorboardRun][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardRun].
+   * Request message for
+   * [TensorboardService.CreateTensorboardRun][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardRun].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateTensorboardRunRequest}
@@ -626,8 +628,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-     * in. Format:
+     * Required. The resource name of the TensorboardExperiment to create the
+     * TensorboardRun in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -652,8 +654,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-     * in. Format:
+     * Required. The resource name of the TensorboardExperiment to create the
+     * TensorboardRun in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -678,8 +680,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-     * in. Format:
+     * Required. The resource name of the TensorboardExperiment to create the
+     * TensorboardRun in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -703,8 +705,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-     * in. Format:
+     * Required. The resource name of the TensorboardExperiment to create the
+     * TensorboardRun in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -724,8 +726,8 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardExperiment to create the TensorboardRun
-     * in. Format:
+     * Required. The resource name of the TensorboardExperiment to create the
+     * TensorboardRun in. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
      * </pre>
      *
@@ -956,7 +958,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID to use for the Tensorboard run, which will become the final
+     * Required. The ID to use for the Tensorboard run, which becomes the final
      * component of the Tensorboard run's resource name.
      * This value should be 1-128 characters, and valid characters
      * are /[a-z][0-9]-/.
@@ -981,7 +983,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID to use for the Tensorboard run, which will become the final
+     * Required. The ID to use for the Tensorboard run, which becomes the final
      * component of the Tensorboard run's resource name.
      * This value should be 1-128 characters, and valid characters
      * are /[a-z][0-9]-/.
@@ -1006,7 +1008,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID to use for the Tensorboard run, which will become the final
+     * Required. The ID to use for the Tensorboard run, which becomes the final
      * component of the Tensorboard run's resource name.
      * This value should be 1-128 characters, and valid characters
      * are /[a-z][0-9]-/.
@@ -1030,7 +1032,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID to use for the Tensorboard run, which will become the final
+     * Required. The ID to use for the Tensorboard run, which becomes the final
      * component of the Tensorboard run's resource name.
      * This value should be 1-128 characters, and valid characters
      * are /[a-z][0-9]-/.
@@ -1050,7 +1052,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The ID to use for the Tensorboard run, which will become the final
+     * Required. The ID to use for the Tensorboard run, which becomes the final
      * component of the Tensorboard run's resource name.
      * This value should be 1-128 characters, and valid characters
      * are /[a-z][0-9]-/.

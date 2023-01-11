@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * pagesSettingsBuilder
  *     .getPageSettings()
  *     .setRetrySettings(
- *         pagesSettingsBuilder.getPageSettings().getRetrySettings().toBuilder()
+ *         pagesSettingsBuilder
+ *             .getPageSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PagesSettings pagesSettings = pagesSettingsBuilder.build();

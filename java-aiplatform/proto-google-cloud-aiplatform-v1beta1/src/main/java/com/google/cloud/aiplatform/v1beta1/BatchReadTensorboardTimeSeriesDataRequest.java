@@ -78,11 +78,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-   * read data from. Format:
+   * Required. The resource name of the Tensorboard containing
+   * TensorboardTimeSeries to read data from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-   * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-   * resources of this Tensorboard.
+   * The TensorboardTimeSeries referenced by
+   * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+   * must be sub resources of this Tensorboard.
    * </pre>
    *
    * <code>
@@ -107,11 +108,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-   * read data from. Format:
+   * Required. The resource name of the Tensorboard containing
+   * TensorboardTimeSeries to read data from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-   * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-   * resources of this Tensorboard.
+   * The TensorboardTimeSeries referenced by
+   * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+   * must be sub resources of this Tensorboard.
    * </pre>
    *
    * <code>
@@ -139,7 +141,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+   * Required. The resource names of the TensorboardTimeSeries to read data
+   * from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
@@ -156,7 +159,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+   * Required. The resource names of the TensorboardTimeSeries to read data
+   * from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
@@ -173,7 +177,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+   * Required. The resource names of the TensorboardTimeSeries to read data
+   * from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
@@ -191,7 +196,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
    *
    *
    * <pre>
-   * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+   * Required. The resource names of the TensorboardTimeSeries to read data
+   * from. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * </pre>
    *
@@ -604,11 +610,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-     * read data from. Format:
+     * Required. The resource name of the Tensorboard containing
+     * TensorboardTimeSeries to read data from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-     * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-     * resources of this Tensorboard.
+     * The TensorboardTimeSeries referenced by
+     * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+     * must be sub resources of this Tensorboard.
      * </pre>
      *
      * <code>
@@ -632,11 +639,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-     * read data from. Format:
+     * Required. The resource name of the Tensorboard containing
+     * TensorboardTimeSeries to read data from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-     * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-     * resources of this Tensorboard.
+     * The TensorboardTimeSeries referenced by
+     * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+     * must be sub resources of this Tensorboard.
      * </pre>
      *
      * <code>
@@ -660,11 +668,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-     * read data from. Format:
+     * Required. The resource name of the Tensorboard containing
+     * TensorboardTimeSeries to read data from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-     * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-     * resources of this Tensorboard.
+     * The TensorboardTimeSeries referenced by
+     * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+     * must be sub resources of this Tensorboard.
      * </pre>
      *
      * <code>
@@ -687,11 +696,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-     * read data from. Format:
+     * Required. The resource name of the Tensorboard containing
+     * TensorboardTimeSeries to read data from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-     * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-     * resources of this Tensorboard.
+     * The TensorboardTimeSeries referenced by
+     * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+     * must be sub resources of this Tensorboard.
      * </pre>
      *
      * <code>
@@ -710,11 +720,12 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Tensorboard containing TensorboardTimeSeries to
-     * read data from. Format:
+     * Required. The resource name of the Tensorboard containing
+     * TensorboardTimeSeries to read data from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`.
-     * The TensorboardTimeSeries referenced by [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series] must be sub
-     * resources of this Tensorboard.
+     * The TensorboardTimeSeries referenced by
+     * [time_series][google.cloud.aiplatform.v1beta1.BatchReadTensorboardTimeSeriesDataRequest.time_series]
+     * must be sub resources of this Tensorboard.
      * </pre>
      *
      * <code>
@@ -748,7 +759,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -765,7 +777,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -782,7 +795,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -800,7 +814,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -818,7 +833,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -843,7 +859,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -867,7 +884,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -888,7 +906,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *
@@ -908,7 +927,8 @@ public final class BatchReadTensorboardTimeSeriesDataRequest
      *
      *
      * <pre>
-     * Required. The resource names of the TensorboardTimeSeries to read data from. Format:
+     * Required. The resource names of the TensorboardTimeSeries to read data
+     * from. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
      * </pre>
      *

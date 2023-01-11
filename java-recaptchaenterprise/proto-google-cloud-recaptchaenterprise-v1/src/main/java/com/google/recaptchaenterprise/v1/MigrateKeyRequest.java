@@ -122,6 +122,31 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int SKIP_BILLING_CHECK_FIELD_NUMBER = 2;
+  private boolean skipBillingCheck_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, skips the billing check.
+   * A reCAPTCHA Enterprise key or migrated key behaves differently than a
+   * reCAPTCHA (non-Enterprise version) key when you reach a quota limit (see
+   * https://cloud.google.com/recaptcha-enterprise/quotas#quota_limit). To avoid
+   * any disruption of your usage, we check that a billing account is present.
+   * If your usage of reCAPTCHA is under the free quota, you can safely skip the
+   * billing check and proceed with the migration. See
+   * https://cloud.google.com/recaptcha-enterprise/docs/billing-information.
+   * </pre>
+   *
+   * <code>bool skip_billing_check = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipBillingCheck.
+   */
+  @java.lang.Override
+  public boolean getSkipBillingCheck() {
+    return skipBillingCheck_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -139,6 +164,9 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (skipBillingCheck_ != false) {
+      output.writeBool(2, skipBillingCheck_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -150,6 +178,9 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (skipBillingCheck_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, skipBillingCheck_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,6 +199,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
         (com.google.recaptchaenterprise.v1.MigrateKeyRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getSkipBillingCheck() != other.getSkipBillingCheck()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +213,8 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + SKIP_BILLING_CHECK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipBillingCheck());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,6 +355,8 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
       super.clear();
       name_ = "";
 
+      skipBillingCheck_ = false;
+
       return this;
     }
 
@@ -349,6 +385,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
       com.google.recaptchaenterprise.v1.MigrateKeyRequest result =
           new com.google.recaptchaenterprise.v1.MigrateKeyRequest(this);
       result.name_ = name_;
+      result.skipBillingCheck_ = skipBillingCheck_;
       onBuilt();
       return result;
     }
@@ -403,6 +440,9 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
         name_ = other.name_;
         onChanged();
       }
+      if (other.getSkipBillingCheck() != false) {
+        setSkipBillingCheck(other.getSkipBillingCheck());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -435,6 +475,12 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
 
                 break;
               } // case 10
+            case 16:
+              {
+                skipBillingCheck_ = input.readBool();
+
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -569,6 +615,79 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipBillingCheck_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, skips the billing check.
+     * A reCAPTCHA Enterprise key or migrated key behaves differently than a
+     * reCAPTCHA (non-Enterprise version) key when you reach a quota limit (see
+     * https://cloud.google.com/recaptcha-enterprise/quotas#quota_limit). To avoid
+     * any disruption of your usage, we check that a billing account is present.
+     * If your usage of reCAPTCHA is under the free quota, you can safely skip the
+     * billing check and proceed with the migration. See
+     * https://cloud.google.com/recaptcha-enterprise/docs/billing-information.
+     * </pre>
+     *
+     * <code>bool skip_billing_check = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipBillingCheck.
+     */
+    @java.lang.Override
+    public boolean getSkipBillingCheck() {
+      return skipBillingCheck_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, skips the billing check.
+     * A reCAPTCHA Enterprise key or migrated key behaves differently than a
+     * reCAPTCHA (non-Enterprise version) key when you reach a quota limit (see
+     * https://cloud.google.com/recaptcha-enterprise/quotas#quota_limit). To avoid
+     * any disruption of your usage, we check that a billing account is present.
+     * If your usage of reCAPTCHA is under the free quota, you can safely skip the
+     * billing check and proceed with the migration. See
+     * https://cloud.google.com/recaptcha-enterprise/docs/billing-information.
+     * </pre>
+     *
+     * <code>bool skip_billing_check = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipBillingCheck to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipBillingCheck(boolean value) {
+
+      skipBillingCheck_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, skips the billing check.
+     * A reCAPTCHA Enterprise key or migrated key behaves differently than a
+     * reCAPTCHA (non-Enterprise version) key when you reach a quota limit (see
+     * https://cloud.google.com/recaptcha-enterprise/quotas#quota_limit). To avoid
+     * any disruption of your usage, we check that a billing account is present.
+     * If your usage of reCAPTCHA is under the free quota, you can safely skip the
+     * billing check and proceed with the migration. See
+     * https://cloud.google.com/recaptcha-enterprise/docs/billing-information.
+     * </pre>
+     *
+     * <code>bool skip_billing_check = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipBillingCheck() {
+
+      skipBillingCheck_ = false;
       onChanged();
       return this;
     }

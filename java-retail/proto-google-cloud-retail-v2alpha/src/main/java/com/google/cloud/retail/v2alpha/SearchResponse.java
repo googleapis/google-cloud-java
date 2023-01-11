@@ -493,6 +493,93 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.Value&gt; variant_rollup_values = 5;</code>
      */
     com.google.protobuf.Value getVariantRollupValuesOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @return A list containing the personalLabels.
+     */
+    java.util.List<java.lang.String> getPersonalLabelsList();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @return The count of personalLabels.
+     */
+    int getPersonalLabelsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The personalLabels at the given index.
+     */
+    java.lang.String getPersonalLabels(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the personalLabels at the given index.
+     */
+    com.google.protobuf.ByteString getPersonalLabelsBytes(int index);
   }
   /**
    *
@@ -515,6 +602,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     private SearchResult() {
       id_ = "";
+      personalLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -1070,6 +1158,103 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int PERSONAL_LABELS_FIELD_NUMBER = 7;
+    private com.google.protobuf.LazyStringList personalLabels_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @return A list containing the personalLabels.
+     */
+    public com.google.protobuf.ProtocolStringList getPersonalLabelsList() {
+      return personalLabels_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @return The count of personalLabels.
+     */
+    public int getPersonalLabelsCount() {
+      return personalLabels_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The personalLabels at the given index.
+     */
+    public java.lang.String getPersonalLabels(int index) {
+      return personalLabels_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies previous events related to this product for this user based on
+     * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+     * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+     * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+     * This is set only when
+     * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+     * is
+     * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+     * Possible values:
+     * * `purchased`: Indicates that this product has been purchased before.
+     * </pre>
+     *
+     * <code>repeated string personal_labels = 7;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the personalLabels at the given index.
+     */
+    public com.google.protobuf.ByteString getPersonalLabelsBytes(int index) {
+      return personalLabels_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1103,6 +1288,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           internalGetVariantRollupValues(),
           VariantRollupValuesDefaultEntryHolder.defaultEntry,
           5);
+      for (int i = 0; i < personalLabels_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, personalLabels_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1144,6 +1332,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, variantRollupValues__);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < personalLabels_.size(); i++) {
+          dataSize += computeStringSizeNoTag(personalLabels_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPersonalLabelsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1170,6 +1366,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return false;
       if (!internalGetVariantRollupValues().equals(other.internalGetVariantRollupValues()))
         return false;
+      if (!getPersonalLabelsList().equals(other.getPersonalLabelsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1196,6 +1393,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetVariantRollupValues().getMap().isEmpty()) {
         hash = (37 * hash) + VARIANT_ROLLUP_VALUES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetVariantRollupValues().hashCode();
+      }
+      if (getPersonalLabelsCount() > 0) {
+        hash = (37 * hash) + PERSONAL_LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + getPersonalLabelsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1374,6 +1575,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
         internalGetMutableMatchingVariantFields().clear();
         internalGetMutableVariantRollupValues().clear();
+        personalLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -1414,6 +1617,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.matchingVariantFields_.makeImmutable();
         result.variantRollupValues_ = internalGetVariantRollupValues();
         result.variantRollupValues_.makeImmutable();
+        if (((bitField0_ & 0x00000004) != 0)) {
+          personalLabels_ = personalLabels_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.personalLabels_ = personalLabels_;
         onBuilt();
         return result;
       }
@@ -1480,6 +1688,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableMatchingVariantFields()
             .mergeFrom(other.internalGetMatchingVariantFields());
         internalGetMutableVariantRollupValues().mergeFrom(other.internalGetVariantRollupValues());
+        if (!other.personalLabels_.isEmpty()) {
+          if (personalLabels_.isEmpty()) {
+            personalLabels_ = other.personalLabels_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePersonalLabelsIsMutable();
+            personalLabels_.addAll(other.personalLabels_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1549,6 +1767,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                       .put(variantRollupValues__.getKey(), variantRollupValues__.getValue());
                   break;
                 } // case 42
+              case 58:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePersonalLabelsIsMutable();
+                  personalLabels_.add(s);
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2615,6 +2840,255 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllVariantRollupValues(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
         internalGetMutableVariantRollupValues().getMutableMap().putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList personalLabels_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensurePersonalLabelsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          personalLabels_ = new com.google.protobuf.LazyStringArrayList(personalLabels_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @return A list containing the personalLabels.
+       */
+      public com.google.protobuf.ProtocolStringList getPersonalLabelsList() {
+        return personalLabels_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @return The count of personalLabels.
+       */
+      public int getPersonalLabelsCount() {
+        return personalLabels_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The personalLabels at the given index.
+       */
+      public java.lang.String getPersonalLabels(int index) {
+        return personalLabels_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the personalLabels at the given index.
+       */
+      public com.google.protobuf.ByteString getPersonalLabelsBytes(int index) {
+        return personalLabels_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The personalLabels to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPersonalLabels(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersonalLabelsIsMutable();
+        personalLabels_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @param value The personalLabels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPersonalLabels(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePersonalLabelsIsMutable();
+        personalLabels_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @param values The personalLabels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPersonalLabels(java.lang.Iterable<java.lang.String> values) {
+        ensurePersonalLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, personalLabels_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPersonalLabels() {
+        personalLabels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specifies previous events related to this product for this user based on
+       * [UserEvent][google.cloud.retail.v2alpha.UserEvent] with same
+       * [SearchRequest.visitor_id][google.cloud.retail.v2alpha.SearchRequest.visitor_id]
+       * or [UserInfo.user_id][google.cloud.retail.v2alpha.UserInfo.user_id].
+       * This is set only when
+       * [SearchRequest.PersonalizationSpec.mode][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.mode]
+       * is
+       * [SearchRequest.PersonalizationSpec.Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
+       * Possible values:
+       * * `purchased`: Indicates that this product has been purchased before.
+       * </pre>
+       *
+       * <code>repeated string personal_labels = 7;</code>
+       *
+       * @param value The bytes of the personalLabels to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPersonalLabelsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePersonalLabelsIsMutable();
+        personalLabels_.add(value);
+        onChanged();
         return this;
       }
 

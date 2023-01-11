@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes].
+ * Response message for
+ * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListEntityTypesResponse}
@@ -143,9 +144,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,9 +170,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -365,7 +368,8 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Response message for [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes].
+   * Response message for
+   * [FeaturestoreService.ListEntityTypes][google.cloud.aiplatform.v1.FeaturestoreService.ListEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListEntityTypesResponse}
@@ -947,9 +951,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -971,9 +976,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -995,9 +1001,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1018,9 +1025,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1037,9 +1045,10 @@ public final class ListEntityTypesResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A token, which can be sent as [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [ListEntityTypesRequest.page_token][google.cloud.aiplatform.v1.ListEntityTypesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

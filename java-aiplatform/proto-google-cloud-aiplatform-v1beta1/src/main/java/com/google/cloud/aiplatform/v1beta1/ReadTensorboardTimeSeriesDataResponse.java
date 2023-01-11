@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [TensorboardService.ReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ReadTensorboardTimeSeriesData].
+ * Response message for
+ * [TensorboardService.ReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ReadTensorboardTimeSeriesData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse}
@@ -287,7 +288,8 @@ public final class ReadTensorboardTimeSeriesDataResponse
    *
    *
    * <pre>
-   * Response message for [TensorboardService.ReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ReadTensorboardTimeSeriesData].
+   * Response message for
+   * [TensorboardService.ReadTensorboardTimeSeriesData][google.cloud.aiplatform.v1beta1.TensorboardService.ReadTensorboardTimeSeriesData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse}

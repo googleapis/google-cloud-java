@@ -27,9 +27,8 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Context that the Artifacts and Executions
-   * belong to.
-   * Format:
+   * Required. The resource name of the Context that the Artifacts and
+   * Executions belong to. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -44,9 +43,8 @@ public interface AddContextArtifactsAndExecutionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Context that the Artifacts and Executions
-   * belong to.
-   * Format:
+   * Required. The resource name of the Context that the Artifacts and
+   * Executions belong to. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *

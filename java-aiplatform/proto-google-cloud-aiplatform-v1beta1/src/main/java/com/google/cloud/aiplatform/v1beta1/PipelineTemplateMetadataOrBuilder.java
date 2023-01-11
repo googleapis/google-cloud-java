@@ -28,8 +28,9 @@ public interface PipelineTemplateMetadataOrBuilder
    *
    * <pre>
    * The version_name in artifact registry.
-   * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-   * from supported template registry.
+   * Will always be presented in output if the
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+   * is from supported template registry.
    * Format is "sha256:abcdef123456...".
    * </pre>
    *
@@ -43,8 +44,9 @@ public interface PipelineTemplateMetadataOrBuilder
    *
    * <pre>
    * The version_name in artifact registry.
-   * Will always be presented in output if the [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is
-   * from supported template registry.
+   * Will always be presented in output if the
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri]
+   * is from supported template registry.
    * Format is "sha256:abcdef123456...".
    * </pre>
    *

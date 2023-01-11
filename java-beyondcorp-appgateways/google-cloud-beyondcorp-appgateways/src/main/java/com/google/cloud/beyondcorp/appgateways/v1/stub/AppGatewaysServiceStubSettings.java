@@ -100,7 +100,10 @@ import org.threeten.bp.Duration;
  * appGatewaysServiceSettingsBuilder
  *     .getAppGatewaySettings()
  *     .setRetrySettings(
- *         appGatewaysServiceSettingsBuilder.getAppGatewaySettings().getRetrySettings().toBuilder()
+ *         appGatewaysServiceSettingsBuilder
+ *             .getAppGatewaySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AppGatewaysServiceStubSettings appGatewaysServiceSettings =

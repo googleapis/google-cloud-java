@@ -69,6 +69,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     status_ = 0;
     statusMessage_ = "";
     conditions_ = java.util.Collections.emptyList();
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -5618,7 +5619,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3513
+   *     google/container/v1beta1/cluster_service.proto;l=3598
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -5646,7 +5647,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3513
+   *     google/container/v1beta1/cluster_service.proto;l=3598
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -6055,6 +6056,59 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     return getUpdateInfo();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 110;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of node pool
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 110;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of node pool
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 110;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6122,6 +6176,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (updateInfo_ != null) {
       output.writeMessage(109, getUpdateInfo());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 110, etag_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6196,6 +6253,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (updateInfo_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(109, getUpdateInfo());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110, etag_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6253,6 +6313,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateInfo()) {
       if (!getUpdateInfo().equals(other.getUpdateInfo())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6322,6 +6383,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + UPDATE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateInfo().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6555,6 +6618,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         updateInfo_ = null;
         updateInfoBuilder_ = null;
       }
+      etag_ = "";
+
       return this;
     }
 
@@ -6649,6 +6714,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.updateInfo_ = updateInfoBuilder_.build();
       }
+      result.etag_ = etag_;
       onBuilt();
       return result;
     }
@@ -6794,6 +6860,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateInfo()) {
         mergeUpdateInfo(other.getUpdateInfo());
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -6938,6 +7008,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 874
+            case 882:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 882
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8255,7 +8331,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3513
+     *     google/container/v1beta1/cluster_service.proto;l=3598
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -8282,7 +8358,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3513
+     *     google/container/v1beta1/cluster_service.proto;l=3598
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -8309,7 +8385,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3513
+     *     google/container/v1beta1/cluster_service.proto;l=3598
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -8335,7 +8411,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3513
+     *     google/container/v1beta1/cluster_service.proto;l=3598
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8357,7 +8433,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3513
+     *     google/container/v1beta1/cluster_service.proto;l=3598
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -9941,6 +10017,122 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         updateInfo_ = null;
       }
       return updateInfoBuilder_;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of node pool
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 110;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of node pool
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 110;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of node pool
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 110;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of node pool
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 110;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This checksum is computed by the server based on the value of node pool
+     * fields, and may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding.
+     * </pre>
+     *
+     * <code>string etag = 110;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+  <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <name>Google Cloud Container Analysis Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,33 +29,33 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1</artifactId>
-        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
+        <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.98.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.99.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1beta1</artifactId>
-        <version>0.98.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
+        <version>0.99.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-containeranalysis-v1</artifactId>
-        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
+        <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-containeranalysis</artifactId>
-        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
       </dependency>
       <!-- TODO: This should maybe eventually be moved into this repo -->
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
-        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
+        <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
       <!-- TODO: Until gax-grpc && grafeas align  -->
     </dependencies>

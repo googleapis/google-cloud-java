@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.WriteTensorboardExperimentData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardExperimentData].
+ * Request message for
+ * [TensorboardService.WriteTensorboardExperimentData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardExperimentData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest}
@@ -390,7 +391,8 @@ public final class WriteTensorboardExperimentDataRequest
    *
    *
    * <pre>
-   * Request message for [TensorboardService.WriteTensorboardExperimentData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardExperimentData].
+   * Request message for
+   * [TensorboardService.WriteTensorboardExperimentData][google.cloud.aiplatform.v1beta1.TensorboardService.WriteTensorboardExperimentData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.WriteTensorboardExperimentDataRequest}

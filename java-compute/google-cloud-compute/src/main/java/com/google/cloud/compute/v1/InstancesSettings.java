@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * instancesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         instancesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         instancesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InstancesSettings instancesSettings = instancesSettingsBuilder.build();

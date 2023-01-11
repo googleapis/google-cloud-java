@@ -79,10 +79,11 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in the
-   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
-   * If this is empty it indicates that there are no more results
-   * through which to paginate.
+   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
+   * field in the subsequent call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
+   * retrieve the next page of results. If this is empty it indicates that there
+   * are no more results through which to paginate.
    * The page token is valid for only 2 hours.
    * </pre>
    *
@@ -96,10 +97,11 @@ public interface ListJobsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results. Pass this value in the
-   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token] field in the subsequent call to
-   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to retrieve the next page of results.
-   * If this is empty it indicates that there are no more results
-   * through which to paginate.
+   * [page_token][google.cloud.scheduler.v1beta1.ListJobsRequest.page_token]
+   * field in the subsequent call to
+   * [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs] to
+   * retrieve the next page of results. If this is empty it indicates that there
+   * are no more results through which to paginate.
    * The page token is valid for only 2 hours.
    * </pre>
    *

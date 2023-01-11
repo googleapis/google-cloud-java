@@ -27,7 +27,9 @@ public interface GenerateAzureAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource to authenticate to.
+   * Required. The name of the
+   * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource to
+   * authenticate to.
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/AzureClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -45,7 +47,9 @@ public interface GenerateAzureAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource to authenticate to.
+   * Required. The name of the
+   * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource to
+   * authenticate to.
    * `AzureCluster` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/AzureClusters/&lt;cluster-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)

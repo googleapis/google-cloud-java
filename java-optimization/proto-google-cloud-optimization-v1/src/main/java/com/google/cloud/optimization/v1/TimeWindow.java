@@ -33,8 +33,11 @@ package com.google.cloud.optimization.v1;
  * event to happen at or before `soft_end_time` by incurring a cost proportional
  * to how long after `soft_end_time` the event occurs. `start_time`, `end_time`,
  * `soft_start_time` and `soft_end_time` should be within the global time limits
- * (see [ShipmentModel.global_start_time][google.cloud.optimization.v1.ShipmentModel.global_start_time] and
- * [ShipmentModel.global_end_time][google.cloud.optimization.v1.ShipmentModel.global_end_time]) and should respect:
+ * (see
+ * [ShipmentModel.global_start_time][google.cloud.optimization.v1.ShipmentModel.global_start_time]
+ * and
+ * [ShipmentModel.global_end_time][google.cloud.optimization.v1.ShipmentModel.global_end_time])
+ * and should respect:
  * ```
  *   0 &lt;= `start_time` &lt;= `soft_start_time` &lt;= `end_time` and
  *   0 &lt;= `start_time` &lt;= `soft_end_time` &lt;= `end_time`.
@@ -635,8 +638,11 @@ public final class TimeWindow extends com.google.protobuf.GeneratedMessageV3
    * event to happen at or before `soft_end_time` by incurring a cost proportional
    * to how long after `soft_end_time` the event occurs. `start_time`, `end_time`,
    * `soft_start_time` and `soft_end_time` should be within the global time limits
-   * (see [ShipmentModel.global_start_time][google.cloud.optimization.v1.ShipmentModel.global_start_time] and
-   * [ShipmentModel.global_end_time][google.cloud.optimization.v1.ShipmentModel.global_end_time]) and should respect:
+   * (see
+   * [ShipmentModel.global_start_time][google.cloud.optimization.v1.ShipmentModel.global_start_time]
+   * and
+   * [ShipmentModel.global_end_time][google.cloud.optimization.v1.ShipmentModel.global_end_time])
+   * and should respect:
    * ```
    *   0 &lt;= `start_time` &lt;= `soft_start_time` &lt;= `end_time` and
    *   0 &lt;= `start_time` &lt;= `soft_end_time` &lt;= `end_time`.

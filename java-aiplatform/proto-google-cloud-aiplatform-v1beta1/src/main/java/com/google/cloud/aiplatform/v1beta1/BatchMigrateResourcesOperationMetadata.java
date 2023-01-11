@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
+ * Runtime operation information for
+ * [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata}
@@ -2158,7 +2159,8 @@ public final class BatchMigrateResourcesOperationMetadata
    *
    *
    * <pre>
-   * Runtime operation information for [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
+   * Runtime operation information for
+   * [MigrationService.BatchMigrateResources][google.cloud.aiplatform.v1beta1.MigrationService.BatchMigrateResources].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.BatchMigrateResourcesOperationMetadata}

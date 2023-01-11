@@ -103,7 +103,10 @@ import org.threeten.bp.Duration;
  * routersSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         routersSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         routersSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RoutersStubSettings routersSettings = routersSettingsBuilder.build();

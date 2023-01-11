@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * targetPoolsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetPoolsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetPoolsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetPoolsSettings targetPoolsSettings = targetPoolsSettingsBuilder.build();

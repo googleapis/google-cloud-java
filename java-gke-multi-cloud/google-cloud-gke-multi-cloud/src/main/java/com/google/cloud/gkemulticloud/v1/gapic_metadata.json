@@ -5,6 +5,39 @@
   "protoPackage": "google.cloud.gkemulticloud.v1",
   "libraryPackage": "com.google.cloud.gkemulticloud.v1",
   "services": {
+    "AttachedClusters": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AttachedClustersClient",
+          "rpcs": {
+            "CreateAttachedCluster": {
+              "methods": ["createAttachedClusterAsync", "createAttachedClusterAsync", "createAttachedClusterAsync", "createAttachedClusterOperationCallable", "createAttachedClusterCallable"]
+            },
+            "DeleteAttachedCluster": {
+              "methods": ["deleteAttachedClusterAsync", "deleteAttachedClusterAsync", "deleteAttachedClusterAsync", "deleteAttachedClusterOperationCallable", "deleteAttachedClusterCallable"]
+            },
+            "GenerateAttachedClusterInstallManifest": {
+              "methods": ["generateAttachedClusterInstallManifest", "generateAttachedClusterInstallManifest", "generateAttachedClusterInstallManifest", "generateAttachedClusterInstallManifestCallable"]
+            },
+            "GetAttachedCluster": {
+              "methods": ["getAttachedCluster", "getAttachedCluster", "getAttachedCluster", "getAttachedClusterCallable"]
+            },
+            "GetAttachedServerConfig": {
+              "methods": ["getAttachedServerConfig", "getAttachedServerConfig", "getAttachedServerConfig", "getAttachedServerConfigCallable"]
+            },
+            "ImportAttachedCluster": {
+              "methods": ["importAttachedClusterAsync", "importAttachedClusterAsync", "importAttachedClusterAsync", "importAttachedClusterOperationCallable", "importAttachedClusterCallable"]
+            },
+            "ListAttachedClusters": {
+              "methods": ["listAttachedClusters", "listAttachedClusters", "listAttachedClusters", "listAttachedClustersPagedCallable", "listAttachedClustersCallable"]
+            },
+            "UpdateAttachedCluster": {
+              "methods": ["updateAttachedClusterAsync", "updateAttachedClusterAsync", "updateAttachedClusterOperationCallable", "updateAttachedClusterCallable"]
+            }
+          }
+        }
+      }
+    },
     "AwsClusters": {
       "clients": {
         "grpc": {

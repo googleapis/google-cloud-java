@@ -95,7 +95,10 @@ import org.threeten.bp.Duration;
  * documentServiceSettingsBuilder
  *     .createDocumentSettings()
  *     .setRetrySettings(
- *         documentServiceSettingsBuilder.createDocumentSettings().getRetrySettings().toBuilder()
+ *         documentServiceSettingsBuilder
+ *             .createDocumentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DocumentServiceStubSettings documentServiceSettings = documentServiceSettingsBuilder.build();

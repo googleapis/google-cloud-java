@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Runtime operation information for [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
+ * Runtime operation information for
+ * [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UndeployIndexOperationMetadata}
@@ -284,7 +285,8 @@ public final class UndeployIndexOperationMetadata extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Runtime operation information for [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
+   * Runtime operation information for
+   * [IndexEndpointService.UndeployIndex][google.cloud.aiplatform.v1.IndexEndpointService.UndeployIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UndeployIndexOperationMetadata}

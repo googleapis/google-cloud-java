@@ -37,7 +37,10 @@ public class SyncSearchAllResources {
     assetServiceSettingsBuilder
         .searchAllResourcesSettings()
         .setRetrySettings(
-            assetServiceSettingsBuilder.searchAllResourcesSettings().getRetrySettings().toBuilder()
+            assetServiceSettingsBuilder
+                .searchAllResourcesSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();

@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * machineImagesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         machineImagesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         machineImagesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MachineImagesSettings machineImagesSettings = machineImagesSettingsBuilder.build();

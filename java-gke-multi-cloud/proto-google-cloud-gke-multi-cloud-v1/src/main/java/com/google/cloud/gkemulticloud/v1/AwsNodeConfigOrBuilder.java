@@ -235,10 +235,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -248,10 +248,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,10 +264,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -277,10 +277,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -295,10 +295,10 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Key/value metadata to assign to each underlying AWS resource. Specify at
-   * most 50 pairs containing alphanumerics, spaces, and symbols (.+-=_:&#64;/).
-   * Keys can be up to 127 Unicode characters.
-   * Values can be up to 255 Unicode characters.
+   * Optional. Key/value metadata to assign to each underlying AWS resource.
+   * Specify at most 50 pairs containing alphanumerics, spaces, and symbols
+   * (.+-=_:&#64;/). Keys can be up to 127 Unicode characters. Values can be up to
+   * 255 Unicode characters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -309,7 +309,8 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+   * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+   * pool.
    * </pre>
    *
    * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -321,7 +322,8 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Required. The name or ARN of the AWS IAM role assigned to nodes in the pool.
+   * Required. The name or ARN of the AWS IAM role assigned to nodes in the
+   * pool.
    * </pre>
    *
    * <code>string iam_instance_profile = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -406,9 +408,9 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -420,9 +422,9 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -434,9 +436,9 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -449,9 +451,9 @@ public interface AwsNodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The IDs of additional security groups to add to nodes in this pool. The
-   * manager will automatically create security groups with minimum rules
-   * needed for a functioning cluster.
+   * Optional. The IDs of additional security groups to add to nodes in this
+   * pool. The manager will automatically create security groups with minimum
+   * rules needed for a functioning cluster.
    * </pre>
    *
    * <code>repeated string security_group_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -586,4 +588,53 @@ public interface AwsNodeConfigOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AwsInstancePlacementOrBuilder getInstancePlacementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration related to CloudWatch metrics collection on the
+   * Auto Scaling group of the node pool.
+   * When unspecified, metrics collection is disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoscalingMetricsCollection field is set.
+   */
+  boolean hasAutoscalingMetricsCollection();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration related to CloudWatch metrics collection on the
+   * Auto Scaling group of the node pool.
+   * When unspecified, metrics collection is disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoscalingMetricsCollection.
+   */
+  com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+      getAutoscalingMetricsCollection();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration related to CloudWatch metrics collection on the
+   * Auto Scaling group of the node pool.
+   * When unspecified, metrics collection is disabled.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection autoscaling_metrics_collection = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder
+      getAutoscalingMetricsCollectionOrBuilder();
 }

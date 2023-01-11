@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [MetadataService.GetMetadataSchema][google.cloud.aiplatform.v1.MetadataService.GetMetadataSchema].
+ * Request message for
+ * [MetadataService.GetMetadataSchema][google.cloud.aiplatform.v1.MetadataService.GetMetadataSchema].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.GetMetadataSchemaRequest}
@@ -288,7 +289,8 @@ public final class GetMetadataSchemaRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [MetadataService.GetMetadataSchema][google.cloud.aiplatform.v1.MetadataService.GetMetadataSchema].
+   * Request message for
+   * [MetadataService.GetMetadataSchema][google.cloud.aiplatform.v1.MetadataService.GetMetadataSchema].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.GetMetadataSchemaRequest}

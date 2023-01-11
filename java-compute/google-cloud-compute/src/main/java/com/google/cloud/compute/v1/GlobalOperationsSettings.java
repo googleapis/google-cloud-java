@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * globalOperationsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         globalOperationsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         globalOperationsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GlobalOperationsSettings globalOperationsSettings = globalOperationsSettingsBuilder.build();

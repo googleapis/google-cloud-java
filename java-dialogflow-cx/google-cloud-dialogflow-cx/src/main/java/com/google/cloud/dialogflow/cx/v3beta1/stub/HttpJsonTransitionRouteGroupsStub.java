@@ -92,6 +92,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -128,6 +129,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -164,6 +166,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -172,7 +175,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                   .toBody(
                                       "transitionRouteGroup",
                                       request.getTransitionRouteGroup(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransitionRouteGroup>newBuilder()
@@ -210,6 +213,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -218,7 +222,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                                   .toBody(
                                       "transitionRouteGroup",
                                       request.getTransitionRouteGroup(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TransitionRouteGroup>newBuilder()
@@ -251,6 +255,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             ProtoRestSerializer<DeleteTransitionRouteGroupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -284,6 +289,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -317,6 +323,7 @@ public class HttpJsonTransitionRouteGroupsStub extends TransitionRouteGroupsStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

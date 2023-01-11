@@ -37,7 +37,10 @@ public class SyncCreateProductSet {
     productSearchSettingsBuilder
         .createProductSetSettings()
         .setRetrySettings(
-            productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+            productSearchSettingsBuilder
+                .createProductSetSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ProductSearchStubSettings productSearchSettings = productSearchSettingsBuilder.build();

@@ -76,7 +76,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The resource name of the model to tune.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The resource name of the model to tune.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * </pre>
    *
    * <code>
@@ -463,7 +463,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The resource name of the model to tune.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -489,7 +489,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The resource name of the model to tune.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -515,7 +515,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The resource name of the model to tune.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -540,7 +540,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The resource name of the model to tune.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>
@@ -561,7 +561,7 @@ public final class TuneModelRequest extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The resource name of the model to tune.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * </pre>
      *
      * <code>

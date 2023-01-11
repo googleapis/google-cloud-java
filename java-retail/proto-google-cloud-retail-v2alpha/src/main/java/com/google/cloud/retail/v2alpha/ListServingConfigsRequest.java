@@ -75,7 +75,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The catalog resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The catalog resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * </pre>
    *
    * <code>
@@ -574,7 +574,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The catalog resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -599,7 +599,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The catalog resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -624,7 +624,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The catalog resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The catalog resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class ListServingConfigsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The catalog resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
      * </pre>
      *
      * <code>

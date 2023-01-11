@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer-bom</artifactId>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,17 +23,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

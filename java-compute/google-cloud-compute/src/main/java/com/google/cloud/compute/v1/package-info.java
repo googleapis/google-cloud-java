@@ -631,6 +631,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= NetworkAttachmentsClient =======================
+ *
+ * <p>Service Description: The NetworkAttachments API.
+ *
+ * <p>Sample for NetworkAttachmentsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NetworkAttachmentsClient networkAttachmentsClient = NetworkAttachmentsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String networkAttachment = "networkAttachment1918512625";
+ *   NetworkAttachment response = networkAttachmentsClient.get(project, region, networkAttachment);
+ * }
+ * }</pre>
+ *
  * <p>======================= NetworkEdgeSecurityServicesClient =======================
  *
  * <p>Service Description: The NetworkEdgeSecurityServices API.

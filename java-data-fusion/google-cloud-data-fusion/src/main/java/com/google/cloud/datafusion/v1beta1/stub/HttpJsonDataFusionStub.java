@@ -113,6 +113,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                                 fields, "latestPatchOnly", request.getLatestPatchOnly());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -150,6 +151,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -183,6 +185,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -217,12 +220,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             ProtoRestSerializer<CreateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "instanceId", request.getInstanceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -256,6 +260,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -294,12 +299,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             ProtoRestSerializer<UpdateInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("instance", request.getInstance(), false))
+                                  .toBody("instance", request.getInstance(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -333,12 +339,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RestartInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -372,12 +379,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpgradeInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -411,12 +419,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RemoveIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RemoveIamPolicyResponse>newBuilder()
@@ -450,6 +459,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -483,12 +493,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AddDnsPeeringRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<AddDnsPeeringResponse>newBuilder()
@@ -519,12 +530,13 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RemoveDnsPeeringRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<RemoveDnsPeeringResponse>newBuilder()
@@ -557,6 +569,7 @@ public class HttpJsonDataFusionStub extends DataFusionStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

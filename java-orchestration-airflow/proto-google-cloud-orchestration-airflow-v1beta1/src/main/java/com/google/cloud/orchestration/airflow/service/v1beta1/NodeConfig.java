@@ -93,6 +93,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -128,6 +130,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * both fields. If only one field (`location` or `nodeConfig.machineType`) is
    * specified, the location information from the specified field will be
    * propagated to the unspecified field.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -171,6 +175,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * type](/compute/docs/machine-types#sharedcore).
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -211,6 +217,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * type](/compute/docs/machine-types#sharedcore).
    * If this field is unspecified, the `machineTypeId` defaults
    * to "n1-standard-1".
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -366,8 +374,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
+   * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
    * If unspecified, defaults to 100GB. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 disk_size_gb = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -388,6 +398,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -404,6 +416,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -420,6 +434,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -437,6 +453,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. The set of Google API scopes to be made available on all
    * node VMs. If `oauth_scopes` is empty, defaults to
    * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -511,6 +529,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -528,6 +548,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -545,6 +567,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -563,6 +587,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * to identify valid sources or targets for network firewalls. Each tag within
    * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -648,6 +674,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    * For more information, see [Optimizing IP address allocation]
    * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
    * Cannot be updated.
+   * This field is supported for Cloud Composer environments in versions
+   * composer-1.*.*-airflow-*.*.*.
    * </pre>
    *
    * <code>int32 max_pods_per_node = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -657,6 +685,28 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getMaxPodsPerNode() {
     return maxPodsPerNode_;
+  }
+
+  public static final int ENABLE_IP_MASQ_AGENT_FIELD_NUMBER = 11;
+  private boolean enableIpMasqAgent_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
+   * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
+   * all destination addresses, except between pods traffic.
+   * See:
+   * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
+   * </pre>
+   *
+   * <code>bool enable_ip_masq_agent = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableIpMasqAgent.
+   */
+  @java.lang.Override
+  public boolean getEnableIpMasqAgent() {
+    return enableIpMasqAgent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -702,6 +752,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (maxPodsPerNode_ != 0) {
       output.writeInt32(10, maxPodsPerNode_);
+    }
+    if (enableIpMasqAgent_ != false) {
+      output.writeBool(11, enableIpMasqAgent_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -752,6 +805,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (maxPodsPerNode_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, maxPodsPerNode_);
     }
+    if (enableIpMasqAgent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableIpMasqAgent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -781,6 +837,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getIpAllocationPolicy().equals(other.getIpAllocationPolicy())) return false;
     }
     if (getMaxPodsPerNode() != other.getMaxPodsPerNode()) return false;
+    if (getEnableIpMasqAgent() != other.getEnableIpMasqAgent()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -818,6 +875,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MAX_PODS_PER_NODE_FIELD_NUMBER;
     hash = (53 * hash) + getMaxPodsPerNode();
+    hash = (37 * hash) + ENABLE_IP_MASQ_AGENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIpMasqAgent());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -984,6 +1043,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       maxPodsPerNode_ = 0;
 
+      enableIpMasqAgent_ = false;
+
       return this;
     }
 
@@ -1035,6 +1096,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.ipAllocationPolicy_ = ipAllocationPolicyBuilder_.build();
       }
       result.maxPodsPerNode_ = maxPodsPerNode_;
+      result.enableIpMasqAgent_ = enableIpMasqAgent_;
       onBuilt();
       return result;
     }
@@ -1136,6 +1198,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getMaxPodsPerNode() != 0) {
         setMaxPodsPerNode(other.getMaxPodsPerNode());
       }
+      if (other.getEnableIpMasqAgent() != false) {
+        setEnableIpMasqAgent(other.getEnableIpMasqAgent());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1225,6 +1290,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 80
+            case 88:
+              {
+                enableIpMasqAgent_ = input.readBool();
+
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1262,6 +1333,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1296,6 +1369,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1330,6 +1405,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1363,6 +1440,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1392,6 +1471,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * both fields. If only one field (`location` or `nodeConfig.machineType`) is
      * specified, the location information from the specified field will be
      * propagated to the unspecified field.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string location = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1433,6 +1514,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * type](/compute/docs/machine-types#sharedcore).
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1472,6 +1555,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * type](/compute/docs/machine-types#sharedcore).
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1511,6 +1596,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * type](/compute/docs/machine-types#sharedcore).
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1549,6 +1636,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * type](/compute/docs/machine-types#sharedcore).
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1583,6 +1672,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * type](/compute/docs/machine-types#sharedcore).
      * If this field is unspecified, the `machineTypeId` defaults
      * to "n1-standard-1".
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>string machine_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1898,8 +1989,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
+     * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
      * If unspecified, defaults to 100GB. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 disk_size_gb = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1914,8 +2007,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
+     * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
      * If unspecified, defaults to 100GB. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 disk_size_gb = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1933,8 +2028,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
+     * Optional. The disk size in GB used for node VMs. Minimum size is 30GB.
      * If unspecified, defaults to 100GB. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 disk_size_gb = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1964,6 +2061,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1980,6 +2079,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1996,6 +2097,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2013,6 +2116,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2030,6 +2135,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2054,6 +2161,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2077,6 +2186,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2097,6 +2208,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2116,6 +2229,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. The set of Google API scopes to be made available on all
      * node VMs. If `oauth_scopes` is empty, defaults to
      * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string oauth_scopes = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2267,6 +2382,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2284,6 +2401,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2301,6 +2420,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2319,6 +2440,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2337,6 +2460,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2362,6 +2487,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2386,6 +2513,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2407,6 +2536,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2427,6 +2558,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * to identify valid sources or targets for network firewalls. Each tag within
      * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>repeated string tags = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2674,6 +2807,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * For more information, see [Optimizing IP address allocation]
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 max_pods_per_node = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2698,6 +2833,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * For more information, see [Optimizing IP address allocation]
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 max_pods_per_node = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2725,6 +2862,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      * For more information, see [Optimizing IP address allocation]
      * (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr).
      * Cannot be updated.
+     * This field is supported for Cloud Composer environments in versions
+     * composer-1.*.*-airflow-*.*.*.
      * </pre>
      *
      * <code>int32 max_pods_per_node = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2734,6 +2873,70 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMaxPodsPerNode() {
 
       maxPodsPerNode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableIpMasqAgent_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
+     * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
+     * all destination addresses, except between pods traffic.
+     * See:
+     * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
+     * </pre>
+     *
+     * <code>bool enable_ip_masq_agent = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableIpMasqAgent.
+     */
+    @java.lang.Override
+    public boolean getEnableIpMasqAgent() {
+      return enableIpMasqAgent_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
+     * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
+     * all destination addresses, except between pods traffic.
+     * See:
+     * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
+     * </pre>
+     *
+     * <code>bool enable_ip_masq_agent = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableIpMasqAgent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableIpMasqAgent(boolean value) {
+
+      enableIpMasqAgent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines
+     * nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for
+     * all destination addresses, except between pods traffic.
+     * See:
+     * https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent
+     * </pre>
+     *
+     * <code>bool enable_ip_masq_agent = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableIpMasqAgent() {
+
+      enableIpMasqAgent_ = false;
       onChanged();
       return this;
     }

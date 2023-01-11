@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.SearchFeatures].
+ * Response message for
+ * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.SearchFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.SearchFeaturesResponse}
@@ -173,9 +174,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -198,9 +200,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -395,7 +398,8 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.SearchFeatures].
+   * Response message for
+   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.SearchFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.SearchFeaturesResponse}
@@ -1084,9 +1088,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1108,9 +1113,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1132,9 +1138,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1155,9 +1162,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1174,9 +1182,10 @@ public final class SearchFeaturesResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A token, which can be sent as [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token] to
-     * retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * A token, which can be sent as
+     * [SearchFeaturesRequest.page_token][google.cloud.aiplatform.v1beta1.SearchFeaturesRequest.page_token]
+     * to retrieve the next page. If this field is omitted, there are no
+     * subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

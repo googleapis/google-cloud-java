@@ -125,7 +125,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * TPU node has been created and is fully usable.
+     * TPU node has been created.
      * </pre>
      *
      * <code>READY = 2;</code>
@@ -280,7 +280,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * TPU node has been created and is fully usable.
+     * TPU node has been created.
      * </pre>
      *
      * <code>READY = 2;</code>

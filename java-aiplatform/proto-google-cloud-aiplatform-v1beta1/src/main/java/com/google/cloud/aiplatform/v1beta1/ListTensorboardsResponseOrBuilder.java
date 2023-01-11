@@ -79,7 +79,8 @@ public interface ListTensorboardsResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardsRequest.page_token]
+   * A token, which can be sent as
+   * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardsRequest.page_token]
    * to retrieve the next page. If this field is omitted, there are no
    * subsequent pages.
    * </pre>
@@ -93,7 +94,8 @@ public interface ListTensorboardsResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardsRequest.page_token]
+   * A token, which can be sent as
+   * [ListTensorboardsRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardsRequest.page_token]
    * to retrieve the next page. If this field is omitted, there are no
    * subsequent pages.
    * </pre>

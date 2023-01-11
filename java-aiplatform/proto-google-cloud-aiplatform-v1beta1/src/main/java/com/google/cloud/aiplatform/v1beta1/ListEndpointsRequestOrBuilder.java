@@ -27,8 +27,8 @@ public interface ListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location from which to list the Endpoints.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location from which to list the
+   * Endpoints. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location from which to list the Endpoints.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location from which to list the
+   * Endpoints. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -58,10 +58,11 @@ public interface ListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
+   * Optional. An expression for filtering the results of the request. For field
+   * names both snake_case and camelCase are supported.
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-   *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+   *     i.e. the last segment of the Endpoint's [resource
+   *     name][google.cloud.aiplatform.v1beta1.Endpoint.name].
    *   * `display_name` supports = and, !=
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
@@ -82,10 +83,11 @@ public interface ListEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
+   * Optional. An expression for filtering the results of the request. For field
+   * names both snake_case and camelCase are supported.
    *   * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID,
-   *     i.e. the last segment of the Endpoint's [resource name][google.cloud.aiplatform.v1beta1.Endpoint.name].
+   *     i.e. the last segment of the Endpoint's [resource
+   *     name][google.cloud.aiplatform.v1beta1.Endpoint.name].
    *   * `display_name` supports = and, !=
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
@@ -122,8 +124,10 @@ public interface ListEndpointsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListEndpointsResponse.next_page_token] of the previous
-   * [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints] call.
+   * [ListEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListEndpointsResponse.next_page_token]
+   * of the previous
+   * [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -137,8 +141,10 @@ public interface ListEndpointsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListEndpointsResponse.next_page_token] of the previous
-   * [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints] call.
+   * [ListEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListEndpointsResponse.next_page_token]
+   * of the previous
+   * [EndpointService.ListEndpoints][google.cloud.aiplatform.v1beta1.EndpointService.ListEndpoints]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

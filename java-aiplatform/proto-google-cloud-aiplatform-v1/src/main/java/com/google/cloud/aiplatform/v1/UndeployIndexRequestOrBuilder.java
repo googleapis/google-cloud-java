@@ -27,8 +27,8 @@ public interface UndeployIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource from which to undeploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface UndeployIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource from which to undeploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource from which to undeploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -60,7 +60,8 @@ public interface UndeployIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+   * Required. The ID of the DeployedIndex to be undeployed from the
+   * IndexEndpoint.
    * </pre>
    *
    * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,7 +73,8 @@ public interface UndeployIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the DeployedIndex to be undeployed from the IndexEndpoint.
+   * Required. The ID of the DeployedIndex to be undeployed from the
+   * IndexEndpoint.
    * </pre>
    *
    * <code>string deployed_index_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

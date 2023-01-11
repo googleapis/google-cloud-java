@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [EndpointService.UndeployModel][google.cloud.aiplatform.v1beta1.EndpointService.UndeployModel].
+ * Response message for
+ * [EndpointService.UndeployModel][google.cloud.aiplatform.v1beta1.EndpointService.UndeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UndeployModelResponse}
@@ -220,7 +221,8 @@ public final class UndeployModelResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [EndpointService.UndeployModel][google.cloud.aiplatform.v1beta1.EndpointService.UndeployModel].
+   * Response message for
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1beta1.EndpointService.UndeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UndeployModelResponse}

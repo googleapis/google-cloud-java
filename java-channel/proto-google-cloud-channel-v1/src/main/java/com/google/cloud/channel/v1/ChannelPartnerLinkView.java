@@ -22,7 +22,9 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * The level of granularity the [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] will display.
+ * The level of granularity the
+ * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] will
+ * display.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.channel.v1.ChannelPartnerLinkView}

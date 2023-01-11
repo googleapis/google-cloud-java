@@ -180,6 +180,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -212,6 +213,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSourceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -247,12 +249,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "sourceId", request.getSourceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("source", request.getSource(), false))
+                                  .toBody("source", request.getSource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -289,12 +292,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("source", request.getSource(), false))
+                                  .toBody("source", request.getSource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -329,6 +333,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<DeleteSourceRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -367,6 +372,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "forceRefresh", request.getForceRefresh());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -407,6 +413,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -441,6 +448,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<GetUtilizationReportRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -477,13 +485,14 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "utilizationReportId", request.getUtilizationReportId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "utilizationReport", request.getUtilizationReport(), false))
+                                      "utilizationReport", request.getUtilizationReport(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -518,6 +527,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<DeleteUtilizationReportRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -560,6 +570,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -593,6 +604,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetDatacenterConnectorRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -632,6 +644,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 "datacenterConnectorId",
                                 request.getDatacenterConnectorId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -640,7 +653,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                   .toBody(
                                       "datacenterConnector",
                                       request.getDatacenterConnector(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -676,6 +689,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<DeleteDatacenterConnectorRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -713,6 +727,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpgradeApplianceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -721,7 +736,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearDatacenterConnector().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -758,12 +773,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(
                                 fields, "migratingVmId", request.getMigratingVmId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("migratingVm", request.getMigratingVm(), false))
+                                  .toBody("migratingVm", request.getMigratingVm(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -802,6 +818,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -836,6 +853,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<GetMigratingVmRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -872,12 +890,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("migratingVm", request.getMigratingVm(), false))
+                                  .toBody("migratingVm", request.getMigratingVm(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -911,6 +930,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteMigratingVmRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -948,13 +968,14 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StartMigrationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearMigratingVm().build(), false))
+                                      "*", request.toBuilder().clearMigratingVm().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -989,13 +1010,14 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ResumeMigrationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearMigratingVm().build(), false))
+                                      "*", request.toBuilder().clearMigratingVm().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1030,13 +1052,14 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<PauseMigrationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearMigratingVm().build(), false))
+                                      "*", request.toBuilder().clearMigratingVm().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1071,13 +1094,14 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FinalizeMigrationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "*", request.toBuilder().clearMigratingVm().build(), false))
+                                      "*", request.toBuilder().clearMigratingVm().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1113,12 +1137,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "cloneJobId", request.getCloneJobId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cloneJob", request.getCloneJob(), false))
+                                  .toBody("cloneJob", request.getCloneJob(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1152,12 +1177,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CancelCloneJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1195,6 +1221,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1228,6 +1255,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCloneJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1264,12 +1292,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(
                                 fields, "cutoverJobId", request.getCutoverJobId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("cutoverJob", request.getCutoverJob(), false))
+                                  .toBody("cutoverJob", request.getCutoverJob(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1303,12 +1332,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CancelCutoverJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1346,6 +1376,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1379,6 +1410,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCutoverJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1416,6 +1448,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1448,6 +1481,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetGroupRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -1483,12 +1517,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "groupId", request.getGroupId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("group", request.getGroup(), false))
+                                  .toBody("group", request.getGroup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1525,12 +1560,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("group", request.getGroup(), false))
+                                  .toBody("group", request.getGroup(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1565,6 +1601,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<DeleteGroupRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1601,12 +1638,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AddGroupMigrationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearGroup().build(), false))
+                                  .toBody("*", request.toBuilder().clearGroup().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1640,12 +1678,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RemoveGroupMigrationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearGroup().build(), false))
+                                  .toBody("*", request.toBuilder().clearGroup().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1683,6 +1722,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1716,6 +1756,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetTargetProjectRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1752,12 +1793,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "targetProjectId", request.getTargetProjectId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("targetProject", request.getTargetProject(), false))
+                                  .toBody("targetProject", request.getTargetProject(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1794,12 +1836,13 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("targetProject", request.getTargetProject(), false))
+                                  .toBody("targetProject", request.getTargetProject(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1834,6 +1877,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             ProtoRestSerializer<DeleteTargetProjectRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

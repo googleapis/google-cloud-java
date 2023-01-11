@@ -67,7 +67,10 @@ import javax.annotation.Generated;
  * userEventServiceSettingsBuilder
  *     .writeUserEventSettings()
  *     .setRetrySettings(
- *         userEventServiceSettingsBuilder.writeUserEventSettings().getRetrySettings().toBuilder()
+ *         userEventServiceSettingsBuilder
+ *             .writeUserEventSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * UserEventServiceSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();

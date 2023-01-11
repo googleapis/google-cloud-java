@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [MetadataService.RemoveContextChildren][google.cloud.aiplatform.v1.MetadataService.RemoveContextChildren].
+ * Response message for
+ * [MetadataService.RemoveContextChildren][google.cloud.aiplatform.v1.MetadataService.RemoveContextChildren].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.RemoveContextChildrenResponse}
@@ -220,7 +221,8 @@ public final class RemoveContextChildrenResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response message for [MetadataService.RemoveContextChildren][google.cloud.aiplatform.v1.MetadataService.RemoveContextChildren].
+   * Response message for
+   * [MetadataService.RemoveContextChildren][google.cloud.aiplatform.v1.MetadataService.RemoveContextChildren].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.RemoveContextChildrenResponse}

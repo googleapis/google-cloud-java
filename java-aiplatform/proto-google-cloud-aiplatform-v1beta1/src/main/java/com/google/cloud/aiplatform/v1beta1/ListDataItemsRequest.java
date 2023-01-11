@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems].
+ * Request message for
+ * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListDataItemsRequest}
@@ -554,7 +555,8 @@ public final class ListDataItemsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems].
+   * Request message for
+   * [DatasetService.ListDataItems][google.cloud.aiplatform.v1beta1.DatasetService.ListDataItems].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListDataItemsRequest}

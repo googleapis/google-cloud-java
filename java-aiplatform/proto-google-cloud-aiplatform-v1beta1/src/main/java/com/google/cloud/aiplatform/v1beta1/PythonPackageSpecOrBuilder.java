@@ -27,8 +27,8 @@ public interface PythonPackageSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The URI of a container image in Artifact Registry that will run the
-   * provided Python package. Vertex AI provides a wide range of executor
+   * Required. The URI of a container image in Artifact Registry that will run
+   * the provided Python package. Vertex AI provides a wide range of executor
    * images with pre-installed packages to meet users' various use cases. See
    * the list of [pre-built containers for
    * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
@@ -44,8 +44,8 @@ public interface PythonPackageSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The URI of a container image in Artifact Registry that will run the
-   * provided Python package. Vertex AI provides a wide range of executor
+   * Required. The URI of a container image in Artifact Registry that will run
+   * the provided Python package. Vertex AI provides a wide range of executor
    * images with pre-installed packages to meet users' various use cases. See
    * the list of [pre-built containers for
    * training](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers).
@@ -62,9 +62,9 @@ public interface PythonPackageSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the Python package files which are
-   * the training program and its dependent packages.
-   * The maximum number of package URIs is 100.
+   * Required. The Google Cloud Storage location of the Python package files
+   * which are the training program and its dependent packages. The maximum
+   * number of package URIs is 100.
    * </pre>
    *
    * <code>repeated string package_uris = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -76,9 +76,9 @@ public interface PythonPackageSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the Python package files which are
-   * the training program and its dependent packages.
-   * The maximum number of package URIs is 100.
+   * Required. The Google Cloud Storage location of the Python package files
+   * which are the training program and its dependent packages. The maximum
+   * number of package URIs is 100.
    * </pre>
    *
    * <code>repeated string package_uris = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,9 +90,9 @@ public interface PythonPackageSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the Python package files which are
-   * the training program and its dependent packages.
-   * The maximum number of package URIs is 100.
+   * Required. The Google Cloud Storage location of the Python package files
+   * which are the training program and its dependent packages. The maximum
+   * number of package URIs is 100.
    * </pre>
    *
    * <code>repeated string package_uris = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -105,9 +105,9 @@ public interface PythonPackageSpecOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Storage location of the Python package files which are
-   * the training program and its dependent packages.
-   * The maximum number of package URIs is 100.
+   * Required. The Google Cloud Storage location of the Python package files
+   * which are the training program and its dependent packages. The maximum
+   * number of package URIs is 100.
    * </pre>
    *
    * <code>repeated string package_uris = 2 [(.google.api.field_behavior) = REQUIRED];</code>

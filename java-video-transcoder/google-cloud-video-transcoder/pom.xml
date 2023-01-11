@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-transcoder</artifactId>
-  <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
   <packaging>jar</packaging>
   <name>Google Video Transcoder</name>
   <description>allows you to transcode videos into a variety of formats. The Transcoder API benefits broadcasters, production companies, businesses, and individuals looking to transform their video content for use across a variety of user devices.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-transcoder-parent</artifactId>
-    <version>1.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
+    <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-transcoder:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-video-transcoder</site.installationModule>

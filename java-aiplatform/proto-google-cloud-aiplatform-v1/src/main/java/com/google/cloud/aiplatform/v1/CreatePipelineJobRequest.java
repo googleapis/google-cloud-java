@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [PipelineService.CreatePipelineJob][google.cloud.aiplatform.v1.PipelineService.CreatePipelineJob].
+ * Request message for
+ * [PipelineService.CreatePipelineJob][google.cloud.aiplatform.v1.PipelineService.CreatePipelineJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreatePipelineJobRequest}
@@ -421,7 +422,8 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [PipelineService.CreatePipelineJob][google.cloud.aiplatform.v1.PipelineService.CreatePipelineJob].
+   * Request message for
+   * [PipelineService.CreatePipelineJob][google.cloud.aiplatform.v1.PipelineService.CreatePipelineJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreatePipelineJobRequest}

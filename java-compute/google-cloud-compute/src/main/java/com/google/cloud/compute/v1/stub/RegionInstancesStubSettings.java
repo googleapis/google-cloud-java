@@ -74,7 +74,10 @@ import org.threeten.bp.Duration;
  * regionInstancesSettingsBuilder
  *     .bulkInsertSettings()
  *     .setRetrySettings(
- *         regionInstancesSettingsBuilder.bulkInsertSettings().getRetrySettings().toBuilder()
+ *         regionInstancesSettingsBuilder
+ *             .bulkInsertSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionInstancesStubSettings regionInstancesSettings = regionInstancesSettingsBuilder.build();

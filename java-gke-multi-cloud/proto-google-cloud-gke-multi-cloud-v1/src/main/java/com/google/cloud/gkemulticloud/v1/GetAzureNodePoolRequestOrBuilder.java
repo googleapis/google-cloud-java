@@ -27,7 +27,9 @@ public interface GetAzureNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to describe.
+   * Required. The name of the
+   * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
+   * describe.
    * `AzureNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
@@ -45,7 +47,9 @@ public interface GetAzureNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to describe.
+   * Required. The name of the
+   * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource to
+   * describe.
    * `AzureNodePool` names are formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)

@@ -165,7 +165,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -183,7 +184,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -204,7 +206,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -222,7 +225,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -245,7 +249,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The labels with user-defined metadata to organize your EntityTypes.
+   * Optional. The labels with user-defined metadata to organize your
+   * EntityTypes.
    * Label keys and values can be no longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
@@ -264,8 +269,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform a consistent read-modify-write updates. If not
+   * set, a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -277,8 +282,8 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform a consistent read-modify-write updates. If not
+   * set, a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -291,9 +296,10 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-   * EntityType.
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 under this EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -311,9 +317,10 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-   * EntityType.
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 under this EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -331,9 +338,10 @@ public interface EntityTypeOrBuilder
    *
    *
    * <pre>
-   * Optional. The default monitoring configuration for all Features with value type
-   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType]) BOOL, STRING, DOUBLE or INT64 under this
-   * EntityType.
+   * Optional. The default monitoring configuration for all Features with value
+   * type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1beta1.Feature.ValueType])
+   * BOOL, STRING, DOUBLE or INT64 under this EntityType.
    * If this is populated with
    * [FeaturestoreMonitoringConfig.monitoring_interval] specified, snapshot
    * analysis monitoring is enabled. Otherwise, snapshot analysis monitoring is
@@ -346,4 +354,21 @@ public interface EntityTypeOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfigOrBuilder
       getMonitoringConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for data retention policy in offline storage.
+   * TTL in days for feature values that will be stored in offline storage.
+   * The Feature Store offline storage periodically removes obsolete feature
+   * values older than `offline_storage_ttl_days` since the feature generation
+   * time. If unset (or explicitly set to 0), default to 4000 days TTL.
+   * </pre>
+   *
+   * <code>int32 offline_storage_ttl_days = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The offlineStorageTtlDays.
+   */
+  int getOfflineStorageTtlDays();
 }

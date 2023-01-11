@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.UpdateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.UpdateCustomerRepricingConfig].
+ * Request message for
+ * [CloudChannelService.UpdateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.UpdateCustomerRepricingConfig].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest}
@@ -292,7 +293,8 @@ public final class UpdateCustomerRepricingConfigRequest
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.UpdateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.UpdateCustomerRepricingConfig].
+   * Request message for
+   * [CloudChannelService.UpdateCustomerRepricingConfig][google.cloud.channel.v1.CloudChannelService.UpdateCustomerRepricingConfig].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest}

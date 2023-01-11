@@ -69,6 +69,767 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
             com.google.cloud.speech.v1p1beta1.SpeechAdaptation.Builder.class);
   }
 
+  public interface ABNFGrammarOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @return A list containing the abnfStrings.
+     */
+    java.util.List<java.lang.String> getAbnfStringsList();
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @return The count of abnfStrings.
+     */
+    int getAbnfStringsCount();
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The abnfStrings at the given index.
+     */
+    java.lang.String getAbnfStrings(int index);
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the abnfStrings at the given index.
+     */
+    com.google.protobuf.ByteString getAbnfStringsBytes(int index);
+  }
+  /** Protobuf type {@code google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar} */
+  public static final class ABNFGrammar extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar)
+      ABNFGrammarOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ABNFGrammar.newBuilder() to construct.
+    private ABNFGrammar(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ABNFGrammar() {
+      abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ABNFGrammar();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1p1beta1.SpeechResourceProto
+          .internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.speech.v1p1beta1.SpeechResourceProto
+          .internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.class,
+              com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder.class);
+    }
+
+    public static final int ABNF_STRINGS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList abnfStrings_;
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @return A list containing the abnfStrings.
+     */
+    public com.google.protobuf.ProtocolStringList getAbnfStringsList() {
+      return abnfStrings_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @return The count of abnfStrings.
+     */
+    public int getAbnfStringsCount() {
+      return abnfStrings_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The abnfStrings at the given index.
+     */
+    public java.lang.String getAbnfStrings(int index) {
+      return abnfStrings_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All declarations and rules of an ABNF grammar broken up into multiple
+     * strings that will end up concatenated.
+     * </pre>
+     *
+     * <code>repeated string abnf_strings = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the abnfStrings at the given index.
+     */
+    public com.google.protobuf.ByteString getAbnfStringsBytes(int index) {
+      return abnfStrings_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < abnfStrings_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, abnfStrings_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < abnfStrings_.size(); i++) {
+          dataSize += computeStringSizeNoTag(abnfStrings_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAbnfStringsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar other =
+          (com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar) obj;
+
+      if (!getAbnfStringsList().equals(other.getAbnfStringsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAbnfStringsCount() > 0) {
+        hash = (37 * hash) + ABNF_STRINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getAbnfStringsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /** Protobuf type {@code google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar)
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.speech.v1p1beta1.SpeechResourceProto
+            .internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.speech.v1p1beta1.SpeechResourceProto
+            .internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.class,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder.class);
+      }
+
+      // Construct using com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.speech.v1p1beta1.SpeechResourceProto
+            .internal_static_google_cloud_speech_v1p1beta1_SpeechAdaptation_ABNFGrammar_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar
+          getDefaultInstanceForType() {
+        return com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar build() {
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar buildPartial() {
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar result =
+            new com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          abnfStrings_ = abnfStrings_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.abnfStrings_ = abnfStrings_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar) {
+          return mergeFrom((com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar other) {
+        if (other
+            == com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.getDefaultInstance())
+          return this;
+        if (!other.abnfStrings_.isEmpty()) {
+          if (abnfStrings_.isEmpty()) {
+            abnfStrings_ = other.abnfStrings_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAbnfStringsIsMutable();
+            abnfStrings_.addAll(other.abnfStrings_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAbnfStringsIsMutable();
+                  abnfStrings_.add(s);
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList abnfStrings_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
+      private void ensureAbnfStringsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          abnfStrings_ = new com.google.protobuf.LazyStringArrayList(abnfStrings_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @return A list containing the abnfStrings.
+       */
+      public com.google.protobuf.ProtocolStringList getAbnfStringsList() {
+        return abnfStrings_.getUnmodifiableView();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @return The count of abnfStrings.
+       */
+      public int getAbnfStringsCount() {
+        return abnfStrings_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The abnfStrings at the given index.
+       */
+      public java.lang.String getAbnfStrings(int index) {
+        return abnfStrings_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the abnfStrings at the given index.
+       */
+      public com.google.protobuf.ByteString getAbnfStringsBytes(int index) {
+        return abnfStrings_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The abnfStrings to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAbnfStrings(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAbnfStringsIsMutable();
+        abnfStrings_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @param value The abnfStrings to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAbnfStrings(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAbnfStringsIsMutable();
+        abnfStrings_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @param values The abnfStrings to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAbnfStrings(java.lang.Iterable<java.lang.String> values) {
+        ensureAbnfStringsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, abnfStrings_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAbnfStrings() {
+        abnfStrings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * All declarations and rules of an ABNF grammar broken up into multiple
+       * strings that will end up concatenated.
+       * </pre>
+       *
+       * <code>repeated string abnf_strings = 1;</code>
+       *
+       * @param value The bytes of the abnfStrings to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAbnfStringsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAbnfStringsIsMutable();
+        abnfStrings_.add(value);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar)
+    private static final com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar();
+    }
+
+    public static com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ABNFGrammar> PARSER =
+        new com.google.protobuf.AbstractParser<ABNFGrammar>() {
+          @java.lang.Override
+          public ABNFGrammar parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ABNFGrammar> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ABNFGrammar> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int PHRASE_SETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet> phraseSets_;
   /**
@@ -298,6 +1059,61 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     return customClasses_.get(index);
   }
 
+  public static final int ABNF_GRAMMAR_FIELD_NUMBER = 4;
+  private com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnfGrammar_;
+  /**
+   *
+   *
+   * <pre>
+   * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+   * comprised by a set of derivation rules.
+   * See specifications: https://www.w3.org/TR/speech-grammar
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+   *
+   * @return Whether the abnfGrammar field is set.
+   */
+  @java.lang.Override
+  public boolean hasAbnfGrammar() {
+    return abnfGrammar_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+   * comprised by a set of derivation rules.
+   * See specifications: https://www.w3.org/TR/speech-grammar
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+   *
+   * @return The abnfGrammar.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar getAbnfGrammar() {
+    return abnfGrammar_ == null
+        ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.getDefaultInstance()
+        : abnfGrammar_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+   * comprised by a set of derivation rules.
+   * See specifications: https://www.w3.org/TR/speech-grammar
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder
+      getAbnfGrammarOrBuilder() {
+    return getAbnfGrammar();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -320,6 +1136,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < customClasses_.size(); i++) {
       output.writeMessage(3, customClasses_.get(i));
+    }
+    if (abnfGrammar_ != null) {
+      output.writeMessage(4, getAbnfGrammar());
     }
     getUnknownFields().writeTo(output);
   }
@@ -344,6 +1163,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < customClasses_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, customClasses_.get(i));
     }
+    if (abnfGrammar_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAbnfGrammar());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -363,6 +1185,10 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     if (!getPhraseSetsList().equals(other.getPhraseSetsList())) return false;
     if (!getPhraseSetReferencesList().equals(other.getPhraseSetReferencesList())) return false;
     if (!getCustomClassesList().equals(other.getCustomClassesList())) return false;
+    if (hasAbnfGrammar() != other.hasAbnfGrammar()) return false;
+    if (hasAbnfGrammar()) {
+      if (!getAbnfGrammar().equals(other.getAbnfGrammar())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -385,6 +1211,10 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
     if (getCustomClassesCount() > 0) {
       hash = (37 * hash) + CUSTOM_CLASSES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomClassesList().hashCode();
+    }
+    if (hasAbnfGrammar()) {
+      hash = (37 * hash) + ABNF_GRAMMAR_FIELD_NUMBER;
+      hash = (53 * hash) + getAbnfGrammar().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -540,6 +1370,12 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         customClassesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      if (abnfGrammarBuilder_ == null) {
+        abnfGrammar_ = null;
+      } else {
+        abnfGrammar_ = null;
+        abnfGrammarBuilder_ = null;
+      }
       return this;
     }
 
@@ -590,6 +1426,11 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         result.customClasses_ = customClasses_;
       } else {
         result.customClasses_ = customClassesBuilder_.build();
+      }
+      if (abnfGrammarBuilder_ == null) {
+        result.abnfGrammar_ = abnfGrammar_;
+      } else {
+        result.abnfGrammar_ = abnfGrammarBuilder_.build();
       }
       onBuilt();
       return result;
@@ -705,6 +1546,9 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasAbnfGrammar()) {
+        mergeAbnfGrammar(other.getAbnfGrammar());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -764,6 +1608,12 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getAbnfGrammarFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1758,6 +2608,215 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
         customClasses_ = null;
       }
       return customClassesBuilder_;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnfGrammar_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder>
+        abnfGrammarBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     *
+     * @return Whether the abnfGrammar field is set.
+     */
+    public boolean hasAbnfGrammar() {
+      return abnfGrammarBuilder_ != null || abnfGrammar_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     *
+     * @return The abnfGrammar.
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar getAbnfGrammar() {
+      if (abnfGrammarBuilder_ == null) {
+        return abnfGrammar_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.getDefaultInstance()
+            : abnfGrammar_;
+      } else {
+        return abnfGrammarBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    public Builder setAbnfGrammar(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar value) {
+      if (abnfGrammarBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        abnfGrammar_ = value;
+        onChanged();
+      } else {
+        abnfGrammarBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    public Builder setAbnfGrammar(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder builderForValue) {
+      if (abnfGrammarBuilder_ == null) {
+        abnfGrammar_ = builderForValue.build();
+        onChanged();
+      } else {
+        abnfGrammarBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    public Builder mergeAbnfGrammar(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar value) {
+      if (abnfGrammarBuilder_ == null) {
+        if (abnfGrammar_ != null) {
+          abnfGrammar_ =
+              com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.newBuilder(
+                      abnfGrammar_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          abnfGrammar_ = value;
+        }
+        onChanged();
+      } else {
+        abnfGrammarBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    public Builder clearAbnfGrammar() {
+      if (abnfGrammarBuilder_ == null) {
+        abnfGrammar_ = null;
+        onChanged();
+      } else {
+        abnfGrammar_ = null;
+        abnfGrammarBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder
+        getAbnfGrammarBuilder() {
+
+      onChanged();
+      return getAbnfGrammarFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder
+        getAbnfGrammarOrBuilder() {
+      if (abnfGrammarBuilder_ != null) {
+        return abnfGrammarBuilder_.getMessageOrBuilder();
+      } else {
+        return abnfGrammar_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.getDefaultInstance()
+            : abnfGrammar_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Augmented Backus-Naur form (ABNF) is a standardized grammar notation
+     * comprised by a set of derivation rules.
+     * See specifications: https://www.w3.org/TR/speech-grammar
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar abnf_grammar = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder>
+        getAbnfGrammarFieldBuilder() {
+      if (abnfGrammarBuilder_ == null) {
+        abnfGrammarBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar.Builder,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammarOrBuilder>(
+                getAbnfGrammar(), getParentForChildren(), isClean());
+        abnfGrammar_ = null;
+      }
+      return abnfGrammarBuilder_;
     }
 
     @java.lang.Override

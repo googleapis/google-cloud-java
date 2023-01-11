@@ -27,8 +27,9 @@ public interface CreateHyperparameterTuningJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the
+   * HyperparameterTuningJob in. Format:
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface CreateHyperparameterTuningJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the HyperparameterTuningJob in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the
+   * HyperparameterTuningJob in. Format:
+   * `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

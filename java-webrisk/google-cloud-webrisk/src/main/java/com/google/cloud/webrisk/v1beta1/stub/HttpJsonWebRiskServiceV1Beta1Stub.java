@@ -84,6 +84,7 @@ public class HttpJsonWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub
                                 fields, "threatType", request.getThreatTypeValue());
                             serializer.putQueryParam(
                                 fields, "versionToken", request.getVersionToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -119,6 +120,7 @@ public class HttpJsonWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub
                             serializer.putQueryParam(
                                 fields, "threatTypes", request.getThreatTypesList());
                             serializer.putQueryParam(fields, "uri", request.getUri());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -154,6 +156,7 @@ public class HttpJsonWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub
                             serializer.putQueryParam(fields, "hashPrefix", request.getHashPrefix());
                             serializer.putQueryParam(
                                 fields, "threatTypes", request.getThreatTypesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

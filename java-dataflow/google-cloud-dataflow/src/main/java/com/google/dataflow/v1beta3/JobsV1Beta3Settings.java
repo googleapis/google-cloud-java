@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * jobsV1Beta3SettingsBuilder
  *     .createJobSettings()
  *     .setRetrySettings(
- *         jobsV1Beta3SettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
+ *         jobsV1Beta3SettingsBuilder
+ *             .createJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * JobsV1Beta3Settings jobsV1Beta3Settings = jobsV1Beta3SettingsBuilder.build();

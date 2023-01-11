@@ -66,7 +66,10 @@ import javax.annotation.Generated;
  * batchControllerSettingsBuilder
  *     .getBatchSettings()
  *     .setRetrySettings(
- *         batchControllerSettingsBuilder.getBatchSettings().getRetrySettings().toBuilder()
+ *         batchControllerSettingsBuilder
+ *             .getBatchSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BatchControllerSettings batchControllerSettings = batchControllerSettingsBuilder.build();

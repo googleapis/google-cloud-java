@@ -672,10 +672,10 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *     the new value, as follows:
    *     <p>{ "software_config":{ "kernels": [{ 'repository':
    *     'gcr.io/deeplearning-platform-release/pytorch-gpu', 'tag': 'latest' }], } }
-   *     <p>Currently, only the following fields can be updated: - software_config.kernels -
-   *     software_config.post_startup_script - software_config.custom_gpu_driver_path -
-   *     software_config.idle_shutdown - software_config.idle_shutdown_timeout -
-   *     software_config.disable_terminal
+   *     <p>Currently, only the following fields can be updated: - `software_config.kernels` -
+   *     `software_config.post_startup_script` - `software_config.custom_gpu_driver_path` -
+   *     `software_config.idle_shutdown` - `software_config.idle_shutdown_timeout` -
+   *     `software_config.disable_terminal`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Runtime, OperationMetadata> updateRuntimeAsync(

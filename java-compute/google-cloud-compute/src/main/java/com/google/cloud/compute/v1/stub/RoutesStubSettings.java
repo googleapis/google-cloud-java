@@ -87,7 +87,10 @@ import org.threeten.bp.Duration;
  * routesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         routesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         routesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RoutesStubSettings routesSettings = routesSettingsBuilder.build();

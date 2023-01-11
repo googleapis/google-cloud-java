@@ -121,12 +121,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ExportAssetsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -169,6 +170,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());
                             serializer.putQueryParam(
                                 fields, "relationshipTypes", request.getRelationshipTypesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -212,6 +214,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                                 fields, "readTimeWindow", request.getReadTimeWindow());
                             serializer.putQueryParam(
                                 fields, "relationshipTypes", request.getRelationshipTypesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -244,12 +247,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CreateFeedRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearParent().build(), false))
+                              .toBody("*", request.toBuilder().clearParent().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Feed>newBuilder()
@@ -279,6 +283,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetFeedRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -312,6 +317,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListFeedsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -344,12 +350,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<UpdateFeedRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().build(), false))
+                              .toBody("*", request.toBuilder().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Feed>newBuilder()
@@ -379,6 +386,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteFeedRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -419,6 +427,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "query", request.getQuery());
                             serializer.putQueryParam(fields, "readMask", request.getReadMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -460,6 +469,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "query", request.getQuery());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -502,6 +512,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                                 fields, "executionTimeout", request.getExecutionTimeout());
                             serializer.putQueryParam(
                                 fields, "savedAnalysisQuery", request.getSavedAnalysisQuery());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -538,12 +549,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AnalyzeIamPolicyLongrunningRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
+                                  .toBody("*", request.toBuilder().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -580,6 +592,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(
                                 fields, "destinationParent", request.getDestinationParent());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -613,12 +626,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<QueryAssetsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<QueryAssetsResponse>newBuilder()
@@ -651,12 +665,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "savedQueryId", request.getSavedQueryId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("savedQuery", request.getSavedQuery(), false))
+                                  .toBody("savedQuery", request.getSavedQuery(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SavedQuery>newBuilder()
@@ -687,6 +702,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSavedQueryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -723,6 +739,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -758,12 +775,13 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             ProtoRestSerializer<UpdateSavedQueryRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("savedQuery", request.getSavedQuery(), false))
+                                  .toBody("savedQuery", request.getSavedQuery(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SavedQuery>newBuilder()
@@ -794,6 +812,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSavedQueryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -831,6 +850,7 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                             ProtoRestSerializer<BatchGetEffectiveIamPoliciesRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "names", request.getNamesList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

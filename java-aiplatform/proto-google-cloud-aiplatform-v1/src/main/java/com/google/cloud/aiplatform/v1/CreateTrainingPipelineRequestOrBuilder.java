@@ -27,8 +27,8 @@ public interface CreateTrainingPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the TrainingPipeline in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the TrainingPipeline
+   * in. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateTrainingPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location to create the TrainingPipeline in.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location to create the TrainingPipeline
+   * in. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

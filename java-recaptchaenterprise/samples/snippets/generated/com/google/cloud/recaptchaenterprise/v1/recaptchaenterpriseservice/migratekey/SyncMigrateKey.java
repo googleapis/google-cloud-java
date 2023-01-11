@@ -39,6 +39,7 @@ public class SyncMigrateKey {
       MigrateKeyRequest request =
           MigrateKeyRequest.newBuilder()
               .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+              .setSkipBillingCheck(true)
               .build();
       Key response = recaptchaEnterpriseServiceClient.migrateKey(request);
     }

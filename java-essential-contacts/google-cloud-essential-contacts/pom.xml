@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-essential-contacts</artifactId>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
   <packaging>jar</packaging>
   <name>Google Essential Contacts API</name>
   <description>Essential Contacts API helps you customize who receives notifications by providing your own list of contacts in many Google Cloud services.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-essential-contacts-parent</artifactId>
-    <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
+    <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-essential-contacts:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-essential-contacts</site.installationModule>

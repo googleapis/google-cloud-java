@@ -238,8 +238,8 @@ public interface TensorboardTimeSeriesOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-   * Blob
+   * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+   * Tensor, Blob
    * </pre>
    *
    * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -251,8 +251,8 @@ public interface TensorboardTimeSeriesOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor,
-   * Blob
+   * Immutable. Name of the plugin this time series pertain to. Such as Scalar,
+   * Tensor, Blob
    * </pre>
    *
    * <code>string plugin_name = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -278,7 +278,8 @@ public interface TensorboardTimeSeriesOrBuilder
    *
    *
    * <pre>
-   * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+   * Output only. Scalar, Tensor, or Blob metadata for this
+   * TensorboardTimeSeries.
    * </pre>
    *
    * <code>
@@ -292,7 +293,8 @@ public interface TensorboardTimeSeriesOrBuilder
    *
    *
    * <pre>
-   * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+   * Output only. Scalar, Tensor, or Blob metadata for this
+   * TensorboardTimeSeries.
    * </pre>
    *
    * <code>
@@ -306,7 +308,8 @@ public interface TensorboardTimeSeriesOrBuilder
    *
    *
    * <pre>
-   * Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
+   * Output only. Scalar, Tensor, or Blob metadata for this
+   * TensorboardTimeSeries.
    * </pre>
    *
    * <code>

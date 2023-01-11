@@ -98,7 +98,10 @@ import org.threeten.bp.Duration;
  * contentServiceSettingsBuilder
  *     .createContentSettings()
  *     .setRetrySettings(
- *         contentServiceSettingsBuilder.createContentSettings().getRetrySettings().toBuilder()
+ *         contentServiceSettingsBuilder
+ *             .createContentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ContentServiceStubSettings contentServiceSettings = contentServiceSettingsBuilder.build();

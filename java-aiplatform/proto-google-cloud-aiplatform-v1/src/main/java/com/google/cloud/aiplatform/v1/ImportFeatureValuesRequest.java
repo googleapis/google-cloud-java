@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.ImportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ImportFeatureValues].
+ * Request message for
+ * [FeaturestoreService.ImportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ImportFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ImportFeatureValuesRequest}
@@ -78,8 +79,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. ID of the Feature to import values of. This Feature must exist in the
-     * target EntityType, or the request will fail.
+     * Required. ID of the Feature to import values of. This Feature must exist
+     * in the target EntityType, or the request will fail.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,8 +92,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. ID of the Feature to import values of. This Feature must exist in the
-     * target EntityType, or the request will fail.
+     * Required. ID of the Feature to import values of. This Feature must exist
+     * in the target EntityType, or the request will fail.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -184,8 +185,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. ID of the Feature to import values of. This Feature must exist in the
-     * target EntityType, or the request will fail.
+     * Required. ID of the Feature to import values of. This Feature must exist
+     * in the target EntityType, or the request will fail.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -208,8 +209,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. ID of the Feature to import values of. This Feature must exist in the
-     * target EntityType, or the request will fail.
+     * Required. ID of the Feature to import values of. This Feature must exist
+     * in the target EntityType, or the request will fail.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -652,8 +653,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. ID of the Feature to import values of. This Feature must exist in the
-       * target EntityType, or the request will fail.
+       * Required. ID of the Feature to import values of. This Feature must exist
+       * in the target EntityType, or the request will fail.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -675,8 +676,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. ID of the Feature to import values of. This Feature must exist in the
-       * target EntityType, or the request will fail.
+       * Required. ID of the Feature to import values of. This Feature must exist
+       * in the target EntityType, or the request will fail.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -698,8 +699,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. ID of the Feature to import values of. This Feature must exist in the
-       * target EntityType, or the request will fail.
+       * Required. ID of the Feature to import values of. This Feature must exist
+       * in the target EntityType, or the request will fail.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -720,8 +721,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. ID of the Feature to import values of. This Feature must exist in the
-       * target EntityType, or the request will fail.
+       * Required. ID of the Feature to import values of. This Feature must exist
+       * in the target EntityType, or the request will fail.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -738,8 +739,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
        *
        *
        * <pre>
-       * Required. ID of the Feature to import values of. This Feature must exist in the
-       * target EntityType, or the request will fail.
+       * Required. ID of the Feature to import values of. This Feature must exist
+       * in the target EntityType, or the request will fail.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1260,8 +1261,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for which values
-   * are being imported. Format:
+   * Required. The resource name of the EntityType grouping the Features for
+   * which values are being imported. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -1287,8 +1288,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for which values
-   * are being imported. Format:
+   * Required. The resource name of the EntityType grouping the Features for
+   * which values are being imported. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -1369,9 +1370,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Specifications defining which Feature values to import from the entity. The
-   * request fails if no feature_specs are provided, and having multiple
-   * feature_specs for one Feature is not allowed.
+   * Required. Specifications defining which Feature values to import from the
+   * entity. The request fails if no feature_specs are provided, and having
+   * multiple feature_specs for one Feature is not allowed.
    * </pre>
    *
    * <code>
@@ -1387,9 +1388,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Specifications defining which Feature values to import from the entity. The
-   * request fails if no feature_specs are provided, and having multiple
-   * feature_specs for one Feature is not allowed.
+   * Required. Specifications defining which Feature values to import from the
+   * entity. The request fails if no feature_specs are provided, and having
+   * multiple feature_specs for one Feature is not allowed.
    * </pre>
    *
    * <code>
@@ -1406,9 +1407,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Specifications defining which Feature values to import from the entity. The
-   * request fails if no feature_specs are provided, and having multiple
-   * feature_specs for one Feature is not allowed.
+   * Required. Specifications defining which Feature values to import from the
+   * entity. The request fails if no feature_specs are provided, and having
+   * multiple feature_specs for one Feature is not allowed.
    * </pre>
    *
    * <code>
@@ -1423,9 +1424,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Specifications defining which Feature values to import from the entity. The
-   * request fails if no feature_specs are provided, and having multiple
-   * feature_specs for one Feature is not allowed.
+   * Required. Specifications defining which Feature values to import from the
+   * entity. The request fails if no feature_specs are provided, and having
+   * multiple feature_specs for one Feature is not allowed.
    * </pre>
    *
    * <code>
@@ -1441,9 +1442,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Specifications defining which Feature values to import from the entity. The
-   * request fails if no feature_specs are provided, and having multiple
-   * feature_specs for one Feature is not allowed.
+   * Required. Specifications defining which Feature values to import from the
+   * entity. The request fails if no feature_specs are provided, and having
+   * multiple feature_specs for one Feature is not allowed.
    * </pre>
    *
    * <code>
@@ -1819,7 +1820,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.ImportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ImportFeatureValues].
+   * Request message for
+   * [FeaturestoreService.ImportFeatureValues][google.cloud.aiplatform.v1.FeaturestoreService.ImportFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ImportFeatureValuesRequest}
@@ -3031,8 +3033,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being imported. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being imported. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3057,8 +3059,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being imported. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being imported. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3083,8 +3085,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being imported. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being imported. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3108,8 +3110,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being imported. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being imported. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3129,8 +3131,8 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the EntityType grouping the Features for which values
-     * are being imported. Format:
+     * Required. The resource name of the EntityType grouping the Features for
+     * which values are being imported. Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
      * </pre>
      *
@@ -3286,9 +3288,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3307,9 +3309,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3327,9 +3329,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3348,9 +3350,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3375,9 +3377,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3401,9 +3403,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3428,9 +3430,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3455,9 +3457,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3480,9 +3482,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3506,9 +3508,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3532,9 +3534,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3555,9 +3557,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3578,9 +3580,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3595,9 +3597,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3616,9 +3618,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3639,9 +3641,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3659,9 +3661,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>
@@ -3680,9 +3682,9 @@ public final class ImportFeatureValuesRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Specifications defining which Feature values to import from the entity. The
-     * request fails if no feature_specs are provided, and having multiple
-     * feature_specs for one Feature is not allowed.
+     * Required. Specifications defining which Feature values to import from the
+     * entity. The request fails if no feature_specs are provided, and having
+     * multiple feature_specs for one Feature is not allowed.
      * </pre>
      *
      * <code>

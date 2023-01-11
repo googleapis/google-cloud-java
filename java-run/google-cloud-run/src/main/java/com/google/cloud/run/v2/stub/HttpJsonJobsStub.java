@@ -92,11 +92,11 @@ public class HttpJsonJobsStub extends JobsStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "jobId", request.getJobId());
                         serializer.putQueryParam(fields, "validateOnly", request.getValidateOnly());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -129,6 +129,7 @@ public class HttpJsonJobsStub extends JobsStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -166,6 +167,7 @@ public class HttpJsonJobsStub extends JobsStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(
                                 fields, "showDeleted", request.getShowDeleted());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -200,11 +202,11 @@ public class HttpJsonJobsStub extends JobsStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "allowMissing", request.getAllowMissing());
                         serializer.putQueryParam(fields, "validateOnly", request.getValidateOnly());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -239,6 +241,7 @@ public class HttpJsonJobsStub extends JobsStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "etag", request.getEtag());
                         serializer.putQueryParam(fields, "validateOnly", request.getValidateOnly());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -274,12 +277,13 @@ public class HttpJsonJobsStub extends JobsStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<RunJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()
@@ -314,6 +318,7 @@ public class HttpJsonJobsStub extends JobsStub {
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "options", request.getOptions());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -347,12 +352,13 @@ public class HttpJsonJobsStub extends JobsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -383,12 +389,13 @@ public class HttpJsonJobsStub extends JobsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

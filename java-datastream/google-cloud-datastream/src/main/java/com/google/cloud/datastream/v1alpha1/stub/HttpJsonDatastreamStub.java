@@ -130,6 +130,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -163,6 +164,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetConnectionProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -200,13 +202,14 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(
                                 fields, "connectionProfileId", request.getConnectionProfileId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "connectionProfile", request.getConnectionProfile(), false))
+                                      "connectionProfile", request.getConnectionProfile(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -246,13 +249,14 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "connectionProfile", request.getConnectionProfile(), false))
+                                      "connectionProfile", request.getConnectionProfile(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -288,6 +292,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             ProtoRestSerializer<DeleteConnectionProfileRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -327,12 +332,13 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DiscoverConnectionProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<DiscoverConnectionProfileResponse>newBuilder()
@@ -367,6 +373,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -399,6 +406,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetStreamRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -437,12 +445,13 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(fields, "streamId", request.getStreamId());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("stream", request.getStream(), false))
+                                  .toBody("stream", request.getStream(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -482,12 +491,13 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("stream", request.getStream(), false))
+                                  .toBody("stream", request.getStream(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -522,6 +532,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             ProtoRestSerializer<DeleteStreamRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -558,12 +569,13 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FetchErrorsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearStream().build(), false))
+                                  .toBody("*", request.toBuilder().clearStream().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -599,6 +611,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -636,13 +649,14 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(
                                 fields, "privateConnectionId", request.getPrivateConnectionId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
                                   .toBody(
-                                      "privateConnection", request.getPrivateConnection(), false))
+                                      "privateConnection", request.getPrivateConnection(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -676,6 +690,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetPrivateConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -716,6 +731,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -752,6 +768,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -790,12 +807,13 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "routeId", request.getRouteId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("route", request.getRoute(), false))
+                                  .toBody("route", request.getRoute(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -828,6 +846,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetRouteRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -865,6 +884,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -899,6 +919,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             ProtoRestSerializer<DeleteRouteRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

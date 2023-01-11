@@ -27,12 +27,14 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. Model predicted output if the input instance is constructed from the
-   * baselines of all the features defined in [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * Output only. Model predicted output if the input instance is constructed
+   * from the baselines of all the features defined in
+   * [ExplanationMetadata.inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The field name of the output is determined by the key in
    * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
    * If the Model's predicted output has multiple dimensions (rank &gt; 1), this is
-   * the value in the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * the value in the output located by
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
    * If there are multiple baselines, their output values are averaged.
    * </pre>
    *
@@ -48,9 +50,11 @@ public interface AttributionOrBuilder
    * <pre>
    * Output only. Model predicted output on the corresponding [explanation
    * instance][ExplainRequest.instances]. The field name of the output is
-   * determined by the key in [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
+   * determined by the key in
+   * [ExplanationMetadata.outputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.outputs].
    * If the Model predicted output has multiple dimensions, this is the value in
-   * the output located by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * the output located by
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
    * </pre>
    *
    * <code>double instance_output_value = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -63,11 +67,14 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. Attributions of each explained feature. Features are extracted from
-   * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * Output only. Attributions of each explained feature. Features are extracted
+   * from the [prediction
+   * instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
+   * according to [explanation metadata for
+   * inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
-   * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
+   * are how much the feature in the
+   * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
    * The format of the value is determined by the feature's input format:
    *   * If the feature is a scalar value, the attribution value is a
@@ -79,10 +86,14 @@ public interface AttributionOrBuilder
    *     attribution value struct are the same as the keys in the feature
    *     struct. The formats of the values in the attribution struct are
    *     determined by the formats of the values in the feature struct.
-   * The [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1beta1.ExplanationMetadata.feature_attributions_schema_uri] field,
-   * pointed to by the [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] field of the
-   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object, points to the schema file that
-   * describes the features and their attribution values (if it is populated).
+   * The
+   * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1beta1.ExplanationMetadata.feature_attributions_schema_uri]
+   * field, pointed to by the
+   * [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] field of
+   * the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object, points to the schema file that describes the features and their
+   * attribution values (if it is populated).
    * </pre>
    *
    * <code>
@@ -96,11 +107,14 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. Attributions of each explained feature. Features are extracted from
-   * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * Output only. Attributions of each explained feature. Features are extracted
+   * from the [prediction
+   * instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
+   * according to [explanation metadata for
+   * inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
-   * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
+   * are how much the feature in the
+   * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
    * The format of the value is determined by the feature's input format:
    *   * If the feature is a scalar value, the attribution value is a
@@ -112,10 +126,14 @@ public interface AttributionOrBuilder
    *     attribution value struct are the same as the keys in the feature
    *     struct. The formats of the values in the attribution struct are
    *     determined by the formats of the values in the feature struct.
-   * The [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1beta1.ExplanationMetadata.feature_attributions_schema_uri] field,
-   * pointed to by the [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] field of the
-   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object, points to the schema file that
-   * describes the features and their attribution values (if it is populated).
+   * The
+   * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1beta1.ExplanationMetadata.feature_attributions_schema_uri]
+   * field, pointed to by the
+   * [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] field of
+   * the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object, points to the schema file that describes the features and their
+   * attribution values (if it is populated).
    * </pre>
    *
    * <code>
@@ -129,11 +147,14 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. Attributions of each explained feature. Features are extracted from
-   * the [prediction instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] according to
-   * [explanation metadata for inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
+   * Output only. Attributions of each explained feature. Features are extracted
+   * from the [prediction
+   * instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
+   * according to [explanation metadata for
+   * inputs][google.cloud.aiplatform.v1beta1.ExplanationMetadata.inputs].
    * The value is a struct, whose keys are the name of the feature. The values
-   * are how much the feature in the [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
+   * are how much the feature in the
+   * [instance][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
    * contributed to the predicted result.
    * The format of the value is determined by the feature's input format:
    *   * If the feature is a scalar value, the attribution value is a
@@ -145,10 +166,14 @@ public interface AttributionOrBuilder
    *     attribution value struct are the same as the keys in the feature
    *     struct. The formats of the values in the attribution struct are
    *     determined by the formats of the values in the feature struct.
-   * The [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1beta1.ExplanationMetadata.feature_attributions_schema_uri] field,
-   * pointed to by the [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] field of the
-   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object, points to the schema file that
-   * describes the features and their attribution values (if it is populated).
+   * The
+   * [ExplanationMetadata.feature_attributions_schema_uri][google.cloud.aiplatform.v1beta1.ExplanationMetadata.feature_attributions_schema_uri]
+   * field, pointed to by the
+   * [ExplanationSpec][google.cloud.aiplatform.v1beta1.ExplanationSpec] field of
+   * the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object, points to the schema file that describes the features and their
+   * attribution values (if it is populated).
    * </pre>
    *
    * <code>
@@ -214,8 +239,9 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. The display name of the output identified by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index]. For example,
-   * the predicted class name by a multi-classification Model.
+   * Output only. The display name of the output identified by
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * For example, the predicted class name by a multi-classification Model.
    * This field is only populated iff the Model predicts display names as a
    * separate field along with the explained output. The predicted display name
    * must has the same shape of the explained output, and can be located using
@@ -231,8 +257,9 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. The display name of the output identified by [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index]. For example,
-   * the predicted class name by a multi-classification Model.
+   * Output only. The display name of the output identified by
+   * [output_index][google.cloud.aiplatform.v1beta1.Attribution.output_index].
+   * For example, the predicted class name by a multi-classification Model.
    * This field is only populated iff the Model predicts display names as a
    * separate field along with the explained output. The predicted display name
    * must has the same shape of the explained output, and can be located using
@@ -249,19 +276,25 @@ public interface AttributionOrBuilder
    *
    *
    * <pre>
-   * Output only. Error of [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions] caused by approximation used in the
-   * explanation method. Lower value means more precise attributions.
+   * Output only. Error of
+   * [feature_attributions][google.cloud.aiplatform.v1beta1.Attribution.feature_attributions]
+   * caused by approximation used in the explanation method. Lower value means
+   * more precise attributions.
    * * For Sampled Shapley
    * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.sampled_shapley_attribution],
-   * increasing [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count] might reduce
-   * the error.
+   * increasing
+   * [path_count][google.cloud.aiplatform.v1beta1.SampledShapleyAttribution.path_count]
+   * might reduce the error.
    * * For Integrated Gradients
    * [attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.integrated_gradients_attribution],
-   * increasing [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count] might
-   * reduce the error.
-   * * For [XRAI attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
    * increasing
-   * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count] might reduce the error.
+   * [step_count][google.cloud.aiplatform.v1beta1.IntegratedGradientsAttribution.step_count]
+   * might reduce the error.
+   * * For [XRAI
+   * attribution][google.cloud.aiplatform.v1beta1.ExplanationParameters.xrai_attribution],
+   * increasing
+   * [step_count][google.cloud.aiplatform.v1beta1.XraiAttribution.step_count]
+   * might reduce the error.
    * See [this introduction](/vertex-ai/docs/explainable-ai/overview)
    * for more information.
    * </pre>

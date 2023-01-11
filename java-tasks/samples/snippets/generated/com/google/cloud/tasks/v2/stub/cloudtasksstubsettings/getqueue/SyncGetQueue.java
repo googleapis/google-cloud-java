@@ -36,7 +36,10 @@ public class SyncGetQueue {
     cloudTasksSettingsBuilder
         .getQueueSettings()
         .setRetrySettings(
-            cloudTasksSettingsBuilder.getQueueSettings().getRetrySettings().toBuilder()
+            cloudTasksSettingsBuilder
+                .getQueueSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudTasksStubSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();

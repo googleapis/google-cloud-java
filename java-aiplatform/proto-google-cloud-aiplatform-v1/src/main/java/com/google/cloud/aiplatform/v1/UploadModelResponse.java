@@ -22,7 +22,9 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message of [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel] operation.
+ * Response message of
+ * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel]
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UploadModelResponse}
@@ -340,7 +342,9 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message of [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel] operation.
+   * Response message of
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1.ModelService.UploadModel]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UploadModelResponse}

@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * nodeGroupsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         nodeGroupsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         nodeGroupsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NodeGroupsSettings nodeGroupsSettings = nodeGroupsSettingsBuilder.build();

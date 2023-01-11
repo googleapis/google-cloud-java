@@ -88,12 +88,13 @@ public class HttpJsonCloudChannelReportsServiceStub extends CloudChannelReportsS
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunReportJobRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -128,12 +129,13 @@ public class HttpJsonCloudChannelReportsServiceStub extends CloudChannelReportsS
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<FetchReportResultsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearReportJob().build(), false))
+                                  .toBody("*", request.toBuilder().clearReportJob().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<FetchReportResultsResponse>newBuilder()
@@ -168,6 +170,7 @@ public class HttpJsonCloudChannelReportsServiceStub extends CloudChannelReportsS
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

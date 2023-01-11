@@ -366,13 +366,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
    * <pre>
    * Output only. Additional information about instance health.
    * Example:
-   *  healthInfo": {
-   *   "docker_proxy_agent_status": "1",
-   *   "docker_status": "1",
-   *   "jupyterlab_api_status": "-1",
-   *   "jupyterlab_status": "-1",
-   *   "updated": "2020-10-18 09:40:03.573409"
-   *  }
+   *     healthInfo": {
+   *       "docker_proxy_agent_status": "1",
+   *       "docker_status": "1",
+   *       "jupyterlab_api_status": "-1",
+   *       "jupyterlab_status": "-1",
+   *       "updated": "2020-10-18 09:40:03.573409"
+   *     }
    * </pre>
    *
    * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -397,13 +397,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
    * <pre>
    * Output only. Additional information about instance health.
    * Example:
-   *  healthInfo": {
-   *   "docker_proxy_agent_status": "1",
-   *   "docker_status": "1",
-   *   "jupyterlab_api_status": "-1",
-   *   "jupyterlab_status": "-1",
-   *   "updated": "2020-10-18 09:40:03.573409"
-   *  }
+   *     healthInfo": {
+   *       "docker_proxy_agent_status": "1",
+   *       "docker_status": "1",
+   *       "jupyterlab_api_status": "-1",
+   *       "jupyterlab_status": "-1",
+   *       "updated": "2020-10-18 09:40:03.573409"
+   *     }
    * </pre>
    *
    * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -419,13 +419,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
    * <pre>
    * Output only. Additional information about instance health.
    * Example:
-   *  healthInfo": {
-   *   "docker_proxy_agent_status": "1",
-   *   "docker_status": "1",
-   *   "jupyterlab_api_status": "-1",
-   *   "jupyterlab_status": "-1",
-   *   "updated": "2020-10-18 09:40:03.573409"
-   *  }
+   *     healthInfo": {
+   *       "docker_proxy_agent_status": "1",
+   *       "docker_status": "1",
+   *       "jupyterlab_api_status": "-1",
+   *       "jupyterlab_status": "-1",
+   *       "updated": "2020-10-18 09:40:03.573409"
+   *     }
    * </pre>
    *
    * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -446,13 +446,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
    * <pre>
    * Output only. Additional information about instance health.
    * Example:
-   *  healthInfo": {
-   *   "docker_proxy_agent_status": "1",
-   *   "docker_status": "1",
-   *   "jupyterlab_api_status": "-1",
-   *   "jupyterlab_status": "-1",
-   *   "updated": "2020-10-18 09:40:03.573409"
-   *  }
+   *     healthInfo": {
+   *       "docker_proxy_agent_status": "1",
+   *       "docker_status": "1",
+   *       "jupyterlab_api_status": "-1",
+   *       "jupyterlab_status": "-1",
+   *       "updated": "2020-10-18 09:40:03.573409"
+   *     }
    * </pre>
    *
    * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -999,13 +999,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1030,13 +1030,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1052,13 +1052,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1079,13 +1079,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1113,13 +1113,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1143,13 +1143,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1172,13 +1172,13 @@ public final class GetInstanceHealthResponse extends com.google.protobuf.Generat
      * <pre>
      * Output only. Additional information about instance health.
      * Example:
-     *  healthInfo": {
-     *   "docker_proxy_agent_status": "1",
-     *   "docker_status": "1",
-     *   "jupyterlab_api_status": "-1",
-     *   "jupyterlab_status": "-1",
-     *   "updated": "2020-10-18 09:40:03.573409"
-     *  }
+     *     healthInfo": {
+     *       "docker_proxy_agent_status": "1",
+     *       "docker_status": "1",
+     *       "jupyterlab_api_status": "-1",
+     *       "jupyterlab_status": "-1",
+     *       "updated": "2020-10-18 09:40:03.573409"
+     *     }
      * </pre>
      *
      * <code>map&lt;string, string&gt; health_info = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];

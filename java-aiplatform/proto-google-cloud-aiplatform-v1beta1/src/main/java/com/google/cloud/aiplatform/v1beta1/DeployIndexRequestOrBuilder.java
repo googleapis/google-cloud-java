@@ -27,8 +27,8 @@ public interface DeployIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource into which to deploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface DeployIndexRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource into which to deploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *

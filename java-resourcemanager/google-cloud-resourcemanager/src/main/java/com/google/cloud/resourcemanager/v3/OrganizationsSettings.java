@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * organizationsSettingsBuilder
  *     .getOrganizationSettings()
  *     .setRetrySettings(
- *         organizationsSettingsBuilder.getOrganizationSettings().getRetrySettings().toBuilder()
+ *         organizationsSettingsBuilder
+ *             .getOrganizationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * OrganizationsSettings organizationsSettings = organizationsSettingsBuilder.build();

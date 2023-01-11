@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.CreateTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardTimeSeries].
+ * Request message for
+ * [TensorboardService.CreateTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardTimeSeries].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest}
@@ -134,10 +135,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-   * will become the final component of the TensorboardTimeSeries's resource
-   * name.
-   * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+   * Optional. The user specified unique ID to use for the
+   * TensorboardTimeSeries, which becomes the final component of the
+   * TensorboardTimeSeries's resource name. This value should match
+   * "[a-z0-9][a-z0-9-]{0, 127}"
    * </pre>
    *
    * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -160,10 +161,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-   * will become the final component of the TensorboardTimeSeries's resource
-   * name.
-   * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+   * Optional. The user specified unique ID to use for the
+   * TensorboardTimeSeries, which becomes the final component of the
+   * TensorboardTimeSeries's resource name. This value should match
+   * "[a-z0-9][a-z0-9-]{0, 127}"
    * </pre>
    *
    * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -427,7 +428,8 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Request message for [TensorboardService.CreateTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardTimeSeries].
+   * Request message for
+   * [TensorboardService.CreateTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.CreateTensorboardTimeSeries].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest}
@@ -768,10 +770,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-     * will become the final component of the TensorboardTimeSeries's resource
-     * name.
-     * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+     * Optional. The user specified unique ID to use for the
+     * TensorboardTimeSeries, which becomes the final component of the
+     * TensorboardTimeSeries's resource name. This value should match
+     * "[a-z0-9][a-z0-9-]{0, 127}"
      * </pre>
      *
      * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -793,10 +795,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-     * will become the final component of the TensorboardTimeSeries's resource
-     * name.
-     * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+     * Optional. The user specified unique ID to use for the
+     * TensorboardTimeSeries, which becomes the final component of the
+     * TensorboardTimeSeries's resource name. This value should match
+     * "[a-z0-9][a-z0-9-]{0, 127}"
      * </pre>
      *
      * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -818,10 +820,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-     * will become the final component of the TensorboardTimeSeries's resource
-     * name.
-     * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+     * Optional. The user specified unique ID to use for the
+     * TensorboardTimeSeries, which becomes the final component of the
+     * TensorboardTimeSeries's resource name. This value should match
+     * "[a-z0-9][a-z0-9-]{0, 127}"
      * </pre>
      *
      * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -842,10 +844,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-     * will become the final component of the TensorboardTimeSeries's resource
-     * name.
-     * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+     * Optional. The user specified unique ID to use for the
+     * TensorboardTimeSeries, which becomes the final component of the
+     * TensorboardTimeSeries's resource name. This value should match
+     * "[a-z0-9][a-z0-9-]{0, 127}"
      * </pre>
      *
      * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -862,10 +864,10 @@ public final class CreateTensorboardTimeSeriesRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. The user specified unique ID to use for the TensorboardTimeSeries, which
-     * will become the final component of the TensorboardTimeSeries's resource
-     * name.
-     * This value should match "[a-z0-9][a-z0-9-]{0, 127}"
+     * Optional. The user specified unique ID to use for the
+     * TensorboardTimeSeries, which becomes the final component of the
+     * TensorboardTimeSeries's resource name. This value should match
+     * "[a-z0-9][a-z0-9-]{0, 127}"
      * </pre>
      *
      * <code>string tensorboard_time_series_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -58,8 +58,9 @@ public interface ContentOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the content. This ID will be
-   * different if the content is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the content. This ID
+   * will be different if the content is deleted and re-created with the same
+   * name.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -71,8 +72,9 @@ public interface ContentOrBuilder
    *
    *
    * <pre>
-   * Output only. System generated globally unique ID for the content. This ID will be
-   * different if the content is deleted and re-created with the same name.
+   * Output only. System generated globally unique ID for the content. This ID
+   * will be different if the content is deleted and re-created with the same
+   * name.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -85,9 +87,9 @@ public interface ContentOrBuilder
    *
    *
    * <pre>
-   * Required. The path for the Content file, represented as directory structure.
-   * Unique within a lake.
-   * Limited to alphanumerics, hyphens, underscores, dots and slashes.
+   * Required. The path for the Content file, represented as directory
+   * structure. Unique within a lake. Limited to alphanumerics, hyphens,
+   * underscores, dots and slashes.
    * </pre>
    *
    * <code>string path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,9 +101,9 @@ public interface ContentOrBuilder
    *
    *
    * <pre>
-   * Required. The path for the Content file, represented as directory structure.
-   * Unique within a lake.
-   * Limited to alphanumerics, hyphens, underscores, dots and slashes.
+   * Required. The path for the Content file, represented as directory
+   * structure. Unique within a lake. Limited to alphanumerics, hyphens,
+   * underscores, dots and slashes.
    * </pre>
    *
    * <code>string path = 3 [(.google.api.field_behavior) = REQUIRED];</code>

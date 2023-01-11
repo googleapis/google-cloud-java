@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.9.0</version>
+  <version>0.11.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.area120:google-area120-tables:0.9.0'
+implementation 'com.google.area120:google-area120-tables:0.11.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.9.0"
+libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.11.0"
 ```
 
 ## Authentication
@@ -165,16 +165,16 @@ Java is a registered trademark of Oracle and/or its affiliates.
 
 [product-docs]: https://area120.google.com/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-area120-tables/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-area120-tables/java11.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.area120/google-area120-tables.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.area120%20AND%20a:google-area120-tables&core=gav
@@ -186,9 +186,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
-[contributing]: https://github.com/googleapis/java-area120-tables/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-area120-tables/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/java-area120-tables/blob/main/LICENSE
+[contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=area120tables.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM

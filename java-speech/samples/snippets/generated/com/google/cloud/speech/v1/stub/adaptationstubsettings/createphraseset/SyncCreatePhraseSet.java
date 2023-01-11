@@ -36,7 +36,10 @@ public class SyncCreatePhraseSet {
     adaptationSettingsBuilder
         .createPhraseSetSettings()
         .setRetrySettings(
-            adaptationSettingsBuilder.createPhraseSetSettings().getRetrySettings().toBuilder()
+            adaptationSettingsBuilder
+                .createPhraseSetSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AdaptationStubSettings adaptationSettings = adaptationSettingsBuilder.build();

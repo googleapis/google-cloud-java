@@ -83,7 +83,10 @@ import org.threeten.bp.Duration;
  * messagesV1Beta3SettingsBuilder
  *     .listJobMessagesSettings()
  *     .setRetrySettings(
- *         messagesV1Beta3SettingsBuilder.listJobMessagesSettings().getRetrySettings().toBuilder()
+ *         messagesV1Beta3SettingsBuilder
+ *             .listJobMessagesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MessagesV1Beta3StubSettings messagesV1Beta3Settings = messagesV1Beta3SettingsBuilder.build();

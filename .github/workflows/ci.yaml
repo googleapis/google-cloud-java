@@ -100,6 +100,13 @@ jobs:
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+  requirements-kokoro:
+    runs-on: ubuntu-latest
+    container: gcr.io/cloud-devrel-public-resources/java8
+    steps:
+    - uses: actions/checkout@v3
+    - run: python3 --version
+    - run: python3 -m pip install --require-hashes -r .kokoro/requirements.txt
 
 # TODO: Uncomment the needed Github Actions
 #  dependencies:

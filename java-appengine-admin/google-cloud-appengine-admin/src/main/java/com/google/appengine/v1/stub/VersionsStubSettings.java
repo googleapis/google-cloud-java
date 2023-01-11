@@ -94,7 +94,10 @@ import org.threeten.bp.Duration;
  * versionsSettingsBuilder
  *     .getVersionSettings()
  *     .setRetrySettings(
- *         versionsSettingsBuilder.getVersionSettings().getRetrySettings().toBuilder()
+ *         versionsSettingsBuilder
+ *             .getVersionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VersionsStubSettings versionsSettings = versionsSettingsBuilder.build();

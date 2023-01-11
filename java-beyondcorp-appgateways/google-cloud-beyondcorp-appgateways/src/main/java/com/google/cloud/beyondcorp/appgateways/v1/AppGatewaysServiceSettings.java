@@ -75,7 +75,10 @@ import javax.annotation.Generated;
  * appGatewaysServiceSettingsBuilder
  *     .getAppGatewaySettings()
  *     .setRetrySettings(
- *         appGatewaysServiceSettingsBuilder.getAppGatewaySettings().getRetrySettings().toBuilder()
+ *         appGatewaysServiceSettingsBuilder
+ *             .getAppGatewaySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AppGatewaysServiceSettings appGatewaysServiceSettings =

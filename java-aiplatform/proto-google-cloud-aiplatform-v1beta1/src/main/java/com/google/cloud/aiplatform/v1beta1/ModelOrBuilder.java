@@ -253,7 +253,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Required. The display name of the Model.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -267,7 +267,7 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Required. The display name of the Model.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -333,7 +333,9 @@ public interface ModelOrBuilder
    * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
-   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * and
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PredictSchemata predict_schemata = 4;</code>
@@ -347,7 +349,9 @@ public interface ModelOrBuilder
    * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
-   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * and
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PredictSchemata predict_schemata = 4;</code>
@@ -361,7 +365,9 @@ public interface ModelOrBuilder
    * <pre>
    * The schemata that describe formats of the Model's predictions and
    * explanations as given and returned via
-   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] and [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * and
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PredictSchemata predict_schemata = 4;</code>
@@ -372,10 +378,10 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
-   * information about the Model, that is specific to it. Unset if the Model
-   * does not have any additional information.
-   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Immutable. Points to a YAML file stored on Google Cloud Storage describing
+   * additional information about the Model, that is specific to it. Unset if
+   * the Model does not have any additional information. The schema is defined
+   * as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * AutoML Models always have this field populated by Vertex AI, if no
    * additional metadata is needed, this field is set to an empty string.
@@ -393,10 +399,10 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. Points to a YAML file stored on Google Cloud Storage describing additional
-   * information about the Model, that is specific to it. Unset if the Model
-   * does not have any additional information.
-   * The schema is defined as an OpenAPI 3.0.2 [Schema
+   * Immutable. Points to a YAML file stored on Google Cloud Storage describing
+   * additional information about the Model, that is specific to it. Unset if
+   * the Model does not have any additional information. The schema is defined
+   * as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * AutoML Models always have this field populated by Vertex AI, if no
    * additional metadata is needed, this field is set to an empty string.
@@ -415,8 +421,9 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. An additional information about the Model; the schema of the metadata can
-   * be found in [metadata_schema][google.cloud.aiplatform.v1beta1.Model.metadata_schema_uri].
+   * Immutable. An additional information about the Model; the schema of the
+   * metadata can be found in
+   * [metadata_schema][google.cloud.aiplatform.v1beta1.Model.metadata_schema_uri].
    * Unset if the Model does not have any additional information.
    * </pre>
    *
@@ -429,8 +436,9 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. An additional information about the Model; the schema of the metadata can
-   * be found in [metadata_schema][google.cloud.aiplatform.v1beta1.Model.metadata_schema_uri].
+   * Immutable. An additional information about the Model; the schema of the
+   * metadata can be found in
+   * [metadata_schema][google.cloud.aiplatform.v1beta1.Model.metadata_schema_uri].
    * Unset if the Model does not have any additional information.
    * </pre>
    *
@@ -443,8 +451,9 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. An additional information about the Model; the schema of the metadata can
-   * be found in [metadata_schema][google.cloud.aiplatform.v1beta1.Model.metadata_schema_uri].
+   * Immutable. An additional information about the Model; the schema of the
+   * metadata can be found in
+   * [metadata_schema][google.cloud.aiplatform.v1beta1.Model.metadata_schema_uri].
    * Unset if the Model does not have any additional information.
    * </pre>
    *
@@ -456,8 +465,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not available for export.
+   * Output only. The formats in which this Model may be exported. If empty,
+   * this Model is not available for export.
    * </pre>
    *
    * <code>
@@ -470,8 +479,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not available for export.
+   * Output only. The formats in which this Model may be exported. If empty,
+   * this Model is not available for export.
    * </pre>
    *
    * <code>
@@ -483,8 +492,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not available for export.
+   * Output only. The formats in which this Model may be exported. If empty,
+   * this Model is not available for export.
    * </pre>
    *
    * <code>
@@ -496,8 +505,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not available for export.
+   * Output only. The formats in which this Model may be exported. If empty,
+   * this Model is not available for export.
    * </pre>
    *
    * <code>
@@ -510,8 +519,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The formats in which this Model may be exported. If empty, this Model is
-   * not available for export.
+   * Output only. The formats in which this Model may be exported. If empty,
+   * this Model is not available for export.
    * </pre>
    *
    * <code>
@@ -525,8 +534,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
-   * any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this
+   * Model, if any.
    * </pre>
    *
    * <code>
@@ -540,8 +549,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
-   * any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this
+   * Model, if any.
    * </pre>
    *
    * <code>
@@ -556,10 +565,10 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Input only. The specification of the container that is to be used when deploying
-   * this Model. The specification is ingested upon
-   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-   * and stored internally by Vertex AI.
+   * Input only. The specification of the container that is to be used when
+   * deploying this Model. The specification is ingested upon
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
+   * and all binaries it contains are copied and stored internally by Vertex AI.
    * Not present for AutoML Models.
    * </pre>
    *
@@ -574,10 +583,10 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Input only. The specification of the container that is to be used when deploying
-   * this Model. The specification is ingested upon
-   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-   * and stored internally by Vertex AI.
+   * Input only. The specification of the container that is to be used when
+   * deploying this Model. The specification is ingested upon
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
+   * and all binaries it contains are copied and stored internally by Vertex AI.
    * Not present for AutoML Models.
    * </pre>
    *
@@ -592,10 +601,10 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Input only. The specification of the container that is to be used when deploying
-   * this Model. The specification is ingested upon
-   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel], and all binaries it contains are copied
-   * and stored internally by Vertex AI.
+   * Input only. The specification of the container that is to be used when
+   * deploying this Model. The specification is ingested upon
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
+   * and all binaries it contains are copied and stored internally by Vertex AI.
    * Not present for AutoML Models.
    * </pre>
    *
@@ -609,9 +618,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. The path to the directory containing the Model artifact and any of its
-   * supporting files.
-   * Not present for AutoML Models.
+   * Immutable. The path to the directory containing the Model artifact and any
+   * of its supporting files. Not present for AutoML Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -623,9 +631,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Immutable. The path to the directory containing the Model artifact and any of its
-   * supporting files.
-   * Not present for AutoML Models.
+   * Immutable. The path to the directory containing the Model artifact and any
+   * of its supporting files. Not present for AutoML Models.
    * </pre>
    *
    * <code>string artifact_uri = 26 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -638,16 +645,22 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. When this Model is deployed, its prediction resources are described by the
-   * `prediction_resources` field of the [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object.
-   * Because not all Models support all resource configuration types, the
-   * configuration types this Model supports are listed here. If no
+   * Output only. When this Model is deployed, its prediction resources are
+   * described by the `prediction_resources` field of the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object. Because not all Models support all resource configuration types,
+   * the configuration types this Model supports are listed here. If no
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and does not support
-   * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
-   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]). Such a Model can serve predictions by
-   * using a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob], if it has at least one entry each in
-   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats] and
+   * online predictions
+   * ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]).
+   * Such a Model can serve predictions by using a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob],
+   * if it has at least one entry each in
+   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats]
+   * and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
    * </pre>
    *
@@ -663,16 +676,22 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. When this Model is deployed, its prediction resources are described by the
-   * `prediction_resources` field of the [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object.
-   * Because not all Models support all resource configuration types, the
-   * configuration types this Model supports are listed here. If no
+   * Output only. When this Model is deployed, its prediction resources are
+   * described by the `prediction_resources` field of the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object. Because not all Models support all resource configuration types,
+   * the configuration types this Model supports are listed here. If no
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and does not support
-   * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
-   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]). Such a Model can serve predictions by
-   * using a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob], if it has at least one entry each in
-   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats] and
+   * online predictions
+   * ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]).
+   * Such a Model can serve predictions by using a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob],
+   * if it has at least one entry each in
+   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats]
+   * and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
    * </pre>
    *
@@ -687,16 +706,22 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. When this Model is deployed, its prediction resources are described by the
-   * `prediction_resources` field of the [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object.
-   * Because not all Models support all resource configuration types, the
-   * configuration types this Model supports are listed here. If no
+   * Output only. When this Model is deployed, its prediction resources are
+   * described by the `prediction_resources` field of the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object. Because not all Models support all resource configuration types,
+   * the configuration types this Model supports are listed here. If no
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and does not support
-   * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
-   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]). Such a Model can serve predictions by
-   * using a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob], if it has at least one entry each in
-   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats] and
+   * online predictions
+   * ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]).
+   * Such a Model can serve predictions by using a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob],
+   * if it has at least one entry each in
+   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats]
+   * and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
    * </pre>
    *
@@ -713,16 +738,22 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. When this Model is deployed, its prediction resources are described by the
-   * `prediction_resources` field of the [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object.
-   * Because not all Models support all resource configuration types, the
-   * configuration types this Model supports are listed here. If no
+   * Output only. When this Model is deployed, its prediction resources are
+   * described by the `prediction_resources` field of the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object. Because not all Models support all resource configuration types,
+   * the configuration types this Model supports are listed here. If no
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and does not support
-   * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
-   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]). Such a Model can serve predictions by
-   * using a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob], if it has at least one entry each in
-   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats] and
+   * online predictions
+   * ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]).
+   * Such a Model can serve predictions by using a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob],
+   * if it has at least one entry each in
+   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats]
+   * and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
    * </pre>
    *
@@ -738,16 +769,22 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. When this Model is deployed, its prediction resources are described by the
-   * `prediction_resources` field of the [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] object.
-   * Because not all Models support all resource configuration types, the
-   * configuration types this Model supports are listed here. If no
+   * Output only. When this Model is deployed, its prediction resources are
+   * described by the `prediction_resources` field of the
+   * [Endpoint.deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+   * object. Because not all Models support all resource configuration types,
+   * the configuration types this Model supports are listed here. If no
    * configuration types are listed, the Model cannot be deployed to an
    * [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and does not support
-   * online predictions ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
-   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]). Such a Model can serve predictions by
-   * using a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob], if it has at least one entry each in
-   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats] and
+   * online predictions
+   * ([PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
+   * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain]).
+   * Such a Model can serve predictions by using a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob],
+   * if it has at least one entry each in
+   * [supported_input_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_input_storage_formats]
+   * and
    * [supported_output_storage_formats][google.cloud.aiplatform.v1beta1.Model.supported_output_storage_formats].
    * </pre>
    *
@@ -766,9 +803,10 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config]. If
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] exists, the instances
-   * should be given as per that schema.
+   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
+   * If
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * exists, the instances should be given as per that schema.
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
@@ -776,10 +814,12 @@ public interface ModelOrBuilder
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
-   * names. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * names. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
-   * syntax. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * syntax. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
@@ -789,11 +829,16 @@ public interface ModelOrBuilder
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
-   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
+   * object.
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -809,9 +854,10 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config]. If
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] exists, the instances
-   * should be given as per that schema.
+   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
+   * If
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * exists, the instances should be given as per that schema.
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
@@ -819,10 +865,12 @@ public interface ModelOrBuilder
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
-   * names. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * names. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
-   * syntax. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * syntax. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
@@ -832,11 +880,16 @@ public interface ModelOrBuilder
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
-   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
+   * object.
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -852,9 +905,10 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config]. If
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] exists, the instances
-   * should be given as per that schema.
+   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
+   * If
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * exists, the instances should be given as per that schema.
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
@@ -862,10 +916,12 @@ public interface ModelOrBuilder
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
-   * names. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * names. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
-   * syntax. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * syntax. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
@@ -875,11 +931,16 @@ public interface ModelOrBuilder
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
-   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
+   * object.
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -896,9 +957,10 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config]. If
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] exists, the instances
-   * should be given as per that schema.
+   * [BatchPredictionJob.input_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.input_config].
+   * If
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * exists, the instances should be given as per that schema.
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each instance is a single line. Uses
@@ -906,10 +968,12 @@ public interface ModelOrBuilder
    * * `csv`
    * The CSV format, where each instance is a single comma-separated line.
    * The first line in the file is the header, containing comma-separated field
-   * names. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * names. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record`
    * The TFRecord format, where each instance is a single record in tfrecord
-   * syntax. Uses [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
+   * syntax. Uses
+   * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
    * * `tf-record-gzip`
    * Similar to `tf-record`, but the file is gzipped. Uses
    * [GcsSource][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig.gcs_source].
@@ -919,11 +983,16 @@ public interface ModelOrBuilder
    * * `file-list`
    * Each line of the file is the location of an instance to process, uses
    * `gcs_source` field of the
-   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig] object.
+   * [InputConfig][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig]
+   * object.
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -941,12 +1010,14 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config]. If both
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] and
-   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri] exist, the predictions
-   * are returned together with their instances. In other words, the
-   * prediction has the original instance data first, followed
-   * by the actual prediction content (as per the schema).
+   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
+   * If both
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * and
+   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri]
+   * exist, the predictions are returned together with their instances. In other
+   * words, the prediction has the original instance data first, followed by the
+   * actual prediction content (as per the schema).
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
@@ -961,9 +1032,13 @@ public interface ModelOrBuilder
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -979,12 +1054,14 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config]. If both
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] and
-   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri] exist, the predictions
-   * are returned together with their instances. In other words, the
-   * prediction has the original instance data first, followed
-   * by the actual prediction content (as per the schema).
+   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
+   * If both
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * and
+   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri]
+   * exist, the predictions are returned together with their instances. In other
+   * words, the prediction has the original instance data first, followed by the
+   * actual prediction content (as per the schema).
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
@@ -999,9 +1076,13 @@ public interface ModelOrBuilder
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -1017,12 +1098,14 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config]. If both
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] and
-   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri] exist, the predictions
-   * are returned together with their instances. In other words, the
-   * prediction has the original instance data first, followed
-   * by the actual prediction content (as per the schema).
+   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
+   * If both
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * and
+   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri]
+   * exist, the predictions are returned together with their instances. In other
+   * words, the prediction has the original instance data first, followed by the
+   * actual prediction content (as per the schema).
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
@@ -1037,9 +1120,13 @@ public interface ModelOrBuilder
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -1056,12 +1143,14 @@ public interface ModelOrBuilder
    *
    * <pre>
    * Output only. The formats this Model supports in
-   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config]. If both
-   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri] and
-   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri] exist, the predictions
-   * are returned together with their instances. In other words, the
-   * prediction has the original instance data first, followed
-   * by the actual prediction content (as per the schema).
+   * [BatchPredictionJob.output_config][google.cloud.aiplatform.v1beta1.BatchPredictionJob.output_config].
+   * If both
+   * [PredictSchemata.instance_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.instance_schema_uri]
+   * and
+   * [PredictSchemata.prediction_schema_uri][google.cloud.aiplatform.v1beta1.PredictSchemata.prediction_schema_uri]
+   * exist, the predictions are returned together with their instances. In other
+   * words, the prediction has the original instance data first, followed by the
+   * actual prediction content (as per the schema).
    * The possible formats are:
    * * `jsonl`
    * The JSON Lines format, where each prediction is a single line. Uses
@@ -1076,9 +1165,13 @@ public interface ModelOrBuilder
    * [BigQueryDestination][google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig.bigquery_destination]
    * .
    * If this Model doesn't support any of these formats it means it cannot be
-   * used with a [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob]. However, if it has
-   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types], it could serve online
-   * predictions by using [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict] or
+   * used with a
+   * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
+   * However, if it has
+   * [supported_deployment_resources_types][google.cloud.aiplatform.v1beta1.Model.supported_deployment_resources_types],
+   * it could serve online predictions by using
+   * [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
+   * or
    * [PredictionService.Explain][google.cloud.aiplatform.v1beta1.PredictionService.Explain].
    * </pre>
    *
@@ -1171,8 +1264,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The pointers to DeployedModels created from this Model. Note that
-   * Model could have been deployed to Endpoints in different Locations.
+   * Output only. The pointers to DeployedModels created from this Model. Note
+   * that Model could have been deployed to Endpoints in different Locations.
    * </pre>
    *
    * <code>
@@ -1184,8 +1277,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The pointers to DeployedModels created from this Model. Note that
-   * Model could have been deployed to Endpoints in different Locations.
+   * Output only. The pointers to DeployedModels created from this Model. Note
+   * that Model could have been deployed to Endpoints in different Locations.
    * </pre>
    *
    * <code>
@@ -1197,8 +1290,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The pointers to DeployedModels created from this Model. Note that
-   * Model could have been deployed to Endpoints in different Locations.
+   * Output only. The pointers to DeployedModels created from this Model. Note
+   * that Model could have been deployed to Endpoints in different Locations.
    * </pre>
    *
    * <code>
@@ -1210,8 +1303,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The pointers to DeployedModels created from this Model. Note that
-   * Model could have been deployed to Endpoints in different Locations.
+   * Output only. The pointers to DeployedModels created from this Model. Note
+   * that Model could have been deployed to Endpoints in different Locations.
    * </pre>
    *
    * <code>
@@ -1224,8 +1317,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The pointers to DeployedModels created from this Model. Note that
-   * Model could have been deployed to Endpoints in different Locations.
+   * Output only. The pointers to DeployedModels created from this Model. Note
+   * that Model could have been deployed to Endpoints in different Locations.
    * </pre>
    *
    * <code>
@@ -1242,21 +1335,27 @@ public interface ModelOrBuilder
    * The default explanation specification for this Model.
    * The Model can be used for [requesting
    * explanation][PredictionService.Explain] after being
-   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if it is populated.
-   * The Model can be used for [batch
+   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
+   * it is populated. The Model can be used for [batch
    * explanation][BatchPredictionJob.generate_explanation] if it is populated.
    * All fields of the explanation_spec can be overridden by
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+   * of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model],
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for [requesting
    * explanation][PredictionService.Explain] by setting
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model] and for [batch
-   * explanation][BatchPredictionJob.generate_explanation] by setting
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+   * of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
+   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
+   * setting
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * </pre>
    *
@@ -1272,21 +1371,27 @@ public interface ModelOrBuilder
    * The default explanation specification for this Model.
    * The Model can be used for [requesting
    * explanation][PredictionService.Explain] after being
-   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if it is populated.
-   * The Model can be used for [batch
+   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
+   * it is populated. The Model can be used for [batch
    * explanation][BatchPredictionJob.generate_explanation] if it is populated.
    * All fields of the explanation_spec can be overridden by
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+   * of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model],
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for [requesting
    * explanation][PredictionService.Explain] by setting
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model] and for [batch
-   * explanation][BatchPredictionJob.generate_explanation] by setting
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+   * of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
+   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
+   * setting
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * </pre>
    *
@@ -1302,21 +1407,27 @@ public interface ModelOrBuilder
    * The default explanation specification for this Model.
    * The Model can be used for [requesting
    * explanation][PredictionService.Explain] after being
-   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if it is populated.
-   * The Model can be used for [batch
+   * [deployed][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel] if
+   * it is populated. The Model can be used for [batch
    * explanation][BatchPredictionJob.generate_explanation] if it is populated.
    * All fields of the explanation_spec can be overridden by
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model], or
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+   * of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model],
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * If the default explanation specification is not set for this Model, this
    * Model can still be used for [requesting
    * explanation][PredictionService.Explain] by setting
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec] of
-   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model] and for [batch
-   * explanation][BatchPredictionJob.generate_explanation] by setting
-   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec] of
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.DeployedModel.explanation_spec]
+   * of
+   * [DeployModelRequest.deployed_model][google.cloud.aiplatform.v1beta1.DeployModelRequest.deployed_model]
+   * and for [batch explanation][BatchPredictionJob.generate_explanation] by
+   * setting
+   * [explanation_spec][google.cloud.aiplatform.v1beta1.BatchPredictionJob.explanation_spec]
+   * of
    * [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob].
    * </pre>
    *
@@ -1472,8 +1583,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Source of a model. It can either be automl training pipeline, custom
-   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * Output only. Source of a model. It can either be automl training pipeline,
+   * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
    * </pre>
    *
    * <code>
@@ -1487,8 +1598,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Source of a model. It can either be automl training pipeline, custom
-   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * Output only. Source of a model. It can either be automl training pipeline,
+   * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
    * </pre>
    *
    * <code>
@@ -1502,8 +1613,8 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. Source of a model. It can either be automl training pipeline, custom
-   * training pipeline, BigQuery ML, or existing Vertex AI Model.
+   * Output only. Source of a model. It can either be automl training pipeline,
+   * custom training pipeline, BigQuery ML, or existing Vertex AI Model.
    * </pre>
    *
    * <code>
@@ -1516,8 +1627,9 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Artifact that was created in MetadataStore when
-   * creating the Model. The Artifact resource name pattern is
+   * Output only. The resource name of the Artifact that was created in
+   * MetadataStore when creating the Model. The Artifact resource name pattern
+   * is
    * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
    * </pre>
    *
@@ -1530,8 +1642,9 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Artifact that was created in MetadataStore when
-   * creating the Model. The Artifact resource name pattern is
+   * Output only. The resource name of the Artifact that was created in
+   * MetadataStore when creating the Model. The Artifact resource name pattern
+   * is
    * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
    * </pre>
    *

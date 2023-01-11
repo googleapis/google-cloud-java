@@ -154,7 +154,10 @@ import javax.annotation.Generated;
  * dataformSettingsBuilder
  *     .getRepositorySettings()
  *     .setRetrySettings(
- *         dataformSettingsBuilder.getRepositorySettings().getRetrySettings().toBuilder()
+ *         dataformSettingsBuilder
+ *             .getRepositorySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataformStubSettings dataformSettings = dataformSettingsBuilder.build();

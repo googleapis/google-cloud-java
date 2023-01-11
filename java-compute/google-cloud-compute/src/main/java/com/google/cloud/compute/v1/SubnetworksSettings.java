@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * subnetworksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         subnetworksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         subnetworksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SubnetworksSettings subnetworksSettings = subnetworksSettingsBuilder.build();

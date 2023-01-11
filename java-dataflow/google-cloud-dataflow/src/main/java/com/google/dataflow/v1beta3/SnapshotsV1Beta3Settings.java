@@ -60,7 +60,10 @@ import javax.annotation.Generated;
  * snapshotsV1Beta3SettingsBuilder
  *     .getSnapshotSettings()
  *     .setRetrySettings(
- *         snapshotsV1Beta3SettingsBuilder.getSnapshotSettings().getRetrySettings().toBuilder()
+ *         snapshotsV1Beta3SettingsBuilder
+ *             .getSnapshotSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SnapshotsV1Beta3Settings snapshotsV1Beta3Settings = snapshotsV1Beta3SettingsBuilder.build();

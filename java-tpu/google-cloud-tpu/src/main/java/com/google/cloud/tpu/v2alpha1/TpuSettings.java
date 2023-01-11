@@ -17,7 +17,9 @@
 package com.google.cloud.tpu.v2alpha1;
 
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -32,8 +34,13 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v2alpha1.stub.TpuStubSettings;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -65,7 +72,10 @@ import javax.annotation.Generated;
  * tpuSettingsBuilder
  *     .getNodeSettings()
  *     .setRetrySettings(
- *         tpuSettingsBuilder.getNodeSettings().getRetrySettings().toBuilder()
+ *         tpuSettingsBuilder
+ *             .getNodeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TpuSettings tpuSettings = tpuSettingsBuilder.build();
@@ -103,7 +113,7 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   }
 
   /** Returns the object with the settings used for calls to deleteNode. */
-  public OperationCallSettings<DeleteNodeRequest, Node, OperationMetadata>
+  public OperationCallSettings<DeleteNodeRequest, Empty, OperationMetadata>
       deleteNodeOperationSettings() {
     return ((TpuStubSettings) getStubSettings()).deleteNodeOperationSettings();
   }
@@ -139,6 +149,40 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   public OperationCallSettings<UpdateNodeRequest, Node, OperationMetadata>
       updateNodeOperationSettings() {
     return ((TpuStubSettings) getStubSettings()).updateNodeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listQueuedResources. */
+  public PagedCallSettings<
+          ListQueuedResourcesRequest, ListQueuedResourcesResponse, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesSettings() {
+    return ((TpuStubSettings) getStubSettings()).listQueuedResourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getQueuedResource. */
+  public UnaryCallSettings<GetQueuedResourceRequest, QueuedResource> getQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).getQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQueuedResource. */
+  public UnaryCallSettings<CreateQueuedResourceRequest, Operation> createQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).createQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQueuedResource. */
+  public OperationCallSettings<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).createQueuedResourceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueuedResource. */
+  public UnaryCallSettings<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).deleteQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueuedResource. */
+  public OperationCallSettings<DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
+      deleteQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).deleteQueuedResourceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
@@ -178,6 +222,29 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   public UnaryCallSettings<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesSettings() {
     return ((TpuStubSettings) getStubSettings()).getGuestAttributesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public UnaryCallSettings<SimulateMaintenanceEventRequest, Operation>
+      simulateMaintenanceEventSettings() {
+    return ((TpuStubSettings) getStubSettings()).simulateMaintenanceEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public OperationCallSettings<SimulateMaintenanceEventRequest, Node, OperationMetadata>
+      simulateMaintenanceEventOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).simulateMaintenanceEventOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((TpuStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((TpuStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final TpuSettings create(TpuStubSettings stub) throws IOException {
@@ -304,7 +371,7 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteNode. */
-    public OperationCallSettings.Builder<DeleteNodeRequest, Node, OperationMetadata>
+    public OperationCallSettings.Builder<DeleteNodeRequest, Empty, OperationMetadata>
         deleteNodeOperationSettings() {
       return getStubSettingsBuilder().deleteNodeOperationSettings();
     }
@@ -340,6 +407,47 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     public OperationCallSettings.Builder<UpdateNodeRequest, Node, OperationMetadata>
         updateNodeOperationSettings() {
       return getStubSettingsBuilder().updateNodeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listQueuedResources. */
+    public PagedCallSettings.Builder<
+            ListQueuedResourcesRequest,
+            ListQueuedResourcesResponse,
+            ListQueuedResourcesPagedResponse>
+        listQueuedResourcesSettings() {
+      return getStubSettingsBuilder().listQueuedResourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getQueuedResource. */
+    public UnaryCallSettings.Builder<GetQueuedResourceRequest, QueuedResource>
+        getQueuedResourceSettings() {
+      return getStubSettingsBuilder().getQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQueuedResource. */
+    public UnaryCallSettings.Builder<CreateQueuedResourceRequest, Operation>
+        createQueuedResourceSettings() {
+      return getStubSettingsBuilder().createQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQueuedResource. */
+    public OperationCallSettings.Builder<
+            CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+        createQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().createQueuedResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueuedResource. */
+    public UnaryCallSettings.Builder<DeleteQueuedResourceRequest, Operation>
+        deleteQueuedResourceSettings() {
+      return getStubSettingsBuilder().deleteQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueuedResource. */
+    public OperationCallSettings.Builder<
+            DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
+        deleteQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().deleteQueuedResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */
@@ -383,6 +491,30 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     public UnaryCallSettings.Builder<GetGuestAttributesRequest, GetGuestAttributesResponse>
         getGuestAttributesSettings() {
       return getStubSettingsBuilder().getGuestAttributesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    public UnaryCallSettings.Builder<SimulateMaintenanceEventRequest, Operation>
+        simulateMaintenanceEventSettings() {
+      return getStubSettingsBuilder().simulateMaintenanceEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    public OperationCallSettings.Builder<SimulateMaintenanceEventRequest, Node, OperationMetadata>
+        simulateMaintenanceEventOperationSettings() {
+      return getStubSettingsBuilder().simulateMaintenanceEventOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

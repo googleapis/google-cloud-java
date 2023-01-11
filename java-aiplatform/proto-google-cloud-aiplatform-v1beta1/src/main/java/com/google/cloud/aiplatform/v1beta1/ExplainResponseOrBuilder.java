@@ -27,9 +27,11 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
-   * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
-   * to be explained.
+   * The explanations of the Model's
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * It has the same number of elements as
+   * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to be
+   * explained.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
@@ -39,9 +41,11 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
-   * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
-   * to be explained.
+   * The explanations of the Model's
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * It has the same number of elements as
+   * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to be
+   * explained.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
@@ -51,9 +55,11 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
-   * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
-   * to be explained.
+   * The explanations of the Model's
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * It has the same number of elements as
+   * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to be
+   * explained.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
@@ -63,9 +69,11 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
-   * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
-   * to be explained.
+   * The explanations of the Model's
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * It has the same number of elements as
+   * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to be
+   * explained.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
@@ -76,9 +84,11 @@ public interface ExplainResponseOrBuilder
    *
    *
    * <pre>
-   * The explanations of the Model's [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
-   * It has the same number of elements as [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances]
-   * to be explained.
+   * The explanations of the Model's
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * It has the same number of elements as
+   * [instances][google.cloud.aiplatform.v1beta1.ExplainRequest.instances] to be
+   * explained.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.Explanation explanations = 1;</code>
@@ -115,7 +125,8 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * The predictions that are the output of the predictions call.
-   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * Same as
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * </pre>
    *
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
@@ -126,7 +137,8 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * The predictions that are the output of the predictions call.
-   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * Same as
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * </pre>
    *
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
@@ -137,7 +149,8 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * The predictions that are the output of the predictions call.
-   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * Same as
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * </pre>
    *
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
@@ -148,7 +161,8 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * The predictions that are the output of the predictions call.
-   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * Same as
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * </pre>
    *
    * <code>repeated .google.protobuf.Value predictions = 3;</code>
@@ -159,7 +173,8 @@ public interface ExplainResponseOrBuilder
    *
    * <pre>
    * The predictions that are the output of the predictions call.
-   * Same as [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
+   * Same as
+   * [PredictResponse.predictions][google.cloud.aiplatform.v1beta1.PredictResponse.predictions].
    * </pre>
    *
    * <code>repeated .google.protobuf.Value predictions = 3;</code>

@@ -27,8 +27,8 @@ public interface DeleteCustomerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the customer repricing config rule to delete.
-   * Format:
+   * Required. The resource name of the customer repricing config rule to
+   * delete. Format:
    * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface DeleteCustomerRepricingConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the customer repricing config rule to delete.
-   * Format:
+   * Required. The resource name of the customer repricing config rule to
+   * delete. Format:
    * accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
    * </pre>
    *

@@ -477,7 +477,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * A list of historical [Snapshot
    * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
    * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-   * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time] descending.
+   * requested by user, sorted by
+   * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
+   * descending.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly}
@@ -971,7 +973,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * A list of historical [Snapshot
      * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
      * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-     * requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time] descending.
+     * requested by user, sorted by
+     * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
+     * descending.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly}
@@ -1980,10 +1984,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType this
-   * Feature belongs to.
-   * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
-   * INT64 can enable monitoring.
+   * Optional. If not set, use the monitoring_config defined for the EntityType
+   * this Feature belongs to. Only Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 can enable monitoring.
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -2004,7 +2008,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -2020,7 +2025,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -2037,7 +2043,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -2052,7 +2059,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -2068,7 +2076,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -3771,10 +3780,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType this
-     * Feature belongs to.
-     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
-     * INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType
+     * this Feature belongs to. Only Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3791,10 +3800,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType this
-     * Feature belongs to.
-     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
-     * INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType
+     * this Feature belongs to. Only Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3814,10 +3823,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If not set, use the monitoring_config defined for the EntityType this
-     * Feature belongs to.
-     * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
-     * INT64 can enable monitoring.
+     * Optional. If not set, use the monitoring_config defined for the EntityType
+     * this Feature belongs to. Only Features with type
+     * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+     * STRING, DOUBLE or INT64 can enable monitoring.
      * If set to true, all types of data monitoring are disabled despite the
      * config on EntityType.
      * </pre>
@@ -3855,7 +3864,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -3874,7 +3884,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -3892,7 +3903,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -3911,7 +3923,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -3936,7 +3949,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -3959,7 +3973,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -3984,7 +3999,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4009,7 +4025,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4031,7 +4048,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4054,7 +4072,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4077,7 +4096,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4098,7 +4118,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4119,7 +4140,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4134,7 +4156,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4153,7 +4176,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4173,7 +4197,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4190,7 +4215,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>
@@ -4208,7 +4234,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The list of historical stats and anomalies with specified objectives.
+     * Output only. The list of historical stats and anomalies with specified
+     * objectives.
      * </pre>
      *
      * <code>

@@ -18,8 +18,8 @@ package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_ListNodes_sync]
 import com.google.cloud.tpu.v2alpha1.ListNodesRequest;
+import com.google.cloud.tpu.v2alpha1.LocationName;
 import com.google.cloud.tpu.v2alpha1.Node;
-import com.google.cloud.tpu.v2alpha1.NodeName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
 
 public class SyncListNodes {
@@ -37,7 +37,7 @@ public class SyncListNodes {
     try (TpuClient tpuClient = TpuClient.create()) {
       ListNodesRequest request =
           ListNodesRequest.newBuilder()
-              .setParent(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

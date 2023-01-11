@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionNetworkEndpointGroupsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionNetworkEndpointGroupsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionNetworkEndpointGroupsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionNetworkEndpointGroupsSettings regionNetworkEndpointGroupsSettings =

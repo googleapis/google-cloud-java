@@ -37,7 +37,10 @@ public class SyncCreateControl {
     controlServiceSettingsBuilder
         .createControlSettings()
         .setRetrySettings(
-            controlServiceSettingsBuilder.createControlSettings().getRetrySettings().toBuilder()
+            controlServiceSettingsBuilder
+                .createControlSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ControlServiceStubSettings controlServiceSettings = controlServiceSettingsBuilder.build();

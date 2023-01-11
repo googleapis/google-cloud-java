@@ -115,8 +115,8 @@ public interface DeleteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for which values
-   * are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for
+   * which values are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *
@@ -131,8 +131,8 @@ public interface DeleteFeatureValuesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType grouping the Features for which values
-   * are being deleted from. Format:
+   * Required. The resource name of the EntityType grouping the Features for
+   * which values are being deleted from. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entityType}`
    * </pre>
    *

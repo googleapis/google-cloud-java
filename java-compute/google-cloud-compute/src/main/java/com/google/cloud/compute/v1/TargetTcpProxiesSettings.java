@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * targetTcpProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetTcpProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetTcpProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetTcpProxiesSettings targetTcpProxiesSettings = targetTcpProxiesSettingsBuilder.build();

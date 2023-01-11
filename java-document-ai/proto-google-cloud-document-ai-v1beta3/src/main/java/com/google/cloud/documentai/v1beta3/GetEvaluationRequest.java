@@ -73,7 +73,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+   * Required. The resource name of the
+   * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
    * </pre>
    *
@@ -99,7 +100,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+   * Required. The resource name of the
+   * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
    * </pre>
    *
@@ -458,7 +460,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+     * Required. The resource name of the
+     * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
      * </pre>
      *
@@ -483,7 +486,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+     * Required. The resource name of the
+     * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
      * </pre>
      *
@@ -508,7 +512,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+     * Required. The resource name of the
+     * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
      * </pre>
      *
@@ -532,7 +537,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+     * Required. The resource name of the
+     * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
      * </pre>
      *
@@ -552,7 +558,8 @@ public final class GetEvaluationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
+     * Required. The resource name of the
+     * [Evaluation][google.cloud.documentai.v1beta3.Evaluation] to get.
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}/evaluations/{evaluation}`
      * </pre>
      *

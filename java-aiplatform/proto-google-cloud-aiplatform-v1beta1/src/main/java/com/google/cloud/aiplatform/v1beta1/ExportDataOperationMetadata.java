@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [DatasetService.ExportData][google.cloud.aiplatform.v1beta1.DatasetService.ExportData].
+ * Runtime operation information for
+ * [DatasetService.ExportData][google.cloud.aiplatform.v1beta1.DatasetService.ExportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata}
@@ -345,7 +346,8 @@ public final class ExportDataOperationMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Runtime operation information for [DatasetService.ExportData][google.cloud.aiplatform.v1beta1.DatasetService.ExportData].
+   * Runtime operation information for
+   * [DatasetService.ExportData][google.cloud.aiplatform.v1beta1.DatasetService.ExportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata}

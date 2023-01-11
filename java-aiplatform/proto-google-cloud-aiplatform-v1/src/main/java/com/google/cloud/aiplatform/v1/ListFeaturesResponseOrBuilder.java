@@ -79,9 +79,10 @@ public interface ListFeaturesResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as [ListFeaturesRequest.page_token][google.cloud.aiplatform.v1.ListFeaturesRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListFeaturesRequest.page_token][google.cloud.aiplatform.v1.ListFeaturesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -93,9 +94,10 @@ public interface ListFeaturesResponseOrBuilder
    *
    *
    * <pre>
-   * A token, which can be sent as [ListFeaturesRequest.page_token][google.cloud.aiplatform.v1.ListFeaturesRequest.page_token] to
-   * retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * A token, which can be sent as
+   * [ListFeaturesRequest.page_token][google.cloud.aiplatform.v1.ListFeaturesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

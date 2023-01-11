@@ -35,7 +35,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2204
+   *     google/container/v1/cluster_service.proto;l=2249
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2204
+   *     google/container/v1/cluster_service.proto;l=2249
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2210
+   *     google/container/v1/cluster_service.proto;l=2255
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2210
+   *     google/container/v1/cluster_service.proto;l=2255
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2214
+   *     google/container/v1/cluster_service.proto;l=2259
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2214
+   *     google/container/v1/cluster_service.proto;l=2259
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2218
+   *     google/container/v1/cluster_service.proto;l=2263
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -155,7 +155,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2218
+   *     google/container/v1/cluster_service.proto;l=2263
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -733,6 +733,35 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
+   * The current etag of the node pool.
+   * If an etag is provided and does not match the current etag of the node
+   * pool, update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 30;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the node pool.
+   * If an etag is provided and does not match the current etag of the node
+   * pool, update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 30;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable or disable NCCL fast socket for the node pool.
    * </pre>
    *
@@ -836,4 +865,39 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.ResourceLabels resource_labels = 33;</code>
    */
   com.google.container.v1.ResourceLabelsOrBuilder getResourceLabelsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 34;</code>
+   *
+   * @return Whether the windowsNodeConfig field is set.
+   */
+  boolean hasWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 34;</code>
+   *
+   * @return The windowsNodeConfig.
+   */
+  com.google.container.v1.WindowsNodeConfig getWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 34;</code>
+   */
+  com.google.container.v1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
 }

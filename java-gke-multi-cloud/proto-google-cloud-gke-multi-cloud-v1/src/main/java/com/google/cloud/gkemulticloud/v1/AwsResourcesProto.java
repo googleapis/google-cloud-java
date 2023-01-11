@@ -115,6 +115,18 @@ public final class AwsResourcesProto {
       internal_static_google_cloud_gkemulticloud_v1_AwsInstancePlacement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkemulticloud_v1_AwsInstancePlacement_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_AwsAutoscalingGroupMetricsCollection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_AwsAutoscalingGroupMetricsCollection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_AwsClusterError_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_AwsClusterError_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkemulticloud_v1_AwsNodePoolError_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkemulticloud_v1_AwsNodePoolError_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -129,7 +141,7 @@ public final class AwsResourcesProto {
           + "v1\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\0324google/cloud/gke"
           + "multicloud/v1/common_resources.proto\032\037go"
-          + "ogle/protobuf/timestamp.proto\"\260\t\n\nAwsClu"
+          + "ogle/protobuf/timestamp.proto\"\306\n\n\nAwsClu"
           + "ster\022\014\n\004name\030\001 \001(\t\022\030\n\013description\030\002 \001(\tB"
           + "\003\340A\001\022L\n\nnetworking\030\003 \001(\01323.google.cloud."
           + "gkemulticloud.v1.AwsClusterNetworkingB\003\340"
@@ -150,124 +162,136 @@ public final class AwsResourcesProto {
           + ".google.cloud.gkemulticloud.v1.WorkloadI"
           + "dentityConfigB\003\340A\003\022#\n\026cluster_ca_certifi"
           + "cate\030\021 \001(\tB\003\340A\003\0228\n\005fleet\030\022 \001(\0132$.google."
-          + "cloud.gkemulticloud.v1.FleetB\003\340A\001\022I\n\016log"
+          + "cloud.gkemulticloud.v1.FleetB\003\340A\002\022I\n\016log"
           + "ging_config\030\023 \001(\0132,.google.cloud.gkemult"
-          + "icloud.v1.LoggingConfigB\003\340A\001\0322\n\020Annotati"
-          + "onsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "\"u\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROV"
-          + "ISIONING\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECONCILING\020\003"
-          + "\022\014\n\010STOPPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006:"
-          + "o\352Al\n\'gkemulticloud.googleapis.com/AwsCl"
-          + "uster\022Aprojects/{project}/locations/{loc"
-          + "ation}/awsClusters/{aws_cluster}\"\250\007\n\017Aws"
-          + "ControlPlane\022\024\n\007version\030\001 \001(\tB\003\340A\002\022\032\n\rin"
-          + "stance_type\030\002 \001(\tB\003\340A\001\022D\n\nssh_config\030\016 \001"
-          + "(\0132+.google.cloud.gkemulticloud.v1.AwsSs"
-          + "hConfigB\003\340A\001\022\027\n\nsubnet_ids\030\004 \003(\tB\003\340A\002\022\037\n"
-          + "\022security_group_ids\030\005 \003(\tB\003\340A\001\022!\n\024iam_in"
-          + "stance_profile\030\007 \001(\tB\003\340A\002\022J\n\013root_volume"
-          + "\030\010 \001(\01320.google.cloud.gkemulticloud.v1.A"
-          + "wsVolumeTemplateB\003\340A\001\022J\n\013main_volume\030\t \001"
-          + "(\01320.google.cloud.gkemulticloud.v1.AwsVo"
-          + "lumeTemplateB\003\340A\001\022V\n\023database_encryption"
-          + "\030\n \001(\01324.google.cloud.gkemulticloud.v1.A"
-          + "wsDatabaseEncryptionB\003\340A\002\022K\n\004tags\030\013 \003(\0132"
-          + "8.google.cloud.gkemulticloud.v1.AwsContr"
-          + "olPlane.TagsEntryB\003\340A\001\022b\n\033aws_services_a"
-          + "uthentication\030\014 \001(\01328.google.cloud.gkemu"
-          + "lticloud.v1.AwsServicesAuthenticationB\003\340"
-          + "A\002\022H\n\014proxy_config\030\020 \001(\0132-.google.cloud."
-          + "gkemulticloud.v1.AwsProxyConfigB\003\340A\001\022R\n\021"
-          + "config_encryption\030\021 \001(\01322.google.cloud.g"
-          + "kemulticloud.v1.AwsConfigEncryptionB\003\340A\002"
-          + "\022T\n\022instance_placement\030\022 \001(\01323.google.cl"
-          + "oud.gkemulticloud.v1.AwsInstancePlacemen"
-          + "tB\003\340A\001\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001\"R\n\031AwsServicesAuthentication"
-          + "\022\025\n\010role_arn\030\001 \001(\tB\003\340A\002\022\036\n\021role_session_"
-          + "name\030\002 \001(\tB\003\340A\001\"[\n\020AwsAuthorization\022G\n\013a"
-          + "dmin_users\030\001 \003(\0132-.google.cloud.gkemulti"
-          + "cloud.v1.AwsClusterUserB\003\340A\002\"\'\n\016AwsClust"
-          + "erUser\022\025\n\010username\030\001 \001(\tB\003\340A\002\"1\n\025AwsData"
-          + "baseEncryption\022\030\n\013kms_key_arn\030\001 \001(\tB\003\340A\002"
-          + "\"\353\001\n\021AwsVolumeTemplate\022\025\n\010size_gib\030\001 \001(\005"
-          + "B\003\340A\001\022U\n\013volume_type\030\002 \001(\0162;.google.clou"
-          + "d.gkemulticloud.v1.AwsVolumeTemplate.Vol"
-          + "umeTypeB\003\340A\001\022\021\n\004iops\030\003 \001(\005B\003\340A\001\022\030\n\013kms_k"
-          + "ey_arn\030\004 \001(\tB\003\340A\001\";\n\nVolumeType\022\033\n\027VOLUM"
-          + "E_TYPE_UNSPECIFIED\020\000\022\007\n\003GP2\020\001\022\007\n\003GP3\020\002\"{"
-          + "\n\024AwsClusterNetworking\022\023\n\006vpc_id\030\001 \001(\tB\003"
-          + "\340A\002\022$\n\027pod_address_cidr_blocks\030\002 \003(\tB\003\340A"
-          + "\002\022(\n\033service_address_cidr_blocks\030\003 \003(\tB\003"
-          + "\340A\002\"\260\007\n\013AwsNodePool\022\014\n\004name\030\001 \001(\t\022\024\n\007ver"
-          + "sion\030\003 \001(\tB\003\340A\002\022A\n\006config\030\034 \001(\0132,.google"
-          + ".cloud.gkemulticloud.v1.AwsNodeConfigB\003\340"
-          + "A\002\022O\n\013autoscaling\030\031 \001(\01325.google.cloud.g"
-          + "kemulticloud.v1.AwsNodePoolAutoscalingB\003"
-          + "\340A\002\022\026\n\tsubnet_id\030\006 \001(\tB\003\340A\002\022D\n\005state\030\020 \001"
-          + "(\01620.google.cloud.gkemulticloud.v1.AwsNo"
-          + "dePool.StateB\003\340A\003\022\020\n\003uid\030\021 \001(\tB\003\340A\003\022\030\n\013r"
-          + "econciling\030\022 \001(\010B\003\340A\003\0224\n\013create_time\030\023 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013u"
-          + "pdate_time\030\024 \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\022\014\n\004etag\030\025 \001(\t\022U\n\013annotations\030\026"
-          + " \003(\0132;.google.cloud.gkemulticloud.v1.Aws"
-          + "NodePool.AnnotationsEntryB\003\340A\001\022R\n\023max_po"
-          + "ds_constraint\030\033 \001(\01320.google.cloud.gkemu"
-          + "lticloud.v1.MaxPodsConstraintB\003\340A\002\0322\n\020An"
-          + "notationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001\"u\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020"
-          + "\n\014PROVISIONING\020\001\022\013\n\007RUNNING\020\002\022\017\n\013RECONCI"
-          + "LING\020\003\022\014\n\010STOPPING\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRA"
-          + "DED\020\006:\216\001\352A\212\001\n(gkemulticloud.googleapis.c"
-          + "om/AwsNodePool\022^projects/{project}/locat"
-          + "ions/{location}/awsClusters/{aws_cluster"
-          + "}/awsNodePools/{aws_node_pool}\"\303\006\n\rAwsNo"
-          + "deConfig\022\032\n\rinstance_type\030\001 \001(\tB\003\340A\001\022J\n\013"
-          + "root_volume\030\002 \001(\01320.google.cloud.gkemult"
-          + "icloud.v1.AwsVolumeTemplateB\003\340A\001\022=\n\006tain"
-          + "ts\030\003 \003(\0132(.google.cloud.gkemulticloud.v1"
-          + ".NodeTaintB\003\340A\001\022M\n\006labels\030\004 \003(\01328.google"
-          + ".cloud.gkemulticloud.v1.AwsNodeConfig.La"
-          + "belsEntryB\003\340A\001\022I\n\004tags\030\005 \003(\01326.google.cl"
-          + "oud.gkemulticloud.v1.AwsNodeConfig.TagsE"
-          + "ntryB\003\340A\001\022!\n\024iam_instance_profile\030\006 \001(\tB"
-          + "\003\340A\002\022\027\n\nimage_type\030\013 \001(\tB\003\340A\001\022D\n\nssh_con"
-          + "fig\030\t \001(\0132+.google.cloud.gkemulticloud.v"
-          + "1.AwsSshConfigB\003\340A\001\022\037\n\022security_group_id"
-          + "s\030\n \003(\tB\003\340A\001\022H\n\014proxy_config\030\014 \001(\0132-.goo"
-          + "gle.cloud.gkemulticloud.v1.AwsProxyConfi"
-          + "gB\003\340A\001\022R\n\021config_encryption\030\r \001(\01322.goog"
-          + "le.cloud.gkemulticloud.v1.AwsConfigEncry"
-          + "ptionB\003\340A\002\022T\n\022instance_placement\030\016 \001(\01323"
-          + ".google.cloud.gkemulticloud.v1.AwsInstan"
-          + "cePlacementB\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tTagsEntry\022\013\n\003"
-          + "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"R\n\026AwsNodeP"
-          + "oolAutoscaling\022\033\n\016min_node_count\030\001 \001(\005B\003"
-          + "\340A\002\022\033\n\016max_node_count\030\002 \001(\005B\003\340A\002\"\364\001\n\017Aws"
-          + "ServerConfig\022\014\n\004name\030\001 \001(\t\022H\n\016valid_vers"
-          + "ions\030\002 \003(\01320.google.cloud.gkemulticloud."
-          + "v1.AwsK8sVersionInfo\022\035\n\025supported_aws_re"
-          + "gions\030\003 \003(\t:j\352Ag\n,gkemulticloud.googleap"
-          + "is.com/AwsServerConfig\0227projects/{projec"
-          + "t}/locations/{location}/awsServerConfig\""
-          + "$\n\021AwsK8sVersionInfo\022\017\n\007version\030\001 \001(\t\")\n"
-          + "\014AwsSshConfig\022\031\n\014ec2_key_pair\030\001 \001(\tB\003\340A\002"
-          + "\"<\n\016AwsProxyConfig\022\022\n\nsecret_arn\030\001 \001(\t\022\026"
-          + "\n\016secret_version\030\002 \001(\t\"/\n\023AwsConfigEncry"
-          + "ption\022\030\n\013kms_key_arn\030\001 \001(\tB\003\340A\002\"\263\001\n\024AwsI"
-          + "nstancePlacement\022Q\n\007tenancy\030\001 \001(\0162;.goog"
-          + "le.cloud.gkemulticloud.v1.AwsInstancePla"
-          + "cement.TenancyB\003\340A\002\"H\n\007Tenancy\022\027\n\023TENANC"
-          + "Y_UNSPECIFIED\020\000\022\013\n\007DEFAULT\020\001\022\r\n\tDEDICATE"
-          + "D\020\002\022\010\n\004HOST\020\003B\347\001\n!com.google.cloud.gkemu"
-          + "lticloud.v1B\021AwsResourcesProtoP\001ZJgoogle"
-          + ".golang.org/genproto/googleapis/cloud/gk"
-          + "emulticloud/v1;gkemulticloud\252\002\035Google.Cl"
-          + "oud.GkeMultiCloud.V1\312\002\035Google\\Cloud\\GkeM"
-          + "ultiCloud\\V1\352\002 Google::Cloud::GkeMultiCl"
-          + "oud::V1b\006proto3"
+          + "icloud.v1.LoggingConfigB\003\340A\001\022C\n\006errors\030\024"
+          + " \003(\0132..google.cloud.gkemulticloud.v1.Aws"
+          + "ClusterErrorB\003\340A\003\022O\n\021monitoring_config\030\025"
+          + " \001(\0132/.google.cloud.gkemulticloud.v1.Mon"
+          + "itoringConfigB\003\340A\001\0322\n\020AnnotationsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\005State\022"
+          + "\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001"
+          + "\022\013\n\007RUNNING\020\002\022\017\n\013RECONCILING\020\003\022\014\n\010STOPPI"
+          + "NG\020\004\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006:o\352Al\n\'gkem"
+          + "ulticloud.googleapis.com/AwsCluster\022Apro"
+          + "jects/{project}/locations/{location}/aws"
+          + "Clusters/{aws_cluster}\"\250\007\n\017AwsControlPla"
+          + "ne\022\024\n\007version\030\001 \001(\tB\003\340A\002\022\032\n\rinstance_typ"
+          + "e\030\002 \001(\tB\003\340A\001\022D\n\nssh_config\030\016 \001(\0132+.googl"
+          + "e.cloud.gkemulticloud.v1.AwsSshConfigB\003\340"
+          + "A\001\022\027\n\nsubnet_ids\030\004 \003(\tB\003\340A\002\022\037\n\022security_"
+          + "group_ids\030\005 \003(\tB\003\340A\001\022!\n\024iam_instance_pro"
+          + "file\030\007 \001(\tB\003\340A\002\022J\n\013root_volume\030\010 \001(\01320.g"
+          + "oogle.cloud.gkemulticloud.v1.AwsVolumeTe"
+          + "mplateB\003\340A\001\022J\n\013main_volume\030\t \001(\01320.googl"
+          + "e.cloud.gkemulticloud.v1.AwsVolumeTempla"
+          + "teB\003\340A\001\022V\n\023database_encryption\030\n \001(\01324.g"
+          + "oogle.cloud.gkemulticloud.v1.AwsDatabase"
+          + "EncryptionB\003\340A\002\022K\n\004tags\030\013 \003(\01328.google.c"
+          + "loud.gkemulticloud.v1.AwsControlPlane.Ta"
+          + "gsEntryB\003\340A\001\022b\n\033aws_services_authenticat"
+          + "ion\030\014 \001(\01328.google.cloud.gkemulticloud.v"
+          + "1.AwsServicesAuthenticationB\003\340A\002\022H\n\014prox"
+          + "y_config\030\020 \001(\0132-.google.cloud.gkemulticl"
+          + "oud.v1.AwsProxyConfigB\003\340A\001\022R\n\021config_enc"
+          + "ryption\030\021 \001(\01322.google.cloud.gkemulticlo"
+          + "ud.v1.AwsConfigEncryptionB\003\340A\002\022T\n\022instan"
+          + "ce_placement\030\022 \001(\01323.google.cloud.gkemul"
+          + "ticloud.v1.AwsInstancePlacementB\003\340A\001\032+\n\t"
+          + "TagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
+          + "\001\"R\n\031AwsServicesAuthentication\022\025\n\010role_a"
+          + "rn\030\001 \001(\tB\003\340A\002\022\036\n\021role_session_name\030\002 \001(\t"
+          + "B\003\340A\001\"[\n\020AwsAuthorization\022G\n\013admin_users"
+          + "\030\001 \003(\0132-.google.cloud.gkemulticloud.v1.A"
+          + "wsClusterUserB\003\340A\002\"\'\n\016AwsClusterUser\022\025\n\010"
+          + "username\030\001 \001(\tB\003\340A\002\"1\n\025AwsDatabaseEncryp"
+          + "tion\022\030\n\013kms_key_arn\030\001 \001(\tB\003\340A\002\"\353\001\n\021AwsVo"
+          + "lumeTemplate\022\025\n\010size_gib\030\001 \001(\005B\003\340A\001\022U\n\013v"
+          + "olume_type\030\002 \001(\0162;.google.cloud.gkemulti"
+          + "cloud.v1.AwsVolumeTemplate.VolumeTypeB\003\340"
+          + "A\001\022\021\n\004iops\030\003 \001(\005B\003\340A\001\022\030\n\013kms_key_arn\030\004 \001"
+          + "(\tB\003\340A\001\";\n\nVolumeType\022\033\n\027VOLUME_TYPE_UNS"
+          + "PECIFIED\020\000\022\007\n\003GP2\020\001\022\007\n\003GP3\020\002\"{\n\024AwsClust"
+          + "erNetworking\022\023\n\006vpc_id\030\001 \001(\tB\003\340A\002\022$\n\027pod"
+          + "_address_cidr_blocks\030\002 \003(\tB\003\340A\002\022(\n\033servi"
+          + "ce_address_cidr_blocks\030\003 \003(\tB\003\340A\002\"\366\007\n\013Aw"
+          + "sNodePool\022\014\n\004name\030\001 \001(\t\022\024\n\007version\030\003 \001(\t"
+          + "B\003\340A\002\022A\n\006config\030\034 \001(\0132,.google.cloud.gke"
+          + "multicloud.v1.AwsNodeConfigB\003\340A\002\022O\n\013auto"
+          + "scaling\030\031 \001(\01325.google.cloud.gkemulticlo"
+          + "ud.v1.AwsNodePoolAutoscalingB\003\340A\002\022\026\n\tsub"
+          + "net_id\030\006 \001(\tB\003\340A\002\022D\n\005state\030\020 \001(\01620.googl"
+          + "e.cloud.gkemulticloud.v1.AwsNodePool.Sta"
+          + "teB\003\340A\003\022\020\n\003uid\030\021 \001(\tB\003\340A\003\022\030\n\013reconciling"
+          + "\030\022 \001(\010B\003\340A\003\0224\n\013create_time\030\023 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\0224\n\013update_time"
+          + "\030\024 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "\014\n\004etag\030\025 \001(\t\022U\n\013annotations\030\026 \003(\0132;.goo"
+          + "gle.cloud.gkemulticloud.v1.AwsNodePool.A"
+          + "nnotationsEntryB\003\340A\001\022R\n\023max_pods_constra"
+          + "int\030\033 \001(\01320.google.cloud.gkemulticloud.v"
+          + "1.MaxPodsConstraintB\003\340A\002\022D\n\006errors\030\035 \003(\013"
+          + "2/.google.cloud.gkemulticloud.v1.AwsNode"
+          + "PoolErrorB\003\340A\003\0322\n\020AnnotationsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"u\n\005State\022\025\n\021S"
+          + "TATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007"
+          + "RUNNING\020\002\022\017\n\013RECONCILING\020\003\022\014\n\010STOPPING\020\004"
+          + "\022\t\n\005ERROR\020\005\022\014\n\010DEGRADED\020\006:\216\001\352A\212\001\n(gkemul"
+          + "ticloud.googleapis.com/AwsNodePool\022^proj"
+          + "ects/{project}/locations/{location}/awsC"
+          + "lusters/{aws_cluster}/awsNodePools/{aws_"
+          + "node_pool}\"\265\007\n\rAwsNodeConfig\022\032\n\rinstance"
+          + "_type\030\001 \001(\tB\003\340A\001\022J\n\013root_volume\030\002 \001(\01320."
+          + "google.cloud.gkemulticloud.v1.AwsVolumeT"
+          + "emplateB\003\340A\001\022=\n\006taints\030\003 \003(\0132(.google.cl"
+          + "oud.gkemulticloud.v1.NodeTaintB\003\340A\001\022M\n\006l"
+          + "abels\030\004 \003(\01328.google.cloud.gkemulticloud"
+          + ".v1.AwsNodeConfig.LabelsEntryB\003\340A\001\022I\n\004ta"
+          + "gs\030\005 \003(\01326.google.cloud.gkemulticloud.v1"
+          + ".AwsNodeConfig.TagsEntryB\003\340A\001\022!\n\024iam_ins"
+          + "tance_profile\030\006 \001(\tB\003\340A\002\022\027\n\nimage_type\030\013"
+          + " \001(\tB\003\340A\001\022D\n\nssh_config\030\t \001(\0132+.google.c"
+          + "loud.gkemulticloud.v1.AwsSshConfigB\003\340A\001\022"
+          + "\037\n\022security_group_ids\030\n \003(\tB\003\340A\001\022H\n\014prox"
+          + "y_config\030\014 \001(\0132-.google.cloud.gkemulticl"
+          + "oud.v1.AwsProxyConfigB\003\340A\001\022R\n\021config_enc"
+          + "ryption\030\r \001(\01322.google.cloud.gkemulticlo"
+          + "ud.v1.AwsConfigEncryptionB\003\340A\002\022T\n\022instan"
+          + "ce_placement\030\016 \001(\01323.google.cloud.gkemul"
+          + "ticloud.v1.AwsInstancePlacementB\003\340A\001\022p\n\036"
+          + "autoscaling_metrics_collection\030\017 \001(\0132C.g"
+          + "oogle.cloud.gkemulticloud.v1.AwsAutoscal"
+          + "ingGroupMetricsCollectionB\003\340A\001\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\"R\n\026AwsNodePoolAutoscaling\022\033\n\016min_node"
+          + "_count\030\001 \001(\005B\003\340A\002\022\033\n\016max_node_count\030\002 \001("
+          + "\005B\003\340A\002\"\364\001\n\017AwsServerConfig\022\014\n\004name\030\001 \001(\t"
+          + "\022H\n\016valid_versions\030\002 \003(\01320.google.cloud."
+          + "gkemulticloud.v1.AwsK8sVersionInfo\022\035\n\025su"
+          + "pported_aws_regions\030\003 \003(\t:j\352Ag\n,gkemulti"
+          + "cloud.googleapis.com/AwsServerConfig\0227pr"
+          + "ojects/{project}/locations/{location}/aw"
+          + "sServerConfig\"$\n\021AwsK8sVersionInfo\022\017\n\007ve"
+          + "rsion\030\001 \001(\t\")\n\014AwsSshConfig\022\031\n\014ec2_key_p"
+          + "air\030\001 \001(\tB\003\340A\002\"<\n\016AwsProxyConfig\022\022\n\nsecr"
+          + "et_arn\030\001 \001(\t\022\026\n\016secret_version\030\002 \001(\t\"/\n\023"
+          + "AwsConfigEncryption\022\030\n\013kms_key_arn\030\001 \001(\t"
+          + "B\003\340A\002\"\263\001\n\024AwsInstancePlacement\022Q\n\007tenanc"
+          + "y\030\001 \001(\0162;.google.cloud.gkemulticloud.v1."
+          + "AwsInstancePlacement.TenancyB\003\340A\002\"H\n\007Ten"
+          + "ancy\022\027\n\023TENANCY_UNSPECIFIED\020\000\022\013\n\007DEFAULT"
+          + "\020\001\022\r\n\tDEDICATED\020\002\022\010\n\004HOST\020\003\"V\n$AwsAutosc"
+          + "alingGroupMetricsCollection\022\030\n\013granulari"
+          + "ty\030\001 \001(\tB\003\340A\002\022\024\n\007metrics\030\002 \003(\tB\003\340A\001\"\"\n\017A"
+          + "wsClusterError\022\017\n\007message\030\001 \001(\t\"#\n\020AwsNo"
+          + "dePoolError\022\017\n\007message\030\001 \001(\tB\347\001\n!com.goo"
+          + "gle.cloud.gkemulticloud.v1B\021AwsResources"
+          + "ProtoP\001ZJgoogle.golang.org/genproto/goog"
+          + "leapis/cloud/gkemulticloud/v1;gkemulticl"
+          + "oud\252\002\035Google.Cloud.GkeMultiCloud.V1\312\002\035Go"
+          + "ogle\\Cloud\\GkeMultiCloud\\V1\352\002 Google::Cl"
+          + "oud::GkeMultiCloud::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -302,6 +326,8 @@ public final class AwsResourcesProto {
               "ClusterCaCertificate",
               "Fleet",
               "LoggingConfig",
+              "Errors",
+              "MonitoringConfig",
             });
     internal_static_google_cloud_gkemulticloud_v1_AwsCluster_AnnotationsEntry_descriptor =
         internal_static_google_cloud_gkemulticloud_v1_AwsCluster_descriptor.getNestedTypes().get(0);
@@ -409,6 +435,7 @@ public final class AwsResourcesProto {
               "Etag",
               "Annotations",
               "MaxPodsConstraint",
+              "Errors",
             });
     internal_static_google_cloud_gkemulticloud_v1_AwsNodePool_AnnotationsEntry_descriptor =
         internal_static_google_cloud_gkemulticloud_v1_AwsNodePool_descriptor
@@ -438,6 +465,7 @@ public final class AwsResourcesProto {
               "ProxyConfig",
               "ConfigEncryption",
               "InstancePlacement",
+              "AutoscalingMetricsCollection",
             });
     internal_static_google_cloud_gkemulticloud_v1_AwsNodeConfig_LabelsEntry_descriptor =
         internal_static_google_cloud_gkemulticloud_v1_AwsNodeConfig_descriptor
@@ -514,6 +542,30 @@ public final class AwsResourcesProto {
             internal_static_google_cloud_gkemulticloud_v1_AwsInstancePlacement_descriptor,
             new java.lang.String[] {
               "Tenancy",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_AwsAutoscalingGroupMetricsCollection_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_gkemulticloud_v1_AwsAutoscalingGroupMetricsCollection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_AwsAutoscalingGroupMetricsCollection_descriptor,
+            new java.lang.String[] {
+              "Granularity", "Metrics",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_AwsClusterError_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_gkemulticloud_v1_AwsClusterError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_AwsClusterError_descriptor,
+            new java.lang.String[] {
+              "Message",
+            });
+    internal_static_google_cloud_gkemulticloud_v1_AwsNodePoolError_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_gkemulticloud_v1_AwsNodePoolError_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkemulticloud_v1_AwsNodePoolError_descriptor,
+            new java.lang.String[] {
+              "Message",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

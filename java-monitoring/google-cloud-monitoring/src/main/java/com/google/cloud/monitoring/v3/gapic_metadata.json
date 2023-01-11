@@ -182,6 +182,27 @@
         }
       }
     },
+    "SnoozeService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SnoozeServiceClient",
+          "rpcs": {
+            "CreateSnooze": {
+              "methods": ["createSnooze", "createSnooze", "createSnooze", "createSnoozeCallable"]
+            },
+            "GetSnooze": {
+              "methods": ["getSnooze", "getSnooze", "getSnooze", "getSnoozeCallable"]
+            },
+            "ListSnoozes": {
+              "methods": ["listSnoozes", "listSnoozes", "listSnoozes", "listSnoozesPagedCallable", "listSnoozesCallable"]
+            },
+            "UpdateSnooze": {
+              "methods": ["updateSnooze", "updateSnooze", "updateSnoozeCallable"]
+            }
+          }
+        }
+      }
+    },
     "UptimeCheckService": {
       "clients": {
         "grpc": {

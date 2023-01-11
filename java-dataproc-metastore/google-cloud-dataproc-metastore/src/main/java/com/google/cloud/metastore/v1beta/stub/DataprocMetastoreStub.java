@@ -24,6 +24,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.metastore.v1beta.AlterMetadataResourceLocationRequest;
+import com.google.cloud.metastore.v1beta.AlterMetadataResourceLocationResponse;
 import com.google.cloud.metastore.v1beta.Backup;
 import com.google.cloud.metastore.v1beta.CreateBackupRequest;
 import com.google.cloud.metastore.v1beta.CreateMetadataImportRequest;
@@ -42,7 +44,13 @@ import com.google.cloud.metastore.v1beta.ListServicesRequest;
 import com.google.cloud.metastore.v1beta.ListServicesResponse;
 import com.google.cloud.metastore.v1beta.MetadataExport;
 import com.google.cloud.metastore.v1beta.MetadataImport;
+import com.google.cloud.metastore.v1beta.MoveTableToDatabaseRequest;
+import com.google.cloud.metastore.v1beta.MoveTableToDatabaseResponse;
 import com.google.cloud.metastore.v1beta.OperationMetadata;
+import com.google.cloud.metastore.v1beta.QueryMetadataRequest;
+import com.google.cloud.metastore.v1beta.QueryMetadataResponse;
+import com.google.cloud.metastore.v1beta.RemoveIamPolicyRequest;
+import com.google.cloud.metastore.v1beta.RemoveIamPolicyResponse;
 import com.google.cloud.metastore.v1beta.Restore;
 import com.google.cloud.metastore.v1beta.RestoreServiceRequest;
 import com.google.cloud.metastore.v1beta.Service;
@@ -190,6 +198,45 @@ public abstract class DataprocMetastoreStub implements BackgroundResource {
 
   public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteBackupCallable()");
+  }
+
+  public UnaryCallable<RemoveIamPolicyRequest, RemoveIamPolicyResponse> removeIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeIamPolicyCallable()");
+  }
+
+  public OperationCallable<QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
+      queryMetadataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryMetadataOperationCallable()");
+  }
+
+  public UnaryCallable<QueryMetadataRequest, Operation> queryMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryMetadataCallable()");
+  }
+
+  public OperationCallable<
+          MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
+      moveTableToDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: moveTableToDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<MoveTableToDatabaseRequest, Operation> moveTableToDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: moveTableToDatabaseCallable()");
+  }
+
+  public OperationCallable<
+          AlterMetadataResourceLocationRequest,
+          AlterMetadataResourceLocationResponse,
+          OperationMetadata>
+      alterMetadataResourceLocationOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: alterMetadataResourceLocationOperationCallable()");
+  }
+
+  public UnaryCallable<AlterMetadataResourceLocationRequest, Operation>
+      alterMetadataResourceLocationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: alterMetadataResourceLocationCallable()");
   }
 
   @Override

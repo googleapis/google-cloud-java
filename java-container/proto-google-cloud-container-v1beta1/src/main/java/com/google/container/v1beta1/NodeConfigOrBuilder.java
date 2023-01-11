@@ -1278,6 +1278,41 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+   *
+   * @return Whether the fastSocket field is set.
+   */
+  boolean hasFastSocket();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+   *
+   * @return The fastSocket.
+   */
+  com.google.container.v1beta1.FastSocket getFastSocket();
+  /**
+   *
+   *
+   * <pre>
+   * Enable or disable NCCL fast socket for the node pool.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.FastSocket fast_socket = 36;</code>
+   */
+  com.google.container.v1beta1.FastSocketOrBuilder getFastSocketOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The resource labels for the node pool to use to annotate any related
    * Google Compute Engine resources.
    * </pre>
@@ -1372,4 +1407,126 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1beta1.NodePoolLoggingConfig logging_config = 38;</code>
    */
   com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder getLoggingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+   *
+   * @return Whether the windowsNodeConfig field is set.
+   */
+  boolean hasWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+   *
+   * @return The windowsNodeConfig.
+   */
+  com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters that can be configured on Windows nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WindowsNodeConfig windows_node_config = 39;</code>
+   */
+  com.google.container.v1beta1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+   * </code>
+   *
+   * @return Whether the localNvmeSsdBlockConfig field is set.
+   */
+  boolean hasLocalNvmeSsdBlockConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+   * </code>
+   *
+   * @return The localNvmeSsdBlockConfig.
+   */
+  com.google.container.v1beta1.LocalNvmeSsdBlockConfig getLocalNvmeSsdBlockConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for using raw-block Local NVMe SSDs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.LocalNvmeSsdBlockConfig local_nvme_ssd_block_config = 40;
+   * </code>
+   */
+  com.google.container.v1beta1.LocalNvmeSsdBlockConfigOrBuilder
+      getLocalNvmeSsdBlockConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * This field is functionally equivalent to the ephemeral_storage_config
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   *
+   * @return Whether the ephemeralStorageLocalSsdConfig field is set.
+   */
+  boolean hasEphemeralStorageLocalSsdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * This field is functionally equivalent to the ephemeral_storage_config
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   *
+   * @return The ephemeralStorageLocalSsdConfig.
+   */
+  com.google.container.v1beta1.EphemeralStorageLocalSsdConfig getEphemeralStorageLocalSsdConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for the node ephemeral storage using Local SSDs.
+   * If unspecified, ephemeral storage is backed by the boot disk.
+   * This field is functionally equivalent to the ephemeral_storage_config
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EphemeralStorageLocalSsdConfig ephemeral_storage_local_ssd_config = 41;
+   * </code>
+   */
+  com.google.container.v1beta1.EphemeralStorageLocalSsdConfigOrBuilder
+      getEphemeralStorageLocalSsdConfigOrBuilder();
 }

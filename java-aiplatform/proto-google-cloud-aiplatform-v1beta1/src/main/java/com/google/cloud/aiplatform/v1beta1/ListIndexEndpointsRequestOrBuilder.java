@@ -27,8 +27,8 @@ public interface ListIndexEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location from which to list the IndexEndpoints.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location from which to list the
+   * IndexEndpoints. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListIndexEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Location from which to list the IndexEndpoints.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. The resource name of the Location from which to list the
+   * IndexEndpoints. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -58,8 +58,8 @@ public interface ListIndexEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
+   * Optional. An expression for filtering the results of the request. For field
+   * names both snake_case and camelCase are supported.
    *   * `index_endpoint` supports = and !=. `index_endpoint` represents the
    *      IndexEndpoint ID, ie. the last segment of the IndexEndpoint's
    *      [resourcename][google.cloud.aiplatform.v1beta1.IndexEndpoint.name].
@@ -85,8 +85,8 @@ public interface ListIndexEndpointsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An expression for filtering the results of the request. For field names
-   * both snake_case and camelCase are supported.
+   * Optional. An expression for filtering the results of the request. For field
+   * names both snake_case and camelCase are supported.
    *   * `index_endpoint` supports = and !=. `index_endpoint` represents the
    *      IndexEndpoint ID, ie. the last segment of the IndexEndpoint's
    *      [resourcename][google.cloud.aiplatform.v1beta1.IndexEndpoint.name].
@@ -128,8 +128,10 @@ public interface ListIndexEndpointsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListIndexEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListIndexEndpointsResponse.next_page_token] of the previous
-   * [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1beta1.IndexEndpointService.ListIndexEndpoints] call.
+   * [ListIndexEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListIndexEndpointsResponse.next_page_token]
+   * of the previous
+   * [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1beta1.IndexEndpointService.ListIndexEndpoints]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -143,8 +145,10 @@ public interface ListIndexEndpointsRequestOrBuilder
    * <pre>
    * Optional. The standard list page token.
    * Typically obtained via
-   * [ListIndexEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListIndexEndpointsResponse.next_page_token] of the previous
-   * [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1beta1.IndexEndpointService.ListIndexEndpoints] call.
+   * [ListIndexEndpointsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListIndexEndpointsResponse.next_page_token]
+   * of the previous
+   * [IndexEndpointService.ListIndexEndpoints][google.cloud.aiplatform.v1beta1.IndexEndpointService.ListIndexEndpoints]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

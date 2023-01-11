@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeployIndex].
+ * Runtime operation information for
+ * [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeployIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployIndexOperationMetadata}
@@ -343,7 +344,8 @@ public final class DeployIndexOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Runtime operation information for [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeployIndex].
+   * Runtime operation information for
+   * [IndexEndpointService.DeployIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.DeployIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployIndexOperationMetadata}

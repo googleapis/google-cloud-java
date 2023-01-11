@@ -86,12 +86,13 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSecuritySettingsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("securitySettings", request.getSecuritySettings(), false))
+                                  .toBody("securitySettings", request.getSecuritySettings(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecuritySettings>newBuilder()
@@ -123,6 +124,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetSecuritySettingsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -161,12 +163,13 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                             ProtoRestSerializer<UpdateSecuritySettingsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("securitySettings", request.getSecuritySettings(), false))
+                                  .toBody("securitySettings", request.getSecuritySettings(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<SecuritySettings>newBuilder()
@@ -202,6 +205,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -236,6 +240,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSecuritySettingsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -269,6 +274,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -302,6 +308,7 @@ public class HttpJsonSecuritySettingsServiceStub extends SecuritySettingsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * zoneOperationsSettingsBuilder
  *     .deleteSettings()
  *     .setRetrySettings(
- *         zoneOperationsSettingsBuilder.deleteSettings().getRetrySettings().toBuilder()
+ *         zoneOperationsSettingsBuilder
+ *             .deleteSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ZoneOperationsSettings zoneOperationsSettings = zoneOperationsSettingsBuilder.build();

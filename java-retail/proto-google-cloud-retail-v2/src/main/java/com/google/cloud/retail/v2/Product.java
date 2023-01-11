@@ -575,7 +575,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The timestamp when this product becomes unavailable for
-   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+   * that this is only applicable to
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+   * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * In general, we suggest the users to delete the stale products explicitly,
+   * instead of using this field to determine staleness.
    * If it is set, the [Product][google.cloud.retail.v2.Product] is not
    * available for
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -605,7 +611,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The timestamp when this product becomes unavailable for
-   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+   * that this is only applicable to
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+   * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * In general, we suggest the users to delete the stale products explicitly,
+   * instead of using this field to determine staleness.
    * If it is set, the [Product][google.cloud.retail.v2.Product] is not
    * available for
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -638,7 +650,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The timestamp when this product becomes unavailable for
-   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+   * that this is only applicable to
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+   * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * In general, we suggest the users to delete the stale products explicitly,
+   * instead of using this field to determine staleness.
    * If it is set, the [Product][google.cloud.retail.v2.Product] is not
    * available for
    * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -670,7 +688,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The TTL (time to live) of the product.
+   * Input only. The TTL (time to live) of the product. Note that this is only
+   * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+   * and ignored for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+   * we suggest the users to delete the stale products explicitly, instead of
+   * using this field to determine staleness.
    * If it is set, it must be a non-negative value, and
    * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
    * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -698,7 +722,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The TTL (time to live) of the product.
+   * Input only. The TTL (time to live) of the product. Note that this is only
+   * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+   * and ignored for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+   * we suggest the users to delete the stale products explicitly, instead of
+   * using this field to determine staleness.
    * If it is set, it must be a non-negative value, and
    * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
    * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -729,7 +759,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The TTL (time to live) of the product.
+   * Input only. The TTL (time to live) of the product. Note that this is only
+   * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+   * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+   * and ignored for
+   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+   * we suggest the users to delete the stale products explicitly, instead of
+   * using this field to determine staleness.
    * If it is set, it must be a non-negative value, and
    * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
    * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -1174,7 +1210,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -1213,7 +1249,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -1252,7 +1288,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -1292,7 +1328,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * belonging to several parallel categories. Strongly recommended using the
    * full path for better search / recommendation quality.
    * To represent full path of category, use '&gt;' sign to separate different
-   * hierarchies. If '&gt;' is part of the category name, please replace it with
+   * hierarchies. If '&gt;' is part of the category name, replace it with
    * other character(s).
    * For example, if a shoes product belongs to both
    * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -1996,7 +2032,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
    * available for
-   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+   * that this is only applicable to
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+   * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -2013,7 +2053,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
    * available for
-   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+   * that this is only applicable to
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+   * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -2032,7 +2076,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
    * available for
-   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+   * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+   * that this is only applicable to
+   * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+   * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+   * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -3076,13 +3124,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
+   * This field is deprecated. Use the retrievable site-wide control instead.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+   * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
+   *     google/cloud/retail/v2/product.proto;l=562
    * @return Whether the retrievableFields field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRetrievableFields() {
     return retrievableFields_ != null;
   }
@@ -3134,13 +3186,17 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
+   * This field is deprecated. Use the retrievable site-wide control instead.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+   * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
+   *     google/cloud/retail/v2/product.proto;l=562
    * @return The retrievableFields.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.FieldMask getRetrievableFields() {
     return retrievableFields_ == null
         ? com.google.protobuf.FieldMask.getDefaultInstance()
@@ -3194,11 +3250,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * Note: Returning more fields in
    * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
+   * This field is deprecated. Use the retrievable site-wide control instead.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+   * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.FieldMaskOrBuilder getRetrievableFieldsOrBuilder() {
     return getRetrievableFields();
   }
@@ -3330,7 +3388,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A list of local inventories specific to different places.
    * This is only available for users who have Retail Search enabled, and it can
-   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * APIs.
    * </pre>
    *
    * <code>
@@ -3347,7 +3409,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A list of local inventories specific to different places.
    * This is only available for users who have Retail Search enabled, and it can
-   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * APIs.
    * </pre>
    *
    * <code>
@@ -3365,7 +3431,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A list of local inventories specific to different places.
    * This is only available for users who have Retail Search enabled, and it can
-   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * APIs.
    * </pre>
    *
    * <code>
@@ -3382,7 +3452,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A list of local inventories specific to different places.
    * This is only available for users who have Retail Search enabled, and it can
-   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * APIs.
    * </pre>
    *
    * <code>
@@ -3399,7 +3473,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. A list of local inventories specific to different places.
    * This is only available for users who have Retail Search enabled, and it can
-   * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+   * be managed by
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * and
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * APIs.
    * </pre>
    *
    * <code>
@@ -5038,7 +5116,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5068,7 +5152,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5108,7 +5198,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5145,7 +5241,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5179,7 +5281,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5225,7 +5333,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5265,7 +5379,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5292,7 +5412,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5327,7 +5453,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The timestamp when this product becomes unavailable for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * In general, we suggest the users to delete the stale products explicitly,
+     * instead of using this field to determine staleness.
      * If it is set, the [Product][google.cloud.retail.v2.Product] is not
      * available for
      * [SearchService.Search][google.cloud.retail.v2.SearchService.Search] after
@@ -5378,7 +5510,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5406,7 +5544,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5444,7 +5588,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5479,7 +5629,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5511,7 +5667,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5555,7 +5717,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5593,7 +5761,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5618,7 +5792,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -5651,7 +5831,13 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The TTL (time to live) of the product.
+     * Input only. The TTL (time to live) of the product. Note that this is only
+     * applicable to [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY]
+     * and [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION],
+     * and ignored for
+     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT]. In general,
+     * we suggest the users to delete the stale products explicitly, instead of
+     * using this field to determine staleness.
      * If it is set, it must be a non-negative value, and
      * [expire_time][google.cloud.retail.v2.Product.expire_time] is set as
      * current timestamp plus [ttl][google.cloud.retail.v2.Product.ttl]. The
@@ -6678,7 +6864,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6717,7 +6903,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6756,7 +6942,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6796,7 +6982,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6836,7 +7022,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6883,7 +7069,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6929,7 +7115,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -6972,7 +7158,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -7014,7 +7200,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * belonging to several parallel categories. Strongly recommended using the
      * full path for better search / recommendation quality.
      * To represent full path of category, use '&gt;' sign to separate different
-     * hierarchies. If '&gt;' is part of the category name, please replace it with
+     * hierarchies. If '&gt;' is part of the category name, replace it with
      * other character(s).
      * For example, if a shoes product belongs to both
      * ["Shoes &amp; Accessories" -&gt; "Shoes"] and
@@ -8655,7 +8841,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8671,7 +8861,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8693,7 +8887,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8717,7 +8915,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8738,7 +8940,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8766,7 +8972,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8788,7 +8998,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8804,7 +9018,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -8824,7 +9042,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The timestamp when this [Product][google.cloud.retail.v2.Product] becomes
      * available for
-     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search].
+     * [SearchService.Search][google.cloud.retail.v2.SearchService.Search]. Note
+     * that this is only applicable to
+     * [Type.PRIMARY][google.cloud.retail.v2.Product.Type.PRIMARY] and
+     * [Type.COLLECTION][google.cloud.retail.v2.Product.Type.COLLECTION], and
+     * ignored for [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
      * </pre>
      *
      * <code>.google.protobuf.Timestamp available_time = 18;</code>
@@ -12248,12 +12470,16 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
+     *     google/cloud/retail/v2/product.proto;l=562
      * @return Whether the retrievableFields field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRetrievableFields() {
       return retrievableFieldsBuilder_ != null || retrievableFields_ != null;
     }
@@ -12305,12 +12531,16 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.Product.retrievable_fields is deprecated. See
+     *     google/cloud/retail/v2/product.proto;l=562
      * @return The retrievableFields.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.FieldMask getRetrievableFields() {
       if (retrievableFieldsBuilder_ == null) {
         return retrievableFields_ == null
@@ -12368,10 +12598,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setRetrievableFields(com.google.protobuf.FieldMask value) {
       if (retrievableFieldsBuilder_ == null) {
         if (value == null) {
@@ -12433,10 +12665,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setRetrievableFields(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (retrievableFieldsBuilder_ == null) {
         retrievableFields_ = builderForValue.build();
@@ -12495,10 +12729,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeRetrievableFields(com.google.protobuf.FieldMask value) {
       if (retrievableFieldsBuilder_ == null) {
         if (retrievableFields_ != null) {
@@ -12564,10 +12800,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearRetrievableFields() {
       if (retrievableFieldsBuilder_ == null) {
         retrievableFields_ = null;
@@ -12627,10 +12865,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.FieldMask.Builder getRetrievableFieldsBuilder() {
 
       onChanged();
@@ -12684,10 +12924,12 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.FieldMaskOrBuilder getRetrievableFieldsOrBuilder() {
       if (retrievableFieldsBuilder_ != null) {
         return retrievableFieldsBuilder_.getMessageOrBuilder();
@@ -12745,9 +12987,10 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * Note: Returning more fields in
      * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
      * response payload size and serving latency.
+     * This field is deprecated. Use the retrievable site-wide control instead.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
+     * <code>.google.protobuf.FieldMask retrievable_fields = 30 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
@@ -13317,7 +13560,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13337,7 +13584,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13357,7 +13608,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13377,7 +13632,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13403,7 +13662,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13427,7 +13690,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13453,7 +13720,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13479,7 +13750,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13503,7 +13778,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13527,7 +13806,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13551,7 +13834,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13574,7 +13861,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13597,7 +13888,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13613,7 +13908,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13634,7 +13933,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13655,7 +13958,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13672,7 +13979,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>
@@ -13689,7 +14000,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. A list of local inventories specific to different places.
      * This is only available for users who have Retail Search enabled, and it can
-     * be managed by [AddLocalInventories][] and [RemoveLocalInventories][] APIs.
+     * be managed by
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+     * and
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+     * APIs.
      * </pre>
      *
      * <code>

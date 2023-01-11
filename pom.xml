@@ -97,10 +97,12 @@
     <module>java-language</module>
     <module>java-life-sciences</module>
     <module>java-managed-identities</module>
+    <module>java-maps-addressvalidation</module>
     <module>java-maps-routing</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
     <module>java-monitoring-dashboards</module>
+    <module>java-monitoring-metricsscope</module>
     <module>java-monitoring</module>
     <module>java-networkconnectivity</module>
     <module>java-network-management</module>
@@ -149,6 +151,7 @@
     <module>java-video-transcoder</module>
     <module>java-vision</module>
     <module>java-vmmigration</module>
+    <module>java-vmwareengine</module>
     <module>java-vpcaccess</module>
     <module>java-webrisk</module>
     <module>java-websecurityscanner</module>

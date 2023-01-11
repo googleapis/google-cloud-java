@@ -128,8 +128,10 @@ public interface ListCustomJobsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListCustomJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListCustomJobsResponse.next_page_token] of the previous
-   * [JobService.ListCustomJobs][google.cloud.aiplatform.v1beta1.JobService.ListCustomJobs] call.
+   * [ListCustomJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListCustomJobsResponse.next_page_token]
+   * of the previous
+   * [JobService.ListCustomJobs][google.cloud.aiplatform.v1beta1.JobService.ListCustomJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -143,8 +145,10 @@ public interface ListCustomJobsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListCustomJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListCustomJobsResponse.next_page_token] of the previous
-   * [JobService.ListCustomJobs][google.cloud.aiplatform.v1beta1.JobService.ListCustomJobs] call.
+   * [ListCustomJobsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListCustomJobsResponse.next_page_token]
+   * of the previous
+   * [JobService.ListCustomJobs][google.cloud.aiplatform.v1beta1.JobService.ListCustomJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>

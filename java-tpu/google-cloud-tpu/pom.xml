@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tpu</artifactId>
-  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+  <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud TPU</name>
   <description>Cloud TPU are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tpu-parent</artifactId>
-    <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
+    <version>2.9.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tpu:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-tpu</site.installationModule>
@@ -43,6 +43,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-tpu-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-tpu-v2alpha1</artifactId>
     </dependency>
     <dependency>
@@ -56,6 +60,10 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
@@ -80,13 +88,35 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-tpu-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-tpu-v2alpha1</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>

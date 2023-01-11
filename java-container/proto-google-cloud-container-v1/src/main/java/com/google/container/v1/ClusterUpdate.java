@@ -49,6 +49,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     desiredDatapathProvider_ = 0;
     desiredPrivateIpv6GoogleAccess_ = 0;
     desiredMasterVersion_ = "";
+    etag_ = "";
+    desiredStackType_ = 0;
   }
 
   @java.lang.Override
@@ -1981,6 +1983,59 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredGatewayApiConfig();
   }
 
+  public static final int ETAG_FIELD_NUMBER = 115;
+  private volatile java.lang.Object etag_;
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the cluster.
+   * If an etag is provided and does not match the current etag of the cluster,
+   * update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 115;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The current etag of the cluster.
+   * If an etag is provided and does not match the current etag of the cluster,
+   * update will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 115;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER = 116;
   private com.google.container.v1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;
   /**
@@ -2028,6 +2083,46 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1.NodePoolLoggingConfigOrBuilder
       getDesiredNodePoolLoggingConfigOrBuilder() {
     return getDesiredNodePoolLoggingConfig();
+  }
+
+  public static final int DESIRED_STACK_TYPE_FIELD_NUMBER = 119;
+  private int desiredStackType_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired stack type of the cluster.
+   * If a stack type is provided and does not match the current stack type of
+   * the cluster, update will attempt to change the stack type to the new type.
+   * </pre>
+   *
+   * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+   *
+   * @return The enum numeric value on the wire for desiredStackType.
+   */
+  @java.lang.Override
+  public int getDesiredStackTypeValue() {
+    return desiredStackType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired stack type of the cluster.
+   * If a stack type is provided and does not match the current stack type of
+   * the cluster, update will attempt to change the stack type to the new type.
+   * </pre>
+   *
+   * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+   *
+   * @return The desiredStackType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.StackType getDesiredStackType() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.StackType result =
+        com.google.container.v1.StackType.valueOf(desiredStackType_);
+    return result == null ? com.google.container.v1.StackType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2158,8 +2253,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredGatewayApiConfig_ != null) {
       output.writeMessage(114, getDesiredGatewayApiConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 115, etag_);
+    }
     if (desiredNodePoolLoggingConfig_ != null) {
       output.writeMessage(116, getDesiredNodePoolLoggingConfig());
+    }
+    if (desiredStackType_ != com.google.container.v1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(119, desiredStackType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2338,10 +2439,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               114, getDesiredGatewayApiConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(115, etag_);
+    }
     if (desiredNodePoolLoggingConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               116, getDesiredNodePoolLoggingConfig());
+    }
+    if (desiredStackType_ != com.google.container.v1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(119, desiredStackType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2505,11 +2612,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredGatewayApiConfig()) {
       if (!getDesiredGatewayApiConfig().equals(other.getDesiredGatewayApiConfig())) return false;
     }
+    if (!getEtag().equals(other.getEtag())) return false;
     if (hasDesiredNodePoolLoggingConfig() != other.hasDesiredNodePoolLoggingConfig()) return false;
     if (hasDesiredNodePoolLoggingConfig()) {
       if (!getDesiredNodePoolLoggingConfig().equals(other.getDesiredNodePoolLoggingConfig()))
         return false;
     }
+    if (desiredStackType_ != other.desiredStackType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2654,10 +2763,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_GATEWAY_API_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredGatewayApiConfig().hashCode();
     }
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     if (hasDesiredNodePoolLoggingConfig()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolLoggingConfig().hashCode();
     }
+    hash = (37 * hash) + DESIRED_STACK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + desiredStackType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2979,12 +3092,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredGatewayApiConfig_ = null;
         desiredGatewayApiConfigBuilder_ = null;
       }
+      etag_ = "";
+
       if (desiredNodePoolLoggingConfigBuilder_ == null) {
         desiredNodePoolLoggingConfig_ = null;
       } else {
         desiredNodePoolLoggingConfig_ = null;
         desiredNodePoolLoggingConfigBuilder_ = null;
       }
+      desiredStackType_ = 0;
+
       return this;
     }
 
@@ -3168,11 +3285,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredGatewayApiConfig_ = desiredGatewayApiConfigBuilder_.build();
       }
+      result.etag_ = etag_;
       if (desiredNodePoolLoggingConfigBuilder_ == null) {
         result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfig_;
       } else {
         result.desiredNodePoolLoggingConfig_ = desiredNodePoolLoggingConfigBuilder_.build();
       }
+      result.desiredStackType_ = desiredStackType_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -3348,8 +3467,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredGatewayApiConfig()) {
         mergeDesiredGatewayApiConfig(other.getDesiredGatewayApiConfig());
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
       if (other.hasDesiredNodePoolLoggingConfig()) {
         mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
+      }
+      if (other.desiredStackType_ != 0) {
+        setDesiredStackTypeValue(other.getDesiredStackTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3633,6 +3759,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 914
+            case 922:
+              {
+                etag_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 922
             case 930:
               {
                 input.readMessage(
@@ -3640,6 +3772,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 930
+            case 952:
+              {
+                desiredStackType_ = input.readEnum();
+
+                break;
+              } // case 952
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10205,6 +10343,122 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredGatewayApiConfigBuilder_;
     }
 
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The current etag of the cluster.
+     * If an etag is provided and does not match the current etag of the cluster,
+     * update will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 115;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.container.v1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.NodePoolLoggingConfig,
@@ -10403,6 +10657,107 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolLoggingConfig_ = null;
       }
       return desiredNodePoolLoggingConfigBuilder_;
+    }
+
+    private int desiredStackType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @return The enum numeric value on the wire for desiredStackType.
+     */
+    @java.lang.Override
+    public int getDesiredStackTypeValue() {
+      return desiredStackType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @param value The enum numeric value on the wire for desiredStackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredStackTypeValue(int value) {
+
+      desiredStackType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @return The desiredStackType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.StackType getDesiredStackType() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.StackType result =
+          com.google.container.v1.StackType.valueOf(desiredStackType_);
+      return result == null ? com.google.container.v1.StackType.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @param value The desiredStackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredStackType(com.google.container.v1.StackType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      desiredStackType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired stack type of the cluster.
+     * If a stack type is provided and does not match the current stack type of
+     * the cluster, update will attempt to change the stack type to the new type.
+     * </pre>
+     *
+     * <code>.google.container.v1.StackType desired_stack_type = 119;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredStackType() {
+
+      desiredStackType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

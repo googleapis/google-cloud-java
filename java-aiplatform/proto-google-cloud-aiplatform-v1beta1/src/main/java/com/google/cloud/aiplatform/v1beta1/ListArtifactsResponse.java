@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
+ * Response message for
+ * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListArtifactsResponse}
@@ -143,7 +144,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+   * A token, which can be sent as
+   * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
    * to retrieve the next page.
    * If this field is not populated, there are no subsequent pages.
    * </pre>
@@ -168,7 +170,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+   * A token, which can be sent as
+   * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
    * to retrieve the next page.
    * If this field is not populated, there are no subsequent pages.
    * </pre>
@@ -365,7 +368,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
+   * Response message for
+   * [MetadataService.ListArtifacts][google.cloud.aiplatform.v1beta1.MetadataService.ListArtifacts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListArtifactsResponse}
@@ -947,7 +951,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+     * A token, which can be sent as
+     * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
      * to retrieve the next page.
      * If this field is not populated, there are no subsequent pages.
      * </pre>
@@ -971,7 +976,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+     * A token, which can be sent as
+     * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
      * to retrieve the next page.
      * If this field is not populated, there are no subsequent pages.
      * </pre>
@@ -995,7 +1001,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+     * A token, which can be sent as
+     * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
      * to retrieve the next page.
      * If this field is not populated, there are no subsequent pages.
      * </pre>
@@ -1018,7 +1025,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+     * A token, which can be sent as
+     * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
      * to retrieve the next page.
      * If this field is not populated, there are no subsequent pages.
      * </pre>
@@ -1037,7 +1045,8 @@ public final class ListArtifactsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A token, which can be sent as [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
+     * A token, which can be sent as
+     * [ListArtifactsRequest.page_token][google.cloud.aiplatform.v1beta1.ListArtifactsRequest.page_token]
      * to retrieve the next page.
      * If this field is not populated, there are no subsequent pages.
      * </pre>

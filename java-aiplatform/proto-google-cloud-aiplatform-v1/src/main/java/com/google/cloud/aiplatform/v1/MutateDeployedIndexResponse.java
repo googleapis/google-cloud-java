@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1.IndexEndpointService.MutateDeployedIndex].
+ * Response message for
+ * [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1.IndexEndpointService.MutateDeployedIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.MutateDeployedIndexResponse}
@@ -282,7 +283,8 @@ public final class MutateDeployedIndexResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1.IndexEndpointService.MutateDeployedIndex].
+   * Response message for
+   * [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1.IndexEndpointService.MutateDeployedIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.MutateDeployedIndexResponse}

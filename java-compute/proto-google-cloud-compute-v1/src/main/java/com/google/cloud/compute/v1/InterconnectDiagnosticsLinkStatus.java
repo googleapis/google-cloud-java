@@ -41,6 +41,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     arpCaches_ = java.util.Collections.emptyList();
     circuitId_ = "";
     googleDemarc_ = "";
+    operationalStatus_ = "";
   }
 
   @java.lang.Override
@@ -67,6 +68,169 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.class,
             com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the link.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.OperationalStatus}
+   */
+  public enum OperationalStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_OPERATIONAL_STATUS = 0;</code>
+     */
+    UNDEFINED_OPERATIONAL_STATUS(0),
+    /**
+     *
+     *
+     * <pre>
+     * The interface is unable to communicate with the remote end.
+     * </pre>
+     *
+     * <code>LINK_OPERATIONAL_STATUS_DOWN = 281653885;</code>
+     */
+    LINK_OPERATIONAL_STATUS_DOWN(281653885),
+    /**
+     *
+     *
+     * <pre>
+     * The interface has low level communication with the remote end.
+     * </pre>
+     *
+     * <code>LINK_OPERATIONAL_STATUS_UP = 305879862;</code>
+     */
+    LINK_OPERATIONAL_STATUS_UP(305879862),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_OPERATIONAL_STATUS = 0;</code>
+     */
+    public static final int UNDEFINED_OPERATIONAL_STATUS_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The interface is unable to communicate with the remote end.
+     * </pre>
+     *
+     * <code>LINK_OPERATIONAL_STATUS_DOWN = 281653885;</code>
+     */
+    public static final int LINK_OPERATIONAL_STATUS_DOWN_VALUE = 281653885;
+    /**
+     *
+     *
+     * <pre>
+     * The interface has low level communication with the remote end.
+     * </pre>
+     *
+     * <code>LINK_OPERATIONAL_STATUS_UP = 305879862;</code>
+     */
+    public static final int LINK_OPERATIONAL_STATUS_UP_VALUE = 305879862;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OperationalStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OperationalStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_OPERATIONAL_STATUS;
+        case 281653885:
+          return LINK_OPERATIONAL_STATUS_DOWN;
+        case 305879862:
+          return LINK_OPERATIONAL_STATUS_UP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OperationalStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OperationalStatus>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OperationalStatus>() {
+              public OperationalStatus findValueByNumber(int number) {
+                return OperationalStatus.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final OperationalStatus[] VALUES = values();
+
+    public static OperationalStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OperationalStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.OperationalStatus)
   }
 
   private int bitField0_;
@@ -314,6 +478,73 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         : lacpStatus_;
   }
 
+  public static final int OPERATIONAL_STATUS_FIELD_NUMBER = 201070847;
+  private volatile java.lang.Object operationalStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the link.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   *
+   * @return Whether the operationalStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasOperationalStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the link.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   *
+   * @return The operationalStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getOperationalStatus() {
+    java.lang.Object ref = operationalStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operationalStatus_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the link.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   *
+   * @return The bytes for operationalStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOperationalStatusBytes() {
+    java.lang.Object ref = operationalStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      operationalStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RECEIVING_OPTICAL_POWER_FIELD_NUMBER = 244717279;
   private com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
       receivingOpticalPower_;
@@ -332,7 +563,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasReceivingOpticalPower() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -391,7 +622,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasTransmittingOpticalPower() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -449,10 +680,13 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 51084, googleDemarc_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201070847, operationalStatus_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 225180977, circuitId_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(244717279, getReceivingOpticalPower());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -461,7 +695,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     for (int i = 0; i < arpCaches_.size(); i++) {
       output.writeMessage(414591761, arpCaches_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(459431197, getTransmittingOpticalPower());
     }
     getUnknownFields().writeTo(output);
@@ -476,10 +710,14 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(51084, googleDemarc_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(201070847, operationalStatus_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(225180977, circuitId_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               244717279, getReceivingOpticalPower());
@@ -491,7 +729,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(414591761, arpCaches_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               459431197, getTransmittingOpticalPower());
@@ -524,6 +762,10 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (hasLacpStatus() != other.hasLacpStatus()) return false;
     if (hasLacpStatus()) {
       if (!getLacpStatus().equals(other.getLacpStatus())) return false;
+    }
+    if (hasOperationalStatus() != other.hasOperationalStatus()) return false;
+    if (hasOperationalStatus()) {
+      if (!getOperationalStatus().equals(other.getOperationalStatus())) return false;
     }
     if (hasReceivingOpticalPower() != other.hasReceivingOpticalPower()) return false;
     if (hasReceivingOpticalPower()) {
@@ -559,6 +801,10 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     if (hasLacpStatus()) {
       hash = (37 * hash) + LACP_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getLacpStatus().hashCode();
+    }
+    if (hasOperationalStatus()) {
+      hash = (37 * hash) + OPERATIONAL_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getOperationalStatus().hashCode();
     }
     if (hasReceivingOpticalPower()) {
       hash = (37 * hash) + RECEIVING_OPTICAL_POWER_FIELD_NUMBER;
@@ -735,18 +981,20 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         lacpStatusBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      operationalStatus_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (receivingOpticalPowerBuilder_ == null) {
         receivingOpticalPower_ = null;
       } else {
         receivingOpticalPowerBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (transmittingOpticalPowerBuilder_ == null) {
         transmittingOpticalPower_ = null;
       } else {
         transmittingOpticalPowerBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -803,20 +1051,24 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000008;
+      }
+      result.operationalStatus_ = operationalStatus_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         if (receivingOpticalPowerBuilder_ == null) {
           result.receivingOpticalPower_ = receivingOpticalPower_;
         } else {
           result.receivingOpticalPower_ = receivingOpticalPowerBuilder_.build();
         }
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         if (transmittingOpticalPowerBuilder_ == null) {
           result.transmittingOpticalPower_ = transmittingOpticalPower_;
         } else {
           result.transmittingOpticalPower_ = transmittingOpticalPowerBuilder_.build();
         }
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -910,6 +1162,11 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       if (other.hasLacpStatus()) {
         mergeLacpStatus(other.getLacpStatus());
       }
+      if (other.hasOperationalStatus()) {
+        bitField0_ |= 0x00000010;
+        operationalStatus_ = other.operationalStatus_;
+        onChanged();
+      }
       if (other.hasReceivingOpticalPower()) {
         mergeReceivingOpticalPower(other.getReceivingOpticalPower());
       }
@@ -948,6 +1205,12 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
                 bitField0_ |= 0x00000004;
                 break;
               } // case 408674
+            case 1608566778:
+              {
+                operationalStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1608566778
             case 1801447818:
               {
                 circuitId_ = input.readStringRequireUtf8();
@@ -958,7 +1221,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
               {
                 input.readMessage(
                     getReceivingOpticalPowerFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1957738234
             case -1405283974:
@@ -985,7 +1248,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
               {
                 input.readMessage(
                     getTransmittingOpticalPowerFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -619517718
             default:
@@ -1807,6 +2070,132 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       return lacpStatusBuilder_;
     }
 
+    private java.lang.Object operationalStatus_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the link.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     *
+     * @return Whether the operationalStatus field is set.
+     */
+    public boolean hasOperationalStatus() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the link.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     *
+     * @return The operationalStatus.
+     */
+    public java.lang.String getOperationalStatus() {
+      java.lang.Object ref = operationalStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operationalStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the link.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     *
+     * @return The bytes for operationalStatus.
+     */
+    public com.google.protobuf.ByteString getOperationalStatusBytes() {
+      java.lang.Object ref = operationalStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        operationalStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the link.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     *
+     * @param value The operationalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperationalStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      operationalStatus_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the link.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOperationalStatus() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      operationalStatus_ = getDefaultInstance().getOperationalStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the link.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     *
+     * @param value The bytes for operationalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperationalStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      operationalStatus_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
         receivingOpticalPower_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1828,7 +2217,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * @return Whether the receivingOpticalPower field is set.
      */
     public boolean hasReceivingOpticalPower() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1876,7 +2265,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1899,7 +2288,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1916,7 +2305,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     public Builder mergeReceivingOpticalPower(
         com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower value) {
       if (receivingOpticalPowerBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && receivingOpticalPower_ != null
             && receivingOpticalPower_
                 != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
@@ -1933,7 +2322,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1954,7 +2343,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         receivingOpticalPowerBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -1970,7 +2359,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
         getReceivingOpticalPowerBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getReceivingOpticalPowerFieldBuilder().getBuilder();
     }
@@ -2045,7 +2434,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      * @return Whether the transmittingOpticalPower field is set.
      */
     public boolean hasTransmittingOpticalPower() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2093,7 +2482,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2116,7 +2505,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2133,7 +2522,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
     public Builder mergeTransmittingOpticalPower(
         com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower value) {
       if (transmittingOpticalPowerBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && transmittingOpticalPower_ != null
             && transmittingOpticalPower_
                 != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower
@@ -2150,7 +2539,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2171,7 +2560,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
       } else {
         transmittingOpticalPowerBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
     /**
@@ -2187,7 +2576,7 @@ public final class InterconnectDiagnosticsLinkStatus extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.Builder
         getTransmittingOpticalPowerBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getTransmittingOpticalPowerFieldBuilder().getBuilder();
     }

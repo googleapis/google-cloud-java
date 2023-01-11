@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
+ * Request message for
+ * [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest}
@@ -78,9 +79,8 @@ public final class AddContextArtifactsAndExecutionsRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Context that the Artifacts and Executions
-   * belong to.
-   * Format:
+   * Required. The resource name of the Context that the Artifacts and
+   * Executions belong to. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -106,9 +106,8 @@ public final class AddContextArtifactsAndExecutionsRequest
    *
    *
    * <pre>
-   * Required. The resource name of the Context that the Artifacts and Executions
-   * belong to.
-   * Format:
+   * Required. The resource name of the Context that the Artifacts and
+   * Executions belong to. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * </pre>
    *
@@ -476,7 +475,8 @@ public final class AddContextArtifactsAndExecutionsRequest
    *
    *
    * <pre>
-   * Request message for [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
+   * Request message for
+   * [MetadataService.AddContextArtifactsAndExecutions][google.cloud.aiplatform.v1beta1.MetadataService.AddContextArtifactsAndExecutions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest}
@@ -709,9 +709,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Context that the Artifacts and Executions
-     * belong to.
-     * Format:
+     * Required. The resource name of the Context that the Artifacts and
+     * Executions belong to. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -736,9 +735,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Context that the Artifacts and Executions
-     * belong to.
-     * Format:
+     * Required. The resource name of the Context that the Artifacts and
+     * Executions belong to. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -763,9 +761,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Context that the Artifacts and Executions
-     * belong to.
-     * Format:
+     * Required. The resource name of the Context that the Artifacts and
+     * Executions belong to. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -789,9 +786,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Context that the Artifacts and Executions
-     * belong to.
-     * Format:
+     * Required. The resource name of the Context that the Artifacts and
+     * Executions belong to. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *
@@ -811,9 +807,8 @@ public final class AddContextArtifactsAndExecutionsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the Context that the Artifacts and Executions
-     * belong to.
-     * Format:
+     * Required. The resource name of the Context that the Artifacts and
+     * Executions belong to. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
      * </pre>
      *

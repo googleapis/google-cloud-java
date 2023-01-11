@@ -36,7 +36,10 @@ public class SyncRecognize {
     speechSettingsBuilder
         .recognizeSettings()
         .setRetrySettings(
-            speechSettingsBuilder.recognizeSettings().getRetrySettings().toBuilder()
+            speechSettingsBuilder
+                .recognizeSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     SpeechStubSettings speechSettings = speechSettingsBuilder.build();

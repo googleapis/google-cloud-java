@@ -79,6 +79,7 @@ public class HttpJsonCompletionStub extends CompletionStub {
                             serializer.putQueryParam(fields, "query", request.getQuery());
                             serializer.putQueryParam(fields, "scope", request.getScopeValue());
                             serializer.putQueryParam(fields, "type", request.getTypeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

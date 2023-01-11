@@ -96,7 +96,10 @@ import org.threeten.bp.Duration;
  * interconnectAttachmentsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         interconnectAttachmentsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         interconnectAttachmentsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InterconnectAttachmentsStubSettings interconnectAttachmentsSettings =

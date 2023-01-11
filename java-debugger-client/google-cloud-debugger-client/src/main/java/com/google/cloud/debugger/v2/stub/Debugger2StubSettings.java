@@ -80,7 +80,10 @@ import org.threeten.bp.Duration;
  * debugger2SettingsBuilder
  *     .setBreakpointSettings()
  *     .setRetrySettings(
- *         debugger2SettingsBuilder.setBreakpointSettings().getRetrySettings().toBuilder()
+ *         debugger2SettingsBuilder
+ *             .setBreakpointSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * Debugger2StubSettings debugger2Settings = debugger2SettingsBuilder.build();

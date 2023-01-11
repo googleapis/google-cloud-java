@@ -37,7 +37,10 @@ public class SyncGetConnector {
     vpcAccessServiceSettingsBuilder
         .getConnectorSettings()
         .setRetrySettings(
-            vpcAccessServiceSettingsBuilder.getConnectorSettings().getRetrySettings().toBuilder()
+            vpcAccessServiceSettingsBuilder
+                .getConnectorSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     VpcAccessServiceSettings vpcAccessServiceSettings = vpcAccessServiceSettingsBuilder.build();

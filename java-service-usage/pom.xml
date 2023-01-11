@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-service-usage-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+  <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
   <name>Google Service Usage Parent</name>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -29,27 +29,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-usage</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-usage:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-usage-v1beta1</artifactId>
-        <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1beta1:current} -->
+        <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-service-usage-v1</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-service-usage-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-usage-v1</artifactId>
-        <version>2.7.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1:current} -->
+        <version>2.8.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-service-usage-v1beta1</artifactId>
-        <version>0.11.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1beta1:current} -->
+        <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-service-usage-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

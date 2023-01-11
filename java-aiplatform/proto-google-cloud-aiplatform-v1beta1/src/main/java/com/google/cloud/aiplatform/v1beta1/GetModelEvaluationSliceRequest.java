@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.GetModelEvaluationSlice][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluationSlice].
+ * Request message for
+ * [ModelService.GetModelEvaluationSlice][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluationSlice].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest}
@@ -290,7 +291,8 @@ public final class GetModelEvaluationSliceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [ModelService.GetModelEvaluationSlice][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluationSlice].
+   * Request message for
+   * [ModelService.GetModelEvaluationSlice][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluationSlice].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest}

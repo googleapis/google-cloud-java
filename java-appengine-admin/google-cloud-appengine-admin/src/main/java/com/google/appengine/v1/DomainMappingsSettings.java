@@ -66,7 +66,10 @@ import javax.annotation.Generated;
  * domainMappingsSettingsBuilder
  *     .getDomainMappingSettings()
  *     .setRetrySettings(
- *         domainMappingsSettingsBuilder.getDomainMappingSettings().getRetrySettings().toBuilder()
+ *         domainMappingsSettingsBuilder
+ *             .getDomainMappingSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DomainMappingsSettings domainMappingsSettings = domainMappingsSettingsBuilder.build();

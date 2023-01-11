@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
+ * Request message for
+ * [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CancelCustomJobRequest}
@@ -288,7 +289,8 @@ public final class CancelCustomJobRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
+   * Request message for
+   * [JobService.CancelCustomJob][google.cloud.aiplatform.v1.JobService.CancelCustomJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CancelCustomJobRequest}

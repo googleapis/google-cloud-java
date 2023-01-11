@@ -36,7 +36,10 @@ public class SyncGetTagKey {
     tagKeysSettingsBuilder
         .getTagKeySettings()
         .setRetrySettings(
-            tagKeysSettingsBuilder.getTagKeySettings().getRetrySettings().toBuilder()
+            tagKeysSettingsBuilder
+                .getTagKeySettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     TagKeysSettings tagKeysSettings = tagKeysSettingsBuilder.build();

@@ -24,8 +24,8 @@ package com.google.cloud.texttospeech.v1;
  * <pre>
  * Contains text input to be synthesized. Either `text` or `ssml` must be
  * supplied. Supplying both or neither returns
- * [google.rpc.Code.INVALID_ARGUMENT][]. The input size is limited to 5000
- * characters.
+ * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. The
+ * input size is limited to 5000 bytes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.texttospeech.v1.SynthesisInput}
@@ -192,7 +192,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
-   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+   * more information, see
    * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
    * </pre>
    *
@@ -209,7 +210,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
-   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+   * more information, see
    * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
    * </pre>
    *
@@ -239,7 +241,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
-   * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+   * more information, see
    * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
    * </pre>
    *
@@ -455,8 +458,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Contains text input to be synthesized. Either `text` or `ssml` must be
    * supplied. Supplying both or neither returns
-   * [google.rpc.Code.INVALID_ARGUMENT][]. The input size is limited to 5000
-   * characters.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. The
+   * input size is limited to 5000 bytes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.texttospeech.v1.SynthesisInput}
@@ -807,7 +810,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The SSML document to be synthesized. The SSML document must be valid
      * and well-formed. Otherwise the RPC will fail and return
-     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+     * more information, see
      * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
      * </pre>
      *
@@ -825,7 +829,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The SSML document to be synthesized. The SSML document must be valid
      * and well-formed. Otherwise the RPC will fail and return
-     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+     * more information, see
      * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
      * </pre>
      *
@@ -856,7 +861,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The SSML document to be synthesized. The SSML document must be valid
      * and well-formed. Otherwise the RPC will fail and return
-     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+     * more information, see
      * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
      * </pre>
      *
@@ -887,7 +893,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The SSML document to be synthesized. The SSML document must be valid
      * and well-formed. Otherwise the RPC will fail and return
-     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+     * more information, see
      * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
      * </pre>
      *
@@ -911,7 +918,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The SSML document to be synthesized. The SSML document must be valid
      * and well-formed. Otherwise the RPC will fail and return
-     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+     * more information, see
      * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
      * </pre>
      *
@@ -933,7 +941,8 @@ public final class SynthesisInput extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The SSML document to be synthesized. The SSML document must be valid
      * and well-formed. Otherwise the RPC will fail and return
-     * [google.rpc.Code.INVALID_ARGUMENT][]. For more information, see
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
+     * more information, see
      * [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
      * </pre>
      *

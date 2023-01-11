@@ -101,7 +101,7 @@ public interface ClusterOrBuilder
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.initial_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1578
+   *     google/container/v1beta1/cluster_service.proto;l=1637
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1591
+   *     google/container/v1beta1/cluster_service.proto;l=1650
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -150,7 +150,7 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1591
+   *     google/container/v1beta1/cluster_service.proto;l=1650
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -1024,7 +1024,7 @@ public interface ClusterOrBuilder
    * <code>bool private_cluster = 28 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.private_cluster is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1713
+   *     google/container/v1beta1/cluster_service.proto;l=1772
    * @return The privateCluster.
    */
   @java.lang.Deprecated
@@ -1044,7 +1044,7 @@ public interface ClusterOrBuilder
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1720
+   *     google/container/v1beta1/cluster_service.proto;l=1779
    * @return The masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1063,7 +1063,7 @@ public interface ClusterOrBuilder
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1720
+   *     google/container/v1beta1/cluster_service.proto;l=1779
    * @return The bytes for masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1730,7 +1730,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1786
+   *     google/container/v1beta1/cluster_service.proto;l=1845
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1747,7 +1747,7 @@ public interface ClusterOrBuilder
    * <code>string zone = 101 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1786
+   *     google/container/v1beta1/cluster_service.proto;l=1845
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1870,7 +1870,7 @@ public interface ClusterOrBuilder
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1819
+   *     google/container/v1beta1/cluster_service.proto;l=1878
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1889,7 +1889,7 @@ public interface ClusterOrBuilder
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1819
+   *     google/container/v1beta1/cluster_service.proto;l=1878
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1959,7 +1959,7 @@ public interface ClusterOrBuilder
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1831
+   *     google/container/v1beta1/cluster_service.proto;l=1890
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1976,7 +1976,7 @@ public interface ClusterOrBuilder
    * <code>string status_message = 108 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1831
+   *     google/container/v1beta1/cluster_service.proto;l=1890
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -2041,7 +2041,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1847
+   *     google/container/v1beta1/cluster_service.proto;l=1906
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2056,7 +2056,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1847
+   *     google/container/v1beta1/cluster_service.proto;l=1906
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -2071,7 +2071,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1847
+   *     google/container/v1beta1/cluster_service.proto;l=1906
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -2087,7 +2087,7 @@ public interface ClusterOrBuilder
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1847
+   *     google/container/v1beta1/cluster_service.proto;l=1906
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -2105,7 +2105,7 @@ public interface ClusterOrBuilder
    * <code>int32 current_node_count = 112 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1851
+   *     google/container/v1beta1/cluster_service.proto;l=1910
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated
@@ -2576,4 +2576,33 @@ public interface ClusterOrBuilder
    * <code>optional .google.container.v1beta1.ProtectConfig protect_config = 137;</code>
    */
   com.google.container.v1beta1.ProtectConfigOrBuilder getProtectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of cluster
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 139;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * This checksum is computed by the server based on the value of cluster
+   * fields, and may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding.
+   * </pre>
+   *
+   * <code>string etag = 139;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

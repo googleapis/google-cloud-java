@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
  * targetSslProxiesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         targetSslProxiesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         targetSslProxiesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TargetSslProxiesStubSettings targetSslProxiesSettings = targetSslProxiesSettingsBuilder.build();

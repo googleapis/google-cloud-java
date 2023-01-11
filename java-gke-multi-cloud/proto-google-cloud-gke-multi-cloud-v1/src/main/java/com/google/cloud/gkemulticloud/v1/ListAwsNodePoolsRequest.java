@@ -141,8 +141,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the pageSize value, the response can include a partial list
    * and a caller should only rely on response's
-   * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token] to determine if
-   * there are more instances left to be queried.
+   * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token]
+   * to determine if there are more instances left to be queried.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -161,7 +161,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The `nextPageToken` value returned from a previous
-   * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+   * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+   * request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -185,7 +186,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The `nextPageToken` value returned from a previous
-   * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+   * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+   * request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -729,8 +731,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
-     * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token] to determine if
-     * there are more instances left to be queried.
+     * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token]
+     * to determine if there are more instances left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -749,8 +751,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
-     * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token] to determine if
-     * there are more instances left to be queried.
+     * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token]
+     * to determine if there are more instances left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -772,8 +774,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the pageSize value, the response can include a partial list
      * and a caller should only rely on response's
-     * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token] to determine if
-     * there are more instances left to be queried.
+     * [nextPageToken][google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse.next_page_token]
+     * to determine if there are more instances left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -793,7 +795,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The `nextPageToken` value returned from a previous
-     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+     * request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -816,7 +819,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The `nextPageToken` value returned from a previous
-     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+     * request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -839,7 +843,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The `nextPageToken` value returned from a previous
-     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+     * request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -861,7 +866,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The `nextPageToken` value returned from a previous
-     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+     * request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -879,7 +885,8 @@ public final class ListAwsNodePoolsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The `nextPageToken` value returned from a previous
-     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools] request, if any.
+     * [awsNodePools.list][google.cloud.gkemulticloud.v1.AwsClusters.ListAwsNodePools]
+     * request, if any.
      * </pre>
      *
      * <code>string page_token = 3;</code>

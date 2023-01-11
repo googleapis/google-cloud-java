@@ -43,6 +43,8 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     metadataSchemaUri_ = "";
     etag_ = "";
+    savedQueries_ = java.util.Collections.emptyList();
+    metadataArtifact_ = "";
   }
 
   @java.lang.Override
@@ -138,7 +140,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -163,7 +165,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-defined name of the Dataset.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -190,10 +192,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The description.
    */
@@ -213,10 +215,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The description of the Dataset.
+   * The description of the Dataset.
    * </pre>
    *
-   * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string description = 16;</code>
    *
    * @return The bytes for description.
    */
@@ -239,11 +241,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-   * information about the Dataset.
-   * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-   * The schema files that can be used here are found in
-   * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * additional information about the Dataset. The schema is defined as an
+   * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+   * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
    * </pre>
    *
    * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -266,11 +267,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-   * information about the Dataset.
-   * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-   * The schema files that can be used here are found in
-   * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+   * Required. Points to a YAML file stored on Google Cloud Storage describing
+   * additional information about the Dataset. The schema is defined as an
+   * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+   * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
    * </pre>
    *
    * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -524,7 +524,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -556,7 +558,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -579,7 +583,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -606,7 +612,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
    * and are immutable. Following system labels exist for each Dataset:
    * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-   *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+   *   value is the
+   *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *   title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -621,6 +629,105 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int SAVED_QUERIES_FIELD_NUMBER = 9;
+  private java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> savedQueries_;
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> getSavedQueriesList() {
+    return savedQueries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1.SavedQueryOrBuilder>
+      getSavedQueriesOrBuilderList() {
+    return savedQueries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  @java.lang.Override
+  public int getSavedQueriesCount() {
+    return savedQueries_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SavedQuery getSavedQueries(int index) {
+    return savedQueries_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * All SavedQueries belong to the Dataset will be returned in List/Get
+   * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+   * will not be populated except for UI cases which will only use
+   * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+   * In CreateDataset request, a SavedQuery is created together if
+   * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+   * The SavedQuery should not contain any AnnotationSpec.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.SavedQueryOrBuilder getSavedQueriesOrBuilder(int index) {
+    return savedQueries_.get(index);
   }
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 11;
@@ -674,6 +781,61 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     return getEncryptionSpec();
   }
 
+  public static final int METADATA_ARTIFACT_FIELD_NUMBER = 17;
+  private volatile java.lang.Object metadataArtifact_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in
+   * MetadataStore when creating the Dataset. The Artifact resource name pattern
+   * is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The metadataArtifact.
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataArtifact() {
+    java.lang.Object ref = metadataArtifact_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadataArtifact_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the Artifact that was created in
+   * MetadataStore when creating the Dataset. The Artifact resource name pattern
+   * is
+   * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+   * </pre>
+   *
+   * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for metadataArtifact.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMetadataArtifactBytes() {
+    java.lang.Object ref = metadataArtifact_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      metadataArtifact_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -711,11 +873,17 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       output.writeMessage(8, getMetadata());
     }
+    for (int i = 0; i < savedQueries_.size(); i++) {
+      output.writeMessage(9, savedQueries_.get(i));
+    }
     if (encryptionSpec_ != null) {
       output.writeMessage(11, getEncryptionSpec());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, description_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, metadataArtifact_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -757,11 +925,17 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMetadata());
     }
+    for (int i = 0; i < savedQueries_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, savedQueries_.get(i));
+    }
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionSpec());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, description_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metadataArtifact_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, metadataArtifact_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -796,10 +970,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getSavedQueriesList().equals(other.getSavedQueriesList())) return false;
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!getMetadataArtifact().equals(other.getMetadataArtifact())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -837,10 +1013,16 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    if (getSavedQueriesCount() > 0) {
+      hash = (37 * hash) + SAVED_QUERIES_FIELD_NUMBER;
+      hash = (53 * hash) + getSavedQueriesList().hashCode();
+    }
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + METADATA_ARTIFACT_FIELD_NUMBER;
+    hash = (53 * hash) + getMetadataArtifact().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1028,12 +1210,21 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       etag_ = "";
 
       internalGetMutableLabels().clear();
+      if (savedQueriesBuilder_ == null) {
+        savedQueries_ = java.util.Collections.emptyList();
+      } else {
+        savedQueries_ = null;
+        savedQueriesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (encryptionSpecBuilder_ == null) {
         encryptionSpec_ = null;
       } else {
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      metadataArtifact_ = "";
+
       return this;
     }
 
@@ -1084,11 +1275,21 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       result.etag_ = etag_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (savedQueriesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          savedQueries_ = java.util.Collections.unmodifiableList(savedQueries_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.savedQueries_ = savedQueries_;
+      } else {
+        result.savedQueries_ = savedQueriesBuilder_.build();
+      }
       if (encryptionSpecBuilder_ == null) {
         result.encryptionSpec_ = encryptionSpec_;
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
+      result.metadataArtifact_ = metadataArtifact_;
       onBuilt();
       return result;
     }
@@ -1168,8 +1369,39 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (savedQueriesBuilder_ == null) {
+        if (!other.savedQueries_.isEmpty()) {
+          if (savedQueries_.isEmpty()) {
+            savedQueries_ = other.savedQueries_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSavedQueriesIsMutable();
+            savedQueries_.addAll(other.savedQueries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.savedQueries_.isEmpty()) {
+          if (savedQueriesBuilder_.isEmpty()) {
+            savedQueriesBuilder_.dispose();
+            savedQueriesBuilder_ = null;
+            savedQueries_ = other.savedQueries_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            savedQueriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSavedQueriesFieldBuilder()
+                    : null;
+          } else {
+            savedQueriesBuilder_.addAllMessages(other.savedQueries_);
+          }
+        }
+      }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getMetadataArtifact().isEmpty()) {
+        metadataArtifact_ = other.metadataArtifact_;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1250,6 +1482,19 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 66
+            case 74:
+              {
+                com.google.cloud.aiplatform.v1.SavedQuery m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.SavedQuery.parser(), extensionRegistry);
+                if (savedQueriesBuilder_ == null) {
+                  ensureSavedQueriesIsMutable();
+                  savedQueries_.add(m);
+                } else {
+                  savedQueriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             case 90:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
@@ -1262,6 +1507,12 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 130
+            case 138:
+              {
+                metadataArtifact_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1393,7 +1644,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1417,7 +1668,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1441,7 +1692,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1464,7 +1715,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1483,7 +1734,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the Dataset.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1508,10 +1759,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @return The description.
      */
@@ -1530,10 +1781,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @return The bytes for description.
      */
@@ -1552,10 +1803,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1573,10 +1824,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @return This builder for chaining.
      */
@@ -1590,10 +1841,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The description of the Dataset.
+     * The description of the Dataset.
      * </pre>
      *
-     * <code>string description = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string description = 16;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1614,11 +1865,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-     * information about the Dataset.
-     * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-     * The schema files that can be used here are found in
-     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * additional information about the Dataset. The schema is defined as an
+     * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+     * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1640,11 +1890,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-     * information about the Dataset.
-     * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-     * The schema files that can be used here are found in
-     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * additional information about the Dataset. The schema is defined as an
+     * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+     * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1666,11 +1915,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-     * information about the Dataset.
-     * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-     * The schema files that can be used here are found in
-     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * additional information about the Dataset. The schema is defined as an
+     * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+     * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1691,11 +1939,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-     * information about the Dataset.
-     * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-     * The schema files that can be used here are found in
-     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * additional information about the Dataset. The schema is defined as an
+     * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+     * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1712,11 +1959,10 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Points to a YAML file stored on Google Cloud Storage describing additional
-     * information about the Dataset.
-     * The schema is defined as an OpenAPI 3.0.2 Schema Object.
-     * The schema files that can be used here are found in
-     * gs://google-cloud-aiplatform/schema/dataset/metadata/.
+     * Required. Points to a YAML file stored on Google Cloud Storage describing
+     * additional information about the Dataset. The schema is defined as an
+     * OpenAPI 3.0.2 Schema Object. The schema files that can be used here are
+     * found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
      * </pre>
      *
      * <code>string metadata_schema_uri = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2466,7 +2712,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2498,7 +2746,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2521,7 +2771,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2549,7 +2801,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2584,7 +2838,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2615,7 +2871,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2645,7 +2903,9 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
      * and are immutable. Following system labels exist for each Dataset:
      * * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
-     *   value is the [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri] title.
+     *   value is the
+     *   [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+     *   title.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
@@ -2653,6 +2913,465 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> savedQueries_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSavedQueriesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        savedQueries_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1.SavedQuery>(savedQueries_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SavedQuery,
+            com.google.cloud.aiplatform.v1.SavedQuery.Builder,
+            com.google.cloud.aiplatform.v1.SavedQueryOrBuilder>
+        savedQueriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> getSavedQueriesList() {
+      if (savedQueriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(savedQueries_);
+      } else {
+        return savedQueriesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public int getSavedQueriesCount() {
+      if (savedQueriesBuilder_ == null) {
+        return savedQueries_.size();
+      } else {
+        return savedQueriesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public com.google.cloud.aiplatform.v1.SavedQuery getSavedQueries(int index) {
+      if (savedQueriesBuilder_ == null) {
+        return savedQueries_.get(index);
+      } else {
+        return savedQueriesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder setSavedQueries(int index, com.google.cloud.aiplatform.v1.SavedQuery value) {
+      if (savedQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSavedQueriesIsMutable();
+        savedQueries_.set(index, value);
+        onChanged();
+      } else {
+        savedQueriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder setSavedQueries(
+        int index, com.google.cloud.aiplatform.v1.SavedQuery.Builder builderForValue) {
+      if (savedQueriesBuilder_ == null) {
+        ensureSavedQueriesIsMutable();
+        savedQueries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        savedQueriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder addSavedQueries(com.google.cloud.aiplatform.v1.SavedQuery value) {
+      if (savedQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSavedQueriesIsMutable();
+        savedQueries_.add(value);
+        onChanged();
+      } else {
+        savedQueriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder addSavedQueries(int index, com.google.cloud.aiplatform.v1.SavedQuery value) {
+      if (savedQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSavedQueriesIsMutable();
+        savedQueries_.add(index, value);
+        onChanged();
+      } else {
+        savedQueriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder addSavedQueries(
+        com.google.cloud.aiplatform.v1.SavedQuery.Builder builderForValue) {
+      if (savedQueriesBuilder_ == null) {
+        ensureSavedQueriesIsMutable();
+        savedQueries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        savedQueriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder addSavedQueries(
+        int index, com.google.cloud.aiplatform.v1.SavedQuery.Builder builderForValue) {
+      if (savedQueriesBuilder_ == null) {
+        ensureSavedQueriesIsMutable();
+        savedQueries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        savedQueriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder addAllSavedQueries(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1.SavedQuery> values) {
+      if (savedQueriesBuilder_ == null) {
+        ensureSavedQueriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, savedQueries_);
+        onChanged();
+      } else {
+        savedQueriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder clearSavedQueries() {
+      if (savedQueriesBuilder_ == null) {
+        savedQueries_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        savedQueriesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public Builder removeSavedQueries(int index) {
+      if (savedQueriesBuilder_ == null) {
+        ensureSavedQueriesIsMutable();
+        savedQueries_.remove(index);
+        onChanged();
+      } else {
+        savedQueriesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public com.google.cloud.aiplatform.v1.SavedQuery.Builder getSavedQueriesBuilder(int index) {
+      return getSavedQueriesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public com.google.cloud.aiplatform.v1.SavedQueryOrBuilder getSavedQueriesOrBuilder(int index) {
+      if (savedQueriesBuilder_ == null) {
+        return savedQueries_.get(index);
+      } else {
+        return savedQueriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1.SavedQueryOrBuilder>
+        getSavedQueriesOrBuilderList() {
+      if (savedQueriesBuilder_ != null) {
+        return savedQueriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(savedQueries_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public com.google.cloud.aiplatform.v1.SavedQuery.Builder addSavedQueriesBuilder() {
+      return getSavedQueriesFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1.SavedQuery.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public com.google.cloud.aiplatform.v1.SavedQuery.Builder addSavedQueriesBuilder(int index) {
+      return getSavedQueriesFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1.SavedQuery.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * All SavedQueries belong to the Dataset will be returned in List/Get
+     * Dataset response. The [annotation_specs][SavedQuery.annotation_specs] field
+     * will not be populated except for UI cases which will only use
+     * [annotation_spec_count][google.cloud.aiplatform.v1.SavedQuery.annotation_spec_count].
+     * In CreateDataset request, a SavedQuery is created together if
+     * this field is set, up to one SavedQuery can be set in CreateDatasetRequest.
+     * The SavedQuery should not contain any AnnotationSpec.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1.SavedQuery saved_queries = 9;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1.SavedQuery.Builder>
+        getSavedQueriesBuilderList() {
+      return getSavedQueriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.SavedQuery,
+            com.google.cloud.aiplatform.v1.SavedQuery.Builder,
+            com.google.cloud.aiplatform.v1.SavedQueryOrBuilder>
+        getSavedQueriesFieldBuilder() {
+      if (savedQueriesBuilder_ == null) {
+        savedQueriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.SavedQuery,
+                com.google.cloud.aiplatform.v1.SavedQuery.Builder,
+                com.google.cloud.aiplatform.v1.SavedQueryOrBuilder>(
+                savedQueries_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        savedQueries_ = null;
+      }
+      return savedQueriesBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
@@ -2848,6 +3567,127 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object metadataArtifact_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in
+     * MetadataStore when creating the Dataset. The Artifact resource name pattern
+     * is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The metadataArtifact.
+     */
+    public java.lang.String getMetadataArtifact() {
+      java.lang.Object ref = metadataArtifact_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadataArtifact_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in
+     * MetadataStore when creating the Dataset. The Artifact resource name pattern
+     * is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for metadataArtifact.
+     */
+    public com.google.protobuf.ByteString getMetadataArtifactBytes() {
+      java.lang.Object ref = metadataArtifact_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        metadataArtifact_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in
+     * MetadataStore when creating the Dataset. The Artifact resource name pattern
+     * is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The metadataArtifact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataArtifact(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      metadataArtifact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in
+     * MetadataStore when creating the Dataset. The Artifact resource name pattern
+     * is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataArtifact() {
+
+      metadataArtifact_ = getDefaultInstance().getMetadataArtifact();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the Artifact that was created in
+     * MetadataStore when creating the Dataset. The Artifact resource name pattern
+     * is
+     * `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
+     * </pre>
+     *
+     * <code>string metadata_artifact = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for metadataArtifact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataArtifactBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      metadataArtifact_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

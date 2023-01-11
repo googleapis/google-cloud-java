@@ -122,7 +122,7 @@ public interface StudySpecOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=588
    * @return Whether the convexStopConfig field is set.
    */
   @java.lang.Deprecated
@@ -140,7 +140,7 @@ public interface StudySpecOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.StudySpec.convex_stop_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/study.proto;l=566
+   *     google/cloud/aiplatform/v1beta1/study.proto;l=588
    * @return The convexStopConfig.
    */
   @java.lang.Deprecated

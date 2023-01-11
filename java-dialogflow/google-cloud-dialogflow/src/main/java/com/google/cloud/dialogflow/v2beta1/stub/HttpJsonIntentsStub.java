@@ -108,6 +108,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -144,6 +145,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                         serializer.putQueryParam(
                             fields, "intentView", request.getIntentViewValue());
                         serializer.putQueryParam(fields, "languageCode", request.getLanguageCode());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -182,12 +184,13 @@ public class HttpJsonIntentsStub extends IntentsStub {
                                 fields, "intentView", request.getIntentViewValue());
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("intent", request.getIntent(), false))
+                                  .toBody("intent", request.getIntent(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Intent>newBuilder()
@@ -226,12 +229,13 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             serializer.putQueryParam(
                                 fields, "languageCode", request.getLanguageCode());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("intent", request.getIntent(), false))
+                                  .toBody("intent", request.getIntent(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Intent>newBuilder()
@@ -263,6 +267,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteIntentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -298,12 +303,13 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchUpdateIntentsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -339,12 +345,13 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<BatchDeleteIntentsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -378,6 +385,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -411,6 +419,7 @@ public class HttpJsonIntentsStub extends IntentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

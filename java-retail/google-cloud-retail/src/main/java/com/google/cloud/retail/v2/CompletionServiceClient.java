@@ -33,8 +33,8 @@ import javax.annotation.Generated;
 /**
  * Service Description: Auto-completion service for retail.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Please enable Retail
- * Search on Cloud Console before using this feature.
+ * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
+ * on Cloud Console before using this feature.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -213,8 +213,8 @@ public class CompletionServiceClient implements BackgroundResource {
   /**
    * Completes the specified prefix with keyword suggestions.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -250,8 +250,8 @@ public class CompletionServiceClient implements BackgroundResource {
   /**
    * Completes the specified prefix with keyword suggestions.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -292,8 +292,8 @@ public class CompletionServiceClient implements BackgroundResource {
    * <p>The operation is successfully finished only after the imported suggestions are indexed
    * successfully and ready for serving. The process takes hours.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -332,8 +332,8 @@ public class CompletionServiceClient implements BackgroundResource {
    * <p>The operation is successfully finished only after the imported suggestions are indexed
    * successfully and ready for serving. The process takes hours.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -372,8 +372,8 @@ public class CompletionServiceClient implements BackgroundResource {
    * <p>The operation is successfully finished only after the imported suggestions are indexed
    * successfully and ready for serving. The process takes hours.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Please enable
-   * Retail Search on Cloud Console before using this feature.
+   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
+   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *

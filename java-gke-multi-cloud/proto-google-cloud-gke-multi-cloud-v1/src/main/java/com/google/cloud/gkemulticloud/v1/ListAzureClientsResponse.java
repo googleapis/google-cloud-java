@@ -74,8 +74,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-   * project and region region.
+   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+   * resources in the specified Google Cloud project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -88,8 +88,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-   * project and region region.
+   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+   * resources in the specified Google Cloud project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -103,8 +103,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-   * project and region region.
+   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+   * resources in the specified Google Cloud project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -117,8 +117,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-   * project and region region.
+   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+   * resources in the specified Google Cloud project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -131,8 +131,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-   * project and region region.
+   * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+   * resources in the specified Google Cloud project and region region.
    * </pre>
    *
    * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -616,8 +616,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -633,8 +633,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -650,8 +650,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -667,8 +667,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -690,8 +690,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -711,8 +711,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -734,8 +734,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -757,8 +757,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -778,8 +778,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -799,8 +799,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -820,8 +820,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -840,8 +840,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -860,8 +860,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -873,8 +873,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -891,8 +891,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -909,8 +909,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -923,8 +923,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>
@@ -937,8 +937,8 @@ public final class ListAzureClientsResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resources in the specified Google Cloud
-     * project and region region.
+     * A list of [AzureClient][google.cloud.gkemulticloud.v1.AzureClient]
+     * resources in the specified Google Cloud project and region region.
      * </pre>
      *
      * <code>repeated .google.cloud.gkemulticloud.v1.AzureClient azure_clients = 1;</code>

@@ -27,9 +27,8 @@ public interface CreateContextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the MetadataStore where the Context should be
-   * created.
-   * Format:
+   * Required. The resource name of the MetadataStore where the Context should
+   * be created. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
@@ -44,9 +43,8 @@ public interface CreateContextRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the MetadataStore where the Context should be
-   * created.
-   * Format:
+   * Required. The resource name of the MetadataStore where the Context should
+   * be created. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *

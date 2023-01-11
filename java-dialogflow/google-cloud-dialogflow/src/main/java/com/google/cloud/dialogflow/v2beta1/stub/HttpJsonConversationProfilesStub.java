@@ -105,6 +105,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -141,6 +142,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetConversationProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -177,6 +179,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateConversationProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -185,7 +188,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                                   .toBody(
                                       "conversationProfile",
                                       request.getConversationProfile(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConversationProfile>newBuilder()
@@ -223,6 +226,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             ProtoRestSerializer<UpdateConversationProfileRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -231,7 +235,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                                   .toBody(
                                       "conversationProfile",
                                       request.getConversationProfile(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConversationProfile>newBuilder()
@@ -265,6 +269,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteConversationProfileRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -302,6 +307,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetSuggestionFeatureConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -310,7 +316,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearConversationProfile().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -348,6 +354,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ClearSuggestionFeatureConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -356,7 +363,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearConversationProfile().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -390,6 +397,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -423,6 +431,7 @@ public class HttpJsonConversationProfilesStub extends ConversationProfilesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

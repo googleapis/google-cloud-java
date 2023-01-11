@@ -45,7 +45,7 @@ public final class ServingConfigProto {
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\032(google/cloud/retail"
           + "/v2alpha/common.proto\0320google/cloud/reta"
-          + "il/v2alpha/search_service.proto\"\366\005\n\rServ"
+          + "il/v2alpha/search_service.proto\"\214\010\n\rServ"
           + "ingConfig\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_"
           + "name\030\002 \001(\tB\003\340A\002\022\020\n\010model_id\030\003 \001(\t\022\035\n\025pri"
           + "ce_reranking_level\030\004 \001(\t\022\031\n\021facet_contro"
@@ -58,19 +58,26 @@ public final class ServingConfigProto {
           + "s_control_ids\030\014 \003(\t\022$\n\034do_not_associate_"
           + "control_ids\030\r \003(\t\022\037\n\027replacement_control"
           + "_ids\030\016 \003(\t\022\032\n\022ignore_control_ids\030\017 \003(\t\022\027"
-          + "\n\017diversity_level\030\010 \001(\t\022$\n\034enable_catego"
-          + "ry_filter_level\030\020 \001(\t\022I\n\016solution_types\030"
-          + "\023 \003(\0162).google.cloud.retail.v2alpha.Solu"
-          + "tionTypeB\006\340A\002\340A\005:\205\001\352A\201\001\n#retail.googleap"
-          + "is.com/ServingConfig\022Zprojects/{project}"
-          + "/locations/{location}/catalogs/{catalog}"
-          + "/servingConfigs/{serving_config}B\340\001\n\037com"
-          + ".google.cloud.retail.v2alphaB\022ServingCon"
-          + "figProtoP\001ZAgoogle.golang.org/genproto/g"
-          + "oogleapis/cloud/retail/v2alpha;retail\242\002\006"
-          + "RETAIL\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033G"
-          + "oogle\\Cloud\\Retail\\V2alpha\352\002\036Google::Clo"
-          + "ud::Retail::V2alphab\006proto3"
+          + "\n\017diversity_level\030\010 \001(\t\022P\n\016diversity_typ"
+          + "e\030\024 \001(\01628.google.cloud.retail.v2alpha.Se"
+          + "rvingConfig.DiversityType\022$\n\034enable_cate"
+          + "gory_filter_level\030\020 \001(\t\022\\\n\024personalizati"
+          + "on_spec\030\025 \001(\0132>.google.cloud.retail.v2al"
+          + "pha.SearchRequest.PersonalizationSpec\022I\n"
+          + "\016solution_types\030\023 \003(\0162).google.cloud.ret"
+          + "ail.v2alpha.SolutionTypeB\006\340A\002\340A\005\"d\n\rDive"
+          + "rsityType\022\036\n\032DIVERSITY_TYPE_UNSPECIFIED\020"
+          + "\000\022\030\n\024RULE_BASED_DIVERSITY\020\002\022\031\n\025DATA_DRIV"
+          + "EN_DIVERSITY\020\003:\205\001\352A\201\001\n#retail.googleapis"
+          + ".com/ServingConfig\022Zprojects/{project}/l"
+          + "ocations/{location}/catalogs/{catalog}/s"
+          + "ervingConfigs/{serving_config}B\340\001\n\037com.g"
+          + "oogle.cloud.retail.v2alphaB\022ServingConfi"
+          + "gProtoP\001ZAgoogle.golang.org/genproto/goo"
+          + "gleapis/cloud/retail/v2alpha;retail\242\002\006RE"
+          + "TAIL\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033Goo"
+          + "gle\\Cloud\\Retail\\V2alpha\352\002\036Google::Cloud"
+          + "::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -102,7 +109,9 @@ public final class ServingConfigProto {
               "ReplacementControlIds",
               "IgnoreControlIds",
               "DiversityLevel",
+              "DiversityType",
               "EnableCategoryFilterLevel",
+              "PersonalizationSpec",
               "SolutionTypes",
             });
     com.google.protobuf.ExtensionRegistry registry =

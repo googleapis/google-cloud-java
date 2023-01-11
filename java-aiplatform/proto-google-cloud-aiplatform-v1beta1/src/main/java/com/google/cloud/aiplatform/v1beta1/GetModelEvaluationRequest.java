@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.GetModelEvaluation][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluation].
+ * Request message for
+ * [ModelService.GetModelEvaluation][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest}
@@ -288,7 +289,8 @@ public final class GetModelEvaluationRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Request message for [ModelService.GetModelEvaluation][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluation].
+   * Request message for
+   * [ModelService.GetModelEvaluation][google.cloud.aiplatform.v1beta1.ModelService.GetModelEvaluation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest}

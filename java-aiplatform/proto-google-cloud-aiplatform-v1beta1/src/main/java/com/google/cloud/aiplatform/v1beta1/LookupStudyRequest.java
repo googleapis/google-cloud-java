@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.LookupStudy][google.cloud.aiplatform.v1beta1.VizierService.LookupStudy].
+ * Request message for
+ * [VizierService.LookupStudy][google.cloud.aiplatform.v1beta1.VizierService.LookupStudy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.LookupStudyRequest}
@@ -345,7 +346,8 @@ public final class LookupStudyRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [VizierService.LookupStudy][google.cloud.aiplatform.v1beta1.VizierService.LookupStudy].
+   * Request message for
+   * [VizierService.LookupStudy][google.cloud.aiplatform.v1beta1.VizierService.LookupStudy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.LookupStudyRequest}

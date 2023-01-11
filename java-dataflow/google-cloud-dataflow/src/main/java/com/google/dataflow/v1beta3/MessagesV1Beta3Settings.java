@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * messagesV1Beta3SettingsBuilder
  *     .listJobMessagesSettings()
  *     .setRetrySettings(
- *         messagesV1Beta3SettingsBuilder.listJobMessagesSettings().getRetrySettings().toBuilder()
+ *         messagesV1Beta3SettingsBuilder
+ *             .listJobMessagesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MessagesV1Beta3Settings messagesV1Beta3Settings = messagesV1Beta3SettingsBuilder.build();

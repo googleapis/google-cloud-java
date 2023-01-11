@@ -90,7 +90,10 @@ import org.threeten.bp.Duration;
  * regionAutoscalersSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionAutoscalersSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionAutoscalersSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionAutoscalersStubSettings regionAutoscalersSettings =

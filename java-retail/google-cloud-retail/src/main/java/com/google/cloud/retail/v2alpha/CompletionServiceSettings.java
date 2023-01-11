@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * completionServiceSettingsBuilder
  *     .completeQuerySettings()
  *     .setRetrySettings(
- *         completionServiceSettingsBuilder.completeQuerySettings().getRetrySettings().toBuilder()
+ *         completionServiceSettingsBuilder
+ *             .completeQuerySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CompletionServiceSettings completionServiceSettings = completionServiceSettingsBuilder.build();

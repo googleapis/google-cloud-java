@@ -27,8 +27,8 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardExperiment
-   * in. Format:
+   * Required. The resource name of the Tensorboard to create the
+   * TensorboardExperiment in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Tensorboard to create the TensorboardExperiment
-   * in. Format:
+   * Required. The resource name of the Tensorboard to create the
+   * TensorboardExperiment in. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * </pre>
    *
@@ -95,8 +95,8 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the Tensorboard experiment, which will become the final
-   * component of the Tensorboard experiment's resource name.
+   * Required. The ID to use for the Tensorboard experiment, which becomes the
+   * final component of the Tensorboard experiment's resource name.
    * This value should be 1-128 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
@@ -110,8 +110,8 @@ public interface CreateTensorboardExperimentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to use for the Tensorboard experiment, which will become the final
-   * component of the Tensorboard experiment's resource name.
+   * Required. The ID to use for the Tensorboard experiment, which becomes the
+   * final component of the Tensorboard experiment's resource name.
    * This value should be 1-128 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>

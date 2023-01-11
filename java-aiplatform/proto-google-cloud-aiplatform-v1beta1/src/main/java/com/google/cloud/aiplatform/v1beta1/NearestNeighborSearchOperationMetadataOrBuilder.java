@@ -29,9 +29,10 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    * <pre>
    * The validation stats of the content (per file) to be inserted or
    * updated on the Matching Engine Index resource. Populated if
-   * contentsDeltaUri is provided as part of [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please note
-   * that, currently for those files that are broken or has unsupported file
-   * format, we will not have the stats for those files.
+   * contentsDeltaUri is provided as part of
+   * [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please
+   * note that, currently for those files that are broken or has unsupported
+   * file format, we will not have the stats for those files.
    * </pre>
    *
    * <code>
@@ -48,9 +49,10 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    * <pre>
    * The validation stats of the content (per file) to be inserted or
    * updated on the Matching Engine Index resource. Populated if
-   * contentsDeltaUri is provided as part of [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please note
-   * that, currently for those files that are broken or has unsupported file
-   * format, we will not have the stats for those files.
+   * contentsDeltaUri is provided as part of
+   * [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please
+   * note that, currently for those files that are broken or has unsupported
+   * file format, we will not have the stats for those files.
    * </pre>
    *
    * <code>
@@ -65,9 +67,10 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    * <pre>
    * The validation stats of the content (per file) to be inserted or
    * updated on the Matching Engine Index resource. Populated if
-   * contentsDeltaUri is provided as part of [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please note
-   * that, currently for those files that are broken or has unsupported file
-   * format, we will not have the stats for those files.
+   * contentsDeltaUri is provided as part of
+   * [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please
+   * note that, currently for those files that are broken or has unsupported
+   * file format, we will not have the stats for those files.
    * </pre>
    *
    * <code>
@@ -81,9 +84,10 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    * <pre>
    * The validation stats of the content (per file) to be inserted or
    * updated on the Matching Engine Index resource. Populated if
-   * contentsDeltaUri is provided as part of [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please note
-   * that, currently for those files that are broken or has unsupported file
-   * format, we will not have the stats for those files.
+   * contentsDeltaUri is provided as part of
+   * [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please
+   * note that, currently for those files that are broken or has unsupported
+   * file format, we will not have the stats for those files.
    * </pre>
    *
    * <code>
@@ -101,9 +105,10 @@ public interface NearestNeighborSearchOperationMetadataOrBuilder
    * <pre>
    * The validation stats of the content (per file) to be inserted or
    * updated on the Matching Engine Index resource. Populated if
-   * contentsDeltaUri is provided as part of [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please note
-   * that, currently for those files that are broken or has unsupported file
-   * format, we will not have the stats for those files.
+   * contentsDeltaUri is provided as part of
+   * [Index.metadata][google.cloud.aiplatform.v1beta1.Index.metadata]. Please
+   * note that, currently for those files that are broken or has unsupported
+   * file format, we will not have the stats for those files.
    * </pre>
    *
    * <code>

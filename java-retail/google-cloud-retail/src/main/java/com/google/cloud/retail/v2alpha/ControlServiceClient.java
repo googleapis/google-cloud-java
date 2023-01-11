@@ -454,7 +454,7 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * <p>[Control][google.cloud.retail.v2alpha.Control] cannot be set to a different oneof field, if
    * so an INVALID_ARGUMENT is returned. If the [Control][google.cloud.retail.v2alpha.Control] to
-   * delete does not exist, a NOT_FOUND error is returned.
+   * update does not exist, a NOT_FOUND error is returned.
    *
    * <p>Sample code:
    *
@@ -492,7 +492,7 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * <p>[Control][google.cloud.retail.v2alpha.Control] cannot be set to a different oneof field, if
    * so an INVALID_ARGUMENT is returned. If the [Control][google.cloud.retail.v2alpha.Control] to
-   * delete does not exist, a NOT_FOUND error is returned.
+   * update does not exist, a NOT_FOUND error is returned.
    *
    * <p>Sample code:
    *
@@ -525,7 +525,7 @@ public class ControlServiceClient implements BackgroundResource {
    *
    * <p>[Control][google.cloud.retail.v2alpha.Control] cannot be set to a different oneof field, if
    * so an INVALID_ARGUMENT is returned. If the [Control][google.cloud.retail.v2alpha.Control] to
-   * delete does not exist, a NOT_FOUND error is returned.
+   * update does not exist, a NOT_FOUND error is returned.
    *
    * <p>Sample code:
    *
@@ -569,7 +569,7 @@ public class ControlServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the Control to delete. Format:
+   * @param name Required. The resource name of the Control to get. Format:
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -597,7 +597,7 @@ public class ControlServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the Control to delete. Format:
+   * @param name Required. The resource name of the Control to get. Format:
    *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -665,7 +665,7 @@ public class ControlServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Controls linked to this catalog.
+   * Lists all Controls by their parent [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
    *
@@ -697,7 +697,7 @@ public class ControlServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Controls linked to this catalog.
+   * Lists all Controls by their parent [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
    *
@@ -726,7 +726,7 @@ public class ControlServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Controls linked to this catalog.
+   * Lists all Controls by their parent [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
    *
@@ -759,7 +759,7 @@ public class ControlServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Controls linked to this catalog.
+   * Lists all Controls by their parent [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
    *
@@ -793,7 +793,7 @@ public class ControlServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all Controls linked to this catalog.
+   * Lists all Controls by their parent [Catalog][google.cloud.retail.v2alpha.Catalog].
    *
    * <p>Sample code:
    *

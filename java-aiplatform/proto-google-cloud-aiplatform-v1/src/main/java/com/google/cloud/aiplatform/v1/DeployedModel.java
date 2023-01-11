@@ -234,8 +234,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-   * will generate a value for this ID.
+   * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+   * Vertex AI will generate a value for this ID.
    * This value should be 1-10 characters, and valid characters are /[0-9]/.
    * </pre>
    *
@@ -259,8 +259,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-   * will generate a value for this ID.
+   * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+   * Vertex AI will generate a value for this ID.
    * This value should be 1-10 characters, and valid characters are /[0-9]/.
    * </pre>
    *
@@ -287,8 +287,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of. Note that
-   * the Model may be in a different location than the DeployedModel's Endpoint.
+   * Required. The resource name of the Model that this is the deployment of.
+   * Note that the Model may be in a different location than the DeployedModel's
+   * Endpoint.
    * The resource name may contain version id or version alias to specify the
    * version, if no version is specified, the default version will be deployed.
    * </pre>
@@ -315,8 +316,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of. Note that
-   * the Model may be in a different location than the DeployedModel's Endpoint.
+   * Required. The resource name of the Model that this is the deployment of.
+   * Note that the Model may be in a different location than the DeployedModel's
+   * Endpoint.
    * The resource name may contain version id or version alias to specify the
    * version, if no version is specified, the default version will be deployed.
    * </pre>
@@ -496,13 +498,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Explanation configuration for this DeployedModel.
-   * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-   * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+   * When deploying a Model using
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+   * this value overrides the value of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+   * All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * will be used for the explanation configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -518,13 +528,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Explanation configuration for this DeployedModel.
-   * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-   * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+   * When deploying a Model using
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+   * this value overrides the value of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+   * All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * will be used for the explanation configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -542,13 +560,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Explanation configuration for this DeployedModel.
-   * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-   * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+   * When deploying a Model using
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+   * this value overrides the value of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+   * All fields of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * are optional in the request. If a field of
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * is not populated, the value of the same field of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * is inherited. If the corresponding
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * is not populated, all fields of the
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+   * will be used for the explanation configuration.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -668,9 +694,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provide paths for users to send predict/explain/health requests directly to
-   * the deployed model services running on Cloud via private services access.
-   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * Output only. Provide paths for users to send predict/explain/health
+   * requests directly to the deployed model services running on Cloud via
+   * private services access. This field is populated if
+   * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
    * </pre>
    *
    * <code>
@@ -687,9 +714,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provide paths for users to send predict/explain/health requests directly to
-   * the deployed model services running on Cloud via private services access.
-   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * Output only. Provide paths for users to send predict/explain/health
+   * requests directly to the deployed model services running on Cloud via
+   * private services access. This field is populated if
+   * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
    * </pre>
    *
    * <code>
@@ -708,9 +736,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provide paths for users to send predict/explain/health requests directly to
-   * the deployed model services running on Cloud via private services access.
-   * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+   * Output only. Provide paths for users to send predict/explain/health
+   * requests directly to the deployed model services running on Cloud via
+   * private services access. This field is populated if
+   * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
    * </pre>
    *
    * <code>
@@ -1845,8 +1874,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-     * will generate a value for this ID.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+     * Vertex AI will generate a value for this ID.
      * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
@@ -1869,8 +1898,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-     * will generate a value for this ID.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+     * Vertex AI will generate a value for this ID.
      * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
@@ -1893,8 +1922,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-     * will generate a value for this ID.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+     * Vertex AI will generate a value for this ID.
      * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
@@ -1916,8 +1945,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-     * will generate a value for this ID.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+     * Vertex AI will generate a value for this ID.
      * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
@@ -1935,8 +1964,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
-     * will generate a value for this ID.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment,
+     * Vertex AI will generate a value for this ID.
      * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
@@ -1961,8 +1990,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of. Note that
-     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of.
+     * Note that the Model may be in a different location than the DeployedModel's
+     * Endpoint.
      * The resource name may contain version id or version alias to specify the
      * version, if no version is specified, the default version will be deployed.
      * </pre>
@@ -1988,8 +2018,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of. Note that
-     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of.
+     * Note that the Model may be in a different location than the DeployedModel's
+     * Endpoint.
      * The resource name may contain version id or version alias to specify the
      * version, if no version is specified, the default version will be deployed.
      * </pre>
@@ -2015,8 +2046,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of. Note that
-     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of.
+     * Note that the Model may be in a different location than the DeployedModel's
+     * Endpoint.
      * The resource name may contain version id or version alias to specify the
      * version, if no version is specified, the default version will be deployed.
      * </pre>
@@ -2041,8 +2073,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of. Note that
-     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of.
+     * Note that the Model may be in a different location than the DeployedModel's
+     * Endpoint.
      * The resource name may contain version id or version alias to specify the
      * version, if no version is specified, the default version will be deployed.
      * </pre>
@@ -2063,8 +2096,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the Model that this is the deployment of. Note that
-     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of.
+     * Note that the Model may be in a different location than the DeployedModel's
+     * Endpoint.
      * The resource name may contain version id or version alias to specify the
      * version, if no version is specified, the default version will be deployed.
      * </pre>
@@ -2516,13 +2550,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2537,13 +2579,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2564,13 +2614,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2593,13 +2651,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2620,13 +2686,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2653,13 +2727,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2680,13 +2762,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2701,13 +2791,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -2726,13 +2824,21 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Explanation configuration for this DeployedModel.
-     * When deploying a Model using [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel], this value
-     * overrides the value of [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]. All fields of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] are optional in the request. If a field of
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] is not populated, the value of the same field of
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is inherited. If the corresponding
-     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec] is not populated, all fields of the
-     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec] will be used for the explanation configuration.
+     * When deploying a Model using
+     * [EndpointService.DeployModel][google.cloud.aiplatform.v1.EndpointService.DeployModel],
+     * this value overrides the value of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec].
+     * All fields of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * are optional in the request. If a field of
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * is not populated, the value of the same field of
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is inherited. If the corresponding
+     * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+     * is not populated, all fields of the
+     * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
+     * will be used for the explanation configuration.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1.ExplanationSpec explanation_spec = 9;</code>
@@ -3026,9 +3132,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3044,9 +3151,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3068,9 +3176,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3094,9 +3203,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3118,9 +3228,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3148,9 +3259,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3172,9 +3284,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3190,9 +3303,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>
@@ -3212,9 +3326,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provide paths for users to send predict/explain/health requests directly to
-     * the deployed model services running on Cloud via private services access.
-     * This field is populated if [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
+     * Output only. Provide paths for users to send predict/explain/health
+     * requests directly to the deployed model services running on Cloud via
+     * private services access. This field is populated if
+     * [network][google.cloud.aiplatform.v1.Endpoint.network] is configured.
      * </pre>
      *
      * <code>

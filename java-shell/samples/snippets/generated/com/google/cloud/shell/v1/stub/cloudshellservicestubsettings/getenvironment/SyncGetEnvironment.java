@@ -37,7 +37,10 @@ public class SyncGetEnvironment {
     cloudShellServiceSettingsBuilder
         .getEnvironmentSettings()
         .setRetrySettings(
-            cloudShellServiceSettingsBuilder.getEnvironmentSettings().getRetrySettings().toBuilder()
+            cloudShellServiceSettingsBuilder
+                .getEnvironmentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudShellServiceStubSettings cloudShellServiceSettings =

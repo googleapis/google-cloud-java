@@ -37,7 +37,10 @@ public class SyncCreateContent {
     contentServiceSettingsBuilder
         .createContentSettings()
         .setRetrySettings(
-            contentServiceSettingsBuilder.createContentSettings().getRetrySettings().toBuilder()
+            contentServiceSettingsBuilder
+                .createContentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ContentServiceSettings contentServiceSettings = contentServiceSettingsBuilder.build();

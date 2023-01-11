@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * publicAdvertisedPrefixesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         publicAdvertisedPrefixesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         publicAdvertisedPrefixesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PublicAdvertisedPrefixesSettings publicAdvertisedPrefixesSettings =

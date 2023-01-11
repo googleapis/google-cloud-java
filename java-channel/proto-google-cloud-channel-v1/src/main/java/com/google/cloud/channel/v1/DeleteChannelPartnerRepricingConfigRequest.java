@@ -75,7 +75,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
    *
    *
    * <pre>
-   * Required. The resource name of the channel partner repricing config rule to delete.
+   * Required. The resource name of the channel partner repricing config rule to
+   * delete.
    * </pre>
    *
    * <code>
@@ -100,7 +101,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
    *
    *
    * <pre>
-   * Required. The resource name of the channel partner repricing config rule to delete.
+   * Required. The resource name of the channel partner repricing config rule to
+   * delete.
    * </pre>
    *
    * <code>
@@ -466,7 +468,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the channel partner repricing config rule to delete.
+     * Required. The resource name of the channel partner repricing config rule to
+     * delete.
      * </pre>
      *
      * <code>
@@ -490,7 +493,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the channel partner repricing config rule to delete.
+     * Required. The resource name of the channel partner repricing config rule to
+     * delete.
      * </pre>
      *
      * <code>
@@ -514,7 +518,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the channel partner repricing config rule to delete.
+     * Required. The resource name of the channel partner repricing config rule to
+     * delete.
      * </pre>
      *
      * <code>
@@ -537,7 +542,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the channel partner repricing config rule to delete.
+     * Required. The resource name of the channel partner repricing config rule to
+     * delete.
      * </pre>
      *
      * <code>
@@ -556,7 +562,8 @@ public final class DeleteChannelPartnerRepricingConfigRequest
      *
      *
      * <pre>
-     * Required. The resource name of the channel partner repricing config rule to delete.
+     * Required. The resource name of the channel partner repricing config rule to
+     * delete.
      * </pre>
      *
      * <code>

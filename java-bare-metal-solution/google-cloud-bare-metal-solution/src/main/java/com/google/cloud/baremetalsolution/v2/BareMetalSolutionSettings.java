@@ -70,7 +70,10 @@ import javax.annotation.Generated;
  * bareMetalSolutionSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         bareMetalSolutionSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         bareMetalSolutionSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BareMetalSolutionSettings bareMetalSolutionSettings = bareMetalSolutionSettingsBuilder.build();

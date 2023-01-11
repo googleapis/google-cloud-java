@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [PipelineService.DeleteTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.DeleteTrainingPipeline].
+ * Request message for
+ * [PipelineService.DeleteTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.DeleteTrainingPipeline].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest}
@@ -289,7 +290,8 @@ public final class DeleteTrainingPipelineRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [PipelineService.DeleteTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.DeleteTrainingPipeline].
+   * Request message for
+   * [PipelineService.DeleteTrainingPipeline][google.cloud.aiplatform.v1beta1.PipelineService.DeleteTrainingPipeline].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest}

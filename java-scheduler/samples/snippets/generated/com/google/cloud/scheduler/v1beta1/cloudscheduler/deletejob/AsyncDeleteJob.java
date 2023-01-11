@@ -39,6 +39,7 @@ public class AsyncDeleteJob {
       DeleteJobRequest request =
           DeleteJobRequest.newBuilder()
               .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setLegacyAppEngineCron(true)
               .build();
       ApiFuture<Empty> future = cloudSchedulerClient.deleteJobCallable().futureCall(request);
       // Do something.

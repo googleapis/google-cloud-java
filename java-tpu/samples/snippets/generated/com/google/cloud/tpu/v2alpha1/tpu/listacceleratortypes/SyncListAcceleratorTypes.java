@@ -18,8 +18,8 @@ package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_ListAcceleratorTypes_sync]
 import com.google.cloud.tpu.v2alpha1.AcceleratorType;
-import com.google.cloud.tpu.v2alpha1.AcceleratorTypeName;
 import com.google.cloud.tpu.v2alpha1.ListAcceleratorTypesRequest;
+import com.google.cloud.tpu.v2alpha1.LocationName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
 
 public class SyncListAcceleratorTypes {
@@ -37,9 +37,7 @@ public class SyncListAcceleratorTypes {
     try (TpuClient tpuClient = TpuClient.create()) {
       ListAcceleratorTypesRequest request =
           ListAcceleratorTypesRequest.newBuilder()
-              .setParent(
-                  AcceleratorTypeName.of("[PROJECT]", "[LOCATION]", "[ACCELERATOR_TYPE]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")

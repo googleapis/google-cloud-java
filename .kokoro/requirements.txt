@@ -16,9 +16,9 @@ cachetools==4.2.4 \
     # via
     #   -r requirements.in
     #   google-auth
-certifi==2022.9.14 \
-    --hash=sha256:36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5 \
-    --hash=sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516
+certifi==2022.12.7 \
+    --hash=sha256:35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3 \
+    --hash=sha256:4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18
     # via requests
 cffi==1.15.1 \
     --hash=sha256:00a9ed42e88df81ffae7a8ab6d9356b371399b91dbdf0c3cb1e84c03a13aceb5 \

@@ -100,7 +100,10 @@ import org.threeten.bp.Duration;
  * metadataServiceSettingsBuilder
  *     .createEntitySettings()
  *     .setRetrySettings(
- *         metadataServiceSettingsBuilder.createEntitySettings().getRetrySettings().toBuilder()
+ *         metadataServiceSettingsBuilder
+ *             .createEntitySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetadataServiceStubSettings metadataServiceSettings = metadataServiceSettingsBuilder.build();

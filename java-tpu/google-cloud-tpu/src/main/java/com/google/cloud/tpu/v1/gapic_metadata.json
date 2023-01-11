@@ -19,6 +19,9 @@
             "GetAcceleratorType": {
               "methods": ["getAcceleratorType", "getAcceleratorType", "getAcceleratorType", "getAcceleratorTypeCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetNode": {
               "methods": ["getNode", "getNode", "getNode", "getNodeCallable"]
             },
@@ -27,6 +30,9 @@
             },
             "ListAcceleratorTypes": {
               "methods": ["listAcceleratorTypes", "listAcceleratorTypes", "listAcceleratorTypes", "listAcceleratorTypesPagedCallable", "listAcceleratorTypesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListNodes": {
               "methods": ["listNodes", "listNodes", "listNodes", "listNodesPagedCallable", "listNodesCallable"]

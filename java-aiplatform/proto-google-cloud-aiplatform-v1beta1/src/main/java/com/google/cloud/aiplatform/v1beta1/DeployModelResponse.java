@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel].
+ * Response message for
+ * [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployModelResponse}
@@ -282,7 +283,8 @@ public final class DeployModelResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel].
+   * Response message for
+   * [EndpointService.DeployModel][google.cloud.aiplatform.v1beta1.EndpointService.DeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployModelResponse}

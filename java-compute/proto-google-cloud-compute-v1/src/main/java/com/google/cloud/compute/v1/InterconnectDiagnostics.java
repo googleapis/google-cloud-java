@@ -39,6 +39,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
 
   private InterconnectDiagnostics() {
     arpCaches_ = java.util.Collections.emptyList();
+    bundleAggregationType_ = "";
+    bundleOperationalStatus_ = "";
     links_ = java.util.Collections.emptyList();
     macAddress_ = "";
   }
@@ -67,6 +69,330 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.InterconnectDiagnostics.class,
             com.google.cloud.compute.v1.InterconnectDiagnostics.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The aggregation type of the bundle interface.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.InterconnectDiagnostics.BundleAggregationType}
+   */
+  public enum BundleAggregationType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BUNDLE_AGGREGATION_TYPE = 0;</code>
+     */
+    UNDEFINED_BUNDLE_AGGREGATION_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * LACP is enabled.
+     * </pre>
+     *
+     * <code>BUNDLE_AGGREGATION_TYPE_LACP = 27758925;</code>
+     */
+    BUNDLE_AGGREGATION_TYPE_LACP(27758925),
+    /**
+     *
+     *
+     * <pre>
+     * LACP is disabled.
+     * </pre>
+     *
+     * <code>BUNDLE_AGGREGATION_TYPE_STATIC = 50678873;</code>
+     */
+    BUNDLE_AGGREGATION_TYPE_STATIC(50678873),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BUNDLE_AGGREGATION_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_BUNDLE_AGGREGATION_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * LACP is enabled.
+     * </pre>
+     *
+     * <code>BUNDLE_AGGREGATION_TYPE_LACP = 27758925;</code>
+     */
+    public static final int BUNDLE_AGGREGATION_TYPE_LACP_VALUE = 27758925;
+    /**
+     *
+     *
+     * <pre>
+     * LACP is disabled.
+     * </pre>
+     *
+     * <code>BUNDLE_AGGREGATION_TYPE_STATIC = 50678873;</code>
+     */
+    public static final int BUNDLE_AGGREGATION_TYPE_STATIC_VALUE = 50678873;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BundleAggregationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BundleAggregationType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_BUNDLE_AGGREGATION_TYPE;
+        case 27758925:
+          return BUNDLE_AGGREGATION_TYPE_LACP;
+        case 50678873:
+          return BUNDLE_AGGREGATION_TYPE_STATIC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BundleAggregationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BundleAggregationType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BundleAggregationType>() {
+              public BundleAggregationType findValueByNumber(int number) {
+                return BundleAggregationType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InterconnectDiagnostics.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final BundleAggregationType[] VALUES = values();
+
+    public static BundleAggregationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BundleAggregationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectDiagnostics.BundleAggregationType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.InterconnectDiagnostics.BundleOperationalStatus}
+   */
+  public enum BundleOperationalStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BUNDLE_OPERATIONAL_STATUS = 0;</code>
+     */
+    UNDEFINED_BUNDLE_OPERATIONAL_STATUS(0),
+    /**
+     *
+     *
+     * <pre>
+     * If bundleAggregationType is LACP: LACP is not established and/or all links in the bundle have DOWN operational status. If bundleAggregationType is STATIC: one or more links in the bundle has DOWN operational status.
+     * </pre>
+     *
+     * <code>BUNDLE_OPERATIONAL_STATUS_DOWN = 453842693;</code>
+     */
+    BUNDLE_OPERATIONAL_STATUS_DOWN(453842693),
+    /**
+     *
+     *
+     * <pre>
+     * If bundleAggregationType is LACP: LACP is established and at least one link in the bundle has UP operational status. If bundleAggregationType is STATIC: all links in the bundle (typically just one) have UP operational status.
+     * </pre>
+     *
+     * <code>BUNDLE_OPERATIONAL_STATUS_UP = 161366462;</code>
+     */
+    BUNDLE_OPERATIONAL_STATUS_UP(161366462),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_BUNDLE_OPERATIONAL_STATUS = 0;</code>
+     */
+    public static final int UNDEFINED_BUNDLE_OPERATIONAL_STATUS_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * If bundleAggregationType is LACP: LACP is not established and/or all links in the bundle have DOWN operational status. If bundleAggregationType is STATIC: one or more links in the bundle has DOWN operational status.
+     * </pre>
+     *
+     * <code>BUNDLE_OPERATIONAL_STATUS_DOWN = 453842693;</code>
+     */
+    public static final int BUNDLE_OPERATIONAL_STATUS_DOWN_VALUE = 453842693;
+    /**
+     *
+     *
+     * <pre>
+     * If bundleAggregationType is LACP: LACP is established and at least one link in the bundle has UP operational status. If bundleAggregationType is STATIC: all links in the bundle (typically just one) have UP operational status.
+     * </pre>
+     *
+     * <code>BUNDLE_OPERATIONAL_STATUS_UP = 161366462;</code>
+     */
+    public static final int BUNDLE_OPERATIONAL_STATUS_UP_VALUE = 161366462;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BundleOperationalStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BundleOperationalStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_BUNDLE_OPERATIONAL_STATUS;
+        case 453842693:
+          return BUNDLE_OPERATIONAL_STATUS_DOWN;
+        case 161366462:
+          return BUNDLE_OPERATIONAL_STATUS_UP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BundleOperationalStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<BundleOperationalStatus>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<BundleOperationalStatus>() {
+              public BundleOperationalStatus findValueByNumber(int number) {
+                return BundleOperationalStatus.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InterconnectDiagnostics.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final BundleOperationalStatus[] VALUES = values();
+
+    public static BundleOperationalStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BundleOperationalStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectDiagnostics.BundleOperationalStatus)
   }
 
   private int bitField0_;
@@ -145,6 +471,140 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
   public com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder getArpCachesOrBuilder(
       int index) {
     return arpCaches_.get(index);
+  }
+
+  public static final int BUNDLE_AGGREGATION_TYPE_FIELD_NUMBER = 434939028;
+  private volatile java.lang.Object bundleAggregationType_;
+  /**
+   *
+   *
+   * <pre>
+   * The aggregation type of the bundle interface.
+   * Check the BundleAggregationType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_aggregation_type = 434939028;</code>
+   *
+   * @return Whether the bundleAggregationType field is set.
+   */
+  @java.lang.Override
+  public boolean hasBundleAggregationType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The aggregation type of the bundle interface.
+   * Check the BundleAggregationType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_aggregation_type = 434939028;</code>
+   *
+   * @return The bundleAggregationType.
+   */
+  @java.lang.Override
+  public java.lang.String getBundleAggregationType() {
+    java.lang.Object ref = bundleAggregationType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bundleAggregationType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The aggregation type of the bundle interface.
+   * Check the BundleAggregationType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_aggregation_type = 434939028;</code>
+   *
+   * @return The bytes for bundleAggregationType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBundleAggregationTypeBytes() {
+    java.lang.Object ref = bundleAggregationType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bundleAggregationType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BUNDLE_OPERATIONAL_STATUS_FIELD_NUMBER = 106433500;
+  private volatile java.lang.Object bundleOperationalStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * Check the BundleOperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_operational_status = 106433500;</code>
+   *
+   * @return Whether the bundleOperationalStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasBundleOperationalStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * Check the BundleOperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_operational_status = 106433500;</code>
+   *
+   * @return The bundleOperationalStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getBundleOperationalStatus() {
+    java.lang.Object ref = bundleOperationalStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bundleOperationalStatus_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The operational status of the bundle interface.
+   * Check the BundleOperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string bundle_operational_status = 106433500;</code>
+   *
+   * @return The bytes for bundleOperationalStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBundleOperationalStatusBytes() {
+    java.lang.Object ref = bundleOperationalStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bundleOperationalStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LINKS_FIELD_NUMBER = 102977465;
@@ -239,7 +699,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasMacAddress() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -305,11 +765,18 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     for (int i = 0; i < links_.size(); i++) {
       output.writeMessage(102977465, links_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 106433500, bundleOperationalStatus_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 332540164, macAddress_);
     }
     for (int i = 0; i < arpCaches_.size(); i++) {
       output.writeMessage(414591761, arpCaches_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 434939028, bundleAggregationType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -323,12 +790,22 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     for (int i = 0; i < links_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(102977465, links_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              106433500, bundleOperationalStatus_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332540164, macAddress_);
     }
     for (int i = 0; i < arpCaches_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(414591761, arpCaches_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              434939028, bundleAggregationType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -347,6 +824,14 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         (com.google.cloud.compute.v1.InterconnectDiagnostics) obj;
 
     if (!getArpCachesList().equals(other.getArpCachesList())) return false;
+    if (hasBundleAggregationType() != other.hasBundleAggregationType()) return false;
+    if (hasBundleAggregationType()) {
+      if (!getBundleAggregationType().equals(other.getBundleAggregationType())) return false;
+    }
+    if (hasBundleOperationalStatus() != other.hasBundleOperationalStatus()) return false;
+    if (hasBundleOperationalStatus()) {
+      if (!getBundleOperationalStatus().equals(other.getBundleOperationalStatus())) return false;
+    }
     if (!getLinksList().equals(other.getLinksList())) return false;
     if (hasMacAddress() != other.hasMacAddress()) return false;
     if (hasMacAddress()) {
@@ -366,6 +851,14 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     if (getArpCachesCount() > 0) {
       hash = (37 * hash) + ARP_CACHES_FIELD_NUMBER;
       hash = (53 * hash) + getArpCachesList().hashCode();
+    }
+    if (hasBundleAggregationType()) {
+      hash = (37 * hash) + BUNDLE_AGGREGATION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getBundleAggregationType().hashCode();
+    }
+    if (hasBundleOperationalStatus()) {
+      hash = (37 * hash) + BUNDLE_OPERATIONAL_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getBundleOperationalStatus().hashCode();
     }
     if (getLinksCount() > 0) {
       hash = (37 * hash) + LINKS_FIELD_NUMBER;
@@ -520,15 +1013,19 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         arpCachesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      bundleAggregationType_ = "";
+      bitField0_ = (bitField0_ & ~0x00000002);
+      bundleOperationalStatus_ = "";
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
       } else {
         links_ = null;
         linksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       macAddress_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -567,17 +1064,25 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       } else {
         result.arpCaches_ = arpCachesBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bundleAggregationType_ = bundleAggregationType_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bundleOperationalStatus_ = bundleOperationalStatus_;
       if (linksBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           links_ = java.util.Collections.unmodifiableList(links_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.links_ = links_;
       } else {
         result.links_ = linksBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        to_bitField0_ |= 0x00000001;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000004;
       }
       result.macAddress_ = macAddress_;
       result.bitField0_ = to_bitField0_;
@@ -658,11 +1163,21 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
           }
         }
       }
+      if (other.hasBundleAggregationType()) {
+        bitField0_ |= 0x00000002;
+        bundleAggregationType_ = other.bundleAggregationType_;
+        onChanged();
+      }
+      if (other.hasBundleOperationalStatus()) {
+        bitField0_ |= 0x00000004;
+        bundleOperationalStatus_ = other.bundleOperationalStatus_;
+        onChanged();
+      }
       if (linksBuilder_ == null) {
         if (!other.links_.isEmpty()) {
           if (links_.isEmpty()) {
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureLinksIsMutable();
             links_.addAll(other.links_);
@@ -675,7 +1190,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
             linksBuilder_.dispose();
             linksBuilder_ = null;
             links_ = other.links_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             linksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLinksFieldBuilder()
@@ -686,7 +1201,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         }
       }
       if (other.hasMacAddress()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         macAddress_ = other.macAddress_;
         onChanged();
       }
@@ -730,10 +1245,16 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                 }
                 break;
               } // case 823819722
+            case 851468002:
+              {
+                bundleOperationalStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 851468002
             case -1634645982:
               {
                 macAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1634645982
             case -978233206:
@@ -750,6 +1271,12 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                 }
                 break;
               } // case -978233206
+            case -815455070:
+              {
+                bundleAggregationType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -815455070
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1171,15 +1698,267 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       return arpCachesBuilder_;
     }
 
+    private java.lang.Object bundleAggregationType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The aggregation type of the bundle interface.
+     * Check the BundleAggregationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_aggregation_type = 434939028;</code>
+     *
+     * @return Whether the bundleAggregationType field is set.
+     */
+    public boolean hasBundleAggregationType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The aggregation type of the bundle interface.
+     * Check the BundleAggregationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_aggregation_type = 434939028;</code>
+     *
+     * @return The bundleAggregationType.
+     */
+    public java.lang.String getBundleAggregationType() {
+      java.lang.Object ref = bundleAggregationType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bundleAggregationType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The aggregation type of the bundle interface.
+     * Check the BundleAggregationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_aggregation_type = 434939028;</code>
+     *
+     * @return The bytes for bundleAggregationType.
+     */
+    public com.google.protobuf.ByteString getBundleAggregationTypeBytes() {
+      java.lang.Object ref = bundleAggregationType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bundleAggregationType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The aggregation type of the bundle interface.
+     * Check the BundleAggregationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_aggregation_type = 434939028;</code>
+     *
+     * @param value The bundleAggregationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBundleAggregationType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      bundleAggregationType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The aggregation type of the bundle interface.
+     * Check the BundleAggregationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_aggregation_type = 434939028;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBundleAggregationType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      bundleAggregationType_ = getDefaultInstance().getBundleAggregationType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The aggregation type of the bundle interface.
+     * Check the BundleAggregationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_aggregation_type = 434939028;</code>
+     *
+     * @param value The bytes for bundleAggregationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBundleAggregationTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      bundleAggregationType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object bundleOperationalStatus_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the bundle interface.
+     * Check the BundleOperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_operational_status = 106433500;</code>
+     *
+     * @return Whether the bundleOperationalStatus field is set.
+     */
+    public boolean hasBundleOperationalStatus() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the bundle interface.
+     * Check the BundleOperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_operational_status = 106433500;</code>
+     *
+     * @return The bundleOperationalStatus.
+     */
+    public java.lang.String getBundleOperationalStatus() {
+      java.lang.Object ref = bundleOperationalStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bundleOperationalStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the bundle interface.
+     * Check the BundleOperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_operational_status = 106433500;</code>
+     *
+     * @return The bytes for bundleOperationalStatus.
+     */
+    public com.google.protobuf.ByteString getBundleOperationalStatusBytes() {
+      java.lang.Object ref = bundleOperationalStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bundleOperationalStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the bundle interface.
+     * Check the BundleOperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_operational_status = 106433500;</code>
+     *
+     * @param value The bundleOperationalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBundleOperationalStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      bundleOperationalStatus_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the bundle interface.
+     * Check the BundleOperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_operational_status = 106433500;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBundleOperationalStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      bundleOperationalStatus_ = getDefaultInstance().getBundleOperationalStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The operational status of the bundle interface.
+     * Check the BundleOperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string bundle_operational_status = 106433500;</code>
+     *
+     * @param value The bytes for bundleOperationalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBundleOperationalStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      bundleOperationalStatus_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus> links_ =
         java.util.Collections.emptyList();
 
     private void ensureLinksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         links_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus>(
                 links_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1412,7 +2191,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
     public Builder clearLinks() {
       if (linksBuilder_ == null) {
         links_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         linksBuilder_.clear();
@@ -1548,7 +2327,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
                 com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus,
                 com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus.Builder,
                 com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatusOrBuilder>(
-                links_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                links_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         links_ = null;
       }
       return linksBuilder_;
@@ -1567,7 +2346,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return Whether the macAddress field is set.
      */
     public boolean hasMacAddress() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1629,7 +2408,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       macAddress_ = value;
       onChanged();
       return this;
@@ -1646,7 +2425,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMacAddress() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       macAddress_ = getDefaultInstance().getMacAddress();
       onChanged();
       return this;
@@ -1668,7 +2447,7 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       macAddress_ = value;
       onChanged();
       return this;

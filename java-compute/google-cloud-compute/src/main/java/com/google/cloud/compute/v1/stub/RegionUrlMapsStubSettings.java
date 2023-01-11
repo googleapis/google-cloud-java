@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * regionUrlMapsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionUrlMapsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionUrlMapsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionUrlMapsStubSettings regionUrlMapsSettings = regionUrlMapsSettingsBuilder.build();

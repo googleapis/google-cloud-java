@@ -92,7 +92,10 @@ import javax.annotation.Generated;
  * serviceManagerSettingsBuilder
  *     .getServiceSettings()
  *     .setRetrySettings(
- *         serviceManagerSettingsBuilder.getServiceSettings().getRetrySettings().toBuilder()
+ *         serviceManagerSettingsBuilder
+ *             .getServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ServiceManagerSettings serviceManagerSettings = serviceManagerSettingsBuilder.build();

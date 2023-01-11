@@ -37,7 +37,10 @@ public class SyncCreateParticipant {
     participantsSettingsBuilder
         .createParticipantSettings()
         .setRetrySettings(
-            participantsSettingsBuilder.createParticipantSettings().getRetrySettings().toBuilder()
+            participantsSettingsBuilder
+                .createParticipantSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ParticipantsStubSettings participantsSettings = participantsSettingsBuilder.build();

@@ -28,7 +28,7 @@ public interface MerchantCenterLinkOrBuilder
    *
    * <pre>
    * Required. The linked [Merchant center account
-   * id](https://developers.google.com/shopping-content/guides/accountstatuses).
+   * ID](https://developers.google.com/shopping-content/guides/accountstatuses).
    * The account must be a standalone account or a sub-account of a MCA.
    * </pre>
    *
@@ -42,11 +42,11 @@ public interface MerchantCenterLinkOrBuilder
    *
    *
    * <pre>
-   * The branch id (e.g. 0/1/2) within this catalog that products from
+   * The branch ID (e.g. 0/1/2) within this catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
    * <code>string branch_id = 2;</code>
@@ -58,11 +58,11 @@ public interface MerchantCenterLinkOrBuilder
    *
    *
    * <pre>
-   * The branch id (e.g. 0/1/2) within this catalog that products from
+   * The branch ID (e.g. 0/1/2) within this catalog that products from
    * merchant_center_account_id are streamed to. When updating this field, an
    * empty value will use the currently configured default branch. However,
    * changing the default branch later on won't change the linked branch here.
-   * A single branch id can only have one linked merchant center account id.
+   * A single branch ID can only have one linked merchant center account ID.
    * </pre>
    *
    * <code>string branch_id = 2;</code>
@@ -215,4 +215,66 @@ public interface MerchantCenterLinkOrBuilder
    * @return The bytes for languageCode.
    */
   com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  java.util.List<com.google.cloud.retail.v2beta.MerchantCenterFeedFilter> getFeedsList();
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  com.google.cloud.retail.v2beta.MerchantCenterFeedFilter getFeeds(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  int getFeedsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  java.util.List<? extends com.google.cloud.retail.v2beta.MerchantCenterFeedFilterOrBuilder>
+      getFeedsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Criteria for the Merchant Center feeds to be ingested via the link.
+   * All offers will be ingested if the list is empty.
+   * Otherwise the offers will be ingested from selected feeds.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2beta.MerchantCenterFeedFilter feeds = 6;</code>
+   */
+  com.google.cloud.retail.v2beta.MerchantCenterFeedFilterOrBuilder getFeedsOrBuilder(int index);
 }

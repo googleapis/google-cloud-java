@@ -82,7 +82,10 @@ import org.threeten.bp.Duration;
  * applicationsSettingsBuilder
  *     .getApplicationSettings()
  *     .setRetrySettings(
- *         applicationsSettingsBuilder.getApplicationSettings().getRetrySettings().toBuilder()
+ *         applicationsSettingsBuilder
+ *             .getApplicationSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApplicationsStubSettings applicationsSettings = applicationsSettingsBuilder.build();

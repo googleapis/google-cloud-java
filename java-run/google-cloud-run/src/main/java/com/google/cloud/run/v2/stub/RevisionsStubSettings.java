@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * revisionsSettingsBuilder
  *     .getRevisionSettings()
  *     .setRetrySettings(
- *         revisionsSettingsBuilder.getRevisionSettings().getRetrySettings().toBuilder()
+ *         revisionsSettingsBuilder
+ *             .getRevisionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RevisionsStubSettings revisionsSettings = revisionsSettingsBuilder.build();

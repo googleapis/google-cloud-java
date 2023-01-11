@@ -320,10 +320,10 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Optional. If not set, use the monitoring_config defined for the EntityType this
-   * Feature belongs to.
-   * Only Features with type ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL, STRING, DOUBLE or
-   * INT64 can enable monitoring.
+   * Optional. If not set, use the monitoring_config defined for the EntityType
+   * this Feature belongs to. Only Features with type
+   * ([Feature.ValueType][google.cloud.aiplatform.v1.Feature.ValueType]) BOOL,
+   * STRING, DOUBLE or INT64 can enable monitoring.
    * If set to true, all types of data monitoring are disabled despite the
    * config on EntityType.
    * </pre>
@@ -338,7 +338,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -351,7 +352,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -364,7 +366,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -376,7 +379,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>
@@ -389,7 +393,8 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of historical stats and anomalies with specified objectives.
+   * Output only. The list of historical stats and anomalies with specified
+   * objectives.
    * </pre>
    *
    * <code>

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
+ * Request message for
+ * [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest}
@@ -289,7 +290,8 @@ public final class CancelBatchPredictionJobRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request message for [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
+   * Request message for
+   * [JobService.CancelBatchPredictionJob][google.cloud.aiplatform.v1.JobService.CancelBatchPredictionJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CancelBatchPredictionJobRequest}

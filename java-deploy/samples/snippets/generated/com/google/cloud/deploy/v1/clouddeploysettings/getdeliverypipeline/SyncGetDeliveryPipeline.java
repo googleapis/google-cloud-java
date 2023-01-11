@@ -36,7 +36,10 @@ public class SyncGetDeliveryPipeline {
     cloudDeploySettingsBuilder
         .getDeliveryPipelineSettings()
         .setRetrySettings(
-            cloudDeploySettingsBuilder.getDeliveryPipelineSettings().getRetrySettings().toBuilder()
+            cloudDeploySettingsBuilder
+                .getDeliveryPipelineSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudDeploySettings cloudDeploySettings = cloudDeploySettingsBuilder.build();

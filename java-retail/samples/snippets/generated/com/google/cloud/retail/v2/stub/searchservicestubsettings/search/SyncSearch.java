@@ -37,7 +37,10 @@ public class SyncSearch {
     searchServiceSettingsBuilder
         .searchSettings()
         .setRetrySettings(
-            searchServiceSettingsBuilder.searchSettings().getRetrySettings().toBuilder()
+            searchServiceSettingsBuilder
+                .searchSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     SearchServiceStubSettings searchServiceSettings = searchServiceSettingsBuilder.build();

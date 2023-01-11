@@ -345,6 +345,26 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CHECK = 4;</code>
      */
     CHECK(4),
+    /**
+     *
+     *
+     * <pre>
+     * Saves snapshot of the resource operation.
+     * </pre>
+     *
+     * <code>SAVE_SNAPSHOT = 5;</code>
+     */
+    SAVE_SNAPSHOT(5),
+    /**
+     *
+     *
+     * <pre>
+     * Loads snapshot of the resource operation.
+     * </pre>
+     *
+     * <code>LOAD_SNAPSHOT = 6;</code>
+     */
+    LOAD_SNAPSHOT(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -398,6 +418,26 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * <code>CHECK = 4;</code>
      */
     public static final int CHECK_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Saves snapshot of the resource operation.
+     * </pre>
+     *
+     * <code>SAVE_SNAPSHOT = 5;</code>
+     */
+    public static final int SAVE_SNAPSHOT_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Loads snapshot of the resource operation.
+     * </pre>
+     *
+     * <code>LOAD_SNAPSHOT = 6;</code>
+     */
+    public static final int LOAD_SNAPSHOT_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -433,6 +473,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           return UPDATE;
         case 4:
           return CHECK;
+        case 5:
+          return SAVE_SNAPSHOT;
+        case 6:
+          return LOAD_SNAPSHOT;
         default:
           return null;
       }

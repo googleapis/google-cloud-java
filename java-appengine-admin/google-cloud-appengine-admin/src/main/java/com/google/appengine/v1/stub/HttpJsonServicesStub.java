@@ -91,6 +91,7 @@ public class HttpJsonServicesStub extends ServicesStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -123,6 +124,7 @@ public class HttpJsonServicesStub extends ServicesStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetServiceRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -159,12 +161,13 @@ public class HttpJsonServicesStub extends ServicesStub {
                             serializer.putQueryParam(
                                 fields, "migrateTraffic", request.getMigrateTraffic());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("service", request.getService(), false))
+                                  .toBody("service", request.getService(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -198,6 +201,7 @@ public class HttpJsonServicesStub extends ServicesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteServiceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

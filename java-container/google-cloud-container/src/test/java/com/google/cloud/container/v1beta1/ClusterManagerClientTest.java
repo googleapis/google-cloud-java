@@ -44,6 +44,7 @@ import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DatabaseEncryption;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.FastSocket;
 import com.google.container.v1beta1.GcfsConfig;
 import com.google.container.v1beta1.GetClusterRequest;
 import com.google.container.v1beta1.GetJSONWebKeysRequest;
@@ -122,6 +123,7 @@ import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.container.v1beta1.UsableSubnetwork;
 import com.google.container.v1beta1.VerticalPodAutoscaling;
 import com.google.container.v1beta1.VirtualNIC;
+import com.google.container.v1beta1.WindowsNodeConfig;
 import com.google.container.v1beta1.WindowsVersions;
 import com.google.container.v1beta1.WorkloadALTSConfig;
 import com.google.container.v1beta1.WorkloadCertificates;
@@ -300,6 +302,7 @@ public class ClusterManagerClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setProtectConfig(ProtectConfig.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -495,8 +498,11 @@ public class ClusterManagerClientTest {
             .setGcfsConfig(GcfsConfig.newBuilder().build())
             .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
+            .setEtag("etag3123477")
+            .setFastSocket(FastSocket.newBuilder().build())
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
+            .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -526,8 +532,11 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
     Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
+    Assert.assertEquals(request.getEtag(), actualRequest.getEtag());
+    Assert.assertEquals(request.getFastSocket(), actualRequest.getFastSocket());
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
+    Assert.assertEquals(request.getWindowsNodeConfig(), actualRequest.getWindowsNodeConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -561,8 +570,11 @@ public class ClusterManagerClientTest {
               .setGcfsConfig(GcfsConfig.newBuilder().build())
               .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
+              .setEtag("etag3123477")
+              .setFastSocket(FastSocket.newBuilder().build())
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
+              .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");
@@ -1351,6 +1363,7 @@ public class ClusterManagerClientTest {
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
             .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

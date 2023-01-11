@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.AddCatalogAttributeRequest;
 import com.google.cloud.retail.v2alpha.AttributesConfig;
+import com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest;
+import com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse;
 import com.google.cloud.retail.v2alpha.Catalog;
 import com.google.cloud.retail.v2alpha.CompletionConfig;
 import com.google.cloud.retail.v2alpha.GetAttributesConfigRequest;
@@ -163,6 +165,21 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(AttributesConfig.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesMethodDescriptor =
+          MethodDescriptor
+              .<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.retail.v2alpha.CatalogService/BatchRemoveCatalogAttributes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchRemoveCatalogAttributesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchRemoveCatalogAttributesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ReplaceCatalogAttributeRequest, AttributesConfig>
       replaceCatalogAttributeMethodDescriptor =
           MethodDescriptor.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
@@ -193,6 +210,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
       addCatalogAttributeCallable;
   private final UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeCallable;
+  private final UnaryCallable<
+          BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesCallable;
   private final UnaryCallable<ReplaceCatalogAttributeRequest, AttributesConfig>
       replaceCatalogAttributeCallable;
 
@@ -353,6 +373,20 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+        batchRemoveCatalogAttributesTransportSettings =
+            GrpcCallSettings
+                .<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchRemoveCatalogAttributesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "attributes_config", String.valueOf(request.getAttributesConfig()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
         replaceCatalogAttributeTransportSettings =
             GrpcCallSettings.<ReplaceCatalogAttributeRequest, AttributesConfig>newBuilder()
@@ -410,6 +444,11 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
         callableFactory.createUnaryCallable(
             removeCatalogAttributeTransportSettings,
             settings.removeCatalogAttributeSettings(),
+            clientContext);
+    this.batchRemoveCatalogAttributesCallable =
+        callableFactory.createUnaryCallable(
+            batchRemoveCatalogAttributesTransportSettings,
+            settings.batchRemoveCatalogAttributesSettings(),
             clientContext);
     this.replaceCatalogAttributeCallable =
         callableFactory.createUnaryCallable(
@@ -482,6 +521,12 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   public UnaryCallable<RemoveCatalogAttributeRequest, AttributesConfig>
       removeCatalogAttributeCallable() {
     return removeCatalogAttributeCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
+      batchRemoveCatalogAttributesCallable() {
+    return batchRemoveCatalogAttributesCallable;
   }
 
   @Override

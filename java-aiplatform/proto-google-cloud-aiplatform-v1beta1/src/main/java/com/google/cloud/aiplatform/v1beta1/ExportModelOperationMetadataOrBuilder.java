@@ -63,7 +63,8 @@ public interface ExportModelOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Information further describing the output of this Model export.
+   * Output only. Information further describing the output of this Model
+   * export.
    * </pre>
    *
    * <code>
@@ -77,7 +78,8 @@ public interface ExportModelOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Information further describing the output of this Model export.
+   * Output only. Information further describing the output of this Model
+   * export.
    * </pre>
    *
    * <code>
@@ -91,7 +93,8 @@ public interface ExportModelOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Information further describing the output of this Model export.
+   * Output only. Information further describing the output of this Model
+   * export.
    * </pre>
    *
    * <code>

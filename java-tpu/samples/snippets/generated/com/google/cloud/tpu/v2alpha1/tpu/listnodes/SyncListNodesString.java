@@ -17,8 +17,8 @@
 package com.google.cloud.tpu.v2alpha1.samples;
 
 // [START tpu_v2alpha1_generated_Tpu_ListNodes_String_sync]
+import com.google.cloud.tpu.v2alpha1.LocationName;
 import com.google.cloud.tpu.v2alpha1.Node;
-import com.google.cloud.tpu.v2alpha1.NodeName;
 import com.google.cloud.tpu.v2alpha1.TpuClient;
 
 public class SyncListNodesString {
@@ -34,7 +34,7 @@ public class SyncListNodesString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (TpuClient tpuClient = TpuClient.create()) {
-      String parent = NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       for (Node element : tpuClient.listNodes(parent).iterateAll()) {
         // doThingsWith(element);
       }

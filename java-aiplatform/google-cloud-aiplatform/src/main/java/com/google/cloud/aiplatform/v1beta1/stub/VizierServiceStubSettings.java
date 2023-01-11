@@ -118,7 +118,10 @@ import org.threeten.bp.Duration;
  * vizierServiceSettingsBuilder
  *     .createStudySettings()
  *     .setRetrySettings(
- *         vizierServiceSettingsBuilder.createStudySettings().getRetrySettings().toBuilder()
+ *         vizierServiceSettingsBuilder
+ *             .createStudySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VizierServiceStubSettings vizierServiceSettings = vizierServiceSettingsBuilder.build();

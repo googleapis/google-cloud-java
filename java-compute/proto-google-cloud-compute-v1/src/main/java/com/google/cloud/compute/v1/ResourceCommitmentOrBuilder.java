@@ -89,7 +89,7 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -102,7 +102,7 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface ResourceCommitmentOrBuilder
    *
    *
    * <pre>
-   * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

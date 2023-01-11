@@ -27,8 +27,8 @@ public interface TimeSeriesDataOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the TensorboardTimeSeries, which will become the final component
-   * of the TensorboardTimeSeries' resource name
+   * Required. The ID of the TensorboardTimeSeries, which will become the final
+   * component of the TensorboardTimeSeries' resource name
    * </pre>
    *
    * <code>string tensorboard_time_series_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface TimeSeriesDataOrBuilder
    *
    *
    * <pre>
-   * Required. The ID of the TensorboardTimeSeries, which will become the final component
-   * of the TensorboardTimeSeries' resource name
+   * Required. The ID of the TensorboardTimeSeries, which will become the final
+   * component of the TensorboardTimeSeries' resource name
    * </pre>
    *
    * <code>string tensorboard_time_series_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -54,8 +54,8 @@ public interface TimeSeriesDataOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The value type of this time series. All the values in this time series data
-   * must match this value type.
+   * Required. Immutable. The value type of this time series. All the values in
+   * this time series data must match this value type.
    * </pre>
    *
    * <code>
@@ -69,8 +69,8 @@ public interface TimeSeriesDataOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The value type of this time series. All the values in this time series data
-   * must match this value type.
+   * Required. Immutable. The value type of this time series. All the values in
+   * this time series data must match this value type.
    * </pre>
    *
    * <code>

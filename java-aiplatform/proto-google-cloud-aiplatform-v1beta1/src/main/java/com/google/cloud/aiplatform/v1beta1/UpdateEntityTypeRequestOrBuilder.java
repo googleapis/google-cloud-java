@@ -27,9 +27,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The EntityType's `name` field is used to identify the EntityType to be
-   * updated.
-   * Format:
+   * Required. The EntityType's `name` field is used to identify the EntityType
+   * to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -44,9 +43,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The EntityType's `name` field is used to identify the EntityType to be
-   * updated.
-   * Format:
+   * Required. The EntityType's `name` field is used to identify the EntityType
+   * to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -61,9 +59,8 @@ public interface UpdateEntityTypeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The EntityType's `name` field is used to identify the EntityType to be
-   * updated.
-   * Format:
+   * Required. The EntityType's `name` field is used to identify the EntityType
+   * to be updated. Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
    * </pre>
    *
@@ -94,6 +91,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
+   *   * `offline_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -122,6 +120,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
+   *   * `offline_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -150,6 +149,7 @@ public interface UpdateEntityTypeRequestOrBuilder
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
+   *   * `offline_storage_ttl_days` (available in Preview)
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

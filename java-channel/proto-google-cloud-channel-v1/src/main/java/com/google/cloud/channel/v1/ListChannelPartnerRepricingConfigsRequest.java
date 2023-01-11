@@ -78,8 +78,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-   * Parent uses the format:
+   * Required. The resource name of the account's
+   * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+   * uses the format:
    * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
    * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
    * for all channel partners.
@@ -107,8 +108,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-   * Parent uses the format:
+   * Required. The resource name of the account's
+   * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+   * uses the format:
    * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
    * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
    * for all channel partners.
@@ -139,9 +141,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Optional. The maximum number of repricing configs to return. The service may return
-   * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-   * maximum value is 100; values above 100 will be coerced to 100.
+   * Optional. The maximum number of repricing configs to return. The service
+   * may return fewer than this value. If unspecified, returns a maximum of 50
+   * rules. The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -161,8 +163,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
    * <pre>
    * Optional. A token identifying a page of results beyond the first page.
    * Obtained through
-   * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-   * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+   * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -187,8 +191,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
    * <pre>
    * Optional. A token identifying a page of results beyond the first page.
    * Obtained through
-   * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-   * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+   * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -214,10 +220,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-   * results (channel_partner_link only). You can use this filter when you
-   * support a BatchGet-like query.
-   * To use the filter, you must set
+   * Optional. A filter for
+   * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+   * (channel_partner_link only). You can use this filter when you support a
+   * BatchGet-like query. To use the filter, you must set
    * `parent=accounts/{account_id}/channelPartnerLinks/-`.
    * Example: `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
@@ -244,10 +250,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-   * results (channel_partner_link only). You can use this filter when you
-   * support a BatchGet-like query.
-   * To use the filter, you must set
+   * Optional. A filter for
+   * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+   * (channel_partner_link only). You can use this filter when you support a
+   * BatchGet-like query. To use the filter, you must set
    * `parent=accounts/{account_id}/channelPartnerLinks/-`.
    * Example: `channel_partner_link =
    * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
@@ -680,8 +686,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-     * Parent uses the format:
+     * Required. The resource name of the account's
+     * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+     * uses the format:
      * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
      * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
      * for all channel partners.
@@ -708,8 +715,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-     * Parent uses the format:
+     * Required. The resource name of the account's
+     * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+     * uses the format:
      * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
      * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
      * for all channel partners.
@@ -736,8 +744,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-     * Parent uses the format:
+     * Required. The resource name of the account's
+     * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+     * uses the format:
      * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
      * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
      * for all channel partners.
@@ -763,8 +772,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-     * Parent uses the format:
+     * Required. The resource name of the account's
+     * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+     * uses the format:
      * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
      * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
      * for all channel partners.
@@ -786,8 +796,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Required. The resource name of the account's [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink].
-     * Parent uses the format:
+     * Required. The resource name of the account's
+     * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]. Parent
+     * uses the format:
      * accounts/{account_id}/channelPartnerLinks/{channel_partner_id}.
      * Supports accounts/{account_id}/channelPartnerLinks/- to retrieve configs
      * for all channel partners.
@@ -816,9 +827,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of repricing configs to return. The service may return
-     * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-     * maximum value is 100; values above 100 will be coerced to 100.
+     * Optional. The maximum number of repricing configs to return. The service
+     * may return fewer than this value. If unspecified, returns a maximum of 50
+     * rules. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -833,9 +844,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of repricing configs to return. The service may return
-     * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-     * maximum value is 100; values above 100 will be coerced to 100.
+     * Optional. The maximum number of repricing configs to return. The service
+     * may return fewer than this value. If unspecified, returns a maximum of 50
+     * rules. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -853,9 +864,9 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of repricing configs to return. The service may return
-     * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-     * maximum value is 100; values above 100 will be coerced to 100.
+     * Optional. The maximum number of repricing configs to return. The service
+     * may return fewer than this value. If unspecified, returns a maximum of 50
+     * rules. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -876,8 +887,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-     * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -901,8 +914,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-     * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -926,8 +941,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-     * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -950,8 +967,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-     * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -970,8 +989,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token] of the
-     * previous [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs] call.
+     * [ListChannelPartnerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -995,10 +1016,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-     * results (channel_partner_link only). You can use this filter when you
-     * support a BatchGet-like query.
-     * To use the filter, you must set
+     * Optional. A filter for
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+     * (channel_partner_link only). You can use this filter when you support a
+     * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
@@ -1024,10 +1045,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-     * results (channel_partner_link only). You can use this filter when you
-     * support a BatchGet-like query.
-     * To use the filter, you must set
+     * Optional. A filter for
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+     * (channel_partner_link only). You can use this filter when you support a
+     * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
@@ -1053,10 +1074,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-     * results (channel_partner_link only). You can use this filter when you
-     * support a BatchGet-like query.
-     * To use the filter, you must set
+     * Optional. A filter for
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+     * (channel_partner_link only). You can use this filter when you support a
+     * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
@@ -1081,10 +1102,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-     * results (channel_partner_link only). You can use this filter when you
-     * support a BatchGet-like query.
-     * To use the filter, you must set
+     * Optional. A filter for
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+     * (channel_partner_link only). You can use this filter when you support a
+     * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =
@@ -1105,10 +1126,10 @@ public final class ListChannelPartnerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. A filter for [CloudChannelService.ListChannelPartnerRepricingConfigs]
-     * results (channel_partner_link only). You can use this filter when you
-     * support a BatchGet-like query.
-     * To use the filter, you must set
+     * Optional. A filter for
+     * [CloudChannelService.ListChannelPartnerRepricingConfigs] results
+     * (channel_partner_link only). You can use this filter when you support a
+     * BatchGet-like query. To use the filter, you must set
      * `parent=accounts/{account_id}/channelPartnerLinks/-`.
      * Example: `channel_partner_link =
      * accounts/account_id/channelPartnerLinks/c1` OR `channel_partner_link =

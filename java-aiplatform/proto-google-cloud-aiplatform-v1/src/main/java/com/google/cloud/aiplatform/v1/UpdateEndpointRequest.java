@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
+ * Request message for
+ * [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateEndpointRequest}
@@ -125,7 +126,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * Required. The update mask applies to the resource. See
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -141,7 +143,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * Required. The update mask applies to the resource. See
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -157,7 +160,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * Required. The update mask applies to the resource. See
+   * [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -350,7 +354,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
+   * Request message for
+   * [EndpointService.UpdateEndpoint][google.cloud.aiplatform.v1.EndpointService.UpdateEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateEndpointRequest}
@@ -757,7 +762,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -772,7 +778,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -793,7 +800,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -816,7 +824,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -836,7 +845,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -861,7 +871,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -882,7 +893,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -897,7 +909,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -916,7 +929,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The update mask applies to the resource. See [google.protobuf.FieldMask][google.protobuf.FieldMask].
+     * Required. The update mask applies to the resource. See
+     * [google.protobuf.FieldMask][google.protobuf.FieldMask].
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

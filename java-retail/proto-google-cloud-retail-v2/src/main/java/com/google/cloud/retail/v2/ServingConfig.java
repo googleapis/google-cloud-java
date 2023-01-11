@@ -53,6 +53,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     replacementControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     diversityLevel_ = "";
+    diversityType_ = 0;
     enableCategoryFilterLevel_ = "";
     solutionTypes_ = java.util.Collections.emptyList();
   }
@@ -81,6 +82,163 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.retail.v2.ServingConfig.class,
             com.google.cloud.retail.v2.ServingConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * What type of diversity - data or rule based.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.retail.v2.ServingConfig.DiversityType}
+   */
+  public enum DiversityType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>DIVERSITY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    DIVERSITY_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Rule based diversity.
+     * </pre>
+     *
+     * <code>RULE_BASED_DIVERSITY = 2;</code>
+     */
+    RULE_BASED_DIVERSITY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Data driven diversity.
+     * </pre>
+     *
+     * <code>DATA_DRIVEN_DIVERSITY = 3;</code>
+     */
+    DATA_DRIVEN_DIVERSITY(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value.
+     * </pre>
+     *
+     * <code>DIVERSITY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int DIVERSITY_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Rule based diversity.
+     * </pre>
+     *
+     * <code>RULE_BASED_DIVERSITY = 2;</code>
+     */
+    public static final int RULE_BASED_DIVERSITY_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Data driven diversity.
+     * </pre>
+     *
+     * <code>DATA_DRIVEN_DIVERSITY = 3;</code>
+     */
+    public static final int DATA_DRIVEN_DIVERSITY_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DiversityType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DiversityType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DIVERSITY_TYPE_UNSPECIFIED;
+        case 2:
+          return RULE_BASED_DIVERSITY;
+        case 3:
+          return DATA_DRIVEN_DIVERSITY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DiversityType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DiversityType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DiversityType>() {
+          public DiversityType findValueByNumber(int number) {
+            return DiversityType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.retail.v2.ServingConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DiversityType[] VALUES = values();
+
+    public static DiversityType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DiversityType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2.ServingConfig.DiversityType)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -264,12 +422,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
-   * * 'no-price-reranking'
-   * * 'low-price-raranking'
-   * * 'medium-price-reranking'
-   * * 'high-price-reranking'
+   * * `no-price-reranking`
+   * * `low-price-raranking`
+   * * `medium-price-reranking`
+   * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
-   * 'no-price-reranking'.
+   * `no-price-reranking`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -301,12 +459,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
-   * * 'no-price-reranking'
-   * * 'low-price-raranking'
-   * * 'medium-price-reranking'
-   * * 'high-price-reranking'
+   * * `no-price-reranking`
+   * * `low-price-raranking`
+   * * `medium-price-reranking`
+   * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
-   * 'no-price-reranking'.
+   * `no-price-reranking`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -1206,14 +1364,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * How much diversity to use in recommendation model results e.g.
-   * 'medium-diversity' or 'high-diversity'. Currently supported values:
-   * * 'no-diversity'
-   * * 'low-diversity'
-   * * 'medium-diversity'
-   * * 'high-diversity'
-   * * 'auto-diversity'
+   * `medium-diversity` or `high-diversity`. Currently supported values:
+   * * `no-diversity`
+   * * `low-diversity`
+   * * `medium-diversity`
+   * * `high-diversity`
+   * * `auto-diversity`
    * If not specified, we choose default based on recommendation model
-   * type. Default value: 'no-diversity'.
+   * type. Default value: `no-diversity`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -1240,14 +1398,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * How much diversity to use in recommendation model results e.g.
-   * 'medium-diversity' or 'high-diversity'. Currently supported values:
-   * * 'no-diversity'
-   * * 'low-diversity'
-   * * 'medium-diversity'
-   * * 'high-diversity'
-   * * 'auto-diversity'
+   * `medium-diversity` or `high-diversity`. Currently supported values:
+   * * `no-diversity`
+   * * `low-diversity`
+   * * `medium-diversity`
+   * * `high-diversity`
+   * * `auto-diversity`
    * If not specified, we choose default based on recommendation model
-   * type. Default value: 'no-diversity'.
+   * type. Default value: `no-diversity`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -1270,18 +1428,60 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DIVERSITY_TYPE_FIELD_NUMBER = 20;
+  private int diversityType_;
+  /**
+   *
+   *
+   * <pre>
+   * What kind of diversity to use - data driven or rule based. If unset,
+   * the server behavior defaults to
+   * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+   *
+   * @return The enum numeric value on the wire for diversityType.
+   */
+  @java.lang.Override
+  public int getDiversityTypeValue() {
+    return diversityType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * What kind of diversity to use - data driven or rule based. If unset,
+   * the server behavior defaults to
+   * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+   *
+   * @return The diversityType.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ServingConfig.DiversityType getDiversityType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.retail.v2.ServingConfig.DiversityType result =
+        com.google.cloud.retail.v2.ServingConfig.DiversityType.valueOf(diversityType_);
+    return result == null
+        ? com.google.cloud.retail.v2.ServingConfig.DiversityType.UNRECOGNIZED
+        : result;
+  }
+
   public static final int ENABLE_CATEGORY_FILTER_LEVEL_FIELD_NUMBER = 16;
   private volatile java.lang.Object enableCategoryFilterLevel_;
   /**
    *
    *
    * <pre>
-   * Whether to add additional category filters on the 'similar-items' model.
+   * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
-   * * 'no-category-match': No additional filtering of original results from
+   * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
-   * * 'relaxed-category-match': Only keep results with categories that match
+   * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
@@ -1310,12 +1510,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether to add additional category filters on the 'similar-items' model.
+   * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
-   * * 'no-category-match': No additional filtering of original results from
+   * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
-   * * 'relaxed-category-match': Only keep results with categories that match
+   * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
@@ -1611,6 +1811,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < solutionTypes_.size(); i++) {
       output.writeEnumNoTag(solutionTypes_.get(i));
     }
+    if (diversityType_
+        != com.google.cloud.retail.v2.ServingConfig.DiversityType.DIVERSITY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(20, diversityType_);
+    }
     if (personalizationSpec_ != null) {
       output.writeMessage(21, getPersonalizationSpec());
     }
@@ -1730,6 +1935,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       solutionTypesMemoizedSerializedSize = dataSize;
     }
+    if (diversityType_
+        != com.google.cloud.retail.v2.ServingConfig.DiversityType.DIVERSITY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, diversityType_);
+    }
     if (personalizationSpec_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getPersonalizationSpec());
@@ -1770,6 +1980,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getReplacementControlIdsList().equals(other.getReplacementControlIdsList())) return false;
     if (!getIgnoreControlIdsList().equals(other.getIgnoreControlIdsList())) return false;
     if (!getDiversityLevel().equals(other.getDiversityLevel())) return false;
+    if (diversityType_ != other.diversityType_) return false;
     if (!getEnableCategoryFilterLevel().equals(other.getEnableCategoryFilterLevel())) return false;
     if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
     if (hasPersonalizationSpec()) {
@@ -1837,6 +2048,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DIVERSITY_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + getDiversityLevel().hashCode();
+    hash = (37 * hash) + DIVERSITY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + diversityType_;
     hash = (37 * hash) + ENABLE_CATEGORY_FILTER_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + getEnableCategoryFilterLevel().hashCode();
     if (hasPersonalizationSpec()) {
@@ -2020,6 +2233,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       diversityLevel_ = "";
 
+      diversityType_ = 0;
+
       enableCategoryFilterLevel_ = "";
 
       if (personalizationSpecBuilder_ == null) {
@@ -2113,6 +2328,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       result.ignoreControlIds_ = ignoreControlIds_;
       result.diversityLevel_ = diversityLevel_;
+      result.diversityType_ = diversityType_;
       result.enableCategoryFilterLevel_ = enableCategoryFilterLevel_;
       if (personalizationSpecBuilder_ == null) {
         result.personalizationSpec_ = personalizationSpec_;
@@ -2286,6 +2502,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
         diversityLevel_ = other.diversityLevel_;
         onChanged();
       }
+      if (other.diversityType_ != 0) {
+        setDiversityTypeValue(other.getDiversityTypeValue());
+      }
       if (!other.getEnableCategoryFilterLevel().isEmpty()) {
         enableCategoryFilterLevel_ = other.enableCategoryFilterLevel_;
         onChanged();
@@ -2454,6 +2673,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 154
+            case 160:
+              {
+                diversityType_ = input.readEnum();
+
+                break;
+              } // case 160
             case 170:
               {
                 input.readMessage(
@@ -2864,12 +3089,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
-     * * 'no-price-reranking'
-     * * 'low-price-raranking'
-     * * 'medium-price-reranking'
-     * * 'high-price-reranking'
+     * * `no-price-reranking`
+     * * `low-price-raranking`
+     * * `medium-price-reranking`
+     * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
-     * 'no-price-reranking'.
+     * `no-price-reranking`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -2900,12 +3125,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
-     * * 'no-price-reranking'
-     * * 'low-price-raranking'
-     * * 'medium-price-reranking'
-     * * 'high-price-reranking'
+     * * `no-price-reranking`
+     * * `low-price-raranking`
+     * * `medium-price-reranking`
+     * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
-     * 'no-price-reranking'.
+     * `no-price-reranking`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -2936,12 +3161,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
-     * * 'no-price-reranking'
-     * * 'low-price-raranking'
-     * * 'medium-price-reranking'
-     * * 'high-price-reranking'
+     * * `no-price-reranking`
+     * * `low-price-raranking`
+     * * `medium-price-reranking`
+     * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
-     * 'no-price-reranking'.
+     * `no-price-reranking`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -2971,12 +3196,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
-     * * 'no-price-reranking'
-     * * 'low-price-raranking'
-     * * 'medium-price-reranking'
-     * * 'high-price-reranking'
+     * * `no-price-reranking`
+     * * `low-price-raranking`
+     * * `medium-price-reranking`
+     * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
-     * 'no-price-reranking'.
+     * `no-price-reranking`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -3002,12 +3227,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * highest-priced items first. This setting could result in a decrease in
      * click-through and conversion rates.
      *  Allowed values are:
-     * * 'no-price-reranking'
-     * * 'low-price-raranking'
-     * * 'medium-price-reranking'
-     * * 'high-price-reranking'
+     * * `no-price-reranking`
+     * * `low-price-raranking`
+     * * `medium-price-reranking`
+     * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
-     * 'no-price-reranking'.
+     * `no-price-reranking`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -5363,14 +5588,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * How much diversity to use in recommendation model results e.g.
-     * 'medium-diversity' or 'high-diversity'. Currently supported values:
-     * * 'no-diversity'
-     * * 'low-diversity'
-     * * 'medium-diversity'
-     * * 'high-diversity'
-     * * 'auto-diversity'
+     * `medium-diversity` or `high-diversity`. Currently supported values:
+     * * `no-diversity`
+     * * `low-diversity`
+     * * `medium-diversity`
+     * * `high-diversity`
+     * * `auto-diversity`
      * If not specified, we choose default based on recommendation model
-     * type. Default value: 'no-diversity'.
+     * type. Default value: `no-diversity`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -5396,14 +5621,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * How much diversity to use in recommendation model results e.g.
-     * 'medium-diversity' or 'high-diversity'. Currently supported values:
-     * * 'no-diversity'
-     * * 'low-diversity'
-     * * 'medium-diversity'
-     * * 'high-diversity'
-     * * 'auto-diversity'
+     * `medium-diversity` or `high-diversity`. Currently supported values:
+     * * `no-diversity`
+     * * `low-diversity`
+     * * `medium-diversity`
+     * * `high-diversity`
+     * * `auto-diversity`
      * If not specified, we choose default based on recommendation model
-     * type. Default value: 'no-diversity'.
+     * type. Default value: `no-diversity`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -5429,14 +5654,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * How much diversity to use in recommendation model results e.g.
-     * 'medium-diversity' or 'high-diversity'. Currently supported values:
-     * * 'no-diversity'
-     * * 'low-diversity'
-     * * 'medium-diversity'
-     * * 'high-diversity'
-     * * 'auto-diversity'
+     * `medium-diversity` or `high-diversity`. Currently supported values:
+     * * `no-diversity`
+     * * `low-diversity`
+     * * `medium-diversity`
+     * * `high-diversity`
+     * * `auto-diversity`
      * If not specified, we choose default based on recommendation model
-     * type. Default value: 'no-diversity'.
+     * type. Default value: `no-diversity`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -5461,14 +5686,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * How much diversity to use in recommendation model results e.g.
-     * 'medium-diversity' or 'high-diversity'. Currently supported values:
-     * * 'no-diversity'
-     * * 'low-diversity'
-     * * 'medium-diversity'
-     * * 'high-diversity'
-     * * 'auto-diversity'
+     * `medium-diversity` or `high-diversity`. Currently supported values:
+     * * `no-diversity`
+     * * `low-diversity`
+     * * `medium-diversity`
+     * * `high-diversity`
+     * * `auto-diversity`
      * If not specified, we choose default based on recommendation model
-     * type. Default value: 'no-diversity'.
+     * type. Default value: `no-diversity`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -5489,14 +5714,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * How much diversity to use in recommendation model results e.g.
-     * 'medium-diversity' or 'high-diversity'. Currently supported values:
-     * * 'no-diversity'
-     * * 'low-diversity'
-     * * 'medium-diversity'
-     * * 'high-diversity'
-     * * 'auto-diversity'
+     * `medium-diversity` or `high-diversity`. Currently supported values:
+     * * `no-diversity`
+     * * `low-diversity`
+     * * `medium-diversity`
+     * * `high-diversity`
+     * * `auto-diversity`
      * If not specified, we choose default based on recommendation model
-     * type. Default value: 'no-diversity'.
+     * type. Default value: `no-diversity`.
      * Can only be set if
      * [solution_types][google.cloud.retail.v2.ServingConfig.solution_types] is
      * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
@@ -5518,17 +5743,120 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int diversityType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * What kind of diversity to use - data driven or rule based. If unset,
+     * the server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+     *
+     * @return The enum numeric value on the wire for diversityType.
+     */
+    @java.lang.Override
+    public int getDiversityTypeValue() {
+      return diversityType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * What kind of diversity to use - data driven or rule based. If unset,
+     * the server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+     *
+     * @param value The enum numeric value on the wire for diversityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiversityTypeValue(int value) {
+
+      diversityType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * What kind of diversity to use - data driven or rule based. If unset,
+     * the server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+     *
+     * @return The diversityType.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.ServingConfig.DiversityType getDiversityType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2.ServingConfig.DiversityType result =
+          com.google.cloud.retail.v2.ServingConfig.DiversityType.valueOf(diversityType_);
+      return result == null
+          ? com.google.cloud.retail.v2.ServingConfig.DiversityType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * What kind of diversity to use - data driven or rule based. If unset,
+     * the server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+     *
+     * @param value The diversityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiversityType(com.google.cloud.retail.v2.ServingConfig.DiversityType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      diversityType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * What kind of diversity to use - data driven or rule based. If unset,
+     * the server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2.ServingConfig.DiversityType diversity_type = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiversityType() {
+
+      diversityType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object enableCategoryFilterLevel_ = "";
     /**
      *
      *
      * <pre>
-     * Whether to add additional category filters on the 'similar-items' model.
+     * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
-     * * 'no-category-match': No additional filtering of original results from
+     * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
-     * * 'relaxed-category-match': Only keep results with categories that match
+     * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
@@ -5556,12 +5884,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to add additional category filters on the 'similar-items' model.
+     * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
-     * * 'no-category-match': No additional filtering of original results from
+     * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
-     * * 'relaxed-category-match': Only keep results with categories that match
+     * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
@@ -5589,12 +5917,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to add additional category filters on the 'similar-items' model.
+     * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
-     * * 'no-category-match': No additional filtering of original results from
+     * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
-     * * 'relaxed-category-match': Only keep results with categories that match
+     * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
@@ -5621,12 +5949,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to add additional category filters on the 'similar-items' model.
+     * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
-     * * 'no-category-match': No additional filtering of original results from
+     * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
-     * * 'relaxed-category-match': Only keep results with categories that match
+     * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).
@@ -5649,12 +5977,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to add additional category filters on the 'similar-items' model.
+     * Whether to add additional category filters on the `similar-items` model.
      * If not specified, we enable it by default.
      *  Allowed values are:
-     * * 'no-category-match': No additional filtering of original results from
+     * * `no-category-match`: No additional filtering of original results from
      *   the model and the customer's filters.
-     * * 'relaxed-category-match': Only keep results with categories that match
+     * * `relaxed-category-match`: Only keep results with categories that match
      *   at least one item categories in the PredictRequests's context item.
      *   * If customer also sends filters in the PredictRequest, then the results
      *   will satisfy both conditions (user given and category match).

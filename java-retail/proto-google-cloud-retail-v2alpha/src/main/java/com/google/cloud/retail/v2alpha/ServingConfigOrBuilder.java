@@ -85,7 +85,8 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
-   * The id of the model to use at serving time.
+   * The id of the model in the same
+   * [Catalog][google.cloud.retail.v2alpha.Catalog] to use at serving time.
    * Currently only RecommendationModels are supported:
    * https://cloud.google.com/retail/recommendations-ai/docs/create-models
    * Can be changed but only to a compatible model (e.g.
@@ -105,7 +106,8 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
-   * The id of the model to use at serving time.
+   * The id of the model in the same
+   * [Catalog][google.cloud.retail.v2alpha.Catalog] to use at serving time.
    * Currently only RecommendationModels are supported:
    * https://cloud.google.com/retail/recommendations-ai/docs/create-models
    * Can be changed but only to a compatible model (e.g.
@@ -132,12 +134,12 @@ public interface ServingConfigOrBuilder
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
-   * * 'no-price-reranking'
-   * * 'low-price-raranking'
-   * * 'medium-price-reranking'
-   * * 'high-price-reranking'
+   * * `no-price-reranking`
+   * * `low-price-raranking`
+   * * `medium-price-reranking`
+   * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
-   * 'no-price-reranking'.
+   * `no-price-reranking`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
@@ -159,12 +161,12 @@ public interface ServingConfigOrBuilder
    * highest-priced items first. This setting could result in a decrease in
    * click-through and conversion rates.
    *  Allowed values are:
-   * * 'no-price-reranking'
-   * * 'low-price-raranking'
-   * * 'medium-price-reranking'
-   * * 'high-price-reranking'
+   * * `no-price-reranking`
+   * * `low-price-raranking`
+   * * `medium-price-reranking`
+   * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
-   * 'no-price-reranking'.
+   * `no-price-reranking`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
@@ -991,14 +993,14 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * How much diversity to use in recommendation model results e.g.
-   * 'medium-diversity' or 'high-diversity'. Currently supported values:
-   * * 'no-diversity'
-   * * 'low-diversity'
-   * * 'medium-diversity'
-   * * 'high-diversity'
-   * * 'auto-diversity'
+   * `medium-diversity` or `high-diversity`. Currently supported values:
+   * * `no-diversity`
+   * * `low-diversity`
+   * * `medium-diversity`
+   * * `high-diversity`
+   * * `auto-diversity`
    * If not specified, we choose default based on recommendation model
-   * type. Default value: 'no-diversity'.
+   * type. Default value: `no-diversity`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
@@ -1015,14 +1017,14 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * How much diversity to use in recommendation model results e.g.
-   * 'medium-diversity' or 'high-diversity'. Currently supported values:
-   * * 'no-diversity'
-   * * 'low-diversity'
-   * * 'medium-diversity'
-   * * 'high-diversity'
-   * * 'auto-diversity'
+   * `medium-diversity` or `high-diversity`. Currently supported values:
+   * * `no-diversity`
+   * * `low-diversity`
+   * * `medium-diversity`
+   * * `high-diversity`
+   * * `auto-diversity`
    * If not specified, we choose default based on recommendation model
-   * type. Default value: 'no-diversity'.
+   * type. Default value: `no-diversity`.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
    * is
@@ -1039,12 +1041,37 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
-   * Whether to add additional category filters on the 'similar-items' model.
+   * What kind of diversity to use - data driven or rule based.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
+   *
+   * @return The enum numeric value on the wire for diversityType.
+   */
+  int getDiversityTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * What kind of diversity to use - data driven or rule based.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
+   *
+   * @return The diversityType.
+   */
+  com.google.cloud.retail.v2alpha.ServingConfig.DiversityType getDiversityType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
-   * * 'no-category-match': No additional filtering of original results from
+   * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
-   * * 'relaxed-category-match': Only keep results with categories that match
+   * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
@@ -1063,12 +1090,12 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
-   * Whether to add additional category filters on the 'similar-items' model.
+   * Whether to add additional category filters on the `similar-items` model.
    * If not specified, we enable it by default.
    *  Allowed values are:
-   * * 'no-category-match': No additional filtering of original results from
+   * * `no-category-match`: No additional filtering of original results from
    *   the model and the customer's filters.
-   * * 'relaxed-category-match': Only keep results with categories that match
+   * * `relaxed-category-match`: Only keep results with categories that match
    *   at least one item categories in the PredictRequests's context item.
    *   * If customer also sends filters in the PredictRequest, then the results
    *   will satisfy both conditions (user given and category match).
@@ -1083,6 +1110,81 @@ public interface ServingConfigOrBuilder
    * @return The bytes for enableCategoryFilterLevel.
    */
   com.google.protobuf.ByteString getEnableCategoryFilterLevelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   * Can only be set if
+   * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
+   * is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2alpha.SearchRequest.personalization_spec]
+   * are set.
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2alpha.SearchRequest.personalization_spec]
+   * will override
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec personalization_spec = 21;
+   * </code>
+   *
+   * @return Whether the personalizationSpec field is set.
+   */
+  boolean hasPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   * Can only be set if
+   * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
+   * is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2alpha.SearchRequest.personalization_spec]
+   * are set.
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2alpha.SearchRequest.personalization_spec]
+   * will override
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec personalization_spec = 21;
+   * </code>
+   *
+   * @return The personalizationSpec.
+   */
+  com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec getPersonalizationSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The specification for personalization spec.
+   * Can only be set if
+   * [solution_types][google.cloud.retail.v2alpha.ServingConfig.solution_types]
+   * is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.retail.v2main.SolutionType.SOLUTION_TYPE_SEARCH].
+   * Notice that if both
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec]
+   * and
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2alpha.SearchRequest.personalization_spec]
+   * are set.
+   * [SearchRequest.personalization_spec][google.cloud.retail.v2alpha.SearchRequest.personalization_spec]
+   * will override
+   * [ServingConfig.personalization_spec][google.cloud.retail.v2alpha.ServingConfig.personalization_spec].
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec personalization_spec = 21;
+   * </code>
+   */
+  com.google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpecOrBuilder
+      getPersonalizationSpecOrBuilder();
 
   /**
    *

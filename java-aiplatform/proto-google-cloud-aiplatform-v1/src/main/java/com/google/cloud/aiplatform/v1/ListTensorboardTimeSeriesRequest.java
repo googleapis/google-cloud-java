@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries].
+ * Request message for
+ * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest}
@@ -77,8 +78,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-   * Format:
+   * Required. The resource name of the TensorboardRun to list
+   * TensorboardTimeSeries. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * </pre>
    *
@@ -104,8 +105,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-   * Format:
+   * Required. The resource name of the TensorboardRun to list
+   * TensorboardTimeSeries. Format:
    * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * </pre>
    *
@@ -185,8 +186,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    * <pre>
    * The maximum number of TensorboardTimeSeries to return. The service may
    * return fewer than this value. If unspecified, at most 50
-   * TensorboardTimeSeries will be returned. The maximum value is 1000; values
-   * above 1000 will be coerced to 1000.
+   * TensorboardTimeSeries are returned. The maximum value is 1000; values
+   * above 1000 are coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -205,11 +206,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    *
    * <pre>
    * A page token, received from a previous
-   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-   * Provide this to retrieve the subsequent page.
+   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-   * match the call that provided the page token.
+   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -233,11 +234,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    *
    * <pre>
    * A page token, received from a previous
-   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-   * Provide this to retrieve the subsequent page.
+   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-   * match the call that provided the page token.
+   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -566,7 +567,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request message for [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries].
+   * Request message for
+   * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest}
@@ -812,8 +814,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-     * Format:
+     * Required. The resource name of the TensorboardRun to list
+     * TensorboardTimeSeries. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
@@ -838,8 +840,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-     * Format:
+     * Required. The resource name of the TensorboardRun to list
+     * TensorboardTimeSeries. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
@@ -864,8 +866,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-     * Format:
+     * Required. The resource name of the TensorboardRun to list
+     * TensorboardTimeSeries. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
@@ -889,8 +891,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-     * Format:
+     * Required. The resource name of the TensorboardRun to list
+     * TensorboardTimeSeries. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
@@ -910,8 +912,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
-     * Format:
+     * Required. The resource name of the TensorboardRun to list
+     * TensorboardTimeSeries. Format:
      * `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
      * </pre>
      *
@@ -1046,8 +1048,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * The maximum number of TensorboardTimeSeries to return. The service may
      * return fewer than this value. If unspecified, at most 50
-     * TensorboardTimeSeries will be returned. The maximum value is 1000; values
-     * above 1000 will be coerced to 1000.
+     * TensorboardTimeSeries are returned. The maximum value is 1000; values
+     * above 1000 are coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1064,8 +1066,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * The maximum number of TensorboardTimeSeries to return. The service may
      * return fewer than this value. If unspecified, at most 50
-     * TensorboardTimeSeries will be returned. The maximum value is 1000; values
-     * above 1000 will be coerced to 1000.
+     * TensorboardTimeSeries are returned. The maximum value is 1000; values
+     * above 1000 are coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1085,8 +1087,8 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      * <pre>
      * The maximum number of TensorboardTimeSeries to return. The service may
      * return fewer than this value. If unspecified, at most 50
-     * TensorboardTimeSeries will be returned. The maximum value is 1000; values
-     * above 1000 will be coerced to 1000.
+     * TensorboardTimeSeries are returned. The maximum value is 1000; values
+     * above 1000 are coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1106,11 +1108,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-     * Provide this to retrieve the subsequent page.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-     * match the call that provided the page token.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1133,11 +1135,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-     * Provide this to retrieve the subsequent page.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-     * match the call that provided the page token.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1160,11 +1162,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-     * Provide this to retrieve the subsequent page.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-     * match the call that provided the page token.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1186,11 +1188,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-     * Provide this to retrieve the subsequent page.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-     * match the call that provided the page token.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1208,11 +1210,11 @@ public final class ListTensorboardTimeSeriesRequest extends com.google.protobuf.
      *
      * <pre>
      * A page token, received from a previous
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] call.
-     * Provide this to retrieve the subsequent page.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries] must
-     * match the call that provided the page token.
+     * [TensorboardService.ListTensorboardTimeSeries][google.cloud.aiplatform.v1.TensorboardService.ListTensorboardTimeSeries]
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 4;</code>

@@ -75,7 +75,10 @@ import javax.annotation.Generated;
  * vizierServiceSettingsBuilder
  *     .createStudySettings()
  *     .setRetrySettings(
- *         vizierServiceSettingsBuilder.createStudySettings().getRetrySettings().toBuilder()
+ *         vizierServiceSettingsBuilder
+ *             .createStudySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VizierServiceSettings vizierServiceSettings = vizierServiceSettingsBuilder.build();

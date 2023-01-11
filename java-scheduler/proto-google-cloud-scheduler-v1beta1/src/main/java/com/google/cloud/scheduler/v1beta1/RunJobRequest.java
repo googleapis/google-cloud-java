@@ -123,6 +123,26 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LEGACY_APP_ENGINE_CRON_FIELD_NUMBER = 2;
+  private boolean legacyAppEngineCron_;
+  /**
+   *
+   *
+   * <pre>
+   * This field is used to manage the legacy App Engine Cron jobs using the
+   * Cloud Scheduler API. If the field is set to true, the job in the __cron
+   * queue with the corresponding name will be forced to run instead.
+   * </pre>
+   *
+   * <code>bool legacy_app_engine_cron = 2;</code>
+   *
+   * @return The legacyAppEngineCron.
+   */
+  @java.lang.Override
+  public boolean getLegacyAppEngineCron() {
+    return legacyAppEngineCron_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +160,9 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (legacyAppEngineCron_ != false) {
+      output.writeBool(2, legacyAppEngineCron_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +174,9 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (legacyAppEngineCron_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, legacyAppEngineCron_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +195,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.scheduler.v1beta1.RunJobRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getLegacyAppEngineCron() != other.getLegacyAppEngineCron()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +209,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + LEGACY_APP_ENGINE_CRON_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLegacyAppEngineCron());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -323,6 +352,8 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
+      legacyAppEngineCron_ = false;
+
       return this;
     }
 
@@ -351,6 +382,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.scheduler.v1beta1.RunJobRequest result =
           new com.google.cloud.scheduler.v1beta1.RunJobRequest(this);
       result.name_ = name_;
+      result.legacyAppEngineCron_ = legacyAppEngineCron_;
       onBuilt();
       return result;
     }
@@ -405,6 +437,9 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
+      if (other.getLegacyAppEngineCron() != false) {
+        setLegacyAppEngineCron(other.getLegacyAppEngineCron());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -437,6 +472,12 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 10
+            case 16:
+              {
+                legacyAppEngineCron_ = input.readBool();
+
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -571,6 +612,64 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean legacyAppEngineCron_;
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to manage the legacy App Engine Cron jobs using the
+     * Cloud Scheduler API. If the field is set to true, the job in the __cron
+     * queue with the corresponding name will be forced to run instead.
+     * </pre>
+     *
+     * <code>bool legacy_app_engine_cron = 2;</code>
+     *
+     * @return The legacyAppEngineCron.
+     */
+    @java.lang.Override
+    public boolean getLegacyAppEngineCron() {
+      return legacyAppEngineCron_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to manage the legacy App Engine Cron jobs using the
+     * Cloud Scheduler API. If the field is set to true, the job in the __cron
+     * queue with the corresponding name will be forced to run instead.
+     * </pre>
+     *
+     * <code>bool legacy_app_engine_cron = 2;</code>
+     *
+     * @param value The legacyAppEngineCron to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLegacyAppEngineCron(boolean value) {
+
+      legacyAppEngineCron_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used to manage the legacy App Engine Cron jobs using the
+     * Cloud Scheduler API. If the field is set to true, the job in the __cron
+     * queue with the corresponding name will be forced to run instead.
+     * </pre>
+     *
+     * <code>bool legacy_app_engine_cron = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLegacyAppEngineCron() {
+
+      legacyAppEngineCron_ = false;
       onChanged();
       return this;
     }

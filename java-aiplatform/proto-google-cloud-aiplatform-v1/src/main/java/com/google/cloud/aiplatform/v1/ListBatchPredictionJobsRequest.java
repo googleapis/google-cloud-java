@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
+ * Request message for
+ * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest}
@@ -232,8 +233,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-   * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+   * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+   * of the previous
+   * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -258,8 +261,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-   * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+   * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+   * of the previous
+   * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -530,7 +535,8 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
+   * Request message for
+   * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListBatchPredictionJobsRequest}
@@ -1123,8 +1129,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+     * of the previous
+     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1148,8 +1156,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+     * of the previous
+     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1173,8 +1183,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+     * of the previous
+     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1197,8 +1209,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+     * of the previous
+     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1217,8 +1231,10 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token] of the previous
-     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs] call.
+     * [ListBatchPredictionJobsResponse.next_page_token][google.cloud.aiplatform.v1.ListBatchPredictionJobsResponse.next_page_token]
+     * of the previous
+     * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1.JobService.ListBatchPredictionJobs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 4;</code>

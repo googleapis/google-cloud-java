@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
+ * Runtime operation information for
+ * [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata}
@@ -283,7 +284,8 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Runtime operation information for [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
+   * Runtime operation information for
+   * [DatasetService.ImportData][google.cloud.aiplatform.v1beta1.DatasetService.ImportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata}

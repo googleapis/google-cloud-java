@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * apiGatewayServiceSettingsBuilder
  *     .getGatewaySettings()
  *     .setRetrySettings(
- *         apiGatewayServiceSettingsBuilder.getGatewaySettings().getRetrySettings().toBuilder()
+ *         apiGatewayServiceSettingsBuilder
+ *             .getGatewaySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ApiGatewayServiceSettings apiGatewayServiceSettings = apiGatewayServiceSettingsBuilder.build();

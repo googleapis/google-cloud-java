@@ -82,12 +82,13 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "connectionId", request.getConnectionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connection", request.getConnection(), false))
+                                  .toBody("connection", request.getConnection(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConnectionProto.Connection>newBuilder()
@@ -121,6 +122,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ConnectionProto.GetConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -160,6 +162,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -198,12 +201,13 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             ProtoRestSerializer<ConnectionProto.UpdateConnectionRequest>
                                 serializer = ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("connection", request.getConnection(), false))
+                                  .toBody("connection", request.getConnection(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ConnectionProto.Connection>newBuilder()
@@ -236,12 +240,13 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ConnectionProto.UpdateConnectionCredentialRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("credential", request.getCredential(), false))
+                                  .toBody("credential", request.getCredential(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -273,6 +278,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ConnectionProto.DeleteConnectionRequest>
                                 serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -307,12 +313,13 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -344,12 +351,13 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -381,12 +389,13 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

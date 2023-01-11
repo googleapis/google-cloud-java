@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * projectsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         projectsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         projectsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProjectsSettings projectsSettings = projectsSettingsBuilder.build();

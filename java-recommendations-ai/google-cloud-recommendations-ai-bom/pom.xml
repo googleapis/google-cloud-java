@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommendations-ai-bom</artifactId>
-  <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+  <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
 
@@ -23,17 +23,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recommendations-ai</artifactId>
-        <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
+        <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommendations-ai:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recommendations-ai-v1beta1</artifactId>
-        <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommendations-ai-v1beta1:current} -->
+        <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recommendations-ai-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recommendations-ai-v1beta1</artifactId>
-        <version>0.14.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
+        <version>0.15.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recommendations-ai-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

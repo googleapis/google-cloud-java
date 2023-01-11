@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [FeaturestoreOnlineServingService.WriteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.WriteFeatureValues].
+ * Response message for
+ * [FeaturestoreOnlineServingService.WriteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.WriteFeatureValues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse}
@@ -220,7 +221,8 @@ public final class WriteFeatureValuesResponse extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Response message for [FeaturestoreOnlineServingService.WriteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.WriteFeatureValues].
+   * Response message for
+   * [FeaturestoreOnlineServingService.WriteFeatureValues][google.cloud.aiplatform.v1beta1.FeaturestoreOnlineServingService.WriteFeatureValues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse}

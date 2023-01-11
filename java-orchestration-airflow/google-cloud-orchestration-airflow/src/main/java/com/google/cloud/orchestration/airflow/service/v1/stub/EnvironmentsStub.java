@@ -27,7 +27,11 @@ import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -93,6 +97,24 @@ public abstract class EnvironmentsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEnvironmentCallable()");
+  }
+
+  public OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: saveSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: saveSnapshotCallable()");
+  }
+
+  public OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: loadSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: loadSnapshotCallable()");
   }
 
   @Override

@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bigquery-data-exchange-v1beta1</artifactId>
-  <version>2.2.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquery-data-exchange-v1beta1:current} -->
+  <version>2.3.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquery-data-exchange-v1beta1:current} -->
   <name>grpc-google-cloud-bigquery-data-exchange-v1beta1</name>
   <description>GRPC library for google-cloud-bigquery-data-exchange</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-data-exchange-parent</artifactId>
-    <version>2.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+    <version>2.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
   </parent>
   <dependencies>
     <dependency>

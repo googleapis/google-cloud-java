@@ -92,8 +92,9 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    *
    * <pre>
    * A token, which can be sent as
-   * [ListTensorboardTimeSeriesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest.page_token] to retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * [ListTensorboardTimeSeriesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -106,8 +107,9 @@ public interface ListTensorboardTimeSeriesResponseOrBuilder
    *
    * <pre>
    * A token, which can be sent as
-   * [ListTensorboardTimeSeriesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest.page_token] to retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * [ListTensorboardTimeSeriesRequest.page_token][google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest.page_token]
+   * to retrieve the next page. If this field is omitted, there are no
+   * subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

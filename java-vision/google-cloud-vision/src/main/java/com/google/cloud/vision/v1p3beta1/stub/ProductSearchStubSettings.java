@@ -116,7 +116,10 @@ import org.threeten.bp.Duration;
  * productSearchSettingsBuilder
  *     .createProductSetSettings()
  *     .setRetrySettings(
- *         productSearchSettingsBuilder.createProductSetSettings().getRetrySettings().toBuilder()
+ *         productSearchSettingsBuilder
+ *             .createProductSetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ProductSearchStubSettings productSearchSettings = productSearchSettingsBuilder.build();

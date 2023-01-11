@@ -23,6 +23,10 @@ package com.google.maps.routing.v2;
  *
  * <pre>
  * A set of values used to specify the mode of travel.
+ * NOTE: WALK, BICYCLE, and TWO_WHEELER routes are in beta and might sometimes
+ * be missing clear sidewalks, pedestrian paths, or bicycling paths.
+ * You must display this warning to the user for all walking, bicycling, and
+ * two-wheel routes that you display in your app.
  * </pre>
  *
  * Protobuf enum {@code google.maps.routing.v2.RouteTravelMode}

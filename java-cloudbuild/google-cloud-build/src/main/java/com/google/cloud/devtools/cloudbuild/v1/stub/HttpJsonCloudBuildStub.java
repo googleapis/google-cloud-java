@@ -119,12 +119,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateBuildRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("build", request.getBuild(), false))
+                                  .toBody("build", request.getBuild(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -160,6 +161,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetBuildRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -198,6 +200,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -233,6 +236,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<CancelBuildRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
@@ -246,7 +250,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                                       .clearName()
                                       .clearProjectId()
                                       .build(),
-                                  false))
+                                  true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Build>newBuilder()
@@ -280,6 +284,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RetryBuildRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -293,7 +298,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                                           .clearName()
                                           .clearProjectId()
                                           .build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -328,12 +333,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ApproveBuildRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), false))
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -369,12 +375,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateBuildTriggerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("trigger", request.getTrigger(), false))
+                                  .toBody("trigger", request.getTrigger(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BuildTrigger>newBuilder()
@@ -408,6 +415,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetBuildTriggerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -445,6 +453,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -481,6 +490,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteBuildTriggerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -521,12 +531,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateBuildTriggerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("trigger", request.getTrigger(), false))
+                                  .toBody("trigger", request.getTrigger(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<BuildTrigger>newBuilder()
@@ -560,12 +571,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RunBuildTriggerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("source", request.getSource(), false))
+                                  .toBody("source", request.getSource(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -605,11 +617,12 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             ProtoRestSerializer<ReceiveTriggerWebhookRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "secret", request.getSecret());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
-                              ProtoRestSerializer.create().toBody("body", request.getBody(), false))
+                              ProtoRestSerializer.create().toBody("body", request.getBody(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<ReceiveTriggerWebhookResponse>newBuilder()
@@ -644,12 +657,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                                 fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(
                                 fields, "workerPoolId", request.getWorkerPoolId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workerPool", request.getWorkerPool(), false))
+                                  .toBody("workerPool", request.getWorkerPool(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -683,6 +697,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetWorkerPoolRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -721,6 +736,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             serializer.putQueryParam(fields, "etag", request.getEtag());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -761,12 +777,13 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("workerPool", request.getWorkerPool(), false))
+                                  .toBody("workerPool", request.getWorkerPool(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -802,6 +819,7 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

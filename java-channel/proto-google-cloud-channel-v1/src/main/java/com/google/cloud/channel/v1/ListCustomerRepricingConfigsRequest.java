@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
+ * Request message for
+ * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListCustomerRepricingConfigsRequest}
@@ -136,9 +137,9 @@ public final class ListCustomerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Optional. The maximum number of repricing configs to return. The service may return
-   * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-   * maximum value is 100; values above 100 will be coerced to 100.
+   * Optional. The maximum number of repricing configs to return. The service
+   * may return fewer than this value. If unspecified, returns a maximum of 50
+   * rules. The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -158,8 +159,10 @@ public final class ListCustomerRepricingConfigsRequest
    * <pre>
    * Optional. A token identifying a page of results beyond the first page.
    * Obtained through
-   * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-   * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+   * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -184,8 +187,10 @@ public final class ListCustomerRepricingConfigsRequest
    * <pre>
    * Optional. A token identifying a page of results beyond the first page.
    * Obtained through
-   * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-   * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+   * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+   * of the previous
+   * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -455,7 +460,8 @@ public final class ListCustomerRepricingConfigsRequest
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
+   * Request message for
+   * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListCustomerRepricingConfigsRequest}
@@ -799,9 +805,9 @@ public final class ListCustomerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of repricing configs to return. The service may return
-     * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-     * maximum value is 100; values above 100 will be coerced to 100.
+     * Optional. The maximum number of repricing configs to return. The service
+     * may return fewer than this value. If unspecified, returns a maximum of 50
+     * rules. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -816,9 +822,9 @@ public final class ListCustomerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of repricing configs to return. The service may return
-     * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-     * maximum value is 100; values above 100 will be coerced to 100.
+     * Optional. The maximum number of repricing configs to return. The service
+     * may return fewer than this value. If unspecified, returns a maximum of 50
+     * rules. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -836,9 +842,9 @@ public final class ListCustomerRepricingConfigsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of repricing configs to return. The service may return
-     * fewer than this value. If unspecified, returns a maximum of 50 rules. The
-     * maximum value is 100; values above 100 will be coerced to 100.
+     * Optional. The maximum number of repricing configs to return. The service
+     * may return fewer than this value. If unspecified, returns a maximum of 50
+     * rules. The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -859,8 +865,10 @@ public final class ListCustomerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -884,8 +892,10 @@ public final class ListCustomerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -909,8 +919,10 @@ public final class ListCustomerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -933,8 +945,10 @@ public final class ListCustomerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -953,8 +967,10 @@ public final class ListCustomerRepricingConfigsRequest
      * <pre>
      * Optional. A token identifying a page of results beyond the first page.
      * Obtained through
-     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token] of the previous
-     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs] call.
+     * [ListCustomerRepricingConfigsResponse.next_page_token][google.cloud.channel.v1.ListCustomerRepricingConfigsResponse.next_page_token]
+     * of the previous
+     * [CloudChannelService.ListCustomerRepricingConfigs][google.cloud.channel.v1.CloudChannelService.ListCustomerRepricingConfigs]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

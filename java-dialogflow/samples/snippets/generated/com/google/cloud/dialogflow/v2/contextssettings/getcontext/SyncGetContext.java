@@ -36,7 +36,10 @@ public class SyncGetContext {
     contextsSettingsBuilder
         .getContextSettings()
         .setRetrySettings(
-            contextsSettingsBuilder.getContextSettings().getRetrySettings().toBuilder()
+            contextsSettingsBuilder
+                .getContextSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ContextsSettings contextsSettings = contextsSettingsBuilder.build();

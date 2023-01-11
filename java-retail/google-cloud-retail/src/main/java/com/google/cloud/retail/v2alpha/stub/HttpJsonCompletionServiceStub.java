@@ -86,11 +86,16 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             serializer.putQueryParam(fields, "dataset", request.getDataset());
                             serializer.putQueryParam(fields, "deviceType", request.getDeviceType());
                             serializer.putQueryParam(
+                                fields,
+                                "enableAttributeSuggestions",
+                                request.getEnableAttributeSuggestions());
+                            serializer.putQueryParam(
                                 fields, "languageCodes", request.getLanguageCodesList());
                             serializer.putQueryParam(
                                 fields, "maxSuggestions", request.getMaxSuggestions());
                             serializer.putQueryParam(fields, "query", request.getQuery());
                             serializer.putQueryParam(fields, "visitorId", request.getVisitorId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -125,12 +130,13 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ImportCompletionDataRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearParent().build(), false))
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.MutateDeployedIndex].
+ * Request message for
+ * [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.MutateDeployedIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.MutateDeployedIndexRequest}
@@ -73,8 +74,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource into which to deploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -100,8 +101,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-   * Format:
+   * Required. The name of the IndexEndpoint resource into which to deploy an
+   * Index. Format:
    * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
    * </pre>
    *
@@ -362,7 +363,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.MutateDeployedIndex].
+   * Request message for
+   * [IndexEndpointService.MutateDeployedIndex][google.cloud.aiplatform.v1beta1.IndexEndpointService.MutateDeployedIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.MutateDeployedIndexRequest}
@@ -556,8 +558,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -582,8 +584,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -608,8 +610,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -633,8 +635,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *
@@ -654,8 +656,8 @@ public final class MutateDeployedIndexRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The name of the IndexEndpoint resource into which to deploy an Index.
-     * Format:
+     * Required. The name of the IndexEndpoint resource into which to deploy an
+     * Index. Format:
      * `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
      * </pre>
      *

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Response message for [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
+ * Response message for
+ * [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListSavedQueriesResponse}
@@ -361,7 +362,8 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
+   * Response message for
+   * [DatasetService.ListSavedQueries][google.cloud.aiplatform.v1.DatasetService.ListSavedQueries].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListSavedQueriesResponse}

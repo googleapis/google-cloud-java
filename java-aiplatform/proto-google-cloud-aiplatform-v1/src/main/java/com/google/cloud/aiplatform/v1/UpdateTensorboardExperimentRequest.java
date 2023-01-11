@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [TensorboardService.UpdateTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.UpdateTensorboardExperiment].
+ * Request message for
+ * [TensorboardService.UpdateTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.UpdateTensorboardExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest}
@@ -75,8 +76,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
    * Required. Field mask is used to specify the fields to be overwritten in the
    * TensorboardExperiment resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
-   * the full request. A field will be overwritten if it is in the mask. If the
-   * user does not provide a mask then all fields will be overwritten if new
+   * the full request. A field is overwritten if it's in the mask. If the
+   * user does not provide a mask then all fields are overwritten if new
    * values are specified.
    * </pre>
    *
@@ -96,8 +97,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
    * Required. Field mask is used to specify the fields to be overwritten in the
    * TensorboardExperiment resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
-   * the full request. A field will be overwritten if it is in the mask. If the
-   * user does not provide a mask then all fields will be overwritten if new
+   * the full request. A field is overwritten if it's in the mask. If the
+   * user does not provide a mask then all fields are overwritten if new
    * values are specified.
    * </pre>
    *
@@ -117,8 +118,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
    * Required. Field mask is used to specify the fields to be overwritten in the
    * TensorboardExperiment resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
-   * the full request. A field will be overwritten if it is in the mask. If the
-   * user does not provide a mask then all fields will be overwritten if new
+   * the full request. A field is overwritten if it's in the mask. If the
+   * user does not provide a mask then all fields are overwritten if new
    * values are specified.
    * </pre>
    *
@@ -376,7 +377,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Request message for [TensorboardService.UpdateTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.UpdateTensorboardExperiment].
+   * Request message for
+   * [TensorboardService.UpdateTensorboardExperiment][google.cloud.aiplatform.v1.TensorboardService.UpdateTensorboardExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest}
@@ -588,8 +590,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -608,8 +610,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -634,8 +636,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -662,8 +664,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -687,8 +689,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -717,8 +719,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -743,8 +745,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -763,8 +765,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *
@@ -787,8 +789,8 @@ public final class UpdateTensorboardExperimentRequest extends com.google.protobu
      * Required. Field mask is used to specify the fields to be overwritten in the
      * TensorboardExperiment resource by the update.
      * The fields specified in the update_mask are relative to the resource, not
-     * the full request. A field will be overwritten if it is in the mask. If the
-     * user does not provide a mask then all fields will be overwritten if new
+     * the full request. A field is overwritten if it's in the mask. If the
+     * user does not provide a mask then all fields are overwritten if new
      * values are specified.
      * </pre>
      *

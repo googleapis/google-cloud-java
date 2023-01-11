@@ -36,7 +36,10 @@ public class SyncGetWorkflow {
     workflowsSettingsBuilder
         .getWorkflowSettings()
         .setRetrySettings(
-            workflowsSettingsBuilder.getWorkflowSettings().getRetrySettings().toBuilder()
+            workflowsSettingsBuilder
+                .getWorkflowSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     WorkflowsSettings workflowsSettings = workflowsSettingsBuilder.build();

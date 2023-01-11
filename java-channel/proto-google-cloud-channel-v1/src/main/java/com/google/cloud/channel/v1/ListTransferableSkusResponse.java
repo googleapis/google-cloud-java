@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus].
+ * Response message for
+ * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListTransferableSkusResponse}
@@ -145,8 +146,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-   * that page.
+   * Pass to
+   * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -170,8 +172,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-   * that page.
+   * Pass to
+   * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -366,7 +369,8 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus].
+   * Response message for
+   * [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListTransferableSkusResponse}
@@ -957,8 +961,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -981,8 +986,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1005,8 +1011,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1028,8 +1035,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1047,8 +1055,9 @@ public final class ListTransferableSkusResponse extends com.google.protobuf.Gene
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token] to obtain
-     * that page.
+     * Pass to
+     * [ListTransferableSkusRequest.page_token][google.cloud.channel.v1.ListTransferableSkusRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

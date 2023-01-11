@@ -17,6 +17,7 @@
 package com.google.cloud.scheduler.v1beta1;
 
 import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListJobsPagedResponse;
+import static com.google.cloud.scheduler.v1beta1.CloudSchedulerClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -30,6 +31,10 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.scheduler.v1beta1.stub.CloudSchedulerStubSettings;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -65,7 +70,10 @@ import javax.annotation.Generated;
  * cloudSchedulerSettingsBuilder
  *     .getJobSettings()
  *     .setRetrySettings(
- *         cloudSchedulerSettingsBuilder.getJobSettings().getRetrySettings().toBuilder()
+ *         cloudSchedulerSettingsBuilder
+ *             .getJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudSchedulerSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
@@ -114,6 +122,17 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
   /** Returns the object with the settings used for calls to runJob. */
   public UnaryCallSettings<RunJobRequest, Job> runJobSettings() {
     return ((CloudSchedulerStubSettings) getStubSettings()).runJobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((CloudSchedulerStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((CloudSchedulerStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final CloudSchedulerSettings create(CloudSchedulerStubSettings stub)
@@ -270,6 +289,18 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
     /** Returns the builder for the settings used for calls to runJob. */
     public UnaryCallSettings.Builder<RunJobRequest, Job> runJobSettings() {
       return getStubSettingsBuilder().runJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

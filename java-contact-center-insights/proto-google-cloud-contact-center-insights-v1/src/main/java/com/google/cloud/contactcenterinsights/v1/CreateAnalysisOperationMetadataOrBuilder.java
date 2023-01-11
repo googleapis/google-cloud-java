@@ -127,4 +127,46 @@ public interface CreateAnalysisOperationMetadataOrBuilder
    * @return The bytes for conversation.
    */
   com.google.protobuf.ByteString getConversationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The annotator selector used for the analysis (if any).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the annotatorSelector field is set.
+   */
+  boolean hasAnnotatorSelector();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The annotator selector used for the analysis (if any).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The annotatorSelector.
+   */
+  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The annotator selector used for the analysis (if any).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector annotator_selector = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
+      getAnnotatorSelectorOrBuilder();
 }

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs]
+ * Response message for
+ * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse}
@@ -145,7 +146,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -169,7 +172,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -364,7 +369,8 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Response message for [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs]
+   * Response message for
+   * [PipelineService.ListPipelineJobs][google.cloud.aiplatform.v1beta1.PipelineService.ListPipelineJobs]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse}
@@ -955,7 +961,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -978,7 +986,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1001,7 +1011,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1023,7 +1035,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1041,7 +1055,9 @@ public final class ListPipelineJobsResponse extends com.google.protobuf.Generate
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListPipelineJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

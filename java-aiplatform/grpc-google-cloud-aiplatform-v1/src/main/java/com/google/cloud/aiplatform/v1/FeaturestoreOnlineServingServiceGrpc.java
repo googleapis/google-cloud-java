@@ -141,6 +141,58 @@ public final class FeaturestoreOnlineServingServiceGrpc {
     return getStreamingReadFeatureValuesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest,
+          com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+      getWriteFeatureValuesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "WriteFeatureValues",
+      requestType = com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest,
+          com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+      getWriteFeatureValuesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest,
+            com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+        getWriteFeatureValuesMethod;
+    if ((getWriteFeatureValuesMethod =
+            FeaturestoreOnlineServingServiceGrpc.getWriteFeatureValuesMethod)
+        == null) {
+      synchronized (FeaturestoreOnlineServingServiceGrpc.class) {
+        if ((getWriteFeatureValuesMethod =
+                FeaturestoreOnlineServingServiceGrpc.getWriteFeatureValuesMethod)
+            == null) {
+          FeaturestoreOnlineServingServiceGrpc.getWriteFeatureValuesMethod =
+              getWriteFeatureValuesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest,
+                          com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "WriteFeatureValues"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeaturestoreOnlineServingServiceMethodDescriptorSupplier(
+                              "WriteFeatureValues"))
+                      .build();
+        }
+      }
+    }
+    return getWriteFeatureValuesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FeaturestoreOnlineServingServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FeaturestoreOnlineServingServiceStub> factory =
@@ -227,6 +279,24 @@ public final class FeaturestoreOnlineServingServiceGrpc {
           getStreamingReadFeatureValuesMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Writes Feature values of one or more entities of an EntityType.
+     * The Feature values are merged into existing entities if any. The Feature
+     * values to be written must have timestamp within the online storage
+     * retention.
+     * </pre>
+     */
+    public void writeFeatureValues(
+        com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getWriteFeatureValuesMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -244,6 +314,13 @@ public final class FeaturestoreOnlineServingServiceGrpc {
                       com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest,
                       com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse>(
                       this, METHODID_STREAMING_READ_FEATURE_VALUES)))
+          .addMethod(
+              getWriteFeatureValuesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest,
+                      com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>(
+                      this, METHODID_WRITE_FEATURE_VALUES)))
           .build();
     }
   }
@@ -305,6 +382,26 @@ public final class FeaturestoreOnlineServingServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes Feature values of one or more entities of an EntityType.
+     * The Feature values are merged into existing entities if any. The Feature
+     * values to be written must have timestamp within the online storage
+     * retention.
+     * </pre>
+     */
+    public void writeFeatureValues(
+        com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getWriteFeatureValuesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -357,6 +454,22 @@ public final class FeaturestoreOnlineServingServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamingReadFeatureValuesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes Feature values of one or more entities of an EntityType.
+     * The Feature values are merged into existing entities if any. The Feature
+     * values to be written must have timestamp within the online storage
+     * retention.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse writeFeatureValues(
+        com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteFeatureValuesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -394,10 +507,28 @@ public final class FeaturestoreOnlineServingServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReadFeatureValuesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes Feature values of one or more entities of an EntityType.
+     * The Feature values are merged into existing entities if any. The Feature
+     * values to be written must have timestamp within the online storage
+     * retention.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>
+        writeFeatureValues(com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getWriteFeatureValuesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_READ_FEATURE_VALUES = 0;
   private static final int METHODID_STREAMING_READ_FEATURE_VALUES = 1;
+  private static final int METHODID_WRITE_FEATURE_VALUES = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -428,6 +559,13 @@ public final class FeaturestoreOnlineServingServiceGrpc {
               (com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_WRITE_FEATURE_VALUES:
+          serviceImpl.writeFeatureValues(
+              (com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse>)
                   responseObserver);
           break;
         default:
@@ -497,6 +635,7 @@ public final class FeaturestoreOnlineServingServiceGrpc {
                           new FeaturestoreOnlineServingServiceFileDescriptorSupplier())
                       .addMethod(getReadFeatureValuesMethod())
                       .addMethod(getStreamingReadFeatureValuesMethod())
+                      .addMethod(getWriteFeatureValuesMethod())
                       .build();
         }
       }

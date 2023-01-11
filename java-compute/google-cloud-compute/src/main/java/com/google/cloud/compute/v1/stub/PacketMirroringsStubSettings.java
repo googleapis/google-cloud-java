@@ -97,7 +97,10 @@ import org.threeten.bp.Duration;
  * packetMirroringsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         packetMirroringsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         packetMirroringsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PacketMirroringsStubSettings packetMirroringsSettings = packetMirroringsSettingsBuilder.build();

@@ -291,6 +291,74 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     return getOutputError();
   }
 
+  public static final int SPEECH_ADAPTATION_INFO_FIELD_NUMBER = 8;
+  private com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speechAdaptationInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on speech adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+   *
+   * @return Whether the speechAdaptationInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeechAdaptationInfo() {
+    return speechAdaptationInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on speech adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+   *
+   * @return The speechAdaptationInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo getSpeechAdaptationInfo() {
+    return speechAdaptationInfo_ == null
+        ? com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.getDefaultInstance()
+        : speechAdaptationInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Provides information on speech adaptation behavior in response
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder
+      getSpeechAdaptationInfoOrBuilder() {
+    return getSpeechAdaptationInfo();
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 9;
+  private long requestId_;
+  /**
+   *
+   *
+   * <pre>
+   * The ID associated with the request. This is a unique ID specific only to
+   * the given request.
+   * </pre>
+   *
+   * <code>int64 request_id = 9;</code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public long getRequestId() {
+    return requestId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -317,6 +385,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     if (outputError_ != null) {
       output.writeMessage(7, getOutputError());
     }
+    if (speechAdaptationInfo_ != null) {
+      output.writeMessage(8, getSpeechAdaptationInfo());
+    }
+    if (requestId_ != 0L) {
+      output.writeInt64(9, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -337,6 +411,13 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     }
     if (outputError_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getOutputError());
+    }
+    if (speechAdaptationInfo_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSpeechAdaptationInfo());
+    }
+    if (requestId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -367,6 +448,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     if (hasOutputError()) {
       if (!getOutputError().equals(other.getOutputError())) return false;
     }
+    if (hasSpeechAdaptationInfo() != other.hasSpeechAdaptationInfo()) return false;
+    if (hasSpeechAdaptationInfo()) {
+      if (!getSpeechAdaptationInfo().equals(other.getSpeechAdaptationInfo())) return false;
+    }
+    if (getRequestId() != other.getRequestId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -394,6 +480,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
       hash = (37 * hash) + OUTPUT_ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getOutputError().hashCode();
     }
+    if (hasSpeechAdaptationInfo()) {
+      hash = (37 * hash) + SPEECH_ADAPTATION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechAdaptationInfo().hashCode();
+    }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRequestId());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -562,6 +654,14 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         outputError_ = null;
         outputErrorBuilder_ = null;
       }
+      if (speechAdaptationInfoBuilder_ == null) {
+        speechAdaptationInfo_ = null;
+      } else {
+        speechAdaptationInfo_ = null;
+        speechAdaptationInfoBuilder_ = null;
+      }
+      requestId_ = 0L;
+
       return this;
     }
 
@@ -615,6 +715,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
       } else {
         result.outputError_ = outputErrorBuilder_.build();
       }
+      if (speechAdaptationInfoBuilder_ == null) {
+        result.speechAdaptationInfo_ = speechAdaptationInfo_;
+      } else {
+        result.speechAdaptationInfo_ = speechAdaptationInfoBuilder_.build();
+      }
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -702,6 +808,12 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
       if (other.hasOutputError()) {
         mergeOutputError(other.getOutputError());
       }
+      if (other.hasSpeechAdaptationInfo()) {
+        mergeSpeechAdaptationInfo(other.getSpeechAdaptationInfo());
+      }
+      if (other.getRequestId() != 0L) {
+        setRequestId(other.getRequestId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -760,6 +872,19 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
 
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getSpeechAdaptationInfoFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 66
+            case 72:
+              {
+                requestId_ = input.readInt64();
+
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1709,6 +1834,252 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         outputError_ = null;
       }
       return outputErrorBuilder_;
+    }
+
+    private com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speechAdaptationInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder>
+        speechAdaptationInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     *
+     * @return Whether the speechAdaptationInfo field is set.
+     */
+    public boolean hasSpeechAdaptationInfo() {
+      return speechAdaptationInfoBuilder_ != null || speechAdaptationInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     *
+     * @return The speechAdaptationInfo.
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo getSpeechAdaptationInfo() {
+      if (speechAdaptationInfoBuilder_ == null) {
+        return speechAdaptationInfo_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.getDefaultInstance()
+            : speechAdaptationInfo_;
+      } else {
+        return speechAdaptationInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    public Builder setSpeechAdaptationInfo(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo value) {
+      if (speechAdaptationInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechAdaptationInfo_ = value;
+        onChanged();
+      } else {
+        speechAdaptationInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    public Builder setSpeechAdaptationInfo(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder builderForValue) {
+      if (speechAdaptationInfoBuilder_ == null) {
+        speechAdaptationInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        speechAdaptationInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    public Builder mergeSpeechAdaptationInfo(
+        com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo value) {
+      if (speechAdaptationInfoBuilder_ == null) {
+        if (speechAdaptationInfo_ != null) {
+          speechAdaptationInfo_ =
+              com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.newBuilder(
+                      speechAdaptationInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          speechAdaptationInfo_ = value;
+        }
+        onChanged();
+      } else {
+        speechAdaptationInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    public Builder clearSpeechAdaptationInfo() {
+      if (speechAdaptationInfoBuilder_ == null) {
+        speechAdaptationInfo_ = null;
+        onChanged();
+      } else {
+        speechAdaptationInfo_ = null;
+        speechAdaptationInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder
+        getSpeechAdaptationInfoBuilder() {
+
+      onChanged();
+      return getSpeechAdaptationInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder
+        getSpeechAdaptationInfoOrBuilder() {
+      if (speechAdaptationInfoBuilder_ != null) {
+        return speechAdaptationInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return speechAdaptationInfo_ == null
+            ? com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.getDefaultInstance()
+            : speechAdaptationInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Provides information on speech adaptation behavior in response
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder>
+        getSpeechAdaptationInfoFieldBuilder() {
+      if (speechAdaptationInfoBuilder_ == null) {
+        speechAdaptationInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder,
+                com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder>(
+                getSpeechAdaptationInfo(), getParentForChildren(), isClean());
+        speechAdaptationInfo_ = null;
+      }
+      return speechAdaptationInfoBuilder_;
+    }
+
+    private long requestId_;
+    /**
+     *
+     *
+     * <pre>
+     * The ID associated with the request. This is a unique ID specific only to
+     * the given request.
+     * </pre>
+     *
+     * <code>int64 request_id = 9;</code>
+     *
+     * @return The requestId.
+     */
+    @java.lang.Override
+    public long getRequestId() {
+      return requestId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID associated with the request. This is a unique ID specific only to
+     * the given request.
+     * </pre>
+     *
+     * <code>int64 request_id = 9;</code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(long value) {
+
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID associated with the request. This is a unique ID specific only to
+     * the given request.
+     * </pre>
+     *
+     * <code>int64 request_id = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+
+      requestId_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

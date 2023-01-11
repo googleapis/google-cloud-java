@@ -245,7 +245,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureClient, OperationMetadata> createAzureClientAsync(
@@ -300,7 +300,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClients/&lt;client-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureClient, OperationMetadata> createAzureClientAsync(
@@ -961,7 +961,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureCluster, OperationMetadata> createAzureClusterAsync(
@@ -1013,7 +1013,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureCluster, OperationMetadata> createAzureClusterAsync(
@@ -1162,9 +1162,13 @@ public class AzureClustersClient implements BackgroundResource {
    * @param updateMask Required. Mask of fields to update. At least one path must be supplied in
    *     this field. The elements of the repeated paths field can only include these fields from
    *     [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster]:
-   *     <p>&#42; `description`. &#42; `annotations`. &#42; `azureClient`. &#42;
-   *     `control_plane.version`. &#42; `control_plane.vm_size`. &#42; `authorization.admin_users`.
-   *     &#42; `control_plane.root_volume.size_gib`. &#42; `logging_config`
+   *     <p>&#42; `description`. &#42; `azureClient`. &#42; `control_plane.version`. &#42;
+   *     `control_plane.vm_size`. &#42; `annotations`. &#42; `authorization.admin_users`. &#42;
+   *     `control_plane.root_volume.size_gib`. &#42; `control_plane.proxy_config`. &#42;
+   *     `control_plane.proxy_config.resource_group_id`. &#42;
+   *     `control_plane.proxy_config.secret_id`. &#42; `control_plane.ssh_config.authorized_key`.
+   *     &#42; `logging_config.component_config.enable_components` &#42;
+   *     `monitoring_config.managed_prometheus_config.enabled`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureCluster, OperationMetadata> updateAzureClusterAsync(
@@ -1866,7 +1870,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureNodePool, OperationMetadata> createAzureNodePoolAsync(
@@ -1920,7 +1924,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     <p>The provided ID will be part of the
    *     [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource name formatted as
    *     `projects/&lt;project-id&gt;/locations/&lt;region&gt;/azureClusters/&lt;cluster-id&gt;/azureNodePools/&lt;node-pool-id&gt;`.
-   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   *     <p>Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureNodePool, OperationMetadata> createAzureNodePoolAsync(
@@ -2073,7 +2077,7 @@ public class AzureClustersClient implements BackgroundResource {
    *     this field. The elements of the repeated paths field can only include these fields from
    *     [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool]:
    *     <p>&#42;. `annotations`. &#42; `version`. &#42; `autoscaling.min_node_count`. &#42;
-   *     `autoscaling.max_node_count`. &#42; `config.vm_size`.
+   *     `autoscaling.max_node_count`. &#42; `config.ssh_config.authorized_key`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AzureNodePool, OperationMetadata> updateAzureNodePoolAsync(

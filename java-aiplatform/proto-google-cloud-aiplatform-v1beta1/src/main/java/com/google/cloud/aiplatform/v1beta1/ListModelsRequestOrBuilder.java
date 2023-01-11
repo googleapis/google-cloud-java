@@ -61,7 +61,8 @@ public interface ListModelsRequestOrBuilder
    * An expression for filtering the results of the request. For field names
    * both snake_case and camelCase are supported.
    *   * `model` supports = and !=. `model` represents the Model ID,
-   *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+   *     i.e. the last segment of the Model's [resource
+   *     name][google.cloud.aiplatform.v1beta1.Model.name].
    *   * `display_name` supports = and !=
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
@@ -85,7 +86,8 @@ public interface ListModelsRequestOrBuilder
    * An expression for filtering the results of the request. For field names
    * both snake_case and camelCase are supported.
    *   * `model` supports = and !=. `model` represents the Model ID,
-   *     i.e. the last segment of the Model's [resource name][google.cloud.aiplatform.v1beta1.Model.name].
+   *     i.e. the last segment of the Model's [resource
+   *     name][google.cloud.aiplatform.v1beta1.Model.name].
    *   * `display_name` supports = and !=
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
@@ -122,8 +124,10 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelsResponse.next_page_token] of the previous
-   * [ModelService.ListModels][google.cloud.aiplatform.v1beta1.ModelService.ListModels] call.
+   * [ListModelsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelsResponse.next_page_token]
+   * of the previous
+   * [ModelService.ListModels][google.cloud.aiplatform.v1beta1.ModelService.ListModels]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -137,8 +141,10 @@ public interface ListModelsRequestOrBuilder
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelsResponse.next_page_token] of the previous
-   * [ModelService.ListModels][google.cloud.aiplatform.v1beta1.ModelService.ListModels] call.
+   * [ListModelsResponse.next_page_token][google.cloud.aiplatform.v1beta1.ListModelsResponse.next_page_token]
+   * of the previous
+   * [ModelService.ListModels][google.cloud.aiplatform.v1beta1.ModelService.ListModels]
+   * call.
    * </pre>
    *
    * <code>string page_token = 4;</code>

@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * reservationsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         reservationsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         reservationsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ReservationsSettings reservationsSettings = reservationsSettingsBuilder.build();

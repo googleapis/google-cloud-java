@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [DatasetService.ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations].
+ * Request message for
+ * [DatasetService.ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.ListAnnotationsRequest}
@@ -554,7 +555,8 @@ public final class ListAnnotationsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request message for [DatasetService.ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations].
+   * Request message for
+   * [DatasetService.ListAnnotations][google.cloud.aiplatform.v1.DatasetService.ListAnnotations].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.ListAnnotationsRequest}

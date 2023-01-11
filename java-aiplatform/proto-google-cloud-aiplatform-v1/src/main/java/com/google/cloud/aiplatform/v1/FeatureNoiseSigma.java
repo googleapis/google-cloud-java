@@ -80,7 +80,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The name of the input feature for which noise sigma is provided. The
      * features are defined in
-     * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     * [explanation metadata
+     * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -94,7 +95,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The name of the input feature for which noise sigma is provided. The
      * features are defined in
-     * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     * [explanation metadata
+     * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -109,8 +111,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * <pre>
      * This represents the standard deviation of the Gaussian kernel that will
      * be used to add noise to the feature prior to computing gradients. Similar
-     * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma] but represents the
-     * noise added to the current feature. Defaults to 0.1.
+     * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma]
+     * but represents the noise added to the current feature. Defaults to 0.1.
      * </pre>
      *
      * <code>float sigma = 2;</code>
@@ -176,7 +178,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The name of the input feature for which noise sigma is provided. The
      * features are defined in
-     * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     * [explanation metadata
+     * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -201,7 +204,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The name of the input feature for which noise sigma is provided. The
      * features are defined in
-     * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+     * [explanation metadata
+     * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -229,8 +233,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * <pre>
      * This represents the standard deviation of the Gaussian kernel that will
      * be used to add noise to the feature prior to computing gradients. Similar
-     * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma] but represents the
-     * noise added to the current feature. Defaults to 0.1.
+     * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma]
+     * but represents the noise added to the current feature. Defaults to 0.1.
      * </pre>
      *
      * <code>float sigma = 2;</code>
@@ -616,7 +620,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The name of the input feature for which noise sigma is provided. The
        * features are defined in
-       * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+       * [explanation metadata
+       * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -640,7 +645,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The name of the input feature for which noise sigma is provided. The
        * features are defined in
-       * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+       * [explanation metadata
+       * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -664,7 +670,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The name of the input feature for which noise sigma is provided. The
        * features are defined in
-       * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+       * [explanation metadata
+       * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -687,7 +694,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The name of the input feature for which noise sigma is provided. The
        * features are defined in
-       * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+       * [explanation metadata
+       * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -706,7 +714,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The name of the input feature for which noise sigma is provided. The
        * features are defined in
-       * [explanation metadata inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
+       * [explanation metadata
+       * inputs][google.cloud.aiplatform.v1.ExplanationMetadata.inputs].
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -732,8 +741,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * This represents the standard deviation of the Gaussian kernel that will
        * be used to add noise to the feature prior to computing gradients. Similar
-       * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma] but represents the
-       * noise added to the current feature. Defaults to 0.1.
+       * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma]
+       * but represents the noise added to the current feature. Defaults to 0.1.
        * </pre>
        *
        * <code>float sigma = 2;</code>
@@ -750,8 +759,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * This represents the standard deviation of the Gaussian kernel that will
        * be used to add noise to the feature prior to computing gradients. Similar
-       * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma] but represents the
-       * noise added to the current feature. Defaults to 0.1.
+       * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma]
+       * but represents the noise added to the current feature. Defaults to 0.1.
        * </pre>
        *
        * <code>float sigma = 2;</code>
@@ -771,8 +780,8 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
        * <pre>
        * This represents the standard deviation of the Gaussian kernel that will
        * be used to add noise to the feature prior to computing gradients. Similar
-       * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma] but represents the
-       * noise added to the current feature. Defaults to 0.1.
+       * to [noise_sigma][google.cloud.aiplatform.v1.SmoothGradConfig.noise_sigma]
+       * but represents the noise added to the current feature. Defaults to 0.1.
        * </pre>
        *
        * <code>float sigma = 2;</code>

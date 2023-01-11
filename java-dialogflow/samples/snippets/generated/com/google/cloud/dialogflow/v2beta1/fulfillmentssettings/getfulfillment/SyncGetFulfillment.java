@@ -36,7 +36,10 @@ public class SyncGetFulfillment {
     fulfillmentsSettingsBuilder
         .getFulfillmentSettings()
         .setRetrySettings(
-            fulfillmentsSettingsBuilder.getFulfillmentSettings().getRetrySettings().toBuilder()
+            fulfillmentsSettingsBuilder
+                .getFulfillmentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     FulfillmentsSettings fulfillmentsSettings = fulfillmentsSettingsBuilder.build();

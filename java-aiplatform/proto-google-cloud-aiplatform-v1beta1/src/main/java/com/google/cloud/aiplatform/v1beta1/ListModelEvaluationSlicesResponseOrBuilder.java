@@ -92,8 +92,9 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -106,8 +107,9 @@ public interface ListModelEvaluationSlicesResponseOrBuilder
    *
    * <pre>
    * A token to retrieve next page of results.
-   * Pass to [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListModelEvaluationSlicesRequest.page_token][google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

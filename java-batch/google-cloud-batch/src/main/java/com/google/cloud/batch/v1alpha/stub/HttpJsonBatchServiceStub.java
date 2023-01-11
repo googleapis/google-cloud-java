@@ -104,11 +104,11 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "jobId", request.getJobId());
                         serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
-                      request ->
-                          ProtoRestSerializer.create().toBody("job", request.getJob(), false))
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Job>newBuilder()
@@ -138,6 +138,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetJobRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -172,6 +173,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "reason", request.getReason());
                         serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -211,6 +213,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -243,6 +246,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetTaskRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -279,6 +283,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -312,6 +317,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -345,6 +351,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -373,20 +380,18 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1alpha/{resource=projects/*/locations/*/tasks/*}:setIamPolicy",
-                          "/v1alpha/{resource=projects/*/locations/*/nodes/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Policy>newBuilder()
@@ -412,14 +417,12 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1alpha/{resource=projects/*/locations/*/tasks/*}:getIamPolicy",
-                          "/v1alpha/{resource=projects/*/locations/*/nodes/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetIamPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -448,20 +451,18 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                             serializer.putPathParam(fields, "resource", request.getResource());
                             return fields;
                           })
-                      .setAdditionalPaths(
-                          "/v1alpha/{resource=projects/*/locations/*/tasks/*}:testIamPermissions",
-                          "/v1alpha/{resource=projects/*/locations/*/nodes/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<TestIamPermissionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearResource().build(), false))
+                                  .toBody("*", request.toBuilder().clearResource().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<TestIamPermissionsResponse>newBuilder()

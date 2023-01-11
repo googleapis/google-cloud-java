@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
+ * Request message for
+ * [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateEndpointRequest}
@@ -425,7 +426,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
+   * Request message for
+   * [EndpointService.CreateEndpoint][google.cloud.aiplatform.v1beta1.EndpointService.CreateEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateEndpointRequest}

@@ -57,6 +57,9 @@ public interface AzureProxyConfigOrBuilder
    *
    * <pre>
    * The URL the of the proxy setting secret with its version.
+   * The secret must be a JSON encoded proxy configuration
+   * as described in
+   * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
    * Secret ids are formatted as
    * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
    * </pre>
@@ -71,6 +74,9 @@ public interface AzureProxyConfigOrBuilder
    *
    * <pre>
    * The URL the of the proxy setting secret with its version.
+   * The secret must be a JSON encoded proxy configuration
+   * as described in
+   * https://cloud.google.com/anthos/clusters/docs/multi-cloud/azure/how-to/use-a-proxy#create_a_proxy_configuration_file
    * Secret ids are formatted as
    * `https://&lt;key-vault-name&gt;.vault.azure.net/secrets/&lt;secret-name&gt;/&lt;secret-version&gt;`.
    * </pre>

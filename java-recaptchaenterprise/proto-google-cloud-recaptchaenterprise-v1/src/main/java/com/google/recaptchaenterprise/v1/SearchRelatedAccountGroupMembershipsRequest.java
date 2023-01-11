@@ -79,8 +79,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    *
    *
    * <pre>
-   * Required. The name of the project to search related account group memberships from.
-   * Specify the project name in the following format: "projects/{project}".
+   * Required. The name of the project to search related account group
+   * memberships from. Specify the project name in the following format:
+   * "projects/{project}".
    * </pre>
    *
    * <code>
@@ -105,8 +106,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    *
    *
    * <pre>
-   * Required. The name of the project to search related account group memberships from.
-   * Specify the project name in the following format: "projects/{project}".
+   * Required. The name of the project to search related account group
+   * memberships from. Specify the project name in the following format:
+   * "projects/{project}".
    * </pre>
    *
    * <code>
@@ -134,9 +136,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    *
    *
    * <pre>
-   * Optional. The unique stable hashed user identifier we should search connections to.
-   * The identifier should correspond to a `hashed_account_id` provided in a
-   * previous `CreateAssessment` or `AnnotateAssessment` call.
+   * Optional. The unique stable hashed user identifier we should search
+   * connections to. The identifier should correspond to a `hashed_account_id`
+   * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
    * </pre>
    *
    * <code>bytes hashed_account_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,10 +156,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    *
    *
    * <pre>
-   * Optional. The maximum number of groups to return. The service might return fewer than
-   * this value.
-   * If unspecified, at most 50 groups are returned.
-   * The maximum value is 1000; values above 1000 are coerced to 1000.
+   * Optional. The maximum number of groups to return. The service might return
+   * fewer than this value. If unspecified, at most 50 groups are returned. The
+   * maximum value is 1000; values above 1000 are coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -647,8 +648,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Required. The name of the project to search related account group memberships from.
-     * Specify the project name in the following format: "projects/{project}".
+     * Required. The name of the project to search related account group
+     * memberships from. Specify the project name in the following format:
+     * "projects/{project}".
      * </pre>
      *
      * <code>
@@ -672,8 +674,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Required. The name of the project to search related account group memberships from.
-     * Specify the project name in the following format: "projects/{project}".
+     * Required. The name of the project to search related account group
+     * memberships from. Specify the project name in the following format:
+     * "projects/{project}".
      * </pre>
      *
      * <code>
@@ -697,8 +700,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Required. The name of the project to search related account group memberships from.
-     * Specify the project name in the following format: "projects/{project}".
+     * Required. The name of the project to search related account group
+     * memberships from. Specify the project name in the following format:
+     * "projects/{project}".
      * </pre>
      *
      * <code>
@@ -721,8 +725,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Required. The name of the project to search related account group memberships from.
-     * Specify the project name in the following format: "projects/{project}".
+     * Required. The name of the project to search related account group
+     * memberships from. Specify the project name in the following format:
+     * "projects/{project}".
      * </pre>
      *
      * <code>
@@ -741,8 +746,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Required. The name of the project to search related account group memberships from.
-     * Specify the project name in the following format: "projects/{project}".
+     * Required. The name of the project to search related account group
+     * memberships from. Specify the project name in the following format:
+     * "projects/{project}".
      * </pre>
      *
      * <code>
@@ -768,9 +774,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search connections to.
-     * The identifier should correspond to a `hashed_account_id` provided in a
-     * previous `CreateAssessment` or `AnnotateAssessment` call.
+     * Optional. The unique stable hashed user identifier we should search
+     * connections to. The identifier should correspond to a `hashed_account_id`
+     * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
      * <code>bytes hashed_account_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -785,9 +791,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search connections to.
-     * The identifier should correspond to a `hashed_account_id` provided in a
-     * previous `CreateAssessment` or `AnnotateAssessment` call.
+     * Optional. The unique stable hashed user identifier we should search
+     * connections to. The identifier should correspond to a `hashed_account_id`
+     * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
      * <code>bytes hashed_account_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -808,9 +814,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search connections to.
-     * The identifier should correspond to a `hashed_account_id` provided in a
-     * previous `CreateAssessment` or `AnnotateAssessment` call.
+     * Optional. The unique stable hashed user identifier we should search
+     * connections to. The identifier should correspond to a `hashed_account_id`
+     * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
      * <code>bytes hashed_account_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -829,10 +835,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of groups to return. The service might return fewer than
-     * this value.
-     * If unspecified, at most 50 groups are returned.
-     * The maximum value is 1000; values above 1000 are coerced to 1000.
+     * Optional. The maximum number of groups to return. The service might return
+     * fewer than this value. If unspecified, at most 50 groups are returned. The
+     * maximum value is 1000; values above 1000 are coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -847,10 +852,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of groups to return. The service might return fewer than
-     * this value.
-     * If unspecified, at most 50 groups are returned.
-     * The maximum value is 1000; values above 1000 are coerced to 1000.
+     * Optional. The maximum number of groups to return. The service might return
+     * fewer than this value. If unspecified, at most 50 groups are returned. The
+     * maximum value is 1000; values above 1000 are coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -868,10 +872,9 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The maximum number of groups to return. The service might return fewer than
-     * this value.
-     * If unspecified, at most 50 groups are returned.
-     * The maximum value is 1000; values above 1000 are coerced to 1000.
+     * Optional. The maximum number of groups to return. The service might return
+     * fewer than this value. If unspecified, at most 50 groups are returned. The
+     * maximum value is 1000; values above 1000 are coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

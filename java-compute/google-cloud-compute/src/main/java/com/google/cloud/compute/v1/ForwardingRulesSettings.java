@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * forwardingRulesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         forwardingRulesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         forwardingRulesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ForwardingRulesSettings forwardingRulesSettings = forwardingRulesSettingsBuilder.build();

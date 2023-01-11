@@ -37,7 +37,10 @@ public class SyncCreateProduct {
     productServiceSettingsBuilder
         .createProductSettings()
         .setRetrySettings(
-            productServiceSettingsBuilder.createProductSettings().getRetrySettings().toBuilder()
+            productServiceSettingsBuilder
+                .createProductSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ProductServiceStubSettings productServiceSettings = productServiceSettingsBuilder.build();

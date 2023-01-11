@@ -64,7 +64,10 @@ import javax.annotation.Generated;
  * publicDelegatedPrefixesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         publicDelegatedPrefixesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         publicDelegatedPrefixesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PublicDelegatedPrefixesSettings publicDelegatedPrefixesSettings =

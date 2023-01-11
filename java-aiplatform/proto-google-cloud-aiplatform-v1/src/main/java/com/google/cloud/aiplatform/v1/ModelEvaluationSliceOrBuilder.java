@@ -93,9 +93,10 @@ public interface ModelEvaluationSliceOrBuilder
    *
    *
    * <pre>
-   * Output only. Points to a YAML file stored on Google Cloud Storage describing the
-   * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-   * schema is defined as an OpenAPI 3.0.2 [Schema
+   * Output only. Points to a YAML file stored on Google Cloud Storage
+   * describing the
+   * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this
+   * ModelEvaluationSlice. The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
@@ -108,9 +109,10 @@ public interface ModelEvaluationSliceOrBuilder
    *
    *
    * <pre>
-   * Output only. Points to a YAML file stored on Google Cloud Storage describing the
-   * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this ModelEvaluationSlice. The
-   * schema is defined as an OpenAPI 3.0.2 [Schema
+   * Output only. Points to a YAML file stored on Google Cloud Storage
+   * describing the
+   * [metrics][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics] of this
+   * ModelEvaluationSlice. The schema is defined as an OpenAPI 3.0.2 [Schema
    * Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
    * </pre>
    *
@@ -124,8 +126,9 @@ public interface ModelEvaluationSliceOrBuilder
    *
    *
    * <pre>
-   * Output only. Sliced evaluation metrics of the Model. The schema of the metrics is stored
-   * in [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
+   * Output only. Sliced evaluation metrics of the Model. The schema of the
+   * metrics is stored in
+   * [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
    * </pre>
    *
    * <code>.google.protobuf.Value metrics = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -137,8 +140,9 @@ public interface ModelEvaluationSliceOrBuilder
    *
    *
    * <pre>
-   * Output only. Sliced evaluation metrics of the Model. The schema of the metrics is stored
-   * in [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
+   * Output only. Sliced evaluation metrics of the Model. The schema of the
+   * metrics is stored in
+   * [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
    * </pre>
    *
    * <code>.google.protobuf.Value metrics = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -150,8 +154,9 @@ public interface ModelEvaluationSliceOrBuilder
    *
    *
    * <pre>
-   * Output only. Sliced evaluation metrics of the Model. The schema of the metrics is stored
-   * in [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
+   * Output only. Sliced evaluation metrics of the Model. The schema of the
+   * metrics is stored in
+   * [metrics_schema_uri][google.cloud.aiplatform.v1.ModelEvaluationSlice.metrics_schema_uri]
    * </pre>
    *
    * <code>.google.protobuf.Value metrics = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

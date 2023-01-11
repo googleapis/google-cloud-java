@@ -36,7 +36,7 @@ public interface ExecutionTemplateOrBuilder
    * </code>
    *
    * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-   *     google/cloud/notebooks/v1/execution.proto;l=150
+   *     google/cloud/notebooks/v1/execution.proto;l=151
    * @return The enum numeric value on the wire for scaleTier.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface ExecutionTemplateOrBuilder
    * </code>
    *
    * @deprecated google.cloud.notebooks.v1.ExecutionTemplate.scale_tier is deprecated. See
-   *     google/cloud/notebooks/v1/execution.proto;l=150
+   *     google/cloud/notebooks/v1/execution.proto;l=151
    * @return The scaleTier.
    */
   @java.lang.Deprecated

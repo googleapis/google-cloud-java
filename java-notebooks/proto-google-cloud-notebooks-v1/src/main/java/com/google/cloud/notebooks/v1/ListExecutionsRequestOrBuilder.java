@@ -99,7 +99,7 @@ public interface ListExecutionsRequestOrBuilder
    *
    * <pre>
    * Filter applied to resulting executions. Currently only supports filtering
-   * executions by a specified schedule_id.
+   * executions by a specified `schedule_id`.
    * Format: `schedule_id=&lt;Schedule_ID&gt;`
    * </pre>
    *
@@ -113,7 +113,7 @@ public interface ListExecutionsRequestOrBuilder
    *
    * <pre>
    * Filter applied to resulting executions. Currently only supports filtering
-   * executions by a specified schedule_id.
+   * executions by a specified `schedule_id`.
    * Format: `schedule_id=&lt;Schedule_ID&gt;`
    * </pre>
    *

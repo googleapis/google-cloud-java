@@ -27,17 +27,17 @@ public interface DiagnosticConfigOrBuilder
    *
    *
    * <pre>
-   * Required. User Cloud Storage bucket location (REQUIRED)
-   * ## Must be formatted with path prefix (gs://$GCS_BUCKET)
+   * Required. User Cloud Storage bucket location (REQUIRED).
+   * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
    * Permissions:
    * User Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account
-   * attached to VM.
+   *   attached to VM.
    * Google Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account or
-   * ## user credentials attached to VM depending on authentication mode.
+   *   user credentials attached to VM depending on authentication mode.
    * Cloud Storage bucket Log file will be written to
-   * gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz
+   * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
    * </pre>
    *
    * <code>string gcs_bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49,17 +49,17 @@ public interface DiagnosticConfigOrBuilder
    *
    *
    * <pre>
-   * Required. User Cloud Storage bucket location (REQUIRED)
-   * ## Must be formatted with path prefix (gs://$GCS_BUCKET)
+   * Required. User Cloud Storage bucket location (REQUIRED).
+   * Must be formatted with path prefix (`gs://$GCS_BUCKET`).
    * Permissions:
    * User Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account
-   * attached to VM.
+   *   attached to VM.
    * Google Managed Notebooks:
    * - storage.buckets.writer: Must be given to the project's service account or
-   * ## user credentials attached to VM depending on authentication mode.
+   *   user credentials attached to VM depending on authentication mode.
    * Cloud Storage bucket Log file will be written to
-   * gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz
+   * `gs://$GCS_BUCKET/$RELATIVE_PATH/$VM_DATE_$TIME.tar.gz`
    * </pre>
    *
    * <code>string gcs_bucket = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,10 +72,12 @@ public interface DiagnosticConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the relative storage path in the Cloud Storage bucket where the
-   * diagnostic logs will be written: Default path will be the root directory of
-   * the Cloud Storage bucket (gs://$GCS_BUCKET/$DATE_$TIME.tar.gz) Example of
-   * full path where Log file will be written: gs://$GCS_BUCKET/$RELATIVE_PATH/
+   * Optional. Defines the relative storage path in the Cloud Storage bucket
+   * where the diagnostic logs will be written: Default path will be the root
+   * directory of the Cloud Storage bucket
+   * (`gs://$GCS_BUCKET/$DATE_$TIME.tar.gz`)
+   * Example of full path where Log file will be written:
+   * `gs://$GCS_BUCKET/$RELATIVE_PATH/`
    * </pre>
    *
    * <code>string relative_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,10 +89,12 @@ public interface DiagnosticConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines the relative storage path in the Cloud Storage bucket where the
-   * diagnostic logs will be written: Default path will be the root directory of
-   * the Cloud Storage bucket (gs://$GCS_BUCKET/$DATE_$TIME.tar.gz) Example of
-   * full path where Log file will be written: gs://$GCS_BUCKET/$RELATIVE_PATH/
+   * Optional. Defines the relative storage path in the Cloud Storage bucket
+   * where the diagnostic logs will be written: Default path will be the root
+   * directory of the Cloud Storage bucket
+   * (`gs://$GCS_BUCKET/$DATE_$TIME.tar.gz`)
+   * Example of full path where Log file will be written:
+   * `gs://$GCS_BUCKET/$RELATIVE_PATH/`
    * </pre>
    *
    * <code>string relative_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

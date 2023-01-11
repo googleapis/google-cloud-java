@@ -222,11 +222,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * Required. The resource name of the
+   * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-   * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-   * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * to use for processing. If a
+   * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+   * server will use its [default
+   * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -252,11 +256,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+   * Required. The resource name of the
+   * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-   * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-   * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}`, or
+   * to use for processing. If a
+   * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+   * server will use its [default
+   * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+   * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+   * or
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
    * </pre>
    *
@@ -291,7 +299,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=351
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -309,7 +317,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=351
    * @return The document.
    */
   @java.lang.Override
@@ -405,6 +413,54 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     return getFieldMask();
   }
 
+  public static final int PROCESS_OPTIONS_FIELD_NUMBER = 7;
+  private com.google.cloud.documentai.v1beta3.ProcessOptions processOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   *
+   * @return Whether the processOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasProcessOptions() {
+    return processOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   *
+   * @return The processOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessOptions getProcessOptions() {
+    return processOptions_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+        : processOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder getProcessOptionsOrBuilder() {
+    return getProcessOptions();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -437,6 +493,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (fieldMask_ != null) {
       output.writeMessage(6, getFieldMask());
     }
+    if (processOptions_ != null) {
+      output.writeMessage(7, getProcessOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -468,6 +527,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (fieldMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFieldMask());
     }
+    if (processOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProcessOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -493,6 +555,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasFieldMask() != other.hasFieldMask()) return false;
     if (hasFieldMask()) {
       if (!getFieldMask().equals(other.getFieldMask())) return false;
+    }
+    if (hasProcessOptions() != other.hasProcessOptions()) return false;
+    if (hasProcessOptions()) {
+      if (!getProcessOptions().equals(other.getProcessOptions())) return false;
     }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
@@ -527,6 +593,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasFieldMask()) {
       hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getFieldMask().hashCode();
+    }
+    if (hasProcessOptions()) {
+      hash = (37 * hash) + PROCESS_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessOptions().hashCode();
     }
     switch (sourceCase_) {
       case 4:
@@ -700,6 +770,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         fieldMask_ = null;
         fieldMaskBuilder_ = null;
       }
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = null;
+      } else {
+        processOptions_ = null;
+        processOptionsBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -754,6 +830,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         result.fieldMask_ = fieldMask_;
       } else {
         result.fieldMask_ = fieldMaskBuilder_.build();
+      }
+      if (processOptionsBuilder_ == null) {
+        result.processOptions_ = processOptions_;
+      } else {
+        result.processOptions_ = processOptionsBuilder_.build();
       }
       result.sourceCase_ = sourceCase_;
       onBuilt();
@@ -818,6 +899,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasFieldMask()) {
         mergeFieldMask(other.getFieldMask());
+      }
+      if (other.hasProcessOptions()) {
+        mergeProcessOptions(other.getProcessOptions());
       }
       switch (other.getSourceCase()) {
         case INLINE_DOCUMENT:
@@ -897,6 +981,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getProcessOptionsFieldBuilder().getBuilder(), extensionRegistry);
+
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1353,11 +1443,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of the
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-     * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-     * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * to use for processing. If a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+     * server will use its [default
+     * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -1382,11 +1476,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of the
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-     * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-     * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * to use for processing. If a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+     * server will use its [default
+     * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -1411,11 +1509,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of the
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-     * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-     * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * to use for processing. If a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+     * server will use its [default
+     * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -1439,11 +1541,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of the
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-     * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-     * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * to use for processing. If a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+     * server will use its [default
+     * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -1463,11 +1569,15 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the [Processor][google.cloud.documentai.v1beta3.Processor] or
+     * Required. The resource name of the
+     * [Processor][google.cloud.documentai.v1beta3.Processor] or
      * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
-     * to use for processing. If a [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the server will use
-     * its [default version][google.cloud.documentai.v1beta3.Processor.default_processor_version]. Format:
-     * `projects/{project}/locations/{location}/processors/{processor}`, or
+     * to use for processing. If a
+     * [Processor][google.cloud.documentai.v1beta3.Processor] is specified, the
+     * server will use its [default
+     * version][google.cloud.documentai.v1beta3.Processor.default_processor_version].
+     * Format: `projects/{project}/locations/{location}/processors/{processor}`,
+     * or
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
      * </pre>
      *
@@ -1505,7 +1615,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=351
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -1522,7 +1632,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=323
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=351
      * @return The document.
      */
     @java.lang.Deprecated
@@ -1937,6 +2047,193 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         fieldMask_ = null;
       }
       return fieldMaskBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.ProcessOptions processOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessOptions,
+            com.google.cloud.documentai.v1beta3.ProcessOptions.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder>
+        processOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     *
+     * @return Whether the processOptions field is set.
+     */
+    public boolean hasProcessOptions() {
+      return processOptionsBuilder_ != null || processOptions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     *
+     * @return The processOptions.
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessOptions getProcessOptions() {
+      if (processOptionsBuilder_ == null) {
+        return processOptions_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+            : processOptions_;
+      } else {
+        return processOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder setProcessOptions(com.google.cloud.documentai.v1beta3.ProcessOptions value) {
+      if (processOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processOptions_ = value;
+        onChanged();
+      } else {
+        processOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder setProcessOptions(
+        com.google.cloud.documentai.v1beta3.ProcessOptions.Builder builderForValue) {
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        processOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder mergeProcessOptions(com.google.cloud.documentai.v1beta3.ProcessOptions value) {
+      if (processOptionsBuilder_ == null) {
+        if (processOptions_ != null) {
+          processOptions_ =
+              com.google.cloud.documentai.v1beta3.ProcessOptions.newBuilder(processOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          processOptions_ = value;
+        }
+        onChanged();
+      } else {
+        processOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public Builder clearProcessOptions() {
+      if (processOptionsBuilder_ == null) {
+        processOptions_ = null;
+        onChanged();
+      } else {
+        processOptions_ = null;
+        processOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessOptions.Builder getProcessOptionsBuilder() {
+
+      onChanged();
+      return getProcessOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder
+        getProcessOptionsOrBuilder() {
+      if (processOptionsBuilder_ != null) {
+        return processOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return processOptions_ == null
+            ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+            : processOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Inference-time options for the process API
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessOptions,
+            com.google.cloud.documentai.v1beta3.ProcessOptions.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder>
+        getProcessOptionsFieldBuilder() {
+      if (processOptionsBuilder_ == null) {
+        processOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.ProcessOptions,
+                com.google.cloud.documentai.v1beta3.ProcessOptions.Builder,
+                com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder>(
+                getProcessOptions(), getParentForChildren(), isClean());
+        processOptions_ = null;
+      }
+      return processOptionsBuilder_;
     }
 
     @java.lang.Override

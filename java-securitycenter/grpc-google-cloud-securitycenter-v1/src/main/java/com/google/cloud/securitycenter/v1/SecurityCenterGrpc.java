@@ -1884,7 +1884,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Gets a big query export.
+     * Gets a BigQuery export.
      * </pre>
      */
     public void getBigQueryExport(
@@ -2263,7 +2263,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a big query export.
+     * Creates a BigQuery export.
      * </pre>
      */
     public void createBigQueryExport(
@@ -2278,7 +2278,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Deletes an existing big query export.
+     * Deletes an existing BigQuery export.
      * </pre>
      */
     public void deleteBigQueryExport(
@@ -2707,7 +2707,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Gets a big query export.
+     * Gets a BigQuery export.
      * </pre>
      */
     public void getBigQueryExport(
@@ -3133,7 +3133,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a big query export.
+     * Creates a BigQuery export.
      * </pre>
      */
     public void createBigQueryExport(
@@ -3150,7 +3150,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Deletes an existing big query export.
+     * Deletes an existing BigQuery export.
      * </pre>
      */
     public void deleteBigQueryExport(
@@ -3318,7 +3318,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Gets a big query export.
+     * Gets a BigQuery export.
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExport(
@@ -3656,7 +3656,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a big query export.
+     * Creates a BigQuery export.
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.BigQueryExport createBigQueryExport(
@@ -3669,7 +3669,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Deletes an existing big query export.
+     * Deletes an existing BigQuery export.
      * </pre>
      */
     public com.google.protobuf.Empty deleteBigQueryExport(
@@ -3832,7 +3832,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Gets a big query export.
+     * Gets a BigQuery export.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4199,7 +4199,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Creates a big query export.
+     * Creates a BigQuery export.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -4214,7 +4214,7 @@ public final class SecurityCenterGrpc {
      *
      *
      * <pre>
-     * Deletes an existing big query export.
+     * Deletes an existing BigQuery export.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

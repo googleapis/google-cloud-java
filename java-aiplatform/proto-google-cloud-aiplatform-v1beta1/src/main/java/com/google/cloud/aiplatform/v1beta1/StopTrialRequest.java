@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [VizierService.StopTrial][google.cloud.aiplatform.v1beta1.VizierService.StopTrial].
+ * Request message for
+ * [VizierService.StopTrial][google.cloud.aiplatform.v1beta1.VizierService.StopTrial].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.StopTrialRequest}
@@ -287,7 +288,8 @@ public final class StopTrialRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request message for [VizierService.StopTrial][google.cloud.aiplatform.v1beta1.VizierService.StopTrial].
+   * Request message for
+   * [VizierService.StopTrial][google.cloud.aiplatform.v1beta1.VizierService.StopTrial].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.StopTrialRequest}

@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * backendBucketsSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         backendBucketsSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         backendBucketsSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BackendBucketsSettings backendBucketsSettings = backendBucketsSettingsBuilder.build();

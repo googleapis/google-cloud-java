@@ -23,7 +23,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * Service for search.
  * This feature is only available for users who have Retail Search enabled.
- * Please enable Retail Search on Cloud Console before using this feature.
+ * Enable Retail Search on Cloud Console before using this feature.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -128,7 +128,7 @@ public final class SearchServiceGrpc {
    * <pre>
    * Service for search.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public abstract static class SearchServiceImplBase implements io.grpc.BindableService {
@@ -139,7 +139,7 @@ public final class SearchServiceGrpc {
      * <pre>
      * Performs a search.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void search(
@@ -168,7 +168,7 @@ public final class SearchServiceGrpc {
    * <pre>
    * Service for search.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public static final class SearchServiceStub
@@ -188,7 +188,7 @@ public final class SearchServiceGrpc {
      * <pre>
      * Performs a search.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void search(
@@ -206,7 +206,7 @@ public final class SearchServiceGrpc {
    * <pre>
    * Service for search.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public static final class SearchServiceBlockingStub
@@ -227,7 +227,7 @@ public final class SearchServiceGrpc {
      * <pre>
      * Performs a search.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.SearchResponse search(
@@ -243,7 +243,7 @@ public final class SearchServiceGrpc {
    * <pre>
    * Service for search.
    * This feature is only available for users who have Retail Search enabled.
-   * Please enable Retail Search on Cloud Console before using this feature.
+   * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
   public static final class SearchServiceFutureStub
@@ -264,7 +264,7 @@ public final class SearchServiceGrpc {
      * <pre>
      * Performs a search.
      * This feature is only available for users who have Retail Search enabled.
-     * Please enable Retail Search on Cloud Console before using this feature.
+     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

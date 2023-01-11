@@ -67,7 +67,10 @@ import javax.annotation.Generated;
  * deploymentsSettingsBuilder
  *     .getDeploymentSettings()
  *     .setRetrySettings(
- *         deploymentsSettingsBuilder.getDeploymentSettings().getRetrySettings().toBuilder()
+ *         deploymentsSettingsBuilder
+ *             .getDeploymentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DeploymentsSettings deploymentsSettings = deploymentsSettingsBuilder.build();

@@ -36,7 +36,10 @@ public class SyncCreateDataset {
     autoMlSettingsBuilder
         .createDatasetSettings()
         .setRetrySettings(
-            autoMlSettingsBuilder.createDatasetSettings().getRetrySettings().toBuilder()
+            autoMlSettingsBuilder
+                .createDatasetSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AutoMlStubSettings autoMlSettings = autoMlSettingsBuilder.build();

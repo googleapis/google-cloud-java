@@ -462,4 +462,125 @@ public class EnvironmentsClientHttpJsonTest {
     } catch (ExecutionException e) {
     }
   }
+
+  @Test
+  public void saveSnapshotTest() throws Exception {
+    SaveSnapshotResponse expectedResponse =
+        SaveSnapshotResponse.newBuilder().setSnapshotPath("snapshotPath-931648503").build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("saveSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SaveSnapshotRequest request =
+        SaveSnapshotRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .setSnapshotLocation("snapshotLocation1625609625")
+            .build();
+
+    SaveSnapshotResponse actualResponse = client.saveSnapshotAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void saveSnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SaveSnapshotRequest request =
+          SaveSnapshotRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .setSnapshotLocation("snapshotLocation1625609625")
+              .build();
+      client.saveSnapshotAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void loadSnapshotTest() throws Exception {
+    LoadSnapshotResponse expectedResponse = LoadSnapshotResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("loadSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LoadSnapshotRequest request =
+        LoadSnapshotRequest.newBuilder()
+            .setEnvironment(
+                "projects/project-4088/locations/location-4088/environments/environment-4088")
+            .setSnapshotPath("snapshotPath-931648503")
+            .setSkipPypiPackagesInstallation(true)
+            .setSkipEnvironmentVariablesSetting(true)
+            .setSkipAirflowOverridesSetting(true)
+            .setSkipGcsDataCopying(true)
+            .build();
+
+    LoadSnapshotResponse actualResponse = client.loadSnapshotAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void loadSnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LoadSnapshotRequest request =
+          LoadSnapshotRequest.newBuilder()
+              .setEnvironment(
+                  "projects/project-4088/locations/location-4088/environments/environment-4088")
+              .setSnapshotPath("snapshotPath-931648503")
+              .setSkipPypiPackagesInstallation(true)
+              .setSkipEnvironmentVariablesSetting(true)
+              .setSkipAirflowOverridesSetting(true)
+              .setSkipGcsDataCopying(true)
+              .build();
+      client.loadSnapshotAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
 }

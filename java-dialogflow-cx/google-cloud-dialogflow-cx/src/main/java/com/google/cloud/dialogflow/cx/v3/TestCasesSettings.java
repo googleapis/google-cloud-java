@@ -71,7 +71,10 @@ import javax.annotation.Generated;
  * testCasesSettingsBuilder
  *     .batchDeleteTestCasesSettings()
  *     .setRetrySettings(
- *         testCasesSettingsBuilder.batchDeleteTestCasesSettings().getRetrySettings().toBuilder()
+ *         testCasesSettingsBuilder
+ *             .batchDeleteTestCasesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TestCasesSettings testCasesSettings = testCasesSettingsBuilder.build();

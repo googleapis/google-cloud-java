@@ -57,7 +57,7 @@
  * admin access. 3. Resellers and distributors can manage customer entitlements.
  *
  * <p>CloudChannelService exposes the following resources: -
- * [Customer][google.cloud.channel.v1.Customer]s: An entity—usually an enterprise—managed by a
+ * [Customer][google.cloud.channel.v1.Customer]s: An entity-usually an enterprise-managed by a
  * reseller or distributor.
  *
  * <p>- [Entitlement][google.cloud.channel.v1.Entitlement]s: An entity that provides a customer with

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel].
+ * Request message for
+ * [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportModelRequest}
@@ -77,7 +78,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The ID of the format in which the Model must be exported. Each Model
-     * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+     * lists the [export formats it
+     * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
      * If no value is provided here, then the first from the list of the Model's
      * supported formats is used by default.
      * </pre>
@@ -92,7 +94,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The ID of the format in which the Model must be exported. Each Model
-     * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+     * lists the [export formats it
+     * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
      * If no value is provided here, then the first from the list of the Model's
      * supported formats is used by default.
      * </pre>
@@ -263,7 +266,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The ID of the format in which the Model must be exported. Each Model
-     * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+     * lists the [export formats it
+     * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
      * If no value is provided here, then the first from the list of the Model's
      * supported formats is used by default.
      * </pre>
@@ -289,7 +293,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The ID of the format in which the Model must be exported. Each Model
-     * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+     * lists the [export formats it
+     * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
      * If no value is provided here, then the first from the list of the Model's
      * supported formats is used by default.
      * </pre>
@@ -861,7 +866,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The ID of the format in which the Model must be exported. Each Model
-       * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+       * lists the [export formats it
+       * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
        * If no value is provided here, then the first from the list of the Model's
        * supported formats is used by default.
        * </pre>
@@ -886,7 +892,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The ID of the format in which the Model must be exported. Each Model
-       * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+       * lists the [export formats it
+       * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
        * If no value is provided here, then the first from the list of the Model's
        * supported formats is used by default.
        * </pre>
@@ -911,7 +918,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The ID of the format in which the Model must be exported. Each Model
-       * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+       * lists the [export formats it
+       * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
        * If no value is provided here, then the first from the list of the Model's
        * supported formats is used by default.
        * </pre>
@@ -935,7 +943,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The ID of the format in which the Model must be exported. Each Model
-       * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+       * lists the [export formats it
+       * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
        * If no value is provided here, then the first from the list of the Model's
        * supported formats is used by default.
        * </pre>
@@ -955,7 +964,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
        *
        * <pre>
        * The ID of the format in which the Model must be exported. Each Model
-       * lists the [export formats it supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
+       * lists the [export formats it
+       * supports][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
        * If no value is provided here, then the first from the list of the Model's
        * supported formats is used by default.
        * </pre>
@@ -1817,7 +1827,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel].
+   * Request message for
+   * [ModelService.ExportModel][google.cloud.aiplatform.v1beta1.ModelService.ExportModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ExportModelRequest}

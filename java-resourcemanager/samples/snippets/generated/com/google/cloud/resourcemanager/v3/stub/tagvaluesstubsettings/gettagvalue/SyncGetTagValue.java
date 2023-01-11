@@ -36,7 +36,10 @@ public class SyncGetTagValue {
     tagValuesSettingsBuilder
         .getTagValueSettings()
         .setRetrySettings(
-            tagValuesSettingsBuilder.getTagValueSettings().getRetrySettings().toBuilder()
+            tagValuesSettingsBuilder
+                .getTagValueSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     TagValuesStubSettings tagValuesSettings = tagValuesSettingsBuilder.build();

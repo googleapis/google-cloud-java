@@ -97,7 +97,10 @@ import org.threeten.bp.Duration;
  * catalogServiceSettingsBuilder
  *     .createCatalogItemSettings()
  *     .setRetrySettings(
- *         catalogServiceSettingsBuilder.createCatalogItemSettings().getRetrySettings().toBuilder()
+ *         catalogServiceSettingsBuilder
+ *             .createCatalogItemSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();

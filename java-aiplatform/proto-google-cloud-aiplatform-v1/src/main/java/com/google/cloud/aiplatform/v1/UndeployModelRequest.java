@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel].
+ * Request message for
+ * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.UndeployModelRequest}
@@ -217,12 +218,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If this field is provided, then the Endpoint's
-   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-   * last DeployedModel is being undeployed from the Endpoint, the
-   * [Endpoint.traffic_split] will always end up empty when this call returns.
-   * A DeployedModel will be successfully undeployed only if it doesn't have
-   * any traffic assigned to it when this method executes, or if this field
-   * unassigns any traffic to it.
+   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+   * overwritten with it. If last DeployedModel is being undeployed from the
+   * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+   * call returns. A DeployedModel will be successfully undeployed only if it
+   * doesn't have any traffic assigned to it when this method executes, or if
+   * this field unassigns any traffic to it.
    * </pre>
    *
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -245,12 +246,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If this field is provided, then the Endpoint's
-   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-   * last DeployedModel is being undeployed from the Endpoint, the
-   * [Endpoint.traffic_split] will always end up empty when this call returns.
-   * A DeployedModel will be successfully undeployed only if it doesn't have
-   * any traffic assigned to it when this method executes, or if this field
-   * unassigns any traffic to it.
+   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+   * overwritten with it. If last DeployedModel is being undeployed from the
+   * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+   * call returns. A DeployedModel will be successfully undeployed only if it
+   * doesn't have any traffic assigned to it when this method executes, or if
+   * this field unassigns any traffic to it.
    * </pre>
    *
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -264,12 +265,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If this field is provided, then the Endpoint's
-   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-   * last DeployedModel is being undeployed from the Endpoint, the
-   * [Endpoint.traffic_split] will always end up empty when this call returns.
-   * A DeployedModel will be successfully undeployed only if it doesn't have
-   * any traffic assigned to it when this method executes, or if this field
-   * unassigns any traffic to it.
+   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+   * overwritten with it. If last DeployedModel is being undeployed from the
+   * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+   * call returns. A DeployedModel will be successfully undeployed only if it
+   * doesn't have any traffic assigned to it when this method executes, or if
+   * this field unassigns any traffic to it.
    * </pre>
    *
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -287,12 +288,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If this field is provided, then the Endpoint's
-   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-   * last DeployedModel is being undeployed from the Endpoint, the
-   * [Endpoint.traffic_split] will always end up empty when this call returns.
-   * A DeployedModel will be successfully undeployed only if it doesn't have
-   * any traffic assigned to it when this method executes, or if this field
-   * unassigns any traffic to it.
+   * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+   * overwritten with it. If last DeployedModel is being undeployed from the
+   * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+   * call returns. A DeployedModel will be successfully undeployed only if it
+   * doesn't have any traffic assigned to it when this method executes, or if
+   * this field unassigns any traffic to it.
    * </pre>
    *
    * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -498,7 +499,8 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel].
+   * Request message for
+   * [EndpointService.UndeployModel][google.cloud.aiplatform.v1.EndpointService.UndeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.UndeployModelRequest}
@@ -981,12 +983,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -1009,12 +1011,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -1028,12 +1030,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -1051,12 +1053,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -1082,12 +1084,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -1109,12 +1111,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>
@@ -1132,12 +1134,12 @@ public final class UndeployModelRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If this field is provided, then the Endpoint's
-     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be overwritten with it. If
-     * last DeployedModel is being undeployed from the Endpoint, the
-     * [Endpoint.traffic_split] will always end up empty when this call returns.
-     * A DeployedModel will be successfully undeployed only if it doesn't have
-     * any traffic assigned to it when this method executes, or if this field
-     * unassigns any traffic to it.
+     * [traffic_split][google.cloud.aiplatform.v1.Endpoint.traffic_split] will be
+     * overwritten with it. If last DeployedModel is being undeployed from the
+     * Endpoint, the [Endpoint.traffic_split] will always end up empty when this
+     * call returns. A DeployedModel will be successfully undeployed only if it
+     * doesn't have any traffic assigned to it when this method executes, or if
+     * this field unassigns any traffic to it.
      * </pre>
      *
      * <code>map&lt;string, int32&gt; traffic_split = 3;</code>

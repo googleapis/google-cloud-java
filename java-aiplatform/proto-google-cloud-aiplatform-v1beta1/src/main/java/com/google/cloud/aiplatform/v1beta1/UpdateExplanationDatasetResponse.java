@@ -22,7 +22,9 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message of [ModelService.UpdateExplanationDataset][google.cloud.aiplatform.v1beta1.ModelService.UpdateExplanationDataset] operation.
+ * Response message of
+ * [ModelService.UpdateExplanationDataset][google.cloud.aiplatform.v1beta1.ModelService.UpdateExplanationDataset]
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse}
@@ -222,7 +224,9 @@ public final class UpdateExplanationDatasetResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Response message of [ModelService.UpdateExplanationDataset][google.cloud.aiplatform.v1beta1.ModelService.UpdateExplanationDataset] operation.
+   * Response message of
+   * [ModelService.UpdateExplanationDataset][google.cloud.aiplatform.v1beta1.ModelService.UpdateExplanationDataset]
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse}

@@ -95,7 +95,10 @@ import org.threeten.bp.Duration;
  * regionBackendServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionBackendServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionBackendServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionBackendServicesStubSettings regionBackendServicesSettings =

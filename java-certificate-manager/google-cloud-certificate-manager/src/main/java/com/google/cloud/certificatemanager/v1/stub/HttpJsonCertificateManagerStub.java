@@ -135,6 +135,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -169,6 +170,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCertificateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -205,12 +207,13 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "certificateId", request.getCertificateId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate(), false))
+                                  .toBody("certificate", request.getCertificate(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -247,12 +250,13 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             ProtoRestSerializer<UpdateCertificateRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificate", request.getCertificate(), false))
+                                  .toBody("certificate", request.getCertificate(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -287,6 +291,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCertificateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -328,6 +333,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -362,6 +368,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCertificateMapRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -398,12 +405,13 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "certificateMapId", request.getCertificateMapId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificateMap", request.getCertificateMap(), false))
+                                  .toBody("certificateMap", request.getCertificateMap(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -442,12 +450,13 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             ProtoRestSerializer<UpdateCertificateMapRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("certificateMap", request.getCertificateMap(), false))
+                                  .toBody("certificateMap", request.getCertificateMap(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -482,6 +491,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCertificateMapRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -525,6 +535,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -559,6 +570,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCertificateMapEntryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -597,6 +609,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                 fields,
                                 "certificateMapEntryId",
                                 request.getCertificateMapEntryId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -605,7 +618,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                   .toBody(
                                       "certificateMapEntry",
                                       request.getCertificateMapEntry(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -644,6 +657,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             ProtoRestSerializer<UpdateCertificateMapEntryRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -652,7 +666,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                   .toBody(
                                       "certificateMapEntry",
                                       request.getCertificateMapEntry(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -687,6 +701,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCertificateMapEntryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -730,6 +745,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -764,6 +780,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetDnsAuthorizationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -800,12 +817,13 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "dnsAuthorizationId", request.getDnsAuthorizationId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dnsAuthorization", request.getDnsAuthorization(), false))
+                                  .toBody("dnsAuthorization", request.getDnsAuthorization(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -844,12 +862,13 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             ProtoRestSerializer<UpdateDnsAuthorizationRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("dnsAuthorization", request.getDnsAuthorization(), false))
+                                  .toBody("dnsAuthorization", request.getDnsAuthorization(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -884,6 +903,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteDnsAuthorizationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -928,6 +948,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -965,6 +986,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetCertificateIssuanceConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1003,6 +1025,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                 fields,
                                 "certificateIssuanceConfigId",
                                 request.getCertificateIssuanceConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -1011,7 +1034,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                                   .toBody(
                                       "certificateIssuanceConfig",
                                       request.getCertificateIssuanceConfig(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -1046,6 +1069,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCertificateIssuanceConfigRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1082,6 +1106,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListLocationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1115,6 +1140,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetLocationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

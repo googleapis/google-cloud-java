@@ -36,7 +36,10 @@ public class SyncExportAssets {
     assetServiceSettingsBuilder
         .exportAssetsSettings()
         .setRetrySettings(
-            assetServiceSettingsBuilder.exportAssetsSettings().getRetrySettings().toBuilder()
+            assetServiceSettingsBuilder
+                .exportAssetsSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();

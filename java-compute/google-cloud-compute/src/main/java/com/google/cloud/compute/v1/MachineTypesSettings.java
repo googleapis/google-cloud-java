@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * machineTypesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         machineTypesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         machineTypesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MachineTypesSettings machineTypesSettings = machineTypesSettingsBuilder.build();

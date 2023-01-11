@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [MetadataService.CreateContext][google.cloud.aiplatform.v1beta1.MetadataService.CreateContext].
+ * Request message for
+ * [MetadataService.CreateContext][google.cloud.aiplatform.v1beta1.MetadataService.CreateContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateContextRequest}
@@ -74,9 +75,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The resource name of the MetadataStore where the Context should be
-   * created.
-   * Format:
+   * Required. The resource name of the MetadataStore where the Context should
+   * be created. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
@@ -102,9 +102,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The resource name of the MetadataStore where the Context should be
-   * created.
-   * Format:
+   * Required. The resource name of the MetadataStore where the Context should
+   * be created. Format:
    * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * </pre>
    *
@@ -429,7 +428,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [MetadataService.CreateContext][google.cloud.aiplatform.v1beta1.MetadataService.CreateContext].
+   * Request message for
+   * [MetadataService.CreateContext][google.cloud.aiplatform.v1beta1.MetadataService.CreateContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateContextRequest}
@@ -634,9 +634,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the Context should be
-     * created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the Context should
+     * be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -661,9 +660,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the Context should be
-     * created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the Context should
+     * be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -688,9 +686,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the Context should be
-     * created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the Context should
+     * be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -714,9 +711,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the Context should be
-     * created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the Context should
+     * be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *
@@ -736,9 +732,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The resource name of the MetadataStore where the Context should be
-     * created.
-     * Format:
+     * Required. The resource name of the MetadataStore where the Context should
+     * be created. Format:
      * `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
      * </pre>
      *

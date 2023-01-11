@@ -71,7 +71,10 @@ import javax.annotation.Generated;
  * flowsSettingsBuilder
  *     .createFlowSettings()
  *     .setRetrySettings(
- *         flowsSettingsBuilder.createFlowSettings().getRetrySettings().toBuilder()
+ *         flowsSettingsBuilder
+ *             .createFlowSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FlowsSettings flowsSettings = flowsSettingsBuilder.build();

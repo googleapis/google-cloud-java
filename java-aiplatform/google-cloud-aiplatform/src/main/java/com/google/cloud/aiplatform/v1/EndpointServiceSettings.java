@@ -75,7 +75,10 @@ import javax.annotation.Generated;
  * endpointServiceSettingsBuilder
  *     .getEndpointSettings()
  *     .setRetrySettings(
- *         endpointServiceSettingsBuilder.getEndpointSettings().getRetrySettings().toBuilder()
+ *         endpointServiceSettingsBuilder
+ *             .getEndpointSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EndpointServiceSettings endpointServiceSettings = endpointServiceSettingsBuilder.build();

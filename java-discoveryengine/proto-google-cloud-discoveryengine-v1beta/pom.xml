@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-discoveryengine-v1beta</artifactId>
-  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1beta:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1beta:current} -->
   <name>proto-google-cloud-discoveryengine-v1beta</name>
   <description>Proto library for google-cloud-discoveryengine</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-discoveryengine-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-discoveryengine:current} -->
   </parent>
   <dependencies>
     <dependency>

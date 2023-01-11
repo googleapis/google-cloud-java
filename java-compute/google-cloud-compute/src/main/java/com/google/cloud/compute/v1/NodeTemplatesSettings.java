@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * nodeTemplatesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         nodeTemplatesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         nodeTemplatesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NodeTemplatesSettings nodeTemplatesSettings = nodeTemplatesSettingsBuilder.build();

@@ -92,7 +92,8 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Version number of TensorProto used to serialize [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
+   * Optional. Version number of TensorProto used to serialize
+   * [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
    * </pre>
    *
    * <code>int32 version_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -518,7 +519,8 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Version number of TensorProto used to serialize [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
+     * Optional. Version number of TensorProto used to serialize
+     * [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
      * </pre>
      *
      * <code>int32 version_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -533,7 +535,8 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Version number of TensorProto used to serialize [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
+     * Optional. Version number of TensorProto used to serialize
+     * [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
      * </pre>
      *
      * <code>int32 version_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -551,7 +554,8 @@ public final class TensorboardTensor extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Version number of TensorProto used to serialize [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
+     * Optional. Version number of TensorProto used to serialize
+     * [value][google.cloud.aiplatform.v1beta1.TensorboardTensor.value].
      * </pre>
      *
      * <code>int32 version_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

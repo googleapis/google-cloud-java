@@ -80,12 +80,13 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateBudgetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("budget", request.getBudget(), false))
+                                  .toBody("budget", request.getBudget(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Budget>newBuilder()
@@ -118,12 +119,13 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                             ProtoRestSerializer<UpdateBudgetRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("budget", request.getBudget(), false))
+                                  .toBody("budget", request.getBudget(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Budget>newBuilder()
@@ -153,6 +155,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetBudgetRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -188,6 +191,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -221,6 +225,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteBudgetRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * instancesSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         instancesSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         instancesSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * InstancesStubSettings instancesSettings = instancesSettingsBuilder.build();

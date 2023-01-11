@@ -75,8 +75,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-   * underlying Subscription ID. For Google Cloud Platform, this is the
+   * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+   * is the underlying Subscription ID. For Google Cloud Platform, this is the
    * Billing Account ID of the billing subaccount."
    * </pre>
    *
@@ -100,8 +100,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-   * underlying Subscription ID. For Google Cloud Platform, this is the
+   * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+   * is the underlying Subscription ID. For Google Cloud Platform, this is the
    * Billing Account ID of the billing subaccount."
    * </pre>
    *
@@ -128,8 +128,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The product pertaining to the provisioning resource as specified in the
-   * Offer.
+   * Output only. The product pertaining to the provisioning resource as
+   * specified in the Offer.
    * </pre>
    *
    * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -152,8 +152,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The product pertaining to the provisioning resource as specified in the
-   * Offer.
+   * Output only. The product pertaining to the provisioning resource as
+   * specified in the Offer.
    * </pre>
    *
    * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -179,7 +179,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+   * Output only. The SKU pertaining to the provisioning resource as specified
+   * in the Offer.
    * </pre>
    *
    * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -202,7 +203,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+   * Output only. The SKU pertaining to the provisioning resource as specified
+   * in the Offer.
    * </pre>
    *
    * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -600,8 +602,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-     * underlying Subscription ID. For Google Cloud Platform, this is the
+     * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+     * is the underlying Subscription ID. For Google Cloud Platform, this is the
      * Billing Account ID of the billing subaccount."
      * </pre>
      *
@@ -624,8 +626,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-     * underlying Subscription ID. For Google Cloud Platform, this is the
+     * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+     * is the underlying Subscription ID. For Google Cloud Platform, this is the
      * Billing Account ID of the billing subaccount."
      * </pre>
      *
@@ -648,8 +650,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-     * underlying Subscription ID. For Google Cloud Platform, this is the
+     * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+     * is the underlying Subscription ID. For Google Cloud Platform, this is the
      * Billing Account ID of the billing subaccount."
      * </pre>
      *
@@ -671,8 +673,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-     * underlying Subscription ID. For Google Cloud Platform, this is the
+     * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+     * is the underlying Subscription ID. For Google Cloud Platform, this is the
      * Billing Account ID of the billing subaccount."
      * </pre>
      *
@@ -690,8 +692,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Provisioning ID of the entitlement. For Google Workspace, this is the
-     * underlying Subscription ID. For Google Cloud Platform, this is the
+     * Output only. Provisioning ID of the entitlement. For Google Workspace, this
+     * is the underlying Subscription ID. For Google Cloud Platform, this is the
      * Billing Account ID of the billing subaccount."
      * </pre>
      *
@@ -716,8 +718,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The product pertaining to the provisioning resource as specified in the
-     * Offer.
+     * Output only. The product pertaining to the provisioning resource as
+     * specified in the Offer.
      * </pre>
      *
      * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -739,8 +741,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The product pertaining to the provisioning resource as specified in the
-     * Offer.
+     * Output only. The product pertaining to the provisioning resource as
+     * specified in the Offer.
      * </pre>
      *
      * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -762,8 +764,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The product pertaining to the provisioning resource as specified in the
-     * Offer.
+     * Output only. The product pertaining to the provisioning resource as
+     * specified in the Offer.
      * </pre>
      *
      * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -784,8 +786,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The product pertaining to the provisioning resource as specified in the
-     * Offer.
+     * Output only. The product pertaining to the provisioning resource as
+     * specified in the Offer.
      * </pre>
      *
      * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -802,8 +804,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The product pertaining to the provisioning resource as specified in the
-     * Offer.
+     * Output only. The product pertaining to the provisioning resource as
+     * specified in the Offer.
      * </pre>
      *
      * <code>string product_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -827,7 +829,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+     * Output only. The SKU pertaining to the provisioning resource as specified
+     * in the Offer.
      * </pre>
      *
      * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -849,7 +852,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+     * Output only. The SKU pertaining to the provisioning resource as specified
+     * in the Offer.
      * </pre>
      *
      * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -871,7 +875,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+     * Output only. The SKU pertaining to the provisioning resource as specified
+     * in the Offer.
      * </pre>
      *
      * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -892,7 +897,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+     * Output only. The SKU pertaining to the provisioning resource as specified
+     * in the Offer.
      * </pre>
      *
      * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -909,7 +915,8 @@ public final class ProvisionedService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
+     * Output only. The SKU pertaining to the provisioning resource as specified
+     * in the Offer.
      * </pre>
      *
      * <code>string sku_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

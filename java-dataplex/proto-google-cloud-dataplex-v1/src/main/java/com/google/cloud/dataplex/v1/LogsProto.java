@@ -63,6 +63,22 @@ public final class LogsProto {
       internal_static_google_cloud_dataplex_v1_SessionEvent_QueryDetail_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_SessionEvent_QueryDetail_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_DimensionPassedEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_DimensionPassedEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -136,10 +152,39 @@ public final class LogsProto {
           + "e\022\026\n\022ENGINE_UNSPECIFIED\020\000\022\r\n\tSPARK_SQL\020\001"
           + "\022\014\n\010BIGQUERY\020\002\"S\n\tEventType\022\032\n\026EVENT_TYP"
           + "E_UNSPECIFIED\020\000\022\t\n\005START\020\001\022\010\n\004STOP\020\002\022\t\n\005"
-          + "QUERY\020\003\022\n\n\006CREATE\020\004B\010\n\006detailBm\n\034com.goo"
-          + "gle.cloud.dataplex.v1B\tLogsProtoP\001Z@goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "dataplex/v1;dataplexb\006proto3"
+          + "QUERY\020\003\022\n\n\006CREATE\020\004B\010\n\006detail\"\210\t\n\rDataSc"
+          + "anEvent\022\023\n\013data_source\030\001 \001(\t\022\016\n\006job_id\030\002"
+          + " \001(\t\022.\n\nstart_time\030\003 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022,\n\010end_time\030\004 \001(\0132\032.google."
+          + "protobuf.Timestamp\022>\n\004type\030\005 \001(\01620.googl"
+          + "e.cloud.dataplex.v1.DataScanEvent.ScanTy"
+          + "pe\022<\n\005state\030\006 \001(\0162-.google.cloud.dataple"
+          + "x.v1.DataScanEvent.State\022\017\n\007message\030\007 \001("
+          + "\t\022\024\n\014spec_version\030\010 \001(\t\022@\n\007trigger\030\t \001(\016"
+          + "2/.google.cloud.dataplex.v1.DataScanEven"
+          + "t.Trigger\022<\n\005scope\030\n \001(\0162-.google.cloud."
+          + "dataplex.v1.DataScanEvent.Scope\022Q\n\014data_"
+          + "profile\030e \001(\01329.google.cloud.dataplex.v1"
+          + ".DataScanEvent.DataProfileResultH\000\022Q\n\014da"
+          + "ta_quality\030f \001(\01329.google.cloud.dataplex"
+          + ".v1.DataScanEvent.DataQualityResultH\000\032&\n"
+          + "\021DataProfileResult\022\021\n\trow_count\030\001 \001(\003\032\330\001"
+          + "\n\021DataQualityResult\022\021\n\trow_count\030\001 \001(\003\022\016"
+          + "\n\006passed\030\002 \001(\010\022h\n\020dimension_passed\030\003 \003(\013"
+          + "2N.google.cloud.dataplex.v1.DataScanEven"
+          + "t.DataQualityResult.DimensionPassedEntry"
+          + "\0326\n\024DimensionPassedEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\010:\0028\001\"I\n\010ScanType\022\031\n\025SCAN_TYP"
+          + "E_UNSPECIFIED\020\000\022\020\n\014DATA_PROFILE\020\001\022\020\n\014DAT"
+          + "A_QUALITY\020\002\"U\n\005State\022\025\n\021STATE_UNSPECIFIE"
+          + "D\020\000\022\013\n\007STARTED\020\001\022\r\n\tSUCCEEDED\020\002\022\n\n\006FAILE"
+          + "D\020\003\022\r\n\tCANCELLED\020\004\"?\n\007Trigger\022\027\n\023TRIGGER"
+          + "_UNSPECIFIED\020\000\022\r\n\tON_DEMAND\020\001\022\014\n\010SCHEDUL"
+          + "E\020\002\"9\n\005Scope\022\025\n\021SCOPE_UNSPECIFIED\020\000\022\010\n\004F"
+          + "ULL\020\001\022\017\n\013INCREMENTAL\020\002B\010\n\006resultBm\n\034com."
+          + "google.cloud.dataplex.v1B\tLogsProtoP\001Z@g"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/dataplex/v1;dataplexb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -248,6 +293,52 @@ public final class LogsProto {
             internal_static_google_cloud_dataplex_v1_SessionEvent_QueryDetail_descriptor,
             new java.lang.String[] {
               "QueryId", "QueryText", "Engine", "Duration", "ResultSizeBytes", "DataProcessedBytes",
+            });
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataScanEvent_descriptor,
+            new java.lang.String[] {
+              "DataSource",
+              "JobId",
+              "StartTime",
+              "EndTime",
+              "Type",
+              "State",
+              "Message",
+              "SpecVersion",
+              "Trigger",
+              "Scope",
+              "DataProfile",
+              "DataQuality",
+              "Result",
+            });
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileResult_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataScanEvent_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileResult_descriptor,
+            new java.lang.String[] {
+              "RowCount",
+            });
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataScanEvent_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_descriptor,
+            new java.lang.String[] {
+              "RowCount", "Passed", "DimensionPassed",
+            });
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_DimensionPassedEntry_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_DimensionPassedEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityResult_DimensionPassedEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();

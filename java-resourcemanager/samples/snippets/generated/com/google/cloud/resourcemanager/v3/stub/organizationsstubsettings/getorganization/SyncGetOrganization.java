@@ -37,7 +37,10 @@ public class SyncGetOrganization {
     organizationsSettingsBuilder
         .getOrganizationSettings()
         .setRetrySettings(
-            organizationsSettingsBuilder.getOrganizationSettings().getRetrySettings().toBuilder()
+            organizationsSettingsBuilder
+                .getOrganizationSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     OrganizationsStubSettings organizationsSettings = organizationsSettingsBuilder.build();

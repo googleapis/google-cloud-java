@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [DatasetService.DeleteDataset][google.cloud.aiplatform.v1.DatasetService.DeleteDataset].
+ * Request message for
+ * [DatasetService.DeleteDataset][google.cloud.aiplatform.v1.DatasetService.DeleteDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.DeleteDatasetRequest}
@@ -287,7 +288,8 @@ public final class DeleteDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [DatasetService.DeleteDataset][google.cloud.aiplatform.v1.DatasetService.DeleteDataset].
+   * Request message for
+   * [DatasetService.DeleteDataset][google.cloud.aiplatform.v1.DatasetService.DeleteDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.DeleteDatasetRequest}

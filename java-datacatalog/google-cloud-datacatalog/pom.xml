@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datacatalog</artifactId>
-  <version>1.13.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+  <version>1.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Data Catalog</name>
   <description>Java idiomatic client for Google Cloud Data Catalog</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datacatalog-parent</artifactId>
-    <version>1.13.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
+    <version>1.14.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-datacatalog</site.installationModule>

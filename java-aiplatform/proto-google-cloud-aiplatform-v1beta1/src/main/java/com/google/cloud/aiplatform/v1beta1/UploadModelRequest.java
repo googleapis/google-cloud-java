@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Request message for [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
+ * Request message for
+ * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.UploadModelRequest}
@@ -41,6 +42,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     parent_ = "";
     parentModel_ = "";
     modelId_ = "";
+    serviceAccount_ = "";
   }
 
   @java.lang.Override
@@ -130,8 +132,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The resource name of the model into which to upload the version. Only
-   * specify this field when uploading a new version.
+   * Optional. The resource name of the model into which to upload the version.
+   * Only specify this field when uploading a new version.
    * </pre>
    *
    * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,8 +156,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The resource name of the model into which to upload the version. Only
-   * specify this field when uploading a new version.
+   * Optional. The resource name of the model into which to upload the version.
+   * Only specify this field when uploading a new version.
    * </pre>
    *
    * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -282,6 +284,67 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     return getModel();
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the model
+   * upload. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used. Users uploading the Model must have the
+   * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+   * account must belong to the project specified in the `parent` field and have
+   * all necessary read permissions.
+   * </pre>
+   *
+   * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the model
+   * upload. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used. Users uploading the Model must have the
+   * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+   * account must belong to the project specified in the `parent` field and have
+   * all necessary read permissions.
+   * </pre>
+   *
+   * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -308,6 +371,9 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, modelId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serviceAccount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -328,6 +394,9 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, modelId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serviceAccount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -352,6 +421,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
     if (hasModel()) {
       if (!getModel().equals(other.getModel())) return false;
     }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -373,6 +443,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -478,7 +550,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
+   * Request message for
+   * [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.UploadModelRequest}
@@ -524,6 +597,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         model_ = null;
         modelBuilder_ = null;
       }
+      serviceAccount_ = "";
+
       return this;
     }
 
@@ -559,6 +634,7 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       } else {
         result.model_ = modelBuilder_.build();
       }
+      result.serviceAccount_ = serviceAccount_;
       onBuilt();
       return result;
     }
@@ -624,6 +700,10 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
       if (other.hasModel()) {
         mergeModel(other.getModel());
       }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -674,6 +754,12 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
 
                 break;
               } // case 42
+            case 50:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -817,8 +903,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -840,8 +926,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -863,8 +949,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -885,8 +971,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -903,8 +989,8 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The resource name of the model into which to upload the version. Only
-     * specify this field when uploading a new version.
+     * Optional. The resource name of the model into which to upload the version.
+     * Only specify this field when uploading a new version.
      * </pre>
      *
      * <code>string parent_model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1245,6 +1331,142 @@ public final class UploadModelRequest extends com.google.protobuf.GeneratedMessa
         model_ = null;
       }
       return modelBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the model
+     * upload. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used. Users uploading the Model must have the
+     * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+     * account must belong to the project specified in the `parent` field and have
+     * all necessary read permissions.
+     * </pre>
+     *
+     * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the model
+     * upload. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used. Users uploading the Model must have the
+     * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+     * account must belong to the project specified in the `parent` field and have
+     * all necessary read permissions.
+     * </pre>
+     *
+     * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the model
+     * upload. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used. Users uploading the Model must have the
+     * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+     * account must belong to the project specified in the `parent` field and have
+     * all necessary read permissions.
+     * </pre>
+     *
+     * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the model
+     * upload. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used. Users uploading the Model must have the
+     * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+     * account must belong to the project specified in the `parent` field and have
+     * all necessary read permissions.
+     * </pre>
+     *
+     * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the model
+     * upload. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used. Users uploading the Model must have the
+     * `iam.serviceAccounts.actAs` permission on this service account. Also, this
+     * account must belong to the project specified in the `parent` field and have
+     * all necessary read permissions.
+     * </pre>
+     *
+     * <code>string service_account = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccount_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

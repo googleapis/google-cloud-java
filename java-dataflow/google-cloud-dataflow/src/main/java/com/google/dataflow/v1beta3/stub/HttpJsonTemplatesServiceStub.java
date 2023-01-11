@@ -78,6 +78,7 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateJobFromTemplateRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -86,7 +87,7 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                                   .toBody(
                                       "*",
                                       request.toBuilder().clearLocation().clearProjectId().build(),
-                                      false))
+                                      true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Job>newBuilder()
@@ -124,12 +125,13 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                             serializer.putQueryParam(fields, "gcsPath", request.getGcsPath());
                             serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("launchParameters", request.getLaunchParameters(), false))
+                                  .toBody("launchParameters", request.getLaunchParameters(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<LaunchTemplateResponse>newBuilder()
@@ -164,6 +166,7 @@ public class HttpJsonTemplatesServiceStub extends TemplatesServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "gcsPath", request.getGcsPath());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

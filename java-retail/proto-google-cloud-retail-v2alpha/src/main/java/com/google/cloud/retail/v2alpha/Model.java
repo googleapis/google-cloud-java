@@ -26,7 +26,7 @@ package com.google.cloud.retail.v2alpha;
  * [Model][google.cloud.retail.v2alpha.Model]. A
  * [Model][google.cloud.retail.v2alpha.Model] can be associated with a
  * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig] and then queried
- * through the Predict api.
+ * through the Predict API.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.Model}
@@ -125,7 +125,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The model is trained on tuned hyperparameters, and can be
+     * The model is trained on tuned hyperparameters and can be
      * queried.
      * </pre>
      *
@@ -169,7 +169,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The model is trained on tuned hyperparameters, and can be
+     * The model is trained on tuned hyperparameters and can be
      * queried.
      * </pre>
      *
@@ -425,7 +425,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes whether periodic tuning is enabled for this model
    * or not. Periodic tuning is scheduled at most every three months. You can
-   * start a tuning process manually by using the ModelTune
+   * start a tuning process manually by using the `TuneModel`
    * method, which starts a tuning process immediately and resets the quarterly
    * schedule. Enabling or disabling periodic tuning does not affect any
    * current tuning processes.
@@ -438,7 +438,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified default value - should never be explicitly set.
+     * Unspecified default value, should never be explicitly set.
      * </pre>
      *
      * <code>PERIODIC_TUNING_STATE_UNSPECIFIED = 0;</code>
@@ -449,8 +449,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The model has periodic tuning disabled. Tuning
-     * can be reenabled by calling the EnableModelPeriodicTuning
-     * method or by calling the TuneModel method.
+     * can be reenabled by calling the `EnableModelPeriodicTuning`
+     * method or by calling the `TuneModel` method.
      * </pre>
      *
      * <code>PERIODIC_TUNING_DISABLED = 1;</code>
@@ -461,7 +461,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The model cannot be tuned with periodic tuning OR the
-     * TuneModel method. Hide the options in customer UI and
+     * `TuneModel` method. Hide the options in customer UI and
      * reject any requests through the backend self serve API.
      * </pre>
      *
@@ -473,7 +473,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The model has periodic tuning enabled. Tuning
-     * can be disabled by calling the DisableModelPeriodicTuning
+     * can be disabled by calling the `DisableModelPeriodicTuning`
      * method.
      * </pre>
      *
@@ -487,7 +487,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified default value - should never be explicitly set.
+     * Unspecified default value, should never be explicitly set.
      * </pre>
      *
      * <code>PERIODIC_TUNING_STATE_UNSPECIFIED = 0;</code>
@@ -498,8 +498,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The model has periodic tuning disabled. Tuning
-     * can be reenabled by calling the EnableModelPeriodicTuning
-     * method or by calling the TuneModel method.
+     * can be reenabled by calling the `EnableModelPeriodicTuning`
+     * method or by calling the `TuneModel` method.
      * </pre>
      *
      * <code>PERIODIC_TUNING_DISABLED = 1;</code>
@@ -510,7 +510,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The model cannot be tuned with periodic tuning OR the
-     * TuneModel method. Hide the options in customer UI and
+     * `TuneModel` method. Hide the options in customer UI and
      * reject any requests through the backend self serve API.
      * </pre>
      *
@@ -522,7 +522,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The model has periodic tuning enabled. Tuning
-     * can be disabled by calling the DisableModelPeriodicTuning
+     * can be disabled by calling the `DisableModelPeriodicTuning`
      * method.
      * </pre>
      *
@@ -633,7 +633,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified default value - should never be explicitly set.
+     * Unspecified default value, should never be explicitly set.
      * </pre>
      *
      * <code>DATA_STATE_UNSPECIFIED = 0;</code>
@@ -667,7 +667,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified default value - should never be explicitly set.
+     * Unspecified default value, should never be explicitly set.
      * </pre>
      *
      * <code>DATA_STATE_UNSPECIFIED = 0;</code>
@@ -947,7 +947,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The PageOptimizationConfig for model training.
    * This determines how many panels to optimize for, and which serving
-   * configurations to consider for each panel.
+   * configs to consider for each panel.
    * The purpose of this model is to optimize which
    * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig] to show on which
    * panels in way that optimizes the visitors shopping journey.
@@ -1058,7 +1058,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * `Panel2 candidates`: &lt;i&gt; home_page_ctr_no_diversity,
        * home_page_ctr_diversity_low,
        *    pdp_cvr_no_diversity &lt;/i&gt;
-       * `Restriction` = UNIQUE_SERVING_CONFIG_RESTRICTION
+       * `Restriction` = `UNIQUE_SERVING_CONFIG_RESTRICTION`
        * `Valid combinations`:
        *   * &lt;i&gt; (pdp_ctr, home_page_ctr_no_diversity)
        *   * (pdp_ctr, home_page_ctr_diversity_low)
@@ -1090,7 +1090,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * `Panel2 candidates`: &lt;i&gt; home_page_ctr_no_diversity,
        * home_page_ctr_diversity_low,
        *  pdp_cvr_no_diversity &lt;/i&gt;
-       * `Restriction` = UNIQUE_MODEL_RESTRICTION
+       * `Restriction` = `UNIQUE_MODEL_RESTRICTION`
        * `Valid combinations`:
        *  * &lt;i&gt; (pdp_ctr, home_page_ctr_no_diversity)
        *  * (pdp_ctr, home_page_ctr_diversity)
@@ -1121,7 +1121,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * `Panel2 candidates`: &lt;i&gt; home_page_ctr_no_diversity,
        * home_page_ctr_diversity_low,
        *  pdp_cvr_no_diversity &lt;/i&gt;
-       * `Restriction` = UNIQUE_MODEL_RESTRICTION
+       * `Restriction` = `UNIQUE_MODEL_RESTRICTION`
        * `Valid combinations`:
        * * &lt;i&gt; (pdp_ctr, home_page_ctr_no_diversity)
        * * (pdp_ctr, home_page_ctr_diversity)
@@ -1193,7 +1193,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * `Panel2 candidates`: &lt;i&gt; home_page_ctr_no_diversity,
        * home_page_ctr_diversity_low,
        *    pdp_cvr_no_diversity &lt;/i&gt;
-       * `Restriction` = UNIQUE_SERVING_CONFIG_RESTRICTION
+       * `Restriction` = `UNIQUE_SERVING_CONFIG_RESTRICTION`
        * `Valid combinations`:
        *   * &lt;i&gt; (pdp_ctr, home_page_ctr_no_diversity)
        *   * (pdp_ctr, home_page_ctr_diversity_low)
@@ -1225,7 +1225,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * `Panel2 candidates`: &lt;i&gt; home_page_ctr_no_diversity,
        * home_page_ctr_diversity_low,
        *  pdp_cvr_no_diversity &lt;/i&gt;
-       * `Restriction` = UNIQUE_MODEL_RESTRICTION
+       * `Restriction` = `UNIQUE_MODEL_RESTRICTION`
        * `Valid combinations`:
        *  * &lt;i&gt; (pdp_ctr, home_page_ctr_no_diversity)
        *  * (pdp_ctr, home_page_ctr_diversity)
@@ -1256,7 +1256,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * `Panel2 candidates`: &lt;i&gt; home_page_ctr_no_diversity,
        * home_page_ctr_diversity_low,
        *  pdp_cvr_no_diversity &lt;/i&gt;
-       * `Restriction` = UNIQUE_MODEL_RESTRICTION
+       * `Restriction` = `UNIQUE_MODEL_RESTRICTION`
        * `Valid combinations`:
        * * &lt;i&gt; (pdp_ctr, home_page_ctr_no_diversity)
        * * (pdp_ctr, home_page_ctr_diversity)
@@ -1375,9 +1375,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This has to be a valid
        * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-       * identifier. e.g. for a ServingConfig with full name:
-       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-       * this would be 'my_candidate_config'
+       * identifier. For example, for a ServingConfig with full name:
+       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+       * this would be `my_candidate_config`.
        * </pre>
        *
        * <code>string serving_config_id = 1;</code>
@@ -1391,9 +1391,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This has to be a valid
        * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-       * identifier. e.g. for a ServingConfig with full name:
-       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-       * this would be 'my_candidate_config'
+       * identifier. For example, for a ServingConfig with full name:
+       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+       * this would be `my_candidate_config`.
        * </pre>
        *
        * <code>string serving_config_id = 1;</code>
@@ -1407,9 +1407,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This has to be a valid
        * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-       * identifier. e.g. for a ServingConfig with full name:
-       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-       * this would be 'my_candidate_config'
+       * identifier. For example, for a ServingConfig with full name:
+       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+       * this would be `my_candidate_config`.
        * </pre>
        *
        * <code>string serving_config_id = 1;</code>
@@ -1522,9 +1522,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This has to be a valid
        * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-       * identifier. e.g. for a ServingConfig with full name:
-       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-       * this would be 'my_candidate_config'
+       * identifier. For example, for a ServingConfig with full name:
+       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+       * this would be `my_candidate_config`.
        * </pre>
        *
        * <code>string serving_config_id = 1;</code>
@@ -1540,9 +1540,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This has to be a valid
        * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-       * identifier. e.g. for a ServingConfig with full name:
-       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-       * this would be 'my_candidate_config'
+       * identifier. For example, for a ServingConfig with full name:
+       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+       * this would be `my_candidate_config`.
        * </pre>
        *
        * <code>string serving_config_id = 1;</code>
@@ -1571,9 +1571,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * This has to be a valid
        * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-       * identifier. e.g. for a ServingConfig with full name:
-       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-       * this would be 'my_candidate_config'
+       * identifier. For example, for a ServingConfig with full name:
+       * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+       * this would be `my_candidate_config`.
        * </pre>
        *
        * <code>string serving_config_id = 1;</code>
@@ -1999,9 +1999,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * This has to be a valid
          * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-         * identifier. e.g. for a ServingConfig with full name:
-         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-         * this would be 'my_candidate_config'
+         * identifier. For example, for a ServingConfig with full name:
+         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+         * this would be `my_candidate_config`.
          * </pre>
          *
          * <code>string serving_config_id = 1;</code>
@@ -2018,9 +2018,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * This has to be a valid
          * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-         * identifier. e.g. for a ServingConfig with full name:
-         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-         * this would be 'my_candidate_config'
+         * identifier. For example, for a ServingConfig with full name:
+         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+         * this would be `my_candidate_config`.
          * </pre>
          *
          * <code>string serving_config_id = 1;</code>
@@ -2050,9 +2050,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * This has to be a valid
          * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-         * identifier. e.g. for a ServingConfig with full name:
-         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-         * this would be 'my_candidate_config'
+         * identifier. For example, for a ServingConfig with full name:
+         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+         * this would be `my_candidate_config`.
          * </pre>
          *
          * <code>string serving_config_id = 1;</code>
@@ -2082,9 +2082,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * This has to be a valid
          * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-         * identifier. e.g. for a ServingConfig with full name:
-         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-         * this would be 'my_candidate_config'
+         * identifier. For example, for a ServingConfig with full name:
+         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+         * this would be `my_candidate_config`.
          * </pre>
          *
          * <code>string serving_config_id = 1;</code>
@@ -2107,9 +2107,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * This has to be a valid
          * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-         * identifier. e.g. for a ServingConfig with full name:
-         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-         * this would be 'my_candidate_config'
+         * identifier. For example, for a ServingConfig with full name:
+         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+         * this would be `my_candidate_config`.
          * </pre>
          *
          * <code>string serving_config_id = 1;</code>
@@ -2130,9 +2130,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * This has to be a valid
          * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]
-         * identifier. e.g. for a ServingConfig with full name:
-         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`
-         * this would be 'my_candidate_config'
+         * identifier. For example, for a ServingConfig with full name:
+         * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/my_candidate_config`,
+         * this would be `my_candidate_config`.
          * </pre>
          *
          * <code>string serving_config_id = 1;</code>
@@ -2254,7 +2254,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2268,7 +2267,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2282,7 +2280,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2295,7 +2292,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2311,7 +2307,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2325,8 +2320,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The default candidate (in case the model fails at serving
-       * time, we can fall back to the default).
+       * Required. The default candidate. If the model fails at serving time,
+       * we fall back to the default.
        * </pre>
        *
        * <code>
@@ -2340,8 +2335,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The default candidate (in case the model fails at serving
-       * time, we can fall back to the default).
+       * Required. The default candidate. If the model fails at serving time,
+       * we fall back to the default.
        * </pre>
        *
        * <code>
@@ -2355,8 +2350,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The default candidate (in case the model fails at serving
-       * time, we can fall back to the default).
+       * Required. The default candidate. If the model fails at serving time,
+       * we fall back to the default.
        * </pre>
        *
        * <code>
@@ -2475,7 +2470,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2492,7 +2486,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2511,7 +2504,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2527,7 +2519,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2544,7 +2535,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The candidates to consider on the panel.
-       * Limit = 10.
        * </pre>
        *
        * <code>
@@ -2564,8 +2554,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The default candidate (in case the model fails at serving
-       * time, we can fall back to the default).
+       * Required. The default candidate. If the model fails at serving time,
+       * we fall back to the default.
        * </pre>
        *
        * <code>
@@ -2582,8 +2572,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The default candidate (in case the model fails at serving
-       * time, we can fall back to the default).
+       * Required. The default candidate. If the model fails at serving time,
+       * we fall back to the default.
        * </pre>
        *
        * <code>
@@ -2604,8 +2594,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The default candidate (in case the model fails at serving
-       * time, we can fall back to the default).
+       * Required. The default candidate. If the model fails at serving time,
+       * we fall back to the default.
        * </pre>
        *
        * <code>
@@ -3203,7 +3193,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3224,7 +3213,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3243,7 +3231,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3263,7 +3250,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3290,7 +3276,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3315,7 +3300,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3341,7 +3325,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3368,7 +3351,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3392,7 +3374,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3417,7 +3398,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3443,7 +3423,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3465,7 +3444,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3487,7 +3465,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3503,7 +3480,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3523,7 +3499,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3545,7 +3520,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3564,7 +3538,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3584,7 +3557,6 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Required. The candidates to consider on the panel.
-         * Limit = 10.
          * </pre>
          *
          * <code>
@@ -3629,8 +3601,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3646,8 +3618,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3671,8 +3643,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3697,8 +3669,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3721,8 +3693,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3752,8 +3724,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3775,8 +3747,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3793,8 +3765,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -3816,8 +3788,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The default candidate (in case the model fails at serving
-         * time, we can fall back to the default).
+         * Required. The default candidate. If the model fails at serving time,
+         * we fall back to the default.
          * </pre>
          *
          * <code>
@@ -4319,7 +4291,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The PageOptimizationConfig for model training.
      * This determines how many panels to optimize for, and which serving
-     * configurations to consider for each panel.
+     * configs to consider for each panel.
      * The purpose of this model is to optimize which
      * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig] to show on which
      * panels in way that optimizes the visitors shopping journey.
@@ -5370,7 +5342,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5384,7 +5356,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5398,7 +5370,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5413,7 +5385,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5429,7 +5401,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents an ordered combination of valid serving configs, which
-   * / may be used for PAGE_OPTIMIZATION recommendations.
+   * can be used for `PAGE_OPTIMIZATION` recommendations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.Model.ServingConfigList}
@@ -5481,7 +5453,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5497,7 +5469,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5513,7 +5485,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5530,7 +5502,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. A set of valid serving configs that may be used for
-     * PAGE_OPTIMIZATION.
+     * `PAGE_OPTIMIZATION`.
      * </pre>
      *
      * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5716,7 +5688,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Represents an ordered combination of valid serving configs, which
-     * / may be used for PAGE_OPTIMIZATION recommendations.
+     * can be used for `PAGE_OPTIMIZATION` recommendations.
      * </pre>
      *
      * Protobuf type {@code google.cloud.retail.v2alpha.Model.ServingConfigList}
@@ -5914,7 +5886,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5930,7 +5902,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5946,7 +5918,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5963,7 +5935,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -5980,7 +5952,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -6004,7 +5976,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -6027,7 +5999,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -6047,7 +6019,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -6066,7 +6038,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. A set of valid serving configs that may be used for
-       * PAGE_OPTIMIZATION.
+       * `PAGE_OPTIMIZATION`.
        * </pre>
        *
        * <code>repeated string serving_config_ids = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -6260,7 +6232,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The fully qualified resource name of the model.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * catalog_id has char limit of 50.
    * recommendation_model_id has char limit of 40.
    * </pre>
@@ -6287,7 +6259,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The fully qualified resource name of the model.
    * Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
    * catalog_id has char limit of 50.
    * recommendation_model_id has char limit of 40.
    * </pre>
@@ -6317,7 +6289,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The display name of the model.
    * Should be human readable, used to display Recommendation Models in the
-   * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+   * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
    * characters.
    * </pre>
    *
@@ -6343,7 +6315,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The display name of the model.
    * Should be human readable, used to display Recommendation Models in the
-   * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+   * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
    * characters.
    * </pre>
    *
@@ -6371,12 +6343,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The training state that the model is in (e.g.
-   * TRAINING or PAUSED).
+   * `TRAINING` or `PAUSED`).
    * Since part of the cost of running the service
    * is frequency of training - this can be used to determine when to train
    * model in order to control cost. If not specified: the default value for
-   * CreateModel method is TRAINING. the default value for
-   * UpdateModel method is to keep the state the same as before.
+   * `CreateModel` method is `TRAINING`. The default value for
+   * `UpdateModel` method is to keep the state the same as before.
    * </pre>
    *
    * <code>
@@ -6394,12 +6366,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The training state that the model is in (e.g.
-   * TRAINING or PAUSED).
+   * `TRAINING` or `PAUSED`).
    * Since part of the cost of running the service
    * is frequency of training - this can be used to determine when to train
    * model in order to control cost. If not specified: the default value for
-   * CreateModel method is TRAINING. the default value for
-   * UpdateModel method is to keep the state the same as before.
+   * `CreateModel` method is `TRAINING`. The default value for
+   * `UpdateModel` method is to keep the state the same as before.
    * </pre>
    *
    * <code>
@@ -6424,7 +6396,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+   * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
    * </pre>
    *
    * <code>
@@ -6441,7 +6413,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+   * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
    * </pre>
    *
    * <code>
@@ -6572,8 +6544,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The type of model e.g. `home-page`.
    * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-   * `frequently-bought-together`, `page-optimization`, 'similar-items',
-   * 'buy-it-again', `recently-viewed`(readonly value).
+   * `frequently-bought-together`, `page-optimization`, `similar-items`,
+   * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+   * This field together with
+   * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+   * describe model metadata to use to control model training and serving.
+   * See https://cloud.google.com/retail/docs/models
+   * for more details on what the model metadata control and which combination
+   * of parameters are valid. For invalid combinations of parameters (e.g. type
+   * = `frequently-bought-together` and optimization_objective = `ctr`), you
+   * receive an error 400 if you try to create/update a recommendation with
+   * this set of knobs.
    * </pre>
    *
    * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6598,8 +6579,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The type of model e.g. `home-page`.
    * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-   * `frequently-bought-together`, `page-optimization`, 'similar-items',
-   * 'buy-it-again', `recently-viewed`(readonly value).
+   * `frequently-bought-together`, `page-optimization`, `similar-items`,
+   * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+   * This field together with
+   * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+   * describe model metadata to use to control model training and serving.
+   * See https://cloud.google.com/retail/docs/models
+   * for more details on what the model metadata control and which combination
+   * of parameters are valid. For invalid combinations of parameters (e.g. type
+   * = `frequently-bought-together` and optimization_objective = `ctr`), you
+   * receive an error 400 if you try to create/update a recommendation with
+   * this set of knobs.
    * </pre>
    *
    * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6633,6 +6623,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * `recommended-for-you` =&gt; `ctr`
    * `others-you-may-like` =&gt; `ctr`
    * `frequently-bought-together` =&gt; `revenue_per_order`
+   * This field together with
+   * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+   * describe model metadata to use to control model training and serving.
+   * See https://cloud.google.com/retail/docs/models
+   * for more details on what the model metadata control and which combination
+   * of parameters are valid. For invalid combinations of parameters (e.g. type
+   * = `frequently-bought-together` and optimization_objective = `ctr`), you
+   * receive an error 400 if you try to create/update a recommendation with
+   * this set of knobs.
    * </pre>
    *
    * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6663,6 +6662,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * `recommended-for-you` =&gt; `ctr`
    * `others-you-may-like` =&gt; `ctr`
    * `frequently-bought-together` =&gt; `revenue_per_order`
+   * This field together with
+   * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+   * describe model metadata to use to control model training and serving.
+   * See https://cloud.google.com/retail/docs/models
+   * for more details on what the model metadata control and which combination
+   * of parameters are valid. For invalid combinations of parameters (e.g. type
+   * = `frequently-bought-together` and optimization_objective = `ctr`), you
+   * receive an error 400 if you try to create/update a recommendation with
+   * this set of knobs.
    * </pre>
    *
    * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6690,8 +6698,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The state of periodic tuning.
    * The period we use is 3 months - to do a
-   * one-off tune earlier use the TuneModel method. Default value
-   * is PERIODIC_TUNING_ENABLED.
+   * one-off tune earlier use the `TuneModel` method. Default value
+   * is `PERIODIC_TUNING_ENABLED`.
    * </pre>
    *
    * <code>
@@ -6710,8 +6718,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The state of periodic tuning.
    * The period we use is 3 months - to do a
-   * one-off tune earlier use the TuneModel method. Default value
-   * is PERIODIC_TUNING_ENABLED.
+   * one-off tune earlier use the `TuneModel` method. Default value
+   * is `PERIODIC_TUNING_ENABLED`.
    * </pre>
    *
    * <code>
@@ -6843,11 +6851,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The state of data requirements for this model: DATA_OK and
-   * DATA_ERROR.
+   * Output only. The state of data requirements for this model: `DATA_OK` and
+   * `DATA_ERROR`.
    * Recommendation model cannot be trained if the data is in
-   * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-   * serving state is ACTIVE: models were trained successfully before, but
+   * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+   * if serving state is `ACTIVE`: models were trained successfully before, but
    * cannot be refreshed because model no longer has sufficient
    * data for training.
    * </pre>
@@ -6866,11 +6874,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The state of data requirements for this model: DATA_OK and
-   * DATA_ERROR.
+   * Output only. The state of data requirements for this model: `DATA_OK` and
+   * `DATA_ERROR`.
    * Recommendation model cannot be trained if the data is in
-   * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-   * serving state is ACTIVE: models were trained successfully before, but
+   * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+   * if serving state is `ACTIVE`: models were trained successfully before, but
    * cannot be refreshed because model no longer has sufficient
    * data for training.
    * </pre>
@@ -6895,8 +6903,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-   * attributes is enabled for the model.
+   * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+   * by attributes is enabled for the model.
    * </pre>
    *
    * <code>
@@ -6913,8 +6921,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-   * attributes is enabled for the model.
+   * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+   * by attributes is enabled for the model.
    * </pre>
    *
    * <code>
@@ -7367,7 +7375,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * [Model][google.cloud.retail.v2alpha.Model]. A
    * [Model][google.cloud.retail.v2alpha.Model] can be associated with a
    * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig] and then queried
-   * through the Predict api.
+   * through the Predict API.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.Model}
@@ -8054,7 +8062,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The fully qualified resource name of the model.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * catalog_id has char limit of 50.
      * recommendation_model_id has char limit of 40.
      * </pre>
@@ -8080,7 +8088,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The fully qualified resource name of the model.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * catalog_id has char limit of 50.
      * recommendation_model_id has char limit of 40.
      * </pre>
@@ -8106,7 +8114,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The fully qualified resource name of the model.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * catalog_id has char limit of 50.
      * recommendation_model_id has char limit of 40.
      * </pre>
@@ -8131,7 +8139,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The fully qualified resource name of the model.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * catalog_id has char limit of 50.
      * recommendation_model_id has char limit of 40.
      * </pre>
@@ -8152,7 +8160,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The fully qualified resource name of the model.
      * Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}`
      * catalog_id has char limit of 50.
      * recommendation_model_id has char limit of 40.
      * </pre>
@@ -8180,7 +8188,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The display name of the model.
      * Should be human readable, used to display Recommendation Models in the
-     * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+     * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
      * characters.
      * </pre>
      *
@@ -8205,7 +8213,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The display name of the model.
      * Should be human readable, used to display Recommendation Models in the
-     * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+     * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
      * characters.
      * </pre>
      *
@@ -8230,7 +8238,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The display name of the model.
      * Should be human readable, used to display Recommendation Models in the
-     * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+     * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
      * characters.
      * </pre>
      *
@@ -8254,7 +8262,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The display name of the model.
      * Should be human readable, used to display Recommendation Models in the
-     * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+     * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
      * characters.
      * </pre>
      *
@@ -8274,7 +8282,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The display name of the model.
      * Should be human readable, used to display Recommendation Models in the
-     * Retail Cloud Cosole Dashboard. UTF-8 encoded string with limit of 1024
+     * Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024
      * characters.
      * </pre>
      *
@@ -8300,12 +8308,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The training state that the model is in (e.g.
-     * TRAINING or PAUSED).
+     * `TRAINING` or `PAUSED`).
      * Since part of the cost of running the service
      * is frequency of training - this can be used to determine when to train
      * model in order to control cost. If not specified: the default value for
-     * CreateModel method is TRAINING. the default value for
-     * UpdateModel method is to keep the state the same as before.
+     * `CreateModel` method is `TRAINING`. The default value for
+     * `UpdateModel` method is to keep the state the same as before.
      * </pre>
      *
      * <code>
@@ -8323,12 +8331,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The training state that the model is in (e.g.
-     * TRAINING or PAUSED).
+     * `TRAINING` or `PAUSED`).
      * Since part of the cost of running the service
      * is frequency of training - this can be used to determine when to train
      * model in order to control cost. If not specified: the default value for
-     * CreateModel method is TRAINING. the default value for
-     * UpdateModel method is to keep the state the same as before.
+     * `CreateModel` method is `TRAINING`. The default value for
+     * `UpdateModel` method is to keep the state the same as before.
      * </pre>
      *
      * <code>
@@ -8349,12 +8357,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The training state that the model is in (e.g.
-     * TRAINING or PAUSED).
+     * `TRAINING` or `PAUSED`).
      * Since part of the cost of running the service
      * is frequency of training - this can be used to determine when to train
      * model in order to control cost. If not specified: the default value for
-     * CreateModel method is TRAINING. the default value for
-     * UpdateModel method is to keep the state the same as before.
+     * `CreateModel` method is `TRAINING`. The default value for
+     * `UpdateModel` method is to keep the state the same as before.
      * </pre>
      *
      * <code>
@@ -8377,12 +8385,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The training state that the model is in (e.g.
-     * TRAINING or PAUSED).
+     * `TRAINING` or `PAUSED`).
      * Since part of the cost of running the service
      * is frequency of training - this can be used to determine when to train
      * model in order to control cost. If not specified: the default value for
-     * CreateModel method is TRAINING. the default value for
-     * UpdateModel method is to keep the state the same as before.
+     * `CreateModel` method is `TRAINING`. The default value for
+     * `UpdateModel` method is to keep the state the same as before.
      * </pre>
      *
      * <code>
@@ -8406,12 +8414,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The training state that the model is in (e.g.
-     * TRAINING or PAUSED).
+     * `TRAINING` or `PAUSED`).
      * Since part of the cost of running the service
      * is frequency of training - this can be used to determine when to train
      * model in order to control cost. If not specified: the default value for
-     * CreateModel method is TRAINING. the default value for
-     * UpdateModel method is to keep the state the same as before.
+     * `CreateModel` method is `TRAINING`. The default value for
+     * `UpdateModel` method is to keep the state the same as before.
      * </pre>
      *
      * <code>
@@ -8432,7 +8440,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+     * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
      * </pre>
      *
      * <code>
@@ -8449,7 +8457,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+     * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
      * </pre>
      *
      * <code>
@@ -8469,7 +8477,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+     * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
      * </pre>
      *
      * <code>
@@ -8491,7 +8499,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+     * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
      * </pre>
      *
      * <code>
@@ -8514,7 +8522,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The serving state of the model: ACTIVE, NOT_ACTIVE.
+     * Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
      * </pre>
      *
      * <code>
@@ -8957,8 +8965,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The type of model e.g. `home-page`.
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-     * `frequently-bought-together`, `page-optimization`, 'similar-items',
-     * 'buy-it-again', `recently-viewed`(readonly value).
+     * `frequently-bought-together`, `page-optimization`, `similar-items`,
+     * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -8982,8 +8999,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The type of model e.g. `home-page`.
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-     * `frequently-bought-together`, `page-optimization`, 'similar-items',
-     * 'buy-it-again', `recently-viewed`(readonly value).
+     * `frequently-bought-together`, `page-optimization`, `similar-items`,
+     * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9007,8 +9033,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The type of model e.g. `home-page`.
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-     * `frequently-bought-together`, `page-optimization`, 'similar-items',
-     * 'buy-it-again', `recently-viewed`(readonly value).
+     * `frequently-bought-together`, `page-optimization`, `similar-items`,
+     * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9031,8 +9066,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The type of model e.g. `home-page`.
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-     * `frequently-bought-together`, `page-optimization`, 'similar-items',
-     * 'buy-it-again', `recently-viewed`(readonly value).
+     * `frequently-bought-together`, `page-optimization`, `similar-items`,
+     * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9051,8 +9095,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The type of model e.g. `home-page`.
      * Currently supported values: `recommended-for-you`, `others-you-may-like`,
-     * `frequently-bought-together`, `page-optimization`, 'similar-items',
-     * 'buy-it-again', `recently-viewed`(readonly value).
+     * `frequently-bought-together`, `page-optimization`, `similar-items`,
+     * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string type = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9084,6 +9137,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `recommended-for-you` =&gt; `ctr`
      * `others-you-may-like` =&gt; `ctr`
      * `frequently-bought-together` =&gt; `revenue_per_order`
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9113,6 +9175,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `recommended-for-you` =&gt; `ctr`
      * `others-you-may-like` =&gt; `ctr`
      * `frequently-bought-together` =&gt; `revenue_per_order`
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9142,6 +9213,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `recommended-for-you` =&gt; `ctr`
      * `others-you-may-like` =&gt; `ctr`
      * `frequently-bought-together` =&gt; `revenue_per_order`
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9170,6 +9250,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `recommended-for-you` =&gt; `ctr`
      * `others-you-may-like` =&gt; `ctr`
      * `frequently-bought-together` =&gt; `revenue_per_order`
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9194,6 +9283,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * `recommended-for-you` =&gt; `ctr`
      * `others-you-may-like` =&gt; `ctr`
      * `frequently-bought-together` =&gt; `revenue_per_order`
+     * This field together with
+     * [optimization_objective][google.cloud.retail.v2alpha.Model.type]
+     * describe model metadata to use to control model training and serving.
+     * See https://cloud.google.com/retail/docs/models
+     * for more details on what the model metadata control and which combination
+     * of parameters are valid. For invalid combinations of parameters (e.g. type
+     * = `frequently-bought-together` and optimization_objective = `ctr`), you
+     * receive an error 400 if you try to create/update a recommendation with
+     * this set of knobs.
      * </pre>
      *
      * <code>string optimization_objective = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9219,8 +9317,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The state of periodic tuning.
      * The period we use is 3 months - to do a
-     * one-off tune earlier use the TuneModel method. Default value
-     * is PERIODIC_TUNING_ENABLED.
+     * one-off tune earlier use the `TuneModel` method. Default value
+     * is `PERIODIC_TUNING_ENABLED`.
      * </pre>
      *
      * <code>
@@ -9239,8 +9337,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The state of periodic tuning.
      * The period we use is 3 months - to do a
-     * one-off tune earlier use the TuneModel method. Default value
-     * is PERIODIC_TUNING_ENABLED.
+     * one-off tune earlier use the `TuneModel` method. Default value
+     * is `PERIODIC_TUNING_ENABLED`.
      * </pre>
      *
      * <code>
@@ -9262,8 +9360,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The state of periodic tuning.
      * The period we use is 3 months - to do a
-     * one-off tune earlier use the TuneModel method. Default value
-     * is PERIODIC_TUNING_ENABLED.
+     * one-off tune earlier use the `TuneModel` method. Default value
+     * is `PERIODIC_TUNING_ENABLED`.
      * </pre>
      *
      * <code>
@@ -9287,8 +9385,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The state of periodic tuning.
      * The period we use is 3 months - to do a
-     * one-off tune earlier use the TuneModel method. Default value
-     * is PERIODIC_TUNING_ENABLED.
+     * one-off tune earlier use the `TuneModel` method. Default value
+     * is `PERIODIC_TUNING_ENABLED`.
      * </pre>
      *
      * <code>
@@ -9314,8 +9412,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The state of periodic tuning.
      * The period we use is 3 months - to do a
-     * one-off tune earlier use the TuneModel method. Default value
-     * is PERIODIC_TUNING_ENABLED.
+     * one-off tune earlier use the `TuneModel` method. Default value
+     * is `PERIODIC_TUNING_ENABLED`.
      * </pre>
      *
      * <code>
@@ -9655,11 +9753,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of data requirements for this model: DATA_OK and
-     * DATA_ERROR.
+     * Output only. The state of data requirements for this model: `DATA_OK` and
+     * `DATA_ERROR`.
      * Recommendation model cannot be trained if the data is in
-     * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-     * serving state is ACTIVE: models were trained successfully before, but
+     * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+     * if serving state is `ACTIVE`: models were trained successfully before, but
      * cannot be refreshed because model no longer has sufficient
      * data for training.
      * </pre>
@@ -9678,11 +9776,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of data requirements for this model: DATA_OK and
-     * DATA_ERROR.
+     * Output only. The state of data requirements for this model: `DATA_OK` and
+     * `DATA_ERROR`.
      * Recommendation model cannot be trained if the data is in
-     * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-     * serving state is ACTIVE: models were trained successfully before, but
+     * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+     * if serving state is `ACTIVE`: models were trained successfully before, but
      * cannot be refreshed because model no longer has sufficient
      * data for training.
      * </pre>
@@ -9704,11 +9802,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of data requirements for this model: DATA_OK and
-     * DATA_ERROR.
+     * Output only. The state of data requirements for this model: `DATA_OK` and
+     * `DATA_ERROR`.
      * Recommendation model cannot be trained if the data is in
-     * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-     * serving state is ACTIVE: models were trained successfully before, but
+     * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+     * if serving state is `ACTIVE`: models were trained successfully before, but
      * cannot be refreshed because model no longer has sufficient
      * data for training.
      * </pre>
@@ -9730,11 +9828,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of data requirements for this model: DATA_OK and
-     * DATA_ERROR.
+     * Output only. The state of data requirements for this model: `DATA_OK` and
+     * `DATA_ERROR`.
      * Recommendation model cannot be trained if the data is in
-     * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-     * serving state is ACTIVE: models were trained successfully before, but
+     * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+     * if serving state is `ACTIVE`: models were trained successfully before, but
      * cannot be refreshed because model no longer has sufficient
      * data for training.
      * </pre>
@@ -9759,11 +9857,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The state of data requirements for this model: DATA_OK and
-     * DATA_ERROR.
+     * Output only. The state of data requirements for this model: `DATA_OK` and
+     * `DATA_ERROR`.
      * Recommendation model cannot be trained if the data is in
-     * DATA_ERROR state. Recommendation model can have DATA_ERROR state even if
-     * serving state is ACTIVE: models were trained successfully before, but
+     * `DATA_ERROR` state. Recommendation model can have `DATA_ERROR` state even
+     * if serving state is `ACTIVE`: models were trained successfully before, but
      * cannot be refreshed because model no longer has sufficient
      * data for training.
      * </pre>
@@ -9786,8 +9884,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-     * attributes is enabled for the model.
+     * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+     * by attributes is enabled for the model.
      * </pre>
      *
      * <code>
@@ -9804,8 +9902,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-     * attributes is enabled for the model.
+     * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+     * by attributes is enabled for the model.
      * </pre>
      *
      * <code>
@@ -9825,8 +9923,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-     * attributes is enabled for the model.
+     * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+     * by attributes is enabled for the model.
      * </pre>
      *
      * <code>
@@ -9848,8 +9946,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-     * attributes is enabled for the model.
+     * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+     * by attributes is enabled for the model.
      * </pre>
      *
      * <code>
@@ -9873,8 +9971,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If RECOMMENDATIONS_FILTERING_ENABLED, recommendation filtering by
-     * attributes is enabled for the model.
+     * Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering
+     * by attributes is enabled for the model.
      * </pre>
      *
      * <code>

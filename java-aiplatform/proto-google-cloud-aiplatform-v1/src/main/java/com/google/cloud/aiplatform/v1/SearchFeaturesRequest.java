@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * Request message for [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures].
+ * Request message for
+ * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.SearchFeaturesRequest}
@@ -297,11 +298,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-   * match the call that provided the page token.
+   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+   * except `page_size`, must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 5;</code>
@@ -325,11 +326,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A page token, received from a previous
-   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-   * Provide this to retrieve the subsequent page.
+   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
-   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-   * match the call that provided the page token.
+   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+   * except `page_size`, must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 5;</code>
@@ -539,7 +540,8 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures].
+   * Request message for
+   * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.SearchFeaturesRequest}
@@ -1278,11 +1280,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-     * match the call that provided the page token.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+     * except `page_size`, must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -1305,11 +1307,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-     * match the call that provided the page token.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+     * except `page_size`, must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -1332,11 +1334,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-     * match the call that provided the page token.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+     * except `page_size`, must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -1358,11 +1360,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-     * match the call that provided the page token.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+     * except `page_size`, must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -1380,11 +1382,11 @@ public final class SearchFeaturesRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A page token, received from a previous
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures] call.
-     * Provide this to retrieve the subsequent page.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures]
+     * call. Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to
-     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures], except `page_size`, must
-     * match the call that provided the page token.
+     * [FeaturestoreService.SearchFeatures][google.cloud.aiplatform.v1.FeaturestoreService.SearchFeatures],
+     * except `page_size`, must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 5;</code>

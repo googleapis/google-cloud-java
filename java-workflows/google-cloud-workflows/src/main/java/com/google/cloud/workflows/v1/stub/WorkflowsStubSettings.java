@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
  * workflowsSettingsBuilder
  *     .getWorkflowSettings()
  *     .setRetrySettings(
- *         workflowsSettingsBuilder.getWorkflowSettings().getRetrySettings().toBuilder()
+ *         workflowsSettingsBuilder
+ *             .getWorkflowSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WorkflowsStubSettings workflowsSettings = workflowsSettingsBuilder.build();

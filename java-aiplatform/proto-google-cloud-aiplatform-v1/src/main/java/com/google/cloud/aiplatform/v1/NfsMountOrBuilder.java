@@ -81,8 +81,8 @@ public interface NfsMountOrBuilder
    *
    *
    * <pre>
-   * Required. Destination mount path. The NFS will be mounted for the user under
-   * /mnt/nfs/&lt;mount_point&gt;
+   * Required. Destination mount path. The NFS will be mounted for the user
+   * under /mnt/nfs/&lt;mount_point&gt;
    * </pre>
    *
    * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -94,8 +94,8 @@ public interface NfsMountOrBuilder
    *
    *
    * <pre>
-   * Required. Destination mount path. The NFS will be mounted for the user under
-   * /mnt/nfs/&lt;mount_point&gt;
+   * Required. Destination mount path. The NFS will be mounted for the user
+   * under /mnt/nfs/&lt;mount_point&gt;
    * </pre>
    *
    * <code>string mount_point = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -96,12 +96,13 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                             ProtoRestSerializer<CreateModelRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "dryRun", request.getDryRun());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("model", request.getModel(), false))
+                                  .toBody("model", request.getModel(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Operation>newBuilder()
@@ -134,12 +135,13 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<PauseModelRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -169,12 +171,13 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<ResumeModelRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -204,6 +207,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteModelRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -239,6 +243,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -272,11 +277,12 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                         ProtoRestSerializer<UpdateModelRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("model", request.getModel(), false))
+                          ProtoRestSerializer.create().toBody("model", request.getModel(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Model>newBuilder()
@@ -306,12 +312,13 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<TuneModelRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(
                       request ->
                           ProtoRestSerializer.create()
-                              .toBody("*", request.toBuilder().clearName().build(), false))
+                              .toBody("*", request.toBuilder().clearName().build(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Operation>newBuilder()

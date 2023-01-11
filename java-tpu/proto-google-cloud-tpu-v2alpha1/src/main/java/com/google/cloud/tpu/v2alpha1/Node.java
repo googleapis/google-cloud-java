@@ -51,6 +51,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     dataDisks_ = java.util.Collections.emptyList();
     apiVersion_ = 0;
     symptoms_ = java.util.Collections.emptyList();
+    queuedResource_ = "";
   }
 
   @java.lang.Override
@@ -167,7 +168,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TPU node is being repaired and may be unusable. Details can be
-     * found in the `help_description` field.
+     * found in the 'help_description' field.
      * </pre>
      *
      * <code>REPAIRING = 6;</code>
@@ -322,7 +323,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * TPU node is being repaired and may be unusable. Details can be
-     * found in the `help_description` field.
+     * found in the 'help_description' field.
      * </pre>
      *
      * <code>REPAIRING = 6;</code>
@@ -1008,10 +1009,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of hardware accelerators associated with this node.
+   * The type of hardware accelerators associated with this node.
    * </pre>
    *
-   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string accelerator_type = 5;</code>
    *
    * @return The acceleratorType.
    */
@@ -1031,10 +1032,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The type of hardware accelerators associated with this node.
+   * The type of hardware accelerators associated with this node.
    * </pre>
    *
-   * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string accelerator_type = 5;</code>
    *
    * @return The bytes for acceleratorType.
    */
@@ -2048,6 +2049,57 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     return symptoms_.get(index);
   }
 
+  public static final int QUEUED_RESOURCE_FIELD_NUMBER = 43;
+  private volatile java.lang.Object queuedResource_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
+   * </pre>
+   *
+   * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The queuedResource.
+   */
+  @java.lang.Override
+  public java.lang.String getQueuedResource() {
+    java.lang.Object ref = queuedResource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      queuedResource_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The qualified name of the QueuedResource that requested this
+   * Node.
+   * </pre>
+   *
+   * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for queuedResource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQueuedResourceBytes() {
+    java.lang.Object ref = queuedResource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      queuedResource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER = 45;
   private com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shieldedInstanceConfig_;
   /**
@@ -2170,6 +2222,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < dataDisks_.size(); i++) {
       output.writeMessage(41, dataDisks_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queuedResource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 43, queuedResource_);
+    }
     if (shieldedInstanceConfig_ != null) {
       output.writeMessage(45, getShieldedInstanceConfig());
     }
@@ -2263,6 +2318,9 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < dataDisks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(41, dataDisks_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(queuedResource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, queuedResource_);
+    }
     if (shieldedInstanceConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(45, getShieldedInstanceConfig());
@@ -2314,6 +2372,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
     if (!getDataDisksList().equals(other.getDataDisksList())) return false;
     if (apiVersion_ != other.apiVersion_) return false;
     if (!getSymptomsList().equals(other.getSymptomsList())) return false;
+    if (!getQueuedResource().equals(other.getQueuedResource())) return false;
     if (hasShieldedInstanceConfig() != other.hasShieldedInstanceConfig()) return false;
     if (hasShieldedInstanceConfig()) {
       if (!getShieldedInstanceConfig().equals(other.getShieldedInstanceConfig())) return false;
@@ -2389,6 +2448,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SYMPTOMS_FIELD_NUMBER;
       hash = (53 * hash) + getSymptomsList().hashCode();
     }
+    hash = (37 * hash) + QUEUED_RESOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getQueuedResource().hashCode();
     if (hasShieldedInstanceConfig()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getShieldedInstanceConfig().hashCode();
@@ -2623,6 +2684,8 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         symptomsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      queuedResource_ = "";
+
       if (shieldedInstanceConfigBuilder_ == null) {
         shieldedInstanceConfig_ = null;
       } else {
@@ -2722,6 +2785,7 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.symptoms_ = symptomsBuilder_.build();
       }
+      result.queuedResource_ = queuedResource_;
       if (shieldedInstanceConfigBuilder_ == null) {
         result.shieldedInstanceConfig_ = shieldedInstanceConfig_;
       } else {
@@ -2917,6 +2981,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getQueuedResource().isEmpty()) {
+        queuedResource_ = other.queuedResource_;
+        onChanged();
+      }
       if (other.hasShieldedInstanceConfig()) {
         mergeShieldedInstanceConfig(other.getShieldedInstanceConfig());
       }
@@ -3099,6 +3167,12 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 330
+            case 346:
+              {
+                queuedResource_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 346
             case 362:
               {
                 input.readMessage(
@@ -3352,10 +3426,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5;</code>
      *
      * @return The acceleratorType.
      */
@@ -3374,10 +3448,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5;</code>
      *
      * @return The bytes for acceleratorType.
      */
@@ -3396,10 +3470,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5;</code>
      *
      * @param value The acceleratorType to set.
      * @return This builder for chaining.
@@ -3417,10 +3491,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5;</code>
      *
      * @return This builder for chaining.
      */
@@ -3434,10 +3508,10 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of hardware accelerators associated with this node.
+     * The type of hardware accelerators associated with this node.
      * </pre>
      *
-     * <code>string accelerator_type = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string accelerator_type = 5;</code>
      *
      * @param value The bytes for acceleratorType to set.
      * @return This builder for chaining.
@@ -6590,6 +6664,117 @@ public final class Node extends com.google.protobuf.GeneratedMessageV3
         symptoms_ = null;
       }
       return symptomsBuilder_;
+    }
+
+    private java.lang.Object queuedResource_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queuedResource.
+     */
+    public java.lang.String getQueuedResource() {
+      java.lang.Object ref = queuedResource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        queuedResource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for queuedResource.
+     */
+    public com.google.protobuf.ByteString getQueuedResourceBytes() {
+      java.lang.Object ref = queuedResource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        queuedResource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The queuedResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueuedResource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      queuedResource_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQueuedResource() {
+
+      queuedResource_ = getDefaultInstance().getQueuedResource();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The qualified name of the QueuedResource that requested this
+     * Node.
+     * </pre>
+     *
+     * <code>string queued_resource = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for queuedResource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQueuedResourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      queuedResource_ = value;
+      onChanged();
+      return this;
     }
 
     private com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig shieldedInstanceConfig_;

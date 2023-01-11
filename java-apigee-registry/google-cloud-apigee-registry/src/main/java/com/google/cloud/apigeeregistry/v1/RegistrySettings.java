@@ -81,7 +81,10 @@ import javax.annotation.Generated;
  * registrySettingsBuilder
  *     .getApiSettings()
  *     .setRetrySettings(
- *         registrySettingsBuilder.getApiSettings().getRetrySettings().toBuilder()
+ *         registrySettingsBuilder
+ *             .getApiSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegistrySettings registrySettings = registrySettingsBuilder.build();

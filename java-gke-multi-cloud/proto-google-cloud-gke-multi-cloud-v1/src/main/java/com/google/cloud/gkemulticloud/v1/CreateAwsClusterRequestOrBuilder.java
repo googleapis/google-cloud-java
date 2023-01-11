@@ -27,8 +27,9 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location where this [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource
-   * will be created.
+   * Required. The parent location where this
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource will be
+   * created.
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
@@ -45,8 +46,9 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent location where this [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource
-   * will be created.
+   * Required. The parent location where this
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource will be
+   * created.
    * Location names are formatted as `projects/&lt;project-id&gt;/locations/&lt;region&gt;`.
    * See [Resource Names](https://cloud.google.com/apis/design/resource_names)
    * for more details on Google Cloud resource names.
@@ -64,7 +66,8 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The specification of the [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to create.
+   * Required. The specification of the
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to create.
    * </pre>
    *
    * <code>
@@ -78,7 +81,8 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The specification of the [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to create.
+   * Required. The specification of the
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to create.
    * </pre>
    *
    * <code>
@@ -92,7 +96,8 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The specification of the [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to create.
+   * Required. The specification of the
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] to create.
    * </pre>
    *
    * <code>
@@ -105,12 +110,13 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A client provided ID the resource. Must be unique within the parent
-   * resource.
-   * The provided ID will be part of the [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
-   * resource name formatted as
+   * Required. A client provided ID the resource. Must be unique within the
+   * parent resource.
+   * The provided ID will be part of the
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource name
+   * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
-   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
    * <code>string aws_cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -122,12 +128,13 @@ public interface CreateAwsClusterRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A client provided ID the resource. Must be unique within the parent
-   * resource.
-   * The provided ID will be part of the [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster]
-   * resource name formatted as
+   * Required. A client provided ID the resource. Must be unique within the
+   * parent resource.
+   * The provided ID will be part of the
+   * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource name
+   * formatted as
    * `projects/&lt;project-id&gt;/locations/&lt;region&gt;/awsClusters/&lt;cluster-id&gt;`.
-   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 40 characters.
+   * Valid characters are `/[a-z][0-9]-/`. Cannot be longer than 63 characters.
    * </pre>
    *
    * <code>string aws_cluster_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

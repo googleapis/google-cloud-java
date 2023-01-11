@@ -36,7 +36,10 @@ public class SyncGetEnvironment {
     environmentsSettingsBuilder
         .getEnvironmentSettings()
         .setRetrySettings(
-            environmentsSettingsBuilder.getEnvironmentSettings().getRetrySettings().toBuilder()
+            environmentsSettingsBuilder
+                .getEnvironmentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();

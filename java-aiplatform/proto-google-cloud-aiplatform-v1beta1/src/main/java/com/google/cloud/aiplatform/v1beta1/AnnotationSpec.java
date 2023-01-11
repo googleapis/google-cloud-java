@@ -125,7 +125,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-defined name of the AnnotationSpec.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -150,7 +150,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. The user-defined name of the AnnotationSpec.
-   * The name can be up to 128 characters long and can be consist of any UTF-8
+   * The name can be up to 128 characters long and can consist of any UTF-8
    * characters.
    * </pre>
    *
@@ -275,8 +275,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -299,8 +299,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-   * "overwrite" update happens.
+   * Optional. Used to perform consistent read-modify-write updates. If not set,
+   * a blind "overwrite" update happens.
    * </pre>
    *
    * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -874,7 +874,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the AnnotationSpec.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -898,7 +898,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the AnnotationSpec.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -922,7 +922,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the AnnotationSpec.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -945,7 +945,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the AnnotationSpec.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -964,7 +964,7 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The user-defined name of the AnnotationSpec.
-     * The name can be up to 128 characters long and can be consist of any UTF-8
+     * The name can be up to 128 characters long and can consist of any UTF-8
      * characters.
      * </pre>
      *
@@ -1391,8 +1391,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1414,8 +1414,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1437,8 +1437,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1459,8 +1459,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1477,8 +1477,8 @@ public final class AnnotationSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Used to perform consistent read-modify-write updates. If not set, a blind
-     * "overwrite" update happens.
+     * Optional. Used to perform consistent read-modify-write updates. If not set,
+     * a blind "overwrite" update happens.
      * </pre>
      *
      * <code>string etag = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

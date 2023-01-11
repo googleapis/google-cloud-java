@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * acceleratorTypesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         acceleratorTypesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         acceleratorTypesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AcceleratorTypesSettings acceleratorTypesSettings = acceleratorTypesSettingsBuilder.build();

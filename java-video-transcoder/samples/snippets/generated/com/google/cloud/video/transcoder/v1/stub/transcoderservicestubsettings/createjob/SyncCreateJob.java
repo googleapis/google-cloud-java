@@ -37,7 +37,10 @@ public class SyncCreateJob {
     transcoderServiceSettingsBuilder
         .createJobSettings()
         .setRetrySettings(
-            transcoderServiceSettingsBuilder.createJobSettings().getRetrySettings().toBuilder()
+            transcoderServiceSettingsBuilder
+                .createJobSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     TranscoderServiceStubSettings transcoderServiceSettings =

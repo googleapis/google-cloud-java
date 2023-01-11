@@ -83,6 +83,7 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -118,6 +119,7 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
                         ProtoRestSerializer<GetSettingRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "view", request.getViewValue());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -156,12 +158,13 @@ public class HttpJsonResourceSettingsServiceStub extends ResourceSettingsService
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateSettingRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
                       .setRequestBodyExtractor(
                           request ->
                               ProtoRestSerializer.create()
-                                  .toBody("setting", request.getSetting(), false))
+                                  .toBody("setting", request.getSetting(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Setting>newBuilder()

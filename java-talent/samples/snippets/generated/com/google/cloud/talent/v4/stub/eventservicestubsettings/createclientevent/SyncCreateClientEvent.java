@@ -37,7 +37,10 @@ public class SyncCreateClientEvent {
     eventServiceSettingsBuilder
         .createClientEventSettings()
         .setRetrySettings(
-            eventServiceSettingsBuilder.createClientEventSettings().getRetrySettings().toBuilder()
+            eventServiceSettingsBuilder
+                .createClientEventSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     EventServiceStubSettings eventServiceSettings = eventServiceSettingsBuilder.build();

@@ -106,7 +106,10 @@ import org.threeten.bp.Duration;
  * subnetworksSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         subnetworksSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         subnetworksSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * SubnetworksStubSettings subnetworksSettings = subnetworksSettingsBuilder.build();

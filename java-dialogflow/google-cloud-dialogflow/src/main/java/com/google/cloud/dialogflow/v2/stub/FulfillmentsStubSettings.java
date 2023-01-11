@@ -87,7 +87,10 @@ import org.threeten.bp.Duration;
  * fulfillmentsSettingsBuilder
  *     .getFulfillmentSettings()
  *     .setRetrySettings(
- *         fulfillmentsSettingsBuilder.getFulfillmentSettings().getRetrySettings().toBuilder()
+ *         fulfillmentsSettingsBuilder
+ *             .getFulfillmentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FulfillmentsStubSettings fulfillmentsSettings = fulfillmentsSettingsBuilder.build();

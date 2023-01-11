@@ -37,7 +37,10 @@ public class SyncGetCustomer {
     cloudChannelServiceSettingsBuilder
         .getCustomerSettings()
         .setRetrySettings(
-            cloudChannelServiceSettingsBuilder.getCustomerSettings().getRetrySettings().toBuilder()
+            cloudChannelServiceSettingsBuilder
+                .getCustomerSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     CloudChannelServiceSettings cloudChannelServiceSettings =

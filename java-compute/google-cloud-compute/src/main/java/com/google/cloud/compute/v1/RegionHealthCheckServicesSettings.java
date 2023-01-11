@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * regionHealthCheckServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         regionHealthCheckServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         regionHealthCheckServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RegionHealthCheckServicesSettings regionHealthCheckServicesSettings =

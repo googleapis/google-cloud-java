@@ -22,7 +22,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Response message for [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks].
+ * Response message for
+ * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ListChannelPartnerLinksResponse}
@@ -147,7 +148,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -171,7 +174,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+   * Pass to
+   * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -367,7 +372,8 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Response message for [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks].
+   * Response message for
+   * [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ListChannelPartnerLinksResponse}
@@ -960,7 +966,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -983,7 +991,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1006,7 +1016,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1028,7 +1040,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1046,7 +1060,9 @@ public final class ListChannelPartnerLinksResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token] to obtain that page.
+     * Pass to
+     * [ListChannelPartnerLinksRequest.page_token][google.cloud.channel.v1.ListChannelPartnerLinksRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

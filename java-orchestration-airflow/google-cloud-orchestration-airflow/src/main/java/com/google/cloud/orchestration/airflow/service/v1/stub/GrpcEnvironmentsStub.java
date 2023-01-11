@@ -31,7 +31,11 @@ import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest;
+import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -107,6 +111,26 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SaveSnapshotRequest, Operation>
+      saveSnapshotMethodDescriptor =
+          MethodDescriptor.<SaveSnapshotRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/SaveSnapshot")
+              .setRequestMarshaller(ProtoUtils.marshaller(SaveSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<LoadSnapshotRequest, Operation>
+      loadSnapshotMethodDescriptor =
+          MethodDescriptor.<LoadSnapshotRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/LoadSnapshot")
+              .setRequestMarshaller(ProtoUtils.marshaller(LoadSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
   private final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
       createEnvironmentOperationCallable;
@@ -121,6 +145,12 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   private final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable;
   private final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable;
+  private final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable;
+  private final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationCallable;
+  private final UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable;
+  private final OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -215,6 +245,26 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
+        GrpcCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(saveSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("environment", String.valueOf(request.getEnvironment()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<LoadSnapshotRequest, Operation> loadSnapshotTransportSettings =
+        GrpcCallSettings.<LoadSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(loadSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("environment", String.valueOf(request.getEnvironment()));
+                  return params.build();
+                })
+            .build();
 
     this.createEnvironmentCallable =
         callableFactory.createUnaryCallable(
@@ -256,6 +306,24 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
         callableFactory.createOperationCallable(
             deleteEnvironmentTransportSettings,
             settings.deleteEnvironmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.saveSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            saveSnapshotTransportSettings, settings.saveSnapshotSettings(), clientContext);
+    this.saveSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            saveSnapshotTransportSettings,
+            settings.saveSnapshotOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.loadSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            loadSnapshotTransportSettings, settings.loadSnapshotSettings(), clientContext);
+    this.loadSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            loadSnapshotTransportSettings,
+            settings.loadSnapshotOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -315,6 +383,28 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
   public OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable() {
     return deleteEnvironmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable() {
+    return saveSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
+      saveSnapshotOperationCallable() {
+    return saveSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<LoadSnapshotRequest, Operation> loadSnapshotCallable() {
+    return loadSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
+      loadSnapshotOperationCallable() {
+    return loadSnapshotOperationCallable;
   }
 
   @Override

@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Runtime operation information for [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
+ * Runtime operation information for
+ * [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateIndexOperationMetadata}
@@ -359,7 +360,8 @@ public final class CreateIndexOperationMetadata extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Runtime operation information for [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
+   * Runtime operation information for
+   * [IndexService.CreateIndex][google.cloud.aiplatform.v1beta1.IndexService.CreateIndex].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.CreateIndexOperationMetadata}

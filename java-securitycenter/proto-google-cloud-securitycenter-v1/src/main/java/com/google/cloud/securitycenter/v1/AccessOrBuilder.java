@@ -124,7 +124,7 @@ public interface AccessOrBuilder
    *
    *
    * <pre>
-   * What kind of user agent is associated, e.g. operating system shells,
+   * What kind of user agent is associated, for example operating system shells,
    * embedded or stand-alone applications, etc.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface AccessOrBuilder
    *
    *
    * <pre>
-   * What kind of user agent is associated, e.g. operating system shells,
+   * What kind of user agent is associated, for example operating system shells,
    * embedded or stand-alone applications, etc.
    * </pre>
    *
@@ -351,4 +351,41 @@ public interface AccessOrBuilder
    */
   com.google.cloud.securitycenter.v1.ServiceAccountDelegationInfoOrBuilder
       getServiceAccountDelegationInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A string that represents the username of a user, user account, or other
+   * entity involved in the access event. What the entity is and what its role
+   * in the access event is depends on the finding that this field appears in.
+   * The entity is likely not an IAM principal, but could be a user that is
+   * logged into an operating system, if the finding is VM-related, or a user
+   * that is logged into some type of application that is involved in the
+   * access event.
+   * </pre>
+   *
+   * <code>string user_name = 11;</code>
+   *
+   * @return The userName.
+   */
+  java.lang.String getUserName();
+  /**
+   *
+   *
+   * <pre>
+   * A string that represents the username of a user, user account, or other
+   * entity involved in the access event. What the entity is and what its role
+   * in the access event is depends on the finding that this field appears in.
+   * The entity is likely not an IAM principal, but could be a user that is
+   * logged into an operating system, if the finding is VM-related, or a user
+   * that is logged into some type of application that is involved in the
+   * access event.
+   * </pre>
+   *
+   * <code>string user_name = 11;</code>
+   *
+   * @return The bytes for userName.
+   */
+  com.google.protobuf.ByteString getUserNameBytes();
 }

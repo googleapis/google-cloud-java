@@ -108,7 +108,10 @@ import org.threeten.bp.Duration;
  * endpointServiceSettingsBuilder
  *     .getEndpointSettings()
  *     .setRetrySettings(
- *         endpointServiceSettingsBuilder.getEndpointSettings().getRetrySettings().toBuilder()
+ *         endpointServiceSettingsBuilder
+ *             .getEndpointSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EndpointServiceStubSettings endpointServiceSettings = endpointServiceSettingsBuilder.build();

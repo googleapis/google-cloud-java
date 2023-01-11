@@ -22,7 +22,8 @@ package com.google.cloud.optimization.v1;
  *
  *
  * <pre>
- * Deprecated: Use [Shipment.Load][], [Vehicle.LoadLimit][] and [ShipmentRoute.VehicleLoad][] instead.
+ * Deprecated: Use [Shipment.Load][], [Vehicle.LoadLimit][] and
+ * [ShipmentRoute.VehicleLoad][] instead.
  * </pre>
  *
  * Protobuf type {@code google.cloud.optimization.v1.CapacityQuantity}
@@ -289,7 +290,8 @@ public final class CapacityQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Deprecated: Use [Shipment.Load][], [Vehicle.LoadLimit][] and [ShipmentRoute.VehicleLoad][] instead.
+   * Deprecated: Use [Shipment.Load][], [Vehicle.LoadLimit][] and
+   * [ShipmentRoute.VehicleLoad][] instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.optimization.v1.CapacityQuantity}

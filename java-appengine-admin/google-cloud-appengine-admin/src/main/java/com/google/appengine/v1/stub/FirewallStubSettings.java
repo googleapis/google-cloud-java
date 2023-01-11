@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * firewallSettingsBuilder
  *     .batchUpdateIngressRulesSettings()
  *     .setRetrySettings(
- *         firewallSettingsBuilder.batchUpdateIngressRulesSettings().getRetrySettings().toBuilder()
+ *         firewallSettingsBuilder
+ *             .batchUpdateIngressRulesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FirewallStubSettings firewallSettings = firewallSettingsBuilder.build();

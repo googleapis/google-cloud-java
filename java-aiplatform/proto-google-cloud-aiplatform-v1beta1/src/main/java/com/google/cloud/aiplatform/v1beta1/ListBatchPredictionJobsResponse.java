@@ -22,7 +22,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Response message for [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1beta1.JobService.ListBatchPredictionJobs]
+ * Response message for
+ * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1beta1.JobService.ListBatchPredictionJobs]
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse}
@@ -153,8 +154,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -178,8 +180,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-   * page.
+   * Pass to
+   * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -376,7 +379,8 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Response message for [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1beta1.JobService.ListBatchPredictionJobs]
+   * Response message for
+   * [JobService.ListBatchPredictionJobs][google.cloud.aiplatform.v1beta1.JobService.ListBatchPredictionJobs]
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse}
@@ -999,8 +1003,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1023,8 +1028,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1047,8 +1053,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1070,8 +1077,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1089,8 +1097,9 @@ public final class ListBatchPredictionJobsResponse extends com.google.protobuf.G
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token] to obtain that
-     * page.
+     * Pass to
+     * [ListBatchPredictionJobsRequest.page_token][google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

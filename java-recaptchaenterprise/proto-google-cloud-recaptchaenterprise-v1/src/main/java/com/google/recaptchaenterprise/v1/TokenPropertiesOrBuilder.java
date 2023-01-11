@@ -131,6 +131,60 @@ public interface TokenPropertiesOrBuilder
    *
    *
    * <pre>
+   * The name of the Android package with which the token was generated (Android
+   * keys only).
+   * </pre>
+   *
+   * <code>string android_package_name = 8;</code>
+   *
+   * @return The androidPackageName.
+   */
+  java.lang.String getAndroidPackageName();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the Android package with which the token was generated (Android
+   * keys only).
+   * </pre>
+   *
+   * <code>string android_package_name = 8;</code>
+   *
+   * @return The bytes for androidPackageName.
+   */
+  com.google.protobuf.ByteString getAndroidPackageNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the iOS bundle with which the token was generated (iOS keys
+   * only).
+   * </pre>
+   *
+   * <code>string ios_bundle_id = 9;</code>
+   *
+   * @return The iosBundleId.
+   */
+  java.lang.String getIosBundleId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the iOS bundle with which the token was generated (iOS keys
+   * only).
+   * </pre>
+   *
+   * <code>string ios_bundle_id = 9;</code>
+   *
+   * @return The bytes for iosBundleId.
+   */
+  com.google.protobuf.ByteString getIosBundleIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Action name provided at token generation.
    * </pre>
    *

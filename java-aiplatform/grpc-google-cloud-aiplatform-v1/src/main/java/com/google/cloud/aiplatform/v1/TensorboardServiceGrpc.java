@@ -127,6 +127,56 @@ public final class TensorboardServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+      getReadTensorboardUsageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReadTensorboardUsage",
+      requestType = com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+      getReadTensorboardUsageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+            com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+        getReadTensorboardUsageMethod;
+    if ((getReadTensorboardUsageMethod = TensorboardServiceGrpc.getReadTensorboardUsageMethod)
+        == null) {
+      synchronized (TensorboardServiceGrpc.class) {
+        if ((getReadTensorboardUsageMethod = TensorboardServiceGrpc.getReadTensorboardUsageMethod)
+            == null) {
+          TensorboardServiceGrpc.getReadTensorboardUsageMethod =
+              getReadTensorboardUsageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+                          com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReadTensorboardUsage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TensorboardServiceMethodDescriptorSupplier("ReadTensorboardUsage"))
+                      .build();
+        }
+      }
+    }
+    return getReadTensorboardUsageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.UpdateTensorboardRequest, com.google.longrunning.Operation>
       getUpdateTensorboardMethod;
 
@@ -1540,6 +1590,21 @@ public final class TensorboardServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public void readTensorboardUsage(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReadTensorboardUsageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Tensorboard.
      * </pre>
      */
@@ -1841,8 +1906,8 @@ public final class TensorboardServiceGrpc {
      * <pre>
      * Reads multiple TensorboardTimeSeries' data. The data point number limit is
      * 1000 for scalars, 100 for tensors and blob references. If the number of
-     * data points stored is less than the limit, all data will be returned.
-     * Otherwise, that limit number of data points will be randomly selected from
+     * data points stored is less than the limit, all data is returned.
+     * Otherwise, the number limit of data points is randomly selected from
      * this time series and returned.
      * </pre>
      */
@@ -1860,8 +1925,8 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Reads a TensorboardTimeSeries' data. By default, if the number of data
-     * points stored is less than 1000, all data will be returned. Otherwise, 1000
-     * data points will be randomly selected from this time series and returned.
+     * points stored is less than 1000, all data is returned. Otherwise, 1000
+     * data points is randomly selected from this time series and returned.
      * This value can be changed by changing max_data_points, which can't be
      * greater than 10k.
      * </pre>
@@ -1898,8 +1963,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points of multiple TensorboardTimeSeries in multiple
-     * TensorboardRun's. If any data fail to be ingested, an error will be
-     * returned.
+     * TensorboardRun's. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public void writeTensorboardExperimentData(
@@ -1916,8 +1980,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points into multiple TensorboardTimeSeries under
-     * a TensorboardRun. If any data fail to be ingested, an error will be
-     * returned.
+     * a TensorboardRun. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public void writeTensorboardRunData(
@@ -1960,6 +2023,13 @@ public final class TensorboardServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.GetTensorboardRequest,
                       com.google.cloud.aiplatform.v1.Tensorboard>(this, METHODID_GET_TENSORBOARD)))
+          .addMethod(
+              getReadTensorboardUsageMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>(
+                      this, METHODID_READ_TENSORBOARD_USAGE)))
           .addMethod(
               getUpdateTensorboardMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2190,6 +2260,23 @@ public final class TensorboardServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Tensorboard> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetTensorboardMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public void readTensorboardUsage(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReadTensorboardUsageMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2539,8 +2626,8 @@ public final class TensorboardServiceGrpc {
      * <pre>
      * Reads multiple TensorboardTimeSeries' data. The data point number limit is
      * 1000 for scalars, 100 for tensors and blob references. If the number of
-     * data points stored is less than the limit, all data will be returned.
-     * Otherwise, that limit number of data points will be randomly selected from
+     * data points stored is less than the limit, all data is returned.
+     * Otherwise, the number limit of data points is randomly selected from
      * this time series and returned.
      * </pre>
      */
@@ -2560,8 +2647,8 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Reads a TensorboardTimeSeries' data. By default, if the number of data
-     * points stored is less than 1000, all data will be returned. Otherwise, 1000
-     * data points will be randomly selected from this time series and returned.
+     * points stored is less than 1000, all data is returned. Otherwise, 1000
+     * data points is randomly selected from this time series and returned.
      * This value can be changed by changing max_data_points, which can't be
      * greater than 10k.
      * </pre>
@@ -2602,8 +2689,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points of multiple TensorboardTimeSeries in multiple
-     * TensorboardRun's. If any data fail to be ingested, an error will be
-     * returned.
+     * TensorboardRun's. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public void writeTensorboardExperimentData(
@@ -2622,8 +2708,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points into multiple TensorboardTimeSeries under
-     * a TensorboardRun. If any data fail to be ingested, an error will be
-     * returned.
+     * a TensorboardRun. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public void writeTensorboardRunData(
@@ -2700,6 +2785,19 @@ public final class TensorboardServiceGrpc {
         com.google.cloud.aiplatform.v1.GetTensorboardRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetTensorboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse readTensorboardUsage(
+        com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadTensorboardUsageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2972,8 +3070,8 @@ public final class TensorboardServiceGrpc {
      * <pre>
      * Reads multiple TensorboardTimeSeries' data. The data point number limit is
      * 1000 for scalars, 100 for tensors and blob references. If the number of
-     * data points stored is less than the limit, all data will be returned.
-     * Otherwise, that limit number of data points will be randomly selected from
+     * data points stored is less than the limit, all data is returned.
+     * Otherwise, the number limit of data points is randomly selected from
      * this time series and returned.
      * </pre>
      */
@@ -2989,8 +3087,8 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Reads a TensorboardTimeSeries' data. By default, if the number of data
-     * points stored is less than 1000, all data will be returned. Otherwise, 1000
-     * data points will be randomly selected from this time series and returned.
+     * points stored is less than 1000, all data is returned. Otherwise, 1000
+     * data points is randomly selected from this time series and returned.
      * This value can be changed by changing max_data_points, which can't be
      * greater than 10k.
      * </pre>
@@ -3024,8 +3122,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points of multiple TensorboardTimeSeries in multiple
-     * TensorboardRun's. If any data fail to be ingested, an error will be
-     * returned.
+     * TensorboardRun's. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataResponse
@@ -3040,8 +3137,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points into multiple TensorboardTimeSeries under
-     * a TensorboardRun. If any data fail to be ingested, an error will be
-     * returned.
+     * a TensorboardRun. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse writeTensorboardRunData(
@@ -3110,6 +3206,20 @@ public final class TensorboardServiceGrpc {
         getTensorboard(com.google.cloud.aiplatform.v1.GetTensorboardRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetTensorboardMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of monthly active users for a given TensorBoard instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
+        readTensorboardUsage(com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReadTensorboardUsageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3406,8 +3516,8 @@ public final class TensorboardServiceGrpc {
      * <pre>
      * Reads multiple TensorboardTimeSeries' data. The data point number limit is
      * 1000 for scalars, 100 for tensors and blob references. If the number of
-     * data points stored is less than the limit, all data will be returned.
-     * Otherwise, that limit number of data points will be randomly selected from
+     * data points stored is less than the limit, all data is returned.
+     * Otherwise, the number limit of data points is randomly selected from
      * this time series and returned.
      * </pre>
      */
@@ -3425,8 +3535,8 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Reads a TensorboardTimeSeries' data. By default, if the number of data
-     * points stored is less than 1000, all data will be returned. Otherwise, 1000
-     * data points will be randomly selected from this time series and returned.
+     * points stored is less than 1000, all data is returned. Otherwise, 1000
+     * data points is randomly selected from this time series and returned.
      * This value can be changed by changing max_data_points, which can't be
      * greater than 10k.
      * </pre>
@@ -3445,8 +3555,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points of multiple TensorboardTimeSeries in multiple
-     * TensorboardRun's. If any data fail to be ingested, an error will be
-     * returned.
+     * TensorboardRun's. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3463,8 +3572,7 @@ public final class TensorboardServiceGrpc {
      *
      * <pre>
      * Write time series data points into multiple TensorboardTimeSeries under
-     * a TensorboardRun. If any data fail to be ingested, an error will be
-     * returned.
+     * a TensorboardRun. If any data fail to be ingested, an error is returned.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3495,32 +3603,33 @@ public final class TensorboardServiceGrpc {
 
   private static final int METHODID_CREATE_TENSORBOARD = 0;
   private static final int METHODID_GET_TENSORBOARD = 1;
-  private static final int METHODID_UPDATE_TENSORBOARD = 2;
-  private static final int METHODID_LIST_TENSORBOARDS = 3;
-  private static final int METHODID_DELETE_TENSORBOARD = 4;
-  private static final int METHODID_CREATE_TENSORBOARD_EXPERIMENT = 5;
-  private static final int METHODID_GET_TENSORBOARD_EXPERIMENT = 6;
-  private static final int METHODID_UPDATE_TENSORBOARD_EXPERIMENT = 7;
-  private static final int METHODID_LIST_TENSORBOARD_EXPERIMENTS = 8;
-  private static final int METHODID_DELETE_TENSORBOARD_EXPERIMENT = 9;
-  private static final int METHODID_CREATE_TENSORBOARD_RUN = 10;
-  private static final int METHODID_BATCH_CREATE_TENSORBOARD_RUNS = 11;
-  private static final int METHODID_GET_TENSORBOARD_RUN = 12;
-  private static final int METHODID_UPDATE_TENSORBOARD_RUN = 13;
-  private static final int METHODID_LIST_TENSORBOARD_RUNS = 14;
-  private static final int METHODID_DELETE_TENSORBOARD_RUN = 15;
-  private static final int METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES = 16;
-  private static final int METHODID_CREATE_TENSORBOARD_TIME_SERIES = 17;
-  private static final int METHODID_GET_TENSORBOARD_TIME_SERIES = 18;
-  private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 19;
-  private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 20;
-  private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 21;
-  private static final int METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA = 22;
-  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 23;
-  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 24;
-  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 25;
-  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 26;
-  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 27;
+  private static final int METHODID_READ_TENSORBOARD_USAGE = 2;
+  private static final int METHODID_UPDATE_TENSORBOARD = 3;
+  private static final int METHODID_LIST_TENSORBOARDS = 4;
+  private static final int METHODID_DELETE_TENSORBOARD = 5;
+  private static final int METHODID_CREATE_TENSORBOARD_EXPERIMENT = 6;
+  private static final int METHODID_GET_TENSORBOARD_EXPERIMENT = 7;
+  private static final int METHODID_UPDATE_TENSORBOARD_EXPERIMENT = 8;
+  private static final int METHODID_LIST_TENSORBOARD_EXPERIMENTS = 9;
+  private static final int METHODID_DELETE_TENSORBOARD_EXPERIMENT = 10;
+  private static final int METHODID_CREATE_TENSORBOARD_RUN = 11;
+  private static final int METHODID_BATCH_CREATE_TENSORBOARD_RUNS = 12;
+  private static final int METHODID_GET_TENSORBOARD_RUN = 13;
+  private static final int METHODID_UPDATE_TENSORBOARD_RUN = 14;
+  private static final int METHODID_LIST_TENSORBOARD_RUNS = 15;
+  private static final int METHODID_DELETE_TENSORBOARD_RUN = 16;
+  private static final int METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES = 17;
+  private static final int METHODID_CREATE_TENSORBOARD_TIME_SERIES = 18;
+  private static final int METHODID_GET_TENSORBOARD_TIME_SERIES = 19;
+  private static final int METHODID_UPDATE_TENSORBOARD_TIME_SERIES = 20;
+  private static final int METHODID_LIST_TENSORBOARD_TIME_SERIES = 21;
+  private static final int METHODID_DELETE_TENSORBOARD_TIME_SERIES = 22;
+  private static final int METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA = 23;
+  private static final int METHODID_READ_TENSORBOARD_TIME_SERIES_DATA = 24;
+  private static final int METHODID_READ_TENSORBOARD_BLOB_DATA = 25;
+  private static final int METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA = 26;
+  private static final int METHODID_WRITE_TENSORBOARD_RUN_DATA = 27;
+  private static final int METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3548,6 +3657,13 @@ public final class TensorboardServiceGrpc {
           serviceImpl.getTensorboard(
               (com.google.cloud.aiplatform.v1.GetTensorboardRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Tensorboard>)
+                  responseObserver);
+          break;
+        case METHODID_READ_TENSORBOARD_USAGE:
+          serviceImpl.readTensorboardUsage(
+              (com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>)
                   responseObserver);
           break;
         case METHODID_UPDATE_TENSORBOARD:
@@ -3778,6 +3894,7 @@ public final class TensorboardServiceGrpc {
                       .setSchemaDescriptor(new TensorboardServiceFileDescriptorSupplier())
                       .addMethod(getCreateTensorboardMethod())
                       .addMethod(getGetTensorboardMethod())
+                      .addMethod(getReadTensorboardUsageMethod())
                       .addMethod(getUpdateTensorboardMethod())
                       .addMethod(getListTensorboardsMethod())
                       .addMethod(getDeleteTensorboardMethod())

@@ -63,7 +63,10 @@ import javax.annotation.Generated;
  * networkEdgeSecurityServicesSettingsBuilder
  *     .getSettings()
  *     .setRetrySettings(
- *         networkEdgeSecurityServicesSettingsBuilder.getSettings().getRetrySettings().toBuilder()
+ *         networkEdgeSecurityServicesSettingsBuilder
+ *             .getSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NetworkEdgeSecurityServicesSettings networkEdgeSecurityServicesSettings =
