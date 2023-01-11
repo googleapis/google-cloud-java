@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.7.0](https://github.com/googleapis/java-iam/compare/v1.6.23...v1.7.0) (2023-01-10)
+
+
+### Features
+
+* Removing migrated grpc- and proto- modules from repository ([#592](https://github.com/googleapis/java-iam/issues/592)) ([9c4b9aa](https://github.com/googleapis/java-iam/commit/9c4b9aace04fc72868f4dcaf289eb0a8f35d4e1f))
+
+
+### Bug Fixes
+
+* Remove 'unstable API' message from README.md ([#570](https://github.com/googleapis/java-iam/issues/570)) ([8da89f5](https://github.com/googleapis/java-iam/commit/8da89f59cbe323b2cc5eb2b483485e424622b027))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-iam-policy to v1.6.23 ([#578](https://github.com/googleapis/java-iam/issues/578)) ([aa49b5e](https://github.com/googleapis/java-iam/commit/aa49b5efaf53fcafc0bbd7662e8b016fcfc2ff61))
+
 ## [1.6.23](https://github.com/googleapis/java-iam/compare/v1.6.22...v1.6.23) (2022-12-20)
 
 

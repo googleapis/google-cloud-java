@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-iam-policy:1.6.23:1.6.24-SNAPSHOT
+google-iam-policy:1.7.0:1.7.0
