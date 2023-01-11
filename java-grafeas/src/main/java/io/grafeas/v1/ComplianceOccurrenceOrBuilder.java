@@ -19,33 +19,43 @@
 
 package io.grafeas.v1;
 
-public interface ComplianceOccurrenceOrBuilder
-    extends
+public interface ComplianceOccurrenceOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.ComplianceOccurrence)
     com.google.protobuf.MessageOrBuilder {
 
-  /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
-  java.util.List<io.grafeas.v1.NonCompliantFile> getNonCompliantFilesList();
-  /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
+  /**
+   * <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code>
+   */
+  java.util.List<io.grafeas.v1.NonCompliantFile> 
+      getNonCompliantFilesList();
+  /**
+   * <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code>
+   */
   io.grafeas.v1.NonCompliantFile getNonCompliantFiles(int index);
-  /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
+  /**
+   * <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code>
+   */
   int getNonCompliantFilesCount();
-  /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
-  java.util.List<? extends io.grafeas.v1.NonCompliantFileOrBuilder>
+  /**
+   * <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code>
+   */
+  java.util.List<? extends io.grafeas.v1.NonCompliantFileOrBuilder> 
       getNonCompliantFilesOrBuilderList();
-  /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
-  io.grafeas.v1.NonCompliantFileOrBuilder getNonCompliantFilesOrBuilder(int index);
+  /**
+   * <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code>
+   */
+  io.grafeas.v1.NonCompliantFileOrBuilder getNonCompliantFilesOrBuilder(
+      int index);
 
   /**
    * <code>string non_compliance_reason = 3;</code>
-   *
    * @return The nonComplianceReason.
    */
   java.lang.String getNonComplianceReason();
   /**
    * <code>string non_compliance_reason = 3;</code>
-   *
    * @return The bytes for nonComplianceReason.
    */
-  com.google.protobuf.ByteString getNonComplianceReasonBytes();
+  com.google.protobuf.ByteString
+      getNonComplianceReasonBytes();
 }

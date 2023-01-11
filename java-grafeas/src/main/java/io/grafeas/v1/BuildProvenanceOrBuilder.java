@@ -19,74 +19,60 @@
 
 package io.grafeas.v1;
 
-public interface BuildProvenanceOrBuilder
-    extends
+public interface BuildProvenanceOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.BuildProvenance)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
-   *
    * @return The id.
    */
   java.lang.String getId();
   /**
-   *
-   *
    * <pre>
    * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
-   *
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString getIdBytes();
+  com.google.protobuf.ByteString
+      getIdBytes();
 
   /**
-   *
-   *
    * <pre>
    * ID of the project.
    * </pre>
    *
    * <code>string project_id = 2;</code>
-   *
    * @return The projectId.
    */
   java.lang.String getProjectId();
   /**
-   *
-   *
    * <pre>
    * ID of the project.
    * </pre>
    *
    * <code>string project_id = 2;</code>
-   *
    * @return The bytes for projectId.
    */
-  com.google.protobuf.ByteString getProjectIdBytes();
+  com.google.protobuf.ByteString
+      getProjectIdBytes();
 
   /**
-   *
-   *
    * <pre>
    * Commands requested by the build.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
-  java.util.List<io.grafeas.v1.Command> getCommandsList();
+  java.util.List<io.grafeas.v1.Command> 
+      getCommandsList();
   /**
-   *
-   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -95,8 +81,6 @@ public interface BuildProvenanceOrBuilder
    */
   io.grafeas.v1.Command getCommands(int index);
   /**
-   *
-   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -105,39 +89,34 @@ public interface BuildProvenanceOrBuilder
    */
   int getCommandsCount();
   /**
-   *
-   *
    * <pre>
    * Commands requested by the build.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
-  java.util.List<? extends io.grafeas.v1.CommandOrBuilder> getCommandsOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.CommandOrBuilder> 
+      getCommandsOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * Commands requested by the build.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
-  io.grafeas.v1.CommandOrBuilder getCommandsOrBuilder(int index);
+  io.grafeas.v1.CommandOrBuilder getCommandsOrBuilder(
+      int index);
 
   /**
-   *
-   *
    * <pre>
    * Output of the build.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
-  java.util.List<io.grafeas.v1.Artifact> getBuiltArtifactsList();
+  java.util.List<io.grafeas.v1.Artifact> 
+      getBuiltArtifactsList();
   /**
-   *
-   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -146,8 +125,6 @@ public interface BuildProvenanceOrBuilder
    */
   io.grafeas.v1.Artifact getBuiltArtifacts(int index);
   /**
-   *
-   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -156,53 +133,43 @@ public interface BuildProvenanceOrBuilder
    */
   int getBuiltArtifactsCount();
   /**
-   *
-   *
    * <pre>
    * Output of the build.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
-  java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder> getBuiltArtifactsOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder> 
+      getBuiltArtifactsOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * Output of the build.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
-  io.grafeas.v1.ArtifactOrBuilder getBuiltArtifactsOrBuilder(int index);
+  io.grafeas.v1.ArtifactOrBuilder getBuiltArtifactsOrBuilder(
+      int index);
 
   /**
-   *
-   *
    * <pre>
    * Time at which the build was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
-   *
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
-   *
-   *
    * <pre>
    * Time at which the build was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
-   *
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
-   *
-   *
    * <pre>
    * Time at which the build was created.
    * </pre>
@@ -212,32 +179,24 @@ public interface BuildProvenanceOrBuilder
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Time at which execution of the build was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
-   *
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
   /**
-   *
-   *
    * <pre>
    * Time at which execution of the build was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
-   *
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
-   *
-   *
    * <pre>
    * Time at which execution of the build was started.
    * </pre>
@@ -247,32 +206,24 @@ public interface BuildProvenanceOrBuilder
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Time at which execution of the build was finished.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
-   *
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
   /**
-   *
-   *
    * <pre>
    * Time at which execution of the build was finished.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
-   *
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
-   *
-   *
    * <pre>
    * Time at which execution of the build was finished.
    * </pre>
@@ -282,8 +233,6 @@ public interface BuildProvenanceOrBuilder
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * E-mail address of the user who initiated this build. Note that this was the
    * user's e-mail address at the time the build was initiated; this address may
@@ -291,13 +240,10 @@ public interface BuildProvenanceOrBuilder
    * </pre>
    *
    * <code>string creator = 8;</code>
-   *
    * @return The creator.
    */
   java.lang.String getCreator();
   /**
-   *
-   *
    * <pre>
    * E-mail address of the user who initiated this build. Note that this was the
    * user's e-mail address at the time the build was initiated; this address may
@@ -305,63 +251,50 @@ public interface BuildProvenanceOrBuilder
    * </pre>
    *
    * <code>string creator = 8;</code>
-   *
    * @return The bytes for creator.
    */
-  com.google.protobuf.ByteString getCreatorBytes();
+  com.google.protobuf.ByteString
+      getCreatorBytes();
 
   /**
-   *
-   *
    * <pre>
    * URI where any logs for this provenance were written.
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
-   *
    * @return The logsUri.
    */
   java.lang.String getLogsUri();
   /**
-   *
-   *
    * <pre>
    * URI where any logs for this provenance were written.
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
-   *
    * @return The bytes for logsUri.
    */
-  com.google.protobuf.ByteString getLogsUriBytes();
+  com.google.protobuf.ByteString
+      getLogsUriBytes();
 
   /**
-   *
-   *
    * <pre>
    * Details of the Source input to the build.
    * </pre>
    *
    * <code>.grafeas.v1.Source source_provenance = 10;</code>
-   *
    * @return Whether the sourceProvenance field is set.
    */
   boolean hasSourceProvenance();
   /**
-   *
-   *
    * <pre>
    * Details of the Source input to the build.
    * </pre>
    *
    * <code>.grafeas.v1.Source source_provenance = 10;</code>
-   *
    * @return The sourceProvenance.
    */
   io.grafeas.v1.Source getSourceProvenance();
   /**
-   *
-   *
    * <pre>
    * Details of the Source input to the build.
    * </pre>
@@ -371,33 +304,26 @@ public interface BuildProvenanceOrBuilder
   io.grafeas.v1.SourceOrBuilder getSourceProvenanceOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Trigger identifier if the build was triggered automatically; empty if not.
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
-   *
    * @return The triggerId.
    */
   java.lang.String getTriggerId();
   /**
-   *
-   *
    * <pre>
    * Trigger identifier if the build was triggered automatically; empty if not.
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
-   *
    * @return The bytes for triggerId.
    */
-  com.google.protobuf.ByteString getTriggerIdBytes();
+  com.google.protobuf.ByteString
+      getTriggerIdBytes();
 
   /**
-   *
-   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -407,8 +333,6 @@ public interface BuildProvenanceOrBuilder
    */
   int getBuildOptionsCount();
   /**
-   *
-   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -416,13 +340,15 @@ public interface BuildProvenanceOrBuilder
    *
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
-  boolean containsBuildOptions(java.lang.String key);
-  /** Use {@link #getBuildOptionsMap()} instead. */
+  boolean containsBuildOptions(
+      java.lang.String key);
+  /**
+   * Use {@link #getBuildOptionsMap()} instead.
+   */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getBuildOptions();
+  java.util.Map<java.lang.String, java.lang.String>
+  getBuildOptions();
   /**
-   *
-   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -430,10 +356,9 @@ public interface BuildProvenanceOrBuilder
    *
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String> getBuildOptionsMap();
+  java.util.Map<java.lang.String, java.lang.String>
+  getBuildOptionsMap();
   /**
-   *
-   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -443,13 +368,11 @@ public interface BuildProvenanceOrBuilder
    */
 
   /* nullable */
-  java.lang.String getBuildOptionsOrDefault(
+java.lang.String getBuildOptionsOrDefault(
       java.lang.String key,
       /* nullable */
-      java.lang.String defaultValue);
+java.lang.String defaultValue);
   /**
-   *
-   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -457,30 +380,27 @@ public interface BuildProvenanceOrBuilder
    *
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
-  java.lang.String getBuildOptionsOrThrow(java.lang.String key);
+
+  java.lang.String getBuildOptionsOrThrow(
+      java.lang.String key);
 
   /**
-   *
-   *
    * <pre>
    * Version string of the builder at the time this build was executed.
    * </pre>
    *
    * <code>string builder_version = 13;</code>
-   *
    * @return The builderVersion.
    */
   java.lang.String getBuilderVersion();
   /**
-   *
-   *
    * <pre>
    * Version string of the builder at the time this build was executed.
    * </pre>
    *
    * <code>string builder_version = 13;</code>
-   *
    * @return The bytes for builderVersion.
    */
-  com.google.protobuf.ByteString getBuilderVersionBytes();
+  com.google.protobuf.ByteString
+      getBuilderVersionBytes();
 }

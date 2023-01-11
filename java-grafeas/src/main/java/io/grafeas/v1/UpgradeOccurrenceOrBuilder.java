@@ -19,65 +19,51 @@
 
 package io.grafeas.v1;
 
-public interface UpgradeOccurrenceOrBuilder
-    extends
+public interface UpgradeOccurrenceOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.UpgradeOccurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The package.
    */
   java.lang.String getPackage();
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The bytes for package.
    */
-  com.google.protobuf.ByteString getPackageBytes();
+  com.google.protobuf.ByteString
+      getPackageBytes();
 
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in a machine +
    * human readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version parsed_version = 3;</code>
-   *
    * @return Whether the parsedVersion field is set.
    */
   boolean hasParsedVersion();
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in a machine +
    * human readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version parsed_version = 3;</code>
-   *
    * @return The parsedVersion.
    */
   io.grafeas.v1.Version getParsedVersion();
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in a machine +
    * human readable form.
@@ -88,8 +74,6 @@ public interface UpgradeOccurrenceOrBuilder
   io.grafeas.v1.VersionOrBuilder getParsedVersionOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for available for the specific operating system
    * for the resource_url. This allows efficient filtering, as well as
@@ -97,13 +81,10 @@ public interface UpgradeOccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-   *
    * @return Whether the distribution field is set.
    */
   boolean hasDistribution();
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for available for the specific operating system
    * for the resource_url. This allows efficient filtering, as well as
@@ -111,13 +92,10 @@ public interface UpgradeOccurrenceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-   *
    * @return The distribution.
    */
   io.grafeas.v1.UpgradeDistribution getDistribution();
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for available for the specific operating system
    * for the resource_url. This allows efficient filtering, as well as
@@ -129,32 +107,24 @@ public interface UpgradeOccurrenceOrBuilder
   io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-   *
    * @return Whether the windowsUpdate field is set.
    */
   boolean hasWindowsUpdate();
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-   *
    * @return The windowsUpdate.
    */
   io.grafeas.v1.WindowsUpdate getWindowsUpdate();
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>

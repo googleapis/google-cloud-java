@@ -19,24 +19,20 @@
 
 package io.grafeas.v1;
 
-public interface BatchCreateNotesResponseOrBuilder
-    extends
+public interface BatchCreateNotesResponseOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.BatchCreateNotesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * The notes that were created.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
-  java.util.List<io.grafeas.v1.Note> getNotesList();
+  java.util.List<io.grafeas.v1.Note> 
+      getNotesList();
   /**
-   *
-   *
    * <pre>
    * The notes that were created.
    * </pre>
@@ -45,8 +41,6 @@ public interface BatchCreateNotesResponseOrBuilder
    */
   io.grafeas.v1.Note getNotes(int index);
   /**
-   *
-   *
    * <pre>
    * The notes that were created.
    * </pre>
@@ -55,23 +49,21 @@ public interface BatchCreateNotesResponseOrBuilder
    */
   int getNotesCount();
   /**
-   *
-   *
    * <pre>
    * The notes that were created.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
-  java.util.List<? extends io.grafeas.v1.NoteOrBuilder> getNotesOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.NoteOrBuilder> 
+      getNotesOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * The notes that were created.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Note notes = 1;</code>
    */
-  io.grafeas.v1.NoteOrBuilder getNotesOrBuilder(int index);
+  io.grafeas.v1.NoteOrBuilder getNotesOrBuilder(
+      int index);
 }

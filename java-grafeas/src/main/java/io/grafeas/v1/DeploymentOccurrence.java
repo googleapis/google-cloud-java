@@ -20,24 +20,21 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * The period during which some deployable was active in a runtime.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.DeploymentOccurrence}
  */
-public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class DeploymentOccurrence extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.DeploymentOccurrence)
     DeploymentOccurrenceOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use DeploymentOccurrence.newBuilder() to construct.
   private DeploymentOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private DeploymentOccurrence() {
     userEmail_ = "";
     config_ = "";
@@ -48,42 +45,39 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new DeploymentOccurrence();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Deployment.internal_static_grafeas_v1_DeploymentOccurrence_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.Deployment
-        .internal_static_grafeas_v1_DeploymentOccurrence_fieldAccessorTable
+    return io.grafeas.v1.Deployment.internal_static_grafeas_v1_DeploymentOccurrence_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.DeploymentOccurrence.class,
-            io.grafeas.v1.DeploymentOccurrence.Builder.class);
+            io.grafeas.v1.DeploymentOccurrence.class, io.grafeas.v1.DeploymentOccurrence.Builder.class);
   }
 
   /**
-   *
-   *
    * <pre>
    * Types of platforms.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1.DeploymentOccurrence.Platform}
    */
-  public enum Platform implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Platform
+      implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     *
-     *
      * <pre>
      * Unknown.
      * </pre>
@@ -92,8 +86,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     PLATFORM_UNSPECIFIED(0),
     /**
-     *
-     *
      * <pre>
      * Google Container Engine.
      * </pre>
@@ -102,8 +94,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     GKE(1),
     /**
-     *
-     *
      * <pre>
      * Google App Engine: Flexible Environment.
      * </pre>
@@ -112,8 +102,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     FLEX(2),
     /**
-     *
-     *
      * <pre>
      * Custom user-defined platform.
      * </pre>
@@ -125,8 +113,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     ;
 
     /**
-     *
-     *
      * <pre>
      * Unknown.
      * </pre>
@@ -135,8 +121,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     public static final int PLATFORM_UNSPECIFIED_VALUE = 0;
     /**
-     *
-     *
      * <pre>
      * Google Container Engine.
      * </pre>
@@ -145,8 +129,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     public static final int GKE_VALUE = 1;
     /**
-     *
-     *
      * <pre>
      * Google App Engine: Flexible Environment.
      * </pre>
@@ -155,8 +137,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     public static final int FLEX_VALUE = 2;
     /**
-     *
-     *
      * <pre>
      * Custom user-defined platform.
      * </pre>
@@ -164,6 +144,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>CUSTOM = 3;</code>
      */
     public static final int CUSTOM_VALUE = 3;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -189,51 +170,50 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      */
     public static Platform forNumber(int value) {
       switch (value) {
-        case 0:
-          return PLATFORM_UNSPECIFIED;
-        case 1:
-          return GKE;
-        case 2:
-          return FLEX;
-        case 3:
-          return CUSTOM;
-        default:
-          return null;
+        case 0: return PLATFORM_UNSPECIFIED;
+        case 1: return GKE;
+        case 2: return FLEX;
+        case 3: return CUSTOM;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Platform> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Platform>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Platform> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Platform>() {
+            public Platform findValueByNumber(int number) {
+              return Platform.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<Platform> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Platform>() {
-          public Platform findValueByNumber(int number) {
-            return Platform.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.DeploymentOccurrence.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Platform[] VALUES = values();
 
-    public static Platform valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Platform valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -253,14 +233,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int USER_EMAIL_FIELD_NUMBER = 1;
   private volatile java.lang.Object userEmail_;
   /**
-   *
-   *
    * <pre>
    * Identity of the user that triggered this deployment.
    * </pre>
    *
    * <code>string user_email = 1;</code>
-   *
    * @return The userEmail.
    */
   @java.lang.Override
@@ -269,29 +246,29 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       userEmail_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Identity of the user that triggered this deployment.
    * </pre>
    *
    * <code>string user_email = 1;</code>
-   *
    * @return The bytes for userEmail.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getUserEmailBytes() {
+  public com.google.protobuf.ByteString
+      getUserEmailBytes() {
     java.lang.Object ref = userEmail_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       userEmail_ = b;
       return b;
     } else {
@@ -302,14 +279,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int DEPLOY_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp deployTime_;
   /**
-   *
-   *
    * <pre>
    * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
-   *
    * @return Whether the deployTime field is set.
    */
   @java.lang.Override
@@ -317,14 +291,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     return deployTime_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Required. Beginning of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
-   *
    * @return The deployTime.
    */
   @java.lang.Override
@@ -332,8 +303,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     return deployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
   }
   /**
-   *
-   *
    * <pre>
    * Required. Beginning of the lifetime of this deployment.
    * </pre>
@@ -348,14 +317,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int UNDEPLOY_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp undeployTime_;
   /**
-   *
-   *
    * <pre>
    * End of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
-   *
    * @return Whether the undeployTime field is set.
    */
   @java.lang.Override
@@ -363,25 +329,18 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     return undeployTime_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * End of the lifetime of this deployment.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
-   *
    * @return The undeployTime.
    */
   @java.lang.Override
   public com.google.protobuf.Timestamp getUndeployTime() {
-    return undeployTime_ == null
-        ? com.google.protobuf.Timestamp.getDefaultInstance()
-        : undeployTime_;
+    return undeployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : undeployTime_;
   }
   /**
-   *
-   *
    * <pre>
    * End of the lifetime of this deployment.
    * </pre>
@@ -396,14 +355,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int CONFIG_FIELD_NUMBER = 4;
   private volatile java.lang.Object config_;
   /**
-   *
-   *
    * <pre>
    * Configuration used to create this deployment.
    * </pre>
    *
    * <code>string config = 4;</code>
-   *
    * @return The config.
    */
   @java.lang.Override
@@ -412,29 +368,29 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       config_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Configuration used to create this deployment.
    * </pre>
    *
    * <code>string config = 4;</code>
-   *
    * @return The bytes for config.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getConfigBytes() {
+  public com.google.protobuf.ByteString
+      getConfigBytes() {
     java.lang.Object ref = config_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       config_ = b;
       return b;
     } else {
@@ -445,14 +401,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int ADDRESS_FIELD_NUMBER = 5;
   private volatile java.lang.Object address_;
   /**
-   *
-   *
    * <pre>
    * Address of the runtime element hosting this deployment.
    * </pre>
    *
    * <code>string address = 5;</code>
-   *
    * @return The address.
    */
   @java.lang.Override
@@ -461,29 +414,29 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       address_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Address of the runtime element hosting this deployment.
    * </pre>
    *
    * <code>string address = 5;</code>
-   *
    * @return The bytes for address.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getAddressBytes() {
+  public com.google.protobuf.ByteString
+      getAddressBytes() {
     java.lang.Object ref = address_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       address_ = b;
       return b;
     } else {
@@ -494,45 +447,37 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public static final int RESOURCE_URI_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList resourceUri_;
   /**
-   *
-   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
-   *
    * @return A list containing the resourceUri.
    */
-  public com.google.protobuf.ProtocolStringList getResourceUriList() {
+  public com.google.protobuf.ProtocolStringList
+      getResourceUriList() {
     return resourceUri_;
   }
   /**
-   *
-   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
-   *
    * @return The count of resourceUri.
    */
   public int getResourceUriCount() {
     return resourceUri_.size();
   }
   /**
-   *
-   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
-   *
    * @param index The index of the element to return.
    * @return The resourceUri at the given index.
    */
@@ -540,60 +485,48 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     return resourceUri_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * Output only. Resource URI for the artifact being deployed taken from
    * the deployable field with the same name.
    * </pre>
    *
    * <code>repeated string resource_uri = 6;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the resourceUri at the given index.
    */
-  public com.google.protobuf.ByteString getResourceUriBytes(int index) {
+  public com.google.protobuf.ByteString
+      getResourceUriBytes(int index) {
     return resourceUri_.getByteString(index);
   }
 
   public static final int PLATFORM_FIELD_NUMBER = 7;
   private int platform_;
   /**
-   *
-   *
    * <pre>
    * Platform hosting this deployment.
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-   *
    * @return The enum numeric value on the wire for platform.
    */
-  @java.lang.Override
-  public int getPlatformValue() {
+  @java.lang.Override public int getPlatformValue() {
     return platform_;
   }
   /**
-   *
-   *
    * <pre>
    * Platform hosting this deployment.
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-   *
    * @return The platform.
    */
-  @java.lang.Override
-  public io.grafeas.v1.DeploymentOccurrence.Platform getPlatform() {
+  @java.lang.Override public io.grafeas.v1.DeploymentOccurrence.Platform getPlatform() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1.DeploymentOccurrence.Platform result =
-        io.grafeas.v1.DeploymentOccurrence.Platform.valueOf(platform_);
+    io.grafeas.v1.DeploymentOccurrence.Platform result = io.grafeas.v1.DeploymentOccurrence.Platform.valueOf(platform_);
     return result == null ? io.grafeas.v1.DeploymentOccurrence.Platform.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -605,7 +538,8 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userEmail_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userEmail_);
     }
@@ -640,10 +574,12 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userEmail_);
     }
     if (deployTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDeployTime());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getDeployTime());
     }
     if (undeployTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUndeployTime());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getUndeployTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(config_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, config_);
@@ -660,7 +596,8 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       size += 1 * getResourceUriList().size();
     }
     if (platform_ != io.grafeas.v1.DeploymentOccurrence.Platform.PLATFORM_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, platform_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, platform_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -670,25 +607,31 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.DeploymentOccurrence)) {
       return super.equals(obj);
     }
     io.grafeas.v1.DeploymentOccurrence other = (io.grafeas.v1.DeploymentOccurrence) obj;
 
-    if (!getUserEmail().equals(other.getUserEmail())) return false;
+    if (!getUserEmail()
+        .equals(other.getUserEmail())) return false;
     if (hasDeployTime() != other.hasDeployTime()) return false;
     if (hasDeployTime()) {
-      if (!getDeployTime().equals(other.getDeployTime())) return false;
+      if (!getDeployTime()
+          .equals(other.getDeployTime())) return false;
     }
     if (hasUndeployTime() != other.hasUndeployTime()) return false;
     if (hasUndeployTime()) {
-      if (!getUndeployTime().equals(other.getUndeployTime())) return false;
+      if (!getUndeployTime()
+          .equals(other.getUndeployTime())) return false;
     }
-    if (!getConfig().equals(other.getConfig())) return false;
-    if (!getAddress().equals(other.getAddress())) return false;
-    if (!getResourceUriList().equals(other.getResourceUriList())) return false;
+    if (!getConfig()
+        .equals(other.getConfig())) return false;
+    if (!getAddress()
+        .equals(other.getAddress())) return false;
+    if (!getResourceUriList()
+        .equals(other.getResourceUriList())) return false;
     if (platform_ != other.platform_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -726,134 +669,130 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     return hash;
   }
 
-  public static io.grafeas.v1.DeploymentOccurrence parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.DeploymentOccurrence parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.DeploymentOccurrence parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.DeploymentOccurrence parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(
-      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.DeploymentOccurrence parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.DeploymentOccurrence prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * The period during which some deployable was active in a runtime.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.DeploymentOccurrence}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.DeploymentOccurrence)
       io.grafeas.v1.DeploymentOccurrenceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Deployment.internal_static_grafeas_v1_DeploymentOccurrence_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.Deployment
-          .internal_static_grafeas_v1_DeploymentOccurrence_fieldAccessorTable
+      return io.grafeas.v1.Deployment.internal_static_grafeas_v1_DeploymentOccurrence_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.DeploymentOccurrence.class,
-              io.grafeas.v1.DeploymentOccurrence.Builder.class);
+              io.grafeas.v1.DeploymentOccurrence.class, io.grafeas.v1.DeploymentOccurrence.Builder.class);
     }
 
     // Construct using io.grafeas.v1.DeploymentOccurrence.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -883,7 +822,8 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Deployment.internal_static_grafeas_v1_DeploymentOccurrence_descriptor;
     }
 
@@ -932,39 +872,38 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.DeploymentOccurrence) {
-        return mergeFrom((io.grafeas.v1.DeploymentOccurrence) other);
+        return mergeFrom((io.grafeas.v1.DeploymentOccurrence)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1030,56 +969,52 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                userEmail_ = input.readStringRequireUtf8();
+            case 10: {
+              userEmail_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                input.readMessage(getDeployTimeFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getDeployTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 18
-            case 26:
-              {
-                input.readMessage(getUndeployTimeFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getUndeployTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 26
-            case 34:
-              {
-                config_ = input.readStringRequireUtf8();
+              break;
+            } // case 26
+            case 34: {
+              config_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 34
-            case 42:
-              {
-                address_ = input.readStringRequireUtf8();
+              break;
+            } // case 34
+            case 42: {
+              address_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 42
-            case 50:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureResourceUriIsMutable();
-                resourceUri_.add(s);
-                break;
-              } // case 50
-            case 56:
-              {
-                platform_ = input.readEnum();
+              break;
+            } // case 42
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureResourceUriIsMutable();
+              resourceUri_.add(s);
+              break;
+            } // case 50
+            case 56: {
+              platform_ = input.readEnum();
 
-                break;
-              } // case 56
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 56
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1089,25 +1024,22 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
-
     private int bitField0_;
 
     private java.lang.Object userEmail_ = "";
     /**
-     *
-     *
      * <pre>
      * Identity of the user that triggered this deployment.
      * </pre>
      *
      * <code>string user_email = 1;</code>
-     *
      * @return The userEmail.
      */
     public java.lang.String getUserEmail() {
       java.lang.Object ref = userEmail_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         userEmail_ = s;
         return s;
@@ -1116,21 +1048,20 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
      * <pre>
      * Identity of the user that triggered this deployment.
      * </pre>
      *
      * <code>string user_email = 1;</code>
-     *
      * @return The bytes for userEmail.
      */
-    public com.google.protobuf.ByteString getUserEmailBytes() {
+    public com.google.protobuf.ByteString
+        getUserEmailBytes() {
       java.lang.Object ref = userEmail_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         userEmail_ = b;
         return b;
       } else {
@@ -1138,61 +1069,54 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
      * <pre>
      * Identity of the user that triggered this deployment.
      * </pre>
      *
      * <code>string user_email = 1;</code>
-     *
      * @param value The userEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setUserEmail(java.lang.String value) {
+    public Builder setUserEmail(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       userEmail_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Identity of the user that triggered this deployment.
      * </pre>
      *
      * <code>string user_email = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearUserEmail() {
-
+      
       userEmail_ = getDefaultInstance().getUserEmail();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Identity of the user that triggered this deployment.
      * </pre>
      *
      * <code>string user_email = 1;</code>
-     *
      * @param value The bytes for userEmail to set.
      * @return This builder for chaining.
      */
-    public Builder setUserEmailBytes(com.google.protobuf.ByteString value) {
+    public Builder setUserEmailBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       userEmail_ = value;
       onChanged();
       return this;
@@ -1200,47 +1124,34 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.Timestamp deployTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        deployTimeBuilder_;
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deployTimeBuilder_;
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
-     *
      * @return Whether the deployTime field is set.
      */
     public boolean hasDeployTime() {
       return deployTimeBuilder_ != null || deployTime_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
-     *
      * @return The deployTime.
      */
     public com.google.protobuf.Timestamp getDeployTime() {
       if (deployTimeBuilder_ == null) {
-        return deployTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : deployTime_;
+        return deployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
       } else {
         return deployTimeBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
@@ -1261,15 +1172,14 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
      */
-    public Builder setDeployTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setDeployTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deployTimeBuilder_ == null) {
         deployTime_ = builderForValue.build();
         onChanged();
@@ -1280,8 +1190,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
@@ -1292,7 +1200,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       if (deployTimeBuilder_ == null) {
         if (deployTime_ != null) {
           deployTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deployTime_).mergeFrom(value).buildPartial();
+            com.google.protobuf.Timestamp.newBuilder(deployTime_).mergeFrom(value).buildPartial();
         } else {
           deployTime_ = value;
         }
@@ -1304,8 +1212,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
@@ -1324,8 +1230,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
@@ -1333,13 +1237,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDeployTimeBuilder() {
-
+      
       onChanged();
       return getDeployTimeFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
@@ -1350,14 +1252,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       if (deployTimeBuilder_ != null) {
         return deployTimeBuilder_.getMessageOrBuilder();
       } else {
-        return deployTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : deployTime_;
+        return deployTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : deployTime_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required. Beginning of the lifetime of this deployment.
      * </pre>
@@ -1365,17 +1264,14 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp deploy_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
         getDeployTimeFieldBuilder() {
       if (deployTimeBuilder_ == null) {
-        deployTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getDeployTime(), getParentForChildren(), isClean());
+        deployTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getDeployTime(),
+                getParentForChildren(),
+                isClean());
         deployTime_ = null;
       }
       return deployTimeBuilder_;
@@ -1383,47 +1279,34 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.Timestamp undeployTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        undeployTimeBuilder_;
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> undeployTimeBuilder_;
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
-     *
      * @return Whether the undeployTime field is set.
      */
     public boolean hasUndeployTime() {
       return undeployTimeBuilder_ != null || undeployTime_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
-     *
      * @return The undeployTime.
      */
     public com.google.protobuf.Timestamp getUndeployTime() {
       if (undeployTimeBuilder_ == null) {
-        return undeployTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : undeployTime_;
+        return undeployTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : undeployTime_;
       } else {
         return undeployTimeBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
@@ -1444,15 +1327,14 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
      */
-    public Builder setUndeployTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUndeployTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
       if (undeployTimeBuilder_ == null) {
         undeployTime_ = builderForValue.build();
         onChanged();
@@ -1463,8 +1345,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
@@ -1475,9 +1355,7 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       if (undeployTimeBuilder_ == null) {
         if (undeployTime_ != null) {
           undeployTime_ =
-              com.google.protobuf.Timestamp.newBuilder(undeployTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            com.google.protobuf.Timestamp.newBuilder(undeployTime_).mergeFrom(value).buildPartial();
         } else {
           undeployTime_ = value;
         }
@@ -1489,8 +1367,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
@@ -1509,8 +1385,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
@@ -1518,13 +1392,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUndeployTimeBuilder() {
-
+      
       onChanged();
       return getUndeployTimeFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
@@ -1535,14 +1407,11 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       if (undeployTimeBuilder_ != null) {
         return undeployTimeBuilder_.getMessageOrBuilder();
       } else {
-        return undeployTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : undeployTime_;
+        return undeployTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : undeployTime_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * End of the lifetime of this deployment.
      * </pre>
@@ -1550,17 +1419,14 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp undeploy_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
         getUndeployTimeFieldBuilder() {
       if (undeployTimeBuilder_ == null) {
-        undeployTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getUndeployTime(), getParentForChildren(), isClean());
+        undeployTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUndeployTime(),
+                getParentForChildren(),
+                isClean());
         undeployTime_ = null;
       }
       return undeployTimeBuilder_;
@@ -1568,20 +1434,18 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object config_ = "";
     /**
-     *
-     *
      * <pre>
      * Configuration used to create this deployment.
      * </pre>
      *
      * <code>string config = 4;</code>
-     *
      * @return The config.
      */
     public java.lang.String getConfig() {
       java.lang.Object ref = config_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         config_ = s;
         return s;
@@ -1590,21 +1454,20 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
      * <pre>
      * Configuration used to create this deployment.
      * </pre>
      *
      * <code>string config = 4;</code>
-     *
      * @return The bytes for config.
      */
-    public com.google.protobuf.ByteString getConfigBytes() {
+    public com.google.protobuf.ByteString
+        getConfigBytes() {
       java.lang.Object ref = config_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         config_ = b;
         return b;
       } else {
@@ -1612,61 +1475,54 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
      * <pre>
      * Configuration used to create this deployment.
      * </pre>
      *
      * <code>string config = 4;</code>
-     *
      * @param value The config to set.
      * @return This builder for chaining.
      */
-    public Builder setConfig(java.lang.String value) {
+    public Builder setConfig(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       config_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Configuration used to create this deployment.
      * </pre>
      *
      * <code>string config = 4;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearConfig() {
-
+      
       config_ = getDefaultInstance().getConfig();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Configuration used to create this deployment.
      * </pre>
      *
      * <code>string config = 4;</code>
-     *
      * @param value The bytes for config to set.
      * @return This builder for chaining.
      */
-    public Builder setConfigBytes(com.google.protobuf.ByteString value) {
+    public Builder setConfigBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       config_ = value;
       onChanged();
       return this;
@@ -1674,20 +1530,18 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object address_ = "";
     /**
-     *
-     *
      * <pre>
      * Address of the runtime element hosting this deployment.
      * </pre>
      *
      * <code>string address = 5;</code>
-     *
      * @return The address.
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         address_ = s;
         return s;
@@ -1696,21 +1550,20 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
      * <pre>
      * Address of the runtime element hosting this deployment.
      * </pre>
      *
      * <code>string address = 5;</code>
-     *
      * @return The bytes for address.
      */
-    public com.google.protobuf.ByteString getAddressBytes() {
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
       java.lang.Object ref = address_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         address_ = b;
         return b;
       } else {
@@ -1718,115 +1571,98 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
      * <pre>
      * Address of the runtime element hosting this deployment.
      * </pre>
      *
      * <code>string address = 5;</code>
-     *
      * @param value The address to set.
      * @return This builder for chaining.
      */
-    public Builder setAddress(java.lang.String value) {
+    public Builder setAddress(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       address_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Address of the runtime element hosting this deployment.
      * </pre>
      *
      * <code>string address = 5;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearAddress() {
-
+      
       address_ = getDefaultInstance().getAddress();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Address of the runtime element hosting this deployment.
      * </pre>
      *
      * <code>string address = 5;</code>
-     *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
      */
-    public Builder setAddressBytes(com.google.protobuf.ByteString value) {
+    public Builder setAddressBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       address_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList resourceUri_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
-
+    private com.google.protobuf.LazyStringList resourceUri_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureResourceUriIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         resourceUri_ = new com.google.protobuf.LazyStringArrayList(resourceUri_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @return A list containing the resourceUri.
      */
-    public com.google.protobuf.ProtocolStringList getResourceUriList() {
+    public com.google.protobuf.ProtocolStringList
+        getResourceUriList() {
       return resourceUri_.getUnmodifiableView();
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @return The count of resourceUri.
      */
     public int getResourceUriCount() {
       return resourceUri_.size();
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @param index The index of the element to return.
      * @return The resourceUri at the given index.
      */
@@ -1834,95 +1670,85 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return resourceUri_.get(index);
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @param index The index of the value to return.
      * @return The bytes of the resourceUri at the given index.
      */
-    public com.google.protobuf.ByteString getResourceUriBytes(int index) {
+    public com.google.protobuf.ByteString
+        getResourceUriBytes(int index) {
       return resourceUri_.getByteString(index);
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @param index The index to set the value at.
      * @param value The resourceUri to set.
      * @return This builder for chaining.
      */
-    public Builder setResourceUri(int index, java.lang.String value) {
+    public Builder setResourceUri(
+        int index, java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResourceUriIsMutable();
+    throw new NullPointerException();
+  }
+  ensureResourceUriIsMutable();
       resourceUri_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @param value The resourceUri to add.
      * @return This builder for chaining.
      */
-    public Builder addResourceUri(java.lang.String value) {
+    public Builder addResourceUri(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResourceUriIsMutable();
+    throw new NullPointerException();
+  }
+  ensureResourceUriIsMutable();
       resourceUri_.add(value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @param values The resourceUri to add.
      * @return This builder for chaining.
      */
-    public Builder addAllResourceUri(java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllResourceUri(
+        java.lang.Iterable<java.lang.String> values) {
       ensureResourceUriIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceUri_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, resourceUri_);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearResourceUri() {
@@ -1932,23 +1758,21 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. Resource URI for the artifact being deployed taken from
      * the deployable field with the same name.
      * </pre>
      *
      * <code>repeated string resource_uri = 6;</code>
-     *
      * @param value The bytes of the resourceUri to add.
      * @return This builder for chaining.
      */
-    public Builder addResourceUriBytes(com.google.protobuf.ByteString value) {
+    public Builder addResourceUriBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       ensureResourceUriIsMutable();
       resourceUri_.add(value);
       onChanged();
@@ -1957,65 +1781,51 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
 
     private int platform_ = 0;
     /**
-     *
-     *
      * <pre>
      * Platform hosting this deployment.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-     *
      * @return The enum numeric value on the wire for platform.
      */
-    @java.lang.Override
-    public int getPlatformValue() {
+    @java.lang.Override public int getPlatformValue() {
       return platform_;
     }
     /**
-     *
-     *
      * <pre>
      * Platform hosting this deployment.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-     *
      * @param value The enum numeric value on the wire for platform to set.
      * @return This builder for chaining.
      */
     public Builder setPlatformValue(int value) {
-
+      
       platform_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Platform hosting this deployment.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-     *
      * @return The platform.
      */
     @java.lang.Override
     public io.grafeas.v1.DeploymentOccurrence.Platform getPlatform() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1.DeploymentOccurrence.Platform result =
-          io.grafeas.v1.DeploymentOccurrence.Platform.valueOf(platform_);
+      io.grafeas.v1.DeploymentOccurrence.Platform result = io.grafeas.v1.DeploymentOccurrence.Platform.valueOf(platform_);
       return result == null ? io.grafeas.v1.DeploymentOccurrence.Platform.UNRECOGNIZED : result;
     }
     /**
-     *
-     *
      * <pre>
      * Platform hosting this deployment.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-     *
      * @param value The platform to set.
      * @return This builder for chaining.
      */
@@ -2023,31 +1833,28 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       platform_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Platform hosting this deployment.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentOccurrence.Platform platform = 7;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearPlatform() {
-
+      
       platform_ = 0;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -2057,12 +1864,12 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.DeploymentOccurrence)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.DeploymentOccurrence)
   private static final io.grafeas.v1.DeploymentOccurrence DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.DeploymentOccurrence();
   }
@@ -2071,27 +1878,27 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeploymentOccurrence> PARSER =
-      new com.google.protobuf.AbstractParser<DeploymentOccurrence>() {
-        @java.lang.Override
-        public DeploymentOccurrence parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<DeploymentOccurrence>
+      PARSER = new com.google.protobuf.AbstractParser<DeploymentOccurrence>() {
+    @java.lang.Override
+    public DeploymentOccurrence parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<DeploymentOccurrence> parser() {
     return PARSER;
@@ -2106,4 +1913,6 @@ public final class DeploymentOccurrence extends com.google.protobuf.GeneratedMes
   public io.grafeas.v1.DeploymentOccurrence getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

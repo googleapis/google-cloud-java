@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Occurrence that represents a single "attestation". The authenticity of an
  * attestation can be verified using the attached signature. If the verifier
@@ -35,16 +33,15 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.AttestationOccurrence}
  */
-public final class AttestationOccurrence extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class AttestationOccurrence extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.AttestationOccurrence)
     AttestationOccurrenceOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use AttestationOccurrence.newBuilder() to construct.
   private AttestationOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private AttestationOccurrence() {
     serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
     signatures_ = java.util.Collections.emptyList();
@@ -53,41 +50,38 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new AttestationOccurrence();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.Attestation
-        .internal_static_grafeas_v1_AttestationOccurrence_fieldAccessorTable
+    return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.AttestationOccurrence.class,
-            io.grafeas.v1.AttestationOccurrence.Builder.class);
+            io.grafeas.v1.AttestationOccurrence.class, io.grafeas.v1.AttestationOccurrence.Builder.class);
   }
 
   public static final int SERIALIZED_PAYLOAD_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString serializedPayload_;
   /**
-   *
-   *
    * <pre>
    * Required. The serialized payload that is verified by one or more
    * `signatures`.
    * </pre>
    *
    * <code>bytes serialized_payload = 1;</code>
-   *
    * @return The serializedPayload.
    */
   @java.lang.Override
@@ -98,8 +92,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public static final int SIGNATURES_FIELD_NUMBER = 2;
   private java.util.List<io.grafeas.v1.Signature> signatures_;
   /**
-   *
-   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -114,8 +106,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return signatures_;
   }
   /**
-   *
-   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -126,12 +116,11 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> getSignaturesOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> 
+      getSignaturesOrBuilderList() {
     return signatures_;
   }
   /**
-   *
-   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -146,8 +135,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return signatures_.size();
   }
   /**
-   *
-   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -162,8 +149,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return signatures_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -174,15 +159,14 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(int index) {
+  public io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(
+      int index) {
     return signatures_.get(index);
   }
 
   public static final int JWTS_FIELD_NUMBER = 3;
   private java.util.List<io.grafeas.v1.Jwt> jwts_;
   /**
-   *
-   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -202,8 +186,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return jwts_;
   }
   /**
-   *
-   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -219,12 +201,11 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> 
+      getJwtsOrBuilderList() {
     return jwts_;
   }
   /**
-   *
-   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -244,8 +225,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return jwts_.size();
   }
   /**
-   *
-   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -265,8 +244,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return jwts_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -282,12 +259,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(int index) {
+  public io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(
+      int index) {
     return jwts_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -299,7 +276,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!serializedPayload_.isEmpty()) {
       output.writeBytes(1, serializedPayload_);
     }
@@ -319,13 +297,16 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
     size = 0;
     if (!serializedPayload_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, serializedPayload_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(1, serializedPayload_);
     }
     for (int i = 0; i < signatures_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, signatures_.get(i));
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, signatures_.get(i));
     }
     for (int i = 0; i < jwts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, jwts_.get(i));
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, jwts_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -335,16 +316,19 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.AttestationOccurrence)) {
       return super.equals(obj);
     }
     io.grafeas.v1.AttestationOccurrence other = (io.grafeas.v1.AttestationOccurrence) obj;
 
-    if (!getSerializedPayload().equals(other.getSerializedPayload())) return false;
-    if (!getSignaturesList().equals(other.getSignaturesList())) return false;
-    if (!getJwtsList().equals(other.getJwtsList())) return false;
+    if (!getSerializedPayload()
+        .equals(other.getSerializedPayload())) return false;
+    if (!getSignaturesList()
+        .equals(other.getSignaturesList())) return false;
+    if (!getJwtsList()
+        .equals(other.getJwtsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -371,103 +355,97 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return hash;
   }
 
-  public static io.grafeas.v1.AttestationOccurrence parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.AttestationOccurrence parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.AttestationOccurrence parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.AttestationOccurrence parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(
-      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.AttestationOccurrence parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.AttestationOccurrence prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Occurrence that represents a single "attestation". The authenticity of an
    * attestation can be verified using the attached signature. If the verifier
@@ -481,31 +459,33 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
    *
    * Protobuf type {@code grafeas.v1.AttestationOccurrence}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.AttestationOccurrence)
       io.grafeas.v1.AttestationOccurrenceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.Attestation
-          .internal_static_grafeas_v1_AttestationOccurrence_fieldAccessorTable
+      return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.AttestationOccurrence.class,
-              io.grafeas.v1.AttestationOccurrence.Builder.class);
+              io.grafeas.v1.AttestationOccurrence.class, io.grafeas.v1.AttestationOccurrence.Builder.class);
     }
 
     // Construct using io.grafeas.v1.AttestationOccurrence.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -529,7 +509,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationOccurrence_descriptor;
     }
 
@@ -578,39 +559,38 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.AttestationOccurrence) {
-        return mergeFrom((io.grafeas.v1.AttestationOccurrence) other);
+        return mergeFrom((io.grafeas.v1.AttestationOccurrence)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -640,10 +620,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             signaturesBuilder_ = null;
             signatures_ = other.signatures_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            signaturesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getSignaturesFieldBuilder()
-                    : null;
+            signaturesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getSignaturesFieldBuilder() : null;
           } else {
             signaturesBuilder_.addAllMessages(other.signatures_);
           }
@@ -667,10 +646,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             jwtsBuilder_ = null;
             jwts_ = other.jwts_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            jwtsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getJwtsFieldBuilder()
-                    : null;
+            jwtsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getJwtsFieldBuilder() : null;
           } else {
             jwtsBuilder_.addAllMessages(other.jwts_);
           }
@@ -702,43 +680,43 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                serializedPayload_ = input.readBytes();
+            case 10: {
+              serializedPayload_ = input.readBytes();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                io.grafeas.v1.Signature m =
-                    input.readMessage(io.grafeas.v1.Signature.parser(), extensionRegistry);
-                if (signaturesBuilder_ == null) {
-                  ensureSignaturesIsMutable();
-                  signatures_.add(m);
-                } else {
-                  signaturesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-            case 26:
-              {
-                io.grafeas.v1.Jwt m =
-                    input.readMessage(io.grafeas.v1.Jwt.parser(), extensionRegistry);
-                if (jwtsBuilder_ == null) {
-                  ensureJwtsIsMutable();
-                  jwts_.add(m);
-                } else {
-                  jwtsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 10
+            case 18: {
+              io.grafeas.v1.Signature m =
+                  input.readMessage(
+                      io.grafeas.v1.Signature.parser(),
+                      extensionRegistry);
+              if (signaturesBuilder_ == null) {
+                ensureSignaturesIsMutable();
+                signatures_.add(m);
+              } else {
+                signaturesBuilder_.addMessage(m);
+              }
+              break;
+            } // case 18
+            case 26: {
+              io.grafeas.v1.Jwt m =
+                  input.readMessage(
+                      io.grafeas.v1.Jwt.parser(),
+                      extensionRegistry);
+              if (jwtsBuilder_ == null) {
+                ensureJwtsIsMutable();
+                jwts_.add(m);
+              } else {
+                jwtsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 26
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -748,21 +726,16 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
-
     private int bitField0_;
 
-    private com.google.protobuf.ByteString serializedPayload_ =
-        com.google.protobuf.ByteString.EMPTY;
+    private com.google.protobuf.ByteString serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     *
-     *
      * <pre>
      * Required. The serialized payload that is verified by one or more
      * `signatures`.
      * </pre>
      *
      * <code>bytes serialized_payload = 1;</code>
-     *
      * @return The serializedPayload.
      */
     @java.lang.Override
@@ -770,64 +743,53 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return serializedPayload_;
     }
     /**
-     *
-     *
      * <pre>
      * Required. The serialized payload that is verified by one or more
      * `signatures`.
      * </pre>
      *
      * <code>bytes serialized_payload = 1;</code>
-     *
      * @param value The serializedPayload to set.
      * @return This builder for chaining.
      */
     public Builder setSerializedPayload(com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       serializedPayload_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. The serialized payload that is verified by one or more
      * `signatures`.
      * </pre>
      *
      * <code>bytes serialized_payload = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearSerializedPayload() {
-
+      
       serializedPayload_ = getDefaultInstance().getSerializedPayload();
       onChanged();
       return this;
     }
 
-    private java.util.List<io.grafeas.v1.Signature> signatures_ = java.util.Collections.emptyList();
-
+    private java.util.List<io.grafeas.v1.Signature> signatures_ =
+      java.util.Collections.emptyList();
     private void ensureSignaturesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         signatures_ = new java.util.ArrayList<io.grafeas.v1.Signature>(signatures_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Signature,
-            io.grafeas.v1.Signature.Builder,
-            io.grafeas.v1.SignatureOrBuilder>
-        signaturesBuilder_;
+        io.grafeas.v1.Signature, io.grafeas.v1.Signature.Builder, io.grafeas.v1.SignatureOrBuilder> signaturesBuilder_;
 
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -845,8 +807,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -864,8 +824,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -883,8 +841,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -894,7 +850,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public Builder setSignatures(int index, io.grafeas.v1.Signature value) {
+    public Builder setSignatures(
+        int index, io.grafeas.v1.Signature value) {
       if (signaturesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -908,8 +865,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -919,7 +874,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public Builder setSignatures(int index, io.grafeas.v1.Signature.Builder builderForValue) {
+    public Builder setSignatures(
+        int index, io.grafeas.v1.Signature.Builder builderForValue) {
       if (signaturesBuilder_ == null) {
         ensureSignaturesIsMutable();
         signatures_.set(index, builderForValue.build());
@@ -930,8 +886,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -955,8 +909,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -966,7 +918,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public Builder addSignatures(int index, io.grafeas.v1.Signature value) {
+    public Builder addSignatures(
+        int index, io.grafeas.v1.Signature value) {
       if (signaturesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -980,8 +933,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -991,7 +942,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public Builder addSignatures(io.grafeas.v1.Signature.Builder builderForValue) {
+    public Builder addSignatures(
+        io.grafeas.v1.Signature.Builder builderForValue) {
       if (signaturesBuilder_ == null) {
         ensureSignaturesIsMutable();
         signatures_.add(builderForValue.build());
@@ -1002,8 +954,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1013,7 +963,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public Builder addSignatures(int index, io.grafeas.v1.Signature.Builder builderForValue) {
+    public Builder addSignatures(
+        int index, io.grafeas.v1.Signature.Builder builderForValue) {
       if (signaturesBuilder_ == null) {
         ensureSignaturesIsMutable();
         signatures_.add(index, builderForValue.build());
@@ -1024,8 +975,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1035,10 +984,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public Builder addAllSignatures(java.lang.Iterable<? extends io.grafeas.v1.Signature> values) {
+    public Builder addAllSignatures(
+        java.lang.Iterable<? extends io.grafeas.v1.Signature> values) {
       if (signaturesBuilder_ == null) {
         ensureSignaturesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, signatures_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, signatures_);
         onChanged();
       } else {
         signaturesBuilder_.addAllMessages(values);
@@ -1046,8 +997,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1068,8 +1017,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1090,8 +1037,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1101,12 +1046,11 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public io.grafeas.v1.Signature.Builder getSignaturesBuilder(int index) {
+    public io.grafeas.v1.Signature.Builder getSignaturesBuilder(
+        int index) {
       return getSignaturesFieldBuilder().getBuilder(index);
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1116,16 +1060,14 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(int index) {
+    public io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(
+        int index) {
       if (signaturesBuilder_ == null) {
-        return signatures_.get(index);
-      } else {
+        return signatures_.get(index);  } else {
         return signaturesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1135,7 +1077,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> getSignaturesOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> 
+         getSignaturesOrBuilderList() {
       if (signaturesBuilder_ != null) {
         return signaturesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1143,8 +1086,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1155,11 +1096,10 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
     public io.grafeas.v1.Signature.Builder addSignaturesBuilder() {
-      return getSignaturesFieldBuilder().addBuilder(io.grafeas.v1.Signature.getDefaultInstance());
+      return getSignaturesFieldBuilder().addBuilder(
+          io.grafeas.v1.Signature.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1169,13 +1109,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public io.grafeas.v1.Signature.Builder addSignaturesBuilder(int index) {
-      return getSignaturesFieldBuilder()
-          .addBuilder(index, io.grafeas.v1.Signature.getDefaultInstance());
+    public io.grafeas.v1.Signature.Builder addSignaturesBuilder(
+        int index) {
+      return getSignaturesFieldBuilder().addBuilder(
+          index, io.grafeas.v1.Signature.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * One or more signatures over `serialized_payload`.  Verifier implementations
      * should consider this attestation message verified if at least one
@@ -1185,43 +1124,38 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
      */
-    public java.util.List<io.grafeas.v1.Signature.Builder> getSignaturesBuilderList() {
+    public java.util.List<io.grafeas.v1.Signature.Builder> 
+         getSignaturesBuilderList() {
       return getSignaturesFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Signature,
-            io.grafeas.v1.Signature.Builder,
-            io.grafeas.v1.SignatureOrBuilder>
+        io.grafeas.v1.Signature, io.grafeas.v1.Signature.Builder, io.grafeas.v1.SignatureOrBuilder> 
         getSignaturesFieldBuilder() {
       if (signaturesBuilder_ == null) {
-        signaturesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                io.grafeas.v1.Signature,
-                io.grafeas.v1.Signature.Builder,
-                io.grafeas.v1.SignatureOrBuilder>(
-                signatures_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        signaturesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Signature, io.grafeas.v1.Signature.Builder, io.grafeas.v1.SignatureOrBuilder>(
+                signatures_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
         signatures_ = null;
       }
       return signaturesBuilder_;
     }
 
-    private java.util.List<io.grafeas.v1.Jwt> jwts_ = java.util.Collections.emptyList();
-
+    private java.util.List<io.grafeas.v1.Jwt> jwts_ =
+      java.util.Collections.emptyList();
     private void ensureJwtsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
         jwts_ = new java.util.ArrayList<io.grafeas.v1.Jwt>(jwts_);
         bitField0_ |= 0x00000002;
-      }
+       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>
-        jwtsBuilder_;
+        io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder> jwtsBuilder_;
 
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1244,8 +1178,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1268,8 +1200,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1292,8 +1222,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1308,7 +1236,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public Builder setJwts(int index, io.grafeas.v1.Jwt value) {
+    public Builder setJwts(
+        int index, io.grafeas.v1.Jwt value) {
       if (jwtsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1322,8 +1251,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1338,7 +1265,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public Builder setJwts(int index, io.grafeas.v1.Jwt.Builder builderForValue) {
+    public Builder setJwts(
+        int index, io.grafeas.v1.Jwt.Builder builderForValue) {
       if (jwtsBuilder_ == null) {
         ensureJwtsIsMutable();
         jwts_.set(index, builderForValue.build());
@@ -1349,8 +1277,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1379,8 +1305,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1395,7 +1319,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public Builder addJwts(int index, io.grafeas.v1.Jwt value) {
+    public Builder addJwts(
+        int index, io.grafeas.v1.Jwt value) {
       if (jwtsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1409,8 +1334,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1425,7 +1348,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public Builder addJwts(io.grafeas.v1.Jwt.Builder builderForValue) {
+    public Builder addJwts(
+        io.grafeas.v1.Jwt.Builder builderForValue) {
       if (jwtsBuilder_ == null) {
         ensureJwtsIsMutable();
         jwts_.add(builderForValue.build());
@@ -1436,8 +1360,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1452,7 +1374,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public Builder addJwts(int index, io.grafeas.v1.Jwt.Builder builderForValue) {
+    public Builder addJwts(
+        int index, io.grafeas.v1.Jwt.Builder builderForValue) {
       if (jwtsBuilder_ == null) {
         ensureJwtsIsMutable();
         jwts_.add(index, builderForValue.build());
@@ -1463,8 +1386,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1479,10 +1400,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public Builder addAllJwts(java.lang.Iterable<? extends io.grafeas.v1.Jwt> values) {
+    public Builder addAllJwts(
+        java.lang.Iterable<? extends io.grafeas.v1.Jwt> values) {
       if (jwtsBuilder_ == null) {
         ensureJwtsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jwts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, jwts_);
         onChanged();
       } else {
         jwtsBuilder_.addAllMessages(values);
@@ -1490,8 +1413,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1517,8 +1438,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1544,8 +1463,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1560,12 +1477,11 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public io.grafeas.v1.Jwt.Builder getJwtsBuilder(int index) {
+    public io.grafeas.v1.Jwt.Builder getJwtsBuilder(
+        int index) {
       return getJwtsFieldBuilder().getBuilder(index);
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1580,16 +1496,14 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(int index) {
+    public io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(
+        int index) {
       if (jwtsBuilder_ == null) {
-        return jwts_.get(index);
-      } else {
+        return jwts_.get(index);  } else {
         return jwtsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1604,7 +1518,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> 
+         getJwtsOrBuilderList() {
       if (jwtsBuilder_ != null) {
         return jwtsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1612,8 +1527,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1629,11 +1542,10 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
     public io.grafeas.v1.Jwt.Builder addJwtsBuilder() {
-      return getJwtsFieldBuilder().addBuilder(io.grafeas.v1.Jwt.getDefaultInstance());
+      return getJwtsFieldBuilder().addBuilder(
+          io.grafeas.v1.Jwt.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1648,12 +1560,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public io.grafeas.v1.Jwt.Builder addJwtsBuilder(int index) {
-      return getJwtsFieldBuilder().addBuilder(index, io.grafeas.v1.Jwt.getDefaultInstance());
+    public io.grafeas.v1.Jwt.Builder addJwtsBuilder(
+        int index) {
+      return getJwtsFieldBuilder().addBuilder(
+          index, io.grafeas.v1.Jwt.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * One or more JWTs encoding a self-contained attestation.
      * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -1668,25 +1580,27 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
      */
-    public java.util.List<io.grafeas.v1.Jwt.Builder> getJwtsBuilderList() {
+    public java.util.List<io.grafeas.v1.Jwt.Builder> 
+         getJwtsBuilderList() {
       return getJwtsFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>
+        io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder> 
         getJwtsFieldBuilder() {
       if (jwtsBuilder_ == null) {
-        jwtsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>(
-                jwts_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        jwtsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>(
+                jwts_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
         jwts_ = null;
       }
       return jwtsBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1696,12 +1610,12 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.AttestationOccurrence)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.AttestationOccurrence)
   private static final io.grafeas.v1.AttestationOccurrence DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.AttestationOccurrence();
   }
@@ -1710,27 +1624,27 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AttestationOccurrence> PARSER =
-      new com.google.protobuf.AbstractParser<AttestationOccurrence>() {
-        @java.lang.Override
-        public AttestationOccurrence parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<AttestationOccurrence>
+      PARSER = new com.google.protobuf.AbstractParser<AttestationOccurrence>() {
+    @java.lang.Override
+    public AttestationOccurrence parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<AttestationOccurrence> parser() {
     return PARSER;
@@ -1745,4 +1659,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public io.grafeas.v1.AttestationOccurrence getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

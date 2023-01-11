@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Note kind that represents a logical attestation "role" or "authority". For
  * example, an organization might have one `Authority` for "QA" and one for
@@ -35,30 +33,32 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.AttestationNote}
  */
-public final class AttestationNote extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class AttestationNote extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.AttestationNote)
     AttestationNoteOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use AttestationNote.newBuilder() to construct.
   private AttestationNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
-  private AttestationNote() {}
+  private AttestationNote() {
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new AttestationNote();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_descriptor;
   }
 
@@ -70,41 +70,33 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1.AttestationNote.class, io.grafeas.v1.AttestationNote.Builder.class);
   }
 
-  public interface HintOrBuilder
-      extends
+  public interface HintOrBuilder extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.AttestationNote.Hint)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     *
-     *
      * <pre>
      * Required. The human readable name of this attestation authority, for
      * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
-     *
      * @return The humanReadableName.
      */
     java.lang.String getHumanReadableName();
     /**
-     *
-     *
      * <pre>
      * Required. The human readable name of this attestation authority, for
      * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
-     *
      * @return The bytes for humanReadableName.
      */
-    com.google.protobuf.ByteString getHumanReadableNameBytes();
+    com.google.protobuf.ByteString
+        getHumanReadableNameBytes();
   }
   /**
-   *
-   *
    * <pre>
    * This submessage provides human-readable hints about the purpose of the
    * authority. Because the name of a note acts as its resource reference, it is
@@ -117,57 +109,53 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
    *
    * Protobuf type {@code grafeas.v1.AttestationNote.Hint}
    */
-  public static final class Hint extends com.google.protobuf.GeneratedMessageV3
-      implements
+  public static final class Hint extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.AttestationNote.Hint)
       HintOrBuilder {
-    private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
     // Use Hint.newBuilder() to construct.
     private Hint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
     private Hint() {
       humanReadableName_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
       return new Hint();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
       return this.unknownFields;
     }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_Hint_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.Attestation
-          .internal_static_grafeas_v1_AttestationNote_Hint_fieldAccessorTable
+      return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_Hint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.AttestationNote.Hint.class,
-              io.grafeas.v1.AttestationNote.Hint.Builder.class);
+              io.grafeas.v1.AttestationNote.Hint.class, io.grafeas.v1.AttestationNote.Hint.Builder.class);
     }
 
     public static final int HUMAN_READABLE_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object humanReadableName_;
     /**
-     *
-     *
      * <pre>
      * Required. The human readable name of this attestation authority, for
      * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
-     *
      * @return The humanReadableName.
      */
     @java.lang.Override
@@ -176,30 +164,30 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         humanReadableName_ = s;
         return s;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required. The human readable name of this attestation authority, for
      * example "qa".
      * </pre>
      *
      * <code>string human_readable_name = 1;</code>
-     *
      * @return The bytes for humanReadableName.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getHumanReadableNameBytes() {
+    public com.google.protobuf.ByteString
+        getHumanReadableNameBytes() {
       java.lang.Object ref = humanReadableName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         humanReadableName_ = b;
         return b;
       } else {
@@ -208,7 +196,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     }
 
     private byte memoizedIsInitialized = -1;
-
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -220,7 +207,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(humanReadableName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, humanReadableName_);
       }
@@ -244,14 +232,15 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof io.grafeas.v1.AttestationNote.Hint)) {
         return super.equals(obj);
       }
       io.grafeas.v1.AttestationNote.Hint other = (io.grafeas.v1.AttestationNote.Hint) obj;
 
-      if (!getHumanReadableName().equals(other.getHumanReadableName())) return false;
+      if (!getHumanReadableName()
+          .equals(other.getHumanReadableName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -270,93 +259,88 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return hash;
     }
 
-    public static io.grafeas.v1.AttestationNote.Hint parseFrom(java.nio.ByteBuffer data)
+    public static io.grafeas.v1.AttestationNote.Hint parseFrom(
+        java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
-    public static io.grafeas.v1.AttestationNote.Hint parseFrom(com.google.protobuf.ByteString data)
+    public static io.grafeas.v1.AttestationNote.Hint parseFrom(
+        com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.AttestationNote.Hint parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-
     public static Builder newBuilder(io.grafeas.v1.AttestationNote.Hint prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -366,8 +350,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return builder;
     }
     /**
-     *
-     *
      * <pre>
      * This submessage provides human-readable hints about the purpose of the
      * authority. Because the name of a note acts as its resource reference, it is
@@ -380,32 +362,33 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      *
      * Protobuf type {@code grafeas.v1.AttestationNote.Hint}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.AttestationNote.Hint)
         io.grafeas.v1.AttestationNote.HintOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
         return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_Hint_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.Attestation
-            .internal_static_grafeas_v1_AttestationNote_Hint_fieldAccessorTable
+        return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_Hint_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.AttestationNote.Hint.class,
-                io.grafeas.v1.AttestationNote.Hint.Builder.class);
+                io.grafeas.v1.AttestationNote.Hint.class, io.grafeas.v1.AttestationNote.Hint.Builder.class);
       }
 
       // Construct using io.grafeas.v1.AttestationNote.Hint.newBuilder()
-      private Builder() {}
+      private Builder() {
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -415,7 +398,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
         return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_Hint_descriptor;
       }
 
@@ -445,41 +429,38 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       public Builder clone() {
         return super.clone();
       }
-
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-
       @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-
       @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.AttestationNote.Hint) {
-          return mergeFrom((io.grafeas.v1.AttestationNote.Hint) other);
+          return mergeFrom((io.grafeas.v1.AttestationNote.Hint)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -518,19 +499,17 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
               case 0:
                 done = true;
                 break;
-              case 10:
-                {
-                  humanReadableName_ = input.readStringRequireUtf8();
+              case 10: {
+                humanReadableName_ = input.readStringRequireUtf8();
 
-                  break;
-                } // case 10
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -543,21 +522,19 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
 
       private java.lang.Object humanReadableName_ = "";
       /**
-       *
-       *
        * <pre>
        * Required. The human readable name of this attestation authority, for
        * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
-       *
        * @return The humanReadableName.
        */
       public java.lang.String getHumanReadableName() {
         java.lang.Object ref = humanReadableName_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           humanReadableName_ = s;
           return s;
@@ -566,22 +543,21 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
         }
       }
       /**
-       *
-       *
        * <pre>
        * Required. The human readable name of this attestation authority, for
        * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
-       *
        * @return The bytes for humanReadableName.
        */
-      public com.google.protobuf.ByteString getHumanReadableNameBytes() {
+      public com.google.protobuf.ByteString
+          getHumanReadableNameBytes() {
         java.lang.Object ref = humanReadableName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           humanReadableName_ = b;
           return b;
         } else {
@@ -589,69 +565,61 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
         }
       }
       /**
-       *
-       *
        * <pre>
        * Required. The human readable name of this attestation authority, for
        * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
-       *
        * @param value The humanReadableName to set.
        * @return This builder for chaining.
        */
-      public Builder setHumanReadableName(java.lang.String value) {
+      public Builder setHumanReadableName(
+          java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         humanReadableName_ = value;
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * Required. The human readable name of this attestation authority, for
        * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearHumanReadableName() {
-
+        
         humanReadableName_ = getDefaultInstance().getHumanReadableName();
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * Required. The human readable name of this attestation authority, for
        * example "qa".
        * </pre>
        *
        * <code>string human_readable_name = 1;</code>
-       *
        * @param value The bytes for humanReadableName to set.
        * @return This builder for chaining.
        */
-      public Builder setHumanReadableNameBytes(com.google.protobuf.ByteString value) {
+      public Builder setHumanReadableNameBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         humanReadableName_ = value;
         onChanged();
         return this;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -664,12 +632,12 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
         return super.mergeUnknownFields(unknownFields);
       }
 
+
       // @@protoc_insertion_point(builder_scope:grafeas.v1.AttestationNote.Hint)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.AttestationNote.Hint)
     private static final io.grafeas.v1.AttestationNote.Hint DEFAULT_INSTANCE;
-
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.AttestationNote.Hint();
     }
@@ -678,28 +646,27 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Hint> PARSER =
-        new com.google.protobuf.AbstractParser<Hint>() {
-          @java.lang.Override
-          public Hint parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
+    private static final com.google.protobuf.Parser<Hint>
+        PARSER = new com.google.protobuf.AbstractParser<Hint>() {
+      @java.lang.Override
+      public Hint parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
 
     public static com.google.protobuf.Parser<Hint> parser() {
       return PARSER;
@@ -714,19 +681,17 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     public io.grafeas.v1.AttestationNote.Hint getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
+
   }
 
   public static final int HINT_FIELD_NUMBER = 1;
   private io.grafeas.v1.AttestationNote.Hint hint_;
   /**
-   *
-   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
-   *
    * @return Whether the hint field is set.
    */
   @java.lang.Override
@@ -734,14 +699,11 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     return hint_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
-   *
    * @return The hint.
    */
   @java.lang.Override
@@ -749,8 +711,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     return hint_ == null ? io.grafeas.v1.AttestationNote.Hint.getDefaultInstance() : hint_;
   }
   /**
-   *
-   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
@@ -763,7 +723,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -775,7 +734,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (hint_ != null) {
       output.writeMessage(1, getHint());
     }
@@ -789,7 +749,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
 
     size = 0;
     if (hint_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getHint());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getHint());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -799,7 +760,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.AttestationNote)) {
       return super.equals(obj);
@@ -808,7 +769,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
 
     if (hasHint() != other.hasHint()) return false;
     if (hasHint()) {
-      if (!getHint().equals(other.getHint())) return false;
+      if (!getHint()
+          .equals(other.getHint())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -830,103 +792,97 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     return hash;
   }
 
-  public static io.grafeas.v1.AttestationNote parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.AttestationNote parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.AttestationNote parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.AttestationNote parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.AttestationNote parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.AttestationNote parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.AttestationNote parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.AttestationNote parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.AttestationNote parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.AttestationNote prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Note kind that represents a logical attestation "role" or "authority". For
    * example, an organization might have one `Authority` for "QA" and one for
@@ -940,11 +896,12 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
    *
    * Protobuf type {@code grafeas.v1.AttestationNote}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.AttestationNote)
       io.grafeas.v1.AttestationNoteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_descriptor;
     }
 
@@ -957,12 +914,15 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using io.grafeas.v1.AttestationNote.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -976,7 +936,8 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Attestation.internal_static_grafeas_v1_AttestationNote_descriptor;
     }
 
@@ -1010,39 +971,38 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.AttestationNote) {
-        return mergeFrom((io.grafeas.v1.AttestationNote) other);
+        return mergeFrom((io.grafeas.v1.AttestationNote)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1080,19 +1040,19 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                input.readMessage(getHintFieldBuilder().getBuilder(), extensionRegistry);
+            case 10: {
+              input.readMessage(
+                  getHintFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 10
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 10
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1105,33 +1065,24 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
 
     private io.grafeas.v1.AttestationNote.Hint hint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.AttestationNote.Hint,
-            io.grafeas.v1.AttestationNote.Hint.Builder,
-            io.grafeas.v1.AttestationNote.HintOrBuilder>
-        hintBuilder_;
+        io.grafeas.v1.AttestationNote.Hint, io.grafeas.v1.AttestationNote.Hint.Builder, io.grafeas.v1.AttestationNote.HintOrBuilder> hintBuilder_;
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
      *
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
-     *
      * @return Whether the hint field is set.
      */
     public boolean hasHint() {
       return hintBuilder_ != null || hint_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
      *
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
-     *
      * @return The hint.
      */
     public io.grafeas.v1.AttestationNote.Hint getHint() {
@@ -1142,8 +1093,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1164,15 +1113,14 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
      *
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
      */
-    public Builder setHint(io.grafeas.v1.AttestationNote.Hint.Builder builderForValue) {
+    public Builder setHint(
+        io.grafeas.v1.AttestationNote.Hint.Builder builderForValue) {
       if (hintBuilder_ == null) {
         hint_ = builderForValue.build();
         onChanged();
@@ -1183,8 +1131,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1195,7 +1141,7 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       if (hintBuilder_ == null) {
         if (hint_ != null) {
           hint_ =
-              io.grafeas.v1.AttestationNote.Hint.newBuilder(hint_).mergeFrom(value).buildPartial();
+            io.grafeas.v1.AttestationNote.Hint.newBuilder(hint_).mergeFrom(value).buildPartial();
         } else {
           hint_ = value;
         }
@@ -1207,8 +1153,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1227,8 +1171,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1236,13 +1178,11 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
      */
     public io.grafeas.v1.AttestationNote.Hint.Builder getHintBuilder() {
-
+      
       onChanged();
       return getHintFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1253,12 +1193,11 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       if (hintBuilder_ != null) {
         return hintBuilder_.getMessageOrBuilder();
       } else {
-        return hint_ == null ? io.grafeas.v1.AttestationNote.Hint.getDefaultInstance() : hint_;
+        return hint_ == null ?
+            io.grafeas.v1.AttestationNote.Hint.getDefaultInstance() : hint_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Hint hints at the purpose of the attestation authority.
      * </pre>
@@ -1266,24 +1205,21 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.AttestationNote.Hint,
-            io.grafeas.v1.AttestationNote.Hint.Builder,
-            io.grafeas.v1.AttestationNote.HintOrBuilder>
+        io.grafeas.v1.AttestationNote.Hint, io.grafeas.v1.AttestationNote.Hint.Builder, io.grafeas.v1.AttestationNote.HintOrBuilder> 
         getHintFieldBuilder() {
       if (hintBuilder_ == null) {
-        hintBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.AttestationNote.Hint,
-                io.grafeas.v1.AttestationNote.Hint.Builder,
-                io.grafeas.v1.AttestationNote.HintOrBuilder>(
-                getHint(), getParentForChildren(), isClean());
+        hintBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.AttestationNote.Hint, io.grafeas.v1.AttestationNote.Hint.Builder, io.grafeas.v1.AttestationNote.HintOrBuilder>(
+                getHint(),
+                getParentForChildren(),
+                isClean());
         hint_ = null;
       }
       return hintBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1293,12 +1229,12 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.AttestationNote)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.AttestationNote)
   private static final io.grafeas.v1.AttestationNote DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.AttestationNote();
   }
@@ -1307,27 +1243,27 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AttestationNote> PARSER =
-      new com.google.protobuf.AbstractParser<AttestationNote>() {
-        @java.lang.Override
-        public AttestationNote parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<AttestationNote>
+      PARSER = new com.google.protobuf.AbstractParser<AttestationNote>() {
+    @java.lang.Override
+    public AttestationNote parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<AttestationNote> parser() {
     return PARSER;
@@ -1342,4 +1278,6 @@ public final class AttestationNote extends com.google.protobuf.GeneratedMessageV
   public io.grafeas.v1.AttestationNote getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

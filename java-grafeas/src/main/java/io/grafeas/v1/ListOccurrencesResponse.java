@@ -20,24 +20,21 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Response for listing occurrences.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.ListOccurrencesResponse}
  */
-public final class ListOccurrencesResponse extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class ListOccurrencesResponse extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.ListOccurrencesResponse)
     ListOccurrencesResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use ListOccurrencesResponse.newBuilder() to construct.
   private ListOccurrencesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private ListOccurrencesResponse() {
     occurrences_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
@@ -45,35 +42,32 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new ListOccurrencesResponse();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return io.grafeas.v1.GrafeasOuterClass
-        .internal_static_grafeas_v1_ListOccurrencesResponse_descriptor;
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+    return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListOccurrencesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.GrafeasOuterClass
-        .internal_static_grafeas_v1_ListOccurrencesResponse_fieldAccessorTable
+    return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListOccurrencesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.ListOccurrencesResponse.class,
-            io.grafeas.v1.ListOccurrencesResponse.Builder.class);
+            io.grafeas.v1.ListOccurrencesResponse.class, io.grafeas.v1.ListOccurrencesResponse.Builder.class);
   }
 
   public static final int OCCURRENCES_FIELD_NUMBER = 1;
   private java.util.List<io.grafeas.v1.Occurrence> occurrences_;
   /**
-   *
-   *
    * <pre>
    * The occurrences requested.
    * </pre>
@@ -85,8 +79,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     return occurrences_;
   }
   /**
-   *
-   *
    * <pre>
    * The occurrences requested.
    * </pre>
@@ -94,12 +86,11 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> 
+      getOccurrencesOrBuilderList() {
     return occurrences_;
   }
   /**
-   *
-   *
    * <pre>
    * The occurrences requested.
    * </pre>
@@ -111,8 +102,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     return occurrences_.size();
   }
   /**
-   *
-   *
    * <pre>
    * The occurrences requested.
    * </pre>
@@ -124,8 +113,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     return occurrences_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * The occurrences requested.
    * </pre>
@@ -133,15 +120,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
+  public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(
+      int index) {
     return occurrences_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
-   *
-   *
    * <pre>
    * The next pagination token in the list response. It should be used as
    * `page_token` for the following request. An empty value means no more
@@ -149,7 +135,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
-   *
    * @return The nextPageToken.
    */
   @java.lang.Override
@@ -158,15 +143,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The next pagination token in the list response. It should be used as
    * `page_token` for the following request. An empty value means no more
@@ -174,15 +158,16 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
-   *
    * @return The bytes for nextPageToken.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -191,7 +176,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -203,7 +187,8 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     for (int i = 0; i < occurrences_.size(); i++) {
       output.writeMessage(1, occurrences_.get(i));
     }
@@ -220,7 +205,8 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
 
     size = 0;
     for (int i = 0; i < occurrences_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, occurrences_.get(i));
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, occurrences_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -233,15 +219,17 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.ListOccurrencesResponse)) {
       return super.equals(obj);
     }
     io.grafeas.v1.ListOccurrencesResponse other = (io.grafeas.v1.ListOccurrencesResponse) obj;
 
-    if (!getOccurrencesList().equals(other.getOccurrencesList())) return false;
-    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getOccurrencesList()
+        .equals(other.getOccurrencesList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -264,135 +252,130 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     return hash;
   }
 
-  public static io.grafeas.v1.ListOccurrencesResponse parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.ListOccurrencesResponse parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.ListOccurrencesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.ListOccurrencesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Response for listing occurrences.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.ListOccurrencesResponse}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.ListOccurrencesResponse)
       io.grafeas.v1.ListOccurrencesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.GrafeasOuterClass
-          .internal_static_grafeas_v1_ListOccurrencesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListOccurrencesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.GrafeasOuterClass
-          .internal_static_grafeas_v1_ListOccurrencesResponse_fieldAccessorTable
+      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListOccurrencesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.ListOccurrencesResponse.class,
-              io.grafeas.v1.ListOccurrencesResponse.Builder.class);
+              io.grafeas.v1.ListOccurrencesResponse.class, io.grafeas.v1.ListOccurrencesResponse.Builder.class);
     }
 
     // Construct using io.grafeas.v1.ListOccurrencesResponse.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -409,9 +392,9 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return io.grafeas.v1.GrafeasOuterClass
-          .internal_static_grafeas_v1_ListOccurrencesResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
+      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListOccurrencesResponse_descriptor;
     }
 
     @java.lang.Override
@@ -430,8 +413,7 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
 
     @java.lang.Override
     public io.grafeas.v1.ListOccurrencesResponse buildPartial() {
-      io.grafeas.v1.ListOccurrencesResponse result =
-          new io.grafeas.v1.ListOccurrencesResponse(this);
+      io.grafeas.v1.ListOccurrencesResponse result = new io.grafeas.v1.ListOccurrencesResponse(this);
       int from_bitField0_ = bitField0_;
       if (occurrencesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -451,39 +433,38 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.ListOccurrencesResponse) {
-        return mergeFrom((io.grafeas.v1.ListOccurrencesResponse) other);
+        return mergeFrom((io.grafeas.v1.ListOccurrencesResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -510,10 +491,9 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
             occurrencesBuilder_ = null;
             occurrences_ = other.occurrences_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            occurrencesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getOccurrencesFieldBuilder()
-                    : null;
+            occurrencesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getOccurrencesFieldBuilder() : null;
           } else {
             occurrencesBuilder_.addAllMessages(other.occurrences_);
           }
@@ -549,31 +529,30 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                io.grafeas.v1.Occurrence m =
-                    input.readMessage(io.grafeas.v1.Occurrence.parser(), extensionRegistry);
-                if (occurrencesBuilder_ == null) {
-                  ensureOccurrencesIsMutable();
-                  occurrences_.add(m);
-                } else {
-                  occurrencesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-            case 18:
-              {
-                nextPageToken_ = input.readStringRequireUtf8();
+            case 10: {
+              io.grafeas.v1.Occurrence m =
+                  input.readMessage(
+                      io.grafeas.v1.Occurrence.parser(),
+                      extensionRegistry);
+              if (occurrencesBuilder_ == null) {
+                ensureOccurrencesIsMutable();
+                occurrences_.add(m);
+              } else {
+                occurrencesBuilder_.addMessage(m);
+              }
+              break;
+            } // case 10
+            case 18: {
+              nextPageToken_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -583,28 +562,21 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       } // finally
       return this;
     }
-
     private int bitField0_;
 
     private java.util.List<io.grafeas.v1.Occurrence> occurrences_ =
-        java.util.Collections.emptyList();
-
+      java.util.Collections.emptyList();
     private void ensureOccurrencesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         occurrences_ = new java.util.ArrayList<io.grafeas.v1.Occurrence>(occurrences_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Occurrence,
-            io.grafeas.v1.Occurrence.Builder,
-            io.grafeas.v1.OccurrenceOrBuilder>
-        occurrencesBuilder_;
+        io.grafeas.v1.Occurrence, io.grafeas.v1.Occurrence.Builder, io.grafeas.v1.OccurrenceOrBuilder> occurrencesBuilder_;
 
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -619,8 +591,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -635,8 +605,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -651,15 +619,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public Builder setOccurrences(int index, io.grafeas.v1.Occurrence value) {
+    public Builder setOccurrences(
+        int index, io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -673,15 +640,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public Builder setOccurrences(int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
+    public Builder setOccurrences(
+        int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
         occurrences_.set(index, builderForValue.build());
@@ -692,8 +658,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -714,15 +678,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public Builder addOccurrences(int index, io.grafeas.v1.Occurrence value) {
+    public Builder addOccurrences(
+        int index, io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -736,15 +699,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public Builder addOccurrences(io.grafeas.v1.Occurrence.Builder builderForValue) {
+    public Builder addOccurrences(
+        io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
         occurrences_.add(builderForValue.build());
@@ -755,15 +717,14 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public Builder addOccurrences(int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
+    public Builder addOccurrences(
+        int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
         occurrences_.add(index, builderForValue.build());
@@ -774,8 +735,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -786,7 +745,8 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
         java.lang.Iterable<? extends io.grafeas.v1.Occurrence> values) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, occurrences_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, occurrences_);
         onChanged();
       } else {
         occurrencesBuilder_.addAllMessages(values);
@@ -794,8 +754,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -813,8 +771,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -832,44 +788,39 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public io.grafeas.v1.Occurrence.Builder getOccurrencesBuilder(int index) {
+    public io.grafeas.v1.Occurrence.Builder getOccurrencesBuilder(
+        int index) {
       return getOccurrencesFieldBuilder().getBuilder(index);
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
+    public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(
+        int index) {
       if (occurrencesBuilder_ == null) {
-        return occurrences_.get(index);
-      } else {
+        return occurrences_.get(index);  } else {
         return occurrencesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder>
-        getOccurrencesOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> 
+         getOccurrencesOrBuilderList() {
       if (occurrencesBuilder_ != null) {
         return occurrencesBuilder_.getMessageOrBuilderList();
       } else {
@@ -877,8 +828,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
@@ -886,46 +835,42 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
     public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder() {
-      return getOccurrencesFieldBuilder().addBuilder(io.grafeas.v1.Occurrence.getDefaultInstance());
+      return getOccurrencesFieldBuilder().addBuilder(
+          io.grafeas.v1.Occurrence.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder(int index) {
-      return getOccurrencesFieldBuilder()
-          .addBuilder(index, io.grafeas.v1.Occurrence.getDefaultInstance());
+    public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder(
+        int index) {
+      return getOccurrencesFieldBuilder().addBuilder(
+          index, io.grafeas.v1.Occurrence.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * The occurrences requested.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Occurrence occurrences = 1;</code>
      */
-    public java.util.List<io.grafeas.v1.Occurrence.Builder> getOccurrencesBuilderList() {
+    public java.util.List<io.grafeas.v1.Occurrence.Builder> 
+         getOccurrencesBuilderList() {
       return getOccurrencesFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Occurrence,
-            io.grafeas.v1.Occurrence.Builder,
-            io.grafeas.v1.OccurrenceOrBuilder>
+        io.grafeas.v1.Occurrence, io.grafeas.v1.Occurrence.Builder, io.grafeas.v1.OccurrenceOrBuilder> 
         getOccurrencesFieldBuilder() {
       if (occurrencesBuilder_ == null) {
-        occurrencesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                io.grafeas.v1.Occurrence,
-                io.grafeas.v1.Occurrence.Builder,
-                io.grafeas.v1.OccurrenceOrBuilder>(
-                occurrences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        occurrencesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Occurrence, io.grafeas.v1.Occurrence.Builder, io.grafeas.v1.OccurrenceOrBuilder>(
+                occurrences_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
         occurrences_ = null;
       }
       return occurrencesBuilder_;
@@ -933,8 +878,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
 
     private java.lang.Object nextPageToken_ = "";
     /**
-     *
-     *
      * <pre>
      * The next pagination token in the list response. It should be used as
      * `page_token` for the following request. An empty value means no more
@@ -942,13 +885,13 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
-     *
      * @return The nextPageToken.
      */
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -957,8 +900,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
     }
     /**
-     *
-     *
      * <pre>
      * The next pagination token in the list response. It should be used as
      * `page_token` for the following request. An empty value means no more
@@ -966,14 +907,15 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
-     *
      * @return The bytes for nextPageToken.
      */
-    public com.google.protobuf.ByteString getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -981,8 +923,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       }
     }
     /**
-     *
-     *
      * <pre>
      * The next pagination token in the list response. It should be used as
      * `page_token` for the following request. An empty value means no more
@@ -990,22 +930,20 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
-     *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setNextPageToken(java.lang.String value) {
+    public Builder setNextPageToken(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The next pagination token in the list response. It should be used as
      * `page_token` for the following request. An empty value means no more
@@ -1013,18 +951,15 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
+      
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The next pagination token in the list response. It should be used as
      * `page_token` for the following request. An empty value means no more
@@ -1032,23 +967,23 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
-     *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       nextPageToken_ = value;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1058,12 +993,12 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.ListOccurrencesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.ListOccurrencesResponse)
   private static final io.grafeas.v1.ListOccurrencesResponse DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.ListOccurrencesResponse();
   }
@@ -1072,27 +1007,27 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListOccurrencesResponse> PARSER =
-      new com.google.protobuf.AbstractParser<ListOccurrencesResponse>() {
-        @java.lang.Override
-        public ListOccurrencesResponse parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<ListOccurrencesResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ListOccurrencesResponse>() {
+    @java.lang.Override
+    public ListOccurrencesResponse parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<ListOccurrencesResponse> parser() {
     return PARSER;
@@ -1107,4 +1042,6 @@ public final class ListOccurrencesResponse extends com.google.protobuf.Generated
   public io.grafeas.v1.ListOccurrencesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

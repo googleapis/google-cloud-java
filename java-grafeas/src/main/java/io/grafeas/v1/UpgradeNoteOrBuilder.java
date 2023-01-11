@@ -19,65 +19,51 @@
 
 package io.grafeas.v1;
 
-public interface UpgradeNoteOrBuilder
-    extends
+public interface UpgradeNoteOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.UpgradeNote)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The package.
    */
   java.lang.String getPackage();
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The bytes for package.
    */
-  com.google.protobuf.ByteString getPackageBytes();
+  com.google.protobuf.ByteString
+      getPackageBytes();
 
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in machine + human
    * readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 2;</code>
-   *
    * @return Whether the version field is set.
    */
   boolean hasVersion();
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in machine + human
    * readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 2;</code>
-   *
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in machine + human
    * readable form.
@@ -88,18 +74,15 @@ public interface UpgradeNoteOrBuilder
   io.grafeas.v1.VersionOrBuilder getVersionOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
-  java.util.List<io.grafeas.v1.UpgradeDistribution> getDistributionsList();
+  java.util.List<io.grafeas.v1.UpgradeDistribution> 
+      getDistributionsList();
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -108,8 +91,6 @@ public interface UpgradeNoteOrBuilder
    */
   io.grafeas.v1.UpgradeDistribution getDistributions(int index);
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -118,54 +99,43 @@ public interface UpgradeNoteOrBuilder
    */
   int getDistributionsCount();
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
-  java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder>
+  java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder> 
       getDistributionsOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
    *
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
-  io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(int index);
+  io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(
+      int index);
 
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-   *
    * @return Whether the windowsUpdate field is set.
    */
   boolean hasWindowsUpdate();
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-   *
    * @return The windowsUpdate.
    */
   io.grafeas.v1.WindowsUpdate getWindowsUpdate();
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>

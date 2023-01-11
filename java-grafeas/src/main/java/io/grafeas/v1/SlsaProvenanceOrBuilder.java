@@ -19,38 +19,29 @@
 
 package io.grafeas.v1;
 
-public interface SlsaProvenanceOrBuilder
-    extends
+public interface SlsaProvenanceOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.SlsaProvenance)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
-   *
    * @return Whether the builder field is set.
    */
   boolean hasBuilder();
   /**
-   *
-   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
-   *
    * @return The builder.
    */
   io.grafeas.v1.SlsaProvenance.SlsaBuilder getBuilder();
   /**
-   *
-   *
    * <pre>
    * required
    * </pre>
@@ -60,8 +51,6 @@ public interface SlsaProvenanceOrBuilder
   io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder getBuilderOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -70,13 +59,10 @@ public interface SlsaProvenanceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
-   *
    * @return Whether the recipe field is set.
    */
   boolean hasRecipe();
   /**
-   *
-   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -85,13 +71,10 @@ public interface SlsaProvenanceOrBuilder
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
-   *
    * @return The recipe.
    */
   io.grafeas.v1.SlsaProvenance.SlsaRecipe getRecipe();
   /**
-   *
-   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -105,22 +88,20 @@ public interface SlsaProvenanceOrBuilder
 
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-   *
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-   *
    * @return The metadata.
    */
   io.grafeas.v1.SlsaProvenance.SlsaMetadata getMetadata();
-  /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
+  /**
+   * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
+   */
   io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -130,10 +111,9 @@ public interface SlsaProvenanceOrBuilder
    *
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
-  java.util.List<io.grafeas.v1.SlsaProvenance.Material> getMaterialsList();
+  java.util.List<io.grafeas.v1.SlsaProvenance.Material> 
+      getMaterialsList();
   /**
-   *
-   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -145,8 +125,6 @@ public interface SlsaProvenanceOrBuilder
    */
   io.grafeas.v1.SlsaProvenance.Material getMaterials(int index);
   /**
-   *
-   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -158,8 +136,6 @@ public interface SlsaProvenanceOrBuilder
    */
   int getMaterialsCount();
   /**
-   *
-   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -169,11 +145,9 @@ public interface SlsaProvenanceOrBuilder
    *
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
-  java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>
+  java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder> 
       getMaterialsOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -183,5 +157,6 @@ public interface SlsaProvenanceOrBuilder
    *
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
-  io.grafeas.v1.SlsaProvenance.MaterialOrBuilder getMaterialsOrBuilder(int index);
+  io.grafeas.v1.SlsaProvenance.MaterialOrBuilder getMaterialsOrBuilder(
+      int index);
 }

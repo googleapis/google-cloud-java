@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Verifiers (e.g. Kritis implementations) MUST verify signatures
  * with respect to the trust anchors defined in policy (e.g. a Kritis policy).
@@ -47,16 +45,15 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.Signature}
  */
-public final class Signature extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class Signature extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Signature)
     SignatureOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use Signature.newBuilder() to construct.
   private Signature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private Signature() {
     signature_ = com.google.protobuf.ByteString.EMPTY;
     publicKeyId_ = "";
@@ -64,16 +61,18 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new Signature();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Common.internal_static_grafeas_v1_Signature_descriptor;
   }
 
@@ -88,8 +87,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   public static final int SIGNATURE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString signature_;
   /**
-   *
-   *
    * <pre>
    * The content of the signature, an opaque bytestring.
    * The payload that this signature verifies MUST be unambiguously provided
@@ -100,7 +97,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bytes signature = 1;</code>
-   *
    * @return The signature.
    */
   @java.lang.Override
@@ -111,8 +107,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   public static final int PUBLIC_KEY_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object publicKeyId_;
   /**
-   *
-   *
    * <pre>
    * The identifier for the public key that verifies this signature.
    *   * The `public_key_id` is required.
@@ -131,7 +125,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
-   *
    * @return The publicKeyId.
    */
   @java.lang.Override
@@ -140,15 +133,14 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       publicKeyId_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The identifier for the public key that verifies this signature.
    *   * The `public_key_id` is required.
@@ -167,15 +159,16 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
-   *
    * @return The bytes for publicKeyId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPublicKeyIdBytes() {
+  public com.google.protobuf.ByteString
+      getPublicKeyIdBytes() {
     java.lang.Object ref = publicKeyId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       publicKeyId_ = b;
       return b;
     } else {
@@ -184,7 +177,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -196,7 +188,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!signature_.isEmpty()) {
       output.writeBytes(1, signature_);
     }
@@ -213,7 +206,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (!signature_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, signature_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(1, signature_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicKeyId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publicKeyId_);
@@ -226,15 +220,17 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.Signature)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Signature other = (io.grafeas.v1.Signature) obj;
 
-    if (!getSignature().equals(other.getSignature())) return false;
-    if (!getPublicKeyId().equals(other.getPublicKeyId())) return false;
+    if (!getSignature()
+        .equals(other.getSignature())) return false;
+    if (!getPublicKeyId()
+        .equals(other.getPublicKeyId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -255,103 +251,97 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.Signature parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Signature parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Signature parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Signature parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.Signature parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Signature parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Signature parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Signature parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Signature parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Signature parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.Signature parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Signature parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Signature parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.Signature parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Signature parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.Signature prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Verifiers (e.g. Kritis implementations) MUST verify signatures
    * with respect to the trust anchors defined in policy (e.g. a Kritis policy).
@@ -377,11 +367,12 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code grafeas.v1.Signature}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Signature)
       io.grafeas.v1.SignatureOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Common.internal_static_grafeas_v1_Signature_descriptor;
     }
 
@@ -394,12 +385,15 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.Signature.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -411,7 +405,8 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Common.internal_static_grafeas_v1_Signature_descriptor;
     }
 
@@ -442,39 +437,38 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Signature) {
-        return mergeFrom((io.grafeas.v1.Signature) other);
+        return mergeFrom((io.grafeas.v1.Signature)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -516,25 +510,22 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                signature_ = input.readBytes();
+            case 10: {
+              signature_ = input.readBytes();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                publicKeyId_ = input.readStringRequireUtf8();
+              break;
+            } // case 10
+            case 18: {
+              publicKeyId_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -547,8 +538,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     *
-     *
      * <pre>
      * The content of the signature, an opaque bytestring.
      * The payload that this signature verifies MUST be unambiguously provided
@@ -559,7 +548,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 1;</code>
-     *
      * @return The signature.
      */
     @java.lang.Override
@@ -567,8 +555,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
       return signature_;
     }
     /**
-     *
-     *
      * <pre>
      * The content of the signature, an opaque bytestring.
      * The payload that this signature verifies MUST be unambiguously provided
@@ -579,22 +565,19 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 1;</code>
-     *
      * @param value The signature to set.
      * @return This builder for chaining.
      */
     public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       signature_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The content of the signature, an opaque bytestring.
      * The payload that this signature verifies MUST be unambiguously provided
@@ -605,11 +588,10 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bytes signature = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearSignature() {
-
+      
       signature_ = getDefaultInstance().getSignature();
       onChanged();
       return this;
@@ -617,8 +599,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object publicKeyId_ = "";
     /**
-     *
-     *
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
@@ -637,13 +617,13 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
-     *
      * @return The publicKeyId.
      */
     public java.lang.String getPublicKeyId() {
       java.lang.Object ref = publicKeyId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         publicKeyId_ = s;
         return s;
@@ -652,8 +632,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
@@ -672,14 +650,15 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
-     *
      * @return The bytes for publicKeyId.
      */
-    public com.google.protobuf.ByteString getPublicKeyIdBytes() {
+    public com.google.protobuf.ByteString
+        getPublicKeyIdBytes() {
       java.lang.Object ref = publicKeyId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         publicKeyId_ = b;
         return b;
       } else {
@@ -687,8 +666,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
@@ -707,22 +684,20 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
-     *
      * @param value The publicKeyId to set.
      * @return This builder for chaining.
      */
-    public Builder setPublicKeyId(java.lang.String value) {
+    public Builder setPublicKeyId(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       publicKeyId_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
@@ -741,18 +716,15 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearPublicKeyId() {
-
+      
       publicKeyId_ = getDefaultInstance().getPublicKeyId();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The identifier for the public key that verifies this signature.
      *   * The `public_key_id` is required.
@@ -771,23 +743,23 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>string public_key_id = 2;</code>
-     *
      * @param value The bytes for publicKeyId to set.
      * @return This builder for chaining.
      */
-    public Builder setPublicKeyIdBytes(com.google.protobuf.ByteString value) {
+    public Builder setPublicKeyIdBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       publicKeyId_ = value;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -797,12 +769,12 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Signature)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Signature)
   private static final io.grafeas.v1.Signature DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Signature();
   }
@@ -811,27 +783,27 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Signature> PARSER =
-      new com.google.protobuf.AbstractParser<Signature>() {
-        @java.lang.Override
-        public Signature parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<Signature>
+      PARSER = new com.google.protobuf.AbstractParser<Signature>() {
+    @java.lang.Override
+    public Signature parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<Signature> parser() {
     return PARSER;
@@ -846,4 +818,6 @@ public final class Signature extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Signature getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

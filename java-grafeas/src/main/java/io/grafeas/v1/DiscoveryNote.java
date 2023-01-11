@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * A note that indicates a type of analysis a provider would perform. This note
  * exists in a provider's project. A `Discovery` occurrence is created in a
@@ -30,32 +28,33 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.DiscoveryNote}
  */
-public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class DiscoveryNote extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.DiscoveryNote)
     DiscoveryNoteOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use DiscoveryNote.newBuilder() to construct.
   private DiscoveryNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private DiscoveryNote() {
     analysisKind_ = 0;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new DiscoveryNote();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Discovery.internal_static_grafeas_v1_DiscoveryNote_descriptor;
   }
 
@@ -70,42 +69,33 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   public static final int ANALYSIS_KIND_FIELD_NUMBER = 1;
   private int analysisKind_;
   /**
-   *
-   *
    * <pre>
    * Required. Immutable. The kind of analysis that is handled by this
    * discovery.
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-   *
    * @return The enum numeric value on the wire for analysisKind.
    */
-  @java.lang.Override
-  public int getAnalysisKindValue() {
+  @java.lang.Override public int getAnalysisKindValue() {
     return analysisKind_;
   }
   /**
-   *
-   *
    * <pre>
    * Required. Immutable. The kind of analysis that is handled by this
    * discovery.
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-   *
    * @return The analysisKind.
    */
-  @java.lang.Override
-  public io.grafeas.v1.NoteKind getAnalysisKind() {
+  @java.lang.Override public io.grafeas.v1.NoteKind getAnalysisKind() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(analysisKind_);
     return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -117,7 +107,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (analysisKind_ != io.grafeas.v1.NoteKind.NOTE_KIND_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, analysisKind_);
     }
@@ -131,7 +122,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (analysisKind_ != io.grafeas.v1.NoteKind.NOTE_KIND_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, analysisKind_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, analysisKind_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -141,7 +133,7 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.DiscoveryNote)) {
       return super.equals(obj);
@@ -167,103 +159,97 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.DiscoveryNote parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.DiscoveryNote parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.DiscoveryNote parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.DiscoveryNote parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.DiscoveryNote parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.DiscoveryNote parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.DiscoveryNote parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.DiscoveryNote prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * A note that indicates a type of analysis a provider would perform. This note
    * exists in a provider's project. A `Discovery` occurrence is created in a
@@ -272,11 +258,12 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code grafeas.v1.DiscoveryNote}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.DiscoveryNote)
       io.grafeas.v1.DiscoveryNoteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Discovery.internal_static_grafeas_v1_DiscoveryNote_descriptor;
     }
 
@@ -289,12 +276,15 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.DiscoveryNote.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -304,7 +294,8 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Discovery.internal_static_grafeas_v1_DiscoveryNote_descriptor;
     }
 
@@ -334,39 +325,38 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.DiscoveryNote) {
-        return mergeFrom((io.grafeas.v1.DiscoveryNote) other);
+        return mergeFrom((io.grafeas.v1.DiscoveryNote)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -404,19 +394,17 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 8:
-              {
-                analysisKind_ = input.readEnum();
+            case 8: {
+              analysisKind_ = input.readEnum();
 
-                break;
-              } // case 8
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 8
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -429,50 +417,40 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
 
     private int analysisKind_ = 0;
     /**
-     *
-     *
      * <pre>
      * Required. Immutable. The kind of analysis that is handled by this
      * discovery.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-     *
      * @return The enum numeric value on the wire for analysisKind.
      */
-    @java.lang.Override
-    public int getAnalysisKindValue() {
+    @java.lang.Override public int getAnalysisKindValue() {
       return analysisKind_;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Immutable. The kind of analysis that is handled by this
      * discovery.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-     *
      * @param value The enum numeric value on the wire for analysisKind to set.
      * @return This builder for chaining.
      */
     public Builder setAnalysisKindValue(int value) {
-
+      
       analysisKind_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Immutable. The kind of analysis that is handled by this
      * discovery.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-     *
      * @return The analysisKind.
      */
     @java.lang.Override
@@ -482,15 +460,12 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Immutable. The kind of analysis that is handled by this
      * discovery.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-     *
      * @param value The analysisKind to set.
      * @return This builder for chaining.
      */
@@ -498,32 +473,29 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       analysisKind_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Immutable. The kind of analysis that is handled by this
      * discovery.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind analysis_kind = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearAnalysisKind() {
-
+      
       analysisKind_ = 0;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -533,12 +505,12 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.DiscoveryNote)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.DiscoveryNote)
   private static final io.grafeas.v1.DiscoveryNote DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.DiscoveryNote();
   }
@@ -547,27 +519,27 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DiscoveryNote> PARSER =
-      new com.google.protobuf.AbstractParser<DiscoveryNote>() {
-        @java.lang.Override
-        public DiscoveryNote parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<DiscoveryNote>
+      PARSER = new com.google.protobuf.AbstractParser<DiscoveryNote>() {
+    @java.lang.Override
+    public DiscoveryNote parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<DiscoveryNote> parser() {
     return PARSER;
@@ -582,4 +554,6 @@ public final class DiscoveryNote extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.DiscoveryNote getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

@@ -20,24 +20,21 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Version contains structured information about the version of a package.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.Version}
  */
-public final class Version extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class Version extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Version)
     VersionOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use Version.newBuilder() to construct.
   private Version(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private Version() {
     name_ = "";
     revision_ = "";
@@ -47,16 +44,18 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new Version();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Package.internal_static_grafeas_v1_Version_descriptor;
   }
 
@@ -69,18 +68,15 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   /**
-   *
-   *
    * <pre>
    * Whether this is an ordinary package version or a sentinel MIN/MAX version.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1.Version.VersionKind}
    */
-  public enum VersionKind implements com.google.protobuf.ProtocolMessageEnum {
+  public enum VersionKind
+      implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     *
-     *
      * <pre>
      * Unknown.
      * </pre>
@@ -89,8 +85,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     VERSION_KIND_UNSPECIFIED(0),
     /**
-     *
-     *
      * <pre>
      * A standard package version.
      * </pre>
@@ -99,8 +93,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     NORMAL(1),
     /**
-     *
-     *
      * <pre>
      * A special version representing negative infinity.
      * </pre>
@@ -109,8 +101,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     MINIMUM(2),
     /**
-     *
-     *
      * <pre>
      * A special version representing positive infinity.
      * </pre>
@@ -122,8 +112,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     ;
 
     /**
-     *
-     *
      * <pre>
      * Unknown.
      * </pre>
@@ -132,8 +120,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int VERSION_KIND_UNSPECIFIED_VALUE = 0;
     /**
-     *
-     *
      * <pre>
      * A standard package version.
      * </pre>
@@ -142,8 +128,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int NORMAL_VALUE = 1;
     /**
-     *
-     *
      * <pre>
      * A special version representing negative infinity.
      * </pre>
@@ -152,8 +136,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int MINIMUM_VALUE = 2;
     /**
-     *
-     *
      * <pre>
      * A special version representing positive infinity.
      * </pre>
@@ -161,6 +143,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <code>MAXIMUM = 3;</code>
      */
     public static final int MAXIMUM_VALUE = 3;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -186,51 +169,50 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     public static VersionKind forNumber(int value) {
       switch (value) {
-        case 0:
-          return VERSION_KIND_UNSPECIFIED;
-        case 1:
-          return NORMAL;
-        case 2:
-          return MINIMUM;
-        case 3:
-          return MAXIMUM;
-        default:
-          return null;
+        case 0: return VERSION_KIND_UNSPECIFIED;
+        case 1: return NORMAL;
+        case 2: return MINIMUM;
+        case 3: return MAXIMUM;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<VersionKind> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<VersionKind>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        VersionKind> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<VersionKind>() {
+            public VersionKind findValueByNumber(int number) {
+              return VersionKind.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<VersionKind> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<VersionKind>() {
-          public VersionKind findValueByNumber(int number) {
-            return VersionKind.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.Version.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final VersionKind[] VALUES = values();
 
-    public static VersionKind valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static VersionKind valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -250,14 +232,11 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int EPOCH_FIELD_NUMBER = 1;
   private int epoch_;
   /**
-   *
-   *
    * <pre>
    * Used to correct mistakes in the version numbering scheme.
    * </pre>
    *
    * <code>int32 epoch = 1;</code>
-   *
    * @return The epoch.
    */
   @java.lang.Override
@@ -268,15 +247,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
-   *
-   *
    * <pre>
    * Required only when version kind is NORMAL. The main part of the version
    * name.
    * </pre>
    *
    * <code>string name = 2;</code>
-   *
    * @return The name.
    */
   @java.lang.Override
@@ -285,30 +261,30 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Required only when version kind is NORMAL. The main part of the version
    * name.
    * </pre>
    *
    * <code>string name = 2;</code>
-   *
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
+  public com.google.protobuf.ByteString
+      getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -319,14 +295,11 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int REVISION_FIELD_NUMBER = 3;
   private volatile java.lang.Object revision_;
   /**
-   *
-   *
    * <pre>
    * The iteration of the package build from the above version.
    * </pre>
    *
    * <code>string revision = 3;</code>
-   *
    * @return The revision.
    */
   @java.lang.Override
@@ -335,29 +308,29 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       revision_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The iteration of the package build from the above version.
    * </pre>
    *
    * <code>string revision = 3;</code>
-   *
    * @return The bytes for revision.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getRevisionBytes() {
+  public com.google.protobuf.ByteString
+      getRevisionBytes() {
     java.lang.Object ref = revision_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       revision_ = b;
       return b;
     } else {
@@ -368,8 +341,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int INCLUSIVE_FIELD_NUMBER = 6;
   private boolean inclusive_;
   /**
-   *
-   *
    * <pre>
    * Whether this version is specifying part of an inclusive range. Grafeas
    * does not have the capability to specify version ranges; instead we have
@@ -380,7 +351,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>bool inclusive = 6;</code>
-   *
    * @return The inclusive.
    */
   @java.lang.Override
@@ -391,35 +361,27 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_;
   /**
-   *
-   *
    * <pre>
    * Required. Distinguishes between sentinel MIN/MAX versions and normal
    * versions.
    * </pre>
    *
    * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-   *
    * @return The enum numeric value on the wire for kind.
    */
-  @java.lang.Override
-  public int getKindValue() {
+  @java.lang.Override public int getKindValue() {
     return kind_;
   }
   /**
-   *
-   *
    * <pre>
    * Required. Distinguishes between sentinel MIN/MAX versions and normal
    * versions.
    * </pre>
    *
    * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-   *
    * @return The kind.
    */
-  @java.lang.Override
-  public io.grafeas.v1.Version.VersionKind getKind() {
+  @java.lang.Override public io.grafeas.v1.Version.VersionKind getKind() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.Version.VersionKind result = io.grafeas.v1.Version.VersionKind.valueOf(kind_);
     return result == null ? io.grafeas.v1.Version.VersionKind.UNRECOGNIZED : result;
@@ -428,15 +390,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public static final int FULL_NAME_FIELD_NUMBER = 5;
   private volatile java.lang.Object fullName_;
   /**
-   *
-   *
    * <pre>
    * Human readable version string. This string is of the form
    * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
    * </pre>
    *
    * <code>string full_name = 5;</code>
-   *
    * @return The fullName.
    */
   @java.lang.Override
@@ -445,30 +404,30 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       fullName_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Human readable version string. This string is of the form
    * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
    * </pre>
    *
    * <code>string full_name = 5;</code>
-   *
    * @return The bytes for fullName.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getFullNameBytes() {
+  public com.google.protobuf.ByteString
+      getFullNameBytes() {
     java.lang.Object ref = fullName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       fullName_ = b;
       return b;
     } else {
@@ -477,7 +436,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -489,7 +447,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (epoch_ != 0) {
       output.writeInt32(1, epoch_);
     }
@@ -518,7 +477,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (epoch_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, epoch_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(1, epoch_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
@@ -527,13 +487,15 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, revision_);
     }
     if (kind_ != io.grafeas.v1.Version.VersionKind.VERSION_KIND_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, kind_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, kind_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, fullName_);
     }
     if (inclusive_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, inclusive_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, inclusive_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -543,19 +505,24 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.Version)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Version other = (io.grafeas.v1.Version) obj;
 
-    if (getEpoch() != other.getEpoch()) return false;
-    if (!getName().equals(other.getName())) return false;
-    if (!getRevision().equals(other.getRevision())) return false;
-    if (getInclusive() != other.getInclusive()) return false;
+    if (getEpoch()
+        != other.getEpoch()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getRevision()
+        .equals(other.getRevision())) return false;
+    if (getInclusive()
+        != other.getInclusive()) return false;
     if (kind_ != other.kind_) return false;
-    if (!getFullName().equals(other.getFullName())) return false;
+    if (!getFullName()
+        .equals(other.getFullName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -574,7 +541,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     hash = (37 * hash) + REVISION_FIELD_NUMBER;
     hash = (53 * hash) + getRevision().hashCode();
     hash = (37 * hash) + INCLUSIVE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInclusive());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getInclusive());
     hash = (37 * hash) + KIND_FIELD_NUMBER;
     hash = (53 * hash) + kind_;
     hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
@@ -584,114 +552,109 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.Version parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Version parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Version parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Version parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.Version parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Version parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Version parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Version parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Version parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Version parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.Version parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Version parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Version parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.Version parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Version parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.Version prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Version contains structured information about the version of a package.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.Version}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Version)
       io.grafeas.v1.VersionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Package.internal_static_grafeas_v1_Version_descriptor;
     }
 
@@ -704,12 +667,15 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.Version.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -729,7 +695,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Package.internal_static_grafeas_v1_Version_descriptor;
     }
 
@@ -764,39 +731,38 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Version) {
-        return mergeFrom((io.grafeas.v1.Version) other);
+        return mergeFrom((io.grafeas.v1.Version)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -852,49 +818,42 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 8:
-              {
-                epoch_ = input.readInt32();
+            case 8: {
+              epoch_ = input.readInt32();
 
-                break;
-              } // case 8
-            case 18:
-              {
-                name_ = input.readStringRequireUtf8();
+              break;
+            } // case 8
+            case 18: {
+              name_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            case 26:
-              {
-                revision_ = input.readStringRequireUtf8();
+              break;
+            } // case 18
+            case 26: {
+              revision_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 26
-            case 32:
-              {
-                kind_ = input.readEnum();
+              break;
+            } // case 26
+            case 32: {
+              kind_ = input.readEnum();
 
-                break;
-              } // case 32
-            case 42:
-              {
-                fullName_ = input.readStringRequireUtf8();
+              break;
+            } // case 32
+            case 42: {
+              fullName_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 42
-            case 48:
-              {
-                inclusive_ = input.readBool();
+              break;
+            } // case 42
+            case 48: {
+              inclusive_ = input.readBool();
 
-                break;
-              } // case 48
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 48
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -905,16 +864,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private int epoch_;
+    private int epoch_ ;
     /**
-     *
-     *
      * <pre>
      * Used to correct mistakes in the version numbering scheme.
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
-     *
      * @return The epoch.
      */
     @java.lang.Override
@@ -922,36 +878,30 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return epoch_;
     }
     /**
-     *
-     *
      * <pre>
      * Used to correct mistakes in the version numbering scheme.
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
-     *
      * @param value The epoch to set.
      * @return This builder for chaining.
      */
     public Builder setEpoch(int value) {
-
+      
       epoch_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Used to correct mistakes in the version numbering scheme.
      * </pre>
      *
      * <code>int32 epoch = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearEpoch() {
-
+      
       epoch_ = 0;
       onChanged();
       return this;
@@ -959,21 +909,19 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object name_ = "";
     /**
-     *
-     *
      * <pre>
      * Required only when version kind is NORMAL. The main part of the version
      * name.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -982,22 +930,21 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required only when version kind is NORMAL. The main part of the version
      * name.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1005,64 +952,57 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required only when version kind is NORMAL. The main part of the version
      * name.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setName(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       name_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required only when version kind is NORMAL. The main part of the version
      * name.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required only when version kind is NORMAL. The main part of the version
      * name.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
@@ -1070,20 +1010,18 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object revision_ = "";
     /**
-     *
-     *
      * <pre>
      * The iteration of the package build from the above version.
      * </pre>
      *
      * <code>string revision = 3;</code>
-     *
      * @return The revision.
      */
     public java.lang.String getRevision() {
       java.lang.Object ref = revision_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         revision_ = s;
         return s;
@@ -1092,21 +1030,20 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The iteration of the package build from the above version.
      * </pre>
      *
      * <code>string revision = 3;</code>
-     *
      * @return The bytes for revision.
      */
-    public com.google.protobuf.ByteString getRevisionBytes() {
+    public com.google.protobuf.ByteString
+        getRevisionBytes() {
       java.lang.Object ref = revision_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         revision_ = b;
         return b;
       } else {
@@ -1114,70 +1051,61 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The iteration of the package build from the above version.
      * </pre>
      *
      * <code>string revision = 3;</code>
-     *
      * @param value The revision to set.
      * @return This builder for chaining.
      */
-    public Builder setRevision(java.lang.String value) {
+    public Builder setRevision(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       revision_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The iteration of the package build from the above version.
      * </pre>
      *
      * <code>string revision = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearRevision() {
-
+      
       revision_ = getDefaultInstance().getRevision();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The iteration of the package build from the above version.
      * </pre>
      *
      * <code>string revision = 3;</code>
-     *
      * @param value The bytes for revision to set.
      * @return This builder for chaining.
      */
-    public Builder setRevisionBytes(com.google.protobuf.ByteString value) {
+    public Builder setRevisionBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       revision_ = value;
       onChanged();
       return this;
     }
 
-    private boolean inclusive_;
+    private boolean inclusive_ ;
     /**
-     *
-     *
      * <pre>
      * Whether this version is specifying part of an inclusive range. Grafeas
      * does not have the capability to specify version ranges; instead we have
@@ -1188,7 +1116,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool inclusive = 6;</code>
-     *
      * @return The inclusive.
      */
     @java.lang.Override
@@ -1196,8 +1123,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return inclusive_;
     }
     /**
-     *
-     *
      * <pre>
      * Whether this version is specifying part of an inclusive range. Grafeas
      * does not have the capability to specify version ranges; instead we have
@@ -1208,19 +1133,16 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool inclusive = 6;</code>
-     *
      * @param value The inclusive to set.
      * @return This builder for chaining.
      */
     public Builder setInclusive(boolean value) {
-
+      
       inclusive_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Whether this version is specifying part of an inclusive range. Grafeas
      * does not have the capability to specify version ranges; instead we have
@@ -1231,11 +1153,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>bool inclusive = 6;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearInclusive() {
-
+      
       inclusive_ = false;
       onChanged();
       return this;
@@ -1243,50 +1164,40 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
     private int kind_ = 0;
     /**
-     *
-     *
      * <pre>
      * Required. Distinguishes between sentinel MIN/MAX versions and normal
      * versions.
      * </pre>
      *
      * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-     *
      * @return The enum numeric value on the wire for kind.
      */
-    @java.lang.Override
-    public int getKindValue() {
+    @java.lang.Override public int getKindValue() {
       return kind_;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Distinguishes between sentinel MIN/MAX versions and normal
      * versions.
      * </pre>
      *
      * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-     *
      * @param value The enum numeric value on the wire for kind to set.
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
+      
       kind_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Distinguishes between sentinel MIN/MAX versions and normal
      * versions.
      * </pre>
      *
      * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-     *
      * @return The kind.
      */
     @java.lang.Override
@@ -1296,15 +1207,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return result == null ? io.grafeas.v1.Version.VersionKind.UNRECOGNIZED : result;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Distinguishes between sentinel MIN/MAX versions and normal
      * versions.
      * </pre>
      *
      * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-     *
      * @param value The kind to set.
      * @return This builder for chaining.
      */
@@ -1312,25 +1220,22 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       kind_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required. Distinguishes between sentinel MIN/MAX versions and normal
      * versions.
      * </pre>
      *
      * <code>.grafeas.v1.Version.VersionKind kind = 4;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      
       kind_ = 0;
       onChanged();
       return this;
@@ -1338,21 +1243,19 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object fullName_ = "";
     /**
-     *
-     *
      * <pre>
      * Human readable version string. This string is of the form
      * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
      * </pre>
      *
      * <code>string full_name = 5;</code>
-     *
      * @return The fullName.
      */
     public java.lang.String getFullName() {
       java.lang.Object ref = fullName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fullName_ = s;
         return s;
@@ -1361,22 +1264,21 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Human readable version string. This string is of the form
      * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
      * </pre>
      *
      * <code>string full_name = 5;</code>
-     *
      * @return The bytes for fullName.
      */
-    public com.google.protobuf.ByteString getFullNameBytes() {
+    public com.google.protobuf.ByteString
+        getFullNameBytes() {
       java.lang.Object ref = fullName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         fullName_ = b;
         return b;
       } else {
@@ -1384,71 +1286,64 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Human readable version string. This string is of the form
      * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
      * </pre>
      *
      * <code>string full_name = 5;</code>
-     *
      * @param value The fullName to set.
      * @return This builder for chaining.
      */
-    public Builder setFullName(java.lang.String value) {
+    public Builder setFullName(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       fullName_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Human readable version string. This string is of the form
      * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
      * </pre>
      *
      * <code>string full_name = 5;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearFullName() {
-
+      
       fullName_ = getDefaultInstance().getFullName();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Human readable version string. This string is of the form
      * &lt;epoch&gt;:&lt;name&gt;-&lt;revision&gt; and is only set when kind is NORMAL.
      * </pre>
      *
      * <code>string full_name = 5;</code>
-     *
      * @param value The bytes for fullName to set.
      * @return This builder for chaining.
      */
-    public Builder setFullNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setFullNameBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       fullName_ = value;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1458,12 +1353,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Version)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Version)
   private static final io.grafeas.v1.Version DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Version();
   }
@@ -1472,27 +1367,27 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Version> PARSER =
-      new com.google.protobuf.AbstractParser<Version>() {
-        @java.lang.Override
-        public Version parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<Version>
+      PARSER = new com.google.protobuf.AbstractParser<Version>() {
+    @java.lang.Override
+    public Version parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<Version> parser() {
     return PARSER;
@@ -1507,4 +1402,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Version getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

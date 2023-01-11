@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * The Upgrade Distribution represents metadata about the Upgrade for each
  * operating system (CPE). Some distributions have additional metadata around
@@ -30,16 +28,15 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.UpgradeDistribution}
  */
-public final class UpgradeDistribution extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class UpgradeDistribution extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.UpgradeDistribution)
     UpgradeDistributionOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use UpgradeDistribution.newBuilder() to construct.
   private UpgradeDistribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private UpgradeDistribution() {
     cpeUri_ = "";
     classification_ = "";
@@ -49,16 +46,18 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new UpgradeDistribution();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeDistribution_descriptor;
   }
 
@@ -67,22 +66,18 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       internalGetFieldAccessorTable() {
     return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeDistribution_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.UpgradeDistribution.class,
-            io.grafeas.v1.UpgradeDistribution.Builder.class);
+            io.grafeas.v1.UpgradeDistribution.class, io.grafeas.v1.UpgradeDistribution.Builder.class);
   }
 
   public static final int CPE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object cpeUri_;
   /**
-   *
-   *
    * <pre>
    * Required - The specific operating system this metadata applies to. See
    * https://cpe.mitre.org/specification/.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
-   *
    * @return The cpeUri.
    */
   @java.lang.Override
@@ -91,30 +86,30 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       cpeUri_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Required - The specific operating system this metadata applies to. See
    * https://cpe.mitre.org/specification/.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
-   *
    * @return The bytes for cpeUri.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getCpeUriBytes() {
+  public com.google.protobuf.ByteString
+      getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       cpeUri_ = b;
       return b;
     } else {
@@ -125,8 +120,6 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public static final int CLASSIFICATION_FIELD_NUMBER = 2;
   private volatile java.lang.Object classification_;
   /**
-   *
-   *
    * <pre>
    * The operating system classification of this Upgrade, as specified by the
    * upstream operating system upgrade feed. For Windows the classification is
@@ -135,7 +128,6 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string classification = 2;</code>
-   *
    * @return The classification.
    */
   @java.lang.Override
@@ -144,15 +136,14 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       classification_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The operating system classification of this Upgrade, as specified by the
    * upstream operating system upgrade feed. For Windows the classification is
@@ -161,15 +152,16 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>string classification = 2;</code>
-   *
    * @return The bytes for classification.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getClassificationBytes() {
+  public com.google.protobuf.ByteString
+      getClassificationBytes() {
     java.lang.Object ref = classification_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       classification_ = b;
       return b;
     } else {
@@ -180,14 +172,11 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public static final int SEVERITY_FIELD_NUMBER = 3;
   private volatile java.lang.Object severity_;
   /**
-   *
-   *
    * <pre>
    * The severity as specified by the upstream operating system.
    * </pre>
    *
    * <code>string severity = 3;</code>
-   *
    * @return The severity.
    */
   @java.lang.Override
@@ -196,29 +185,29 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       severity_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The severity as specified by the upstream operating system.
    * </pre>
    *
    * <code>string severity = 3;</code>
-   *
    * @return The bytes for severity.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getSeverityBytes() {
+  public com.google.protobuf.ByteString
+      getSeverityBytes() {
     java.lang.Object ref = severity_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       severity_ = b;
       return b;
     } else {
@@ -229,42 +218,34 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public static final int CVE_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList cve_;
   /**
-   *
-   *
    * <pre>
    * The cve tied to this Upgrade.
    * </pre>
    *
    * <code>repeated string cve = 4;</code>
-   *
    * @return A list containing the cve.
    */
-  public com.google.protobuf.ProtocolStringList getCveList() {
+  public com.google.protobuf.ProtocolStringList
+      getCveList() {
     return cve_;
   }
   /**
-   *
-   *
    * <pre>
    * The cve tied to this Upgrade.
    * </pre>
    *
    * <code>repeated string cve = 4;</code>
-   *
    * @return The count of cve.
    */
   public int getCveCount() {
     return cve_.size();
   }
   /**
-   *
-   *
    * <pre>
    * The cve tied to this Upgrade.
    * </pre>
    *
    * <code>repeated string cve = 4;</code>
-   *
    * @param index The index of the element to return.
    * @return The cve at the given index.
    */
@@ -272,23 +253,20 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     return cve_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * The cve tied to this Upgrade.
    * </pre>
    *
    * <code>repeated string cve = 4;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the cve at the given index.
    */
-  public com.google.protobuf.ByteString getCveBytes(int index) {
+  public com.google.protobuf.ByteString
+      getCveBytes(int index) {
     return cve_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -300,7 +278,8 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpeUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cpeUri_);
     }
@@ -347,17 +326,21 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.UpgradeDistribution)) {
       return super.equals(obj);
     }
     io.grafeas.v1.UpgradeDistribution other = (io.grafeas.v1.UpgradeDistribution) obj;
 
-    if (!getCpeUri().equals(other.getCpeUri())) return false;
-    if (!getClassification().equals(other.getClassification())) return false;
-    if (!getSeverity().equals(other.getSeverity())) return false;
-    if (!getCveList().equals(other.getCveList())) return false;
+    if (!getCpeUri()
+        .equals(other.getCpeUri())) return false;
+    if (!getClassification()
+        .equals(other.getClassification())) return false;
+    if (!getSeverity()
+        .equals(other.getSeverity())) return false;
+    if (!getCveList()
+        .equals(other.getCveList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -384,103 +367,97 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     return hash;
   }
 
-  public static io.grafeas.v1.UpgradeDistribution parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.UpgradeDistribution parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.UpgradeDistribution parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.UpgradeDistribution parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(
-      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeDistribution parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.UpgradeDistribution prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * The Upgrade Distribution represents metadata about the Upgrade for each
    * operating system (CPE). Some distributions have additional metadata around
@@ -489,11 +466,12 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
    *
    * Protobuf type {@code grafeas.v1.UpgradeDistribution}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.UpgradeDistribution)
       io.grafeas.v1.UpgradeDistributionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeDistribution_descriptor;
     }
 
@@ -502,17 +480,19 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         internalGetFieldAccessorTable() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeDistribution_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.UpgradeDistribution.class,
-              io.grafeas.v1.UpgradeDistribution.Builder.class);
+              io.grafeas.v1.UpgradeDistribution.class, io.grafeas.v1.UpgradeDistribution.Builder.class);
     }
 
     // Construct using io.grafeas.v1.UpgradeDistribution.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -528,7 +508,8 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeDistribution_descriptor;
     }
 
@@ -566,39 +547,38 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.UpgradeDistribution) {
-        return mergeFrom((io.grafeas.v1.UpgradeDistribution) other);
+        return mergeFrom((io.grafeas.v1.UpgradeDistribution)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -655,38 +635,33 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                cpeUri_ = input.readStringRequireUtf8();
+            case 10: {
+              cpeUri_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                classification_ = input.readStringRequireUtf8();
+              break;
+            } // case 10
+            case 18: {
+              classification_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            case 26:
-              {
-                severity_ = input.readStringRequireUtf8();
+              break;
+            } // case 18
+            case 26: {
+              severity_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 26
-            case 34:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureCveIsMutable();
-                cve_.add(s);
-                break;
-              } // case 34
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 26
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureCveIsMutable();
+              cve_.add(s);
+              break;
+            } // case 34
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -696,26 +671,23 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
-
     private int bitField0_;
 
     private java.lang.Object cpeUri_ = "";
     /**
-     *
-     *
      * <pre>
      * Required - The specific operating system this metadata applies to. See
      * https://cpe.mitre.org/specification/.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
-     *
      * @return The cpeUri.
      */
     public java.lang.String getCpeUri() {
       java.lang.Object ref = cpeUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         cpeUri_ = s;
         return s;
@@ -724,22 +696,21 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required - The specific operating system this metadata applies to. See
      * https://cpe.mitre.org/specification/.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
-     *
      * @return The bytes for cpeUri.
      */
-    public com.google.protobuf.ByteString getCpeUriBytes() {
+    public com.google.protobuf.ByteString
+        getCpeUriBytes() {
       java.lang.Object ref = cpeUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         cpeUri_ = b;
         return b;
       } else {
@@ -747,64 +718,57 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required - The specific operating system this metadata applies to. See
      * https://cpe.mitre.org/specification/.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
-     *
      * @param value The cpeUri to set.
      * @return This builder for chaining.
      */
-    public Builder setCpeUri(java.lang.String value) {
+    public Builder setCpeUri(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       cpeUri_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The specific operating system this metadata applies to. See
      * https://cpe.mitre.org/specification/.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
-
+      
       cpeUri_ = getDefaultInstance().getCpeUri();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The specific operating system this metadata applies to. See
      * https://cpe.mitre.org/specification/.
      * </pre>
      *
      * <code>string cpe_uri = 1;</code>
-     *
      * @param value The bytes for cpeUri to set.
      * @return This builder for chaining.
      */
-    public Builder setCpeUriBytes(com.google.protobuf.ByteString value) {
+    public Builder setCpeUriBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       cpeUri_ = value;
       onChanged();
       return this;
@@ -812,8 +776,6 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
 
     private java.lang.Object classification_ = "";
     /**
-     *
-     *
      * <pre>
      * The operating system classification of this Upgrade, as specified by the
      * upstream operating system upgrade feed. For Windows the classification is
@@ -822,13 +784,13 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string classification = 2;</code>
-     *
      * @return The classification.
      */
     public java.lang.String getClassification() {
       java.lang.Object ref = classification_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         classification_ = s;
         return s;
@@ -837,8 +799,6 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
     }
     /**
-     *
-     *
      * <pre>
      * The operating system classification of this Upgrade, as specified by the
      * upstream operating system upgrade feed. For Windows the classification is
@@ -847,14 +807,15 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string classification = 2;</code>
-     *
      * @return The bytes for classification.
      */
-    public com.google.protobuf.ByteString getClassificationBytes() {
+    public com.google.protobuf.ByteString
+        getClassificationBytes() {
       java.lang.Object ref = classification_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         classification_ = b;
         return b;
       } else {
@@ -862,8 +823,6 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
     }
     /**
-     *
-     *
      * <pre>
      * The operating system classification of this Upgrade, as specified by the
      * upstream operating system upgrade feed. For Windows the classification is
@@ -872,22 +831,20 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string classification = 2;</code>
-     *
      * @param value The classification to set.
      * @return This builder for chaining.
      */
-    public Builder setClassification(java.lang.String value) {
+    public Builder setClassification(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       classification_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The operating system classification of this Upgrade, as specified by the
      * upstream operating system upgrade feed. For Windows the classification is
@@ -896,18 +853,15 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string classification = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearClassification() {
-
+      
       classification_ = getDefaultInstance().getClassification();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The operating system classification of this Upgrade, as specified by the
      * upstream operating system upgrade feed. For Windows the classification is
@@ -916,16 +870,16 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>string classification = 2;</code>
-     *
      * @param value The bytes for classification to set.
      * @return This builder for chaining.
      */
-    public Builder setClassificationBytes(com.google.protobuf.ByteString value) {
+    public Builder setClassificationBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       classification_ = value;
       onChanged();
       return this;
@@ -933,20 +887,18 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
 
     private java.lang.Object severity_ = "";
     /**
-     *
-     *
      * <pre>
      * The severity as specified by the upstream operating system.
      * </pre>
      *
      * <code>string severity = 3;</code>
-     *
      * @return The severity.
      */
     public java.lang.String getSeverity() {
       java.lang.Object ref = severity_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         severity_ = s;
         return s;
@@ -955,21 +907,20 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
     }
     /**
-     *
-     *
      * <pre>
      * The severity as specified by the upstream operating system.
      * </pre>
      *
      * <code>string severity = 3;</code>
-     *
      * @return The bytes for severity.
      */
-    public com.google.protobuf.ByteString getSeverityBytes() {
+    public com.google.protobuf.ByteString
+        getSeverityBytes() {
       java.lang.Object ref = severity_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         severity_ = b;
         return b;
       } else {
@@ -977,111 +928,95 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
     }
     /**
-     *
-     *
      * <pre>
      * The severity as specified by the upstream operating system.
      * </pre>
      *
      * <code>string severity = 3;</code>
-     *
      * @param value The severity to set.
      * @return This builder for chaining.
      */
-    public Builder setSeverity(java.lang.String value) {
+    public Builder setSeverity(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       severity_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The severity as specified by the upstream operating system.
      * </pre>
      *
      * <code>string severity = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      
       severity_ = getDefaultInstance().getSeverity();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The severity as specified by the upstream operating system.
      * </pre>
      *
      * <code>string severity = 3;</code>
-     *
      * @param value The bytes for severity to set.
      * @return This builder for chaining.
      */
-    public Builder setSeverityBytes(com.google.protobuf.ByteString value) {
+    public Builder setSeverityBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       severity_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.LazyStringList cve_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-
     private void ensureCveIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         cve_ = new com.google.protobuf.LazyStringArrayList(cve_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @return A list containing the cve.
      */
-    public com.google.protobuf.ProtocolStringList getCveList() {
+    public com.google.protobuf.ProtocolStringList
+        getCveList() {
       return cve_.getUnmodifiableView();
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @return The count of cve.
      */
     public int getCveCount() {
       return cve_.size();
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @param index The index of the element to return.
      * @return The cve at the given index.
      */
@@ -1089,90 +1024,80 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return cve_.get(index);
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @param index The index of the value to return.
      * @return The bytes of the cve at the given index.
      */
-    public com.google.protobuf.ByteString getCveBytes(int index) {
+    public com.google.protobuf.ByteString
+        getCveBytes(int index) {
       return cve_.getByteString(index);
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @param index The index to set the value at.
      * @param value The cve to set.
      * @return This builder for chaining.
      */
-    public Builder setCve(int index, java.lang.String value) {
+    public Builder setCve(
+        int index, java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureCveIsMutable();
+    throw new NullPointerException();
+  }
+  ensureCveIsMutable();
       cve_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @param value The cve to add.
      * @return This builder for chaining.
      */
-    public Builder addCve(java.lang.String value) {
+    public Builder addCve(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureCveIsMutable();
+    throw new NullPointerException();
+  }
+  ensureCveIsMutable();
       cve_.add(value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @param values The cve to add.
      * @return This builder for chaining.
      */
-    public Builder addAllCve(java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllCve(
+        java.lang.Iterable<java.lang.String> values) {
       ensureCveIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cve_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, cve_);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearCve() {
@@ -1182,30 +1107,28 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The cve tied to this Upgrade.
      * </pre>
      *
      * <code>repeated string cve = 4;</code>
-     *
      * @param value The bytes of the cve to add.
      * @return This builder for chaining.
      */
-    public Builder addCveBytes(com.google.protobuf.ByteString value) {
+    public Builder addCveBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       ensureCveIsMutable();
       cve_.add(value);
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1215,12 +1138,12 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.UpgradeDistribution)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.UpgradeDistribution)
   private static final io.grafeas.v1.UpgradeDistribution DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.UpgradeDistribution();
   }
@@ -1229,27 +1152,27 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpgradeDistribution> PARSER =
-      new com.google.protobuf.AbstractParser<UpgradeDistribution>() {
-        @java.lang.Override
-        public UpgradeDistribution parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<UpgradeDistribution>
+      PARSER = new com.google.protobuf.AbstractParser<UpgradeDistribution>() {
+    @java.lang.Override
+    public UpgradeDistribution parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<UpgradeDistribution> parser() {
     return PARSER;
@@ -1264,4 +1187,6 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public io.grafeas.v1.UpgradeDistribution getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

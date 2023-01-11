@@ -19,242 +19,196 @@
 
 package io.grafeas.v1;
 
-public interface CommandOrBuilder
-    extends
+public interface CommandOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Command)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * Required. Name of the command, as presented on the command line, or if the
    * command is packaged as a Docker container, as presented to `docker pull`.
    * </pre>
    *
    * <code>string name = 1;</code>
-   *
    * @return The name.
    */
   java.lang.String getName();
   /**
-   *
-   *
    * <pre>
    * Required. Name of the command, as presented on the command line, or if the
    * command is packaged as a Docker container, as presented to `docker pull`.
    * </pre>
    *
    * <code>string name = 1;</code>
-   *
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
-   *
-   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
    *
    * <code>repeated string env = 2;</code>
-   *
    * @return A list containing the env.
    */
-  java.util.List<java.lang.String> getEnvList();
+  java.util.List<java.lang.String>
+      getEnvList();
   /**
-   *
-   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
    *
    * <code>repeated string env = 2;</code>
-   *
    * @return The count of env.
    */
   int getEnvCount();
   /**
-   *
-   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
    *
    * <code>repeated string env = 2;</code>
-   *
    * @param index The index of the element to return.
    * @return The env at the given index.
    */
   java.lang.String getEnv(int index);
   /**
-   *
-   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
    *
    * <code>repeated string env = 2;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the env at the given index.
    */
-  com.google.protobuf.ByteString getEnvBytes(int index);
+  com.google.protobuf.ByteString
+      getEnvBytes(int index);
 
   /**
-   *
-   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
    *
    * <code>repeated string args = 3;</code>
-   *
    * @return A list containing the args.
    */
-  java.util.List<java.lang.String> getArgsList();
+  java.util.List<java.lang.String>
+      getArgsList();
   /**
-   *
-   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
    *
    * <code>repeated string args = 3;</code>
-   *
    * @return The count of args.
    */
   int getArgsCount();
   /**
-   *
-   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
    *
    * <code>repeated string args = 3;</code>
-   *
    * @param index The index of the element to return.
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
   /**
-   *
-   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
    *
    * <code>repeated string args = 3;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the args at the given index.
    */
-  com.google.protobuf.ByteString getArgsBytes(int index);
+  com.google.protobuf.ByteString
+      getArgsBytes(int index);
 
   /**
-   *
-   *
    * <pre>
    * Working directory (relative to project source root) used when running this
    * command.
    * </pre>
    *
    * <code>string dir = 4;</code>
-   *
    * @return The dir.
    */
   java.lang.String getDir();
   /**
-   *
-   *
    * <pre>
    * Working directory (relative to project source root) used when running this
    * command.
    * </pre>
    *
    * <code>string dir = 4;</code>
-   *
    * @return The bytes for dir.
    */
-  com.google.protobuf.ByteString getDirBytes();
+  com.google.protobuf.ByteString
+      getDirBytes();
 
   /**
-   *
-   *
    * <pre>
    * Optional unique identifier for this command, used in wait_for to reference
    * this command as a dependency.
    * </pre>
    *
    * <code>string id = 5;</code>
-   *
    * @return The id.
    */
   java.lang.String getId();
   /**
-   *
-   *
    * <pre>
    * Optional unique identifier for this command, used in wait_for to reference
    * this command as a dependency.
    * </pre>
    *
    * <code>string id = 5;</code>
-   *
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString getIdBytes();
+  com.google.protobuf.ByteString
+      getIdBytes();
 
   /**
-   *
-   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
-   *
    * @return A list containing the waitFor.
    */
-  java.util.List<java.lang.String> getWaitForList();
+  java.util.List<java.lang.String>
+      getWaitForList();
   /**
-   *
-   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
-   *
    * @return The count of waitFor.
    */
   int getWaitForCount();
   /**
-   *
-   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
-   *
    * @param index The index of the element to return.
    * @return The waitFor at the given index.
    */
   java.lang.String getWaitFor(int index);
   /**
-   *
-   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the waitFor at the given index.
    */
-  com.google.protobuf.ByteString getWaitForBytes(int index);
+  com.google.protobuf.ByteString
+      getWaitForBytes(int index);
 }

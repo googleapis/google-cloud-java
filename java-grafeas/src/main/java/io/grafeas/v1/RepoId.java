@@ -20,38 +20,38 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * A unique identifier for a Cloud Repo.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.RepoId}
  */
-public final class RepoId extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class RepoId extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.RepoId)
     RepoIdOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use RepoId.newBuilder() to construct.
   private RepoId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
-  private RepoId() {}
+  private RepoId() {
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new RepoId();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_RepoId_descriptor;
   }
 
@@ -65,16 +65,13 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
 
   private int idCase_ = 0;
   private java.lang.Object id_;
-
   public enum IdCase
-      implements
-          com.google.protobuf.Internal.EnumLite,
+      implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROJECT_REPO_ID(1),
     UID(2),
     ID_NOT_SET(0);
     private final int value;
-
     private IdCase(int value) {
       this.value = value;
     }
@@ -90,36 +87,30 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
 
     public static IdCase forNumber(int value) {
       switch (value) {
-        case 1:
-          return PROJECT_REPO_ID;
-        case 2:
-          return UID;
-        case 0:
-          return ID_NOT_SET;
-        default:
-          return null;
+        case 1: return PROJECT_REPO_ID;
+        case 2: return UID;
+        case 0: return ID_NOT_SET;
+        default: return null;
       }
     }
-
     public int getNumber() {
       return this.value;
     }
   };
 
-  public IdCase getIdCase() {
-    return IdCase.forNumber(idCase_);
+  public IdCase
+  getIdCase() {
+    return IdCase.forNumber(
+        idCase_);
   }
 
   public static final int PROJECT_REPO_ID_FIELD_NUMBER = 1;
   /**
-   *
-   *
    * <pre>
    * A combination of a project ID and a repo name.
    * </pre>
    *
    * <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
-   *
    * @return Whether the projectRepoId field is set.
    */
   @java.lang.Override
@@ -127,26 +118,21 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     return idCase_ == 1;
   }
   /**
-   *
-   *
    * <pre>
    * A combination of a project ID and a repo name.
    * </pre>
    *
    * <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
-   *
    * @return The projectRepoId.
    */
   @java.lang.Override
   public io.grafeas.v1.ProjectRepoId getProjectRepoId() {
     if (idCase_ == 1) {
-      return (io.grafeas.v1.ProjectRepoId) id_;
+       return (io.grafeas.v1.ProjectRepoId) id_;
     }
     return io.grafeas.v1.ProjectRepoId.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A combination of a project ID and a repo name.
    * </pre>
@@ -156,35 +142,29 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.ProjectRepoIdOrBuilder getProjectRepoIdOrBuilder() {
     if (idCase_ == 1) {
-      return (io.grafeas.v1.ProjectRepoId) id_;
+       return (io.grafeas.v1.ProjectRepoId) id_;
     }
     return io.grafeas.v1.ProjectRepoId.getDefaultInstance();
   }
 
   public static final int UID_FIELD_NUMBER = 2;
   /**
-   *
-   *
    * <pre>
    * A server-assigned, globally unique identifier.
    * </pre>
    *
    * <code>string uid = 2;</code>
-   *
    * @return Whether the uid field is set.
    */
   public boolean hasUid() {
     return idCase_ == 2;
   }
   /**
-   *
-   *
    * <pre>
    * A server-assigned, globally unique identifier.
    * </pre>
    *
    * <code>string uid = 2;</code>
-   *
    * @return The uid.
    */
   public java.lang.String getUid() {
@@ -195,7 +175,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (idCase_ == 2) {
         id_ = s;
@@ -204,24 +185,23 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   *
-   *
    * <pre>
    * A server-assigned, globally unique identifier.
    * </pre>
    *
    * <code>string uid = 2;</code>
-   *
    * @return The bytes for uid.
    */
-  public com.google.protobuf.ByteString getUidBytes() {
+  public com.google.protobuf.ByteString
+      getUidBytes() {
     java.lang.Object ref = "";
     if (idCase_ == 2) {
       ref = id_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       if (idCase_ == 2) {
         id_ = b;
       }
@@ -232,7 +212,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -244,7 +223,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (idCase_ == 1) {
       output.writeMessage(1, (io.grafeas.v1.ProjectRepoId) id_);
     }
@@ -261,9 +241,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (idCase_ == 1) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              1, (io.grafeas.v1.ProjectRepoId) id_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, (io.grafeas.v1.ProjectRepoId) id_);
     }
     if (idCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
@@ -276,7 +255,7 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.RepoId)) {
       return super.equals(obj);
@@ -286,10 +265,12 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     if (!getIdCase().equals(other.getIdCase())) return false;
     switch (idCase_) {
       case 1:
-        if (!getProjectRepoId().equals(other.getProjectRepoId())) return false;
+        if (!getProjectRepoId()
+            .equals(other.getProjectRepoId())) return false;
         break;
       case 2:
-        if (!getUid().equals(other.getUid())) return false;
+        if (!getUid()
+            .equals(other.getUid())) return false;
         break;
       case 0:
       default:
@@ -322,114 +303,109 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.RepoId parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.RepoId parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.RepoId parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.RepoId parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.RepoId parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.RepoId parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.RepoId parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.RepoId parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.RepoId parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.RepoId prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * A unique identifier for a Cloud Repo.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.RepoId}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.RepoId)
       io.grafeas.v1.RepoIdOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_RepoId_descriptor;
     }
 
@@ -442,12 +418,15 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.RepoId.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -460,7 +439,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_RepoId_descriptor;
     }
 
@@ -500,39 +480,38 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.RepoId) {
-        return mergeFrom((io.grafeas.v1.RepoId) other);
+        return mergeFrom((io.grafeas.v1.RepoId)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -542,22 +521,19 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(io.grafeas.v1.RepoId other) {
       if (other == io.grafeas.v1.RepoId.getDefaultInstance()) return this;
       switch (other.getIdCase()) {
-        case PROJECT_REPO_ID:
-          {
-            mergeProjectRepoId(other.getProjectRepoId());
-            break;
-          }
-        case UID:
-          {
-            idCase_ = 2;
-            id_ = other.id_;
-            onChanged();
-            break;
-          }
-        case ID_NOT_SET:
-          {
-            break;
-          }
+        case PROJECT_REPO_ID: {
+          mergeProjectRepoId(other.getProjectRepoId());
+          break;
+        }
+        case UID: {
+          idCase_ = 2;
+          id_ = other.id_;
+          onChanged();
+          break;
+        }
+        case ID_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -585,26 +561,25 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                input.readMessage(getProjectRepoIdFieldBuilder().getBuilder(), extensionRegistry);
-                idCase_ = 1;
-                break;
-              } // case 10
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                idCase_ = 2;
-                id_ = s;
-                break;
-              } // case 18
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+            case 10: {
+              input.readMessage(
+                  getProjectRepoIdFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              idCase_ = 1;
+              break;
+            } // case 10
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              idCase_ = 2;
+              id_ = s;
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -614,12 +589,12 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
-
     private int idCase_ = 0;
     private java.lang.Object id_;
-
-    public IdCase getIdCase() {
-      return IdCase.forNumber(idCase_);
+    public IdCase
+        getIdCase() {
+      return IdCase.forNumber(
+          idCase_);
     }
 
     public Builder clearId() {
@@ -629,20 +604,15 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ProjectRepoId,
-            io.grafeas.v1.ProjectRepoId.Builder,
-            io.grafeas.v1.ProjectRepoIdOrBuilder>
-        projectRepoIdBuilder_;
+        io.grafeas.v1.ProjectRepoId, io.grafeas.v1.ProjectRepoId.Builder, io.grafeas.v1.ProjectRepoIdOrBuilder> projectRepoIdBuilder_;
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
      *
      * <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
-     *
      * @return Whether the projectRepoId field is set.
      */
     @java.lang.Override
@@ -650,14 +620,11 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return idCase_ == 1;
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
      *
      * <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
-     *
      * @return The projectRepoId.
      */
     @java.lang.Override
@@ -675,8 +642,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
@@ -697,15 +662,14 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
      *
      * <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
      */
-    public Builder setProjectRepoId(io.grafeas.v1.ProjectRepoId.Builder builderForValue) {
+    public Builder setProjectRepoId(
+        io.grafeas.v1.ProjectRepoId.Builder builderForValue) {
       if (projectRepoIdBuilder_ == null) {
         id_ = builderForValue.build();
         onChanged();
@@ -716,8 +680,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
@@ -726,11 +688,10 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProjectRepoId(io.grafeas.v1.ProjectRepoId value) {
       if (projectRepoIdBuilder_ == null) {
-        if (idCase_ == 1 && id_ != io.grafeas.v1.ProjectRepoId.getDefaultInstance()) {
-          id_ =
-              io.grafeas.v1.ProjectRepoId.newBuilder((io.grafeas.v1.ProjectRepoId) id_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (idCase_ == 1 &&
+            id_ != io.grafeas.v1.ProjectRepoId.getDefaultInstance()) {
+          id_ = io.grafeas.v1.ProjectRepoId.newBuilder((io.grafeas.v1.ProjectRepoId) id_)
+              .mergeFrom(value).buildPartial();
         } else {
           id_ = value;
         }
@@ -746,8 +707,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
@@ -771,8 +730,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
@@ -783,8 +740,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return getProjectRepoIdFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
@@ -803,8 +758,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A combination of a project ID and a repo name.
      * </pre>
@@ -812,37 +765,30 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.ProjectRepoId project_repo_id = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ProjectRepoId,
-            io.grafeas.v1.ProjectRepoId.Builder,
-            io.grafeas.v1.ProjectRepoIdOrBuilder>
+        io.grafeas.v1.ProjectRepoId, io.grafeas.v1.ProjectRepoId.Builder, io.grafeas.v1.ProjectRepoIdOrBuilder> 
         getProjectRepoIdFieldBuilder() {
       if (projectRepoIdBuilder_ == null) {
         if (!(idCase_ == 1)) {
           id_ = io.grafeas.v1.ProjectRepoId.getDefaultInstance();
         }
-        projectRepoIdBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.ProjectRepoId,
-                io.grafeas.v1.ProjectRepoId.Builder,
-                io.grafeas.v1.ProjectRepoIdOrBuilder>(
-                (io.grafeas.v1.ProjectRepoId) id_, getParentForChildren(), isClean());
+        projectRepoIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ProjectRepoId, io.grafeas.v1.ProjectRepoId.Builder, io.grafeas.v1.ProjectRepoIdOrBuilder>(
+                (io.grafeas.v1.ProjectRepoId) id_,
+                getParentForChildren(),
+                isClean());
         id_ = null;
       }
       idCase_ = 1;
-      onChanged();
-      ;
+      onChanged();;
       return projectRepoIdBuilder_;
     }
 
     /**
-     *
-     *
      * <pre>
      * A server-assigned, globally unique identifier.
      * </pre>
      *
      * <code>string uid = 2;</code>
-     *
      * @return Whether the uid field is set.
      */
     @java.lang.Override
@@ -850,14 +796,11 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return idCase_ == 2;
     }
     /**
-     *
-     *
      * <pre>
      * A server-assigned, globally unique identifier.
      * </pre>
      *
      * <code>string uid = 2;</code>
-     *
      * @return The uid.
      */
     @java.lang.Override
@@ -867,7 +810,8 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
         ref = id_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (idCase_ == 2) {
           id_ = s;
@@ -878,25 +822,24 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A server-assigned, globally unique identifier.
      * </pre>
      *
      * <code>string uid = 2;</code>
-     *
      * @return The bytes for uid.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getUidBytes() {
+    public com.google.protobuf.ByteString
+        getUidBytes() {
       java.lang.Object ref = "";
       if (idCase_ == 2) {
         ref = id_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         if (idCase_ == 2) {
           id_ = b;
         }
@@ -906,35 +849,30 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A server-assigned, globally unique identifier.
      * </pre>
      *
      * <code>string uid = 2;</code>
-     *
      * @param value The uid to set.
      * @return This builder for chaining.
      */
-    public Builder setUid(java.lang.String value) {
+    public Builder setUid(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      idCase_ = 2;
+    throw new NullPointerException();
+  }
+  idCase_ = 2;
       id_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A server-assigned, globally unique identifier.
      * </pre>
      *
      * <code>string uid = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearUid() {
@@ -946,30 +884,28 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A server-assigned, globally unique identifier.
      * </pre>
      *
      * <code>string uid = 2;</code>
-     *
      * @param value The bytes for uid to set.
      * @return This builder for chaining.
      */
-    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+    public Builder setUidBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       idCase_ = 2;
       id_ = value;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -979,12 +915,12 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.RepoId)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.RepoId)
   private static final io.grafeas.v1.RepoId DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.RepoId();
   }
@@ -993,27 +929,27 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RepoId> PARSER =
-      new com.google.protobuf.AbstractParser<RepoId>() {
-        @java.lang.Override
-        public RepoId parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<RepoId>
+      PARSER = new com.google.protobuf.AbstractParser<RepoId>() {
+    @java.lang.Override
+    public RepoId parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<RepoId> parser() {
     return PARSER;
@@ -1028,4 +964,6 @@ public final class RepoId extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.RepoId getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

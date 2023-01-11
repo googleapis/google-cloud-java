@@ -19,47 +19,51 @@
 
 package io.grafeas.v1;
 
-/** Protobuf type {@code grafeas.v1.Subject} */
-public final class Subject extends com.google.protobuf.GeneratedMessageV3
-    implements
+/**
+ * Protobuf type {@code grafeas.v1.Subject}
+ */
+public final class Subject extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Subject)
     SubjectOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use Subject.newBuilder() to construct.
   private Subject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private Subject() {
     name_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new Subject();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(int number) {
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
     switch (number) {
       case 2:
         return internalGetDigest();
       default:
-        throw new RuntimeException("Invalid map field number: " + number);
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
     }
   }
-
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -72,7 +76,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   private volatile java.lang.Object name_;
   /**
    * <code>string name = 1;</code>
-   *
    * @return The name.
    */
   @java.lang.Override
@@ -81,7 +84,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
@@ -89,15 +93,16 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
   /**
    * <code>string name = 1;</code>
-   *
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
+  public com.google.protobuf.ByteString
+      getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -106,23 +111,24 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIGEST_FIELD_NUMBER = 2;
-
   private static final class DigestDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
-        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-            io.grafeas.v1.InTotoStatementProto
-                .internal_static_grafeas_v1_Subject_DigestEntry_descriptor,
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "",
-            com.google.protobuf.WireFormat.FieldType.STRING,
-            "");
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_DigestEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
   }
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
-
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> digest_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetDigest() {
     if (digest_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(DigestDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(
+          DigestDefaultEntryHolder.defaultEntry);
     }
     return digest_;
   }
@@ -131,8 +137,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     return internalGetDigest().getMap().size();
   }
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -142,22 +146,22 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
+
   @java.lang.Override
-  public boolean containsDigest(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
+  public boolean containsDigest(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetDigest().getMap().containsKey(key);
   }
-  /** Use {@link #getDigestMap()} instead. */
+  /**
+   * Use {@link #getDigestMap()} instead.
+   */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDigest() {
     return getDigestMap();
   }
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -168,12 +172,11 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   @java.lang.Override
+
   public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
     return internalGetDigest().getMap();
   }
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -184,16 +187,16 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getDigestOrDefault(java.lang.String key, java.lang.String defaultValue) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+
+  public java.lang.String getDigestOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetDigest().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -204,11 +207,12 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getDigestOrThrow(java.lang.String key) {
-    if (key == null) {
-      throw new NullPointerException("map key");
-    }
-    java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+
+  public java.lang.String getDigestOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetDigest().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -216,7 +220,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -228,12 +231,17 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetDigest(), DigestDefaultEntryHolder.defaultEntry, 2);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetDigest(),
+        DigestDefaultEntryHolder.defaultEntry,
+        2);
     getUnknownFields().writeTo(output);
   }
 
@@ -246,15 +254,15 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetDigest().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
-          DigestDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, digest__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetDigest().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      digest__ = DigestDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, digest__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -264,15 +272,17 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.Subject)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Subject other = (io.grafeas.v1.Subject) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (!internalGetDigest().equals(other.internalGetDigest())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!internalGetDigest().equals(
+        other.internalGetDigest())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -295,145 +305,148 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.Subject parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Subject parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Subject parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Subject parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.Subject parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Subject parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Subject parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Subject parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Subject parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Subject parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.Subject parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Subject parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Subject parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.Subject parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Subject parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.Subject prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code grafeas.v1.Subject} */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  /**
+   * Protobuf type {@code grafeas.v1.Subject}
+   */
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Subject)
       io.grafeas.v1.SubjectOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(int number) {
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
       switch (number) {
         case 2:
           return internalGetDigest();
         default:
-          throw new RuntimeException("Invalid map field number: " + number);
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
       }
     }
-
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
       switch (number) {
         case 2:
           return internalGetMutableDigest();
         default:
-          throw new RuntimeException("Invalid map field number: " + number);
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
       }
     }
-
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.InTotoStatementProto
-          .internal_static_grafeas_v1_Subject_fieldAccessorTable
+      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.Subject.class, io.grafeas.v1.Subject.Builder.class);
     }
 
     // Construct using io.grafeas.v1.Subject.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -444,7 +457,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
     }
 
@@ -477,39 +491,38 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Subject) {
-        return mergeFrom((io.grafeas.v1.Subject) other);
+        return mergeFrom((io.grafeas.v1.Subject)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -522,7 +535,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
-      internalGetMutableDigest().mergeFrom(other.internalGetDigest());
+      internalGetMutableDigest().mergeFrom(
+          other.internalGetDigest());
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -549,30 +563,25 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                name_ = input.readStringRequireUtf8();
+            case 10: {
+              name_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
-                    input.readMessage(
-                        DigestDefaultEntryHolder.defaultEntry.getParserForType(),
-                        extensionRegistry);
-                internalGetMutableDigest()
-                    .getMutableMap()
-                    .put(digest__.getKey(), digest__.getValue());
-                break;
-              } // case 18
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 10
+            case 18: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              digest__ = input.readMessage(
+                  DigestDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableDigest().getMutableMap().put(
+                  digest__.getKey(), digest__.getValue());
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -582,19 +591,18 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
-
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
      * <code>string name = 1;</code>
-     *
      * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -604,14 +612,15 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>string name = 1;</code>
-     *
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -620,62 +629,62 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>string name = 1;</code>
-     *
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setName(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       name_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>string name = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
      * <code>string name = 1;</code>
-     *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
-
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> digest_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetDigest() {
       if (digest_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(DigestDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(
+            DigestDefaultEntryHolder.defaultEntry);
       }
       return digest_;
     }
-
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-        internalGetMutableDigest() {
-      onChanged();
-      ;
+    internalGetMutableDigest() {
+      onChanged();;
       if (digest_ == null) {
-        digest_ = com.google.protobuf.MapField.newMapField(DigestDefaultEntryHolder.defaultEntry);
+        digest_ = com.google.protobuf.MapField.newMapField(
+            DigestDefaultEntryHolder.defaultEntry);
       }
       if (!digest_.isMutable()) {
         digest_ = digest_.copy();
@@ -687,8 +696,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       return internalGetDigest().getMap().size();
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -698,22 +705,22 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
+
     @java.lang.Override
-    public boolean containsDigest(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
+    public boolean containsDigest(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetDigest().getMap().containsKey(key);
     }
-    /** Use {@link #getDigestMap()} instead. */
+    /**
+     * Use {@link #getDigestMap()} instead.
+     */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDigest() {
       return getDigestMap();
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -724,12 +731,11 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
     @java.lang.Override
+
     public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
       return internalGetDigest().getMap();
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -740,17 +746,16 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
     @java.lang.Override
+
     public java.lang.String getDigestOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDigest().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -761,11 +766,12 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getDigestOrThrow(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
+
+    public java.lang.String getDigestOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDigest().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -773,12 +779,11 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDigest() {
-      internalGetMutableDigest().getMutableMap().clear();
+      internalGetMutableDigest().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -788,21 +793,23 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
-    public Builder removeDigest(java.lang.String key) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
-      internalGetMutableDigest().getMutableMap().remove(key);
+
+    public Builder removeDigest(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableDigest().getMutableMap()
+          .remove(key);
       return this;
     }
-    /** Use alternate mutation accessors instead. */
+    /**
+     * Use alternate mutation accessors instead.
+     */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableDigest() {
       return internalGetMutableDigest().getMutableMap();
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -812,20 +819,19 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
-    public Builder putDigest(java.lang.String key, java.lang.String value) {
-      if (key == null) {
-        throw new NullPointerException("map key");
-      }
+    public Builder putDigest(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
       if (value == null) {
-        throw new NullPointerException("map value");
-      }
+  throw new NullPointerException("map value");
+}
 
-      internalGetMutableDigest().getMutableMap().put(key, value);
+      internalGetMutableDigest().getMutableMap()
+          .put(key, value);
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
      * Algorithms can be e.g. sha256, sha512
@@ -835,13 +841,16 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>map&lt;string, string&gt; digest = 2;</code>
      */
-    public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableDigest().getMutableMap().putAll(values);
+
+    public Builder putAllDigest(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableDigest().getMutableMap()
+          .putAll(values);
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -851,12 +860,12 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Subject)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Subject)
   private static final io.grafeas.v1.Subject DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Subject();
   }
@@ -865,27 +874,27 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Subject> PARSER =
-      new com.google.protobuf.AbstractParser<Subject>() {
-        @java.lang.Override
-        public Subject parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<Subject>
+      PARSER = new com.google.protobuf.AbstractParser<Subject>() {
+    @java.lang.Override
+    public Subject parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<Subject> parser() {
     return PARSER;
@@ -900,4 +909,6 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Subject getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

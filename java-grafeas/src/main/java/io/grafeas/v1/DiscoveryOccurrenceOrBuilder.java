@@ -19,79 +19,64 @@
 
 package io.grafeas.v1;
 
-public interface DiscoveryOccurrenceOrBuilder
-    extends
+public interface DiscoveryOccurrenceOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.DiscoveryOccurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis continuous_analysis = 1;</code>
-   *
    * @return The enum numeric value on the wire for continuousAnalysis.
    */
   int getContinuousAnalysisValue();
   /**
-   *
-   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis continuous_analysis = 1;</code>
-   *
    * @return The continuousAnalysis.
    */
   io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis getContinuousAnalysis();
 
   /**
-   *
-   *
    * <pre>
    * The status of discovery for the resource.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisStatus analysis_status = 2;</code>
-   *
    * @return The enum numeric value on the wire for analysisStatus.
    */
   int getAnalysisStatusValue();
   /**
-   *
-   *
    * <pre>
    * The status of discovery for the resource.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisStatus analysis_status = 2;</code>
-   *
    * @return The analysisStatus.
    */
   io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus getAnalysisStatus();
 
   /**
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
-   *
    * @return Whether the analysisCompleted field is set.
    */
   boolean hasAnalysisCompleted();
   /**
    * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
-   *
    * @return The analysisCompleted.
    */
   io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted getAnalysisCompleted();
-  /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
+  /**
+   * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
+   */
   io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder getAnalysisCompletedOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Indicates any errors encountered during analysis of a resource. There
    * could be 0 or more of these errors.
@@ -99,10 +84,9 @@ public interface DiscoveryOccurrenceOrBuilder
    *
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
-  java.util.List<com.google.rpc.Status> getAnalysisErrorList();
+  java.util.List<com.google.rpc.Status> 
+      getAnalysisErrorList();
   /**
-   *
-   *
    * <pre>
    * Indicates any errors encountered during analysis of a resource. There
    * could be 0 or more of these errors.
@@ -112,8 +96,6 @@ public interface DiscoveryOccurrenceOrBuilder
    */
   com.google.rpc.Status getAnalysisError(int index);
   /**
-   *
-   *
    * <pre>
    * Indicates any errors encountered during analysis of a resource. There
    * could be 0 or more of these errors.
@@ -123,8 +105,6 @@ public interface DiscoveryOccurrenceOrBuilder
    */
   int getAnalysisErrorCount();
   /**
-   *
-   *
    * <pre>
    * Indicates any errors encountered during analysis of a resource. There
    * could be 0 or more of these errors.
@@ -132,10 +112,9 @@ public interface DiscoveryOccurrenceOrBuilder
    *
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
-  java.util.List<? extends com.google.rpc.StatusOrBuilder> getAnalysisErrorOrBuilderList();
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> 
+      getAnalysisErrorOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * Indicates any errors encountered during analysis of a resource. There
    * could be 0 or more of these errors.
@@ -143,11 +122,10 @@ public interface DiscoveryOccurrenceOrBuilder
    *
    * <code>repeated .google.rpc.Status analysis_error = 8;</code>
    */
-  com.google.rpc.StatusOrBuilder getAnalysisErrorOrBuilder(int index);
+  com.google.rpc.StatusOrBuilder getAnalysisErrorOrBuilder(
+      int index);
 
   /**
-   *
-   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -155,13 +133,10 @@ public interface DiscoveryOccurrenceOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status analysis_status_error = 3;</code>
-   *
    * @return Whether the analysisStatusError field is set.
    */
   boolean hasAnalysisStatusError();
   /**
-   *
-   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -169,13 +144,10 @@ public interface DiscoveryOccurrenceOrBuilder
    * </pre>
    *
    * <code>.google.rpc.Status analysis_status_error = 3;</code>
-   *
    * @return The analysisStatusError.
    */
   com.google.rpc.Status getAnalysisStatusError();
   /**
-   *
-   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -187,57 +159,44 @@ public interface DiscoveryOccurrenceOrBuilder
   com.google.rpc.StatusOrBuilder getAnalysisStatusErrorOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * The CPE of the resource being scanned.
    * </pre>
    *
    * <code>string cpe = 4;</code>
-   *
    * @return The cpe.
    */
   java.lang.String getCpe();
   /**
-   *
-   *
    * <pre>
    * The CPE of the resource being scanned.
    * </pre>
    *
    * <code>string cpe = 4;</code>
-   *
    * @return The bytes for cpe.
    */
-  com.google.protobuf.ByteString getCpeBytes();
+  com.google.protobuf.ByteString
+      getCpeBytes();
 
   /**
-   *
-   *
    * <pre>
    * The last time this resource was scanned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
-   *
    * @return Whether the lastScanTime field is set.
    */
   boolean hasLastScanTime();
   /**
-   *
-   *
    * <pre>
    * The last time this resource was scanned.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
-   *
    * @return The lastScanTime.
    */
   com.google.protobuf.Timestamp getLastScanTime();
   /**
-   *
-   *
    * <pre>
    * The last time this resource was scanned.
    * </pre>
@@ -247,40 +206,29 @@ public interface DiscoveryOccurrenceOrBuilder
   com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * The time occurrences related to this discovery occurrence were archived.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the archiveTime field is set.
    */
   boolean hasArchiveTime();
   /**
-   *
-   *
    * <pre>
    * The time occurrences related to this discovery occurrence were archived.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   *
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The archiveTime.
    */
   com.google.protobuf.Timestamp getArchiveTime();
   /**
-   *
-   *
    * <pre>
    * The time occurrences related to this discovery occurrence were archived.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.protobuf.Timestamp archive_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getArchiveTimeOrBuilder();
 }

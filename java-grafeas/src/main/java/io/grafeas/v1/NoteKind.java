@@ -20,18 +20,15 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Kind represents the kinds of notes supported.
  * </pre>
  *
  * Protobuf enum {@code grafeas.v1.NoteKind}
  */
-public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
+public enum NoteKind
+    implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   *
-   *
    * <pre>
    * Default value. This value is unused.
    * </pre>
@@ -40,8 +37,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   NOTE_KIND_UNSPECIFIED(0),
   /**
-   *
-   *
    * <pre>
    * The note and occurrence represent a package vulnerability.
    * </pre>
@@ -50,8 +45,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   VULNERABILITY(1),
   /**
-   *
-   *
    * <pre>
    * The note and occurrence assert build provenance.
    * </pre>
@@ -60,8 +53,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   BUILD(2),
   /**
-   *
-   *
    * <pre>
    * This represents an image basis relationship.
    * </pre>
@@ -70,8 +61,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   IMAGE(3),
   /**
-   *
-   *
    * <pre>
    * This represents a package installed via a package manager.
    * </pre>
@@ -80,8 +69,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   PACKAGE(4),
   /**
-   *
-   *
    * <pre>
    * The note and occurrence track deployment events.
    * </pre>
@@ -90,8 +77,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   DEPLOYMENT(5),
   /**
-   *
-   *
    * <pre>
    * The note and occurrence track the initial discovery status of a resource.
    * </pre>
@@ -100,8 +85,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   DISCOVERY(6),
   /**
-   *
-   *
    * <pre>
    * This represents a logical "role" that can attest to artifacts.
    * </pre>
@@ -110,8 +93,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   ATTESTATION(7),
   /**
-   *
-   *
    * <pre>
    * This represents an available package upgrade.
    * </pre>
@@ -120,8 +101,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   UPGRADE(8),
   /**
-   *
-   *
    * <pre>
    * This represents a Compliance Note
    * </pre>
@@ -130,8 +109,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   COMPLIANCE(9),
   /**
-   *
-   *
    * <pre>
    * This represents a DSSE attestation Note
    * </pre>
@@ -143,8 +120,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
   ;
 
   /**
-   *
-   *
    * <pre>
    * Default value. This value is unused.
    * </pre>
@@ -153,8 +128,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int NOTE_KIND_UNSPECIFIED_VALUE = 0;
   /**
-   *
-   *
    * <pre>
    * The note and occurrence represent a package vulnerability.
    * </pre>
@@ -163,8 +136,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int VULNERABILITY_VALUE = 1;
   /**
-   *
-   *
    * <pre>
    * The note and occurrence assert build provenance.
    * </pre>
@@ -173,8 +144,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int BUILD_VALUE = 2;
   /**
-   *
-   *
    * <pre>
    * This represents an image basis relationship.
    * </pre>
@@ -183,8 +152,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int IMAGE_VALUE = 3;
   /**
-   *
-   *
    * <pre>
    * This represents a package installed via a package manager.
    * </pre>
@@ -193,8 +160,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int PACKAGE_VALUE = 4;
   /**
-   *
-   *
    * <pre>
    * The note and occurrence track deployment events.
    * </pre>
@@ -203,8 +168,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int DEPLOYMENT_VALUE = 5;
   /**
-   *
-   *
    * <pre>
    * The note and occurrence track the initial discovery status of a resource.
    * </pre>
@@ -213,8 +176,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int DISCOVERY_VALUE = 6;
   /**
-   *
-   *
    * <pre>
    * This represents a logical "role" that can attest to artifacts.
    * </pre>
@@ -223,8 +184,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int ATTESTATION_VALUE = 7;
   /**
-   *
-   *
    * <pre>
    * This represents an available package upgrade.
    * </pre>
@@ -233,8 +192,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int UPGRADE_VALUE = 8;
   /**
-   *
-   *
    * <pre>
    * This represents a Compliance Note
    * </pre>
@@ -243,8 +200,6 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int COMPLIANCE_VALUE = 9;
   /**
-   *
-   *
    * <pre>
    * This represents a DSSE attestation Note
    * </pre>
@@ -252,6 +207,7 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DSSE_ATTESTATION = 10;</code>
    */
   public static final int DSSE_ATTESTATION_VALUE = 10;
+
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -277,65 +233,57 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static NoteKind forNumber(int value) {
     switch (value) {
-      case 0:
-        return NOTE_KIND_UNSPECIFIED;
-      case 1:
-        return VULNERABILITY;
-      case 2:
-        return BUILD;
-      case 3:
-        return IMAGE;
-      case 4:
-        return PACKAGE;
-      case 5:
-        return DEPLOYMENT;
-      case 6:
-        return DISCOVERY;
-      case 7:
-        return ATTESTATION;
-      case 8:
-        return UPGRADE;
-      case 9:
-        return COMPLIANCE;
-      case 10:
-        return DSSE_ATTESTATION;
-      default:
-        return null;
+      case 0: return NOTE_KIND_UNSPECIFIED;
+      case 1: return VULNERABILITY;
+      case 2: return BUILD;
+      case 3: return IMAGE;
+      case 4: return PACKAGE;
+      case 5: return DEPLOYMENT;
+      case 6: return DISCOVERY;
+      case 7: return ATTESTATION;
+      case 8: return UPGRADE;
+      case 9: return COMPLIANCE;
+      case 10: return DSSE_ATTESTATION;
+      default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<NoteKind> internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<NoteKind>
+      internalGetValueMap() {
     return internalValueMap;
   }
+  private static final com.google.protobuf.Internal.EnumLiteMap<
+      NoteKind> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<NoteKind>() {
+          public NoteKind findValueByNumber(int number) {
+            return NoteKind.forNumber(number);
+          }
+        };
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<NoteKind> internalValueMap =
-      new com.google.protobuf.Internal.EnumLiteMap<NoteKind>() {
-        public NoteKind findValueByNumber(int number) {
-          return NoteKind.forNumber(number);
-        }
-      };
-
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor
+      getValueDescriptor() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalStateException(
           "Can't get the descriptor of an unrecognized enum value.");
     }
     return getDescriptor().getValues().get(ordinal());
   }
-
-  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+  public final com.google.protobuf.Descriptors.EnumDescriptor
+      getDescriptorForType() {
     return getDescriptor();
   }
-
-  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.EnumDescriptor
+      getDescriptor() {
     return io.grafeas.v1.Common.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final NoteKind[] VALUES = values();
 
-  public static NoteKind valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static NoteKind valueOf(
+      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException(
+        "EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -351,3 +299,4 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
 
   // @@protoc_insertion_point(enum_scope:grafeas.v1.NoteKind)
 }
+

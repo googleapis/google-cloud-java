@@ -19,69 +19,51 @@
 
 package io.grafeas.v1;
 
-public interface UpdateNoteRequestOrBuilder
-    extends
+public interface UpdateNoteRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.UpdateNoteRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   *
-   *
    * <pre>
    * The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
-   *
-   *
    * <pre>
    * The updated note.
    * </pre>
    *
    * <code>.grafeas.v1.Note note = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
    * @return Whether the note field is set.
    */
   boolean hasNote();
   /**
-   *
-   *
    * <pre>
    * The updated note.
    * </pre>
    *
    * <code>.grafeas.v1.Note note = 2 [(.google.api.field_behavior) = REQUIRED];</code>
-   *
    * @return The note.
    */
   io.grafeas.v1.Note getNote();
   /**
-   *
-   *
    * <pre>
    * The updated note.
    * </pre>
@@ -91,32 +73,24 @@ public interface UpdateNoteRequestOrBuilder
   io.grafeas.v1.NoteOrBuilder getNoteOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * The fields to update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
-   *
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
-   *
-   *
    * <pre>
    * The fields to update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 3;</code>
-   *
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
-   *
-   *
    * <pre>
    * The fields to update.
    * </pre>

@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Windows Update represents the metadata about the update for the Windows
  * operating system. The fields in this message come from the Windows Update API
@@ -31,16 +29,15 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.WindowsUpdate}
  */
-public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class WindowsUpdate extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.WindowsUpdate)
     WindowsUpdateOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use WindowsUpdate.newBuilder() to construct.
   private WindowsUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private WindowsUpdate() {
     title_ = "";
     description_ = "";
@@ -51,16 +48,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new WindowsUpdate();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_descriptor;
   }
 
@@ -72,108 +71,93 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.WindowsUpdate.class, io.grafeas.v1.WindowsUpdate.Builder.class);
   }
 
-  public interface IdentityOrBuilder
-      extends
+  public interface IdentityOrBuilder extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.WindowsUpdate.Identity)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     *
-     *
      * <pre>
      * The revision independent identifier of the update.
      * </pre>
      *
      * <code>string update_id = 1;</code>
-     *
      * @return The updateId.
      */
     java.lang.String getUpdateId();
     /**
-     *
-     *
      * <pre>
      * The revision independent identifier of the update.
      * </pre>
      *
      * <code>string update_id = 1;</code>
-     *
      * @return The bytes for updateId.
      */
-    com.google.protobuf.ByteString getUpdateIdBytes();
+    com.google.protobuf.ByteString
+        getUpdateIdBytes();
 
     /**
-     *
-     *
      * <pre>
      * The revision number of the update.
      * </pre>
      *
      * <code>int32 revision = 2;</code>
-     *
      * @return The revision.
      */
     int getRevision();
   }
   /**
-   *
-   *
    * <pre>
    * The unique identifier of the update.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.WindowsUpdate.Identity}
    */
-  public static final class Identity extends com.google.protobuf.GeneratedMessageV3
-      implements
+  public static final class Identity extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.WindowsUpdate.Identity)
       IdentityOrBuilder {
-    private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
     // Use Identity.newBuilder() to construct.
     private Identity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
     private Identity() {
       updateId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
       return new Identity();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
       return this.unknownFields;
     }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Identity_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.Upgrade
-          .internal_static_grafeas_v1_WindowsUpdate_Identity_fieldAccessorTable
+      return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Identity_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.WindowsUpdate.Identity.class,
-              io.grafeas.v1.WindowsUpdate.Identity.Builder.class);
+              io.grafeas.v1.WindowsUpdate.Identity.class, io.grafeas.v1.WindowsUpdate.Identity.Builder.class);
     }
 
     public static final int UPDATE_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object updateId_;
     /**
-     *
-     *
      * <pre>
      * The revision independent identifier of the update.
      * </pre>
      *
      * <code>string update_id = 1;</code>
-     *
      * @return The updateId.
      */
     @java.lang.Override
@@ -182,29 +166,29 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         updateId_ = s;
         return s;
       }
     }
     /**
-     *
-     *
      * <pre>
      * The revision independent identifier of the update.
      * </pre>
      *
      * <code>string update_id = 1;</code>
-     *
      * @return The bytes for updateId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getUpdateIdBytes() {
+    public com.google.protobuf.ByteString
+        getUpdateIdBytes() {
       java.lang.Object ref = updateId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         updateId_ = b;
         return b;
       } else {
@@ -215,14 +199,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public static final int REVISION_FIELD_NUMBER = 2;
     private int revision_;
     /**
-     *
-     *
      * <pre>
      * The revision number of the update.
      * </pre>
      *
      * <code>int32 revision = 2;</code>
-     *
      * @return The revision.
      */
     @java.lang.Override
@@ -231,7 +212,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private byte memoizedIsInitialized = -1;
-
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -243,7 +223,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updateId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, updateId_);
       }
@@ -263,7 +244,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, updateId_);
       }
       if (revision_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, revision_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, revision_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -273,15 +255,17 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof io.grafeas.v1.WindowsUpdate.Identity)) {
         return super.equals(obj);
       }
       io.grafeas.v1.WindowsUpdate.Identity other = (io.grafeas.v1.WindowsUpdate.Identity) obj;
 
-      if (!getUpdateId().equals(other.getUpdateId())) return false;
-      if (getRevision() != other.getRevision()) return false;
+      if (!getUpdateId()
+          .equals(other.getUpdateId())) return false;
+      if (getRevision()
+          != other.getRevision()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -302,94 +286,88 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return hash;
     }
 
-    public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(java.nio.ByteBuffer data)
+    public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
+        java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Identity parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-
     public static Builder newBuilder(io.grafeas.v1.WindowsUpdate.Identity prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -399,40 +377,39 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return builder;
     }
     /**
-     *
-     *
      * <pre>
      * The unique identifier of the update.
      * </pre>
      *
      * Protobuf type {@code grafeas.v1.WindowsUpdate.Identity}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.WindowsUpdate.Identity)
         io.grafeas.v1.WindowsUpdate.IdentityOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
         return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Identity_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.Upgrade
-            .internal_static_grafeas_v1_WindowsUpdate_Identity_fieldAccessorTable
+        return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Identity_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.WindowsUpdate.Identity.class,
-                io.grafeas.v1.WindowsUpdate.Identity.Builder.class);
+                io.grafeas.v1.WindowsUpdate.Identity.class, io.grafeas.v1.WindowsUpdate.Identity.Builder.class);
       }
 
       // Construct using io.grafeas.v1.WindowsUpdate.Identity.newBuilder()
-      private Builder() {}
+      private Builder() {
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -444,7 +421,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
         return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Identity_descriptor;
       }
 
@@ -464,8 +442,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public io.grafeas.v1.WindowsUpdate.Identity buildPartial() {
-        io.grafeas.v1.WindowsUpdate.Identity result =
-            new io.grafeas.v1.WindowsUpdate.Identity(this);
+        io.grafeas.v1.WindowsUpdate.Identity result = new io.grafeas.v1.WindowsUpdate.Identity(this);
         result.updateId_ = updateId_;
         result.revision_ = revision_;
         onBuilt();
@@ -476,41 +453,38 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       public Builder clone() {
         return super.clone();
       }
-
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-
       @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-
       @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.WindowsUpdate.Identity) {
-          return mergeFrom((io.grafeas.v1.WindowsUpdate.Identity) other);
+          return mergeFrom((io.grafeas.v1.WindowsUpdate.Identity)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -552,25 +526,22 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
-              case 10:
-                {
-                  updateId_ = input.readStringRequireUtf8();
+              case 10: {
+                updateId_ = input.readStringRequireUtf8();
 
-                  break;
-                } // case 10
-              case 16:
-                {
-                  revision_ = input.readInt32();
+                break;
+              } // case 10
+              case 16: {
+                revision_ = input.readInt32();
 
-                  break;
-                } // case 16
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -583,20 +554,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
       private java.lang.Object updateId_ = "";
       /**
-       *
-       *
        * <pre>
        * The revision independent identifier of the update.
        * </pre>
        *
        * <code>string update_id = 1;</code>
-       *
        * @return The updateId.
        */
       public java.lang.String getUpdateId() {
         java.lang.Object ref = updateId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           updateId_ = s;
           return s;
@@ -605,21 +574,20 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
        * <pre>
        * The revision independent identifier of the update.
        * </pre>
        *
        * <code>string update_id = 1;</code>
-       *
        * @return The bytes for updateId.
        */
-      public com.google.protobuf.ByteString getUpdateIdBytes() {
+      public com.google.protobuf.ByteString
+          getUpdateIdBytes() {
         java.lang.Object ref = updateId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           updateId_ = b;
           return b;
         } else {
@@ -627,76 +595,66 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
        * <pre>
        * The revision independent identifier of the update.
        * </pre>
        *
        * <code>string update_id = 1;</code>
-       *
        * @param value The updateId to set.
        * @return This builder for chaining.
        */
-      public Builder setUpdateId(java.lang.String value) {
+      public Builder setUpdateId(
+          java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         updateId_ = value;
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The revision independent identifier of the update.
        * </pre>
        *
        * <code>string update_id = 1;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearUpdateId() {
-
+        
         updateId_ = getDefaultInstance().getUpdateId();
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The revision independent identifier of the update.
        * </pre>
        *
        * <code>string update_id = 1;</code>
-       *
        * @param value The bytes for updateId to set.
        * @return This builder for chaining.
        */
-      public Builder setUpdateIdBytes(com.google.protobuf.ByteString value) {
+      public Builder setUpdateIdBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         updateId_ = value;
         onChanged();
         return this;
       }
 
-      private int revision_;
+      private int revision_ ;
       /**
-       *
-       *
        * <pre>
        * The revision number of the update.
        * </pre>
        *
        * <code>int32 revision = 2;</code>
-       *
        * @return The revision.
        */
       @java.lang.Override
@@ -704,41 +662,34 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return revision_;
       }
       /**
-       *
-       *
        * <pre>
        * The revision number of the update.
        * </pre>
        *
        * <code>int32 revision = 2;</code>
-       *
        * @param value The revision to set.
        * @return This builder for chaining.
        */
       public Builder setRevision(int value) {
-
+        
         revision_ = value;
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The revision number of the update.
        * </pre>
        *
        * <code>int32 revision = 2;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearRevision() {
-
+        
         revision_ = 0;
         onChanged();
         return this;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -751,12 +702,12 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return super.mergeUnknownFields(unknownFields);
       }
 
+
       // @@protoc_insertion_point(builder_scope:grafeas.v1.WindowsUpdate.Identity)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.WindowsUpdate.Identity)
     private static final io.grafeas.v1.WindowsUpdate.Identity DEFAULT_INSTANCE;
-
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.WindowsUpdate.Identity();
     }
@@ -765,28 +716,27 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Identity> PARSER =
-        new com.google.protobuf.AbstractParser<Identity>() {
-          @java.lang.Override
-          public Identity parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
+    private static final com.google.protobuf.Parser<Identity>
+        PARSER = new com.google.protobuf.AbstractParser<Identity>() {
+      @java.lang.Override
+      public Identity parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
 
     public static com.google.protobuf.Parser<Identity> parser() {
       return PARSER;
@@ -801,82 +751,69 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.WindowsUpdate.Identity getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
+
   }
 
-  public interface CategoryOrBuilder
-      extends
+  public interface CategoryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.WindowsUpdate.Category)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     *
-     *
      * <pre>
      * The identifier of the category.
      * </pre>
      *
      * <code>string category_id = 1;</code>
-     *
      * @return The categoryId.
      */
     java.lang.String getCategoryId();
     /**
-     *
-     *
      * <pre>
      * The identifier of the category.
      * </pre>
      *
      * <code>string category_id = 1;</code>
-     *
      * @return The bytes for categoryId.
      */
-    com.google.protobuf.ByteString getCategoryIdBytes();
+    com.google.protobuf.ByteString
+        getCategoryIdBytes();
 
     /**
-     *
-     *
      * <pre>
      * The localized name of the category.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return The name.
      */
     java.lang.String getName();
     /**
-     *
-     *
      * <pre>
      * The localized name of the category.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return The bytes for name.
      */
-    com.google.protobuf.ByteString getNameBytes();
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
-   *
-   *
    * <pre>
    * The category to which the update belongs.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.WindowsUpdate.Category}
    */
-  public static final class Category extends com.google.protobuf.GeneratedMessageV3
-      implements
+  public static final class Category extends
+      com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.WindowsUpdate.Category)
       CategoryOrBuilder {
-    private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
     // Use Category.newBuilder() to construct.
     private Category(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
     private Category() {
       categoryId_ = "";
       name_ = "";
@@ -884,40 +821,37 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
       return new Category();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
       return this.unknownFields;
     }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Category_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.Upgrade
-          .internal_static_grafeas_v1_WindowsUpdate_Category_fieldAccessorTable
+      return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Category_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.WindowsUpdate.Category.class,
-              io.grafeas.v1.WindowsUpdate.Category.Builder.class);
+              io.grafeas.v1.WindowsUpdate.Category.class, io.grafeas.v1.WindowsUpdate.Category.Builder.class);
     }
 
     public static final int CATEGORY_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object categoryId_;
     /**
-     *
-     *
      * <pre>
      * The identifier of the category.
      * </pre>
      *
      * <code>string category_id = 1;</code>
-     *
      * @return The categoryId.
      */
     @java.lang.Override
@@ -926,29 +860,29 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         categoryId_ = s;
         return s;
       }
     }
     /**
-     *
-     *
      * <pre>
      * The identifier of the category.
      * </pre>
      *
      * <code>string category_id = 1;</code>
-     *
      * @return The bytes for categoryId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getCategoryIdBytes() {
+    public com.google.protobuf.ByteString
+        getCategoryIdBytes() {
       java.lang.Object ref = categoryId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         categoryId_ = b;
         return b;
       } else {
@@ -959,14 +893,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
-     *
-     *
      * <pre>
      * The localized name of the category.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return The name.
      */
     @java.lang.Override
@@ -975,29 +906,29 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
     }
     /**
-     *
-     *
      * <pre>
      * The localized name of the category.
      * </pre>
      *
      * <code>string name = 2;</code>
-     *
      * @return The bytes for name.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getNameBytes() {
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1006,7 +937,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private byte memoizedIsInitialized = -1;
-
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1018,7 +948,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(categoryId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, categoryId_);
       }
@@ -1048,15 +979,17 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof io.grafeas.v1.WindowsUpdate.Category)) {
         return super.equals(obj);
       }
       io.grafeas.v1.WindowsUpdate.Category other = (io.grafeas.v1.WindowsUpdate.Category) obj;
 
-      if (!getCategoryId().equals(other.getCategoryId())) return false;
-      if (!getName().equals(other.getName())) return false;
+      if (!getCategoryId()
+          .equals(other.getCategoryId())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1077,94 +1010,88 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return hash;
     }
 
-    public static io.grafeas.v1.WindowsUpdate.Category parseFrom(java.nio.ByteBuffer data)
+    public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
+        java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
-
     public static io.grafeas.v1.WindowsUpdate.Category parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-
     public static Builder newBuilder(io.grafeas.v1.WindowsUpdate.Category prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1174,40 +1101,39 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return builder;
     }
     /**
-     *
-     *
      * <pre>
      * The category to which the update belongs.
      * </pre>
      *
      * Protobuf type {@code grafeas.v1.WindowsUpdate.Category}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.WindowsUpdate.Category)
         io.grafeas.v1.WindowsUpdate.CategoryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
         return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Category_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.Upgrade
-            .internal_static_grafeas_v1_WindowsUpdate_Category_fieldAccessorTable
+        return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Category_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.WindowsUpdate.Category.class,
-                io.grafeas.v1.WindowsUpdate.Category.Builder.class);
+                io.grafeas.v1.WindowsUpdate.Category.class, io.grafeas.v1.WindowsUpdate.Category.Builder.class);
       }
 
       // Construct using io.grafeas.v1.WindowsUpdate.Category.newBuilder()
-      private Builder() {}
+      private Builder() {
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
       }
 
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1219,7 +1145,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
         return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_Category_descriptor;
       }
 
@@ -1239,8 +1166,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public io.grafeas.v1.WindowsUpdate.Category buildPartial() {
-        io.grafeas.v1.WindowsUpdate.Category result =
-            new io.grafeas.v1.WindowsUpdate.Category(this);
+        io.grafeas.v1.WindowsUpdate.Category result = new io.grafeas.v1.WindowsUpdate.Category(this);
         result.categoryId_ = categoryId_;
         result.name_ = name_;
         onBuilt();
@@ -1251,41 +1177,38 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       public Builder clone() {
         return super.clone();
       }
-
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.setField(field, value);
       }
-
       @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-
       @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.WindowsUpdate.Category) {
-          return mergeFrom((io.grafeas.v1.WindowsUpdate.Category) other);
+          return mergeFrom((io.grafeas.v1.WindowsUpdate.Category)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1328,25 +1251,22 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
-              case 10:
-                {
-                  categoryId_ = input.readStringRequireUtf8();
+              case 10: {
+                categoryId_ = input.readStringRequireUtf8();
 
-                  break;
-                } // case 10
-              case 18:
-                {
-                  name_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+              case 18: {
+                name_ = input.readStringRequireUtf8();
 
-                  break;
-                } // case 18
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1359,20 +1279,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
       private java.lang.Object categoryId_ = "";
       /**
-       *
-       *
        * <pre>
        * The identifier of the category.
        * </pre>
        *
        * <code>string category_id = 1;</code>
-       *
        * @return The categoryId.
        */
       public java.lang.String getCategoryId() {
         java.lang.Object ref = categoryId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           categoryId_ = s;
           return s;
@@ -1381,21 +1299,20 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
        * <pre>
        * The identifier of the category.
        * </pre>
        *
        * <code>string category_id = 1;</code>
-       *
        * @return The bytes for categoryId.
        */
-      public com.google.protobuf.ByteString getCategoryIdBytes() {
+      public com.google.protobuf.ByteString
+          getCategoryIdBytes() {
         java.lang.Object ref = categoryId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           categoryId_ = b;
           return b;
         } else {
@@ -1403,61 +1320,54 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
        * <pre>
        * The identifier of the category.
        * </pre>
        *
        * <code>string category_id = 1;</code>
-       *
        * @param value The categoryId to set.
        * @return This builder for chaining.
        */
-      public Builder setCategoryId(java.lang.String value) {
+      public Builder setCategoryId(
+          java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         categoryId_ = value;
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The identifier of the category.
        * </pre>
        *
        * <code>string category_id = 1;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearCategoryId() {
-
+        
         categoryId_ = getDefaultInstance().getCategoryId();
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The identifier of the category.
        * </pre>
        *
        * <code>string category_id = 1;</code>
-       *
        * @param value The bytes for categoryId to set.
        * @return This builder for chaining.
        */
-      public Builder setCategoryIdBytes(com.google.protobuf.ByteString value) {
+      public Builder setCategoryIdBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         categoryId_ = value;
         onChanged();
         return this;
@@ -1465,20 +1375,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
       private java.lang.Object name_ = "";
       /**
-       *
-       *
        * <pre>
        * The localized name of the category.
        * </pre>
        *
        * <code>string name = 2;</code>
-       *
        * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
@@ -1487,21 +1395,20 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
        * <pre>
        * The localized name of the category.
        * </pre>
        *
        * <code>string name = 2;</code>
-       *
        * @return The bytes for name.
        */
-      public com.google.protobuf.ByteString getNameBytes() {
+      public com.google.protobuf.ByteString
+          getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
@@ -1509,66 +1416,58 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
-       *
-       *
        * <pre>
        * The localized name of the category.
        * </pre>
        *
        * <code>string name = 2;</code>
-       *
        * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setName(java.lang.String value) {
+      public Builder setName(
+          java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         name_ = value;
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The localized name of the category.
        * </pre>
        *
        * <code>string name = 2;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       *
-       *
        * <pre>
        * The localized name of the category.
        * </pre>
        *
        * <code>string name = 2;</code>
-       *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
-      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
         onChanged();
         return this;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1581,12 +1480,12 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         return super.mergeUnknownFields(unknownFields);
       }
 
+
       // @@protoc_insertion_point(builder_scope:grafeas.v1.WindowsUpdate.Category)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.WindowsUpdate.Category)
     private static final io.grafeas.v1.WindowsUpdate.Category DEFAULT_INSTANCE;
-
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.WindowsUpdate.Category();
     }
@@ -1595,28 +1494,27 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Category> PARSER =
-        new com.google.protobuf.AbstractParser<Category>() {
-          @java.lang.Override
-          public Category parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
+    private static final com.google.protobuf.Parser<Category>
+        PARSER = new com.google.protobuf.AbstractParser<Category>() {
+      @java.lang.Override
+      public Category parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
 
     public static com.google.protobuf.Parser<Category> parser() {
       return PARSER;
@@ -1631,19 +1529,17 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1.WindowsUpdate.Category getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
+
   }
 
   public static final int IDENTITY_FIELD_NUMBER = 1;
   private io.grafeas.v1.WindowsUpdate.Identity identity_;
   /**
-   *
-   *
    * <pre>
    * Required - The unique identifier for the update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
-   *
    * @return Whether the identity field is set.
    */
   @java.lang.Override
@@ -1651,25 +1547,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return identity_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Required - The unique identifier for the update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
-   *
    * @return The identity.
    */
   @java.lang.Override
   public io.grafeas.v1.WindowsUpdate.Identity getIdentity() {
-    return identity_ == null
-        ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()
-        : identity_;
+    return identity_ == null ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance() : identity_;
   }
   /**
-   *
-   *
    * <pre>
    * Required - The unique identifier for the update.
    * </pre>
@@ -1684,14 +1573,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int TITLE_FIELD_NUMBER = 2;
   private volatile java.lang.Object title_;
   /**
-   *
-   *
    * <pre>
    * The localized title of the update.
    * </pre>
    *
    * <code>string title = 2;</code>
-   *
    * @return The title.
    */
   @java.lang.Override
@@ -1700,29 +1586,29 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       title_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The localized title of the update.
    * </pre>
    *
    * <code>string title = 2;</code>
-   *
    * @return The bytes for title.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getTitleBytes() {
+  public com.google.protobuf.ByteString
+      getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       title_ = b;
       return b;
     } else {
@@ -1733,14 +1619,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object description_;
   /**
-   *
-   *
    * <pre>
    * The localized description of the update.
    * </pre>
    *
    * <code>string description = 3;</code>
-   *
    * @return The description.
    */
   @java.lang.Override
@@ -1749,29 +1632,29 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The localized description of the update.
    * </pre>
    *
    * <code>string description = 3;</code>
-   *
    * @return The bytes for description.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getDescriptionBytes() {
+  public com.google.protobuf.ByteString
+      getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -1782,8 +1665,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int CATEGORIES_FIELD_NUMBER = 4;
   private java.util.List<io.grafeas.v1.WindowsUpdate.Category> categories_;
   /**
-   *
-   *
    * <pre>
    * The list of categories to which the update belongs.
    * </pre>
@@ -1795,8 +1676,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return categories_;
   }
   /**
-   *
-   *
    * <pre>
    * The list of categories to which the update belongs.
    * </pre>
@@ -1804,13 +1683,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>
+  public java.util.List<? extends io.grafeas.v1.WindowsUpdate.CategoryOrBuilder> 
       getCategoriesOrBuilderList() {
     return categories_;
   }
   /**
-   *
-   *
    * <pre>
    * The list of categories to which the update belongs.
    * </pre>
@@ -1822,8 +1699,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return categories_.size();
   }
   /**
-   *
-   *
    * <pre>
    * The list of categories to which the update belongs.
    * </pre>
@@ -1835,8 +1710,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return categories_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * The list of categories to which the update belongs.
    * </pre>
@@ -1844,52 +1717,45 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.WindowsUpdate.CategoryOrBuilder getCategoriesOrBuilder(int index) {
+  public io.grafeas.v1.WindowsUpdate.CategoryOrBuilder getCategoriesOrBuilder(
+      int index) {
     return categories_.get(index);
   }
 
   public static final int KB_ARTICLE_IDS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList kbArticleIds_;
   /**
-   *
-   *
    * <pre>
    * The Microsoft Knowledge Base article IDs that are associated with the
    * update.
    * </pre>
    *
    * <code>repeated string kb_article_ids = 5;</code>
-   *
    * @return A list containing the kbArticleIds.
    */
-  public com.google.protobuf.ProtocolStringList getKbArticleIdsList() {
+  public com.google.protobuf.ProtocolStringList
+      getKbArticleIdsList() {
     return kbArticleIds_;
   }
   /**
-   *
-   *
    * <pre>
    * The Microsoft Knowledge Base article IDs that are associated with the
    * update.
    * </pre>
    *
    * <code>repeated string kb_article_ids = 5;</code>
-   *
    * @return The count of kbArticleIds.
    */
   public int getKbArticleIdsCount() {
     return kbArticleIds_.size();
   }
   /**
-   *
-   *
    * <pre>
    * The Microsoft Knowledge Base article IDs that are associated with the
    * update.
    * </pre>
    *
    * <code>repeated string kb_article_ids = 5;</code>
-   *
    * @param index The index of the element to return.
    * @return The kbArticleIds at the given index.
    */
@@ -1897,33 +1763,28 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return kbArticleIds_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * The Microsoft Knowledge Base article IDs that are associated with the
    * update.
    * </pre>
    *
    * <code>repeated string kb_article_ids = 5;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the kbArticleIds at the given index.
    */
-  public com.google.protobuf.ByteString getKbArticleIdsBytes(int index) {
+  public com.google.protobuf.ByteString
+      getKbArticleIdsBytes(int index) {
     return kbArticleIds_.getByteString(index);
   }
 
   public static final int SUPPORT_URL_FIELD_NUMBER = 6;
   private volatile java.lang.Object supportUrl_;
   /**
-   *
-   *
    * <pre>
    * The hyperlink to the support information for the update.
    * </pre>
    *
    * <code>string support_url = 6;</code>
-   *
    * @return The supportUrl.
    */
   @java.lang.Override
@@ -1932,29 +1793,29 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       supportUrl_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * The hyperlink to the support information for the update.
    * </pre>
    *
    * <code>string support_url = 6;</code>
-   *
    * @return The bytes for supportUrl.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getSupportUrlBytes() {
+  public com.google.protobuf.ByteString
+      getSupportUrlBytes() {
     java.lang.Object ref = supportUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       supportUrl_ = b;
       return b;
     } else {
@@ -1965,14 +1826,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int LAST_PUBLISHED_TIMESTAMP_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp lastPublishedTimestamp_;
   /**
-   *
-   *
    * <pre>
    * The last published timestamp of the update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
-   *
    * @return Whether the lastPublishedTimestamp field is set.
    */
   @java.lang.Override
@@ -1980,25 +1838,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return lastPublishedTimestamp_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * The last published timestamp of the update.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
-   *
    * @return The lastPublishedTimestamp.
    */
   @java.lang.Override
   public com.google.protobuf.Timestamp getLastPublishedTimestamp() {
-    return lastPublishedTimestamp_ == null
-        ? com.google.protobuf.Timestamp.getDefaultInstance()
-        : lastPublishedTimestamp_;
+    return lastPublishedTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPublishedTimestamp_;
   }
   /**
-   *
-   *
    * <pre>
    * The last published timestamp of the update.
    * </pre>
@@ -2011,7 +1862,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -2023,7 +1873,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (identity_ != null) {
       output.writeMessage(1, getIdentity());
     }
@@ -2055,7 +1906,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (identity_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getIdentity());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getIdentity());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
@@ -2064,7 +1916,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     for (int i = 0; i < categories_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, categories_.get(i));
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, categories_.get(i));
     }
     {
       int dataSize = 0;
@@ -2078,8 +1931,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, supportUrl_);
     }
     if (lastPublishedTimestamp_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getLastPublishedTimestamp());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getLastPublishedTimestamp());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2089,7 +1942,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.WindowsUpdate)) {
       return super.equals(obj);
@@ -2098,16 +1951,23 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     if (hasIdentity() != other.hasIdentity()) return false;
     if (hasIdentity()) {
-      if (!getIdentity().equals(other.getIdentity())) return false;
+      if (!getIdentity()
+          .equals(other.getIdentity())) return false;
     }
-    if (!getTitle().equals(other.getTitle())) return false;
-    if (!getDescription().equals(other.getDescription())) return false;
-    if (!getCategoriesList().equals(other.getCategoriesList())) return false;
-    if (!getKbArticleIdsList().equals(other.getKbArticleIdsList())) return false;
-    if (!getSupportUrl().equals(other.getSupportUrl())) return false;
+    if (!getTitle()
+        .equals(other.getTitle())) return false;
+    if (!getDescription()
+        .equals(other.getDescription())) return false;
+    if (!getCategoriesList()
+        .equals(other.getCategoriesList())) return false;
+    if (!getKbArticleIdsList()
+        .equals(other.getKbArticleIdsList())) return false;
+    if (!getSupportUrl()
+        .equals(other.getSupportUrl())) return false;
     if (hasLastPublishedTimestamp() != other.hasLastPublishedTimestamp()) return false;
     if (hasLastPublishedTimestamp()) {
-      if (!getLastPublishedTimestamp().equals(other.getLastPublishedTimestamp())) return false;
+      if (!getLastPublishedTimestamp()
+          .equals(other.getLastPublishedTimestamp())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2147,103 +2007,97 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.WindowsUpdate parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.WindowsUpdate parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.WindowsUpdate parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.WindowsUpdate parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.WindowsUpdate parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.WindowsUpdate parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.WindowsUpdate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.WindowsUpdate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Windows Update represents the metadata about the update for the Windows
    * operating system. The fields in this message come from the Windows Update API
@@ -2253,11 +2107,12 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code grafeas.v1.WindowsUpdate}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.WindowsUpdate)
       io.grafeas.v1.WindowsUpdateOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_descriptor;
     }
 
@@ -2270,12 +2125,15 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.WindowsUpdate.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -2310,7 +2168,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_WindowsUpdate_descriptor;
     }
 
@@ -2367,39 +2226,38 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.WindowsUpdate) {
-        return mergeFrom((io.grafeas.v1.WindowsUpdate) other);
+        return mergeFrom((io.grafeas.v1.WindowsUpdate)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -2437,10 +2295,9 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             categoriesBuilder_ = null;
             categories_ = other.categories_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            categoriesBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getCategoriesFieldBuilder()
-                    : null;
+            categoriesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getCategoriesFieldBuilder() : null;
           } else {
             categoriesBuilder_.addAllMessages(other.categories_);
           }
@@ -2489,64 +2346,60 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                input.readMessage(getIdentityFieldBuilder().getBuilder(), extensionRegistry);
+            case 10: {
+              input.readMessage(
+                  getIdentityFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 10
-            case 18:
-              {
-                title_ = input.readStringRequireUtf8();
+              break;
+            } // case 10
+            case 18: {
+              title_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            case 26:
-              {
-                description_ = input.readStringRequireUtf8();
+              break;
+            } // case 18
+            case 26: {
+              description_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 26
-            case 34:
-              {
-                io.grafeas.v1.WindowsUpdate.Category m =
-                    input.readMessage(
-                        io.grafeas.v1.WindowsUpdate.Category.parser(), extensionRegistry);
-                if (categoriesBuilder_ == null) {
-                  ensureCategoriesIsMutable();
-                  categories_.add(m);
-                } else {
-                  categoriesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureKbArticleIdsIsMutable();
-                kbArticleIds_.add(s);
-                break;
-              } // case 42
-            case 50:
-              {
-                supportUrl_ = input.readStringRequireUtf8();
+              break;
+            } // case 26
+            case 34: {
+              io.grafeas.v1.WindowsUpdate.Category m =
+                  input.readMessage(
+                      io.grafeas.v1.WindowsUpdate.Category.parser(),
+                      extensionRegistry);
+              if (categoriesBuilder_ == null) {
+                ensureCategoriesIsMutable();
+                categories_.add(m);
+              } else {
+                categoriesBuilder_.addMessage(m);
+              }
+              break;
+            } // case 34
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureKbArticleIdsIsMutable();
+              kbArticleIds_.add(s);
+              break;
+            } // case 42
+            case 50: {
+              supportUrl_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 50
-            case 58:
-              {
-                input.readMessage(
-                    getLastPublishedTimestampFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 50
+            case 58: {
+              input.readMessage(
+                  getLastPublishedTimestampFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 58
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 58
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2556,52 +2409,38 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
-
     private int bitField0_;
 
     private io.grafeas.v1.WindowsUpdate.Identity identity_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate.Identity,
-            io.grafeas.v1.WindowsUpdate.Identity.Builder,
-            io.grafeas.v1.WindowsUpdate.IdentityOrBuilder>
-        identityBuilder_;
+        io.grafeas.v1.WindowsUpdate.Identity, io.grafeas.v1.WindowsUpdate.Identity.Builder, io.grafeas.v1.WindowsUpdate.IdentityOrBuilder> identityBuilder_;
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
-     *
      * @return Whether the identity field is set.
      */
     public boolean hasIdentity() {
       return identityBuilder_ != null || identity_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
-     *
      * @return The identity.
      */
     public io.grafeas.v1.WindowsUpdate.Identity getIdentity() {
       if (identityBuilder_ == null) {
-        return identity_ == null
-            ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()
-            : identity_;
+        return identity_ == null ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance() : identity_;
       } else {
         return identityBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
@@ -2622,15 +2461,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
      */
-    public Builder setIdentity(io.grafeas.v1.WindowsUpdate.Identity.Builder builderForValue) {
+    public Builder setIdentity(
+        io.grafeas.v1.WindowsUpdate.Identity.Builder builderForValue) {
       if (identityBuilder_ == null) {
         identity_ = builderForValue.build();
         onChanged();
@@ -2641,8 +2479,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
@@ -2653,9 +2489,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (identityBuilder_ == null) {
         if (identity_ != null) {
           identity_ =
-              io.grafeas.v1.WindowsUpdate.Identity.newBuilder(identity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            io.grafeas.v1.WindowsUpdate.Identity.newBuilder(identity_).mergeFrom(value).buildPartial();
         } else {
           identity_ = value;
         }
@@ -2667,8 +2501,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
@@ -2687,8 +2519,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
@@ -2696,13 +2526,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Identity.Builder getIdentityBuilder() {
-
+      
       onChanged();
       return getIdentityFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
@@ -2713,14 +2541,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (identityBuilder_ != null) {
         return identityBuilder_.getMessageOrBuilder();
       } else {
-        return identity_ == null
-            ? io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance()
-            : identity_;
+        return identity_ == null ?
+            io.grafeas.v1.WindowsUpdate.Identity.getDefaultInstance() : identity_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required - The unique identifier for the update.
      * </pre>
@@ -2728,17 +2553,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate.Identity identity = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate.Identity,
-            io.grafeas.v1.WindowsUpdate.Identity.Builder,
-            io.grafeas.v1.WindowsUpdate.IdentityOrBuilder>
+        io.grafeas.v1.WindowsUpdate.Identity, io.grafeas.v1.WindowsUpdate.Identity.Builder, io.grafeas.v1.WindowsUpdate.IdentityOrBuilder> 
         getIdentityFieldBuilder() {
       if (identityBuilder_ == null) {
-        identityBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.WindowsUpdate.Identity,
-                io.grafeas.v1.WindowsUpdate.Identity.Builder,
-                io.grafeas.v1.WindowsUpdate.IdentityOrBuilder>(
-                getIdentity(), getParentForChildren(), isClean());
+        identityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.WindowsUpdate.Identity, io.grafeas.v1.WindowsUpdate.Identity.Builder, io.grafeas.v1.WindowsUpdate.IdentityOrBuilder>(
+                getIdentity(),
+                getParentForChildren(),
+                isClean());
         identity_ = null;
       }
       return identityBuilder_;
@@ -2746,20 +2568,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object title_ = "";
     /**
-     *
-     *
      * <pre>
      * The localized title of the update.
      * </pre>
      *
      * <code>string title = 2;</code>
-     *
      * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         title_ = s;
         return s;
@@ -2768,21 +2588,20 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The localized title of the update.
      * </pre>
      *
      * <code>string title = 2;</code>
-     *
      * @return The bytes for title.
      */
-    public com.google.protobuf.ByteString getTitleBytes() {
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         title_ = b;
         return b;
       } else {
@@ -2790,61 +2609,54 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The localized title of the update.
      * </pre>
      *
      * <code>string title = 2;</code>
-     *
      * @param value The title to set.
      * @return This builder for chaining.
      */
-    public Builder setTitle(java.lang.String value) {
+    public Builder setTitle(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       title_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The localized title of the update.
      * </pre>
      *
      * <code>string title = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
+      
       title_ = getDefaultInstance().getTitle();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The localized title of the update.
      * </pre>
      *
      * <code>string title = 2;</code>
-     *
      * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
-    public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+    public Builder setTitleBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       title_ = value;
       onChanged();
       return this;
@@ -2852,20 +2664,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object description_ = "";
     /**
-     *
-     *
      * <pre>
      * The localized description of the update.
      * </pre>
      *
      * <code>string description = 3;</code>
-     *
      * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -2874,21 +2684,20 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The localized description of the update.
      * </pre>
      *
      * <code>string description = 3;</code>
-     *
      * @return The bytes for description.
      */
-    public com.google.protobuf.ByteString getDescriptionBytes() {
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -2896,85 +2705,72 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The localized description of the update.
      * </pre>
      *
      * <code>string description = 3;</code>
-     *
      * @param value The description to set.
      * @return This builder for chaining.
      */
-    public Builder setDescription(java.lang.String value) {
+    public Builder setDescription(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       description_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The localized description of the update.
      * </pre>
      *
      * <code>string description = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
+      
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The localized description of the update.
      * </pre>
      *
      * <code>string description = 3;</code>
-     *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
-    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<io.grafeas.v1.WindowsUpdate.Category> categories_ =
-        java.util.Collections.emptyList();
-
+      java.util.Collections.emptyList();
     private void ensureCategoriesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         categories_ = new java.util.ArrayList<io.grafeas.v1.WindowsUpdate.Category>(categories_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate.Category,
-            io.grafeas.v1.WindowsUpdate.Category.Builder,
-            io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>
-        categoriesBuilder_;
+        io.grafeas.v1.WindowsUpdate.Category, io.grafeas.v1.WindowsUpdate.Category.Builder, io.grafeas.v1.WindowsUpdate.CategoryOrBuilder> categoriesBuilder_;
 
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -2989,8 +2785,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3005,8 +2799,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3021,15 +2813,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public Builder setCategories(int index, io.grafeas.v1.WindowsUpdate.Category value) {
+    public Builder setCategories(
+        int index, io.grafeas.v1.WindowsUpdate.Category value) {
       if (categoriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3043,8 +2834,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3063,8 +2852,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3085,15 +2872,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public Builder addCategories(int index, io.grafeas.v1.WindowsUpdate.Category value) {
+    public Builder addCategories(
+        int index, io.grafeas.v1.WindowsUpdate.Category value) {
       if (categoriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3107,15 +2893,14 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public Builder addCategories(io.grafeas.v1.WindowsUpdate.Category.Builder builderForValue) {
+    public Builder addCategories(
+        io.grafeas.v1.WindowsUpdate.Category.Builder builderForValue) {
       if (categoriesBuilder_ == null) {
         ensureCategoriesIsMutable();
         categories_.add(builderForValue.build());
@@ -3126,8 +2911,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3146,8 +2929,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3158,7 +2939,8 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
         java.lang.Iterable<? extends io.grafeas.v1.WindowsUpdate.Category> values) {
       if (categoriesBuilder_ == null) {
         ensureCategoriesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categories_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, categories_);
         onChanged();
       } else {
         categoriesBuilder_.addAllMessages(values);
@@ -3166,8 +2948,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3185,8 +2965,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3204,44 +2982,39 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public io.grafeas.v1.WindowsUpdate.Category.Builder getCategoriesBuilder(int index) {
+    public io.grafeas.v1.WindowsUpdate.Category.Builder getCategoriesBuilder(
+        int index) {
       return getCategoriesFieldBuilder().getBuilder(index);
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public io.grafeas.v1.WindowsUpdate.CategoryOrBuilder getCategoriesOrBuilder(int index) {
+    public io.grafeas.v1.WindowsUpdate.CategoryOrBuilder getCategoriesOrBuilder(
+        int index) {
       if (categoriesBuilder_ == null) {
-        return categories_.get(index);
-      } else {
+        return categories_.get(index);  } else {
         return categoriesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>
-        getCategoriesOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.WindowsUpdate.CategoryOrBuilder> 
+         getCategoriesOrBuilderList() {
       if (categoriesBuilder_ != null) {
         return categoriesBuilder_.getMessageOrBuilderList();
       } else {
@@ -3249,8 +3022,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
@@ -3258,101 +3029,86 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Category.Builder addCategoriesBuilder() {
-      return getCategoriesFieldBuilder()
-          .addBuilder(io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance());
+      return getCategoriesFieldBuilder().addBuilder(
+          io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public io.grafeas.v1.WindowsUpdate.Category.Builder addCategoriesBuilder(int index) {
-      return getCategoriesFieldBuilder()
-          .addBuilder(index, io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance());
+    public io.grafeas.v1.WindowsUpdate.Category.Builder addCategoriesBuilder(
+        int index) {
+      return getCategoriesFieldBuilder().addBuilder(
+          index, io.grafeas.v1.WindowsUpdate.Category.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * The list of categories to which the update belongs.
      * </pre>
      *
      * <code>repeated .grafeas.v1.WindowsUpdate.Category categories = 4;</code>
      */
-    public java.util.List<io.grafeas.v1.WindowsUpdate.Category.Builder> getCategoriesBuilderList() {
+    public java.util.List<io.grafeas.v1.WindowsUpdate.Category.Builder> 
+         getCategoriesBuilderList() {
       return getCategoriesFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate.Category,
-            io.grafeas.v1.WindowsUpdate.Category.Builder,
-            io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>
+        io.grafeas.v1.WindowsUpdate.Category, io.grafeas.v1.WindowsUpdate.Category.Builder, io.grafeas.v1.WindowsUpdate.CategoryOrBuilder> 
         getCategoriesFieldBuilder() {
       if (categoriesBuilder_ == null) {
-        categoriesBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                io.grafeas.v1.WindowsUpdate.Category,
-                io.grafeas.v1.WindowsUpdate.Category.Builder,
-                io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        categoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.WindowsUpdate.Category, io.grafeas.v1.WindowsUpdate.Category.Builder, io.grafeas.v1.WindowsUpdate.CategoryOrBuilder>(
+                categories_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
         categories_ = null;
       }
       return categoriesBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList kbArticleIds_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
-
+    private com.google.protobuf.LazyStringList kbArticleIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureKbArticleIdsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
         kbArticleIds_ = new com.google.protobuf.LazyStringArrayList(kbArticleIds_);
         bitField0_ |= 0x00000002;
-      }
+       }
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @return A list containing the kbArticleIds.
      */
-    public com.google.protobuf.ProtocolStringList getKbArticleIdsList() {
+    public com.google.protobuf.ProtocolStringList
+        getKbArticleIdsList() {
       return kbArticleIds_.getUnmodifiableView();
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @return The count of kbArticleIds.
      */
     public int getKbArticleIdsCount() {
       return kbArticleIds_.size();
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @param index The index of the element to return.
      * @return The kbArticleIds at the given index.
      */
@@ -3360,95 +3116,85 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return kbArticleIds_.get(index);
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @param index The index of the value to return.
      * @return The bytes of the kbArticleIds at the given index.
      */
-    public com.google.protobuf.ByteString getKbArticleIdsBytes(int index) {
+    public com.google.protobuf.ByteString
+        getKbArticleIdsBytes(int index) {
       return kbArticleIds_.getByteString(index);
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @param index The index to set the value at.
      * @param value The kbArticleIds to set.
      * @return This builder for chaining.
      */
-    public Builder setKbArticleIds(int index, java.lang.String value) {
+    public Builder setKbArticleIds(
+        int index, java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureKbArticleIdsIsMutable();
+    throw new NullPointerException();
+  }
+  ensureKbArticleIdsIsMutable();
       kbArticleIds_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @param value The kbArticleIds to add.
      * @return This builder for chaining.
      */
-    public Builder addKbArticleIds(java.lang.String value) {
+    public Builder addKbArticleIds(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureKbArticleIdsIsMutable();
+    throw new NullPointerException();
+  }
+  ensureKbArticleIdsIsMutable();
       kbArticleIds_.add(value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @param values The kbArticleIds to add.
      * @return This builder for chaining.
      */
-    public Builder addAllKbArticleIds(java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllKbArticleIds(
+        java.lang.Iterable<java.lang.String> values) {
       ensureKbArticleIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kbArticleIds_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, kbArticleIds_);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearKbArticleIds() {
@@ -3458,23 +3204,21 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The Microsoft Knowledge Base article IDs that are associated with the
      * update.
      * </pre>
      *
      * <code>repeated string kb_article_ids = 5;</code>
-     *
      * @param value The bytes of the kbArticleIds to add.
      * @return This builder for chaining.
      */
-    public Builder addKbArticleIdsBytes(com.google.protobuf.ByteString value) {
+    public Builder addKbArticleIdsBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       ensureKbArticleIdsIsMutable();
       kbArticleIds_.add(value);
       onChanged();
@@ -3483,20 +3227,18 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object supportUrl_ = "";
     /**
-     *
-     *
      * <pre>
      * The hyperlink to the support information for the update.
      * </pre>
      *
      * <code>string support_url = 6;</code>
-     *
      * @return The supportUrl.
      */
     public java.lang.String getSupportUrl() {
       java.lang.Object ref = supportUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         supportUrl_ = s;
         return s;
@@ -3505,21 +3247,20 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The hyperlink to the support information for the update.
      * </pre>
      *
      * <code>string support_url = 6;</code>
-     *
      * @return The bytes for supportUrl.
      */
-    public com.google.protobuf.ByteString getSupportUrlBytes() {
+    public com.google.protobuf.ByteString
+        getSupportUrlBytes() {
       java.lang.Object ref = supportUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         supportUrl_ = b;
         return b;
       } else {
@@ -3527,61 +3268,54 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * The hyperlink to the support information for the update.
      * </pre>
      *
      * <code>string support_url = 6;</code>
-     *
      * @param value The supportUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setSupportUrl(java.lang.String value) {
+    public Builder setSupportUrl(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       supportUrl_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The hyperlink to the support information for the update.
      * </pre>
      *
      * <code>string support_url = 6;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearSupportUrl() {
-
+      
       supportUrl_ = getDefaultInstance().getSupportUrl();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The hyperlink to the support information for the update.
      * </pre>
      *
      * <code>string support_url = 6;</code>
-     *
      * @param value The bytes for supportUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setSupportUrlBytes(com.google.protobuf.ByteString value) {
+    public Builder setSupportUrlBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       supportUrl_ = value;
       onChanged();
       return this;
@@ -3589,47 +3323,34 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.Timestamp lastPublishedTimestamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        lastPublishedTimestampBuilder_;
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastPublishedTimestampBuilder_;
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
-     *
      * @return Whether the lastPublishedTimestamp field is set.
      */
     public boolean hasLastPublishedTimestamp() {
       return lastPublishedTimestampBuilder_ != null || lastPublishedTimestamp_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
-     *
      * @return The lastPublishedTimestamp.
      */
     public com.google.protobuf.Timestamp getLastPublishedTimestamp() {
       if (lastPublishedTimestampBuilder_ == null) {
-        return lastPublishedTimestamp_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : lastPublishedTimestamp_;
+        return lastPublishedTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastPublishedTimestamp_;
       } else {
         return lastPublishedTimestampBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3650,8 +3371,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3670,8 +3389,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3682,9 +3399,7 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (lastPublishedTimestampBuilder_ == null) {
         if (lastPublishedTimestamp_ != null) {
           lastPublishedTimestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(lastPublishedTimestamp_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            com.google.protobuf.Timestamp.newBuilder(lastPublishedTimestamp_).mergeFrom(value).buildPartial();
         } else {
           lastPublishedTimestamp_ = value;
         }
@@ -3696,8 +3411,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3716,8 +3429,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3725,13 +3436,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastPublishedTimestampBuilder() {
-
+      
       onChanged();
       return getLastPublishedTimestampFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3742,14 +3451,11 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       if (lastPublishedTimestampBuilder_ != null) {
         return lastPublishedTimestampBuilder_.getMessageOrBuilder();
       } else {
-        return lastPublishedTimestamp_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : lastPublishedTimestamp_;
+        return lastPublishedTimestamp_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : lastPublishedTimestamp_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * The last published timestamp of the update.
      * </pre>
@@ -3757,24 +3463,21 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_published_timestamp = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
         getLastPublishedTimestampFieldBuilder() {
       if (lastPublishedTimestampBuilder_ == null) {
-        lastPublishedTimestampBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getLastPublishedTimestamp(), getParentForChildren(), isClean());
+        lastPublishedTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getLastPublishedTimestamp(),
+                getParentForChildren(),
+                isClean());
         lastPublishedTimestamp_ = null;
       }
       return lastPublishedTimestampBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -3784,12 +3487,12 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.WindowsUpdate)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.WindowsUpdate)
   private static final io.grafeas.v1.WindowsUpdate DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.WindowsUpdate();
   }
@@ -3798,27 +3501,27 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WindowsUpdate> PARSER =
-      new com.google.protobuf.AbstractParser<WindowsUpdate>() {
-        @java.lang.Override
-        public WindowsUpdate parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<WindowsUpdate>
+      PARSER = new com.google.protobuf.AbstractParser<WindowsUpdate>() {
+    @java.lang.Override
+    public WindowsUpdate parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<WindowsUpdate> parser() {
     return PARSER;
@@ -3833,4 +3536,6 @@ public final class WindowsUpdate extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.WindowsUpdate getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

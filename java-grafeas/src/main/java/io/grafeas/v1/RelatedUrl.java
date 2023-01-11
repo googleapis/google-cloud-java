@@ -20,24 +20,21 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Metadata for any related URL information.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.RelatedUrl}
  */
-public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class RelatedUrl extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.RelatedUrl)
     RelatedUrlOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use RelatedUrl.newBuilder() to construct.
   private RelatedUrl(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private RelatedUrl() {
     url_ = "";
     label_ = "";
@@ -45,16 +42,18 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new RelatedUrl();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Common.internal_static_grafeas_v1_RelatedUrl_descriptor;
   }
 
@@ -69,14 +68,11 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   public static final int URL_FIELD_NUMBER = 1;
   private volatile java.lang.Object url_;
   /**
-   *
-   *
    * <pre>
    * Specific URL associated with the resource.
    * </pre>
    *
    * <code>string url = 1;</code>
-   *
    * @return The url.
    */
   @java.lang.Override
@@ -85,29 +81,29 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       url_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Specific URL associated with the resource.
    * </pre>
    *
    * <code>string url = 1;</code>
-   *
    * @return The bytes for url.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getUrlBytes() {
+  public com.google.protobuf.ByteString
+      getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       url_ = b;
       return b;
     } else {
@@ -118,14 +114,11 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   public static final int LABEL_FIELD_NUMBER = 2;
   private volatile java.lang.Object label_;
   /**
-   *
-   *
    * <pre>
    * Label to describe usage of the URL.
    * </pre>
    *
    * <code>string label = 2;</code>
-   *
    * @return The label.
    */
   @java.lang.Override
@@ -134,29 +127,29 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       label_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Label to describe usage of the URL.
    * </pre>
    *
    * <code>string label = 2;</code>
-   *
    * @return The bytes for label.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getLabelBytes() {
+  public com.google.protobuf.ByteString
+      getLabelBytes() {
     java.lang.Object ref = label_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       label_ = b;
       return b;
     } else {
@@ -165,7 +158,6 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -177,7 +169,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
     }
@@ -207,15 +200,17 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.RelatedUrl)) {
       return super.equals(obj);
     }
     io.grafeas.v1.RelatedUrl other = (io.grafeas.v1.RelatedUrl) obj;
 
-    if (!getUrl().equals(other.getUrl())) return false;
-    if (!getLabel().equals(other.getLabel())) return false;
+    if (!getUrl()
+        .equals(other.getUrl())) return false;
+    if (!getLabel()
+        .equals(other.getLabel())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -236,114 +231,109 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.RelatedUrl parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.RelatedUrl parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.RelatedUrl parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.RelatedUrl parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.RelatedUrl parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.RelatedUrl parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.RelatedUrl parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.RelatedUrl parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.RelatedUrl parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.RelatedUrl prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Metadata for any related URL information.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.RelatedUrl}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.RelatedUrl)
       io.grafeas.v1.RelatedUrlOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Common.internal_static_grafeas_v1_RelatedUrl_descriptor;
     }
 
@@ -356,12 +346,15 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.RelatedUrl.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -373,7 +366,8 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Common.internal_static_grafeas_v1_RelatedUrl_descriptor;
     }
 
@@ -404,39 +398,38 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.RelatedUrl) {
-        return mergeFrom((io.grafeas.v1.RelatedUrl) other);
+        return mergeFrom((io.grafeas.v1.RelatedUrl)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -479,25 +472,22 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                url_ = input.readStringRequireUtf8();
+            case 10: {
+              url_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                label_ = input.readStringRequireUtf8();
+              break;
+            } // case 10
+            case 18: {
+              label_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -510,20 +500,18 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object url_ = "";
     /**
-     *
-     *
      * <pre>
      * Specific URL associated with the resource.
      * </pre>
      *
      * <code>string url = 1;</code>
-     *
      * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
@@ -532,21 +520,20 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Specific URL associated with the resource.
      * </pre>
      *
      * <code>string url = 1;</code>
-     *
      * @return The bytes for url.
      */
-    public com.google.protobuf.ByteString getUrlBytes() {
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -554,61 +541,54 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Specific URL associated with the resource.
      * </pre>
      *
      * <code>string url = 1;</code>
-     *
      * @param value The url to set.
      * @return This builder for chaining.
      */
-    public Builder setUrl(java.lang.String value) {
+    public Builder setUrl(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       url_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Specific URL associated with the resource.
      * </pre>
      *
      * <code>string url = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
+      
       url_ = getDefaultInstance().getUrl();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Specific URL associated with the resource.
      * </pre>
      *
      * <code>string url = 1;</code>
-     *
      * @param value The bytes for url to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+    public Builder setUrlBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       url_ = value;
       onChanged();
       return this;
@@ -616,20 +596,18 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object label_ = "";
     /**
-     *
-     *
      * <pre>
      * Label to describe usage of the URL.
      * </pre>
      *
      * <code>string label = 2;</code>
-     *
      * @return The label.
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         label_ = s;
         return s;
@@ -638,21 +616,20 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Label to describe usage of the URL.
      * </pre>
      *
      * <code>string label = 2;</code>
-     *
      * @return The bytes for label.
      */
-    public com.google.protobuf.ByteString getLabelBytes() {
+    public com.google.protobuf.ByteString
+        getLabelBytes() {
       java.lang.Object ref = label_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         label_ = b;
         return b;
       } else {
@@ -660,68 +637,61 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Label to describe usage of the URL.
      * </pre>
      *
      * <code>string label = 2;</code>
-     *
      * @param value The label to set.
      * @return This builder for chaining.
      */
-    public Builder setLabel(java.lang.String value) {
+    public Builder setLabel(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       label_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Label to describe usage of the URL.
      * </pre>
      *
      * <code>string label = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
+      
       label_ = getDefaultInstance().getLabel();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Label to describe usage of the URL.
      * </pre>
      *
      * <code>string label = 2;</code>
-     *
      * @param value The bytes for label to set.
      * @return This builder for chaining.
      */
-    public Builder setLabelBytes(com.google.protobuf.ByteString value) {
+    public Builder setLabelBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       label_ = value;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -731,12 +701,12 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.RelatedUrl)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.RelatedUrl)
   private static final io.grafeas.v1.RelatedUrl DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.RelatedUrl();
   }
@@ -745,27 +715,27 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RelatedUrl> PARSER =
-      new com.google.protobuf.AbstractParser<RelatedUrl>() {
-        @java.lang.Override
-        public RelatedUrl parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<RelatedUrl>
+      PARSER = new com.google.protobuf.AbstractParser<RelatedUrl>() {
+    @java.lang.Override
+    public RelatedUrl parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<RelatedUrl> parser() {
     return PARSER;
@@ -780,4 +750,6 @@ public final class RelatedUrl extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.RelatedUrl getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

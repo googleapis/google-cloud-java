@@ -19,28 +19,25 @@
 
 package io.grafeas.v1;
 
-public interface EnvelopeSignatureOrBuilder
-    extends
+public interface EnvelopeSignatureOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.EnvelopeSignature)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <code>bytes sig = 1;</code>
-   *
    * @return The sig.
    */
   com.google.protobuf.ByteString getSig();
 
   /**
    * <code>string keyid = 2;</code>
-   *
    * @return The keyid.
    */
   java.lang.String getKeyid();
   /**
    * <code>string keyid = 2;</code>
-   *
    * @return The bytes for keyid.
    */
-  com.google.protobuf.ByteString getKeyidBytes();
+  com.google.protobuf.ByteString
+      getKeyidBytes();
 }

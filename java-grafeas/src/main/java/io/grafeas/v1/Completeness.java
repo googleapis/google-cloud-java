@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Indicates that the builder claims certain fields in this message to be
  * complete.
@@ -29,38 +27,39 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.Completeness}
  */
-public final class Completeness extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class Completeness extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Completeness)
     CompletenessOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use Completeness.newBuilder() to construct.
   private Completeness(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
-  private Completeness() {}
+  private Completeness() {
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new Completeness();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Completeness_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.InTotoProvenanceProto
-        .internal_static_grafeas_v1_Completeness_fieldAccessorTable
+    return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Completeness_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.Completeness.class, io.grafeas.v1.Completeness.Builder.class);
   }
@@ -68,15 +67,12 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   public static final int ARGUMENTS_FIELD_NUMBER = 1;
   private boolean arguments_;
   /**
-   *
-   *
    * <pre>
    * If true, the builder claims that recipe.arguments is complete, meaning that
    * all external inputs are properly captured in the recipe.
    * </pre>
    *
    * <code>bool arguments = 1;</code>
-   *
    * @return The arguments.
    */
   @java.lang.Override
@@ -87,15 +83,12 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   public static final int ENVIRONMENT_FIELD_NUMBER = 2;
   private boolean environment_;
   /**
-   *
-   *
    * <pre>
    * If true, the builder claims that recipe.environment is claimed to be
    * complete.
    * </pre>
    *
    * <code>bool environment = 2;</code>
-   *
    * @return The environment.
    */
   @java.lang.Override
@@ -106,15 +99,12 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   public static final int MATERIALS_FIELD_NUMBER = 3;
   private boolean materials_;
   /**
-   *
-   *
    * <pre>
    * If true, the builder claims that materials are complete, usually through
    * some controls to prevent network access. Sometimes called "hermetic".
    * </pre>
    *
    * <code>bool materials = 3;</code>
-   *
    * @return The materials.
    */
   @java.lang.Override
@@ -123,7 +113,6 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -135,7 +124,8 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (arguments_ != false) {
       output.writeBool(1, arguments_);
     }
@@ -155,13 +145,16 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (arguments_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, arguments_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(1, arguments_);
     }
     if (environment_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, environment_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, environment_);
     }
     if (materials_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, materials_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, materials_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -171,16 +164,19 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.Completeness)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Completeness other = (io.grafeas.v1.Completeness) obj;
 
-    if (getArguments() != other.getArguments()) return false;
-    if (getEnvironment() != other.getEnvironment()) return false;
-    if (getMaterials() != other.getMaterials()) return false;
+    if (getArguments()
+        != other.getArguments()) return false;
+    if (getEnvironment()
+        != other.getEnvironment()) return false;
+    if (getMaterials()
+        != other.getMaterials()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -193,113 +189,110 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ARGUMENTS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArguments());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getArguments());
     hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnvironment());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnvironment());
     hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMaterials());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getMaterials());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.grafeas.v1.Completeness parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Completeness parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Completeness parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.Completeness parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.Completeness parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Completeness parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Completeness parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.Completeness parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Completeness parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.Completeness prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Indicates that the builder claims certain fields in this message to be
    * complete.
@@ -307,30 +300,33 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code grafeas.v1.Completeness}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Completeness)
       io.grafeas.v1.CompletenessOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Completeness_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.InTotoProvenanceProto
-          .internal_static_grafeas_v1_Completeness_fieldAccessorTable
+      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Completeness_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.Completeness.class, io.grafeas.v1.Completeness.Builder.class);
     }
 
     // Construct using io.grafeas.v1.Completeness.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -344,7 +340,8 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Completeness_descriptor;
     }
 
@@ -376,39 +373,38 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Completeness) {
-        return mergeFrom((io.grafeas.v1.Completeness) other);
+        return mergeFrom((io.grafeas.v1.Completeness)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -452,31 +448,27 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 8:
-              {
-                arguments_ = input.readBool();
+            case 8: {
+              arguments_ = input.readBool();
 
-                break;
-              } // case 8
-            case 16:
-              {
-                environment_ = input.readBool();
+              break;
+            } // case 8
+            case 16: {
+              environment_ = input.readBool();
 
-                break;
-              } // case 16
-            case 24:
-              {
-                materials_ = input.readBool();
+              break;
+            } // case 16
+            case 24: {
+              materials_ = input.readBool();
 
-                break;
-              } // case 24
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 24
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -487,17 +479,14 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private boolean arguments_;
+    private boolean arguments_ ;
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that recipe.arguments is complete, meaning that
      * all external inputs are properly captured in the recipe.
      * </pre>
      *
      * <code>bool arguments = 1;</code>
-     *
      * @return The arguments.
      */
     @java.lang.Override
@@ -505,54 +494,45 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       return arguments_;
     }
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that recipe.arguments is complete, meaning that
      * all external inputs are properly captured in the recipe.
      * </pre>
      *
      * <code>bool arguments = 1;</code>
-     *
      * @param value The arguments to set.
      * @return This builder for chaining.
      */
     public Builder setArguments(boolean value) {
-
+      
       arguments_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that recipe.arguments is complete, meaning that
      * all external inputs are properly captured in the recipe.
      * </pre>
      *
      * <code>bool arguments = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearArguments() {
-
+      
       arguments_ = false;
       onChanged();
       return this;
     }
 
-    private boolean environment_;
+    private boolean environment_ ;
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that recipe.environment is claimed to be
      * complete.
      * </pre>
      *
      * <code>bool environment = 2;</code>
-     *
      * @return The environment.
      */
     @java.lang.Override
@@ -560,54 +540,45 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       return environment_;
     }
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that recipe.environment is claimed to be
      * complete.
      * </pre>
      *
      * <code>bool environment = 2;</code>
-     *
      * @param value The environment to set.
      * @return This builder for chaining.
      */
     public Builder setEnvironment(boolean value) {
-
+      
       environment_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that recipe.environment is claimed to be
      * complete.
      * </pre>
      *
      * <code>bool environment = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearEnvironment() {
-
+      
       environment_ = false;
       onChanged();
       return this;
     }
 
-    private boolean materials_;
+    private boolean materials_ ;
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that materials are complete, usually through
      * some controls to prevent network access. Sometimes called "hermetic".
      * </pre>
      *
      * <code>bool materials = 3;</code>
-     *
      * @return The materials.
      */
     @java.lang.Override
@@ -615,45 +586,39 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       return materials_;
     }
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that materials are complete, usually through
      * some controls to prevent network access. Sometimes called "hermetic".
      * </pre>
      *
      * <code>bool materials = 3;</code>
-     *
      * @param value The materials to set.
      * @return This builder for chaining.
      */
     public Builder setMaterials(boolean value) {
-
+      
       materials_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * If true, the builder claims that materials are complete, usually through
      * some controls to prevent network access. Sometimes called "hermetic".
      * </pre>
      *
      * <code>bool materials = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearMaterials() {
-
+      
       materials_ = false;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -663,12 +628,12 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Completeness)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Completeness)
   private static final io.grafeas.v1.Completeness DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Completeness();
   }
@@ -677,27 +642,27 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Completeness> PARSER =
-      new com.google.protobuf.AbstractParser<Completeness>() {
-        @java.lang.Override
-        public Completeness parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<Completeness>
+      PARSER = new com.google.protobuf.AbstractParser<Completeness>() {
+    @java.lang.Override
+    public Completeness parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<Completeness> parser() {
     return PARSER;
@@ -712,4 +677,6 @@ public final class Completeness extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Completeness getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

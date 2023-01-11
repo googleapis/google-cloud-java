@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * An Upgrade Note represents a potential upgrade of a package to a given
  * version. For each package version combination (i.e. bash 4.0, bash 4.1,
@@ -31,16 +29,15 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.UpgradeNote}
  */
-public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class UpgradeNote extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.UpgradeNote)
     UpgradeNoteOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use UpgradeNote.newBuilder() to construct.
   private UpgradeNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private UpgradeNote() {
     package_ = "";
     distributions_ = java.util.Collections.emptyList();
@@ -48,16 +45,18 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new UpgradeNote();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeNote_descriptor;
   }
 
@@ -72,14 +71,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public static final int PACKAGE_FIELD_NUMBER = 1;
   private volatile java.lang.Object package_;
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The package.
    */
   @java.lang.Override
@@ -88,29 +84,29 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       package_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The bytes for package.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPackageBytes() {
+  public com.google.protobuf.ByteString
+      getPackageBytes() {
     java.lang.Object ref = package_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       package_ = b;
       return b;
     } else {
@@ -121,15 +117,12 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public static final int VERSION_FIELD_NUMBER = 2;
   private io.grafeas.v1.Version version_;
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in machine + human
    * readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 2;</code>
-   *
    * @return Whether the version field is set.
    */
   @java.lang.Override
@@ -137,15 +130,12 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return version_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in machine + human
    * readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 2;</code>
-   *
    * @return The version.
    */
   @java.lang.Override
@@ -153,8 +143,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
   }
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in machine + human
    * readable form.
@@ -170,8 +158,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public static final int DISTRIBUTIONS_FIELD_NUMBER = 3;
   private java.util.List<io.grafeas.v1.UpgradeDistribution> distributions_;
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -183,8 +169,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return distributions_;
   }
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -192,13 +176,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder>
+  public java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder> 
       getDistributionsOrBuilderList() {
     return distributions_;
   }
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -210,8 +192,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return distributions_.size();
   }
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -223,8 +203,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return distributions_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for each specific operating system.
    * </pre>
@@ -232,21 +210,19 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(int index) {
+  public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(
+      int index) {
     return distributions_.get(index);
   }
 
   public static final int WINDOWS_UPDATE_FIELD_NUMBER = 4;
   private io.grafeas.v1.WindowsUpdate windowsUpdate_;
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-   *
    * @return Whether the windowsUpdate field is set.
    */
   @java.lang.Override
@@ -254,25 +230,18 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return windowsUpdate_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-   *
    * @return The windowsUpdate.
    */
   @java.lang.Override
   public io.grafeas.v1.WindowsUpdate getWindowsUpdate() {
-    return windowsUpdate_ == null
-        ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
-        : windowsUpdate_;
+    return windowsUpdate_ == null ? io.grafeas.v1.WindowsUpdate.getDefaultInstance() : windowsUpdate_;
   }
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
@@ -285,7 +254,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -297,7 +265,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(package_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, package_);
     }
@@ -323,13 +292,16 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, package_);
     }
     if (version_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getVersion());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getVersion());
     }
     for (int i = 0; i < distributions_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, distributions_.get(i));
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, distributions_.get(i));
     }
     if (windowsUpdate_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getWindowsUpdate());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getWindowsUpdate());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -339,22 +311,26 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.UpgradeNote)) {
       return super.equals(obj);
     }
     io.grafeas.v1.UpgradeNote other = (io.grafeas.v1.UpgradeNote) obj;
 
-    if (!getPackage().equals(other.getPackage())) return false;
+    if (!getPackage()
+        .equals(other.getPackage())) return false;
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
-      if (!getVersion().equals(other.getVersion())) return false;
+      if (!getVersion()
+          .equals(other.getVersion())) return false;
     }
-    if (!getDistributionsList().equals(other.getDistributionsList())) return false;
+    if (!getDistributionsList()
+        .equals(other.getDistributionsList())) return false;
     if (hasWindowsUpdate() != other.hasWindowsUpdate()) return false;
     if (hasWindowsUpdate()) {
-      if (!getWindowsUpdate().equals(other.getWindowsUpdate())) return false;
+      if (!getWindowsUpdate()
+          .equals(other.getWindowsUpdate())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -386,103 +362,97 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.UpgradeNote parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.UpgradeNote parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.UpgradeNote parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.UpgradeNote parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeNote parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeNote parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.UpgradeNote parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.UpgradeNote parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeNote parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.UpgradeNote prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * An Upgrade Note represents a potential upgrade of a package to a given
    * version. For each package version combination (i.e. bash 4.0, bash 4.1,
@@ -492,11 +462,12 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code grafeas.v1.UpgradeNote}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.UpgradeNote)
       io.grafeas.v1.UpgradeNoteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeNote_descriptor;
     }
 
@@ -509,12 +480,15 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.UpgradeNote.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -543,7 +517,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeNote_descriptor;
     }
 
@@ -593,39 +568,38 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.UpgradeNote) {
-        return mergeFrom((io.grafeas.v1.UpgradeNote) other);
+        return mergeFrom((io.grafeas.v1.UpgradeNote)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -659,10 +633,9 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             distributionsBuilder_ = null;
             distributions_ = other.distributions_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            distributionsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getDistributionsFieldBuilder()
-                    : null;
+            distributionsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getDistributionsFieldBuilder() : null;
           } else {
             distributionsBuilder_.addAllMessages(other.distributions_);
           }
@@ -697,44 +670,44 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                package_ = input.readStringRequireUtf8();
+            case 10: {
+              package_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getVersionFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 18
-            case 26:
-              {
-                io.grafeas.v1.UpgradeDistribution m =
-                    input.readMessage(
-                        io.grafeas.v1.UpgradeDistribution.parser(), extensionRegistry);
-                if (distributionsBuilder_ == null) {
-                  ensureDistributionsIsMutable();
-                  distributions_.add(m);
-                } else {
-                  distributionsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 26
-            case 34:
-              {
-                input.readMessage(getWindowsUpdateFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 18
+            case 26: {
+              io.grafeas.v1.UpgradeDistribution m =
+                  input.readMessage(
+                      io.grafeas.v1.UpgradeDistribution.parser(),
+                      extensionRegistry);
+              if (distributionsBuilder_ == null) {
+                ensureDistributionsIsMutable();
+                distributions_.add(m);
+              } else {
+                distributionsBuilder_.addMessage(m);
+              }
+              break;
+            } // case 26
+            case 34: {
+              input.readMessage(
+                  getWindowsUpdateFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 34
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 34
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -744,25 +717,22 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
-
     private int bitField0_;
 
     private java.lang.Object package_ = "";
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @return The package.
      */
     public java.lang.String getPackage() {
       java.lang.Object ref = package_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         package_ = s;
         return s;
@@ -771,21 +741,20 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @return The bytes for package.
      */
-    public com.google.protobuf.ByteString getPackageBytes() {
+    public com.google.protobuf.ByteString
+        getPackageBytes() {
       java.lang.Object ref = package_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         package_ = b;
         return b;
       } else {
@@ -793,61 +762,54 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @param value The package to set.
      * @return This builder for chaining.
      */
-    public Builder setPackage(java.lang.String value) {
+    public Builder setPackage(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       package_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearPackage() {
-
+      
       package_ = getDefaultInstance().getPackage();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @param value The bytes for package to set.
      * @return This builder for chaining.
      */
-    public Builder setPackageBytes(com.google.protobuf.ByteString value) {
+    public Builder setPackageBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       package_ = value;
       onChanged();
       return this;
@@ -855,33 +817,26 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
     private io.grafeas.v1.Version version_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
-        versionBuilder_;
+        io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder> versionBuilder_;
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
      * </pre>
      *
      * <code>.grafeas.v1.Version version = 2;</code>
-     *
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
       return versionBuilder_ != null || version_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
      * </pre>
      *
      * <code>.grafeas.v1.Version version = 2;</code>
-     *
      * @return The version.
      */
     public io.grafeas.v1.Version getVersion() {
@@ -892,8 +847,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -915,8 +868,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -924,7 +875,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.grafeas.v1.Version version = 2;</code>
      */
-    public Builder setVersion(io.grafeas.v1.Version.Builder builderForValue) {
+    public Builder setVersion(
+        io.grafeas.v1.Version.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
         onChanged();
@@ -935,8 +887,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -947,7 +897,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeVersion(io.grafeas.v1.Version value) {
       if (versionBuilder_ == null) {
         if (version_ != null) {
-          version_ = io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
+          version_ =
+            io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
         } else {
           version_ = value;
         }
@@ -959,8 +910,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -980,8 +929,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -990,13 +937,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 2;</code>
      */
     public io.grafeas.v1.Version.Builder getVersionBuilder() {
-
+      
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -1008,12 +953,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       if (versionBuilder_ != null) {
         return versionBuilder_.getMessageOrBuilder();
       } else {
-        return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
+        return version_ == null ?
+            io.grafeas.v1.Version.getDefaultInstance() : version_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in machine + human
      * readable form.
@@ -1022,38 +966,32 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.Version version = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
+        io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder> 
         getVersionFieldBuilder() {
       if (versionBuilder_ == null) {
-        versionBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.Version,
-                io.grafeas.v1.Version.Builder,
-                io.grafeas.v1.VersionOrBuilder>(getVersion(), getParentForChildren(), isClean());
+        versionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>(
+                getVersion(),
+                getParentForChildren(),
+                isClean());
         version_ = null;
       }
       return versionBuilder_;
     }
 
     private java.util.List<io.grafeas.v1.UpgradeDistribution> distributions_ =
-        java.util.Collections.emptyList();
-
+      java.util.Collections.emptyList();
     private void ensureDistributionsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         distributions_ = new java.util.ArrayList<io.grafeas.v1.UpgradeDistribution>(distributions_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.UpgradeDistribution,
-            io.grafeas.v1.UpgradeDistribution.Builder,
-            io.grafeas.v1.UpgradeDistributionOrBuilder>
-        distributionsBuilder_;
+        io.grafeas.v1.UpgradeDistribution, io.grafeas.v1.UpgradeDistribution.Builder, io.grafeas.v1.UpgradeDistributionOrBuilder> distributionsBuilder_;
 
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1068,8 +1006,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1084,8 +1020,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1100,15 +1034,14 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public Builder setDistributions(int index, io.grafeas.v1.UpgradeDistribution value) {
+    public Builder setDistributions(
+        int index, io.grafeas.v1.UpgradeDistribution value) {
       if (distributionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1122,8 +1055,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1142,8 +1073,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1164,15 +1093,14 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public Builder addDistributions(int index, io.grafeas.v1.UpgradeDistribution value) {
+    public Builder addDistributions(
+        int index, io.grafeas.v1.UpgradeDistribution value) {
       if (distributionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1186,15 +1114,14 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public Builder addDistributions(io.grafeas.v1.UpgradeDistribution.Builder builderForValue) {
+    public Builder addDistributions(
+        io.grafeas.v1.UpgradeDistribution.Builder builderForValue) {
       if (distributionsBuilder_ == null) {
         ensureDistributionsIsMutable();
         distributions_.add(builderForValue.build());
@@ -1205,8 +1132,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1225,8 +1150,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1237,7 +1160,8 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
         java.lang.Iterable<? extends io.grafeas.v1.UpgradeDistribution> values) {
       if (distributionsBuilder_ == null) {
         ensureDistributionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, distributions_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, distributions_);
         onChanged();
       } else {
         distributionsBuilder_.addAllMessages(values);
@@ -1245,8 +1169,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1264,8 +1186,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1283,44 +1203,39 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public io.grafeas.v1.UpgradeDistribution.Builder getDistributionsBuilder(int index) {
+    public io.grafeas.v1.UpgradeDistribution.Builder getDistributionsBuilder(
+        int index) {
       return getDistributionsFieldBuilder().getBuilder(index);
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(int index) {
+    public io.grafeas.v1.UpgradeDistributionOrBuilder getDistributionsOrBuilder(
+        int index) {
       if (distributionsBuilder_ == null) {
-        return distributions_.get(index);
-      } else {
+        return distributions_.get(index);  } else {
         return distributionsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder>
-        getDistributionsOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.UpgradeDistributionOrBuilder> 
+         getDistributionsOrBuilderList() {
       if (distributionsBuilder_ != null) {
         return distributionsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1328,8 +1243,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
@@ -1337,46 +1250,38 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
     public io.grafeas.v1.UpgradeDistribution.Builder addDistributionsBuilder() {
-      return getDistributionsFieldBuilder()
-          .addBuilder(io.grafeas.v1.UpgradeDistribution.getDefaultInstance());
+      return getDistributionsFieldBuilder().addBuilder(
+          io.grafeas.v1.UpgradeDistribution.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public io.grafeas.v1.UpgradeDistribution.Builder addDistributionsBuilder(int index) {
-      return getDistributionsFieldBuilder()
-          .addBuilder(index, io.grafeas.v1.UpgradeDistribution.getDefaultInstance());
+    public io.grafeas.v1.UpgradeDistribution.Builder addDistributionsBuilder(
+        int index) {
+      return getDistributionsFieldBuilder().addBuilder(
+          index, io.grafeas.v1.UpgradeDistribution.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for each specific operating system.
      * </pre>
      *
      * <code>repeated .grafeas.v1.UpgradeDistribution distributions = 3;</code>
      */
-    public java.util.List<io.grafeas.v1.UpgradeDistribution.Builder> getDistributionsBuilderList() {
+    public java.util.List<io.grafeas.v1.UpgradeDistribution.Builder> 
+         getDistributionsBuilderList() {
       return getDistributionsFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.UpgradeDistribution,
-            io.grafeas.v1.UpgradeDistribution.Builder,
-            io.grafeas.v1.UpgradeDistributionOrBuilder>
+        io.grafeas.v1.UpgradeDistribution, io.grafeas.v1.UpgradeDistribution.Builder, io.grafeas.v1.UpgradeDistributionOrBuilder> 
         getDistributionsFieldBuilder() {
       if (distributionsBuilder_ == null) {
-        distributionsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                io.grafeas.v1.UpgradeDistribution,
-                io.grafeas.v1.UpgradeDistribution.Builder,
-                io.grafeas.v1.UpgradeDistributionOrBuilder>(
+        distributionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.UpgradeDistribution, io.grafeas.v1.UpgradeDistribution.Builder, io.grafeas.v1.UpgradeDistributionOrBuilder>(
                 distributions_,
                 ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
@@ -1388,47 +1293,34 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
 
     private io.grafeas.v1.WindowsUpdate windowsUpdate_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate,
-            io.grafeas.v1.WindowsUpdate.Builder,
-            io.grafeas.v1.WindowsUpdateOrBuilder>
-        windowsUpdateBuilder_;
+        io.grafeas.v1.WindowsUpdate, io.grafeas.v1.WindowsUpdate.Builder, io.grafeas.v1.WindowsUpdateOrBuilder> windowsUpdateBuilder_;
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-     *
      * @return Whether the windowsUpdate field is set.
      */
     public boolean hasWindowsUpdate() {
       return windowsUpdateBuilder_ != null || windowsUpdate_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
-     *
      * @return The windowsUpdate.
      */
     public io.grafeas.v1.WindowsUpdate getWindowsUpdate() {
       if (windowsUpdateBuilder_ == null) {
-        return windowsUpdate_ == null
-            ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
-            : windowsUpdate_;
+        return windowsUpdate_ == null ? io.grafeas.v1.WindowsUpdate.getDefaultInstance() : windowsUpdate_;
       } else {
         return windowsUpdateBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1449,15 +1341,14 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
      */
-    public Builder setWindowsUpdate(io.grafeas.v1.WindowsUpdate.Builder builderForValue) {
+    public Builder setWindowsUpdate(
+        io.grafeas.v1.WindowsUpdate.Builder builderForValue) {
       if (windowsUpdateBuilder_ == null) {
         windowsUpdate_ = builderForValue.build();
         onChanged();
@@ -1468,8 +1359,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1480,9 +1369,7 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       if (windowsUpdateBuilder_ == null) {
         if (windowsUpdate_ != null) {
           windowsUpdate_ =
-              io.grafeas.v1.WindowsUpdate.newBuilder(windowsUpdate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            io.grafeas.v1.WindowsUpdate.newBuilder(windowsUpdate_).mergeFrom(value).buildPartial();
         } else {
           windowsUpdate_ = value;
         }
@@ -1494,8 +1381,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1514,8 +1399,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1523,13 +1406,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Builder getWindowsUpdateBuilder() {
-
+      
       onChanged();
       return getWindowsUpdateFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1540,14 +1421,11 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       if (windowsUpdateBuilder_ != null) {
         return windowsUpdateBuilder_.getMessageOrBuilder();
       } else {
-        return windowsUpdate_ == null
-            ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
-            : windowsUpdate_;
+        return windowsUpdate_ == null ?
+            io.grafeas.v1.WindowsUpdate.getDefaultInstance() : windowsUpdate_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1555,24 +1433,21 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.WindowsUpdate windows_update = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate,
-            io.grafeas.v1.WindowsUpdate.Builder,
-            io.grafeas.v1.WindowsUpdateOrBuilder>
+        io.grafeas.v1.WindowsUpdate, io.grafeas.v1.WindowsUpdate.Builder, io.grafeas.v1.WindowsUpdateOrBuilder> 
         getWindowsUpdateFieldBuilder() {
       if (windowsUpdateBuilder_ == null) {
-        windowsUpdateBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.WindowsUpdate,
-                io.grafeas.v1.WindowsUpdate.Builder,
-                io.grafeas.v1.WindowsUpdateOrBuilder>(
-                getWindowsUpdate(), getParentForChildren(), isClean());
+        windowsUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.WindowsUpdate, io.grafeas.v1.WindowsUpdate.Builder, io.grafeas.v1.WindowsUpdateOrBuilder>(
+                getWindowsUpdate(),
+                getParentForChildren(),
+                isClean());
         windowsUpdate_ = null;
       }
       return windowsUpdateBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1582,12 +1457,12 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.UpgradeNote)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.UpgradeNote)
   private static final io.grafeas.v1.UpgradeNote DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.UpgradeNote();
   }
@@ -1596,27 +1471,27 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpgradeNote> PARSER =
-      new com.google.protobuf.AbstractParser<UpgradeNote>() {
-        @java.lang.Override
-        public UpgradeNote parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<UpgradeNote>
+      PARSER = new com.google.protobuf.AbstractParser<UpgradeNote>() {
+    @java.lang.Override
+    public UpgradeNote parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<UpgradeNote> parser() {
     return PARSER;
@@ -1631,4 +1506,6 @@ public final class UpgradeNote extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.UpgradeNote getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

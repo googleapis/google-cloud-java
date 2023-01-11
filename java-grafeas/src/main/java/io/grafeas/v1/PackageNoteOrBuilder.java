@@ -19,43 +19,31 @@
 
 package io.grafeas.v1;
 
-public interface PackageNoteOrBuilder
-    extends
+public interface PackageNoteOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.PackageNote)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * The name of the package.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   *
-   *
    * <pre>
    * The name of the package.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
-   * </code>
-   *
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
-   *
-   *
    * <pre>
    * Deprecated.
    * The various channels by which a package is distributed.
@@ -63,10 +51,9 @@ public interface PackageNoteOrBuilder
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
-  java.util.List<io.grafeas.v1.Distribution> getDistributionList();
+  java.util.List<io.grafeas.v1.Distribution> 
+      getDistributionList();
   /**
-   *
-   *
    * <pre>
    * Deprecated.
    * The various channels by which a package is distributed.
@@ -76,8 +63,6 @@ public interface PackageNoteOrBuilder
    */
   io.grafeas.v1.Distribution getDistribution(int index);
   /**
-   *
-   *
    * <pre>
    * Deprecated.
    * The various channels by which a package is distributed.
@@ -87,8 +72,6 @@ public interface PackageNoteOrBuilder
    */
   int getDistributionCount();
   /**
-   *
-   *
    * <pre>
    * Deprecated.
    * The various channels by which a package is distributed.
@@ -96,10 +79,9 @@ public interface PackageNoteOrBuilder
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
-  java.util.List<? extends io.grafeas.v1.DistributionOrBuilder> getDistributionOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.DistributionOrBuilder> 
+      getDistributionOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * Deprecated.
    * The various channels by which a package is distributed.
@@ -107,38 +89,32 @@ public interface PackageNoteOrBuilder
    *
    * <code>repeated .grafeas.v1.Distribution distribution = 10;</code>
    */
-  io.grafeas.v1.DistributionOrBuilder getDistributionOrBuilder(int index);
+  io.grafeas.v1.DistributionOrBuilder getDistributionOrBuilder(
+      int index);
 
   /**
-   *
-   *
    * <pre>
    * The type of package; whether native or non native (e.g., ruby gems,
    * node.js packages, etc.).
    * </pre>
    *
    * <code>string package_type = 11;</code>
-   *
    * @return The packageType.
    */
   java.lang.String getPackageType();
   /**
-   *
-   *
    * <pre>
    * The type of package; whether native or non native (e.g., ruby gems,
    * node.js packages, etc.).
    * </pre>
    *
    * <code>string package_type = 11;</code>
-   *
    * @return The bytes for packageType.
    */
-  com.google.protobuf.ByteString getPackageTypeBytes();
+  com.google.protobuf.ByteString
+      getPackageTypeBytes();
 
   /**
-   *
-   *
    * <pre>
    * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
@@ -146,13 +122,10 @@ public interface PackageNoteOrBuilder
    * </pre>
    *
    * <code>string cpe_uri = 12;</code>
-   *
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
   /**
-   *
-   *
    * <pre>
    * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
@@ -160,65 +133,51 @@ public interface PackageNoteOrBuilder
    * </pre>
    *
    * <code>string cpe_uri = 12;</code>
-   *
    * @return The bytes for cpeUri.
    */
-  com.google.protobuf.ByteString getCpeUriBytes();
+  com.google.protobuf.ByteString
+      getCpeUriBytes();
 
   /**
-   *
-   *
    * <pre>
    * The CPU architecture for which packages in this distribution channel were
    * built. Architecture will be blank for language packages.
    * </pre>
    *
    * <code>.grafeas.v1.Architecture architecture = 13;</code>
-   *
    * @return The enum numeric value on the wire for architecture.
    */
   int getArchitectureValue();
   /**
-   *
-   *
    * <pre>
    * The CPU architecture for which packages in this distribution channel were
    * built. Architecture will be blank for language packages.
    * </pre>
    *
    * <code>.grafeas.v1.Architecture architecture = 13;</code>
-   *
    * @return The architecture.
    */
   io.grafeas.v1.Architecture getArchitecture();
 
   /**
-   *
-   *
    * <pre>
    * The version of the package.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 14;</code>
-   *
    * @return Whether the version field is set.
    */
   boolean hasVersion();
   /**
-   *
-   *
    * <pre>
    * The version of the package.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 14;</code>
-   *
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
   /**
-   *
-   *
    * <pre>
    * The version of the package.
    * </pre>
@@ -228,107 +187,84 @@ public interface PackageNoteOrBuilder
   io.grafeas.v1.VersionOrBuilder getVersionOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * A freeform text denoting the maintainer of this package.
    * </pre>
    *
    * <code>string maintainer = 15;</code>
-   *
    * @return The maintainer.
    */
   java.lang.String getMaintainer();
   /**
-   *
-   *
    * <pre>
    * A freeform text denoting the maintainer of this package.
    * </pre>
    *
    * <code>string maintainer = 15;</code>
-   *
    * @return The bytes for maintainer.
    */
-  com.google.protobuf.ByteString getMaintainerBytes();
+  com.google.protobuf.ByteString
+      getMaintainerBytes();
 
   /**
-   *
-   *
    * <pre>
    * The homepage for this package.
    * </pre>
    *
    * <code>string url = 16;</code>
-   *
    * @return The url.
    */
   java.lang.String getUrl();
   /**
-   *
-   *
    * <pre>
    * The homepage for this package.
    * </pre>
    *
    * <code>string url = 16;</code>
-   *
    * @return The bytes for url.
    */
-  com.google.protobuf.ByteString getUrlBytes();
+  com.google.protobuf.ByteString
+      getUrlBytes();
 
   /**
-   *
-   *
    * <pre>
    * The description of this package.
    * </pre>
    *
    * <code>string description = 17;</code>
-   *
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   *
-   *
    * <pre>
    * The description of this package.
    * </pre>
    *
    * <code>string description = 17;</code>
-   *
    * @return The bytes for description.
    */
-  com.google.protobuf.ByteString getDescriptionBytes();
+  com.google.protobuf.ByteString
+      getDescriptionBytes();
 
   /**
-   *
-   *
    * <pre>
    * Licenses that have been declared by the authors of the package.
    * </pre>
    *
    * <code>.grafeas.v1.License license = 18;</code>
-   *
    * @return Whether the license field is set.
    */
   boolean hasLicense();
   /**
-   *
-   *
    * <pre>
    * Licenses that have been declared by the authors of the package.
    * </pre>
    *
    * <code>.grafeas.v1.License license = 18;</code>
-   *
    * @return The license.
    */
   io.grafeas.v1.License getLicense();
   /**
-   *
-   *
    * <pre>
    * Licenses that have been declared by the authors of the package.
    * </pre>
@@ -338,8 +274,6 @@ public interface PackageNoteOrBuilder
   io.grafeas.v1.LicenseOrBuilder getLicenseOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Hash value, typically a file digest, that allows unique
    * identification a specific package.
@@ -347,10 +281,9 @@ public interface PackageNoteOrBuilder
    *
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
-  java.util.List<io.grafeas.v1.Digest> getDigestList();
+  java.util.List<io.grafeas.v1.Digest> 
+      getDigestList();
   /**
-   *
-   *
    * <pre>
    * Hash value, typically a file digest, that allows unique
    * identification a specific package.
@@ -360,8 +293,6 @@ public interface PackageNoteOrBuilder
    */
   io.grafeas.v1.Digest getDigest(int index);
   /**
-   *
-   *
    * <pre>
    * Hash value, typically a file digest, that allows unique
    * identification a specific package.
@@ -371,8 +302,6 @@ public interface PackageNoteOrBuilder
    */
   int getDigestCount();
   /**
-   *
-   *
    * <pre>
    * Hash value, typically a file digest, that allows unique
    * identification a specific package.
@@ -380,10 +309,9 @@ public interface PackageNoteOrBuilder
    *
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
-  java.util.List<? extends io.grafeas.v1.DigestOrBuilder> getDigestOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.DigestOrBuilder> 
+      getDigestOrBuilderList();
   /**
-   *
-   *
    * <pre>
    * Hash value, typically a file digest, that allows unique
    * identification a specific package.
@@ -391,5 +319,6 @@ public interface PackageNoteOrBuilder
    *
    * <code>repeated .grafeas.v1.Digest digest = 19;</code>
    */
-  io.grafeas.v1.DigestOrBuilder getDigestOrBuilder(int index);
+  io.grafeas.v1.DigestOrBuilder getDigestOrBuilder(
+      int index);
 }

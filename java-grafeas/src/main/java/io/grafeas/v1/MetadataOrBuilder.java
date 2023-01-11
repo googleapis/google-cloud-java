@@ -19,14 +19,11 @@
 
 package io.grafeas.v1;
 
-public interface MetadataOrBuilder
-    extends
+public interface MetadataOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Metadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * Identifies the particular build invocation, which can be useful for finding
    * associated logs or other ad-hoc analysis. The value SHOULD be globally
@@ -34,13 +31,10 @@ public interface MetadataOrBuilder
    * </pre>
    *
    * <code>string build_invocation_id = 1;</code>
-   *
    * @return The buildInvocationId.
    */
   java.lang.String getBuildInvocationId();
   /**
-   *
-   *
    * <pre>
    * Identifies the particular build invocation, which can be useful for finding
    * associated logs or other ad-hoc analysis. The value SHOULD be globally
@@ -48,38 +42,30 @@ public interface MetadataOrBuilder
    * </pre>
    *
    * <code>string build_invocation_id = 1;</code>
-   *
    * @return The bytes for buildInvocationId.
    */
-  com.google.protobuf.ByteString getBuildInvocationIdBytes();
+  com.google.protobuf.ByteString
+      getBuildInvocationIdBytes();
 
   /**
-   *
-   *
    * <pre>
    * The timestamp of when the build started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
-   *
    * @return Whether the buildStartedOn field is set.
    */
   boolean hasBuildStartedOn();
   /**
-   *
-   *
    * <pre>
    * The timestamp of when the build started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
-   *
    * @return The buildStartedOn.
    */
   com.google.protobuf.Timestamp getBuildStartedOn();
   /**
-   *
-   *
    * <pre>
    * The timestamp of when the build started.
    * </pre>
@@ -89,32 +75,24 @@ public interface MetadataOrBuilder
   com.google.protobuf.TimestampOrBuilder getBuildStartedOnOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * The timestamp of when the build completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
-   *
    * @return Whether the buildFinishedOn field is set.
    */
   boolean hasBuildFinishedOn();
   /**
-   *
-   *
    * <pre>
    * The timestamp of when the build completed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
-   *
    * @return The buildFinishedOn.
    */
   com.google.protobuf.Timestamp getBuildFinishedOn();
   /**
-   *
-   *
    * <pre>
    * The timestamp of when the build completed.
    * </pre>
@@ -124,34 +102,26 @@ public interface MetadataOrBuilder
   com.google.protobuf.TimestampOrBuilder getBuildFinishedOnOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * Indicates that the builder claims certain fields in this message to be
    * complete.
    * </pre>
    *
    * <code>.grafeas.v1.Completeness completeness = 4;</code>
-   *
    * @return Whether the completeness field is set.
    */
   boolean hasCompleteness();
   /**
-   *
-   *
    * <pre>
    * Indicates that the builder claims certain fields in this message to be
    * complete.
    * </pre>
    *
    * <code>.grafeas.v1.Completeness completeness = 4;</code>
-   *
    * @return The completeness.
    */
   io.grafeas.v1.Completeness getCompleteness();
   /**
-   *
-   *
    * <pre>
    * Indicates that the builder claims certain fields in this message to be
    * complete.
@@ -162,15 +132,12 @@ public interface MetadataOrBuilder
   io.grafeas.v1.CompletenessOrBuilder getCompletenessOrBuilder();
 
   /**
-   *
-   *
    * <pre>
    * If true, the builder claims that running the recipe on materials will
    * produce bit-for-bit identical output.
    * </pre>
    *
    * <code>bool reproducible = 5;</code>
-   *
    * @return The reproducible.
    */
   boolean getReproducible();

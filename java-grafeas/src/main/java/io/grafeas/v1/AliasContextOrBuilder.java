@@ -19,58 +19,46 @@
 
 package io.grafeas.v1;
 
-public interface AliasContextOrBuilder
-    extends
+public interface AliasContextOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.AliasContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * The alias kind.
    * </pre>
    *
    * <code>.grafeas.v1.AliasContext.Kind kind = 1;</code>
-   *
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
-   *
-   *
    * <pre>
    * The alias kind.
    * </pre>
    *
    * <code>.grafeas.v1.AliasContext.Kind kind = 1;</code>
-   *
    * @return The kind.
    */
   io.grafeas.v1.AliasContext.Kind getKind();
 
   /**
-   *
-   *
    * <pre>
    * The alias name.
    * </pre>
    *
    * <code>string name = 2;</code>
-   *
    * @return The name.
    */
   java.lang.String getName();
   /**
-   *
-   *
    * <pre>
    * The alias name.
    * </pre>
    *
    * <code>string name = 2;</code>
-   *
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

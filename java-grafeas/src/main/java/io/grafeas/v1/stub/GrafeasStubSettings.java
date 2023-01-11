@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * grafeasSettingsBuilder
  *     .getOccurrenceSettings()
  *     .setRetrySettings(
- *         grafeasSettingsBuilder.getOccurrenceSettings().getRetrySettings().toBuilder()
+ *         grafeasSettingsBuilder
+ *             .getOccurrenceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GrafeasStubSettings grafeasSettings = grafeasSettingsBuilder.build();

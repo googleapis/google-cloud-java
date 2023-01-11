@@ -19,40 +19,31 @@
 
 package io.grafeas.v1;
 
-public interface DSSEAttestationOccurrenceOrBuilder
-    extends
+public interface DSSEAttestationOccurrenceOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.DSSEAttestationOccurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * If doing something security critical, make sure to verify the signatures in
    * this metadata.
    * </pre>
    *
    * <code>.grafeas.v1.Envelope envelope = 1;</code>
-   *
    * @return Whether the envelope field is set.
    */
   boolean hasEnvelope();
   /**
-   *
-   *
    * <pre>
    * If doing something security critical, make sure to verify the signatures in
    * this metadata.
    * </pre>
    *
    * <code>.grafeas.v1.Envelope envelope = 1;</code>
-   *
    * @return The envelope.
    */
   io.grafeas.v1.Envelope getEnvelope();
   /**
-   *
-   *
    * <pre>
    * If doing something security critical, make sure to verify the signatures in
    * this metadata.
@@ -64,17 +55,17 @@ public interface DSSEAttestationOccurrenceOrBuilder
 
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-   *
    * @return Whether the statement field is set.
    */
   boolean hasStatement();
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-   *
    * @return The statement.
    */
   io.grafeas.v1.InTotoStatement getStatement();
-  /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
+  /**
+   * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
+   */
   io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder();
 
   public io.grafeas.v1.DSSEAttestationOccurrence.DecodedPayloadCase getDecodedPayloadCase();

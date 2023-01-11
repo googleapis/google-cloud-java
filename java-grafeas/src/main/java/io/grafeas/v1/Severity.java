@@ -20,18 +20,15 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Note provider assigned severity/impact ranking.
  * </pre>
  *
  * Protobuf enum {@code grafeas.v1.Severity}
  */
-public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
+public enum Severity
+    implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   *
-   *
    * <pre>
    * Unknown.
    * </pre>
@@ -40,8 +37,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   SEVERITY_UNSPECIFIED(0),
   /**
-   *
-   *
    * <pre>
    * Minimal severity.
    * </pre>
@@ -50,8 +45,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   MINIMAL(1),
   /**
-   *
-   *
    * <pre>
    * Low severity.
    * </pre>
@@ -60,8 +53,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   LOW(2),
   /**
-   *
-   *
    * <pre>
    * Medium severity.
    * </pre>
@@ -70,8 +61,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   MEDIUM(3),
   /**
-   *
-   *
    * <pre>
    * High severity.
    * </pre>
@@ -80,8 +69,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   HIGH(4),
   /**
-   *
-   *
    * <pre>
    * Critical severity.
    * </pre>
@@ -93,8 +80,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
   ;
 
   /**
-   *
-   *
    * <pre>
    * Unknown.
    * </pre>
@@ -103,8 +88,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
   /**
-   *
-   *
    * <pre>
    * Minimal severity.
    * </pre>
@@ -113,8 +96,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int MINIMAL_VALUE = 1;
   /**
-   *
-   *
    * <pre>
    * Low severity.
    * </pre>
@@ -123,8 +104,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int LOW_VALUE = 2;
   /**
-   *
-   *
    * <pre>
    * Medium severity.
    * </pre>
@@ -133,8 +112,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int MEDIUM_VALUE = 3;
   /**
-   *
-   *
    * <pre>
    * High severity.
    * </pre>
@@ -143,8 +120,6 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int HIGH_VALUE = 4;
   /**
-   *
-   *
    * <pre>
    * Critical severity.
    * </pre>
@@ -152,6 +127,7 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CRITICAL = 5;</code>
    */
   public static final int CRITICAL_VALUE = 5;
+
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -177,55 +153,52 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static Severity forNumber(int value) {
     switch (value) {
-      case 0:
-        return SEVERITY_UNSPECIFIED;
-      case 1:
-        return MINIMAL;
-      case 2:
-        return LOW;
-      case 3:
-        return MEDIUM;
-      case 4:
-        return HIGH;
-      case 5:
-        return CRITICAL;
-      default:
-        return null;
+      case 0: return SEVERITY_UNSPECIFIED;
+      case 1: return MINIMAL;
+      case 2: return LOW;
+      case 3: return MEDIUM;
+      case 4: return HIGH;
+      case 5: return CRITICAL;
+      default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<Severity> internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<Severity>
+      internalGetValueMap() {
     return internalValueMap;
   }
+  private static final com.google.protobuf.Internal.EnumLiteMap<
+      Severity> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Severity>() {
+          public Severity findValueByNumber(int number) {
+            return Severity.forNumber(number);
+          }
+        };
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<Severity> internalValueMap =
-      new com.google.protobuf.Internal.EnumLiteMap<Severity>() {
-        public Severity findValueByNumber(int number) {
-          return Severity.forNumber(number);
-        }
-      };
-
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor
+      getValueDescriptor() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalStateException(
           "Can't get the descriptor of an unrecognized enum value.");
     }
     return getDescriptor().getValues().get(ordinal());
   }
-
-  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+  public final com.google.protobuf.Descriptors.EnumDescriptor
+      getDescriptorForType() {
     return getDescriptor();
   }
-
-  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.EnumDescriptor
+      getDescriptor() {
     return io.grafeas.v1.SeverityOuterClass.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Severity[] VALUES = values();
 
-  public static Severity valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static Severity valueOf(
+      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException(
+        "EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -241,3 +214,4 @@ public enum Severity implements com.google.protobuf.ProtocolMessageEnum {
 
   // @@protoc_insertion_point(enum_scope:grafeas.v1.Severity)
 }
+

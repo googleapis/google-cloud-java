@@ -19,27 +19,23 @@
 
 package io.grafeas.v1;
 
-public interface SubjectOrBuilder
-    extends
+public interface SubjectOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Subject)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <code>string name = 1;</code>
-   *
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <code>string name = 1;</code>
-   *
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString
+      getNameBytes();
 
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -51,8 +47,6 @@ public interface SubjectOrBuilder
    */
   int getDigestCount();
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -62,13 +56,15 @@ public interface SubjectOrBuilder
    *
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
-  boolean containsDigest(java.lang.String key);
-  /** Use {@link #getDigestMap()} instead. */
+  boolean containsDigest(
+      java.lang.String key);
+  /**
+   * Use {@link #getDigestMap()} instead.
+   */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getDigest();
+  java.util.Map<java.lang.String, java.lang.String>
+  getDigest();
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -78,10 +74,9 @@ public interface SubjectOrBuilder
    *
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String> getDigestMap();
+  java.util.Map<java.lang.String, java.lang.String>
+  getDigestMap();
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -93,13 +88,11 @@ public interface SubjectOrBuilder
    */
 
   /* nullable */
-  java.lang.String getDigestOrDefault(
+java.lang.String getDigestOrDefault(
       java.lang.String key,
       /* nullable */
-      java.lang.String defaultValue);
+java.lang.String defaultValue);
   /**
-   *
-   *
    * <pre>
    * `"&lt;ALGORITHM&gt;": "&lt;HEX_VALUE&gt;"`
    * Algorithms can be e.g. sha256, sha512
@@ -109,5 +102,7 @@ public interface SubjectOrBuilder
    *
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
-  java.lang.String getDigestOrThrow(java.lang.String key);
+
+  java.lang.String getDigestOrThrow(
+      java.lang.String key);
 }

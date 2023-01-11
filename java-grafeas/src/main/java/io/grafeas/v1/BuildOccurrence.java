@@ -20,40 +20,39 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Details of a build occurrence.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.BuildOccurrence}
  */
-public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class BuildOccurrence extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.BuildOccurrence)
     BuildOccurrenceOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use BuildOccurrence.newBuilder() to construct.
   private BuildOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private BuildOccurrence() {
     provenanceBytes_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new BuildOccurrence();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Build.internal_static_grafeas_v1_BuildOccurrence_descriptor;
   }
 
@@ -68,14 +67,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   public static final int PROVENANCE_FIELD_NUMBER = 1;
   private io.grafeas.v1.BuildProvenance provenance_;
   /**
-   *
-   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
-   *
    * @return Whether the provenance field is set.
    */
   @java.lang.Override
@@ -83,14 +79,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return provenance_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
-   *
    * @return The provenance.
    */
   @java.lang.Override
@@ -98,8 +91,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return provenance_ == null ? io.grafeas.v1.BuildProvenance.getDefaultInstance() : provenance_;
   }
   /**
-   *
-   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
@@ -114,8 +105,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   public static final int PROVENANCE_BYTES_FIELD_NUMBER = 2;
   private volatile java.lang.Object provenanceBytes_;
   /**
-   *
-   *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
    * build signature in the corresponding build note. After verifying the
@@ -130,7 +119,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
-   *
    * @return The provenanceBytes.
    */
   @java.lang.Override
@@ -139,15 +127,14 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       provenanceBytes_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
    * build signature in the corresponding build note. After verifying the
@@ -162,15 +149,16 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
-   *
    * @return The bytes for provenanceBytes.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getProvenanceBytesBytes() {
+  public com.google.protobuf.ByteString
+      getProvenanceBytesBytes() {
     java.lang.Object ref = provenanceBytes_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       provenanceBytes_ = b;
       return b;
     } else {
@@ -181,15 +169,12 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   public static final int INTOTO_PROVENANCE_FIELD_NUMBER = 3;
   private io.grafeas.v1.InTotoProvenance intotoProvenance_;
   /**
-   *
-   *
    * <pre>
    * Deprecated. See InTotoStatement for the replacement.
    * In-toto Provenance representation as defined in spec.
    * </pre>
    *
    * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
-   *
    * @return Whether the intotoProvenance field is set.
    */
   @java.lang.Override
@@ -197,26 +182,19 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return intotoProvenance_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Deprecated. See InTotoStatement for the replacement.
    * In-toto Provenance representation as defined in spec.
    * </pre>
    *
    * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
-   *
    * @return The intotoProvenance.
    */
   @java.lang.Override
   public io.grafeas.v1.InTotoProvenance getIntotoProvenance() {
-    return intotoProvenance_ == null
-        ? io.grafeas.v1.InTotoProvenance.getDefaultInstance()
-        : intotoProvenance_;
+    return intotoProvenance_ == null ? io.grafeas.v1.InTotoProvenance.getDefaultInstance() : intotoProvenance_;
   }
   /**
-   *
-   *
    * <pre>
    * Deprecated. See InTotoStatement for the replacement.
    * In-toto Provenance representation as defined in spec.
@@ -232,8 +210,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   public static final int INTOTO_STATEMENT_FIELD_NUMBER = 4;
   private io.grafeas.v1.InTotoStatement intotoStatement_;
   /**
-   *
-   *
    * <pre>
    * In-toto Statement representation as defined in spec.
    * The intoto_statement can contain any type of provenance. The serialized
@@ -242,7 +218,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
-   *
    * @return Whether the intotoStatement field is set.
    */
   @java.lang.Override
@@ -250,8 +225,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return intotoStatement_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * In-toto Statement representation as defined in spec.
    * The intoto_statement can contain any type of provenance. The serialized
@@ -260,18 +233,13 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
-   *
    * @return The intotoStatement.
    */
   @java.lang.Override
   public io.grafeas.v1.InTotoStatement getIntotoStatement() {
-    return intotoStatement_ == null
-        ? io.grafeas.v1.InTotoStatement.getDefaultInstance()
-        : intotoStatement_;
+    return intotoStatement_ == null ? io.grafeas.v1.InTotoStatement.getDefaultInstance() : intotoStatement_;
   }
   /**
-   *
-   *
    * <pre>
    * In-toto Statement representation as defined in spec.
    * The intoto_statement can contain any type of provenance. The serialized
@@ -287,7 +255,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -299,7 +266,8 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (provenance_ != null) {
       output.writeMessage(1, getProvenance());
     }
@@ -322,16 +290,19 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
 
     size = 0;
     if (provenance_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProvenance());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getProvenance());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(provenanceBytes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, provenanceBytes_);
     }
     if (intotoProvenance_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getIntotoProvenance());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getIntotoProvenance());
     }
     if (intotoStatement_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getIntotoStatement());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getIntotoStatement());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,7 +312,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.BuildOccurrence)) {
       return super.equals(obj);
@@ -350,16 +321,20 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
 
     if (hasProvenance() != other.hasProvenance()) return false;
     if (hasProvenance()) {
-      if (!getProvenance().equals(other.getProvenance())) return false;
+      if (!getProvenance()
+          .equals(other.getProvenance())) return false;
     }
-    if (!getProvenanceBytes().equals(other.getProvenanceBytes())) return false;
+    if (!getProvenanceBytes()
+        .equals(other.getProvenanceBytes())) return false;
     if (hasIntotoProvenance() != other.hasIntotoProvenance()) return false;
     if (hasIntotoProvenance()) {
-      if (!getIntotoProvenance().equals(other.getIntotoProvenance())) return false;
+      if (!getIntotoProvenance()
+          .equals(other.getIntotoProvenance())) return false;
     }
     if (hasIntotoStatement() != other.hasIntotoStatement()) return false;
     if (hasIntotoStatement()) {
-      if (!getIntotoStatement().equals(other.getIntotoStatement())) return false;
+      if (!getIntotoStatement()
+          .equals(other.getIntotoStatement())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -391,114 +366,109 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return hash;
   }
 
-  public static io.grafeas.v1.BuildOccurrence parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.BuildOccurrence parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.BuildOccurrence parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.BuildOccurrence parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.BuildOccurrence parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.BuildOccurrence parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.BuildOccurrence parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.BuildOccurrence prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Details of a build occurrence.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.BuildOccurrence}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.BuildOccurrence)
       io.grafeas.v1.BuildOccurrenceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Build.internal_static_grafeas_v1_BuildOccurrence_descriptor;
     }
 
@@ -511,12 +481,15 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     }
 
     // Construct using io.grafeas.v1.BuildOccurrence.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -544,7 +517,8 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Build.internal_static_grafeas_v1_BuildOccurrence_descriptor;
     }
 
@@ -589,39 +563,38 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.BuildOccurrence) {
-        return mergeFrom((io.grafeas.v1.BuildOccurrence) other);
+        return mergeFrom((io.grafeas.v1.BuildOccurrence)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -669,38 +642,38 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                input.readMessage(getProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+            case 10: {
+              input.readMessage(
+                  getProvenanceFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 10
-            case 18:
-              {
-                provenanceBytes_ = input.readStringRequireUtf8();
+              break;
+            } // case 10
+            case 18: {
+              provenanceBytes_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            case 26:
-              {
-                input.readMessage(
-                    getIntotoProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getIntotoProvenanceFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 26
-            case 34:
-              {
-                input.readMessage(getIntotoStatementFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 26
+            case 34: {
+              input.readMessage(
+                  getIntotoStatementFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 34
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 34
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -713,47 +686,34 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
 
     private io.grafeas.v1.BuildProvenance provenance_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.BuildProvenance,
-            io.grafeas.v1.BuildProvenance.Builder,
-            io.grafeas.v1.BuildProvenanceOrBuilder>
-        provenanceBuilder_;
+        io.grafeas.v1.BuildProvenance, io.grafeas.v1.BuildProvenance.Builder, io.grafeas.v1.BuildProvenanceOrBuilder> provenanceBuilder_;
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
-     *
      * @return Whether the provenance field is set.
      */
     public boolean hasProvenance() {
       return provenanceBuilder_ != null || provenance_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
-     *
      * @return The provenance.
      */
     public io.grafeas.v1.BuildProvenance getProvenance() {
       if (provenanceBuilder_ == null) {
-        return provenance_ == null
-            ? io.grafeas.v1.BuildProvenance.getDefaultInstance()
-            : provenance_;
+        return provenance_ == null ? io.grafeas.v1.BuildProvenance.getDefaultInstance() : provenance_;
       } else {
         return provenanceBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
@@ -774,15 +734,14 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
      */
-    public Builder setProvenance(io.grafeas.v1.BuildProvenance.Builder builderForValue) {
+    public Builder setProvenance(
+        io.grafeas.v1.BuildProvenance.Builder builderForValue) {
       if (provenanceBuilder_ == null) {
         provenance_ = builderForValue.build();
         onChanged();
@@ -793,8 +752,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
@@ -805,7 +762,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       if (provenanceBuilder_ == null) {
         if (provenance_ != null) {
           provenance_ =
-              io.grafeas.v1.BuildProvenance.newBuilder(provenance_).mergeFrom(value).buildPartial();
+            io.grafeas.v1.BuildProvenance.newBuilder(provenance_).mergeFrom(value).buildPartial();
         } else {
           provenance_ = value;
         }
@@ -817,8 +774,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
@@ -837,8 +792,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
@@ -846,13 +799,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
      */
     public io.grafeas.v1.BuildProvenance.Builder getProvenanceBuilder() {
-
+      
       onChanged();
       return getProvenanceFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
@@ -863,14 +814,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       if (provenanceBuilder_ != null) {
         return provenanceBuilder_.getMessageOrBuilder();
       } else {
-        return provenance_ == null
-            ? io.grafeas.v1.BuildProvenance.getDefaultInstance()
-            : provenance_;
+        return provenance_ == null ?
+            io.grafeas.v1.BuildProvenance.getDefaultInstance() : provenance_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * The actual provenance for the build.
      * </pre>
@@ -878,17 +826,14 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.BuildProvenance,
-            io.grafeas.v1.BuildProvenance.Builder,
-            io.grafeas.v1.BuildProvenanceOrBuilder>
+        io.grafeas.v1.BuildProvenance, io.grafeas.v1.BuildProvenance.Builder, io.grafeas.v1.BuildProvenanceOrBuilder> 
         getProvenanceFieldBuilder() {
       if (provenanceBuilder_ == null) {
-        provenanceBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.BuildProvenance,
-                io.grafeas.v1.BuildProvenance.Builder,
-                io.grafeas.v1.BuildProvenanceOrBuilder>(
-                getProvenance(), getParentForChildren(), isClean());
+        provenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.BuildProvenance, io.grafeas.v1.BuildProvenance.Builder, io.grafeas.v1.BuildProvenanceOrBuilder>(
+                getProvenance(),
+                getParentForChildren(),
+                isClean());
         provenance_ = null;
       }
       return provenanceBuilder_;
@@ -896,8 +841,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
 
     private java.lang.Object provenanceBytes_ = "";
     /**
-     *
-     *
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
      * build signature in the corresponding build note. After verifying the
@@ -912,13 +855,13 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
-     *
      * @return The provenanceBytes.
      */
     public java.lang.String getProvenanceBytes() {
       java.lang.Object ref = provenanceBytes_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         provenanceBytes_ = s;
         return s;
@@ -927,8 +870,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     *
-     *
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
      * build signature in the corresponding build note. After verifying the
@@ -943,14 +884,15 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
-     *
      * @return The bytes for provenanceBytes.
      */
-    public com.google.protobuf.ByteString getProvenanceBytesBytes() {
+    public com.google.protobuf.ByteString
+        getProvenanceBytesBytes() {
       java.lang.Object ref = provenanceBytes_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         provenanceBytes_ = b;
         return b;
       } else {
@@ -958,8 +900,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     *
-     *
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
      * build signature in the corresponding build note. After verifying the
@@ -974,22 +914,20 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
-     *
      * @param value The provenanceBytes to set.
      * @return This builder for chaining.
      */
-    public Builder setProvenanceBytes(java.lang.String value) {
+    public Builder setProvenanceBytes(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       provenanceBytes_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
      * build signature in the corresponding build note. After verifying the
@@ -1004,18 +942,15 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearProvenanceBytes() {
-
+      
       provenanceBytes_ = getDefaultInstance().getProvenanceBytes();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Serialized JSON representation of the provenance, used in generating the
      * build signature in the corresponding build note. After verifying the
@@ -1030,16 +965,16 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>string provenance_bytes = 2;</code>
-     *
      * @param value The bytes for provenanceBytes to set.
      * @return This builder for chaining.
      */
-    public Builder setProvenanceBytesBytes(com.google.protobuf.ByteString value) {
+    public Builder setProvenanceBytesBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       provenanceBytes_ = value;
       onChanged();
       return this;
@@ -1047,49 +982,36 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
 
     private io.grafeas.v1.InTotoProvenance intotoProvenance_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.InTotoProvenance,
-            io.grafeas.v1.InTotoProvenance.Builder,
-            io.grafeas.v1.InTotoProvenanceOrBuilder>
-        intotoProvenanceBuilder_;
+        io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder> intotoProvenanceBuilder_;
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
      * </pre>
      *
      * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
-     *
      * @return Whether the intotoProvenance field is set.
      */
     public boolean hasIntotoProvenance() {
       return intotoProvenanceBuilder_ != null || intotoProvenance_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
      * </pre>
      *
      * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
-     *
      * @return The intotoProvenance.
      */
     public io.grafeas.v1.InTotoProvenance getIntotoProvenance() {
       if (intotoProvenanceBuilder_ == null) {
-        return intotoProvenance_ == null
-            ? io.grafeas.v1.InTotoProvenance.getDefaultInstance()
-            : intotoProvenance_;
+        return intotoProvenance_ == null ? io.grafeas.v1.InTotoProvenance.getDefaultInstance() : intotoProvenance_;
       } else {
         return intotoProvenanceBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1111,8 +1033,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1120,7 +1040,8 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
      */
-    public Builder setIntotoProvenance(io.grafeas.v1.InTotoProvenance.Builder builderForValue) {
+    public Builder setIntotoProvenance(
+        io.grafeas.v1.InTotoProvenance.Builder builderForValue) {
       if (intotoProvenanceBuilder_ == null) {
         intotoProvenance_ = builderForValue.build();
         onChanged();
@@ -1131,8 +1052,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1144,9 +1063,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       if (intotoProvenanceBuilder_ == null) {
         if (intotoProvenance_ != null) {
           intotoProvenance_ =
-              io.grafeas.v1.InTotoProvenance.newBuilder(intotoProvenance_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            io.grafeas.v1.InTotoProvenance.newBuilder(intotoProvenance_).mergeFrom(value).buildPartial();
         } else {
           intotoProvenance_ = value;
         }
@@ -1158,8 +1075,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1179,8 +1094,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1189,13 +1102,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
      */
     public io.grafeas.v1.InTotoProvenance.Builder getIntotoProvenanceBuilder() {
-
+      
       onChanged();
       return getIntotoProvenanceFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1207,14 +1118,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       if (intotoProvenanceBuilder_ != null) {
         return intotoProvenanceBuilder_.getMessageOrBuilder();
       } else {
-        return intotoProvenance_ == null
-            ? io.grafeas.v1.InTotoProvenance.getDefaultInstance()
-            : intotoProvenance_;
+        return intotoProvenance_ == null ?
+            io.grafeas.v1.InTotoProvenance.getDefaultInstance() : intotoProvenance_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Deprecated. See InTotoStatement for the replacement.
      * In-toto Provenance representation as defined in spec.
@@ -1223,17 +1131,14 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.InTotoProvenance,
-            io.grafeas.v1.InTotoProvenance.Builder,
-            io.grafeas.v1.InTotoProvenanceOrBuilder>
+        io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder> 
         getIntotoProvenanceFieldBuilder() {
       if (intotoProvenanceBuilder_ == null) {
-        intotoProvenanceBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.InTotoProvenance,
-                io.grafeas.v1.InTotoProvenance.Builder,
-                io.grafeas.v1.InTotoProvenanceOrBuilder>(
-                getIntotoProvenance(), getParentForChildren(), isClean());
+        intotoProvenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder>(
+                getIntotoProvenance(),
+                getParentForChildren(),
+                isClean());
         intotoProvenance_ = null;
       }
       return intotoProvenanceBuilder_;
@@ -1241,13 +1146,8 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
 
     private io.grafeas.v1.InTotoStatement intotoStatement_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.InTotoStatement,
-            io.grafeas.v1.InTotoStatement.Builder,
-            io.grafeas.v1.InTotoStatementOrBuilder>
-        intotoStatementBuilder_;
+        io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder> intotoStatementBuilder_;
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1256,15 +1156,12 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
-     *
      * @return Whether the intotoStatement field is set.
      */
     public boolean hasIntotoStatement() {
       return intotoStatementBuilder_ != null || intotoStatement_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1273,21 +1170,16 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
-     *
      * @return The intotoStatement.
      */
     public io.grafeas.v1.InTotoStatement getIntotoStatement() {
       if (intotoStatementBuilder_ == null) {
-        return intotoStatement_ == null
-            ? io.grafeas.v1.InTotoStatement.getDefaultInstance()
-            : intotoStatement_;
+        return intotoStatement_ == null ? io.grafeas.v1.InTotoStatement.getDefaultInstance() : intotoStatement_;
       } else {
         return intotoStatementBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1311,8 +1203,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1322,7 +1212,8 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
      */
-    public Builder setIntotoStatement(io.grafeas.v1.InTotoStatement.Builder builderForValue) {
+    public Builder setIntotoStatement(
+        io.grafeas.v1.InTotoStatement.Builder builderForValue) {
       if (intotoStatementBuilder_ == null) {
         intotoStatement_ = builderForValue.build();
         onChanged();
@@ -1333,8 +1224,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1348,9 +1237,7 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       if (intotoStatementBuilder_ == null) {
         if (intotoStatement_ != null) {
           intotoStatement_ =
-              io.grafeas.v1.InTotoStatement.newBuilder(intotoStatement_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            io.grafeas.v1.InTotoStatement.newBuilder(intotoStatement_).mergeFrom(value).buildPartial();
         } else {
           intotoStatement_ = value;
         }
@@ -1362,8 +1249,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1385,8 +1270,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1397,13 +1280,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
      */
     public io.grafeas.v1.InTotoStatement.Builder getIntotoStatementBuilder() {
-
+      
       onChanged();
       return getIntotoStatementFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1417,14 +1298,11 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       if (intotoStatementBuilder_ != null) {
         return intotoStatementBuilder_.getMessageOrBuilder();
       } else {
-        return intotoStatement_ == null
-            ? io.grafeas.v1.InTotoStatement.getDefaultInstance()
-            : intotoStatement_;
+        return intotoStatement_ == null ?
+            io.grafeas.v1.InTotoStatement.getDefaultInstance() : intotoStatement_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * In-toto Statement representation as defined in spec.
      * The intoto_statement can contain any type of provenance. The serialized
@@ -1435,24 +1313,21 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.InTotoStatement,
-            io.grafeas.v1.InTotoStatement.Builder,
-            io.grafeas.v1.InTotoStatementOrBuilder>
+        io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder> 
         getIntotoStatementFieldBuilder() {
       if (intotoStatementBuilder_ == null) {
-        intotoStatementBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.InTotoStatement,
-                io.grafeas.v1.InTotoStatement.Builder,
-                io.grafeas.v1.InTotoStatementOrBuilder>(
-                getIntotoStatement(), getParentForChildren(), isClean());
+        intotoStatementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder>(
+                getIntotoStatement(),
+                getParentForChildren(),
+                isClean());
         intotoStatement_ = null;
       }
       return intotoStatementBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1462,12 +1337,12 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.BuildOccurrence)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.BuildOccurrence)
   private static final io.grafeas.v1.BuildOccurrence DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.BuildOccurrence();
   }
@@ -1476,27 +1351,27 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BuildOccurrence> PARSER =
-      new com.google.protobuf.AbstractParser<BuildOccurrence>() {
-        @java.lang.Override
-        public BuildOccurrence parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<BuildOccurrence>
+      PARSER = new com.google.protobuf.AbstractParser<BuildOccurrence>() {
+    @java.lang.Override
+    public BuildOccurrence parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<BuildOccurrence> parser() {
     return PARSER;
@@ -1511,4 +1386,6 @@ public final class BuildOccurrence extends com.google.protobuf.GeneratedMessageV
   public io.grafeas.v1.BuildOccurrence getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

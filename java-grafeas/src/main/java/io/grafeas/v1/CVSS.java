@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * Common Vulnerability Scoring System.
  * For details, see https://www.first.org/cvss/specification-document
@@ -31,16 +29,15 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.CVSS}
  */
-public final class CVSS extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class CVSS extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.CVSS)
     CVSSOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use CVSS.newBuilder() to construct.
   private CVSS(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private CVSS() {
     attackVector_ = 0;
     attackComplexity_ = 0;
@@ -55,16 +52,18 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new CVSS();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_descriptor;
   }
 
@@ -76,31 +75,55 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1.CVSS.class, io.grafeas.v1.CVSS.Builder.class);
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.AttackVector} */
-  public enum AttackVector implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.AttackVector}
+   */
+  public enum AttackVector
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code>
+     */
     ATTACK_VECTOR_UNSPECIFIED(0),
-    /** <code>ATTACK_VECTOR_NETWORK = 1;</code> */
+    /**
+     * <code>ATTACK_VECTOR_NETWORK = 1;</code>
+     */
     ATTACK_VECTOR_NETWORK(1),
-    /** <code>ATTACK_VECTOR_ADJACENT = 2;</code> */
+    /**
+     * <code>ATTACK_VECTOR_ADJACENT = 2;</code>
+     */
     ATTACK_VECTOR_ADJACENT(2),
-    /** <code>ATTACK_VECTOR_LOCAL = 3;</code> */
+    /**
+     * <code>ATTACK_VECTOR_LOCAL = 3;</code>
+     */
     ATTACK_VECTOR_LOCAL(3),
-    /** <code>ATTACK_VECTOR_PHYSICAL = 4;</code> */
+    /**
+     * <code>ATTACK_VECTOR_PHYSICAL = 4;</code>
+     */
     ATTACK_VECTOR_PHYSICAL(4),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code>
+     */
     public static final int ATTACK_VECTOR_UNSPECIFIED_VALUE = 0;
-    /** <code>ATTACK_VECTOR_NETWORK = 1;</code> */
+    /**
+     * <code>ATTACK_VECTOR_NETWORK = 1;</code>
+     */
     public static final int ATTACK_VECTOR_NETWORK_VALUE = 1;
-    /** <code>ATTACK_VECTOR_ADJACENT = 2;</code> */
+    /**
+     * <code>ATTACK_VECTOR_ADJACENT = 2;</code>
+     */
     public static final int ATTACK_VECTOR_ADJACENT_VALUE = 2;
-    /** <code>ATTACK_VECTOR_LOCAL = 3;</code> */
+    /**
+     * <code>ATTACK_VECTOR_LOCAL = 3;</code>
+     */
     public static final int ATTACK_VECTOR_LOCAL_VALUE = 3;
-    /** <code>ATTACK_VECTOR_PHYSICAL = 4;</code> */
+    /**
+     * <code>ATTACK_VECTOR_PHYSICAL = 4;</code>
+     */
     public static final int ATTACK_VECTOR_PHYSICAL_VALUE = 4;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -126,53 +149,51 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static AttackVector forNumber(int value) {
       switch (value) {
-        case 0:
-          return ATTACK_VECTOR_UNSPECIFIED;
-        case 1:
-          return ATTACK_VECTOR_NETWORK;
-        case 2:
-          return ATTACK_VECTOR_ADJACENT;
-        case 3:
-          return ATTACK_VECTOR_LOCAL;
-        case 4:
-          return ATTACK_VECTOR_PHYSICAL;
-        default:
-          return null;
+        case 0: return ATTACK_VECTOR_UNSPECIFIED;
+        case 1: return ATTACK_VECTOR_NETWORK;
+        case 2: return ATTACK_VECTOR_ADJACENT;
+        case 3: return ATTACK_VECTOR_LOCAL;
+        case 4: return ATTACK_VECTOR_PHYSICAL;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<AttackVector> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<AttackVector>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AttackVector> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AttackVector>() {
+            public AttackVector findValueByNumber(int number) {
+              return AttackVector.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<AttackVector> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<AttackVector>() {
-          public AttackVector findValueByNumber(int number) {
-            return AttackVector.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final AttackVector[] VALUES = values();
 
-    public static AttackVector valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static AttackVector valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -189,23 +210,39 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1.CVSS.AttackVector)
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.AttackComplexity} */
-  public enum AttackComplexity implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>ATTACK_COMPLEXITY_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.AttackComplexity}
+   */
+  public enum AttackComplexity
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ATTACK_COMPLEXITY_UNSPECIFIED = 0;</code>
+     */
     ATTACK_COMPLEXITY_UNSPECIFIED(0),
-    /** <code>ATTACK_COMPLEXITY_LOW = 1;</code> */
+    /**
+     * <code>ATTACK_COMPLEXITY_LOW = 1;</code>
+     */
     ATTACK_COMPLEXITY_LOW(1),
-    /** <code>ATTACK_COMPLEXITY_HIGH = 2;</code> */
+    /**
+     * <code>ATTACK_COMPLEXITY_HIGH = 2;</code>
+     */
     ATTACK_COMPLEXITY_HIGH(2),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>ATTACK_COMPLEXITY_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>ATTACK_COMPLEXITY_UNSPECIFIED = 0;</code>
+     */
     public static final int ATTACK_COMPLEXITY_UNSPECIFIED_VALUE = 0;
-    /** <code>ATTACK_COMPLEXITY_LOW = 1;</code> */
+    /**
+     * <code>ATTACK_COMPLEXITY_LOW = 1;</code>
+     */
     public static final int ATTACK_COMPLEXITY_LOW_VALUE = 1;
-    /** <code>ATTACK_COMPLEXITY_HIGH = 2;</code> */
+    /**
+     * <code>ATTACK_COMPLEXITY_HIGH = 2;</code>
+     */
     public static final int ATTACK_COMPLEXITY_HIGH_VALUE = 2;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -231,42 +268,39 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static AttackComplexity forNumber(int value) {
       switch (value) {
-        case 0:
-          return ATTACK_COMPLEXITY_UNSPECIFIED;
-        case 1:
-          return ATTACK_COMPLEXITY_LOW;
-        case 2:
-          return ATTACK_COMPLEXITY_HIGH;
-        default:
-          return null;
+        case 0: return ATTACK_COMPLEXITY_UNSPECIFIED;
+        case 1: return ATTACK_COMPLEXITY_LOW;
+        case 2: return ATTACK_COMPLEXITY_HIGH;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<AttackComplexity> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<AttackComplexity>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AttackComplexity> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AttackComplexity>() {
+            public AttackComplexity findValueByNumber(int number) {
+              return AttackComplexity.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<AttackComplexity>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<AttackComplexity>() {
-              public AttackComplexity findValueByNumber(int number) {
-                return AttackComplexity.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(1);
     }
 
@@ -275,7 +309,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public static AttackComplexity valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -292,27 +327,47 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1.CVSS.AttackComplexity)
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.Authentication} */
-  public enum Authentication implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>AUTHENTICATION_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.Authentication}
+   */
+  public enum Authentication
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>AUTHENTICATION_UNSPECIFIED = 0;</code>
+     */
     AUTHENTICATION_UNSPECIFIED(0),
-    /** <code>AUTHENTICATION_MULTIPLE = 1;</code> */
+    /**
+     * <code>AUTHENTICATION_MULTIPLE = 1;</code>
+     */
     AUTHENTICATION_MULTIPLE(1),
-    /** <code>AUTHENTICATION_SINGLE = 2;</code> */
+    /**
+     * <code>AUTHENTICATION_SINGLE = 2;</code>
+     */
     AUTHENTICATION_SINGLE(2),
-    /** <code>AUTHENTICATION_NONE = 3;</code> */
+    /**
+     * <code>AUTHENTICATION_NONE = 3;</code>
+     */
     AUTHENTICATION_NONE(3),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>AUTHENTICATION_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>AUTHENTICATION_UNSPECIFIED = 0;</code>
+     */
     public static final int AUTHENTICATION_UNSPECIFIED_VALUE = 0;
-    /** <code>AUTHENTICATION_MULTIPLE = 1;</code> */
+    /**
+     * <code>AUTHENTICATION_MULTIPLE = 1;</code>
+     */
     public static final int AUTHENTICATION_MULTIPLE_VALUE = 1;
-    /** <code>AUTHENTICATION_SINGLE = 2;</code> */
+    /**
+     * <code>AUTHENTICATION_SINGLE = 2;</code>
+     */
     public static final int AUTHENTICATION_SINGLE_VALUE = 2;
-    /** <code>AUTHENTICATION_NONE = 3;</code> */
+    /**
+     * <code>AUTHENTICATION_NONE = 3;</code>
+     */
     public static final int AUTHENTICATION_NONE_VALUE = 3;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -338,51 +393,50 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static Authentication forNumber(int value) {
       switch (value) {
-        case 0:
-          return AUTHENTICATION_UNSPECIFIED;
-        case 1:
-          return AUTHENTICATION_MULTIPLE;
-        case 2:
-          return AUTHENTICATION_SINGLE;
-        case 3:
-          return AUTHENTICATION_NONE;
-        default:
-          return null;
+        case 0: return AUTHENTICATION_UNSPECIFIED;
+        case 1: return AUTHENTICATION_MULTIPLE;
+        case 2: return AUTHENTICATION_SINGLE;
+        case 3: return AUTHENTICATION_NONE;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Authentication> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Authentication>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Authentication> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Authentication>() {
+            public Authentication findValueByNumber(int number) {
+              return Authentication.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<Authentication> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Authentication>() {
-          public Authentication findValueByNumber(int number) {
-            return Authentication.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final Authentication[] VALUES = values();
 
-    public static Authentication valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Authentication valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -399,27 +453,47 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1.CVSS.Authentication)
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.PrivilegesRequired} */
-  public enum PrivilegesRequired implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>PRIVILEGES_REQUIRED_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.PrivilegesRequired}
+   */
+  public enum PrivilegesRequired
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>PRIVILEGES_REQUIRED_UNSPECIFIED = 0;</code>
+     */
     PRIVILEGES_REQUIRED_UNSPECIFIED(0),
-    /** <code>PRIVILEGES_REQUIRED_NONE = 1;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_NONE = 1;</code>
+     */
     PRIVILEGES_REQUIRED_NONE(1),
-    /** <code>PRIVILEGES_REQUIRED_LOW = 2;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_LOW = 2;</code>
+     */
     PRIVILEGES_REQUIRED_LOW(2),
-    /** <code>PRIVILEGES_REQUIRED_HIGH = 3;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_HIGH = 3;</code>
+     */
     PRIVILEGES_REQUIRED_HIGH(3),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>PRIVILEGES_REQUIRED_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_UNSPECIFIED = 0;</code>
+     */
     public static final int PRIVILEGES_REQUIRED_UNSPECIFIED_VALUE = 0;
-    /** <code>PRIVILEGES_REQUIRED_NONE = 1;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_NONE = 1;</code>
+     */
     public static final int PRIVILEGES_REQUIRED_NONE_VALUE = 1;
-    /** <code>PRIVILEGES_REQUIRED_LOW = 2;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_LOW = 2;</code>
+     */
     public static final int PRIVILEGES_REQUIRED_LOW_VALUE = 2;
-    /** <code>PRIVILEGES_REQUIRED_HIGH = 3;</code> */
+    /**
+     * <code>PRIVILEGES_REQUIRED_HIGH = 3;</code>
+     */
     public static final int PRIVILEGES_REQUIRED_HIGH_VALUE = 3;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -445,16 +519,11 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static PrivilegesRequired forNumber(int value) {
       switch (value) {
-        case 0:
-          return PRIVILEGES_REQUIRED_UNSPECIFIED;
-        case 1:
-          return PRIVILEGES_REQUIRED_NONE;
-        case 2:
-          return PRIVILEGES_REQUIRED_LOW;
-        case 3:
-          return PRIVILEGES_REQUIRED_HIGH;
-        default:
-          return null;
+        case 0: return PRIVILEGES_REQUIRED_UNSPECIFIED;
+        case 1: return PRIVILEGES_REQUIRED_NONE;
+        case 2: return PRIVILEGES_REQUIRED_LOW;
+        case 3: return PRIVILEGES_REQUIRED_HIGH;
+        default: return null;
       }
     }
 
@@ -462,28 +531,28 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
         internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        PrivilegesRequired> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PrivilegesRequired>() {
+            public PrivilegesRequired findValueByNumber(int number) {
+              return PrivilegesRequired.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<PrivilegesRequired>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<PrivilegesRequired>() {
-              public PrivilegesRequired findValueByNumber(int number) {
-                return PrivilegesRequired.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(3);
     }
 
@@ -492,7 +561,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public static PrivilegesRequired valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -509,23 +579,39 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1.CVSS.PrivilegesRequired)
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.UserInteraction} */
-  public enum UserInteraction implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>USER_INTERACTION_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.UserInteraction}
+   */
+  public enum UserInteraction
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>USER_INTERACTION_UNSPECIFIED = 0;</code>
+     */
     USER_INTERACTION_UNSPECIFIED(0),
-    /** <code>USER_INTERACTION_NONE = 1;</code> */
+    /**
+     * <code>USER_INTERACTION_NONE = 1;</code>
+     */
     USER_INTERACTION_NONE(1),
-    /** <code>USER_INTERACTION_REQUIRED = 2;</code> */
+    /**
+     * <code>USER_INTERACTION_REQUIRED = 2;</code>
+     */
     USER_INTERACTION_REQUIRED(2),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>USER_INTERACTION_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>USER_INTERACTION_UNSPECIFIED = 0;</code>
+     */
     public static final int USER_INTERACTION_UNSPECIFIED_VALUE = 0;
-    /** <code>USER_INTERACTION_NONE = 1;</code> */
+    /**
+     * <code>USER_INTERACTION_NONE = 1;</code>
+     */
     public static final int USER_INTERACTION_NONE_VALUE = 1;
-    /** <code>USER_INTERACTION_REQUIRED = 2;</code> */
+    /**
+     * <code>USER_INTERACTION_REQUIRED = 2;</code>
+     */
     public static final int USER_INTERACTION_REQUIRED_VALUE = 2;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -551,42 +637,39 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static UserInteraction forNumber(int value) {
       switch (value) {
-        case 0:
-          return USER_INTERACTION_UNSPECIFIED;
-        case 1:
-          return USER_INTERACTION_NONE;
-        case 2:
-          return USER_INTERACTION_REQUIRED;
-        default:
-          return null;
+        case 0: return USER_INTERACTION_UNSPECIFIED;
+        case 1: return USER_INTERACTION_NONE;
+        case 2: return USER_INTERACTION_REQUIRED;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<UserInteraction> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<UserInteraction>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        UserInteraction> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<UserInteraction>() {
+            public UserInteraction findValueByNumber(int number) {
+              return UserInteraction.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<UserInteraction>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<UserInteraction>() {
-              public UserInteraction findValueByNumber(int number) {
-                return UserInteraction.forNumber(number);
-              }
-            };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(4);
     }
 
@@ -595,7 +678,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public static UserInteraction valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -612,23 +696,39 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1.CVSS.UserInteraction)
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.Scope} */
-  public enum Scope implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>SCOPE_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.Scope}
+   */
+  public enum Scope
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SCOPE_UNSPECIFIED = 0;</code>
+     */
     SCOPE_UNSPECIFIED(0),
-    /** <code>SCOPE_UNCHANGED = 1;</code> */
+    /**
+     * <code>SCOPE_UNCHANGED = 1;</code>
+     */
     SCOPE_UNCHANGED(1),
-    /** <code>SCOPE_CHANGED = 2;</code> */
+    /**
+     * <code>SCOPE_CHANGED = 2;</code>
+     */
     SCOPE_CHANGED(2),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>SCOPE_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>SCOPE_UNSPECIFIED = 0;</code>
+     */
     public static final int SCOPE_UNSPECIFIED_VALUE = 0;
-    /** <code>SCOPE_UNCHANGED = 1;</code> */
+    /**
+     * <code>SCOPE_UNCHANGED = 1;</code>
+     */
     public static final int SCOPE_UNCHANGED_VALUE = 1;
-    /** <code>SCOPE_CHANGED = 2;</code> */
+    /**
+     * <code>SCOPE_CHANGED = 2;</code>
+     */
     public static final int SCOPE_CHANGED_VALUE = 2;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -654,49 +754,49 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static Scope forNumber(int value) {
       switch (value) {
-        case 0:
-          return SCOPE_UNSPECIFIED;
-        case 1:
-          return SCOPE_UNCHANGED;
-        case 2:
-          return SCOPE_CHANGED;
-        default:
-          return null;
+        case 0: return SCOPE_UNSPECIFIED;
+        case 1: return SCOPE_UNCHANGED;
+        case 2: return SCOPE_CHANGED;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Scope> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Scope>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Scope> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Scope>() {
+            public Scope findValueByNumber(int number) {
+              return Scope.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<Scope> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Scope>() {
-          public Scope findValueByNumber(int number) {
-            return Scope.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final Scope[] VALUES = values();
 
-    public static Scope valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Scope valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -713,27 +813,47 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:grafeas.v1.CVSS.Scope)
   }
 
-  /** Protobuf enum {@code grafeas.v1.CVSS.Impact} */
-  public enum Impact implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>IMPACT_UNSPECIFIED = 0;</code> */
+  /**
+   * Protobuf enum {@code grafeas.v1.CVSS.Impact}
+   */
+  public enum Impact
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>IMPACT_UNSPECIFIED = 0;</code>
+     */
     IMPACT_UNSPECIFIED(0),
-    /** <code>IMPACT_HIGH = 1;</code> */
+    /**
+     * <code>IMPACT_HIGH = 1;</code>
+     */
     IMPACT_HIGH(1),
-    /** <code>IMPACT_LOW = 2;</code> */
+    /**
+     * <code>IMPACT_LOW = 2;</code>
+     */
     IMPACT_LOW(2),
-    /** <code>IMPACT_NONE = 3;</code> */
+    /**
+     * <code>IMPACT_NONE = 3;</code>
+     */
     IMPACT_NONE(3),
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>IMPACT_UNSPECIFIED = 0;</code> */
+    /**
+     * <code>IMPACT_UNSPECIFIED = 0;</code>
+     */
     public static final int IMPACT_UNSPECIFIED_VALUE = 0;
-    /** <code>IMPACT_HIGH = 1;</code> */
+    /**
+     * <code>IMPACT_HIGH = 1;</code>
+     */
     public static final int IMPACT_HIGH_VALUE = 1;
-    /** <code>IMPACT_LOW = 2;</code> */
+    /**
+     * <code>IMPACT_LOW = 2;</code>
+     */
     public static final int IMPACT_LOW_VALUE = 2;
-    /** <code>IMPACT_NONE = 3;</code> */
+    /**
+     * <code>IMPACT_NONE = 3;</code>
+     */
     public static final int IMPACT_NONE_VALUE = 3;
+
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -759,51 +879,50 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      */
     public static Impact forNumber(int value) {
       switch (value) {
-        case 0:
-          return IMPACT_UNSPECIFIED;
-        case 1:
-          return IMPACT_HIGH;
-        case 2:
-          return IMPACT_LOW;
-        case 3:
-          return IMPACT_NONE;
-        default:
-          return null;
+        case 0: return IMPACT_UNSPECIFIED;
+        case 1: return IMPACT_HIGH;
+        case 2: return IMPACT_LOW;
+        case 3: return IMPACT_NONE;
+        default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Impact> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Impact>
+        internalGetValueMap() {
       return internalValueMap;
     }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Impact> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Impact>() {
+            public Impact findValueByNumber(int number) {
+              return Impact.forNumber(number);
+            }
+          };
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<Impact> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Impact>() {
-          public Impact findValueByNumber(int number) {
-            return Impact.forNumber(number);
-          }
-        };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
     }
-
-    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
       return getDescriptor();
     }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSS.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final Impact[] VALUES = values();
 
-    public static Impact valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Impact valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -823,14 +942,11 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public static final int BASE_SCORE_FIELD_NUMBER = 1;
   private float baseScore_;
   /**
-   *
-   *
    * <pre>
    * The base score is a function of the base metric scores.
    * </pre>
    *
    * <code>float base_score = 1;</code>
-   *
    * @return The baseScore.
    */
   @java.lang.Override
@@ -842,7 +958,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private float exploitabilityScore_;
   /**
    * <code>float exploitability_score = 2;</code>
-   *
    * @return The exploitabilityScore.
    */
   @java.lang.Override
@@ -854,7 +969,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private float impactScore_;
   /**
    * <code>float impact_score = 3;</code>
-   *
    * @return The impactScore.
    */
   @java.lang.Override
@@ -865,8 +979,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public static final int ATTACK_VECTOR_FIELD_NUMBER = 4;
   private int attackVector_;
   /**
-   *
-   *
    * <pre>
    * Base Metrics
    * Represents the intrinsic characteristics of a vulnerability that are
@@ -874,16 +986,12 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-   *
    * @return The enum numeric value on the wire for attackVector.
    */
-  @java.lang.Override
-  public int getAttackVectorValue() {
+  @java.lang.Override public int getAttackVectorValue() {
     return attackVector_;
   }
   /**
-   *
-   *
    * <pre>
    * Base Metrics
    * Represents the intrinsic characteristics of a vulnerability that are
@@ -891,11 +999,9 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-   *
    * @return The attackVector.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.AttackVector getAttackVector() {
+  @java.lang.Override public io.grafeas.v1.CVSS.AttackVector getAttackVector() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSS.AttackVector result = io.grafeas.v1.CVSS.AttackVector.valueOf(attackVector_);
     return result == null ? io.grafeas.v1.CVSS.AttackVector.UNRECOGNIZED : result;
@@ -905,23 +1011,18 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int attackComplexity_;
   /**
    * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-   *
    * @return The enum numeric value on the wire for attackComplexity.
    */
-  @java.lang.Override
-  public int getAttackComplexityValue() {
+  @java.lang.Override public int getAttackComplexityValue() {
     return attackComplexity_;
   }
   /**
    * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-   *
    * @return The attackComplexity.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.AttackComplexity getAttackComplexity() {
+  @java.lang.Override public io.grafeas.v1.CVSS.AttackComplexity getAttackComplexity() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1.CVSS.AttackComplexity result =
-        io.grafeas.v1.CVSS.AttackComplexity.valueOf(attackComplexity_);
+    io.grafeas.v1.CVSS.AttackComplexity result = io.grafeas.v1.CVSS.AttackComplexity.valueOf(attackComplexity_);
     return result == null ? io.grafeas.v1.CVSS.AttackComplexity.UNRECOGNIZED : result;
   }
 
@@ -929,23 +1030,18 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int authentication_;
   /**
    * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-   *
    * @return The enum numeric value on the wire for authentication.
    */
-  @java.lang.Override
-  public int getAuthenticationValue() {
+  @java.lang.Override public int getAuthenticationValue() {
     return authentication_;
   }
   /**
    * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-   *
    * @return The authentication.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.Authentication getAuthentication() {
+  @java.lang.Override public io.grafeas.v1.CVSS.Authentication getAuthentication() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1.CVSS.Authentication result =
-        io.grafeas.v1.CVSS.Authentication.valueOf(authentication_);
+    io.grafeas.v1.CVSS.Authentication result = io.grafeas.v1.CVSS.Authentication.valueOf(authentication_);
     return result == null ? io.grafeas.v1.CVSS.Authentication.UNRECOGNIZED : result;
   }
 
@@ -953,23 +1049,18 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int privilegesRequired_;
   /**
    * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-   *
    * @return The enum numeric value on the wire for privilegesRequired.
    */
-  @java.lang.Override
-  public int getPrivilegesRequiredValue() {
+  @java.lang.Override public int getPrivilegesRequiredValue() {
     return privilegesRequired_;
   }
   /**
    * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-   *
    * @return The privilegesRequired.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.PrivilegesRequired getPrivilegesRequired() {
+  @java.lang.Override public io.grafeas.v1.CVSS.PrivilegesRequired getPrivilegesRequired() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1.CVSS.PrivilegesRequired result =
-        io.grafeas.v1.CVSS.PrivilegesRequired.valueOf(privilegesRequired_);
+    io.grafeas.v1.CVSS.PrivilegesRequired result = io.grafeas.v1.CVSS.PrivilegesRequired.valueOf(privilegesRequired_);
     return result == null ? io.grafeas.v1.CVSS.PrivilegesRequired.UNRECOGNIZED : result;
   }
 
@@ -977,23 +1068,18 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int userInteraction_;
   /**
    * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-   *
    * @return The enum numeric value on the wire for userInteraction.
    */
-  @java.lang.Override
-  public int getUserInteractionValue() {
+  @java.lang.Override public int getUserInteractionValue() {
     return userInteraction_;
   }
   /**
    * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-   *
    * @return The userInteraction.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.UserInteraction getUserInteraction() {
+  @java.lang.Override public io.grafeas.v1.CVSS.UserInteraction getUserInteraction() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1.CVSS.UserInteraction result =
-        io.grafeas.v1.CVSS.UserInteraction.valueOf(userInteraction_);
+    io.grafeas.v1.CVSS.UserInteraction result = io.grafeas.v1.CVSS.UserInteraction.valueOf(userInteraction_);
     return result == null ? io.grafeas.v1.CVSS.UserInteraction.UNRECOGNIZED : result;
   }
 
@@ -1001,20 +1087,16 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int scope_;
   /**
    * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-   *
    * @return The enum numeric value on the wire for scope.
    */
-  @java.lang.Override
-  public int getScopeValue() {
+  @java.lang.Override public int getScopeValue() {
     return scope_;
   }
   /**
    * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-   *
    * @return The scope.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.Scope getScope() {
+  @java.lang.Override public io.grafeas.v1.CVSS.Scope getScope() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSS.Scope result = io.grafeas.v1.CVSS.Scope.valueOf(scope_);
     return result == null ? io.grafeas.v1.CVSS.Scope.UNRECOGNIZED : result;
@@ -1024,20 +1106,16 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int confidentialityImpact_;
   /**
    * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-   *
    * @return The enum numeric value on the wire for confidentialityImpact.
    */
-  @java.lang.Override
-  public int getConfidentialityImpactValue() {
+  @java.lang.Override public int getConfidentialityImpactValue() {
     return confidentialityImpact_;
   }
   /**
    * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-   *
    * @return The confidentialityImpact.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.Impact getConfidentialityImpact() {
+  @java.lang.Override public io.grafeas.v1.CVSS.Impact getConfidentialityImpact() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSS.Impact result = io.grafeas.v1.CVSS.Impact.valueOf(confidentialityImpact_);
     return result == null ? io.grafeas.v1.CVSS.Impact.UNRECOGNIZED : result;
@@ -1047,20 +1125,16 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int integrityImpact_;
   /**
    * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-   *
    * @return The enum numeric value on the wire for integrityImpact.
    */
-  @java.lang.Override
-  public int getIntegrityImpactValue() {
+  @java.lang.Override public int getIntegrityImpactValue() {
     return integrityImpact_;
   }
   /**
    * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-   *
    * @return The integrityImpact.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.Impact getIntegrityImpact() {
+  @java.lang.Override public io.grafeas.v1.CVSS.Impact getIntegrityImpact() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSS.Impact result = io.grafeas.v1.CVSS.Impact.valueOf(integrityImpact_);
     return result == null ? io.grafeas.v1.CVSS.Impact.UNRECOGNIZED : result;
@@ -1070,27 +1144,22 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   private int availabilityImpact_;
   /**
    * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-   *
    * @return The enum numeric value on the wire for availabilityImpact.
    */
-  @java.lang.Override
-  public int getAvailabilityImpactValue() {
+  @java.lang.Override public int getAvailabilityImpactValue() {
     return availabilityImpact_;
   }
   /**
    * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-   *
    * @return The availabilityImpact.
    */
-  @java.lang.Override
-  public io.grafeas.v1.CVSS.Impact getAvailabilityImpact() {
+  @java.lang.Override public io.grafeas.v1.CVSS.Impact getAvailabilityImpact() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.CVSS.Impact result = io.grafeas.v1.CVSS.Impact.valueOf(availabilityImpact_);
     return result == null ? io.grafeas.v1.CVSS.Impact.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1102,7 +1171,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (java.lang.Float.floatToRawIntBits(baseScore_) != 0) {
       output.writeFloat(1, baseScore_);
     }
@@ -1115,20 +1185,16 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     if (attackVector_ != io.grafeas.v1.CVSS.AttackVector.ATTACK_VECTOR_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, attackVector_);
     }
-    if (attackComplexity_
-        != io.grafeas.v1.CVSS.AttackComplexity.ATTACK_COMPLEXITY_UNSPECIFIED.getNumber()) {
+    if (attackComplexity_ != io.grafeas.v1.CVSS.AttackComplexity.ATTACK_COMPLEXITY_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, attackComplexity_);
     }
-    if (authentication_
-        != io.grafeas.v1.CVSS.Authentication.AUTHENTICATION_UNSPECIFIED.getNumber()) {
+    if (authentication_ != io.grafeas.v1.CVSS.Authentication.AUTHENTICATION_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, authentication_);
     }
-    if (privilegesRequired_
-        != io.grafeas.v1.CVSS.PrivilegesRequired.PRIVILEGES_REQUIRED_UNSPECIFIED.getNumber()) {
+    if (privilegesRequired_ != io.grafeas.v1.CVSS.PrivilegesRequired.PRIVILEGES_REQUIRED_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, privilegesRequired_);
     }
-    if (userInteraction_
-        != io.grafeas.v1.CVSS.UserInteraction.USER_INTERACTION_UNSPECIFIED.getNumber()) {
+    if (userInteraction_ != io.grafeas.v1.CVSS.UserInteraction.USER_INTERACTION_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, userInteraction_);
     }
     if (scope_ != io.grafeas.v1.CVSS.Scope.SCOPE_UNSPECIFIED.getNumber()) {
@@ -1153,44 +1219,52 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (java.lang.Float.floatToRawIntBits(baseScore_) != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, baseScore_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(1, baseScore_);
     }
     if (java.lang.Float.floatToRawIntBits(exploitabilityScore_) != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, exploitabilityScore_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(2, exploitabilityScore_);
     }
     if (java.lang.Float.floatToRawIntBits(impactScore_) != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, impactScore_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(3, impactScore_);
     }
     if (attackVector_ != io.grafeas.v1.CVSS.AttackVector.ATTACK_VECTOR_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, attackVector_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, attackVector_);
     }
-    if (attackComplexity_
-        != io.grafeas.v1.CVSS.AttackComplexity.ATTACK_COMPLEXITY_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, attackComplexity_);
+    if (attackComplexity_ != io.grafeas.v1.CVSS.AttackComplexity.ATTACK_COMPLEXITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, attackComplexity_);
     }
-    if (authentication_
-        != io.grafeas.v1.CVSS.Authentication.AUTHENTICATION_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, authentication_);
+    if (authentication_ != io.grafeas.v1.CVSS.Authentication.AUTHENTICATION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(6, authentication_);
     }
-    if (privilegesRequired_
-        != io.grafeas.v1.CVSS.PrivilegesRequired.PRIVILEGES_REQUIRED_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, privilegesRequired_);
+    if (privilegesRequired_ != io.grafeas.v1.CVSS.PrivilegesRequired.PRIVILEGES_REQUIRED_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, privilegesRequired_);
     }
-    if (userInteraction_
-        != io.grafeas.v1.CVSS.UserInteraction.USER_INTERACTION_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, userInteraction_);
+    if (userInteraction_ != io.grafeas.v1.CVSS.UserInteraction.USER_INTERACTION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, userInteraction_);
     }
     if (scope_ != io.grafeas.v1.CVSS.Scope.SCOPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, scope_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(9, scope_);
     }
     if (confidentialityImpact_ != io.grafeas.v1.CVSS.Impact.IMPACT_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, confidentialityImpact_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, confidentialityImpact_);
     }
     if (integrityImpact_ != io.grafeas.v1.CVSS.Impact.IMPACT_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, integrityImpact_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(11, integrityImpact_);
     }
     if (availabilityImpact_ != io.grafeas.v1.CVSS.Impact.IMPACT_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, availabilityImpact_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(12, availabilityImpact_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1200,7 +1274,7 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.CVSS)) {
       return super.equals(obj);
@@ -1208,11 +1282,14 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     io.grafeas.v1.CVSS other = (io.grafeas.v1.CVSS) obj;
 
     if (java.lang.Float.floatToIntBits(getBaseScore())
-        != java.lang.Float.floatToIntBits(other.getBaseScore())) return false;
+        != java.lang.Float.floatToIntBits(
+            other.getBaseScore())) return false;
     if (java.lang.Float.floatToIntBits(getExploitabilityScore())
-        != java.lang.Float.floatToIntBits(other.getExploitabilityScore())) return false;
+        != java.lang.Float.floatToIntBits(
+            other.getExploitabilityScore())) return false;
     if (java.lang.Float.floatToIntBits(getImpactScore())
-        != java.lang.Float.floatToIntBits(other.getImpactScore())) return false;
+        != java.lang.Float.floatToIntBits(
+            other.getImpactScore())) return false;
     if (attackVector_ != other.attackVector_) return false;
     if (attackComplexity_ != other.attackComplexity_) return false;
     if (authentication_ != other.authentication_) return false;
@@ -1234,11 +1311,14 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + BASE_SCORE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getBaseScore());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getBaseScore());
     hash = (37 * hash) + EXPLOITABILITY_SCORE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getExploitabilityScore());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getExploitabilityScore());
     hash = (37 * hash) + IMPACT_SCORE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(getImpactScore());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getImpactScore());
     hash = (37 * hash) + ATTACK_VECTOR_FIELD_NUMBER;
     hash = (53 * hash) + attackVector_;
     hash = (37 * hash) + ATTACK_COMPLEXITY_FIELD_NUMBER;
@@ -1262,102 +1342,97 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.CVSS parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.CVSS parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.CVSS parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.CVSS parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.CVSS parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.CVSS parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.CVSS parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.CVSS parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.CVSS parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-  }
-
-  public static io.grafeas.v1.CVSS parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+  public static io.grafeas.v1.CVSS parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
+  public static io.grafeas.v1.CVSS parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
   public static io.grafeas.v1.CVSS parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.CVSS parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.CVSS parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.CVSS parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.CVSS parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.CVSS prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * Common Vulnerability Scoring System.
    * For details, see https://www.first.org/cvss/specification-document
@@ -1367,11 +1442,12 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code grafeas.v1.CVSS}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.CVSS)
       io.grafeas.v1.CVSSOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_descriptor;
     }
 
@@ -1384,12 +1460,15 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.CVSS.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1421,7 +1500,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_descriptor;
     }
 
@@ -1462,39 +1542,38 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.CVSS) {
-        return mergeFrom((io.grafeas.v1.CVSS) other);
+        return mergeFrom((io.grafeas.v1.CVSS)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1565,85 +1644,72 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 13:
-              {
-                baseScore_ = input.readFloat();
+            case 13: {
+              baseScore_ = input.readFloat();
 
-                break;
-              } // case 13
-            case 21:
-              {
-                exploitabilityScore_ = input.readFloat();
+              break;
+            } // case 13
+            case 21: {
+              exploitabilityScore_ = input.readFloat();
 
-                break;
-              } // case 21
-            case 29:
-              {
-                impactScore_ = input.readFloat();
+              break;
+            } // case 21
+            case 29: {
+              impactScore_ = input.readFloat();
 
-                break;
-              } // case 29
-            case 32:
-              {
-                attackVector_ = input.readEnum();
+              break;
+            } // case 29
+            case 32: {
+              attackVector_ = input.readEnum();
 
-                break;
-              } // case 32
-            case 40:
-              {
-                attackComplexity_ = input.readEnum();
+              break;
+            } // case 32
+            case 40: {
+              attackComplexity_ = input.readEnum();
 
-                break;
-              } // case 40
-            case 48:
-              {
-                authentication_ = input.readEnum();
+              break;
+            } // case 40
+            case 48: {
+              authentication_ = input.readEnum();
 
-                break;
-              } // case 48
-            case 56:
-              {
-                privilegesRequired_ = input.readEnum();
+              break;
+            } // case 48
+            case 56: {
+              privilegesRequired_ = input.readEnum();
 
-                break;
-              } // case 56
-            case 64:
-              {
-                userInteraction_ = input.readEnum();
+              break;
+            } // case 56
+            case 64: {
+              userInteraction_ = input.readEnum();
 
-                break;
-              } // case 64
-            case 72:
-              {
-                scope_ = input.readEnum();
+              break;
+            } // case 64
+            case 72: {
+              scope_ = input.readEnum();
 
-                break;
-              } // case 72
-            case 80:
-              {
-                confidentialityImpact_ = input.readEnum();
+              break;
+            } // case 72
+            case 80: {
+              confidentialityImpact_ = input.readEnum();
 
-                break;
-              } // case 80
-            case 88:
-              {
-                integrityImpact_ = input.readEnum();
+              break;
+            } // case 80
+            case 88: {
+              integrityImpact_ = input.readEnum();
 
-                break;
-              } // case 88
-            case 96:
-              {
-                availabilityImpact_ = input.readEnum();
+              break;
+            } // case 88
+            case 96: {
+              availabilityImpact_ = input.readEnum();
 
-                break;
-              } // case 96
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 96
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1654,16 +1720,13 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private float baseScore_;
+    private float baseScore_ ;
     /**
-     *
-     *
      * <pre>
      * The base score is a function of the base metric scores.
      * </pre>
      *
      * <code>float base_score = 1;</code>
-     *
      * @return The baseScore.
      */
     @java.lang.Override
@@ -1671,45 +1734,38 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       return baseScore_;
     }
     /**
-     *
-     *
      * <pre>
      * The base score is a function of the base metric scores.
      * </pre>
      *
      * <code>float base_score = 1;</code>
-     *
      * @param value The baseScore to set.
      * @return This builder for chaining.
      */
     public Builder setBaseScore(float value) {
-
+      
       baseScore_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * The base score is a function of the base metric scores.
      * </pre>
      *
      * <code>float base_score = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearBaseScore() {
-
+      
       baseScore_ = 0F;
       onChanged();
       return this;
     }
 
-    private float exploitabilityScore_;
+    private float exploitabilityScore_ ;
     /**
      * <code>float exploitability_score = 2;</code>
-     *
      * @return The exploitabilityScore.
      */
     @java.lang.Override
@@ -1718,32 +1774,29 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>float exploitability_score = 2;</code>
-     *
      * @param value The exploitabilityScore to set.
      * @return This builder for chaining.
      */
     public Builder setExploitabilityScore(float value) {
-
+      
       exploitabilityScore_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>float exploitability_score = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearExploitabilityScore() {
-
+      
       exploitabilityScore_ = 0F;
       onChanged();
       return this;
     }
 
-    private float impactScore_;
+    private float impactScore_ ;
     /**
      * <code>float impact_score = 3;</code>
-     *
      * @return The impactScore.
      */
     @java.lang.Override
@@ -1752,23 +1805,21 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>float impact_score = 3;</code>
-     *
      * @param value The impactScore to set.
      * @return This builder for chaining.
      */
     public Builder setImpactScore(float value) {
-
+      
       impactScore_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>float impact_score = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearImpactScore() {
-
+      
       impactScore_ = 0F;
       onChanged();
       return this;
@@ -1776,8 +1827,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     private int attackVector_ = 0;
     /**
-     *
-     *
      * <pre>
      * Base Metrics
      * Represents the intrinsic characteristics of a vulnerability that are
@@ -1785,16 +1834,12 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-     *
      * @return The enum numeric value on the wire for attackVector.
      */
-    @java.lang.Override
-    public int getAttackVectorValue() {
+    @java.lang.Override public int getAttackVectorValue() {
       return attackVector_;
     }
     /**
-     *
-     *
      * <pre>
      * Base Metrics
      * Represents the intrinsic characteristics of a vulnerability that are
@@ -1802,19 +1847,16 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-     *
      * @param value The enum numeric value on the wire for attackVector to set.
      * @return This builder for chaining.
      */
     public Builder setAttackVectorValue(int value) {
-
+      
       attackVector_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Base Metrics
      * Represents the intrinsic characteristics of a vulnerability that are
@@ -1822,19 +1864,15 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-     *
      * @return The attackVector.
      */
     @java.lang.Override
     public io.grafeas.v1.CVSS.AttackVector getAttackVector() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1.CVSS.AttackVector result =
-          io.grafeas.v1.CVSS.AttackVector.valueOf(attackVector_);
+      io.grafeas.v1.CVSS.AttackVector result = io.grafeas.v1.CVSS.AttackVector.valueOf(attackVector_);
       return result == null ? io.grafeas.v1.CVSS.AttackVector.UNRECOGNIZED : result;
     }
     /**
-     *
-     *
      * <pre>
      * Base Metrics
      * Represents the intrinsic characteristics of a vulnerability that are
@@ -1842,7 +1880,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-     *
      * @param value The attackVector to set.
      * @return This builder for chaining.
      */
@@ -1850,14 +1887,12 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       attackVector_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Base Metrics
      * Represents the intrinsic characteristics of a vulnerability that are
@@ -1865,11 +1900,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>.grafeas.v1.CVSS.AttackVector attack_vector = 4;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearAttackVector() {
-
+      
       attackVector_ = 0;
       onChanged();
       return this;
@@ -1878,40 +1912,34 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int attackComplexity_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-     *
      * @return The enum numeric value on the wire for attackComplexity.
      */
-    @java.lang.Override
-    public int getAttackComplexityValue() {
+    @java.lang.Override public int getAttackComplexityValue() {
       return attackComplexity_;
     }
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-     *
      * @param value The enum numeric value on the wire for attackComplexity to set.
      * @return This builder for chaining.
      */
     public Builder setAttackComplexityValue(int value) {
-
+      
       attackComplexity_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-     *
      * @return The attackComplexity.
      */
     @java.lang.Override
     public io.grafeas.v1.CVSS.AttackComplexity getAttackComplexity() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1.CVSS.AttackComplexity result =
-          io.grafeas.v1.CVSS.AttackComplexity.valueOf(attackComplexity_);
+      io.grafeas.v1.CVSS.AttackComplexity result = io.grafeas.v1.CVSS.AttackComplexity.valueOf(attackComplexity_);
       return result == null ? io.grafeas.v1.CVSS.AttackComplexity.UNRECOGNIZED : result;
     }
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-     *
      * @param value The attackComplexity to set.
      * @return This builder for chaining.
      */
@@ -1919,18 +1947,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       attackComplexity_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.AttackComplexity attack_complexity = 5;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearAttackComplexity() {
-
+      
       attackComplexity_ = 0;
       onChanged();
       return this;
@@ -1939,40 +1966,34 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int authentication_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-     *
      * @return The enum numeric value on the wire for authentication.
      */
-    @java.lang.Override
-    public int getAuthenticationValue() {
+    @java.lang.Override public int getAuthenticationValue() {
       return authentication_;
     }
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-     *
      * @param value The enum numeric value on the wire for authentication to set.
      * @return This builder for chaining.
      */
     public Builder setAuthenticationValue(int value) {
-
+      
       authentication_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-     *
      * @return The authentication.
      */
     @java.lang.Override
     public io.grafeas.v1.CVSS.Authentication getAuthentication() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1.CVSS.Authentication result =
-          io.grafeas.v1.CVSS.Authentication.valueOf(authentication_);
+      io.grafeas.v1.CVSS.Authentication result = io.grafeas.v1.CVSS.Authentication.valueOf(authentication_);
       return result == null ? io.grafeas.v1.CVSS.Authentication.UNRECOGNIZED : result;
     }
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-     *
      * @param value The authentication to set.
      * @return This builder for chaining.
      */
@@ -1980,18 +2001,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       authentication_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Authentication authentication = 6;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearAuthentication() {
-
+      
       authentication_ = 0;
       onChanged();
       return this;
@@ -2000,40 +2020,34 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int privilegesRequired_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-     *
      * @return The enum numeric value on the wire for privilegesRequired.
      */
-    @java.lang.Override
-    public int getPrivilegesRequiredValue() {
+    @java.lang.Override public int getPrivilegesRequiredValue() {
       return privilegesRequired_;
     }
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-     *
      * @param value The enum numeric value on the wire for privilegesRequired to set.
      * @return This builder for chaining.
      */
     public Builder setPrivilegesRequiredValue(int value) {
-
+      
       privilegesRequired_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-     *
      * @return The privilegesRequired.
      */
     @java.lang.Override
     public io.grafeas.v1.CVSS.PrivilegesRequired getPrivilegesRequired() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1.CVSS.PrivilegesRequired result =
-          io.grafeas.v1.CVSS.PrivilegesRequired.valueOf(privilegesRequired_);
+      io.grafeas.v1.CVSS.PrivilegesRequired result = io.grafeas.v1.CVSS.PrivilegesRequired.valueOf(privilegesRequired_);
       return result == null ? io.grafeas.v1.CVSS.PrivilegesRequired.UNRECOGNIZED : result;
     }
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-     *
      * @param value The privilegesRequired to set.
      * @return This builder for chaining.
      */
@@ -2041,18 +2055,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       privilegesRequired_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.PrivilegesRequired privileges_required = 7;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearPrivilegesRequired() {
-
+      
       privilegesRequired_ = 0;
       onChanged();
       return this;
@@ -2061,40 +2074,34 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int userInteraction_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-     *
      * @return The enum numeric value on the wire for userInteraction.
      */
-    @java.lang.Override
-    public int getUserInteractionValue() {
+    @java.lang.Override public int getUserInteractionValue() {
       return userInteraction_;
     }
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-     *
      * @param value The enum numeric value on the wire for userInteraction to set.
      * @return This builder for chaining.
      */
     public Builder setUserInteractionValue(int value) {
-
+      
       userInteraction_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-     *
      * @return The userInteraction.
      */
     @java.lang.Override
     public io.grafeas.v1.CVSS.UserInteraction getUserInteraction() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1.CVSS.UserInteraction result =
-          io.grafeas.v1.CVSS.UserInteraction.valueOf(userInteraction_);
+      io.grafeas.v1.CVSS.UserInteraction result = io.grafeas.v1.CVSS.UserInteraction.valueOf(userInteraction_);
       return result == null ? io.grafeas.v1.CVSS.UserInteraction.UNRECOGNIZED : result;
     }
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-     *
      * @param value The userInteraction to set.
      * @return This builder for chaining.
      */
@@ -2102,18 +2109,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       userInteraction_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.UserInteraction user_interaction = 8;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearUserInteraction() {
-
+      
       userInteraction_ = 0;
       onChanged();
       return this;
@@ -2122,28 +2128,24 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int scope_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-     *
      * @return The enum numeric value on the wire for scope.
      */
-    @java.lang.Override
-    public int getScopeValue() {
+    @java.lang.Override public int getScopeValue() {
       return scope_;
     }
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-     *
      * @param value The enum numeric value on the wire for scope to set.
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
+      
       scope_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-     *
      * @return The scope.
      */
     @java.lang.Override
@@ -2154,7 +2156,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-     *
      * @param value The scope to set.
      * @return This builder for chaining.
      */
@@ -2162,18 +2163,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       scope_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Scope scope = 9;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      
       scope_ = 0;
       onChanged();
       return this;
@@ -2182,28 +2182,24 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int confidentialityImpact_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-     *
      * @return The enum numeric value on the wire for confidentialityImpact.
      */
-    @java.lang.Override
-    public int getConfidentialityImpactValue() {
+    @java.lang.Override public int getConfidentialityImpactValue() {
       return confidentialityImpact_;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-     *
      * @param value The enum numeric value on the wire for confidentialityImpact to set.
      * @return This builder for chaining.
      */
     public Builder setConfidentialityImpactValue(int value) {
-
+      
       confidentialityImpact_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-     *
      * @return The confidentialityImpact.
      */
     @java.lang.Override
@@ -2214,7 +2210,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-     *
      * @param value The confidentialityImpact to set.
      * @return This builder for chaining.
      */
@@ -2222,18 +2217,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       confidentialityImpact_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact confidentiality_impact = 10;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearConfidentialityImpact() {
-
+      
       confidentialityImpact_ = 0;
       onChanged();
       return this;
@@ -2242,28 +2236,24 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int integrityImpact_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-     *
      * @return The enum numeric value on the wire for integrityImpact.
      */
-    @java.lang.Override
-    public int getIntegrityImpactValue() {
+    @java.lang.Override public int getIntegrityImpactValue() {
       return integrityImpact_;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-     *
      * @param value The enum numeric value on the wire for integrityImpact to set.
      * @return This builder for chaining.
      */
     public Builder setIntegrityImpactValue(int value) {
-
+      
       integrityImpact_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-     *
      * @return The integrityImpact.
      */
     @java.lang.Override
@@ -2274,7 +2264,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-     *
      * @param value The integrityImpact to set.
      * @return This builder for chaining.
      */
@@ -2282,18 +2271,17 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       integrityImpact_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact integrity_impact = 11;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearIntegrityImpact() {
-
+      
       integrityImpact_ = 0;
       onChanged();
       return this;
@@ -2302,28 +2290,24 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     private int availabilityImpact_ = 0;
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-     *
      * @return The enum numeric value on the wire for availabilityImpact.
      */
-    @java.lang.Override
-    public int getAvailabilityImpactValue() {
+    @java.lang.Override public int getAvailabilityImpactValue() {
       return availabilityImpact_;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-     *
      * @param value The enum numeric value on the wire for availabilityImpact to set.
      * @return This builder for chaining.
      */
     public Builder setAvailabilityImpactValue(int value) {
-
+      
       availabilityImpact_ = value;
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-     *
      * @return The availabilityImpact.
      */
     @java.lang.Override
@@ -2334,7 +2318,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-     *
      * @param value The availabilityImpact to set.
      * @return This builder for chaining.
      */
@@ -2342,25 +2325,24 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       availabilityImpact_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
      * <code>.grafeas.v1.CVSS.Impact availability_impact = 12;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearAvailabilityImpact() {
-
+      
       availabilityImpact_ = 0;
       onChanged();
       return this;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -2370,12 +2352,12 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.CVSS)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.CVSS)
   private static final io.grafeas.v1.CVSS DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.CVSS();
   }
@@ -2384,27 +2366,27 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CVSS> PARSER =
-      new com.google.protobuf.AbstractParser<CVSS>() {
-        @java.lang.Override
-        public CVSS parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<CVSS>
+      PARSER = new com.google.protobuf.AbstractParser<CVSS>() {
+    @java.lang.Override
+    public CVSS parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<CVSS> parser() {
     return PARSER;
@@ -2419,4 +2401,6 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.CVSS getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

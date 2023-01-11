@@ -19,35 +19,29 @@
 
 package io.grafeas.v1;
 
-public interface FileLocationOrBuilder
-    extends
+public interface FileLocationOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.FileLocation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * For jars that are contained inside .war files, this filepath
    * can indicate the path to war file combined with the path to jar file.
    * </pre>
    *
    * <code>string file_path = 1;</code>
-   *
    * @return The filePath.
    */
   java.lang.String getFilePath();
   /**
-   *
-   *
    * <pre>
    * For jars that are contained inside .war files, this filepath
    * can indicate the path to war file combined with the path to jar file.
    * </pre>
    *
    * <code>string file_path = 1;</code>
-   *
    * @return The bytes for filePath.
    */
-  com.google.protobuf.ByteString getFilePathBytes();
+  com.google.protobuf.ByteString
+      getFilePathBytes();
 }

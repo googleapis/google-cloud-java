@@ -20,8 +20,6 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * An Upgrade Occurrence represents that a specific resource_url could install a
  * specific upgrade. This presence is supplied via local sources (i.e. it is
@@ -32,32 +30,33 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.UpgradeOccurrence}
  */
-public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class UpgradeOccurrence extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.UpgradeOccurrence)
     UpgradeOccurrenceOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use UpgradeOccurrence.newBuilder() to construct.
   private UpgradeOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private UpgradeOccurrence() {
     package_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new UpgradeOccurrence();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeOccurrence_descriptor;
   }
 
@@ -72,14 +71,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   public static final int PACKAGE_FIELD_NUMBER = 1;
   private volatile java.lang.Object package_;
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The package.
    */
   @java.lang.Override
@@ -88,29 +84,29 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       package_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The package this Upgrade is for.
    * </pre>
    *
    * <code>string package = 1;</code>
-   *
    * @return The bytes for package.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPackageBytes() {
+  public com.google.protobuf.ByteString
+      getPackageBytes() {
     java.lang.Object ref = package_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       package_ = b;
       return b;
     } else {
@@ -121,15 +117,12 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   public static final int PARSED_VERSION_FIELD_NUMBER = 3;
   private io.grafeas.v1.Version parsedVersion_;
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in a machine +
    * human readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version parsed_version = 3;</code>
-   *
    * @return Whether the parsedVersion field is set.
    */
   @java.lang.Override
@@ -137,15 +130,12 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     return parsedVersion_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in a machine +
    * human readable form.
    * </pre>
    *
    * <code>.grafeas.v1.Version parsed_version = 3;</code>
-   *
    * @return The parsedVersion.
    */
   @java.lang.Override
@@ -153,8 +143,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     return parsedVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : parsedVersion_;
   }
   /**
-   *
-   *
    * <pre>
    * Required for non-Windows OS. The version of the package in a machine +
    * human readable form.
@@ -170,8 +158,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   public static final int DISTRIBUTION_FIELD_NUMBER = 4;
   private io.grafeas.v1.UpgradeDistribution distribution_;
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for available for the specific operating system
    * for the resource_url. This allows efficient filtering, as well as
@@ -179,7 +165,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-   *
    * @return Whether the distribution field is set.
    */
   @java.lang.Override
@@ -187,8 +172,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     return distribution_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for available for the specific operating system
    * for the resource_url. This allows efficient filtering, as well as
@@ -196,18 +179,13 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-   *
    * @return The distribution.
    */
   @java.lang.Override
   public io.grafeas.v1.UpgradeDistribution getDistribution() {
-    return distribution_ == null
-        ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance()
-        : distribution_;
+    return distribution_ == null ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance() : distribution_;
   }
   /**
-   *
-   *
    * <pre>
    * Metadata about the upgrade for available for the specific operating system
    * for the resource_url. This allows efficient filtering, as well as
@@ -224,14 +202,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   public static final int WINDOWS_UPDATE_FIELD_NUMBER = 5;
   private io.grafeas.v1.WindowsUpdate windowsUpdate_;
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-   *
    * @return Whether the windowsUpdate field is set.
    */
   @java.lang.Override
@@ -239,25 +214,18 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     return windowsUpdate_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
    *
    * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-   *
    * @return The windowsUpdate.
    */
   @java.lang.Override
   public io.grafeas.v1.WindowsUpdate getWindowsUpdate() {
-    return windowsUpdate_ == null
-        ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
-        : windowsUpdate_;
+    return windowsUpdate_ == null ? io.grafeas.v1.WindowsUpdate.getDefaultInstance() : windowsUpdate_;
   }
   /**
-   *
-   *
    * <pre>
    * Required for Windows OS. Represents the metadata about the Windows update.
    * </pre>
@@ -270,7 +238,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -282,7 +249,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(package_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, package_);
     }
@@ -308,13 +276,16 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, package_);
     }
     if (parsedVersion_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getParsedVersion());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getParsedVersion());
     }
     if (distribution_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDistribution());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getDistribution());
     }
     if (windowsUpdate_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getWindowsUpdate());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getWindowsUpdate());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -324,25 +295,29 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.UpgradeOccurrence)) {
       return super.equals(obj);
     }
     io.grafeas.v1.UpgradeOccurrence other = (io.grafeas.v1.UpgradeOccurrence) obj;
 
-    if (!getPackage().equals(other.getPackage())) return false;
+    if (!getPackage()
+        .equals(other.getPackage())) return false;
     if (hasParsedVersion() != other.hasParsedVersion()) return false;
     if (hasParsedVersion()) {
-      if (!getParsedVersion().equals(other.getParsedVersion())) return false;
+      if (!getParsedVersion()
+          .equals(other.getParsedVersion())) return false;
     }
     if (hasDistribution() != other.hasDistribution()) return false;
     if (hasDistribution()) {
-      if (!getDistribution().equals(other.getDistribution())) return false;
+      if (!getDistribution()
+          .equals(other.getDistribution())) return false;
     }
     if (hasWindowsUpdate() != other.hasWindowsUpdate()) return false;
     if (hasWindowsUpdate()) {
-      if (!getWindowsUpdate().equals(other.getWindowsUpdate())) return false;
+      if (!getWindowsUpdate()
+          .equals(other.getWindowsUpdate())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -374,103 +349,97 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     return hash;
   }
 
-  public static io.grafeas.v1.UpgradeOccurrence parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.UpgradeOccurrence parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.UpgradeOccurrence parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.UpgradeOccurrence parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(
-      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.UpgradeOccurrence parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.UpgradeOccurrence prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * An Upgrade Occurrence represents that a specific resource_url could install a
    * specific upgrade. This presence is supplied via local sources (i.e. it is
@@ -481,11 +450,12 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
    *
    * Protobuf type {@code grafeas.v1.UpgradeOccurrence}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.UpgradeOccurrence)
       io.grafeas.v1.UpgradeOccurrenceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeOccurrence_descriptor;
     }
 
@@ -498,12 +468,15 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     }
 
     // Construct using io.grafeas.v1.UpgradeOccurrence.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -531,7 +504,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.Upgrade.internal_static_grafeas_v1_UpgradeOccurrence_descriptor;
     }
 
@@ -576,39 +550,38 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.UpgradeOccurrence) {
-        return mergeFrom((io.grafeas.v1.UpgradeOccurrence) other);
+        return mergeFrom((io.grafeas.v1.UpgradeOccurrence)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -656,37 +629,38 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                package_ = input.readStringRequireUtf8();
+            case 10: {
+              package_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 26:
-              {
-                input.readMessage(getParsedVersionFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 10
+            case 26: {
+              input.readMessage(
+                  getParsedVersionFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 26
-            case 34:
-              {
-                input.readMessage(getDistributionFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 26
+            case 34: {
+              input.readMessage(
+                  getDistributionFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 34
-            case 42:
-              {
-                input.readMessage(getWindowsUpdateFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 34
+            case 42: {
+              input.readMessage(
+                  getWindowsUpdateFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 42
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 42
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -699,20 +673,18 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
 
     private java.lang.Object package_ = "";
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @return The package.
      */
     public java.lang.String getPackage() {
       java.lang.Object ref = package_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         package_ = s;
         return s;
@@ -721,21 +693,20 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @return The bytes for package.
      */
-    public com.google.protobuf.ByteString getPackageBytes() {
+    public com.google.protobuf.ByteString
+        getPackageBytes() {
       java.lang.Object ref = package_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         package_ = b;
         return b;
       } else {
@@ -743,61 +714,54 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @param value The package to set.
      * @return This builder for chaining.
      */
-    public Builder setPackage(java.lang.String value) {
+    public Builder setPackage(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       package_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearPackage() {
-
+      
       package_ = getDefaultInstance().getPackage();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The package this Upgrade is for.
      * </pre>
      *
      * <code>string package = 1;</code>
-     *
      * @param value The bytes for package to set.
      * @return This builder for chaining.
      */
-    public Builder setPackageBytes(com.google.protobuf.ByteString value) {
+    public Builder setPackageBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       package_ = value;
       onChanged();
       return this;
@@ -805,33 +769,26 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
 
     private io.grafeas.v1.Version parsedVersion_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
-        parsedVersionBuilder_;
+        io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder> parsedVersionBuilder_;
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
      * </pre>
      *
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
-     *
      * @return Whether the parsedVersion field is set.
      */
     public boolean hasParsedVersion() {
       return parsedVersionBuilder_ != null || parsedVersion_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
      * </pre>
      *
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
-     *
      * @return The parsedVersion.
      */
     public io.grafeas.v1.Version getParsedVersion() {
@@ -842,8 +799,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -865,8 +820,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -874,7 +827,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      *
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
      */
-    public Builder setParsedVersion(io.grafeas.v1.Version.Builder builderForValue) {
+    public Builder setParsedVersion(
+        io.grafeas.v1.Version.Builder builderForValue) {
       if (parsedVersionBuilder_ == null) {
         parsedVersion_ = builderForValue.build();
         onChanged();
@@ -885,8 +839,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -898,7 +850,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (parsedVersionBuilder_ == null) {
         if (parsedVersion_ != null) {
           parsedVersion_ =
-              io.grafeas.v1.Version.newBuilder(parsedVersion_).mergeFrom(value).buildPartial();
+            io.grafeas.v1.Version.newBuilder(parsedVersion_).mergeFrom(value).buildPartial();
         } else {
           parsedVersion_ = value;
         }
@@ -910,8 +862,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -931,8 +881,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -941,13 +889,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
      */
     public io.grafeas.v1.Version.Builder getParsedVersionBuilder() {
-
+      
       onChanged();
       return getParsedVersionFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -959,12 +905,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (parsedVersionBuilder_ != null) {
         return parsedVersionBuilder_.getMessageOrBuilder();
       } else {
-        return parsedVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : parsedVersion_;
+        return parsedVersion_ == null ?
+            io.grafeas.v1.Version.getDefaultInstance() : parsedVersion_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for non-Windows OS. The version of the package in a machine +
      * human readable form.
@@ -973,15 +918,14 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Version parsed_version = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
+        io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder> 
         getParsedVersionFieldBuilder() {
       if (parsedVersionBuilder_ == null) {
-        parsedVersionBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.Version,
-                io.grafeas.v1.Version.Builder,
-                io.grafeas.v1.VersionOrBuilder>(
-                getParsedVersion(), getParentForChildren(), isClean());
+        parsedVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>(
+                getParsedVersion(),
+                getParentForChildren(),
+                isClean());
         parsedVersion_ = null;
       }
       return parsedVersionBuilder_;
@@ -989,13 +933,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
 
     private io.grafeas.v1.UpgradeDistribution distribution_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.UpgradeDistribution,
-            io.grafeas.v1.UpgradeDistribution.Builder,
-            io.grafeas.v1.UpgradeDistributionOrBuilder>
-        distributionBuilder_;
+        io.grafeas.v1.UpgradeDistribution, io.grafeas.v1.UpgradeDistribution.Builder, io.grafeas.v1.UpgradeDistributionOrBuilder> distributionBuilder_;
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1003,15 +942,12 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-     *
      * @return Whether the distribution field is set.
      */
     public boolean hasDistribution() {
       return distributionBuilder_ != null || distribution_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1019,21 +955,16 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * </pre>
      *
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
-     *
      * @return The distribution.
      */
     public io.grafeas.v1.UpgradeDistribution getDistribution() {
       if (distributionBuilder_ == null) {
-        return distribution_ == null
-            ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance()
-            : distribution_;
+        return distribution_ == null ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance() : distribution_;
       } else {
         return distributionBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1056,8 +987,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1066,7 +995,8 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      *
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
      */
-    public Builder setDistribution(io.grafeas.v1.UpgradeDistribution.Builder builderForValue) {
+    public Builder setDistribution(
+        io.grafeas.v1.UpgradeDistribution.Builder builderForValue) {
       if (distributionBuilder_ == null) {
         distribution_ = builderForValue.build();
         onChanged();
@@ -1077,8 +1007,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1091,9 +1019,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (distributionBuilder_ == null) {
         if (distribution_ != null) {
           distribution_ =
-              io.grafeas.v1.UpgradeDistribution.newBuilder(distribution_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            io.grafeas.v1.UpgradeDistribution.newBuilder(distribution_).mergeFrom(value).buildPartial();
         } else {
           distribution_ = value;
         }
@@ -1105,8 +1031,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1127,8 +1051,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1138,13 +1060,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
      */
     public io.grafeas.v1.UpgradeDistribution.Builder getDistributionBuilder() {
-
+      
       onChanged();
       return getDistributionFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1157,14 +1077,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (distributionBuilder_ != null) {
         return distributionBuilder_.getMessageOrBuilder();
       } else {
-        return distribution_ == null
-            ? io.grafeas.v1.UpgradeDistribution.getDefaultInstance()
-            : distribution_;
+        return distribution_ == null ?
+            io.grafeas.v1.UpgradeDistribution.getDefaultInstance() : distribution_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Metadata about the upgrade for available for the specific operating system
      * for the resource_url. This allows efficient filtering, as well as
@@ -1174,17 +1091,14 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.UpgradeDistribution distribution = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.UpgradeDistribution,
-            io.grafeas.v1.UpgradeDistribution.Builder,
-            io.grafeas.v1.UpgradeDistributionOrBuilder>
+        io.grafeas.v1.UpgradeDistribution, io.grafeas.v1.UpgradeDistribution.Builder, io.grafeas.v1.UpgradeDistributionOrBuilder> 
         getDistributionFieldBuilder() {
       if (distributionBuilder_ == null) {
-        distributionBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.UpgradeDistribution,
-                io.grafeas.v1.UpgradeDistribution.Builder,
-                io.grafeas.v1.UpgradeDistributionOrBuilder>(
-                getDistribution(), getParentForChildren(), isClean());
+        distributionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.UpgradeDistribution, io.grafeas.v1.UpgradeDistribution.Builder, io.grafeas.v1.UpgradeDistributionOrBuilder>(
+                getDistribution(),
+                getParentForChildren(),
+                isClean());
         distribution_ = null;
       }
       return distributionBuilder_;
@@ -1192,47 +1106,34 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
 
     private io.grafeas.v1.WindowsUpdate windowsUpdate_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate,
-            io.grafeas.v1.WindowsUpdate.Builder,
-            io.grafeas.v1.WindowsUpdateOrBuilder>
-        windowsUpdateBuilder_;
+        io.grafeas.v1.WindowsUpdate, io.grafeas.v1.WindowsUpdate.Builder, io.grafeas.v1.WindowsUpdateOrBuilder> windowsUpdateBuilder_;
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-     *
      * @return Whether the windowsUpdate field is set.
      */
     public boolean hasWindowsUpdate() {
       return windowsUpdateBuilder_ != null || windowsUpdate_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
-     *
      * @return The windowsUpdate.
      */
     public io.grafeas.v1.WindowsUpdate getWindowsUpdate() {
       if (windowsUpdateBuilder_ == null) {
-        return windowsUpdate_ == null
-            ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
-            : windowsUpdate_;
+        return windowsUpdate_ == null ? io.grafeas.v1.WindowsUpdate.getDefaultInstance() : windowsUpdate_;
       } else {
         return windowsUpdateBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1253,15 +1154,14 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
      *
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
      */
-    public Builder setWindowsUpdate(io.grafeas.v1.WindowsUpdate.Builder builderForValue) {
+    public Builder setWindowsUpdate(
+        io.grafeas.v1.WindowsUpdate.Builder builderForValue) {
       if (windowsUpdateBuilder_ == null) {
         windowsUpdate_ = builderForValue.build();
         onChanged();
@@ -1272,8 +1172,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1284,9 +1182,7 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (windowsUpdateBuilder_ == null) {
         if (windowsUpdate_ != null) {
           windowsUpdate_ =
-              io.grafeas.v1.WindowsUpdate.newBuilder(windowsUpdate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            io.grafeas.v1.WindowsUpdate.newBuilder(windowsUpdate_).mergeFrom(value).buildPartial();
         } else {
           windowsUpdate_ = value;
         }
@@ -1298,8 +1194,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1318,8 +1212,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1327,13 +1219,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
      */
     public io.grafeas.v1.WindowsUpdate.Builder getWindowsUpdateBuilder() {
-
+      
       onChanged();
       return getWindowsUpdateFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1344,14 +1234,11 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       if (windowsUpdateBuilder_ != null) {
         return windowsUpdateBuilder_.getMessageOrBuilder();
       } else {
-        return windowsUpdate_ == null
-            ? io.grafeas.v1.WindowsUpdate.getDefaultInstance()
-            : windowsUpdate_;
+        return windowsUpdate_ == null ?
+            io.grafeas.v1.WindowsUpdate.getDefaultInstance() : windowsUpdate_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Required for Windows OS. Represents the metadata about the Windows update.
      * </pre>
@@ -1359,24 +1246,21 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.WindowsUpdate windows_update = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.WindowsUpdate,
-            io.grafeas.v1.WindowsUpdate.Builder,
-            io.grafeas.v1.WindowsUpdateOrBuilder>
+        io.grafeas.v1.WindowsUpdate, io.grafeas.v1.WindowsUpdate.Builder, io.grafeas.v1.WindowsUpdateOrBuilder> 
         getWindowsUpdateFieldBuilder() {
       if (windowsUpdateBuilder_ == null) {
-        windowsUpdateBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.WindowsUpdate,
-                io.grafeas.v1.WindowsUpdate.Builder,
-                io.grafeas.v1.WindowsUpdateOrBuilder>(
-                getWindowsUpdate(), getParentForChildren(), isClean());
+        windowsUpdateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.WindowsUpdate, io.grafeas.v1.WindowsUpdate.Builder, io.grafeas.v1.WindowsUpdateOrBuilder>(
+                getWindowsUpdate(),
+                getParentForChildren(),
+                isClean());
         windowsUpdate_ = null;
       }
       return windowsUpdateBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1386,12 +1270,12 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.UpgradeOccurrence)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.UpgradeOccurrence)
   private static final io.grafeas.v1.UpgradeOccurrence DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.UpgradeOccurrence();
   }
@@ -1400,27 +1284,27 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpgradeOccurrence> PARSER =
-      new com.google.protobuf.AbstractParser<UpgradeOccurrence>() {
-        @java.lang.Override
-        public UpgradeOccurrence parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<UpgradeOccurrence>
+      PARSER = new com.google.protobuf.AbstractParser<UpgradeOccurrence>() {
+    @java.lang.Override
+    public UpgradeOccurrence parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<UpgradeOccurrence> parser() {
     return PARSER;
@@ -1435,4 +1319,6 @@ public final class UpgradeOccurrence extends com.google.protobuf.GeneratedMessag
   public io.grafeas.v1.UpgradeOccurrence getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

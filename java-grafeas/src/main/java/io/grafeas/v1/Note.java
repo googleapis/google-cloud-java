@@ -20,24 +20,21 @@
 package io.grafeas.v1;
 
 /**
- *
- *
  * <pre>
  * A type of analysis that can be done for a resource.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.Note}
  */
-public final class Note extends com.google.protobuf.GeneratedMessageV3
-    implements
+public final class Note extends
+    com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Note)
     NoteOrBuilder {
-  private static final long serialVersionUID = 0L;
+private static final long serialVersionUID = 0L;
   // Use Note.newBuilder() to construct.
   private Note(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-
   private Note() {
     name_ = "";
     shortDescription_ = "";
@@ -49,16 +46,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
     return new Note();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet
+  getUnknownFields() {
     return this.unknownFields;
   }
-
-  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+  public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
     return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_Note_descriptor;
   }
 
@@ -72,10 +71,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
   private int typeCase_ = 0;
   private java.lang.Object type_;
-
   public enum TypeCase
-      implements
-          com.google.protobuf.Internal.EnumLite,
+      implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VULNERABILITY(10),
     BUILD(11),
@@ -89,7 +86,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     DSSE_ATTESTATION(19),
     TYPE_NOT_SET(0);
     private final int value;
-
     private TypeCase(int value) {
       this.value = value;
     }
@@ -105,54 +101,40 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     public static TypeCase forNumber(int value) {
       switch (value) {
-        case 10:
-          return VULNERABILITY;
-        case 11:
-          return BUILD;
-        case 12:
-          return IMAGE;
-        case 13:
-          return PACKAGE;
-        case 14:
-          return DEPLOYMENT;
-        case 15:
-          return DISCOVERY;
-        case 16:
-          return ATTESTATION;
-        case 17:
-          return UPGRADE;
-        case 18:
-          return COMPLIANCE;
-        case 19:
-          return DSSE_ATTESTATION;
-        case 0:
-          return TYPE_NOT_SET;
-        default:
-          return null;
+        case 10: return VULNERABILITY;
+        case 11: return BUILD;
+        case 12: return IMAGE;
+        case 13: return PACKAGE;
+        case 14: return DEPLOYMENT;
+        case 15: return DISCOVERY;
+        case 16: return ATTESTATION;
+        case 17: return UPGRADE;
+        case 18: return COMPLIANCE;
+        case 19: return DSSE_ATTESTATION;
+        case 0: return TYPE_NOT_SET;
+        default: return null;
       }
     }
-
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TypeCase getTypeCase() {
-    return TypeCase.forNumber(typeCase_);
+  public TypeCase
+  getTypeCase() {
+    return TypeCase.forNumber(
+        typeCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
-   *
-   *
    * <pre>
    * Output only. The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * </pre>
    *
    * <code>string name = 1;</code>
-   *
    * @return The name.
    */
   @java.lang.Override
@@ -161,30 +143,30 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * Output only. The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * </pre>
    *
    * <code>string name = 1;</code>
-   *
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getNameBytes() {
+  public com.google.protobuf.ByteString
+      getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -195,14 +177,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object shortDescription_;
   /**
-   *
-   *
    * <pre>
    * A one sentence description of this note.
    * </pre>
    *
    * <code>string short_description = 2;</code>
-   *
    * @return The shortDescription.
    */
   @java.lang.Override
@@ -211,29 +190,29 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       shortDescription_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * A one sentence description of this note.
    * </pre>
    *
    * <code>string short_description = 2;</code>
-   *
    * @return The bytes for shortDescription.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getShortDescriptionBytes() {
+  public com.google.protobuf.ByteString
+      getShortDescriptionBytes() {
     java.lang.Object ref = shortDescription_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       shortDescription_ = b;
       return b;
     } else {
@@ -244,14 +223,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int LONG_DESCRIPTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object longDescription_;
   /**
-   *
-   *
    * <pre>
    * A detailed description of this note.
    * </pre>
    *
    * <code>string long_description = 3;</code>
-   *
    * @return The longDescription.
    */
   @java.lang.Override
@@ -260,29 +236,29 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       longDescription_ = s;
       return s;
     }
   }
   /**
-   *
-   *
    * <pre>
    * A detailed description of this note.
    * </pre>
    *
    * <code>string long_description = 3;</code>
-   *
    * @return The bytes for longDescription.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getLongDescriptionBytes() {
+  public com.google.protobuf.ByteString
+      getLongDescriptionBytes() {
     java.lang.Object ref = longDescription_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
       longDescription_ = b;
       return b;
     } else {
@@ -293,35 +269,27 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_;
   /**
-   *
-   *
    * <pre>
    * Output only. The type of analysis. This field can be used as a filter in
    * list requests.
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
-   *
    * @return The enum numeric value on the wire for kind.
    */
-  @java.lang.Override
-  public int getKindValue() {
+  @java.lang.Override public int getKindValue() {
     return kind_;
   }
   /**
-   *
-   *
    * <pre>
    * Output only. The type of analysis. This field can be used as a filter in
    * list requests.
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
-   *
    * @return The kind.
    */
-  @java.lang.Override
-  public io.grafeas.v1.NoteKind getKind() {
+  @java.lang.Override public io.grafeas.v1.NoteKind getKind() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.NoteKind result = io.grafeas.v1.NoteKind.valueOf(kind_);
     return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
@@ -330,8 +298,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int RELATED_URL_FIELD_NUMBER = 5;
   private java.util.List<io.grafeas.v1.RelatedUrl> relatedUrl_;
   /**
-   *
-   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -343,8 +309,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return relatedUrl_;
   }
   /**
-   *
-   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -352,12 +316,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.RelatedUrlOrBuilder> getRelatedUrlOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.RelatedUrlOrBuilder> 
+      getRelatedUrlOrBuilderList() {
     return relatedUrl_;
   }
   /**
-   *
-   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -369,8 +332,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return relatedUrl_.size();
   }
   /**
-   *
-   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -382,8 +343,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return relatedUrl_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -391,21 +350,19 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.RelatedUrlOrBuilder getRelatedUrlOrBuilder(int index) {
+  public io.grafeas.v1.RelatedUrlOrBuilder getRelatedUrlOrBuilder(
+      int index) {
     return relatedUrl_.get(index);
   }
 
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp expirationTime_;
   /**
-   *
-   *
    * <pre>
    * Time of expiration for this note. Empty if note does not expire.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
-   *
    * @return Whether the expirationTime field is set.
    */
   @java.lang.Override
@@ -413,25 +370,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return expirationTime_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Time of expiration for this note. Empty if note does not expire.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
-   *
    * @return The expirationTime.
    */
   @java.lang.Override
   public com.google.protobuf.Timestamp getExpirationTime() {
-    return expirationTime_ == null
-        ? com.google.protobuf.Timestamp.getDefaultInstance()
-        : expirationTime_;
+    return expirationTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expirationTime_;
   }
   /**
-   *
-   *
    * <pre>
    * Time of expiration for this note. Empty if note does not expire.
    * </pre>
@@ -446,15 +396,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
   /**
-   *
-   *
    * <pre>
    * Output only. The time this note was created. This field can be used as a
    * filter in list requests.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
-   *
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -462,15 +409,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return createTime_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Output only. The time this note was created. This field can be used as a
    * filter in list requests.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7;</code>
-   *
    * @return The createTime.
    */
   @java.lang.Override
@@ -478,8 +422,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
-   *
-   *
    * <pre>
    * Output only. The time this note was created. This field can be used as a
    * filter in list requests.
@@ -495,15 +437,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
   /**
-   *
-   *
    * <pre>
    * Output only. The time this note was last updated. This field can be used as
    * a filter in list requests.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
-   *
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -511,15 +450,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ != null;
   }
   /**
-   *
-   *
    * <pre>
    * Output only. The time this note was last updated. This field can be used as
    * a filter in list requests.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8;</code>
-   *
    * @return The updateTime.
    */
   @java.lang.Override
@@ -527,8 +463,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
-   *
-   *
    * <pre>
    * Output only. The time this note was last updated. This field can be used as
    * a filter in list requests.
@@ -544,42 +478,34 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public static final int RELATED_NOTE_NAMES_FIELD_NUMBER = 9;
   private com.google.protobuf.LazyStringList relatedNoteNames_;
   /**
-   *
-   *
    * <pre>
    * Other notes related to this note.
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
-   *
    * @return A list containing the relatedNoteNames.
    */
-  public com.google.protobuf.ProtocolStringList getRelatedNoteNamesList() {
+  public com.google.protobuf.ProtocolStringList
+      getRelatedNoteNamesList() {
     return relatedNoteNames_;
   }
   /**
-   *
-   *
    * <pre>
    * Other notes related to this note.
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
-   *
    * @return The count of relatedNoteNames.
    */
   public int getRelatedNoteNamesCount() {
     return relatedNoteNames_.size();
   }
   /**
-   *
-   *
    * <pre>
    * Other notes related to this note.
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
-   *
    * @param index The index of the element to return.
    * @return The relatedNoteNames at the given index.
    */
@@ -587,31 +513,26 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return relatedNoteNames_.get(index);
   }
   /**
-   *
-   *
    * <pre>
    * Other notes related to this note.
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
-   *
    * @param index The index of the value to return.
    * @return The bytes of the relatedNoteNames at the given index.
    */
-  public com.google.protobuf.ByteString getRelatedNoteNamesBytes(int index) {
+  public com.google.protobuf.ByteString
+      getRelatedNoteNamesBytes(int index) {
     return relatedNoteNames_.getByteString(index);
   }
 
   public static final int VULNERABILITY_FIELD_NUMBER = 10;
   /**
-   *
-   *
    * <pre>
    * A note describing a package vulnerability.
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
-   *
    * @return Whether the vulnerability field is set.
    */
   @java.lang.Override
@@ -619,26 +540,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 10;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a package vulnerability.
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
-   *
    * @return The vulnerability.
    */
   @java.lang.Override
   public io.grafeas.v1.VulnerabilityNote getVulnerability() {
     if (typeCase_ == 10) {
-      return (io.grafeas.v1.VulnerabilityNote) type_;
+       return (io.grafeas.v1.VulnerabilityNote) type_;
     }
     return io.grafeas.v1.VulnerabilityNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a package vulnerability.
    * </pre>
@@ -648,21 +564,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.VulnerabilityNoteOrBuilder getVulnerabilityOrBuilder() {
     if (typeCase_ == 10) {
-      return (io.grafeas.v1.VulnerabilityNote) type_;
+       return (io.grafeas.v1.VulnerabilityNote) type_;
     }
     return io.grafeas.v1.VulnerabilityNote.getDefaultInstance();
   }
 
   public static final int BUILD_FIELD_NUMBER = 11;
   /**
-   *
-   *
    * <pre>
    * A note describing build provenance for a verifiable build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildNote build = 11;</code>
-   *
    * @return Whether the build field is set.
    */
   @java.lang.Override
@@ -670,26 +583,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 11;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing build provenance for a verifiable build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildNote build = 11;</code>
-   *
    * @return The build.
    */
   @java.lang.Override
   public io.grafeas.v1.BuildNote getBuild() {
     if (typeCase_ == 11) {
-      return (io.grafeas.v1.BuildNote) type_;
+       return (io.grafeas.v1.BuildNote) type_;
     }
     return io.grafeas.v1.BuildNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing build provenance for a verifiable build.
    * </pre>
@@ -699,21 +607,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.BuildNoteOrBuilder getBuildOrBuilder() {
     if (typeCase_ == 11) {
-      return (io.grafeas.v1.BuildNote) type_;
+       return (io.grafeas.v1.BuildNote) type_;
     }
     return io.grafeas.v1.BuildNote.getDefaultInstance();
   }
 
   public static final int IMAGE_FIELD_NUMBER = 12;
   /**
-   *
-   *
    * <pre>
    * A note describing a base image.
    * </pre>
    *
    * <code>.grafeas.v1.ImageNote image = 12;</code>
-   *
    * @return Whether the image field is set.
    */
   @java.lang.Override
@@ -721,26 +626,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 12;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a base image.
    * </pre>
    *
    * <code>.grafeas.v1.ImageNote image = 12;</code>
-   *
    * @return The image.
    */
   @java.lang.Override
   public io.grafeas.v1.ImageNote getImage() {
     if (typeCase_ == 12) {
-      return (io.grafeas.v1.ImageNote) type_;
+       return (io.grafeas.v1.ImageNote) type_;
     }
     return io.grafeas.v1.ImageNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a base image.
    * </pre>
@@ -750,21 +650,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.ImageNoteOrBuilder getImageOrBuilder() {
     if (typeCase_ == 12) {
-      return (io.grafeas.v1.ImageNote) type_;
+       return (io.grafeas.v1.ImageNote) type_;
     }
     return io.grafeas.v1.ImageNote.getDefaultInstance();
   }
 
   public static final int PACKAGE_FIELD_NUMBER = 13;
   /**
-   *
-   *
    * <pre>
    * A note describing a package hosted by various package managers.
    * </pre>
    *
    * <code>.grafeas.v1.PackageNote package = 13;</code>
-   *
    * @return Whether the package field is set.
    */
   @java.lang.Override
@@ -772,26 +669,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 13;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a package hosted by various package managers.
    * </pre>
    *
    * <code>.grafeas.v1.PackageNote package = 13;</code>
-   *
    * @return The package.
    */
   @java.lang.Override
   public io.grafeas.v1.PackageNote getPackage() {
     if (typeCase_ == 13) {
-      return (io.grafeas.v1.PackageNote) type_;
+       return (io.grafeas.v1.PackageNote) type_;
     }
     return io.grafeas.v1.PackageNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a package hosted by various package managers.
    * </pre>
@@ -801,21 +693,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.PackageNoteOrBuilder getPackageOrBuilder() {
     if (typeCase_ == 13) {
-      return (io.grafeas.v1.PackageNote) type_;
+       return (io.grafeas.v1.PackageNote) type_;
     }
     return io.grafeas.v1.PackageNote.getDefaultInstance();
   }
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 14;
   /**
-   *
-   *
    * <pre>
    * A note describing something that can be deployed.
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
-   *
    * @return Whether the deployment field is set.
    */
   @java.lang.Override
@@ -823,26 +712,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 14;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing something that can be deployed.
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
-   *
    * @return The deployment.
    */
   @java.lang.Override
   public io.grafeas.v1.DeploymentNote getDeployment() {
     if (typeCase_ == 14) {
-      return (io.grafeas.v1.DeploymentNote) type_;
+       return (io.grafeas.v1.DeploymentNote) type_;
     }
     return io.grafeas.v1.DeploymentNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing something that can be deployed.
    * </pre>
@@ -852,21 +736,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.DeploymentNoteOrBuilder getDeploymentOrBuilder() {
     if (typeCase_ == 14) {
-      return (io.grafeas.v1.DeploymentNote) type_;
+       return (io.grafeas.v1.DeploymentNote) type_;
     }
     return io.grafeas.v1.DeploymentNote.getDefaultInstance();
   }
 
   public static final int DISCOVERY_FIELD_NUMBER = 15;
   /**
-   *
-   *
    * <pre>
    * A note describing the initial analysis of a resource.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
-   *
    * @return Whether the discovery field is set.
    */
   @java.lang.Override
@@ -874,26 +755,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 15;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing the initial analysis of a resource.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
-   *
    * @return The discovery.
    */
   @java.lang.Override
   public io.grafeas.v1.DiscoveryNote getDiscovery() {
     if (typeCase_ == 15) {
-      return (io.grafeas.v1.DiscoveryNote) type_;
+       return (io.grafeas.v1.DiscoveryNote) type_;
     }
     return io.grafeas.v1.DiscoveryNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing the initial analysis of a resource.
    * </pre>
@@ -903,21 +779,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.DiscoveryNoteOrBuilder getDiscoveryOrBuilder() {
     if (typeCase_ == 15) {
-      return (io.grafeas.v1.DiscoveryNote) type_;
+       return (io.grafeas.v1.DiscoveryNote) type_;
     }
     return io.grafeas.v1.DiscoveryNote.getDefaultInstance();
   }
 
   public static final int ATTESTATION_FIELD_NUMBER = 16;
   /**
-   *
-   *
    * <pre>
    * A note describing an attestation role.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
-   *
    * @return Whether the attestation field is set.
    */
   @java.lang.Override
@@ -925,26 +798,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 16;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing an attestation role.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
-   *
    * @return The attestation.
    */
   @java.lang.Override
   public io.grafeas.v1.AttestationNote getAttestation() {
     if (typeCase_ == 16) {
-      return (io.grafeas.v1.AttestationNote) type_;
+       return (io.grafeas.v1.AttestationNote) type_;
     }
     return io.grafeas.v1.AttestationNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing an attestation role.
    * </pre>
@@ -954,21 +822,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.AttestationNoteOrBuilder getAttestationOrBuilder() {
     if (typeCase_ == 16) {
-      return (io.grafeas.v1.AttestationNote) type_;
+       return (io.grafeas.v1.AttestationNote) type_;
     }
     return io.grafeas.v1.AttestationNote.getDefaultInstance();
   }
 
   public static final int UPGRADE_FIELD_NUMBER = 17;
   /**
-   *
-   *
    * <pre>
    * A note describing available package upgrades.
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
-   *
    * @return Whether the upgrade field is set.
    */
   @java.lang.Override
@@ -976,26 +841,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 17;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing available package upgrades.
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
-   *
    * @return The upgrade.
    */
   @java.lang.Override
   public io.grafeas.v1.UpgradeNote getUpgrade() {
     if (typeCase_ == 17) {
-      return (io.grafeas.v1.UpgradeNote) type_;
+       return (io.grafeas.v1.UpgradeNote) type_;
     }
     return io.grafeas.v1.UpgradeNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing available package upgrades.
    * </pre>
@@ -1005,21 +865,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.UpgradeNoteOrBuilder getUpgradeOrBuilder() {
     if (typeCase_ == 17) {
-      return (io.grafeas.v1.UpgradeNote) type_;
+       return (io.grafeas.v1.UpgradeNote) type_;
     }
     return io.grafeas.v1.UpgradeNote.getDefaultInstance();
   }
 
   public static final int COMPLIANCE_FIELD_NUMBER = 18;
   /**
-   *
-   *
    * <pre>
    * A note describing a compliance check.
    * </pre>
    *
    * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
-   *
    * @return Whether the compliance field is set.
    */
   @java.lang.Override
@@ -1027,26 +884,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 18;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a compliance check.
    * </pre>
    *
    * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
-   *
    * @return The compliance.
    */
   @java.lang.Override
   public io.grafeas.v1.ComplianceNote getCompliance() {
     if (typeCase_ == 18) {
-      return (io.grafeas.v1.ComplianceNote) type_;
+       return (io.grafeas.v1.ComplianceNote) type_;
     }
     return io.grafeas.v1.ComplianceNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a compliance check.
    * </pre>
@@ -1056,21 +908,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.ComplianceNoteOrBuilder getComplianceOrBuilder() {
     if (typeCase_ == 18) {
-      return (io.grafeas.v1.ComplianceNote) type_;
+       return (io.grafeas.v1.ComplianceNote) type_;
     }
     return io.grafeas.v1.ComplianceNote.getDefaultInstance();
   }
 
   public static final int DSSE_ATTESTATION_FIELD_NUMBER = 19;
   /**
-   *
-   *
    * <pre>
    * A note describing a dsse attestation note.
    * </pre>
    *
    * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
-   *
    * @return Whether the dsseAttestation field is set.
    */
   @java.lang.Override
@@ -1078,26 +927,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return typeCase_ == 19;
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a dsse attestation note.
    * </pre>
    *
    * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
-   *
    * @return The dsseAttestation.
    */
   @java.lang.Override
   public io.grafeas.v1.DSSEAttestationNote getDsseAttestation() {
     if (typeCase_ == 19) {
-      return (io.grafeas.v1.DSSEAttestationNote) type_;
+       return (io.grafeas.v1.DSSEAttestationNote) type_;
     }
     return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
   }
   /**
-   *
-   *
    * <pre>
    * A note describing a dsse attestation note.
    * </pre>
@@ -1107,13 +951,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.DSSEAttestationNoteOrBuilder getDsseAttestationOrBuilder() {
     if (typeCase_ == 19) {
-      return (io.grafeas.v1.DSSEAttestationNote) type_;
+       return (io.grafeas.v1.DSSEAttestationNote) type_;
     }
     return io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
-
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1125,7 +968,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output)
+                      throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1202,19 +1046,24 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, longDescription_);
     }
     if (kind_ != io.grafeas.v1.NoteKind.NOTE_KIND_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, kind_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, kind_);
     }
     for (int i = 0; i < relatedUrl_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, relatedUrl_.get(i));
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, relatedUrl_.get(i));
     }
     if (expirationTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getExpirationTime());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getExpirationTime());
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getUpdateTime());
     }
     {
       int dataSize = 0;
@@ -1225,54 +1074,44 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       size += 1 * getRelatedNoteNamesList().size();
     }
     if (typeCase_ == 10) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              10, (io.grafeas.v1.VulnerabilityNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (io.grafeas.v1.VulnerabilityNote) type_);
     }
     if (typeCase_ == 11) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              11, (io.grafeas.v1.BuildNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, (io.grafeas.v1.BuildNote) type_);
     }
     if (typeCase_ == 12) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              12, (io.grafeas.v1.ImageNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, (io.grafeas.v1.ImageNote) type_);
     }
     if (typeCase_ == 13) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              13, (io.grafeas.v1.PackageNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, (io.grafeas.v1.PackageNote) type_);
     }
     if (typeCase_ == 14) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              14, (io.grafeas.v1.DeploymentNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, (io.grafeas.v1.DeploymentNote) type_);
     }
     if (typeCase_ == 15) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              15, (io.grafeas.v1.DiscoveryNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, (io.grafeas.v1.DiscoveryNote) type_);
     }
     if (typeCase_ == 16) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              16, (io.grafeas.v1.AttestationNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, (io.grafeas.v1.AttestationNote) type_);
     }
     if (typeCase_ == 17) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              17, (io.grafeas.v1.UpgradeNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(17, (io.grafeas.v1.UpgradeNote) type_);
     }
     if (typeCase_ == 18) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              18, (io.grafeas.v1.ComplianceNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(18, (io.grafeas.v1.ComplianceNote) type_);
     }
     if (typeCase_ == 19) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              19, (io.grafeas.v1.DSSEAttestationNote) type_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(19, (io.grafeas.v1.DSSEAttestationNote) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1282,62 +1121,80 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-      return true;
+     return true;
     }
     if (!(obj instanceof io.grafeas.v1.Note)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Note other = (io.grafeas.v1.Note) obj;
 
-    if (!getName().equals(other.getName())) return false;
-    if (!getShortDescription().equals(other.getShortDescription())) return false;
-    if (!getLongDescription().equals(other.getLongDescription())) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!getShortDescription()
+        .equals(other.getShortDescription())) return false;
+    if (!getLongDescription()
+        .equals(other.getLongDescription())) return false;
     if (kind_ != other.kind_) return false;
-    if (!getRelatedUrlList().equals(other.getRelatedUrlList())) return false;
+    if (!getRelatedUrlList()
+        .equals(other.getRelatedUrlList())) return false;
     if (hasExpirationTime() != other.hasExpirationTime()) return false;
     if (hasExpirationTime()) {
-      if (!getExpirationTime().equals(other.getExpirationTime())) return false;
+      if (!getExpirationTime()
+          .equals(other.getExpirationTime())) return false;
     }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      if (!getCreateTime().equals(other.getCreateTime())) return false;
+      if (!getCreateTime()
+          .equals(other.getCreateTime())) return false;
     }
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
-      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+      if (!getUpdateTime()
+          .equals(other.getUpdateTime())) return false;
     }
-    if (!getRelatedNoteNamesList().equals(other.getRelatedNoteNamesList())) return false;
+    if (!getRelatedNoteNamesList()
+        .equals(other.getRelatedNoteNamesList())) return false;
     if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
       case 10:
-        if (!getVulnerability().equals(other.getVulnerability())) return false;
+        if (!getVulnerability()
+            .equals(other.getVulnerability())) return false;
         break;
       case 11:
-        if (!getBuild().equals(other.getBuild())) return false;
+        if (!getBuild()
+            .equals(other.getBuild())) return false;
         break;
       case 12:
-        if (!getImage().equals(other.getImage())) return false;
+        if (!getImage()
+            .equals(other.getImage())) return false;
         break;
       case 13:
-        if (!getPackage().equals(other.getPackage())) return false;
+        if (!getPackage()
+            .equals(other.getPackage())) return false;
         break;
       case 14:
-        if (!getDeployment().equals(other.getDeployment())) return false;
+        if (!getDeployment()
+            .equals(other.getDeployment())) return false;
         break;
       case 15:
-        if (!getDiscovery().equals(other.getDiscovery())) return false;
+        if (!getDiscovery()
+            .equals(other.getDiscovery())) return false;
         break;
       case 16:
-        if (!getAttestation().equals(other.getAttestation())) return false;
+        if (!getAttestation()
+            .equals(other.getAttestation())) return false;
         break;
       case 17:
-        if (!getUpgrade().equals(other.getUpgrade())) return false;
+        if (!getUpgrade()
+            .equals(other.getUpgrade())) return false;
         break;
       case 18:
-        if (!getCompliance().equals(other.getCompliance())) return false;
+        if (!getCompliance()
+            .equals(other.getCompliance())) return false;
         break;
       case 19:
-        if (!getDsseAttestation().equals(other.getDsseAttestation())) return false;
+        if (!getDsseAttestation()
+            .equals(other.getDsseAttestation())) return false;
         break;
       case 0:
       default:
@@ -1430,113 +1287,109 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static io.grafeas.v1.Note parseFrom(java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Note parseFrom(
+      java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Note parseFrom(
-      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Note parseFrom(com.google.protobuf.ByteString data)
+  public static io.grafeas.v1.Note parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Note parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
   public static io.grafeas.v1.Note parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-
   public static io.grafeas.v1.Note parseFrom(
-      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Note parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-  }
-
-  public static io.grafeas.v1.Note parseFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+  public static io.grafeas.v1.Note parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
+  public static io.grafeas.v1.Note parseFrom(
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
+  }
   public static io.grafeas.v1.Note parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Note parseDelimitedFrom(
-      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-
-  public static io.grafeas.v1.Note parseFrom(com.google.protobuf.CodedInputStream input)
+  public static io.grafeas.v1.Note parseFrom(
+      com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input);
   }
-
   public static io.grafeas.v1.Note parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-        PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3
+        .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() {
-    return newBuilder();
-  }
-
+  public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-
   public static Builder newBuilder(io.grafeas.v1.Note prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE
+        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
-   *
-   *
    * <pre>
    * A type of analysis that can be done for a resource.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.Note}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-      implements
+  public static final class Builder extends
+      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Note)
       io.grafeas.v1.NoteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_Note_descriptor;
     }
 
@@ -1549,12 +1402,15 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using io.grafeas.v1.Note.newBuilder()
-    private Builder() {}
+    private Builder() {
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      super(parent);
     }
 
+    private Builder(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      super(parent);
+
+    }
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1629,7 +1485,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor
+        getDescriptorForType() {
       return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_Note_descriptor;
     }
 
@@ -1763,39 +1620,38 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     public Builder clone() {
       return super.clone();
     }
-
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.setField(field, value);
     }
-
     @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
-
     @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
-
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
-
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
-
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Note) {
-        return mergeFrom((io.grafeas.v1.Note) other);
+        return mergeFrom((io.grafeas.v1.Note)other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1837,10 +1693,9 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             relatedUrlBuilder_ = null;
             relatedUrl_ = other.relatedUrl_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            relatedUrlBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getRelatedUrlFieldBuilder()
-                    : null;
+            relatedUrlBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getRelatedUrlFieldBuilder() : null;
           } else {
             relatedUrlBuilder_.addAllMessages(other.relatedUrl_);
           }
@@ -1866,60 +1721,49 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       switch (other.getTypeCase()) {
-        case VULNERABILITY:
-          {
-            mergeVulnerability(other.getVulnerability());
-            break;
-          }
-        case BUILD:
-          {
-            mergeBuild(other.getBuild());
-            break;
-          }
-        case IMAGE:
-          {
-            mergeImage(other.getImage());
-            break;
-          }
-        case PACKAGE:
-          {
-            mergePackage(other.getPackage());
-            break;
-          }
-        case DEPLOYMENT:
-          {
-            mergeDeployment(other.getDeployment());
-            break;
-          }
-        case DISCOVERY:
-          {
-            mergeDiscovery(other.getDiscovery());
-            break;
-          }
-        case ATTESTATION:
-          {
-            mergeAttestation(other.getAttestation());
-            break;
-          }
-        case UPGRADE:
-          {
-            mergeUpgrade(other.getUpgrade());
-            break;
-          }
-        case COMPLIANCE:
-          {
-            mergeCompliance(other.getCompliance());
-            break;
-          }
-        case DSSE_ATTESTATION:
-          {
-            mergeDsseAttestation(other.getDsseAttestation());
-            break;
-          }
-        case TYPE_NOT_SET:
-          {
-            break;
-          }
+        case VULNERABILITY: {
+          mergeVulnerability(other.getVulnerability());
+          break;
+        }
+        case BUILD: {
+          mergeBuild(other.getBuild());
+          break;
+        }
+        case IMAGE: {
+          mergeImage(other.getImage());
+          break;
+        }
+        case PACKAGE: {
+          mergePackage(other.getPackage());
+          break;
+        }
+        case DEPLOYMENT: {
+          mergeDeployment(other.getDeployment());
+          break;
+        }
+        case DISCOVERY: {
+          mergeDiscovery(other.getDiscovery());
+          break;
+        }
+        case ATTESTATION: {
+          mergeAttestation(other.getAttestation());
+          break;
+        }
+        case UPGRADE: {
+          mergeUpgrade(other.getUpgrade());
+          break;
+        }
+        case COMPLIANCE: {
+          mergeCompliance(other.getCompliance());
+          break;
+        }
+        case DSSE_ATTESTATION: {
+          mergeDsseAttestation(other.getDsseAttestation());
+          break;
+        }
+        case TYPE_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1947,134 +1791,142 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
-            case 10:
-              {
-                name_ = input.readStringRequireUtf8();
+            case 10: {
+              name_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-            case 18:
-              {
-                shortDescription_ = input.readStringRequireUtf8();
+              break;
+            } // case 10
+            case 18: {
+              shortDescription_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 18
-            case 26:
-              {
-                longDescription_ = input.readStringRequireUtf8();
+              break;
+            } // case 18
+            case 26: {
+              longDescription_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 26
-            case 32:
-              {
-                kind_ = input.readEnum();
+              break;
+            } // case 26
+            case 32: {
+              kind_ = input.readEnum();
 
-                break;
-              } // case 32
-            case 42:
-              {
-                io.grafeas.v1.RelatedUrl m =
-                    input.readMessage(io.grafeas.v1.RelatedUrl.parser(), extensionRegistry);
-                if (relatedUrlBuilder_ == null) {
-                  ensureRelatedUrlIsMutable();
-                  relatedUrl_.add(m);
-                } else {
-                  relatedUrlBuilder_.addMessage(m);
-                }
-                break;
-              } // case 42
-            case 50:
-              {
-                input.readMessage(getExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 32
+            case 42: {
+              io.grafeas.v1.RelatedUrl m =
+                  input.readMessage(
+                      io.grafeas.v1.RelatedUrl.parser(),
+                      extensionRegistry);
+              if (relatedUrlBuilder_ == null) {
+                ensureRelatedUrlIsMutable();
+                relatedUrl_.add(m);
+              } else {
+                relatedUrlBuilder_.addMessage(m);
+              }
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getExpirationTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 50
-            case 58:
-              {
-                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 50
+            case 58: {
+              input.readMessage(
+                  getCreateTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 58
-            case 66:
-              {
-                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+              break;
+            } // case 58
+            case 66: {
+              input.readMessage(
+                  getUpdateTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
 
-                break;
-              } // case 66
-            case 74:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureRelatedNoteNamesIsMutable();
-                relatedNoteNames_.add(s);
-                break;
-              } // case 74
-            case 82:
-              {
-                input.readMessage(getVulnerabilityFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 10;
-                break;
-              } // case 82
-            case 90:
-              {
-                input.readMessage(getBuildFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 11;
-                break;
-              } // case 90
-            case 98:
-              {
-                input.readMessage(getImageFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 12;
-                break;
-              } // case 98
-            case 106:
-              {
-                input.readMessage(getPackageFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 13;
-                break;
-              } // case 106
-            case 114:
-              {
-                input.readMessage(getDeploymentFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 14;
-                break;
-              } // case 114
-            case 122:
-              {
-                input.readMessage(getDiscoveryFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 15;
-                break;
-              } // case 122
-            case 130:
-              {
-                input.readMessage(getAttestationFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 16;
-                break;
-              } // case 130
-            case 138:
-              {
-                input.readMessage(getUpgradeFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 17;
-                break;
-              } // case 138
-            case 146:
-              {
-                input.readMessage(getComplianceFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 18;
-                break;
-              } // case 146
-            case 154:
-              {
-                input.readMessage(getDsseAttestationFieldBuilder().getBuilder(), extensionRegistry);
-                typeCase_ = 19;
-                break;
-              } // case 154
-            default:
-              {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+              break;
+            } // case 66
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureRelatedNoteNamesIsMutable();
+              relatedNoteNames_.add(s);
+              break;
+            } // case 74
+            case 82: {
+              input.readMessage(
+                  getVulnerabilityFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 10;
+              break;
+            } // case 82
+            case 90: {
+              input.readMessage(
+                  getBuildFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 11;
+              break;
+            } // case 90
+            case 98: {
+              input.readMessage(
+                  getImageFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 12;
+              break;
+            } // case 98
+            case 106: {
+              input.readMessage(
+                  getPackageFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 13;
+              break;
+            } // case 106
+            case 114: {
+              input.readMessage(
+                  getDeploymentFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 14;
+              break;
+            } // case 114
+            case 122: {
+              input.readMessage(
+                  getDiscoveryFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 15;
+              break;
+            } // case 122
+            case 130: {
+              input.readMessage(
+                  getAttestationFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 16;
+              break;
+            } // case 130
+            case 138: {
+              input.readMessage(
+                  getUpgradeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 17;
+              break;
+            } // case 138
+            case 146: {
+              input.readMessage(
+                  getComplianceFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 18;
+              break;
+            } // case 146
+            case 154: {
+              input.readMessage(
+                  getDsseAttestationFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 19;
+              break;
+            } // case 154
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2084,12 +1936,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
-
     private int typeCase_ = 0;
     private java.lang.Object type_;
-
-    public TypeCase getTypeCase() {
-      return TypeCase.forNumber(typeCase_);
+    public TypeCase
+        getTypeCase() {
+      return TypeCase.forNumber(
+          typeCase_);
     }
 
     public Builder clearType() {
@@ -2103,21 +1955,19 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object name_ = "";
     /**
-     *
-     *
      * <pre>
      * Output only. The name of the note in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
      * <code>string name = 1;</code>
-     *
      * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -2126,22 +1976,21 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The name of the note in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
      * <code>string name = 1;</code>
-     *
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString getNameBytes() {
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -2149,64 +1998,57 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The name of the note in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
      * <code>string name = 1;</code>
-     *
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(java.lang.String value) {
+    public Builder setName(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       name_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The name of the note in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
      * <code>string name = 1;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
+      
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The name of the note in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
      * <code>string name = 1;</code>
-     *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       name_ = value;
       onChanged();
       return this;
@@ -2214,20 +2056,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object shortDescription_ = "";
     /**
-     *
-     *
      * <pre>
      * A one sentence description of this note.
      * </pre>
      *
      * <code>string short_description = 2;</code>
-     *
      * @return The shortDescription.
      */
     public java.lang.String getShortDescription() {
       java.lang.Object ref = shortDescription_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         shortDescription_ = s;
         return s;
@@ -2236,21 +2076,20 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A one sentence description of this note.
      * </pre>
      *
      * <code>string short_description = 2;</code>
-     *
      * @return The bytes for shortDescription.
      */
-    public com.google.protobuf.ByteString getShortDescriptionBytes() {
+    public com.google.protobuf.ByteString
+        getShortDescriptionBytes() {
       java.lang.Object ref = shortDescription_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         shortDescription_ = b;
         return b;
       } else {
@@ -2258,61 +2097,54 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A one sentence description of this note.
      * </pre>
      *
      * <code>string short_description = 2;</code>
-     *
      * @param value The shortDescription to set.
      * @return This builder for chaining.
      */
-    public Builder setShortDescription(java.lang.String value) {
+    public Builder setShortDescription(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       shortDescription_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A one sentence description of this note.
      * </pre>
      *
      * <code>string short_description = 2;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearShortDescription() {
-
+      
       shortDescription_ = getDefaultInstance().getShortDescription();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A one sentence description of this note.
      * </pre>
      *
      * <code>string short_description = 2;</code>
-     *
      * @param value The bytes for shortDescription to set.
      * @return This builder for chaining.
      */
-    public Builder setShortDescriptionBytes(com.google.protobuf.ByteString value) {
+    public Builder setShortDescriptionBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       shortDescription_ = value;
       onChanged();
       return this;
@@ -2320,20 +2152,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object longDescription_ = "";
     /**
-     *
-     *
      * <pre>
      * A detailed description of this note.
      * </pre>
      *
      * <code>string long_description = 3;</code>
-     *
      * @return The longDescription.
      */
     public java.lang.String getLongDescription() {
       java.lang.Object ref = longDescription_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         longDescription_ = s;
         return s;
@@ -2342,21 +2172,20 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A detailed description of this note.
      * </pre>
      *
      * <code>string long_description = 3;</code>
-     *
      * @return The bytes for longDescription.
      */
-    public com.google.protobuf.ByteString getLongDescriptionBytes() {
+    public com.google.protobuf.ByteString
+        getLongDescriptionBytes() {
       java.lang.Object ref = longDescription_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         longDescription_ = b;
         return b;
       } else {
@@ -2364,61 +2193,54 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A detailed description of this note.
      * </pre>
      *
      * <code>string long_description = 3;</code>
-     *
      * @param value The longDescription to set.
      * @return This builder for chaining.
      */
-    public Builder setLongDescription(java.lang.String value) {
+    public Builder setLongDescription(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-
+    throw new NullPointerException();
+  }
+  
       longDescription_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A detailed description of this note.
      * </pre>
      *
      * <code>string long_description = 3;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearLongDescription() {
-
+      
       longDescription_ = getDefaultInstance().getLongDescription();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A detailed description of this note.
      * </pre>
      *
      * <code>string long_description = 3;</code>
-     *
      * @param value The bytes for longDescription to set.
      * @return This builder for chaining.
      */
-    public Builder setLongDescriptionBytes(com.google.protobuf.ByteString value) {
+    public Builder setLongDescriptionBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
       longDescription_ = value;
       onChanged();
       return this;
@@ -2426,50 +2248,40 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private int kind_ = 0;
     /**
-     *
-     *
      * <pre>
      * Output only. The type of analysis. This field can be used as a filter in
      * list requests.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind kind = 4;</code>
-     *
      * @return The enum numeric value on the wire for kind.
      */
-    @java.lang.Override
-    public int getKindValue() {
+    @java.lang.Override public int getKindValue() {
       return kind_;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The type of analysis. This field can be used as a filter in
      * list requests.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind kind = 4;</code>
-     *
      * @param value The enum numeric value on the wire for kind to set.
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
+      
       kind_ = value;
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The type of analysis. This field can be used as a filter in
      * list requests.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind kind = 4;</code>
-     *
      * @return The kind.
      */
     @java.lang.Override
@@ -2479,15 +2291,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return result == null ? io.grafeas.v1.NoteKind.UNRECOGNIZED : result;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The type of analysis. This field can be used as a filter in
      * list requests.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind kind = 4;</code>
-     *
      * @param value The kind to set.
      * @return This builder for chaining.
      */
@@ -2495,49 +2304,40 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      
       kind_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The type of analysis. This field can be used as a filter in
      * list requests.
      * </pre>
      *
      * <code>.grafeas.v1.NoteKind kind = 4;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      
       kind_ = 0;
       onChanged();
       return this;
     }
 
     private java.util.List<io.grafeas.v1.RelatedUrl> relatedUrl_ =
-        java.util.Collections.emptyList();
-
+      java.util.Collections.emptyList();
     private void ensureRelatedUrlIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         relatedUrl_ = new java.util.ArrayList<io.grafeas.v1.RelatedUrl>(relatedUrl_);
         bitField0_ |= 0x00000001;
-      }
+       }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.RelatedUrl,
-            io.grafeas.v1.RelatedUrl.Builder,
-            io.grafeas.v1.RelatedUrlOrBuilder>
-        relatedUrlBuilder_;
+        io.grafeas.v1.RelatedUrl, io.grafeas.v1.RelatedUrl.Builder, io.grafeas.v1.RelatedUrlOrBuilder> relatedUrlBuilder_;
 
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2552,8 +2352,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2568,8 +2366,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2584,15 +2380,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public Builder setRelatedUrl(int index, io.grafeas.v1.RelatedUrl value) {
+    public Builder setRelatedUrl(
+        int index, io.grafeas.v1.RelatedUrl value) {
       if (relatedUrlBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2606,15 +2401,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public Builder setRelatedUrl(int index, io.grafeas.v1.RelatedUrl.Builder builderForValue) {
+    public Builder setRelatedUrl(
+        int index, io.grafeas.v1.RelatedUrl.Builder builderForValue) {
       if (relatedUrlBuilder_ == null) {
         ensureRelatedUrlIsMutable();
         relatedUrl_.set(index, builderForValue.build());
@@ -2625,8 +2419,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2647,15 +2439,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public Builder addRelatedUrl(int index, io.grafeas.v1.RelatedUrl value) {
+    public Builder addRelatedUrl(
+        int index, io.grafeas.v1.RelatedUrl value) {
       if (relatedUrlBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2669,15 +2460,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public Builder addRelatedUrl(io.grafeas.v1.RelatedUrl.Builder builderForValue) {
+    public Builder addRelatedUrl(
+        io.grafeas.v1.RelatedUrl.Builder builderForValue) {
       if (relatedUrlBuilder_ == null) {
         ensureRelatedUrlIsMutable();
         relatedUrl_.add(builderForValue.build());
@@ -2688,15 +2478,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public Builder addRelatedUrl(int index, io.grafeas.v1.RelatedUrl.Builder builderForValue) {
+    public Builder addRelatedUrl(
+        int index, io.grafeas.v1.RelatedUrl.Builder builderForValue) {
       if (relatedUrlBuilder_ == null) {
         ensureRelatedUrlIsMutable();
         relatedUrl_.add(index, builderForValue.build());
@@ -2707,18 +2496,18 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public Builder addAllRelatedUrl(java.lang.Iterable<? extends io.grafeas.v1.RelatedUrl> values) {
+    public Builder addAllRelatedUrl(
+        java.lang.Iterable<? extends io.grafeas.v1.RelatedUrl> values) {
       if (relatedUrlBuilder_ == null) {
         ensureRelatedUrlIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedUrl_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, relatedUrl_);
         onChanged();
       } else {
         relatedUrlBuilder_.addAllMessages(values);
@@ -2726,8 +2515,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2745,8 +2532,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2764,44 +2549,39 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public io.grafeas.v1.RelatedUrl.Builder getRelatedUrlBuilder(int index) {
+    public io.grafeas.v1.RelatedUrl.Builder getRelatedUrlBuilder(
+        int index) {
       return getRelatedUrlFieldBuilder().getBuilder(index);
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public io.grafeas.v1.RelatedUrlOrBuilder getRelatedUrlOrBuilder(int index) {
+    public io.grafeas.v1.RelatedUrlOrBuilder getRelatedUrlOrBuilder(
+        int index) {
       if (relatedUrlBuilder_ == null) {
-        return relatedUrl_.get(index);
-      } else {
+        return relatedUrl_.get(index);  } else {
         return relatedUrlBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.RelatedUrlOrBuilder>
-        getRelatedUrlOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.RelatedUrlOrBuilder> 
+         getRelatedUrlOrBuilderList() {
       if (relatedUrlBuilder_ != null) {
         return relatedUrlBuilder_.getMessageOrBuilderList();
       } else {
@@ -2809,8 +2589,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
@@ -2818,46 +2596,42 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
     public io.grafeas.v1.RelatedUrl.Builder addRelatedUrlBuilder() {
-      return getRelatedUrlFieldBuilder().addBuilder(io.grafeas.v1.RelatedUrl.getDefaultInstance());
+      return getRelatedUrlFieldBuilder().addBuilder(
+          io.grafeas.v1.RelatedUrl.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public io.grafeas.v1.RelatedUrl.Builder addRelatedUrlBuilder(int index) {
-      return getRelatedUrlFieldBuilder()
-          .addBuilder(index, io.grafeas.v1.RelatedUrl.getDefaultInstance());
+    public io.grafeas.v1.RelatedUrl.Builder addRelatedUrlBuilder(
+        int index) {
+      return getRelatedUrlFieldBuilder().addBuilder(
+          index, io.grafeas.v1.RelatedUrl.getDefaultInstance());
     }
     /**
-     *
-     *
      * <pre>
      * URLs associated with this note.
      * </pre>
      *
      * <code>repeated .grafeas.v1.RelatedUrl related_url = 5;</code>
      */
-    public java.util.List<io.grafeas.v1.RelatedUrl.Builder> getRelatedUrlBuilderList() {
+    public java.util.List<io.grafeas.v1.RelatedUrl.Builder> 
+         getRelatedUrlBuilderList() {
       return getRelatedUrlFieldBuilder().getBuilderList();
     }
-
     private com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.RelatedUrl,
-            io.grafeas.v1.RelatedUrl.Builder,
-            io.grafeas.v1.RelatedUrlOrBuilder>
+        io.grafeas.v1.RelatedUrl, io.grafeas.v1.RelatedUrl.Builder, io.grafeas.v1.RelatedUrlOrBuilder> 
         getRelatedUrlFieldBuilder() {
       if (relatedUrlBuilder_ == null) {
-        relatedUrlBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                io.grafeas.v1.RelatedUrl,
-                io.grafeas.v1.RelatedUrl.Builder,
-                io.grafeas.v1.RelatedUrlOrBuilder>(
-                relatedUrl_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        relatedUrlBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.RelatedUrl, io.grafeas.v1.RelatedUrl.Builder, io.grafeas.v1.RelatedUrlOrBuilder>(
+                relatedUrl_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
         relatedUrl_ = null;
       }
       return relatedUrlBuilder_;
@@ -2865,47 +2639,34 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.Timestamp expirationTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        expirationTimeBuilder_;
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expirationTimeBuilder_;
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
-     *
      * @return Whether the expirationTime field is set.
      */
     public boolean hasExpirationTime() {
       return expirationTimeBuilder_ != null || expirationTime_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
-     *
      * @return The expirationTime.
      */
     public com.google.protobuf.Timestamp getExpirationTime() {
       if (expirationTimeBuilder_ == null) {
-        return expirationTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : expirationTime_;
+        return expirationTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expirationTime_;
       } else {
         return expirationTimeBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
@@ -2926,15 +2687,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
      */
-    public Builder setExpirationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setExpirationTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expirationTimeBuilder_ == null) {
         expirationTime_ = builderForValue.build();
         onChanged();
@@ -2945,8 +2705,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
@@ -2957,9 +2715,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (expirationTimeBuilder_ == null) {
         if (expirationTime_ != null) {
           expirationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expirationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+            com.google.protobuf.Timestamp.newBuilder(expirationTime_).mergeFrom(value).buildPartial();
         } else {
           expirationTime_ = value;
         }
@@ -2971,8 +2727,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
@@ -2991,8 +2745,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
@@ -3000,13 +2752,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpirationTimeBuilder() {
-
+      
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
@@ -3017,14 +2767,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (expirationTimeBuilder_ != null) {
         return expirationTimeBuilder_.getMessageOrBuilder();
       } else {
-        return expirationTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : expirationTime_;
+        return expirationTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : expirationTime_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Time of expiration for this note. Empty if note does not expire.
      * </pre>
@@ -3032,17 +2779,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
         getExpirationTimeFieldBuilder() {
       if (expirationTimeBuilder_ == null) {
-        expirationTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getExpirationTime(), getParentForChildren(), isClean());
+        expirationTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getExpirationTime(),
+                getParentForChildren(),
+                isClean());
         expirationTime_ = null;
       }
       return expirationTimeBuilder_;
@@ -3050,49 +2794,36 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        createTimeBuilder_;
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
-     *
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
-     *
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : createTime_;
+        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3114,8 +2845,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3123,7 +2852,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
-    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -3134,8 +2864,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3147,7 +2875,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -3159,8 +2887,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3180,8 +2906,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3190,13 +2914,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3208,14 +2930,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : createTime_;
+        return createTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was created. This field can be used as a
      * filter in list requests.
@@ -3224,17 +2943,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(), getParentForChildren(), isClean());
+        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(),
+                getParentForChildren(),
+                isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -3242,49 +2958,36 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
-        updateTimeBuilder_;
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
-     *
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
-     *
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : updateTime_;
+        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3306,8 +3009,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3315,7 +3016,8 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
      */
-    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -3326,8 +3028,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3339,7 +3039,7 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -3351,8 +3051,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3372,8 +3070,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3382,13 +3078,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3400,14 +3094,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null
-            ? com.google.protobuf.Timestamp.getDefaultInstance()
-            : updateTime_;
+        return updateTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
       }
     }
     /**
-     *
-     *
      * <pre>
      * Output only. The time this note was last updated. This field can be used as
      * a filter in list requests.
@@ -3416,68 +3107,55 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp,
-            com.google.protobuf.Timestamp.Builder,
-            com.google.protobuf.TimestampOrBuilder>
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Timestamp,
-                com.google.protobuf.Timestamp.Builder,
-                com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(), getParentForChildren(), isClean());
+        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(),
+                getParentForChildren(),
+                isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList relatedNoteNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
-
+    private com.google.protobuf.LazyStringList relatedNoteNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureRelatedNoteNamesIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
         relatedNoteNames_ = new com.google.protobuf.LazyStringArrayList(relatedNoteNames_);
         bitField0_ |= 0x00000002;
-      }
+       }
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @return A list containing the relatedNoteNames.
      */
-    public com.google.protobuf.ProtocolStringList getRelatedNoteNamesList() {
+    public com.google.protobuf.ProtocolStringList
+        getRelatedNoteNamesList() {
       return relatedNoteNames_.getUnmodifiableView();
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @return The count of relatedNoteNames.
      */
     public int getRelatedNoteNamesCount() {
       return relatedNoteNames_.size();
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @param index The index of the element to return.
      * @return The relatedNoteNames at the given index.
      */
@@ -3485,90 +3163,80 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return relatedNoteNames_.get(index);
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @param index The index of the value to return.
      * @return The bytes of the relatedNoteNames at the given index.
      */
-    public com.google.protobuf.ByteString getRelatedNoteNamesBytes(int index) {
+    public com.google.protobuf.ByteString
+        getRelatedNoteNamesBytes(int index) {
       return relatedNoteNames_.getByteString(index);
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @param index The index to set the value at.
      * @param value The relatedNoteNames to set.
      * @return This builder for chaining.
      */
-    public Builder setRelatedNoteNames(int index, java.lang.String value) {
+    public Builder setRelatedNoteNames(
+        int index, java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureRelatedNoteNamesIsMutable();
+    throw new NullPointerException();
+  }
+  ensureRelatedNoteNamesIsMutable();
       relatedNoteNames_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @param value The relatedNoteNames to add.
      * @return This builder for chaining.
      */
-    public Builder addRelatedNoteNames(java.lang.String value) {
+    public Builder addRelatedNoteNames(
+        java.lang.String value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureRelatedNoteNamesIsMutable();
+    throw new NullPointerException();
+  }
+  ensureRelatedNoteNamesIsMutable();
       relatedNoteNames_.add(value);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @param values The relatedNoteNames to add.
      * @return This builder for chaining.
      */
-    public Builder addAllRelatedNoteNames(java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllRelatedNoteNames(
+        java.lang.Iterable<java.lang.String> values) {
       ensureRelatedNoteNamesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedNoteNames_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, relatedNoteNames_);
       onChanged();
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @return This builder for chaining.
      */
     public Builder clearRelatedNoteNames() {
@@ -3578,22 +3246,20 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * Other notes related to this note.
      * </pre>
      *
      * <code>repeated string related_note_names = 9;</code>
-     *
      * @param value The bytes of the relatedNoteNames to add.
      * @return This builder for chaining.
      */
-    public Builder addRelatedNoteNamesBytes(com.google.protobuf.ByteString value) {
+    public Builder addRelatedNoteNamesBytes(
+        com.google.protobuf.ByteString value) {
       if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       ensureRelatedNoteNamesIsMutable();
       relatedNoteNames_.add(value);
       onChanged();
@@ -3601,19 +3267,13 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.VulnerabilityNote,
-            io.grafeas.v1.VulnerabilityNote.Builder,
-            io.grafeas.v1.VulnerabilityNoteOrBuilder>
-        vulnerabilityBuilder_;
+        io.grafeas.v1.VulnerabilityNote, io.grafeas.v1.VulnerabilityNote.Builder, io.grafeas.v1.VulnerabilityNoteOrBuilder> vulnerabilityBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
      *
      * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
-     *
      * @return Whether the vulnerability field is set.
      */
     @java.lang.Override
@@ -3621,14 +3281,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 10;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
      *
      * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
-     *
      * @return The vulnerability.
      */
     @java.lang.Override
@@ -3646,8 +3303,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
@@ -3668,15 +3323,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
      *
      * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
      */
-    public Builder setVulnerability(io.grafeas.v1.VulnerabilityNote.Builder builderForValue) {
+    public Builder setVulnerability(
+        io.grafeas.v1.VulnerabilityNote.Builder builderForValue) {
       if (vulnerabilityBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -3687,8 +3341,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
@@ -3697,11 +3349,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVulnerability(io.grafeas.v1.VulnerabilityNote value) {
       if (vulnerabilityBuilder_ == null) {
-        if (typeCase_ == 10 && type_ != io.grafeas.v1.VulnerabilityNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.VulnerabilityNote.newBuilder((io.grafeas.v1.VulnerabilityNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 10 &&
+            type_ != io.grafeas.v1.VulnerabilityNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.VulnerabilityNote.newBuilder((io.grafeas.v1.VulnerabilityNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -3717,8 +3368,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
@@ -3742,8 +3391,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
@@ -3754,8 +3401,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getVulnerabilityFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
@@ -3774,8 +3419,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package vulnerability.
      * </pre>
@@ -3783,42 +3426,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.VulnerabilityNote vulnerability = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.VulnerabilityNote,
-            io.grafeas.v1.VulnerabilityNote.Builder,
-            io.grafeas.v1.VulnerabilityNoteOrBuilder>
+        io.grafeas.v1.VulnerabilityNote, io.grafeas.v1.VulnerabilityNote.Builder, io.grafeas.v1.VulnerabilityNoteOrBuilder> 
         getVulnerabilityFieldBuilder() {
       if (vulnerabilityBuilder_ == null) {
         if (!(typeCase_ == 10)) {
           type_ = io.grafeas.v1.VulnerabilityNote.getDefaultInstance();
         }
-        vulnerabilityBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.VulnerabilityNote,
-                io.grafeas.v1.VulnerabilityNote.Builder,
-                io.grafeas.v1.VulnerabilityNoteOrBuilder>(
-                (io.grafeas.v1.VulnerabilityNote) type_, getParentForChildren(), isClean());
+        vulnerabilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.VulnerabilityNote, io.grafeas.v1.VulnerabilityNote.Builder, io.grafeas.v1.VulnerabilityNoteOrBuilder>(
+                (io.grafeas.v1.VulnerabilityNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 10;
-      onChanged();
-      ;
+      onChanged();;
       return vulnerabilityBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.BuildNote,
-            io.grafeas.v1.BuildNote.Builder,
-            io.grafeas.v1.BuildNoteOrBuilder>
-        buildBuilder_;
+        io.grafeas.v1.BuildNote, io.grafeas.v1.BuildNote.Builder, io.grafeas.v1.BuildNoteOrBuilder> buildBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildNote build = 11;</code>
-     *
      * @return Whether the build field is set.
      */
     @java.lang.Override
@@ -3826,14 +3459,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 11;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildNote build = 11;</code>
-     *
      * @return The build.
      */
     @java.lang.Override
@@ -3851,8 +3481,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
@@ -3873,15 +3501,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
      *
      * <code>.grafeas.v1.BuildNote build = 11;</code>
      */
-    public Builder setBuild(io.grafeas.v1.BuildNote.Builder builderForValue) {
+    public Builder setBuild(
+        io.grafeas.v1.BuildNote.Builder builderForValue) {
       if (buildBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -3892,8 +3519,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
@@ -3902,11 +3527,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBuild(io.grafeas.v1.BuildNote value) {
       if (buildBuilder_ == null) {
-        if (typeCase_ == 11 && type_ != io.grafeas.v1.BuildNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.BuildNote.newBuilder((io.grafeas.v1.BuildNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 11 &&
+            type_ != io.grafeas.v1.BuildNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.BuildNote.newBuilder((io.grafeas.v1.BuildNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -3922,8 +3546,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
@@ -3947,8 +3569,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
@@ -3959,8 +3579,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getBuildFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
@@ -3979,8 +3597,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing build provenance for a verifiable build.
      * </pre>
@@ -3988,42 +3604,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.BuildNote build = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.BuildNote,
-            io.grafeas.v1.BuildNote.Builder,
-            io.grafeas.v1.BuildNoteOrBuilder>
+        io.grafeas.v1.BuildNote, io.grafeas.v1.BuildNote.Builder, io.grafeas.v1.BuildNoteOrBuilder> 
         getBuildFieldBuilder() {
       if (buildBuilder_ == null) {
         if (!(typeCase_ == 11)) {
           type_ = io.grafeas.v1.BuildNote.getDefaultInstance();
         }
-        buildBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.BuildNote,
-                io.grafeas.v1.BuildNote.Builder,
-                io.grafeas.v1.BuildNoteOrBuilder>(
-                (io.grafeas.v1.BuildNote) type_, getParentForChildren(), isClean());
+        buildBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.BuildNote, io.grafeas.v1.BuildNote.Builder, io.grafeas.v1.BuildNoteOrBuilder>(
+                (io.grafeas.v1.BuildNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 11;
-      onChanged();
-      ;
+      onChanged();;
       return buildBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ImageNote,
-            io.grafeas.v1.ImageNote.Builder,
-            io.grafeas.v1.ImageNoteOrBuilder>
-        imageBuilder_;
+        io.grafeas.v1.ImageNote, io.grafeas.v1.ImageNote.Builder, io.grafeas.v1.ImageNoteOrBuilder> imageBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
      *
      * <code>.grafeas.v1.ImageNote image = 12;</code>
-     *
      * @return Whether the image field is set.
      */
     @java.lang.Override
@@ -4031,14 +3637,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 12;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
      *
      * <code>.grafeas.v1.ImageNote image = 12;</code>
-     *
      * @return The image.
      */
     @java.lang.Override
@@ -4056,8 +3659,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
@@ -4078,15 +3679,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
      *
      * <code>.grafeas.v1.ImageNote image = 12;</code>
      */
-    public Builder setImage(io.grafeas.v1.ImageNote.Builder builderForValue) {
+    public Builder setImage(
+        io.grafeas.v1.ImageNote.Builder builderForValue) {
       if (imageBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -4097,8 +3697,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
@@ -4107,11 +3705,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeImage(io.grafeas.v1.ImageNote value) {
       if (imageBuilder_ == null) {
-        if (typeCase_ == 12 && type_ != io.grafeas.v1.ImageNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.ImageNote.newBuilder((io.grafeas.v1.ImageNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 12 &&
+            type_ != io.grafeas.v1.ImageNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.ImageNote.newBuilder((io.grafeas.v1.ImageNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -4127,8 +3724,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
@@ -4152,8 +3747,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
@@ -4164,8 +3757,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getImageFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
@@ -4184,8 +3775,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a base image.
      * </pre>
@@ -4193,42 +3782,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.ImageNote image = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ImageNote,
-            io.grafeas.v1.ImageNote.Builder,
-            io.grafeas.v1.ImageNoteOrBuilder>
+        io.grafeas.v1.ImageNote, io.grafeas.v1.ImageNote.Builder, io.grafeas.v1.ImageNoteOrBuilder> 
         getImageFieldBuilder() {
       if (imageBuilder_ == null) {
         if (!(typeCase_ == 12)) {
           type_ = io.grafeas.v1.ImageNote.getDefaultInstance();
         }
-        imageBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.ImageNote,
-                io.grafeas.v1.ImageNote.Builder,
-                io.grafeas.v1.ImageNoteOrBuilder>(
-                (io.grafeas.v1.ImageNote) type_, getParentForChildren(), isClean());
+        imageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ImageNote, io.grafeas.v1.ImageNote.Builder, io.grafeas.v1.ImageNoteOrBuilder>(
+                (io.grafeas.v1.ImageNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 12;
-      onChanged();
-      ;
+      onChanged();;
       return imageBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.PackageNote,
-            io.grafeas.v1.PackageNote.Builder,
-            io.grafeas.v1.PackageNoteOrBuilder>
-        packageBuilder_;
+        io.grafeas.v1.PackageNote, io.grafeas.v1.PackageNote.Builder, io.grafeas.v1.PackageNoteOrBuilder> packageBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
      *
      * <code>.grafeas.v1.PackageNote package = 13;</code>
-     *
      * @return Whether the package field is set.
      */
     @java.lang.Override
@@ -4236,14 +3815,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 13;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
      *
      * <code>.grafeas.v1.PackageNote package = 13;</code>
-     *
      * @return The package.
      */
     @java.lang.Override
@@ -4261,8 +3837,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
@@ -4283,15 +3857,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
      *
      * <code>.grafeas.v1.PackageNote package = 13;</code>
      */
-    public Builder setPackage(io.grafeas.v1.PackageNote.Builder builderForValue) {
+    public Builder setPackage(
+        io.grafeas.v1.PackageNote.Builder builderForValue) {
       if (packageBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -4302,8 +3875,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
@@ -4312,11 +3883,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePackage(io.grafeas.v1.PackageNote value) {
       if (packageBuilder_ == null) {
-        if (typeCase_ == 13 && type_ != io.grafeas.v1.PackageNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.PackageNote.newBuilder((io.grafeas.v1.PackageNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 13 &&
+            type_ != io.grafeas.v1.PackageNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.PackageNote.newBuilder((io.grafeas.v1.PackageNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -4332,8 +3902,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
@@ -4357,8 +3925,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
@@ -4369,8 +3935,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getPackageFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
@@ -4389,8 +3953,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a package hosted by various package managers.
      * </pre>
@@ -4398,42 +3960,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.PackageNote package = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.PackageNote,
-            io.grafeas.v1.PackageNote.Builder,
-            io.grafeas.v1.PackageNoteOrBuilder>
+        io.grafeas.v1.PackageNote, io.grafeas.v1.PackageNote.Builder, io.grafeas.v1.PackageNoteOrBuilder> 
         getPackageFieldBuilder() {
       if (packageBuilder_ == null) {
         if (!(typeCase_ == 13)) {
           type_ = io.grafeas.v1.PackageNote.getDefaultInstance();
         }
-        packageBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.PackageNote,
-                io.grafeas.v1.PackageNote.Builder,
-                io.grafeas.v1.PackageNoteOrBuilder>(
-                (io.grafeas.v1.PackageNote) type_, getParentForChildren(), isClean());
+        packageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.PackageNote, io.grafeas.v1.PackageNote.Builder, io.grafeas.v1.PackageNoteOrBuilder>(
+                (io.grafeas.v1.PackageNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 13;
-      onChanged();
-      ;
+      onChanged();;
       return packageBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.DeploymentNote,
-            io.grafeas.v1.DeploymentNote.Builder,
-            io.grafeas.v1.DeploymentNoteOrBuilder>
-        deploymentBuilder_;
+        io.grafeas.v1.DeploymentNote, io.grafeas.v1.DeploymentNote.Builder, io.grafeas.v1.DeploymentNoteOrBuilder> deploymentBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
-     *
      * @return Whether the deployment field is set.
      */
     @java.lang.Override
@@ -4441,14 +3993,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 14;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
-     *
      * @return The deployment.
      */
     @java.lang.Override
@@ -4466,8 +4015,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
@@ -4488,15 +4035,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
      *
      * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
      */
-    public Builder setDeployment(io.grafeas.v1.DeploymentNote.Builder builderForValue) {
+    public Builder setDeployment(
+        io.grafeas.v1.DeploymentNote.Builder builderForValue) {
       if (deploymentBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -4507,8 +4053,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
@@ -4517,11 +4061,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeployment(io.grafeas.v1.DeploymentNote value) {
       if (deploymentBuilder_ == null) {
-        if (typeCase_ == 14 && type_ != io.grafeas.v1.DeploymentNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.DeploymentNote.newBuilder((io.grafeas.v1.DeploymentNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 14 &&
+            type_ != io.grafeas.v1.DeploymentNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.DeploymentNote.newBuilder((io.grafeas.v1.DeploymentNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -4537,8 +4080,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
@@ -4562,8 +4103,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
@@ -4574,8 +4113,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getDeploymentFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
@@ -4594,8 +4131,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing something that can be deployed.
      * </pre>
@@ -4603,42 +4138,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.DeploymentNote deployment = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.DeploymentNote,
-            io.grafeas.v1.DeploymentNote.Builder,
-            io.grafeas.v1.DeploymentNoteOrBuilder>
+        io.grafeas.v1.DeploymentNote, io.grafeas.v1.DeploymentNote.Builder, io.grafeas.v1.DeploymentNoteOrBuilder> 
         getDeploymentFieldBuilder() {
       if (deploymentBuilder_ == null) {
         if (!(typeCase_ == 14)) {
           type_ = io.grafeas.v1.DeploymentNote.getDefaultInstance();
         }
-        deploymentBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.DeploymentNote,
-                io.grafeas.v1.DeploymentNote.Builder,
-                io.grafeas.v1.DeploymentNoteOrBuilder>(
-                (io.grafeas.v1.DeploymentNote) type_, getParentForChildren(), isClean());
+        deploymentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DeploymentNote, io.grafeas.v1.DeploymentNote.Builder, io.grafeas.v1.DeploymentNoteOrBuilder>(
+                (io.grafeas.v1.DeploymentNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 14;
-      onChanged();
-      ;
+      onChanged();;
       return deploymentBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.DiscoveryNote,
-            io.grafeas.v1.DiscoveryNote.Builder,
-            io.grafeas.v1.DiscoveryNoteOrBuilder>
-        discoveryBuilder_;
+        io.grafeas.v1.DiscoveryNote, io.grafeas.v1.DiscoveryNote.Builder, io.grafeas.v1.DiscoveryNoteOrBuilder> discoveryBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
      *
      * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
-     *
      * @return Whether the discovery field is set.
      */
     @java.lang.Override
@@ -4646,14 +4171,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 15;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
      *
      * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
-     *
      * @return The discovery.
      */
     @java.lang.Override
@@ -4671,8 +4193,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
@@ -4693,15 +4213,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
      *
      * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
      */
-    public Builder setDiscovery(io.grafeas.v1.DiscoveryNote.Builder builderForValue) {
+    public Builder setDiscovery(
+        io.grafeas.v1.DiscoveryNote.Builder builderForValue) {
       if (discoveryBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -4712,8 +4231,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
@@ -4722,11 +4239,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDiscovery(io.grafeas.v1.DiscoveryNote value) {
       if (discoveryBuilder_ == null) {
-        if (typeCase_ == 15 && type_ != io.grafeas.v1.DiscoveryNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.DiscoveryNote.newBuilder((io.grafeas.v1.DiscoveryNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 15 &&
+            type_ != io.grafeas.v1.DiscoveryNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.DiscoveryNote.newBuilder((io.grafeas.v1.DiscoveryNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -4742,8 +4258,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
@@ -4767,8 +4281,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
@@ -4779,8 +4291,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getDiscoveryFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
@@ -4799,8 +4309,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing the initial analysis of a resource.
      * </pre>
@@ -4808,42 +4316,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.DiscoveryNote discovery = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.DiscoveryNote,
-            io.grafeas.v1.DiscoveryNote.Builder,
-            io.grafeas.v1.DiscoveryNoteOrBuilder>
+        io.grafeas.v1.DiscoveryNote, io.grafeas.v1.DiscoveryNote.Builder, io.grafeas.v1.DiscoveryNoteOrBuilder> 
         getDiscoveryFieldBuilder() {
       if (discoveryBuilder_ == null) {
         if (!(typeCase_ == 15)) {
           type_ = io.grafeas.v1.DiscoveryNote.getDefaultInstance();
         }
-        discoveryBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.DiscoveryNote,
-                io.grafeas.v1.DiscoveryNote.Builder,
-                io.grafeas.v1.DiscoveryNoteOrBuilder>(
-                (io.grafeas.v1.DiscoveryNote) type_, getParentForChildren(), isClean());
+        discoveryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DiscoveryNote, io.grafeas.v1.DiscoveryNote.Builder, io.grafeas.v1.DiscoveryNoteOrBuilder>(
+                (io.grafeas.v1.DiscoveryNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 15;
-      onChanged();
-      ;
+      onChanged();;
       return discoveryBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.AttestationNote,
-            io.grafeas.v1.AttestationNote.Builder,
-            io.grafeas.v1.AttestationNoteOrBuilder>
-        attestationBuilder_;
+        io.grafeas.v1.AttestationNote, io.grafeas.v1.AttestationNote.Builder, io.grafeas.v1.AttestationNoteOrBuilder> attestationBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
      *
      * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
-     *
      * @return Whether the attestation field is set.
      */
     @java.lang.Override
@@ -4851,14 +4349,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 16;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
      *
      * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
-     *
      * @return The attestation.
      */
     @java.lang.Override
@@ -4876,8 +4371,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
@@ -4898,15 +4391,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
      *
      * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
      */
-    public Builder setAttestation(io.grafeas.v1.AttestationNote.Builder builderForValue) {
+    public Builder setAttestation(
+        io.grafeas.v1.AttestationNote.Builder builderForValue) {
       if (attestationBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -4917,8 +4409,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
@@ -4927,11 +4417,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAttestation(io.grafeas.v1.AttestationNote value) {
       if (attestationBuilder_ == null) {
-        if (typeCase_ == 16 && type_ != io.grafeas.v1.AttestationNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.AttestationNote.newBuilder((io.grafeas.v1.AttestationNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 16 &&
+            type_ != io.grafeas.v1.AttestationNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.AttestationNote.newBuilder((io.grafeas.v1.AttestationNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -4947,8 +4436,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
@@ -4972,8 +4459,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
@@ -4984,8 +4469,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getAttestationFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
@@ -5004,8 +4487,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing an attestation role.
      * </pre>
@@ -5013,42 +4494,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.AttestationNote attestation = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.AttestationNote,
-            io.grafeas.v1.AttestationNote.Builder,
-            io.grafeas.v1.AttestationNoteOrBuilder>
+        io.grafeas.v1.AttestationNote, io.grafeas.v1.AttestationNote.Builder, io.grafeas.v1.AttestationNoteOrBuilder> 
         getAttestationFieldBuilder() {
       if (attestationBuilder_ == null) {
         if (!(typeCase_ == 16)) {
           type_ = io.grafeas.v1.AttestationNote.getDefaultInstance();
         }
-        attestationBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.AttestationNote,
-                io.grafeas.v1.AttestationNote.Builder,
-                io.grafeas.v1.AttestationNoteOrBuilder>(
-                (io.grafeas.v1.AttestationNote) type_, getParentForChildren(), isClean());
+        attestationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.AttestationNote, io.grafeas.v1.AttestationNote.Builder, io.grafeas.v1.AttestationNoteOrBuilder>(
+                (io.grafeas.v1.AttestationNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 16;
-      onChanged();
-      ;
+      onChanged();;
       return attestationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.UpgradeNote,
-            io.grafeas.v1.UpgradeNote.Builder,
-            io.grafeas.v1.UpgradeNoteOrBuilder>
-        upgradeBuilder_;
+        io.grafeas.v1.UpgradeNote, io.grafeas.v1.UpgradeNote.Builder, io.grafeas.v1.UpgradeNoteOrBuilder> upgradeBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
      *
      * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
-     *
      * @return Whether the upgrade field is set.
      */
     @java.lang.Override
@@ -5056,14 +4527,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 17;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
      *
      * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
-     *
      * @return The upgrade.
      */
     @java.lang.Override
@@ -5081,8 +4549,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
@@ -5103,15 +4569,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
      *
      * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
      */
-    public Builder setUpgrade(io.grafeas.v1.UpgradeNote.Builder builderForValue) {
+    public Builder setUpgrade(
+        io.grafeas.v1.UpgradeNote.Builder builderForValue) {
       if (upgradeBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -5122,8 +4587,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
@@ -5132,11 +4595,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpgrade(io.grafeas.v1.UpgradeNote value) {
       if (upgradeBuilder_ == null) {
-        if (typeCase_ == 17 && type_ != io.grafeas.v1.UpgradeNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.UpgradeNote.newBuilder((io.grafeas.v1.UpgradeNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 17 &&
+            type_ != io.grafeas.v1.UpgradeNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.UpgradeNote.newBuilder((io.grafeas.v1.UpgradeNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -5152,8 +4614,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
@@ -5177,8 +4637,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
@@ -5189,8 +4647,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getUpgradeFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
@@ -5209,8 +4665,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing available package upgrades.
      * </pre>
@@ -5218,42 +4672,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.UpgradeNote upgrade = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.UpgradeNote,
-            io.grafeas.v1.UpgradeNote.Builder,
-            io.grafeas.v1.UpgradeNoteOrBuilder>
+        io.grafeas.v1.UpgradeNote, io.grafeas.v1.UpgradeNote.Builder, io.grafeas.v1.UpgradeNoteOrBuilder> 
         getUpgradeFieldBuilder() {
       if (upgradeBuilder_ == null) {
         if (!(typeCase_ == 17)) {
           type_ = io.grafeas.v1.UpgradeNote.getDefaultInstance();
         }
-        upgradeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.UpgradeNote,
-                io.grafeas.v1.UpgradeNote.Builder,
-                io.grafeas.v1.UpgradeNoteOrBuilder>(
-                (io.grafeas.v1.UpgradeNote) type_, getParentForChildren(), isClean());
+        upgradeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.UpgradeNote, io.grafeas.v1.UpgradeNote.Builder, io.grafeas.v1.UpgradeNoteOrBuilder>(
+                (io.grafeas.v1.UpgradeNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 17;
-      onChanged();
-      ;
+      onChanged();;
       return upgradeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ComplianceNote,
-            io.grafeas.v1.ComplianceNote.Builder,
-            io.grafeas.v1.ComplianceNoteOrBuilder>
-        complianceBuilder_;
+        io.grafeas.v1.ComplianceNote, io.grafeas.v1.ComplianceNote.Builder, io.grafeas.v1.ComplianceNoteOrBuilder> complianceBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
      *
      * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
-     *
      * @return Whether the compliance field is set.
      */
     @java.lang.Override
@@ -5261,14 +4705,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 18;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
      *
      * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
-     *
      * @return The compliance.
      */
     @java.lang.Override
@@ -5286,8 +4727,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
@@ -5308,15 +4747,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
      *
      * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
      */
-    public Builder setCompliance(io.grafeas.v1.ComplianceNote.Builder builderForValue) {
+    public Builder setCompliance(
+        io.grafeas.v1.ComplianceNote.Builder builderForValue) {
       if (complianceBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -5327,8 +4765,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
@@ -5337,11 +4773,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCompliance(io.grafeas.v1.ComplianceNote value) {
       if (complianceBuilder_ == null) {
-        if (typeCase_ == 18 && type_ != io.grafeas.v1.ComplianceNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.ComplianceNote.newBuilder((io.grafeas.v1.ComplianceNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 18 &&
+            type_ != io.grafeas.v1.ComplianceNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.ComplianceNote.newBuilder((io.grafeas.v1.ComplianceNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -5357,8 +4792,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
@@ -5382,8 +4815,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
@@ -5394,8 +4825,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getComplianceFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
@@ -5414,8 +4843,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a compliance check.
      * </pre>
@@ -5423,42 +4850,32 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.ComplianceNote compliance = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ComplianceNote,
-            io.grafeas.v1.ComplianceNote.Builder,
-            io.grafeas.v1.ComplianceNoteOrBuilder>
+        io.grafeas.v1.ComplianceNote, io.grafeas.v1.ComplianceNote.Builder, io.grafeas.v1.ComplianceNoteOrBuilder> 
         getComplianceFieldBuilder() {
       if (complianceBuilder_ == null) {
         if (!(typeCase_ == 18)) {
           type_ = io.grafeas.v1.ComplianceNote.getDefaultInstance();
         }
-        complianceBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.ComplianceNote,
-                io.grafeas.v1.ComplianceNote.Builder,
-                io.grafeas.v1.ComplianceNoteOrBuilder>(
-                (io.grafeas.v1.ComplianceNote) type_, getParentForChildren(), isClean());
+        complianceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.ComplianceNote, io.grafeas.v1.ComplianceNote.Builder, io.grafeas.v1.ComplianceNoteOrBuilder>(
+                (io.grafeas.v1.ComplianceNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 18;
-      onChanged();
-      ;
+      onChanged();;
       return complianceBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.DSSEAttestationNote,
-            io.grafeas.v1.DSSEAttestationNote.Builder,
-            io.grafeas.v1.DSSEAttestationNoteOrBuilder>
-        dsseAttestationBuilder_;
+        io.grafeas.v1.DSSEAttestationNote, io.grafeas.v1.DSSEAttestationNote.Builder, io.grafeas.v1.DSSEAttestationNoteOrBuilder> dsseAttestationBuilder_;
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
      *
      * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
-     *
      * @return Whether the dsseAttestation field is set.
      */
     @java.lang.Override
@@ -5466,14 +4883,11 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return typeCase_ == 19;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
      *
      * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
-     *
      * @return The dsseAttestation.
      */
     @java.lang.Override
@@ -5491,8 +4905,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
@@ -5513,15 +4925,14 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
      *
      * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
      */
-    public Builder setDsseAttestation(io.grafeas.v1.DSSEAttestationNote.Builder builderForValue) {
+    public Builder setDsseAttestation(
+        io.grafeas.v1.DSSEAttestationNote.Builder builderForValue) {
       if (dsseAttestationBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -5532,8 +4943,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
@@ -5542,12 +4951,10 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDsseAttestation(io.grafeas.v1.DSSEAttestationNote value) {
       if (dsseAttestationBuilder_ == null) {
-        if (typeCase_ == 19 && type_ != io.grafeas.v1.DSSEAttestationNote.getDefaultInstance()) {
-          type_ =
-              io.grafeas.v1.DSSEAttestationNote.newBuilder(
-                      (io.grafeas.v1.DSSEAttestationNote) type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (typeCase_ == 19 &&
+            type_ != io.grafeas.v1.DSSEAttestationNote.getDefaultInstance()) {
+          type_ = io.grafeas.v1.DSSEAttestationNote.newBuilder((io.grafeas.v1.DSSEAttestationNote) type_)
+              .mergeFrom(value).buildPartial();
         } else {
           type_ = value;
         }
@@ -5563,8 +4970,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
@@ -5588,8 +4993,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
@@ -5600,8 +5003,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return getDsseAttestationFieldBuilder().getBuilder();
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
@@ -5620,8 +5021,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
      * <pre>
      * A note describing a dsse attestation note.
      * </pre>
@@ -5629,30 +5028,26 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
      * <code>.grafeas.v1.DSSEAttestationNote dsse_attestation = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.DSSEAttestationNote,
-            io.grafeas.v1.DSSEAttestationNote.Builder,
-            io.grafeas.v1.DSSEAttestationNoteOrBuilder>
+        io.grafeas.v1.DSSEAttestationNote, io.grafeas.v1.DSSEAttestationNote.Builder, io.grafeas.v1.DSSEAttestationNoteOrBuilder> 
         getDsseAttestationFieldBuilder() {
       if (dsseAttestationBuilder_ == null) {
         if (!(typeCase_ == 19)) {
           type_ = io.grafeas.v1.DSSEAttestationNote.getDefaultInstance();
         }
-        dsseAttestationBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                io.grafeas.v1.DSSEAttestationNote,
-                io.grafeas.v1.DSSEAttestationNote.Builder,
-                io.grafeas.v1.DSSEAttestationNoteOrBuilder>(
-                (io.grafeas.v1.DSSEAttestationNote) type_, getParentForChildren(), isClean());
+        dsseAttestationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.DSSEAttestationNote, io.grafeas.v1.DSSEAttestationNote.Builder, io.grafeas.v1.DSSEAttestationNoteOrBuilder>(
+                (io.grafeas.v1.DSSEAttestationNote) type_,
+                getParentForChildren(),
+                isClean());
         type_ = null;
       }
       typeCase_ = 19;
-      onChanged();
-      ;
+      onChanged();;
       return dsseAttestationBuilder_;
     }
-
     @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(
+        final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -5662,12 +5057,12 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
+
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Note)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Note)
   private static final io.grafeas.v1.Note DEFAULT_INSTANCE;
-
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Note();
   }
@@ -5676,27 +5071,27 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Note> PARSER =
-      new com.google.protobuf.AbstractParser<Note>() {
-        @java.lang.Override
-        public Note parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          Builder builder = newBuilder();
-          try {
-            builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
-          }
-          return builder.buildPartial();
-        }
-      };
+  private static final com.google.protobuf.Parser<Note>
+      PARSER = new com.google.protobuf.AbstractParser<Note>() {
+    @java.lang.Override
+    public Note parsePartialFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
+    }
+  };
 
   public static com.google.protobuf.Parser<Note> parser() {
     return PARSER;
@@ -5711,4 +5106,6 @@ public final class Note extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1.Note getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+
 }
+

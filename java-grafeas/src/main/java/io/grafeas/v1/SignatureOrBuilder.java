@@ -19,14 +19,11 @@
 
 package io.grafeas.v1;
 
-public interface SignatureOrBuilder
-    extends
+public interface SignatureOrBuilder extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Signature)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
    * <pre>
    * The content of the signature, an opaque bytestring.
    * The payload that this signature verifies MUST be unambiguously provided
@@ -37,14 +34,11 @@ public interface SignatureOrBuilder
    * </pre>
    *
    * <code>bytes signature = 1;</code>
-   *
    * @return The signature.
    */
   com.google.protobuf.ByteString getSignature();
 
   /**
-   *
-   *
    * <pre>
    * The identifier for the public key that verifies this signature.
    *   * The `public_key_id` is required.
@@ -63,13 +57,10 @@ public interface SignatureOrBuilder
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
-   *
    * @return The publicKeyId.
    */
   java.lang.String getPublicKeyId();
   /**
-   *
-   *
    * <pre>
    * The identifier for the public key that verifies this signature.
    *   * The `public_key_id` is required.
@@ -88,8 +79,8 @@ public interface SignatureOrBuilder
    * </pre>
    *
    * <code>string public_key_id = 2;</code>
-   *
    * @return The bytes for publicKeyId.
    */
-  com.google.protobuf.ByteString getPublicKeyIdBytes();
+  com.google.protobuf.ByteString
+      getPublicKeyIdBytes();
 }
