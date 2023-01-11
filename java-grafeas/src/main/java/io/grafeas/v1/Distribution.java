@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * This represents a particular channel of distribution for a given package.
  * E.g., Debian's jessie-backports dpkg mirror.
@@ -27,15 +29,16 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.Distribution}
  */
-public final class Distribution extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Distribution extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Distribution)
     DistributionOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Distribution.newBuilder() to construct.
   private Distribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Distribution() {
     cpeUri_ = "";
     architecture_ = 0;
@@ -46,18 +49,16 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Distribution();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Package.internal_static_grafeas_v1_Distribution_descriptor;
   }
 
@@ -72,12 +73,15 @@ private static final long serialVersionUID = 0L;
   public static final int CPE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object cpeUri_;
   /**
+   *
+   *
    * <pre>
    * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
    * @return The cpeUri.
    */
   @java.lang.Override
@@ -86,30 +90,30 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       cpeUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
    * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
    * @return The bytes for cpeUri.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCpeUriBytes() {
+  public com.google.protobuf.ByteString getCpeUriBytes() {
     java.lang.Object ref = cpeUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       cpeUri_ = b;
       return b;
     } else {
@@ -120,27 +124,35 @@ private static final long serialVersionUID = 0L;
   public static final int ARCHITECTURE_FIELD_NUMBER = 2;
   private int architecture_;
   /**
+   *
+   *
    * <pre>
    * The CPU architecture for which packages in this distribution channel were
    * built.
    * </pre>
    *
    * <code>.grafeas.v1.Architecture architecture = 2;</code>
+   *
    * @return The enum numeric value on the wire for architecture.
    */
-  @java.lang.Override public int getArchitectureValue() {
+  @java.lang.Override
+  public int getArchitectureValue() {
     return architecture_;
   }
   /**
+   *
+   *
    * <pre>
    * The CPU architecture for which packages in this distribution channel were
    * built.
    * </pre>
    *
    * <code>.grafeas.v1.Architecture architecture = 2;</code>
+   *
    * @return The architecture.
    */
-  @java.lang.Override public io.grafeas.v1.Architecture getArchitecture() {
+  @java.lang.Override
+  public io.grafeas.v1.Architecture getArchitecture() {
     @SuppressWarnings("deprecation")
     io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
     return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
@@ -149,11 +161,14 @@ private static final long serialVersionUID = 0L;
   public static final int LATEST_VERSION_FIELD_NUMBER = 3;
   private io.grafeas.v1.Version latestVersion_;
   /**
+   *
+   *
    * <pre>
    * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1.Version latest_version = 3;</code>
+   *
    * @return Whether the latestVersion field is set.
    */
   @java.lang.Override
@@ -161,11 +176,14 @@ private static final long serialVersionUID = 0L;
     return latestVersion_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The latest available version of this package in this distribution channel.
    * </pre>
    *
    * <code>.grafeas.v1.Version latest_version = 3;</code>
+   *
    * @return The latestVersion.
    */
   @java.lang.Override
@@ -173,6 +191,8 @@ private static final long serialVersionUID = 0L;
     return latestVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : latestVersion_;
   }
   /**
+   *
+   *
    * <pre>
    * The latest available version of this package in this distribution channel.
    * </pre>
@@ -187,11 +207,14 @@ private static final long serialVersionUID = 0L;
   public static final int MAINTAINER_FIELD_NUMBER = 4;
   private volatile java.lang.Object maintainer_;
   /**
+   *
+   *
    * <pre>
    * A freeform string denoting the maintainer of this package.
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   *
    * @return The maintainer.
    */
   @java.lang.Override
@@ -200,29 +223,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       maintainer_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A freeform string denoting the maintainer of this package.
    * </pre>
    *
    * <code>string maintainer = 4;</code>
+   *
    * @return The bytes for maintainer.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getMaintainerBytes() {
+  public com.google.protobuf.ByteString getMaintainerBytes() {
     java.lang.Object ref = maintainer_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       maintainer_ = b;
       return b;
     } else {
@@ -233,11 +256,14 @@ private static final long serialVersionUID = 0L;
   public static final int URL_FIELD_NUMBER = 5;
   private volatile java.lang.Object url_;
   /**
+   *
+   *
    * <pre>
    * The distribution channel-specific homepage for this package.
    * </pre>
    *
    * <code>string url = 5;</code>
+   *
    * @return The url.
    */
   @java.lang.Override
@@ -246,29 +272,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       url_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The distribution channel-specific homepage for this package.
    * </pre>
    *
    * <code>string url = 5;</code>
+   *
    * @return The bytes for url.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUrlBytes() {
+  public com.google.protobuf.ByteString getUrlBytes() {
     java.lang.Object ref = url_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       url_ = b;
       return b;
     } else {
@@ -279,11 +305,14 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * The distribution channel-specific description of this package.
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
    * @return The description.
    */
   @java.lang.Override
@@ -292,29 +321,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The distribution channel-specific description of this package.
    * </pre>
    *
    * <code>string description = 6;</code>
+   *
    * @return The bytes for description.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -323,6 +352,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -334,8 +364,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpeUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cpeUri_);
     }
@@ -367,12 +396,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cpeUri_);
     }
     if (architecture_ != io.grafeas.v1.Architecture.ARCHITECTURE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, architecture_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, architecture_);
     }
     if (latestVersion_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getLatestVersion());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLatestVersion());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maintainer_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, maintainer_);
@@ -391,27 +418,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.Distribution)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Distribution other = (io.grafeas.v1.Distribution) obj;
 
-    if (!getCpeUri()
-        .equals(other.getCpeUri())) return false;
+    if (!getCpeUri().equals(other.getCpeUri())) return false;
     if (architecture_ != other.architecture_) return false;
     if (hasLatestVersion() != other.hasLatestVersion()) return false;
     if (hasLatestVersion()) {
-      if (!getLatestVersion()
-          .equals(other.getLatestVersion())) return false;
+      if (!getLatestVersion().equals(other.getLatestVersion())) return false;
     }
-    if (!getMaintainer()
-        .equals(other.getMaintainer())) return false;
-    if (!getUrl()
-        .equals(other.getUrl())) return false;
-    if (!getDescription()
-        .equals(other.getDescription())) return false;
+    if (!getMaintainer().equals(other.getMaintainer())) return false;
+    if (!getUrl().equals(other.getUrl())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -442,97 +464,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.Distribution parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Distribution parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.Distribution parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.Distribution parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.Distribution parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Distribution parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.Distribution parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.Distribution parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Distribution parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.Distribution prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * This represents a particular channel of distribution for a given package.
    * E.g., Debian's jessie-backports dpkg mirror.
@@ -540,12 +568,11 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.Distribution}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Distribution)
       io.grafeas.v1.DistributionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Package.internal_static_grafeas_v1_Distribution_descriptor;
     }
 
@@ -558,15 +585,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.Distribution.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -590,8 +614,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Package.internal_static_grafeas_v1_Distribution_descriptor;
     }
 
@@ -630,38 +653,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Distribution) {
-        return mergeFrom((io.grafeas.v1.Distribution)other);
+        return mergeFrom((io.grafeas.v1.Distribution) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -718,44 +742,49 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              cpeUri_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                cpeUri_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 16: {
-              architecture_ = input.readEnum();
+                break;
+              } // case 10
+            case 16:
+              {
+                architecture_ = input.readEnum();
 
-              break;
-            } // case 16
-            case 26: {
-              input.readMessage(
-                  getLatestVersionFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 16
+            case 26:
+              {
+                input.readMessage(getLatestVersionFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 26
-            case 34: {
-              maintainer_ = input.readStringRequireUtf8();
+                break;
+              } // case 26
+            case 34:
+              {
+                maintainer_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 34
-            case 42: {
-              url_ = input.readStringRequireUtf8();
+                break;
+              } // case 34
+            case 42:
+              {
+                url_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 42
-            case 50: {
-              description_ = input.readStringRequireUtf8();
+                break;
+              } // case 42
+            case 50:
+              {
+                description_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 50
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -768,19 +797,21 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object cpeUri_ = "";
     /**
+     *
+     *
      * <pre>
      * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @return The cpeUri.
      */
     public java.lang.String getCpeUri() {
       java.lang.Object ref = cpeUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         cpeUri_ = s;
         return s;
@@ -789,21 +820,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @return The bytes for cpeUri.
      */
-    public com.google.protobuf.ByteString
-        getCpeUriBytes() {
+    public com.google.protobuf.ByteString getCpeUriBytes() {
       java.lang.Object ref = cpeUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         cpeUri_ = b;
         return b;
       } else {
@@ -811,57 +843,64 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @param value The cpeUri to set.
      * @return This builder for chaining.
      */
-    public Builder setCpeUri(
-        java.lang.String value) {
+    public Builder setCpeUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       cpeUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearCpeUri() {
-      
+
       cpeUri_ = getDefaultInstance().getCpeUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
      * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
      * @param value The bytes for cpeUri to set.
      * @return This builder for chaining.
      */
-    public Builder setCpeUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCpeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       cpeUri_ = value;
       onChanged();
       return this;
@@ -869,40 +908,50 @@ private static final long serialVersionUID = 0L;
 
     private int architecture_ = 0;
     /**
+     *
+     *
      * <pre>
      * The CPU architecture for which packages in this distribution channel were
      * built.
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
      * @return The enum numeric value on the wire for architecture.
      */
-    @java.lang.Override public int getArchitectureValue() {
+    @java.lang.Override
+    public int getArchitectureValue() {
       return architecture_;
     }
     /**
+     *
+     *
      * <pre>
      * The CPU architecture for which packages in this distribution channel were
      * built.
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
      * @param value The enum numeric value on the wire for architecture to set.
      * @return This builder for chaining.
      */
     public Builder setArchitectureValue(int value) {
-      
+
       architecture_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The CPU architecture for which packages in this distribution channel were
      * built.
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
      * @return The architecture.
      */
     @java.lang.Override
@@ -912,12 +961,15 @@ private static final long serialVersionUID = 0L;
       return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The CPU architecture for which packages in this distribution channel were
      * built.
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
      * @param value The architecture to set.
      * @return This builder for chaining.
      */
@@ -925,22 +977,25 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       architecture_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The CPU architecture for which packages in this distribution channel were
      * built.
      * </pre>
      *
      * <code>.grafeas.v1.Architecture architecture = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
-      
+
       architecture_ = 0;
       onChanged();
       return this;
@@ -948,24 +1003,31 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1.Version latestVersion_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder> latestVersionBuilder_;
+            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
+        latestVersionBuilder_;
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1.Version latest_version = 3;</code>
+     *
      * @return Whether the latestVersion field is set.
      */
     public boolean hasLatestVersion() {
       return latestVersionBuilder_ != null || latestVersion_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1.Version latest_version = 3;</code>
+     *
      * @return The latestVersion.
      */
     public io.grafeas.v1.Version getLatestVersion() {
@@ -976,6 +1038,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
@@ -996,14 +1060,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
      *
      * <code>.grafeas.v1.Version latest_version = 3;</code>
      */
-    public Builder setLatestVersion(
-        io.grafeas.v1.Version.Builder builderForValue) {
+    public Builder setLatestVersion(io.grafeas.v1.Version.Builder builderForValue) {
       if (latestVersionBuilder_ == null) {
         latestVersion_ = builderForValue.build();
         onChanged();
@@ -1014,6 +1079,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
@@ -1024,7 +1091,7 @@ private static final long serialVersionUID = 0L;
       if (latestVersionBuilder_ == null) {
         if (latestVersion_ != null) {
           latestVersion_ =
-            io.grafeas.v1.Version.newBuilder(latestVersion_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.Version.newBuilder(latestVersion_).mergeFrom(value).buildPartial();
         } else {
           latestVersion_ = value;
         }
@@ -1036,6 +1103,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
@@ -1054,6 +1123,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
@@ -1061,11 +1132,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Version latest_version = 3;</code>
      */
     public io.grafeas.v1.Version.Builder getLatestVersionBuilder() {
-      
+
       onChanged();
       return getLatestVersionFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
@@ -1076,11 +1149,12 @@ private static final long serialVersionUID = 0L;
       if (latestVersionBuilder_ != null) {
         return latestVersionBuilder_.getMessageOrBuilder();
       } else {
-        return latestVersion_ == null ?
-            io.grafeas.v1.Version.getDefaultInstance() : latestVersion_;
+        return latestVersion_ == null ? io.grafeas.v1.Version.getDefaultInstance() : latestVersion_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The latest available version of this package in this distribution channel.
      * </pre>
@@ -1088,14 +1162,15 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Version latest_version = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder> 
+            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
         getLatestVersionFieldBuilder() {
       if (latestVersionBuilder_ == null) {
-        latestVersionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>(
-                getLatestVersion(),
-                getParentForChildren(),
-                isClean());
+        latestVersionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Version,
+                io.grafeas.v1.Version.Builder,
+                io.grafeas.v1.VersionOrBuilder>(
+                getLatestVersion(), getParentForChildren(), isClean());
         latestVersion_ = null;
       }
       return latestVersionBuilder_;
@@ -1103,18 +1178,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object maintainer_ = "";
     /**
+     *
+     *
      * <pre>
      * A freeform string denoting the maintainer of this package.
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
      * @return The maintainer.
      */
     public java.lang.String getMaintainer() {
       java.lang.Object ref = maintainer_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         maintainer_ = s;
         return s;
@@ -1123,20 +1200,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A freeform string denoting the maintainer of this package.
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
      * @return The bytes for maintainer.
      */
-    public com.google.protobuf.ByteString
-        getMaintainerBytes() {
+    public com.google.protobuf.ByteString getMaintainerBytes() {
       java.lang.Object ref = maintainer_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         maintainer_ = b;
         return b;
       } else {
@@ -1144,54 +1222,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A freeform string denoting the maintainer of this package.
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
      * @param value The maintainer to set.
      * @return This builder for chaining.
      */
-    public Builder setMaintainer(
-        java.lang.String value) {
+    public Builder setMaintainer(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       maintainer_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A freeform string denoting the maintainer of this package.
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearMaintainer() {
-      
+
       maintainer_ = getDefaultInstance().getMaintainer();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A freeform string denoting the maintainer of this package.
      * </pre>
      *
      * <code>string maintainer = 4;</code>
+     *
      * @param value The bytes for maintainer to set.
      * @return This builder for chaining.
      */
-    public Builder setMaintainerBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMaintainerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       maintainer_ = value;
       onChanged();
       return this;
@@ -1199,18 +1284,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object url_ = "";
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific homepage for this package.
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
      * @return The url.
      */
     public java.lang.String getUrl() {
       java.lang.Object ref = url_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
@@ -1219,20 +1306,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific homepage for this package.
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
      * @return The bytes for url.
      */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
+    public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -1240,54 +1328,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific homepage for this package.
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
      * @param value The url to set.
      * @return This builder for chaining.
      */
-    public Builder setUrl(
-        java.lang.String value) {
+    public Builder setUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       url_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific homepage for this package.
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-      
+
       url_ = getDefaultInstance().getUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific homepage for this package.
      * </pre>
      *
      * <code>string url = 5;</code>
+     *
      * @param value The bytes for url to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       url_ = value;
       onChanged();
       return this;
@@ -1295,18 +1390,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific description of this package.
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
      * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1315,20 +1412,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific description of this package.
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
      * @return The bytes for description.
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1336,61 +1434,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific description of this package.
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
      * @param value The description to set.
      * @return This builder for chaining.
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific description of this package.
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The distribution channel-specific description of this package.
      * </pre>
      *
      * <code>string description = 6;</code>
+     *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1400,12 +1505,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Distribution)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Distribution)
   private static final io.grafeas.v1.Distribution DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Distribution();
   }
@@ -1414,27 +1519,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Distribution>
-      PARSER = new com.google.protobuf.AbstractParser<Distribution>() {
-    @java.lang.Override
-    public Distribution parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<Distribution> PARSER =
+      new com.google.protobuf.AbstractParser<Distribution>() {
+        @java.lang.Override
+        public Distribution parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<Distribution> parser() {
     return PARSER;
@@ -1449,6 +1554,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.Distribution getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

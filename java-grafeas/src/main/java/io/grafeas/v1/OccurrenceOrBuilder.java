@@ -19,33 +19,41 @@
 
 package io.grafeas.v1;
 
-public interface OccurrenceOrBuilder extends
+public interface OccurrenceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Occurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
    * @return The name.
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * </pre>
    *
    * <code>string name = 1;</code>
+   *
    * @return The bytes for name.
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. A URI that represents the resource for which the
    * occurrence applies. For example,
@@ -53,10 +61,13 @@ public interface OccurrenceOrBuilder extends
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
+   *
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. A URI that represents the resource for which the
    * occurrence applies. For example,
@@ -64,12 +75,14 @@ public interface OccurrenceOrBuilder extends
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
+   *
    * @return The bytes for resourceUri.
    */
-  com.google.protobuf.ByteString
-      getResourceUriBytes();
+  com.google.protobuf.ByteString getResourceUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
    * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
@@ -77,10 +90,13 @@ public interface OccurrenceOrBuilder extends
    * </pre>
    *
    * <code>string note_name = 3;</code>
+   *
    * @return The noteName.
    */
   java.lang.String getNoteName();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
    * the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be
@@ -88,71 +104,90 @@ public interface OccurrenceOrBuilder extends
    * </pre>
    *
    * <code>string note_name = 3;</code>
+   *
    * @return The bytes for noteName.
    */
-  com.google.protobuf.ByteString
-      getNoteNameBytes();
+  com.google.protobuf.ByteString getNoteNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. This explicitly denotes which of the occurrence details are
    * specified. This field can be used as a filter in list requests.
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
+   *
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Output only. This explicitly denotes which of the occurrence details are
    * specified. This field can be used as a filter in list requests.
    * </pre>
    *
    * <code>.grafeas.v1.NoteKind kind = 4;</code>
+   *
    * @return The kind.
    */
   io.grafeas.v1.NoteKind getKind();
 
   /**
+   *
+   *
    * <pre>
    * A description of actions that can be taken to remedy the note.
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
    * @return The remediation.
    */
   java.lang.String getRemediation();
   /**
+   *
+   *
    * <pre>
    * A description of actions that can be taken to remedy the note.
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
    * @return The bytes for remediation.
    */
-  com.google.protobuf.ByteString
-      getRemediationBytes();
+  com.google.protobuf.ByteString getRemediationBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   *
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -162,24 +197,32 @@ public interface OccurrenceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7;</code>
+   *
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -189,24 +232,32 @@ public interface OccurrenceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityOccurrence vulnerability = 8;</code>
+   *
    * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
    *
    * <code>.grafeas.v1.VulnerabilityOccurrence vulnerability = 8;</code>
+   *
    * @return The vulnerability.
    */
   io.grafeas.v1.VulnerabilityOccurrence getVulnerability();
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -216,24 +267,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.VulnerabilityOccurrenceOrBuilder getVulnerabilityOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildOccurrence build = 9;</code>
+   *
    * @return Whether the build field is set.
    */
   boolean hasBuild();
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildOccurrence build = 9;</code>
+   *
    * @return The build.
    */
   io.grafeas.v1.BuildOccurrence getBuild();
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -243,26 +302,34 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.BuildOccurrenceOrBuilder getBuildOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
    * </pre>
    *
    * <code>.grafeas.v1.ImageOccurrence image = 10;</code>
+   *
    * @return Whether the image field is set.
    */
   boolean hasImage();
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
    * </pre>
    *
    * <code>.grafeas.v1.ImageOccurrence image = 10;</code>
+   *
    * @return The image.
    */
   io.grafeas.v1.ImageOccurrence getImage();
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -273,24 +340,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.ImageOccurrenceOrBuilder getImageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
    *
    * <code>.grafeas.v1.PackageOccurrence package = 11;</code>
+   *
    * @return Whether the package field is set.
    */
   boolean hasPackage();
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
    *
    * <code>.grafeas.v1.PackageOccurrence package = 11;</code>
+   *
    * @return The package.
    */
   io.grafeas.v1.PackageOccurrence getPackage();
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -300,24 +375,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.PackageOccurrenceOrBuilder getPackageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentOccurrence deployment = 12;</code>
+   *
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
    *
    * <code>.grafeas.v1.DeploymentOccurrence deployment = 12;</code>
+   *
    * @return The deployment.
    */
   io.grafeas.v1.DeploymentOccurrence getDeployment();
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -327,24 +410,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.DeploymentOccurrenceOrBuilder getDeploymentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence discovery = 13;</code>
+   *
    * @return Whether the discovery field is set.
    */
   boolean hasDiscovery();
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
    *
    * <code>.grafeas.v1.DiscoveryOccurrence discovery = 13;</code>
+   *
    * @return The discovery.
    */
   io.grafeas.v1.DiscoveryOccurrence getDiscovery();
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -354,24 +445,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.DiscoveryOccurrenceOrBuilder getDiscoveryOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationOccurrence attestation = 14;</code>
+   *
    * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationOccurrence attestation = 14;</code>
+   *
    * @return The attestation.
    */
   io.grafeas.v1.AttestationOccurrence getAttestation();
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
@@ -381,24 +480,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.AttestationOccurrenceOrBuilder getAttestationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes an available package upgrade on the linked resource.
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   *
    * @return Whether the upgrade field is set.
    */
   boolean hasUpgrade();
   /**
+   *
+   *
    * <pre>
    * Describes an available package upgrade on the linked resource.
    * </pre>
    *
    * <code>.grafeas.v1.UpgradeOccurrence upgrade = 15;</code>
+   *
    * @return The upgrade.
    */
   io.grafeas.v1.UpgradeOccurrence getUpgrade();
   /**
+   *
+   *
    * <pre>
    * Describes an available package upgrade on the linked resource.
    * </pre>
@@ -408,24 +515,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.UpgradeOccurrenceOrBuilder getUpgradeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes a compliance violation on a linked resource.
    * </pre>
    *
    * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   *
    * @return Whether the compliance field is set.
    */
   boolean hasCompliance();
   /**
+   *
+   *
    * <pre>
    * Describes a compliance violation on a linked resource.
    * </pre>
    *
    * <code>.grafeas.v1.ComplianceOccurrence compliance = 16;</code>
+   *
    * @return The compliance.
    */
   io.grafeas.v1.ComplianceOccurrence getCompliance();
   /**
+   *
+   *
    * <pre>
    * Describes a compliance violation on a linked resource.
    * </pre>
@@ -435,24 +550,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.ComplianceOccurrenceOrBuilder getComplianceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact using dsse.
    * </pre>
    *
    * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   *
    * @return Whether the dsseAttestation field is set.
    */
   boolean hasDsseAttestation();
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact using dsse.
    * </pre>
    *
    * <code>.grafeas.v1.DSSEAttestationOccurrence dsse_attestation = 17;</code>
+   *
    * @return The dsseAttestation.
    */
   io.grafeas.v1.DSSEAttestationOccurrence getDsseAttestation();
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact using dsse.
    * </pre>
@@ -462,24 +585,32 @@ public interface OccurrenceOrBuilder extends
   io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder getDsseAttestationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * https://github.com/secure-systems-lab/dsse
    * </pre>
    *
    * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   *
    * @return Whether the envelope field is set.
    */
   boolean hasEnvelope();
   /**
+   *
+   *
    * <pre>
    * https://github.com/secure-systems-lab/dsse
    * </pre>
    *
    * <code>.grafeas.v1.Envelope envelope = 18;</code>
+   *
    * @return The envelope.
    */
   io.grafeas.v1.Envelope getEnvelope();
   /**
+   *
+   *
    * <pre>
    * https://github.com/secure-systems-lab/dsse
    * </pre>

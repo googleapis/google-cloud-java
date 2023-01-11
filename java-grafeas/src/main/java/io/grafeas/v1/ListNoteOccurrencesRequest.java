@@ -20,21 +20,24 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Request to list occurrences for a note.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.ListNoteOccurrencesRequest}
  */
-public final class ListNoteOccurrencesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListNoteOccurrencesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.ListNoteOccurrencesRequest)
     ListNoteOccurrencesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListNoteOccurrencesRequest.newBuilder() to construct.
   private ListNoteOccurrencesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListNoteOccurrencesRequest() {
     name_ = "";
     filter_ = "";
@@ -43,38 +46,44 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ListNoteOccurrencesRequest();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1.GrafeasOuterClass
+        .internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListNoteOccurrencesRequest_fieldAccessorTable
+    return io.grafeas.v1.GrafeasOuterClass
+        .internal_static_grafeas_v1_ListNoteOccurrencesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.ListNoteOccurrencesRequest.class, io.grafeas.v1.ListNoteOccurrencesRequest.Builder.class);
+            io.grafeas.v1.ListNoteOccurrencesRequest.class,
+            io.grafeas.v1.ListNoteOccurrencesRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The name of the note to list occurrences for in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
    * @return The name.
    */
   @java.lang.Override
@@ -83,30 +92,32 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the note to list occurrences for in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
    * @return The bytes for name.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -117,11 +128,14 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_FIELD_NUMBER = 2;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * The filter expression.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
    * @return The filter.
    */
   @java.lang.Override
@@ -130,29 +144,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The filter expression.
    * </pre>
    *
    * <code>string filter = 2;</code>
+   *
    * @return The bytes for filter.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -163,11 +177,14 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * Number of occurrences to return in the list.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
+   *
    * @return The pageSize.
    */
   @java.lang.Override
@@ -178,11 +195,14 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * Token to provide to skip to a particular spot in the list.
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
    * @return The pageToken.
    */
   @java.lang.Override
@@ -191,29 +211,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Token to provide to skip to a particular spot in the list.
    * </pre>
    *
    * <code>string page_token = 4;</code>
+   *
    * @return The bytes for pageToken.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -222,6 +242,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -233,8 +254,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -263,8 +283,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
@@ -277,21 +296,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.ListNoteOccurrencesRequest)) {
       return super.equals(obj);
     }
     io.grafeas.v1.ListNoteOccurrencesRequest other = (io.grafeas.v1.ListNoteOccurrencesRequest) obj;
 
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getFilter()
-        .equals(other.getFilter())) return false;
-    if (getPageSize()
-        != other.getPageSize()) return false;
-    if (!getPageToken()
-        .equals(other.getPageToken())) return false;
+    if (!getName().equals(other.getName())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
+    if (getPageSize() != other.getPageSize()) return false;
+    if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -316,130 +331,136 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.ListNoteOccurrencesRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1.ListNoteOccurrencesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ListNoteOccurrencesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.ListNoteOccurrencesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request to list occurrences for a note.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.ListNoteOccurrencesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.ListNoteOccurrencesRequest)
       io.grafeas.v1.ListNoteOccurrencesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.GrafeasOuterClass
+          .internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListNoteOccurrencesRequest_fieldAccessorTable
+      return io.grafeas.v1.GrafeasOuterClass
+          .internal_static_grafeas_v1_ListNoteOccurrencesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.ListNoteOccurrencesRequest.class, io.grafeas.v1.ListNoteOccurrencesRequest.Builder.class);
+              io.grafeas.v1.ListNoteOccurrencesRequest.class,
+              io.grafeas.v1.ListNoteOccurrencesRequest.Builder.class);
     }
 
     // Construct using io.grafeas.v1.ListNoteOccurrencesRequest.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -455,9 +476,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1.GrafeasOuterClass
+          .internal_static_grafeas_v1_ListNoteOccurrencesRequest_descriptor;
     }
 
     @java.lang.Override
@@ -476,7 +497,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1.ListNoteOccurrencesRequest buildPartial() {
-      io.grafeas.v1.ListNoteOccurrencesRequest result = new io.grafeas.v1.ListNoteOccurrencesRequest(this);
+      io.grafeas.v1.ListNoteOccurrencesRequest result =
+          new io.grafeas.v1.ListNoteOccurrencesRequest(this);
       result.name_ = name_;
       result.filter_ = filter_;
       result.pageSize_ = pageSize_;
@@ -489,38 +511,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.ListNoteOccurrencesRequest) {
-        return mergeFrom((io.grafeas.v1.ListNoteOccurrencesRequest)other);
+        return mergeFrom((io.grafeas.v1.ListNoteOccurrencesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -570,32 +593,37 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              name_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                name_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              filter_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+            case 18:
+              {
+                filter_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 18
-            case 24: {
-              pageSize_ = input.readInt32();
+                break;
+              } // case 18
+            case 24:
+              {
+                pageSize_ = input.readInt32();
 
-              break;
-            } // case 24
-            case 34: {
-              pageToken_ = input.readStringRequireUtf8();
+                break;
+              } // case 24
+            case 34:
+              {
+                pageToken_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 34
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -608,19 +636,23 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the note to list occurrences for in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -629,21 +661,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the note to list occurrences for in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @return The bytes for name.
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -651,57 +686,70 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the note to list occurrences for in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @param value The name to set.
      * @return This builder for chaining.
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the note to list occurrences for in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the note to list occurrences for in the form of
      * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -709,18 +757,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * The filter expression.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
      * @return The filter.
      */
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -729,20 +779,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The filter expression.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
      * @return The bytes for filter.
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -750,66 +801,76 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The filter expression.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
      * @param value The filter to set.
      * @return This builder for chaining.
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filter expression.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filter expression.
      * </pre>
      *
      * <code>string filter = 2;</code>
+     *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * Number of occurrences to return in the list.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     *
      * @return The pageSize.
      */
     @java.lang.Override
@@ -817,30 +878,36 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * Number of occurrences to return in the list.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     *
      * @param value The pageSize to set.
      * @return This builder for chaining.
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Number of occurrences to return in the list.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
@@ -848,18 +915,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * Token to provide to skip to a particular spot in the list.
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
      * @return The pageToken.
      */
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -868,20 +937,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token to provide to skip to a particular spot in the list.
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
      * @return The bytes for pageToken.
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -889,61 +959,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token to provide to skip to a particular spot in the list.
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token to provide to skip to a particular spot in the list.
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token to provide to skip to a particular spot in the list.
      * </pre>
      *
      * <code>string page_token = 4;</code>
+     *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -953,12 +1030,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.ListNoteOccurrencesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.ListNoteOccurrencesRequest)
   private static final io.grafeas.v1.ListNoteOccurrencesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.ListNoteOccurrencesRequest();
   }
@@ -967,27 +1044,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListNoteOccurrencesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListNoteOccurrencesRequest>() {
-    @java.lang.Override
-    public ListNoteOccurrencesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<ListNoteOccurrencesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListNoteOccurrencesRequest>() {
+        @java.lang.Override
+        public ListNoteOccurrencesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<ListNoteOccurrencesRequest> parser() {
     return PARSER;
@@ -1002,6 +1079,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.ListNoteOccurrencesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

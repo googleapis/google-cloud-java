@@ -21,83 +21,90 @@ package io.grafeas.v1;
 
 public final class InTotoStatementProto {
   private InTotoStatementProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_InTotoStatement_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoStatement_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Subject_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Subject_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Subject_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Subject_DigestEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Subject_DigestEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Subject_DigestEntry_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n!grafeas/v1/intoto_statement.proto\022\ngra" +
-      "feas.v1\032\"grafeas/v1/intoto_provenance.pr" +
-      "oto\032 grafeas/v1/slsa_provenance.proto\032)g" +
-      "rafeas/v1/slsa_provenance_zero_two.proto" +
-      "\"\243\002\n\017InTotoStatement\022\023\n\004type\030\001 \001(\tR\005_typ" +
-      "e\022$\n\007subject\030\002 \003(\0132\023.grafeas.v1.Subject\022" +
-      "\026\n\016predicate_type\030\003 \001(\t\0222\n\nprovenance\030\004 " +
-      "\001(\0132\034.grafeas.v1.InTotoProvenanceH\000\0225\n\017s" +
-      "lsa_provenance\030\005 \001(\0132\032.grafeas.v1.SlsaPr" +
-      "ovenanceH\000\022E\n\030slsa_provenance_zero_two\030\006" +
-      " \001(\0132!.grafeas.v1.SlsaProvenanceZeroTwoH" +
-      "\000B\013\n\tpredicate\"w\n\007Subject\022\014\n\004name\030\001 \001(\t\022" +
-      "/\n\006digest\030\002 \003(\0132\037.grafeas.v1.Subject.Dig" +
-      "estEntry\032-\n\013DigestEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001Bg\n\rio.grafeas.v1B\024InToto" +
-      "StatementProtoP\001Z8google.golang.org/genp" +
-      "roto/googleapis/grafeas/v1;grafeas\242\002\003GRA" +
-      "b\006proto3"
+      "\n!grafeas/v1/intoto_statement.proto\022\ngra"
+          + "feas.v1\032\"grafeas/v1/intoto_provenance.pr"
+          + "oto\032 grafeas/v1/slsa_provenance.proto\032)g"
+          + "rafeas/v1/slsa_provenance_zero_two.proto"
+          + "\"\243\002\n\017InTotoStatement\022\023\n\004type\030\001 \001(\tR\005_typ"
+          + "e\022$\n\007subject\030\002 \003(\0132\023.grafeas.v1.Subject\022"
+          + "\026\n\016predicate_type\030\003 \001(\t\0222\n\nprovenance\030\004 "
+          + "\001(\0132\034.grafeas.v1.InTotoProvenanceH\000\0225\n\017s"
+          + "lsa_provenance\030\005 \001(\0132\032.grafeas.v1.SlsaPr"
+          + "ovenanceH\000\022E\n\030slsa_provenance_zero_two\030\006"
+          + " \001(\0132!.grafeas.v1.SlsaProvenanceZeroTwoH"
+          + "\000B\013\n\tpredicate\"w\n\007Subject\022\014\n\004name\030\001 \001(\t\022"
+          + "/\n\006digest\030\002 \003(\0132\037.grafeas.v1.Subject.Dig"
+          + "estEntry\032-\n\013DigestEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001Bg\n\rio.grafeas.v1B\024InToto"
+          + "StatementProtoP\001Z8google.golang.org/genp"
+          + "roto/googleapis/grafeas/v1;grafeas\242\002\003GRA"
+          + "b\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.grafeas.v1.InTotoProvenanceProto.getDescriptor(),
-          io.grafeas.v1.SlsaProvenanceProto.getDescriptor(),
-          io.grafeas.v1.SlsaProvenanceZeroTwoProto.getDescriptor(),
-        });
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              io.grafeas.v1.InTotoProvenanceProto.getDescriptor(),
+              io.grafeas.v1.SlsaProvenanceProto.getDescriptor(),
+              io.grafeas.v1.SlsaProvenanceZeroTwoProto.getDescriptor(),
+            });
     internal_static_grafeas_v1_InTotoStatement_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_InTotoStatement_descriptor,
-        new java.lang.String[] { "Type", "Subject", "PredicateType", "Provenance", "SlsaProvenance", "SlsaProvenanceZeroTwo", "Predicate", });
-    internal_static_grafeas_v1_Subject_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_grafeas_v1_Subject_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Subject_descriptor,
-        new java.lang.String[] { "Name", "Digest", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoStatement_descriptor,
+            new java.lang.String[] {
+              "Type",
+              "Subject",
+              "PredicateType",
+              "Provenance",
+              "SlsaProvenance",
+              "SlsaProvenanceZeroTwo",
+              "Predicate",
+            });
+    internal_static_grafeas_v1_Subject_descriptor = getDescriptor().getMessageTypes().get(1);
+    internal_static_grafeas_v1_Subject_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Subject_descriptor,
+            new java.lang.String[] {
+              "Name", "Digest",
+            });
     internal_static_grafeas_v1_Subject_DigestEntry_descriptor =
-      internal_static_grafeas_v1_Subject_descriptor.getNestedTypes().get(0);
-    internal_static_grafeas_v1_Subject_DigestEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Subject_DigestEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        internal_static_grafeas_v1_Subject_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_Subject_DigestEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Subject_DigestEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     io.grafeas.v1.InTotoProvenanceProto.getDescriptor();
     io.grafeas.v1.SlsaProvenanceProto.getDescriptor();
     io.grafeas.v1.SlsaProvenanceZeroTwoProto.getDescriptor();

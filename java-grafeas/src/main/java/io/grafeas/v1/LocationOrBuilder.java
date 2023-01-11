@@ -19,53 +19,67 @@
 
 package io.grafeas.v1;
 
-public interface LocationOrBuilder extends
+public interface LocationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Location)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated.
    * The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
   /**
+   *
+   *
    * <pre>
    * Deprecated.
    * The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
    * @return The bytes for cpeUri.
    */
-  com.google.protobuf.ByteString
-      getCpeUriBytes();
+  com.google.protobuf.ByteString getCpeUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated.
    * The version installed at this location.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 2;</code>
+   *
    * @return Whether the version field is set.
    */
   boolean hasVersion();
   /**
+   *
+   *
    * <pre>
    * Deprecated.
    * The version installed at this location.
    * </pre>
    *
    * <code>.grafeas.v1.Version version = 2;</code>
+   *
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
   /**
+   *
+   *
    * <pre>
    * Deprecated.
    * The version installed at this location.
@@ -76,22 +90,27 @@ public interface LocationOrBuilder extends
   io.grafeas.v1.VersionOrBuilder getVersionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The path from which we gathered that this package/version is installed.
    * </pre>
    *
    * <code>string path = 3;</code>
+   *
    * @return The path.
    */
   java.lang.String getPath();
   /**
+   *
+   *
    * <pre>
    * The path from which we gathered that this package/version is installed.
    * </pre>
    *
    * <code>string path = 3;</code>
+   *
    * @return The bytes for path.
    */
-  com.google.protobuf.ByteString
-      getPathBytes();
+  com.google.protobuf.ByteString getPathBytes();
 }

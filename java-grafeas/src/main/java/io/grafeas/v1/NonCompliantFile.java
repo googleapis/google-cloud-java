@@ -20,21 +20,24 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Details about files that caused a compliance check to fail.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.NonCompliantFile}
  */
-public final class NonCompliantFile extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class NonCompliantFile extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.NonCompliantFile)
     NonCompliantFileOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use NonCompliantFile.newBuilder() to construct.
   private NonCompliantFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private NonCompliantFile() {
     path_ = "";
     displayCommand_ = "";
@@ -43,18 +46,16 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new NonCompliantFile();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Compliance.internal_static_grafeas_v1_NonCompliantFile_descriptor;
   }
 
@@ -69,11 +70,14 @@ private static final long serialVersionUID = 0L;
   public static final int PATH_FIELD_NUMBER = 1;
   private volatile java.lang.Object path_;
   /**
+   *
+   *
    * <pre>
    * Empty if `display_command` is set.
    * </pre>
    *
    * <code>string path = 1;</code>
+   *
    * @return The path.
    */
   @java.lang.Override
@@ -82,29 +86,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       path_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Empty if `display_command` is set.
    * </pre>
    *
    * <code>string path = 1;</code>
+   *
    * @return The bytes for path.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPathBytes() {
+  public com.google.protobuf.ByteString getPathBytes() {
     java.lang.Object ref = path_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       path_ = b;
       return b;
     } else {
@@ -115,11 +119,14 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_COMMAND_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayCommand_;
   /**
+   *
+   *
    * <pre>
    * Command to display the non-compliant files.
    * </pre>
    *
    * <code>string display_command = 2;</code>
+   *
    * @return The displayCommand.
    */
   @java.lang.Override
@@ -128,29 +135,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayCommand_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Command to display the non-compliant files.
    * </pre>
    *
    * <code>string display_command = 2;</code>
+   *
    * @return The bytes for displayCommand.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDisplayCommandBytes() {
+  public com.google.protobuf.ByteString getDisplayCommandBytes() {
     java.lang.Object ref = displayCommand_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayCommand_ = b;
       return b;
     } else {
@@ -161,11 +168,14 @@ private static final long serialVersionUID = 0L;
   public static final int REASON_FIELD_NUMBER = 3;
   private volatile java.lang.Object reason_;
   /**
+   *
+   *
    * <pre>
    * Explains why a file is non compliant for a CIS check.
    * </pre>
    *
    * <code>string reason = 3;</code>
+   *
    * @return The reason.
    */
   @java.lang.Override
@@ -174,29 +184,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       reason_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Explains why a file is non compliant for a CIS check.
    * </pre>
    *
    * <code>string reason = 3;</code>
+   *
    * @return The bytes for reason.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getReasonBytes() {
+  public com.google.protobuf.ByteString getReasonBytes() {
     java.lang.Object ref = reason_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       reason_ = b;
       return b;
     } else {
@@ -205,6 +215,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -216,8 +227,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
     }
@@ -253,19 +263,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.NonCompliantFile)) {
       return super.equals(obj);
     }
     io.grafeas.v1.NonCompliantFile other = (io.grafeas.v1.NonCompliantFile) obj;
 
-    if (!getPath()
-        .equals(other.getPath())) return false;
-    if (!getDisplayCommand()
-        .equals(other.getDisplayCommand())) return false;
-    if (!getReason()
-        .equals(other.getReason())) return false;
+    if (!getPath().equals(other.getPath())) return false;
+    if (!getDisplayCommand().equals(other.getDisplayCommand())) return false;
+    if (!getReason().equals(other.getReason())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -288,109 +295,114 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.NonCompliantFile parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.NonCompliantFile parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.NonCompliantFile parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.NonCompliantFile parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.NonCompliantFile parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.NonCompliantFile parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.NonCompliantFile parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.NonCompliantFile prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Details about files that caused a compliance check to fail.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.NonCompliantFile}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.NonCompliantFile)
       io.grafeas.v1.NonCompliantFileOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Compliance.internal_static_grafeas_v1_NonCompliantFile_descriptor;
     }
 
@@ -403,15 +415,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.NonCompliantFile.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -425,8 +434,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Compliance.internal_static_grafeas_v1_NonCompliantFile_descriptor;
     }
 
@@ -458,38 +466,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.NonCompliantFile) {
-        return mergeFrom((io.grafeas.v1.NonCompliantFile)other);
+        return mergeFrom((io.grafeas.v1.NonCompliantFile) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -536,27 +545,31 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              path_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                path_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              displayCommand_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+            case 18:
+              {
+                displayCommand_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 18
-            case 26: {
-              reason_ = input.readStringRequireUtf8();
+                break;
+              } // case 18
+            case 26:
+              {
+                reason_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 26
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 26
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -569,18 +582,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object path_ = "";
     /**
+     *
+     *
      * <pre>
      * Empty if `display_command` is set.
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
      * @return The path.
      */
     public java.lang.String getPath() {
       java.lang.Object ref = path_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         path_ = s;
         return s;
@@ -589,20 +604,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Empty if `display_command` is set.
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
      * @return The bytes for path.
      */
-    public com.google.protobuf.ByteString
-        getPathBytes() {
+    public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         path_ = b;
         return b;
       } else {
@@ -610,54 +626,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Empty if `display_command` is set.
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
      * @param value The path to set.
      * @return This builder for chaining.
      */
-    public Builder setPath(
-        java.lang.String value) {
+    public Builder setPath(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       path_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Empty if `display_command` is set.
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-      
+
       path_ = getDefaultInstance().getPath();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Empty if `display_command` is set.
      * </pre>
      *
      * <code>string path = 1;</code>
+     *
      * @param value The bytes for path to set.
      * @return This builder for chaining.
      */
-    public Builder setPathBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPathBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       path_ = value;
       onChanged();
       return this;
@@ -665,18 +688,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayCommand_ = "";
     /**
+     *
+     *
      * <pre>
      * Command to display the non-compliant files.
      * </pre>
      *
      * <code>string display_command = 2;</code>
+     *
      * @return The displayCommand.
      */
     public java.lang.String getDisplayCommand() {
       java.lang.Object ref = displayCommand_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayCommand_ = s;
         return s;
@@ -685,20 +710,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Command to display the non-compliant files.
      * </pre>
      *
      * <code>string display_command = 2;</code>
+     *
      * @return The bytes for displayCommand.
      */
-    public com.google.protobuf.ByteString
-        getDisplayCommandBytes() {
+    public com.google.protobuf.ByteString getDisplayCommandBytes() {
       java.lang.Object ref = displayCommand_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayCommand_ = b;
         return b;
       } else {
@@ -706,54 +732,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Command to display the non-compliant files.
      * </pre>
      *
      * <code>string display_command = 2;</code>
+     *
      * @param value The displayCommand to set.
      * @return This builder for chaining.
      */
-    public Builder setDisplayCommand(
-        java.lang.String value) {
+    public Builder setDisplayCommand(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayCommand_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Command to display the non-compliant files.
      * </pre>
      *
      * <code>string display_command = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearDisplayCommand() {
-      
+
       displayCommand_ = getDefaultInstance().getDisplayCommand();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Command to display the non-compliant files.
      * </pre>
      *
      * <code>string display_command = 2;</code>
+     *
      * @param value The bytes for displayCommand to set.
      * @return This builder for chaining.
      */
-    public Builder setDisplayCommandBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayCommandBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayCommand_ = value;
       onChanged();
       return this;
@@ -761,18 +794,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object reason_ = "";
     /**
+     *
+     *
      * <pre>
      * Explains why a file is non compliant for a CIS check.
      * </pre>
      *
      * <code>string reason = 3;</code>
+     *
      * @return The reason.
      */
     public java.lang.String getReason() {
       java.lang.Object ref = reason_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reason_ = s;
         return s;
@@ -781,20 +816,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Explains why a file is non compliant for a CIS check.
      * </pre>
      *
      * <code>string reason = 3;</code>
+     *
      * @return The bytes for reason.
      */
-    public com.google.protobuf.ByteString
-        getReasonBytes() {
+    public com.google.protobuf.ByteString getReasonBytes() {
       java.lang.Object ref = reason_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         reason_ = b;
         return b;
       } else {
@@ -802,61 +838,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Explains why a file is non compliant for a CIS check.
      * </pre>
      *
      * <code>string reason = 3;</code>
+     *
      * @param value The reason to set.
      * @return This builder for chaining.
      */
-    public Builder setReason(
-        java.lang.String value) {
+    public Builder setReason(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       reason_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Explains why a file is non compliant for a CIS check.
      * </pre>
      *
      * <code>string reason = 3;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-      
+
       reason_ = getDefaultInstance().getReason();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Explains why a file is non compliant for a CIS check.
      * </pre>
      *
      * <code>string reason = 3;</code>
+     *
      * @param value The bytes for reason to set.
      * @return This builder for chaining.
      */
-    public Builder setReasonBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setReasonBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       reason_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -866,12 +909,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.NonCompliantFile)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.NonCompliantFile)
   private static final io.grafeas.v1.NonCompliantFile DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.NonCompliantFile();
   }
@@ -880,27 +923,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NonCompliantFile>
-      PARSER = new com.google.protobuf.AbstractParser<NonCompliantFile>() {
-    @java.lang.Override
-    public NonCompliantFile parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<NonCompliantFile> PARSER =
+      new com.google.protobuf.AbstractParser<NonCompliantFile>() {
+        @java.lang.Override
+        public NonCompliantFile parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<NonCompliantFile> parser() {
     return PARSER;
@@ -915,6 +958,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.NonCompliantFile getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

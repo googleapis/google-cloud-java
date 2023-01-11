@@ -19,29 +19,38 @@
 
 package io.grafeas.v1;
 
-public interface BuildOccurrenceOrBuilder extends
+public interface BuildOccurrenceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.BuildOccurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
+   *
    * @return Whether the provenance field is set.
    */
   boolean hasProvenance();
   /**
+   *
+   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
    *
    * <code>.grafeas.v1.BuildProvenance provenance = 1;</code>
+   *
    * @return The provenance.
    */
   io.grafeas.v1.BuildProvenance getProvenance();
   /**
+   *
+   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
@@ -51,6 +60,8 @@ public interface BuildOccurrenceOrBuilder extends
   io.grafeas.v1.BuildProvenanceOrBuilder getProvenanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
    * build signature in the corresponding build note. After verifying the
@@ -65,10 +76,13 @@ public interface BuildOccurrenceOrBuilder extends
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   *
    * @return The provenanceBytes.
    */
   java.lang.String getProvenanceBytes();
   /**
+   *
+   *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
    * build signature in the corresponding build note. After verifying the
@@ -83,32 +97,40 @@ public interface BuildOccurrenceOrBuilder extends
    * </pre>
    *
    * <code>string provenance_bytes = 2;</code>
+   *
    * @return The bytes for provenanceBytes.
    */
-  com.google.protobuf.ByteString
-      getProvenanceBytesBytes();
+  com.google.protobuf.ByteString getProvenanceBytesBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. See InTotoStatement for the replacement.
    * In-toto Provenance representation as defined in spec.
    * </pre>
    *
    * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+   *
    * @return Whether the intotoProvenance field is set.
    */
   boolean hasIntotoProvenance();
   /**
+   *
+   *
    * <pre>
    * Deprecated. See InTotoStatement for the replacement.
    * In-toto Provenance representation as defined in spec.
    * </pre>
    *
    * <code>.grafeas.v1.InTotoProvenance intoto_provenance = 3;</code>
+   *
    * @return The intotoProvenance.
    */
   io.grafeas.v1.InTotoProvenance getIntotoProvenance();
   /**
+   *
+   *
    * <pre>
    * Deprecated. See InTotoStatement for the replacement.
    * In-toto Provenance representation as defined in spec.
@@ -119,6 +141,8 @@ public interface BuildOccurrenceOrBuilder extends
   io.grafeas.v1.InTotoProvenanceOrBuilder getIntotoProvenanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * In-toto Statement representation as defined in spec.
    * The intoto_statement can contain any type of provenance. The serialized
@@ -127,10 +151,13 @@ public interface BuildOccurrenceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+   *
    * @return Whether the intotoStatement field is set.
    */
   boolean hasIntotoStatement();
   /**
+   *
+   *
    * <pre>
    * In-toto Statement representation as defined in spec.
    * The intoto_statement can contain any type of provenance. The serialized
@@ -139,10 +166,13 @@ public interface BuildOccurrenceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
+   *
    * @return The intotoStatement.
    */
   io.grafeas.v1.InTotoStatement getIntotoStatement();
   /**
+   *
+   *
    * <pre>
    * In-toto Statement representation as defined in spec.
    * The intoto_statement can contain any type of provenance. The serialized

@@ -21,76 +21,78 @@ package io.grafeas.v1;
 
 public final class DsseAttestation {
   private DsseAttestation() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_DSSEAttestationNote_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_DSSEAttestationNote_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_DSSEAttestationNote_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n!grafeas/v1/dsse_attestation.proto\022\ngra" +
-      "feas.v1\032\027grafeas/v1/common.proto\032!grafea" +
-      "s/v1/intoto_statement.proto\"v\n\023DSSEAttes" +
-      "tationNote\0226\n\004hint\030\001 \001(\0132(.grafeas.v1.DS" +
-      "SEAttestationNote.DSSEHint\032\'\n\010DSSEHint\022\033" +
-      "\n\023human_readable_name\030\001 \001(\t\"\210\001\n\031DSSEAtte" +
-      "stationOccurrence\022&\n\010envelope\030\001 \001(\0132\024.gr" +
-      "afeas.v1.Envelope\0220\n\tstatement\030\002 \001(\0132\033.g" +
-      "rafeas.v1.InTotoStatementH\000B\021\n\017decoded_p" +
-      "ayloadBQ\n\rio.grafeas.v1P\001Z8google.golang" +
-      ".org/genproto/googleapis/grafeas/v1;graf" +
-      "eas\242\002\003GRAb\006proto3"
+      "\n!grafeas/v1/dsse_attestation.proto\022\ngra"
+          + "feas.v1\032\027grafeas/v1/common.proto\032!grafea"
+          + "s/v1/intoto_statement.proto\"v\n\023DSSEAttes"
+          + "tationNote\0226\n\004hint\030\001 \001(\0132(.grafeas.v1.DS"
+          + "SEAttestationNote.DSSEHint\032\'\n\010DSSEHint\022\033"
+          + "\n\023human_readable_name\030\001 \001(\t\"\210\001\n\031DSSEAtte"
+          + "stationOccurrence\022&\n\010envelope\030\001 \001(\0132\024.gr"
+          + "afeas.v1.Envelope\0220\n\tstatement\030\002 \001(\0132\033.g"
+          + "rafeas.v1.InTotoStatementH\000B\021\n\017decoded_p"
+          + "ayloadBQ\n\rio.grafeas.v1P\001Z8google.golang"
+          + ".org/genproto/googleapis/grafeas/v1;graf"
+          + "eas\242\002\003GRAb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.grafeas.v1.Common.getDescriptor(),
-          io.grafeas.v1.InTotoStatementProto.getDescriptor(),
-        });
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              io.grafeas.v1.Common.getDescriptor(),
+              io.grafeas.v1.InTotoStatementProto.getDescriptor(),
+            });
     internal_static_grafeas_v1_DSSEAttestationNote_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_grafeas_v1_DSSEAttestationNote_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_DSSEAttestationNote_descriptor,
-        new java.lang.String[] { "Hint", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_grafeas_v1_DSSEAttestationNote_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_DSSEAttestationNote_descriptor,
+            new java.lang.String[] {
+              "Hint",
+            });
     internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_descriptor =
-      internal_static_grafeas_v1_DSSEAttestationNote_descriptor.getNestedTypes().get(0);
-    internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_descriptor,
-        new java.lang.String[] { "HumanReadableName", });
+        internal_static_grafeas_v1_DSSEAttestationNote_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_DSSEAttestationNote_DSSEHint_descriptor,
+            new java.lang.String[] {
+              "HumanReadableName",
+            });
     internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor,
-        new java.lang.String[] { "Envelope", "Statement", "DecodedPayload", });
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor,
+            new java.lang.String[] {
+              "Envelope", "Statement", "DecodedPayload",
+            });
     io.grafeas.v1.Common.getDescriptor();
     io.grafeas.v1.InTotoStatementProto.getDescriptor();
   }

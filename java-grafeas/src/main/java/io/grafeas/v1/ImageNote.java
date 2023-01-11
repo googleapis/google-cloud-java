@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Basis describes the base image portion (Note) of the DockerImage
  * relationship. Linked occurrences are derived from this or an equivalent image
@@ -30,33 +32,32 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.ImageNote}
  */
-public final class ImageNote extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ImageNote extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.ImageNote)
     ImageNoteOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ImageNote.newBuilder() to construct.
   private ImageNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ImageNote() {
     resourceUrl_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ImageNote();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Image.internal_static_grafeas_v1_ImageNote_descriptor;
   }
 
@@ -71,12 +72,15 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_URL_FIELD_NUMBER = 1;
   private volatile java.lang.Object resourceUrl_;
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource_url for the resource representing the
    * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
    * @return The resourceUrl.
    */
   @java.lang.Override
@@ -85,30 +89,30 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       resourceUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource_url for the resource representing the
    * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
    * @return The bytes for resourceUrl.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getResourceUrlBytes() {
+  public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       resourceUrl_ = b;
       return b;
     } else {
@@ -119,11 +123,14 @@ private static final long serialVersionUID = 0L;
   public static final int FINGERPRINT_FIELD_NUMBER = 2;
   private io.grafeas.v1.Fingerprint fingerprint_;
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+   *
    * @return Whether the fingerprint field is set.
    */
   @java.lang.Override
@@ -131,11 +138,14 @@ private static final long serialVersionUID = 0L;
     return fingerprint_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+   *
    * @return The fingerprint.
    */
   @java.lang.Override
@@ -143,6 +153,8 @@ private static final long serialVersionUID = 0L;
     return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The fingerprint of the base image.
    * </pre>
@@ -155,6 +167,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -166,8 +179,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUrl_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceUrl_);
     }
@@ -187,8 +199,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resourceUrl_);
     }
     if (fingerprint_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getFingerprint());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFingerprint());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -198,19 +209,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.ImageNote)) {
       return super.equals(obj);
     }
     io.grafeas.v1.ImageNote other = (io.grafeas.v1.ImageNote) obj;
 
-    if (!getResourceUrl()
-        .equals(other.getResourceUrl())) return false;
+    if (!getResourceUrl().equals(other.getResourceUrl())) return false;
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
-      if (!getFingerprint()
-          .equals(other.getFingerprint())) return false;
+      if (!getFingerprint().equals(other.getFingerprint())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -234,97 +243,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.ImageNote parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.ImageNote parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.ImageNote parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.ImageNote parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.ImageNote parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ImageNote parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.ImageNote parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.ImageNote parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ImageNote parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.ImageNote prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Basis describes the base image portion (Note) of the DockerImage
    * relationship. Linked occurrences are derived from this or an equivalent image
@@ -335,12 +350,11 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.ImageNote}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.ImageNote)
       io.grafeas.v1.ImageNoteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Image.internal_static_grafeas_v1_ImageNote_descriptor;
     }
 
@@ -353,15 +367,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.ImageNote.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -377,8 +388,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Image.internal_static_grafeas_v1_ImageNote_descriptor;
     }
 
@@ -413,38 +423,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.ImageNote) {
-        return mergeFrom((io.grafeas.v1.ImageNote)other);
+        return mergeFrom((io.grafeas.v1.ImageNote) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -486,24 +497,25 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              resourceUrl_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                resourceUrl_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              input.readMessage(
-                  getFingerprintFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getFingerprintFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 18
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -516,19 +528,21 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource_url for the resource representing the
      * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
      * @return The resourceUrl.
      */
     public java.lang.String getResourceUrl() {
       java.lang.Object ref = resourceUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceUrl_ = s;
         return s;
@@ -537,21 +551,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource_url for the resource representing the
      * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
      * @return The bytes for resourceUrl.
      */
-    public com.google.protobuf.ByteString
-        getResourceUrlBytes() {
+    public com.google.protobuf.ByteString getResourceUrlBytes() {
       java.lang.Object ref = resourceUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceUrl_ = b;
         return b;
       } else {
@@ -559,57 +574,64 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource_url for the resource representing the
      * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
      * @param value The resourceUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setResourceUrl(
-        java.lang.String value) {
+    public Builder setResourceUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       resourceUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource_url for the resource representing the
      * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
-      
+
       resourceUrl_ = getDefaultInstance().getResourceUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource_url for the resource representing the
      * basis of associated occurrence images.
      * </pre>
      *
      * <code>string resource_url = 1;</code>
+     *
      * @param value The bytes for resourceUrl to set.
      * @return This builder for chaining.
      */
-    public Builder setResourceUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setResourceUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       resourceUrl_ = value;
       onChanged();
       return this;
@@ -617,24 +639,33 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1.Fingerprint fingerprint_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Fingerprint, io.grafeas.v1.Fingerprint.Builder, io.grafeas.v1.FingerprintOrBuilder> fingerprintBuilder_;
+            io.grafeas.v1.Fingerprint,
+            io.grafeas.v1.Fingerprint.Builder,
+            io.grafeas.v1.FingerprintOrBuilder>
+        fingerprintBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+     *
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
       return fingerprintBuilder_ != null || fingerprint_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+     *
      * @return The fingerprint.
      */
     public io.grafeas.v1.Fingerprint getFingerprint() {
@@ -645,6 +676,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
@@ -665,14 +698,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
      *
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
      */
-    public Builder setFingerprint(
-        io.grafeas.v1.Fingerprint.Builder builderForValue) {
+    public Builder setFingerprint(io.grafeas.v1.Fingerprint.Builder builderForValue) {
       if (fingerprintBuilder_ == null) {
         fingerprint_ = builderForValue.build();
         onChanged();
@@ -683,6 +717,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
@@ -693,7 +729,7 @@ private static final long serialVersionUID = 0L;
       if (fingerprintBuilder_ == null) {
         if (fingerprint_ != null) {
           fingerprint_ =
-            io.grafeas.v1.Fingerprint.newBuilder(fingerprint_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.Fingerprint.newBuilder(fingerprint_).mergeFrom(value).buildPartial();
         } else {
           fingerprint_ = value;
         }
@@ -705,6 +741,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
@@ -723,6 +761,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
@@ -730,11 +770,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
      */
     public io.grafeas.v1.Fingerprint.Builder getFingerprintBuilder() {
-      
+
       onChanged();
       return getFingerprintFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
@@ -745,11 +787,12 @@ private static final long serialVersionUID = 0L;
       if (fingerprintBuilder_ != null) {
         return fingerprintBuilder_.getMessageOrBuilder();
       } else {
-        return fingerprint_ == null ?
-            io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
+        return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The fingerprint of the base image.
      * </pre>
@@ -757,21 +800,24 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Fingerprint, io.grafeas.v1.Fingerprint.Builder, io.grafeas.v1.FingerprintOrBuilder> 
+            io.grafeas.v1.Fingerprint,
+            io.grafeas.v1.Fingerprint.Builder,
+            io.grafeas.v1.FingerprintOrBuilder>
         getFingerprintFieldBuilder() {
       if (fingerprintBuilder_ == null) {
-        fingerprintBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Fingerprint, io.grafeas.v1.Fingerprint.Builder, io.grafeas.v1.FingerprintOrBuilder>(
-                getFingerprint(),
-                getParentForChildren(),
-                isClean());
+        fingerprintBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Fingerprint,
+                io.grafeas.v1.Fingerprint.Builder,
+                io.grafeas.v1.FingerprintOrBuilder>(
+                getFingerprint(), getParentForChildren(), isClean());
         fingerprint_ = null;
       }
       return fingerprintBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -781,12 +827,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.ImageNote)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.ImageNote)
   private static final io.grafeas.v1.ImageNote DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.ImageNote();
   }
@@ -795,27 +841,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImageNote>
-      PARSER = new com.google.protobuf.AbstractParser<ImageNote>() {
-    @java.lang.Override
-    public ImageNote parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<ImageNote> PARSER =
+      new com.google.protobuf.AbstractParser<ImageNote>() {
+        @java.lang.Override
+        public ImageNote parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<ImageNote> parser() {
     return PARSER;
@@ -830,6 +876,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.ImageNote getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

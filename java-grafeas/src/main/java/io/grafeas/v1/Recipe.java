@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Steps taken to build the artifact.
  * For a TaskRun, typically each container corresponds to one step in the
@@ -28,15 +30,16 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.Recipe}
  */
-public final class Recipe extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Recipe extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Recipe)
     RecipeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Recipe.newBuilder() to construct.
   private Recipe(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Recipe() {
     type_ = "";
     entryPoint_ = "";
@@ -46,18 +49,16 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Recipe();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Recipe_descriptor;
   }
 
@@ -72,12 +73,15 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
+   *
+   *
    * <pre>
    * URI indicating what type of recipe was performed. It determines the meaning
    * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The type.
    */
   @java.lang.Override
@@ -86,30 +90,30 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       type_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * URI indicating what type of recipe was performed. It determines the meaning
    * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
+  public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       type_ = b;
       return b;
     } else {
@@ -120,6 +124,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEFINED_IN_MATERIAL_FIELD_NUMBER = 2;
   private long definedInMaterial_;
   /**
+   *
+   *
    * <pre>
    * Index in materials containing the recipe steps that are not implied by
    * recipe.type. For example, if the recipe type were "make", then this would
@@ -129,6 +135,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 defined_in_material = 2;</code>
+   *
    * @return The definedInMaterial.
    */
   @java.lang.Override
@@ -139,6 +146,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENTRY_POINT_FIELD_NUMBER = 3;
   private volatile java.lang.Object entryPoint_;
   /**
+   *
+   *
    * <pre>
    * String identifying the entry point into the build.
    * This is often a path to a configuration file and/or a target label within
@@ -148,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string entry_point = 3;</code>
+   *
    * @return The entryPoint.
    */
   @java.lang.Override
@@ -156,14 +166,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       entryPoint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * String identifying the entry point into the build.
    * This is often a path to a configuration file and/or a target label within
@@ -173,16 +184,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string entry_point = 3;</code>
+   *
    * @return The bytes for entryPoint.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEntryPointBytes() {
+  public com.google.protobuf.ByteString getEntryPointBytes() {
     java.lang.Object ref = entryPoint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       entryPoint_ = b;
       return b;
     } else {
@@ -193,6 +203,8 @@ private static final long serialVersionUID = 0L;
   public static final int ARGUMENTS_FIELD_NUMBER = 4;
   private java.util.List<com.google.protobuf.Any> arguments_;
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -209,6 +221,8 @@ private static final long serialVersionUID = 0L;
     return arguments_;
   }
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -221,11 +235,12 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-      getArgumentsOrBuilderList() {
+  public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getArgumentsOrBuilderList() {
     return arguments_;
   }
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -242,6 +257,8 @@ private static final long serialVersionUID = 0L;
     return arguments_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -258,6 +275,8 @@ private static final long serialVersionUID = 0L;
     return arguments_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -270,14 +289,15 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder(
-      int index) {
+  public com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder(int index) {
     return arguments_.get(index);
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 5;
   private java.util.List<com.google.protobuf.Any> environment_;
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -292,6 +312,8 @@ private static final long serialVersionUID = 0L;
     return environment_;
   }
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -302,11 +324,12 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-      getEnvironmentOrBuilderList() {
+  public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEnvironmentOrBuilderList() {
     return environment_;
   }
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -321,6 +344,8 @@ private static final long serialVersionUID = 0L;
     return environment_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -335,6 +360,8 @@ private static final long serialVersionUID = 0L;
     return environment_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -345,12 +372,12 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder(
-      int index) {
+  public com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder(int index) {
     return environment_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -362,8 +389,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
@@ -392,19 +418,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
     if (definedInMaterial_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, definedInMaterial_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, definedInMaterial_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entryPoint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, entryPoint_);
     }
     for (int i = 0; i < arguments_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, arguments_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, arguments_.get(i));
     }
     for (int i = 0; i < environment_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, environment_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, environment_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -414,23 +437,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.Recipe)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Recipe other = (io.grafeas.v1.Recipe) obj;
 
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (getDefinedInMaterial()
-        != other.getDefinedInMaterial()) return false;
-    if (!getEntryPoint()
-        .equals(other.getEntryPoint())) return false;
-    if (!getArgumentsList()
-        .equals(other.getArgumentsList())) return false;
-    if (!getEnvironmentList()
-        .equals(other.getEnvironmentList())) return false;
+    if (!getType().equals(other.getType())) return false;
+    if (getDefinedInMaterial() != other.getDefinedInMaterial()) return false;
+    if (!getEntryPoint().equals(other.getEntryPoint())) return false;
+    if (!getArgumentsList().equals(other.getArgumentsList())) return false;
+    if (!getEnvironmentList().equals(other.getEnvironmentList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -445,8 +463,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + DEFINED_IN_MATERIAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDefinedInMaterial());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDefinedInMaterial());
     hash = (37 * hash) + ENTRY_POINT_FIELD_NUMBER;
     hash = (53 * hash) + getEntryPoint().hashCode();
     if (getArgumentsCount() > 0) {
@@ -462,97 +479,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.Recipe parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Recipe parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.Recipe parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.Recipe parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.Recipe parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Recipe parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.Recipe parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.Recipe parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Recipe parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.Recipe prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Steps taken to build the artifact.
    * For a TaskRun, typically each container corresponds to one step in the
@@ -561,33 +584,30 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.Recipe}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Recipe)
       io.grafeas.v1.RecipeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Recipe_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Recipe_fieldAccessorTable
+      return io.grafeas.v1.InTotoProvenanceProto
+          .internal_static_grafeas_v1_Recipe_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.Recipe.class, io.grafeas.v1.Recipe.Builder.class);
     }
 
     // Construct using io.grafeas.v1.Recipe.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -615,8 +635,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_Recipe_descriptor;
     }
 
@@ -667,38 +686,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Recipe) {
-        return mergeFrom((io.grafeas.v1.Recipe)other);
+        return mergeFrom((io.grafeas.v1.Recipe) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -736,9 +756,10 @@ private static final long serialVersionUID = 0L;
             argumentsBuilder_ = null;
             arguments_ = other.arguments_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            argumentsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getArgumentsFieldBuilder() : null;
+            argumentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getArgumentsFieldBuilder()
+                    : null;
           } else {
             argumentsBuilder_.addAllMessages(other.arguments_);
           }
@@ -762,9 +783,10 @@ private static final long serialVersionUID = 0L;
             environmentBuilder_ = null;
             environment_ = other.environment_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            environmentBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEnvironmentFieldBuilder() : null;
+            environmentBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEnvironmentFieldBuilder()
+                    : null;
           } else {
             environmentBuilder_.addAllMessages(other.environment_);
           }
@@ -796,53 +818,55 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              type_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                type_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 16: {
-              definedInMaterial_ = input.readInt64();
+                break;
+              } // case 10
+            case 16:
+              {
+                definedInMaterial_ = input.readInt64();
 
-              break;
-            } // case 16
-            case 26: {
-              entryPoint_ = input.readStringRequireUtf8();
+                break;
+              } // case 16
+            case 26:
+              {
+                entryPoint_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 26
-            case 34: {
-              com.google.protobuf.Any m =
-                  input.readMessage(
-                      com.google.protobuf.Any.parser(),
-                      extensionRegistry);
-              if (argumentsBuilder_ == null) {
-                ensureArgumentsIsMutable();
-                arguments_.add(m);
-              } else {
-                argumentsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
-            case 42: {
-              com.google.protobuf.Any m =
-                  input.readMessage(
-                      com.google.protobuf.Any.parser(),
-                      extensionRegistry);
-              if (environmentBuilder_ == null) {
-                ensureEnvironmentIsMutable();
-                environment_.add(m);
-              } else {
-                environmentBuilder_.addMessage(m);
-              }
-              break;
-            } // case 42
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.Any m =
+                    input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+                if (argumentsBuilder_ == null) {
+                  ensureArgumentsIsMutable();
+                  arguments_.add(m);
+                } else {
+                  argumentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.Any m =
+                    input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+                if (environmentBuilder_ == null) {
+                  ensureEnvironmentIsMutable();
+                  environment_.add(m);
+                } else {
+                  environmentBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -852,23 +876,26 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the meaning
      * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
@@ -877,21 +904,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the meaning
      * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The bytes for type.
      */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -899,64 +927,73 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the meaning
      * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(
-        java.lang.String value) {
+    public Builder setType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       type_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the meaning
      * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      
+
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the meaning
      * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       type_ = value;
       onChanged();
       return this;
     }
 
-    private long definedInMaterial_ ;
+    private long definedInMaterial_;
     /**
+     *
+     *
      * <pre>
      * Index in materials containing the recipe steps that are not implied by
      * recipe.type. For example, if the recipe type were "make", then this would
@@ -966,6 +1003,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 defined_in_material = 2;</code>
+     *
      * @return The definedInMaterial.
      */
     @java.lang.Override
@@ -973,6 +1011,8 @@ private static final long serialVersionUID = 0L;
       return definedInMaterial_;
     }
     /**
+     *
+     *
      * <pre>
      * Index in materials containing the recipe steps that are not implied by
      * recipe.type. For example, if the recipe type were "make", then this would
@@ -982,16 +1022,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 defined_in_material = 2;</code>
+     *
      * @param value The definedInMaterial to set.
      * @return This builder for chaining.
      */
     public Builder setDefinedInMaterial(long value) {
-      
+
       definedInMaterial_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Index in materials containing the recipe steps that are not implied by
      * recipe.type. For example, if the recipe type were "make", then this would
@@ -1001,10 +1044,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 defined_in_material = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearDefinedInMaterial() {
-      
+
       definedInMaterial_ = 0L;
       onChanged();
       return this;
@@ -1012,6 +1056,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object entryPoint_ = "";
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -1021,13 +1067,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return The entryPoint.
      */
     public java.lang.String getEntryPoint() {
       java.lang.Object ref = entryPoint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         entryPoint_ = s;
         return s;
@@ -1036,6 +1082,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -1045,15 +1093,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return The bytes for entryPoint.
      */
-    public com.google.protobuf.ByteString
-        getEntryPointBytes() {
+    public com.google.protobuf.ByteString getEntryPointBytes() {
       java.lang.Object ref = entryPoint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         entryPoint_ = b;
         return b;
       } else {
@@ -1061,6 +1108,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -1070,20 +1119,22 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @param value The entryPoint to set.
      * @return This builder for chaining.
      */
-    public Builder setEntryPoint(
-        java.lang.String value) {
+    public Builder setEntryPoint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       entryPoint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -1093,15 +1144,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearEntryPoint() {
-      
+
       entryPoint_ = getDefaultInstance().getEntryPoint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -1111,34 +1165,39 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @param value The bytes for entryPoint to set.
      * @return This builder for chaining.
      */
-    public Builder setEntryPointBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setEntryPointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       entryPoint_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.protobuf.Any> arguments_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.protobuf.Any> arguments_ = java.util.Collections.emptyList();
+
     private void ensureArgumentsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         arguments_ = new java.util.ArrayList<com.google.protobuf.Any>(arguments_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> argumentsBuilder_;
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        argumentsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1158,6 +1217,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1177,6 +1238,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1196,6 +1259,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1207,8 +1272,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public Builder setArguments(
-        int index, com.google.protobuf.Any value) {
+    public Builder setArguments(int index, com.google.protobuf.Any value) {
       if (argumentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1222,6 +1286,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1233,8 +1299,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public Builder setArguments(
-        int index, com.google.protobuf.Any.Builder builderForValue) {
+    public Builder setArguments(int index, com.google.protobuf.Any.Builder builderForValue) {
       if (argumentsBuilder_ == null) {
         ensureArgumentsIsMutable();
         arguments_.set(index, builderForValue.build());
@@ -1245,6 +1310,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1270,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1281,8 +1350,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public Builder addArguments(
-        int index, com.google.protobuf.Any value) {
+    public Builder addArguments(int index, com.google.protobuf.Any value) {
       if (argumentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1296,6 +1364,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1307,8 +1377,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public Builder addArguments(
-        com.google.protobuf.Any.Builder builderForValue) {
+    public Builder addArguments(com.google.protobuf.Any.Builder builderForValue) {
       if (argumentsBuilder_ == null) {
         ensureArgumentsIsMutable();
         arguments_.add(builderForValue.build());
@@ -1319,6 +1388,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1330,8 +1401,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public Builder addArguments(
-        int index, com.google.protobuf.Any.Builder builderForValue) {
+    public Builder addArguments(int index, com.google.protobuf.Any.Builder builderForValue) {
       if (argumentsBuilder_ == null) {
         ensureArgumentsIsMutable();
         arguments_.add(index, builderForValue.build());
@@ -1342,6 +1412,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1353,12 +1425,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public Builder addAllArguments(
-        java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+    public Builder addAllArguments(java.lang.Iterable<? extends com.google.protobuf.Any> values) {
       if (argumentsBuilder_ == null) {
         ensureArgumentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, arguments_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, arguments_);
         onChanged();
       } else {
         argumentsBuilder_.addAllMessages(values);
@@ -1366,6 +1436,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1388,6 +1460,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1410,6 +1484,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1421,11 +1497,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public com.google.protobuf.Any.Builder getArgumentsBuilder(
-        int index) {
+    public com.google.protobuf.Any.Builder getArgumentsBuilder(int index) {
       return getArgumentsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1437,14 +1514,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder(
-        int index) {
+    public com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder(int index) {
       if (argumentsBuilder_ == null) {
-        return arguments_.get(index);  } else {
+        return arguments_.get(index);
+      } else {
         return argumentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1456,8 +1535,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-         getArgumentsOrBuilderList() {
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> getArgumentsOrBuilderList() {
       if (argumentsBuilder_ != null) {
         return argumentsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1465,6 +1543,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1477,10 +1557,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
     public com.google.protobuf.Any.Builder addArgumentsBuilder() {
-      return getArgumentsFieldBuilder().addBuilder(
-          com.google.protobuf.Any.getDefaultInstance());
+      return getArgumentsFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1492,12 +1573,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public com.google.protobuf.Any.Builder addArgumentsBuilder(
-        int index) {
-      return getArgumentsFieldBuilder().addBuilder(
-          index, com.google.protobuf.Any.getDefaultInstance());
+    public com.google.protobuf.Any.Builder addArgumentsBuilder(int index) {
+      return getArgumentsFieldBuilder()
+          .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -1509,38 +1591,46 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any arguments = 4;</code>
      */
-    public java.util.List<com.google.protobuf.Any.Builder> 
-         getArgumentsBuilderList() {
+    public java.util.List<com.google.protobuf.Any.Builder> getArgumentsBuilderList() {
       return getArgumentsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
         getArgumentsFieldBuilder() {
       if (argumentsBuilder_ == null) {
-        argumentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                arguments_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
+        argumentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.protobuf.Any,
+                com.google.protobuf.Any.Builder,
+                com.google.protobuf.AnyOrBuilder>(
+                arguments_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         arguments_ = null;
       }
       return argumentsBuilder_;
     }
 
     private java.util.List<com.google.protobuf.Any> environment_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureEnvironmentIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
         environment_ = new java.util.ArrayList<com.google.protobuf.Any>(environment_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> environmentBuilder_;
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        environmentBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1558,6 +1648,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1575,6 +1667,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1592,6 +1686,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1601,8 +1697,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public Builder setEnvironment(
-        int index, com.google.protobuf.Any value) {
+    public Builder setEnvironment(int index, com.google.protobuf.Any value) {
       if (environmentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1616,6 +1711,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1625,8 +1722,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public Builder setEnvironment(
-        int index, com.google.protobuf.Any.Builder builderForValue) {
+    public Builder setEnvironment(int index, com.google.protobuf.Any.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         ensureEnvironmentIsMutable();
         environment_.set(index, builderForValue.build());
@@ -1637,6 +1733,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1660,6 +1758,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1669,8 +1769,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public Builder addEnvironment(
-        int index, com.google.protobuf.Any value) {
+    public Builder addEnvironment(int index, com.google.protobuf.Any value) {
       if (environmentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1684,6 +1783,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1693,8 +1794,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public Builder addEnvironment(
-        com.google.protobuf.Any.Builder builderForValue) {
+    public Builder addEnvironment(com.google.protobuf.Any.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         ensureEnvironmentIsMutable();
         environment_.add(builderForValue.build());
@@ -1705,6 +1805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1714,8 +1816,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public Builder addEnvironment(
-        int index, com.google.protobuf.Any.Builder builderForValue) {
+    public Builder addEnvironment(int index, com.google.protobuf.Any.Builder builderForValue) {
       if (environmentBuilder_ == null) {
         ensureEnvironmentIsMutable();
         environment_.add(index, builderForValue.build());
@@ -1726,6 +1827,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1735,12 +1838,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public Builder addAllEnvironment(
-        java.lang.Iterable<? extends com.google.protobuf.Any> values) {
+    public Builder addAllEnvironment(java.lang.Iterable<? extends com.google.protobuf.Any> values) {
       if (environmentBuilder_ == null) {
         ensureEnvironmentIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, environment_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, environment_);
         onChanged();
       } else {
         environmentBuilder_.addAllMessages(values);
@@ -1748,6 +1849,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1768,6 +1871,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1788,6 +1893,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1797,11 +1904,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public com.google.protobuf.Any.Builder getEnvironmentBuilder(
-        int index) {
+    public com.google.protobuf.Any.Builder getEnvironmentBuilder(int index) {
       return getEnvironmentFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1811,14 +1919,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder(
-        int index) {
+    public com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder(int index) {
       if (environmentBuilder_ == null) {
-        return environment_.get(index);  } else {
+        return environment_.get(index);
+      } else {
         return environmentBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1828,8 +1938,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-         getEnvironmentOrBuilderList() {
+    public java.util.List<? extends com.google.protobuf.AnyOrBuilder>
+        getEnvironmentOrBuilderList() {
       if (environmentBuilder_ != null) {
         return environmentBuilder_.getMessageOrBuilderList();
       } else {
@@ -1837,6 +1947,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1847,10 +1959,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
     public com.google.protobuf.Any.Builder addEnvironmentBuilder() {
-      return getEnvironmentFieldBuilder().addBuilder(
-          com.google.protobuf.Any.getDefaultInstance());
+      return getEnvironmentFieldBuilder().addBuilder(com.google.protobuf.Any.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1860,12 +1973,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public com.google.protobuf.Any.Builder addEnvironmentBuilder(
-        int index) {
-      return getEnvironmentFieldBuilder().addBuilder(
-          index, com.google.protobuf.Any.getDefaultInstance());
+    public com.google.protobuf.Any.Builder addEnvironmentBuilder(int index) {
+      return getEnvironmentFieldBuilder()
+          .addBuilder(index, com.google.protobuf.Any.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating the
      * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -1875,27 +1989,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.Any environment = 5;</code>
      */
-    public java.util.List<com.google.protobuf.Any.Builder> 
-         getEnvironmentBuilderList() {
+    public java.util.List<com.google.protobuf.Any.Builder> getEnvironmentBuilderList() {
       return getEnvironmentFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
         getEnvironmentFieldBuilder() {
       if (environmentBuilder_ == null) {
-        environmentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                environment_,
-                ((bitField0_ & 0x00000002) != 0),
-                getParentForChildren(),
-                isClean());
+        environmentBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.protobuf.Any,
+                com.google.protobuf.Any.Builder,
+                com.google.protobuf.AnyOrBuilder>(
+                environment_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         environment_ = null;
       }
       return environmentBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1905,12 +2021,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Recipe)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Recipe)
   private static final io.grafeas.v1.Recipe DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Recipe();
   }
@@ -1919,27 +2035,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Recipe>
-      PARSER = new com.google.protobuf.AbstractParser<Recipe>() {
-    @java.lang.Override
-    public Recipe parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<Recipe> PARSER =
+      new com.google.protobuf.AbstractParser<Recipe>() {
+        @java.lang.Override
+        public Recipe parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<Recipe> parser() {
     return PARSER;
@@ -1954,6 +2070,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.Recipe getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

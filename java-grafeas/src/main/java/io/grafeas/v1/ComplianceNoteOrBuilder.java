@@ -19,60 +19,74 @@
 
 package io.grafeas.v1;
 
-public interface ComplianceNoteOrBuilder extends
+public interface ComplianceNoteOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.ComplianceNote)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The title that identifies this compliance check.
    * </pre>
    *
    * <code>string title = 1;</code>
+   *
    * @return The title.
    */
   java.lang.String getTitle();
   /**
+   *
+   *
    * <pre>
    * The title that identifies this compliance check.
    * </pre>
    *
    * <code>string title = 1;</code>
+   *
    * @return The bytes for title.
    */
-  com.google.protobuf.ByteString
-      getTitleBytes();
+  com.google.protobuf.ByteString getTitleBytes();
 
   /**
+   *
+   *
    * <pre>
    * A description about this compliance check.
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
    * @return The description.
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * A description about this compliance check.
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
    * @return The bytes for description.
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
    *
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
-  java.util.List<io.grafeas.v1.ComplianceVersion> 
-      getVersionList();
+  java.util.List<io.grafeas.v1.ComplianceVersion> getVersionList();
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -81,6 +95,8 @@ public interface ComplianceNoteOrBuilder extends
    */
   io.grafeas.v1.ComplianceVersion getVersion(int index);
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -89,85 +105,100 @@ public interface ComplianceNoteOrBuilder extends
    */
   int getVersionCount();
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
    *
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
-  java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder> 
-      getVersionOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder> getVersionOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
    *
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
-  io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder(
-      int index);
+  io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A rationale for the existence of this compliance check.
    * </pre>
    *
    * <code>string rationale = 4;</code>
+   *
    * @return The rationale.
    */
   java.lang.String getRationale();
   /**
+   *
+   *
    * <pre>
    * A rationale for the existence of this compliance check.
    * </pre>
    *
    * <code>string rationale = 4;</code>
+   *
    * @return The bytes for rationale.
    */
-  com.google.protobuf.ByteString
-      getRationaleBytes();
+  com.google.protobuf.ByteString getRationaleBytes();
 
   /**
+   *
+   *
    * <pre>
    * A description of remediation steps if the compliance check fails.
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
    * @return The remediation.
    */
   java.lang.String getRemediation();
   /**
+   *
+   *
    * <pre>
    * A description of remediation steps if the compliance check fails.
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
    * @return The bytes for remediation.
    */
-  com.google.protobuf.ByteString
-      getRemediationBytes();
+  com.google.protobuf.ByteString getRemediationBytes();
 
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
+   *
    * @return Whether the cisBenchmark field is set.
    */
   boolean hasCisBenchmark();
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
+   *
    * @return The cisBenchmark.
    */
   io.grafeas.v1.ComplianceNote.CisBenchmark getCisBenchmark();
-  /**
-   * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-   */
+  /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
   io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder getCisBenchmarkOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Serialized scan instructions with a predefined format.
    * </pre>
    *
    * <code>bytes scan_instructions = 7;</code>
+   *
    * @return The scanInstructions.
    */
   com.google.protobuf.ByteString getScanInstructions();

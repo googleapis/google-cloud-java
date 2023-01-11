@@ -19,51 +19,65 @@
 
 package io.grafeas.v1;
 
-public interface ImageNoteOrBuilder extends
+public interface ImageNoteOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.ImageNote)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource_url for the resource representing the
    * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource_url for the resource representing the
    * basis of associated occurrence images.
    * </pre>
    *
    * <code>string resource_url = 1;</code>
+   *
    * @return The bytes for resourceUrl.
    */
-  com.google.protobuf.ByteString
-      getResourceUrlBytes();
+  com.google.protobuf.ByteString getResourceUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+   *
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The fingerprint of the base image.
    * </pre>
    *
    * <code>.grafeas.v1.Fingerprint fingerprint = 2;</code>
+   *
    * @return The fingerprint.
    */
   io.grafeas.v1.Fingerprint getFingerprint();
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The fingerprint of the base image.
    * </pre>

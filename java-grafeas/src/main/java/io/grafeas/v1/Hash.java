@@ -20,21 +20,24 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Container message for hash values.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.Hash}
  */
-public final class Hash extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Hash extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.Hash)
     HashOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Hash.newBuilder() to construct.
   private Hash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Hash() {
     type_ = "";
     value_ = com.google.protobuf.ByteString.EMPTY;
@@ -42,18 +45,16 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new Hash();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_Hash_descriptor;
   }
 
@@ -68,11 +69,14 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
+   *
+   *
    * <pre>
    * Required. The type of hash that was performed, e.g. "SHA-256".
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The type.
    */
   @java.lang.Override
@@ -81,29 +85,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       type_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The type of hash that was performed, e.g. "SHA-256".
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
+  public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       type_ = b;
       return b;
     } else {
@@ -114,11 +118,14 @@ private static final long serialVersionUID = 0L;
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString value_;
   /**
+   *
+   *
    * <pre>
    * Required. The hash value.
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
    * @return The value.
    */
   @java.lang.Override
@@ -127,6 +134,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -138,8 +146,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
@@ -159,8 +166,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
     if (!value_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, value_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, value_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,17 +176,15 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.Hash)) {
       return super.equals(obj);
     }
     io.grafeas.v1.Hash other = (io.grafeas.v1.Hash) obj;
 
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (!getValue()
-        .equals(other.getValue())) return false;
+    if (!getType().equals(other.getType())) return false;
+    if (!getValue().equals(other.getValue())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -201,109 +205,113 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.Hash parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.Hash parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Hash parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.Hash parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.Hash parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Hash parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.Hash parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.Hash parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.Hash parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+
+  public static io.grafeas.v1.Hash parseFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Hash parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.Hash parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Hash parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.Hash parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.Hash parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.Hash parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.Hash prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Container message for hash values.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.Hash}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.Hash)
       io.grafeas.v1.HashOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_Hash_descriptor;
     }
 
@@ -316,15 +324,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.Hash.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -336,8 +341,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_Hash_descriptor;
     }
 
@@ -368,38 +372,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.Hash) {
-        return mergeFrom((io.grafeas.v1.Hash)other);
+        return mergeFrom((io.grafeas.v1.Hash) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -441,22 +446,25 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              type_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                type_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              value_ = input.readBytes();
+                break;
+              } // case 10
+            case 18:
+              {
+                value_ = input.readBytes();
 
-              break;
-            } // case 18
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -469,18 +477,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object type_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The type of hash that was performed, e.g. "SHA-256".
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
@@ -489,20 +499,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The type of hash that was performed, e.g. "SHA-256".
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The bytes for type.
      */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -510,54 +521,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The type of hash that was performed, e.g. "SHA-256".
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(
-        java.lang.String value) {
+    public Builder setType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       type_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The type of hash that was performed, e.g. "SHA-256".
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      
+
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The type of hash that was performed, e.g. "SHA-256".
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       type_ = value;
       onChanged();
       return this;
@@ -565,11 +583,14 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
      * @return The value.
      */
     @java.lang.Override
@@ -577,40 +598,46 @@ private static final long serialVersionUID = 0L;
       return value_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
      * @param value The value to set.
      * @return This builder for chaining.
      */
     public Builder setValue(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       value_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The hash value.
      * </pre>
      *
      * <code>bytes value = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-      
+
       value_ = getDefaultInstance().getValue();
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -620,12 +647,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.Hash)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.Hash)
   private static final io.grafeas.v1.Hash DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.Hash();
   }
@@ -634,27 +661,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Hash>
-      PARSER = new com.google.protobuf.AbstractParser<Hash>() {
-    @java.lang.Override
-    public Hash parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<Hash> PARSER =
+      new com.google.protobuf.AbstractParser<Hash>() {
+        @java.lang.Override
+        public Hash parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<Hash> parser() {
     return PARSER;
@@ -669,6 +696,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.Hash getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

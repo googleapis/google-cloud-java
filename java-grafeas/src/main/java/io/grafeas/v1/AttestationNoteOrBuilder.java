@@ -19,29 +19,38 @@
 
 package io.grafeas.v1;
 
-public interface AttestationNoteOrBuilder extends
+public interface AttestationNoteOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.AttestationNote)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
+   *
    * @return Whether the hint field is set.
    */
   boolean hasHint();
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>
    *
    * <code>.grafeas.v1.AttestationNote.Hint hint = 1;</code>
+   *
    * @return The hint.
    */
   io.grafeas.v1.AttestationNote.Hint getHint();
   /**
+   *
+   *
    * <pre>
    * Hint hints at the purpose of the attestation authority.
    * </pre>

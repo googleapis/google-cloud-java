@@ -19,33 +19,41 @@
 
 package io.grafeas.v1;
 
-public interface RecipeOrBuilder extends
+public interface RecipeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Recipe)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * URI indicating what type of recipe was performed. It determines the meaning
    * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The type.
    */
   java.lang.String getType();
   /**
+   *
+   *
    * <pre>
    * URI indicating what type of recipe was performed. It determines the meaning
    * of recipe.entryPoint, recipe.arguments, recipe.environment, and materials.
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The bytes for type.
    */
-  com.google.protobuf.ByteString
-      getTypeBytes();
+  com.google.protobuf.ByteString getTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Index in materials containing the recipe steps that are not implied by
    * recipe.type. For example, if the recipe type were "make", then this would
@@ -55,11 +63,14 @@ public interface RecipeOrBuilder extends
    * </pre>
    *
    * <code>int64 defined_in_material = 2;</code>
+   *
    * @return The definedInMaterial.
    */
   long getDefinedInMaterial();
 
   /**
+   *
+   *
    * <pre>
    * String identifying the entry point into the build.
    * This is often a path to a configuration file and/or a target label within
@@ -69,10 +80,13 @@ public interface RecipeOrBuilder extends
    * </pre>
    *
    * <code>string entry_point = 3;</code>
+   *
    * @return The entryPoint.
    */
   java.lang.String getEntryPoint();
   /**
+   *
+   *
    * <pre>
    * String identifying the entry point into the build.
    * This is often a path to a configuration file and/or a target label within
@@ -82,12 +96,14 @@ public interface RecipeOrBuilder extends
    * </pre>
    *
    * <code>string entry_point = 3;</code>
+   *
    * @return The bytes for entryPoint.
    */
-  com.google.protobuf.ByteString
-      getEntryPointBytes();
+  com.google.protobuf.ByteString getEntryPointBytes();
 
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -99,9 +115,10 @@ public interface RecipeOrBuilder extends
    *
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
-  java.util.List<com.google.protobuf.Any> 
-      getArgumentsList();
+  java.util.List<com.google.protobuf.Any> getArgumentsList();
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -115,6 +132,8 @@ public interface RecipeOrBuilder extends
    */
   com.google.protobuf.Any getArguments(int index);
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -128,6 +147,8 @@ public interface RecipeOrBuilder extends
    */
   int getArgumentsCount();
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -139,9 +160,10 @@ public interface RecipeOrBuilder extends
    *
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
-  java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-      getArgumentsOrBuilderList();
+  java.util.List<? extends com.google.protobuf.AnyOrBuilder> getArgumentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Collection of all external inputs that influenced the build on top of
    * recipe.definedInMaterial and recipe.entryPoint. For example, if the recipe
@@ -153,10 +175,11 @@ public interface RecipeOrBuilder extends
    *
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
-  com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder(
-      int index);
+  com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -166,9 +189,10 @@ public interface RecipeOrBuilder extends
    *
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
-  java.util.List<com.google.protobuf.Any> 
-      getEnvironmentList();
+  java.util.List<com.google.protobuf.Any> getEnvironmentList();
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -180,6 +204,8 @@ public interface RecipeOrBuilder extends
    */
   com.google.protobuf.Any getEnvironment(int index);
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -191,6 +217,8 @@ public interface RecipeOrBuilder extends
    */
   int getEnvironmentCount();
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -200,9 +228,10 @@ public interface RecipeOrBuilder extends
    *
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
-  java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-      getEnvironmentOrBuilderList();
+  java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEnvironmentOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Any other builder-controlled inputs necessary for correctly evaluating the
    * recipe. Usually only needed for reproducing the build but not evaluated as
@@ -212,6 +241,5 @@ public interface RecipeOrBuilder extends
    *
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
-  com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder(
-      int index);
+  com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder(int index);
 }

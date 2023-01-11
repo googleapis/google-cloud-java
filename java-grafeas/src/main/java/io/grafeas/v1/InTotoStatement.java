@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Spec defined at
  * https://github.com/in-toto/attestation/tree/main/spec#statement The
@@ -29,15 +31,16 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.InTotoStatement}
  */
-public final class InTotoStatement extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoStatement)
     InTotoStatementOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use InTotoStatement.newBuilder() to construct.
   private InTotoStatement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private InTotoStatement() {
     type_ = "";
     subject_ = java.util.Collections.emptyList();
@@ -46,39 +49,41 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InTotoStatement();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable
+    return io.grafeas.v1.InTotoStatementProto
+        .internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.InTotoStatement.class, io.grafeas.v1.InTotoStatement.Builder.class);
   }
 
   private int predicateCase_ = 0;
   private java.lang.Object predicate_;
+
   public enum PredicateCase
-      implements com.google.protobuf.Internal.EnumLite,
+      implements
+          com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROVENANCE(4),
     SLSA_PROVENANCE(5),
     SLSA_PROVENANCE_ZERO_TWO(6),
     PREDICATE_NOT_SET(0);
     private final int value;
+
     private PredicateCase(int value) {
       this.value = value;
     }
@@ -94,32 +99,39 @@ private static final long serialVersionUID = 0L;
 
     public static PredicateCase forNumber(int value) {
       switch (value) {
-        case 4: return PROVENANCE;
-        case 5: return SLSA_PROVENANCE;
-        case 6: return SLSA_PROVENANCE_ZERO_TWO;
-        case 0: return PREDICATE_NOT_SET;
-        default: return null;
+        case 4:
+          return PROVENANCE;
+        case 5:
+          return SLSA_PROVENANCE;
+        case 6:
+          return SLSA_PROVENANCE_ZERO_TWO;
+        case 0:
+          return PREDICATE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public PredicateCase
-  getPredicateCase() {
-    return PredicateCase.forNumber(
-        predicateCase_);
+  public PredicateCase getPredicateCase() {
+    return PredicateCase.forNumber(predicateCase_);
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
+   *
+   *
    * <pre>
    * Always `https://in-toto.io/Statement/v0.1`.
    * </pre>
    *
    * <code>string type = 1 [json_name = "_type"];</code>
+   *
    * @return The type.
    */
   @java.lang.Override
@@ -128,29 +140,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       type_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Always `https://in-toto.io/Statement/v0.1`.
    * </pre>
    *
    * <code>string type = 1 [json_name = "_type"];</code>
+   *
    * @return The bytes for type.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
+  public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       type_ = b;
       return b;
     } else {
@@ -160,52 +172,43 @@ private static final long serialVersionUID = 0L;
 
   public static final int SUBJECT_FIELD_NUMBER = 2;
   private java.util.List<io.grafeas.v1.Subject> subject_;
-  /**
-   * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-   */
+  /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public java.util.List<io.grafeas.v1.Subject> getSubjectList() {
     return subject_;
   }
-  /**
-   * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-   */
+  /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> 
-      getSubjectOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
     return subject_;
   }
-  /**
-   * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-   */
+  /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public int getSubjectCount() {
     return subject_.size();
   }
-  /**
-   * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-   */
+  /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.Subject getSubject(int index) {
     return subject_.get(index);
   }
-  /**
-   * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-   */
+  /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
-  public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(
-      int index) {
+  public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index) {
     return subject_.get(index);
   }
 
   public static final int PREDICATE_TYPE_FIELD_NUMBER = 3;
   private volatile java.lang.Object predicateType_;
   /**
+   *
+   *
    * <pre>
    * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
    * </pre>
    *
    * <code>string predicate_type = 3;</code>
+   *
    * @return The predicateType.
    */
   @java.lang.Override
@@ -214,29 +217,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       predicateType_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
    * </pre>
    *
    * <code>string predicate_type = 3;</code>
+   *
    * @return The bytes for predicateType.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getPredicateTypeBytes() {
+  public com.google.protobuf.ByteString getPredicateTypeBytes() {
     java.lang.Object ref = predicateType_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       predicateType_ = b;
       return b;
     } else {
@@ -247,6 +250,7 @@ private static final long serialVersionUID = 0L;
   public static final int PROVENANCE_FIELD_NUMBER = 4;
   /**
    * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
+   *
    * @return Whether the provenance field is set.
    */
   @java.lang.Override
@@ -255,22 +259,21 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
+   *
    * @return The provenance.
    */
   @java.lang.Override
   public io.grafeas.v1.InTotoProvenance getProvenance() {
     if (predicateCase_ == 4) {
-       return (io.grafeas.v1.InTotoProvenance) predicate_;
+      return (io.grafeas.v1.InTotoProvenance) predicate_;
     }
     return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
   }
-  /**
-   * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-   */
+  /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
   @java.lang.Override
   public io.grafeas.v1.InTotoProvenanceOrBuilder getProvenanceOrBuilder() {
     if (predicateCase_ == 4) {
-       return (io.grafeas.v1.InTotoProvenance) predicate_;
+      return (io.grafeas.v1.InTotoProvenance) predicate_;
     }
     return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
   }
@@ -278,6 +281,7 @@ private static final long serialVersionUID = 0L;
   public static final int SLSA_PROVENANCE_FIELD_NUMBER = 5;
   /**
    * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
+   *
    * @return Whether the slsaProvenance field is set.
    */
   @java.lang.Override
@@ -286,22 +290,21 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
+   *
    * @return The slsaProvenance.
    */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenance getSlsaProvenance() {
     if (predicateCase_ == 5) {
-       return (io.grafeas.v1.SlsaProvenance) predicate_;
+      return (io.grafeas.v1.SlsaProvenance) predicate_;
     }
     return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
   }
-  /**
-   * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-   */
+  /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceOrBuilder getSlsaProvenanceOrBuilder() {
     if (predicateCase_ == 5) {
-       return (io.grafeas.v1.SlsaProvenance) predicate_;
+      return (io.grafeas.v1.SlsaProvenance) predicate_;
     }
     return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
   }
@@ -309,6 +312,7 @@ private static final long serialVersionUID = 0L;
   public static final int SLSA_PROVENANCE_ZERO_TWO_FIELD_NUMBER = 6;
   /**
    * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+   *
    * @return Whether the slsaProvenanceZeroTwo field is set.
    */
   @java.lang.Override
@@ -317,27 +321,27 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+   *
    * @return The slsaProvenanceZeroTwo.
    */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceZeroTwo getSlsaProvenanceZeroTwo() {
     if (predicateCase_ == 6) {
-       return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
+      return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
     }
     return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
   }
-  /**
-   * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-   */
+  /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder() {
     if (predicateCase_ == 6) {
-       return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
+      return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
     }
     return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -349,8 +353,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
@@ -382,23 +385,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
     for (int i = 0; i < subject_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, subject_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, subject_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(predicateType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, predicateType_);
     }
     if (predicateCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (io.grafeas.v1.InTotoProvenance) predicate_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (io.grafeas.v1.InTotoProvenance) predicate_);
     }
     if (predicateCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (io.grafeas.v1.SlsaProvenance) predicate_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (io.grafeas.v1.SlsaProvenance) predicate_);
     }
     if (predicateCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -408,32 +413,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.InTotoStatement)) {
       return super.equals(obj);
     }
     io.grafeas.v1.InTotoStatement other = (io.grafeas.v1.InTotoStatement) obj;
 
-    if (!getType()
-        .equals(other.getType())) return false;
-    if (!getSubjectList()
-        .equals(other.getSubjectList())) return false;
-    if (!getPredicateType()
-        .equals(other.getPredicateType())) return false;
+    if (!getType().equals(other.getType())) return false;
+    if (!getSubjectList().equals(other.getSubjectList())) return false;
+    if (!getPredicateType().equals(other.getPredicateType())) return false;
     if (!getPredicateCase().equals(other.getPredicateCase())) return false;
     switch (predicateCase_) {
       case 4:
-        if (!getProvenance()
-            .equals(other.getProvenance())) return false;
+        if (!getProvenance().equals(other.getProvenance())) return false;
         break;
       case 5:
-        if (!getSlsaProvenance()
-            .equals(other.getSlsaProvenance())) return false;
+        if (!getSlsaProvenance().equals(other.getSlsaProvenance())) return false;
         break;
       case 6:
-        if (!getSlsaProvenanceZeroTwo()
-            .equals(other.getSlsaProvenanceZeroTwo())) return false;
+        if (!getSlsaProvenanceZeroTwo().equals(other.getSlsaProvenanceZeroTwo())) return false;
         break;
       case 0:
       default:
@@ -478,97 +477,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.InTotoStatement parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.InTotoStatement parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.InTotoStatement parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.InTotoStatement parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.InTotoStatement parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.InTotoStatement parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.InTotoStatement parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.InTotoStatement parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.InTotoStatement parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.InTotoStatement prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Spec defined at
    * https://github.com/in-toto/attestation/tree/main/spec#statement The
@@ -578,33 +583,31 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.InTotoStatement}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.InTotoStatement)
       io.grafeas.v1.InTotoStatementOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.InTotoStatementProto
+          .internal_static_grafeas_v1_InTotoStatement_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable
+      return io.grafeas.v1.InTotoStatementProto
+          .internal_static_grafeas_v1_InTotoStatement_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.InTotoStatement.class, io.grafeas.v1.InTotoStatement.Builder.class);
     }
 
     // Construct using io.grafeas.v1.InTotoStatement.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -634,9 +637,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_InTotoStatement_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1.InTotoStatementProto
+          .internal_static_grafeas_v1_InTotoStatement_descriptor;
     }
 
     @java.lang.Override
@@ -698,38 +701,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.InTotoStatement) {
-        return mergeFrom((io.grafeas.v1.InTotoStatement)other);
+        return mergeFrom((io.grafeas.v1.InTotoStatement) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -760,9 +764,10 @@ private static final long serialVersionUID = 0L;
             subjectBuilder_ = null;
             subject_ = other.subject_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            subjectBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSubjectFieldBuilder() : null;
+            subjectBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSubjectFieldBuilder()
+                    : null;
           } else {
             subjectBuilder_.addAllMessages(other.subject_);
           }
@@ -773,21 +778,25 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getPredicateCase()) {
-        case PROVENANCE: {
-          mergeProvenance(other.getProvenance());
-          break;
-        }
-        case SLSA_PROVENANCE: {
-          mergeSlsaProvenance(other.getSlsaProvenance());
-          break;
-        }
-        case SLSA_PROVENANCE_ZERO_TWO: {
-          mergeSlsaProvenanceZeroTwo(other.getSlsaProvenanceZeroTwo());
-          break;
-        }
-        case PREDICATE_NOT_SET: {
-          break;
-        }
+        case PROVENANCE:
+          {
+            mergeProvenance(other.getProvenance());
+            break;
+          }
+        case SLSA_PROVENANCE:
+          {
+            mergeSlsaProvenance(other.getSlsaProvenance());
+            break;
+          }
+        case SLSA_PROVENANCE_ZERO_TWO:
+          {
+            mergeSlsaProvenanceZeroTwo(other.getSlsaProvenanceZeroTwo());
+            break;
+          }
+        case PREDICATE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -815,56 +824,56 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              type_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                type_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              io.grafeas.v1.Subject m =
-                  input.readMessage(
-                      io.grafeas.v1.Subject.parser(),
-                      extensionRegistry);
-              if (subjectBuilder_ == null) {
-                ensureSubjectIsMutable();
-                subject_.add(m);
-              } else {
-                subjectBuilder_.addMessage(m);
-              }
-              break;
-            } // case 18
-            case 26: {
-              predicateType_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+            case 18:
+              {
+                io.grafeas.v1.Subject m =
+                    input.readMessage(io.grafeas.v1.Subject.parser(), extensionRegistry);
+                if (subjectBuilder_ == null) {
+                  ensureSubjectIsMutable();
+                  subject_.add(m);
+                } else {
+                  subjectBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            case 26:
+              {
+                predicateType_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 26
-            case 34: {
-              input.readMessage(
-                  getProvenanceFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              predicateCase_ = 4;
-              break;
-            } // case 34
-            case 42: {
-              input.readMessage(
-                  getSlsaProvenanceFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              predicateCase_ = 5;
-              break;
-            } // case 42
-            case 50: {
-              input.readMessage(
-                  getSlsaProvenanceZeroTwoFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              predicateCase_ = 6;
-              break;
-            } // case 50
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+                predicateCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getSlsaProvenanceFieldBuilder().getBuilder(), extensionRegistry);
+                predicateCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getSlsaProvenanceZeroTwoFieldBuilder().getBuilder(), extensionRegistry);
+                predicateCase_ = 6;
+                break;
+              } // case 50
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -874,12 +883,12 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int predicateCase_ = 0;
     private java.lang.Object predicate_;
-    public PredicateCase
-        getPredicateCase() {
-      return PredicateCase.forNumber(
-          predicateCase_);
+
+    public PredicateCase getPredicateCase() {
+      return PredicateCase.forNumber(predicateCase_);
     }
 
     public Builder clearPredicate() {
@@ -893,18 +902,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object type_ = "";
     /**
+     *
+     *
      * <pre>
      * Always `https://in-toto.io/Statement/v0.1`.
      * </pre>
      *
      * <code>string type = 1 [json_name = "_type"];</code>
+     *
      * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
@@ -913,20 +924,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Always `https://in-toto.io/Statement/v0.1`.
      * </pre>
      *
      * <code>string type = 1 [json_name = "_type"];</code>
+     *
      * @return The bytes for type.
      */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -934,74 +946,80 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Always `https://in-toto.io/Statement/v0.1`.
      * </pre>
      *
      * <code>string type = 1 [json_name = "_type"];</code>
+     *
      * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setType(
-        java.lang.String value) {
+    public Builder setType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       type_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Always `https://in-toto.io/Statement/v0.1`.
      * </pre>
      *
      * <code>string type = 1 [json_name = "_type"];</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      
+
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Always `https://in-toto.io/Statement/v0.1`.
      * </pre>
      *
      * <code>string type = 1 [json_name = "_type"];</code>
+     *
      * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       type_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<io.grafeas.v1.Subject> subject_ =
-      java.util.Collections.emptyList();
+    private java.util.List<io.grafeas.v1.Subject> subject_ = java.util.Collections.emptyList();
+
     private void ensureSubjectIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         subject_ = new java.util.ArrayList<io.grafeas.v1.Subject>(subject_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Subject, io.grafeas.v1.Subject.Builder, io.grafeas.v1.SubjectOrBuilder> subjectBuilder_;
+            io.grafeas.v1.Subject, io.grafeas.v1.Subject.Builder, io.grafeas.v1.SubjectOrBuilder>
+        subjectBuilder_;
 
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public java.util.List<io.grafeas.v1.Subject> getSubjectList() {
       if (subjectBuilder_ == null) {
         return java.util.Collections.unmodifiableList(subject_);
@@ -1009,9 +1027,7 @@ private static final long serialVersionUID = 0L;
         return subjectBuilder_.getMessageList();
       }
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public int getSubjectCount() {
       if (subjectBuilder_ == null) {
         return subject_.size();
@@ -1019,9 +1035,7 @@ private static final long serialVersionUID = 0L;
         return subjectBuilder_.getCount();
       }
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject getSubject(int index) {
       if (subjectBuilder_ == null) {
         return subject_.get(index);
@@ -1029,11 +1043,8 @@ private static final long serialVersionUID = 0L;
         return subjectBuilder_.getMessage(index);
       }
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public Builder setSubject(
-        int index, io.grafeas.v1.Subject value) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public Builder setSubject(int index, io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1046,11 +1057,8 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public Builder setSubject(
-        int index, io.grafeas.v1.Subject.Builder builderForValue) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public Builder setSubject(int index, io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
         ensureSubjectIsMutable();
         subject_.set(index, builderForValue.build());
@@ -1060,9 +1068,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
         if (value == null) {
@@ -1076,11 +1082,8 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public Builder addSubject(
-        int index, io.grafeas.v1.Subject value) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public Builder addSubject(int index, io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1093,11 +1096,8 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public Builder addSubject(
-        io.grafeas.v1.Subject.Builder builderForValue) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public Builder addSubject(io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
         ensureSubjectIsMutable();
         subject_.add(builderForValue.build());
@@ -1107,11 +1107,8 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public Builder addSubject(
-        int index, io.grafeas.v1.Subject.Builder builderForValue) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public Builder addSubject(int index, io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
         ensureSubjectIsMutable();
         subject_.add(index, builderForValue.build());
@@ -1121,24 +1118,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public Builder addAllSubject(
-        java.lang.Iterable<? extends io.grafeas.v1.Subject> values) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public Builder addAllSubject(java.lang.Iterable<? extends io.grafeas.v1.Subject> values) {
       if (subjectBuilder_ == null) {
         ensureSubjectIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, subject_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, subject_);
         onChanged();
       } else {
         subjectBuilder_.addAllMessages(values);
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder clearSubject() {
       if (subjectBuilder_ == null) {
         subject_ = java.util.Collections.emptyList();
@@ -1149,9 +1140,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder removeSubject(int index) {
       if (subjectBuilder_ == null) {
         ensureSubjectIsMutable();
@@ -1162,66 +1151,49 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public io.grafeas.v1.Subject.Builder getSubjectBuilder(
-        int index) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public io.grafeas.v1.Subject.Builder getSubjectBuilder(int index) {
       return getSubjectFieldBuilder().getBuilder(index);
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(
-        int index) {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index) {
       if (subjectBuilder_ == null) {
-        return subject_.get(index);  } else {
+        return subject_.get(index);
+      } else {
         return subjectBuilder_.getMessageOrBuilder(index);
       }
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> 
-         getSubjectOrBuilderList() {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
       if (subjectBuilder_ != null) {
         return subjectBuilder_.getMessageOrBuilderList();
       } else {
         return java.util.Collections.unmodifiableList(subject_);
       }
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder addSubjectBuilder() {
-      return getSubjectFieldBuilder().addBuilder(
-          io.grafeas.v1.Subject.getDefaultInstance());
+      return getSubjectFieldBuilder().addBuilder(io.grafeas.v1.Subject.getDefaultInstance());
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public io.grafeas.v1.Subject.Builder addSubjectBuilder(
-        int index) {
-      return getSubjectFieldBuilder().addBuilder(
-          index, io.grafeas.v1.Subject.getDefaultInstance());
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public io.grafeas.v1.Subject.Builder addSubjectBuilder(int index) {
+      return getSubjectFieldBuilder().addBuilder(index, io.grafeas.v1.Subject.getDefaultInstance());
     }
-    /**
-     * <code>repeated .grafeas.v1.Subject subject = 2;</code>
-     */
-    public java.util.List<io.grafeas.v1.Subject.Builder> 
-         getSubjectBuilderList() {
+    /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
+    public java.util.List<io.grafeas.v1.Subject.Builder> getSubjectBuilderList() {
       return getSubjectFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Subject, io.grafeas.v1.Subject.Builder, io.grafeas.v1.SubjectOrBuilder> 
+            io.grafeas.v1.Subject, io.grafeas.v1.Subject.Builder, io.grafeas.v1.SubjectOrBuilder>
         getSubjectFieldBuilder() {
       if (subjectBuilder_ == null) {
-        subjectBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Subject, io.grafeas.v1.Subject.Builder, io.grafeas.v1.SubjectOrBuilder>(
-                subject_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
+        subjectBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.Subject,
+                io.grafeas.v1.Subject.Builder,
+                io.grafeas.v1.SubjectOrBuilder>(
+                subject_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         subject_ = null;
       }
       return subjectBuilder_;
@@ -1229,18 +1201,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object predicateType_ = "";
     /**
+     *
+     *
      * <pre>
      * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
      * </pre>
      *
      * <code>string predicate_type = 3;</code>
+     *
      * @return The predicateType.
      */
     public java.lang.String getPredicateType() {
       java.lang.Object ref = predicateType_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         predicateType_ = s;
         return s;
@@ -1249,20 +1223,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
      * </pre>
      *
      * <code>string predicate_type = 3;</code>
+     *
      * @return The bytes for predicateType.
      */
-    public com.google.protobuf.ByteString
-        getPredicateTypeBytes() {
+    public com.google.protobuf.ByteString getPredicateTypeBytes() {
       java.lang.Object ref = predicateType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         predicateType_ = b;
         return b;
       } else {
@@ -1270,63 +1245,74 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
      * </pre>
      *
      * <code>string predicate_type = 3;</code>
+     *
      * @param value The predicateType to set.
      * @return This builder for chaining.
      */
-    public Builder setPredicateType(
-        java.lang.String value) {
+    public Builder setPredicateType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       predicateType_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
      * </pre>
      *
      * <code>string predicate_type = 3;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearPredicateType() {
-      
+
       predicateType_ = getDefaultInstance().getPredicateType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
      * </pre>
      *
      * <code>string predicate_type = 3;</code>
+     *
      * @param value The bytes for predicateType to set.
      * @return This builder for chaining.
      */
-    public Builder setPredicateTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPredicateTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       predicateType_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder> provenanceBuilder_;
+            io.grafeas.v1.InTotoProvenance,
+            io.grafeas.v1.InTotoProvenance.Builder,
+            io.grafeas.v1.InTotoProvenanceOrBuilder>
+        provenanceBuilder_;
     /**
      * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
+     *
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
@@ -1335,6 +1321,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
+     *
      * @return The provenance.
      */
     @java.lang.Override
@@ -1351,9 +1338,7 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder setProvenance(io.grafeas.v1.InTotoProvenance value) {
       if (provenanceBuilder_ == null) {
         if (value == null) {
@@ -1367,11 +1352,8 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 4;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
-    public Builder setProvenance(
-        io.grafeas.v1.InTotoProvenance.Builder builderForValue) {
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
+    public Builder setProvenance(io.grafeas.v1.InTotoProvenance.Builder builderForValue) {
       if (provenanceBuilder_ == null) {
         predicate_ = builderForValue.build();
         onChanged();
@@ -1381,15 +1363,15 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 4;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder mergeProvenance(io.grafeas.v1.InTotoProvenance value) {
       if (provenanceBuilder_ == null) {
-        if (predicateCase_ == 4 &&
-            predicate_ != io.grafeas.v1.InTotoProvenance.getDefaultInstance()) {
-          predicate_ = io.grafeas.v1.InTotoProvenance.newBuilder((io.grafeas.v1.InTotoProvenance) predicate_)
-              .mergeFrom(value).buildPartial();
+        if (predicateCase_ == 4
+            && predicate_ != io.grafeas.v1.InTotoProvenance.getDefaultInstance()) {
+          predicate_ =
+              io.grafeas.v1.InTotoProvenance.newBuilder((io.grafeas.v1.InTotoProvenance) predicate_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           predicate_ = value;
         }
@@ -1404,9 +1386,7 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 4;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder clearProvenance() {
       if (provenanceBuilder_ == null) {
         if (predicateCase_ == 4) {
@@ -1423,15 +1403,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public io.grafeas.v1.InTotoProvenance.Builder getProvenanceBuilder() {
       return getProvenanceFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoProvenanceOrBuilder getProvenanceOrBuilder() {
       if ((predicateCase_ == 4) && (provenanceBuilder_ != null)) {
@@ -1443,32 +1419,38 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
-     */
+    /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder> 
+            io.grafeas.v1.InTotoProvenance,
+            io.grafeas.v1.InTotoProvenance.Builder,
+            io.grafeas.v1.InTotoProvenanceOrBuilder>
         getProvenanceFieldBuilder() {
       if (provenanceBuilder_ == null) {
         if (!(predicateCase_ == 4)) {
           predicate_ = io.grafeas.v1.InTotoProvenance.getDefaultInstance();
         }
-        provenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.InTotoProvenance, io.grafeas.v1.InTotoProvenance.Builder, io.grafeas.v1.InTotoProvenanceOrBuilder>(
-                (io.grafeas.v1.InTotoProvenance) predicate_,
-                getParentForChildren(),
-                isClean());
+        provenanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.InTotoProvenance,
+                io.grafeas.v1.InTotoProvenance.Builder,
+                io.grafeas.v1.InTotoProvenanceOrBuilder>(
+                (io.grafeas.v1.InTotoProvenance) predicate_, getParentForChildren(), isClean());
         predicate_ = null;
       }
       predicateCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return provenanceBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance, io.grafeas.v1.SlsaProvenance.Builder, io.grafeas.v1.SlsaProvenanceOrBuilder> slsaProvenanceBuilder_;
+            io.grafeas.v1.SlsaProvenance,
+            io.grafeas.v1.SlsaProvenance.Builder,
+            io.grafeas.v1.SlsaProvenanceOrBuilder>
+        slsaProvenanceBuilder_;
     /**
      * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
+     *
      * @return Whether the slsaProvenance field is set.
      */
     @java.lang.Override
@@ -1477,6 +1459,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
+     *
      * @return The slsaProvenance.
      */
     @java.lang.Override
@@ -1493,9 +1476,7 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder setSlsaProvenance(io.grafeas.v1.SlsaProvenance value) {
       if (slsaProvenanceBuilder_ == null) {
         if (value == null) {
@@ -1509,11 +1490,8 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 5;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
-    public Builder setSlsaProvenance(
-        io.grafeas.v1.SlsaProvenance.Builder builderForValue) {
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
+    public Builder setSlsaProvenance(io.grafeas.v1.SlsaProvenance.Builder builderForValue) {
       if (slsaProvenanceBuilder_ == null) {
         predicate_ = builderForValue.build();
         onChanged();
@@ -1523,15 +1501,15 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 5;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder mergeSlsaProvenance(io.grafeas.v1.SlsaProvenance value) {
       if (slsaProvenanceBuilder_ == null) {
-        if (predicateCase_ == 5 &&
-            predicate_ != io.grafeas.v1.SlsaProvenance.getDefaultInstance()) {
-          predicate_ = io.grafeas.v1.SlsaProvenance.newBuilder((io.grafeas.v1.SlsaProvenance) predicate_)
-              .mergeFrom(value).buildPartial();
+        if (predicateCase_ == 5
+            && predicate_ != io.grafeas.v1.SlsaProvenance.getDefaultInstance()) {
+          predicate_ =
+              io.grafeas.v1.SlsaProvenance.newBuilder((io.grafeas.v1.SlsaProvenance) predicate_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           predicate_ = value;
         }
@@ -1546,9 +1524,7 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 5;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder clearSlsaProvenance() {
       if (slsaProvenanceBuilder_ == null) {
         if (predicateCase_ == 5) {
@@ -1565,15 +1541,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public io.grafeas.v1.SlsaProvenance.Builder getSlsaProvenanceBuilder() {
       return getSlsaProvenanceFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceOrBuilder getSlsaProvenanceOrBuilder() {
       if ((predicateCase_ == 5) && (slsaProvenanceBuilder_ != null)) {
@@ -1585,32 +1557,38 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance, io.grafeas.v1.SlsaProvenance.Builder, io.grafeas.v1.SlsaProvenanceOrBuilder> 
+            io.grafeas.v1.SlsaProvenance,
+            io.grafeas.v1.SlsaProvenance.Builder,
+            io.grafeas.v1.SlsaProvenanceOrBuilder>
         getSlsaProvenanceFieldBuilder() {
       if (slsaProvenanceBuilder_ == null) {
         if (!(predicateCase_ == 5)) {
           predicate_ = io.grafeas.v1.SlsaProvenance.getDefaultInstance();
         }
-        slsaProvenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.SlsaProvenance, io.grafeas.v1.SlsaProvenance.Builder, io.grafeas.v1.SlsaProvenanceOrBuilder>(
-                (io.grafeas.v1.SlsaProvenance) predicate_,
-                getParentForChildren(),
-                isClean());
+        slsaProvenanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenance,
+                io.grafeas.v1.SlsaProvenance.Builder,
+                io.grafeas.v1.SlsaProvenanceOrBuilder>(
+                (io.grafeas.v1.SlsaProvenance) predicate_, getParentForChildren(), isClean());
         predicate_ = null;
       }
       predicateCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return slsaProvenanceBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenanceZeroTwo, io.grafeas.v1.SlsaProvenanceZeroTwo.Builder, io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder> slsaProvenanceZeroTwoBuilder_;
+            io.grafeas.v1.SlsaProvenanceZeroTwo,
+            io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
+            io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>
+        slsaProvenanceZeroTwoBuilder_;
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+     *
      * @return Whether the slsaProvenanceZeroTwo field is set.
      */
     @java.lang.Override
@@ -1619,6 +1597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+     *
      * @return The slsaProvenanceZeroTwo.
      */
     @java.lang.Override
@@ -1635,9 +1614,7 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder setSlsaProvenanceZeroTwo(io.grafeas.v1.SlsaProvenanceZeroTwo value) {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
         if (value == null) {
@@ -1651,9 +1628,7 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 6;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder setSlsaProvenanceZeroTwo(
         io.grafeas.v1.SlsaProvenanceZeroTwo.Builder builderForValue) {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
@@ -1665,15 +1640,16 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 6;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder mergeSlsaProvenanceZeroTwo(io.grafeas.v1.SlsaProvenanceZeroTwo value) {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
-        if (predicateCase_ == 6 &&
-            predicate_ != io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance()) {
-          predicate_ = io.grafeas.v1.SlsaProvenanceZeroTwo.newBuilder((io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_)
-              .mergeFrom(value).buildPartial();
+        if (predicateCase_ == 6
+            && predicate_ != io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance()) {
+          predicate_ =
+              io.grafeas.v1.SlsaProvenanceZeroTwo.newBuilder(
+                      (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           predicate_ = value;
         }
@@ -1688,9 +1664,7 @@ private static final long serialVersionUID = 0L;
       predicateCase_ = 6;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder clearSlsaProvenanceZeroTwo() {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
         if (predicateCase_ == 6) {
@@ -1707,15 +1681,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public io.grafeas.v1.SlsaProvenanceZeroTwo.Builder getSlsaProvenanceZeroTwoBuilder() {
       return getSlsaProvenanceZeroTwoFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder() {
       if ((predicateCase_ == 6) && (slsaProvenanceZeroTwoBuilder_ != null)) {
@@ -1727,30 +1697,34 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenanceZeroTwo, io.grafeas.v1.SlsaProvenanceZeroTwo.Builder, io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder> 
+            io.grafeas.v1.SlsaProvenanceZeroTwo,
+            io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
+            io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>
         getSlsaProvenanceZeroTwoFieldBuilder() {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
         if (!(predicateCase_ == 6)) {
           predicate_ = io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
         }
-        slsaProvenanceZeroTwoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.SlsaProvenanceZeroTwo, io.grafeas.v1.SlsaProvenanceZeroTwo.Builder, io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>(
+        slsaProvenanceZeroTwoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenanceZeroTwo,
+                io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
+                io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>(
                 (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_,
                 getParentForChildren(),
                 isClean());
         predicate_ = null;
       }
       predicateCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return slsaProvenanceZeroTwoBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1760,12 +1734,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.InTotoStatement)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.InTotoStatement)
   private static final io.grafeas.v1.InTotoStatement DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.InTotoStatement();
   }
@@ -1774,27 +1748,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InTotoStatement>
-      PARSER = new com.google.protobuf.AbstractParser<InTotoStatement>() {
-    @java.lang.Override
-    public InTotoStatement parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<InTotoStatement> PARSER =
+      new com.google.protobuf.AbstractParser<InTotoStatement>() {
+        @java.lang.Override
+        public InTotoStatement parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<InTotoStatement> parser() {
     return PARSER;
@@ -1809,6 +1783,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.InTotoStatement getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

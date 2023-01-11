@@ -20,21 +20,24 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Request to create occurrences in batch.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.BatchCreateOccurrencesRequest}
  */
-public final class BatchCreateOccurrencesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BatchCreateOccurrencesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.BatchCreateOccurrencesRequest)
     BatchCreateOccurrencesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BatchCreateOccurrencesRequest.newBuilder() to construct.
   private BatchCreateOccurrencesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BatchCreateOccurrencesRequest() {
     parent_ = "";
     occurrences_ = java.util.Collections.emptyList();
@@ -42,38 +45,44 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BatchCreateOccurrencesRequest();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_BatchCreateOccurrencesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1.GrafeasOuterClass
+        .internal_static_grafeas_v1_BatchCreateOccurrencesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_BatchCreateOccurrencesRequest_fieldAccessorTable
+    return io.grafeas.v1.GrafeasOuterClass
+        .internal_static_grafeas_v1_BatchCreateOccurrencesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.BatchCreateOccurrencesRequest.class, io.grafeas.v1.BatchCreateOccurrencesRequest.Builder.class);
+            io.grafeas.v1.BatchCreateOccurrencesRequest.class,
+            io.grafeas.v1.BatchCreateOccurrencesRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrences are to be created.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
    * @return The parent.
    */
   @java.lang.Override
@@ -82,30 +91,32 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrences are to be created.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
    * @return The bytes for parent.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -116,64 +127,83 @@ private static final long serialVersionUID = 0L;
   public static final int OCCURRENCES_FIELD_NUMBER = 2;
   private java.util.List<io.grafeas.v1.Occurrence> occurrences_;
   /**
+   *
+   *
    * <pre>
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
     return occurrences_;
   }
   /**
+   *
+   *
    * <pre>
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> 
-      getOccurrencesOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> getOccurrencesOrBuilderList() {
     return occurrences_;
   }
   /**
+   *
+   *
    * <pre>
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public int getOccurrencesCount() {
     return occurrences_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public io.grafeas.v1.Occurrence getOccurrences(int index) {
     return occurrences_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The occurrences to create. Max allowed length is 1000.
    * </pre>
    *
-   * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
-  public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(
-      int index) {
+  public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
     return occurrences_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -185,8 +215,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -206,8 +235,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     for (int i = 0; i < occurrences_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, occurrences_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, occurrences_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -217,17 +245,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.BatchCreateOccurrencesRequest)) {
       return super.equals(obj);
     }
-    io.grafeas.v1.BatchCreateOccurrencesRequest other = (io.grafeas.v1.BatchCreateOccurrencesRequest) obj;
+    io.grafeas.v1.BatchCreateOccurrencesRequest other =
+        (io.grafeas.v1.BatchCreateOccurrencesRequest) obj;
 
-    if (!getParent()
-        .equals(other.getParent())) return false;
-    if (!getOccurrencesList()
-        .equals(other.getOccurrencesList())) return false;
+    if (!getParent().equals(other.getParent())) return false;
+    if (!getOccurrencesList().equals(other.getOccurrencesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -250,130 +277,136 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.BatchCreateOccurrencesRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1.BatchCreateOccurrencesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.BatchCreateOccurrencesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.BatchCreateOccurrencesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request to create occurrences in batch.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.BatchCreateOccurrencesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.BatchCreateOccurrencesRequest)
       io.grafeas.v1.BatchCreateOccurrencesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_BatchCreateOccurrencesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.GrafeasOuterClass
+          .internal_static_grafeas_v1_BatchCreateOccurrencesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_BatchCreateOccurrencesRequest_fieldAccessorTable
+      return io.grafeas.v1.GrafeasOuterClass
+          .internal_static_grafeas_v1_BatchCreateOccurrencesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.BatchCreateOccurrencesRequest.class, io.grafeas.v1.BatchCreateOccurrencesRequest.Builder.class);
+              io.grafeas.v1.BatchCreateOccurrencesRequest.class,
+              io.grafeas.v1.BatchCreateOccurrencesRequest.Builder.class);
     }
 
     // Construct using io.grafeas.v1.BatchCreateOccurrencesRequest.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -390,9 +423,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1.GrafeasOuterClass.internal_static_grafeas_v1_BatchCreateOccurrencesRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1.GrafeasOuterClass
+          .internal_static_grafeas_v1_BatchCreateOccurrencesRequest_descriptor;
     }
 
     @java.lang.Override
@@ -411,7 +444,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1.BatchCreateOccurrencesRequest buildPartial() {
-      io.grafeas.v1.BatchCreateOccurrencesRequest result = new io.grafeas.v1.BatchCreateOccurrencesRequest(this);
+      io.grafeas.v1.BatchCreateOccurrencesRequest result =
+          new io.grafeas.v1.BatchCreateOccurrencesRequest(this);
       int from_bitField0_ = bitField0_;
       result.parent_ = parent_;
       if (occurrencesBuilder_ == null) {
@@ -431,38 +465,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.BatchCreateOccurrencesRequest) {
-        return mergeFrom((io.grafeas.v1.BatchCreateOccurrencesRequest)other);
+        return mergeFrom((io.grafeas.v1.BatchCreateOccurrencesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -493,9 +528,10 @@ private static final long serialVersionUID = 0L;
             occurrencesBuilder_ = null;
             occurrences_ = other.occurrences_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            occurrencesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getOccurrencesFieldBuilder() : null;
+            occurrencesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOccurrencesFieldBuilder()
+                    : null;
           } else {
             occurrencesBuilder_.addAllMessages(other.occurrences_);
           }
@@ -527,30 +563,31 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              parent_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                parent_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              io.grafeas.v1.Occurrence m =
-                  input.readMessage(
-                      io.grafeas.v1.Occurrence.parser(),
-                      extensionRegistry);
-              if (occurrencesBuilder_ == null) {
-                ensureOccurrencesIsMutable();
-                occurrences_.add(m);
-              } else {
-                occurrencesBuilder_.addMessage(m);
-              }
-              break;
-            } // case 18
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 10
+            case 18:
+              {
+                io.grafeas.v1.Occurrence m =
+                    input.readMessage(io.grafeas.v1.Occurrence.parser(), extensionRegistry);
+                if (occurrencesBuilder_ == null) {
+                  ensureOccurrencesIsMutable();
+                  occurrences_.add(m);
+                } else {
+                  occurrencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -560,23 +597,28 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @return The parent.
      */
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -585,21 +627,24 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @return The bytes for parent.
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -607,80 +652,101 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @param value The parent to set.
      * @return This builder for chaining.
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrences are to be created.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<io.grafeas.v1.Occurrence> occurrences_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureOccurrencesIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         occurrences_ = new java.util.ArrayList<io.grafeas.v1.Occurrence>(occurrences_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Occurrence, io.grafeas.v1.Occurrence.Builder, io.grafeas.v1.OccurrenceOrBuilder> occurrencesBuilder_;
+            io.grafeas.v1.Occurrence,
+            io.grafeas.v1.Occurrence.Builder,
+            io.grafeas.v1.OccurrenceOrBuilder>
+        occurrencesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public java.util.List<io.grafeas.v1.Occurrence> getOccurrencesList() {
       if (occurrencesBuilder_ == null) {
@@ -690,11 +756,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public int getOccurrencesCount() {
       if (occurrencesBuilder_ == null) {
@@ -704,11 +774,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Occurrence getOccurrences(int index) {
       if (occurrencesBuilder_ == null) {
@@ -718,14 +792,17 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public Builder setOccurrences(
-        int index, io.grafeas.v1.Occurrence value) {
+    public Builder setOccurrences(int index, io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -739,14 +816,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public Builder setOccurrences(
-        int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
+    public Builder setOccurrences(int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
         occurrences_.set(index, builderForValue.build());
@@ -757,11 +837,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addOccurrences(io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
@@ -777,14 +861,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public Builder addOccurrences(
-        int index, io.grafeas.v1.Occurrence value) {
+    public Builder addOccurrences(int index, io.grafeas.v1.Occurrence value) {
       if (occurrencesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -798,14 +885,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public Builder addOccurrences(
-        io.grafeas.v1.Occurrence.Builder builderForValue) {
+    public Builder addOccurrences(io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
         occurrences_.add(builderForValue.build());
@@ -816,14 +906,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public Builder addOccurrences(
-        int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
+    public Builder addOccurrences(int index, io.grafeas.v1.Occurrence.Builder builderForValue) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
         occurrences_.add(index, builderForValue.build());
@@ -834,18 +927,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder addAllOccurrences(
         java.lang.Iterable<? extends io.grafeas.v1.Occurrence> values) {
       if (occurrencesBuilder_ == null) {
         ensureOccurrencesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, occurrences_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, occurrences_);
         onChanged();
       } else {
         occurrencesBuilder_.addAllMessages(values);
@@ -853,11 +949,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearOccurrences() {
       if (occurrencesBuilder_ == null) {
@@ -870,11 +970,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder removeOccurrences(int index) {
       if (occurrencesBuilder_ == null) {
@@ -887,39 +991,50 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public io.grafeas.v1.Occurrence.Builder getOccurrencesBuilder(
-        int index) {
+    public io.grafeas.v1.Occurrence.Builder getOccurrencesBuilder(int index) {
       return getOccurrencesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(
-        int index) {
+    public io.grafeas.v1.OccurrenceOrBuilder getOccurrencesOrBuilder(int index) {
       if (occurrencesBuilder_ == null) {
-        return occurrences_.get(index);  } else {
+        return occurrences_.get(index);
+      } else {
         return occurrencesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder> 
-         getOccurrencesOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.OccurrenceOrBuilder>
+        getOccurrencesOrBuilderList() {
       if (occurrencesBuilder_ != null) {
         return occurrencesBuilder_.getMessageOrBuilderList();
       } else {
@@ -927,56 +1042,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder() {
-      return getOccurrencesFieldBuilder().addBuilder(
-          io.grafeas.v1.Occurrence.getDefaultInstance());
+      return getOccurrencesFieldBuilder().addBuilder(io.grafeas.v1.Occurrence.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder(
-        int index) {
-      return getOccurrencesFieldBuilder().addBuilder(
-          index, io.grafeas.v1.Occurrence.getDefaultInstance());
+    public io.grafeas.v1.Occurrence.Builder addOccurrencesBuilder(int index) {
+      return getOccurrencesFieldBuilder()
+          .addBuilder(index, io.grafeas.v1.Occurrence.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The occurrences to create. Max allowed length is 1000.
      * </pre>
      *
-     * <code>repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * repeated .grafeas.v1.Occurrence occurrences = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
-    public java.util.List<io.grafeas.v1.Occurrence.Builder> 
-         getOccurrencesBuilderList() {
+    public java.util.List<io.grafeas.v1.Occurrence.Builder> getOccurrencesBuilderList() {
       return getOccurrencesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Occurrence, io.grafeas.v1.Occurrence.Builder, io.grafeas.v1.OccurrenceOrBuilder> 
+            io.grafeas.v1.Occurrence,
+            io.grafeas.v1.Occurrence.Builder,
+            io.grafeas.v1.OccurrenceOrBuilder>
         getOccurrencesFieldBuilder() {
       if (occurrencesBuilder_ == null) {
-        occurrencesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Occurrence, io.grafeas.v1.Occurrence.Builder, io.grafeas.v1.OccurrenceOrBuilder>(
-                occurrences_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
+        occurrencesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.Occurrence,
+                io.grafeas.v1.Occurrence.Builder,
+                io.grafeas.v1.OccurrenceOrBuilder>(
+                occurrences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         occurrences_ = null;
       }
       return occurrencesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -986,12 +1113,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.BatchCreateOccurrencesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.BatchCreateOccurrencesRequest)
   private static final io.grafeas.v1.BatchCreateOccurrencesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.BatchCreateOccurrencesRequest();
   }
@@ -1000,27 +1127,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchCreateOccurrencesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<BatchCreateOccurrencesRequest>() {
-    @java.lang.Override
-    public BatchCreateOccurrencesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<BatchCreateOccurrencesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<BatchCreateOccurrencesRequest>() {
+        @java.lang.Override
+        public BatchCreateOccurrencesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<BatchCreateOccurrencesRequest> parser() {
     return PARSER;
@@ -1035,6 +1162,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.BatchCreateOccurrencesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

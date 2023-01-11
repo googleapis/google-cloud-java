@@ -19,43 +19,42 @@
 
 package io.grafeas.v1;
 
-/**
- * Protobuf type {@code grafeas.v1.InTotoProvenance}
- */
-public final class InTotoProvenance extends
-    com.google.protobuf.GeneratedMessageV3 implements
+/** Protobuf type {@code grafeas.v1.InTotoProvenance} */
+public final class InTotoProvenance extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoProvenance)
     InTotoProvenanceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use InTotoProvenance.newBuilder() to construct.
   private InTotoProvenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private InTotoProvenance() {
     materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new InTotoProvenance();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1.InTotoProvenanceProto
+        .internal_static_grafeas_v1_InTotoProvenance_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
+    return io.grafeas.v1.InTotoProvenanceProto
+        .internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.InTotoProvenance.class, io.grafeas.v1.InTotoProvenance.Builder.class);
   }
@@ -63,11 +62,14 @@ private static final long serialVersionUID = 0L;
   public static final int BUILDER_CONFIG_FIELD_NUMBER = 1;
   private io.grafeas.v1.BuilderConfig builderConfig_;
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
+   *
    * @return Whether the builderConfig field is set.
    */
   @java.lang.Override
@@ -75,18 +77,25 @@ private static final long serialVersionUID = 0L;
     return builderConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
+   *
    * @return The builderConfig.
    */
   @java.lang.Override
   public io.grafeas.v1.BuilderConfig getBuilderConfig() {
-    return builderConfig_ == null ? io.grafeas.v1.BuilderConfig.getDefaultInstance() : builderConfig_;
+    return builderConfig_ == null
+        ? io.grafeas.v1.BuilderConfig.getDefaultInstance()
+        : builderConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
@@ -101,6 +110,8 @@ private static final long serialVersionUID = 0L;
   public static final int RECIPE_FIELD_NUMBER = 2;
   private io.grafeas.v1.Recipe recipe_;
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -109,6 +120,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1.Recipe recipe = 2;</code>
+   *
    * @return Whether the recipe field is set.
    */
   @java.lang.Override
@@ -116,6 +128,8 @@ private static final long serialVersionUID = 0L;
     return recipe_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -124,6 +138,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.grafeas.v1.Recipe recipe = 2;</code>
+   *
    * @return The recipe.
    */
   @java.lang.Override
@@ -131,6 +146,8 @@ private static final long serialVersionUID = 0L;
     return recipe_ == null ? io.grafeas.v1.Recipe.getDefaultInstance() : recipe_;
   }
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -149,6 +166,7 @@ private static final long serialVersionUID = 0L;
   private io.grafeas.v1.Metadata metadata_;
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
+   *
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -157,15 +175,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
+   *
    * @return The metadata.
    */
   @java.lang.Override
   public io.grafeas.v1.Metadata getMetadata() {
     return metadata_ == null ? io.grafeas.v1.Metadata.getDefaultInstance() : metadata_;
   }
-  /**
-   * <code>.grafeas.v1.Metadata metadata = 3;</code>
-   */
+  /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
@@ -174,6 +191,8 @@ private static final long serialVersionUID = 0L;
   public static final int MATERIALS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList materials_;
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -182,13 +201,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @return A list containing the materials.
    */
-  public com.google.protobuf.ProtocolStringList
-      getMaterialsList() {
+  public com.google.protobuf.ProtocolStringList getMaterialsList() {
     return materials_;
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -197,12 +218,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @return The count of materials.
    */
   public int getMaterialsCount() {
     return materials_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -211,6 +235,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @param index The index of the element to return.
    * @return The materials at the given index.
    */
@@ -218,6 +243,8 @@ private static final long serialVersionUID = 0L;
     return materials_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -226,15 +253,16 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @param index The index of the value to return.
    * @return The bytes of the materials at the given index.
    */
-  public com.google.protobuf.ByteString
-      getMaterialsBytes(int index) {
+  public com.google.protobuf.ByteString getMaterialsBytes(int index) {
     return materials_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -246,8 +274,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (builderConfig_ != null) {
       output.writeMessage(1, getBuilderConfig());
     }
@@ -270,16 +297,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (builderConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBuilderConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBuilderConfig());
     }
     if (recipe_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getRecipe());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRecipe());
     }
     if (metadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getMetadata());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMetadata());
     }
     {
       int dataSize = 0;
@@ -297,7 +321,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.InTotoProvenance)) {
       return super.equals(obj);
@@ -306,21 +330,17 @@ private static final long serialVersionUID = 0L;
 
     if (hasBuilderConfig() != other.hasBuilderConfig()) return false;
     if (hasBuilderConfig()) {
-      if (!getBuilderConfig()
-          .equals(other.getBuilderConfig())) return false;
+      if (!getBuilderConfig().equals(other.getBuilderConfig())) return false;
     }
     if (hasRecipe() != other.hasRecipe()) return false;
     if (hasRecipe()) {
-      if (!getRecipe()
-          .equals(other.getRecipe())) return false;
+      if (!getRecipe().equals(other.getRecipe())) return false;
     }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      if (!getMetadata()
-          .equals(other.getMetadata())) return false;
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    if (!getMaterialsList()
-        .equals(other.getMaterialsList())) return false;
+    if (!getMaterialsList().equals(other.getMaterialsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -353,126 +373,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.InTotoProvenance parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.InTotoProvenance parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.InTotoProvenance parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.InTotoProvenance parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.InTotoProvenance parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.InTotoProvenance parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.InTotoProvenance parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.InTotoProvenance prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   * Protobuf type {@code grafeas.v1.InTotoProvenance}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  /** Protobuf type {@code grafeas.v1.InTotoProvenance} */
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.InTotoProvenance)
       io.grafeas.v1.InTotoProvenanceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.InTotoProvenanceProto
+          .internal_static_grafeas_v1_InTotoProvenance_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
+      return io.grafeas.v1.InTotoProvenanceProto
+          .internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.InTotoProvenance.class, io.grafeas.v1.InTotoProvenance.Builder.class);
     }
 
     // Construct using io.grafeas.v1.InTotoProvenance.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -500,9 +520,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1.InTotoProvenanceProto
+          .internal_static_grafeas_v1_InTotoProvenance_descriptor;
     }
 
     @java.lang.Override
@@ -551,38 +571,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.InTotoProvenance) {
-        return mergeFrom((io.grafeas.v1.InTotoProvenance)other);
+        return mergeFrom((io.grafeas.v1.InTotoProvenance) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -636,39 +657,38 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  getBuilderConfigFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 10:
+              {
+                input.readMessage(getBuilderConfigFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 10
-            case 18: {
-              input.readMessage(
-                  getRecipeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRecipeFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 18
-            case 26: {
-              input.readMessage(
-                  getMetadataFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 26
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              ensureMaterialsIsMutable();
-              materials_.add(s);
-              break;
-            } // case 34
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureMaterialsIsMutable();
+                materials_.add(s);
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -678,38 +698,52 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int bitField0_;
 
     private io.grafeas.v1.BuilderConfig builderConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.BuilderConfig, io.grafeas.v1.BuilderConfig.Builder, io.grafeas.v1.BuilderConfigOrBuilder> builderConfigBuilder_;
+            io.grafeas.v1.BuilderConfig,
+            io.grafeas.v1.BuilderConfig.Builder,
+            io.grafeas.v1.BuilderConfigOrBuilder>
+        builderConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
      *
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
+     *
      * @return Whether the builderConfig field is set.
      */
     public boolean hasBuilderConfig() {
       return builderConfigBuilder_ != null || builderConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
      *
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
+     *
      * @return The builderConfig.
      */
     public io.grafeas.v1.BuilderConfig getBuilderConfig() {
       if (builderConfigBuilder_ == null) {
-        return builderConfig_ == null ? io.grafeas.v1.BuilderConfig.getDefaultInstance() : builderConfig_;
+        return builderConfig_ == null
+            ? io.grafeas.v1.BuilderConfig.getDefaultInstance()
+            : builderConfig_;
       } else {
         return builderConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -730,14 +764,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
      *
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
      */
-    public Builder setBuilderConfig(
-        io.grafeas.v1.BuilderConfig.Builder builderForValue) {
+    public Builder setBuilderConfig(io.grafeas.v1.BuilderConfig.Builder builderForValue) {
       if (builderConfigBuilder_ == null) {
         builderConfig_ = builderForValue.build();
         onChanged();
@@ -748,6 +783,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -758,7 +795,9 @@ private static final long serialVersionUID = 0L;
       if (builderConfigBuilder_ == null) {
         if (builderConfig_ != null) {
           builderConfig_ =
-            io.grafeas.v1.BuilderConfig.newBuilder(builderConfig_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.BuilderConfig.newBuilder(builderConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           builderConfig_ = value;
         }
@@ -770,6 +809,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -788,6 +829,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -795,11 +838,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
      */
     public io.grafeas.v1.BuilderConfig.Builder getBuilderConfigBuilder() {
-      
+
       onChanged();
       return getBuilderConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -810,11 +855,14 @@ private static final long serialVersionUID = 0L;
       if (builderConfigBuilder_ != null) {
         return builderConfigBuilder_.getMessageOrBuilder();
       } else {
-        return builderConfig_ == null ?
-            io.grafeas.v1.BuilderConfig.getDefaultInstance() : builderConfig_;
+        return builderConfig_ == null
+            ? io.grafeas.v1.BuilderConfig.getDefaultInstance()
+            : builderConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -822,14 +870,17 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.BuilderConfig, io.grafeas.v1.BuilderConfig.Builder, io.grafeas.v1.BuilderConfigOrBuilder> 
+            io.grafeas.v1.BuilderConfig,
+            io.grafeas.v1.BuilderConfig.Builder,
+            io.grafeas.v1.BuilderConfigOrBuilder>
         getBuilderConfigFieldBuilder() {
       if (builderConfigBuilder_ == null) {
-        builderConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.BuilderConfig, io.grafeas.v1.BuilderConfig.Builder, io.grafeas.v1.BuilderConfigOrBuilder>(
-                getBuilderConfig(),
-                getParentForChildren(),
-                isClean());
+        builderConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.BuilderConfig,
+                io.grafeas.v1.BuilderConfig.Builder,
+                io.grafeas.v1.BuilderConfigOrBuilder>(
+                getBuilderConfig(), getParentForChildren(), isClean());
         builderConfig_ = null;
       }
       return builderConfigBuilder_;
@@ -837,8 +888,11 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1.Recipe recipe_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder> recipeBuilder_;
+            io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder>
+        recipeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -847,12 +901,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
+     *
      * @return Whether the recipe field is set.
      */
     public boolean hasRecipe() {
       return recipeBuilder_ != null || recipe_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -861,6 +918,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
+     *
      * @return The recipe.
      */
     public io.grafeas.v1.Recipe getRecipe() {
@@ -871,6 +929,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -894,6 +954,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -903,8 +965,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
      */
-    public Builder setRecipe(
-        io.grafeas.v1.Recipe.Builder builderForValue) {
+    public Builder setRecipe(io.grafeas.v1.Recipe.Builder builderForValue) {
       if (recipeBuilder_ == null) {
         recipe_ = builderForValue.build();
         onChanged();
@@ -915,6 +976,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -927,8 +990,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeRecipe(io.grafeas.v1.Recipe value) {
       if (recipeBuilder_ == null) {
         if (recipe_ != null) {
-          recipe_ =
-            io.grafeas.v1.Recipe.newBuilder(recipe_).mergeFrom(value).buildPartial();
+          recipe_ = io.grafeas.v1.Recipe.newBuilder(recipe_).mergeFrom(value).buildPartial();
         } else {
           recipe_ = value;
         }
@@ -940,6 +1002,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -961,6 +1025,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -971,11 +1037,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
      */
     public io.grafeas.v1.Recipe.Builder getRecipeBuilder() {
-      
+
       onChanged();
       return getRecipeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -989,11 +1057,12 @@ private static final long serialVersionUID = 0L;
       if (recipeBuilder_ != null) {
         return recipeBuilder_.getMessageOrBuilder();
       } else {
-        return recipe_ == null ?
-            io.grafeas.v1.Recipe.getDefaultInstance() : recipe_;
+        return recipe_ == null ? io.grafeas.v1.Recipe.getDefaultInstance() : recipe_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -1004,14 +1073,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder> 
+            io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder>
         getRecipeFieldBuilder() {
       if (recipeBuilder_ == null) {
-        recipeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder>(
-                getRecipe(),
-                getParentForChildren(),
-                isClean());
+        recipeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Recipe, io.grafeas.v1.Recipe.Builder, io.grafeas.v1.RecipeOrBuilder>(
+                getRecipe(), getParentForChildren(), isClean());
         recipe_ = null;
       }
       return recipeBuilder_;
@@ -1019,9 +1087,11 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1.Metadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder> metadataBuilder_;
+            io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder>
+        metadataBuilder_;
     /**
      * <code>.grafeas.v1.Metadata metadata = 3;</code>
+     *
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
@@ -1029,6 +1099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.grafeas.v1.Metadata metadata = 3;</code>
+     *
      * @return The metadata.
      */
     public io.grafeas.v1.Metadata getMetadata() {
@@ -1038,9 +1109,7 @@ private static final long serialVersionUID = 0L;
         return metadataBuilder_.getMessage();
       }
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.Metadata value) {
       if (metadataBuilder_ == null) {
         if (value == null) {
@@ -1054,11 +1123,8 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
-    public Builder setMetadata(
-        io.grafeas.v1.Metadata.Builder builderForValue) {
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
+    public Builder setMetadata(io.grafeas.v1.Metadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
         onChanged();
@@ -1068,14 +1134,11 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder mergeMetadata(io.grafeas.v1.Metadata value) {
       if (metadataBuilder_ == null) {
         if (metadata_ != null) {
-          metadata_ =
-            io.grafeas.v1.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+          metadata_ = io.grafeas.v1.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
         } else {
           metadata_ = value;
         }
@@ -1086,9 +1149,7 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
         metadata_ = null;
@@ -1100,50 +1161,47 @@ private static final long serialVersionUID = 0L;
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public io.grafeas.v1.Metadata.Builder getMetadataBuilder() {
-      
+
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
         return metadataBuilder_.getMessageOrBuilder();
       } else {
-        return metadata_ == null ?
-            io.grafeas.v1.Metadata.getDefaultInstance() : metadata_;
+        return metadata_ == null ? io.grafeas.v1.Metadata.getDefaultInstance() : metadata_;
       }
     }
-    /**
-     * <code>.grafeas.v1.Metadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder> 
+            io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder>
         getMetadataFieldBuilder() {
       if (metadataBuilder_ == null) {
-        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Metadata, io.grafeas.v1.Metadata.Builder, io.grafeas.v1.MetadataOrBuilder>(
-                getMetadata(),
-                getParentForChildren(),
-                isClean());
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Metadata,
+                io.grafeas.v1.Metadata.Builder,
+                io.grafeas.v1.MetadataOrBuilder>(getMetadata(), getParentForChildren(), isClean());
         metadata_ = null;
       }
       return metadataBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList materials_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureMaterialsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         materials_ = new com.google.protobuf.LazyStringArrayList(materials_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1152,13 +1210,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @return A list containing the materials.
      */
-    public com.google.protobuf.ProtocolStringList
-        getMaterialsList() {
+    public com.google.protobuf.ProtocolStringList getMaterialsList() {
       return materials_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1167,12 +1227,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @return The count of materials.
      */
     public int getMaterialsCount() {
       return materials_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1181,6 +1244,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @param index The index of the element to return.
      * @return The materials at the given index.
      */
@@ -1188,6 +1252,8 @@ private static final long serialVersionUID = 0L;
       return materials_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1196,14 +1262,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @param index The index of the value to return.
      * @return The bytes of the materials at the given index.
      */
-    public com.google.protobuf.ByteString
-        getMaterialsBytes(int index) {
+    public com.google.protobuf.ByteString getMaterialsBytes(int index) {
       return materials_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1212,21 +1280,23 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @param index The index to set the value at.
      * @param value The materials to set.
      * @return This builder for chaining.
      */
-    public Builder setMaterials(
-        int index, java.lang.String value) {
+    public Builder setMaterials(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMaterialsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureMaterialsIsMutable();
       materials_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1235,20 +1305,22 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @param value The materials to add.
      * @return This builder for chaining.
      */
-    public Builder addMaterials(
-        java.lang.String value) {
+    public Builder addMaterials(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMaterialsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureMaterialsIsMutable();
       materials_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1257,18 +1329,19 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @param values The materials to add.
      * @return This builder for chaining.
      */
-    public Builder addAllMaterials(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllMaterials(java.lang.Iterable<java.lang.String> values) {
       ensureMaterialsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, materials_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, materials_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1277,6 +1350,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearMaterials() {
@@ -1286,6 +1360,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -1294,23 +1370,23 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>repeated string materials = 4;</code>
+     *
      * @param value The bytes of the materials to add.
      * @return This builder for chaining.
      */
-    public Builder addMaterialsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addMaterialsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureMaterialsIsMutable();
       materials_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -1320,12 +1396,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.InTotoProvenance)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.InTotoProvenance)
   private static final io.grafeas.v1.InTotoProvenance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.InTotoProvenance();
   }
@@ -1334,27 +1410,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InTotoProvenance>
-      PARSER = new com.google.protobuf.AbstractParser<InTotoProvenance>() {
-    @java.lang.Override
-    public InTotoProvenance parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<InTotoProvenance> PARSER =
+      new com.google.protobuf.AbstractParser<InTotoProvenance>() {
+        @java.lang.Override
+        public InTotoProvenance parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<InTotoProvenance> parser() {
     return PARSER;
@@ -1369,6 +1445,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.InTotoProvenance getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

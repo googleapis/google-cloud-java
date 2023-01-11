@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Provenance of a build. Contains all information needed to verify the full
  * details about the build from source to completion.
@@ -27,15 +29,16 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.BuildProvenance}
  */
-public final class BuildProvenance extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BuildProvenance extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.BuildProvenance)
     BuildProvenanceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BuildProvenance.newBuilder() to construct.
   private BuildProvenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BuildProvenance() {
     id_ = "";
     projectId_ = "";
@@ -49,33 +52,30 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new BuildProvenance();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_BuildProvenance_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 12:
         return internalGetBuildOptions();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -87,11 +87,14 @@ private static final long serialVersionUID = 0L;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
+   *
+   *
    * <pre>
    * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
    * @return The id.
    */
   @java.lang.Override
@@ -100,29 +103,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. Unique identifier of the build.
    * </pre>
    *
    * <code>string id = 1;</code>
+   *
    * @return The bytes for id.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIdBytes() {
+  public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       id_ = b;
       return b;
     } else {
@@ -133,11 +136,14 @@ private static final long serialVersionUID = 0L;
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * ID of the project.
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
    * @return The projectId.
    */
   @java.lang.Override
@@ -146,29 +152,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * ID of the project.
    * </pre>
    *
    * <code>string project_id = 2;</code>
+   *
    * @return The bytes for projectId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -179,6 +185,8 @@ private static final long serialVersionUID = 0L;
   public static final int COMMANDS_FIELD_NUMBER = 3;
   private java.util.List<io.grafeas.v1.Command> commands_;
   /**
+   *
+   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -190,6 +198,8 @@ private static final long serialVersionUID = 0L;
     return commands_;
   }
   /**
+   *
+   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -197,11 +207,12 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.CommandOrBuilder> 
-      getCommandsOrBuilderList() {
+  public java.util.List<? extends io.grafeas.v1.CommandOrBuilder> getCommandsOrBuilderList() {
     return commands_;
   }
   /**
+   *
+   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -213,6 +224,8 @@ private static final long serialVersionUID = 0L;
     return commands_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -224,6 +237,8 @@ private static final long serialVersionUID = 0L;
     return commands_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Commands requested by the build.
    * </pre>
@@ -231,14 +246,15 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .grafeas.v1.Command commands = 3;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.CommandOrBuilder getCommandsOrBuilder(
-      int index) {
+  public io.grafeas.v1.CommandOrBuilder getCommandsOrBuilder(int index) {
     return commands_.get(index);
   }
 
   public static final int BUILT_ARTIFACTS_FIELD_NUMBER = 4;
   private java.util.List<io.grafeas.v1.Artifact> builtArtifacts_;
   /**
+   *
+   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -250,6 +266,8 @@ private static final long serialVersionUID = 0L;
     return builtArtifacts_;
   }
   /**
+   *
+   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -257,11 +275,13 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder> 
+  public java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder>
       getBuiltArtifactsOrBuilderList() {
     return builtArtifacts_;
   }
   /**
+   *
+   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -273,6 +293,8 @@ private static final long serialVersionUID = 0L;
     return builtArtifacts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -284,6 +306,8 @@ private static final long serialVersionUID = 0L;
     return builtArtifacts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output of the build.
    * </pre>
@@ -291,19 +315,21 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.ArtifactOrBuilder getBuiltArtifactsOrBuilder(
-      int index) {
+  public io.grafeas.v1.ArtifactOrBuilder getBuiltArtifactsOrBuilder(int index) {
     return builtArtifacts_.get(index);
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Time at which the build was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -311,11 +337,14 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time at which the build was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
    * @return The createTime.
    */
   @java.lang.Override
@@ -323,6 +352,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time at which the build was created.
    * </pre>
@@ -337,11 +368,14 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Time at which execution of the build was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
+   *
    * @return Whether the startTime field is set.
    */
   @java.lang.Override
@@ -349,11 +383,14 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time at which execution of the build was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 6;</code>
+   *
    * @return The startTime.
    */
   @java.lang.Override
@@ -361,6 +398,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time at which execution of the build was started.
    * </pre>
@@ -375,11 +414,14 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * Time at which execution of the build was finished.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
+   *
    * @return Whether the endTime field is set.
    */
   @java.lang.Override
@@ -387,11 +429,14 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time at which execution of the build was finished.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 7;</code>
+   *
    * @return The endTime.
    */
   @java.lang.Override
@@ -399,6 +444,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time at which execution of the build was finished.
    * </pre>
@@ -413,6 +460,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATOR_FIELD_NUMBER = 8;
   private volatile java.lang.Object creator_;
   /**
+   *
+   *
    * <pre>
    * E-mail address of the user who initiated this build. Note that this was the
    * user's e-mail address at the time the build was initiated; this address may
@@ -420,6 +469,7 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string creator = 8;</code>
+   *
    * @return The creator.
    */
   @java.lang.Override
@@ -428,14 +478,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       creator_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * E-mail address of the user who initiated this build. Note that this was the
    * user's e-mail address at the time the build was initiated; this address may
@@ -443,16 +494,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string creator = 8;</code>
+   *
    * @return The bytes for creator.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getCreatorBytes() {
+  public com.google.protobuf.ByteString getCreatorBytes() {
     java.lang.Object ref = creator_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       creator_ = b;
       return b;
     } else {
@@ -463,11 +513,14 @@ private static final long serialVersionUID = 0L;
   public static final int LOGS_URI_FIELD_NUMBER = 9;
   private volatile java.lang.Object logsUri_;
   /**
+   *
+   *
    * <pre>
    * URI where any logs for this provenance were written.
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
+   *
    * @return The logsUri.
    */
   @java.lang.Override
@@ -476,29 +529,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       logsUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * URI where any logs for this provenance were written.
    * </pre>
    *
    * <code>string logs_uri = 9;</code>
+   *
    * @return The bytes for logsUri.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getLogsUriBytes() {
+  public com.google.protobuf.ByteString getLogsUriBytes() {
     java.lang.Object ref = logsUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       logsUri_ = b;
       return b;
     } else {
@@ -509,11 +562,14 @@ private static final long serialVersionUID = 0L;
   public static final int SOURCE_PROVENANCE_FIELD_NUMBER = 10;
   private io.grafeas.v1.Source sourceProvenance_;
   /**
+   *
+   *
    * <pre>
    * Details of the Source input to the build.
    * </pre>
    *
    * <code>.grafeas.v1.Source source_provenance = 10;</code>
+   *
    * @return Whether the sourceProvenance field is set.
    */
   @java.lang.Override
@@ -521,18 +577,25 @@ private static final long serialVersionUID = 0L;
     return sourceProvenance_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Details of the Source input to the build.
    * </pre>
    *
    * <code>.grafeas.v1.Source source_provenance = 10;</code>
+   *
    * @return The sourceProvenance.
    */
   @java.lang.Override
   public io.grafeas.v1.Source getSourceProvenance() {
-    return sourceProvenance_ == null ? io.grafeas.v1.Source.getDefaultInstance() : sourceProvenance_;
+    return sourceProvenance_ == null
+        ? io.grafeas.v1.Source.getDefaultInstance()
+        : sourceProvenance_;
   }
   /**
+   *
+   *
    * <pre>
    * Details of the Source input to the build.
    * </pre>
@@ -547,11 +610,14 @@ private static final long serialVersionUID = 0L;
   public static final int TRIGGER_ID_FIELD_NUMBER = 11;
   private volatile java.lang.Object triggerId_;
   /**
+   *
+   *
    * <pre>
    * Trigger identifier if the build was triggered automatically; empty if not.
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
+   *
    * @return The triggerId.
    */
   @java.lang.Override
@@ -560,29 +626,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       triggerId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Trigger identifier if the build was triggered automatically; empty if not.
    * </pre>
    *
    * <code>string trigger_id = 11;</code>
+   *
    * @return The bytes for triggerId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTriggerIdBytes() {
+  public com.google.protobuf.ByteString getTriggerIdBytes() {
     java.lang.Object ref = triggerId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       triggerId_ = b;
       return b;
     } else {
@@ -591,21 +657,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BUILD_OPTIONS_FIELD_NUMBER = 12;
+
   private static final class BuildOptionsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.grafeas.v1.Provenance.internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            io.grafeas.v1.Provenance
+                .internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> buildOptions_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> buildOptions_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetBuildOptions() {
+      internalGetBuildOptions() {
     if (buildOptions_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           BuildOptionsDefaultEntryHolder.defaultEntry);
@@ -617,6 +684,8 @@ private static final long serialVersionUID = 0L;
     return internalGetBuildOptions().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -624,22 +693,22 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
-
   @java.lang.Override
-  public boolean containsBuildOptions(
-      java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+  public boolean containsBuildOptions(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
     return internalGetBuildOptions().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getBuildOptionsMap()} instead.
-   */
+  /** Use {@link #getBuildOptionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getBuildOptions() {
     return getBuildOptionsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -648,11 +717,12 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getBuildOptionsMap() {
     return internalGetBuildOptions().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -661,16 +731,17 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
   @java.lang.Override
-
   public java.lang.String getBuildOptionsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetBuildOptions().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildOptions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Special options applied to this build. This is a catch-all field where
    * build providers can enter any desired additional details.
@@ -679,12 +750,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; build_options = 12;</code>
    */
   @java.lang.Override
-
-  public java.lang.String getBuildOptionsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetBuildOptions().getMap();
+  public java.lang.String getBuildOptionsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildOptions().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -694,11 +764,14 @@ private static final long serialVersionUID = 0L;
   public static final int BUILDER_VERSION_FIELD_NUMBER = 13;
   private volatile java.lang.Object builderVersion_;
   /**
+   *
+   *
    * <pre>
    * Version string of the builder at the time this build was executed.
    * </pre>
    *
    * <code>string builder_version = 13;</code>
+   *
    * @return The builderVersion.
    */
   @java.lang.Override
@@ -707,29 +780,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       builderVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Version string of the builder at the time this build was executed.
    * </pre>
    *
    * <code>string builder_version = 13;</code>
+   *
    * @return The bytes for builderVersion.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getBuilderVersionBytes() {
+  public com.google.protobuf.ByteString getBuilderVersionBytes() {
     java.lang.Object ref = builderVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       builderVersion_ = b;
       return b;
     } else {
@@ -738,6 +811,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -749,8 +823,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
@@ -784,12 +857,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, triggerId_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetBuildOptions(),
-        BuildOptionsDefaultEntryHolder.defaultEntry,
-        12);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetBuildOptions(), BuildOptionsDefaultEntryHolder.defaultEntry, 12);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(builderVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, builderVersion_);
     }
@@ -809,24 +878,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
     }
     for (int i = 0; i < commands_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, commands_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, commands_.get(i));
     }
     for (int i = 0; i < builtArtifacts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, builtArtifacts_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, builtArtifacts_.get(i));
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCreateTime());
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEndTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, creator_);
@@ -835,21 +899,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, logsUri_);
     }
     if (sourceProvenance_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getSourceProvenance());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getSourceProvenance());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(triggerId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, triggerId_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetBuildOptions().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      buildOptions__ = BuildOptionsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, buildOptions__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetBuildOptions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildOptions__ =
+          BuildOptionsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, buildOptions__);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(builderVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, builderVersion_);
@@ -862,51 +925,38 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.BuildProvenance)) {
       return super.equals(obj);
     }
     io.grafeas.v1.BuildProvenance other = (io.grafeas.v1.BuildProvenance) obj;
 
-    if (!getId()
-        .equals(other.getId())) return false;
-    if (!getProjectId()
-        .equals(other.getProjectId())) return false;
-    if (!getCommandsList()
-        .equals(other.getCommandsList())) return false;
-    if (!getBuiltArtifactsList()
-        .equals(other.getBuiltArtifactsList())) return false;
+    if (!getId().equals(other.getId())) return false;
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getCommandsList().equals(other.getCommandsList())) return false;
+    if (!getBuiltArtifactsList().equals(other.getBuiltArtifactsList())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
-      if (!getCreateTime()
-          .equals(other.getCreateTime())) return false;
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
-      if (!getStartTime()
-          .equals(other.getStartTime())) return false;
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
     if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
-      if (!getEndTime()
-          .equals(other.getEndTime())) return false;
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    if (!getCreator()
-        .equals(other.getCreator())) return false;
-    if (!getLogsUri()
-        .equals(other.getLogsUri())) return false;
+    if (!getCreator().equals(other.getCreator())) return false;
+    if (!getLogsUri().equals(other.getLogsUri())) return false;
     if (hasSourceProvenance() != other.hasSourceProvenance()) return false;
     if (hasSourceProvenance()) {
-      if (!getSourceProvenance()
-          .equals(other.getSourceProvenance())) return false;
+      if (!getSourceProvenance().equals(other.getSourceProvenance())) return false;
     }
-    if (!getTriggerId()
-        .equals(other.getTriggerId())) return false;
-    if (!internalGetBuildOptions().equals(
-        other.internalGetBuildOptions())) return false;
-    if (!getBuilderVersion()
-        .equals(other.getBuilderVersion())) return false;
+    if (!getTriggerId().equals(other.getTriggerId())) return false;
+    if (!internalGetBuildOptions().equals(other.internalGetBuildOptions())) return false;
+    if (!getBuilderVersion().equals(other.getBuilderVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -963,97 +1013,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.BuildProvenance parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.BuildProvenance parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.BuildProvenance parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.BuildProvenance parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.BuildProvenance parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.BuildProvenance parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.BuildProvenance parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.BuildProvenance parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.BuildProvenance parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.BuildProvenance prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Provenance of a build. Contains all information needed to verify the full
    * details about the build from source to completion.
@@ -1061,37 +1117,34 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.BuildProvenance}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.BuildProvenance)
       io.grafeas.v1.BuildProvenanceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_BuildProvenance_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 12:
           return internalGetBuildOptions();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 12:
           return internalGetMutableBuildOptions();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1101,15 +1154,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.BuildProvenance.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1168,8 +1218,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_BuildProvenance_descriptor;
     }
 
@@ -1245,38 +1294,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.BuildProvenance) {
-        return mergeFrom((io.grafeas.v1.BuildProvenance)other);
+        return mergeFrom((io.grafeas.v1.BuildProvenance) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1311,9 +1361,10 @@ private static final long serialVersionUID = 0L;
             commandsBuilder_ = null;
             commands_ = other.commands_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            commandsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCommandsFieldBuilder() : null;
+            commandsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCommandsFieldBuilder()
+                    : null;
           } else {
             commandsBuilder_.addAllMessages(other.commands_);
           }
@@ -1337,9 +1388,10 @@ private static final long serialVersionUID = 0L;
             builtArtifactsBuilder_ = null;
             builtArtifacts_ = other.builtArtifacts_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            builtArtifactsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBuiltArtifactsFieldBuilder() : null;
+            builtArtifactsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBuiltArtifactsFieldBuilder()
+                    : null;
           } else {
             builtArtifactsBuilder_.addAllMessages(other.builtArtifacts_);
           }
@@ -1369,8 +1421,7 @@ private static final long serialVersionUID = 0L;
         triggerId_ = other.triggerId_;
         onChanged();
       }
-      internalGetMutableBuildOptions().mergeFrom(
-          other.internalGetBuildOptions());
+      internalGetMutableBuildOptions().mergeFrom(other.internalGetBuildOptions());
       if (!other.getBuilderVersion().isEmpty()) {
         builderVersion_ = other.builderVersion_;
         onChanged();
@@ -1401,104 +1452,109 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              id_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                id_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              projectId_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+            case 18:
+              {
+                projectId_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 18
-            case 26: {
-              io.grafeas.v1.Command m =
-                  input.readMessage(
-                      io.grafeas.v1.Command.parser(),
-                      extensionRegistry);
-              if (commandsBuilder_ == null) {
-                ensureCommandsIsMutable();
-                commands_.add(m);
-              } else {
-                commandsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 26
-            case 34: {
-              io.grafeas.v1.Artifact m =
-                  input.readMessage(
-                      io.grafeas.v1.Artifact.parser(),
-                      extensionRegistry);
-              if (builtArtifactsBuilder_ == null) {
-                ensureBuiltArtifactsIsMutable();
-                builtArtifacts_.add(m);
-              } else {
-                builtArtifactsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
-            case 42: {
-              input.readMessage(
-                  getCreateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 18
+            case 26:
+              {
+                io.grafeas.v1.Command m =
+                    input.readMessage(io.grafeas.v1.Command.parser(), extensionRegistry);
+                if (commandsBuilder_ == null) {
+                  ensureCommandsIsMutable();
+                  commands_.add(m);
+                } else {
+                  commandsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                io.grafeas.v1.Artifact m =
+                    input.readMessage(io.grafeas.v1.Artifact.parser(), extensionRegistry);
+                if (builtArtifactsBuilder_ == null) {
+                  ensureBuiltArtifactsIsMutable();
+                  builtArtifacts_.add(m);
+                } else {
+                  builtArtifactsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 42
-            case 50: {
-              input.readMessage(
-                  getStartTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 50
-            case 58: {
-              input.readMessage(
-                  getEndTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 58
-            case 66: {
-              creator_ = input.readStringRequireUtf8();
+                break;
+              } // case 58
+            case 66:
+              {
+                creator_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 66
-            case 74: {
-              logsUri_ = input.readStringRequireUtf8();
+                break;
+              } // case 66
+            case 74:
+              {
+                logsUri_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 74
-            case 82: {
-              input.readMessage(
-                  getSourceProvenanceFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getSourceProvenanceFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 82
-            case 90: {
-              triggerId_ = input.readStringRequireUtf8();
+                break;
+              } // case 82
+            case 90:
+              {
+                triggerId_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 90
-            case 98: {
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              buildOptions__ = input.readMessage(
-                  BuildOptionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              internalGetMutableBuildOptions().getMutableMap().put(
-                  buildOptions__.getKey(), buildOptions__.getValue());
-              break;
-            } // case 98
-            case 106: {
-              builderVersion_ = input.readStringRequireUtf8();
+                break;
+              } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> buildOptions__ =
+                    input.readMessage(
+                        BuildOptionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableBuildOptions()
+                    .getMutableMap()
+                    .put(buildOptions__.getKey(), buildOptions__.getValue());
+                break;
+              } // case 98
+            case 106:
+              {
+                builderVersion_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 106
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 106
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1508,22 +1564,25 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
      * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
@@ -1532,20 +1591,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
      * @return The bytes for id.
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
+    public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -1553,54 +1613,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
      * @param value The id to set.
      * @return This builder for chaining.
      */
-    public Builder setId(
-        java.lang.String value) {
+    public Builder setId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       id_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      
+
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique identifier of the build.
      * </pre>
      *
      * <code>string id = 1;</code>
+     *
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       id_ = value;
       onChanged();
       return this;
@@ -1608,18 +1675,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * ID of the project.
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
      * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -1628,20 +1697,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * ID of the project.
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
      * @return The bytes for projectId.
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -1649,72 +1719,82 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * ID of the project.
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * ID of the project.
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * ID of the project.
      * </pre>
      *
      * <code>string project_id = 2;</code>
+     *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<io.grafeas.v1.Command> commands_ =
-      java.util.Collections.emptyList();
+    private java.util.List<io.grafeas.v1.Command> commands_ = java.util.Collections.emptyList();
+
     private void ensureCommandsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         commands_ = new java.util.ArrayList<io.grafeas.v1.Command>(commands_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Command, io.grafeas.v1.Command.Builder, io.grafeas.v1.CommandOrBuilder> commandsBuilder_;
+            io.grafeas.v1.Command, io.grafeas.v1.Command.Builder, io.grafeas.v1.CommandOrBuilder>
+        commandsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1729,6 +1809,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1743,6 +1825,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1757,14 +1841,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public Builder setCommands(
-        int index, io.grafeas.v1.Command value) {
+    public Builder setCommands(int index, io.grafeas.v1.Command value) {
       if (commandsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1778,14 +1863,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public Builder setCommands(
-        int index, io.grafeas.v1.Command.Builder builderForValue) {
+    public Builder setCommands(int index, io.grafeas.v1.Command.Builder builderForValue) {
       if (commandsBuilder_ == null) {
         ensureCommandsIsMutable();
         commands_.set(index, builderForValue.build());
@@ -1796,6 +1882,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1816,14 +1904,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public Builder addCommands(
-        int index, io.grafeas.v1.Command value) {
+    public Builder addCommands(int index, io.grafeas.v1.Command value) {
       if (commandsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1837,14 +1926,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public Builder addCommands(
-        io.grafeas.v1.Command.Builder builderForValue) {
+    public Builder addCommands(io.grafeas.v1.Command.Builder builderForValue) {
       if (commandsBuilder_ == null) {
         ensureCommandsIsMutable();
         commands_.add(builderForValue.build());
@@ -1855,14 +1945,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public Builder addCommands(
-        int index, io.grafeas.v1.Command.Builder builderForValue) {
+    public Builder addCommands(int index, io.grafeas.v1.Command.Builder builderForValue) {
       if (commandsBuilder_ == null) {
         ensureCommandsIsMutable();
         commands_.add(index, builderForValue.build());
@@ -1873,18 +1964,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public Builder addAllCommands(
-        java.lang.Iterable<? extends io.grafeas.v1.Command> values) {
+    public Builder addAllCommands(java.lang.Iterable<? extends io.grafeas.v1.Command> values) {
       if (commandsBuilder_ == null) {
         ensureCommandsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, commands_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, commands_);
         onChanged();
       } else {
         commandsBuilder_.addAllMessages(values);
@@ -1892,6 +1983,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1909,6 +2002,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1926,39 +2021,43 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public io.grafeas.v1.Command.Builder getCommandsBuilder(
-        int index) {
+    public io.grafeas.v1.Command.Builder getCommandsBuilder(int index) {
       return getCommandsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public io.grafeas.v1.CommandOrBuilder getCommandsOrBuilder(
-        int index) {
+    public io.grafeas.v1.CommandOrBuilder getCommandsOrBuilder(int index) {
       if (commandsBuilder_ == null) {
-        return commands_.get(index);  } else {
+        return commands_.get(index);
+      } else {
         return commandsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.CommandOrBuilder> 
-         getCommandsOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.CommandOrBuilder> getCommandsOrBuilderList() {
       if (commandsBuilder_ != null) {
         return commandsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1966,6 +2065,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
@@ -1973,60 +2074,66 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
     public io.grafeas.v1.Command.Builder addCommandsBuilder() {
-      return getCommandsFieldBuilder().addBuilder(
-          io.grafeas.v1.Command.getDefaultInstance());
+      return getCommandsFieldBuilder().addBuilder(io.grafeas.v1.Command.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public io.grafeas.v1.Command.Builder addCommandsBuilder(
-        int index) {
-      return getCommandsFieldBuilder().addBuilder(
-          index, io.grafeas.v1.Command.getDefaultInstance());
+    public io.grafeas.v1.Command.Builder addCommandsBuilder(int index) {
+      return getCommandsFieldBuilder()
+          .addBuilder(index, io.grafeas.v1.Command.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Commands requested by the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Command commands = 3;</code>
      */
-    public java.util.List<io.grafeas.v1.Command.Builder> 
-         getCommandsBuilderList() {
+    public java.util.List<io.grafeas.v1.Command.Builder> getCommandsBuilderList() {
       return getCommandsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Command, io.grafeas.v1.Command.Builder, io.grafeas.v1.CommandOrBuilder> 
+            io.grafeas.v1.Command, io.grafeas.v1.Command.Builder, io.grafeas.v1.CommandOrBuilder>
         getCommandsFieldBuilder() {
       if (commandsBuilder_ == null) {
-        commandsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Command, io.grafeas.v1.Command.Builder, io.grafeas.v1.CommandOrBuilder>(
-                commands_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
+        commandsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.Command,
+                io.grafeas.v1.Command.Builder,
+                io.grafeas.v1.CommandOrBuilder>(
+                commands_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         commands_ = null;
       }
       return commandsBuilder_;
     }
 
     private java.util.List<io.grafeas.v1.Artifact> builtArtifacts_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureBuiltArtifactsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
         builtArtifacts_ = new java.util.ArrayList<io.grafeas.v1.Artifact>(builtArtifacts_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Artifact, io.grafeas.v1.Artifact.Builder, io.grafeas.v1.ArtifactOrBuilder> builtArtifactsBuilder_;
+            io.grafeas.v1.Artifact, io.grafeas.v1.Artifact.Builder, io.grafeas.v1.ArtifactOrBuilder>
+        builtArtifactsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2041,6 +2148,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2055,6 +2164,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2069,14 +2180,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public Builder setBuiltArtifacts(
-        int index, io.grafeas.v1.Artifact value) {
+    public Builder setBuiltArtifacts(int index, io.grafeas.v1.Artifact value) {
       if (builtArtifactsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2090,14 +2202,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public Builder setBuiltArtifacts(
-        int index, io.grafeas.v1.Artifact.Builder builderForValue) {
+    public Builder setBuiltArtifacts(int index, io.grafeas.v1.Artifact.Builder builderForValue) {
       if (builtArtifactsBuilder_ == null) {
         ensureBuiltArtifactsIsMutable();
         builtArtifacts_.set(index, builderForValue.build());
@@ -2108,6 +2221,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2128,14 +2243,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public Builder addBuiltArtifacts(
-        int index, io.grafeas.v1.Artifact value) {
+    public Builder addBuiltArtifacts(int index, io.grafeas.v1.Artifact value) {
       if (builtArtifactsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2149,14 +2265,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public Builder addBuiltArtifacts(
-        io.grafeas.v1.Artifact.Builder builderForValue) {
+    public Builder addBuiltArtifacts(io.grafeas.v1.Artifact.Builder builderForValue) {
       if (builtArtifactsBuilder_ == null) {
         ensureBuiltArtifactsIsMutable();
         builtArtifacts_.add(builderForValue.build());
@@ -2167,14 +2284,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public Builder addBuiltArtifacts(
-        int index, io.grafeas.v1.Artifact.Builder builderForValue) {
+    public Builder addBuiltArtifacts(int index, io.grafeas.v1.Artifact.Builder builderForValue) {
       if (builtArtifactsBuilder_ == null) {
         ensureBuiltArtifactsIsMutable();
         builtArtifacts_.add(index, builderForValue.build());
@@ -2185,6 +2303,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2195,8 +2315,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends io.grafeas.v1.Artifact> values) {
       if (builtArtifactsBuilder_ == null) {
         ensureBuiltArtifactsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, builtArtifacts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, builtArtifacts_);
         onChanged();
       } else {
         builtArtifactsBuilder_.addAllMessages(values);
@@ -2204,6 +2323,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2221,6 +2342,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2238,39 +2361,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public io.grafeas.v1.Artifact.Builder getBuiltArtifactsBuilder(
-        int index) {
+    public io.grafeas.v1.Artifact.Builder getBuiltArtifactsBuilder(int index) {
       return getBuiltArtifactsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public io.grafeas.v1.ArtifactOrBuilder getBuiltArtifactsOrBuilder(
-        int index) {
+    public io.grafeas.v1.ArtifactOrBuilder getBuiltArtifactsOrBuilder(int index) {
       if (builtArtifactsBuilder_ == null) {
-        return builtArtifacts_.get(index);  } else {
+        return builtArtifacts_.get(index);
+      } else {
         return builtArtifactsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder> 
-         getBuiltArtifactsOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.ArtifactOrBuilder>
+        getBuiltArtifactsOrBuilderList() {
       if (builtArtifactsBuilder_ != null) {
         return builtArtifactsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2278,6 +2406,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
@@ -2285,38 +2415,44 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
     public io.grafeas.v1.Artifact.Builder addBuiltArtifactsBuilder() {
-      return getBuiltArtifactsFieldBuilder().addBuilder(
-          io.grafeas.v1.Artifact.getDefaultInstance());
+      return getBuiltArtifactsFieldBuilder()
+          .addBuilder(io.grafeas.v1.Artifact.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public io.grafeas.v1.Artifact.Builder addBuiltArtifactsBuilder(
-        int index) {
-      return getBuiltArtifactsFieldBuilder().addBuilder(
-          index, io.grafeas.v1.Artifact.getDefaultInstance());
+    public io.grafeas.v1.Artifact.Builder addBuiltArtifactsBuilder(int index) {
+      return getBuiltArtifactsFieldBuilder()
+          .addBuilder(index, io.grafeas.v1.Artifact.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output of the build.
      * </pre>
      *
      * <code>repeated .grafeas.v1.Artifact built_artifacts = 4;</code>
      */
-    public java.util.List<io.grafeas.v1.Artifact.Builder> 
-         getBuiltArtifactsBuilderList() {
+    public java.util.List<io.grafeas.v1.Artifact.Builder> getBuiltArtifactsBuilderList() {
       return getBuiltArtifactsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.Artifact, io.grafeas.v1.Artifact.Builder, io.grafeas.v1.ArtifactOrBuilder> 
+            io.grafeas.v1.Artifact, io.grafeas.v1.Artifact.Builder, io.grafeas.v1.ArtifactOrBuilder>
         getBuiltArtifactsFieldBuilder() {
       if (builtArtifactsBuilder_ == null) {
-        builtArtifactsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.Artifact, io.grafeas.v1.Artifact.Builder, io.grafeas.v1.ArtifactOrBuilder>(
+        builtArtifactsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.Artifact,
+                io.grafeas.v1.Artifact.Builder,
+                io.grafeas.v1.ArtifactOrBuilder>(
                 builtArtifacts_,
                 ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
@@ -2328,34 +2464,47 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
+     *
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
@@ -2376,14 +2525,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -2394,6 +2544,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
@@ -2404,7 +2556,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -2416,6 +2568,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
@@ -2434,6 +2588,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
@@ -2441,11 +2597,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
@@ -2456,11 +2614,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time at which the build was created.
      * </pre>
@@ -2468,14 +2629,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -2483,24 +2647,33 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
+     *
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
+     *
      * @return The startTime.
      */
     public com.google.protobuf.Timestamp getStartTime() {
@@ -2511,6 +2684,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
@@ -2531,14 +2706,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -2549,6 +2725,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
@@ -2559,7 +2737,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -2571,6 +2749,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
@@ -2589,6 +2769,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
@@ -2596,11 +2778,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
@@ -2611,11 +2795,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was started.
      * </pre>
@@ -2623,14 +2808,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -2638,24 +2826,33 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
+     *
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
+     *
      * @return The endTime.
      */
     public com.google.protobuf.Timestamp getEndTime() {
@@ -2666,6 +2863,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
@@ -2686,14 +2885,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -2704,6 +2904,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
@@ -2714,7 +2916,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -2726,6 +2928,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
@@ -2744,6 +2948,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
@@ -2751,11 +2957,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
@@ -2766,11 +2974,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time at which execution of the build was finished.
      * </pre>
@@ -2778,14 +2987,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
@@ -2793,6 +3005,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object creator_ = "";
     /**
+     *
+     *
      * <pre>
      * E-mail address of the user who initiated this build. Note that this was the
      * user's e-mail address at the time the build was initiated; this address may
@@ -2800,13 +3014,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
      * @return The creator.
      */
     public java.lang.String getCreator() {
       java.lang.Object ref = creator_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         creator_ = s;
         return s;
@@ -2815,6 +3029,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * E-mail address of the user who initiated this build. Note that this was the
      * user's e-mail address at the time the build was initiated; this address may
@@ -2822,15 +3038,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
      * @return The bytes for creator.
      */
-    public com.google.protobuf.ByteString
-        getCreatorBytes() {
+    public com.google.protobuf.ByteString getCreatorBytes() {
       java.lang.Object ref = creator_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         creator_ = b;
         return b;
       } else {
@@ -2838,6 +3053,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * E-mail address of the user who initiated this build. Note that this was the
      * user's e-mail address at the time the build was initiated; this address may
@@ -2845,20 +3062,22 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
      * @param value The creator to set.
      * @return This builder for chaining.
      */
-    public Builder setCreator(
-        java.lang.String value) {
+    public Builder setCreator(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       creator_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * E-mail address of the user who initiated this build. Note that this was the
      * user's e-mail address at the time the build was initiated; this address may
@@ -2866,15 +3085,18 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearCreator() {
-      
+
       creator_ = getDefaultInstance().getCreator();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * E-mail address of the user who initiated this build. Note that this was the
      * user's e-mail address at the time the build was initiated; this address may
@@ -2882,16 +3104,16 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string creator = 8;</code>
+     *
      * @param value The bytes for creator to set.
      * @return This builder for chaining.
      */
-    public Builder setCreatorBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCreatorBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       creator_ = value;
       onChanged();
       return this;
@@ -2899,18 +3121,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object logsUri_ = "";
     /**
+     *
+     *
      * <pre>
      * URI where any logs for this provenance were written.
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
      * @return The logsUri.
      */
     public java.lang.String getLogsUri() {
       java.lang.Object ref = logsUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         logsUri_ = s;
         return s;
@@ -2919,20 +3143,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI where any logs for this provenance were written.
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
      * @return The bytes for logsUri.
      */
-    public com.google.protobuf.ByteString
-        getLogsUriBytes() {
+    public com.google.protobuf.ByteString getLogsUriBytes() {
       java.lang.Object ref = logsUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         logsUri_ = b;
         return b;
       } else {
@@ -2940,54 +3165,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI where any logs for this provenance were written.
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
      * @param value The logsUri to set.
      * @return This builder for chaining.
      */
-    public Builder setLogsUri(
-        java.lang.String value) {
+    public Builder setLogsUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       logsUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * URI where any logs for this provenance were written.
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearLogsUri() {
-      
+
       logsUri_ = getDefaultInstance().getLogsUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * URI where any logs for this provenance were written.
      * </pre>
      *
      * <code>string logs_uri = 9;</code>
+     *
      * @param value The bytes for logsUri to set.
      * @return This builder for chaining.
      */
-    public Builder setLogsUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLogsUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       logsUri_ = value;
       onChanged();
       return this;
@@ -2995,34 +3227,45 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1.Source sourceProvenance_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder> sourceProvenanceBuilder_;
+            io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder>
+        sourceProvenanceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
      *
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
+     *
      * @return Whether the sourceProvenance field is set.
      */
     public boolean hasSourceProvenance() {
       return sourceProvenanceBuilder_ != null || sourceProvenance_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
      *
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
+     *
      * @return The sourceProvenance.
      */
     public io.grafeas.v1.Source getSourceProvenance() {
       if (sourceProvenanceBuilder_ == null) {
-        return sourceProvenance_ == null ? io.grafeas.v1.Source.getDefaultInstance() : sourceProvenance_;
+        return sourceProvenance_ == null
+            ? io.grafeas.v1.Source.getDefaultInstance()
+            : sourceProvenance_;
       } else {
         return sourceProvenanceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
@@ -3043,14 +3286,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
      *
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
      */
-    public Builder setSourceProvenance(
-        io.grafeas.v1.Source.Builder builderForValue) {
+    public Builder setSourceProvenance(io.grafeas.v1.Source.Builder builderForValue) {
       if (sourceProvenanceBuilder_ == null) {
         sourceProvenance_ = builderForValue.build();
         onChanged();
@@ -3061,6 +3305,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
@@ -3071,7 +3317,7 @@ private static final long serialVersionUID = 0L;
       if (sourceProvenanceBuilder_ == null) {
         if (sourceProvenance_ != null) {
           sourceProvenance_ =
-            io.grafeas.v1.Source.newBuilder(sourceProvenance_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.Source.newBuilder(sourceProvenance_).mergeFrom(value).buildPartial();
         } else {
           sourceProvenance_ = value;
         }
@@ -3083,6 +3329,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
@@ -3101,6 +3349,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
@@ -3108,11 +3358,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
      */
     public io.grafeas.v1.Source.Builder getSourceProvenanceBuilder() {
-      
+
       onChanged();
       return getSourceProvenanceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
@@ -3123,11 +3375,14 @@ private static final long serialVersionUID = 0L;
       if (sourceProvenanceBuilder_ != null) {
         return sourceProvenanceBuilder_.getMessageOrBuilder();
       } else {
-        return sourceProvenance_ == null ?
-            io.grafeas.v1.Source.getDefaultInstance() : sourceProvenance_;
+        return sourceProvenance_ == null
+            ? io.grafeas.v1.Source.getDefaultInstance()
+            : sourceProvenance_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Details of the Source input to the build.
      * </pre>
@@ -3135,14 +3390,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Source source_provenance = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder> 
+            io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder>
         getSourceProvenanceFieldBuilder() {
       if (sourceProvenanceBuilder_ == null) {
-        sourceProvenanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder>(
-                getSourceProvenance(),
-                getParentForChildren(),
-                isClean());
+        sourceProvenanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Source, io.grafeas.v1.Source.Builder, io.grafeas.v1.SourceOrBuilder>(
+                getSourceProvenance(), getParentForChildren(), isClean());
         sourceProvenance_ = null;
       }
       return sourceProvenanceBuilder_;
@@ -3150,18 +3404,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object triggerId_ = "";
     /**
+     *
+     *
      * <pre>
      * Trigger identifier if the build was triggered automatically; empty if not.
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
      * @return The triggerId.
      */
     public java.lang.String getTriggerId() {
       java.lang.Object ref = triggerId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         triggerId_ = s;
         return s;
@@ -3170,20 +3426,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Trigger identifier if the build was triggered automatically; empty if not.
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
      * @return The bytes for triggerId.
      */
-    public com.google.protobuf.ByteString
-        getTriggerIdBytes() {
+    public com.google.protobuf.ByteString getTriggerIdBytes() {
       java.lang.Object ref = triggerId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         triggerId_ = b;
         return b;
       } else {
@@ -3191,75 +3448,84 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Trigger identifier if the build was triggered automatically; empty if not.
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
      * @param value The triggerId to set.
      * @return This builder for chaining.
      */
-    public Builder setTriggerId(
-        java.lang.String value) {
+    public Builder setTriggerId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       triggerId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Trigger identifier if the build was triggered automatically; empty if not.
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearTriggerId() {
-      
+
       triggerId_ = getDefaultInstance().getTriggerId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Trigger identifier if the build was triggered automatically; empty if not.
      * </pre>
      *
      * <code>string trigger_id = 11;</code>
+     *
      * @param value The bytes for triggerId to set.
      * @return This builder for chaining.
      */
-    public Builder setTriggerIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTriggerIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       triggerId_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> buildOptions_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> buildOptions_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetBuildOptions() {
+        internalGetBuildOptions() {
       if (buildOptions_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             BuildOptionsDefaultEntryHolder.defaultEntry);
       }
       return buildOptions_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableBuildOptions() {
-      onChanged();;
+        internalGetMutableBuildOptions() {
+      onChanged();
+      ;
       if (buildOptions_ == null) {
-        buildOptions_ = com.google.protobuf.MapField.newMapField(
-            BuildOptionsDefaultEntryHolder.defaultEntry);
+        buildOptions_ =
+            com.google.protobuf.MapField.newMapField(BuildOptionsDefaultEntryHolder.defaultEntry);
       }
       if (!buildOptions_.isMutable()) {
         buildOptions_ = buildOptions_.copy();
@@ -3271,6 +3537,8 @@ private static final long serialVersionUID = 0L;
       return internalGetBuildOptions().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3278,22 +3546,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
-
     @java.lang.Override
-    public boolean containsBuildOptions(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+    public boolean containsBuildOptions(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
       return internalGetBuildOptions().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getBuildOptionsMap()} instead.
-     */
+    /** Use {@link #getBuildOptionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getBuildOptions() {
       return getBuildOptionsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3302,11 +3570,12 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getBuildOptionsMap() {
       return internalGetBuildOptions().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3315,16 +3584,17 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
     @java.lang.Override
-
     public java.lang.String getBuildOptionsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetBuildOptions().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildOptions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3333,12 +3603,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
     @java.lang.Override
-
-    public java.lang.String getBuildOptionsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetBuildOptions().getMap();
+    public java.lang.String getBuildOptionsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetBuildOptions().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -3346,11 +3615,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearBuildOptions() {
-      internalGetMutableBuildOptions().getMutableMap()
-          .clear();
+      internalGetMutableBuildOptions().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3358,23 +3628,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
-
-    public Builder removeBuildOptions(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      internalGetMutableBuildOptions().getMutableMap()
-          .remove(key);
+    public Builder removeBuildOptions(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableBuildOptions().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableBuildOptions() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableBuildOptions() {
       return internalGetMutableBuildOptions().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3382,19 +3650,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
-    public Builder putBuildOptions(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new NullPointerException("map key"); }
+    public Builder putBuildOptions(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
       if (value == null) {
-  throw new NullPointerException("map value");
-}
+        throw new NullPointerException("map value");
+      }
 
-      internalGetMutableBuildOptions().getMutableMap()
-          .put(key, value);
+      internalGetMutableBuildOptions().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Special options applied to this build. This is a catch-all field where
      * build providers can enter any desired additional details.
@@ -3402,28 +3671,27 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; build_options = 12;</code>
      */
-
-    public Builder putAllBuildOptions(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableBuildOptions().getMutableMap()
-          .putAll(values);
+    public Builder putAllBuildOptions(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableBuildOptions().getMutableMap().putAll(values);
       return this;
     }
 
     private java.lang.Object builderVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * Version string of the builder at the time this build was executed.
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
      * @return The builderVersion.
      */
     public java.lang.String getBuilderVersion() {
       java.lang.Object ref = builderVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         builderVersion_ = s;
         return s;
@@ -3432,20 +3700,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Version string of the builder at the time this build was executed.
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
      * @return The bytes for builderVersion.
      */
-    public com.google.protobuf.ByteString
-        getBuilderVersionBytes() {
+    public com.google.protobuf.ByteString getBuilderVersionBytes() {
       java.lang.Object ref = builderVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         builderVersion_ = b;
         return b;
       } else {
@@ -3453,61 +3722,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Version string of the builder at the time this build was executed.
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
      * @param value The builderVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setBuilderVersion(
-        java.lang.String value) {
+    public Builder setBuilderVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       builderVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Version string of the builder at the time this build was executed.
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearBuilderVersion() {
-      
+
       builderVersion_ = getDefaultInstance().getBuilderVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Version string of the builder at the time this build was executed.
      * </pre>
      *
      * <code>string builder_version = 13;</code>
+     *
      * @param value The bytes for builderVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setBuilderVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setBuilderVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       builderVersion_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -3517,12 +3793,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.BuildProvenance)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.BuildProvenance)
   private static final io.grafeas.v1.BuildProvenance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.BuildProvenance();
   }
@@ -3531,27 +3807,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BuildProvenance>
-      PARSER = new com.google.protobuf.AbstractParser<BuildProvenance>() {
-    @java.lang.Override
-    public BuildProvenance parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<BuildProvenance> PARSER =
+      new com.google.protobuf.AbstractParser<BuildProvenance>() {
+        @java.lang.Override
+        public BuildProvenance parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<BuildProvenance> parser() {
     return PARSER;
@@ -3566,6 +3842,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.BuildProvenance getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

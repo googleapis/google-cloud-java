@@ -19,73 +19,89 @@
 
 package io.grafeas.v1;
 
-public interface ComplianceVersionOrBuilder extends
+public interface ComplianceVersionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.ComplianceVersion)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The CPE URI (https://cpe.mitre.org/specification/) this benchmark is
    * applicable to.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
   /**
+   *
+   *
    * <pre>
    * The CPE URI (https://cpe.mitre.org/specification/) this benchmark is
    * applicable to.
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
+   *
    * @return The bytes for cpeUri.
    */
-  com.google.protobuf.ByteString
-      getCpeUriBytes();
+  com.google.protobuf.ByteString getCpeUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the document that defines this benchmark, e.g. "CIS
    * Container-Optimized OS".
    * </pre>
    *
    * <code>string benchmark_document = 3;</code>
+   *
    * @return The benchmarkDocument.
    */
   java.lang.String getBenchmarkDocument();
   /**
+   *
+   *
    * <pre>
    * The name of the document that defines this benchmark, e.g. "CIS
    * Container-Optimized OS".
    * </pre>
    *
    * <code>string benchmark_document = 3;</code>
+   *
    * @return The bytes for benchmarkDocument.
    */
-  com.google.protobuf.ByteString
-      getBenchmarkDocumentBytes();
+  com.google.protobuf.ByteString getBenchmarkDocumentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The version of the benchmark. This is set to the version of the OS-specific
    * CIS document the benchmark is defined in.
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
    * @return The version.
    */
   java.lang.String getVersion();
   /**
+   *
+   *
    * <pre>
    * The version of the benchmark. This is set to the version of the OS-specific
    * CIS document the benchmark is defined in.
    * </pre>
    *
    * <code>string version = 2;</code>
+   *
    * @return The bytes for version.
    */
-  com.google.protobuf.ByteString
-      getVersionBytes();
+  com.google.protobuf.ByteString getVersionBytes();
 }

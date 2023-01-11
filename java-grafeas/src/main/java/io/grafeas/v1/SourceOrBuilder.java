@@ -19,33 +19,41 @@
 
 package io.grafeas.v1;
 
-public interface SourceOrBuilder extends
+public interface SourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Source)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If provided, the input binary artifacts for the build came from this
    * location.
    * </pre>
    *
    * <code>string artifact_storage_source_uri = 1;</code>
+   *
    * @return The artifactStorageSourceUri.
    */
   java.lang.String getArtifactStorageSourceUri();
   /**
+   *
+   *
    * <pre>
    * If provided, the input binary artifacts for the build came from this
    * location.
    * </pre>
    *
    * <code>string artifact_storage_source_uri = 1;</code>
+   *
    * @return The bytes for artifactStorageSourceUri.
    */
-  com.google.protobuf.ByteString
-      getArtifactStorageSourceUriBytes();
+  com.google.protobuf.ByteString getArtifactStorageSourceUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -59,6 +67,8 @@ public interface SourceOrBuilder extends
    */
   int getFileHashesCount();
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -70,15 +80,13 @@ public interface SourceOrBuilder extends
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
-  boolean containsFileHashes(
-      java.lang.String key);
-  /**
-   * Use {@link #getFileHashesMap()} instead.
-   */
+  boolean containsFileHashes(java.lang.String key);
+  /** Use {@link #getFileHashesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, io.grafeas.v1.FileHashes>
-  getFileHashes();
+  java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashes();
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -90,9 +98,10 @@ public interface SourceOrBuilder extends
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
-  java.util.Map<java.lang.String, io.grafeas.v1.FileHashes>
-  getFileHashesMap();
+  java.util.Map<java.lang.String, io.grafeas.v1.FileHashes> getFileHashesMap();
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -106,11 +115,13 @@ public interface SourceOrBuilder extends
    */
 
   /* nullable */
-io.grafeas.v1.FileHashes getFileHashesOrDefault(
+  io.grafeas.v1.FileHashes getFileHashesOrDefault(
       java.lang.String key,
       /* nullable */
-io.grafeas.v1.FileHashes defaultValue);
+      io.grafeas.v1.FileHashes defaultValue);
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -122,29 +133,35 @@ io.grafeas.v1.FileHashes defaultValue);
    *
    * <code>map&lt;string, .grafeas.v1.FileHashes&gt; file_hashes = 2;</code>
    */
-
-  io.grafeas.v1.FileHashes getFileHashesOrThrow(
-      java.lang.String key);
+  io.grafeas.v1.FileHashes getFileHashesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * If provided, the source code used for the build came from this location.
    * </pre>
    *
    * <code>.grafeas.v1.SourceContext context = 3;</code>
+   *
    * @return Whether the context field is set.
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * If provided, the source code used for the build came from this location.
    * </pre>
    *
    * <code>.grafeas.v1.SourceContext context = 3;</code>
+   *
    * @return The context.
    */
   io.grafeas.v1.SourceContext getContext();
   /**
+   *
+   *
    * <pre>
    * If provided, the source code used for the build came from this location.
    * </pre>
@@ -154,6 +171,8 @@ io.grafeas.v1.FileHashes defaultValue);
   io.grafeas.v1.SourceContextOrBuilder getContextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -163,9 +182,10 @@ io.grafeas.v1.FileHashes defaultValue);
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
-  java.util.List<io.grafeas.v1.SourceContext> 
-      getAdditionalContextsList();
+  java.util.List<io.grafeas.v1.SourceContext> getAdditionalContextsList();
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -177,6 +197,8 @@ io.grafeas.v1.FileHashes defaultValue);
    */
   io.grafeas.v1.SourceContext getAdditionalContexts(int index);
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -188,6 +210,8 @@ io.grafeas.v1.FileHashes defaultValue);
    */
   int getAdditionalContextsCount();
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -197,9 +221,11 @@ io.grafeas.v1.FileHashes defaultValue);
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
-  java.util.List<? extends io.grafeas.v1.SourceContextOrBuilder> 
+  java.util.List<? extends io.grafeas.v1.SourceContextOrBuilder>
       getAdditionalContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -209,6 +235,5 @@ io.grafeas.v1.FileHashes defaultValue);
    *
    * <code>repeated .grafeas.v1.SourceContext additional_contexts = 4;</code>
    */
-  io.grafeas.v1.SourceContextOrBuilder getAdditionalContextsOrBuilder(
-      int index);
+  io.grafeas.v1.SourceContextOrBuilder getAdditionalContextsOrBuilder(int index);
 }

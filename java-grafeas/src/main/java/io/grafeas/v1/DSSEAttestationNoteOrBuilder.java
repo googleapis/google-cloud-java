@@ -19,29 +19,38 @@
 
 package io.grafeas.v1;
 
-public interface DSSEAttestationNoteOrBuilder extends
+public interface DSSEAttestationNoteOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.DSSEAttestationNote)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * DSSEHint hints at the purpose of the attestation authority.
    * </pre>
    *
    * <code>.grafeas.v1.DSSEAttestationNote.DSSEHint hint = 1;</code>
+   *
    * @return Whether the hint field is set.
    */
   boolean hasHint();
   /**
+   *
+   *
    * <pre>
    * DSSEHint hints at the purpose of the attestation authority.
    * </pre>
    *
    * <code>.grafeas.v1.DSSEAttestationNote.DSSEHint hint = 1;</code>
+   *
    * @return The hint.
    */
   io.grafeas.v1.DSSEAttestationNote.DSSEHint getHint();
   /**
+   *
+   *
    * <pre>
    * DSSEHint hints at the purpose of the attestation authority.
    * </pre>

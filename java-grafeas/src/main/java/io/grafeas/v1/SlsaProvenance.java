@@ -19,52 +19,53 @@
 
 package io.grafeas.v1;
 
-/**
- * Protobuf type {@code grafeas.v1.SlsaProvenance}
- */
-public final class SlsaProvenance extends
-    com.google.protobuf.GeneratedMessageV3 implements
+/** Protobuf type {@code grafeas.v1.SlsaProvenance} */
+public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance)
     SlsaProvenanceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SlsaProvenance.newBuilder() to construct.
   private SlsaProvenance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SlsaProvenance() {
     materials_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new SlsaProvenance();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_fieldAccessorTable
+    return io.grafeas.v1.SlsaProvenanceProto
+        .internal_static_grafeas_v1_SlsaProvenance_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.SlsaProvenance.class, io.grafeas.v1.SlsaProvenance.Builder.class);
   }
 
-  public interface SlsaRecipeOrBuilder extends
+  public interface SlsaRecipeOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.SlsaProvenance.SlsaRecipe)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the
      * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -72,10 +73,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The type.
      */
     java.lang.String getType();
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the
      * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -83,12 +87,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The bytes for type.
      */
-    com.google.protobuf.ByteString
-        getTypeBytes();
+    com.google.protobuf.ByteString getTypeBytes();
 
     /**
+     *
+     *
      * <pre>
      * Index in materials containing the recipe steps that are not implied by
      * recipe.type. For example, if the recipe type were "make", then this would
@@ -98,11 +104,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 defined_in_material = 2;</code>
+     *
      * @return The definedInMaterial.
      */
     long getDefinedInMaterial();
 
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -112,10 +121,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return The entryPoint.
      */
     java.lang.String getEntryPoint();
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -125,12 +137,14 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return The bytes for entryPoint.
      */
-    com.google.protobuf.ByteString
-        getEntryPointBytes();
+    com.google.protobuf.ByteString getEntryPointBytes();
 
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -140,10 +154,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any arguments = 4;</code>
+     *
      * @return Whether the arguments field is set.
      */
     boolean hasArguments();
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -153,10 +170,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any arguments = 4;</code>
+     *
      * @return The arguments.
      */
     com.google.protobuf.Any getArguments();
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -170,6 +190,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.AnyOrBuilder getArgumentsOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating
      * the recipe. Usually only needed for reproducing the build but not
@@ -178,10 +200,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any environment = 5;</code>
+     *
      * @return Whether the environment field is set.
      */
     boolean hasEnvironment();
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating
      * the recipe. Usually only needed for reproducing the build but not
@@ -190,10 +215,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any environment = 5;</code>
+     *
      * @return The environment.
      */
     com.google.protobuf.Any getEnvironment();
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating
      * the recipe. Usually only needed for reproducing the build but not
@@ -206,6 +234,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.AnyOrBuilder getEnvironmentOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * Steps taken to build the artifact.
    * For a TaskRun, typically each container corresponds to one step in the
@@ -214,15 +244,16 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaRecipe}
    */
-  public static final class SlsaRecipe extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class SlsaRecipe extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaRecipe)
       SlsaRecipeOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SlsaRecipe.newBuilder() to construct.
     private SlsaRecipe(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private SlsaRecipe() {
       type_ = "";
       entryPoint_ = "";
@@ -230,32 +261,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SlsaRecipe();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_fieldAccessorTable
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.SlsaProvenance.SlsaRecipe.class, io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder.class);
+              io.grafeas.v1.SlsaProvenance.SlsaRecipe.class,
+              io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private volatile java.lang.Object type_;
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the
      * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -263,6 +297,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The type.
      */
     @java.lang.Override
@@ -271,14 +306,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI indicating what type of recipe was performed. It determines the
      * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -286,16 +322,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 1;</code>
+     *
      * @return The bytes for type.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -306,6 +341,8 @@ private static final long serialVersionUID = 0L;
     public static final int DEFINED_IN_MATERIAL_FIELD_NUMBER = 2;
     private long definedInMaterial_;
     /**
+     *
+     *
      * <pre>
      * Index in materials containing the recipe steps that are not implied by
      * recipe.type. For example, if the recipe type were "make", then this would
@@ -315,6 +352,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 defined_in_material = 2;</code>
+     *
      * @return The definedInMaterial.
      */
     @java.lang.Override
@@ -325,6 +363,8 @@ private static final long serialVersionUID = 0L;
     public static final int ENTRY_POINT_FIELD_NUMBER = 3;
     private volatile java.lang.Object entryPoint_;
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -334,6 +374,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return The entryPoint.
      */
     @java.lang.Override
@@ -342,14 +383,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         entryPoint_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * String identifying the entry point into the build.
      * This is often a path to a configuration file and/or a target label within
@@ -359,16 +401,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string entry_point = 3;</code>
+     *
      * @return The bytes for entryPoint.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEntryPointBytes() {
+    public com.google.protobuf.ByteString getEntryPointBytes() {
       java.lang.Object ref = entryPoint_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         entryPoint_ = b;
         return b;
       } else {
@@ -379,6 +420,8 @@ private static final long serialVersionUID = 0L;
     public static final int ARGUMENTS_FIELD_NUMBER = 4;
     private com.google.protobuf.Any arguments_;
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -388,6 +431,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any arguments = 4;</code>
+     *
      * @return Whether the arguments field is set.
      */
     @java.lang.Override
@@ -395,6 +439,8 @@ private static final long serialVersionUID = 0L;
       return arguments_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -404,6 +450,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any arguments = 4;</code>
+     *
      * @return The arguments.
      */
     @java.lang.Override
@@ -411,6 +458,8 @@ private static final long serialVersionUID = 0L;
       return arguments_ == null ? com.google.protobuf.Any.getDefaultInstance() : arguments_;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of all external inputs that influenced the build on top of
      * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -429,6 +478,8 @@ private static final long serialVersionUID = 0L;
     public static final int ENVIRONMENT_FIELD_NUMBER = 5;
     private com.google.protobuf.Any environment_;
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating
      * the recipe. Usually only needed for reproducing the build but not
@@ -437,6 +488,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any environment = 5;</code>
+     *
      * @return Whether the environment field is set.
      */
     @java.lang.Override
@@ -444,6 +496,8 @@ private static final long serialVersionUID = 0L;
       return environment_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating
      * the recipe. Usually only needed for reproducing the build but not
@@ -452,6 +506,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Any environment = 5;</code>
+     *
      * @return The environment.
      */
     @java.lang.Override
@@ -459,6 +514,8 @@ private static final long serialVersionUID = 0L;
       return environment_ == null ? com.google.protobuf.Any.getDefaultInstance() : environment_;
     }
     /**
+     *
+     *
      * <pre>
      * Any other builder-controlled inputs necessary for correctly evaluating
      * the recipe. Usually only needed for reproducing the build but not
@@ -474,6 +531,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -485,8 +543,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
       }
@@ -515,19 +572,16 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
       }
       if (definedInMaterial_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, definedInMaterial_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, definedInMaterial_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entryPoint_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, entryPoint_);
       }
       if (arguments_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getArguments());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getArguments());
       }
       if (environment_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getEnvironment());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEnvironment());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -537,28 +591,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1.SlsaProvenance.SlsaRecipe)) {
         return super.equals(obj);
       }
       io.grafeas.v1.SlsaProvenance.SlsaRecipe other = (io.grafeas.v1.SlsaProvenance.SlsaRecipe) obj;
 
-      if (!getType()
-          .equals(other.getType())) return false;
-      if (getDefinedInMaterial()
-          != other.getDefinedInMaterial()) return false;
-      if (!getEntryPoint()
-          .equals(other.getEntryPoint())) return false;
+      if (!getType().equals(other.getType())) return false;
+      if (getDefinedInMaterial() != other.getDefinedInMaterial()) return false;
+      if (!getEntryPoint().equals(other.getEntryPoint())) return false;
       if (hasArguments() != other.hasArguments()) return false;
       if (hasArguments()) {
-        if (!getArguments()
-            .equals(other.getArguments())) return false;
+        if (!getArguments().equals(other.getArguments())) return false;
       }
       if (hasEnvironment() != other.hasEnvironment()) return false;
       if (hasEnvironment()) {
-        if (!getEnvironment()
-            .equals(other.getEnvironment())) return false;
+        if (!getEnvironment().equals(other.getEnvironment())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -574,8 +623,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + DEFINED_IN_MATERIAL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getDefinedInMaterial());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDefinedInMaterial());
       hash = (37 * hash) + ENTRY_POINT_FIELD_NUMBER;
       hash = (53 * hash) + getEntryPoint().hashCode();
       if (hasArguments()) {
@@ -591,88 +639,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaRecipe parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1.SlsaProvenance.SlsaRecipe prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -682,6 +736,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Steps taken to build the artifact.
      * For a TaskRun, typically each container corresponds to one step in the
@@ -690,33 +746,33 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaRecipe}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaRecipe)
         io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_fieldAccessorTable
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.SlsaProvenance.SlsaRecipe.class, io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder.class);
+                io.grafeas.v1.SlsaProvenance.SlsaRecipe.class,
+                io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder.class);
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaRecipe.newBuilder()
-      private Builder() {
+      private Builder() {}
 
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -742,9 +798,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
       }
 
       @java.lang.Override
@@ -763,7 +819,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public io.grafeas.v1.SlsaProvenance.SlsaRecipe buildPartial() {
-        io.grafeas.v1.SlsaProvenance.SlsaRecipe result = new io.grafeas.v1.SlsaProvenance.SlsaRecipe(this);
+        io.grafeas.v1.SlsaProvenance.SlsaRecipe result =
+            new io.grafeas.v1.SlsaProvenance.SlsaRecipe(this);
         result.type_ = type_;
         result.definedInMaterial_ = definedInMaterial_;
         result.entryPoint_ = entryPoint_;
@@ -785,38 +842,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.SlsaProvenance.SlsaRecipe) {
-          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaRecipe)other);
+          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaRecipe) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -868,41 +928,43 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                type_ = input.readStringRequireUtf8();
+              case 10:
+                {
+                  type_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-              case 16: {
-                definedInMaterial_ = input.readInt64();
+                  break;
+                } // case 10
+              case 16:
+                {
+                  definedInMaterial_ = input.readInt64();
 
-                break;
-              } // case 16
-              case 26: {
-                entryPoint_ = input.readStringRequireUtf8();
+                  break;
+                } // case 16
+              case 26:
+                {
+                  entryPoint_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getArgumentsFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getArgumentsFieldBuilder().getBuilder(), extensionRegistry);
 
-                break;
-              } // case 34
-              case 42: {
-                input.readMessage(
-                    getEnvironmentFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
 
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -915,6 +977,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object type_ = "";
       /**
+       *
+       *
        * <pre>
        * URI indicating what type of recipe was performed. It determines the
        * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -922,13 +986,13 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
        * @return The type.
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           type_ = s;
           return s;
@@ -937,6 +1001,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * URI indicating what type of recipe was performed. It determines the
        * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -944,15 +1010,14 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
        * @return The bytes for type.
        */
-      public com.google.protobuf.ByteString
-          getTypeBytes() {
+      public com.google.protobuf.ByteString getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           type_ = b;
           return b;
         } else {
@@ -960,6 +1025,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * URI indicating what type of recipe was performed. It determines the
        * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -967,20 +1034,22 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(
-          java.lang.String value) {
+      public Builder setType(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         type_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * URI indicating what type of recipe was performed. It determines the
        * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -988,15 +1057,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+
         type_ = getDefaultInstance().getType();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * URI indicating what type of recipe was performed. It determines the
        * meaning of recipe.entryPoint, recipe.arguments, recipe.environment, and
@@ -1004,23 +1076,25 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string type = 1;</code>
+       *
        * @param value The bytes for type to set.
        * @return This builder for chaining.
        */
-      public Builder setTypeBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         type_ = value;
         onChanged();
         return this;
       }
 
-      private long definedInMaterial_ ;
+      private long definedInMaterial_;
       /**
+       *
+       *
        * <pre>
        * Index in materials containing the recipe steps that are not implied by
        * recipe.type. For example, if the recipe type were "make", then this would
@@ -1030,6 +1104,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 defined_in_material = 2;</code>
+       *
        * @return The definedInMaterial.
        */
       @java.lang.Override
@@ -1037,6 +1112,8 @@ private static final long serialVersionUID = 0L;
         return definedInMaterial_;
       }
       /**
+       *
+       *
        * <pre>
        * Index in materials containing the recipe steps that are not implied by
        * recipe.type. For example, if the recipe type were "make", then this would
@@ -1046,16 +1123,19 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 defined_in_material = 2;</code>
+       *
        * @param value The definedInMaterial to set.
        * @return This builder for chaining.
        */
       public Builder setDefinedInMaterial(long value) {
-        
+
         definedInMaterial_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Index in materials containing the recipe steps that are not implied by
        * recipe.type. For example, if the recipe type were "make", then this would
@@ -1065,10 +1145,11 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>int64 defined_in_material = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearDefinedInMaterial() {
-        
+
         definedInMaterial_ = 0L;
         onChanged();
         return this;
@@ -1076,6 +1157,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object entryPoint_ = "";
       /**
+       *
+       *
        * <pre>
        * String identifying the entry point into the build.
        * This is often a path to a configuration file and/or a target label within
@@ -1085,13 +1168,13 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string entry_point = 3;</code>
+       *
        * @return The entryPoint.
        */
       public java.lang.String getEntryPoint() {
         java.lang.Object ref = entryPoint_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           entryPoint_ = s;
           return s;
@@ -1100,6 +1183,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * String identifying the entry point into the build.
        * This is often a path to a configuration file and/or a target label within
@@ -1109,15 +1194,14 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string entry_point = 3;</code>
+       *
        * @return The bytes for entryPoint.
        */
-      public com.google.protobuf.ByteString
-          getEntryPointBytes() {
+      public com.google.protobuf.ByteString getEntryPointBytes() {
         java.lang.Object ref = entryPoint_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           entryPoint_ = b;
           return b;
         } else {
@@ -1125,6 +1209,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * String identifying the entry point into the build.
        * This is often a path to a configuration file and/or a target label within
@@ -1134,20 +1220,22 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string entry_point = 3;</code>
+       *
        * @param value The entryPoint to set.
        * @return This builder for chaining.
        */
-      public Builder setEntryPoint(
-          java.lang.String value) {
+      public Builder setEntryPoint(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         entryPoint_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * String identifying the entry point into the build.
        * This is often a path to a configuration file and/or a target label within
@@ -1157,15 +1245,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string entry_point = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearEntryPoint() {
-        
+
         entryPoint_ = getDefaultInstance().getEntryPoint();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * String identifying the entry point into the build.
        * This is often a path to a configuration file and/or a target label within
@@ -1175,16 +1266,16 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string entry_point = 3;</code>
+       *
        * @param value The bytes for entryPoint to set.
        * @return This builder for chaining.
        */
-      public Builder setEntryPointBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setEntryPointBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         entryPoint_ = value;
         onChanged();
         return this;
@@ -1192,8 +1283,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Any arguments_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> argumentsBuilder_;
+              com.google.protobuf.Any,
+              com.google.protobuf.Any.Builder,
+              com.google.protobuf.AnyOrBuilder>
+          argumentsBuilder_;
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1203,12 +1299,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Any arguments = 4;</code>
+       *
        * @return Whether the arguments field is set.
        */
       public boolean hasArguments() {
         return argumentsBuilder_ != null || arguments_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1218,6 +1317,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Any arguments = 4;</code>
+       *
        * @return The arguments.
        */
       public com.google.protobuf.Any getArguments() {
@@ -1228,6 +1328,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1252,6 +1354,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1262,8 +1366,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.protobuf.Any arguments = 4;</code>
        */
-      public Builder setArguments(
-          com.google.protobuf.Any.Builder builderForValue) {
+      public Builder setArguments(com.google.protobuf.Any.Builder builderForValue) {
         if (argumentsBuilder_ == null) {
           arguments_ = builderForValue.build();
           onChanged();
@@ -1274,6 +1377,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1288,7 +1393,7 @@ private static final long serialVersionUID = 0L;
         if (argumentsBuilder_ == null) {
           if (arguments_ != null) {
             arguments_ =
-              com.google.protobuf.Any.newBuilder(arguments_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Any.newBuilder(arguments_).mergeFrom(value).buildPartial();
           } else {
             arguments_ = value;
           }
@@ -1300,6 +1405,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1322,6 +1429,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1333,11 +1442,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Any arguments = 4;</code>
        */
       public com.google.protobuf.Any.Builder getArgumentsBuilder() {
-        
+
         onChanged();
         return getArgumentsFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1352,11 +1463,12 @@ private static final long serialVersionUID = 0L;
         if (argumentsBuilder_ != null) {
           return argumentsBuilder_.getMessageOrBuilder();
         } else {
-          return arguments_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : arguments_;
+          return arguments_ == null ? com.google.protobuf.Any.getDefaultInstance() : arguments_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Collection of all external inputs that influenced the build on top of
        * recipe.definedInMaterial and recipe.entryPoint. For example, if the
@@ -1368,14 +1480,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Any arguments = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              com.google.protobuf.Any,
+              com.google.protobuf.Any.Builder,
+              com.google.protobuf.AnyOrBuilder>
           getArgumentsFieldBuilder() {
         if (argumentsBuilder_ == null) {
-          argumentsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getArguments(),
-                  getParentForChildren(),
-                  isClean());
+          argumentsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Any,
+                  com.google.protobuf.Any.Builder,
+                  com.google.protobuf.AnyOrBuilder>(
+                  getArguments(), getParentForChildren(), isClean());
           arguments_ = null;
         }
         return argumentsBuilder_;
@@ -1383,8 +1498,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Any environment_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> environmentBuilder_;
+              com.google.protobuf.Any,
+              com.google.protobuf.Any.Builder,
+              com.google.protobuf.AnyOrBuilder>
+          environmentBuilder_;
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1393,12 +1513,15 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Any environment = 5;</code>
+       *
        * @return Whether the environment field is set.
        */
       public boolean hasEnvironment() {
         return environmentBuilder_ != null || environment_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1407,6 +1530,7 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>.google.protobuf.Any environment = 5;</code>
+       *
        * @return The environment.
        */
       public com.google.protobuf.Any getEnvironment() {
@@ -1417,6 +1541,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1440,6 +1566,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1449,8 +1577,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.protobuf.Any environment = 5;</code>
        */
-      public Builder setEnvironment(
-          com.google.protobuf.Any.Builder builderForValue) {
+      public Builder setEnvironment(com.google.protobuf.Any.Builder builderForValue) {
         if (environmentBuilder_ == null) {
           environment_ = builderForValue.build();
           onChanged();
@@ -1461,6 +1588,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1474,7 +1603,7 @@ private static final long serialVersionUID = 0L;
         if (environmentBuilder_ == null) {
           if (environment_ != null) {
             environment_ =
-              com.google.protobuf.Any.newBuilder(environment_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Any.newBuilder(environment_).mergeFrom(value).buildPartial();
           } else {
             environment_ = value;
           }
@@ -1486,6 +1615,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1507,6 +1638,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1517,11 +1650,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Any environment = 5;</code>
        */
       public com.google.protobuf.Any.Builder getEnvironmentBuilder() {
-        
+
         onChanged();
         return getEnvironmentFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1535,11 +1670,12 @@ private static final long serialVersionUID = 0L;
         if (environmentBuilder_ != null) {
           return environmentBuilder_.getMessageOrBuilder();
         } else {
-          return environment_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : environment_;
+          return environment_ == null ? com.google.protobuf.Any.getDefaultInstance() : environment_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Any other builder-controlled inputs necessary for correctly evaluating
        * the recipe. Usually only needed for reproducing the build but not
@@ -1550,18 +1686,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Any environment = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+              com.google.protobuf.Any,
+              com.google.protobuf.Any.Builder,
+              com.google.protobuf.AnyOrBuilder>
           getEnvironmentFieldBuilder() {
         if (environmentBuilder_ == null) {
-          environmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getEnvironment(),
-                  getParentForChildren(),
-                  isClean());
+          environmentBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Any,
+                  com.google.protobuf.Any.Builder,
+                  com.google.protobuf.AnyOrBuilder>(
+                  getEnvironment(), getParentForChildren(), isClean());
           environment_ = null;
         }
         return environmentBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1574,12 +1714,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1.SlsaProvenance.SlsaRecipe)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.SlsaProvenance.SlsaRecipe)
     private static final io.grafeas.v1.SlsaProvenance.SlsaRecipe DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.SlsaProvenance.SlsaRecipe();
     }
@@ -1588,27 +1728,28 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SlsaRecipe>
-        PARSER = new com.google.protobuf.AbstractParser<SlsaRecipe>() {
-      @java.lang.Override
-      public SlsaRecipe parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+    private static final com.google.protobuf.Parser<SlsaRecipe> PARSER =
+        new com.google.protobuf.AbstractParser<SlsaRecipe>() {
+          @java.lang.Override
+          public SlsaRecipe parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
 
     public static com.google.protobuf.Parser<SlsaRecipe> parser() {
       return PARSER;
@@ -1623,47 +1764,58 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1.SlsaProvenance.SlsaRecipe getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface SlsaCompletenessOrBuilder extends
+  public interface SlsaCompletenessOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.SlsaProvenance.SlsaCompleteness)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that recipe.arguments is complete, meaning
      * that all external inputs are properly captured in the recipe.
      * </pre>
      *
      * <code>bool arguments = 1;</code>
+     *
      * @return The arguments.
      */
     boolean getArguments();
 
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that recipe.environment is claimed to be
      * complete.
      * </pre>
      *
      * <code>bool environment = 2;</code>
+     *
      * @return The environment.
      */
     boolean getEnvironment();
 
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that materials are complete, usually through
      * some controls to prevent network access. Sometimes called "hermetic".
      * </pre>
      *
      * <code>bool materials = 3;</code>
+     *
      * @return The materials.
      */
     boolean getMaterials();
   }
   /**
+   *
+   *
    * <pre>
    * Indicates that the builder claims certain fields in this message to be
    * complete.
@@ -1671,52 +1823,56 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaCompleteness}
    */
-  public static final class SlsaCompleteness extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class SlsaCompleteness extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaCompleteness)
       SlsaCompletenessOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SlsaCompleteness.newBuilder() to construct.
     private SlsaCompleteness(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SlsaCompleteness() {
-    }
+
+    private SlsaCompleteness() {}
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SlsaCompleteness();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_fieldAccessorTable
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.class, io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder.class);
+              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.class,
+              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder.class);
     }
 
     public static final int ARGUMENTS_FIELD_NUMBER = 1;
     private boolean arguments_;
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that recipe.arguments is complete, meaning
      * that all external inputs are properly captured in the recipe.
      * </pre>
      *
      * <code>bool arguments = 1;</code>
+     *
      * @return The arguments.
      */
     @java.lang.Override
@@ -1727,12 +1883,15 @@ private static final long serialVersionUID = 0L;
     public static final int ENVIRONMENT_FIELD_NUMBER = 2;
     private boolean environment_;
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that recipe.environment is claimed to be
      * complete.
      * </pre>
      *
      * <code>bool environment = 2;</code>
+     *
      * @return The environment.
      */
     @java.lang.Override
@@ -1743,12 +1902,15 @@ private static final long serialVersionUID = 0L;
     public static final int MATERIALS_FIELD_NUMBER = 3;
     private boolean materials_;
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that materials are complete, usually through
      * some controls to prevent network access. Sometimes called "hermetic".
      * </pre>
      *
      * <code>bool materials = 3;</code>
+     *
      * @return The materials.
      */
     @java.lang.Override
@@ -1757,6 +1919,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1768,8 +1931,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (arguments_ != false) {
         output.writeBool(1, arguments_);
       }
@@ -1789,16 +1951,13 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (arguments_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, arguments_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, arguments_);
       }
       if (environment_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, environment_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, environment_);
       }
       if (materials_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, materials_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, materials_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1808,19 +1967,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1.SlsaProvenance.SlsaCompleteness)) {
         return super.equals(obj);
       }
-      io.grafeas.v1.SlsaProvenance.SlsaCompleteness other = (io.grafeas.v1.SlsaProvenance.SlsaCompleteness) obj;
+      io.grafeas.v1.SlsaProvenance.SlsaCompleteness other =
+          (io.grafeas.v1.SlsaProvenance.SlsaCompleteness) obj;
 
-      if (getArguments()
-          != other.getArguments()) return false;
-      if (getEnvironment()
-          != other.getEnvironment()) return false;
-      if (getMaterials()
-          != other.getMaterials()) return false;
+      if (getArguments() != other.getArguments()) return false;
+      if (getEnvironment() != other.getEnvironment()) return false;
+      if (getMaterials() != other.getMaterials()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1833,101 +1990,104 @@ private static final long serialVersionUID = 0L;
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ARGUMENTS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getArguments());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArguments());
       hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEnvironment());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnvironment());
       hash = (37 * hash) + MATERIALS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMaterials());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMaterials());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaCompleteness parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1.SlsaProvenance.SlsaCompleteness prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1937,6 +2097,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
@@ -1944,33 +2106,33 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaCompleteness}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaCompleteness)
         io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_fieldAccessorTable
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.SlsaProvenance.SlsaCompleteness.class, io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder.class);
+                io.grafeas.v1.SlsaProvenance.SlsaCompleteness.class,
+                io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder.class);
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaCompleteness.newBuilder()
-      private Builder() {
+      private Builder() {}
 
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1984,9 +2146,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
       }
 
       @java.lang.Override
@@ -2005,7 +2167,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public io.grafeas.v1.SlsaProvenance.SlsaCompleteness buildPartial() {
-        io.grafeas.v1.SlsaProvenance.SlsaCompleteness result = new io.grafeas.v1.SlsaProvenance.SlsaCompleteness(this);
+        io.grafeas.v1.SlsaProvenance.SlsaCompleteness result =
+            new io.grafeas.v1.SlsaProvenance.SlsaCompleteness(this);
         result.arguments_ = arguments_;
         result.environment_ = environment_;
         result.materials_ = materials_;
@@ -2017,38 +2180,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.SlsaProvenance.SlsaCompleteness) {
-          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaCompleteness)other);
+          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaCompleteness) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2056,7 +2222,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(io.grafeas.v1.SlsaProvenance.SlsaCompleteness other) {
-        if (other == io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance()) return this;
+        if (other == io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance())
+          return this;
         if (other.getArguments() != false) {
           setArguments(other.getArguments());
         }
@@ -2092,27 +2259,31 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 8: {
-                arguments_ = input.readBool();
+              case 8:
+                {
+                  arguments_ = input.readBool();
 
-                break;
-              } // case 8
-              case 16: {
-                environment_ = input.readBool();
+                  break;
+                } // case 8
+              case 16:
+                {
+                  environment_ = input.readBool();
 
-                break;
-              } // case 16
-              case 24: {
-                materials_ = input.readBool();
+                  break;
+                } // case 16
+              case 24:
+                {
+                  materials_ = input.readBool();
 
-                break;
-              } // case 24
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2123,14 +2294,17 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private boolean arguments_ ;
+      private boolean arguments_;
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that recipe.arguments is complete, meaning
        * that all external inputs are properly captured in the recipe.
        * </pre>
        *
        * <code>bool arguments = 1;</code>
+       *
        * @return The arguments.
        */
       @java.lang.Override
@@ -2138,45 +2312,54 @@ private static final long serialVersionUID = 0L;
         return arguments_;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that recipe.arguments is complete, meaning
        * that all external inputs are properly captured in the recipe.
        * </pre>
        *
        * <code>bool arguments = 1;</code>
+       *
        * @param value The arguments to set.
        * @return This builder for chaining.
        */
       public Builder setArguments(boolean value) {
-        
+
         arguments_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that recipe.arguments is complete, meaning
        * that all external inputs are properly captured in the recipe.
        * </pre>
        *
        * <code>bool arguments = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearArguments() {
-        
+
         arguments_ = false;
         onChanged();
         return this;
       }
 
-      private boolean environment_ ;
+      private boolean environment_;
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that recipe.environment is claimed to be
        * complete.
        * </pre>
        *
        * <code>bool environment = 2;</code>
+       *
        * @return The environment.
        */
       @java.lang.Override
@@ -2184,45 +2367,54 @@ private static final long serialVersionUID = 0L;
         return environment_;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that recipe.environment is claimed to be
        * complete.
        * </pre>
        *
        * <code>bool environment = 2;</code>
+       *
        * @param value The environment to set.
        * @return This builder for chaining.
        */
       public Builder setEnvironment(boolean value) {
-        
+
         environment_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that recipe.environment is claimed to be
        * complete.
        * </pre>
        *
        * <code>bool environment = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearEnvironment() {
-        
+
         environment_ = false;
         onChanged();
         return this;
       }
 
-      private boolean materials_ ;
+      private boolean materials_;
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that materials are complete, usually through
        * some controls to prevent network access. Sometimes called "hermetic".
        * </pre>
        *
        * <code>bool materials = 3;</code>
+       *
        * @return The materials.
        */
       @java.lang.Override
@@ -2230,36 +2422,43 @@ private static final long serialVersionUID = 0L;
         return materials_;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that materials are complete, usually through
        * some controls to prevent network access. Sometimes called "hermetic".
        * </pre>
        *
        * <code>bool materials = 3;</code>
+       *
        * @param value The materials to set.
        * @return This builder for chaining.
        */
       public Builder setMaterials(boolean value) {
-        
+
         materials_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that materials are complete, usually through
        * some controls to prevent network access. Sometimes called "hermetic".
        * </pre>
        *
        * <code>bool materials = 3;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMaterials() {
-        
+
         materials_ = false;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2272,12 +2471,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1.SlsaProvenance.SlsaCompleteness)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.SlsaProvenance.SlsaCompleteness)
     private static final io.grafeas.v1.SlsaProvenance.SlsaCompleteness DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.SlsaProvenance.SlsaCompleteness();
     }
@@ -2286,27 +2485,28 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SlsaCompleteness>
-        PARSER = new com.google.protobuf.AbstractParser<SlsaCompleteness>() {
-      @java.lang.Override
-      public SlsaCompleteness parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+    private static final com.google.protobuf.Parser<SlsaCompleteness> PARSER =
+        new com.google.protobuf.AbstractParser<SlsaCompleteness>() {
+          @java.lang.Override
+          public SlsaCompleteness parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
 
     public static com.google.protobuf.Parser<SlsaCompleteness> parser() {
       return PARSER;
@@ -2321,14 +2521,16 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1.SlsaProvenance.SlsaCompleteness getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface SlsaMetadataOrBuilder extends
+  public interface SlsaMetadataOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.SlsaProvenance.SlsaMetadata)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Identifies the particular build invocation, which can be useful for
      * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -2336,10 +2538,13 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string build_invocation_id = 1;</code>
+     *
      * @return The buildInvocationId.
      */
     java.lang.String getBuildInvocationId();
     /**
+     *
+     *
      * <pre>
      * Identifies the particular build invocation, which can be useful for
      * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -2347,30 +2552,38 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string build_invocation_id = 1;</code>
+     *
      * @return The bytes for buildInvocationId.
      */
-    com.google.protobuf.ByteString
-        getBuildInvocationIdBytes();
+    com.google.protobuf.ByteString getBuildInvocationIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
+     *
      * @return Whether the buildStartedOn field is set.
      */
     boolean hasBuildStartedOn();
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
+     *
      * @return The buildStartedOn.
      */
     com.google.protobuf.Timestamp getBuildStartedOn();
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build started.
      * </pre>
@@ -2380,24 +2593,32 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.TimestampOrBuilder getBuildStartedOnOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
+     *
      * @return Whether the buildFinishedOn field is set.
      */
     boolean hasBuildFinishedOn();
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
+     *
      * @return The buildFinishedOn.
      */
     com.google.protobuf.Timestamp getBuildFinishedOn();
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build completed.
      * </pre>
@@ -2407,26 +2628,34 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.TimestampOrBuilder getBuildFinishedOnOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
+     *
      * @return Whether the completeness field is set.
      */
     boolean hasCompleteness();
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
+     *
      * @return The completeness.
      */
     io.grafeas.v1.SlsaProvenance.SlsaCompleteness getCompleteness();
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
@@ -2437,64 +2666,73 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder getCompletenessOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that running the recipe on materials will
      * produce bit-for-bit identical output.
      * </pre>
      *
      * <code>bool reproducible = 5;</code>
+     *
      * @return The reproducible.
      */
     boolean getReproducible();
   }
   /**
+   *
+   *
    * <pre>
    * Other properties of the build.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaMetadata}
    */
-  public static final class SlsaMetadata extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class SlsaMetadata extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaMetadata)
       SlsaMetadataOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SlsaMetadata.newBuilder() to construct.
     private SlsaMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private SlsaMetadata() {
       buildInvocationId_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SlsaMetadata();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_fieldAccessorTable
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.SlsaProvenance.SlsaMetadata.class, io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder.class);
+              io.grafeas.v1.SlsaProvenance.SlsaMetadata.class,
+              io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder.class);
     }
 
     public static final int BUILD_INVOCATION_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object buildInvocationId_;
     /**
+     *
+     *
      * <pre>
      * Identifies the particular build invocation, which can be useful for
      * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -2502,6 +2740,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string build_invocation_id = 1;</code>
+     *
      * @return The buildInvocationId.
      */
     @java.lang.Override
@@ -2510,14 +2749,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         buildInvocationId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the particular build invocation, which can be useful for
      * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -2525,16 +2765,15 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string build_invocation_id = 1;</code>
+     *
      * @return The bytes for buildInvocationId.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getBuildInvocationIdBytes() {
+    public com.google.protobuf.ByteString getBuildInvocationIdBytes() {
       java.lang.Object ref = buildInvocationId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         buildInvocationId_ = b;
         return b;
       } else {
@@ -2545,11 +2784,14 @@ private static final long serialVersionUID = 0L;
     public static final int BUILD_STARTED_ON_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp buildStartedOn_;
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
+     *
      * @return Whether the buildStartedOn field is set.
      */
     @java.lang.Override
@@ -2557,18 +2799,25 @@ private static final long serialVersionUID = 0L;
       return buildStartedOn_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
+     *
      * @return The buildStartedOn.
      */
     @java.lang.Override
     public com.google.protobuf.Timestamp getBuildStartedOn() {
-      return buildStartedOn_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildStartedOn_;
+      return buildStartedOn_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : buildStartedOn_;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build started.
      * </pre>
@@ -2583,11 +2832,14 @@ private static final long serialVersionUID = 0L;
     public static final int BUILD_FINISHED_ON_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp buildFinishedOn_;
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
+     *
      * @return Whether the buildFinishedOn field is set.
      */
     @java.lang.Override
@@ -2595,18 +2847,25 @@ private static final long serialVersionUID = 0L;
       return buildFinishedOn_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build completed.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
+     *
      * @return The buildFinishedOn.
      */
     @java.lang.Override
     public com.google.protobuf.Timestamp getBuildFinishedOn() {
-      return buildFinishedOn_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildFinishedOn_;
+      return buildFinishedOn_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : buildFinishedOn_;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of when the build completed.
      * </pre>
@@ -2621,12 +2880,15 @@ private static final long serialVersionUID = 0L;
     public static final int COMPLETENESS_FIELD_NUMBER = 4;
     private io.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness_;
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
+     *
      * @return Whether the completeness field is set.
      */
     @java.lang.Override
@@ -2634,19 +2896,26 @@ private static final long serialVersionUID = 0L;
       return completeness_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
+     *
      * @return The completeness.
      */
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenance.SlsaCompleteness getCompleteness() {
-      return completeness_ == null ? io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance() : completeness_;
+      return completeness_ == null
+          ? io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance()
+          : completeness_;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates that the builder claims certain fields in this message to be
      * complete.
@@ -2662,12 +2931,15 @@ private static final long serialVersionUID = 0L;
     public static final int REPRODUCIBLE_FIELD_NUMBER = 5;
     private boolean reproducible_;
     /**
+     *
+     *
      * <pre>
      * If true, the builder claims that running the recipe on materials will
      * produce bit-for-bit identical output.
      * </pre>
      *
      * <code>bool reproducible = 5;</code>
+     *
      * @return The reproducible.
      */
     @java.lang.Override
@@ -2676,6 +2948,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2687,8 +2960,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(buildInvocationId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, buildInvocationId_);
       }
@@ -2717,20 +2989,16 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, buildInvocationId_);
       }
       if (buildStartedOn_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getBuildStartedOn());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getBuildStartedOn());
       }
       if (buildFinishedOn_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getBuildFinishedOn());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBuildFinishedOn());
       }
       if (completeness_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getCompleteness());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCompleteness());
       }
       if (reproducible_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, reproducible_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, reproducible_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2740,32 +3008,28 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1.SlsaProvenance.SlsaMetadata)) {
         return super.equals(obj);
       }
-      io.grafeas.v1.SlsaProvenance.SlsaMetadata other = (io.grafeas.v1.SlsaProvenance.SlsaMetadata) obj;
+      io.grafeas.v1.SlsaProvenance.SlsaMetadata other =
+          (io.grafeas.v1.SlsaProvenance.SlsaMetadata) obj;
 
-      if (!getBuildInvocationId()
-          .equals(other.getBuildInvocationId())) return false;
+      if (!getBuildInvocationId().equals(other.getBuildInvocationId())) return false;
       if (hasBuildStartedOn() != other.hasBuildStartedOn()) return false;
       if (hasBuildStartedOn()) {
-        if (!getBuildStartedOn()
-            .equals(other.getBuildStartedOn())) return false;
+        if (!getBuildStartedOn().equals(other.getBuildStartedOn())) return false;
       }
       if (hasBuildFinishedOn() != other.hasBuildFinishedOn()) return false;
       if (hasBuildFinishedOn()) {
-        if (!getBuildFinishedOn()
-            .equals(other.getBuildFinishedOn())) return false;
+        if (!getBuildFinishedOn().equals(other.getBuildFinishedOn())) return false;
       }
       if (hasCompleteness() != other.hasCompleteness()) return false;
       if (hasCompleteness()) {
-        if (!getCompleteness()
-            .equals(other.getCompleteness())) return false;
+        if (!getCompleteness().equals(other.getCompleteness())) return false;
       }
-      if (getReproducible()
-          != other.getReproducible()) return false;
+      if (getReproducible() != other.getReproducible()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2792,95 +3056,100 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getCompleteness().hashCode();
       }
       hash = (37 * hash) + REPRODUCIBLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getReproducible());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReproducible());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaMetadata parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1.SlsaProvenance.SlsaMetadata prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2890,39 +3159,41 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Other properties of the build.
      * </pre>
      *
      * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaMetadata}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaMetadata)
         io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_fieldAccessorTable
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.SlsaProvenance.SlsaMetadata.class, io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder.class);
+                io.grafeas.v1.SlsaProvenance.SlsaMetadata.class,
+                io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder.class);
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaMetadata.newBuilder()
-      private Builder() {
+      private Builder() {}
 
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2952,9 +3223,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
       }
 
       @java.lang.Override
@@ -2973,7 +3244,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public io.grafeas.v1.SlsaProvenance.SlsaMetadata buildPartial() {
-        io.grafeas.v1.SlsaProvenance.SlsaMetadata result = new io.grafeas.v1.SlsaProvenance.SlsaMetadata(this);
+        io.grafeas.v1.SlsaProvenance.SlsaMetadata result =
+            new io.grafeas.v1.SlsaProvenance.SlsaMetadata(this);
         result.buildInvocationId_ = buildInvocationId_;
         if (buildStartedOnBuilder_ == null) {
           result.buildStartedOn_ = buildStartedOn_;
@@ -2999,38 +3271,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.SlsaProvenance.SlsaMetadata) {
-          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaMetadata)other);
+          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaMetadata) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -3081,43 +3356,45 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                buildInvocationId_ = input.readStringRequireUtf8();
+              case 10:
+                {
+                  buildInvocationId_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getBuildStartedOnFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getBuildStartedOnFieldBuilder().getBuilder(), extensionRegistry);
 
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getBuildFinishedOnFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getBuildFinishedOnFieldBuilder().getBuilder(), extensionRegistry);
 
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getCompletenessFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getCompletenessFieldBuilder().getBuilder(), extensionRegistry);
 
-                break;
-              } // case 34
-              case 40: {
-                reproducible_ = input.readBool();
+                  break;
+                } // case 34
+              case 40:
+                {
+                  reproducible_ = input.readBool();
 
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3130,6 +3407,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object buildInvocationId_ = "";
       /**
+       *
+       *
        * <pre>
        * Identifies the particular build invocation, which can be useful for
        * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -3137,13 +3416,13 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string build_invocation_id = 1;</code>
+       *
        * @return The buildInvocationId.
        */
       public java.lang.String getBuildInvocationId() {
         java.lang.Object ref = buildInvocationId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           buildInvocationId_ = s;
           return s;
@@ -3152,6 +3431,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Identifies the particular build invocation, which can be useful for
        * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -3159,15 +3440,14 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string build_invocation_id = 1;</code>
+       *
        * @return The bytes for buildInvocationId.
        */
-      public com.google.protobuf.ByteString
-          getBuildInvocationIdBytes() {
+      public com.google.protobuf.ByteString getBuildInvocationIdBytes() {
         java.lang.Object ref = buildInvocationId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           buildInvocationId_ = b;
           return b;
         } else {
@@ -3175,6 +3455,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Identifies the particular build invocation, which can be useful for
        * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -3182,20 +3464,22 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string build_invocation_id = 1;</code>
+       *
        * @param value The buildInvocationId to set.
        * @return This builder for chaining.
        */
-      public Builder setBuildInvocationId(
-          java.lang.String value) {
+      public Builder setBuildInvocationId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         buildInvocationId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Identifies the particular build invocation, which can be useful for
        * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -3203,15 +3487,18 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string build_invocation_id = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearBuildInvocationId() {
-        
+
         buildInvocationId_ = getDefaultInstance().getBuildInvocationId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Identifies the particular build invocation, which can be useful for
        * finding associated logs or other ad-hoc analysis. The value SHOULD be
@@ -3219,16 +3506,16 @@ private static final long serialVersionUID = 0L;
        * </pre>
        *
        * <code>string build_invocation_id = 1;</code>
+       *
        * @param value The bytes for buildInvocationId to set.
        * @return This builder for chaining.
        */
-      public Builder setBuildInvocationIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setBuildInvocationIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         buildInvocationId_ = value;
         onChanged();
         return this;
@@ -3236,34 +3523,47 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Timestamp buildStartedOn_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> buildStartedOnBuilder_;
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          buildStartedOnBuilder_;
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
+       *
        * @return Whether the buildStartedOn field is set.
        */
       public boolean hasBuildStartedOn() {
         return buildStartedOnBuilder_ != null || buildStartedOn_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
+       *
        * @return The buildStartedOn.
        */
       public com.google.protobuf.Timestamp getBuildStartedOn() {
         if (buildStartedOnBuilder_ == null) {
-          return buildStartedOn_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildStartedOn_;
+          return buildStartedOn_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : buildStartedOn_;
         } else {
           return buildStartedOnBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
@@ -3284,14 +3584,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
        */
-      public Builder setBuildStartedOn(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+      public Builder setBuildStartedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (buildStartedOnBuilder_ == null) {
           buildStartedOn_ = builderForValue.build();
           onChanged();
@@ -3302,6 +3603,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
@@ -3312,7 +3615,9 @@ private static final long serialVersionUID = 0L;
         if (buildStartedOnBuilder_ == null) {
           if (buildStartedOn_ != null) {
             buildStartedOn_ =
-              com.google.protobuf.Timestamp.newBuilder(buildStartedOn_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Timestamp.newBuilder(buildStartedOn_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             buildStartedOn_ = value;
           }
@@ -3324,6 +3629,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
@@ -3342,6 +3649,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
@@ -3349,11 +3658,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
        */
       public com.google.protobuf.Timestamp.Builder getBuildStartedOnBuilder() {
-        
+
         onChanged();
         return getBuildStartedOnFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
@@ -3364,11 +3675,14 @@ private static final long serialVersionUID = 0L;
         if (buildStartedOnBuilder_ != null) {
           return buildStartedOnBuilder_.getMessageOrBuilder();
         } else {
-          return buildStartedOn_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : buildStartedOn_;
+          return buildStartedOn_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : buildStartedOn_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build started.
        * </pre>
@@ -3376,14 +3690,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp build_started_on = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
           getBuildStartedOnFieldBuilder() {
         if (buildStartedOnBuilder_ == null) {
-          buildStartedOnBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getBuildStartedOn(),
-                  getParentForChildren(),
-                  isClean());
+          buildStartedOnBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getBuildStartedOn(), getParentForChildren(), isClean());
           buildStartedOn_ = null;
         }
         return buildStartedOnBuilder_;
@@ -3391,34 +3708,47 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Timestamp buildFinishedOn_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> buildFinishedOnBuilder_;
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          buildFinishedOnBuilder_;
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
+       *
        * @return Whether the buildFinishedOn field is set.
        */
       public boolean hasBuildFinishedOn() {
         return buildFinishedOnBuilder_ != null || buildFinishedOn_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
+       *
        * @return The buildFinishedOn.
        */
       public com.google.protobuf.Timestamp getBuildFinishedOn() {
         if (buildFinishedOnBuilder_ == null) {
-          return buildFinishedOn_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : buildFinishedOn_;
+          return buildFinishedOn_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : buildFinishedOn_;
         } else {
           return buildFinishedOnBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
@@ -3439,14 +3769,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
        */
-      public Builder setBuildFinishedOn(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+      public Builder setBuildFinishedOn(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (buildFinishedOnBuilder_ == null) {
           buildFinishedOn_ = builderForValue.build();
           onChanged();
@@ -3457,6 +3788,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
@@ -3467,7 +3800,9 @@ private static final long serialVersionUID = 0L;
         if (buildFinishedOnBuilder_ == null) {
           if (buildFinishedOn_ != null) {
             buildFinishedOn_ =
-              com.google.protobuf.Timestamp.newBuilder(buildFinishedOn_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Timestamp.newBuilder(buildFinishedOn_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             buildFinishedOn_ = value;
           }
@@ -3479,6 +3814,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
@@ -3497,6 +3834,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
@@ -3504,11 +3843,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
        */
       public com.google.protobuf.Timestamp.Builder getBuildFinishedOnBuilder() {
-        
+
         onChanged();
         return getBuildFinishedOnFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
@@ -3519,11 +3860,14 @@ private static final long serialVersionUID = 0L;
         if (buildFinishedOnBuilder_ != null) {
           return buildFinishedOnBuilder_.getMessageOrBuilder();
         } else {
-          return buildFinishedOn_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : buildFinishedOn_;
+          return buildFinishedOn_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : buildFinishedOn_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The timestamp of when the build completed.
        * </pre>
@@ -3531,14 +3875,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp build_finished_on = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
           getBuildFinishedOnFieldBuilder() {
         if (buildFinishedOnBuilder_ == null) {
-          buildFinishedOnBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getBuildFinishedOn(),
-                  getParentForChildren(),
-                  isClean());
+          buildFinishedOnBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getBuildFinishedOn(), getParentForChildren(), isClean());
           buildFinishedOn_ = null;
         }
         return buildFinishedOnBuilder_;
@@ -3546,36 +3893,49 @@ private static final long serialVersionUID = 0L;
 
       private io.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.grafeas.v1.SlsaProvenance.SlsaCompleteness, io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder, io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder> completenessBuilder_;
+              io.grafeas.v1.SlsaProvenance.SlsaCompleteness,
+              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder,
+              io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder>
+          completenessBuilder_;
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
        * </pre>
        *
        * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
+       *
        * @return Whether the completeness field is set.
        */
       public boolean hasCompleteness() {
         return completenessBuilder_ != null || completeness_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
        * </pre>
        *
        * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
+       *
        * @return The completeness.
        */
       public io.grafeas.v1.SlsaProvenance.SlsaCompleteness getCompleteness() {
         if (completenessBuilder_ == null) {
-          return completeness_ == null ? io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance() : completeness_;
+          return completeness_ == null
+              ? io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance()
+              : completeness_;
         } else {
           return completenessBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3597,6 +3957,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3616,6 +3978,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3627,7 +3991,9 @@ private static final long serialVersionUID = 0L;
         if (completenessBuilder_ == null) {
           if (completeness_ != null) {
             completeness_ =
-              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.newBuilder(completeness_).mergeFrom(value).buildPartial();
+                io.grafeas.v1.SlsaProvenance.SlsaCompleteness.newBuilder(completeness_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             completeness_ = value;
           }
@@ -3639,6 +4005,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3658,6 +4026,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3666,11 +4036,13 @@ private static final long serialVersionUID = 0L;
        * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
        */
       public io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder getCompletenessBuilder() {
-        
+
         onChanged();
         return getCompletenessFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3682,11 +4054,14 @@ private static final long serialVersionUID = 0L;
         if (completenessBuilder_ != null) {
           return completenessBuilder_.getMessageOrBuilder();
         } else {
-          return completeness_ == null ?
-              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance() : completeness_;
+          return completeness_ == null
+              ? io.grafeas.v1.SlsaProvenance.SlsaCompleteness.getDefaultInstance()
+              : completeness_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Indicates that the builder claims certain fields in this message to be
        * complete.
@@ -3695,27 +4070,33 @@ private static final long serialVersionUID = 0L;
        * <code>.grafeas.v1.SlsaProvenance.SlsaCompleteness completeness = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          io.grafeas.v1.SlsaProvenance.SlsaCompleteness, io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder, io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder> 
+              io.grafeas.v1.SlsaProvenance.SlsaCompleteness,
+              io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder,
+              io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder>
           getCompletenessFieldBuilder() {
         if (completenessBuilder_ == null) {
-          completenessBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              io.grafeas.v1.SlsaProvenance.SlsaCompleteness, io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder, io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder>(
-                  getCompleteness(),
-                  getParentForChildren(),
-                  isClean());
+          completenessBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  io.grafeas.v1.SlsaProvenance.SlsaCompleteness,
+                  io.grafeas.v1.SlsaProvenance.SlsaCompleteness.Builder,
+                  io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder>(
+                  getCompleteness(), getParentForChildren(), isClean());
           completeness_ = null;
         }
         return completenessBuilder_;
       }
 
-      private boolean reproducible_ ;
+      private boolean reproducible_;
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that running the recipe on materials will
        * produce bit-for-bit identical output.
        * </pre>
        *
        * <code>bool reproducible = 5;</code>
+       *
        * @return The reproducible.
        */
       @java.lang.Override
@@ -3723,36 +4104,43 @@ private static final long serialVersionUID = 0L;
         return reproducible_;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that running the recipe on materials will
        * produce bit-for-bit identical output.
        * </pre>
        *
        * <code>bool reproducible = 5;</code>
+       *
        * @param value The reproducible to set.
        * @return This builder for chaining.
        */
       public Builder setReproducible(boolean value) {
-        
+
         reproducible_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * If true, the builder claims that running the recipe on materials will
        * produce bit-for-bit identical output.
        * </pre>
        *
        * <code>bool reproducible = 5;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearReproducible() {
-        
+
         reproducible_ = false;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3765,12 +4153,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1.SlsaProvenance.SlsaMetadata)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.SlsaProvenance.SlsaMetadata)
     private static final io.grafeas.v1.SlsaProvenance.SlsaMetadata DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.SlsaProvenance.SlsaMetadata();
     }
@@ -3779,27 +4167,28 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SlsaMetadata>
-        PARSER = new com.google.protobuf.AbstractParser<SlsaMetadata>() {
-      @java.lang.Override
-      public SlsaMetadata parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+    private static final com.google.protobuf.Parser<SlsaMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<SlsaMetadata>() {
+          @java.lang.Override
+          public SlsaMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
 
     public static com.google.protobuf.Parser<SlsaMetadata> parser() {
       return PARSER;
@@ -3814,70 +4203,72 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1.SlsaProvenance.SlsaMetadata getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface SlsaBuilderOrBuilder extends
+  public interface SlsaBuilderOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.SlsaProvenance.SlsaBuilder)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string id = 1;</code>
+     *
      * @return The id.
      */
     java.lang.String getId();
     /**
      * <code>string id = 1;</code>
+     *
      * @return The bytes for id.
      */
-    com.google.protobuf.ByteString
-        getIdBytes();
+    com.google.protobuf.ByteString getIdBytes();
   }
-  /**
-   * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaBuilder}
-   */
-  public static final class SlsaBuilder extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaBuilder} */
+  public static final class SlsaBuilder extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.SlsaBuilder)
       SlsaBuilderOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SlsaBuilder.newBuilder() to construct.
     private SlsaBuilder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private SlsaBuilder() {
       id_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new SlsaBuilder();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_fieldAccessorTable
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.SlsaProvenance.SlsaBuilder.class, io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder.class);
+              io.grafeas.v1.SlsaProvenance.SlsaBuilder.class,
+              io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
      * <code>string id = 1;</code>
+     *
      * @return The id.
      */
     @java.lang.Override
@@ -3886,8 +4277,7 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
@@ -3895,16 +4285,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>string id = 1;</code>
+     *
      * @return The bytes for id.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
+    public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -3913,6 +4302,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3924,8 +4314,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
@@ -3949,15 +4338,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1.SlsaProvenance.SlsaBuilder)) {
         return super.equals(obj);
       }
-      io.grafeas.v1.SlsaProvenance.SlsaBuilder other = (io.grafeas.v1.SlsaProvenance.SlsaBuilder) obj;
+      io.grafeas.v1.SlsaProvenance.SlsaBuilder other =
+          (io.grafeas.v1.SlsaProvenance.SlsaBuilder) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
+      if (!getId().equals(other.getId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3976,88 +4365,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.SlsaBuilder parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1.SlsaProvenance.SlsaBuilder prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -4066,36 +4461,34 @@ private static final long serialVersionUID = 0L;
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaBuilder}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code grafeas.v1.SlsaProvenance.SlsaBuilder} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaBuilder)
         io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_fieldAccessorTable
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.SlsaProvenance.SlsaBuilder.class, io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder.class);
+                io.grafeas.v1.SlsaProvenance.SlsaBuilder.class,
+                io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder.class);
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.SlsaBuilder.newBuilder()
-      private Builder() {
+      private Builder() {}
 
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -4105,9 +4498,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
       }
 
       @java.lang.Override
@@ -4126,7 +4519,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public io.grafeas.v1.SlsaProvenance.SlsaBuilder buildPartial() {
-        io.grafeas.v1.SlsaProvenance.SlsaBuilder result = new io.grafeas.v1.SlsaProvenance.SlsaBuilder(this);
+        io.grafeas.v1.SlsaProvenance.SlsaBuilder result =
+            new io.grafeas.v1.SlsaProvenance.SlsaBuilder(this);
         result.id_ = id_;
         onBuilt();
         return result;
@@ -4136,38 +4530,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.SlsaProvenance.SlsaBuilder) {
-          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaBuilder)other);
+          return mergeFrom((io.grafeas.v1.SlsaProvenance.SlsaBuilder) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -4206,17 +4603,19 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
+              case 10:
+                {
+                  id_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4230,13 +4629,13 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object id_ = "";
       /**
        * <code>string id = 1;</code>
+       *
        * @return The id.
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           id_ = s;
           return s;
@@ -4246,15 +4645,14 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>string id = 1;</code>
+       *
        * @return The bytes for id.
        */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
+      public com.google.protobuf.ByteString getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           id_ = b;
           return b;
         } else {
@@ -4263,45 +4661,47 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>string id = 1;</code>
+       *
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(
-          java.lang.String value) {
+      public Builder setId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         id_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
        * <code>string id = 1;</code>
+       *
        * @param value The bytes for id to set.
        * @return This builder for chaining.
        */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         id_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4314,12 +4714,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1.SlsaProvenance.SlsaBuilder)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.SlsaProvenance.SlsaBuilder)
     private static final io.grafeas.v1.SlsaProvenance.SlsaBuilder DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.SlsaProvenance.SlsaBuilder();
     }
@@ -4328,27 +4728,28 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SlsaBuilder>
-        PARSER = new com.google.protobuf.AbstractParser<SlsaBuilder>() {
-      @java.lang.Override
-      public SlsaBuilder parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+    private static final com.google.protobuf.Parser<SlsaBuilder> PARSER =
+        new com.google.protobuf.AbstractParser<SlsaBuilder>() {
+          @java.lang.Override
+          public SlsaBuilder parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
 
     public static com.google.protobuf.Parser<SlsaBuilder> parser() {
       return PARSER;
@@ -4363,118 +4764,102 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1.SlsaProvenance.SlsaBuilder getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface MaterialOrBuilder extends
+  public interface MaterialOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.SlsaProvenance.Material)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string uri = 1;</code>
+     *
      * @return The uri.
      */
     java.lang.String getUri();
     /**
      * <code>string uri = 1;</code>
+     *
      * @return The bytes for uri.
      */
-    com.google.protobuf.ByteString
-        getUriBytes();
+    com.google.protobuf.ByteString getUriBytes();
 
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
     int getDigestCount();
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
-    boolean containsDigest(
-        java.lang.String key);
-    /**
-     * Use {@link #getDigestMap()} instead.
-     */
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    boolean containsDigest(java.lang.String key);
+    /** Use {@link #getDigestMap()} instead. */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getDigest();
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getDigestMap();
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
+    java.util.Map<java.lang.String, java.lang.String> getDigest();
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    java.util.Map<java.lang.String, java.lang.String> getDigestMap();
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
 
     /* nullable */
-java.lang.String getDigestOrDefault(
+    java.lang.String getDigestOrDefault(
         java.lang.String key,
         /* nullable */
-java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
-
-    java.lang.String getDigestOrThrow(
-        java.lang.String key);
+        java.lang.String defaultValue);
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
+    java.lang.String getDigestOrThrow(java.lang.String key);
   }
-  /**
-   * Protobuf type {@code grafeas.v1.SlsaProvenance.Material}
-   */
-  public static final class Material extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  /** Protobuf type {@code grafeas.v1.SlsaProvenance.Material} */
+  public static final class Material extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.SlsaProvenance.Material)
       MaterialOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Material.newBuilder() to construct.
     private Material(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Material() {
       uri_ = "";
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new Material();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 2:
           return internalGetDigest();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_Material_fieldAccessorTable
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_Material_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.SlsaProvenance.Material.class, io.grafeas.v1.SlsaProvenance.Material.Builder.class);
+              io.grafeas.v1.SlsaProvenance.Material.class,
+              io.grafeas.v1.SlsaProvenance.Material.Builder.class);
     }
 
     public static final int URI_FIELD_NUMBER = 1;
     private volatile java.lang.Object uri_;
     /**
      * <code>string uri = 1;</code>
+     *
      * @return The uri.
      */
     @java.lang.Override
@@ -4483,8 +4868,7 @@ java.lang.String defaultValue);
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         uri_ = s;
         return s;
@@ -4492,16 +4876,15 @@ java.lang.String defaultValue);
     }
     /**
      * <code>string uri = 1;</code>
+     *
      * @return The bytes for uri.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUriBytes() {
+    public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         uri_ = b;
         return b;
       } else {
@@ -4510,24 +4893,23 @@ java.lang.String defaultValue);
     }
 
     public static final int DIGEST_FIELD_NUMBER = 2;
+
     private static final class DigestDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_Material_DigestEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              io.grafeas.v1.SlsaProvenanceProto
+                  .internal_static_grafeas_v1_SlsaProvenance_Material_DigestEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> digest_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetDigest() {
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
       if (digest_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            DigestDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(DigestDefaultEntryHolder.defaultEntry);
       }
       return digest_;
     }
@@ -4535,55 +4917,42 @@ java.lang.String defaultValue);
     public int getDigestCount() {
       return internalGetDigest().getMap().size();
     }
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
-
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
-    public boolean containsDigest(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+    public boolean containsDigest(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
       return internalGetDigest().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getDigestMap()} instead.
-     */
+    /** Use {@link #getDigestMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDigest() {
       return getDigestMap();
     }
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
       return internalGetDigest().getMap();
     }
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
-
     public java.lang.String getDigestOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetDigest().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-    /**
-     * <code>map&lt;string, string&gt; digest = 2;</code>
-     */
+    /** <code>map&lt;string, string&gt; digest = 2;</code> */
     @java.lang.Override
-
-    public java.lang.String getDigestOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetDigest().getMap();
+    public java.lang.String getDigestOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -4591,6 +4960,7 @@ java.lang.String defaultValue);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4602,17 +4972,12 @@ java.lang.String defaultValue);
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetDigest(),
-          DigestDefaultEntryHolder.defaultEntry,
-          2);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetDigest(), DigestDefaultEntryHolder.defaultEntry, 2);
       getUnknownFields().writeTo(output);
     }
 
@@ -4625,15 +4990,15 @@ java.lang.String defaultValue);
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetDigest().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        digest__ = DigestDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, digest__);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetDigest().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
+            DigestDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, digest__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4643,17 +5008,15 @@ java.lang.String defaultValue);
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1.SlsaProvenance.Material)) {
         return super.equals(obj);
       }
       io.grafeas.v1.SlsaProvenance.Material other = (io.grafeas.v1.SlsaProvenance.Material) obj;
 
-      if (!getUri()
-          .equals(other.getUri())) return false;
-      if (!internalGetDigest().equals(
-          other.internalGetDigest())) return false;
+      if (!getUri().equals(other.getUri())) return false;
+      if (!internalGetDigest().equals(other.internalGetDigest())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4676,88 +5039,94 @@ java.lang.String defaultValue);
       return hash;
     }
 
-    public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1.SlsaProvenance.Material parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1.SlsaProvenance.Material parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1.SlsaProvenance.Material parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.SlsaProvenance.Material parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1.SlsaProvenance.Material prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -4766,58 +5135,54 @@ java.lang.String defaultValue);
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code grafeas.v1.SlsaProvenance.Material}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    /** Protobuf type {@code grafeas.v1.SlsaProvenance.Material} */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.Material)
         io.grafeas.v1.SlsaProvenance.MaterialOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
         switch (number) {
           case 2:
             return internalGetDigest();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
         switch (number) {
           case 2:
             return internalGetMutableDigest();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_Material_fieldAccessorTable
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_Material_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.SlsaProvenance.Material.class, io.grafeas.v1.SlsaProvenance.Material.Builder.class);
+                io.grafeas.v1.SlsaProvenance.Material.class,
+                io.grafeas.v1.SlsaProvenance.Material.Builder.class);
       }
 
       // Construct using io.grafeas.v1.SlsaProvenance.Material.newBuilder()
-      private Builder() {
+      private Builder() {}
 
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -4828,9 +5193,9 @@ java.lang.String defaultValue);
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.SlsaProvenanceProto
+            .internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
       }
 
       @java.lang.Override
@@ -4849,7 +5214,8 @@ java.lang.String defaultValue);
 
       @java.lang.Override
       public io.grafeas.v1.SlsaProvenance.Material buildPartial() {
-        io.grafeas.v1.SlsaProvenance.Material result = new io.grafeas.v1.SlsaProvenance.Material(this);
+        io.grafeas.v1.SlsaProvenance.Material result =
+            new io.grafeas.v1.SlsaProvenance.Material(this);
         int from_bitField0_ = bitField0_;
         result.uri_ = uri_;
         result.digest_ = internalGetDigest();
@@ -4862,38 +5228,41 @@ java.lang.String defaultValue);
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.SlsaProvenance.Material) {
-          return mergeFrom((io.grafeas.v1.SlsaProvenance.Material)other);
+          return mergeFrom((io.grafeas.v1.SlsaProvenance.Material) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -4906,8 +5275,7 @@ java.lang.String defaultValue);
           uri_ = other.uri_;
           onChanged();
         }
-        internalGetMutableDigest().mergeFrom(
-            other.internalGetDigest());
+        internalGetMutableDigest().mergeFrom(other.internalGetDigest());
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4934,25 +5302,30 @@ java.lang.String defaultValue);
               case 0:
                 done = true;
                 break;
-              case 10: {
-                uri_ = input.readStringRequireUtf8();
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
 
-                break;
-              } // case 10
-              case 18: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                digest__ = input.readMessage(
-                    DigestDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableDigest().getMutableMap().put(
-                    digest__.getKey(), digest__.getValue());
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+                  break;
+                } // case 10
+              case 18:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> digest__ =
+                      input.readMessage(
+                          DigestDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableDigest()
+                      .getMutableMap()
+                      .put(digest__.getKey(), digest__.getValue());
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4962,18 +5335,19 @@ java.lang.String defaultValue);
         } // finally
         return this;
       }
+
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
       /**
        * <code>string uri = 1;</code>
+       *
        * @return The uri.
        */
       public java.lang.String getUri() {
         java.lang.Object ref = uri_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           uri_ = s;
           return s;
@@ -4983,15 +5357,14 @@ java.lang.String defaultValue);
       }
       /**
        * <code>string uri = 1;</code>
+       *
        * @return The bytes for uri.
        */
-      public com.google.protobuf.ByteString
-          getUriBytes() {
+      public com.google.protobuf.ByteString getUriBytes() {
         java.lang.Object ref = uri_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           uri_ = b;
           return b;
         } else {
@@ -5000,62 +5373,62 @@ java.lang.String defaultValue);
       }
       /**
        * <code>string uri = 1;</code>
+       *
        * @param value The uri to set.
        * @return This builder for chaining.
        */
-      public Builder setUri(
-          java.lang.String value) {
+      public Builder setUri(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         uri_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>string uri = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-        
+
         uri_ = getDefaultInstance().getUri();
         onChanged();
         return this;
       }
       /**
        * <code>string uri = 1;</code>
+       *
        * @param value The bytes for uri to set.
        * @return This builder for chaining.
        */
-      public Builder setUriBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         uri_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> digest_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetDigest() {
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> digest_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDigest() {
         if (digest_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              DigestDefaultEntryHolder.defaultEntry);
+          return com.google.protobuf.MapField.emptyMapField(DigestDefaultEntryHolder.defaultEntry);
         }
         return digest_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableDigest() {
-        onChanged();;
+          internalGetMutableDigest() {
+        onChanged();
+        ;
         if (digest_ == null) {
-          digest_ = com.google.protobuf.MapField.newMapField(
-              DigestDefaultEntryHolder.defaultEntry);
+          digest_ = com.google.protobuf.MapField.newMapField(DigestDefaultEntryHolder.defaultEntry);
         }
         if (!digest_.isMutable()) {
           digest_ = digest_.copy();
@@ -5066,55 +5439,42 @@ java.lang.String defaultValue);
       public int getDigestCount() {
         return internalGetDigest().getMap().size();
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
-
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
-      public boolean containsDigest(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
+      public boolean containsDigest(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
         return internalGetDigest().getMap().containsKey(key);
       }
-      /**
-       * Use {@link #getDigestMap()} instead.
-       */
+      /** Use {@link #getDigestMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getDigest() {
         return getDigestMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
-
       public java.util.Map<java.lang.String, java.lang.String> getDigestMap() {
         return internalGetDigest().getMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
-
       public java.lang.String getDigestOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetDigest().getMap();
+          java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
       @java.lang.Override
-
-      public java.lang.String getDigestOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetDigest().getMap();
+      public java.lang.String getDigestOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetDigest().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -5122,54 +5482,40 @@ java.lang.String defaultValue);
       }
 
       public Builder clearDigest() {
-        internalGetMutableDigest().getMutableMap()
-            .clear();
+        internalGetMutableDigest().getMutableMap().clear();
         return this;
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
-
-      public Builder removeDigest(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableDigest().getMutableMap()
-            .remove(key);
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      public Builder removeDigest(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableDigest().getMutableMap().remove(key);
         return this;
       }
-      /**
-       * Use alternate mutation accessors instead.
-       */
+      /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableDigest() {
+      public java.util.Map<java.lang.String, java.lang.String> getMutableDigest() {
         return internalGetMutableDigest().getMutableMap();
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
-      public Builder putDigest(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      public Builder putDigest(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
         if (value == null) {
-  throw new NullPointerException("map value");
-}
+          throw new NullPointerException("map value");
+        }
 
-        internalGetMutableDigest().getMutableMap()
-            .put(key, value);
+        internalGetMutableDigest().getMutableMap().put(key, value);
         return this;
       }
-      /**
-       * <code>map&lt;string, string&gt; digest = 2;</code>
-       */
-
-      public Builder putAllDigest(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableDigest().getMutableMap()
-            .putAll(values);
+      /** <code>map&lt;string, string&gt; digest = 2;</code> */
+      public Builder putAllDigest(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableDigest().getMutableMap().putAll(values);
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5182,12 +5528,12 @@ java.lang.String defaultValue);
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1.SlsaProvenance.Material)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.SlsaProvenance.Material)
     private static final io.grafeas.v1.SlsaProvenance.Material DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.SlsaProvenance.Material();
     }
@@ -5196,27 +5542,28 @@ java.lang.String defaultValue);
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Material>
-        PARSER = new com.google.protobuf.AbstractParser<Material>() {
-      @java.lang.Override
-      public Material parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+    private static final com.google.protobuf.Parser<Material> PARSER =
+        new com.google.protobuf.AbstractParser<Material>() {
+          @java.lang.Override
+          public Material parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
 
     public static com.google.protobuf.Parser<Material> parser() {
       return PARSER;
@@ -5231,17 +5578,19 @@ java.lang.String defaultValue);
     public io.grafeas.v1.SlsaProvenance.Material getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int BUILDER_FIELD_NUMBER = 1;
   private io.grafeas.v1.SlsaProvenance.SlsaBuilder builder_;
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
+   *
    * @return Whether the builder field is set.
    */
   @java.lang.Override
@@ -5249,18 +5598,25 @@ java.lang.String defaultValue);
     return builder_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
+   *
    * @return The builder.
    */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenance.SlsaBuilder getBuilder() {
-    return builder_ == null ? io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance() : builder_;
+    return builder_ == null
+        ? io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance()
+        : builder_;
   }
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
@@ -5275,6 +5631,8 @@ java.lang.String defaultValue);
   public static final int RECIPE_FIELD_NUMBER = 2;
   private io.grafeas.v1.SlsaProvenance.SlsaRecipe recipe_;
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -5283,6 +5641,7 @@ java.lang.String defaultValue);
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
+   *
    * @return Whether the recipe field is set.
    */
   @java.lang.Override
@@ -5290,6 +5649,8 @@ java.lang.String defaultValue);
     return recipe_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -5298,6 +5659,7 @@ java.lang.String defaultValue);
    * </pre>
    *
    * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
+   *
    * @return The recipe.
    */
   @java.lang.Override
@@ -5305,6 +5667,8 @@ java.lang.String defaultValue);
     return recipe_ == null ? io.grafeas.v1.SlsaProvenance.SlsaRecipe.getDefaultInstance() : recipe_;
   }
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -5323,6 +5687,7 @@ java.lang.String defaultValue);
   private io.grafeas.v1.SlsaProvenance.SlsaMetadata metadata_;
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
+   *
    * @return Whether the metadata field is set.
    */
   @java.lang.Override
@@ -5331,15 +5696,16 @@ java.lang.String defaultValue);
   }
   /**
    * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
+   *
    * @return The metadata.
    */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenance.SlsaMetadata getMetadata() {
-    return metadata_ == null ? io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance() : metadata_;
+    return metadata_ == null
+        ? io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance()
+        : metadata_;
   }
-  /**
-   * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-   */
+  /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder getMetadataOrBuilder() {
     return getMetadata();
@@ -5348,6 +5714,8 @@ java.lang.String defaultValue);
   public static final int MATERIALS_FIELD_NUMBER = 4;
   private java.util.List<io.grafeas.v1.SlsaProvenance.Material> materials_;
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -5362,6 +5730,8 @@ java.lang.String defaultValue);
     return materials_;
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -5372,11 +5742,13 @@ java.lang.String defaultValue);
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder> 
+  public java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>
       getMaterialsOrBuilderList() {
     return materials_;
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -5391,6 +5763,8 @@ java.lang.String defaultValue);
     return materials_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -5405,6 +5779,8 @@ java.lang.String defaultValue);
     return materials_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -5415,12 +5791,12 @@ java.lang.String defaultValue);
    * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.SlsaProvenance.MaterialOrBuilder getMaterialsOrBuilder(
-      int index) {
+  public io.grafeas.v1.SlsaProvenance.MaterialOrBuilder getMaterialsOrBuilder(int index) {
     return materials_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -5432,8 +5808,7 @@ java.lang.String defaultValue);
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (builder_ != null) {
       output.writeMessage(1, getBuilder());
     }
@@ -5456,20 +5831,16 @@ java.lang.String defaultValue);
 
     size = 0;
     if (builder_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getBuilder());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBuilder());
     }
     if (recipe_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getRecipe());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRecipe());
     }
     if (metadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getMetadata());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMetadata());
     }
     for (int i = 0; i < materials_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, materials_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, materials_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5479,7 +5850,7 @@ java.lang.String defaultValue);
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.SlsaProvenance)) {
       return super.equals(obj);
@@ -5488,21 +5859,17 @@ java.lang.String defaultValue);
 
     if (hasBuilder() != other.hasBuilder()) return false;
     if (hasBuilder()) {
-      if (!getBuilder()
-          .equals(other.getBuilder())) return false;
+      if (!getBuilder().equals(other.getBuilder())) return false;
     }
     if (hasRecipe() != other.hasRecipe()) return false;
     if (hasRecipe()) {
-      if (!getRecipe()
-          .equals(other.getRecipe())) return false;
+      if (!getRecipe().equals(other.getRecipe())) return false;
     }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      if (!getMetadata()
-          .equals(other.getMetadata())) return false;
+      if (!getMetadata().equals(other.getMetadata())) return false;
     }
-    if (!getMaterialsList()
-        .equals(other.getMaterialsList())) return false;
+    if (!getMaterialsList().equals(other.getMaterialsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5535,126 +5902,125 @@ java.lang.String defaultValue);
     return hash;
   }
 
-  public static io.grafeas.v1.SlsaProvenance parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.SlsaProvenance parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.SlsaProvenance parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.SlsaProvenance parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.SlsaProvenance parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.SlsaProvenance parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.SlsaProvenance parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.SlsaProvenance prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   * Protobuf type {@code grafeas.v1.SlsaProvenance}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  /** Protobuf type {@code grafeas.v1.SlsaProvenance} */
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance)
       io.grafeas.v1.SlsaProvenanceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_fieldAccessorTable
+      return io.grafeas.v1.SlsaProvenanceProto
+          .internal_static_grafeas_v1_SlsaProvenance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.class, io.grafeas.v1.SlsaProvenance.Builder.class);
     }
 
     // Construct using io.grafeas.v1.SlsaProvenance.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -5687,8 +6053,7 @@ java.lang.String defaultValue);
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
     }
 
@@ -5742,38 +6107,39 @@ java.lang.String defaultValue);
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.SlsaProvenance) {
-        return mergeFrom((io.grafeas.v1.SlsaProvenance)other);
+        return mergeFrom((io.grafeas.v1.SlsaProvenance) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -5809,9 +6175,10 @@ java.lang.String defaultValue);
             materialsBuilder_ = null;
             materials_ = other.materials_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            materialsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getMaterialsFieldBuilder() : null;
+            materialsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMaterialsFieldBuilder()
+                    : null;
           } else {
             materialsBuilder_.addAllMessages(other.materials_);
           }
@@ -5843,46 +6210,44 @@ java.lang.String defaultValue);
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  getBuilderFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 10:
+              {
+                input.readMessage(getBuilderFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 10
-            case 18: {
-              input.readMessage(
-                  getRecipeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getRecipeFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 18
-            case 26: {
-              input.readMessage(
-                  getMetadataFieldBuilder().getBuilder(),
-                  extensionRegistry);
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 26
-            case 34: {
-              io.grafeas.v1.SlsaProvenance.Material m =
-                  input.readMessage(
-                      io.grafeas.v1.SlsaProvenance.Material.parser(),
-                      extensionRegistry);
-              if (materialsBuilder_ == null) {
-                ensureMaterialsIsMutable();
-                materials_.add(m);
-              } else {
-                materialsBuilder_.addMessage(m);
-              }
-              break;
-            } // case 34
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 26
+            case 34:
+              {
+                io.grafeas.v1.SlsaProvenance.Material m =
+                    input.readMessage(
+                        io.grafeas.v1.SlsaProvenance.Material.parser(), extensionRegistry);
+                if (materialsBuilder_ == null) {
+                  ensureMaterialsIsMutable();
+                  materials_.add(m);
+                } else {
+                  materialsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5892,38 +6257,52 @@ java.lang.String defaultValue);
       } // finally
       return this;
     }
+
     private int bitField0_;
 
     private io.grafeas.v1.SlsaProvenance.SlsaBuilder builder_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.SlsaBuilder, io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder, io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder> builderBuilder_;
+            io.grafeas.v1.SlsaProvenance.SlsaBuilder,
+            io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder,
+            io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder>
+        builderBuilder_;
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
+     *
      * @return Whether the builder field is set.
      */
     public boolean hasBuilder() {
       return builderBuilder_ != null || builder_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
+     *
      * @return The builder.
      */
     public io.grafeas.v1.SlsaProvenance.SlsaBuilder getBuilder() {
       if (builderBuilder_ == null) {
-        return builder_ == null ? io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance() : builder_;
+        return builder_ == null
+            ? io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance()
+            : builder_;
       } else {
         return builderBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -5944,14 +6323,15 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
      */
-    public Builder setBuilder(
-        io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder builderForValue) {
+    public Builder setBuilder(io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder builderForValue) {
       if (builderBuilder_ == null) {
         builder_ = builderForValue.build();
         onChanged();
@@ -5962,6 +6342,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -5972,7 +6354,9 @@ java.lang.String defaultValue);
       if (builderBuilder_ == null) {
         if (builder_ != null) {
           builder_ =
-            io.grafeas.v1.SlsaProvenance.SlsaBuilder.newBuilder(builder_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.SlsaProvenance.SlsaBuilder.newBuilder(builder_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           builder_ = value;
         }
@@ -5984,6 +6368,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -6002,6 +6388,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -6009,11 +6397,13 @@ java.lang.String defaultValue);
      * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
      */
     public io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder getBuilderBuilder() {
-      
+
       onChanged();
       return getBuilderFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -6024,11 +6414,14 @@ java.lang.String defaultValue);
       if (builderBuilder_ != null) {
         return builderBuilder_.getMessageOrBuilder();
       } else {
-        return builder_ == null ?
-            io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance() : builder_;
+        return builder_ == null
+            ? io.grafeas.v1.SlsaProvenance.SlsaBuilder.getDefaultInstance()
+            : builder_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * required
      * </pre>
@@ -6036,14 +6429,17 @@ java.lang.String defaultValue);
      * <code>.grafeas.v1.SlsaProvenance.SlsaBuilder builder = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.SlsaBuilder, io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder, io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder> 
+            io.grafeas.v1.SlsaProvenance.SlsaBuilder,
+            io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder,
+            io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder>
         getBuilderFieldBuilder() {
       if (builderBuilder_ == null) {
-        builderBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.SlsaProvenance.SlsaBuilder, io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder, io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder>(
-                getBuilder(),
-                getParentForChildren(),
-                isClean());
+        builderBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenance.SlsaBuilder,
+                io.grafeas.v1.SlsaProvenance.SlsaBuilder.Builder,
+                io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder>(
+                getBuilder(), getParentForChildren(), isClean());
         builder_ = null;
       }
       return builderBuilder_;
@@ -6051,8 +6447,13 @@ java.lang.String defaultValue);
 
     private io.grafeas.v1.SlsaProvenance.SlsaRecipe recipe_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.SlsaRecipe, io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder, io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder> recipeBuilder_;
+            io.grafeas.v1.SlsaProvenance.SlsaRecipe,
+            io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder,
+            io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder>
+        recipeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6061,12 +6462,15 @@ java.lang.String defaultValue);
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
+     *
      * @return Whether the recipe field is set.
      */
     public boolean hasRecipe() {
       return recipeBuilder_ != null || recipe_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6075,16 +6479,21 @@ java.lang.String defaultValue);
      * </pre>
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
+     *
      * @return The recipe.
      */
     public io.grafeas.v1.SlsaProvenance.SlsaRecipe getRecipe() {
       if (recipeBuilder_ == null) {
-        return recipe_ == null ? io.grafeas.v1.SlsaProvenance.SlsaRecipe.getDefaultInstance() : recipe_;
+        return recipe_ == null
+            ? io.grafeas.v1.SlsaProvenance.SlsaRecipe.getDefaultInstance()
+            : recipe_;
       } else {
         return recipeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6108,6 +6517,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6117,8 +6528,7 @@ java.lang.String defaultValue);
      *
      * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
      */
-    public Builder setRecipe(
-        io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder builderForValue) {
+    public Builder setRecipe(io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder builderForValue) {
       if (recipeBuilder_ == null) {
         recipe_ = builderForValue.build();
         onChanged();
@@ -6129,6 +6539,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6142,7 +6554,9 @@ java.lang.String defaultValue);
       if (recipeBuilder_ == null) {
         if (recipe_ != null) {
           recipe_ =
-            io.grafeas.v1.SlsaProvenance.SlsaRecipe.newBuilder(recipe_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.SlsaProvenance.SlsaRecipe.newBuilder(recipe_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           recipe_ = value;
         }
@@ -6154,6 +6568,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6175,6 +6591,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6185,11 +6603,13 @@ java.lang.String defaultValue);
      * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
      */
     public io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder getRecipeBuilder() {
-      
+
       onChanged();
       return getRecipeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6203,11 +6623,14 @@ java.lang.String defaultValue);
       if (recipeBuilder_ != null) {
         return recipeBuilder_.getMessageOrBuilder();
       } else {
-        return recipe_ == null ?
-            io.grafeas.v1.SlsaProvenance.SlsaRecipe.getDefaultInstance() : recipe_;
+        return recipe_ == null
+            ? io.grafeas.v1.SlsaProvenance.SlsaRecipe.getDefaultInstance()
+            : recipe_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Identifies the configuration used for the build.
      * When combined with materials, this SHOULD fully describe the build,
@@ -6218,14 +6641,17 @@ java.lang.String defaultValue);
      * <code>.grafeas.v1.SlsaProvenance.SlsaRecipe recipe = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.SlsaRecipe, io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder, io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder> 
+            io.grafeas.v1.SlsaProvenance.SlsaRecipe,
+            io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder,
+            io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder>
         getRecipeFieldBuilder() {
       if (recipeBuilder_ == null) {
-        recipeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.SlsaProvenance.SlsaRecipe, io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder, io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder>(
-                getRecipe(),
-                getParentForChildren(),
-                isClean());
+        recipeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenance.SlsaRecipe,
+                io.grafeas.v1.SlsaProvenance.SlsaRecipe.Builder,
+                io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder>(
+                getRecipe(), getParentForChildren(), isClean());
         recipe_ = null;
       }
       return recipeBuilder_;
@@ -6233,9 +6659,13 @@ java.lang.String defaultValue);
 
     private io.grafeas.v1.SlsaProvenance.SlsaMetadata metadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.SlsaMetadata, io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder, io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder> metadataBuilder_;
+            io.grafeas.v1.SlsaProvenance.SlsaMetadata,
+            io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder,
+            io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder>
+        metadataBuilder_;
     /**
      * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
+     *
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
@@ -6243,18 +6673,19 @@ java.lang.String defaultValue);
     }
     /**
      * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
+     *
      * @return The metadata.
      */
     public io.grafeas.v1.SlsaProvenance.SlsaMetadata getMetadata() {
       if (metadataBuilder_ == null) {
-        return metadata_ == null ? io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance() : metadata_;
+        return metadata_ == null
+            ? io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance()
+            : metadata_;
       } else {
         return metadataBuilder_.getMessage();
       }
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.SlsaProvenance.SlsaMetadata value) {
       if (metadataBuilder_ == null) {
         if (value == null) {
@@ -6268,11 +6699,8 @@ java.lang.String defaultValue);
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
-    public Builder setMetadata(
-        io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder builderForValue) {
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
+    public Builder setMetadata(io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
         onChanged();
@@ -6282,14 +6710,14 @@ java.lang.String defaultValue);
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder mergeMetadata(io.grafeas.v1.SlsaProvenance.SlsaMetadata value) {
       if (metadataBuilder_ == null) {
         if (metadata_ != null) {
           metadata_ =
-            io.grafeas.v1.SlsaProvenance.SlsaMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+              io.grafeas.v1.SlsaProvenance.SlsaMetadata.newBuilder(metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metadata_ = value;
         }
@@ -6300,9 +6728,7 @@ java.lang.String defaultValue);
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
         metadata_ = null;
@@ -6314,55 +6740,59 @@ java.lang.String defaultValue);
 
       return this;
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder getMetadataBuilder() {
-      
+
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     public io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder getMetadataOrBuilder() {
       if (metadataBuilder_ != null) {
         return metadataBuilder_.getMessageOrBuilder();
       } else {
-        return metadata_ == null ?
-            io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance() : metadata_;
+        return metadata_ == null
+            ? io.grafeas.v1.SlsaProvenance.SlsaMetadata.getDefaultInstance()
+            : metadata_;
       }
     }
-    /**
-     * <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code>
-     */
+    /** <code>.grafeas.v1.SlsaProvenance.SlsaMetadata metadata = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.SlsaMetadata, io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder, io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder> 
+            io.grafeas.v1.SlsaProvenance.SlsaMetadata,
+            io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder,
+            io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder>
         getMetadataFieldBuilder() {
       if (metadataBuilder_ == null) {
-        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.SlsaProvenance.SlsaMetadata, io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder, io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder>(
-                getMetadata(),
-                getParentForChildren(),
-                isClean());
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenance.SlsaMetadata,
+                io.grafeas.v1.SlsaProvenance.SlsaMetadata.Builder,
+                io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
         metadata_ = null;
       }
       return metadataBuilder_;
     }
 
     private java.util.List<io.grafeas.v1.SlsaProvenance.Material> materials_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureMaterialsIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         materials_ = new java.util.ArrayList<io.grafeas.v1.SlsaProvenance.Material>(materials_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.Material, io.grafeas.v1.SlsaProvenance.Material.Builder, io.grafeas.v1.SlsaProvenance.MaterialOrBuilder> materialsBuilder_;
+            io.grafeas.v1.SlsaProvenance.Material,
+            io.grafeas.v1.SlsaProvenance.Material.Builder,
+            io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>
+        materialsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6380,6 +6810,8 @@ java.lang.String defaultValue);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6397,6 +6829,8 @@ java.lang.String defaultValue);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6414,6 +6848,8 @@ java.lang.String defaultValue);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6423,8 +6859,7 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public Builder setMaterials(
-        int index, io.grafeas.v1.SlsaProvenance.Material value) {
+    public Builder setMaterials(int index, io.grafeas.v1.SlsaProvenance.Material value) {
       if (materialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6438,6 +6873,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6459,6 +6896,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6482,6 +6921,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6491,8 +6932,7 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public Builder addMaterials(
-        int index, io.grafeas.v1.SlsaProvenance.Material value) {
+    public Builder addMaterials(int index, io.grafeas.v1.SlsaProvenance.Material value) {
       if (materialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6506,6 +6946,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6515,8 +6957,7 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public Builder addMaterials(
-        io.grafeas.v1.SlsaProvenance.Material.Builder builderForValue) {
+    public Builder addMaterials(io.grafeas.v1.SlsaProvenance.Material.Builder builderForValue) {
       if (materialsBuilder_ == null) {
         ensureMaterialsIsMutable();
         materials_.add(builderForValue.build());
@@ -6527,6 +6968,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6548,6 +6991,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6561,8 +7006,7 @@ java.lang.String defaultValue);
         java.lang.Iterable<? extends io.grafeas.v1.SlsaProvenance.Material> values) {
       if (materialsBuilder_ == null) {
         ensureMaterialsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, materials_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, materials_);
         onChanged();
       } else {
         materialsBuilder_.addAllMessages(values);
@@ -6570,6 +7014,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6590,6 +7036,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6610,6 +7058,8 @@ java.lang.String defaultValue);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6619,11 +7069,12 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public io.grafeas.v1.SlsaProvenance.Material.Builder getMaterialsBuilder(
-        int index) {
+    public io.grafeas.v1.SlsaProvenance.Material.Builder getMaterialsBuilder(int index) {
       return getMaterialsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6633,14 +7084,16 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public io.grafeas.v1.SlsaProvenance.MaterialOrBuilder getMaterialsOrBuilder(
-        int index) {
+    public io.grafeas.v1.SlsaProvenance.MaterialOrBuilder getMaterialsOrBuilder(int index) {
       if (materialsBuilder_ == null) {
-        return materials_.get(index);  } else {
+        return materials_.get(index);
+      } else {
         return materialsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6650,8 +7103,8 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder> 
-         getMaterialsOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>
+        getMaterialsOrBuilderList() {
       if (materialsBuilder_ != null) {
         return materialsBuilder_.getMessageOrBuilderList();
       } else {
@@ -6659,6 +7112,8 @@ java.lang.String defaultValue);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6669,10 +7124,12 @@ java.lang.String defaultValue);
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
     public io.grafeas.v1.SlsaProvenance.Material.Builder addMaterialsBuilder() {
-      return getMaterialsFieldBuilder().addBuilder(
-          io.grafeas.v1.SlsaProvenance.Material.getDefaultInstance());
+      return getMaterialsFieldBuilder()
+          .addBuilder(io.grafeas.v1.SlsaProvenance.Material.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6682,12 +7139,13 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public io.grafeas.v1.SlsaProvenance.Material.Builder addMaterialsBuilder(
-        int index) {
-      return getMaterialsFieldBuilder().addBuilder(
-          index, io.grafeas.v1.SlsaProvenance.Material.getDefaultInstance());
+    public io.grafeas.v1.SlsaProvenance.Material.Builder addMaterialsBuilder(int index) {
+      return getMaterialsFieldBuilder()
+          .addBuilder(index, io.grafeas.v1.SlsaProvenance.Material.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The collection of artifacts that influenced the build including sources,
      * dependencies, build tools, base images, and so on. This is considered to be
@@ -6697,27 +7155,29 @@ java.lang.String defaultValue);
      *
      * <code>repeated .grafeas.v1.SlsaProvenance.Material materials = 4;</code>
      */
-    public java.util.List<io.grafeas.v1.SlsaProvenance.Material.Builder> 
-         getMaterialsBuilderList() {
+    public java.util.List<io.grafeas.v1.SlsaProvenance.Material.Builder> getMaterialsBuilderList() {
       return getMaterialsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.SlsaProvenance.Material, io.grafeas.v1.SlsaProvenance.Material.Builder, io.grafeas.v1.SlsaProvenance.MaterialOrBuilder> 
+            io.grafeas.v1.SlsaProvenance.Material,
+            io.grafeas.v1.SlsaProvenance.Material.Builder,
+            io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>
         getMaterialsFieldBuilder() {
       if (materialsBuilder_ == null) {
-        materialsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.SlsaProvenance.Material, io.grafeas.v1.SlsaProvenance.Material.Builder, io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>(
-                materials_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
+        materialsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenance.Material,
+                io.grafeas.v1.SlsaProvenance.Material.Builder,
+                io.grafeas.v1.SlsaProvenance.MaterialOrBuilder>(
+                materials_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         materials_ = null;
       }
       return materialsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -6727,12 +7187,12 @@ java.lang.String defaultValue);
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.SlsaProvenance)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.SlsaProvenance)
   private static final io.grafeas.v1.SlsaProvenance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.SlsaProvenance();
   }
@@ -6741,27 +7201,27 @@ java.lang.String defaultValue);
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SlsaProvenance>
-      PARSER = new com.google.protobuf.AbstractParser<SlsaProvenance>() {
-    @java.lang.Override
-    public SlsaProvenance parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<SlsaProvenance> PARSER =
+      new com.google.protobuf.AbstractParser<SlsaProvenance>() {
+        @java.lang.Override
+        public SlsaProvenance parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<SlsaProvenance> parser() {
     return PARSER;
@@ -6776,6 +7236,4 @@ java.lang.String defaultValue);
   public io.grafeas.v1.SlsaProvenance getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

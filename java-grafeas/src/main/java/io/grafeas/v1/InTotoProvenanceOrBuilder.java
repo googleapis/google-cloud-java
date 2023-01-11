@@ -19,29 +19,38 @@
 
 package io.grafeas.v1;
 
-public interface InTotoProvenanceOrBuilder extends
+public interface InTotoProvenanceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.InTotoProvenance)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
+   *
    * @return Whether the builderConfig field is set.
    */
   boolean hasBuilderConfig();
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
    *
    * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
+   *
    * @return The builderConfig.
    */
   io.grafeas.v1.BuilderConfig getBuilderConfig();
   /**
+   *
+   *
    * <pre>
    * required
    * </pre>
@@ -51,6 +60,8 @@ public interface InTotoProvenanceOrBuilder extends
   io.grafeas.v1.BuilderConfigOrBuilder getBuilderConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -59,10 +70,13 @@ public interface InTotoProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1.Recipe recipe = 2;</code>
+   *
    * @return Whether the recipe field is set.
    */
   boolean hasRecipe();
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -71,10 +85,13 @@ public interface InTotoProvenanceOrBuilder extends
    * </pre>
    *
    * <code>.grafeas.v1.Recipe recipe = 2;</code>
+   *
    * @return The recipe.
    */
   io.grafeas.v1.Recipe getRecipe();
   /**
+   *
+   *
    * <pre>
    * Identifies the configuration used for the build.
    * When combined with materials, this SHOULD fully describe the build,
@@ -88,20 +105,22 @@ public interface InTotoProvenanceOrBuilder extends
 
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
+   *
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
+   *
    * @return The metadata.
    */
   io.grafeas.v1.Metadata getMetadata();
-  /**
-   * <code>.grafeas.v1.Metadata metadata = 3;</code>
-   */
+  /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
   io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -110,11 +129,13 @@ public interface InTotoProvenanceOrBuilder extends
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @return A list containing the materials.
    */
-  java.util.List<java.lang.String>
-      getMaterialsList();
+  java.util.List<java.lang.String> getMaterialsList();
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -123,10 +144,13 @@ public interface InTotoProvenanceOrBuilder extends
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @return The count of materials.
    */
   int getMaterialsCount();
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -135,11 +159,14 @@ public interface InTotoProvenanceOrBuilder extends
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @param index The index of the element to return.
    * @return The materials at the given index.
    */
   java.lang.String getMaterials(int index);
   /**
+   *
+   *
    * <pre>
    * The collection of artifacts that influenced the build including sources,
    * dependencies, build tools, base images, and so on. This is considered to be
@@ -148,9 +175,9 @@ public interface InTotoProvenanceOrBuilder extends
    * </pre>
    *
    * <code>repeated string materials = 4;</code>
+   *
    * @param index The index of the value to return.
    * @return The bytes of the materials at the given index.
    */
-  com.google.protobuf.ByteString
-      getMaterialsBytes(int index);
+  com.google.protobuf.ByteString getMaterialsBytes(int index);
 }

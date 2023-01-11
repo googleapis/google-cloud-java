@@ -21,66 +21,66 @@ package io.grafeas.v1;
 
 public final class Build {
   private Build() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_BuildNote_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_BuildNote_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_BuildNote_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_BuildOccurrence_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_BuildOccurrence_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_BuildOccurrence_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n\026grafeas/v1/build.proto\022\ngrafeas.v1\032\"gr" +
-      "afeas/v1/intoto_provenance.proto\032!grafea" +
-      "s/v1/intoto_statement.proto\032\033grafeas/v1/" +
-      "provenance.proto\"$\n\tBuildNote\022\027\n\017builder" +
-      "_version\030\001 \001(\t\"\314\001\n\017BuildOccurrence\022/\n\npr" +
-      "ovenance\030\001 \001(\0132\033.grafeas.v1.BuildProvena" +
-      "nce\022\030\n\020provenance_bytes\030\002 \001(\t\0227\n\021intoto_" +
-      "provenance\030\003 \001(\0132\034.grafeas.v1.InTotoProv" +
-      "enance\0225\n\020intoto_statement\030\004 \001(\0132\033.grafe" +
-      "as.v1.InTotoStatementBQ\n\rio.grafeas.v1P\001" +
-      "Z8google.golang.org/genproto/googleapis/" +
-      "grafeas/v1;grafeas\242\002\003GRAb\006proto3"
+      "\n\026grafeas/v1/build.proto\022\ngrafeas.v1\032\"gr"
+          + "afeas/v1/intoto_provenance.proto\032!grafea"
+          + "s/v1/intoto_statement.proto\032\033grafeas/v1/"
+          + "provenance.proto\"$\n\tBuildNote\022\027\n\017builder"
+          + "_version\030\001 \001(\t\"\314\001\n\017BuildOccurrence\022/\n\npr"
+          + "ovenance\030\001 \001(\0132\033.grafeas.v1.BuildProvena"
+          + "nce\022\030\n\020provenance_bytes\030\002 \001(\t\0227\n\021intoto_"
+          + "provenance\030\003 \001(\0132\034.grafeas.v1.InTotoProv"
+          + "enance\0225\n\020intoto_statement\030\004 \001(\0132\033.grafe"
+          + "as.v1.InTotoStatementBQ\n\rio.grafeas.v1P\001"
+          + "Z8google.golang.org/genproto/googleapis/"
+          + "grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.grafeas.v1.InTotoProvenanceProto.getDescriptor(),
-          io.grafeas.v1.InTotoStatementProto.getDescriptor(),
-          io.grafeas.v1.Provenance.getDescriptor(),
-        });
-    internal_static_grafeas_v1_BuildNote_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_grafeas_v1_BuildNote_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_BuildNote_descriptor,
-        new java.lang.String[] { "BuilderVersion", });
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              io.grafeas.v1.InTotoProvenanceProto.getDescriptor(),
+              io.grafeas.v1.InTotoStatementProto.getDescriptor(),
+              io.grafeas.v1.Provenance.getDescriptor(),
+            });
+    internal_static_grafeas_v1_BuildNote_descriptor = getDescriptor().getMessageTypes().get(0);
+    internal_static_grafeas_v1_BuildNote_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_BuildNote_descriptor,
+            new java.lang.String[] {
+              "BuilderVersion",
+            });
     internal_static_grafeas_v1_BuildOccurrence_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_grafeas_v1_BuildOccurrence_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_BuildOccurrence_descriptor,
-        new java.lang.String[] { "Provenance", "ProvenanceBytes", "IntotoProvenance", "IntotoStatement", });
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_grafeas_v1_BuildOccurrence_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_BuildOccurrence_descriptor,
+            new java.lang.String[] {
+              "Provenance", "ProvenanceBytes", "IntotoProvenance", "IntotoStatement",
+            });
     io.grafeas.v1.InTotoProvenanceProto.getDescriptor();
     io.grafeas.v1.InTotoStatementProto.getDescriptor();
     io.grafeas.v1.Provenance.getDescriptor();

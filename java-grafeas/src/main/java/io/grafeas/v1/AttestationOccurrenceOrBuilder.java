@@ -19,22 +19,28 @@
 
 package io.grafeas.v1;
 
-public interface AttestationOccurrenceOrBuilder extends
+public interface AttestationOccurrenceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.AttestationOccurrence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The serialized payload that is verified by one or more
    * `signatures`.
    * </pre>
    *
    * <code>bytes serialized_payload = 1;</code>
+   *
    * @return The serializedPayload.
    */
   com.google.protobuf.ByteString getSerializedPayload();
 
   /**
+   *
+   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -44,9 +50,10 @@ public interface AttestationOccurrenceOrBuilder extends
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
-  java.util.List<io.grafeas.v1.Signature> 
-      getSignaturesList();
+  java.util.List<io.grafeas.v1.Signature> getSignaturesList();
   /**
+   *
+   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -58,6 +65,8 @@ public interface AttestationOccurrenceOrBuilder extends
    */
   io.grafeas.v1.Signature getSignatures(int index);
   /**
+   *
+   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -69,6 +78,8 @@ public interface AttestationOccurrenceOrBuilder extends
    */
   int getSignaturesCount();
   /**
+   *
+   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -78,9 +89,10 @@ public interface AttestationOccurrenceOrBuilder extends
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
-  java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> 
-      getSignaturesOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> getSignaturesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * One or more signatures over `serialized_payload`.  Verifier implementations
    * should consider this attestation message verified if at least one
@@ -90,10 +102,11 @@ public interface AttestationOccurrenceOrBuilder extends
    *
    * <code>repeated .grafeas.v1.Signature signatures = 2;</code>
    */
-  io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(
-      int index);
+  io.grafeas.v1.SignatureOrBuilder getSignaturesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -108,9 +121,10 @@ public interface AttestationOccurrenceOrBuilder extends
    *
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
-  java.util.List<io.grafeas.v1.Jwt> 
-      getJwtsList();
+  java.util.List<io.grafeas.v1.Jwt> getJwtsList();
   /**
+   *
+   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -127,6 +141,8 @@ public interface AttestationOccurrenceOrBuilder extends
    */
   io.grafeas.v1.Jwt getJwts(int index);
   /**
+   *
+   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -143,6 +159,8 @@ public interface AttestationOccurrenceOrBuilder extends
    */
   int getJwtsCount();
   /**
+   *
+   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -157,9 +175,10 @@ public interface AttestationOccurrenceOrBuilder extends
    *
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
-  java.util.List<? extends io.grafeas.v1.JwtOrBuilder> 
-      getJwtsOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * One or more JWTs encoding a self-contained attestation.
    * Each JWT encodes the payload that it verifies within the JWT itself.
@@ -174,6 +193,5 @@ public interface AttestationOccurrenceOrBuilder extends
    *
    * <code>repeated .grafeas.v1.Jwt jwts = 3;</code>
    */
-  io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(
-      int index);
+  io.grafeas.v1.JwtOrBuilder getJwtsOrBuilder(int index);
 }

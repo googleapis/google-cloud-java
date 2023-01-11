@@ -21,260 +21,278 @@ package io.grafeas.v1;
 
 public final class Provenance {
   private Provenance() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_BuildProvenance_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_BuildProvenance_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_BuildProvenance_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Source_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Source_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Source_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Source_FileHashesEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Source_FileHashesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Source_FileHashesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_FileHashes_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_FileHashes_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_FileHashes_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Hash_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Hash_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Hash_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Command_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Command_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Command_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_Artifact_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Artifact_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Artifact_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_SourceContext_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_SourceContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_SourceContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_SourceContext_LabelsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_SourceContext_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_SourceContext_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_AliasContext_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_AliasContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_AliasContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_CloudRepoSourceContext_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_CloudRepoSourceContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_CloudRepoSourceContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_GerritSourceContext_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_GerritSourceContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_GerritSourceContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_GitSourceContext_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_GitSourceContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_GitSourceContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_RepoId_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_RepoId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_RepoId_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_grafeas_v1_ProjectRepoId_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_ProjectRepoId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_ProjectRepoId_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n\033grafeas/v1/provenance.proto\022\ngrafeas.v" +
-      "1\032\037google/protobuf/timestamp.proto\"\220\004\n\017B" +
-      "uildProvenance\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_id" +
-      "\030\002 \001(\t\022%\n\010commands\030\003 \003(\0132\023.grafeas.v1.Co" +
-      "mmand\022-\n\017built_artifacts\030\004 \003(\0132\024.grafeas" +
-      ".v1.Artifact\022/\n\013create_time\030\005 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022.\n\nstart_time\030\006 \001(" +
-      "\0132\032.google.protobuf.Timestamp\022,\n\010end_tim" +
-      "e\030\007 \001(\0132\032.google.protobuf.Timestamp\022\017\n\007c" +
-      "reator\030\010 \001(\t\022\020\n\010logs_uri\030\t \001(\t\022-\n\021source" +
-      "_provenance\030\n \001(\0132\022.grafeas.v1.Source\022\022\n" +
-      "\ntrigger_id\030\013 \001(\t\022D\n\rbuild_options\030\014 \003(\013" +
-      "2-.grafeas.v1.BuildProvenance.BuildOptio" +
-      "nsEntry\022\027\n\017builder_version\030\r \001(\t\0323\n\021Buil" +
-      "dOptionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001\"\225\002\n\006Source\022#\n\033artifact_storage_sou" +
-      "rce_uri\030\001 \001(\t\0227\n\013file_hashes\030\002 \003(\0132\".gra" +
-      "feas.v1.Source.FileHashesEntry\022*\n\007contex" +
-      "t\030\003 \001(\0132\031.grafeas.v1.SourceContext\0226\n\023ad" +
-      "ditional_contexts\030\004 \003(\0132\031.grafeas.v1.Sou" +
-      "rceContext\032I\n\017FileHashesEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022%\n\005value\030\002 \001(\0132\026.grafeas.v1.FileHashe" +
-      "s:\0028\001\"1\n\nFileHashes\022#\n\tfile_hash\030\001 \003(\0132\020" +
-      ".grafeas.v1.Hash\"#\n\004Hash\022\014\n\004type\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\014\"]\n\007Command\022\014\n\004name\030\001 \001(\t\022\013" +
-      "\n\003env\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022\013\n\003dir\030\004 \001(\t\022\n" +
-      "\n\002id\030\005 \001(\t\022\020\n\010wait_for\030\006 \003(\t\"7\n\010Artifact" +
-      "\022\020\n\010checksum\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\r\n\005names\030" +
-      "\003 \003(\t\"\232\002\n\rSourceContext\0228\n\ncloud_repo\030\001 " +
-      "\001(\0132\".grafeas.v1.CloudRepoSourceContextH" +
-      "\000\0221\n\006gerrit\030\002 \001(\0132\037.grafeas.v1.GerritSou" +
-      "rceContextH\000\022+\n\003git\030\003 \001(\0132\034.grafeas.v1.G" +
-      "itSourceContextH\000\0225\n\006labels\030\004 \003(\0132%.graf" +
-      "eas.v1.SourceContext.LabelsEntry\032-\n\013Labe" +
-      "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B" +
-      "\t\n\007context\"\212\001\n\014AliasContext\022+\n\004kind\030\001 \001(" +
-      "\0162\035.grafeas.v1.AliasContext.Kind\022\014\n\004name" +
-      "\030\002 \001(\t\"?\n\004Kind\022\024\n\020KIND_UNSPECIFIED\020\000\022\t\n\005" +
-      "FIXED\020\001\022\013\n\007MOVABLE\020\002\022\t\n\005OTHER\020\004\"\223\001\n\026Clou" +
-      "dRepoSourceContext\022#\n\007repo_id\030\001 \001(\0132\022.gr" +
-      "afeas.v1.RepoId\022\025\n\013revision_id\030\002 \001(\tH\000\0221" +
-      "\n\ralias_context\030\003 \001(\0132\030.grafeas.v1.Alias" +
-      "ContextH\000B\n\n\010revision\"\225\001\n\023GerritSourceCo" +
-      "ntext\022\020\n\010host_uri\030\001 \001(\t\022\026\n\016gerrit_projec" +
-      "t\030\002 \001(\t\022\025\n\013revision_id\030\003 \001(\tH\000\0221\n\ralias_" +
-      "context\030\004 \001(\0132\030.grafeas.v1.AliasContextH" +
-      "\000B\n\n\010revision\"4\n\020GitSourceContext\022\013\n\003url" +
-      "\030\001 \001(\t\022\023\n\013revision_id\030\002 \001(\t\"S\n\006RepoId\0224\n" +
-      "\017project_repo_id\030\001 \001(\0132\031.grafeas.v1.Proj" +
-      "ectRepoIdH\000\022\r\n\003uid\030\002 \001(\tH\000B\004\n\002id\"6\n\rProj" +
-      "ectRepoId\022\022\n\nproject_id\030\001 \001(\t\022\021\n\trepo_na" +
-      "me\030\002 \001(\tBQ\n\rio.grafeas.v1P\001Z8google.gola" +
-      "ng.org/genproto/googleapis/grafeas/v1;gr" +
-      "afeas\242\002\003GRAb\006proto3"
+      "\n\033grafeas/v1/provenance.proto\022\ngrafeas.v"
+          + "1\032\037google/protobuf/timestamp.proto\"\220\004\n\017B"
+          + "uildProvenance\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_id"
+          + "\030\002 \001(\t\022%\n\010commands\030\003 \003(\0132\023.grafeas.v1.Co"
+          + "mmand\022-\n\017built_artifacts\030\004 \003(\0132\024.grafeas"
+          + ".v1.Artifact\022/\n\013create_time\030\005 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\022.\n\nstart_time\030\006 \001("
+          + "\0132\032.google.protobuf.Timestamp\022,\n\010end_tim"
+          + "e\030\007 \001(\0132\032.google.protobuf.Timestamp\022\017\n\007c"
+          + "reator\030\010 \001(\t\022\020\n\010logs_uri\030\t \001(\t\022-\n\021source"
+          + "_provenance\030\n \001(\0132\022.grafeas.v1.Source\022\022\n"
+          + "\ntrigger_id\030\013 \001(\t\022D\n\rbuild_options\030\014 \003(\013"
+          + "2-.grafeas.v1.BuildProvenance.BuildOptio"
+          + "nsEntry\022\027\n\017builder_version\030\r \001(\t\0323\n\021Buil"
+          + "dOptionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
+          + "\t:\0028\001\"\225\002\n\006Source\022#\n\033artifact_storage_sou"
+          + "rce_uri\030\001 \001(\t\0227\n\013file_hashes\030\002 \003(\0132\".gra"
+          + "feas.v1.Source.FileHashesEntry\022*\n\007contex"
+          + "t\030\003 \001(\0132\031.grafeas.v1.SourceContext\0226\n\023ad"
+          + "ditional_contexts\030\004 \003(\0132\031.grafeas.v1.Sou"
+          + "rceContext\032I\n\017FileHashesEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022%\n\005value\030\002 \001(\0132\026.grafeas.v1.FileHashe"
+          + "s:\0028\001\"1\n\nFileHashes\022#\n\tfile_hash\030\001 \003(\0132\020"
+          + ".grafeas.v1.Hash\"#\n\004Hash\022\014\n\004type\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\014\"]\n\007Command\022\014\n\004name\030\001 \001(\t\022\013"
+          + "\n\003env\030\002 \003(\t\022\014\n\004args\030\003 \003(\t\022\013\n\003dir\030\004 \001(\t\022\n"
+          + "\n\002id\030\005 \001(\t\022\020\n\010wait_for\030\006 \003(\t\"7\n\010Artifact"
+          + "\022\020\n\010checksum\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\r\n\005names\030"
+          + "\003 \003(\t\"\232\002\n\rSourceContext\0228\n\ncloud_repo\030\001 "
+          + "\001(\0132\".grafeas.v1.CloudRepoSourceContextH"
+          + "\000\0221\n\006gerrit\030\002 \001(\0132\037.grafeas.v1.GerritSou"
+          + "rceContextH\000\022+\n\003git\030\003 \001(\0132\034.grafeas.v1.G"
+          + "itSourceContextH\000\0225\n\006labels\030\004 \003(\0132%.graf"
+          + "eas.v1.SourceContext.LabelsEntry\032-\n\013Labe"
+          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B"
+          + "\t\n\007context\"\212\001\n\014AliasContext\022+\n\004kind\030\001 \001("
+          + "\0162\035.grafeas.v1.AliasContext.Kind\022\014\n\004name"
+          + "\030\002 \001(\t\"?\n\004Kind\022\024\n\020KIND_UNSPECIFIED\020\000\022\t\n\005"
+          + "FIXED\020\001\022\013\n\007MOVABLE\020\002\022\t\n\005OTHER\020\004\"\223\001\n\026Clou"
+          + "dRepoSourceContext\022#\n\007repo_id\030\001 \001(\0132\022.gr"
+          + "afeas.v1.RepoId\022\025\n\013revision_id\030\002 \001(\tH\000\0221"
+          + "\n\ralias_context\030\003 \001(\0132\030.grafeas.v1.Alias"
+          + "ContextH\000B\n\n\010revision\"\225\001\n\023GerritSourceCo"
+          + "ntext\022\020\n\010host_uri\030\001 \001(\t\022\026\n\016gerrit_projec"
+          + "t\030\002 \001(\t\022\025\n\013revision_id\030\003 \001(\tH\000\0221\n\ralias_"
+          + "context\030\004 \001(\0132\030.grafeas.v1.AliasContextH"
+          + "\000B\n\n\010revision\"4\n\020GitSourceContext\022\013\n\003url"
+          + "\030\001 \001(\t\022\023\n\013revision_id\030\002 \001(\t\"S\n\006RepoId\0224\n"
+          + "\017project_repo_id\030\001 \001(\0132\031.grafeas.v1.Proj"
+          + "ectRepoIdH\000\022\r\n\003uid\030\002 \001(\tH\000B\004\n\002id\"6\n\rProj"
+          + "ectRepoId\022\022\n\nproject_id\030\001 \001(\t\022\021\n\trepo_na"
+          + "me\030\002 \001(\tBQ\n\rio.grafeas.v1P\001Z8google.gola"
+          + "ng.org/genproto/googleapis/grafeas/v1;gr"
+          + "afeas\242\002\003GRAb\006proto3"
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
-        });
+    descriptor =
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.protobuf.TimestampProto.getDescriptor(),
+            });
     internal_static_grafeas_v1_BuildProvenance_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_grafeas_v1_BuildProvenance_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_BuildProvenance_descriptor,
-        new java.lang.String[] { "Id", "ProjectId", "Commands", "BuiltArtifacts", "CreateTime", "StartTime", "EndTime", "Creator", "LogsUri", "SourceProvenance", "TriggerId", "BuildOptions", "BuilderVersion", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_grafeas_v1_BuildProvenance_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_BuildProvenance_descriptor,
+            new java.lang.String[] {
+              "Id",
+              "ProjectId",
+              "Commands",
+              "BuiltArtifacts",
+              "CreateTime",
+              "StartTime",
+              "EndTime",
+              "Creator",
+              "LogsUri",
+              "SourceProvenance",
+              "TriggerId",
+              "BuildOptions",
+              "BuilderVersion",
+            });
     internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor =
-      internal_static_grafeas_v1_BuildProvenance_descriptor.getNestedTypes().get(0);
-    internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_grafeas_v1_Source_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_grafeas_v1_Source_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Source_descriptor,
-        new java.lang.String[] { "ArtifactStorageSourceUri", "FileHashes", "Context", "AdditionalContexts", });
+        internal_static_grafeas_v1_BuildProvenance_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_BuildProvenance_BuildOptionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_grafeas_v1_Source_descriptor = getDescriptor().getMessageTypes().get(1);
+    internal_static_grafeas_v1_Source_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Source_descriptor,
+            new java.lang.String[] {
+              "ArtifactStorageSourceUri", "FileHashes", "Context", "AdditionalContexts",
+            });
     internal_static_grafeas_v1_Source_FileHashesEntry_descriptor =
-      internal_static_grafeas_v1_Source_descriptor.getNestedTypes().get(0);
-    internal_static_grafeas_v1_Source_FileHashesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Source_FileHashesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_grafeas_v1_FileHashes_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_grafeas_v1_FileHashes_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_FileHashes_descriptor,
-        new java.lang.String[] { "FileHash", });
-    internal_static_grafeas_v1_Hash_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_grafeas_v1_Hash_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Hash_descriptor,
-        new java.lang.String[] { "Type", "Value", });
-    internal_static_grafeas_v1_Command_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_grafeas_v1_Command_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Command_descriptor,
-        new java.lang.String[] { "Name", "Env", "Args", "Dir", "Id", "WaitFor", });
-    internal_static_grafeas_v1_Artifact_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_grafeas_v1_Artifact_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_Artifact_descriptor,
-        new java.lang.String[] { "Checksum", "Id", "Names", });
-    internal_static_grafeas_v1_SourceContext_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_grafeas_v1_SourceContext_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_SourceContext_descriptor,
-        new java.lang.String[] { "CloudRepo", "Gerrit", "Git", "Labels", "Context", });
+        internal_static_grafeas_v1_Source_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_Source_FileHashesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Source_FileHashesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_grafeas_v1_FileHashes_descriptor = getDescriptor().getMessageTypes().get(2);
+    internal_static_grafeas_v1_FileHashes_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_FileHashes_descriptor,
+            new java.lang.String[] {
+              "FileHash",
+            });
+    internal_static_grafeas_v1_Hash_descriptor = getDescriptor().getMessageTypes().get(3);
+    internal_static_grafeas_v1_Hash_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Hash_descriptor,
+            new java.lang.String[] {
+              "Type", "Value",
+            });
+    internal_static_grafeas_v1_Command_descriptor = getDescriptor().getMessageTypes().get(4);
+    internal_static_grafeas_v1_Command_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Command_descriptor,
+            new java.lang.String[] {
+              "Name", "Env", "Args", "Dir", "Id", "WaitFor",
+            });
+    internal_static_grafeas_v1_Artifact_descriptor = getDescriptor().getMessageTypes().get(5);
+    internal_static_grafeas_v1_Artifact_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Artifact_descriptor,
+            new java.lang.String[] {
+              "Checksum", "Id", "Names",
+            });
+    internal_static_grafeas_v1_SourceContext_descriptor = getDescriptor().getMessageTypes().get(6);
+    internal_static_grafeas_v1_SourceContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_SourceContext_descriptor,
+            new java.lang.String[] {
+              "CloudRepo", "Gerrit", "Git", "Labels", "Context",
+            });
     internal_static_grafeas_v1_SourceContext_LabelsEntry_descriptor =
-      internal_static_grafeas_v1_SourceContext_descriptor.getNestedTypes().get(0);
-    internal_static_grafeas_v1_SourceContext_LabelsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_SourceContext_LabelsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_grafeas_v1_AliasContext_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_grafeas_v1_AliasContext_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_AliasContext_descriptor,
-        new java.lang.String[] { "Kind", "Name", });
+        internal_static_grafeas_v1_SourceContext_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_SourceContext_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_SourceContext_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_grafeas_v1_AliasContext_descriptor = getDescriptor().getMessageTypes().get(7);
+    internal_static_grafeas_v1_AliasContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_AliasContext_descriptor,
+            new java.lang.String[] {
+              "Kind", "Name",
+            });
     internal_static_grafeas_v1_CloudRepoSourceContext_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_grafeas_v1_CloudRepoSourceContext_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_CloudRepoSourceContext_descriptor,
-        new java.lang.String[] { "RepoId", "RevisionId", "AliasContext", "Revision", });
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_grafeas_v1_CloudRepoSourceContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_CloudRepoSourceContext_descriptor,
+            new java.lang.String[] {
+              "RepoId", "RevisionId", "AliasContext", "Revision",
+            });
     internal_static_grafeas_v1_GerritSourceContext_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_grafeas_v1_GerritSourceContext_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_GerritSourceContext_descriptor,
-        new java.lang.String[] { "HostUri", "GerritProject", "RevisionId", "AliasContext", "Revision", });
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_grafeas_v1_GerritSourceContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_GerritSourceContext_descriptor,
+            new java.lang.String[] {
+              "HostUri", "GerritProject", "RevisionId", "AliasContext", "Revision",
+            });
     internal_static_grafeas_v1_GitSourceContext_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_grafeas_v1_GitSourceContext_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_GitSourceContext_descriptor,
-        new java.lang.String[] { "Url", "RevisionId", });
-    internal_static_grafeas_v1_RepoId_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_grafeas_v1_RepoId_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_RepoId_descriptor,
-        new java.lang.String[] { "ProjectRepoId", "Uid", "Id", });
-    internal_static_grafeas_v1_ProjectRepoId_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_grafeas_v1_ProjectRepoId_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_grafeas_v1_ProjectRepoId_descriptor,
-        new java.lang.String[] { "ProjectId", "RepoName", });
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_grafeas_v1_GitSourceContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_GitSourceContext_descriptor,
+            new java.lang.String[] {
+              "Url", "RevisionId",
+            });
+    internal_static_grafeas_v1_RepoId_descriptor = getDescriptor().getMessageTypes().get(11);
+    internal_static_grafeas_v1_RepoId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_RepoId_descriptor,
+            new java.lang.String[] {
+              "ProjectRepoId", "Uid", "Id",
+            });
+    internal_static_grafeas_v1_ProjectRepoId_descriptor = getDescriptor().getMessageTypes().get(12);
+    internal_static_grafeas_v1_ProjectRepoId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_ProjectRepoId_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "RepoName",
+            });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

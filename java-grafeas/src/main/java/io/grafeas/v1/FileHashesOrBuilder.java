@@ -19,20 +19,24 @@
 
 package io.grafeas.v1;
 
-public interface FileHashesOrBuilder extends
+public interface FileHashesOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.FileHashes)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
-  java.util.List<io.grafeas.v1.Hash> 
-      getFileHashList();
+  java.util.List<io.grafeas.v1.Hash> getFileHashList();
   /**
+   *
+   *
    * <pre>
    * Required. Collection of file hashes.
    * </pre>
@@ -41,6 +45,8 @@ public interface FileHashesOrBuilder extends
    */
   io.grafeas.v1.Hash getFileHash(int index);
   /**
+   *
+   *
    * <pre>
    * Required. Collection of file hashes.
    * </pre>
@@ -49,21 +55,23 @@ public interface FileHashesOrBuilder extends
    */
   int getFileHashCount();
   /**
+   *
+   *
    * <pre>
    * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
-  java.util.List<? extends io.grafeas.v1.HashOrBuilder> 
-      getFileHashOrBuilderList();
+  java.util.List<? extends io.grafeas.v1.HashOrBuilder> getFileHashOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Required. Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
-  io.grafeas.v1.HashOrBuilder getFileHashOrBuilder(
-      int index);
+  io.grafeas.v1.HashOrBuilder getFileHashOrBuilder(int index);
 }

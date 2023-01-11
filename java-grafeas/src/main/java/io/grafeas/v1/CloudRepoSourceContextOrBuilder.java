@@ -19,29 +19,38 @@
 
 package io.grafeas.v1;
 
-public interface CloudRepoSourceContextOrBuilder extends
+public interface CloudRepoSourceContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.CloudRepoSourceContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the repo.
    * </pre>
    *
    * <code>.grafeas.v1.RepoId repo_id = 1;</code>
+   *
    * @return Whether the repoId field is set.
    */
   boolean hasRepoId();
   /**
+   *
+   *
    * <pre>
    * The ID of the repo.
    * </pre>
    *
    * <code>.grafeas.v1.RepoId repo_id = 1;</code>
+   *
    * @return The repoId.
    */
   io.grafeas.v1.RepoId getRepoId();
   /**
+   *
+   *
    * <pre>
    * The ID of the repo.
    * </pre>
@@ -51,53 +60,69 @@ public interface CloudRepoSourceContextOrBuilder extends
   io.grafeas.v1.RepoIdOrBuilder getRepoIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A revision ID.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
    * @return Whether the revisionId field is set.
    */
   boolean hasRevisionId();
   /**
+   *
+   *
    * <pre>
    * A revision ID.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
   /**
+   *
+   *
    * <pre>
    * A revision ID.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
+   *
    * @return The bytes for revisionId.
    */
-  com.google.protobuf.ByteString
-      getRevisionIdBytes();
+  com.google.protobuf.ByteString getRevisionIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
    *
    * <code>.grafeas.v1.AliasContext alias_context = 3;</code>
+   *
    * @return Whether the aliasContext field is set.
    */
   boolean hasAliasContext();
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
    *
    * <code>.grafeas.v1.AliasContext alias_context = 3;</code>
+   *
    * @return The aliasContext.
    */
   io.grafeas.v1.AliasContext getAliasContext();
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>

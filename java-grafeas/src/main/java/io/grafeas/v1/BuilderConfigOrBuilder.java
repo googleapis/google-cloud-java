@@ -19,19 +19,21 @@
 
 package io.grafeas.v1;
 
-public interface BuilderConfigOrBuilder extends
+public interface BuilderConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.BuilderConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    * <code>string id = 1;</code>
+   *
    * @return The id.
    */
   java.lang.String getId();
   /**
    * <code>string id = 1;</code>
+   *
    * @return The bytes for id.
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 }

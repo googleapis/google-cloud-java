@@ -19,11 +19,14 @@
 
 package io.grafeas.v1;
 
-public interface LicenseOrBuilder extends
+public interface LicenseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.License)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Often a single license can be used to represent the licensing terms.
    * Sometimes it is necessary to include a choice of one or more licenses
@@ -33,10 +36,13 @@ public interface LicenseOrBuilder extends
    * </pre>
    *
    * <code>string expression = 1;</code>
+   *
    * @return The expression.
    */
   java.lang.String getExpression();
   /**
+   *
+   *
    * <pre>
    * Often a single license can be used to represent the licensing terms.
    * Sometimes it is necessary to include a choice of one or more licenses
@@ -46,28 +52,33 @@ public interface LicenseOrBuilder extends
    * </pre>
    *
    * <code>string expression = 1;</code>
+   *
    * @return The bytes for expression.
    */
-  com.google.protobuf.ByteString
-      getExpressionBytes();
+  com.google.protobuf.ByteString getExpressionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Comments
    * </pre>
    *
    * <code>string comments = 2;</code>
+   *
    * @return The comments.
    */
   java.lang.String getComments();
   /**
+   *
+   *
    * <pre>
    * Comments
    * </pre>
    *
    * <code>string comments = 2;</code>
+   *
    * @return The bytes for comments.
    */
-  com.google.protobuf.ByteString
-      getCommentsBytes();
+  com.google.protobuf.ByteString getCommentsBytes();
 }

@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Selects a repo using a Google Cloud Platform project ID (e.g.,
  * winged-cargo-31) and a repo name within that project.
@@ -27,15 +29,16 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.ProjectRepoId}
  */
-public final class ProjectRepoId extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ProjectRepoId extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.ProjectRepoId)
     ProjectRepoIdOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ProjectRepoId.newBuilder() to construct.
   private ProjectRepoId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ProjectRepoId() {
     projectId_ = "";
     repoName_ = "";
@@ -43,18 +46,16 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ProjectRepoId();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Provenance.internal_static_grafeas_v1_ProjectRepoId_descriptor;
   }
 
@@ -69,11 +70,14 @@ private static final long serialVersionUID = 0L;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * The ID of the project.
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
    * @return The projectId.
    */
   @java.lang.Override
@@ -82,29 +86,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The ID of the project.
    * </pre>
    *
    * <code>string project_id = 1;</code>
+   *
    * @return The bytes for projectId.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -115,11 +119,14 @@ private static final long serialVersionUID = 0L;
   public static final int REPO_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object repoName_;
   /**
+   *
+   *
    * <pre>
    * The name of the repo. Leave empty for the default repo.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
    * @return The repoName.
    */
   @java.lang.Override
@@ -128,29 +135,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       repoName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the repo. Leave empty for the default repo.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
+   *
    * @return The bytes for repoName.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRepoNameBytes() {
+  public com.google.protobuf.ByteString getRepoNameBytes() {
     java.lang.Object ref = repoName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       repoName_ = b;
       return b;
     } else {
@@ -159,6 +166,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -170,8 +178,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -201,17 +208,15 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.ProjectRepoId)) {
       return super.equals(obj);
     }
     io.grafeas.v1.ProjectRepoId other = (io.grafeas.v1.ProjectRepoId) obj;
 
-    if (!getProjectId()
-        .equals(other.getProjectId())) return false;
-    if (!getRepoName()
-        .equals(other.getRepoName())) return false;
+    if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getRepoName().equals(other.getRepoName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -232,97 +237,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.ProjectRepoId parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.ProjectRepoId parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.ProjectRepoId parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.ProjectRepoId parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.ProjectRepoId parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.ProjectRepoId parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ProjectRepoId parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.ProjectRepoId prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Selects a repo using a Google Cloud Platform project ID (e.g.,
    * winged-cargo-31) and a repo name within that project.
@@ -330,12 +341,11 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.ProjectRepoId}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.ProjectRepoId)
       io.grafeas.v1.ProjectRepoIdOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_ProjectRepoId_descriptor;
     }
 
@@ -348,15 +358,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.ProjectRepoId.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -368,8 +375,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Provenance.internal_static_grafeas_v1_ProjectRepoId_descriptor;
     }
 
@@ -400,38 +406,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.ProjectRepoId) {
-        return mergeFrom((io.grafeas.v1.ProjectRepoId)other);
+        return mergeFrom((io.grafeas.v1.ProjectRepoId) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -474,22 +481,25 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              projectId_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                projectId_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              repoName_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+            case 18:
+              {
+                repoName_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 18
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -502,18 +512,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * The ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
      * @return The projectId.
      */
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -522,20 +534,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
      * @return The bytes for projectId.
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -543,54 +556,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
+     *
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -598,18 +618,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object repoName_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the repo. Leave empty for the default repo.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
      * @return The repoName.
      */
     public java.lang.String getRepoName() {
       java.lang.Object ref = repoName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         repoName_ = s;
         return s;
@@ -618,20 +640,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the repo. Leave empty for the default repo.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
      * @return The bytes for repoName.
      */
-    public com.google.protobuf.ByteString
-        getRepoNameBytes() {
+    public com.google.protobuf.ByteString getRepoNameBytes() {
       java.lang.Object ref = repoName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         repoName_ = b;
         return b;
       } else {
@@ -639,61 +662,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the repo. Leave empty for the default repo.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
      * @param value The repoName to set.
      * @return This builder for chaining.
      */
-    public Builder setRepoName(
-        java.lang.String value) {
+    public Builder setRepoName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       repoName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the repo. Leave empty for the default repo.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearRepoName() {
-      
+
       repoName_ = getDefaultInstance().getRepoName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the repo. Leave empty for the default repo.
      * </pre>
      *
      * <code>string repo_name = 2;</code>
+     *
      * @param value The bytes for repoName to set.
      * @return This builder for chaining.
      */
-    public Builder setRepoNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRepoNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       repoName_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -703,12 +733,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.ProjectRepoId)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.ProjectRepoId)
   private static final io.grafeas.v1.ProjectRepoId DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.ProjectRepoId();
   }
@@ -717,27 +747,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ProjectRepoId>
-      PARSER = new com.google.protobuf.AbstractParser<ProjectRepoId>() {
-    @java.lang.Override
-    public ProjectRepoId parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<ProjectRepoId> PARSER =
+      new com.google.protobuf.AbstractParser<ProjectRepoId>() {
+        @java.lang.Override
+        public ProjectRepoId parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<ProjectRepoId> parser() {
     return PARSER;
@@ -752,6 +782,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.ProjectRepoId getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

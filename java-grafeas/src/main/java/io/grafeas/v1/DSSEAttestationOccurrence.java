@@ -20,6 +20,8 @@
 package io.grafeas.v1;
 
 /**
+ *
+ *
  * <pre>
  * Deprecated. Prefer to use a regular Occurrence, and populate the
  * Envelope at the top level of the Occurrence.
@@ -27,51 +29,55 @@ package io.grafeas.v1;
  *
  * Protobuf type {@code grafeas.v1.DSSEAttestationOccurrence}
  */
-public final class DSSEAttestationOccurrence extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DSSEAttestationOccurrence extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.DSSEAttestationOccurrence)
     DSSEAttestationOccurrenceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DSSEAttestationOccurrence.newBuilder() to construct.
   private DSSEAttestationOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private DSSEAttestationOccurrence() {
-  }
+
+  private DSSEAttestationOccurrence() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new DSSEAttestationOccurrence();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1.DsseAttestation.internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1.DsseAttestation
+        .internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.DsseAttestation.internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable
+    return io.grafeas.v1.DsseAttestation
+        .internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1.DSSEAttestationOccurrence.class, io.grafeas.v1.DSSEAttestationOccurrence.Builder.class);
+            io.grafeas.v1.DSSEAttestationOccurrence.class,
+            io.grafeas.v1.DSSEAttestationOccurrence.Builder.class);
   }
 
   private int decodedPayloadCase_ = 0;
   private java.lang.Object decodedPayload_;
+
   public enum DecodedPayloadCase
-      implements com.google.protobuf.Internal.EnumLite,
+      implements
+          com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STATEMENT(2),
     DECODEDPAYLOAD_NOT_SET(0);
     private final int value;
+
     private DecodedPayloadCase(int value) {
       this.value = value;
     }
@@ -87,31 +93,36 @@ private static final long serialVersionUID = 0L;
 
     public static DecodedPayloadCase forNumber(int value) {
       switch (value) {
-        case 2: return STATEMENT;
-        case 0: return DECODEDPAYLOAD_NOT_SET;
-        default: return null;
+        case 2:
+          return STATEMENT;
+        case 0:
+          return DECODEDPAYLOAD_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DecodedPayloadCase
-  getDecodedPayloadCase() {
-    return DecodedPayloadCase.forNumber(
-        decodedPayloadCase_);
+  public DecodedPayloadCase getDecodedPayloadCase() {
+    return DecodedPayloadCase.forNumber(decodedPayloadCase_);
   }
 
   public static final int ENVELOPE_FIELD_NUMBER = 1;
   private io.grafeas.v1.Envelope envelope_;
   /**
+   *
+   *
    * <pre>
    * If doing something security critical, make sure to verify the signatures in
    * this metadata.
    * </pre>
    *
    * <code>.grafeas.v1.Envelope envelope = 1;</code>
+   *
    * @return Whether the envelope field is set.
    */
   @java.lang.Override
@@ -119,12 +130,15 @@ private static final long serialVersionUID = 0L;
     return envelope_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If doing something security critical, make sure to verify the signatures in
    * this metadata.
    * </pre>
    *
    * <code>.grafeas.v1.Envelope envelope = 1;</code>
+   *
    * @return The envelope.
    */
   @java.lang.Override
@@ -132,6 +146,8 @@ private static final long serialVersionUID = 0L;
     return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
   }
   /**
+   *
+   *
    * <pre>
    * If doing something security critical, make sure to verify the signatures in
    * this metadata.
@@ -147,6 +163,7 @@ private static final long serialVersionUID = 0L;
   public static final int STATEMENT_FIELD_NUMBER = 2;
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
+   *
    * @return Whether the statement field is set.
    */
   @java.lang.Override
@@ -155,27 +172,27 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
+   *
    * @return The statement.
    */
   @java.lang.Override
   public io.grafeas.v1.InTotoStatement getStatement() {
     if (decodedPayloadCase_ == 2) {
-       return (io.grafeas.v1.InTotoStatement) decodedPayload_;
+      return (io.grafeas.v1.InTotoStatement) decodedPayload_;
     }
     return io.grafeas.v1.InTotoStatement.getDefaultInstance();
   }
-  /**
-   * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-   */
+  /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder() {
     if (decodedPayloadCase_ == 2) {
-       return (io.grafeas.v1.InTotoStatement) decodedPayload_;
+      return (io.grafeas.v1.InTotoStatement) decodedPayload_;
     }
     return io.grafeas.v1.InTotoStatement.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -187,8 +204,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (envelope_ != null) {
       output.writeMessage(1, getEnvelope());
     }
@@ -205,12 +221,12 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (envelope_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getEnvelope());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEnvelope());
     }
     if (decodedPayloadCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (io.grafeas.v1.InTotoStatement) decodedPayload_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (io.grafeas.v1.InTotoStatement) decodedPayload_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -220,7 +236,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.DSSEAttestationOccurrence)) {
       return super.equals(obj);
@@ -229,14 +245,12 @@ private static final long serialVersionUID = 0L;
 
     if (hasEnvelope() != other.hasEnvelope()) return false;
     if (hasEnvelope()) {
-      if (!getEnvelope()
-          .equals(other.getEnvelope())) return false;
+      if (!getEnvelope().equals(other.getEnvelope())) return false;
     }
     if (!getDecodedPayloadCase().equals(other.getDecodedPayloadCase())) return false;
     switch (decodedPayloadCase_) {
       case 2:
-        if (!getStatement()
-            .equals(other.getStatement())) return false;
+        if (!getStatement().equals(other.getStatement())) return false;
         break;
       case 0:
       default:
@@ -269,97 +283,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.DSSEAttestationOccurrence parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1.DSSEAttestationOccurrence parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.DSSEAttestationOccurrence parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.DSSEAttestationOccurrence prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. Prefer to use a regular Occurrence, and populate the
    * Envelope at the top level of the Occurrence.
@@ -367,33 +388,32 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1.DSSEAttestationOccurrence}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.DSSEAttestationOccurrence)
       io.grafeas.v1.DSSEAttestationOccurrenceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.DsseAttestation.internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.DsseAttestation
+          .internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.DsseAttestation.internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable
+      return io.grafeas.v1.DsseAttestation
+          .internal_static_grafeas_v1_DSSEAttestationOccurrence_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.DSSEAttestationOccurrence.class, io.grafeas.v1.DSSEAttestationOccurrence.Builder.class);
+              io.grafeas.v1.DSSEAttestationOccurrence.class,
+              io.grafeas.v1.DSSEAttestationOccurrence.Builder.class);
     }
 
     // Construct using io.grafeas.v1.DSSEAttestationOccurrence.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -412,9 +432,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1.DsseAttestation.internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1.DsseAttestation
+          .internal_static_grafeas_v1_DSSEAttestationOccurrence_descriptor;
     }
 
     @java.lang.Override
@@ -433,7 +453,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1.DSSEAttestationOccurrence buildPartial() {
-      io.grafeas.v1.DSSEAttestationOccurrence result = new io.grafeas.v1.DSSEAttestationOccurrence(this);
+      io.grafeas.v1.DSSEAttestationOccurrence result =
+          new io.grafeas.v1.DSSEAttestationOccurrence(this);
       if (envelopeBuilder_ == null) {
         result.envelope_ = envelope_;
       } else {
@@ -455,38 +476,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.DSSEAttestationOccurrence) {
-        return mergeFrom((io.grafeas.v1.DSSEAttestationOccurrence)other);
+        return mergeFrom((io.grafeas.v1.DSSEAttestationOccurrence) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -499,13 +521,15 @@ private static final long serialVersionUID = 0L;
         mergeEnvelope(other.getEnvelope());
       }
       switch (other.getDecodedPayloadCase()) {
-        case STATEMENT: {
-          mergeStatement(other.getStatement());
-          break;
-        }
-        case DECODEDPAYLOAD_NOT_SET: {
-          break;
-        }
+        case STATEMENT:
+          {
+            mergeStatement(other.getStatement());
+            break;
+          }
+        case DECODEDPAYLOAD_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -533,26 +557,25 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              input.readMessage(
-                  getEnvelopeFieldBuilder().getBuilder(),
-                  extensionRegistry);
+            case 10:
+              {
+                input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
 
-              break;
-            } // case 10
-            case 18: {
-              input.readMessage(
-                  getStatementFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              decodedPayloadCase_ = 2;
-              break;
-            } // case 18
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(getStatementFieldBuilder().getBuilder(), extensionRegistry);
+                decodedPayloadCase_ = 2;
+                break;
+              } // case 18
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -562,12 +585,12 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int decodedPayloadCase_ = 0;
     private java.lang.Object decodedPayload_;
-    public DecodedPayloadCase
-        getDecodedPayloadCase() {
-      return DecodedPayloadCase.forNumber(
-          decodedPayloadCase_);
+
+    public DecodedPayloadCase getDecodedPayloadCase() {
+      return DecodedPayloadCase.forNumber(decodedPayloadCase_);
     }
 
     public Builder clearDecodedPayload() {
@@ -577,29 +600,35 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private io.grafeas.v1.Envelope envelope_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder> envelopeBuilder_;
+            io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
+        envelopeBuilder_;
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
      * </pre>
      *
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
+     *
      * @return Whether the envelope field is set.
      */
     public boolean hasEnvelope() {
       return envelopeBuilder_ != null || envelope_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
      * </pre>
      *
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
+     *
      * @return The envelope.
      */
     public io.grafeas.v1.Envelope getEnvelope() {
@@ -610,6 +639,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -631,6 +662,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -638,8 +671,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
      */
-    public Builder setEnvelope(
-        io.grafeas.v1.Envelope.Builder builderForValue) {
+    public Builder setEnvelope(io.grafeas.v1.Envelope.Builder builderForValue) {
       if (envelopeBuilder_ == null) {
         envelope_ = builderForValue.build();
         onChanged();
@@ -650,6 +682,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -660,8 +694,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeEnvelope(io.grafeas.v1.Envelope value) {
       if (envelopeBuilder_ == null) {
         if (envelope_ != null) {
-          envelope_ =
-            io.grafeas.v1.Envelope.newBuilder(envelope_).mergeFrom(value).buildPartial();
+          envelope_ = io.grafeas.v1.Envelope.newBuilder(envelope_).mergeFrom(value).buildPartial();
         } else {
           envelope_ = value;
         }
@@ -673,6 +706,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -692,6 +727,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -700,11 +737,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
      */
     public io.grafeas.v1.Envelope.Builder getEnvelopeBuilder() {
-      
+
       onChanged();
       return getEnvelopeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -716,11 +755,12 @@ private static final long serialVersionUID = 0L;
       if (envelopeBuilder_ != null) {
         return envelopeBuilder_.getMessageOrBuilder();
       } else {
-        return envelope_ == null ?
-            io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
+        return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If doing something security critical, make sure to verify the signatures in
      * this metadata.
@@ -729,23 +769,27 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder> 
+            io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
         getEnvelopeFieldBuilder() {
       if (envelopeBuilder_ == null) {
-        envelopeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>(
-                getEnvelope(),
-                getParentForChildren(),
-                isClean());
+        envelopeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Envelope,
+                io.grafeas.v1.Envelope.Builder,
+                io.grafeas.v1.EnvelopeOrBuilder>(getEnvelope(), getParentForChildren(), isClean());
         envelope_ = null;
       }
       return envelopeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder> statementBuilder_;
+            io.grafeas.v1.InTotoStatement,
+            io.grafeas.v1.InTotoStatement.Builder,
+            io.grafeas.v1.InTotoStatementOrBuilder>
+        statementBuilder_;
     /**
      * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
+     *
      * @return Whether the statement field is set.
      */
     @java.lang.Override
@@ -754,6 +798,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
+     *
      * @return The statement.
      */
     @java.lang.Override
@@ -770,9 +815,7 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.InTotoStatement.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder setStatement(io.grafeas.v1.InTotoStatement value) {
       if (statementBuilder_ == null) {
         if (value == null) {
@@ -786,11 +829,8 @@ private static final long serialVersionUID = 0L;
       decodedPayloadCase_ = 2;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
-    public Builder setStatement(
-        io.grafeas.v1.InTotoStatement.Builder builderForValue) {
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
+    public Builder setStatement(io.grafeas.v1.InTotoStatement.Builder builderForValue) {
       if (statementBuilder_ == null) {
         decodedPayload_ = builderForValue.build();
         onChanged();
@@ -800,15 +840,16 @@ private static final long serialVersionUID = 0L;
       decodedPayloadCase_ = 2;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder mergeStatement(io.grafeas.v1.InTotoStatement value) {
       if (statementBuilder_ == null) {
-        if (decodedPayloadCase_ == 2 &&
-            decodedPayload_ != io.grafeas.v1.InTotoStatement.getDefaultInstance()) {
-          decodedPayload_ = io.grafeas.v1.InTotoStatement.newBuilder((io.grafeas.v1.InTotoStatement) decodedPayload_)
-              .mergeFrom(value).buildPartial();
+        if (decodedPayloadCase_ == 2
+            && decodedPayload_ != io.grafeas.v1.InTotoStatement.getDefaultInstance()) {
+          decodedPayload_ =
+              io.grafeas.v1.InTotoStatement.newBuilder(
+                      (io.grafeas.v1.InTotoStatement) decodedPayload_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           decodedPayload_ = value;
         }
@@ -823,9 +864,7 @@ private static final long serialVersionUID = 0L;
       decodedPayloadCase_ = 2;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public Builder clearStatement() {
       if (statementBuilder_ == null) {
         if (decodedPayloadCase_ == 2) {
@@ -842,15 +881,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     public io.grafeas.v1.InTotoStatement.Builder getStatementBuilder() {
       return getStatementFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoStatementOrBuilder getStatementOrBuilder() {
       if ((decodedPayloadCase_ == 2) && (statementBuilder_ != null)) {
@@ -862,30 +897,32 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.InTotoStatement.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.InTotoStatement statement = 2;</code>
-     */
+    /** <code>.grafeas.v1.InTotoStatement statement = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder> 
+            io.grafeas.v1.InTotoStatement,
+            io.grafeas.v1.InTotoStatement.Builder,
+            io.grafeas.v1.InTotoStatementOrBuilder>
         getStatementFieldBuilder() {
       if (statementBuilder_ == null) {
         if (!(decodedPayloadCase_ == 2)) {
           decodedPayload_ = io.grafeas.v1.InTotoStatement.getDefaultInstance();
         }
-        statementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.InTotoStatement, io.grafeas.v1.InTotoStatement.Builder, io.grafeas.v1.InTotoStatementOrBuilder>(
-                (io.grafeas.v1.InTotoStatement) decodedPayload_,
-                getParentForChildren(),
-                isClean());
+        statementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.InTotoStatement,
+                io.grafeas.v1.InTotoStatement.Builder,
+                io.grafeas.v1.InTotoStatementOrBuilder>(
+                (io.grafeas.v1.InTotoStatement) decodedPayload_, getParentForChildren(), isClean());
         decodedPayload_ = null;
       }
       decodedPayloadCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return statementBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -895,12 +932,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.DSSEAttestationOccurrence)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.DSSEAttestationOccurrence)
   private static final io.grafeas.v1.DSSEAttestationOccurrence DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.DSSEAttestationOccurrence();
   }
@@ -909,27 +946,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DSSEAttestationOccurrence>
-      PARSER = new com.google.protobuf.AbstractParser<DSSEAttestationOccurrence>() {
-    @java.lang.Override
-    public DSSEAttestationOccurrence parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<DSSEAttestationOccurrence> PARSER =
+      new com.google.protobuf.AbstractParser<DSSEAttestationOccurrence>() {
+        @java.lang.Override
+        public DSSEAttestationOccurrence parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<DSSEAttestationOccurrence> parser() {
     return PARSER;
@@ -944,6 +981,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.DSSEAttestationOccurrence getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

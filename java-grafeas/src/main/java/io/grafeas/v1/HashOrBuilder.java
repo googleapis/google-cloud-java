@@ -19,36 +19,45 @@
 
 package io.grafeas.v1;
 
-public interface HashOrBuilder extends
+public interface HashOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1.Hash)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The type of hash that was performed, e.g. "SHA-256".
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The type.
    */
   java.lang.String getType();
   /**
+   *
+   *
    * <pre>
    * Required. The type of hash that was performed, e.g. "SHA-256".
    * </pre>
    *
    * <code>string type = 1;</code>
+   *
    * @return The bytes for type.
    */
-  com.google.protobuf.ByteString
-      getTypeBytes();
+  com.google.protobuf.ByteString getTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The hash value.
    * </pre>
    *
    * <code>bytes value = 2;</code>
+   *
    * @return The value.
    */
   com.google.protobuf.ByteString getValue();

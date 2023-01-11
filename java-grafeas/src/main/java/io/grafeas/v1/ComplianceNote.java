@@ -19,18 +19,17 @@
 
 package io.grafeas.v1;
 
-/**
- * Protobuf type {@code grafeas.v1.ComplianceNote}
- */
-public final class ComplianceNote extends
-    com.google.protobuf.GeneratedMessageV3 implements
+/** Protobuf type {@code grafeas.v1.ComplianceNote} */
+public final class ComplianceNote extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1.ComplianceNote)
     ComplianceNoteOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ComplianceNote.newBuilder() to construct.
   private ComplianceNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ComplianceNote() {
     title_ = "";
     description_ = "";
@@ -42,18 +41,16 @@ private static final long serialVersionUID = 0L;
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(
-      UnusedPrivateParameter unused) {
+  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
     return new ComplianceNote();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_descriptor;
   }
 
@@ -65,76 +62,85 @@ private static final long serialVersionUID = 0L;
             io.grafeas.v1.ComplianceNote.class, io.grafeas.v1.ComplianceNote.Builder.class);
   }
 
-  public interface CisBenchmarkOrBuilder extends
+  public interface CisBenchmarkOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:grafeas.v1.ComplianceNote.CisBenchmark)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int32 profile_level = 1;</code>
+     *
      * @return The profileLevel.
      */
     int getProfileLevel();
 
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
+     *
      * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
+     *
      * @return The severity.
      */
     io.grafeas.v1.Severity getSeverity();
   }
   /**
+   *
+   *
    * <pre>
    * A compliance check that is a CIS benchmark.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.ComplianceNote.CisBenchmark}
    */
-  public static final class CisBenchmark extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class CisBenchmark extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:grafeas.v1.ComplianceNote.CisBenchmark)
       CisBenchmarkOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use CisBenchmark.newBuilder() to construct.
     private CisBenchmark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private CisBenchmark() {
       severity_ = 0;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
       return new CisBenchmark();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_CisBenchmark_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1.Compliance
+          .internal_static_grafeas_v1_ComplianceNote_CisBenchmark_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_CisBenchmark_fieldAccessorTable
+      return io.grafeas.v1.Compliance
+          .internal_static_grafeas_v1_ComplianceNote_CisBenchmark_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1.ComplianceNote.CisBenchmark.class, io.grafeas.v1.ComplianceNote.CisBenchmark.Builder.class);
+              io.grafeas.v1.ComplianceNote.CisBenchmark.class,
+              io.grafeas.v1.ComplianceNote.CisBenchmark.Builder.class);
     }
 
     public static final int PROFILE_LEVEL_FIELD_NUMBER = 1;
     private int profileLevel_;
     /**
      * <code>int32 profile_level = 1;</code>
+     *
      * @return The profileLevel.
      */
     @java.lang.Override
@@ -146,22 +152,27 @@ private static final long serialVersionUID = 0L;
     private int severity_;
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
+     *
      * @return The enum numeric value on the wire for severity.
      */
-    @java.lang.Override public int getSeverityValue() {
+    @java.lang.Override
+    public int getSeverityValue() {
       return severity_;
     }
     /**
      * <code>.grafeas.v1.Severity severity = 2;</code>
+     *
      * @return The severity.
      */
-    @java.lang.Override public io.grafeas.v1.Severity getSeverity() {
+    @java.lang.Override
+    public io.grafeas.v1.Severity getSeverity() {
       @SuppressWarnings("deprecation")
       io.grafeas.v1.Severity result = io.grafeas.v1.Severity.valueOf(severity_);
       return result == null ? io.grafeas.v1.Severity.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -173,8 +184,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (profileLevel_ != 0) {
         output.writeInt32(1, profileLevel_);
       }
@@ -191,12 +201,10 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (profileLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, profileLevel_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, profileLevel_);
       }
       if (severity_ != io.grafeas.v1.Severity.SEVERITY_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, severity_);
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, severity_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -206,15 +214,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof io.grafeas.v1.ComplianceNote.CisBenchmark)) {
         return super.equals(obj);
       }
-      io.grafeas.v1.ComplianceNote.CisBenchmark other = (io.grafeas.v1.ComplianceNote.CisBenchmark) obj;
+      io.grafeas.v1.ComplianceNote.CisBenchmark other =
+          (io.grafeas.v1.ComplianceNote.CisBenchmark) obj;
 
-      if (getProfileLevel()
-          != other.getProfileLevel()) return false;
+      if (getProfileLevel() != other.getProfileLevel()) return false;
       if (severity_ != other.severity_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -236,88 +244,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
-        java.nio.ByteBuffer data)
+    public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static io.grafeas.v1.ComplianceNote.CisBenchmark parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static io.grafeas.v1.ComplianceNote.CisBenchmark parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static io.grafeas.v1.ComplianceNote.CisBenchmark parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(io.grafeas.v1.ComplianceNote.CisBenchmark prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -327,39 +341,41 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A compliance check that is a CIS benchmark.
      * </pre>
      *
      * Protobuf type {@code grafeas.v1.ComplianceNote.CisBenchmark}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:grafeas.v1.ComplianceNote.CisBenchmark)
         io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_CisBenchmark_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return io.grafeas.v1.Compliance
+            .internal_static_grafeas_v1_ComplianceNote_CisBenchmark_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_CisBenchmark_fieldAccessorTable
+        return io.grafeas.v1.Compliance
+            .internal_static_grafeas_v1_ComplianceNote_CisBenchmark_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.grafeas.v1.ComplianceNote.CisBenchmark.class, io.grafeas.v1.ComplianceNote.CisBenchmark.Builder.class);
+                io.grafeas.v1.ComplianceNote.CisBenchmark.class,
+                io.grafeas.v1.ComplianceNote.CisBenchmark.Builder.class);
       }
 
       // Construct using io.grafeas.v1.ComplianceNote.CisBenchmark.newBuilder()
-      private Builder() {
+      private Builder() {}
 
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -371,9 +387,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_CisBenchmark_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return io.grafeas.v1.Compliance
+            .internal_static_grafeas_v1_ComplianceNote_CisBenchmark_descriptor;
       }
 
       @java.lang.Override
@@ -392,7 +408,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public io.grafeas.v1.ComplianceNote.CisBenchmark buildPartial() {
-        io.grafeas.v1.ComplianceNote.CisBenchmark result = new io.grafeas.v1.ComplianceNote.CisBenchmark(this);
+        io.grafeas.v1.ComplianceNote.CisBenchmark result =
+            new io.grafeas.v1.ComplianceNote.CisBenchmark(this);
         result.profileLevel_ = profileLevel_;
         result.severity_ = severity_;
         onBuilt();
@@ -403,38 +420,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof io.grafeas.v1.ComplianceNote.CisBenchmark) {
-          return mergeFrom((io.grafeas.v1.ComplianceNote.CisBenchmark)other);
+          return mergeFrom((io.grafeas.v1.ComplianceNote.CisBenchmark) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -475,22 +495,25 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 8: {
-                profileLevel_ = input.readInt32();
+              case 8:
+                {
+                  profileLevel_ = input.readInt32();
 
-                break;
-              } // case 8
-              case 16: {
-                severity_ = input.readEnum();
+                  break;
+                } // case 8
+              case 16:
+                {
+                  severity_ = input.readEnum();
 
-                break;
-              } // case 16
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
             } // switch (tag)
           } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -501,9 +524,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private int profileLevel_ ;
+      private int profileLevel_;
       /**
        * <code>int32 profile_level = 1;</code>
+       *
        * @return The profileLevel.
        */
       @java.lang.Override
@@ -512,21 +536,23 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>int32 profile_level = 1;</code>
+       *
        * @param value The profileLevel to set.
        * @return This builder for chaining.
        */
       public Builder setProfileLevel(int value) {
-        
+
         profileLevel_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>int32 profile_level = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearProfileLevel() {
-        
+
         profileLevel_ = 0;
         onChanged();
         return this;
@@ -535,24 +561,28 @@ private static final long serialVersionUID = 0L;
       private int severity_ = 0;
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
+       *
        * @return The enum numeric value on the wire for severity.
        */
-      @java.lang.Override public int getSeverityValue() {
+      @java.lang.Override
+      public int getSeverityValue() {
         return severity_;
       }
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
+       *
        * @param value The enum numeric value on the wire for severity to set.
        * @return This builder for chaining.
        */
       public Builder setSeverityValue(int value) {
-        
+
         severity_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
+       *
        * @return The severity.
        */
       @java.lang.Override
@@ -563,6 +593,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
+       *
        * @param value The severity to set.
        * @return This builder for chaining.
        */
@@ -570,21 +601,23 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         severity_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
        * <code>.grafeas.v1.Severity severity = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearSeverity() {
-        
+
         severity_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -597,12 +630,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:grafeas.v1.ComplianceNote.CisBenchmark)
     }
 
     // @@protoc_insertion_point(class_scope:grafeas.v1.ComplianceNote.CisBenchmark)
     private static final io.grafeas.v1.ComplianceNote.CisBenchmark DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new io.grafeas.v1.ComplianceNote.CisBenchmark();
     }
@@ -611,27 +644,28 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CisBenchmark>
-        PARSER = new com.google.protobuf.AbstractParser<CisBenchmark>() {
-      @java.lang.Override
-      public CisBenchmark parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
+    private static final com.google.protobuf.Parser<CisBenchmark> PARSER =
+        new com.google.protobuf.AbstractParser<CisBenchmark>() {
+          @java.lang.Override
+          public CisBenchmark parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
 
     public static com.google.protobuf.Parser<CisBenchmark> parser() {
       return PARSER;
@@ -646,17 +680,19 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1.ComplianceNote.CisBenchmark getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int complianceTypeCase_ = 0;
   private java.lang.Object complianceType_;
+
   public enum ComplianceTypeCase
-      implements com.google.protobuf.Internal.EnumLite,
+      implements
+          com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CIS_BENCHMARK(6),
     COMPLIANCETYPE_NOT_SET(0);
     private final int value;
+
     private ComplianceTypeCase(int value) {
       this.value = value;
     }
@@ -672,30 +708,35 @@ private static final long serialVersionUID = 0L;
 
     public static ComplianceTypeCase forNumber(int value) {
       switch (value) {
-        case 6: return CIS_BENCHMARK;
-        case 0: return COMPLIANCETYPE_NOT_SET;
-        default: return null;
+        case 6:
+          return CIS_BENCHMARK;
+        case 0:
+          return COMPLIANCETYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ComplianceTypeCase
-  getComplianceTypeCase() {
-    return ComplianceTypeCase.forNumber(
-        complianceTypeCase_);
+  public ComplianceTypeCase getComplianceTypeCase() {
+    return ComplianceTypeCase.forNumber(complianceTypeCase_);
   }
 
   public static final int TITLE_FIELD_NUMBER = 1;
   private volatile java.lang.Object title_;
   /**
+   *
+   *
    * <pre>
    * The title that identifies this compliance check.
    * </pre>
    *
    * <code>string title = 1;</code>
+   *
    * @return The title.
    */
   @java.lang.Override
@@ -704,29 +745,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       title_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The title that identifies this compliance check.
    * </pre>
    *
    * <code>string title = 1;</code>
+   *
    * @return The bytes for title.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTitleBytes() {
+  public com.google.protobuf.ByteString getTitleBytes() {
     java.lang.Object ref = title_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       title_ = b;
       return b;
     } else {
@@ -737,11 +778,14 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * A description about this compliance check.
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
    * @return The description.
    */
   @java.lang.Override
@@ -750,29 +794,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A description about this compliance check.
    * </pre>
    *
    * <code>string description = 2;</code>
+   *
    * @return The bytes for description.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -783,6 +827,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 3;
   private java.util.List<io.grafeas.v1.ComplianceVersion> version_;
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -794,6 +840,8 @@ private static final long serialVersionUID = 0L;
     return version_;
   }
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -801,11 +849,13 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
   @java.lang.Override
-  public java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder> 
+  public java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder>
       getVersionOrBuilderList() {
     return version_;
   }
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -817,6 +867,8 @@ private static final long serialVersionUID = 0L;
     return version_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -828,6 +880,8 @@ private static final long serialVersionUID = 0L;
     return version_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The OS and config versions the benchmark applies to.
    * </pre>
@@ -835,19 +889,21 @@ private static final long serialVersionUID = 0L;
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
   @java.lang.Override
-  public io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder(
-      int index) {
+  public io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder(int index) {
     return version_.get(index);
   }
 
   public static final int RATIONALE_FIELD_NUMBER = 4;
   private volatile java.lang.Object rationale_;
   /**
+   *
+   *
    * <pre>
    * A rationale for the existence of this compliance check.
    * </pre>
    *
    * <code>string rationale = 4;</code>
+   *
    * @return The rationale.
    */
   @java.lang.Override
@@ -856,29 +912,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       rationale_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A rationale for the existence of this compliance check.
    * </pre>
    *
    * <code>string rationale = 4;</code>
+   *
    * @return The bytes for rationale.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRationaleBytes() {
+  public com.google.protobuf.ByteString getRationaleBytes() {
     java.lang.Object ref = rationale_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       rationale_ = b;
       return b;
     } else {
@@ -889,11 +945,14 @@ private static final long serialVersionUID = 0L;
   public static final int REMEDIATION_FIELD_NUMBER = 5;
   private volatile java.lang.Object remediation_;
   /**
+   *
+   *
    * <pre>
    * A description of remediation steps if the compliance check fails.
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
    * @return The remediation.
    */
   @java.lang.Override
@@ -902,29 +961,29 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       remediation_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A description of remediation steps if the compliance check fails.
    * </pre>
    *
    * <code>string remediation = 5;</code>
+   *
    * @return The bytes for remediation.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getRemediationBytes() {
+  public com.google.protobuf.ByteString getRemediationBytes() {
     java.lang.Object ref = remediation_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       remediation_ = b;
       return b;
     } else {
@@ -935,6 +994,7 @@ private static final long serialVersionUID = 0L;
   public static final int CIS_BENCHMARK_FIELD_NUMBER = 6;
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
+   *
    * @return Whether the cisBenchmark field is set.
    */
   @java.lang.Override
@@ -943,22 +1003,21 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
+   *
    * @return The cisBenchmark.
    */
   @java.lang.Override
   public io.grafeas.v1.ComplianceNote.CisBenchmark getCisBenchmark() {
     if (complianceTypeCase_ == 6) {
-       return (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_;
+      return (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_;
     }
     return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
   }
-  /**
-   * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-   */
+  /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
   @java.lang.Override
   public io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder getCisBenchmarkOrBuilder() {
     if (complianceTypeCase_ == 6) {
-       return (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_;
+      return (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_;
     }
     return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
   }
@@ -966,11 +1025,14 @@ private static final long serialVersionUID = 0L;
   public static final int SCAN_INSTRUCTIONS_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString scanInstructions_;
   /**
+   *
+   *
    * <pre>
    * Serialized scan instructions with a predefined format.
    * </pre>
    *
    * <code>bytes scan_instructions = 7;</code>
+   *
    * @return The scanInstructions.
    */
   @java.lang.Override
@@ -979,6 +1041,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -990,8 +1053,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
     }
@@ -1029,8 +1091,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     for (int i = 0; i < version_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, version_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, version_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rationale_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, rationale_);
@@ -1039,12 +1100,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, remediation_);
     }
     if (complianceTypeCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_);
     }
     if (!scanInstructions_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(7, scanInstructions_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(7, scanInstructions_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1054,30 +1115,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1.ComplianceNote)) {
       return super.equals(obj);
     }
     io.grafeas.v1.ComplianceNote other = (io.grafeas.v1.ComplianceNote) obj;
 
-    if (!getTitle()
-        .equals(other.getTitle())) return false;
-    if (!getDescription()
-        .equals(other.getDescription())) return false;
-    if (!getVersionList()
-        .equals(other.getVersionList())) return false;
-    if (!getRationale()
-        .equals(other.getRationale())) return false;
-    if (!getRemediation()
-        .equals(other.getRemediation())) return false;
-    if (!getScanInstructions()
-        .equals(other.getScanInstructions())) return false;
+    if (!getTitle().equals(other.getTitle())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getVersionList().equals(other.getVersionList())) return false;
+    if (!getRationale().equals(other.getRationale())) return false;
+    if (!getRemediation().equals(other.getRemediation())) return false;
+    if (!getScanInstructions().equals(other.getScanInstructions())) return false;
     if (!getComplianceTypeCase().equals(other.getComplianceTypeCase())) return false;
     switch (complianceTypeCase_) {
       case 6:
-        if (!getCisBenchmark()
-            .equals(other.getCisBenchmark())) return false;
+        if (!getCisBenchmark().equals(other.getCisBenchmark())) return false;
         break;
       case 0:
       default:
@@ -1120,105 +1174,106 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1.ComplianceNote parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1.ComplianceNote parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1.ComplianceNote parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1.ComplianceNote parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1.ComplianceNote parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ComplianceNote parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1.ComplianceNote parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1.ComplianceNote parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1.ComplianceNote parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1.ComplianceNote prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   * Protobuf type {@code grafeas.v1.ComplianceNote}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  /** Protobuf type {@code grafeas.v1.ComplianceNote} */
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1.ComplianceNote)
       io.grafeas.v1.ComplianceNoteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_descriptor;
     }
 
@@ -1231,15 +1286,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // Construct using io.grafeas.v1.ComplianceNote.newBuilder()
-    private Builder() {
+    private Builder() {}
 
-    }
-
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1269,8 +1321,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1.Compliance.internal_static_grafeas_v1_ComplianceNote_descriptor;
     }
 
@@ -1322,38 +1373,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1.ComplianceNote) {
-        return mergeFrom((io.grafeas.v1.ComplianceNote)other);
+        return mergeFrom((io.grafeas.v1.ComplianceNote) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1388,9 +1440,10 @@ private static final long serialVersionUID = 0L;
             versionBuilder_ = null;
             version_ = other.version_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            versionBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getVersionFieldBuilder() : null;
+            versionBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getVersionFieldBuilder()
+                    : null;
           } else {
             versionBuilder_.addAllMessages(other.version_);
           }
@@ -1408,13 +1461,15 @@ private static final long serialVersionUID = 0L;
         setScanInstructions(other.getScanInstructions());
       }
       switch (other.getComplianceTypeCase()) {
-        case CIS_BENCHMARK: {
-          mergeCisBenchmark(other.getCisBenchmark());
-          break;
-        }
-        case COMPLIANCETYPE_NOT_SET: {
-          break;
-        }
+        case CIS_BENCHMARK:
+          {
+            mergeCisBenchmark(other.getCisBenchmark());
+            break;
+          }
+        case COMPLIANCETYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1442,57 +1497,61 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              title_ = input.readStringRequireUtf8();
+            case 10:
+              {
+                title_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 10
-            case 18: {
-              description_ = input.readStringRequireUtf8();
+                break;
+              } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 18
-            case 26: {
-              io.grafeas.v1.ComplianceVersion m =
-                  input.readMessage(
-                      io.grafeas.v1.ComplianceVersion.parser(),
-                      extensionRegistry);
-              if (versionBuilder_ == null) {
-                ensureVersionIsMutable();
-                version_.add(m);
-              } else {
-                versionBuilder_.addMessage(m);
-              }
-              break;
-            } // case 26
-            case 34: {
-              rationale_ = input.readStringRequireUtf8();
+                break;
+              } // case 18
+            case 26:
+              {
+                io.grafeas.v1.ComplianceVersion m =
+                    input.readMessage(io.grafeas.v1.ComplianceVersion.parser(), extensionRegistry);
+                if (versionBuilder_ == null) {
+                  ensureVersionIsMutable();
+                  version_.add(m);
+                } else {
+                  versionBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                rationale_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 34
-            case 42: {
-              remediation_ = input.readStringRequireUtf8();
+                break;
+              } // case 34
+            case 42:
+              {
+                remediation_ = input.readStringRequireUtf8();
 
-              break;
-            } // case 42
-            case 50: {
-              input.readMessage(
-                  getCisBenchmarkFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              complianceTypeCase_ = 6;
-              break;
-            } // case 50
-            case 58: {
-              scanInstructions_ = input.readBytes();
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getCisBenchmarkFieldBuilder().getBuilder(), extensionRegistry);
+                complianceTypeCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                scanInstructions_ = input.readBytes();
 
-              break;
-            } // case 58
-            default: {
-              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                done = true; // was an endgroup tag
-              }
-              break;
-            } // default:
+                break;
+              } // case 58
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
           } // switch (tag)
         } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1502,12 +1561,12 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
     private int complianceTypeCase_ = 0;
     private java.lang.Object complianceType_;
-    public ComplianceTypeCase
-        getComplianceTypeCase() {
-      return ComplianceTypeCase.forNumber(
-          complianceTypeCase_);
+
+    public ComplianceTypeCase getComplianceTypeCase() {
+      return ComplianceTypeCase.forNumber(complianceTypeCase_);
     }
 
     public Builder clearComplianceType() {
@@ -1521,18 +1580,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object title_ = "";
     /**
+     *
+     *
      * <pre>
      * The title that identifies this compliance check.
      * </pre>
      *
      * <code>string title = 1;</code>
+     *
      * @return The title.
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         title_ = s;
         return s;
@@ -1541,20 +1602,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The title that identifies this compliance check.
      * </pre>
      *
      * <code>string title = 1;</code>
+     *
      * @return The bytes for title.
      */
-    public com.google.protobuf.ByteString
-        getTitleBytes() {
+    public com.google.protobuf.ByteString getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         title_ = b;
         return b;
       } else {
@@ -1562,54 +1624,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The title that identifies this compliance check.
      * </pre>
      *
      * <code>string title = 1;</code>
+     *
      * @param value The title to set.
      * @return This builder for chaining.
      */
-    public Builder setTitle(
-        java.lang.String value) {
+    public Builder setTitle(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       title_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The title that identifies this compliance check.
      * </pre>
      *
      * <code>string title = 1;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-      
+
       title_ = getDefaultInstance().getTitle();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The title that identifies this compliance check.
      * </pre>
      *
      * <code>string title = 1;</code>
+     *
      * @param value The bytes for title to set.
      * @return This builder for chaining.
      */
-    public Builder setTitleBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTitleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       title_ = value;
       onChanged();
       return this;
@@ -1617,18 +1686,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * A description about this compliance check.
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
      * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1637,20 +1708,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description about this compliance check.
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
      * @return The bytes for description.
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1658,72 +1730,85 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description about this compliance check.
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
      * @param value The description to set.
      * @return This builder for chaining.
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description about this compliance check.
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description about this compliance check.
      * </pre>
      *
      * <code>string description = 2;</code>
+     *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<io.grafeas.v1.ComplianceVersion> version_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureVersionIsMutable() {
       if (!((bitField0_ & 0x00000001) != 0)) {
         version_ = new java.util.ArrayList<io.grafeas.v1.ComplianceVersion>(version_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.ComplianceVersion, io.grafeas.v1.ComplianceVersion.Builder, io.grafeas.v1.ComplianceVersionOrBuilder> versionBuilder_;
+            io.grafeas.v1.ComplianceVersion,
+            io.grafeas.v1.ComplianceVersion.Builder,
+            io.grafeas.v1.ComplianceVersionOrBuilder>
+        versionBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1738,6 +1823,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1752,6 +1839,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1766,14 +1855,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public Builder setVersion(
-        int index, io.grafeas.v1.ComplianceVersion value) {
+    public Builder setVersion(int index, io.grafeas.v1.ComplianceVersion value) {
       if (versionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1787,14 +1877,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public Builder setVersion(
-        int index, io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
+    public Builder setVersion(int index, io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         ensureVersionIsMutable();
         version_.set(index, builderForValue.build());
@@ -1805,6 +1896,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1825,14 +1918,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public Builder addVersion(
-        int index, io.grafeas.v1.ComplianceVersion value) {
+    public Builder addVersion(int index, io.grafeas.v1.ComplianceVersion value) {
       if (versionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1846,14 +1940,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public Builder addVersion(
-        io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
+    public Builder addVersion(io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         ensureVersionIsMutable();
         version_.add(builderForValue.build());
@@ -1864,14 +1959,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public Builder addVersion(
-        int index, io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
+    public Builder addVersion(int index, io.grafeas.v1.ComplianceVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         ensureVersionIsMutable();
         version_.add(index, builderForValue.build());
@@ -1882,6 +1978,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1892,8 +1990,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends io.grafeas.v1.ComplianceVersion> values) {
       if (versionBuilder_ == null) {
         ensureVersionIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, version_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, version_);
         onChanged();
       } else {
         versionBuilder_.addAllMessages(values);
@@ -1901,6 +1998,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1918,6 +2017,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1935,39 +2036,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public io.grafeas.v1.ComplianceVersion.Builder getVersionBuilder(
-        int index) {
+    public io.grafeas.v1.ComplianceVersion.Builder getVersionBuilder(int index) {
       return getVersionFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder(
-        int index) {
+    public io.grafeas.v1.ComplianceVersionOrBuilder getVersionOrBuilder(int index) {
       if (versionBuilder_ == null) {
-        return version_.get(index);  } else {
+        return version_.get(index);
+      } else {
         return versionBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder> 
-         getVersionOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder>
+        getVersionOrBuilderList() {
       if (versionBuilder_ != null) {
         return versionBuilder_.getMessageOrBuilderList();
       } else {
@@ -1975,6 +2081,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
@@ -1982,42 +2090,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
     public io.grafeas.v1.ComplianceVersion.Builder addVersionBuilder() {
-      return getVersionFieldBuilder().addBuilder(
-          io.grafeas.v1.ComplianceVersion.getDefaultInstance());
+      return getVersionFieldBuilder()
+          .addBuilder(io.grafeas.v1.ComplianceVersion.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public io.grafeas.v1.ComplianceVersion.Builder addVersionBuilder(
-        int index) {
-      return getVersionFieldBuilder().addBuilder(
-          index, io.grafeas.v1.ComplianceVersion.getDefaultInstance());
+    public io.grafeas.v1.ComplianceVersion.Builder addVersionBuilder(int index) {
+      return getVersionFieldBuilder()
+          .addBuilder(index, io.grafeas.v1.ComplianceVersion.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The OS and config versions the benchmark applies to.
      * </pre>
      *
      * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
      */
-    public java.util.List<io.grafeas.v1.ComplianceVersion.Builder> 
-         getVersionBuilderList() {
+    public java.util.List<io.grafeas.v1.ComplianceVersion.Builder> getVersionBuilderList() {
       return getVersionFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1.ComplianceVersion, io.grafeas.v1.ComplianceVersion.Builder, io.grafeas.v1.ComplianceVersionOrBuilder> 
+            io.grafeas.v1.ComplianceVersion,
+            io.grafeas.v1.ComplianceVersion.Builder,
+            io.grafeas.v1.ComplianceVersionOrBuilder>
         getVersionFieldBuilder() {
       if (versionBuilder_ == null) {
-        versionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1.ComplianceVersion, io.grafeas.v1.ComplianceVersion.Builder, io.grafeas.v1.ComplianceVersionOrBuilder>(
-                version_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
+        versionBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.ComplianceVersion,
+                io.grafeas.v1.ComplianceVersion.Builder,
+                io.grafeas.v1.ComplianceVersionOrBuilder>(
+                version_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         version_ = null;
       }
       return versionBuilder_;
@@ -2025,18 +2138,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object rationale_ = "";
     /**
+     *
+     *
      * <pre>
      * A rationale for the existence of this compliance check.
      * </pre>
      *
      * <code>string rationale = 4;</code>
+     *
      * @return The rationale.
      */
     public java.lang.String getRationale() {
       java.lang.Object ref = rationale_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         rationale_ = s;
         return s;
@@ -2045,20 +2160,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A rationale for the existence of this compliance check.
      * </pre>
      *
      * <code>string rationale = 4;</code>
+     *
      * @return The bytes for rationale.
      */
-    public com.google.protobuf.ByteString
-        getRationaleBytes() {
+    public com.google.protobuf.ByteString getRationaleBytes() {
       java.lang.Object ref = rationale_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         rationale_ = b;
         return b;
       } else {
@@ -2066,54 +2182,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A rationale for the existence of this compliance check.
      * </pre>
      *
      * <code>string rationale = 4;</code>
+     *
      * @param value The rationale to set.
      * @return This builder for chaining.
      */
-    public Builder setRationale(
-        java.lang.String value) {
+    public Builder setRationale(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       rationale_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A rationale for the existence of this compliance check.
      * </pre>
      *
      * <code>string rationale = 4;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearRationale() {
-      
+
       rationale_ = getDefaultInstance().getRationale();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A rationale for the existence of this compliance check.
      * </pre>
      *
      * <code>string rationale = 4;</code>
+     *
      * @param value The bytes for rationale to set.
      * @return This builder for chaining.
      */
-    public Builder setRationaleBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRationaleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       rationale_ = value;
       onChanged();
       return this;
@@ -2121,18 +2244,20 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object remediation_ = "";
     /**
+     *
+     *
      * <pre>
      * A description of remediation steps if the compliance check fails.
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
      * @return The remediation.
      */
     public java.lang.String getRemediation() {
       java.lang.Object ref = remediation_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         remediation_ = s;
         return s;
@@ -2141,20 +2266,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description of remediation steps if the compliance check fails.
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
      * @return The bytes for remediation.
      */
-    public com.google.protobuf.ByteString
-        getRemediationBytes() {
+    public com.google.protobuf.ByteString getRemediationBytes() {
       java.lang.Object ref = remediation_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         remediation_ = b;
         return b;
       } else {
@@ -2162,63 +2288,74 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description of remediation steps if the compliance check fails.
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
      * @param value The remediation to set.
      * @return This builder for chaining.
      */
-    public Builder setRemediation(
-        java.lang.String value) {
+    public Builder setRemediation(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       remediation_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of remediation steps if the compliance check fails.
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearRemediation() {
-      
+
       remediation_ = getDefaultInstance().getRemediation();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of remediation steps if the compliance check fails.
      * </pre>
      *
      * <code>string remediation = 5;</code>
+     *
      * @param value The bytes for remediation to set.
      * @return This builder for chaining.
      */
-    public Builder setRemediationBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRemediationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       remediation_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.ComplianceNote.CisBenchmark, io.grafeas.v1.ComplianceNote.CisBenchmark.Builder, io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder> cisBenchmarkBuilder_;
+            io.grafeas.v1.ComplianceNote.CisBenchmark,
+            io.grafeas.v1.ComplianceNote.CisBenchmark.Builder,
+            io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder>
+        cisBenchmarkBuilder_;
     /**
      * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
+     *
      * @return Whether the cisBenchmark field is set.
      */
     @java.lang.Override
@@ -2227,6 +2364,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
+     *
      * @return The cisBenchmark.
      */
     @java.lang.Override
@@ -2243,9 +2381,7 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder setCisBenchmark(io.grafeas.v1.ComplianceNote.CisBenchmark value) {
       if (cisBenchmarkBuilder_ == null) {
         if (value == null) {
@@ -2259,9 +2395,7 @@ private static final long serialVersionUID = 0L;
       complianceTypeCase_ = 6;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder setCisBenchmark(
         io.grafeas.v1.ComplianceNote.CisBenchmark.Builder builderForValue) {
       if (cisBenchmarkBuilder_ == null) {
@@ -2273,15 +2407,16 @@ private static final long serialVersionUID = 0L;
       complianceTypeCase_ = 6;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder mergeCisBenchmark(io.grafeas.v1.ComplianceNote.CisBenchmark value) {
       if (cisBenchmarkBuilder_ == null) {
-        if (complianceTypeCase_ == 6 &&
-            complianceType_ != io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance()) {
-          complianceType_ = io.grafeas.v1.ComplianceNote.CisBenchmark.newBuilder((io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_)
-              .mergeFrom(value).buildPartial();
+        if (complianceTypeCase_ == 6
+            && complianceType_ != io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance()) {
+          complianceType_ =
+              io.grafeas.v1.ComplianceNote.CisBenchmark.newBuilder(
+                      (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           complianceType_ = value;
         }
@@ -2296,9 +2431,7 @@ private static final long serialVersionUID = 0L;
       complianceTypeCase_ = 6;
       return this;
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public Builder clearCisBenchmark() {
       if (cisBenchmarkBuilder_ == null) {
         if (complianceTypeCase_ == 6) {
@@ -2315,15 +2448,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     public io.grafeas.v1.ComplianceNote.CisBenchmark.Builder getCisBenchmarkBuilder() {
       return getCisBenchmarkFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     @java.lang.Override
     public io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder getCisBenchmarkOrBuilder() {
       if ((complianceTypeCase_ == 6) && (cisBenchmarkBuilder_ != null)) {
@@ -2335,35 +2464,42 @@ private static final long serialVersionUID = 0L;
         return io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
       }
     }
-    /**
-     * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
-     */
+    /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1.ComplianceNote.CisBenchmark, io.grafeas.v1.ComplianceNote.CisBenchmark.Builder, io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder> 
+            io.grafeas.v1.ComplianceNote.CisBenchmark,
+            io.grafeas.v1.ComplianceNote.CisBenchmark.Builder,
+            io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder>
         getCisBenchmarkFieldBuilder() {
       if (cisBenchmarkBuilder_ == null) {
         if (!(complianceTypeCase_ == 6)) {
           complianceType_ = io.grafeas.v1.ComplianceNote.CisBenchmark.getDefaultInstance();
         }
-        cisBenchmarkBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1.ComplianceNote.CisBenchmark, io.grafeas.v1.ComplianceNote.CisBenchmark.Builder, io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder>(
+        cisBenchmarkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.ComplianceNote.CisBenchmark,
+                io.grafeas.v1.ComplianceNote.CisBenchmark.Builder,
+                io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder>(
                 (io.grafeas.v1.ComplianceNote.CisBenchmark) complianceType_,
                 getParentForChildren(),
                 isClean());
         complianceType_ = null;
       }
       complianceTypeCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return cisBenchmarkBuilder_;
     }
 
     private com.google.protobuf.ByteString scanInstructions_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * Serialized scan instructions with a predefined format.
      * </pre>
      *
      * <code>bytes scan_instructions = 7;</code>
+     *
      * @return The scanInstructions.
      */
     @java.lang.Override
@@ -2371,40 +2507,46 @@ private static final long serialVersionUID = 0L;
       return scanInstructions_;
     }
     /**
+     *
+     *
      * <pre>
      * Serialized scan instructions with a predefined format.
      * </pre>
      *
      * <code>bytes scan_instructions = 7;</code>
+     *
      * @param value The scanInstructions to set.
      * @return This builder for chaining.
      */
     public Builder setScanInstructions(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       scanInstructions_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Serialized scan instructions with a predefined format.
      * </pre>
      *
      * <code>bytes scan_instructions = 7;</code>
+     *
      * @return This builder for chaining.
      */
     public Builder clearScanInstructions() {
-      
+
       scanInstructions_ = getDefaultInstance().getScanInstructions();
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
     }
 
@@ -2414,12 +2556,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1.ComplianceNote)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1.ComplianceNote)
   private static final io.grafeas.v1.ComplianceNote DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1.ComplianceNote();
   }
@@ -2428,27 +2570,27 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ComplianceNote>
-      PARSER = new com.google.protobuf.AbstractParser<ComplianceNote>() {
-    @java.lang.Override
-    public ComplianceNote parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      Builder builder = newBuilder();
-      try {
-        builder.mergeFrom(input, extensionRegistry);
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(builder.buildPartial());
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e)
-            .setUnfinishedMessage(builder.buildPartial());
-      }
-      return builder.buildPartial();
-    }
-  };
+  private static final com.google.protobuf.Parser<ComplianceNote> PARSER =
+      new com.google.protobuf.AbstractParser<ComplianceNote>() {
+        @java.lang.Override
+        public ComplianceNote parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
 
   public static com.google.protobuf.Parser<ComplianceNote> parser() {
     return PARSER;
@@ -2463,6 +2605,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1.ComplianceNote getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-
