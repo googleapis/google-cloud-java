@@ -137,7 +137,10 @@ import org.threeten.bp.Duration;
  * cloudDeploySettingsBuilder
  *     .getDeliveryPipelineSettings()
  *     .setRetrySettings(
- *         cloudDeploySettingsBuilder.getDeliveryPipelineSettings().getRetrySettings().toBuilder()
+ *         cloudDeploySettingsBuilder
+ *             .getDeliveryPipelineSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudDeployStubSettings cloudDeploySettings = cloudDeploySettingsBuilder.build();

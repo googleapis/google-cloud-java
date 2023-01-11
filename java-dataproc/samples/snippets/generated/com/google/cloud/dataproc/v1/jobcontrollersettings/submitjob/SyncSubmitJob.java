@@ -36,7 +36,10 @@ public class SyncSubmitJob {
     jobControllerSettingsBuilder
         .submitJobSettings()
         .setRetrySettings(
-            jobControllerSettingsBuilder.submitJobSettings().getRetrySettings().toBuilder()
+            jobControllerSettingsBuilder
+                .submitJobSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     JobControllerSettings jobControllerSettings = jobControllerSettingsBuilder.build();

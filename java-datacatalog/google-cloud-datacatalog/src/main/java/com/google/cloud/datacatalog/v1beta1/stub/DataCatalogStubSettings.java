@@ -123,7 +123,10 @@ import org.threeten.bp.Duration;
  * dataCatalogSettingsBuilder
  *     .createEntryGroupSettings()
  *     .setRetrySettings(
- *         dataCatalogSettingsBuilder.createEntryGroupSettings().getRetrySettings().toBuilder()
+ *         dataCatalogSettingsBuilder
+ *             .createEntryGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataCatalogStubSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();

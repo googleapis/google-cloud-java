@@ -37,7 +37,10 @@ public class SyncCreateConversation {
     conversationsSettingsBuilder
         .createConversationSettings()
         .setRetrySettings(
-            conversationsSettingsBuilder.createConversationSettings().getRetrySettings().toBuilder()
+            conversationsSettingsBuilder
+                .createConversationSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     ConversationsStubSettings conversationsSettings = conversationsSettingsBuilder.build();

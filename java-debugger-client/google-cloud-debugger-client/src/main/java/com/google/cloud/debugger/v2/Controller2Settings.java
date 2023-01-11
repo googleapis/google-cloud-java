@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * controller2SettingsBuilder
  *     .registerDebuggeeSettings()
  *     .setRetrySettings(
- *         controller2SettingsBuilder.registerDebuggeeSettings().getRetrySettings().toBuilder()
+ *         controller2SettingsBuilder
+ *             .registerDebuggeeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * Controller2Settings controller2Settings = controller2SettingsBuilder.build();

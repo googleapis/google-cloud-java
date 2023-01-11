@@ -36,7 +36,10 @@ public class SyncGetDocument {
     documentsSettingsBuilder
         .getDocumentSettings()
         .setRetrySettings(
-            documentsSettingsBuilder.getDocumentSettings().getRetrySettings().toBuilder()
+            documentsSettingsBuilder
+                .getDocumentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     DocumentsStubSettings documentsSettings = documentsSettingsBuilder.build();

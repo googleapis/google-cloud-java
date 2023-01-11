@@ -116,7 +116,10 @@ import org.threeten.bp.Duration;
  * testCasesSettingsBuilder
  *     .batchDeleteTestCasesSettings()
  *     .setRetrySettings(
- *         testCasesSettingsBuilder.batchDeleteTestCasesSettings().getRetrySettings().toBuilder()
+ *         testCasesSettingsBuilder
+ *             .batchDeleteTestCasesSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * TestCasesStubSettings testCasesSettings = testCasesSettingsBuilder.build();

@@ -112,7 +112,10 @@ import org.threeten.bp.Duration;
  * dataprocMetastoreSettingsBuilder
  *     .getServiceSettings()
  *     .setRetrySettings(
- *         dataprocMetastoreSettingsBuilder.getServiceSettings().getRetrySettings().toBuilder()
+ *         dataprocMetastoreSettingsBuilder
+ *             .getServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataprocMetastoreStubSettings dataprocMetastoreSettings =

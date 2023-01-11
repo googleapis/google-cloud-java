@@ -113,7 +113,10 @@ import org.threeten.bp.Duration;
  * dataFusionSettingsBuilder
  *     .getInstanceSettings()
  *     .setRetrySettings(
- *         dataFusionSettingsBuilder.getInstanceSettings().getRetrySettings().toBuilder()
+ *         dataFusionSettingsBuilder
+ *             .getInstanceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataFusionStubSettings dataFusionSettings = dataFusionSettingsBuilder.build();

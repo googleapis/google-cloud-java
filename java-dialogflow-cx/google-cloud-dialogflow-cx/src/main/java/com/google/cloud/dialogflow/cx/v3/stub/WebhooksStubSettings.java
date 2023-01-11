@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * webhooksSettingsBuilder
  *     .getWebhookSettings()
  *     .setRetrySettings(
- *         webhooksSettingsBuilder.getWebhookSettings().getRetrySettings().toBuilder()
+ *         webhooksSettingsBuilder
+ *             .getWebhookSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * WebhooksStubSettings webhooksSettings = webhooksSettingsBuilder.build();

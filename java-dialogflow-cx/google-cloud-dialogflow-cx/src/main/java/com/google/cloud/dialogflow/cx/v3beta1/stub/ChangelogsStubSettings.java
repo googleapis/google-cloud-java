@@ -88,7 +88,10 @@ import org.threeten.bp.Duration;
  * changelogsSettingsBuilder
  *     .getChangelogSettings()
  *     .setRetrySettings(
- *         changelogsSettingsBuilder.getChangelogSettings().getRetrySettings().toBuilder()
+ *         changelogsSettingsBuilder
+ *             .getChangelogSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ChangelogsStubSettings changelogsSettings = changelogsSettingsBuilder.build();

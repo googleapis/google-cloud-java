@@ -77,7 +77,10 @@ import javax.annotation.Generated;
  * eventarcSettingsBuilder
  *     .getTriggerSettings()
  *     .setRetrySettings(
- *         eventarcSettingsBuilder.getTriggerSettings().getRetrySettings().toBuilder()
+ *         eventarcSettingsBuilder
+ *             .getTriggerSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EventarcSettings eventarcSettings = eventarcSettingsBuilder.build();

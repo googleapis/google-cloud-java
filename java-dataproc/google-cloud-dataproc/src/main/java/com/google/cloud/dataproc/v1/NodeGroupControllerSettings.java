@@ -62,7 +62,10 @@ import javax.annotation.Generated;
  * nodeGroupControllerSettingsBuilder
  *     .getNodeGroupSettings()
  *     .setRetrySettings(
- *         nodeGroupControllerSettingsBuilder.getNodeGroupSettings().getRetrySettings().toBuilder()
+ *         nodeGroupControllerSettingsBuilder
+ *             .getNodeGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * NodeGroupControllerSettings nodeGroupControllerSettings =

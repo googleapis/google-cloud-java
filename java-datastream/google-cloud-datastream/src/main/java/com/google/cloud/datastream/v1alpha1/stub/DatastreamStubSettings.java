@@ -122,7 +122,10 @@ import org.threeten.bp.Duration;
  * datastreamSettingsBuilder
  *     .getConnectionProfileSettings()
  *     .setRetrySettings(
- *         datastreamSettingsBuilder.getConnectionProfileSettings().getRetrySettings().toBuilder()
+ *         datastreamSettingsBuilder
+ *             .getConnectionProfileSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DatastreamStubSettings datastreamSettings = datastreamSettingsBuilder.build();

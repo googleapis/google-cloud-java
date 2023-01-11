@@ -93,7 +93,10 @@ import org.threeten.bp.Duration;
  * batchControllerSettingsBuilder
  *     .getBatchSettings()
  *     .setRetrySettings(
- *         batchControllerSettingsBuilder.getBatchSettings().getRetrySettings().toBuilder()
+ *         batchControllerSettingsBuilder
+ *             .getBatchSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BatchControllerStubSettings batchControllerSettings = batchControllerSettingsBuilder.build();

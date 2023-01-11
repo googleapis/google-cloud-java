@@ -36,7 +36,10 @@ public class SyncGetConnectionProfile {
     datastreamSettingsBuilder
         .getConnectionProfileSettings()
         .setRetrySettings(
-            datastreamSettingsBuilder.getConnectionProfileSettings().getRetrySettings().toBuilder()
+            datastreamSettingsBuilder
+                .getConnectionProfileSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     DatastreamSettings datastreamSettings = datastreamSettingsBuilder.build();

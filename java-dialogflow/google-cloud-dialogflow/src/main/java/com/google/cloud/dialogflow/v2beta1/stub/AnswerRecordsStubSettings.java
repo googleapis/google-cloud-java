@@ -90,7 +90,10 @@ import org.threeten.bp.Duration;
  * answerRecordsSettingsBuilder
  *     .getAnswerRecordSettings()
  *     .setRetrySettings(
- *         answerRecordsSettingsBuilder.getAnswerRecordSettings().getRetrySettings().toBuilder()
+ *         answerRecordsSettingsBuilder
+ *             .getAnswerRecordSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AnswerRecordsStubSettings answerRecordsSettings = answerRecordsSettingsBuilder.build();

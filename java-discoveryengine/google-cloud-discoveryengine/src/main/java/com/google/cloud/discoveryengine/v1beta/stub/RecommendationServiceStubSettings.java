@@ -74,7 +74,10 @@ import org.threeten.bp.Duration;
  * recommendationServiceSettingsBuilder
  *     .recommendSettings()
  *     .setRetrySettings(
- *         recommendationServiceSettingsBuilder.recommendSettings().getRetrySettings().toBuilder()
+ *         recommendationServiceSettingsBuilder
+ *             .recommendSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RecommendationServiceStubSettings recommendationServiceSettings =

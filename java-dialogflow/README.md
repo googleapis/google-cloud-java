@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>4.12.0</version>
+  <version>4.13.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dialogflow:4.12.0'
+implementation 'com.google.cloud:google-cloud-dialogflow:4.13.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.12.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow" % "4.13.0"
 ```
 
 ## Authentication

@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * dataprocMetastoreSettingsBuilder
  *     .getServiceSettings()
  *     .setRetrySettings(
- *         dataprocMetastoreSettingsBuilder.getServiceSettings().getRetrySettings().toBuilder()
+ *         dataprocMetastoreSettingsBuilder
+ *             .getServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DataprocMetastoreSettings dataprocMetastoreSettings = dataprocMetastoreSettingsBuilder.build();

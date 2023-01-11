@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * documentServiceSettingsBuilder
  *     .createDocumentSettings()
  *     .setRetrySettings(
- *         documentServiceSettingsBuilder.createDocumentSettings().getRetrySettings().toBuilder()
+ *         documentServiceSettingsBuilder
+ *             .createDocumentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DocumentServiceSettings documentServiceSettings = documentServiceSettingsBuilder.build();

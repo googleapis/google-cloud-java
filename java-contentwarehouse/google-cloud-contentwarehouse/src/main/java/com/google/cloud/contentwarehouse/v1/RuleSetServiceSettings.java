@@ -65,7 +65,10 @@ import javax.annotation.Generated;
  * ruleSetServiceSettingsBuilder
  *     .createRuleSetSettings()
  *     .setRetrySettings(
- *         ruleSetServiceSettingsBuilder.createRuleSetSettings().getRetrySettings().toBuilder()
+ *         ruleSetServiceSettingsBuilder
+ *             .createRuleSetSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RuleSetServiceSettings ruleSetServiceSettings = ruleSetServiceSettingsBuilder.build();

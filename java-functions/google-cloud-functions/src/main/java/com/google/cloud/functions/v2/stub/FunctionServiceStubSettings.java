@@ -110,7 +110,10 @@ import org.threeten.bp.Duration;
  * functionServiceSettingsBuilder
  *     .getFunctionSettings()
  *     .setRetrySettings(
- *         functionServiceSettingsBuilder.getFunctionSettings().getRetrySettings().toBuilder()
+ *         functionServiceSettingsBuilder
+ *             .getFunctionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FunctionServiceStubSettings functionServiceSettings = functionServiceSettingsBuilder.build();

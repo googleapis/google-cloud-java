@@ -36,7 +36,10 @@ public class SyncGetIntent {
     intentsSettingsBuilder
         .getIntentSettings()
         .setRetrySettings(
-            intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
+            intentsSettingsBuilder
+                .getIntentSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     IntentsStubSettings intentsSettings = intentsSettingsBuilder.build();

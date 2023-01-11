@@ -61,7 +61,10 @@ import javax.annotation.Generated;
  * recommendationServiceSettingsBuilder
  *     .recommendSettings()
  *     .setRetrySettings(
- *         recommendationServiceSettingsBuilder.recommendSettings().getRetrySettings().toBuilder()
+ *         recommendationServiceSettingsBuilder
+ *             .recommendSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * RecommendationServiceSettings recommendationServiceSettings =

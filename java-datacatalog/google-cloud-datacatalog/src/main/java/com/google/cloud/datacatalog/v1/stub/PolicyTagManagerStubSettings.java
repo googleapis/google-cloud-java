@@ -101,7 +101,10 @@ import org.threeten.bp.Duration;
  * policyTagManagerSettingsBuilder
  *     .createTaxonomySettings()
  *     .setRetrySettings(
- *         policyTagManagerSettingsBuilder.createTaxonomySettings().getRetrySettings().toBuilder()
+ *         policyTagManagerSettingsBuilder
+ *             .createTaxonomySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PolicyTagManagerStubSettings policyTagManagerSettings = policyTagManagerSettingsBuilder.build();

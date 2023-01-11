@@ -36,7 +36,10 @@ public class SyncSearchDomains {
     domainsSettingsBuilder
         .searchDomainsSettings()
         .setRetrySettings(
-            domainsSettingsBuilder.searchDomainsSettings().getRetrySettings().toBuilder()
+            domainsSettingsBuilder
+                .searchDomainsSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     DomainsSettings domainsSettings = domainsSettingsBuilder.build();

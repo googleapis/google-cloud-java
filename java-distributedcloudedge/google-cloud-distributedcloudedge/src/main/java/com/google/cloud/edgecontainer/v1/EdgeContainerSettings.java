@@ -68,7 +68,10 @@ import javax.annotation.Generated;
  * edgeContainerSettingsBuilder
  *     .getClusterSettings()
  *     .setRetrySettings(
- *         edgeContainerSettingsBuilder.getClusterSettings().getRetrySettings().toBuilder()
+ *         edgeContainerSettingsBuilder
+ *             .getClusterSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EdgeContainerSettings edgeContainerSettings = edgeContainerSettingsBuilder.build();

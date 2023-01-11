@@ -89,7 +89,10 @@ import org.threeten.bp.Duration;
  * deploymentsSettingsBuilder
  *     .getDeploymentSettings()
  *     .setRetrySettings(
- *         deploymentsSettingsBuilder.getDeploymentSettings().getRetrySettings().toBuilder()
+ *         deploymentsSettingsBuilder
+ *             .getDeploymentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * DeploymentsStubSettings deploymentsSettings = deploymentsSettingsBuilder.build();

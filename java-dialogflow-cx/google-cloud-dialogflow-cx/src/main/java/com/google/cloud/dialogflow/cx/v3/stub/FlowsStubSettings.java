@@ -106,7 +106,10 @@ import org.threeten.bp.Duration;
  * flowsSettingsBuilder
  *     .createFlowSettings()
  *     .setRetrySettings(
- *         flowsSettingsBuilder.createFlowSettings().getRetrySettings().toBuilder()
+ *         flowsSettingsBuilder
+ *             .createFlowSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FlowsStubSettings flowsSettings = flowsSettingsBuilder.build();

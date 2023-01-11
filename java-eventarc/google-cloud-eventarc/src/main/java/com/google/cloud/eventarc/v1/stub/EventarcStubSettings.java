@@ -125,7 +125,10 @@ import org.threeten.bp.Duration;
  * eventarcSettingsBuilder
  *     .getTriggerSettings()
  *     .setRetrySettings(
- *         eventarcSettingsBuilder.getTriggerSettings().getRetrySettings().toBuilder()
+ *         eventarcSettingsBuilder
+ *             .getTriggerSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EventarcStubSettings eventarcSettings = eventarcSettingsBuilder.build();
