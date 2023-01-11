@@ -63,7 +63,7 @@ import java.util.Set;
  *         &lt;log&gt;application.log&lt;/log&gt;
  *
  *         &lt;!-- Optional: defaults to {@code "ERROR"} --&gt;
- *         &lt;flushLevel&gt;WARNING&lt;/flushLevel&gt;
+ *         &lt;flushLevel&gt;WARN&lt;/flushLevel&gt;
  *
  *         &lt;!-- Optional: defaults to {@code ASYNC} --&gt;
  *         &lt;writeSynchronicity&gt;SYNC&lt;/writeSynchronicity&gt;
@@ -91,6 +91,20 @@ import java.util.Set;
  *
  *         &lt;!-- Optional: specifies if a batch's valid entries should be written even if some other entry failed due to an error. Defaults to {@code true} --&gt;
  *         &lt;partialSuccess&gt;true&lt;/partialSuccess&gt;
+ *
+ *         &lt;!-- Optional: In the asynchronous mode the call(s) to Logging API takes place asynchronously and few calls to `write()`
+ *         method may be batched together to compose a single call to Logging API. In order to control the batching settings,
+ *         the `logbackBatchingSettings` section can be used as shown below.
+ *         See [BatchingSettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.batching.BatchingSettings)
+ *         for more info regarding parameters shown below --&gt;
+ *         &lt;logbackBatchingSettings&gt;
+ *            &lt;elementCountThreshold&gt;100&lt;/elementCountThreshold&gt;
+ *            &lt;requestByteThreshold&gt;1000&lt;/requestByteThreshold&gt;
+ *            &lt;delayThreshold&gt;500&lt;/delayThreshold&gt;
+ *            &lt;maxOutstandingElementCount&gt;10000&lt;/maxOutstandingElementCount&gt;
+ *            &lt;maxOutstandingRequestBytes&gt;100000&lt;/maxOutstandingRequestBytes&gt;
+ *            &lt;limitExceededBehavior&gt;Ignore&lt;/limitExceededBehavior&gt;
+ *         &lt;/logbackBatchingSettings&gt;
  *     &lt;/appender&gt;
  * </pre>
  */
@@ -131,6 +145,7 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
   private Synchronicity writeSyncFlag = Synchronicity.ASYNC;
   private final Set<String> enhancerClassNames = new HashSet<>();
   private final Set<String> loggingEventEnhancerClassNames = new HashSet<>();
+  private LogbackBatchingSettings logbackBatchingSettings = null;
 
   /**
    * Sets a threshold for log severity level to flush all log entries that were batched so far.
@@ -222,6 +237,19 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    */
   public void setRedirectToStdout(boolean flag) {
     redirectToStdout = flag;
+  }
+
+  /**
+   * Sets the {@link LogbackBatchingSettings} to be used for the asynchronous mode call(s) to
+   * Logging API
+   *
+   * <p>Default to {@code null}.
+   *
+   * @param batchingSettings the {@link LogbackBatchingSettings} to be used for asynchronous mode
+   *     call(s) to Logging API
+   */
+  public void setLogbackBatchingSettings(LogbackBatchingSettings batchingSettings) {
+    logbackBatchingSettings = batchingSettings;
   }
 
   /**
@@ -430,6 +458,8 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
       }
       // opt-out metadata auto-population to control it in the appender code
       builder.setAutoPopulateMetadata(false);
+      builder.setBatchingSettings(
+          this.logbackBatchingSettings != null ? this.logbackBatchingSettings.build() : null);
       loggingOptions = builder.build();
     }
     return loggingOptions;

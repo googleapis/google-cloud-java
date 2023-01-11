@@ -1,0 +1,57 @@
+<configuration>
+  <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
+    <!-- Optional: filter logs at and above this level -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+        <level>INFO</level>
+    </filter>
+
+    <!-- Optional: defaults to "java.log" -->
+    <log>application.log</log>
+
+    <!-- Optional: defaults to "ERROR" -->
+    <flushLevel>WARN</flushLevel>
+
+    <!-- Optional: defaults to ASYNC -->
+    <writeSynchronicity>SYNC</writeSynchronicity>
+
+    <!-- Optional: defaults to true -->
+    <autoPopulateMetadata>false</autoPopulateMetadata>
+
+    <!-- Optional: defaults to false -->
+    <redirectToStdout>true</redirectToStdout>
+
+    <!-- Optional: auto detects on App Engine Flex, Standard, GCE and GKE, defaults to "global". -->
+    <resourceType>global</resourceType>
+
+    <!-- Optional: defaults to the default credentials of the environment -->
+    <credentialsFile>src/test/java/com/google/cloud/logging/logback/dummy-credentials.json</credentialsFile>
+
+    <!-- Optional: defaults to the project id obtained during authentication process. Project id is also used to construct resource name of the log entries -->
+    <logDestinationProjectId>String</logDestinationProjectId>
+
+    <!-- Optional: add custom labels to log entries using LoggingEnhancer classes -->
+    <!-- <enhancer>com.example.logging.logback.enhancers.ExampleEnhancer</enhancer> -->
+
+    <!-- Optional: specifies if a batch's valid entries should be written even if some other entry failed due to an error. Defaults to true 
+    See [partial_success](https://cloud.google.com/logging/docs/reference/v2/rest/v2/entries/write#body.request_body.FIELDS.partial_success) for more info -->
+    <partialSuccess>true</partialSuccess>
+
+    <!-- Optional: In the asynchronous mode the call(s) to Logging API takes place asynchronously and few calls to `write()` 
+    method may be batched together to compose a single call to Logging API. In order to control the batching settings, 
+    the `logbackBatchingSettings` section can be used as shown below.
+    See [BatchingSettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.batching.BatchingSettings) 
+    for more info regarding parameters shown below -->
+    <logbackBatchingSettings>
+      <elementCountThreshold>100</elementCountThreshold>
+      <requestByteThreshold>1000</requestByteThreshold>
+      <delayThreshold>500</delayThreshold>
+      <maxOutstandingElementCount>10000</maxOutstandingElementCount>
+      <maxOutstandingRequestBytes>100000</maxOutstandingRequestBytes>
+      <limitExceededBehavior>Ignore</limitExceededBehavior>
+    </logbackBatchingSettings>
+  </appender>
+
+  <root level="info">
+    <appender-ref ref="CLOUD" />
+  </root>
+</configuration>
