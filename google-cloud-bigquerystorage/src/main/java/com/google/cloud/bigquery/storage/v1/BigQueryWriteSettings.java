@@ -60,7 +60,10 @@ import javax.annotation.Generated;
  * bigQueryWriteSettingsBuilder
  *     .createWriteStreamSettings()
  *     .setRetrySettings(
- *         bigQueryWriteSettingsBuilder.createWriteStreamSettings().getRetrySettings().toBuilder()
+ *         bigQueryWriteSettingsBuilder
+ *             .createWriteStreamSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BigQueryWriteSettings bigQueryWriteSettings = bigQueryWriteSettingsBuilder.build();

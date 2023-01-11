@@ -81,7 +81,10 @@ import org.threeten.bp.Duration;
  * bigQueryWriteSettingsBuilder
  *     .createWriteStreamSettings()
  *     .setRetrySettings(
- *         bigQueryWriteSettingsBuilder.createWriteStreamSettings().getRetrySettings().toBuilder()
+ *         bigQueryWriteSettingsBuilder
+ *             .createWriteStreamSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * BigQueryWriteStubSettings bigQueryWriteSettings = bigQueryWriteSettingsBuilder.build();
