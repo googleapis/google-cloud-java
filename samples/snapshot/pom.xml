@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-logging</artifactId>
-      <version>3.14.1</version>
+      <version>3.14.2-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
