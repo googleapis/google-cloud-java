@@ -49,6 +49,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   private CloneJob() {
     name_ = "";
     state_ = 0;
+    steps_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -737,6 +738,85 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     return getError();
   }
 
+  public static final int STEPS_FIELD_NUMBER = 23;
+  private java.util.List<com.google.cloud.vmmigration.v1.CloneStep> steps_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.CloneStep> getStepsList() {
+    return steps_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vmmigration.v1.CloneStepOrBuilder>
+      getStepsOrBuilderList() {
+    return steps_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getStepsCount() {
+    return steps_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CloneStep getSteps(int index) {
+    return steps_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CloneStepOrBuilder getStepsOrBuilder(int index) {
+    return steps_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -773,6 +853,9 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     if (endTime_ != null) {
       output.writeMessage(22, getEndTime());
     }
+    for (int i = 0; i < steps_.size(); i++) {
+      output.writeMessage(23, steps_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -804,6 +887,9 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (endTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getEndTime());
+    }
+    for (int i = 0; i < steps_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, steps_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -838,6 +924,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
     }
+    if (!getStepsList().equals(other.getStepsList())) return false;
     if (!getTargetVmDetailsCase().equals(other.getTargetVmDetailsCase())) return false;
     switch (targetVmDetailsCase_) {
       case 20:
@@ -877,6 +964,10 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (getStepsCount() > 0) {
+      hash = (37 * hash) + STEPS_FIELD_NUMBER;
+      hash = (53 * hash) + getStepsList().hashCode();
     }
     switch (targetVmDetailsCase_) {
       case 20:
@@ -1064,6 +1155,13 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         error_ = null;
         errorBuilder_ = null;
       }
+      if (stepsBuilder_ == null) {
+        steps_ = java.util.Collections.emptyList();
+      } else {
+        steps_ = null;
+        stepsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetVmDetailsCase_ = 0;
       targetVmDetails_ = null;
       return this;
@@ -1093,6 +1191,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.CloneJob buildPartial() {
       com.google.cloud.vmmigration.v1.CloneJob result =
           new com.google.cloud.vmmigration.v1.CloneJob(this);
+      int from_bitField0_ = bitField0_;
       if (targetVmDetailsCase_ == 20) {
         if (computeEngineTargetDetailsBuilder_ == null) {
           result.targetVmDetails_ = targetVmDetails_;
@@ -1121,6 +1220,15 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         result.error_ = error_;
       } else {
         result.error_ = errorBuilder_.build();
+      }
+      if (stepsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          steps_ = java.util.Collections.unmodifiableList(steps_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.steps_ = steps_;
+      } else {
+        result.steps_ = stepsBuilder_.build();
       }
       result.targetVmDetailsCase_ = targetVmDetailsCase_;
       onBuilt();
@@ -1190,6 +1298,33 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasError()) {
         mergeError(other.getError());
+      }
+      if (stepsBuilder_ == null) {
+        if (!other.steps_.isEmpty()) {
+          if (steps_.isEmpty()) {
+            steps_ = other.steps_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureStepsIsMutable();
+            steps_.addAll(other.steps_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.steps_.isEmpty()) {
+          if (stepsBuilder_.isEmpty()) {
+            stepsBuilder_.dispose();
+            stepsBuilder_ = null;
+            steps_ = other.steps_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            stepsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStepsFieldBuilder()
+                    : null;
+          } else {
+            stepsBuilder_.addAllMessages(other.steps_);
+          }
+        }
       }
       switch (other.getTargetVmDetailsCase()) {
         case COMPUTE_ENGINE_TARGET_DETAILS:
@@ -1271,6 +1406,19 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
                 break;
               } // case 178
+            case 186:
+              {
+                com.google.cloud.vmmigration.v1.CloneStep m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.CloneStep.parser(), extensionRegistry);
+                if (stepsBuilder_ == null) {
+                  ensureStepsIsMutable();
+                  steps_.add(m);
+                } else {
+                  stepsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1301,6 +1449,8 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails,
@@ -2520,6 +2670,390 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         error_ = null;
       }
       return errorBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.vmmigration.v1.CloneStep> steps_ =
+        java.util.Collections.emptyList();
+
+    private void ensureStepsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        steps_ = new java.util.ArrayList<com.google.cloud.vmmigration.v1.CloneStep>(steps_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CloneStep,
+            com.google.cloud.vmmigration.v1.CloneStep.Builder,
+            com.google.cloud.vmmigration.v1.CloneStepOrBuilder>
+        stepsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.CloneStep> getStepsList() {
+      if (stepsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(steps_);
+      } else {
+        return stepsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getStepsCount() {
+      if (stepsBuilder_ == null) {
+        return steps_.size();
+      } else {
+        return stepsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneStep getSteps(int index) {
+      if (stepsBuilder_ == null) {
+        return steps_.get(index);
+      } else {
+        return stepsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSteps(int index, com.google.cloud.vmmigration.v1.CloneStep value) {
+      if (stepsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStepsIsMutable();
+        steps_.set(index, value);
+        onChanged();
+      } else {
+        stepsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSteps(
+        int index, com.google.cloud.vmmigration.v1.CloneStep.Builder builderForValue) {
+      if (stepsBuilder_ == null) {
+        ensureStepsIsMutable();
+        steps_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        stepsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSteps(com.google.cloud.vmmigration.v1.CloneStep value) {
+      if (stepsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStepsIsMutable();
+        steps_.add(value);
+        onChanged();
+      } else {
+        stepsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSteps(int index, com.google.cloud.vmmigration.v1.CloneStep value) {
+      if (stepsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStepsIsMutable();
+        steps_.add(index, value);
+        onChanged();
+      } else {
+        stepsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSteps(com.google.cloud.vmmigration.v1.CloneStep.Builder builderForValue) {
+      if (stepsBuilder_ == null) {
+        ensureStepsIsMutable();
+        steps_.add(builderForValue.build());
+        onChanged();
+      } else {
+        stepsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSteps(
+        int index, com.google.cloud.vmmigration.v1.CloneStep.Builder builderForValue) {
+      if (stepsBuilder_ == null) {
+        ensureStepsIsMutable();
+        steps_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        stepsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllSteps(
+        java.lang.Iterable<? extends com.google.cloud.vmmigration.v1.CloneStep> values) {
+      if (stepsBuilder_ == null) {
+        ensureStepsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, steps_);
+        onChanged();
+      } else {
+        stepsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSteps() {
+      if (stepsBuilder_ == null) {
+        steps_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        stepsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeSteps(int index) {
+      if (stepsBuilder_ == null) {
+        ensureStepsIsMutable();
+        steps_.remove(index);
+        onChanged();
+      } else {
+        stepsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneStep.Builder getStepsBuilder(int index) {
+      return getStepsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneStepOrBuilder getStepsOrBuilder(int index) {
+      if (stepsBuilder_ == null) {
+        return steps_.get(index);
+      } else {
+        return stepsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vmmigration.v1.CloneStepOrBuilder>
+        getStepsOrBuilderList() {
+      if (stepsBuilder_ != null) {
+        return stepsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(steps_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneStep.Builder addStepsBuilder() {
+      return getStepsFieldBuilder()
+          .addBuilder(com.google.cloud.vmmigration.v1.CloneStep.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneStep.Builder addStepsBuilder(int index) {
+      return getStepsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vmmigration.v1.CloneStep.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The clone steps list representing its progress.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.CloneStep.Builder> getStepsBuilderList() {
+      return getStepsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CloneStep,
+            com.google.cloud.vmmigration.v1.CloneStep.Builder,
+            com.google.cloud.vmmigration.v1.CloneStepOrBuilder>
+        getStepsFieldBuilder() {
+      if (stepsBuilder_ == null) {
+        stepsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.CloneStep,
+                com.google.cloud.vmmigration.v1.CloneStep.Builder,
+                com.google.cloud.vmmigration.v1.CloneStepOrBuilder>(
+                steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        steps_ = null;
+      }
+      return stepsBuilder_;
     }
 
     @java.lang.Override

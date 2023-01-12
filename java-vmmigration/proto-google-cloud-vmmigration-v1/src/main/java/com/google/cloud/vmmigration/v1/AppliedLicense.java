@@ -112,7 +112,7 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The license type is is Bring Your Own License type.
+     * The license type is Bring Your Own License type.
      * </pre>
      *
      * <code>BYOL = 3;</code>
@@ -155,7 +155,7 @@ public final class AppliedLicense extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The license type is is Bring Your Own License type.
+     * The license type is Bring Your Own License type.
      * </pre>
      *
      * <code>BYOL = 3;</code>

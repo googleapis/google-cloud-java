@@ -148,7 +148,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The GCP target project ID or project name.
+   * The Google Cloud target project ID or project name.
    * </pre>
    *
    * <code>string project = 2;</code>
@@ -171,7 +171,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The GCP target project ID or project name.
+   * The Google Cloud target project ID or project name.
    * </pre>
    *
    * <code>string project = 2;</code>
@@ -2042,7 +2042,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The GCP target project ID or project name.
+     * The Google Cloud target project ID or project name.
      * </pre>
      *
      * <code>string project = 2;</code>
@@ -2064,7 +2064,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The GCP target project ID or project name.
+     * The Google Cloud target project ID or project name.
      * </pre>
      *
      * <code>string project = 2;</code>
@@ -2086,7 +2086,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The GCP target project ID or project name.
+     * The Google Cloud target project ID or project name.
      * </pre>
      *
      * <code>string project = 2;</code>
@@ -2107,7 +2107,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The GCP target project ID or project name.
+     * The Google Cloud target project ID or project name.
      * </pre>
      *
      * <code>string project = 2;</code>
@@ -2124,7 +2124,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The GCP target project ID or project name.
+     * The Google Cloud target project ID or project name.
      * </pre>
      *
      * <code>string project = 2;</code>

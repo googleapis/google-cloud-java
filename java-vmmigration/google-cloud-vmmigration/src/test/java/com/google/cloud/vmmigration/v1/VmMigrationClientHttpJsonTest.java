@@ -20,7 +20,9 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPag
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListSourcesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListTargetProjectsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationReportsPagedResponse;
@@ -34,10 +36,15 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.vmmigration.v1.stub.HttpJsonVmMigrationStub;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -2483,6 +2490,7 @@ public class VmMigrationClientHttpJsonTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2545,6 +2553,7 @@ public class VmMigrationClientHttpJsonTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2807,6 +2816,7 @@ public class VmMigrationClientHttpJsonTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2860,6 +2870,7 @@ public class VmMigrationClientHttpJsonTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2915,6 +2926,7 @@ public class VmMigrationClientHttpJsonTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2980,6 +2992,7 @@ public class VmMigrationClientHttpJsonTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3246,6 +3259,7 @@ public class VmMigrationClientHttpJsonTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3302,6 +3316,7 @@ public class VmMigrationClientHttpJsonTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4469,6 +4484,348 @@ public class VmMigrationClientHttpJsonTest {
       client.deleteTargetProjectAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listReplicationCyclesTest() throws Exception {
+    ReplicationCycle responsesElement = ReplicationCycle.newBuilder().build();
+    ListReplicationCyclesResponse expectedResponse =
+        ListReplicationCyclesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReplicationCycles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MigratingVmName parent =
+        MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]");
+
+    ListReplicationCyclesPagedResponse pagedListResponse = client.listReplicationCycles(parent);
+
+    List<ReplicationCycle> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReplicationCyclesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listReplicationCyclesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MigratingVmName parent =
+          MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]");
+      client.listReplicationCycles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReplicationCyclesTest2() throws Exception {
+    ReplicationCycle responsesElement = ReplicationCycle.newBuilder().build();
+    ListReplicationCyclesResponse expectedResponse =
+        ListReplicationCyclesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReplicationCycles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9743/locations/location-9743/sources/source-9743/migratingVms/migratingVm-9743";
+
+    ListReplicationCyclesPagedResponse pagedListResponse = client.listReplicationCycles(parent);
+
+    List<ReplicationCycle> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReplicationCyclesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listReplicationCyclesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9743/locations/location-9743/sources/source-9743/migratingVms/migratingVm-9743";
+      client.listReplicationCycles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReplicationCycleTest() throws Exception {
+    ReplicationCycle expectedResponse =
+        ReplicationCycle.newBuilder()
+            .setName(
+                ReplicationCycleName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[SOURCE]",
+                        "[MIGRATING_VM]",
+                        "[REPLICATION_CYCLE]")
+                    .toString())
+            .setCycleNumber(-1095724862)
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setTotalPauseDuration(Duration.newBuilder().build())
+            .setProgressPercent(-2137894861)
+            .addAllSteps(new ArrayList<CycleStep>())
+            .setError(Status.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ReplicationCycleName name =
+        ReplicationCycleName.of(
+            "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[REPLICATION_CYCLE]");
+
+    ReplicationCycle actualResponse = client.getReplicationCycle(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReplicationCycleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReplicationCycleName name =
+          ReplicationCycleName.of(
+              "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[REPLICATION_CYCLE]");
+      client.getReplicationCycle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReplicationCycleTest2() throws Exception {
+    ReplicationCycle expectedResponse =
+        ReplicationCycle.newBuilder()
+            .setName(
+                ReplicationCycleName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[SOURCE]",
+                        "[MIGRATING_VM]",
+                        "[REPLICATION_CYCLE]")
+                    .toString())
+            .setCycleNumber(-1095724862)
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setTotalPauseDuration(Duration.newBuilder().build())
+            .setProgressPercent(-2137894861)
+            .addAllSteps(new ArrayList<CycleStep>())
+            .setError(Status.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9819/locations/location-9819/sources/source-9819/migratingVms/migratingVm-9819/replicationCycles/replicationCycle-9819";
+
+    ReplicationCycle actualResponse = client.getReplicationCycle(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReplicationCycleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9819/locations/location-9819/sources/source-9819/migratingVms/migratingVm-9819/replicationCycles/replicationCycle-9819";
+      client.getReplicationCycle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

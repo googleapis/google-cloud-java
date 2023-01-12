@@ -314,5 +314,67 @@ public interface CutoverJobOrBuilder
    */
   com.google.protobuf.ByteString getStateMessageBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cutover steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverStep steps = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.CutoverStep> getStepsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cutover steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverStep steps = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CutoverStep getSteps(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cutover steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverStep steps = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getStepsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cutover steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverStep steps = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.CutoverStepOrBuilder>
+      getStepsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cutover steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverStep steps = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CutoverStepOrBuilder getStepsOrBuilder(int index);
+
   public com.google.cloud.vmmigration.v1.CutoverJob.TargetVmDetailsCase getTargetVmDetailsCase();
 }

@@ -74,6 +74,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VMWARE_VMS(1),
+    AWS_VMS(3),
     SOURCEVMS_NOT_SET(0);
     private final int value;
 
@@ -94,6 +95,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       switch (value) {
         case 1:
           return VMWARE_VMS;
+        case 3:
+          return AWS_VMS;
         case 0:
           return SOURCEVMS_NOT_SET;
         default:
@@ -159,6 +162,57 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       return (com.google.cloud.vmmigration.v1.VmwareVmsDetails) sourceVms_;
     }
     return com.google.cloud.vmmigration.v1.VmwareVmsDetails.getDefaultInstance();
+  }
+
+  public static final int AWS_VMS_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type AWS.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+   *
+   * @return Whether the awsVms field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsVms() {
+    return sourceVmsCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type AWS.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+   *
+   * @return The awsVms.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsVmsDetails getAwsVms() {
+    if (sourceVmsCase_ == 3) {
+      return (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_;
+    }
+    return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type AWS.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder getAwsVmsOrBuilder() {
+    if (sourceVmsCase_ == 3) {
+      return (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_;
+    }
+    return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
@@ -233,6 +287,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     if (updateTime_ != null) {
       output.writeMessage(2, getUpdateTime());
     }
+    if (sourceVmsCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -249,6 +306,11 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     }
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateTime());
+    }
+    if (sourceVmsCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -275,6 +337,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       case 1:
         if (!getVmwareVms().equals(other.getVmwareVms())) return false;
         break;
+      case 3:
+        if (!getAwsVms().equals(other.getAwsVms())) return false;
+        break;
       case 0:
       default:
     }
@@ -297,6 +362,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       case 1:
         hash = (37 * hash) + VMWARE_VMS_FIELD_NUMBER;
         hash = (53 * hash) + getVmwareVms().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + AWS_VMS_FIELD_NUMBER;
+        hash = (53 * hash) + getAwsVms().hashCode();
         break;
       case 0:
       default:
@@ -444,6 +513,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       if (vmwareVmsBuilder_ != null) {
         vmwareVmsBuilder_.clear();
       }
+      if (awsVmsBuilder_ != null) {
+        awsVmsBuilder_.clear();
+      }
       if (updateTimeBuilder_ == null) {
         updateTime_ = null;
       } else {
@@ -484,6 +556,13 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
           result.sourceVms_ = sourceVms_;
         } else {
           result.sourceVms_ = vmwareVmsBuilder_.build();
+        }
+      }
+      if (sourceVmsCase_ == 3) {
+        if (awsVmsBuilder_ == null) {
+          result.sourceVms_ = sourceVms_;
+        } else {
+          result.sourceVms_ = awsVmsBuilder_.build();
         }
       }
       if (updateTimeBuilder_ == null) {
@@ -551,6 +630,11 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             mergeVmwareVms(other.getVmwareVms());
             break;
           }
+        case AWS_VMS:
+          {
+            mergeAwsVms(other.getAwsVms());
+            break;
+          }
         case SOURCEVMS_NOT_SET:
           {
             break;
@@ -594,6 +678,12 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
 
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getAwsVmsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceVmsCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -834,6 +924,216 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       ;
       return vmwareVmsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsVmsDetails,
+            com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder>
+        awsVmsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     *
+     * @return Whether the awsVms field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsVms() {
+      return sourceVmsCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     *
+     * @return The awsVms.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsVmsDetails getAwsVms() {
+      if (awsVmsBuilder_ == null) {
+        if (sourceVmsCase_ == 3) {
+          return (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_;
+        }
+        return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
+      } else {
+        if (sourceVmsCase_ == 3) {
+          return awsVmsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    public Builder setAwsVms(com.google.cloud.vmmigration.v1.AwsVmsDetails value) {
+      if (awsVmsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceVms_ = value;
+        onChanged();
+      } else {
+        awsVmsBuilder_.setMessage(value);
+      }
+      sourceVmsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    public Builder setAwsVms(
+        com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder builderForValue) {
+      if (awsVmsBuilder_ == null) {
+        sourceVms_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsVmsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceVmsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    public Builder mergeAwsVms(com.google.cloud.vmmigration.v1.AwsVmsDetails value) {
+      if (awsVmsBuilder_ == null) {
+        if (sourceVmsCase_ == 3
+            && sourceVms_ != com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance()) {
+          sourceVms_ =
+              com.google.cloud.vmmigration.v1.AwsVmsDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceVms_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceVmsCase_ == 3) {
+          awsVmsBuilder_.mergeFrom(value);
+        } else {
+          awsVmsBuilder_.setMessage(value);
+        }
+      }
+      sourceVmsCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    public Builder clearAwsVms() {
+      if (awsVmsBuilder_ == null) {
+        if (sourceVmsCase_ == 3) {
+          sourceVmsCase_ = 0;
+          sourceVms_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceVmsCase_ == 3) {
+          sourceVmsCase_ = 0;
+          sourceVms_ = null;
+        }
+        awsVmsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder getAwsVmsBuilder() {
+      return getAwsVmsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder getAwsVmsOrBuilder() {
+      if ((sourceVmsCase_ == 3) && (awsVmsBuilder_ != null)) {
+        return awsVmsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceVmsCase_ == 3) {
+          return (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_;
+        }
+        return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type AWS.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsVmsDetails,
+            com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder>
+        getAwsVmsFieldBuilder() {
+      if (awsVmsBuilder_ == null) {
+        if (!(sourceVmsCase_ == 3)) {
+          sourceVms_ = com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
+        }
+        awsVmsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AwsVmsDetails,
+                com.google.cloud.vmmigration.v1.AwsVmsDetails.Builder,
+                com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_,
+                getParentForChildren(),
+                isClean());
+        sourceVms_ = null;
+      }
+      sourceVmsCase_ = 3;
+      onChanged();
+      ;
+      return awsVmsBuilder_;
     }
 
     private com.google.protobuf.Timestamp updateTime_;

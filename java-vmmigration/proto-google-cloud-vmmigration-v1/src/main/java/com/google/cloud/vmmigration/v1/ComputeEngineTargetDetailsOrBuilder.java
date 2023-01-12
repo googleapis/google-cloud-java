@@ -52,7 +52,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * The GCP target project ID or project name.
+   * The Google Cloud target project ID or project name.
    * </pre>
    *
    * <code>string project = 2;</code>
@@ -64,7 +64,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * The GCP target project ID or project name.
+   * The Google Cloud target project ID or project name.
    * </pre>
    *
    * <code>string project = 2;</code>

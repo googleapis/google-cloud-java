@@ -62,6 +62,41 @@ public interface SourceOrBuilder
    *
    *
    * <pre>
+   * AWS type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+   *
+   * @return Whether the aws field is set.
+   */
+  boolean hasAws();
+  /**
+   *
+   *
+   * <pre>
+   * AWS type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+   *
+   * @return The aws.
+   */
+  com.google.cloud.vmmigration.v1.AwsSourceDetails getAws();
+  /**
+   *
+   *
+   * <pre>
+   * AWS type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+   */
+  com.google.cloud.vmmigration.v1.AwsSourceDetailsOrBuilder getAwsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The Source name.
    * </pre>
    *

@@ -79,8 +79,14 @@
             "GetGroup": {
               "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetMigratingVm": {
               "methods": ["getMigratingVm", "getMigratingVm", "getMigratingVm", "getMigratingVmCallable"]
+            },
+            "GetReplicationCycle": {
+              "methods": ["getReplicationCycle", "getReplicationCycle", "getReplicationCycle", "getReplicationCycleCallable"]
             },
             "GetSource": {
               "methods": ["getSource", "getSource", "getSource", "getSourceCallable"]
@@ -103,8 +109,14 @@
             "ListGroups": {
               "methods": ["listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ListMigratingVms": {
               "methods": ["listMigratingVms", "listMigratingVms", "listMigratingVms", "listMigratingVmsPagedCallable", "listMigratingVmsCallable"]
+            },
+            "ListReplicationCycles": {
+              "methods": ["listReplicationCycles", "listReplicationCycles", "listReplicationCycles", "listReplicationCyclesPagedCallable", "listReplicationCyclesCallable"]
             },
             "ListSources": {
               "methods": ["listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]

@@ -36,7 +36,10 @@ public class SyncGetSource {
     vmMigrationSettingsBuilder
         .getSourceSettings()
         .setRetrySettings(
-            vmMigrationSettingsBuilder.getSourceSettings().getRetrySettings().toBuilder()
+            vmMigrationSettingsBuilder
+                .getSourceSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     VmMigrationSettings vmMigrationSettings = vmMigrationSettingsBuilder.build();

@@ -215,7 +215,7 @@ public interface DatacenterConnectorOrBuilder
    *
    * <pre>
    * Output only. The communication channel between the datacenter connector and
-   * GCP.
+   * Google Cloud.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -228,7 +228,7 @@ public interface DatacenterConnectorOrBuilder
    *
    * <pre>
    * Output only. The communication channel between the datacenter connector and
-   * GCP.
+   * Google Cloud.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

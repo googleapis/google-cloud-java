@@ -979,4 +979,47 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listReplicationCycles(
+      ListReplicationCyclesRequest request,
+      StreamObserver<ListReplicationCyclesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListReplicationCyclesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListReplicationCyclesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListReplicationCycles, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListReplicationCyclesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getReplicationCycle(
+      GetReplicationCycleRequest request, StreamObserver<ReplicationCycle> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReplicationCycle) {
+      requests.add(request);
+      responseObserver.onNext(((ReplicationCycle) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetReplicationCycle, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReplicationCycle.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

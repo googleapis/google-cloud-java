@@ -20,7 +20,9 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPag
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListSourcesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListTargetProjectsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationReportsPagedResponse;
@@ -33,10 +35,15 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -59,6 +66,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class VmMigrationClientTest {
+  private static MockIAMPolicy mockIAMPolicy;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private static MockVmMigration mockVmMigration;
   private LocalChannelProvider channelProvider;
@@ -67,9 +76,12 @@ public class VmMigrationClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockVmMigration = new MockVmMigration();
+    mockLocations = new MockLocations();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockVmMigration));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockVmMigration, mockLocations, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -2271,6 +2283,7 @@ public class VmMigrationClientTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2332,6 +2345,7 @@ public class VmMigrationClientTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2569,6 +2583,7 @@ public class VmMigrationClientTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -2616,6 +2631,7 @@ public class VmMigrationClientTest {
                     .toString())
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .addAllSteps(new ArrayList<CloneStep>())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -2663,6 +2679,7 @@ public class VmMigrationClientTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2727,6 +2744,7 @@ public class VmMigrationClientTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2968,6 +2986,7 @@ public class VmMigrationClientTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -3018,6 +3037,7 @@ public class VmMigrationClientTest {
             .setProgressPercent(-2137894861)
             .setError(Status.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
+            .addAllSteps(new ArrayList<CutoverStep>())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -4068,6 +4088,307 @@ public class VmMigrationClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listReplicationCyclesTest() throws Exception {
+    ReplicationCycle responsesElement = ReplicationCycle.newBuilder().build();
+    ListReplicationCyclesResponse expectedResponse =
+        ListReplicationCyclesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReplicationCycles(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    MigratingVmName parent =
+        MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]");
+
+    ListReplicationCyclesPagedResponse pagedListResponse = client.listReplicationCycles(parent);
+
+    List<ReplicationCycle> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReplicationCyclesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReplicationCyclesRequest actualRequest =
+        ((ListReplicationCyclesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReplicationCyclesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      MigratingVmName parent =
+          MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]");
+      client.listReplicationCycles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReplicationCyclesTest2() throws Exception {
+    ReplicationCycle responsesElement = ReplicationCycle.newBuilder().build();
+    ListReplicationCyclesResponse expectedResponse =
+        ListReplicationCyclesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReplicationCycles(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListReplicationCyclesPagedResponse pagedListResponse = client.listReplicationCycles(parent);
+
+    List<ReplicationCycle> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReplicationCyclesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListReplicationCyclesRequest actualRequest =
+        ((ListReplicationCyclesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listReplicationCyclesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listReplicationCycles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReplicationCycleTest() throws Exception {
+    ReplicationCycle expectedResponse =
+        ReplicationCycle.newBuilder()
+            .setName(
+                ReplicationCycleName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[SOURCE]",
+                        "[MIGRATING_VM]",
+                        "[REPLICATION_CYCLE]")
+                    .toString())
+            .setCycleNumber(-1095724862)
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setTotalPauseDuration(Duration.newBuilder().build())
+            .setProgressPercent(-2137894861)
+            .addAllSteps(new ArrayList<CycleStep>())
+            .setError(Status.newBuilder().build())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    ReplicationCycleName name =
+        ReplicationCycleName.of(
+            "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[REPLICATION_CYCLE]");
+
+    ReplicationCycle actualResponse = client.getReplicationCycle(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReplicationCycleRequest actualRequest = ((GetReplicationCycleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReplicationCycleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ReplicationCycleName name =
+          ReplicationCycleName.of(
+              "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[REPLICATION_CYCLE]");
+      client.getReplicationCycle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReplicationCycleTest2() throws Exception {
+    ReplicationCycle expectedResponse =
+        ReplicationCycle.newBuilder()
+            .setName(
+                ReplicationCycleName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[SOURCE]",
+                        "[MIGRATING_VM]",
+                        "[REPLICATION_CYCLE]")
+                    .toString())
+            .setCycleNumber(-1095724862)
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setTotalPauseDuration(Duration.newBuilder().build())
+            .setProgressPercent(-2137894861)
+            .addAllSteps(new ArrayList<CycleStep>())
+            .setError(Status.newBuilder().build())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ReplicationCycle actualResponse = client.getReplicationCycle(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetReplicationCycleRequest actualRequest = ((GetReplicationCycleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getReplicationCycleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getReplicationCycle(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("name3373707")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }
