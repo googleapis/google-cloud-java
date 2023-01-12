@@ -37,6 +37,9 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetPackage": {
               "methods": ["getPackage", "getPackage", "getPackageCallable"]
             },
@@ -63,6 +66,9 @@
             },
             "ListFiles": {
               "methods": ["listFiles", "listFiles", "listFilesPagedCallable", "listFilesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListPackages": {
               "methods": ["listPackages", "listPackages", "listPackagesPagedCallable", "listPackagesCallable"]
