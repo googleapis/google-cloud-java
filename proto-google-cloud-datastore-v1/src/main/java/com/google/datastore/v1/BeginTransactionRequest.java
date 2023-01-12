@@ -22,7 +22,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The request for [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+ * The request for
+ * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.BeginTransactionRequest}
@@ -404,7 +405,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   * The request for
+   * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.BeginTransactionRequest}

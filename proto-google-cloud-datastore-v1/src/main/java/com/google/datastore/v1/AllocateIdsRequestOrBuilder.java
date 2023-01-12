@@ -81,8 +81,8 @@ public interface AllocateIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with incomplete key paths for which to allocate IDs.
-   * No key may be reserved/read-only.
+   * Required. A list of keys with incomplete key paths for which to allocate
+   * IDs. No key may be reserved/read-only.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -93,8 +93,8 @@ public interface AllocateIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with incomplete key paths for which to allocate IDs.
-   * No key may be reserved/read-only.
+   * Required. A list of keys with incomplete key paths for which to allocate
+   * IDs. No key may be reserved/read-only.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -105,8 +105,8 @@ public interface AllocateIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with incomplete key paths for which to allocate IDs.
-   * No key may be reserved/read-only.
+   * Required. A list of keys with incomplete key paths for which to allocate
+   * IDs. No key may be reserved/read-only.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -117,8 +117,8 @@ public interface AllocateIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with incomplete key paths for which to allocate IDs.
-   * No key may be reserved/read-only.
+   * Required. A list of keys with incomplete key paths for which to allocate
+   * IDs. No key may be reserved/read-only.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -129,8 +129,8 @@ public interface AllocateIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with incomplete key paths for which to allocate IDs.
-   * No key may be reserved/read-only.
+   * Required. A list of keys with incomplete key paths for which to allocate
+   * IDs. No key may be reserved/read-only.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];

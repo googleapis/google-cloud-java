@@ -22,7 +22,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
+ * The response for
+ * [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.RunAggregationQueryResponse}
@@ -341,7 +342,8 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The response for [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
+   * The response for
+   * [Datastore.RunAggregationQuery][google.datastore.v1.Datastore.RunAggregationQuery].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.RunAggregationQueryResponse}

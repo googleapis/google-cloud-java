@@ -22,7 +22,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The request for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
+ * The request for
+ * [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.ReserveIdsRequest}
@@ -177,8 +178,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -192,8 +193,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -207,8 +208,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -222,8 +223,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -237,8 +238,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -432,7 +433,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
+   * The request for
+   * [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.ReserveIdsRequest}
@@ -910,8 +912,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -928,8 +930,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -946,8 +948,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -964,8 +966,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -988,8 +990,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1009,8 +1011,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1033,8 +1035,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1057,8 +1059,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1078,8 +1080,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1099,8 +1101,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1120,8 +1122,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1141,8 +1143,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1162,8 +1164,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1176,8 +1178,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1194,8 +1196,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1212,8 +1214,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1226,8 +1228,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -1241,8 +1243,8 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. A list of keys with complete key paths whose numeric IDs should not be
-     * auto-allocated.
+     * Required. A list of keys with complete key paths whose numeric IDs should
+     * not be auto-allocated.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];

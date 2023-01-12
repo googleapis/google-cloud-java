@@ -81,8 +81,8 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -93,8 +93,8 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -105,8 +105,8 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -117,8 +117,8 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -129,8 +129,8 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of keys with complete key paths whose numeric IDs should not be
-   * auto-allocated.
+   * Required. A list of keys with complete key paths whose numeric IDs should
+   * not be auto-allocated.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 1 [(.google.api.field_behavior) = REQUIRED];
