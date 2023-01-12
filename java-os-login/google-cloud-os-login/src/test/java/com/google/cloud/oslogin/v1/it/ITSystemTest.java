@@ -71,6 +71,7 @@ public class ITSystemTest {
   private static String getFromCredential(String key) throws Exception {
     GoogleCredentials credentials =
         GoogleCredentials.getApplicationDefault().createScoped(GOOGLE_API_CLOUD_PLATFORM_LINK);
+    System.out.println(credentials);
     JsonObject jsonObject = GSON.fromJson(GSON.toJson(credentials), JsonObject.class);
     return jsonObject.get(key).toString().replaceAll(REGEXP, "");
   }
