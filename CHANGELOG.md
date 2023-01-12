@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.20.2](https://github.com/googleapis/java-bigquery/compare/v2.20.1...v2.20.2) (2023-01-12)
+
+
+### Dependencies
+
+* Update com.google.cloud:google-cloud-bigquerystorage-bom to 2.28.1 ([b62391d](https://github.com/googleapis/java-bigquery/commit/b62391d9cbf5fab30ff5df488d2835be45c5b8d8))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20221209-2.0.0 ([#2449](https://github.com/googleapis/java-bigquery/issues/2449)) ([9d0a107](https://github.com/googleapis/java-bigquery/commit/9d0a107da5e1e600dddccae79eb83358fd6940c6))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20221217-2.0.0 ([#2459](https://github.com/googleapis/java-bigquery/issues/2459)) ([08e2927](https://github.com/googleapis/java-bigquery/commit/08e2927ecb05ff3fda03493a99f466a6d2417d20))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.1 ([#2455](https://github.com/googleapis/java-bigquery/issues/2455)) ([412710c](https://github.com/googleapis/java-bigquery/commit/412710c25d637efeac5a2242ad841b11a788708a))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.2 ([#2456](https://github.com/googleapis/java-bigquery/issues/2456)) ([04d47ad](https://github.com/googleapis/java-bigquery/commit/04d47ad3b8e9b0078884f81c227eb96e87d21aa2))
+* Update dependency org.threeten:threeten-extra to v1.7.2 ([#2450](https://github.com/googleapis/java-bigquery/issues/2450)) ([485be56](https://github.com/googleapis/java-bigquery/commit/485be563ba50974dd40069072b56d319ad40a70a))
+
 ## [2.20.1](https://github.com/googleapis/java-bigquery/compare/v2.20.0...v2.20.1) (2023-01-04)
 
 
