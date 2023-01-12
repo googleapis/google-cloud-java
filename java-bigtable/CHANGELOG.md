@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.18.0](https://github.com/googleapis/java-bigtable/compare/v2.17.1...v2.18.0) (2023-01-12)
+
+
+### Features
+
+* Enable channel priming by default ([#1555](https://github.com/googleapis/java-bigtable/issues/1555)) ([303959c](https://github.com/googleapis/java-bigtable/commit/303959cc88e8cf164a45026d79de67e3f58d09fe))
+
+
+### Bug Fixes
+
+* Call attemptStarted method with the request ([#1562](https://github.com/googleapis/java-bigtable/issues/1562)) ([325f09c](https://github.com/googleapis/java-bigtable/commit/325f09c9e257d53871a9071e6bfcbb0887298641))
+* Defer instance admin api errors to RPC time rather then client construction time ([#1576](https://github.com/googleapis/java-bigtable/issues/1576)) ([06a0ced](https://github.com/googleapis/java-bigtable/commit/06a0ced03dbac91145bac6d5d01f327c3ff4a83f))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.1 ([#1572](https://github.com/googleapis/java-bigtable/issues/1572)) ([a68fb80](https://github.com/googleapis/java-bigtable/commit/a68fb8028a338b937b4baf8c50fad1080e137849))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.2 ([#1573](https://github.com/googleapis/java-bigtable/issues/1573)) ([e1362aa](https://github.com/googleapis/java-bigtable/commit/e1362aa4e47b2da089b21a8cfd124d7e935af8de))
+
 ## [2.17.1](https://github.com/googleapis/java-bigtable/compare/v2.17.0...v2.17.1) (2022-12-13)
 
 
