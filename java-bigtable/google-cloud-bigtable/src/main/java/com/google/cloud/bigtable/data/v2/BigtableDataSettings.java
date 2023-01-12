@@ -15,12 +15,12 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
@@ -129,14 +129,8 @@ public final class BigtableDataSettings {
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
                 .setMaxInboundMessageSize(256 * 1024 * 1024)
-                .setPoolSize(1)
-                .setChannelConfigurator(
-                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                      @Override
-                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                        return input.usePlaintext();
-                      }
-                    })
+                .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
+                .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
                 .setKeepAliveTime(Duration.ofSeconds(61)) // sends ping in this interval
                 .setKeepAliveTimeout(
                     Duration.ofSeconds(10)) // wait this long before considering the connection dead

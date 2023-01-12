@@ -15,9 +15,9 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.base.MoreObjects;
@@ -174,14 +174,8 @@ public final class BigtableTableAdminSettings {
         .setEndpoint(hostname + ":" + port)
         .setTransportChannelProvider(
             InstantiatingGrpcChannelProvider.newBuilder()
-                .setPoolSize(1)
-                .setChannelConfigurator(
-                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                      @Override
-                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-                        return input.usePlaintext();
-                      }
-                    })
+                .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
+                .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
                 .build());
 
     LOGGER.info("Connecting to the Bigtable emulator at " + hostname + ":" + port);
