@@ -49,7 +49,7 @@ if ! grep -q samples/snippets/generated ${OWLBOT_FILE}; then
 # Insert into `deep-remove-regex:` section
 deep_remove_regex="- \"\/${module_name}\/samples\/snippets\/generated\""
 entry_before_deep_remove_regex="${module_name}\/google-.*\/src"
-sed -i.bak "/${entry_before_deep_remove_regex}/a ${deep_remove_regex}" ${OWLBOT_FILE}
+sed -i.bak "/${entry_before_deep_remove_regex}/a ${deep_remove_regex}" ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
 
 
 # Insert into `deep-copy-regex:` section
@@ -59,16 +59,16 @@ deep_copy_regex="- source: \"${proto_path}(v.*)/.*-java/samples/snippets/generat
 entry_before_deep_copy_regex="dest: \"\/owl-bot-staging\/${module_name}\/\$1\/google-"
 
 # echo ${proto_path}
-sed -i.bak "/${entry_before_deep_copy_regex}/a ${deep_copy_regex}" ${OWLBOT_FILE}
+sed -i.bak "/${entry_before_deep_copy_regex}/a ${deep_copy_regex}" ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
 
 # Remove duplicate lines
 perl -i -ne 'if ( /^\s*#/ ) { print } else { print if ! $SEEN{$_}++}' ${OWLBOT_FILE}
 
 # Add back new lines between sections
-sed -i.bak  's/deep-copy-regex/\n&/g'  ${OWLBOT_FILE}
-sed -i.bak  's/deep-remove-regex/\n&/g'  ${OWLBOT_FILE}
-sed -i.bak  's/deep-preserve-regex/\n&/g'  ${OWLBOT_FILE}
-sed -i.bak  's/api-name/\n&/g'  ${OWLBOT_FILE}
+sed -i.bak  's/deep-copy-regex/\n&/g'  ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
+sed -i.bak  's/deep-remove-regex/\n&/g'  ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
+sed -i.bak  's/deep-preserve-regex/\n&/g'  ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
+sed -i.bak  's/api-name/\n&/g'  ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
 
 fi
 
