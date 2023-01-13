@@ -1,6 +1,18 @@
 # Changelog
 
 
+## [0.129.0](https://github.com/googleapis/java-logging-logback/compare/v0.128.10...v0.129.0) (2023-01-12)
+
+
+### Features
+
+* Add support for batching configuration ([#977](https://github.com/googleapis/java-logging-logback/issues/977)) ([afbe09c](https://github.com/googleapis/java-logging-logback/commit/afbe09c62647bca8eb9aa51f5ab63a13396800f7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.14.1 ([#980](https://github.com/googleapis/java-logging-logback/issues/980)) ([6758979](https://github.com/googleapis/java-logging-logback/commit/6758979c3e3abaf24a8bfd3eb3c6b7cf954b7913))
+
 ## [0.128.10](https://github.com/googleapis/java-logging-logback/compare/v0.128.9...v0.128.10) (2023-01-09)
 
 
