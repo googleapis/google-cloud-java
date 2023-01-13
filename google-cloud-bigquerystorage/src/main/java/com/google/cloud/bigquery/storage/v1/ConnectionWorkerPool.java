@@ -58,6 +58,11 @@ public class ConnectionWorkerPool {
   private final long maxInflightBytes;
 
   /*
+   * Max retry duration for retryable errors.
+   */
+  private final java.time.Duration maxRetryDuration;
+
+  /*
    * Behavior when inflight queue is exceeded. Only supports Block or Throw, default is Block.
    */
   private final FlowController.LimitExceededBehavior limitExceededBehavior;
@@ -196,12 +201,14 @@ public class ConnectionWorkerPool {
   public ConnectionWorkerPool(
       long maxInflightRequests,
       long maxInflightBytes,
+      java.time.Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
       String traceId,
       BigQueryWriteClient client,
       boolean ownsBigQueryWriteClient) {
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
+    this.maxRetryDuration = maxRetryDuration;
     this.limitExceededBehavior = limitExceededBehavior;
     this.traceId = traceId;
     this.client = client;
@@ -356,6 +363,7 @@ public class ConnectionWorkerPool {
             writeSchema,
             maxInflightRequests,
             maxInflightBytes,
+            maxRetryDuration,
             limitExceededBehavior,
             traceId,
             client,

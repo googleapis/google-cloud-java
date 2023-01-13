@@ -153,7 +153,8 @@ public class ConnectionWorkerPoolTest {
             .setMaxConnectionsPerRegion(maxConnections)
             .build());
     ConnectionWorkerPool connectionWorkerPool =
-        createConnectionWorkerPool(maxRequests, /*maxBytes=*/ 100000);
+        createConnectionWorkerPool(
+            maxRequests, /*maxBytes=*/ 100000, java.time.Duration.ofSeconds(5));
 
     // Sets the sleep time to simulate requests stuck in connection.
     testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
@@ -206,7 +207,8 @@ public class ConnectionWorkerPoolTest {
     ConnectionWorkerPool.setOptions(
         Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
-        createConnectionWorkerPool(/*maxRequests=*/ 3, /*maxBytes=*/ 1000);
+        createConnectionWorkerPool(
+            /*maxRequests=*/ 3, /*maxBytes=*/ 1000, java.time.Duration.ofSeconds(5));
 
     // Sets the sleep time to simulate requests stuck in connection.
     testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
@@ -255,7 +257,8 @@ public class ConnectionWorkerPoolTest {
     ConnectionWorkerPool.setOptions(
         Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
-        createConnectionWorkerPool(/*maxRequests=*/ 3, /*maxBytes=*/ 100000);
+        createConnectionWorkerPool(
+            /*maxRequests=*/ 3, /*maxBytes=*/ 100000, java.time.Duration.ofSeconds(5));
 
     // Sets the sleep time to simulate requests stuck in connection.
     testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
@@ -368,11 +371,13 @@ public class ConnectionWorkerPoolTest {
     return rowsBuilder.build();
   }
 
-  ConnectionWorkerPool createConnectionWorkerPool(long maxRequests, long maxBytes) {
+  ConnectionWorkerPool createConnectionWorkerPool(
+      long maxRequests, long maxBytes, java.time.Duration maxRetryDuration) {
     ConnectionWorkerPool.enableTestingLogic();
     return new ConnectionWorkerPool(
         maxRequests,
         maxBytes,
+        maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
         client,

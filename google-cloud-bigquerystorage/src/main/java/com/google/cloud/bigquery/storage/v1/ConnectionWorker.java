@@ -31,6 +31,7 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
@@ -61,6 +62,7 @@ public class ConnectionWorker implements AutoCloseable {
   private Lock lock;
   private Condition hasMessageInWaitingQueue;
   private Condition inflightReduced;
+  private static Duration maxRetryDuration = Duration.ofMinutes(5);
 
   /*
    * The identifier of the current stream to write to. This stream name can change during
@@ -113,6 +115,9 @@ public class ConnectionWorker implements AutoCloseable {
    */
   @GuardedBy("lock")
   private long conectionRetryCountWithoutCallback = 0;
+
+  @GuardedBy("lock")
+  private long connectionRetryStartTime = 0;
 
   /*
    * If false, streamConnection needs to be reset.
@@ -201,6 +206,7 @@ public class ConnectionWorker implements AutoCloseable {
       ProtoSchema writerSchema,
       long maxInflightRequests,
       long maxInflightBytes,
+      Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
       String traceId,
       BigQueryWriteClient client,
@@ -210,6 +216,7 @@ public class ConnectionWorker implements AutoCloseable {
     this.hasMessageInWaitingQueue = lock.newCondition();
     this.inflightReduced = lock.newCondition();
     this.streamName = streamName;
+    this.maxRetryDuration = maxRetryDuration;
     if (writerSchema == null) {
       throw new StatusRuntimeException(
           Status.fromCode(Code.INVALID_ARGUMENT)
@@ -237,6 +244,7 @@ public class ConnectionWorker implements AutoCloseable {
   }
 
   private void resetConnection() {
+    log.info("Reconnecting for stream:" + streamName);
     this.streamConnection =
         new StreamConnection(
             this.client,
@@ -618,6 +626,9 @@ public class ConnectionWorker implements AutoCloseable {
       if (conectionRetryCountWithoutCallback != 0) {
         conectionRetryCountWithoutCallback = 0;
       }
+      if (connectionRetryStartTime != 0) {
+        connectionRetryStartTime = 0;
+      }
       if (!this.inflightRequestQueue.isEmpty()) {
         requestWrapper = pollInflightRequestQueue();
       } else if (inflightCleanuped) {
@@ -686,15 +697,25 @@ public class ConnectionWorker implements AutoCloseable {
     try {
       this.streamConnectionIsConnected = false;
       if (connectionFinalStatus == null) {
+        if (connectionRetryStartTime == 0) {
+          connectionRetryStartTime = System.currentTimeMillis();
+        }
         // If the error can be retried, don't set it here, let it try to retry later on.
-        if (isRetriableError(finalStatus) && !userClosed) {
+        if (isRetriableError(finalStatus)
+            && !userClosed
+            && (maxRetryDuration.toMillis() == 0f
+                || System.currentTimeMillis() - connectionRetryStartTime
+                    <= maxRetryDuration.toMillis())) {
           this.conectionRetryCountWithoutCallback++;
           log.info(
               "Retriable error "
                   + finalStatus.toString()
                   + " received, retry count "
                   + conectionRetryCountWithoutCallback
-                  + " for stream "
+                  + ", millis left to retry "
+                  + (maxRetryDuration.toMillis()
+                      - (System.currentTimeMillis() - connectionRetryStartTime))
+                  + ", for stream "
                   + streamName);
         } else {
           Exceptions.StorageException storageException = Exceptions.toStorageException(finalStatus);

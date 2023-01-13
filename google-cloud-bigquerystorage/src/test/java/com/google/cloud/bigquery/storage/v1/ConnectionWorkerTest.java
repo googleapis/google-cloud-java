@@ -290,16 +290,23 @@ public class ConnectionWorkerTest {
 
   private ConnectionWorker createConnectionWorker() throws IOException {
     // By default use only the first table as table reference.
-    return createConnectionWorker(TEST_STREAM_1, TEST_TRACE_ID, 100, 1000);
+    return createConnectionWorker(
+        TEST_STREAM_1, TEST_TRACE_ID, 100, 1000, java.time.Duration.ofSeconds(5));
   }
 
   private ConnectionWorker createConnectionWorker(
-      String streamName, String traceId, long maxRequests, long maxBytes) throws IOException {
+      String streamName,
+      String traceId,
+      long maxRequests,
+      long maxBytes,
+      java.time.Duration maxRetryDuration)
+      throws IOException {
     return new ConnectionWorker(
         streamName,
         createProtoSchema("foo"),
         maxRequests,
         maxBytes,
+        maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
         client,

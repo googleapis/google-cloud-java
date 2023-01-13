@@ -91,6 +91,10 @@ public class FakeBigQueryWrite implements MockGrpcService {
     serviceImpl.setTimesToClose(numberTimesToClose);
   }
 
+  public void setCloseForeverAfter(long closeForeverAfter) {
+    serviceImpl.setCloseForeverAfter(closeForeverAfter);
+  }
+
   public long getConnectionCount() {
     return serviceImpl.getConnectionCount();
   }
