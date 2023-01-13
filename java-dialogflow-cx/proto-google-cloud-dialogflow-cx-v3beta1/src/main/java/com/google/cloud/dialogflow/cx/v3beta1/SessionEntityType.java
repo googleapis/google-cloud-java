@@ -26,9 +26,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * entities that are built for an individual user such as favorites,
  * preferences, playlists, and so on.
  * You can redefine a session entity type at the session level to extend or
- * replace a [custom entity type][google.cloud.dialogflow.cx.v3beta1.EntityType] at the user session level (we
- * refer to the entity types defined at the agent level as "custom entity
- * types").
+ * replace a [custom entity type][google.cloud.dialogflow.cx.v3beta1.EntityType]
+ * at the user session level (we refer to the entity types defined at the agent
+ * level as "custom entity types").
  * Note: session entity types apply to all queries, regardless of the language.
  * For more information about entity types, see the [Dialogflow
  * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -119,8 +119,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
      * this session entity type. If you want to get the supplemented list,
-     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.GetEntityType] on the custom entity type
-     * and merge.
+     * please call
+     * [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.GetEntityType]
+     * on the custom entity type and merge.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2;</code>
@@ -160,8 +161,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      * `GetSessionEntityType`, `CreateSessionEntityType` and
      * `UpdateSessionEntityType` only return the additional entities added in
      * this session entity type. If you want to get the supplemented list,
-     * please call [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.GetEntityType] on the custom entity type
-     * and merge.
+     * please call
+     * [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.GetEntityType]
+     * on the custom entity type and merge.
      * </pre>
      *
      * <code>ENTITY_OVERRIDE_MODE_SUPPLEMENT = 2;</code>
@@ -323,8 +325,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or supplement the
-   * custom entity type definition.
+   * Required. Indicates whether the additional data should override or
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -341,8 +343,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. Indicates whether the additional data should override or supplement the
-   * custom entity type definition.
+   * Required. Indicates whether the additional data should override or
+   * supplement the custom entity type definition.
    * </pre>
    *
    * <code>
@@ -369,8 +371,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -386,8 +388,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -403,8 +405,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -419,8 +421,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -435,8 +437,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The collection of entities to override or supplement the custom entity
-   * type.
+   * Required. The collection of entities to override or supplement the custom
+   * entity type.
    * </pre>
    *
    * <code>
@@ -643,9 +645,9 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
    * entities that are built for an individual user such as favorites,
    * preferences, playlists, and so on.
    * You can redefine a session entity type at the session level to extend or
-   * replace a [custom entity type][google.cloud.dialogflow.cx.v3beta1.EntityType] at the user session level (we
-   * refer to the entity types defined at the agent level as "custom entity
-   * types").
+   * replace a [custom entity type][google.cloud.dialogflow.cx.v3beta1.EntityType]
+   * at the user session level (we refer to the entity types defined at the agent
+   * level as "custom entity types").
    * Note: session entity types apply to all queries, regardless of the language.
    * For more information about entity types, see the [Dialogflow
    * documentation](https://cloud.google.com/dialogflow/docs/entities-overview).
@@ -1028,8 +1030,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1046,8 +1048,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1067,8 +1069,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1092,8 +1094,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1117,8 +1119,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. Indicates whether the additional data should override or supplement the
-     * custom entity type definition.
+     * Required. Indicates whether the additional data should override or
+     * supplement the custom entity type definition.
      * </pre>
      *
      * <code>
@@ -1156,8 +1158,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1176,8 +1178,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1195,8 +1197,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1214,8 +1216,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1240,8 +1242,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1264,8 +1266,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1289,8 +1291,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1315,8 +1317,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1338,8 +1340,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1362,8 +1364,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1386,8 +1388,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1408,8 +1410,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1430,8 +1432,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1446,8 +1448,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1466,8 +1468,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1487,8 +1489,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1504,8 +1506,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>
@@ -1522,8 +1524,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The collection of entities to override or supplement the custom entity
-     * type.
+     * Required. The collection of entities to override or supplement the custom
+     * entity type.
      * </pre>
      *
      * <code>

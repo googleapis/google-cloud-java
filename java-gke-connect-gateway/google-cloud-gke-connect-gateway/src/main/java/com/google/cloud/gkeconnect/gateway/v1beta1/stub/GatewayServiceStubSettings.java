@@ -69,7 +69,10 @@ import javax.annotation.Generated;
  * gatewayServiceSettingsBuilder
  *     .getResourceSettings()
  *     .setRetrySettings(
- *         gatewayServiceSettingsBuilder.getResourceSettings().getRetrySettings().toBuilder()
+ *         gatewayServiceSettingsBuilder
+ *             .getResourceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GatewayServiceStubSettings gatewayServiceSettings = gatewayServiceSettingsBuilder.build();

@@ -85,7 +85,10 @@ import org.threeten.bp.Duration;
  * osConfigServiceSettingsBuilder
  *     .executePatchJobSettings()
  *     .setRetrySettings(
- *         osConfigServiceSettingsBuilder.executePatchJobSettings().getRetrySettings().toBuilder()
+ *         osConfigServiceSettingsBuilder
+ *             .executePatchJobSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * OsConfigServiceStubSettings osConfigServiceSettings = osConfigServiceSettingsBuilder.build();

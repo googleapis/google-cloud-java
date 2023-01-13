@@ -135,7 +135,10 @@ import org.threeten.bp.Duration;
  * keyManagementServiceSettingsBuilder
  *     .getKeyRingSettings()
  *     .setRetrySettings(
- *         keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
+ *         keyManagementServiceSettingsBuilder
+ *             .getKeyRingSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * KeyManagementServiceStubSettings keyManagementServiceSettings =

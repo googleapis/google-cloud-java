@@ -113,7 +113,10 @@ import org.threeten.bp.Duration;
  * azureClustersSettingsBuilder
  *     .getAzureClientSettings()
  *     .setRetrySettings(
- *         azureClustersSettingsBuilder.getAzureClientSettings().getRetrySettings().toBuilder()
+ *         azureClustersSettingsBuilder
+ *             .getAzureClientSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AzureClustersStubSettings azureClustersSettings = azureClustersSettingsBuilder.build();

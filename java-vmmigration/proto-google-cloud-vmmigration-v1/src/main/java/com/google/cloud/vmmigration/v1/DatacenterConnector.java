@@ -22,9 +22,10 @@ package com.google.cloud.vmmigration.v1;
  *
  *
  * <pre>
- * DatacenterConnector message describes a connector between the Source and GCP,
- * which is installed on a vmware datacenter (an OVA vm installed by the user)
- * to connect the Datacenter to GCP and support vm migration data transfer.
+ * DatacenterConnector message describes a connector between the Source and
+ * Google Cloud, which is installed on a vmware datacenter (an OVA vm installed
+ * by the user) to connect the Datacenter to Google Cloud and support vm
+ * migration data transfer.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmmigration.v1.DatacenterConnector}
@@ -597,7 +598,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. The communication channel between the datacenter connector and
-   * GCP.
+   * Google Cloud.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -621,7 +622,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. The communication channel between the datacenter connector and
-   * GCP.
+   * Google Cloud.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1322,9 +1323,10 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * DatacenterConnector message describes a connector between the Source and GCP,
-   * which is installed on a vmware datacenter (an OVA vm installed by the user)
-   * to connect the Datacenter to GCP and support vm migration data transfer.
+   * DatacenterConnector message describes a connector between the Source and
+   * Google Cloud, which is installed on a vmware datacenter (an OVA vm installed
+   * by the user) to connect the Datacenter to Google Cloud and support vm
+   * migration data transfer.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmmigration.v1.DatacenterConnector}
@@ -2563,7 +2565,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The communication channel between the datacenter connector and
-     * GCP.
+     * Google Cloud.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2586,7 +2588,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The communication channel between the datacenter connector and
-     * GCP.
+     * Google Cloud.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2609,7 +2611,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The communication channel between the datacenter connector and
-     * GCP.
+     * Google Cloud.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2631,7 +2633,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The communication channel between the datacenter connector and
-     * GCP.
+     * Google Cloud.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2649,7 +2651,7 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The communication channel between the datacenter connector and
-     * GCP.
+     * Google Cloud.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -26,10 +26,16 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *   * Generate rich message responses.
  *   * Set parameter values.
  *   * Call the webhook.
- * Fulfillments can be called at various stages in the [Page][google.cloud.dialogflow.cx.v3beta1.Page] or
- * [Form][google.cloud.dialogflow.cx.v3beta1.Form] lifecycle. For example, when a [DetectIntentRequest][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest] drives a
- * session to enter a new page, the page's entry fulfillment can add a static
- * response to the [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] in the returning [DetectIntentResponse][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse],
+ * Fulfillments can be called at various stages in the
+ * [Page][google.cloud.dialogflow.cx.v3beta1.Page] or
+ * [Form][google.cloud.dialogflow.cx.v3beta1.Form] lifecycle. For example, when
+ * a
+ * [DetectIntentRequest][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest]
+ * drives a session to enter a new page, the page's entry fulfillment can add a
+ * static response to the
+ * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] in the
+ * returning
+ * [DetectIntentResponse][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse],
  * call the webhook (for example, to load user data from a database), or both.
  * </pre>
  *
@@ -4949,7 +4955,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+   * The value of this field will be populated in the
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
    * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
    * called.
    * The tag is typically used by the webhook service to identify which
@@ -4977,7 +4984,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+   * The value of this field will be populated in the
+   * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
    * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
    * called.
    * The tag is typically used by the webhook service to identify which
@@ -5389,10 +5397,16 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
    *   * Generate rich message responses.
    *   * Set parameter values.
    *   * Call the webhook.
-   * Fulfillments can be called at various stages in the [Page][google.cloud.dialogflow.cx.v3beta1.Page] or
-   * [Form][google.cloud.dialogflow.cx.v3beta1.Form] lifecycle. For example, when a [DetectIntentRequest][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest] drives a
-   * session to enter a new page, the page's entry fulfillment can add a static
-   * response to the [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] in the returning [DetectIntentResponse][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse],
+   * Fulfillments can be called at various stages in the
+   * [Page][google.cloud.dialogflow.cx.v3beta1.Page] or
+   * [Form][google.cloud.dialogflow.cx.v3beta1.Form] lifecycle. For example, when
+   * a
+   * [DetectIntentRequest][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest]
+   * drives a session to enter a new page, the page's entry fulfillment can add a
+   * static response to the
+   * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] in the
+   * returning
+   * [DetectIntentResponse][google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse],
    * call the webhook (for example, to load user data from a database), or both.
    * </pre>
    *
@@ -6318,7 +6332,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6345,7 +6360,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6372,7 +6388,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6398,7 +6415,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which
@@ -6420,7 +6438,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The value of this field will be populated in the [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
+     * The value of this field will be populated in the
+     * [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]
      * `fulfillmentInfo.tag` field by Dialogflow when the associated webhook is
      * called.
      * The tag is typically used by the webhook service to identify which

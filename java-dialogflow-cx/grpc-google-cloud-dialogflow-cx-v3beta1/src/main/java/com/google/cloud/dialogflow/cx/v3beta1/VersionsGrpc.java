@@ -402,7 +402,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * </pre>
      */
     public void listVersions(
@@ -417,7 +418,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Retrieves the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public void getVersion(
@@ -431,11 +433,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the
+     * specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
      * </pre>
      */
@@ -450,7 +454,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Updates the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public void updateVersion(
@@ -465,7 +470,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Deletes the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public void deleteVersion(
@@ -584,7 +590,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * </pre>
      */
     public void listVersions(
@@ -601,7 +608,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Retrieves the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public void getVersion(
@@ -616,11 +624,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the
+     * specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
      * </pre>
      */
@@ -637,7 +647,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Updates the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public void updateVersion(
@@ -654,7 +665,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Deletes the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public void deleteVersion(
@@ -729,7 +741,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse listVersions(
@@ -742,7 +755,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Retrieves the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Version getVersion(
@@ -755,11 +769,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the
+     * specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
      * </pre>
      */
@@ -773,7 +789,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Updates the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Version updateVersion(
@@ -786,7 +803,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Deletes the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public com.google.protobuf.Empty deleteVersion(
@@ -851,7 +869,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -865,7 +884,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Retrieves the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -879,11 +899,13 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the
+     * specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]
      * </pre>
      */
@@ -897,7 +919,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Updates the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -911,7 +934,8 @@ public final class VersionsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * Deletes the specified
+     * [Version][google.cloud.dialogflow.cx.v3beta1.Version].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

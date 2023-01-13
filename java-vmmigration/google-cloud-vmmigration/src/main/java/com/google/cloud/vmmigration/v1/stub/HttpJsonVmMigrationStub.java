@@ -20,7 +20,9 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPag
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListSourcesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListTargetProjectsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationReportsPagedResponse;
@@ -40,6 +42,10 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
@@ -72,6 +78,7 @@ import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
+import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
@@ -86,6 +93,8 @@ import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse;
 import com.google.cloud.vmmigration.v1.ListSourcesRequest;
 import com.google.cloud.vmmigration.v1.ListSourcesResponse;
 import com.google.cloud.vmmigration.v1.ListTargetProjectsRequest;
@@ -98,6 +107,7 @@ import com.google.cloud.vmmigration.v1.PauseMigrationRequest;
 import com.google.cloud.vmmigration.v1.PauseMigrationResponse;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
+import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
 import com.google.cloud.vmmigration.v1.Source;
@@ -1892,6 +1902,148 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListReplicationCyclesRequest, ListReplicationCyclesResponse>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListReplicationCycles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListReplicationCyclesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/sources/*/migratingVms/*}/replicationCycles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReplicationCyclesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListReplicationCyclesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListReplicationCyclesResponse>newBuilder()
+                      .setDefaultInstance(ListReplicationCyclesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetReplicationCycleRequest, ReplicationCycle>
+      getReplicationCycleMethodDescriptor =
+          ApiMethodDescriptor.<GetReplicationCycleRequest, ReplicationCycle>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetReplicationCycle")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetReplicationCycleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/sources/*/migratingVms/*/replicationCycles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetReplicationCycleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetReplicationCycleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReplicationCycle>newBuilder()
+                      .setDefaultInstance(ReplicationCycle.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable;
@@ -2025,6 +2177,16 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   private final UnaryCallable<DeleteTargetProjectRequest, Operation> deleteTargetProjectCallable;
   private final OperationCallable<DeleteTargetProjectRequest, Empty, OperationMetadata>
       deleteTargetProjectOperationCallable;
+  private final UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesCallable;
+  private final UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesPagedResponse>
+      listReplicationCyclesPagedCallable;
+  private final UnaryCallable<GetReplicationCycleRequest, ReplicationCycle>
+      getReplicationCycleCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -2310,6 +2472,30 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(deleteTargetProjectMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+        listReplicationCyclesTransportSettings =
+            HttpJsonCallSettings
+                .<ListReplicationCyclesRequest, ListReplicationCyclesResponse>newBuilder()
+                .setMethodDescriptor(listReplicationCyclesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetReplicationCycleRequest, ReplicationCycle>
+        getReplicationCycleTransportSettings =
+            HttpJsonCallSettings.<GetReplicationCycleRequest, ReplicationCycle>newBuilder()
+                .setMethodDescriptor(getReplicationCycleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.listSourcesCallable =
         callableFactory.createUnaryCallable(
@@ -2671,6 +2857,30 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
             settings.deleteTargetProjectOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listReplicationCyclesCallable =
+        callableFactory.createUnaryCallable(
+            listReplicationCyclesTransportSettings,
+            settings.listReplicationCyclesSettings(),
+            clientContext);
+    this.listReplicationCyclesPagedCallable =
+        callableFactory.createPagedCallable(
+            listReplicationCyclesTransportSettings,
+            settings.listReplicationCyclesSettings(),
+            clientContext);
+    this.getReplicationCycleCallable =
+        callableFactory.createUnaryCallable(
+            getReplicationCycleTransportSettings,
+            settings.getReplicationCycleSettings(),
+            clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2723,6 +2933,10 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     methodDescriptors.add(createTargetProjectMethodDescriptor);
     methodDescriptors.add(updateTargetProjectMethodDescriptor);
     methodDescriptors.add(deleteTargetProjectMethodDescriptor);
+    methodDescriptors.add(listReplicationCyclesMethodDescriptor);
+    methodDescriptors.add(getReplicationCycleMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -3167,6 +3381,39 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   public OperationCallable<DeleteTargetProjectRequest, Empty, OperationMetadata>
       deleteTargetProjectOperationCallable() {
     return deleteTargetProjectOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesCallable() {
+    return listReplicationCyclesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesPagedResponse>
+      listReplicationCyclesPagedCallable() {
+    return listReplicationCyclesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReplicationCycleRequest, ReplicationCycle> getReplicationCycleCallable() {
+    return getReplicationCycleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

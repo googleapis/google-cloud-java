@@ -36,7 +36,10 @@ public class SyncGetHub {
     hubServiceSettingsBuilder
         .getHubSettings()
         .setRetrySettings(
-            hubServiceSettingsBuilder.getHubSettings().getRetrySettings().toBuilder()
+            hubServiceSettingsBuilder
+                .getHubSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     HubServiceSettings hubServiceSettings = hubServiceSettingsBuilder.build();

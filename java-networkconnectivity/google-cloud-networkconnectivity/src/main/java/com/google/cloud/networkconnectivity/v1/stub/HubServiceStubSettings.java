@@ -99,7 +99,10 @@ import org.threeten.bp.Duration;
  * hubServiceSettingsBuilder
  *     .getHubSettings()
  *     .setRetrySettings(
- *         hubServiceSettingsBuilder.getHubSettings().getRetrySettings().toBuilder()
+ *         hubServiceSettingsBuilder
+ *             .getHubSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * HubServiceStubSettings hubServiceSettings = hubServiceSettingsBuilder.build();

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlowValidationResult].
+ * The response message for
+ * [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlowValidationResult].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.FlowValidationResult}
@@ -434,7 +435,8 @@ public final class FlowValidationResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlowValidationResult].
+   * The response message for
+   * [Flows.GetFlowValidationResult][google.cloud.dialogflow.cx.v3beta1.Flows.GetFlowValidationResult].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.FlowValidationResult}

@@ -69,6 +69,47 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
+   * Output only. Details of the VM from an AWS source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the awsSourceVmDetails field is set.
+   */
+  boolean hasAwsSourceVmDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an AWS source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The awsSourceVmDetails.
+   */
+  com.google.cloud.vmmigration.v1.AwsSourceVmDetails getAwsSourceVmDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an AWS source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder getAwsSourceVmDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The identifier of the MigratingVm.
    * </pre>
    *
@@ -733,4 +774,6 @@ public interface MigratingVmOrBuilder
   com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getRecentCutoverJobsOrBuilder(int index);
 
   public com.google.cloud.vmmigration.v1.MigratingVm.TargetVmDefaultsCase getTargetVmDefaultsCase();
+
+  public com.google.cloud.vmmigration.v1.MigratingVm.SourceVmDetailsCase getSourceVmDetailsCase();
 }

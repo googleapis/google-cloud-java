@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
+ * The request message for
+ * [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest}
@@ -268,10 +269,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-   * export the agent to. The format of this URI must be
-   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-   * If left unspecified, the serialized agent is returned inline.
+   * Optional. The [Google Cloud
+   * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+   * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+   * left unspecified, the serialized agent is returned inline.
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -299,10 +300,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-   * export the agent to. The format of this URI must be
-   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-   * If left unspecified, the serialized agent is returned inline.
+   * Optional. The [Google Cloud
+   * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+   * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+   * left unspecified, the serialized agent is returned inline.
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -333,7 +334,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+   * Optional. The data format of the exported agent. If not specified, `BLOB`
+   * is assumed.
    * </pre>
    *
    * <code>
@@ -350,7 +352,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+   * Optional. The data format of the exported agent. If not specified, `BLOB`
+   * is assumed.
    * </pre>
    *
    * <code>
@@ -623,7 +626,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
+   * The request message for
+   * [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest}
@@ -954,10 +958,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the agent to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+     * left unspecified, the serialized agent is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -984,10 +988,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the agent to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+     * left unspecified, the serialized agent is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1014,10 +1018,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the agent to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+     * left unspecified, the serialized agent is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1043,10 +1047,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the agent to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+     * left unspecified, the serialized agent is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1068,10 +1072,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the agent to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
+     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
+     * left unspecified, the serialized agent is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -1100,7 +1104,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * Optional. The data format of the exported agent. If not specified, `BLOB`
+     * is assumed.
      * </pre>
      *
      * <code>
@@ -1117,7 +1122,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * Optional. The data format of the exported agent. If not specified, `BLOB`
+     * is assumed.
      * </pre>
      *
      * <code>
@@ -1137,7 +1143,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * Optional. The data format of the exported agent. If not specified, `BLOB`
+     * is assumed.
      * </pre>
      *
      * <code>
@@ -1159,7 +1166,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * Optional. The data format of the exported agent. If not specified, `BLOB`
+     * is assumed.
      * </pre>
      *
      * <code>
@@ -1183,7 +1191,8 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
+     * Optional. The data format of the exported agent. If not specified, `BLOB`
+     * is assumed.
      * </pre>
      *
      * <code>

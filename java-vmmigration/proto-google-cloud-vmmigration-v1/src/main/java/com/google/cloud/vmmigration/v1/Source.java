@@ -88,6 +88,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VMWARE(10),
+    AWS(12),
     SOURCEDETAILS_NOT_SET(0);
     private final int value;
 
@@ -108,6 +109,8 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 10:
           return VMWARE;
+        case 12:
+          return AWS;
         case 0:
           return SOURCEDETAILS_NOT_SET;
         default:
@@ -173,6 +176,57 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.vmmigration.v1.VmwareSourceDetails) sourceDetails_;
     }
     return com.google.cloud.vmmigration.v1.VmwareSourceDetails.getDefaultInstance();
+  }
+
+  public static final int AWS_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * AWS type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+   *
+   * @return Whether the aws field is set.
+   */
+  @java.lang.Override
+  public boolean hasAws() {
+    return sourceDetailsCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * AWS type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+   *
+   * @return The aws.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsSourceDetails getAws() {
+    if (sourceDetailsCase_ == 12) {
+      return (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * AWS type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsSourceDetailsOrBuilder getAwsOrBuilder() {
+    if (sourceDetailsCase_ == 12) {
+      return (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -500,6 +554,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     if (sourceDetailsCase_ == 10) {
       output.writeMessage(10, (com.google.cloud.vmmigration.v1.VmwareSourceDetails) sourceDetails_);
     }
+    if (sourceDetailsCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -536,6 +593,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.vmmigration.v1.VmwareSourceDetails) sourceDetails_);
     }
+    if (sourceDetailsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -566,6 +628,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     switch (sourceDetailsCase_) {
       case 10:
         if (!getVmware().equals(other.getVmware())) return false;
+        break;
+      case 12:
+        if (!getAws().equals(other.getAws())) return false;
         break;
       case 0:
       default:
@@ -601,6 +666,10 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + VMWARE_FIELD_NUMBER;
         hash = (53 * hash) + getVmware().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + AWS_FIELD_NUMBER;
+        hash = (53 * hash) + getAws().hashCode();
         break;
       case 0:
       default:
@@ -767,6 +836,9 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       if (vmwareBuilder_ != null) {
         vmwareBuilder_.clear();
       }
+      if (awsBuilder_ != null) {
+        awsBuilder_.clear();
+      }
       name_ = "";
 
       if (createTimeBuilder_ == null) {
@@ -819,6 +891,13 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           result.sourceDetails_ = sourceDetails_;
         } else {
           result.sourceDetails_ = vmwareBuilder_.build();
+        }
+      }
+      if (sourceDetailsCase_ == 12) {
+        if (awsBuilder_ == null) {
+          result.sourceDetails_ = sourceDetails_;
+        } else {
+          result.sourceDetails_ = awsBuilder_.build();
         }
       }
       result.name_ = name_;
@@ -906,6 +985,11 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             mergeVmware(other.getVmware());
             break;
           }
+        case AWS:
+          {
+            mergeAws(other.getAws());
+            break;
+          }
         case SOURCEDETAILS_NOT_SET:
           {
             break;
@@ -978,6 +1062,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
                 sourceDetailsCase_ = 10;
                 break;
               } // case 82
+            case 98:
+              {
+                input.readMessage(getAwsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceDetailsCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1220,6 +1310,217 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return vmwareBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsSourceDetails,
+            com.google.cloud.vmmigration.v1.AwsSourceDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsSourceDetailsOrBuilder>
+        awsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     *
+     * @return Whether the aws field is set.
+     */
+    @java.lang.Override
+    public boolean hasAws() {
+      return sourceDetailsCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     *
+     * @return The aws.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsSourceDetails getAws() {
+      if (awsBuilder_ == null) {
+        if (sourceDetailsCase_ == 12) {
+          return (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
+      } else {
+        if (sourceDetailsCase_ == 12) {
+          return awsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    public Builder setAws(com.google.cloud.vmmigration.v1.AwsSourceDetails value) {
+      if (awsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceDetails_ = value;
+        onChanged();
+      } else {
+        awsBuilder_.setMessage(value);
+      }
+      sourceDetailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    public Builder setAws(
+        com.google.cloud.vmmigration.v1.AwsSourceDetails.Builder builderForValue) {
+      if (awsBuilder_ == null) {
+        sourceDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceDetailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    public Builder mergeAws(com.google.cloud.vmmigration.v1.AwsSourceDetails value) {
+      if (awsBuilder_ == null) {
+        if (sourceDetailsCase_ == 12
+            && sourceDetails_
+                != com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance()) {
+          sourceDetails_ =
+              com.google.cloud.vmmigration.v1.AwsSourceDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceDetailsCase_ == 12) {
+          awsBuilder_.mergeFrom(value);
+        } else {
+          awsBuilder_.setMessage(value);
+        }
+      }
+      sourceDetailsCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    public Builder clearAws() {
+      if (awsBuilder_ == null) {
+        if (sourceDetailsCase_ == 12) {
+          sourceDetailsCase_ = 0;
+          sourceDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceDetailsCase_ == 12) {
+          sourceDetailsCase_ = 0;
+          sourceDetails_ = null;
+        }
+        awsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceDetails.Builder getAwsBuilder() {
+      return getAwsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsSourceDetailsOrBuilder getAwsOrBuilder() {
+      if ((sourceDetailsCase_ == 12) && (awsBuilder_ != null)) {
+        return awsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceDetailsCase_ == 12) {
+          return (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AWS type source details.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AwsSourceDetails aws = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsSourceDetails,
+            com.google.cloud.vmmigration.v1.AwsSourceDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsSourceDetailsOrBuilder>
+        getAwsFieldBuilder() {
+      if (awsBuilder_ == null) {
+        if (!(sourceDetailsCase_ == 12)) {
+          sourceDetails_ = com.google.cloud.vmmigration.v1.AwsSourceDetails.getDefaultInstance();
+        }
+        awsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AwsSourceDetails,
+                com.google.cloud.vmmigration.v1.AwsSourceDetails.Builder,
+                com.google.cloud.vmmigration.v1.AwsSourceDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.AwsSourceDetails) sourceDetails_,
+                getParentForChildren(),
+                isClean());
+        sourceDetails_ = null;
+      }
+      sourceDetailsCase_ = 12;
+      onChanged();
+      ;
+      return awsBuilder_;
     }
 
     private java.lang.Object name_ = "";

@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+ * Service for managing
+ * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -310,7 +311,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
    * </pre>
    */
   public abstract static class EntityTypesImplBase implements io.grpc.BindableService {
@@ -440,7 +442,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
    * </pre>
    */
   public static final class EntityTypesStub
@@ -549,7 +552,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
    * </pre>
    */
   public static final class EntityTypesBlockingStub
@@ -640,7 +644,8 @@ public final class EntityTypesGrpc {
    *
    *
    * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
    * </pre>
    */
   public static final class EntityTypesFutureStub

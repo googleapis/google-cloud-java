@@ -18,6 +18,7 @@ package com.google.devtools.artifactregistry.v1;
 
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
@@ -36,6 +37,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.devtools.artifactregistry.v1.stub.ArtifactRegistryStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -77,7 +82,10 @@ import javax.annotation.Generated;
  * artifactRegistrySettingsBuilder
  *     .getDockerImageSettings()
  *     .setRetrySettings(
- *         artifactRegistrySettingsBuilder.getDockerImageSettings().getRetrySettings().toBuilder()
+ *         artifactRegistrySettingsBuilder
+ *             .getDockerImageSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ArtifactRegistrySettings artifactRegistrySettings = artifactRegistrySettingsBuilder.build();
@@ -268,6 +276,17 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   public UnaryCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsSettings() {
     return ((ArtifactRegistryStubSettings) getStubSettings()).updateProjectSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ArtifactRegistryStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final ArtifactRegistrySettings create(ArtifactRegistryStubSettings stub)
@@ -574,6 +593,18 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
     public UnaryCallSettings.Builder<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsSettings() {
       return getStubSettingsBuilder().updateProjectSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -64,12 +64,12 @@ public final class ValidationMessageProto {
           + "everity\022\030\n\024SEVERITY_UNSPECIFIED\020\000\022\010\n\004INF"
           + "O\020\001\022\013\n\007WARNING\020\002\022\t\n\005ERROR\020\003\"2\n\014ResourceN"
           + "ame\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\tB"
-          + "\336\001\n&com.google.cloud.dialogflow.cx.v3bet"
-          + "a1B\026ValidationMessageProtoP\001ZDgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/dialog"
-          + "flow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Clou"
-          + "d.Dialogflow.Cx.V3Beta1\352\002&Google::Cloud:"
-          + ":Dialogflow::CX::V3beta1b\006proto3"
+          + "\320\001\n&com.google.cloud.dialogflow.cx.v3bet"
+          + "a1B\026ValidationMessageProtoP\001Z6cloud.goog"
+          + "le.com/go/dialogflow/cx/apiv3beta1/cxpb;"
+          + "cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialogflow.C"
+          + "x.V3Beta1\352\002&Google::Cloud::Dialogflow::C"
+          + "X::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

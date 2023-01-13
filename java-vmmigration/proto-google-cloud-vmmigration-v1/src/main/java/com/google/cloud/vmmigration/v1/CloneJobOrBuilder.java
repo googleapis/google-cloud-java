@@ -274,5 +274,67 @@ public interface CloneJobOrBuilder
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.CloneStep> getStepsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CloneStep getSteps(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getStepsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.CloneStepOrBuilder>
+      getStepsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The clone steps list representing its progress.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneStep steps = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CloneStepOrBuilder getStepsOrBuilder(int index);
+
   public com.google.cloud.vmmigration.v1.CloneJob.TargetVmDetailsCase getTargetVmDetailsCase();
 }

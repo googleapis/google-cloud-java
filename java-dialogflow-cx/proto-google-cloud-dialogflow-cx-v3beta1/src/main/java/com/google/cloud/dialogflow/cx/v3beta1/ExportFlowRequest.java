@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
+ * The request message for
+ * [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest}
@@ -131,10 +132,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-   * export the flow to. The format of this URI must be
-   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-   * If left unspecified, the serialized flow is returned inline.
+   * Optional. The [Google Cloud
+   * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+   * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+   * unspecified, the serialized flow is returned inline.
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -162,10 +163,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-   * export the flow to. The format of this URI must be
-   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-   * If left unspecified, the serialized flow is returned inline.
+   * Optional. The [Google Cloud
+   * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+   * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+   * unspecified, the serialized flow is returned inline.
    * Dialogflow performs a write operation for the Cloud Storage object
    * on the caller's behalf, so your request authentication must
    * have write permissions for the object. For more information, see
@@ -390,7 +391,8 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
+   * The request message for
+   * [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest}
@@ -713,10 +715,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the flow to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized flow is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+     * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+     * unspecified, the serialized flow is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -743,10 +745,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the flow to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized flow is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+     * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+     * unspecified, the serialized flow is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -773,10 +775,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the flow to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized flow is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+     * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+     * unspecified, the serialized flow is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -802,10 +804,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the flow to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized flow is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+     * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+     * unspecified, the serialized flow is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see
@@ -827,10 +829,10 @@ public final class ExportFlowRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
-     * export the flow to. The format of this URI must be
-     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
-     * If left unspecified, the serialized flow is returned inline.
+     * Optional. The [Google Cloud
+     * Storage](https://cloud.google.com/storage/docs/) URI to export the flow to.
+     * The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If left
+     * unspecified, the serialized flow is returned inline.
      * Dialogflow performs a write operation for the Cloud Storage object
      * on the caller's behalf, so your request authentication must
      * have write permissions for the object. For more information, see

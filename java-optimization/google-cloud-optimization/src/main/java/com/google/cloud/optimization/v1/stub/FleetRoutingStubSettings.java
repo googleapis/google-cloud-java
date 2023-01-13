@@ -82,7 +82,10 @@ import org.threeten.bp.Duration;
  * fleetRoutingSettingsBuilder
  *     .optimizeToursSettings()
  *     .setRetrySettings(
- *         fleetRoutingSettingsBuilder.optimizeToursSettings().getRetrySettings().toBuilder()
+ *         fleetRoutingSettingsBuilder
+ *             .optimizeToursSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * FleetRoutingStubSettings fleetRoutingSettings = fleetRoutingSettingsBuilder.build();

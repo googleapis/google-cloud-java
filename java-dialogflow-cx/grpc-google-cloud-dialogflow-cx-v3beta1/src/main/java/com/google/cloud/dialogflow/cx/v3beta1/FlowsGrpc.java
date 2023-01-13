@@ -673,7 +673,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+     * - `response`:
+     * [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -695,7 +696,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
+     * - `response`:
+     * [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>
@@ -942,7 +944,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+     * - `response`:
+     * [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -965,7 +968,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
+     * - `response`:
+     * [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>
@@ -1130,7 +1134,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+     * - `response`:
+     * [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1152,7 +1157,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
+     * - `response`:
+     * [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>
@@ -1323,7 +1329,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
+     * - `response`:
+     * [ImportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse]
      * Note: You should always train a flow prior to sending it queries. See the
      * [training
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
@@ -1345,7 +1352,8 @@ public final class FlowsGrpc {
      * The returned `Operation` type has the following method-specific fields:
      * - `metadata`: An empty [Struct
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
-     * - `response`: [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
+     * - `response`:
+     * [ExportFlowResponse][google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse]
      * Note that resources (e.g. intents, entities, webhooks) that the flow
      * references will also be exported.
      * </pre>

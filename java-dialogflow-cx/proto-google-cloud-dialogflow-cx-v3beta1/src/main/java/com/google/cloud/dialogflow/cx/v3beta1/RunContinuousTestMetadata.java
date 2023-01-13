@@ -22,8 +22,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Metadata returned for the [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest] long running
- * operation.
+ * Metadata returned for the
+ * [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest]
+ * long running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata}
@@ -303,8 +304,9 @@ public final class RunContinuousTestMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Metadata returned for the [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest] long running
-   * operation.
+   * Metadata returned for the
+   * [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest]
+   * long running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata}

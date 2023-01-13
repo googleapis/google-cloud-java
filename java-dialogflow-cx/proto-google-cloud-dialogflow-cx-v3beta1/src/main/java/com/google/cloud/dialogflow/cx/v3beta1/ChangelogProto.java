@@ -87,13 +87,12 @@ public final class ChangelogProto {
           + "gelogs/*}\332A\004name\032x\312A\031dialogflow.googleap"
           + "is.com\322AYhttps://www.googleapis.com/auth"
           + "/cloud-platform,https://www.googleapis.c"
-          + "om/auth/dialogflowB\326\001\n&com.google.cloud."
+          + "om/auth/dialogflowB\310\001\n&com.google.cloud."
           + "dialogflow.cx.v3beta1B\016ChangelogProtoP\001Z"
-          + "Dgoogle.golang.org/genproto/googleapis/c"
-          + "loud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\""
-          + "Google.Cloud.Dialogflow.Cx.V3Beta1\352\002&Goo"
-          + "gle::Cloud::Dialogflow::CX::V3beta1b\006pro"
-          + "to3"
+          + "6cloud.google.com/go/dialogflow/cx/apiv3"
+          + "beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.Cloud.D"
+          + "ialogflow.Cx.V3Beta1\352\002&Google::Cloud::Di"
+          + "alogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

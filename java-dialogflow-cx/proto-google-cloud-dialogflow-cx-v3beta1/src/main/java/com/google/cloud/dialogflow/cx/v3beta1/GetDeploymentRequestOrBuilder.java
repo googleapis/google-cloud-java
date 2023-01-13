@@ -27,8 +27,9 @@ public interface GetDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *
@@ -43,8 +44,9 @@ public interface GetDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/deployments/&lt;Deployment ID&gt;`.
    * </pre>
    *

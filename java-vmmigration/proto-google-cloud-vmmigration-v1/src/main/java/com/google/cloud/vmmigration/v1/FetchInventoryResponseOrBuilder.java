@@ -62,6 +62,41 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
+   * The description of the VMs in a Source of type AWS.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+   *
+   * @return Whether the awsVms field is set.
+   */
+  boolean hasAwsVms();
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type AWS.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+   *
+   * @return The awsVms.
+   */
+  com.google.cloud.vmmigration.v1.AwsVmsDetails getAwsVms();
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type AWS.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AwsVmsDetails aws_vms = 3;</code>
+   */
+  com.google.cloud.vmmigration.v1.AwsVmsDetailsOrBuilder getAwsVmsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The timestamp when the source was last queried (if the result
    * is from the cache).
    * </pre>

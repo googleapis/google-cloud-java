@@ -28,6 +28,9 @@
             "GetDataSource": {
               "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetTransferConfig": {
               "methods": ["getTransferConfig", "getTransferConfig", "getTransferConfig", "getTransferConfigCallable"]
             },
@@ -36,6 +39,9 @@
             },
             "ListDataSources": {
               "methods": ["listDataSources", "listDataSources", "listDataSources", "listDataSources", "listDataSourcesPagedCallable", "listDataSourcesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListTransferConfigs": {
               "methods": ["listTransferConfigs", "listTransferConfigs", "listTransferConfigs", "listTransferConfigs", "listTransferConfigsPagedCallable", "listTransferConfigsCallable"]

@@ -82,7 +82,10 @@ import javax.annotation.Generated;
  * imageVersionsSettingsBuilder
  *     .listImageVersionsSettings()
  *     .setRetrySettings(
- *         imageVersionsSettingsBuilder.listImageVersionsSettings().getRetrySettings().toBuilder()
+ *         imageVersionsSettingsBuilder
+ *             .listImageVersionsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ImageVersionsStubSettings imageVersionsSettings = imageVersionsSettingsBuilder.build();

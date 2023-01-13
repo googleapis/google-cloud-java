@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
+import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferConfigsPagedResponse;
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
@@ -34,6 +35,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigquery.datatransfer.v1.stub.DataTransferServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -172,6 +177,17 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   /** Returns the object with the settings used for calls to enrollDataSources. */
   public UnaryCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).enrollDataSourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((DataTransferServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final DataTransferServiceSettings create(DataTransferServiceStubSettings stub)
@@ -385,6 +401,18 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
     /** Returns the builder for the settings used for calls to enrollDataSources. */
     public UnaryCallSettings.Builder<EnrollDataSourcesRequest, Empty> enrollDataSourcesSettings() {
       return getStubSettingsBuilder().enrollDataSourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

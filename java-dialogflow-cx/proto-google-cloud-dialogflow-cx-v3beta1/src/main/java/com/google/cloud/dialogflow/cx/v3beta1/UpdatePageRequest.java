@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Pages.UpdatePage][google.cloud.dialogflow.cx.v3beta1.Pages.UpdatePage].
+ * The request message for
+ * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3beta1.Pages.UpdatePage].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest}
@@ -443,7 +444,8 @@ public final class UpdatePageRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Pages.UpdatePage][google.cloud.dialogflow.cx.v3beta1.Pages.UpdatePage].
+   * The request message for
+   * [Pages.UpdatePage][google.cloud.dialogflow.cx.v3beta1.Pages.UpdatePage].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest}

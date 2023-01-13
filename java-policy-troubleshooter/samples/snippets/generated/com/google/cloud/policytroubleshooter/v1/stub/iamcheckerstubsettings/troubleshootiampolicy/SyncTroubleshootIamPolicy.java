@@ -36,7 +36,10 @@ public class SyncTroubleshootIamPolicy {
     iamCheckerSettingsBuilder
         .troubleshootIamPolicySettings()
         .setRetrySettings(
-            iamCheckerSettingsBuilder.troubleshootIamPolicySettings().getRetrySettings().toBuilder()
+            iamCheckerSettingsBuilder
+                .troubleshootIamPolicySettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     IamCheckerStubSettings iamCheckerSettings = iamCheckerSettingsBuilder.build();

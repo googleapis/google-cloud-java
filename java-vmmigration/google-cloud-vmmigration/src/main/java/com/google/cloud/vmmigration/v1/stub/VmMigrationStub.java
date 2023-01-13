@@ -20,7 +20,9 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPag
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListSourcesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListTargetProjectsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationReportsPagedResponse;
@@ -28,6 +30,10 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationR
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
@@ -60,6 +66,7 @@ import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
+import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
@@ -74,6 +81,8 @@ import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse;
 import com.google.cloud.vmmigration.v1.ListSourcesRequest;
 import com.google.cloud.vmmigration.v1.ListSourcesResponse;
 import com.google.cloud.vmmigration.v1.ListTargetProjectsRequest;
@@ -86,6 +95,7 @@ import com.google.cloud.vmmigration.v1.PauseMigrationRequest;
 import com.google.cloud.vmmigration.v1.PauseMigrationResponse;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
+import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
 import com.google.cloud.vmmigration.v1.Source;
@@ -494,6 +504,34 @@ public abstract class VmMigrationStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTargetProjectRequest, Operation> deleteTargetProjectCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTargetProjectCallable()");
+  }
+
+  public UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesPagedResponse>
+      listReplicationCyclesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReplicationCyclesPagedCallable()");
+  }
+
+  public UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listReplicationCyclesCallable()");
+  }
+
+  public UnaryCallable<GetReplicationCycleRequest, ReplicationCycle> getReplicationCycleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getReplicationCycleCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

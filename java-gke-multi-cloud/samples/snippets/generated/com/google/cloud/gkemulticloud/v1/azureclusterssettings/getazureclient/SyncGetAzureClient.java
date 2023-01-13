@@ -36,7 +36,10 @@ public class SyncGetAzureClient {
     azureClustersSettingsBuilder
         .getAzureClientSettings()
         .setRetrySettings(
-            azureClustersSettingsBuilder.getAzureClientSettings().getRetrySettings().toBuilder()
+            azureClustersSettingsBuilder
+                .getAzureClientSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     AzureClustersSettings azureClustersSettings = azureClustersSettingsBuilder.build();

@@ -28,8 +28,9 @@ public interface BatchRunTestCasesResponseOrBuilder
    *
    * <pre>
    * The test case results. The detailed
-   * [conversation turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns] are empty in this
-   * response.
+   * [conversation
+   * turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns]
+   * are empty in this response.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult results = 1;</code>
@@ -40,8 +41,9 @@ public interface BatchRunTestCasesResponseOrBuilder
    *
    * <pre>
    * The test case results. The detailed
-   * [conversation turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns] are empty in this
-   * response.
+   * [conversation
+   * turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns]
+   * are empty in this response.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult results = 1;</code>
@@ -52,8 +54,9 @@ public interface BatchRunTestCasesResponseOrBuilder
    *
    * <pre>
    * The test case results. The detailed
-   * [conversation turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns] are empty in this
-   * response.
+   * [conversation
+   * turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns]
+   * are empty in this response.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult results = 1;</code>
@@ -64,8 +67,9 @@ public interface BatchRunTestCasesResponseOrBuilder
    *
    * <pre>
    * The test case results. The detailed
-   * [conversation turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns] are empty in this
-   * response.
+   * [conversation
+   * turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns]
+   * are empty in this response.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult results = 1;</code>
@@ -77,8 +81,9 @@ public interface BatchRunTestCasesResponseOrBuilder
    *
    * <pre>
    * The test case results. The detailed
-   * [conversation turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns] are empty in this
-   * response.
+   * [conversation
+   * turns][google.cloud.dialogflow.cx.v3beta1.TestCaseResult.conversation_turns]
+   * are empty in this response.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TestCaseResult results = 1;</code>

@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.UpdateVersion].
+ * The request message for
+ * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.UpdateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest}
@@ -125,8 +126,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -142,8 +143,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -159,8 +160,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -354,7 +355,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.UpdateVersion].
+   * The request message for
+   * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.UpdateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest}
@@ -762,8 +764,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -778,8 +780,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -800,8 +802,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -824,8 +826,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -845,8 +847,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -871,8 +873,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -893,8 +895,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -909,8 +911,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -929,8 +931,8 @@ public final class UpdateVersionRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

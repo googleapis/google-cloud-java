@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
+ * Service for managing
+ * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -171,7 +172,8 @@ public final class ChangelogsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
+   * Service for managing
+   * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
    * </pre>
    */
   public abstract static class ChangelogsImplBase implements io.grpc.BindableService {
@@ -231,7 +233,8 @@ public final class ChangelogsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
+   * Service for managing
+   * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
    * </pre>
    */
   public static final class ChangelogsStub extends io.grpc.stub.AbstractAsyncStub<ChangelogsStub> {
@@ -283,7 +286,8 @@ public final class ChangelogsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
+   * Service for managing
+   * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
    * </pre>
    */
   public static final class ChangelogsBlockingStub
@@ -329,7 +333,8 @@ public final class ChangelogsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
+   * Service for managing
+   * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
    * </pre>
    */
   public static final class ChangelogsFutureStub

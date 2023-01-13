@@ -17,6 +17,7 @@
 package com.google.devtools.artifactregistry.v1beta2.stub;
 
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListFilesPagedResponse;
+import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListLocationsPagedResponse;
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListRepositoriesPagedResponse;
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListTagsPagedResponse;
@@ -26,6 +27,10 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest;
 import com.google.devtools.artifactregistry.v1beta2.CreateTagRequest;
 import com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest;
@@ -248,6 +253,19 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
   public UnaryCallable<UpdateProjectSettingsRequest, ProjectSettings>
       updateProjectSettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: updateProjectSettingsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

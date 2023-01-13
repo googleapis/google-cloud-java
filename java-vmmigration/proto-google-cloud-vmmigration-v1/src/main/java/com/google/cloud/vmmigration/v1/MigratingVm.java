@@ -497,6 +497,50 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return TargetVmDefaultsCase.forNumber(targetVmDefaultsCase_);
   }
 
+  private int sourceVmDetailsCase_ = 0;
+  private java.lang.Object sourceVmDetails_;
+
+  public enum SourceVmDetailsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AWS_SOURCE_VM_DETAILS(29),
+    SOURCEVMDETAILS_NOT_SET(0);
+    private final int value;
+
+    private SourceVmDetailsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceVmDetailsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceVmDetailsCase forNumber(int value) {
+      switch (value) {
+        case 29:
+          return AWS_SOURCE_VM_DETAILS;
+        case 0:
+          return SOURCEVMDETAILS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceVmDetailsCase getSourceVmDetailsCase() {
+    return SourceVmDetailsCase.forNumber(sourceVmDetailsCase_);
+  }
+
   public static final int COMPUTE_ENGINE_TARGET_DEFAULTS_FIELD_NUMBER = 26;
   /**
    *
@@ -554,6 +598,64 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_;
     }
     return com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults.getDefaultInstance();
+  }
+
+  public static final int AWS_SOURCE_VM_DETAILS_FIELD_NUMBER = 29;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an AWS source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the awsSourceVmDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasAwsSourceVmDetails() {
+    return sourceVmDetailsCase_ == 29;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an AWS source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The awsSourceVmDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsSourceVmDetails getAwsSourceVmDetails() {
+    if (sourceVmDetailsCase_ == 29) {
+      return (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an AWS source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder
+      getAwsSourceVmDetailsOrBuilder() {
+    if (sourceVmDetailsCase_ == 29) {
+      return (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1576,6 +1678,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           26, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_);
     }
+    if (sourceVmDetailsCase_ == 29) {
+      output.writeMessage(
+          29, (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1646,6 +1752,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               26, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_);
     }
+    if (sourceVmDetailsCase_ == 29) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1704,6 +1815,14 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       case 26:
         if (!getComputeEngineTargetDefaults().equals(other.getComputeEngineTargetDefaults()))
           return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getSourceVmDetailsCase().equals(other.getSourceVmDetailsCase())) return false;
+    switch (sourceVmDetailsCase_) {
+      case 29:
+        if (!getAwsSourceVmDetails().equals(other.getAwsSourceVmDetails())) return false;
         break;
       case 0:
       default:
@@ -1775,6 +1894,14 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       case 26:
         hash = (37 * hash) + COMPUTE_ENGINE_TARGET_DEFAULTS_FIELD_NUMBER;
         hash = (53 * hash) + getComputeEngineTargetDefaults().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (sourceVmDetailsCase_) {
+      case 29:
+        hash = (37 * hash) + AWS_SOURCE_VM_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getAwsSourceVmDetails().hashCode();
         break;
       case 0:
       default:
@@ -1941,6 +2068,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (computeEngineTargetDefaultsBuilder_ != null) {
         computeEngineTargetDefaultsBuilder_.clear();
       }
+      if (awsSourceVmDetailsBuilder_ != null) {
+        awsSourceVmDetailsBuilder_.clear();
+      }
       name_ = "";
 
       sourceVmId_ = "";
@@ -2012,6 +2142,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000004);
       targetVmDefaultsCase_ = 0;
       targetVmDefaults_ = null;
+      sourceVmDetailsCase_ = 0;
+      sourceVmDetails_ = null;
       return this;
     }
 
@@ -2045,6 +2177,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           result.targetVmDefaults_ = targetVmDefaults_;
         } else {
           result.targetVmDefaults_ = computeEngineTargetDefaultsBuilder_.build();
+        }
+      }
+      if (sourceVmDetailsCase_ == 29) {
+        if (awsSourceVmDetailsBuilder_ == null) {
+          result.sourceVmDetails_ = sourceVmDetails_;
+        } else {
+          result.sourceVmDetails_ = awsSourceVmDetailsBuilder_.build();
         }
       }
       result.name_ = name_;
@@ -2109,6 +2248,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         result.recentCutoverJobs_ = recentCutoverJobsBuilder_.build();
       }
       result.targetVmDefaultsCase_ = targetVmDefaultsCase_;
+      result.sourceVmDetailsCase_ = sourceVmDetailsCase_;
       onBuilt();
       return result;
     }
@@ -2268,6 +2408,17 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
+      switch (other.getSourceVmDetailsCase()) {
+        case AWS_SOURCE_VM_DETAILS:
+          {
+            mergeAwsSourceVmDetails(other.getAwsSourceVmDetails());
+            break;
+          }
+        case SOURCEVMDETAILS_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2416,6 +2567,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 targetVmDefaultsCase_ = 26;
                 break;
               } // case 210
+            case 234:
+              {
+                input.readMessage(
+                    getAwsSourceVmDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceVmDetailsCase_ = 29;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2443,6 +2601,20 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTargetVmDefaults() {
       targetVmDefaultsCase_ = 0;
       targetVmDefaults_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int sourceVmDetailsCase_ = 0;
+    private java.lang.Object sourceVmDetails_;
+
+    public SourceVmDetailsCase getSourceVmDetailsCase() {
+      return SourceVmDetailsCase.forNumber(sourceVmDetailsCase_);
+    }
+
+    public Builder clearSourceVmDetails() {
+      sourceVmDetailsCase_ = 0;
+      sourceVmDetails_ = null;
       onChanged();
       return this;
     }
@@ -2684,6 +2856,239 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return computeEngineTargetDefaultsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder>
+        awsSourceVmDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the awsSourceVmDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasAwsSourceVmDetails() {
+      return sourceVmDetailsCase_ == 29;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The awsSourceVmDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails getAwsSourceVmDetails() {
+      if (awsSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 29) {
+          return (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
+      } else {
+        if (sourceVmDetailsCase_ == 29) {
+          return awsSourceVmDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAwsSourceVmDetails(com.google.cloud.vmmigration.v1.AwsSourceVmDetails value) {
+      if (awsSourceVmDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceVmDetails_ = value;
+        onChanged();
+      } else {
+        awsSourceVmDetailsBuilder_.setMessage(value);
+      }
+      sourceVmDetailsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAwsSourceVmDetails(
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Builder builderForValue) {
+      if (awsSourceVmDetailsBuilder_ == null) {
+        sourceVmDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        awsSourceVmDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceVmDetailsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAwsSourceVmDetails(
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails value) {
+      if (awsSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 29
+            && sourceVmDetails_
+                != com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance()) {
+          sourceVmDetails_ =
+              com.google.cloud.vmmigration.v1.AwsSourceVmDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceVmDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceVmDetailsCase_ == 29) {
+          awsSourceVmDetailsBuilder_.mergeFrom(value);
+        } else {
+          awsSourceVmDetailsBuilder_.setMessage(value);
+        }
+      }
+      sourceVmDetailsCase_ = 29;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAwsSourceVmDetails() {
+      if (awsSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 29) {
+          sourceVmDetailsCase_ = 0;
+          sourceVmDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceVmDetailsCase_ == 29) {
+          sourceVmDetailsCase_ = 0;
+          sourceVmDetails_ = null;
+        }
+        awsSourceVmDetailsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Builder
+        getAwsSourceVmDetailsBuilder() {
+      return getAwsSourceVmDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder
+        getAwsSourceVmDetailsOrBuilder() {
+      if ((sourceVmDetailsCase_ == 29) && (awsSourceVmDetailsBuilder_ != null)) {
+        return awsSourceVmDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceVmDetailsCase_ == 29) {
+          return (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an AWS source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails aws_source_vm_details = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder>
+        getAwsSourceVmDetailsFieldBuilder() {
+      if (awsSourceVmDetailsBuilder_ == null) {
+        if (!(sourceVmDetailsCase_ == 29)) {
+          sourceVmDetails_ =
+              com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
+        }
+        awsSourceVmDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails,
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Builder,
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_,
+                getParentForChildren(),
+                isClean());
+        sourceVmDetails_ = null;
+      }
+      sourceVmDetailsCase_ = 29;
+      onChanged();
+      ;
+      return awsSourceVmDetailsBuilder_;
     }
 
     private java.lang.Object name_ = "";

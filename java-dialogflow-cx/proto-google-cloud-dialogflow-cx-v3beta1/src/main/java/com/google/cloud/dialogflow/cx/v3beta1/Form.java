@@ -25,8 +25,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * A form is a data model that groups related parameters that can be collected
  * from the user. The process in which the agent prompts the user and collects
  * parameter values from the user is called form filling. A form can be added to
- * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done, the filled parameters will be
- * written to the [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+ * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done,
+ * the filled parameters will be written to the
+ * [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Form}
@@ -258,7 +259,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * redaction is enabled, the parameter content will be replaced by parameter
      * name during logging.
      * Note: the parameter content is subject to redaction if either parameter
-     * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+     * level redaction or [entity type level
+     * redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
      * enabled.
      * </pre>
      *
@@ -2741,7 +2743,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      * redaction is enabled, the parameter content will be replaced by parameter
      * name during logging.
      * Note: the parameter content is subject to redaction if either parameter
-     * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+     * level redaction or [entity type level
+     * redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
      * enabled.
      * </pre>
      *
@@ -4017,7 +4020,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * redaction is enabled, the parameter content will be replaced by parameter
        * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
-       * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+       * level redaction or [entity type level
+       * redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
        * enabled.
        * </pre>
        *
@@ -4037,7 +4041,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * redaction is enabled, the parameter content will be replaced by parameter
        * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
-       * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+       * level redaction or [entity type level
+       * redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
        * enabled.
        * </pre>
        *
@@ -4060,7 +4065,8 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        * redaction is enabled, the parameter content will be replaced by parameter
        * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
-       * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+       * level redaction or [entity type level
+       * redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
        * enabled.
        * </pre>
        *
@@ -4377,8 +4383,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
    * A form is a data model that groups related parameters that can be collected
    * from the user. The process in which the agent prompts the user and collects
    * parameter values from the user is called form filling. A form can be added to
-   * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done, the filled parameters will be
-   * written to the [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
+   * a [page][google.cloud.dialogflow.cx.v3beta1.Page]. When form filling is done,
+   * the filled parameters will be written to the
+   * [session][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Form}

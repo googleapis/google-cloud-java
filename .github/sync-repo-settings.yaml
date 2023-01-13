@@ -33,6 +33,7 @@ branchProtectionRules:
       - units (17)
       - cla/google
       - enforcer
+      - lint
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
       - 'Kokoro - Test: Java 17 GraalVM Native Image - AI Platform'
@@ -40,26 +41,27 @@ branchProtectionRules:
       - 'Kokoro - Test: Java GraalVM Native Image - AI Platform'
       - 'Kokoro - Test: Java GraalVM Native Image - Compute'
   - pattern: 1.0.x
-      # Can admins overwrite branch protection.
-      # Defaults to `true`
+    # Can admins overwrite branch protection.
+    # Defaults to `true`
     isAdminEnforced: true
-      # Number of approving reviews required to update matching branches.
-      # Defaults to `1`
+    # Number of approving reviews required to update matching branches.
+    # Defaults to `1`
     requiredApprovingReviewCount: 1
-      # Are reviews from code owners required to update matching branches.
-      # Defaults to `false`
+    # Are reviews from code owners required to update matching branches.
+    # Defaults to `false`
     requiresCodeOwnerReviews: true
-      # Require up to date branches
+    # Require up to date branches
     requiresStrictStatusChecks: false
-      # List of required status check contexts that must pass for commits to be accepted to matching branches.
+    # List of required status check contexts that must pass for commits to be accepted to matching branches.
     requiredStatusCheckContexts:
-    - units (8)
-    - units (11)
-    - units (17)
-    - cla/google
-    - enforcer
-    - OwlBot Post Processor
-    - 'Kokoro - Test: Integration'
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Integration'
 # List of explicit permissions to add (additive only)
 permissionRules:
   - team: yoshi-admins

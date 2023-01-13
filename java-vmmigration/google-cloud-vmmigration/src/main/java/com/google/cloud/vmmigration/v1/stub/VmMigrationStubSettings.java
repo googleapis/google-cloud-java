@@ -20,7 +20,9 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPag
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListSourcesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListTargetProjectsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationReportsPagedResponse;
@@ -54,6 +56,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
@@ -86,6 +92,7 @@ import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
+import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
@@ -100,6 +107,8 @@ import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse;
 import com.google.cloud.vmmigration.v1.ListSourcesRequest;
 import com.google.cloud.vmmigration.v1.ListSourcesResponse;
 import com.google.cloud.vmmigration.v1.ListTargetProjectsRequest;
@@ -112,6 +121,7 @@ import com.google.cloud.vmmigration.v1.PauseMigrationRequest;
 import com.google.cloud.vmmigration.v1.PauseMigrationResponse;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
+import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
 import com.google.cloud.vmmigration.v1.Source;
@@ -164,7 +174,10 @@ import org.threeten.bp.Duration;
  * vmMigrationSettingsBuilder
  *     .getSourceSettings()
  *     .setRetrySettings(
- *         vmMigrationSettingsBuilder.getSourceSettings().getRetrySettings().toBuilder()
+ *         vmMigrationSettingsBuilder
+ *             .getSourceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * VmMigrationStubSettings vmMigrationSettings = vmMigrationSettingsBuilder.build();
@@ -314,6 +327,17 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       deleteTargetProjectSettings;
   private final OperationCallSettings<DeleteTargetProjectRequest, Empty, OperationMetadata>
       deleteTargetProjectOperationSettings;
+  private final PagedCallSettings<
+          ListReplicationCyclesRequest,
+          ListReplicationCyclesResponse,
+          ListReplicationCyclesPagedResponse>
+      listReplicationCyclesSettings;
+  private final UnaryCallSettings<GetReplicationCycleRequest, ReplicationCycle>
+      getReplicationCycleSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListSourcesRequest, ListSourcesResponse, Source>
       LIST_SOURCES_PAGE_STR_DESC =
@@ -632,6 +656,83 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             }
           };
 
+  private static final PagedListDescriptor<
+          ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
+      LIST_REPLICATION_CYCLES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReplicationCyclesRequest injectToken(
+                ListReplicationCyclesRequest payload, String token) {
+              return ListReplicationCyclesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReplicationCyclesRequest injectPageSize(
+                ListReplicationCyclesRequest payload, int pageSize) {
+              return ListReplicationCyclesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReplicationCyclesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReplicationCyclesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReplicationCycle> extractResources(
+                ListReplicationCyclesResponse payload) {
+              return payload.getReplicationCyclesList() == null
+                  ? ImmutableList.<ReplicationCycle>of()
+                  : payload.getReplicationCyclesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
       LIST_SOURCES_PAGE_STR_FACT =
@@ -791,6 +892,47 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
                       PageContext.create(
                           callable, LIST_TARGET_PROJECTS_PAGE_STR_DESC, request, context);
               return ListTargetProjectsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReplicationCyclesRequest,
+          ListReplicationCyclesResponse,
+          ListReplicationCyclesPagedResponse>
+      LIST_REPLICATION_CYCLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReplicationCyclesRequest,
+              ListReplicationCyclesResponse,
+              ListReplicationCyclesPagedResponse>() {
+            @Override
+            public ApiFuture<ListReplicationCyclesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesResponse> callable,
+                ListReplicationCyclesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReplicationCyclesResponse> futureResponse) {
+              PageContext<
+                      ListReplicationCyclesRequest, ListReplicationCyclesResponse, ReplicationCycle>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_REPLICATION_CYCLES_PAGE_STR_DESC, request, context);
+              return ListReplicationCyclesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1203,6 +1345,32 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     return deleteTargetProjectOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listReplicationCycles. */
+  public PagedCallSettings<
+          ListReplicationCyclesRequest,
+          ListReplicationCyclesResponse,
+          ListReplicationCyclesPagedResponse>
+      listReplicationCyclesSettings() {
+    return listReplicationCyclesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getReplicationCycle. */
+  public UnaryCallSettings<GetReplicationCycleRequest, ReplicationCycle>
+      getReplicationCycleSettings() {
+    return getReplicationCycleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public VmMigrationStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1393,6 +1561,10 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     deleteTargetProjectSettings = settingsBuilder.deleteTargetProjectSettings().build();
     deleteTargetProjectOperationSettings =
         settingsBuilder.deleteTargetProjectOperationSettings().build();
+    listReplicationCyclesSettings = settingsBuilder.listReplicationCyclesSettings().build();
+    getReplicationCycleSettings = settingsBuilder.getReplicationCycleSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for VmMigrationStubSettings. */
@@ -1561,6 +1733,17 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     private final OperationCallSettings.Builder<
             DeleteTargetProjectRequest, Empty, OperationMetadata>
         deleteTargetProjectOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListReplicationCyclesRequest,
+            ListReplicationCyclesResponse,
+            ListReplicationCyclesPagedResponse>
+        listReplicationCyclesSettings;
+    private final UnaryCallSettings.Builder<GetReplicationCycleRequest, ReplicationCycle>
+        getReplicationCycleSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1688,6 +1871,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       updateTargetProjectOperationSettings = OperationCallSettings.newBuilder();
       deleteTargetProjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTargetProjectOperationSettings = OperationCallSettings.newBuilder();
+      listReplicationCyclesSettings =
+          PagedCallSettings.newBuilder(LIST_REPLICATION_CYCLES_PAGE_STR_FACT);
+      getReplicationCycleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1734,7 +1922,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               getTargetProjectSettings,
               createTargetProjectSettings,
               updateTargetProjectSettings,
-              deleteTargetProjectSettings);
+              deleteTargetProjectSettings,
+              listReplicationCyclesSettings,
+              getReplicationCycleSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -1820,6 +2012,10 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       deleteTargetProjectSettings = settings.deleteTargetProjectSettings.toBuilder();
       deleteTargetProjectOperationSettings =
           settings.deleteTargetProjectOperationSettings.toBuilder();
+      listReplicationCyclesSettings = settings.listReplicationCyclesSettings.toBuilder();
+      getReplicationCycleSettings = settings.getReplicationCycleSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1866,7 +2062,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               getTargetProjectSettings,
               createTargetProjectSettings,
               updateTargetProjectSettings,
-              deleteTargetProjectSettings);
+              deleteTargetProjectSettings,
+              listReplicationCyclesSettings,
+              getReplicationCycleSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -2113,6 +2313,26 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
       builder
           .deleteTargetProjectSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listReplicationCyclesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getReplicationCycleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -3270,6 +3490,33 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     public OperationCallSettings.Builder<DeleteTargetProjectRequest, Empty, OperationMetadata>
         deleteTargetProjectOperationSettings() {
       return deleteTargetProjectOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReplicationCycles. */
+    public PagedCallSettings.Builder<
+            ListReplicationCyclesRequest,
+            ListReplicationCyclesResponse,
+            ListReplicationCyclesPagedResponse>
+        listReplicationCyclesSettings() {
+      return listReplicationCyclesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getReplicationCycle. */
+    public UnaryCallSettings.Builder<GetReplicationCycleRequest, ReplicationCycle>
+        getReplicationCycleSettings() {
+      return getReplicationCycleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

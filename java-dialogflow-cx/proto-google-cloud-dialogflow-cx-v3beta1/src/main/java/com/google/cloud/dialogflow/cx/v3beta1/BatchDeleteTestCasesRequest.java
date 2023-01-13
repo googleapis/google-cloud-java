@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchDeleteTestCases].
+ * The request message for
+ * [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchDeleteTestCases].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.BatchDeleteTestCasesRequest}
@@ -377,7 +378,8 @@ public final class BatchDeleteTestCasesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The request message for [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchDeleteTestCases].
+   * The request message for
+   * [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchDeleteTestCases].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.BatchDeleteTestCasesRequest}

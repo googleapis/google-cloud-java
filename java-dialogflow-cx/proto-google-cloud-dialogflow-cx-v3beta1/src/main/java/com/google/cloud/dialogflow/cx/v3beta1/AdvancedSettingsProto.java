@@ -52,13 +52,12 @@ public final class AdvancedSettingsProto {
           + "ow.cx.v3beta1.AdvancedSettings.LoggingSe"
           + "ttings\032Y\n\017LoggingSettings\022\"\n\032enable_stac"
           + "kdriver_logging\030\002 \001(\010\022\"\n\032enable_interact"
-          + "ion_logging\030\003 \001(\010B\335\001\n&com.google.cloud.d"
+          + "ion_logging\030\003 \001(\010B\317\001\n&com.google.cloud.d"
           + "ialogflow.cx.v3beta1B\025AdvancedSettingsPr"
-          + "otoP\001ZDgoogle.golang.org/genproto/google"
-          + "apis/cloud/dialogflow/cx/v3beta1;cx\370\001\001\242\002"
-          + "\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1"
-          + "\352\002&Google::Cloud::Dialogflow::CX::V3beta"
-          + "1b\006proto3"
+          + "otoP\001Z6cloud.google.com/go/dialogflow/cx"
+          + "/apiv3beta1/cxpb;cxpb\370\001\001\242\002\002DF\252\002\"Google.C"
+          + "loud.Dialogflow.Cx.V3Beta1\352\002&Google::Clo"
+          + "ud::Dialogflow::CX::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

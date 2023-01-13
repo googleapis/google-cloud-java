@@ -61,7 +61,10 @@ import javax.annotation.Generated;
  * metricsScopesSettingsBuilder
  *     .getMetricsScopeSettings()
  *     .setRetrySettings(
- *         metricsScopesSettingsBuilder.getMetricsScopeSettings().getRetrySettings().toBuilder()
+ *         metricsScopesSettingsBuilder
+ *             .getMetricsScopeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * MetricsScopesSettings metricsScopesSettings = metricsScopesSettingsBuilder.build();

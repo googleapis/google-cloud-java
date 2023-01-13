@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for managing [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+ * Service for managing
+ * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -504,7 +505,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
    * </pre>
    */
   public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
@@ -513,7 +515,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Returns the list of all environments in the specified
+     * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * </pre>
      */
     public void listEnvironments(
@@ -528,7 +531,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Retrieves the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void getEnvironment(
@@ -543,7 +547,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in
+     * the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -563,7 +568,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Updates the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -583,7 +589,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deletes the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void deleteEnvironment(
@@ -597,7 +604,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Looks up the history of the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void lookupEnvironmentHistory(
@@ -613,12 +621,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Kicks off a continuous test under the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
-     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
+     * - `metadata`:
+     * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+     * - `response`:
+     * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
      * </pre>
      */
     public void runContinuousTest(
@@ -648,12 +659,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deploys a flow to the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
-     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+     * - `metadata`:
+     * [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+     * - `response`:
+     * [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
      * </pre>
      */
     public void deployFlow(
@@ -731,7 +745,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
    * </pre>
    */
   public static final class EnvironmentsStub
@@ -749,7 +764,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Returns the list of all environments in the specified
+     * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * </pre>
      */
     public void listEnvironments(
@@ -766,7 +782,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Retrieves the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void getEnvironment(
@@ -783,7 +800,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in
+     * the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -805,7 +823,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Updates the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -827,7 +846,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deletes the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void deleteEnvironment(
@@ -843,7 +863,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Looks up the history of the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void lookupEnvironmentHistory(
@@ -861,12 +882,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Kicks off a continuous test under the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
-     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
+     * - `metadata`:
+     * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+     * - `response`:
+     * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
      * </pre>
      */
     public void runContinuousTest(
@@ -900,12 +924,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deploys a flow to the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
-     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+     * - `metadata`:
+     * [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+     * - `response`:
+     * [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
      * </pre>
      */
     public void deployFlow(
@@ -920,7 +947,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
    * </pre>
    */
   public static final class EnvironmentsBlockingStub
@@ -939,7 +967,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Returns the list of all environments in the specified
+     * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsResponse listEnvironments(
@@ -952,7 +981,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Retrieves the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Environment getEnvironment(
@@ -965,7 +995,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in
+     * the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -984,7 +1015,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Updates the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -1003,7 +1035,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deletes the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.protobuf.Empty deleteEnvironment(
@@ -1016,7 +1049,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Looks up the history of the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryResponse
@@ -1030,12 +1064,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Kicks off a continuous test under the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
-     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
+     * - `metadata`:
+     * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+     * - `response`:
+     * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
      * </pre>
      */
     public com.google.longrunning.Operation runContinuousTest(
@@ -1062,12 +1099,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deploys a flow to the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
-     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+     * - `metadata`:
+     * [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+     * - `response`:
+     * [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
      * </pre>
      */
     public com.google.longrunning.Operation deployFlow(
@@ -1081,7 +1121,8 @@ public final class EnvironmentsGrpc {
    *
    *
    * <pre>
-   * Service for managing [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
    * </pre>
    */
   public static final class EnvironmentsFutureStub
@@ -1100,7 +1141,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Returns the list of all environments in the specified
+     * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1114,7 +1156,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Retrieves the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1128,7 +1171,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in
+     * the specified [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -1147,7 +1191,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Updates the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
@@ -1166,7 +1211,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deletes the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -1179,7 +1225,8 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Looks up the history of the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1194,12 +1241,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Kicks off a continuous test under the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Kicks off a continuous test under the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
-     * - `response`: [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
+     * - `metadata`:
+     * [RunContinuousTestMetadata][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestMetadata]
+     * - `response`:
+     * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1227,12 +1277,15 @@ public final class EnvironmentsGrpc {
      *
      *
      * <pre>
-     * Deploys a flow to the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Deploys a flow to the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`: [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
-     * - `response`: [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
+     * - `metadata`:
+     * [DeployFlowMetadata][google.cloud.dialogflow.cx.v3beta1.DeployFlowMetadata]
+     * - `response`:
+     * [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

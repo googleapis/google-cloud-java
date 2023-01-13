@@ -36,7 +36,10 @@ public class SyncGetEndpoint {
     iDSSettingsBuilder
         .getEndpointSettings()
         .setRetrySettings(
-            iDSSettingsBuilder.getEndpointSettings().getRetrySettings().toBuilder()
+            iDSSettingsBuilder
+                .getEndpointSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     IDSSettings iDSSettings = iDSSettingsBuilder.build();

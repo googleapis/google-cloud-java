@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.GetEnvironment].
+ * The request message for
+ * [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.GetEnvironment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest}
@@ -73,8 +74,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
@@ -100,8 +102,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the
+   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
@@ -288,7 +291,8 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.GetEnvironment].
+   * The request message for
+   * [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.GetEnvironment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest}
@@ -462,8 +466,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -488,8 +493,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -514,8 +520,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -539,8 +546,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
@@ -560,8 +568,9 @@ public final class GetEnvironmentRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *

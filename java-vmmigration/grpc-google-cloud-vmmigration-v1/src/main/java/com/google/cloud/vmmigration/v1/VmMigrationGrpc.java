@@ -2043,6 +2043,103 @@ public final class VmMigrationGrpc {
     return getDeleteTargetProjectMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
+          com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+      getListReplicationCyclesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReplicationCycles",
+      requestType = com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
+          com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+      getListReplicationCyclesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
+            com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+        getListReplicationCyclesMethod;
+    if ((getListReplicationCyclesMethod = VmMigrationGrpc.getListReplicationCyclesMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getListReplicationCyclesMethod = VmMigrationGrpc.getListReplicationCyclesMethod)
+            == null) {
+          VmMigrationGrpc.getListReplicationCyclesMethod =
+              getListReplicationCyclesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
+                          com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListReplicationCycles"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("ListReplicationCycles"))
+                      .build();
+        }
+      }
+    }
+    return getListReplicationCyclesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
+          com.google.cloud.vmmigration.v1.ReplicationCycle>
+      getGetReplicationCycleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReplicationCycle",
+      requestType = com.google.cloud.vmmigration.v1.GetReplicationCycleRequest.class,
+      responseType = com.google.cloud.vmmigration.v1.ReplicationCycle.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
+          com.google.cloud.vmmigration.v1.ReplicationCycle>
+      getGetReplicationCycleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
+            com.google.cloud.vmmigration.v1.ReplicationCycle>
+        getGetReplicationCycleMethod;
+    if ((getGetReplicationCycleMethod = VmMigrationGrpc.getGetReplicationCycleMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getGetReplicationCycleMethod = VmMigrationGrpc.getGetReplicationCycleMethod) == null) {
+          VmMigrationGrpc.getGetReplicationCycleMethod =
+              getGetReplicationCycleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
+                          com.google.cloud.vmmigration.v1.ReplicationCycle>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetReplicationCycle"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.GetReplicationCycleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.ReplicationCycle
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("GetReplicationCycle"))
+                      .build();
+        }
+      }
+    }
+    return getGetReplicationCycleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VmMigrationStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VmMigrationStub> factory =
@@ -2742,6 +2839,36 @@ public final class VmMigrationGrpc {
           getDeleteTargetProjectMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReplicationCycles in a given MigratingVM.
+     * </pre>
+     */
+    public void listReplicationCycles(
+        com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReplicationCyclesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReplicationCycle.
+     * </pre>
+     */
+    public void getReplicationCycle(
+        com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ReplicationCycle>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReplicationCycleMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -3024,6 +3151,20 @@ public final class VmMigrationGrpc {
                   new MethodHandlers<
                       com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_TARGET_PROJECT)))
+          .addMethod(
+              getListReplicationCyclesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
+                      com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>(
+                      this, METHODID_LIST_REPLICATION_CYCLES)))
+          .addMethod(
+              getGetReplicationCycleMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
+                      com.google.cloud.vmmigration.v1.ReplicationCycle>(
+                      this, METHODID_GET_REPLICATION_CYCLE)))
           .build();
     }
   }
@@ -3780,6 +3921,40 @@ public final class VmMigrationGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReplicationCycles in a given MigratingVM.
+     * </pre>
+     */
+    public void listReplicationCycles(
+        com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReplicationCyclesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReplicationCycle.
+     * </pre>
+     */
+    public void getReplicationCycle(
+        com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ReplicationCycle>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReplicationCycleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -4396,6 +4571,32 @@ public final class VmMigrationGrpc {
         com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteTargetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReplicationCycles in a given MigratingVM.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse listReplicationCycles(
+        com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReplicationCyclesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReplicationCycle.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ReplicationCycle getReplicationCycle(
+        com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReplicationCycleMethod(), getCallOptions(), request);
     }
   }
 
@@ -5036,6 +5237,35 @@ public final class VmMigrationGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteTargetProjectMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReplicationCycles in a given MigratingVM.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
+        listReplicationCycles(
+            com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReplicationCyclesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReplicationCycle.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.vmmigration.v1.ReplicationCycle>
+        getReplicationCycle(com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReplicationCycleMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SOURCES = 0;
@@ -5082,6 +5312,8 @@ public final class VmMigrationGrpc {
   private static final int METHODID_CREATE_TARGET_PROJECT = 41;
   private static final int METHODID_UPDATE_TARGET_PROJECT = 42;
   private static final int METHODID_DELETE_TARGET_PROJECT = 43;
+  private static final int METHODID_LIST_REPLICATION_CYCLES = 44;
+  private static final int METHODID_GET_REPLICATION_CYCLE = 45;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5341,6 +5573,19 @@ public final class VmMigrationGrpc {
               (com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_LIST_REPLICATION_CYCLES:
+          serviceImpl.listReplicationCycles(
+              (com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_REPLICATION_CYCLE:
+          serviceImpl.getReplicationCycle(
+              (com.google.cloud.vmmigration.v1.GetReplicationCycleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ReplicationCycle>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -5449,6 +5694,8 @@ public final class VmMigrationGrpc {
                       .addMethod(getCreateTargetProjectMethod())
                       .addMethod(getUpdateTargetProjectMethod())
                       .addMethod(getDeleteTargetProjectMethod())
+                      .addMethod(getListReplicationCyclesMethod())
+                      .addMethod(getGetReplicationCycleMethod())
                       .build();
         }
       }

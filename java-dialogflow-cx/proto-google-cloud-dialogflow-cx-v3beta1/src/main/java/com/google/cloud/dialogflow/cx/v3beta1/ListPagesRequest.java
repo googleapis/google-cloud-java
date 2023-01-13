@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Pages.ListPages][google.cloud.dialogflow.cx.v3beta1.Pages.ListPages].
+ * The request message for
+ * [Pages.ListPages][google.cloud.dialogflow.cx.v3beta1.Pages.ListPages].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListPagesRequest}
@@ -470,7 +471,8 @@ public final class ListPagesRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The request message for [Pages.ListPages][google.cloud.dialogflow.cx.v3beta1.Pages.ListPages].
+   * The request message for
+   * [Pages.ListPages][google.cloud.dialogflow.cx.v3beta1.Pages.ListPages].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListPagesRequest}

@@ -37,7 +37,10 @@ public class SyncGetKeyRing {
     keyManagementServiceSettingsBuilder
         .getKeyRingSettings()
         .setRetrySettings(
-            keyManagementServiceSettingsBuilder.getKeyRingSettings().getRetrySettings().toBuilder()
+            keyManagementServiceSettingsBuilder
+                .getKeyRingSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     KeyManagementServiceSettings keyManagementServiceSettings =

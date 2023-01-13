@@ -124,8 +124,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-   * that identifies the metric types, resources, and projects to query.
+   * Required. The [monitoring
+   * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+   * the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -148,8 +149,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-   * that identifies the metric types, resources, and projects to query.
+   * Required. The [monitoring
+   * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+   * the metric types, resources, and projects to query.
    * </pre>
    *
    * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -338,7 +340,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
-   *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=79
+   *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=80
    * @return Whether the statisticalTimeSeriesFilter field is set.
    */
   @java.lang.Override
@@ -359,7 +361,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
-   *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=79
+   *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=80
    * @return The statisticalTimeSeriesFilter.
    */
   @java.lang.Override
@@ -910,8 +912,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-     * that identifies the metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+     * the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -933,8 +936,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-     * that identifies the metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+     * the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -956,8 +960,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-     * that identifies the metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+     * the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -978,8 +983,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-     * that identifies the metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+     * the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -996,8 +1002,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-     * that identifies the metric types, resources, and projects to query.
+     * Required. The [monitoring
+     * filter](https://cloud.google.com/monitoring/api/v3/filters) that identifies
+     * the metric types, resources, and projects to query.
      * </pre>
      *
      * <code>string filter = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1650,7 +1657,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
-     *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=79
+     *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=80
      * @return Whether the statisticalTimeSeriesFilter field is set.
      */
     @java.lang.Override
@@ -1671,7 +1678,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.monitoring.dashboard.v1.TimeSeriesFilter.statistical_time_series_filter is
-     *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=79
+     *     deprecated. See google/monitoring/dashboard/v1/metrics.proto;l=80
      * @return The statisticalTimeSeriesFilter.
      */
     @java.lang.Override

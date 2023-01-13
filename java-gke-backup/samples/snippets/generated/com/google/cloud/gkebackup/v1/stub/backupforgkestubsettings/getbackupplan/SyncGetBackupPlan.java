@@ -37,7 +37,10 @@ public class SyncGetBackupPlan {
     backupForGKESettingsBuilder
         .getBackupPlanSettings()
         .setRetrySettings(
-            backupForGKESettingsBuilder.getBackupPlanSettings().getRetrySettings().toBuilder()
+            backupForGKESettingsBuilder
+                .getBackupPlanSettings()
+                .getRetrySettings()
+                .toBuilder()
                 .setTotalTimeout(Duration.ofSeconds(30))
                 .build());
     BackupForGKEStubSettings backupForGKESettings = backupForGKESettingsBuilder.build();

@@ -20,7 +20,9 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPag
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListSourcesPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListTargetProjectsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationReportsPagedResponse;
@@ -32,6 +34,10 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.AddGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
@@ -64,6 +70,7 @@ import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
+import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
@@ -78,6 +85,8 @@ import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
+import com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse;
 import com.google.cloud.vmmigration.v1.ListSourcesRequest;
 import com.google.cloud.vmmigration.v1.ListSourcesResponse;
 import com.google.cloud.vmmigration.v1.ListTargetProjectsRequest;
@@ -90,6 +99,7 @@ import com.google.cloud.vmmigration.v1.PauseMigrationRequest;
 import com.google.cloud.vmmigration.v1.PauseMigrationResponse;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest;
 import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
+import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
 import com.google.cloud.vmmigration.v1.Source;
@@ -559,6 +569,46 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesMethodDescriptor =
+          MethodDescriptor.<ListReplicationCyclesRequest, ListReplicationCyclesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListReplicationCycles")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListReplicationCyclesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListReplicationCyclesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetReplicationCycleRequest, ReplicationCycle>
+      getReplicationCycleMethodDescriptor =
+          MethodDescriptor.<GetReplicationCycleRequest, ReplicationCycle>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetReplicationCycle")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetReplicationCycleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ReplicationCycle.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable;
@@ -692,6 +742,16 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   private final UnaryCallable<DeleteTargetProjectRequest, Operation> deleteTargetProjectCallable;
   private final OperationCallable<DeleteTargetProjectRequest, Empty, OperationMetadata>
       deleteTargetProjectOperationCallable;
+  private final UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesCallable;
+  private final UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesPagedResponse>
+      listReplicationCyclesPagedCallable;
+  private final UnaryCallable<GetReplicationCycleRequest, ReplicationCycle>
+      getReplicationCycleCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -1192,6 +1252,49 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+        listReplicationCyclesTransportSettings =
+            GrpcCallSettings
+                .<ListReplicationCyclesRequest, ListReplicationCyclesResponse>newBuilder()
+                .setMethodDescriptor(listReplicationCyclesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<GetReplicationCycleRequest, ReplicationCycle>
+        getReplicationCycleTransportSettings =
+            GrpcCallSettings.<GetReplicationCycleRequest, ReplicationCycle>newBuilder()
+                .setMethodDescriptor(getReplicationCycleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listSourcesCallable =
         callableFactory.createUnaryCallable(
@@ -1553,6 +1656,30 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             settings.deleteTargetProjectOperationSettings(),
             clientContext,
             operationsStub);
+    this.listReplicationCyclesCallable =
+        callableFactory.createUnaryCallable(
+            listReplicationCyclesTransportSettings,
+            settings.listReplicationCyclesSettings(),
+            clientContext);
+    this.listReplicationCyclesPagedCallable =
+        callableFactory.createPagedCallable(
+            listReplicationCyclesTransportSettings,
+            settings.listReplicationCyclesSettings(),
+            clientContext);
+    this.getReplicationCycleCallable =
+        callableFactory.createUnaryCallable(
+            getReplicationCycleTransportSettings,
+            settings.getReplicationCycleSettings(),
+            clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1999,6 +2126,39 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   public OperationCallable<DeleteTargetProjectRequest, Empty, OperationMetadata>
       deleteTargetProjectOperationCallable() {
     return deleteTargetProjectOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
+      listReplicationCyclesCallable() {
+    return listReplicationCyclesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReplicationCyclesRequest, ListReplicationCyclesPagedResponse>
+      listReplicationCyclesPagedCallable() {
+    return listReplicationCyclesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReplicationCycleRequest, ReplicationCycle> getReplicationCycleCallable() {
+    return getReplicationCycleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override

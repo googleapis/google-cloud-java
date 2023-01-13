@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3beta1.Environments.LookupEnvironmentHistory].
+ * The request message for
+ * [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3beta1.Environments.LookupEnvironmentHistory].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest}
@@ -377,7 +378,8 @@ public final class LookupEnvironmentHistoryRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The request message for [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3beta1.Environments.LookupEnvironmentHistory].
+   * The request message for
+   * [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3beta1.Environments.LookupEnvironmentHistory].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest}

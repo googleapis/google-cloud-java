@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest].
+ * The response message for
+ * [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse}
@@ -287,7 +288,8 @@ public final class RunContinuousTestResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The response message for [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest].
+   * The response message for
+   * [Environments.RunContinuousTest][google.cloud.dialogflow.cx.v3beta1.Environments.RunContinuousTest].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse}

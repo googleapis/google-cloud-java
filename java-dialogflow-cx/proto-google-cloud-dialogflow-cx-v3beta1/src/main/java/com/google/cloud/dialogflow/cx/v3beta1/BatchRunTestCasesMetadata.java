@@ -22,8 +22,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Metadata returned for the [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchRunTestCases] long running
- * operation.
+ * Metadata returned for the
+ * [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchRunTestCases]
+ * long running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata}
@@ -303,8 +304,9 @@ public final class BatchRunTestCasesMetadata extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Metadata returned for the [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchRunTestCases] long running
-   * operation.
+   * Metadata returned for the
+   * [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchRunTestCases]
+   * long running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.BatchRunTestCasesMetadata}
