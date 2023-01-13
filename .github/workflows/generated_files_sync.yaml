@@ -59,6 +59,17 @@ jobs:
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code
 
+  owlbot-yaml:
+    # applying templated .Owlbot.yaml config doesn't create a diff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate .Owlbot.yaml files
+        run: |
+          bash generation/set_owlbot_config.sh
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
+
   gitignore_correctness:
     # Generated files should not match .gitignore
     runs-on: ubuntu-latest
