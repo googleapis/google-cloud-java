@@ -17,6 +17,20 @@ Use Linux environment.
 
 Install Docker.
 
+### Ensure no Release Please "snapshot" pull request open
+
+Ensure google-cloud-java repository does not have [a pull request with "autorelease: snapshot" label](
+https://github.com/googleapis/google-cloud-java/pulls?q=is%3Apr+is%3Aopen+label%3A%22autorelease%3A+snapshot%22).
+
+If you find one, merge it after approving it.
+This is a pull request to append "-SNAPSHOT" to versions in pom.xml files in the
+repostiory. It's not for an actual release.
+
+Background: This new client library generation process creates pom.xml files with
+a "-SNAPSHOT" version. To have consistency with other modules, ensure the pom.xml files in
+the repository has "-SNAPSHOT" versions too.
+
+
 ### Checkout google-cloud-java repository
 
 ```
