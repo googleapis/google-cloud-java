@@ -28,6 +28,7 @@ import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.UninitializedMessageException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
@@ -49,6 +50,7 @@ import org.threeten.bp.temporal.TemporalAccessor;
  */
 public class JsonToProtoMessage {
   private static final Logger LOG = Logger.getLogger(JsonToProtoMessage.class.getName());
+  private static int NUMERIC_SCALE = 9;
   private static ImmutableMap<FieldDescriptor.Type, String> FieldTypeToDebugMessage =
       new ImmutableMap.Builder<FieldDescriptor.Type, String>()
           .put(FieldDescriptor.Type.BOOL, "boolean")
@@ -315,10 +317,15 @@ public class JsonToProtoMessage {
                       new BigDecimal(((Number) val).longValue())));
               return;
             } else if (val instanceof Float || val instanceof Double) {
+              // In JSON, the precision passed in is machine dependent. We should round the number
+              // before passing to backend.
+              BigDecimal bigDecimal = new BigDecimal(String.valueOf(val));
+              if (bigDecimal.scale() > 9) {
+                bigDecimal = bigDecimal.setScale(NUMERIC_SCALE, RoundingMode.HALF_UP);
+              }
               protoMsg.setField(
                   fieldDescriptor,
-                  BigDecimalByteStringEncoder.encodeToNumericByteString(
-                      new BigDecimal(String.valueOf(val))));
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(bigDecimal));
               return;
             } else if (val instanceof BigDecimal) {
               protoMsg.setField(
@@ -559,10 +566,13 @@ public class JsonToProtoMessage {
                       new BigDecimal(((Number) val).longValue())));
               added = true;
             } else if (val instanceof Float || val instanceof Double) {
+              BigDecimal bigDecimal = new BigDecimal(String.valueOf(val));
+              if (bigDecimal.scale() > 9) {
+                bigDecimal = bigDecimal.setScale(NUMERIC_SCALE, RoundingMode.HALF_UP);
+              }
               protoMsg.addRepeatedField(
                   fieldDescriptor,
-                  BigDecimalByteStringEncoder.encodeToNumericByteString(
-                      new BigDecimal(String.valueOf(val))));
+                  BigDecimalByteStringEncoder.encodeToNumericByteString(bigDecimal));
               added = true;
             } else if (val instanceof BigDecimal) {
               protoMsg.addRepeatedField(

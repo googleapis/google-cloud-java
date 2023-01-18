@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.storage.test.JsonTest.*;
 import com.google.cloud.bigquery.storage.test.SchemaTest.*;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.Descriptor;
@@ -682,6 +683,60 @@ public class JsonToProtoMessageTest {
     json.put("string", "9.1");
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(TestDouble.getDescriptor(), json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testDoubleHighPrecision() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                TableFieldSchema.newBuilder()
+                    .setName("numeric")
+                    .setType(TableFieldSchema.Type.NUMERIC)
+                    .build())
+            .build();
+    TestNumeric expectedProto =
+        TestNumeric.newBuilder()
+            .setNumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(
+                    new BigDecimal("3.400500513")))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("numeric", 3.400500512978076);
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(
+            TestNumeric.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testDoubleHighPrecision_RepeatedField() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                0,
+                TableFieldSchema.newBuilder()
+                    .setName("bignumeric")
+                    .setType(TableFieldSchema.Type.NUMERIC)
+                    .setMode(TableFieldSchema.Mode.REPEATED)
+                    .build())
+            .build();
+    TestBignumeric expectedProto =
+        TestBignumeric.newBuilder()
+            .addBignumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(
+                    new BigDecimal("3.400500513")))
+            .addBignumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0.1")))
+            .addBignumeric(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("0.12")))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("bignumeric", ImmutableList.of(3.400500512978076, 0.10000000000055, 0.12));
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.convertJsonToProtoMessage(
+            TestBignumeric.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
 
