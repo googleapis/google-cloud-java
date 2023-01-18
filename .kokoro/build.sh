@@ -27,31 +27,11 @@ source ${scriptDir}/common.sh
 mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
-# if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
-if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
-  export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
-fi
+setup_application_credentials
 
 if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets" ]; then
   source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
 fi
-
-function setup_cloud() {
-  gcloud config set project "$GOOGLE_CLOUD_PROJECT"
-
-  terraform -version &&
-    source ./.cloud/helpers/init.sh "$1" &&
-    source ./.cloud/helpers/plan.sh "$1" &&
-    source ./.cloud/helpers/apply.sh &&
-    source ./.cloud/helpers/populate-env.sh
-
-  destroy() {
-    arguments=$?
-    time source ./.cloud/helpers/destroy.sh
-    exit $arguments
-  }
-  trap destroy EXIT
-}
 
 RETURN_CODE=0
 
