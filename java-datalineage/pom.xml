@@ -50,4 +50,5 @@
     <module>proto-google-cloud-datalineage-v1</module>
     <module>google-cloud-datalineage-bom</module>
   </modules>
-</project>
+
+  </project>
