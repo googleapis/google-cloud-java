@@ -600,3 +600,6 @@ proto-google-cloud-monitoring-metricsscope-v1:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-monitoring-metricsscope-v1:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-tpu-v2:2.9.0:2.10.0-SNAPSHOT
 grpc-google-cloud-tpu-v2:2.9.0:2.10.0-SNAPSHOT
+google-cloud-datalineage:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-datalineage-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-datalineage-v1:0.0.0:0.0.1-SNAPSHOT
