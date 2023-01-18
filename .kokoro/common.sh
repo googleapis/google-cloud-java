@@ -138,6 +138,7 @@ function run_graalvm_tests() {
     -Danimal.sniffer.skip=true \
     -Pnative \
     -fae \
+    -T 1C \
     test
 
   RETURN_CODE=$?
