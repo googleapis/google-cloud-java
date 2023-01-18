@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-monitoring/grpc-google-.*/src"
 - "/java-monitoring/proto-google-.*/src"
 - "/java-monitoring/google-.*/src"
+- "/java-monitoring/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-monitoring/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -25,7 +26,6 @@ deep-preserve-regex:
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOuterClass.java"
 - "/java-monitoring/proto-google-cloud-monitoring-v3/src/main/java/google/monitoring/v3/DroppedLabelsOuterClass.java"
 
-
 deep-copy-regex:
 - source: "/google/monitoring/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring/$1/proto-google-cloud-monitoring-$1/src"
@@ -33,5 +33,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-monitoring/$1/grpc-google-cloud-monitoring-$1/src"
 - source: "/google/monitoring/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring/$1/google-cloud-monitoring/src"
+- source: "/google/monitoring/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-monitoring/$1/samples/snippets/generated"
 
 api-name: monitoring

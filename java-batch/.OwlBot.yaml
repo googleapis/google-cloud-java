@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-batch/grpc-google-.*/src"
 - "/java-batch/proto-google-.*/src"
 - "/java-batch/google-.*/src"
+- "/java-batch/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-batch/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-batch/$1/grpc-google-cloud-batch-$1/src"
 - source: "/google/cloud/batch/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-batch/$1/google-cloud-batch/src"
+- source: "/google/cloud/batch/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-batch/$1/samples/snippets/generated"
 
 api-name: batch

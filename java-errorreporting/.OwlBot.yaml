@@ -17,12 +17,12 @@ deep-remove-regex:
 - "/java-errorreporting/grpc-google-.*/src"
 - "/java-errorreporting/proto-google-.*/src"
 - "/java-errorreporting/google-.*/src"
+- "/java-errorreporting/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-errorreporting/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-errorreporting/google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java"
 - "/java-errorreporting/proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java"
-
 
 deep-copy-regex:
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/proto-google-.*/src"
@@ -31,5 +31,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-errorreporting/$1/grpc-google-cloud-error-reporting-$1/src"
 - source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-errorreporting/$1/google-cloud-errorreporting/src"
+- source: "/google/devtools/clouderrorreporting/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-errorreporting/$1/samples/snippets/generated"
 
 api-name: clouderrorreporting

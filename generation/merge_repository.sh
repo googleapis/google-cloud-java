@@ -118,7 +118,8 @@ git add --all
 git commit -am 'chore: remove and disable owlbot postprocessor templates' \
     --allow-empty
 
-for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh ../../set_owlbot_config.sh $F; done
+../../set_owlbot_config.sh
+
 git commit -am 'chore: set owlbot copy config' --allow-empty
 
 # create a monorepo/diff repo

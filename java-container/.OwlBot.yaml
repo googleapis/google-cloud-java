@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-container/grpc-google-.*/src"
 - "/java-container/proto-google-.*/src"
 - "/java-container/google-.*/src"
+- "/java-container/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-container/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
@@ -30,5 +31,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-container/$1/grpc-google-cloud-container-$1/src"
 - source: "/google/container/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-container/$1/google-cloud-container/src"
+- source: "/google/container/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-container/$1/samples/snippets/generated"
 
 api-name: container

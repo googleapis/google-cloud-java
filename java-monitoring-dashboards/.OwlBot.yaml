@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-monitoring-dashboards/grpc-google-.*/src"
 - "/java-monitoring-dashboards/proto-google-.*/src"
 - "/java-monitoring-dashboards/google-.*/src"
+- "/java-monitoring-dashboards/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-monitoring-dashboards/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-monitoring-dashboards/$1/grpc-google-cloud-monitoring-dashboard-$1/src"
 - source: "/google/monitoring/dashboard/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-monitoring-dashboards/$1/google-cloud-monitoring-dashboard/src"
+- source: "/google/monitoring/dashboard/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-monitoring-dashboards/$1/samples/snippets/generated"
 
 api-name: monitoring-dashboards

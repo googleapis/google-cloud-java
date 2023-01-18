@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-dataform/grpc-google-.*/src"
 - "/java-dataform/proto-google-.*/src"
 - "/java-dataform/google-.*/src"
+- "/java-dataform/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-dataform/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-dataform/$1/grpc-google-cloud-dataform-$1/src"
 - source: "/google/cloud/dataform/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-dataform/$1/google-cloud-dataform/src"
+- source: "/google/cloud/dataform/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-dataform/$1/samples/snippets/generated"
 
 api-name: dataform

@@ -17,12 +17,12 @@ deep-remove-regex:
 - "/java-trace/grpc-google-.*/src"
 - "/java-trace/proto-google-.*/src"
 - "/java-trace/google-.*/src"
+- "/java-trace/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-trace/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-trace/google-cloud-trace/src/test/java/com/google/cloud/trace/v1/VPCServiceControlTest.java"
 - "/java-trace/google-cloud-trace/src/test/java/com/google/cloud/trace/v2/VPCServiceControlTest.java"
-
 
 deep-copy-regex:
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/proto-google-.*/src"
@@ -31,5 +31,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-trace/$1/grpc-google-cloud-trace-$1/src"
 - source: "/google/devtools/cloudtrace/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-trace/$1/google-cloud-trace/src"
+- source: "/google/devtools/cloudtrace/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-trace/$1/samples/snippets/generated"
 
 api-name: cloudtrace
