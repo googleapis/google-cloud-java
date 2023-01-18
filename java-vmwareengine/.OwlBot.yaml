@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/vmwareengine/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-vmwareengine/$1/samples/snippets/generated"
 
-api-name: java-vmwareengine
+api-name: vmwareengine

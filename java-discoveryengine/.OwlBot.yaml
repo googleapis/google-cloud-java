@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/discoveryengine/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-discoveryengine/$1/samples/snippets/generated"
 
-api-name: java-discoveryengine
+api-name: discoveryengine

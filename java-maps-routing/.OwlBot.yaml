@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/maps/routing/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-maps-routing/$1/samples/snippets/generated"
 
-api-name: java-maps-routing
+api-name: maps-routing

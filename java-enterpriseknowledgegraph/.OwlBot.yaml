@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/enterpriseknowledgegraph/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-enterpriseknowledgegraph/$1/samples/snippets/generated"
 
-api-name: java-enterpriseknowledgegraph
+api-name: enterpriseknowledgegraph
