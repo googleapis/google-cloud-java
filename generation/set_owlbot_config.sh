@@ -10,7 +10,11 @@
 #
 # To apply the change to all OwlBot configuration files in all modules:
 # $ for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`; do sh generation/set_owlbot_config.sh $F; done
-OWLBOT_FILE=$1
+
+for F in `find . -maxdepth 2 -name '.OwlBot.yaml'`;
+do
+
+OWLBOT_FILE=$F
 
 if [ -z "${OWLBOT_FILE}" ]; then
   echo "Please specify file name"
@@ -72,3 +76,4 @@ sed -i.bak  's/api-name/\n&/g'  ${OWLBOT_FILE} && rm "${OWLBOT_FILE}".bak
 
 fi
 
+done

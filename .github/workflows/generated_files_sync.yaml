@@ -66,7 +66,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Check if .Owlbot.yaml files are correctly configured
         run: |
-          bash generation/check_owlbot_config.sh
+          bash generation/set_owlbot_config.sh
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code
 
