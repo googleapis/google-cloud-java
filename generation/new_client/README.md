@@ -189,6 +189,8 @@ Please create a pull request:
 ```
 
 Create a pull request from the change.
+In the PR description, write down the `python3.9 generation/new_client/new-client.py generate ...`
+command you ran above.
 
 ## Advanced Options
 
