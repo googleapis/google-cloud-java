@@ -43,6 +43,7 @@ public class ITAddressesTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
+    System.out.println("Change to run tests");
     addresses = new ArrayList<>();
     AddressesSettings addressesSettings = AddressesSettings.newBuilder().build();
     addressesClient = AddressesClient.create(addressesSettings);
