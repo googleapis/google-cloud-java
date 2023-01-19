@@ -60,6 +60,7 @@
     <module>java-dataform</module>
     <module>java-data-fusion</module>
     <module>java-datalabeling</module>
+    <module>java-datalineage</module>
     <module>java-dataplex</module>
     <module>java-dataproc-metastore</module>
     <module>java-dataproc</module>
