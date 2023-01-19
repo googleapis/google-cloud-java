@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-analytics-admin/grpc-google-.*/src"
 - "/java-analytics-admin/proto-google-.*/src"
 - "/java-analytics-admin/google-.*/src"
+- "/java-analytics-admin/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/analytics/admin/(v.*)/.*-java/proto-google-.*/src"
@@ -25,5 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-analytics-admin/$1/grpc-google-analytics-admin-$1/src"
 - source: "/google/analytics/admin/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-analytics-admin/$1/google-analytics-admin/src"
+- source: "/google/analytics/admin/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-analytics-admin/$1/samples/snippets/generated"
 
 api-name: analyticsadmin

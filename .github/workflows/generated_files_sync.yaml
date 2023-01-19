@@ -59,6 +59,17 @@ jobs:
       - name: Fail if there's any difference
         run: git --no-pager diff --exit-code
 
+  owlbot-yaml:
+    # Each module's .Owlbot.yaml config is configured according to set_owlbot_config.sh
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check if .Owlbot.yaml files are correctly configured
+        run: |
+          bash generation/set_owlbot_config.sh
+      - name: Fail if there's any difference
+        run: git --no-pager diff --exit-code
+
   gitignore_correctness:
     # Generated files should not match .gitignore
     runs-on: ubuntu-latest

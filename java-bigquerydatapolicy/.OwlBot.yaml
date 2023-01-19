@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-bigquerydatapolicy/grpc-google-.*/src"
 - "/java-bigquerydatapolicy/proto-google-.*/src"
 - "/java-bigquerydatapolicy/google-.*/src"
+- "/java-bigquerydatapolicy/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-bigquerydatapolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/grpc-google-cloud-bigquerydatapolicy-$1/src"
 - source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/google-cloud-bigquerydatapolicy/src"
+- source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-bigquerydatapolicy/$1/samples/snippets/generated"
 
 api-name: bigquerydatapolicy

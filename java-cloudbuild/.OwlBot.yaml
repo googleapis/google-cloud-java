@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-cloudbuild/grpc-google-.*/src"
 - "/java-cloudbuild/proto-google-.*/src"
 - "/java-cloudbuild/google-.*/src"
+- "/java-cloudbuild/samples/snippets/generated"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/proto-google-.*/src"
@@ -25,5 +26,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-cloudbuild/$1/grpc-google-cloud-build-$1/src"
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-cloudbuild/$1/google-cloud-build/src"
+- source: "/google/devtools/cloudbuild/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-cloudbuild/$1/samples/snippets/generated"
 
 api-name: cloudbuild

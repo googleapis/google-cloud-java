@@ -16,49 +16,71 @@
 excluded_modules=('gapic-libraries-bom' 'google-cloud-jar-parent' 'google-cloud-pom-parent')
 
 function retry_with_backoff {
-    attempts_left=$1
-    sleep_seconds=$2
-    shift 2
-    command=$@
+  attempts_left=$1
+  sleep_seconds=$2
+  shift 2
+  command=$@
 
+  # store current flag state
+  flags=$-
 
-    # store current flag state
-    flags=$-
-    
-    # allow a failures to continue
+  # allow a failures to continue
+  set +e
+  unset IFS
+  ${command}
+  exit_code=$?
+
+  # restore "e" flag
+  if [[ ${flags} =~ e ]]; then
+    set -e
+  else
     set +e
-    unset IFS
-    ${command}
-    exit_code=$?
+  fi
 
-    # restore "e" flag
-    if [[ ${flags} =~ e ]]
-    then set -e
-    else set +e
-    fi
+  if [[ $exit_code == 0 ]]; then
+    return 0
+  fi
 
-    if [[ $exit_code == 0 ]]
-    then
-        return 0
-    fi
+  # failure
+  if [[ ${attempts_left} -gt 0 ]]; then
+    echo "failure (${exit_code}), sleeping ${sleep_seconds}..."
+    sleep ${sleep_seconds}
+    new_attempts=$((${attempts_left} - 1))
+    new_sleep=$((${sleep_seconds} * 2))
+    retry_with_backoff ${new_attempts} ${new_sleep} ${command}
+  fi
 
-    # failure
-    if [[ ${attempts_left} -gt 0 ]]
-    then
-        echo "failure (${exit_code}), sleeping ${sleep_seconds}..."
-        sleep ${sleep_seconds}
-        new_attempts=$((${attempts_left} - 1))
-        new_sleep=$((${sleep_seconds} * 2))
-        retry_with_backoff ${new_attempts} ${new_sleep} ${command}
-    fi
-
-    return $exit_code
+  return $exit_code
 }
 
 ## Helper functions
 function now() { date +"%Y-%m-%d %H:%M:%S" | tr -d '\n'; }
 function msg() { println "$*" >&2; }
 function println() { printf '%s\n' "$(now) $*"; }
+
+function setup_application_credentials() {
+  # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
+  if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
+    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath "${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS}")
+  fi
+}
+
+function setup_cloud() {
+  gcloud config set project "$GOOGLE_CLOUD_PROJECT"
+
+  terraform -version &&
+    source ./.cloud/helpers/init.sh "$1" &&
+    source ./.cloud/helpers/plan.sh "$1" &&
+    source ./.cloud/helpers/apply.sh &&
+    source ./.cloud/helpers/populate-env.sh
+
+  destroy() {
+    arguments=$?
+    time source ./.cloud/helpers/destroy.sh
+    exit $arguments
+  }
+  trap destroy EXIT
+}
 
 function generate_modified_modules_list() {
   # Find the files changed from when the PR branched to the last commit
@@ -80,7 +102,7 @@ function generate_modified_modules_list() {
   modified_module_list=()
   # If either parent pom.xml is touched, run ITs on all the modules
   parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
-  if [[ ( -n $parent_pom_modified ) || ( "${TEST_ALL_MODULES}" == "true" ) ]]; then
+  if [[ (-n $parent_pom_modified) || ("${TEST_ALL_MODULES}" == "true") ]]; then
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
@@ -182,15 +204,15 @@ function generate_graalvm_modules_list() {
 function install_modules() {
   retry_with_backoff 3 10 \
     mvn -B \
-      -ntp \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -DskipTests=true \
-      -Djacoco.skip=true \
-      -T 1C \
-      install
+    -ntp \
+    -DtrimStackTrace=false \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -DskipTests=true \
+    -Djacoco.skip=true \
+    -T 1C \
+    install
 }

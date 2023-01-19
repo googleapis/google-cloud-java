@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-apikeys/grpc-google-.*/src"
 - "/java-apikeys/proto-google-.*/src"
 - "/java-apikeys/google-.*/src"
+- "/java-apikeys/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-apikeys/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,5 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-apikeys/$1/grpc-google-cloud-apikeys-$1/src"
 - source: "/google/api/apikeys/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-apikeys/$1/google-cloud-apikeys/src"
+- source: "/google/api/apikeys/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-apikeys/$1/samples/snippets/generated"
 
 api-name: apikeys
