@@ -30,4 +30,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src"
 
 
-api-name: java-datalineage
+api-name: datalineage
