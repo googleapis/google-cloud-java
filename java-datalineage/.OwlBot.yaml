@@ -17,6 +17,7 @@ deep-remove-regex:
 - "/java-datalineage/grpc-google-.*/src"
 - "/java-datalineage/proto-google-.*/src"
 - "/java-datalineage/google-.*/src"
+- "/java-datalineage/samples/snippets/generated"
 
 deep-preserve-regex:
 - "/java-datalineage/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
@@ -28,6 +29,7 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datalineage/$1/grpc-google-cloud-datalineage-$1/src"
 - source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src"
-
+- source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-datalineage/$1/samples/snippets/generated"
 
 api-name: datalineage
