@@ -309,8 +309,7 @@ public class ConnectionWorkerTest {
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
-        client,
-        /*ownsBigQueryWriteClient=*/ false);
+        client.getSettings());
   }
 
   private ProtoSchema createProtoSchema(String protoName) {

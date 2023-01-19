@@ -184,7 +184,7 @@ public class StreamWriter implements AutoCloseable {
   private StreamWriter(Builder builder) throws IOException {
     this.streamName = builder.streamName;
     this.writerSchema = builder.writerSchema;
-    boolean ownsBigQueryWriteClient = builder.client == null;
+    BigQueryWriteSettings clientSettings = getBigQueryWriteSettings(builder);
     if (!builder.enableConnectionPool) {
       this.location = builder.location;
       this.singleConnectionOrConnectionPool =
@@ -197,8 +197,7 @@ public class StreamWriter implements AutoCloseable {
                   builder.maxRetryDuration,
                   builder.limitExceededBehavior,
                   builder.traceId,
-                  getBigQueryWriteClient(builder),
-                  ownsBigQueryWriteClient));
+                  clientSettings));
     } else {
       if (!isDefaultStream(streamName)) {
         log.warning(
@@ -208,7 +207,9 @@ public class StreamWriter implements AutoCloseable {
             "Trying to enable connection pool in non-default stream.");
       }
 
-      BigQueryWriteClient client = getBigQueryWriteClient(builder);
+      // We need a client to perform some getWriteStream calls.
+      BigQueryWriteClient client =
+          builder.client != null ? builder.client : new BigQueryWriteClient(clientSettings);
       String location = builder.location;
       if (location == null || location.isEmpty()) {
         // Location is not passed in, try to fetch from RPC
@@ -256,14 +257,11 @@ public class StreamWriter implements AutoCloseable {
                         builder.maxRetryDuration,
                         builder.limitExceededBehavior,
                         builder.traceId,
-                        client,
-                        ownsBigQueryWriteClient);
+                        client.getSettings());
                   }));
       validateFetchedConnectonPool(builder);
-      // Shut down the passed in client. Internally we will create another client inside connection
-      // pool for every new connection worker.
-      if (client != singleConnectionOrConnectionPool.connectionWorkerPool().bigQueryWriteClient()
-          && ownsBigQueryWriteClient) {
+      // If the client is not from outside, then shutdown the client we created.
+      if (builder.client == null) {
         client.shutdown();
         try {
           client.awaitTermination(150, TimeUnit.SECONDS);
@@ -293,19 +291,16 @@ public class StreamWriter implements AutoCloseable {
     return streamMatcher.find();
   }
 
-  private BigQueryWriteClient getBigQueryWriteClient(Builder builder) throws IOException {
-    if (builder.client == null) {
-      BigQueryWriteSettings stubSettings =
-          BigQueryWriteSettings.newBuilder()
-              .setCredentialsProvider(builder.credentialsProvider)
-              .setTransportChannelProvider(builder.channelProvider)
-              .setBackgroundExecutorProvider(builder.executorProvider)
-              .setEndpoint(builder.endpoint)
-              .build();
-      testOnlyClientCreatedTimes++;
-      return BigQueryWriteClient.create(stubSettings);
+  private BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
+    if (builder.client != null) {
+      return builder.client.getSettings();
     } else {
-      return builder.client;
+      return BigQueryWriteSettings.newBuilder()
+          .setCredentialsProvider(builder.credentialsProvider)
+          .setTransportChannelProvider(builder.channelProvider)
+          .setBackgroundExecutorProvider(builder.executorProvider)
+          .setEndpoint(builder.endpoint)
+          .build();
     }
   }
 
@@ -316,10 +311,6 @@ public class StreamWriter implements AutoCloseable {
         this.singleConnectionOrConnectionPool.connectionWorkerPool().getTraceId(),
         builder.traceId)) {
       paramsValidatedFailed = "Trace id";
-    } else if (!Objects.equals(
-        this.singleConnectionOrConnectionPool.connectionWorkerPool().ownsBigQueryWriteClient(),
-        builder.client == null)) {
-      paramsValidatedFailed = "Whether using passed in clients";
     } else if (!Objects.equals(
         this.singleConnectionOrConnectionPool.connectionWorkerPool().limitExceededBehavior(),
         builder.limitExceededBehavior)) {

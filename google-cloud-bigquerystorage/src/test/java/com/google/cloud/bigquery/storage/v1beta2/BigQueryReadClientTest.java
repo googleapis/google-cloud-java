@@ -287,7 +287,7 @@ public class BigQueryReadClientTest {
       throws ExecutionException, InterruptedException {
     RetryInfo retryInfo =
         RetryInfo.newBuilder()
-            .setRetryDelay(Duration.newBuilder().setSeconds(123).setNanos(456).build())
+            .setRetryDelay(Duration.newBuilder().setSeconds(2).setNanos(456).build())
             .build();
 
     Metadata metadata = new Metadata();

@@ -48,7 +48,7 @@ public class ConnectionWorkerPoolTest {
   private FakeBigQueryWrite testBigQueryWrite;
   private FakeScheduledExecutorService fakeExecutor;
   private static MockServiceHelper serviceHelper;
-  private BigQueryWriteClient client;
+  private BigQueryWriteSettings clientSettings;
 
   private static final String TEST_TRACE_ID = "home:job1";
   private static final String TEST_STREAM_1 = "projects/p1/datasets/d1/tables/t1/streams/_default";
@@ -63,12 +63,11 @@ public class ConnectionWorkerPoolTest {
     serviceHelper.start();
     fakeExecutor = new FakeScheduledExecutorService();
     testBigQueryWrite.setExecutor(fakeExecutor);
-    client =
-        BigQueryWriteClient.create(
-            BigQueryWriteSettings.newBuilder()
-                .setCredentialsProvider(NoCredentialsProvider.create())
-                .setTransportChannelProvider(serviceHelper.createChannelProvider())
-                .build());
+    clientSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(serviceHelper.createChannelProvider())
+            .build();
     ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.5);
     ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.6);
   }
@@ -325,6 +324,56 @@ public class ConnectionWorkerPoolTest {
             IllegalArgumentException.class, () -> ConnectionWorkerPool.toTableName("projects/p/"));
   }
 
+  @Test
+  public void testCloseExternalClient()
+      throws IOException, InterruptedException, ExecutionException {
+    // Try append 100 requests.
+    long appendCount = 100L;
+    // testBigQueryWrite is used to
+    for (long i = 0; i < appendCount * 2; i++) {
+      testBigQueryWrite.addResponse(createAppendResponse(i));
+    }
+    testBigQueryWrite.addResponse(WriteStream.newBuilder().setLocation("us").build());
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    BigQueryWriteClient externalClient =
+        BigQueryWriteClient.create(
+            BigQueryWriteSettings.newBuilder()
+                .setCredentialsProvider(NoCredentialsProvider.create())
+                .setTransportChannelProvider(serviceHelper.createChannelProvider())
+                .build());
+    // Create some stream writers.
+    List<StreamWriter> streamWriterList = new ArrayList<>();
+    for (int i = 0; i < 4; i++) {
+      StreamWriter sw =
+          StreamWriter.newBuilder(
+                  String.format("projects/p1/datasets/d1/tables/t%s/streams/_default", i),
+                  externalClient)
+              .setWriterSchema(createProtoSchema())
+              .setTraceId(TEST_TRACE_ID)
+              .setEnableConnectionPool(true)
+              .build();
+      streamWriterList.add(sw);
+    }
+
+    for (long i = 0; i < appendCount; i++) {
+      StreamWriter sw = streamWriterList.get((int) (i % streamWriterList.size()));
+      // Round robinly insert requests to different tables.
+      futures.add(sw.append(createProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+    externalClient.close();
+    externalClient.awaitTermination(1, TimeUnit.MINUTES);
+    // Send more requests, the connections should still work.
+    for (long i = appendCount; i < appendCount * 2; i++) {
+      StreamWriter sw = streamWriterList.get((int) (i % streamWriterList.size()));
+      futures.add(sw.append(createProtoRows(new String[] {String.valueOf(i)}), i));
+    }
+    for (int i = 0; i < appendCount * 2; i++) {
+      AppendRowsResponse response = futures.get(i).get();
+      assertThat(response.getAppendResult().getOffset().getValue()).isEqualTo(i);
+    }
+    assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount * 2);
+  }
+
   private AppendRowsResponse createAppendResponse(long offset) {
     return AppendRowsResponse.newBuilder()
         .setAppendResult(
@@ -333,9 +382,11 @@ public class ConnectionWorkerPoolTest {
   }
 
   private StreamWriter getTestStreamWriter(String streamName) throws IOException {
-    return StreamWriter.newBuilder(streamName, client)
+    return StreamWriter.newBuilder(streamName)
         .setWriterSchema(createProtoSchema())
         .setTraceId(TEST_TRACE_ID)
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setChannelProvider(serviceHelper.createChannelProvider())
         .build();
   }
 
@@ -380,7 +431,6 @@ public class ConnectionWorkerPoolTest {
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
         TEST_TRACE_ID,
-        client,
-        /*ownsBigQueryWriteClient=*/ false);
+        clientSettings);
   }
 }

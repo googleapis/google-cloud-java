@@ -149,12 +149,7 @@ public class ConnectionWorkerPool {
   /*
    * A client used to interact with BigQuery.
    */
-  private BigQueryWriteClient client;
-
-  /*
-   * If true, the client above is created by this writer and should be closed.
-   */
-  private boolean ownsBigQueryWriteClient = false;
+  private BigQueryWriteSettings clientSettings;
 
   /**
    * The current maximum connection count. This value is gradually increased till the user defined
@@ -204,15 +199,13 @@ public class ConnectionWorkerPool {
       java.time.Duration maxRetryDuration,
       FlowController.LimitExceededBehavior limitExceededBehavior,
       String traceId,
-      BigQueryWriteClient client,
-      boolean ownsBigQueryWriteClient) {
+      BigQueryWriteSettings clientSettings) {
     this.maxInflightRequests = maxInflightRequests;
     this.maxInflightBytes = maxInflightBytes;
     this.maxRetryDuration = maxRetryDuration;
     this.limitExceededBehavior = limitExceededBehavior;
     this.traceId = traceId;
-    this.client = client;
-    this.ownsBigQueryWriteClient = ownsBigQueryWriteClient;
+    this.clientSettings = clientSettings;
     this.currentMaxConnectionCount = settings.minConnectionsPerRegion();
   }
 
@@ -308,6 +301,7 @@ public class ConnectionWorkerPool {
         }
         return createConnectionWorker(streamWriter.getStreamName(), streamWriter.getProtoSchema());
       } else {
+
         // Stick to the original connection if all the connections are overwhelmed.
         if (existingConnectionWorker != null) {
           return existingConnectionWorker;
@@ -355,8 +349,6 @@ public class ConnectionWorkerPool {
       // Though atomic integer is super lightweight, add extra if check in case adding future logic.
       testValueCreateConnectionCount.getAndIncrement();
     }
-    // currently we use different header for the client in each connection worker to be different
-    // as the backend require the header to have the same write_stream field as request body.
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             streamName,
@@ -366,8 +358,7 @@ public class ConnectionWorkerPool {
             maxRetryDuration,
             limitExceededBehavior,
             traceId,
-            client,
-            ownsBigQueryWriteClient);
+            clientSettings);
     connectionWorkerPool.add(connectionWorker);
     log.info(
         String.format(
@@ -402,8 +393,11 @@ public class ConnectionWorkerPool {
       log.info(
           String.format(
               "During closing of writeStream for %s with writer id %s, we decided to close %s "
-                  + "connections",
-              streamWriter.getStreamName(), streamWriter.getWriterId(), connectionToRemove.size()));
+                  + "connections, pool size after removal $s",
+              streamWriter.getStreamName(),
+              streamWriter.getWriterId(),
+              connectionToRemove.size(),
+              connectionToWriteStream.size() - 1));
       connectionToWriteStream.keySet().removeAll(connectionToRemove);
     } finally {
       lock.unlock();
@@ -447,16 +441,12 @@ public class ConnectionWorkerPool {
     return traceId;
   }
 
-  boolean ownsBigQueryWriteClient() {
-    return ownsBigQueryWriteClient;
-  }
-
   FlowController.LimitExceededBehavior limitExceededBehavior() {
     return limitExceededBehavior;
   }
 
-  BigQueryWriteClient bigQueryWriteClient() {
-    return client;
+  BigQueryWriteSettings bigQueryWriteSettings() {
+    return clientSettings;
   }
 
   static String toTableName(String streamName) {
