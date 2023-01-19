@@ -25,6 +25,7 @@ import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FileDescriptor;
+import com.google.protobuf.ExtensionLite;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -160,7 +161,12 @@ public class BQTableSchemaToProtoDescriptor {
     if (!BigQuerySchemaUtil.isProtoCompatible(fieldName)) {
       fieldDescriptor.setName(BigQuerySchemaUtil.generatePlaceholderFieldName(fieldName));
       fieldDescriptor.setOptions(
-          FieldOptions.newBuilder().setExtension(AnnotationsProto.columnName, fieldName).build());
+          FieldOptions.newBuilder()
+              .setExtension(
+                  (ExtensionLite<FieldOptions, String>) AnnotationsProto.columnName,
+                  // Remove ExtensionLite after protobuf linkage error is resolved.
+                  fieldName)
+              .build());
     }
     return fieldDescriptor.build();
   }
