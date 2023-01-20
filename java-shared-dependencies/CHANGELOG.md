@@ -1,6 +1,21 @@
 # Changelog
 
 
+## [3.1.2](https://github.com/googleapis/java-shared-dependencies/compare/v3.1.1...v3.1.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-shared-dependencies/issues/1744)) ([#971](https://github.com/googleapis/java-shared-dependencies/issues/971)) ([74a96f1](https://github.com/googleapis/java-shared-dependencies/commit/74a96f1155418bde285877b72b4d7e600d08beb6))
+
+
+### Dependencies
+
+* Update dependency com.google.api:gapic-generator-java-bom to v2.14.0 ([#972](https://github.com/googleapis/java-shared-dependencies/issues/972)) ([2c742b5](https://github.com/googleapis/java-shared-dependencies/commit/2c742b56afc441f4922e6f6c737d3c3374ceadec))
+* Update dependency com.google.cloud:google-cloud-core-bom to v2.9.3 ([#974](https://github.com/googleapis/java-shared-dependencies/issues/974)) ([e4cb2ae](https://github.com/googleapis/java-shared-dependencies/commit/e4cb2ae34648c61ac40b7c9628e4ec088186fd57))
+* Update google.core.version to v2.9.2 ([#969](https://github.com/googleapis/java-shared-dependencies/issues/969)) ([aa946a6](https://github.com/googleapis/java-shared-dependencies/commit/aa946a6e33a5c8c3d6ae37bb07c3872c0bab793b))
+* Update google.core.version to v2.9.4 ([#976](https://github.com/googleapis/java-shared-dependencies/issues/976)) ([718246c](https://github.com/googleapis/java-shared-dependencies/commit/718246c985488b138eb0113b5a3200d3eb2af31d))
+
 ## [3.1.1](https://github.com/googleapis/java-shared-dependencies/compare/v3.1.0...v3.1.1) (2023-01-09)
 
 
