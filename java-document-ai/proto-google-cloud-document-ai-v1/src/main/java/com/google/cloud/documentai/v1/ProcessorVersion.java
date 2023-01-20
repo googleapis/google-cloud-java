@@ -503,11 +503,15 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getDeprecationTimeOrBuilder() {
-      return getDeprecationTime();
+      return deprecationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : deprecationTime_;
     }
 
     public static final int REPLACEMENT_PROCESSOR_VERSION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object replacementProcessorVersion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object replacementProcessorVersion_ = "";
     /**
      *
      *
@@ -776,14 +780,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (deprecationTimeBuilder_ == null) {
-          deprecationTime_ = null;
-        } else {
-          deprecationTime_ = null;
+        bitField0_ = 0;
+        deprecationTime_ = null;
+        if (deprecationTimeBuilder_ != null) {
+          deprecationTimeBuilder_.dispose();
           deprecationTimeBuilder_ = null;
         }
         replacementProcessorVersion_ = "";
-
         return this;
       }
 
@@ -812,14 +815,23 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo buildPartial() {
         com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo result =
             new com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo(this);
-        if (deprecationTimeBuilder_ == null) {
-          result.deprecationTime_ = deprecationTime_;
-        } else {
-          result.deprecationTime_ = deprecationTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.replacementProcessorVersion_ = replacementProcessorVersion_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.deprecationTime_ =
+              deprecationTimeBuilder_ == null ? deprecationTime_ : deprecationTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.replacementProcessorVersion_ = replacementProcessorVersion_;
+        }
       }
 
       @java.lang.Override
@@ -877,6 +889,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         }
         if (!other.getReplacementProcessorVersion().isEmpty()) {
           replacementProcessorVersion_ = other.replacementProcessorVersion_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -909,13 +922,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       getDeprecationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   replacementProcessorVersion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -935,6 +948,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.Timestamp deprecationTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -953,7 +968,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        * @return Whether the deprecationTime field is set.
        */
       public boolean hasDeprecationTime() {
-        return deprecationTimeBuilder_ != null || deprecationTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -990,11 +1005,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           deprecationTime_ = value;
-          onChanged();
         } else {
           deprecationTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1009,11 +1024,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       public Builder setDeprecationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (deprecationTimeBuilder_ == null) {
           deprecationTime_ = builderForValue.build();
-          onChanged();
         } else {
           deprecationTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1027,19 +1042,18 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeDeprecationTime(com.google.protobuf.Timestamp value) {
         if (deprecationTimeBuilder_ == null) {
-          if (deprecationTime_ != null) {
-            deprecationTime_ =
-                com.google.protobuf.Timestamp.newBuilder(deprecationTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && deprecationTime_ != null
+              && deprecationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getDeprecationTimeBuilder().mergeFrom(value);
           } else {
             deprecationTime_ = value;
           }
-          onChanged();
         } else {
           deprecationTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1052,14 +1066,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Timestamp deprecation_time = 1;</code>
        */
       public Builder clearDeprecationTime() {
-        if (deprecationTimeBuilder_ == null) {
-          deprecationTime_ = null;
-          onChanged();
-        } else {
-          deprecationTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deprecationTime_ = null;
+        if (deprecationTimeBuilder_ != null) {
+          deprecationTimeBuilder_.dispose();
           deprecationTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1072,7 +1085,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Timestamp deprecation_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getDeprecationTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getDeprecationTimeFieldBuilder().getBuilder();
       }
@@ -1184,8 +1197,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         replacementProcessorVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1202,8 +1215,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearReplacementProcessorVersion() {
-
         replacementProcessorVersion_ = getDefaultInstance().getReplacementProcessorVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1225,8 +1238,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         replacementProcessorVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1299,7 +1312,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1352,7 +1367,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1445,11 +1462,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
-    return getDocumentSchema();
+    return documentSchema_ == null
+        ? com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()
+        : documentSchema_;
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1478,9 +1497,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1.ProcessorVersion.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.documentai.v1.ProcessorVersion.State result =
-        com.google.cloud.documentai.v1.ProcessorVersion.State.valueOf(state_);
+        com.google.cloud.documentai.v1.ProcessorVersion.State.forNumber(state_);
     return result == null
         ? com.google.cloud.documentai.v1.ProcessorVersion.State.UNRECOGNIZED
         : result;
@@ -1529,11 +1547,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 9;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -1582,7 +1602,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KMS_KEY_VERSION_NAME_FIELD_NUMBER = 10;
-  private volatile java.lang.Object kmsKeyVersionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyVersionName_ = "";
   /**
    *
    *
@@ -1631,7 +1653,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GOOGLE_MANAGED_FIELD_NUMBER = 11;
-  private boolean googleManaged_;
+  private boolean googleManaged_ = false;
   /**
    *
    *
@@ -1697,7 +1719,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfoOrBuilder
       getDeprecationInfoOrBuilder() {
-    return getDeprecationInfo();
+    return deprecationInfo_ == null
+        ? com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo.getDefaultInstance()
+        : deprecationInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1990,34 +2014,26 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-      } else {
-        documentSchema_ = null;
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
       state_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       kmsKeyName_ = "";
-
       kmsKeyVersionName_ = "";
-
       googleManaged_ = false;
-
-      if (deprecationInfoBuilder_ == null) {
-        deprecationInfo_ = null;
-      } else {
-        deprecationInfo_ = null;
+      deprecationInfo_ = null;
+      if (deprecationInfoBuilder_ != null) {
+        deprecationInfoBuilder_.dispose();
         deprecationInfoBuilder_ = null;
       }
       return this;
@@ -2047,29 +2063,44 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.documentai.v1.ProcessorVersion buildPartial() {
       com.google.cloud.documentai.v1.ProcessorVersion result =
           new com.google.cloud.documentai.v1.ProcessorVersion(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (documentSchemaBuilder_ == null) {
-        result.documentSchema_ = documentSchema_;
-      } else {
-        result.documentSchema_ = documentSchemaBuilder_.build();
-      }
-      result.state_ = state_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      result.kmsKeyName_ = kmsKeyName_;
-      result.kmsKeyVersionName_ = kmsKeyVersionName_;
-      result.googleManaged_ = googleManaged_;
-      if (deprecationInfoBuilder_ == null) {
-        result.deprecationInfo_ = deprecationInfo_;
-      } else {
-        result.deprecationInfo_ = deprecationInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.ProcessorVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentSchema_ =
+            documentSchemaBuilder_ == null ? documentSchema_ : documentSchemaBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.kmsKeyVersionName_ = kmsKeyVersionName_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.googleManaged_ = googleManaged_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deprecationInfo_ =
+            deprecationInfoBuilder_ == null ? deprecationInfo_ : deprecationInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2120,10 +2151,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDocumentSchema()) {
@@ -2137,10 +2170,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getKmsKeyVersionName().isEmpty()) {
         kmsKeyVersionName_ = other.kmsKeyVersionName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getGoogleManaged() != false) {
@@ -2178,55 +2213,55 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 74:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 82:
               {
                 kmsKeyVersionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 88:
               {
                 googleManaged_ = input.readBool();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getDeprecationInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 106
             default:
@@ -2245,6 +2280,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2313,8 +2350,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2332,8 +2369,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2356,8 +2393,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2423,8 +2460,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2440,8 +2477,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2462,8 +2499,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2486,7 +2523,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return Whether the documentSchema field is set.
      */
     public boolean hasDocumentSchema() {
-      return documentSchemaBuilder_ != null || documentSchema_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2523,11 +2560,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         documentSchema_ = value;
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2543,11 +2580,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         com.google.cloud.documentai.v1.DocumentSchema.Builder builderForValue) {
       if (documentSchemaBuilder_ == null) {
         documentSchema_ = builderForValue.build();
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2561,19 +2598,19 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDocumentSchema(com.google.cloud.documentai.v1.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
-        if (documentSchema_ != null) {
-          documentSchema_ =
-              com.google.cloud.documentai.v1.DocumentSchema.newBuilder(documentSchema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && documentSchema_ != null
+            && documentSchema_
+                != com.google.cloud.documentai.v1.DocumentSchema.getDefaultInstance()) {
+          getDocumentSchemaBuilder().mergeFrom(value);
         } else {
           documentSchema_ = value;
         }
-        onChanged();
       } else {
         documentSchemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2586,14 +2623,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
      */
     public Builder clearDocumentSchema() {
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-        onChanged();
-      } else {
-        documentSchema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2606,7 +2642,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.documentai.v1.DocumentSchema document_schema = 12;</code>
      */
     public com.google.cloud.documentai.v1.DocumentSchema.Builder getDocumentSchemaBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
@@ -2683,8 +2719,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2701,9 +2737,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1.ProcessorVersion.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1.ProcessorVersion.State result =
-          com.google.cloud.documentai.v1.ProcessorVersion.State.valueOf(state_);
+          com.google.cloud.documentai.v1.ProcessorVersion.State.forNumber(state_);
       return result == null
           ? com.google.cloud.documentai.v1.ProcessorVersion.State.UNRECOGNIZED
           : result;
@@ -2724,7 +2759,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2741,7 +2776,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -2765,7 +2800,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2802,11 +2837,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2821,11 +2856,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2839,17 +2874,18 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2862,14 +2898,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2882,7 +2917,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2991,8 +3026,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3008,8 +3043,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3030,8 +3065,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3097,8 +3132,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3114,8 +3149,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyVersionName() {
-
       kmsKeyVersionName_ = getDefaultInstance().getKmsKeyVersionName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3136,8 +3171,8 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3173,6 +3208,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public Builder setGoogleManaged(boolean value) {
 
       googleManaged_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3188,7 +3224,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGoogleManaged() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       googleManaged_ = false;
       onChanged();
       return this;
@@ -3213,7 +3249,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * @return Whether the deprecationInfo field is set.
      */
     public boolean hasDeprecationInfo() {
-      return deprecationInfoBuilder_ != null || deprecationInfo_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3253,11 +3289,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         deprecationInfo_ = value;
-        onChanged();
       } else {
         deprecationInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3274,11 +3310,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo.Builder builderForValue) {
       if (deprecationInfoBuilder_ == null) {
         deprecationInfo_ = builderForValue.build();
-        onChanged();
       } else {
         deprecationInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3294,20 +3330,20 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     public Builder mergeDeprecationInfo(
         com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo value) {
       if (deprecationInfoBuilder_ == null) {
-        if (deprecationInfo_ != null) {
-          deprecationInfo_ =
-              com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo.newBuilder(
-                      deprecationInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && deprecationInfo_ != null
+            && deprecationInfo_
+                != com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo
+                    .getDefaultInstance()) {
+          getDeprecationInfoBuilder().mergeFrom(value);
         } else {
           deprecationInfo_ = value;
         }
-        onChanged();
       } else {
         deprecationInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3321,14 +3357,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDeprecationInfo() {
-      if (deprecationInfoBuilder_ == null) {
-        deprecationInfo_ = null;
-        onChanged();
-      } else {
-        deprecationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deprecationInfo_ = null;
+      if (deprecationInfoBuilder_ != null) {
+        deprecationInfoBuilder_.dispose();
         deprecationInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3343,7 +3378,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.documentai.v1.ProcessorVersion.DeprecationInfo.Builder
         getDeprecationInfoBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDeprecationInfoFieldBuilder().getBuilder();
     }

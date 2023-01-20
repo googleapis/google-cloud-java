@@ -245,7 +245,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
         getTrainingDocumentsOrBuilder() {
-      return getTrainingDocuments();
+      return trainingDocuments_ == null
+          ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+          : trainingDocuments_;
     }
 
     public static final int TEST_DOCUMENTS_FIELD_NUMBER = 4;
@@ -294,7 +296,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
         getTestDocumentsOrBuilder() {
-      return getTestDocuments();
+      return testDocuments_ == null
+          ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+          : testDocuments_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -525,16 +529,15 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (trainingDocumentsBuilder_ == null) {
-          trainingDocuments_ = null;
-        } else {
-          trainingDocuments_ = null;
+        bitField0_ = 0;
+        trainingDocuments_ = null;
+        if (trainingDocumentsBuilder_ != null) {
+          trainingDocumentsBuilder_.dispose();
           trainingDocumentsBuilder_ = null;
         }
-        if (testDocumentsBuilder_ == null) {
-          testDocuments_ = null;
-        } else {
-          testDocuments_ = null;
+        testDocuments_ = null;
+        if (testDocumentsBuilder_ != null) {
+          testDocumentsBuilder_.dispose();
           testDocumentsBuilder_ = null;
         }
         return this;
@@ -568,18 +571,26 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           buildPartial() {
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData result =
             new com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData(this);
-        if (trainingDocumentsBuilder_ == null) {
-          result.trainingDocuments_ = trainingDocuments_;
-        } else {
-          result.trainingDocuments_ = trainingDocumentsBuilder_.build();
-        }
-        if (testDocumentsBuilder_ == null) {
-          result.testDocuments_ = testDocuments_;
-        } else {
-          result.testDocuments_ = testDocumentsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.trainingDocuments_ =
+              trainingDocumentsBuilder_ == null
+                  ? trainingDocuments_
+                  : trainingDocumentsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.testDocuments_ =
+              testDocumentsBuilder_ == null ? testDocuments_ : testDocumentsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -670,13 +681,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
                 {
                   input.readMessage(
                       getTrainingDocumentsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getTestDocumentsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -695,6 +706,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig trainingDocuments_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -715,7 +728,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        * @return Whether the trainingDocuments field is set.
        */
       public boolean hasTrainingDocuments() {
-        return trainingDocumentsBuilder_ != null || trainingDocuments_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -755,11 +768,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           trainingDocuments_ = value;
-          onChanged();
         } else {
           trainingDocumentsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -776,11 +789,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder builderForValue) {
         if (trainingDocumentsBuilder_ == null) {
           trainingDocuments_ = builderForValue.build();
-          onChanged();
         } else {
           trainingDocumentsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -796,20 +809,20 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public Builder mergeTrainingDocuments(
           com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig value) {
         if (trainingDocumentsBuilder_ == null) {
-          if (trainingDocuments_ != null) {
-            trainingDocuments_ =
-                com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.newBuilder(
-                        trainingDocuments_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && trainingDocuments_ != null
+              && trainingDocuments_
+                  != com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig
+                      .getDefaultInstance()) {
+            getTrainingDocumentsBuilder().mergeFrom(value);
           } else {
             trainingDocuments_ = value;
           }
-          onChanged();
         } else {
           trainingDocumentsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -823,14 +836,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        * </code>
        */
       public Builder clearTrainingDocuments() {
-        if (trainingDocumentsBuilder_ == null) {
-          trainingDocuments_ = null;
-          onChanged();
-        } else {
-          trainingDocuments_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        trainingDocuments_ = null;
+        if (trainingDocumentsBuilder_ != null) {
+          trainingDocumentsBuilder_.dispose();
           trainingDocumentsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -845,7 +857,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        */
       public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder
           getTrainingDocumentsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTrainingDocumentsFieldBuilder().getBuilder();
       }
@@ -914,7 +926,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        * @return Whether the testDocuments field is set.
        */
       public boolean hasTestDocuments() {
-        return testDocumentsBuilder_ != null || testDocuments_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -952,11 +964,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             throw new NullPointerException();
           }
           testDocuments_ = value;
-          onChanged();
         } else {
           testDocumentsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -972,11 +984,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder builderForValue) {
         if (testDocumentsBuilder_ == null) {
           testDocuments_ = builderForValue.build();
-          onChanged();
         } else {
           testDocumentsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -991,20 +1003,20 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       public Builder mergeTestDocuments(
           com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig value) {
         if (testDocumentsBuilder_ == null) {
-          if (testDocuments_ != null) {
-            testDocuments_ =
-                com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.newBuilder(
-                        testDocuments_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && testDocuments_ != null
+              && testDocuments_
+                  != com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig
+                      .getDefaultInstance()) {
+            getTestDocumentsBuilder().mergeFrom(value);
           } else {
             testDocuments_ = value;
           }
-          onChanged();
         } else {
           testDocumentsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1017,14 +1029,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig test_documents = 4;</code>
        */
       public Builder clearTestDocuments() {
-        if (testDocumentsBuilder_ == null) {
-          testDocuments_ = null;
-          onChanged();
-        } else {
-          testDocuments_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        testDocuments_ = null;
+        if (testDocumentsBuilder_ != null) {
+          testDocumentsBuilder_.dispose();
           testDocumentsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1038,7 +1049,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
        */
       public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder
           getTestDocumentsBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTestDocumentsFieldBuilder().getBuilder();
       }
@@ -1156,7 +1167,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -1264,7 +1277,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.ProcessorVersionOrBuilder
       getProcessorVersionOrBuilder() {
-    return getProcessorVersion();
+    return processorVersion_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessorVersion.getDefaultInstance()
+        : processorVersion_;
   }
 
   public static final int DOCUMENT_SCHEMA_FIELD_NUMBER = 10;
@@ -1318,7 +1333,9 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getDocumentSchemaOrBuilder() {
-    return getDocumentSchema();
+    return documentSchema_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+        : documentSchema_;
   }
 
   public static final int INPUT_DATA_FIELD_NUMBER = 4;
@@ -1374,11 +1391,16 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputDataOrBuilder
       getInputDataOrBuilder() {
-    return getInputData();
+    return inputData_ == null
+        ? com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData
+            .getDefaultInstance()
+        : inputData_;
   }
 
   public static final int BASE_PROCESSOR_VERSION_FIELD_NUMBER = 8;
-  private volatile java.lang.Object baseProcessorVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseProcessorVersion_ = "";
   /**
    *
    *
@@ -1679,28 +1701,24 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (processorVersionBuilder_ == null) {
-        processorVersion_ = null;
-      } else {
-        processorVersion_ = null;
+      processorVersion_ = null;
+      if (processorVersionBuilder_ != null) {
+        processorVersionBuilder_.dispose();
         processorVersionBuilder_ = null;
       }
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-      } else {
-        documentSchema_ = null;
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
-      if (inputDataBuilder_ == null) {
-        inputData_ = null;
-      } else {
-        inputData_ = null;
+      inputData_ = null;
+      if (inputDataBuilder_ != null) {
+        inputDataBuilder_.dispose();
         inputDataBuilder_ = null;
       }
       baseProcessorVersion_ = "";
-
       return this;
     }
 
@@ -1729,25 +1747,33 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest buildPartial() {
       com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest result =
           new com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest(this);
-      result.parent_ = parent_;
-      if (processorVersionBuilder_ == null) {
-        result.processorVersion_ = processorVersion_;
-      } else {
-        result.processorVersion_ = processorVersionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (documentSchemaBuilder_ == null) {
-        result.documentSchema_ = documentSchema_;
-      } else {
-        result.documentSchema_ = documentSchemaBuilder_.build();
-      }
-      if (inputDataBuilder_ == null) {
-        result.inputData_ = inputData_;
-      } else {
-        result.inputData_ = inputDataBuilder_.build();
-      }
-      result.baseProcessorVersion_ = baseProcessorVersion_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.processorVersion_ =
+            processorVersionBuilder_ == null ? processorVersion_ : processorVersionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentSchema_ =
+            documentSchemaBuilder_ == null ? documentSchema_ : documentSchemaBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inputData_ = inputDataBuilder_ == null ? inputData_ : inputDataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.baseProcessorVersion_ = baseProcessorVersion_;
+      }
     }
 
     @java.lang.Override
@@ -1800,6 +1826,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasProcessorVersion()) {
@@ -1813,6 +1840,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       }
       if (!other.getBaseProcessorVersion().isEmpty()) {
         baseProcessorVersion_ = other.baseProcessorVersion_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1844,32 +1872,32 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getProcessorVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getInputDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 66:
               {
                 baseProcessorVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getDocumentSchemaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 82
             default:
@@ -1888,6 +1916,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1962,8 +1992,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1983,8 +2013,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2009,8 +2039,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2035,7 +2065,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the processorVersion field is set.
      */
     public boolean hasProcessorVersion() {
-      return processorVersionBuilder_ != null || processorVersion_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2076,11 +2106,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         processorVersion_ = value;
-        onChanged();
       } else {
         processorVersionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2098,11 +2128,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         com.google.cloud.documentai.v1beta3.ProcessorVersion.Builder builderForValue) {
       if (processorVersionBuilder_ == null) {
         processorVersion_ = builderForValue.build();
-        onChanged();
       } else {
         processorVersionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2119,19 +2149,19 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public Builder mergeProcessorVersion(
         com.google.cloud.documentai.v1beta3.ProcessorVersion value) {
       if (processorVersionBuilder_ == null) {
-        if (processorVersion_ != null) {
-          processorVersion_ =
-              com.google.cloud.documentai.v1beta3.ProcessorVersion.newBuilder(processorVersion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && processorVersion_ != null
+            && processorVersion_
+                != com.google.cloud.documentai.v1beta3.ProcessorVersion.getDefaultInstance()) {
+          getProcessorVersionBuilder().mergeFrom(value);
         } else {
           processorVersion_ = value;
         }
-        onChanged();
       } else {
         processorVersionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2146,14 +2176,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearProcessorVersion() {
-      if (processorVersionBuilder_ == null) {
-        processorVersion_ = null;
-        onChanged();
-      } else {
-        processorVersion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      processorVersion_ = null;
+      if (processorVersionBuilder_ != null) {
+        processorVersionBuilder_.dispose();
         processorVersionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2169,7 +2198,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.documentai.v1beta3.ProcessorVersion.Builder
         getProcessorVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProcessorVersionFieldBuilder().getBuilder();
     }
@@ -2242,7 +2271,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the documentSchema field is set.
      */
     public boolean hasDocumentSchema() {
-      return documentSchemaBuilder_ != null || documentSchema_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2283,11 +2312,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         documentSchema_ = value;
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2305,11 +2334,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         com.google.cloud.documentai.v1beta3.DocumentSchema.Builder builderForValue) {
       if (documentSchemaBuilder_ == null) {
         documentSchema_ = builderForValue.build();
-        onChanged();
       } else {
         documentSchemaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2325,19 +2354,19 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeDocumentSchema(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
       if (documentSchemaBuilder_ == null) {
-        if (documentSchema_ != null) {
-          documentSchema_ =
-              com.google.cloud.documentai.v1beta3.DocumentSchema.newBuilder(documentSchema_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && documentSchema_ != null
+            && documentSchema_
+                != com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()) {
+          getDocumentSchemaBuilder().mergeFrom(value);
         } else {
           documentSchema_ = value;
         }
-        onChanged();
       } else {
         documentSchemaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2352,14 +2381,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearDocumentSchema() {
-      if (documentSchemaBuilder_ == null) {
-        documentSchema_ = null;
-        onChanged();
-      } else {
-        documentSchema_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      documentSchema_ = null;
+      if (documentSchemaBuilder_ != null) {
+        documentSchemaBuilder_.dispose();
         documentSchemaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2374,7 +2402,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.documentai.v1beta3.DocumentSchema.Builder getDocumentSchemaBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
@@ -2447,7 +2475,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return Whether the inputData field is set.
      */
     public boolean hasInputData() {
-      return inputDataBuilder_ != null || inputData_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2491,11 +2519,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         inputData_ = value;
-        onChanged();
       } else {
         inputDataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2514,11 +2542,11 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
             builderForValue) {
       if (inputDataBuilder_ == null) {
         inputData_ = builderForValue.build();
-        onChanged();
       } else {
         inputDataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2535,20 +2563,20 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
     public Builder mergeInputData(
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData value) {
       if (inputDataBuilder_ == null) {
-        if (inputData_ != null) {
-          inputData_ =
-              com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData.newBuilder(
-                      inputData_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && inputData_ != null
+            && inputData_
+                != com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData
+                    .getDefaultInstance()) {
+          getInputDataBuilder().mergeFrom(value);
         } else {
           inputData_ = value;
         }
-        onChanged();
       } else {
         inputDataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2563,14 +2591,13 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearInputData() {
-      if (inputDataBuilder_ == null) {
-        inputData_ = null;
-        onChanged();
-      } else {
-        inputData_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      inputData_ = null;
+      if (inputDataBuilder_ != null) {
+        inputDataBuilder_.dispose();
         inputDataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2586,7 +2613,7 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      */
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest.InputData.Builder
         getInputDataBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInputDataFieldBuilder().getBuilder();
     }
@@ -2707,8 +2734,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseProcessorVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2726,8 +2753,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearBaseProcessorVersion() {
-
       baseProcessorVersion_ = getDefaultInstance().getBaseProcessorVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2750,8 +2777,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseProcessorVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

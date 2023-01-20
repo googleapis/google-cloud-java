@@ -181,7 +181,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int GCS_SOURCE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object gcsSource_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcsSource_ = "";
     /**
      *
      *
@@ -230,7 +232,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int MIME_TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object mimeType_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mimeType_ = "";
     /**
      *
      *
@@ -500,10 +504,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gcsSource_ = "";
-
         mimeType_ = "";
-
         return this;
       }
 
@@ -535,10 +538,22 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           buildPartial() {
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig result =
             new com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig(this);
-        result.gcsSource_ = gcsSource_;
-        result.mimeType_ = mimeType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gcsSource_ = gcsSource_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.mimeType_ = mimeType_;
+        }
       }
 
       @java.lang.Override
@@ -595,10 +610,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
                 .getDefaultInstance()) return this;
         if (!other.getGcsSource().isEmpty()) {
           gcsSource_ = other.gcsSource_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getMimeType().isEmpty()) {
           mimeType_ = other.mimeType_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -630,13 +647,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
               case 10:
                 {
                   gcsSource_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   mimeType_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -655,6 +672,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object gcsSource_ = "";
       /**
@@ -717,8 +736,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         gcsSource_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -734,8 +753,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearGcsSource() {
-
         gcsSource_ = getDefaultInstance().getGcsSource();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -756,8 +775,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gcsSource_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -829,8 +848,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         mimeType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -848,8 +867,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearMimeType() {
-
         mimeType_ = getDefaultInstance().getMimeType();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -872,8 +891,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         mimeType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1029,7 +1048,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object gcsDestination_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcsDestination_ = "";
     /**
      *
      *
@@ -1286,8 +1307,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gcsDestination_ = "";
-
         return this;
       }
 
@@ -1319,9 +1340,19 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           buildPartial() {
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig result =
             new com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig(this);
-        result.gcsDestination_ = gcsDestination_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gcsDestination_ = gcsDestination_;
+        }
       }
 
       @java.lang.Override
@@ -1378,6 +1409,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
                 .getDefaultInstance()) return this;
         if (!other.getGcsDestination().isEmpty()) {
           gcsDestination_ = other.gcsDestination_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1409,7 +1441,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
               case 10:
                 {
                   gcsDestination_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1428,6 +1460,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object gcsDestination_ = "";
       /**
@@ -1490,8 +1524,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         gcsDestination_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1507,8 +1541,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearGcsDestination() {
-
         gcsDestination_ = getDefaultInstance().getGcsDestination();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1529,8 +1563,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gcsDestination_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1604,7 +1638,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1667,6 +1703,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INPUT_CONFIGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>
       inputConfigs_;
   /**
@@ -1770,7 +1808,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=464
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
@@ -1790,7 +1828,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=464
    * @return The outputConfig.
    */
   @java.lang.Override
@@ -1817,7 +1855,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig
+            .getDefaultInstance()
+        : outputConfig_;
   }
 
   public static final int INPUT_DOCUMENTS_FIELD_NUMBER = 5;
@@ -1866,7 +1907,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
       getInputDocumentsOrBuilder() {
-    return getInputDocuments();
+    return inputDocuments_ == null
+        ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+        : inputDocuments_;
   }
 
   public static final int DOCUMENT_OUTPUT_CONFIG_FIELD_NUMBER = 6;
@@ -1915,11 +1958,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder
       getDocumentOutputConfigOrBuilder() {
-    return getDocumentOutputConfig();
+    return documentOutputConfig_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentOutputConfig.getDefaultInstance()
+        : documentOutputConfig_;
   }
 
   public static final int SKIP_HUMAN_REVIEW_FIELD_NUMBER = 4;
-  private boolean skipHumanReview_;
+  private boolean skipHumanReview_ = false;
   /**
    *
    *
@@ -1982,7 +2027,9 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.ProcessOptionsOrBuilder getProcessOptionsOrBuilder() {
-    return getProcessOptions();
+    return processOptions_ == null
+        ? com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()
+        : processOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2260,39 +2307,34 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
       } else {
         inputConfigs_ = null;
         inputConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-      if (inputDocumentsBuilder_ == null) {
-        inputDocuments_ = null;
-      } else {
-        inputDocuments_ = null;
+      inputDocuments_ = null;
+      if (inputDocumentsBuilder_ != null) {
+        inputDocumentsBuilder_.dispose();
         inputDocumentsBuilder_ = null;
       }
-      if (documentOutputConfigBuilder_ == null) {
-        documentOutputConfig_ = null;
-      } else {
-        documentOutputConfig_ = null;
+      documentOutputConfig_ = null;
+      if (documentOutputConfigBuilder_ != null) {
+        documentOutputConfigBuilder_.dispose();
         documentOutputConfigBuilder_ = null;
       }
       skipHumanReview_ = false;
-
-      if (processOptionsBuilder_ == null) {
-        processOptions_ = null;
-      } else {
-        processOptions_ = null;
+      processOptions_ = null;
+      if (processOptionsBuilder_ != null) {
+        processOptionsBuilder_.dispose();
         processOptionsBuilder_ = null;
       }
       return this;
@@ -2322,40 +2364,53 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest buildPartial() {
       com.google.cloud.documentai.v1beta3.BatchProcessRequest result =
           new com.google.cloud.documentai.v1beta3.BatchProcessRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1beta3.BatchProcessRequest result) {
       if (inputConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           inputConfigs_ = java.util.Collections.unmodifiableList(inputConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.inputConfigs_ = inputConfigs_;
       } else {
         result.inputConfigs_ = inputConfigsBuilder_.build();
       }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.BatchProcessRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (inputDocumentsBuilder_ == null) {
-        result.inputDocuments_ = inputDocuments_;
-      } else {
-        result.inputDocuments_ = inputDocumentsBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
       }
-      if (documentOutputConfigBuilder_ == null) {
-        result.documentOutputConfig_ = documentOutputConfig_;
-      } else {
-        result.documentOutputConfig_ = documentOutputConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inputDocuments_ =
+            inputDocumentsBuilder_ == null ? inputDocuments_ : inputDocumentsBuilder_.build();
       }
-      result.skipHumanReview_ = skipHumanReview_;
-      if (processOptionsBuilder_ == null) {
-        result.processOptions_ = processOptions_;
-      } else {
-        result.processOptions_ = processOptionsBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.documentOutputConfig_ =
+            documentOutputConfigBuilder_ == null
+                ? documentOutputConfig_
+                : documentOutputConfigBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.skipHumanReview_ = skipHumanReview_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.processOptions_ =
+            processOptionsBuilder_ == null ? processOptions_ : processOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2406,13 +2461,14 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (inputConfigsBuilder_ == null) {
         if (!other.inputConfigs_.isEmpty()) {
           if (inputConfigs_.isEmpty()) {
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureInputConfigsIsMutable();
             inputConfigs_.addAll(other.inputConfigs_);
@@ -2425,7 +2481,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             inputConfigsBuilder_.dispose();
             inputConfigsBuilder_ = null;
             inputConfigs_ = other.inputConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             inputConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInputConfigsFieldBuilder()
@@ -2479,7 +2535,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2500,32 +2556,32 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 skipHumanReview_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getInputDocumentsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getDocumentOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getProcessOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -2629,8 +2685,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2653,8 +2709,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2682,8 +2738,8 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2692,12 +2748,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         inputConfigs_ = java.util.Collections.emptyList();
 
     private void ensureInputConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         inputConfigs_ =
             new java.util.ArrayList<
                 com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>(
                 inputConfigs_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2958,7 +3014,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         inputConfigsBuilder_.clear();
@@ -3113,7 +3169,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
                 com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig,
                 com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder,
                 com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder>(
-                inputConfigs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                inputConfigs_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         inputConfigs_ = null;
       }
       return inputConfigsBuilder_;
@@ -3137,12 +3193,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=464
      * @return Whether the outputConfig field is set.
      */
     @java.lang.Deprecated
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3156,7 +3212,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=456
+     *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=464
      * @return The outputConfig.
      */
     @java.lang.Deprecated
@@ -3190,11 +3246,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3214,11 +3270,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3236,20 +3292,20 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeOutputConfig(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig.newBuilder(
-                      outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig
+                    .getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3265,14 +3321,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3289,7 +3344,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig.Builder
         getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
@@ -3362,7 +3417,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the inputDocuments field is set.
      */
     public boolean hasInputDocuments() {
-      return inputDocumentsBuilder_ != null || inputDocuments_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3400,11 +3455,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         inputDocuments_ = value;
-        onChanged();
       } else {
         inputDocumentsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3420,11 +3475,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder builderForValue) {
       if (inputDocumentsBuilder_ == null) {
         inputDocuments_ = builderForValue.build();
-        onChanged();
       } else {
         inputDocumentsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3439,20 +3494,20 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeInputDocuments(
         com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig value) {
       if (inputDocumentsBuilder_ == null) {
-        if (inputDocuments_ != null) {
-          inputDocuments_ =
-              com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.newBuilder(
-                      inputDocuments_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && inputDocuments_ != null
+            && inputDocuments_
+                != com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig
+                    .getDefaultInstance()) {
+          getInputDocumentsBuilder().mergeFrom(value);
         } else {
           inputDocuments_ = value;
         }
-        onChanged();
       } else {
         inputDocumentsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3465,14 +3520,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
      */
     public Builder clearInputDocuments() {
-      if (inputDocumentsBuilder_ == null) {
-        inputDocuments_ = null;
-        onChanged();
-      } else {
-        inputDocuments_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      inputDocuments_ = null;
+      if (inputDocumentsBuilder_ != null) {
+        inputDocumentsBuilder_.dispose();
         inputDocumentsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3486,7 +3540,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder
         getInputDocumentsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInputDocumentsFieldBuilder().getBuilder();
     }
@@ -3554,7 +3608,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the documentOutputConfig field is set.
      */
     public boolean hasDocumentOutputConfig() {
-      return documentOutputConfigBuilder_ != null || documentOutputConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3594,11 +3648,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         documentOutputConfig_ = value;
-        onChanged();
       } else {
         documentOutputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3615,11 +3669,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder builderForValue) {
       if (documentOutputConfigBuilder_ == null) {
         documentOutputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         documentOutputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3635,20 +3689,19 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeDocumentOutputConfig(
         com.google.cloud.documentai.v1beta3.DocumentOutputConfig value) {
       if (documentOutputConfigBuilder_ == null) {
-        if (documentOutputConfig_ != null) {
-          documentOutputConfig_ =
-              com.google.cloud.documentai.v1beta3.DocumentOutputConfig.newBuilder(
-                      documentOutputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && documentOutputConfig_ != null
+            && documentOutputConfig_
+                != com.google.cloud.documentai.v1beta3.DocumentOutputConfig.getDefaultInstance()) {
+          getDocumentOutputConfigBuilder().mergeFrom(value);
         } else {
           documentOutputConfig_ = value;
         }
-        onChanged();
       } else {
         documentOutputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3662,14 +3715,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDocumentOutputConfig() {
-      if (documentOutputConfigBuilder_ == null) {
-        documentOutputConfig_ = null;
-        onChanged();
-      } else {
-        documentOutputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      documentOutputConfig_ = null;
+      if (documentOutputConfigBuilder_ != null) {
+        documentOutputConfigBuilder_.dispose();
         documentOutputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3684,7 +3736,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder
         getDocumentOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDocumentOutputConfigFieldBuilder().getBuilder();
     }
@@ -3768,6 +3820,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     public Builder setSkipHumanReview(boolean value) {
 
       skipHumanReview_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3784,7 +3837,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSkipHumanReview() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       skipHumanReview_ = false;
       onChanged();
       return this;
@@ -3808,7 +3861,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the processOptions field is set.
      */
     public boolean hasProcessOptions() {
-      return processOptionsBuilder_ != null || processOptions_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3845,11 +3898,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         processOptions_ = value;
-        onChanged();
       } else {
         processOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3865,11 +3918,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.documentai.v1beta3.ProcessOptions.Builder builderForValue) {
       if (processOptionsBuilder_ == null) {
         processOptions_ = builderForValue.build();
-        onChanged();
       } else {
         processOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3883,19 +3936,19 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeProcessOptions(com.google.cloud.documentai.v1beta3.ProcessOptions value) {
       if (processOptionsBuilder_ == null) {
-        if (processOptions_ != null) {
-          processOptions_ =
-              com.google.cloud.documentai.v1beta3.ProcessOptions.newBuilder(processOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && processOptions_ != null
+            && processOptions_
+                != com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()) {
+          getProcessOptionsBuilder().mergeFrom(value);
         } else {
           processOptions_ = value;
         }
-        onChanged();
       } else {
         processOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3908,14 +3961,13 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
      */
     public Builder clearProcessOptions() {
-      if (processOptionsBuilder_ == null) {
-        processOptions_ = null;
-        onChanged();
-      } else {
-        processOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      processOptions_ = null;
+      if (processOptionsBuilder_ != null) {
+        processOptionsBuilder_.dispose();
         processOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3928,7 +3980,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
      */
     public com.google.cloud.documentai.v1beta3.ProcessOptions.Builder getProcessOptionsBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getProcessOptionsFieldBuilder().getBuilder();
     }

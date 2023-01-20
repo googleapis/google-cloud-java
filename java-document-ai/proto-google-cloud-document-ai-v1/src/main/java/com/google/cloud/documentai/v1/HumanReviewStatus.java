@@ -277,7 +277,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -306,16 +306,17 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1.HumanReviewStatus.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.documentai.v1.HumanReviewStatus.State result =
-        com.google.cloud.documentai.v1.HumanReviewStatus.State.valueOf(state_);
+        com.google.cloud.documentai.v1.HumanReviewStatus.State.forNumber(state_);
     return result == null
         ? com.google.cloud.documentai.v1.HumanReviewStatus.State.UNRECOGNIZED
         : result;
   }
 
   public static final int STATE_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object stateMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateMessage_ = "";
   /**
    *
    *
@@ -364,7 +365,9 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int HUMAN_REVIEW_OPERATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object humanReviewOperation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object humanReviewOperation_ = "";
   /**
    *
    *
@@ -635,12 +638,10 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       stateMessage_ = "";
-
       humanReviewOperation_ = "";
-
       return this;
     }
 
@@ -668,11 +669,24 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.documentai.v1.HumanReviewStatus buildPartial() {
       com.google.cloud.documentai.v1.HumanReviewStatus result =
           new com.google.cloud.documentai.v1.HumanReviewStatus(this);
-      result.state_ = state_;
-      result.stateMessage_ = stateMessage_;
-      result.humanReviewOperation_ = humanReviewOperation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.HumanReviewStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stateMessage_ = stateMessage_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.humanReviewOperation_ = humanReviewOperation_;
+      }
     }
 
     @java.lang.Override
@@ -726,10 +740,12 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getStateMessage().isEmpty()) {
         stateMessage_ = other.stateMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getHumanReviewOperation().isEmpty()) {
         humanReviewOperation_ = other.humanReviewOperation_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -761,19 +777,19 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 stateMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 humanReviewOperation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -792,6 +808,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -822,8 +840,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,9 +858,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1.HumanReviewStatus.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1.HumanReviewStatus.State result =
-          com.google.cloud.documentai.v1.HumanReviewStatus.State.valueOf(state_);
+          com.google.cloud.documentai.v1.HumanReviewStatus.State.forNumber(state_);
       return result == null
           ? com.google.cloud.documentai.v1.HumanReviewStatus.State.UNRECOGNIZED
           : result;
@@ -863,7 +880,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -880,7 +897,7 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -947,8 +964,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -964,8 +981,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearStateMessage() {
-
       stateMessage_ = getDefaultInstance().getStateMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -986,8 +1003,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1062,8 +1079,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       humanReviewOperation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1082,8 +1099,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearHumanReviewOperation() {
-
       humanReviewOperation_ = getDefaultInstance().getHumanReviewOperation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1107,8 +1124,8 @@ public final class HumanReviewStatus extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       humanReviewOperation_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

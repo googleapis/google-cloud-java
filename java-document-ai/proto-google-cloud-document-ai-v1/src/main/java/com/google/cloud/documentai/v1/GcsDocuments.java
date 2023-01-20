@@ -68,6 +68,8 @@ public final class GcsDocuments extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1.GcsDocument> documents_;
   /**
    *
@@ -335,6 +337,7 @@ public final class GcsDocuments extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (documentsBuilder_ == null) {
         documents_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,15 @@ public final class GcsDocuments extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1.GcsDocuments buildPartial() {
       com.google.cloud.documentai.v1.GcsDocuments result =
           new com.google.cloud.documentai.v1.GcsDocuments(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1.GcsDocuments result) {
       if (documentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           documents_ = java.util.Collections.unmodifiableList(documents_);
@@ -379,8 +390,10 @@ public final class GcsDocuments extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.documents_ = documentsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.GcsDocuments result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -66,7 +66,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_NATIVE_PDF_PARSING_FIELD_NUMBER = 3;
-  private boolean enableNativePdfParsing_;
+  private boolean enableNativePdfParsing_ = false;
   /**
    *
    *
@@ -281,8 +281,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableNativePdfParsing_ = false;
-
       return this;
     }
 
@@ -310,9 +310,18 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.OcrConfig buildPartial() {
       com.google.cloud.documentai.v1beta3.OcrConfig result =
           new com.google.cloud.documentai.v1beta3.OcrConfig(this);
-      result.enableNativePdfParsing_ = enableNativePdfParsing_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.OcrConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableNativePdfParsing_ = enableNativePdfParsing_;
+      }
     }
 
     @java.lang.Override
@@ -392,7 +401,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 enableNativePdfParsing_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             default:
@@ -411,6 +420,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableNativePdfParsing_;
     /**
@@ -445,6 +456,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableNativePdfParsing(boolean value) {
 
       enableNativePdfParsing_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -461,7 +473,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableNativePdfParsing() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableNativePdfParsing_ = false;
       onChanged();
       return this;

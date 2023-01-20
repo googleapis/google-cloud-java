@@ -68,6 +68,8 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_HINTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languageHints_;
   /**
    *
@@ -360,6 +362,7 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageHints_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -389,14 +392,24 @@ public final class OcrParams extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta1.OcrParams buildPartial() {
       com.google.cloud.documentai.v1beta1.OcrParams result =
           new com.google.cloud.documentai.v1beta1.OcrParams(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1beta1.OcrParams result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         languageHints_ = languageHints_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.languageHints_ = languageHints_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta1.OcrParams result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

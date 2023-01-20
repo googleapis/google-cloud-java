@@ -358,7 +358,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -413,7 +415,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -466,7 +470,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -515,7 +521,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -548,16 +554,17 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.Processor.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.documentai.v1beta3.Processor.State result =
-        com.google.cloud.documentai.v1beta3.Processor.State.valueOf(state_);
+        com.google.cloud.documentai.v1beta3.Processor.State.forNumber(state_);
     return result == null
         ? com.google.cloud.documentai.v1beta3.Processor.State.UNRECOGNIZED
         : result;
   }
 
   public static final int DEFAULT_PROCESSOR_VERSION_FIELD_NUMBER = 9;
-  private volatile java.lang.Object defaultProcessorVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultProcessorVersion_ = "";
   /**
    *
    *
@@ -606,7 +613,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROCESS_ENDPOINT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object processEndpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object processEndpoint_ = "";
   /**
    *
    *
@@ -703,11 +712,13 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int KMS_KEY_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object kmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
   /**
    *
    *
@@ -1025,26 +1036,19 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = "";
-
       displayName_ = "";
-
       state_ = 0;
-
       defaultProcessorVersion_ = "";
-
       processEndpoint_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       kmsKeyName_ = "";
-
       return this;
     }
 
@@ -1072,20 +1076,39 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.Processor buildPartial() {
       com.google.cloud.documentai.v1beta3.Processor result =
           new com.google.cloud.documentai.v1beta3.Processor(this);
-      result.name_ = name_;
-      result.type_ = type_;
-      result.displayName_ = displayName_;
-      result.state_ = state_;
-      result.defaultProcessorVersion_ = defaultProcessorVersion_;
-      result.processEndpoint_ = processEndpoint_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.kmsKeyName_ = kmsKeyName_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta3.Processor result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.defaultProcessorVersion_ = defaultProcessorVersion_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.processEndpoint_ = processEndpoint_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
     }
 
     @java.lang.Override
@@ -1135,14 +1158,17 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.documentai.v1beta3.Processor.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1150,10 +1176,12 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDefaultProcessorVersion().isEmpty()) {
         defaultProcessorVersion_ = other.defaultProcessorVersion_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getProcessEndpoint().isEmpty()) {
         processEndpoint_ = other.processEndpoint_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1161,6 +1189,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1192,49 +1221,49 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 50:
               {
                 processEndpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 defaultProcessorVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 74
             default:
@@ -1253,6 +1282,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1324,8 +1355,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1344,8 +1375,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1369,8 +1400,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1442,8 +1473,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1461,8 +1492,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1485,8 +1516,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1552,8 +1583,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1569,8 +1600,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1591,8 +1622,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1630,8 +1661,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1650,9 +1681,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.documentai.v1beta3.Processor.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.documentai.v1beta3.Processor.State result =
-          com.google.cloud.documentai.v1beta3.Processor.State.valueOf(state_);
+          com.google.cloud.documentai.v1beta3.Processor.State.forNumber(state_);
       return result == null
           ? com.google.cloud.documentai.v1beta3.Processor.State.UNRECOGNIZED
           : result;
@@ -1675,7 +1705,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1694,7 +1724,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1761,8 +1791,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultProcessorVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1778,8 +1808,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultProcessorVersion() {
-
       defaultProcessorVersion_ = getDefaultInstance().getDefaultProcessorVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1800,8 +1830,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultProcessorVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1876,8 +1906,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       processEndpoint_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1896,8 +1926,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProcessEndpoint() {
-
       processEndpoint_ = getDefaultInstance().getProcessEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1921,8 +1951,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       processEndpoint_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1945,7 +1975,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1982,11 +2012,11 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2001,11 +2031,11 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2019,17 +2049,18 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2042,14 +2073,13 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2062,7 +2092,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2174,8 +2204,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2192,8 +2222,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyName() {
-
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2215,8 +2245,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyName_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

@@ -46,6 +46,9 @@
             "GetProcessor": {
               "methods": ["getProcessor", "getProcessor", "getProcessor", "getProcessorCallable"]
             },
+            "GetProcessorType": {
+              "methods": ["getProcessorType", "getProcessorType", "getProcessorType", "getProcessorTypeCallable"]
+            },
             "GetProcessorVersion": {
               "methods": ["getProcessorVersion", "getProcessorVersion", "getProcessorVersion", "getProcessorVersionCallable"]
             },

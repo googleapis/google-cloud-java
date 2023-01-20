@@ -21,6 +21,7 @@ import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.List
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorsPagedResponse;
 
+import com.google.api.LaunchStage;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -419,6 +420,94 @@ public class DocumentProcessorServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listProcessorTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorTypeTest() throws Exception {
+    ProcessorType expectedResponse =
+        ProcessorType.newBuilder()
+            .setName(ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+            .setType("type3575610")
+            .setCategory("category50511102")
+            .addAllAvailableLocations(new ArrayList<ProcessorType.LocationInfo>())
+            .setAllowCreation(true)
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .addAllSampleDocumentUris(new ArrayList<String>())
+            .build();
+    mockDocumentProcessorService.addResponse(expectedResponse);
+
+    ProcessorTypeName name = ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]");
+
+    ProcessorType actualResponse = client.getProcessorType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProcessorTypeRequest actualRequest = ((GetProcessorTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProcessorTypeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      ProcessorTypeName name = ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]");
+      client.getProcessorType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorTypeTest2() throws Exception {
+    ProcessorType expectedResponse =
+        ProcessorType.newBuilder()
+            .setName(ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+            .setType("type3575610")
+            .setCategory("category50511102")
+            .addAllAvailableLocations(new ArrayList<ProcessorType.LocationInfo>())
+            .setAllowCreation(true)
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .addAllSampleDocumentUris(new ArrayList<String>())
+            .build();
+    mockDocumentProcessorService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ProcessorType actualResponse = client.getProcessorType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProcessorTypeRequest actualRequest = ((GetProcessorTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProcessorTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getProcessorType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

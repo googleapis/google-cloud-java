@@ -69,7 +69,9 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
   }
 
   public static final int EVALUATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object evaluation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object evaluation_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       evaluation_ = "";
-
       return this;
     }
 
@@ -348,9 +350,19 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
     public com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionResponse buildPartial() {
       com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionResponse result =
           new com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionResponse(this);
-      result.evaluation_ = evaluation_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.evaluation_ = evaluation_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +416,7 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
               .getDefaultInstance()) return this;
       if (!other.getEvaluation().isEmpty()) {
         evaluation_ = other.evaluation_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +448,7 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
             case 18:
               {
                 evaluation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -454,6 +467,8 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object evaluation_ = "";
     /**
@@ -516,8 +531,8 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       evaluation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -533,8 +548,8 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearEvaluation() {
-
       evaluation_ = getDefaultInstance().getEvaluation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -555,8 +570,8 @@ public final class EvaluateProcessorVersionResponse extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       evaluation_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -68,7 +68,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -86,7 +86,9 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
   }
 
   public static final int MODEL_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object modelVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelVersion_ = "";
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       modelVersion_ = "";
-
       return this;
     }
 
@@ -374,10 +375,21 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
     public com.google.cloud.documentai.v1beta1.EntityExtractionParams buildPartial() {
       com.google.cloud.documentai.v1beta1.EntityExtractionParams result =
           new com.google.cloud.documentai.v1beta1.EntityExtractionParams(this);
-      result.enabled_ = enabled_;
-      result.modelVersion_ = modelVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta1.EntityExtractionParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.modelVersion_ = modelVersion_;
+      }
     }
 
     @java.lang.Override
@@ -431,6 +443,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
       }
       if (!other.getModelVersion().isEmpty()) {
         modelVersion_ = other.modelVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -462,13 +475,13 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 modelVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -487,6 +500,8 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -519,6 +534,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -534,7 +550,7 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -604,8 +620,8 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       modelVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -622,8 +638,8 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearModelVersion() {
-
       modelVersion_ = getDefaultInstance().getModelVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -645,8 +661,8 @@ public final class EntityExtractionParams extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       modelVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -68,6 +68,8 @@ public final class FetchProcessorTypesResponse extends com.google.protobuf.Gener
   }
 
   public static final int PROCESSOR_TYPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1.ProcessorType> processorTypes_;
   /**
    *
@@ -337,6 +339,7 @@ public final class FetchProcessorTypesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (processorTypesBuilder_ == null) {
         processorTypes_ = java.util.Collections.emptyList();
       } else {
@@ -371,7 +374,16 @@ public final class FetchProcessorTypesResponse extends com.google.protobuf.Gener
     public com.google.cloud.documentai.v1.FetchProcessorTypesResponse buildPartial() {
       com.google.cloud.documentai.v1.FetchProcessorTypesResponse result =
           new com.google.cloud.documentai.v1.FetchProcessorTypesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1.FetchProcessorTypesResponse result) {
       if (processorTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           processorTypes_ = java.util.Collections.unmodifiableList(processorTypes_);
@@ -381,8 +393,10 @@ public final class FetchProcessorTypesResponse extends com.google.protobuf.Gener
       } else {
         result.processorTypes_ = processorTypesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.FetchProcessorTypesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

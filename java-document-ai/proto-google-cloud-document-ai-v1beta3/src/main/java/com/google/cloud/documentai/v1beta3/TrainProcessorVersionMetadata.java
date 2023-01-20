@@ -273,7 +273,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     }
 
     public static final int DOCUMENT_ERROR_COUNT_FIELD_NUMBER = 3;
-    private int documentErrorCount_;
+    private int documentErrorCount_ = 0;
     /**
      *
      *
@@ -291,7 +291,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     }
 
     public static final int DATASET_ERROR_COUNT_FIELD_NUMBER = 4;
-    private int datasetErrorCount_;
+    private int datasetErrorCount_ = 0;
     /**
      *
      *
@@ -309,6 +309,8 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     }
 
     public static final int DOCUMENT_ERRORS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.rpc.Status> documentErrors_;
     /**
      *
@@ -388,6 +390,8 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     }
 
     public static final int DATASET_ERRORS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.rpc.Status> datasetErrors_;
     /**
      *
@@ -724,24 +728,23 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         documentErrorCount_ = 0;
-
         datasetErrorCount_ = 0;
-
         if (documentErrorsBuilder_ == null) {
           documentErrors_ = java.util.Collections.emptyList();
         } else {
           documentErrors_ = null;
           documentErrorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (datasetErrorsBuilder_ == null) {
           datasetErrors_ = java.util.Collections.emptyList();
         } else {
           datasetErrors_ = null;
           datasetErrorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -775,29 +778,47 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation result =
             new com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.documentErrorCount_ = documentErrorCount_;
-        result.datasetErrorCount_ = datasetErrorCount_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
+              result) {
         if (documentErrorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             documentErrors_ = java.util.Collections.unmodifiableList(documentErrors_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.documentErrors_ = documentErrors_;
         } else {
           result.documentErrors_ = documentErrorsBuilder_.build();
         }
         if (datasetErrorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             datasetErrors_ = java.util.Collections.unmodifiableList(datasetErrors_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.datasetErrors_ = datasetErrors_;
         } else {
           result.datasetErrors_ = datasetErrorsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.documentErrorCount_ = documentErrorCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.datasetErrorCount_ = datasetErrorCount_;
+        }
       }
 
       @java.lang.Override
@@ -865,7 +886,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           if (!other.documentErrors_.isEmpty()) {
             if (documentErrors_.isEmpty()) {
               documentErrors_ = other.documentErrors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureDocumentErrorsIsMutable();
               documentErrors_.addAll(other.documentErrors_);
@@ -878,7 +899,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
               documentErrorsBuilder_.dispose();
               documentErrorsBuilder_ = null;
               documentErrors_ = other.documentErrors_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               documentErrorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDocumentErrorsFieldBuilder()
@@ -892,7 +913,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           if (!other.datasetErrors_.isEmpty()) {
             if (datasetErrors_.isEmpty()) {
               datasetErrors_ = other.datasetErrors_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureDatasetErrorsIsMutable();
               datasetErrors_.addAll(other.datasetErrors_);
@@ -905,7 +926,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
               datasetErrorsBuilder_.dispose();
               datasetErrorsBuilder_ = null;
               datasetErrors_ = other.datasetErrors_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               datasetErrorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getDatasetErrorsFieldBuilder()
@@ -968,13 +989,13 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
               case 24:
                 {
                   documentErrorCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 24
               case 32:
                 {
                   datasetErrorCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 32
               default:
@@ -1027,6 +1048,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public Builder setDocumentErrorCount(int value) {
 
         documentErrorCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1042,7 +1064,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearDocumentErrorCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         documentErrorCount_ = 0;
         onChanged();
         return this;
@@ -1079,6 +1101,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public Builder setDatasetErrorCount(int value) {
 
         datasetErrorCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1094,7 +1117,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearDatasetErrorCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         datasetErrorCount_ = 0;
         onChanged();
         return this;
@@ -1104,9 +1127,9 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           java.util.Collections.emptyList();
 
       private void ensureDocumentErrorsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           documentErrors_ = new java.util.ArrayList<com.google.rpc.Status>(documentErrors_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -1339,7 +1362,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public Builder clearDocumentErrors() {
         if (documentErrorsBuilder_ == null) {
           documentErrors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           documentErrorsBuilder_.clear();
@@ -1473,7 +1496,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
                   com.google.rpc.Status.Builder,
                   com.google.rpc.StatusOrBuilder>(
                   documentErrors_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           documentErrors_ = null;
@@ -1485,9 +1508,9 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           java.util.Collections.emptyList();
 
       private void ensureDatasetErrorsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           datasetErrors_ = new java.util.ArrayList<com.google.rpc.Status>(datasetErrors_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -1720,7 +1743,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public Builder clearDatasetErrors() {
         if (datasetErrorsBuilder_ == null) {
           datasetErrors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           datasetErrorsBuilder_.clear();
@@ -1854,7 +1877,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
                   com.google.rpc.Status.Builder,
                   com.google.rpc.StatusOrBuilder>(
                   datasetErrors_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           datasetErrors_ = null;
@@ -1978,7 +2001,9 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder
       getCommonMetadataOrBuilder() {
-    return getCommonMetadata();
+    return commonMetadata_ == null
+        ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
+        : commonMetadata_;
   }
 
   public static final int TRAINING_DATASET_VALIDATION_FIELD_NUMBER = 2;
@@ -2037,7 +2062,10 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
           .DatasetValidationOrBuilder
       getTrainingDatasetValidationOrBuilder() {
-    return getTrainingDatasetValidation();
+    return trainingDatasetValidation_ == null
+        ? com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
+            .getDefaultInstance()
+        : trainingDatasetValidation_;
   }
 
   public static final int TEST_DATASET_VALIDATION_FIELD_NUMBER = 3;
@@ -2096,7 +2124,10 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
           .DatasetValidationOrBuilder
       getTestDatasetValidationOrBuilder() {
-    return getTestDatasetValidation();
+    return testDatasetValidation_ == null
+        ? com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
+            .getDefaultInstance()
+        : testDatasetValidation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2336,22 +2367,20 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = 0;
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
-      if (trainingDatasetValidationBuilder_ == null) {
-        trainingDatasetValidation_ = null;
-      } else {
-        trainingDatasetValidation_ = null;
+      trainingDatasetValidation_ = null;
+      if (trainingDatasetValidationBuilder_ != null) {
+        trainingDatasetValidationBuilder_.dispose();
         trainingDatasetValidationBuilder_ = null;
       }
-      if (testDatasetValidationBuilder_ == null) {
-        testDatasetValidation_ = null;
-      } else {
-        testDatasetValidation_ = null;
+      testDatasetValidation_ = null;
+      if (testDatasetValidationBuilder_ != null) {
+        testDatasetValidationBuilder_.dispose();
         testDatasetValidationBuilder_ = null;
       }
       return this;
@@ -2382,23 +2411,32 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata buildPartial() {
       com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata result =
           new com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata(this);
-      if (commonMetadataBuilder_ == null) {
-        result.commonMetadata_ = commonMetadata_;
-      } else {
-        result.commonMetadata_ = commonMetadataBuilder_.build();
-      }
-      if (trainingDatasetValidationBuilder_ == null) {
-        result.trainingDatasetValidation_ = trainingDatasetValidation_;
-      } else {
-        result.trainingDatasetValidation_ = trainingDatasetValidationBuilder_.build();
-      }
-      if (testDatasetValidationBuilder_ == null) {
-        result.testDatasetValidation_ = testDatasetValidation_;
-      } else {
-        result.testDatasetValidation_ = testDatasetValidationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commonMetadata_ =
+            commonMetadataBuilder_ == null ? commonMetadata_ : commonMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trainingDatasetValidation_ =
+            trainingDatasetValidationBuilder_ == null
+                ? trainingDatasetValidation_
+                : trainingDatasetValidationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.testDatasetValidation_ =
+            testDatasetValidationBuilder_ == null
+                ? testDatasetValidation_
+                : testDatasetValidationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2487,21 +2525,21 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getCommonMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getTrainingDatasetValidationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getTestDatasetValidationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -2521,6 +2559,8 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.CommonOperationMetadata,
@@ -2539,7 +2579,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * @return Whether the commonMetadata field is set.
      */
     public boolean hasCommonMetadata() {
-      return commonMetadataBuilder_ != null || commonMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2577,11 +2617,11 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         commonMetadata_ = value;
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2597,11 +2637,11 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder builderForValue) {
       if (commonMetadataBuilder_ == null) {
         commonMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2616,20 +2656,20 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public Builder mergeCommonMetadata(
         com.google.cloud.documentai.v1beta3.CommonOperationMetadata value) {
       if (commonMetadataBuilder_ == null) {
-        if (commonMetadata_ != null) {
-          commonMetadata_ =
-              com.google.cloud.documentai.v1beta3.CommonOperationMetadata.newBuilder(
-                      commonMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && commonMetadata_ != null
+            && commonMetadata_
+                != com.google.cloud.documentai.v1beta3.CommonOperationMetadata
+                    .getDefaultInstance()) {
+          getCommonMetadataBuilder().mergeFrom(value);
         } else {
           commonMetadata_ = value;
         }
-        onChanged();
       } else {
         commonMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2642,14 +2682,13 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
      */
     public Builder clearCommonMetadata() {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-        onChanged();
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2663,7 +2702,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      */
     public com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder
         getCommonMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
@@ -2735,7 +2774,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * @return Whether the trainingDatasetValidation field is set.
      */
     public boolean hasTrainingDatasetValidation() {
-      return trainingDatasetValidationBuilder_ != null || trainingDatasetValidation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2779,11 +2818,11 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         trainingDatasetValidation_ = value;
-        onChanged();
       } else {
         trainingDatasetValidationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2802,11 +2841,11 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             builderForValue) {
       if (trainingDatasetValidationBuilder_ == null) {
         trainingDatasetValidation_ = builderForValue.build();
-        onChanged();
       } else {
         trainingDatasetValidationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2823,20 +2862,20 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public Builder mergeTrainingDatasetValidation(
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation value) {
       if (trainingDatasetValidationBuilder_ == null) {
-        if (trainingDatasetValidation_ != null) {
-          trainingDatasetValidation_ =
-              com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
-                  .newBuilder(trainingDatasetValidation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && trainingDatasetValidation_ != null
+            && trainingDatasetValidation_
+                != com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
+                    .DatasetValidation.getDefaultInstance()) {
+          getTrainingDatasetValidationBuilder().mergeFrom(value);
         } else {
           trainingDatasetValidation_ = value;
         }
-        onChanged();
       } else {
         trainingDatasetValidationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2851,14 +2890,13 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearTrainingDatasetValidation() {
-      if (trainingDatasetValidationBuilder_ == null) {
-        trainingDatasetValidation_ = null;
-        onChanged();
-      } else {
-        trainingDatasetValidation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      trainingDatasetValidation_ = null;
+      if (trainingDatasetValidationBuilder_ != null) {
+        trainingDatasetValidationBuilder_.dispose();
         trainingDatasetValidationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2875,7 +2913,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
             .Builder
         getTrainingDatasetValidationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTrainingDatasetValidationFieldBuilder().getBuilder();
     }
@@ -2957,7 +2995,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * @return Whether the testDatasetValidation field is set.
      */
     public boolean hasTestDatasetValidation() {
-      return testDatasetValidationBuilder_ != null || testDatasetValidation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3001,11 +3039,11 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         testDatasetValidation_ = value;
-        onChanged();
       } else {
         testDatasetValidationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3024,11 +3062,11 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             builderForValue) {
       if (testDatasetValidationBuilder_ == null) {
         testDatasetValidation_ = builderForValue.build();
-        onChanged();
       } else {
         testDatasetValidationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3045,20 +3083,20 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public Builder mergeTestDatasetValidation(
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation value) {
       if (testDatasetValidationBuilder_ == null) {
-        if (testDatasetValidation_ != null) {
-          testDatasetValidation_ =
-              com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
-                  .newBuilder(testDatasetValidation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && testDatasetValidation_ != null
+            && testDatasetValidation_
+                != com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
+                    .DatasetValidation.getDefaultInstance()) {
+          getTestDatasetValidationBuilder().mergeFrom(value);
         } else {
           testDatasetValidation_ = value;
         }
-        onChanged();
       } else {
         testDatasetValidationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3073,14 +3111,13 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearTestDatasetValidation() {
-      if (testDatasetValidationBuilder_ == null) {
-        testDatasetValidation_ = null;
-        onChanged();
-      } else {
-        testDatasetValidation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      testDatasetValidation_ = null;
+      if (testDatasetValidationBuilder_ != null) {
+        testDatasetValidationBuilder_.dispose();
         testDatasetValidationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3097,7 +3134,7 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
             .Builder
         getTestDatasetValidationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTestDatasetValidationFieldBuilder().getBuilder();
     }

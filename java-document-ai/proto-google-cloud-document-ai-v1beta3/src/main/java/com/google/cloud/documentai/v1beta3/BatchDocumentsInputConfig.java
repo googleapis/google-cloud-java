@@ -442,6 +442,7 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsPrefixBuilder_ != null) {
         gcsPrefixBuilder_.clear();
       }
@@ -478,23 +479,29 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig buildPartial() {
       com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig result =
           new com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig(this);
-      if (sourceCase_ == 1) {
-        if (gcsPrefixBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsPrefixBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (gcsDocumentsBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsDocumentsBuilder_.build();
-        }
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && gcsPrefixBuilder_ != null) {
+        result.source_ = gcsPrefixBuilder_.build();
+      }
+      if (sourceCase_ == 2 && gcsDocumentsBuilder_ != null) {
+        result.source_ = gcsDocumentsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -628,6 +635,8 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.GcsPrefix,
@@ -835,7 +844,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return gcsPrefixBuilder_;
     }
 
@@ -1045,7 +1053,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsDocumentsBuilder_;
     }
 

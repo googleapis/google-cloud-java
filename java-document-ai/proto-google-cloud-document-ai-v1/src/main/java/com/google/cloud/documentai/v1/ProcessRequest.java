@@ -217,7 +217,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -288,7 +290,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SKIP_HUMAN_REVIEW_FIELD_NUMBER = 3;
-  private boolean skipHumanReview_;
+  private boolean skipHumanReview_ = false;
   /**
    *
    *
@@ -355,7 +357,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
-    return getFieldMask();
+    return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -617,6 +619,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (inlineDocumentBuilder_ != null) {
         inlineDocumentBuilder_.clear();
       }
@@ -624,13 +627,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         rawDocumentBuilder_.clear();
       }
       name_ = "";
-
       skipHumanReview_ = false;
-
-      if (fieldMaskBuilder_ == null) {
-        fieldMask_ = null;
-      } else {
-        fieldMask_ = null;
+      fieldMask_ = null;
+      if (fieldMaskBuilder_ != null) {
+        fieldMaskBuilder_.dispose();
         fieldMaskBuilder_ = null;
       }
       sourceCase_ = 0;
@@ -662,30 +662,36 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1.ProcessRequest buildPartial() {
       com.google.cloud.documentai.v1.ProcessRequest result =
           new com.google.cloud.documentai.v1.ProcessRequest(this);
-      if (sourceCase_ == 4) {
-        if (inlineDocumentBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = inlineDocumentBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 5) {
-        if (rawDocumentBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = rawDocumentBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.skipHumanReview_ = skipHumanReview_;
-      if (fieldMaskBuilder_ == null) {
-        result.fieldMask_ = fieldMask_;
-      } else {
-        result.fieldMask_ = fieldMaskBuilder_.build();
-      }
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.ProcessRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.skipHumanReview_ = skipHumanReview_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.fieldMask_ = fieldMaskBuilder_ == null ? fieldMask_ : fieldMaskBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.documentai.v1.ProcessRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 4 && inlineDocumentBuilder_ != null) {
+        result.source_ = inlineDocumentBuilder_.build();
+      }
+      if (sourceCase_ == 5 && rawDocumentBuilder_ != null) {
+        result.source_ = rawDocumentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -735,6 +741,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.documentai.v1.ProcessRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getSkipHumanReview() != false) {
@@ -788,13 +795,13 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 24:
               {
                 skipHumanReview_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
@@ -812,7 +819,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -845,6 +852,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1.Document,
@@ -1052,7 +1061,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 4;
       onChanged();
-      ;
       return inlineDocumentBuilder_;
     }
 
@@ -1262,7 +1270,6 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       sourceCase_ = 5;
       onChanged();
-      ;
       return rawDocumentBuilder_;
     }
 
@@ -1360,8 +1367,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1388,8 +1395,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1421,8 +1428,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1460,6 +1467,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSkipHumanReview(boolean value) {
 
       skipHumanReview_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1476,7 +1484,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSkipHumanReview() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       skipHumanReview_ = false;
       onChanged();
       return this;
@@ -1502,7 +1510,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fieldMask field is set.
      */
     public boolean hasFieldMask() {
-      return fieldMaskBuilder_ != null || fieldMask_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1541,11 +1549,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         fieldMask_ = value;
-        onChanged();
       } else {
         fieldMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1562,11 +1570,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = builderForValue.build();
-        onChanged();
       } else {
         fieldMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1582,17 +1590,18 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
       if (fieldMaskBuilder_ == null) {
-        if (fieldMask_ != null) {
-          fieldMask_ =
-              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && fieldMask_ != null
+            && fieldMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getFieldMaskBuilder().mergeFrom(value);
         } else {
           fieldMask_ = value;
         }
-        onChanged();
       } else {
         fieldMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1607,14 +1616,13 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
      */
     public Builder clearFieldMask() {
-      if (fieldMaskBuilder_ == null) {
-        fieldMask_ = null;
-        onChanged();
-      } else {
-        fieldMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      fieldMask_ = null;
+      if (fieldMaskBuilder_ != null) {
+        fieldMaskBuilder_.dispose();
         fieldMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1629,7 +1637,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }

@@ -68,7 +68,9 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
   }
 
   public static final int PROCESSOR_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object processorVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object processorVersion_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       processorVersion_ = "";
-
       return this;
     }
 
@@ -346,9 +348,19 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
     public com.google.cloud.documentai.v1beta3.TrainProcessorVersionResponse buildPartial() {
       com.google.cloud.documentai.v1beta3.TrainProcessorVersionResponse result =
           new com.google.cloud.documentai.v1beta3.TrainProcessorVersionResponse(this);
-      result.processorVersion_ = processorVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta3.TrainProcessorVersionResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.processorVersion_ = processorVersion_;
+      }
     }
 
     @java.lang.Override
@@ -401,6 +413,7 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
         return this;
       if (!other.getProcessorVersion().isEmpty()) {
         processorVersion_ = other.processorVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -432,7 +445,7 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
             case 10:
               {
                 processorVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +464,8 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object processorVersion_ = "";
     /**
@@ -513,8 +528,8 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       processorVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -530,8 +545,8 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearProcessorVersion() {
-
       processorVersion_ = getDefaultInstance().getProcessorVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -552,8 +567,8 @@ public final class TrainProcessorVersionResponse extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       processorVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

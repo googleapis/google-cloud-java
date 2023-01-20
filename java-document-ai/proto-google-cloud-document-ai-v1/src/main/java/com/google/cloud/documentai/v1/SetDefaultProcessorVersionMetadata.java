@@ -113,7 +113,9 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.documentai.v1.CommonOperationMetadataOrBuilder
       getCommonMetadataOrBuilder() {
-    return getCommonMetadata();
+    return commonMetadata_ == null
+        ? com.google.cloud.documentai.v1.CommonOperationMetadata.getDefaultInstance()
+        : commonMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,10 +324,10 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = 0;
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
       return this;
@@ -356,13 +358,20 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
     public com.google.cloud.documentai.v1.SetDefaultProcessorVersionMetadata buildPartial() {
       com.google.cloud.documentai.v1.SetDefaultProcessorVersionMetadata result =
           new com.google.cloud.documentai.v1.SetDefaultProcessorVersionMetadata(this);
-      if (commonMetadataBuilder_ == null) {
-        result.commonMetadata_ = commonMetadata_;
-      } else {
-        result.commonMetadata_ = commonMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1.SetDefaultProcessorVersionMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commonMetadata_ =
+            commonMetadataBuilder_ == null ? commonMetadata_ : commonMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +454,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
             case 10:
               {
                 input.readMessage(getCommonMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +474,8 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.documentai.v1.CommonOperationMetadata commonMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1.CommonOperationMetadata,
@@ -483,7 +494,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      * @return Whether the commonMetadata field is set.
      */
     public boolean hasCommonMetadata() {
-      return commonMetadataBuilder_ != null || commonMetadata_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -520,11 +531,11 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
           throw new NullPointerException();
         }
         commonMetadata_ = value;
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -540,11 +551,11 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
         com.google.cloud.documentai.v1.CommonOperationMetadata.Builder builderForValue) {
       if (commonMetadataBuilder_ == null) {
         commonMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         commonMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -559,19 +570,19 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
     public Builder mergeCommonMetadata(
         com.google.cloud.documentai.v1.CommonOperationMetadata value) {
       if (commonMetadataBuilder_ == null) {
-        if (commonMetadata_ != null) {
-          commonMetadata_ =
-              com.google.cloud.documentai.v1.CommonOperationMetadata.newBuilder(commonMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && commonMetadata_ != null
+            && commonMetadata_
+                != com.google.cloud.documentai.v1.CommonOperationMetadata.getDefaultInstance()) {
+          getCommonMetadataBuilder().mergeFrom(value);
         } else {
           commonMetadata_ = value;
         }
-        onChanged();
       } else {
         commonMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -584,14 +595,13 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      * <code>.google.cloud.documentai.v1.CommonOperationMetadata common_metadata = 1;</code>
      */
     public Builder clearCommonMetadata() {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-        onChanged();
-      } else {
-        commonMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      commonMetadata_ = null;
+      if (commonMetadataBuilder_ != null) {
+        commonMetadataBuilder_.dispose();
         commonMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -605,7 +615,7 @@ public final class SetDefaultProcessorVersionMetadata extends com.google.protobu
      */
     public com.google.cloud.documentai.v1.CommonOperationMetadata.Builder
         getCommonMetadataBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }

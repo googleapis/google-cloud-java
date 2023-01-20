@@ -68,7 +68,9 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta2.AutoMlParams buildPartial() {
       com.google.cloud.documentai.v1beta2.AutoMlParams result =
           new com.google.cloud.documentai.v1beta2.AutoMlParams(this);
-      result.model_ = model_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta2.AutoMlParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -397,6 +408,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -428,7 +440,7 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -447,6 +459,8 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -512,8 +526,8 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -530,8 +544,8 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -553,8 +567,8 @@ public final class AutoMlParams extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

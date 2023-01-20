@@ -69,6 +69,8 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
   }
 
   public static final int RESPONSES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1beta1.ProcessDocumentResponse> responses_;
   /**
    *
@@ -343,6 +345,7 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (responsesBuilder_ == null) {
         responses_ = java.util.Collections.emptyList();
       } else {
@@ -378,7 +381,16 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
     public com.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse buildPartial() {
       com.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse result =
           new com.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse result) {
       if (responsesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           responses_ = java.util.Collections.unmodifiableList(responses_);
@@ -388,8 +400,11 @@ public final class BatchProcessDocumentsResponse extends com.google.protobuf.Gen
       } else {
         result.responses_ = responsesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -55,6 +55,7 @@ import com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest;
 import com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse;
 import com.google.cloud.documentai.v1beta3.GetEvaluationRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
+import com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsResponse;
@@ -67,6 +68,7 @@ import com.google.cloud.documentai.v1beta3.ListProcessorsResponse;
 import com.google.cloud.documentai.v1beta3.ProcessRequest;
 import com.google.cloud.documentai.v1beta3.ProcessResponse;
 import com.google.cloud.documentai.v1beta3.Processor;
+import com.google.cloud.documentai.v1beta3.ProcessorType;
 import com.google.cloud.documentai.v1beta3.ProcessorVersion;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata;
 import com.google.cloud.documentai.v1beta3.ReviewDocumentRequest;
@@ -145,6 +147,17 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListProcessorTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProcessorTypesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetProcessorTypeRequest, ProcessorType>
+      getProcessorTypeMethodDescriptor =
+          MethodDescriptor.<GetProcessorTypeRequest, ProcessorType>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/GetProcessorType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetProcessorTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProcessorType.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListProcessorsRequest, ListProcessorsResponse>
@@ -365,6 +378,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
       listProcessorTypesCallable;
   private final UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesPagedResponse>
       listProcessorTypesPagedCallable;
+  private final UnaryCallable<GetProcessorTypeRequest, ProcessorType> getProcessorTypeCallable;
   private final UnaryCallable<ListProcessorsRequest, ListProcessorsResponse> listProcessorsCallable;
   private final UnaryCallable<ListProcessorsRequest, ListProcessorsPagedResponse>
       listProcessorsPagedCallable;
@@ -528,6 +542,16 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
+        GrpcCallSettings.<GetProcessorTypeRequest, ProcessorType>newBuilder()
+            .setMethodDescriptor(getProcessorTypeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
             GrpcCallSettings.<ListProcessorsRequest, ListProcessorsResponse>newBuilder()
@@ -760,6 +784,9 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
             listProcessorTypesTransportSettings,
             settings.listProcessorTypesSettings(),
             clientContext);
+    this.getProcessorTypeCallable =
+        callableFactory.createUnaryCallable(
+            getProcessorTypeTransportSettings, settings.getProcessorTypeSettings(), clientContext);
     this.listProcessorsCallable =
         callableFactory.createUnaryCallable(
             listProcessorsTransportSettings, settings.listProcessorsSettings(), clientContext);
@@ -948,6 +975,11 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
   public UnaryCallable<ListProcessorTypesRequest, ListProcessorTypesPagedResponse>
       listProcessorTypesPagedCallable() {
     return listProcessorTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProcessorTypeRequest, ProcessorType> getProcessorTypeCallable() {
+    return getProcessorTypeCallable;
   }
 
   @Override

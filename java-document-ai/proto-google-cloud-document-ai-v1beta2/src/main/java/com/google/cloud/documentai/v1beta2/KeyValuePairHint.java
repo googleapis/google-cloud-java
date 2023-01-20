@@ -69,7 +69,9 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -118,6 +120,8 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VALUE_TYPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList valueTypes_;
   /**
    *
@@ -403,10 +407,10 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       valueTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -434,15 +438,28 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.documentai.v1beta2.KeyValuePairHint buildPartial() {
       com.google.cloud.documentai.v1beta2.KeyValuePairHint result =
           new com.google.cloud.documentai.v1beta2.KeyValuePairHint(this);
-      int from_bitField0_ = bitField0_;
-      result.key_ = key_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        valueTypes_ = valueTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.valueTypes_ = valueTypes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.documentai.v1beta2.KeyValuePairHint result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        valueTypes_ = valueTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.valueTypes_ = valueTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta2.KeyValuePairHint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -493,12 +510,13 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.valueTypes_.isEmpty()) {
         if (valueTypes_.isEmpty()) {
           valueTypes_ = other.valueTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureValueTypesIsMutable();
           valueTypes_.addAll(other.valueTypes_);
@@ -534,7 +552,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -624,8 +642,8 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,8 +659,8 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -663,8 +681,8 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -673,9 +691,9 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValueTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         valueTypes_ = new com.google.protobuf.LazyStringArrayList(valueTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -834,7 +852,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearValueTypes() {
       valueTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

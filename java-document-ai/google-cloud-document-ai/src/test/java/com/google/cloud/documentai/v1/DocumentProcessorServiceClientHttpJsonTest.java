@@ -21,6 +21,7 @@ import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.List
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorVersionsPagedResponse;
 import static com.google.cloud.documentai.v1.DocumentProcessorServiceClient.ListProcessorsPagedResponse;
 
+import com.google.api.LaunchStage;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.testing.MockHttpService;
@@ -454,6 +455,107 @@ public class DocumentProcessorServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-5833/locations/location-5833";
       client.listProcessorTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorTypeTest() throws Exception {
+    ProcessorType expectedResponse =
+        ProcessorType.newBuilder()
+            .setName(ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+            .setType("type3575610")
+            .setCategory("category50511102")
+            .addAllAvailableLocations(new ArrayList<ProcessorType.LocationInfo>())
+            .setAllowCreation(true)
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .addAllSampleDocumentUris(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProcessorTypeName name = ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]");
+
+    ProcessorType actualResponse = client.getProcessorType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessorTypeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorTypeName name = ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]");
+      client.getProcessorType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessorTypeTest2() throws Exception {
+    ProcessorType expectedResponse =
+        ProcessorType.newBuilder()
+            .setName(ProcessorTypeName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR_TYPE]").toString())
+            .setType("type3575610")
+            .setCategory("category50511102")
+            .addAllAvailableLocations(new ArrayList<ProcessorType.LocationInfo>())
+            .setAllowCreation(true)
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .addAllSampleDocumentUris(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-6471/locations/location-6471/processorTypes/processorType-6471";
+
+    ProcessorType actualResponse = client.getProcessorType(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessorTypeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6471/locations/location-6471/processorTypes/processorType-6471";
+      client.getProcessorType(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

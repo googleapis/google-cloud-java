@@ -161,7 +161,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PAGES_PER_SHARD_FIELD_NUMBER = 2;
-  private int pagesPerShard_;
+  private int pagesPerShard_ = 0;
   /**
    *
    *
@@ -411,11 +411,11 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
       pagesPerShard_ = 0;
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -445,17 +445,27 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta2.OutputConfig buildPartial() {
       com.google.cloud.documentai.v1beta2.OutputConfig result =
           new com.google.cloud.documentai.v1beta2.OutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.pagesPerShard_ = pagesPerShard_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1beta2.OutputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pagesPerShard_ = pagesPerShard_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.documentai.v1beta2.OutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -553,7 +563,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 pagesPerShard_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -586,6 +596,8 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta2.GcsDestination,
@@ -795,7 +807,6 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -854,6 +865,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setPagesPerShard(int value) {
 
       pagesPerShard_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,7 +893,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPagesPerShard() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pagesPerShard_ = 0;
       onChanged();
       return this;

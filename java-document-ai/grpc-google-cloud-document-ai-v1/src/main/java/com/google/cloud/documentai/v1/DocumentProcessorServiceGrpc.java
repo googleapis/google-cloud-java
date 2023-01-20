@@ -237,6 +237,54 @@ public final class DocumentProcessorServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1.GetProcessorTypeRequest,
+          com.google.cloud.documentai.v1.ProcessorType>
+      getGetProcessorTypeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProcessorType",
+      requestType = com.google.cloud.documentai.v1.GetProcessorTypeRequest.class,
+      responseType = com.google.cloud.documentai.v1.ProcessorType.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1.GetProcessorTypeRequest,
+          com.google.cloud.documentai.v1.ProcessorType>
+      getGetProcessorTypeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.documentai.v1.GetProcessorTypeRequest,
+            com.google.cloud.documentai.v1.ProcessorType>
+        getGetProcessorTypeMethod;
+    if ((getGetProcessorTypeMethod = DocumentProcessorServiceGrpc.getGetProcessorTypeMethod)
+        == null) {
+      synchronized (DocumentProcessorServiceGrpc.class) {
+        if ((getGetProcessorTypeMethod = DocumentProcessorServiceGrpc.getGetProcessorTypeMethod)
+            == null) {
+          DocumentProcessorServiceGrpc.getGetProcessorTypeMethod =
+              getGetProcessorTypeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.documentai.v1.GetProcessorTypeRequest,
+                          com.google.cloud.documentai.v1.ProcessorType>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProcessorType"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1.GetProcessorTypeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1.ProcessorType.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentProcessorServiceMethodDescriptorSupplier("GetProcessorType"))
+                      .build();
+        }
+      }
+    }
+    return getGetProcessorTypeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.documentai.v1.ListProcessorsRequest,
           com.google.cloud.documentai.v1.ListProcessorsResponse>
       getListProcessorsMethod;
@@ -988,6 +1036,21 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
+     * Gets a processor type detail.
+     * </pre>
+     */
+    public void getProcessorType(
+        com.google.cloud.documentai.v1.GetProcessorTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1.ProcessorType>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetProcessorTypeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all processors which belong to this project.
      * </pre>
      */
@@ -1208,6 +1271,13 @@ public final class DocumentProcessorServiceGrpc {
                       com.google.cloud.documentai.v1.ListProcessorTypesResponse>(
                       this, METHODID_LIST_PROCESSOR_TYPES)))
           .addMethod(
+              getGetProcessorTypeMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.documentai.v1.GetProcessorTypeRequest,
+                      com.google.cloud.documentai.v1.ProcessorType>(
+                      this, METHODID_GET_PROCESSOR_TYPE)))
+          .addMethod(
               getListProcessorsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1380,6 +1450,23 @@ public final class DocumentProcessorServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListProcessorTypesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a processor type detail.
+     * </pre>
+     */
+    public void getProcessorType(
+        com.google.cloud.documentai.v1.GetProcessorTypeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1.ProcessorType>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProcessorTypeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1685,6 +1772,19 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
+     * Gets a processor type detail.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1.ProcessorType getProcessorType(
+        com.google.cloud.documentai.v1.GetProcessorTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProcessorTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all processors which belong to this project.
      * </pre>
      */
@@ -1943,6 +2043,20 @@ public final class DocumentProcessorServiceGrpc {
      *
      *
      * <pre>
+     * Gets a processor type detail.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.documentai.v1.ProcessorType>
+        getProcessorType(com.google.cloud.documentai.v1.GetProcessorTypeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProcessorTypeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all processors which belong to this project.
      * </pre>
      */
@@ -2130,19 +2244,20 @@ public final class DocumentProcessorServiceGrpc {
   private static final int METHODID_BATCH_PROCESS_DOCUMENTS = 1;
   private static final int METHODID_FETCH_PROCESSOR_TYPES = 2;
   private static final int METHODID_LIST_PROCESSOR_TYPES = 3;
-  private static final int METHODID_LIST_PROCESSORS = 4;
-  private static final int METHODID_GET_PROCESSOR = 5;
-  private static final int METHODID_GET_PROCESSOR_VERSION = 6;
-  private static final int METHODID_LIST_PROCESSOR_VERSIONS = 7;
-  private static final int METHODID_DELETE_PROCESSOR_VERSION = 8;
-  private static final int METHODID_DEPLOY_PROCESSOR_VERSION = 9;
-  private static final int METHODID_UNDEPLOY_PROCESSOR_VERSION = 10;
-  private static final int METHODID_CREATE_PROCESSOR = 11;
-  private static final int METHODID_DELETE_PROCESSOR = 12;
-  private static final int METHODID_ENABLE_PROCESSOR = 13;
-  private static final int METHODID_DISABLE_PROCESSOR = 14;
-  private static final int METHODID_SET_DEFAULT_PROCESSOR_VERSION = 15;
-  private static final int METHODID_REVIEW_DOCUMENT = 16;
+  private static final int METHODID_GET_PROCESSOR_TYPE = 4;
+  private static final int METHODID_LIST_PROCESSORS = 5;
+  private static final int METHODID_GET_PROCESSOR = 6;
+  private static final int METHODID_GET_PROCESSOR_VERSION = 7;
+  private static final int METHODID_LIST_PROCESSOR_VERSIONS = 8;
+  private static final int METHODID_DELETE_PROCESSOR_VERSION = 9;
+  private static final int METHODID_DEPLOY_PROCESSOR_VERSION = 10;
+  private static final int METHODID_UNDEPLOY_PROCESSOR_VERSION = 11;
+  private static final int METHODID_CREATE_PROCESSOR = 12;
+  private static final int METHODID_DELETE_PROCESSOR = 13;
+  private static final int METHODID_ENABLE_PROCESSOR = 14;
+  private static final int METHODID_DISABLE_PROCESSOR = 15;
+  private static final int METHODID_SET_DEFAULT_PROCESSOR_VERSION = 16;
+  private static final int METHODID_REVIEW_DOCUMENT = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2184,6 +2299,12 @@ public final class DocumentProcessorServiceGrpc {
               (com.google.cloud.documentai.v1.ListProcessorTypesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.documentai.v1.ListProcessorTypesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_PROCESSOR_TYPE:
+          serviceImpl.getProcessorType(
+              (com.google.cloud.documentai.v1.GetProcessorTypeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1.ProcessorType>)
                   responseObserver);
           break;
         case METHODID_LIST_PROCESSORS:
@@ -2325,6 +2446,7 @@ public final class DocumentProcessorServiceGrpc {
                       .addMethod(getBatchProcessDocumentsMethod())
                       .addMethod(getFetchProcessorTypesMethod())
                       .addMethod(getListProcessorTypesMethod())
+                      .addMethod(getGetProcessorTypeMethod())
                       .addMethod(getListProcessorsMethod())
                       .addMethod(getGetProcessorMethod())
                       .addMethod(getGetProcessorVersionMethod())

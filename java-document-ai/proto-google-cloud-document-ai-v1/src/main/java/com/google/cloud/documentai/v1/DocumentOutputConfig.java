@@ -311,7 +311,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
 
       public static final int PAGES_PER_SHARD_FIELD_NUMBER = 1;
-      private int pagesPerShard_;
+      private int pagesPerShard_ = 0;
       /**
        *
        *
@@ -329,7 +329,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
 
       public static final int PAGES_OVERLAP_FIELD_NUMBER = 2;
-      private int pagesOverlap_;
+      private int pagesOverlap_ = 0;
       /**
        *
        *
@@ -584,10 +584,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           pagesPerShard_ = 0;
-
           pagesOverlap_ = 0;
-
           return this;
         }
 
@@ -622,10 +621,23 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               result =
                   new com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
                       .ShardingConfig(this);
-          result.pagesPerShard_ = pagesPerShard_;
-          result.pagesOverlap_ = pagesOverlap_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.pagesPerShard_ = pagesPerShard_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.pagesOverlap_ = pagesOverlap_;
+          }
         }
 
         @java.lang.Override
@@ -718,13 +730,13 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
                 case 8:
                   {
                     pagesPerShard_ = input.readInt32();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 case 16:
                   {
                     pagesOverlap_ = input.readInt32();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 16
                 default:
@@ -743,6 +755,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private int pagesPerShard_;
         /**
@@ -775,6 +789,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         public Builder setPagesPerShard(int value) {
 
           pagesPerShard_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -790,7 +805,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearPagesPerShard() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           pagesPerShard_ = 0;
           onChanged();
           return this;
@@ -827,6 +842,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         public Builder setPagesOverlap(int value) {
 
           pagesOverlap_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -842,7 +858,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
          * @return This builder for chaining.
          */
         public Builder clearPagesOverlap() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           pagesOverlap_ = 0;
           onChanged();
           return this;
@@ -920,7 +936,9 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     }
 
     public static final int GCS_URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object gcsUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcsUri_ = "";
     /**
      *
      *
@@ -1017,7 +1035,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder() {
-      return getFieldMask();
+      return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
     }
 
     public static final int SHARDING_CONFIG_FIELD_NUMBER = 3;
@@ -1076,7 +1094,10 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
             .ShardingConfigOrBuilder
         getShardingConfigOrBuilder() {
-      return getShardingConfig();
+      return shardingConfig_ == null
+          ? com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
+              .getDefaultInstance()
+          : shardingConfig_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1309,18 +1330,16 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gcsUri_ = "";
-
-        if (fieldMaskBuilder_ == null) {
-          fieldMask_ = null;
-        } else {
-          fieldMask_ = null;
+        fieldMask_ = null;
+        if (fieldMaskBuilder_ != null) {
+          fieldMaskBuilder_.dispose();
           fieldMaskBuilder_ = null;
         }
-        if (shardingConfigBuilder_ == null) {
-          shardingConfig_ = null;
-        } else {
-          shardingConfig_ = null;
+        shardingConfig_ = null;
+        if (shardingConfigBuilder_ != null) {
+          shardingConfigBuilder_.dispose();
           shardingConfigBuilder_ = null;
         }
         return this;
@@ -1352,19 +1371,26 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig buildPartial() {
         com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig result =
             new com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig(this);
-        result.gcsUri_ = gcsUri_;
-        if (fieldMaskBuilder_ == null) {
-          result.fieldMask_ = fieldMask_;
-        } else {
-          result.fieldMask_ = fieldMaskBuilder_.build();
-        }
-        if (shardingConfigBuilder_ == null) {
-          result.shardingConfig_ = shardingConfig_;
-        } else {
-          result.shardingConfig_ = shardingConfigBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gcsUri_ = gcsUri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fieldMask_ = fieldMaskBuilder_ == null ? fieldMask_ : fieldMaskBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.shardingConfig_ =
+              shardingConfigBuilder_ == null ? shardingConfig_ : shardingConfigBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1420,6 +1446,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
                 .getDefaultInstance()) return this;
         if (!other.getGcsUri().isEmpty()) {
           gcsUri_ = other.gcsUri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasFieldMask()) {
@@ -1457,20 +1484,20 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   gcsUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getShardingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1489,6 +1516,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object gcsUri_ = "";
       /**
@@ -1551,8 +1580,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         gcsUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1568,8 +1597,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearGcsUri() {
-
         gcsUri_ = getDefaultInstance().getGcsUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1590,8 +1619,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gcsUri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1616,7 +1645,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        * @return Whether the fieldMask field is set.
        */
       public boolean hasFieldMask() {
-        return fieldMaskBuilder_ != null || fieldMask_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1657,11 +1686,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           fieldMask_ = value;
-          onChanged();
         } else {
           fieldMaskBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1678,11 +1707,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
         if (fieldMaskBuilder_ == null) {
           fieldMask_ = builderForValue.build();
-          onChanged();
         } else {
           fieldMaskBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1698,19 +1727,18 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
         if (fieldMaskBuilder_ == null) {
-          if (fieldMask_ != null) {
-            fieldMask_ =
-                com.google.protobuf.FieldMask.newBuilder(fieldMask_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && fieldMask_ != null
+              && fieldMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+            getFieldMaskBuilder().mergeFrom(value);
           } else {
             fieldMask_ = value;
           }
-          onChanged();
         } else {
           fieldMaskBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1725,14 +1753,13 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        * <code>.google.protobuf.FieldMask field_mask = 2;</code>
        */
       public Builder clearFieldMask() {
-        if (fieldMaskBuilder_ == null) {
-          fieldMask_ = null;
-          onChanged();
-        } else {
-          fieldMask_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fieldMask_ = null;
+        if (fieldMaskBuilder_ != null) {
+          fieldMaskBuilder_.dispose();
           fieldMaskBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1747,7 +1774,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        * <code>.google.protobuf.FieldMask field_mask = 2;</code>
        */
       public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getFieldMaskFieldBuilder().getBuilder();
       }
@@ -1822,7 +1849,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        * @return Whether the shardingConfig field is set.
        */
       public boolean hasShardingConfig() {
-        return shardingConfigBuilder_ != null || shardingConfig_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1867,11 +1894,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           shardingConfig_ = value;
-          onChanged();
         } else {
           shardingConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1890,11 +1917,11 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               builderForValue) {
         if (shardingConfigBuilder_ == null) {
           shardingConfig_ = builderForValue.build();
-          onChanged();
         } else {
           shardingConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1912,20 +1939,20 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
               value) {
         if (shardingConfigBuilder_ == null) {
-          if (shardingConfig_ != null) {
-            shardingConfig_ =
-                com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
-                    .newBuilder(shardingConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && shardingConfig_ != null
+              && shardingConfig_
+                  != com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
+                      .ShardingConfig.getDefaultInstance()) {
+            getShardingConfigBuilder().mergeFrom(value);
           } else {
             shardingConfig_ = value;
           }
-          onChanged();
         } else {
           shardingConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1940,14 +1967,13 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public Builder clearShardingConfig() {
-        if (shardingConfigBuilder_ == null) {
-          shardingConfig_ = null;
-          onChanged();
-        } else {
-          shardingConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        shardingConfig_ = null;
+        if (shardingConfigBuilder_ != null) {
+          shardingConfigBuilder_.dispose();
           shardingConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1964,7 +1990,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       public com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
               .Builder
           getShardingConfigBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getShardingConfigFieldBuilder().getBuilder();
       }
@@ -2405,6 +2431,7 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsOutputConfigBuilder_ != null) {
         gcsOutputConfigBuilder_.clear();
       }
@@ -2437,16 +2464,24 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.documentai.v1.DocumentOutputConfig buildPartial() {
       com.google.cloud.documentai.v1.DocumentOutputConfig result =
           new com.google.cloud.documentai.v1.DocumentOutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsOutputConfigBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsOutputConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.documentai.v1.DocumentOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.documentai.v1.DocumentOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsOutputConfigBuilder_ != null) {
+        result.destination_ = gcsOutputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2568,6 +2603,8 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig,
@@ -2798,7 +2835,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsOutputConfigBuilder_;
     }
 
