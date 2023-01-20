@@ -71,7 +71,9 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RECOGNIZER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object recognizer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recognizer_ = "";
   /**
    *
    *
@@ -183,7 +185,9 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognitionConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.speech.v2.RecognitionConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int CONFIG_MASK_FIELD_NUMBER = 5;
@@ -265,10 +269,12 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getConfigMaskOrBuilder() {
-    return getConfigMask();
+    return configMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : configMask_;
   }
 
   public static final int FILES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.BatchRecognizeFileMetadata> files_;
   /**
    *
@@ -576,18 +582,16 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       recognizer_ = "";
-
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-      if (configMaskBuilder_ == null) {
-        configMask_ = null;
-      } else {
-        configMask_ = null;
+      configMask_ = null;
+      if (configMaskBuilder_ != null) {
+        configMaskBuilder_.dispose();
         configMaskBuilder_ = null;
       }
       if (filesBuilder_ == null) {
@@ -596,7 +600,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         files_ = null;
         filesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -624,29 +628,38 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.speech.v2.BatchRecognizeRequest buildPartial() {
       com.google.cloud.speech.v2.BatchRecognizeRequest result =
           new com.google.cloud.speech.v2.BatchRecognizeRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.recognizer_ = recognizer_;
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (configMaskBuilder_ == null) {
-        result.configMask_ = configMask_;
-      } else {
-        result.configMask_ = configMaskBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v2.BatchRecognizeRequest result) {
       if (filesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           files_ = java.util.Collections.unmodifiableList(files_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.files_ = files_;
       } else {
         result.files_ = filesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.BatchRecognizeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.recognizer_ = recognizer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.configMask_ = configMaskBuilder_ == null ? configMask_ : configMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -697,6 +710,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getRecognizer().isEmpty()) {
         recognizer_ = other.recognizer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConfig()) {
@@ -709,7 +723,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         if (!other.files_.isEmpty()) {
           if (files_.isEmpty()) {
             files_ = other.files_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFilesIsMutable();
             files_.addAll(other.files_);
@@ -722,7 +736,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
             filesBuilder_.dispose();
             filesBuilder_ = null;
             files_ = other.files_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             filesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFilesFieldBuilder()
@@ -761,7 +775,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 recognizer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -781,13 +795,13 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
             case 34:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getConfigMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -876,8 +890,8 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       recognizer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -895,8 +909,8 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRecognizer() {
-
       recognizer_ = getDefaultInstance().getRecognizer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -919,8 +933,8 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       recognizer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -948,7 +962,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -995,11 +1009,11 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1019,11 +1033,11 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     public Builder setConfig(com.google.cloud.speech.v2.RecognitionConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1042,19 +1056,18 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeConfig(com.google.cloud.speech.v2.RecognitionConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.speech.v2.RecognitionConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && config_ != null
+            && config_ != com.google.cloud.speech.v2.RecognitionConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1072,14 +1085,13 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.speech.v2.RecognitionConfig config = 4;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1097,7 +1109,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.speech.v2.RecognitionConfig config = 4;</code>
      */
     public com.google.cloud.speech.v2.RecognitionConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -1185,7 +1197,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the configMask field is set.
      */
     public boolean hasConfigMask() {
-      return configMaskBuilder_ != null || configMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1246,11 +1258,11 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         configMask_ = value;
-        onChanged();
       } else {
         configMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1277,11 +1289,11 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     public Builder setConfigMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (configMaskBuilder_ == null) {
         configMask_ = builderForValue.build();
-        onChanged();
       } else {
         configMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1307,17 +1319,18 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeConfigMask(com.google.protobuf.FieldMask value) {
       if (configMaskBuilder_ == null) {
-        if (configMask_ != null) {
-          configMask_ =
-              com.google.protobuf.FieldMask.newBuilder(configMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && configMask_ != null
+            && configMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getConfigMaskBuilder().mergeFrom(value);
         } else {
           configMask_ = value;
         }
-        onChanged();
       } else {
         configMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1342,14 +1355,13 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask config_mask = 5;</code>
      */
     public Builder clearConfigMask() {
-      if (configMaskBuilder_ == null) {
-        configMask_ = null;
-        onChanged();
-      } else {
-        configMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      configMask_ = null;
+      if (configMaskBuilder_ != null) {
+        configMaskBuilder_.dispose();
         configMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1374,7 +1386,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask config_mask = 5;</code>
      */
     public com.google.protobuf.FieldMask.Builder getConfigMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConfigMaskFieldBuilder().getBuilder();
     }
@@ -1450,10 +1462,10 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureFilesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         files_ =
             new java.util.ArrayList<com.google.cloud.speech.v2.BatchRecognizeFileMetadata>(files_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1672,7 +1684,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     public Builder clearFiles() {
       if (filesBuilder_ == null) {
         files_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         filesBuilder_.clear();
@@ -1798,7 +1810,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
                 com.google.cloud.speech.v2.BatchRecognizeFileMetadata,
                 com.google.cloud.speech.v2.BatchRecognizeFileMetadata.Builder,
                 com.google.cloud.speech.v2.BatchRecognizeFileMetadataOrBuilder>(
-                files_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                files_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         files_ = null;
       }
       return filesBuilder_;

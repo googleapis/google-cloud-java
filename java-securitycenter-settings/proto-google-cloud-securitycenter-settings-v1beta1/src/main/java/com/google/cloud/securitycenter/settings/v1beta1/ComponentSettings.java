@@ -168,7 +168,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -201,9 +201,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
-          com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.valueOf(state_);
+          com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.forNumber(
+              state_);
       return result == null
           ? com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.UNRECOGNIZED
           : result;
@@ -441,8 +441,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         state_ = 0;
-
         return this;
       }
 
@@ -476,9 +476,20 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings result =
             new com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings(
                 this);
-        result.state_ = state_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
       }
 
       @java.lang.Override
@@ -568,7 +579,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
               case 8:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -587,6 +598,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int state_ = 0;
       /**
@@ -621,8 +634,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -641,9 +654,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
        */
       @java.lang.Override
       public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
-            com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.valueOf(
+            com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.forNumber(
                 state_);
         return result == null
             ? com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.UNRECOGNIZED
@@ -668,7 +680,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -687,7 +699,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
         onChanged();
         return this;
@@ -817,7 +829,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -880,7 +894,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -911,16 +925,17 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
-        com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.valueOf(state_);
+        com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.forNumber(state_);
     return result == null
         ? com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.UNRECOGNIZED
         : result;
   }
 
   public static final int PROJECT_SERVICE_ACCOUNT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object projectServiceAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectServiceAccount_ = "";
   /**
    *
    *
@@ -991,6 +1006,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
                             .DetectorSettings.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String,
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
@@ -1076,9 +1092,11 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
+  public /* nullable */ com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
+          .DetectorSettings
       getDetectorSettingsOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
               defaultValue) {
     if (key == null) {
@@ -1121,7 +1139,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ETAG_FIELD_NUMBER = 5;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1217,7 +1237,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int CONTAINER_THREAT_DETECTION_SETTINGS_FIELD_NUMBER = 41;
@@ -1863,19 +1883,15 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       state_ = 0;
-
       projectServiceAccount_ = "";
-
       internalGetMutableDetectorSettings().clear();
       etag_ = "";
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       if (containerThreatDetectionSettingsBuilder_ != null) {
@@ -1921,49 +1937,54 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings buildPartial() {
       com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings result =
           new com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.state_ = state_;
-      result.projectServiceAccount_ = projectServiceAccount_;
-      result.detectorSettings_ = internalGetDetectorSettings();
-      result.detectorSettings_.makeImmutable();
-      result.etag_ = etag_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (specificSettingsCase_ == 41) {
-        if (containerThreatDetectionSettingsBuilder_ == null) {
-          result.specificSettings_ = specificSettings_;
-        } else {
-          result.specificSettings_ = containerThreatDetectionSettingsBuilder_.build();
-        }
-      }
-      if (specificSettingsCase_ == 42) {
-        if (eventThreatDetectionSettingsBuilder_ == null) {
-          result.specificSettings_ = specificSettings_;
-        } else {
-          result.specificSettings_ = eventThreatDetectionSettingsBuilder_.build();
-        }
-      }
-      if (specificSettingsCase_ == 44) {
-        if (securityHealthAnalyticsSettingsBuilder_ == null) {
-          result.specificSettings_ = specificSettings_;
-        } else {
-          result.specificSettings_ = securityHealthAnalyticsSettingsBuilder_.build();
-        }
-      }
-      if (specificSettingsCase_ == 40) {
-        if (webSecurityScannerSettingsBuilder_ == null) {
-          result.specificSettings_ = specificSettings_;
-        } else {
-          result.specificSettings_ = webSecurityScannerSettingsBuilder_.build();
-        }
-      }
-      result.specificSettingsCase_ = specificSettingsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.projectServiceAccount_ = projectServiceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.detectorSettings_ = internalGetDetectorSettings();
+        result.detectorSettings_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings result) {
+      result.specificSettingsCase_ = specificSettingsCase_;
+      result.specificSettings_ = this.specificSettings_;
+      if (specificSettingsCase_ == 41 && containerThreatDetectionSettingsBuilder_ != null) {
+        result.specificSettings_ = containerThreatDetectionSettingsBuilder_.build();
+      }
+      if (specificSettingsCase_ == 42 && eventThreatDetectionSettingsBuilder_ != null) {
+        result.specificSettings_ = eventThreatDetectionSettingsBuilder_.build();
+      }
+      if (specificSettingsCase_ == 44 && securityHealthAnalyticsSettingsBuilder_ != null) {
+        result.specificSettings_ = securityHealthAnalyticsSettingsBuilder_.build();
+      }
+      if (specificSettingsCase_ == 40 && webSecurityScannerSettingsBuilder_ != null) {
+        result.specificSettings_ = webSecurityScannerSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2017,6 +2038,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2024,11 +2046,14 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getProjectServiceAccount().isEmpty()) {
         projectServiceAccount_ = other.projectServiceAccount_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableDetectorSettings().mergeFrom(other.internalGetDetectorSettings());
+      bitField0_ |= 0x00000008;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasUpdateTime()) {
@@ -2089,19 +2114,19 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 projectServiceAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -2117,18 +2142,19 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
                 internalGetMutableDetectorSettings()
                     .getMutableMap()
                     .put(detectorSettings__.getKey(), detectorSettings__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 322:
@@ -2276,8 +2302,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2300,8 +2326,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2329,8 +2355,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2368,8 +2394,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2388,9 +2414,9 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState result =
-          com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.valueOf(state_);
+          com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.forNumber(
+              state_);
       return result == null
           ? com.google.cloud.securitycenter.settings.v1beta1.ComponentEnablementState.UNRECOGNIZED
           : result;
@@ -2414,7 +2440,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2433,7 +2459,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -2503,8 +2529,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectServiceAccount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2521,8 +2547,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProjectServiceAccount() {
-
       projectServiceAccount_ = getDefaultInstance().getProjectServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2544,8 +2570,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectServiceAccount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2570,8 +2596,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
             java.lang.String,
             com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
         internalGetMutableDetectorSettings() {
-      onChanged();
-      ;
       if (detectorSettings_ == null) {
         detectorSettings_ =
             com.google.protobuf.MapField.newMapField(
@@ -2580,6 +2604,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       if (!detectorSettings_.isMutable()) {
         detectorSettings_ = detectorSettings_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return detectorSettings_;
     }
 
@@ -2652,9 +2678,11 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
+    public /* nullable */ com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
+            .DetectorSettings
         getDetectorSettingsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
                 defaultValue) {
       if (key == null) {
@@ -2697,6 +2725,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearDetectorSettings() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableDetectorSettings().getMutableMap().clear();
       return this;
     }
@@ -2727,6 +2756,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
             java.lang.String,
             com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
         getMutableDetectorSettings() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableDetectorSettings().getMutableMap();
     }
     /**
@@ -2752,8 +2782,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDetectorSettings().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2776,6 +2806,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings>
             values) {
       internalGetMutableDetectorSettings().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2843,8 +2874,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2861,8 +2892,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2884,8 +2915,8 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2910,7 +2941,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2951,11 +2982,11 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2972,11 +3003,11 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2992,17 +3023,18 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3017,14 +3049,13 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3039,7 +3070,7 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3350,7 +3381,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       }
       specificSettingsCase_ = 41;
       onChanged();
-      ;
       return containerThreatDetectionSettingsBuilder_;
     }
 
@@ -3608,7 +3638,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       }
       specificSettingsCase_ = 42;
       onChanged();
-      ;
       return eventThreatDetectionSettingsBuilder_;
     }
 
@@ -3870,7 +3899,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       }
       specificSettingsCase_ = 44;
       onChanged();
-      ;
       return securityHealthAnalyticsSettingsBuilder_;
     }
 
@@ -4124,7 +4152,6 @@ public final class ComponentSettings extends com.google.protobuf.GeneratedMessag
       }
       specificSettingsCase_ = 40;
       onChanged();
-      ;
       return webSecurityScannerSettingsBuilder_;
     }
 

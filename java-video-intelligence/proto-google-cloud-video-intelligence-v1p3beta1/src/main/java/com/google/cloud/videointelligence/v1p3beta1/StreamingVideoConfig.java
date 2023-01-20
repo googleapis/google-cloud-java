@@ -574,7 +574,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FEATURE_FIELD_NUMBER = 1;
-  private int feature_;
+  private int feature_ = 0;
   /**
    *
    *
@@ -603,9 +603,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.videointelligence.v1p3beta1.StreamingFeature result =
-        com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.valueOf(feature_);
+        com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.forNumber(feature_);
     return result == null
         ? com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.UNRECOGNIZED
         : result;
@@ -660,7 +659,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfigOrBuilder
       getStorageConfigOrBuilder() {
-    return getStorageConfig();
+    return storageConfig_ == null
+        ? com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig.getDefaultInstance()
+        : storageConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1038,6 +1039,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (shotChangeDetectionConfigBuilder_ != null) {
         shotChangeDetectionConfigBuilder_.clear();
       }
@@ -1060,11 +1062,9 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
         automlObjectTrackingConfigBuilder_.clear();
       }
       feature_ = 0;
-
-      if (storageConfigBuilder_ == null) {
-        storageConfig_ = null;
-      } else {
-        storageConfig_ = null;
+      storageConfig_ = null;
+      if (storageConfigBuilder_ != null) {
+        storageConfigBuilder_.dispose();
         storageConfigBuilder_ = null;
       }
       streamingConfigCase_ = 0;
@@ -1097,64 +1097,51 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig result =
           new com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig(this);
-      if (streamingConfigCase_ == 2) {
-        if (shotChangeDetectionConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = shotChangeDetectionConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (streamingConfigCase_ == 3) {
-        if (labelDetectionConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = labelDetectionConfigBuilder_.build();
-        }
-      }
-      if (streamingConfigCase_ == 4) {
-        if (explicitContentDetectionConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = explicitContentDetectionConfigBuilder_.build();
-        }
-      }
-      if (streamingConfigCase_ == 5) {
-        if (objectTrackingConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = objectTrackingConfigBuilder_.build();
-        }
-      }
-      if (streamingConfigCase_ == 23) {
-        if (automlActionRecognitionConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = automlActionRecognitionConfigBuilder_.build();
-        }
-      }
-      if (streamingConfigCase_ == 21) {
-        if (automlClassificationConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = automlClassificationConfigBuilder_.build();
-        }
-      }
-      if (streamingConfigCase_ == 22) {
-        if (automlObjectTrackingConfigBuilder_ == null) {
-          result.streamingConfig_ = streamingConfig_;
-        } else {
-          result.streamingConfig_ = automlObjectTrackingConfigBuilder_.build();
-        }
-      }
-      result.feature_ = feature_;
-      if (storageConfigBuilder_ == null) {
-        result.storageConfig_ = storageConfig_;
-      } else {
-        result.storageConfig_ = storageConfigBuilder_.build();
-      }
-      result.streamingConfigCase_ = streamingConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.feature_ = feature_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.storageConfig_ =
+            storageConfigBuilder_ == null ? storageConfig_ : storageConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig result) {
+      result.streamingConfigCase_ = streamingConfigCase_;
+      result.streamingConfig_ = this.streamingConfig_;
+      if (streamingConfigCase_ == 2 && shotChangeDetectionConfigBuilder_ != null) {
+        result.streamingConfig_ = shotChangeDetectionConfigBuilder_.build();
+      }
+      if (streamingConfigCase_ == 3 && labelDetectionConfigBuilder_ != null) {
+        result.streamingConfig_ = labelDetectionConfigBuilder_.build();
+      }
+      if (streamingConfigCase_ == 4 && explicitContentDetectionConfigBuilder_ != null) {
+        result.streamingConfig_ = explicitContentDetectionConfigBuilder_.build();
+      }
+      if (streamingConfigCase_ == 5 && objectTrackingConfigBuilder_ != null) {
+        result.streamingConfig_ = objectTrackingConfigBuilder_.build();
+      }
+      if (streamingConfigCase_ == 23 && automlActionRecognitionConfigBuilder_ != null) {
+        result.streamingConfig_ = automlActionRecognitionConfigBuilder_.build();
+      }
+      if (streamingConfigCase_ == 21 && automlClassificationConfigBuilder_ != null) {
+        result.streamingConfig_ = automlClassificationConfigBuilder_.build();
+      }
+      if (streamingConfigCase_ == 22 && automlObjectTrackingConfigBuilder_ != null) {
+        result.streamingConfig_ = automlObjectTrackingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1281,7 +1268,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 feature_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 8
             case 18:
@@ -1337,7 +1324,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
             case 242:
               {
                 input.readMessage(getStorageConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 242
             default:
@@ -1370,6 +1357,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1p3beta1.StreamingShotChangeDetectionConfig,
@@ -1618,7 +1607,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 2;
       onChanged();
-      ;
       return shotChangeDetectionConfigBuilder_;
     }
 
@@ -1864,7 +1852,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 3;
       onChanged();
-      ;
       return labelDetectionConfigBuilder_;
     }
 
@@ -2125,7 +2112,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 4;
       onChanged();
-      ;
       return explicitContentDetectionConfigBuilder_;
     }
 
@@ -2371,7 +2357,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 5;
       onChanged();
-      ;
       return objectTrackingConfigBuilder_;
     }
 
@@ -2629,7 +2614,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 23;
       onChanged();
-      ;
       return automlActionRecognitionConfigBuilder_;
     }
 
@@ -2882,7 +2866,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 21;
       onChanged();
-      ;
       return automlClassificationConfigBuilder_;
     }
 
@@ -3135,7 +3118,6 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       }
       streamingConfigCase_ = 22;
       onChanged();
-      ;
       return automlObjectTrackingConfigBuilder_;
     }
 
@@ -3168,8 +3150,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setFeatureValue(int value) {
-
       feature_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3186,9 +3168,8 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p3beta1.StreamingFeature getFeature() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.videointelligence.v1p3beta1.StreamingFeature result =
-          com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.valueOf(feature_);
+          com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.forNumber(feature_);
       return result == null
           ? com.google.cloud.videointelligence.v1p3beta1.StreamingFeature.UNRECOGNIZED
           : result;
@@ -3209,7 +3190,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       feature_ = value.getNumber();
       onChanged();
       return this;
@@ -3226,7 +3207,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFeature() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       feature_ = 0;
       onChanged();
       return this;
@@ -3251,7 +3232,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the storageConfig field is set.
      */
     public boolean hasStorageConfig() {
-      return storageConfigBuilder_ != null || storageConfig_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3292,11 +3273,11 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         storageConfig_ = value;
-        onChanged();
       } else {
         storageConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3314,11 +3295,11 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
             builderForValue) {
       if (storageConfigBuilder_ == null) {
         storageConfig_ = builderForValue.build();
-        onChanged();
       } else {
         storageConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3334,20 +3315,20 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeStorageConfig(
         com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig value) {
       if (storageConfigBuilder_ == null) {
-        if (storageConfig_ != null) {
-          storageConfig_ =
-              com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig.newBuilder(
-                      storageConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && storageConfig_ != null
+            && storageConfig_
+                != com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig
+                    .getDefaultInstance()) {
+          getStorageConfigBuilder().mergeFrom(value);
         } else {
           storageConfig_ = value;
         }
-        onChanged();
       } else {
         storageConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3361,14 +3342,13 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearStorageConfig() {
-      if (storageConfigBuilder_ == null) {
-        storageConfig_ = null;
-        onChanged();
-      } else {
-        storageConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      storageConfig_ = null;
+      if (storageConfigBuilder_ != null) {
+        storageConfigBuilder_.dispose();
         storageConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3383,7 +3363,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.videointelligence.v1p3beta1.StreamingStorageConfig.Builder
         getStorageConfigBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getStorageConfigFieldBuilder().getBuilder();
     }

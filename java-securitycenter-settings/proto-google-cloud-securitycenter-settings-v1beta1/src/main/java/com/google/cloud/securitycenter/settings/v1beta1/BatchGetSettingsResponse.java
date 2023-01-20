@@ -69,6 +69,8 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
   }
 
   public static final int SETTINGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Settings> settings_;
   /**
    *
@@ -344,6 +346,7 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (settingsBuilder_ == null) {
         settings_ = java.util.Collections.emptyList();
       } else {
@@ -382,7 +385,16 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
         buildPartial() {
       com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse result =
           new com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse result) {
       if (settingsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           settings_ = java.util.Collections.unmodifiableList(settings_);
@@ -392,8 +404,11 @@ public final class BatchGetSettingsResponse extends com.google.protobuf.Generate
       } else {
         result.settings_ = settingsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

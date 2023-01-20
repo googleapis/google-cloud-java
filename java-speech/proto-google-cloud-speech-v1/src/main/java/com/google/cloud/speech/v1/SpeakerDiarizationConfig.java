@@ -66,7 +66,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   }
 
   public static final int ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER = 1;
-  private boolean enableSpeakerDiarization_;
+  private boolean enableSpeakerDiarization_ = false;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   }
 
   public static final int MIN_SPEAKER_COUNT_FIELD_NUMBER = 2;
-  private int minSpeakerCount_;
+  private int minSpeakerCount_ = 0;
   /**
    *
    *
@@ -106,7 +106,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   }
 
   public static final int MAX_SPEAKER_COUNT_FIELD_NUMBER = 3;
-  private int maxSpeakerCount_;
+  private int maxSpeakerCount_ = 0;
   /**
    *
    *
@@ -126,7 +126,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   }
 
   public static final int SPEAKER_TAG_FIELD_NUMBER = 5;
-  private int speakerTag_;
+  private int speakerTag_ = 0;
   /**
    *
    *
@@ -371,14 +371,11 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableSpeakerDiarization_ = false;
-
       minSpeakerCount_ = 0;
-
       maxSpeakerCount_ = 0;
-
       speakerTag_ = 0;
-
       return this;
     }
 
@@ -406,12 +403,27 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public com.google.cloud.speech.v1.SpeakerDiarizationConfig buildPartial() {
       com.google.cloud.speech.v1.SpeakerDiarizationConfig result =
           new com.google.cloud.speech.v1.SpeakerDiarizationConfig(this);
-      result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
-      result.minSpeakerCount_ = minSpeakerCount_;
-      result.maxSpeakerCount_ = maxSpeakerCount_;
-      result.speakerTag_ = speakerTag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1.SpeakerDiarizationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minSpeakerCount_ = minSpeakerCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxSpeakerCount_ = maxSpeakerCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.speakerTag_ = speakerTag_;
+      }
     }
 
     @java.lang.Override
@@ -501,25 +513,25 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
             case 8:
               {
                 enableSpeakerDiarization_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 minSpeakerCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 maxSpeakerCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 40:
               {
                 speakerTag_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -538,6 +550,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableSpeakerDiarization_;
     /**
@@ -574,6 +588,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder setEnableSpeakerDiarization(boolean value) {
 
       enableSpeakerDiarization_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -591,7 +606,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearEnableSpeakerDiarization() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableSpeakerDiarization_ = false;
       onChanged();
       return this;
@@ -632,6 +647,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder setMinSpeakerCount(int value) {
 
       minSpeakerCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -649,7 +665,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMinSpeakerCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       minSpeakerCount_ = 0;
       onChanged();
       return this;
@@ -690,6 +706,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder setMaxSpeakerCount(int value) {
 
       maxSpeakerCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -707,7 +724,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMaxSpeakerCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       maxSpeakerCount_ = 0;
       onChanged();
       return this;
@@ -752,6 +769,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder setSpeakerTag(int value) {
 
       speakerTag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -771,7 +789,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      */
     @java.lang.Deprecated
     public Builder clearSpeakerTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       speakerTag_ = 0;
       onChanged();
       return this;

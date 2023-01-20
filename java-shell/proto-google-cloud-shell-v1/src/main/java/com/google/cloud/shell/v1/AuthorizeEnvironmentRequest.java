@@ -71,7 +71,9 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
   }
 
   public static final int ACCESS_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object accessToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accessToken_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
   }
 
   public static final int ID_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object idToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object idToken_ = "";
   /**
    *
    *
@@ -267,7 +273,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -501,16 +507,13 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       accessToken_ = "";
-
       idToken_ = "";
-
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       return this;
@@ -540,16 +543,27 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     public com.google.cloud.shell.v1.AuthorizeEnvironmentRequest buildPartial() {
       com.google.cloud.shell.v1.AuthorizeEnvironmentRequest result =
           new com.google.cloud.shell.v1.AuthorizeEnvironmentRequest(this);
-      result.name_ = name_;
-      result.accessToken_ = accessToken_;
-      result.idToken_ = idToken_;
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.AuthorizeEnvironmentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.accessToken_ = accessToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.idToken_ = idToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -600,14 +614,17 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAccessToken().isEmpty()) {
         accessToken_ = other.accessToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIdToken().isEmpty()) {
         idToken_ = other.idToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasExpireTime()) {
@@ -642,25 +659,25 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 accessToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 idToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -679,6 +696,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -747,8 +766,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,8 +785,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -790,8 +809,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -857,8 +876,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       accessToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -874,8 +893,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearAccessToken() {
-
       accessToken_ = getDefaultInstance().getAccessToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -896,8 +915,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accessToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -963,8 +982,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       idToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -980,8 +999,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearIdToken() {
-
       idToken_ = getDefaultInstance().getIdToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1002,8 +1021,8 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       idToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1027,7 +1046,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1066,11 +1085,11 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1086,11 +1105,11 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1105,17 +1124,18 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1129,14 +1149,13 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1150,7 +1169,7 @@ public final class AuthorizeEnvironmentRequest extends com.google.protobuf.Gener
      * <code>.google.protobuf.Timestamp expire_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }

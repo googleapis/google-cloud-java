@@ -69,7 +69,9 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -168,11 +170,13 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder getOverrideOrBuilder() {
-    return getOverride();
+    return override_ == null
+        ? com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()
+        : override_;
   }
 
   public static final int FORCE_FIELD_NUMBER = 3;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -192,7 +196,10 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
   }
 
   public static final int FORCE_ONLY_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> forceOnly_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>
       forceOnly_converter_ =
@@ -200,9 +207,8 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
               java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>() {
             public com.google.api.serviceusage.v1beta1.QuotaSafetyCheck convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.api.serviceusage.v1beta1.QuotaSafetyCheck result =
-                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.valueOf(from);
+                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.forNumber(from);
               return result == null
                   ? com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.UNRECOGNIZED
                   : result;
@@ -553,18 +559,16 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (overrideBuilder_ == null) {
-        override_ = null;
-      } else {
-        override_ = null;
+      override_ = null;
+      if (overrideBuilder_ != null) {
+        overrideBuilder_.dispose();
         overrideBuilder_ = null;
       }
       force_ = false;
-
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -593,21 +597,35 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
     public com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest buildPartial() {
       com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest result =
           new com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (overrideBuilder_ == null) {
-        result.override_ = override_;
-      } else {
-        result.override_ = overrideBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.force_ = force_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.forceOnly_ = forceOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.forceOnly_ = forceOnly_;
+    }
+
+    private void buildPartial0(
+        com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.override_ = overrideBuilder_ == null ? override_ : overrideBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
+      }
     }
 
     @java.lang.Override
@@ -660,6 +678,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOverride()) {
@@ -671,7 +690,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
       if (!other.forceOnly_.isEmpty()) {
         if (forceOnly_.isEmpty()) {
           forceOnly_ = other.forceOnly_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureForceOnlyIsMutable();
           forceOnly_.addAll(other.forceOnly_);
@@ -707,19 +726,19 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOverrideFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
@@ -830,8 +849,8 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +869,8 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -875,8 +894,8 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,7 +918,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      * @return Whether the override field is set.
      */
     public boolean hasOverride() {
-      return overrideBuilder_ != null || override_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -936,11 +955,11 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         override_ = value;
-        onChanged();
       } else {
         overrideBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -956,11 +975,11 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
         com.google.api.serviceusage.v1beta1.QuotaOverride.Builder builderForValue) {
       if (overrideBuilder_ == null) {
         override_ = builderForValue.build();
-        onChanged();
       } else {
         overrideBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -974,19 +993,19 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      */
     public Builder mergeOverride(com.google.api.serviceusage.v1beta1.QuotaOverride value) {
       if (overrideBuilder_ == null) {
-        if (override_ != null) {
-          override_ =
-              com.google.api.serviceusage.v1beta1.QuotaOverride.newBuilder(override_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && override_ != null
+            && override_
+                != com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()) {
+          getOverrideBuilder().mergeFrom(value);
         } else {
           override_ = value;
         }
-        onChanged();
       } else {
         overrideBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -999,14 +1018,13 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      * <code>.google.api.serviceusage.v1beta1.QuotaOverride override = 2;</code>
      */
     public Builder clearOverride() {
-      if (overrideBuilder_ == null) {
-        override_ = null;
-        onChanged();
-      } else {
-        override_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      override_ = null;
+      if (overrideBuilder_ != null) {
+        overrideBuilder_.dispose();
         overrideBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1019,7 +1037,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      * <code>.google.api.serviceusage.v1beta1.QuotaOverride override = 2;</code>
      */
     public com.google.api.serviceusage.v1beta1.QuotaOverride.Builder getOverrideBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOverrideFieldBuilder().getBuilder();
     }
@@ -1102,6 +1120,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,7 +1138,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       force_ = false;
       onChanged();
       return this;
@@ -1128,9 +1147,9 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
     private java.util.List<java.lang.Integer> forceOnly_ = java.util.Collections.emptyList();
 
     private void ensureForceOnlyIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         forceOnly_ = new java.util.ArrayList<java.lang.Integer>(forceOnly_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1277,7 +1296,7 @@ public final class CreateConsumerOverrideRequest extends com.google.protobuf.Gen
      */
     public Builder clearForceOnly() {
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

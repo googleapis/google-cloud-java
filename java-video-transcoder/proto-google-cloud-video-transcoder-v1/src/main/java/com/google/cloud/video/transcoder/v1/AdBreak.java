@@ -113,7 +113,9 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartTimeOffsetOrBuilder() {
-    return getStartTimeOffset();
+    return startTimeOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : startTimeOffset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeOffsetBuilder_ == null) {
-        startTimeOffset_ = null;
-      } else {
-        startTimeOffset_ = null;
+      bitField0_ = 0;
+      startTimeOffset_ = null;
+      if (startTimeOffsetBuilder_ != null) {
+        startTimeOffsetBuilder_.dispose();
         startTimeOffsetBuilder_ = null;
       }
       return this;
@@ -351,13 +353,19 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.AdBreak buildPartial() {
       com.google.cloud.video.transcoder.v1.AdBreak result =
           new com.google.cloud.video.transcoder.v1.AdBreak(this);
-      if (startTimeOffsetBuilder_ == null) {
-        result.startTimeOffset_ = startTimeOffset_;
-      } else {
-        result.startTimeOffset_ = startTimeOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.AdBreak result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTimeOffset_ =
+            startTimeOffsetBuilder_ == null ? startTimeOffset_ : startTimeOffsetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +445,7 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -456,6 +464,8 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration startTimeOffset_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -476,7 +486,7 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTimeOffset field is set.
      */
     public boolean hasStartTimeOffset() {
-      return startTimeOffsetBuilder_ != null || startTimeOffset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -515,11 +525,11 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTimeOffset_ = value;
-        onChanged();
       } else {
         startTimeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -535,11 +545,11 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (startTimeOffsetBuilder_ == null) {
         startTimeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -554,19 +564,18 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTimeOffset(com.google.protobuf.Duration value) {
       if (startTimeOffsetBuilder_ == null) {
-        if (startTimeOffset_ != null) {
-          startTimeOffset_ =
-              com.google.protobuf.Duration.newBuilder(startTimeOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTimeOffset_ != null
+            && startTimeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getStartTimeOffsetBuilder().mergeFrom(value);
         } else {
           startTimeOffset_ = value;
         }
-        onChanged();
       } else {
         startTimeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -580,14 +589,13 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_time_offset = 1;</code>
      */
     public Builder clearStartTimeOffset() {
-      if (startTimeOffsetBuilder_ == null) {
-        startTimeOffset_ = null;
-        onChanged();
-      } else {
-        startTimeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTimeOffset_ = null;
+      if (startTimeOffsetBuilder_ != null) {
+        startTimeOffsetBuilder_.dispose();
         startTimeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -601,7 +609,7 @@ public final class AdBreak extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_time_offset = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getStartTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeOffsetFieldBuilder().getBuilder();
     }

@@ -192,7 +192,9 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -241,7 +243,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BOOST_FIELD_NUMBER = 2;
-    private float boost_;
+    private float boost_ = 0F;
     /**
      *
      *
@@ -497,10 +499,9 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = "";
-
         boost_ = 0F;
-
         return this;
       }
 
@@ -528,10 +529,21 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase buildPartial() {
         com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase result =
             new com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase(this);
-        result.value_ = value_;
-        result.boost_ = boost_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.boost_ = boost_;
+        }
       }
 
       @java.lang.Override
@@ -584,6 +596,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getBoost() != 0F) {
@@ -618,13 +631,13 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 21:
                 {
                   boost_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               default:
@@ -643,6 +656,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object value_ = "";
       /**
@@ -705,8 +720,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -722,8 +737,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -744,8 +759,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -797,6 +812,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       public Builder setBoost(float value) {
 
         boost_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -820,7 +836,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBoost() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         boost_ = 0F;
         onChanged();
         return this;
@@ -891,7 +907,9 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -940,6 +958,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PHRASES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase> phrases_;
   /**
    *
@@ -1010,7 +1030,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOST_FIELD_NUMBER = 4;
-  private float boost_;
+  private float boost_ = 0F;
   /**
    *
    *
@@ -1254,17 +1274,16 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (phrasesBuilder_ == null) {
         phrases_ = java.util.Collections.emptyList();
       } else {
         phrases_ = null;
         phrasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       boost_ = 0F;
-
       return this;
     }
 
@@ -1292,20 +1311,34 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.speech.v1p1beta1.PhraseSet buildPartial() {
       com.google.cloud.speech.v1p1beta1.PhraseSet result =
           new com.google.cloud.speech.v1p1beta1.PhraseSet(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.speech.v1p1beta1.PhraseSet result) {
       if (phrasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           phrases_ = java.util.Collections.unmodifiableList(phrases_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.phrases_ = phrases_;
       } else {
         result.phrases_ = phrasesBuilder_.build();
       }
-      result.boost_ = boost_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.PhraseSet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.boost_ = boost_;
+      }
     }
 
     @java.lang.Override
@@ -1355,13 +1388,14 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.speech.v1p1beta1.PhraseSet.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (phrasesBuilder_ == null) {
         if (!other.phrases_.isEmpty()) {
           if (phrases_.isEmpty()) {
             phrases_ = other.phrases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePhrasesIsMutable();
             phrases_.addAll(other.phrases_);
@@ -1374,7 +1408,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             phrasesBuilder_.dispose();
             phrasesBuilder_ = null;
             phrases_ = other.phrases_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             phrasesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPhrasesFieldBuilder()
@@ -1416,7 +1450,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1436,7 +1470,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
             case 37:
               {
                 boost_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 37
             default:
@@ -1519,8 +1553,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1536,8 +1570,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1558,8 +1592,8 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1568,10 +1602,10 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePhrasesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         phrases_ =
             new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase>(phrases_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1787,7 +1821,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPhrases() {
       if (phrasesBuilder_ == null) {
         phrases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         phrasesBuilder_.clear();
@@ -1911,7 +1945,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase,
                 com.google.cloud.speech.v1p1beta1.PhraseSet.Phrase.Builder,
                 com.google.cloud.speech.v1p1beta1.PhraseSet.PhraseOrBuilder>(
-                phrases_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                phrases_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         phrases_ = null;
       }
       return phrasesBuilder_;
@@ -1964,6 +1998,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
     public Builder setBoost(float value) {
 
       boost_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1987,7 +2022,7 @@ public final class PhraseSet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBoost() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       boost_ = 0F;
       onChanged();
       return this;

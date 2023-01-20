@@ -116,10 +116,14 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastEstablishTimeOrBuilder() {
-    return getLastEstablishTime();
+    return lastEstablishTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastEstablishTime_;
   }
 
   public static final int VIDEO_STREAMS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.VideoStreamProperty> videoStreams_;
   /**
    *
@@ -191,6 +195,8 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
   }
 
   public static final int AUDIO_STREAMS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.AudioStreamProperty> audioStreams_;
   /**
    *
@@ -486,10 +492,10 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lastEstablishTimeBuilder_ == null) {
-        lastEstablishTime_ = null;
-      } else {
-        lastEstablishTime_ = null;
+      bitField0_ = 0;
+      lastEstablishTime_ = null;
+      if (lastEstablishTimeBuilder_ != null) {
+        lastEstablishTimeBuilder_.dispose();
         lastEstablishTimeBuilder_ = null;
       }
       if (videoStreamsBuilder_ == null) {
@@ -498,14 +504,14 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         videoStreams_ = null;
         videoStreamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (audioStreamsBuilder_ == null) {
         audioStreams_ = java.util.Collections.emptyList();
       } else {
         audioStreams_ = null;
         audioStreamsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -533,32 +539,44 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     public com.google.cloud.video.livestream.v1.InputStreamProperty buildPartial() {
       com.google.cloud.video.livestream.v1.InputStreamProperty result =
           new com.google.cloud.video.livestream.v1.InputStreamProperty(this);
-      int from_bitField0_ = bitField0_;
-      if (lastEstablishTimeBuilder_ == null) {
-        result.lastEstablishTime_ = lastEstablishTime_;
-      } else {
-        result.lastEstablishTime_ = lastEstablishTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.livestream.v1.InputStreamProperty result) {
       if (videoStreamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           videoStreams_ = java.util.Collections.unmodifiableList(videoStreams_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.videoStreams_ = videoStreams_;
       } else {
         result.videoStreams_ = videoStreamsBuilder_.build();
       }
       if (audioStreamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           audioStreams_ = java.util.Collections.unmodifiableList(audioStreams_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.audioStreams_ = audioStreams_;
       } else {
         result.audioStreams_ = audioStreamsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.InputStreamProperty result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lastEstablishTime_ =
+            lastEstablishTimeBuilder_ == null
+                ? lastEstablishTime_
+                : lastEstablishTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -614,7 +632,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         if (!other.videoStreams_.isEmpty()) {
           if (videoStreams_.isEmpty()) {
             videoStreams_ = other.videoStreams_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureVideoStreamsIsMutable();
             videoStreams_.addAll(other.videoStreams_);
@@ -627,7 +645,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
             videoStreamsBuilder_.dispose();
             videoStreamsBuilder_ = null;
             videoStreams_ = other.videoStreams_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             videoStreamsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVideoStreamsFieldBuilder()
@@ -641,7 +659,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         if (!other.audioStreams_.isEmpty()) {
           if (audioStreams_.isEmpty()) {
             audioStreams_ = other.audioStreams_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAudioStreamsIsMutable();
             audioStreams_.addAll(other.audioStreams_);
@@ -654,7 +672,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
             audioStreamsBuilder_.dispose();
             audioStreamsBuilder_ = null;
             audioStreams_ = other.audioStreams_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             audioStreamsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAudioStreamsFieldBuilder()
@@ -694,7 +712,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getLastEstablishTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -763,7 +781,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
      * @return Whether the lastEstablishTime field is set.
      */
     public boolean hasLastEstablishTime() {
-      return lastEstablishTimeBuilder_ != null || lastEstablishTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -802,11 +820,11 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         lastEstablishTime_ = value;
-        onChanged();
       } else {
         lastEstablishTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -822,11 +840,11 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     public Builder setLastEstablishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastEstablishTimeBuilder_ == null) {
         lastEstablishTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastEstablishTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -841,19 +859,18 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeLastEstablishTime(com.google.protobuf.Timestamp value) {
       if (lastEstablishTimeBuilder_ == null) {
-        if (lastEstablishTime_ != null) {
-          lastEstablishTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastEstablishTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && lastEstablishTime_ != null
+            && lastEstablishTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastEstablishTimeBuilder().mergeFrom(value);
         } else {
           lastEstablishTime_ = value;
         }
-        onChanged();
       } else {
         lastEstablishTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -867,14 +884,13 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
      */
     public Builder clearLastEstablishTime() {
-      if (lastEstablishTimeBuilder_ == null) {
-        lastEstablishTime_ = null;
-        onChanged();
-      } else {
-        lastEstablishTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      lastEstablishTime_ = null;
+      if (lastEstablishTimeBuilder_ != null) {
+        lastEstablishTimeBuilder_.dispose();
         lastEstablishTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +904,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastEstablishTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLastEstablishTimeFieldBuilder().getBuilder();
     }
@@ -942,11 +958,11 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureVideoStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         videoStreams_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.VideoStreamProperty>(
                 videoStreams_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1179,7 +1195,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     public Builder clearVideoStreams() {
       if (videoStreamsBuilder_ == null) {
         videoStreams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         videoStreamsBuilder_.clear();
@@ -1315,7 +1331,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
                 com.google.cloud.video.livestream.v1.VideoStreamProperty,
                 com.google.cloud.video.livestream.v1.VideoStreamProperty.Builder,
                 com.google.cloud.video.livestream.v1.VideoStreamPropertyOrBuilder>(
-                videoStreams_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                videoStreams_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         videoStreams_ = null;
       }
       return videoStreamsBuilder_;
@@ -1325,11 +1341,11 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAudioStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         audioStreams_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.AudioStreamProperty>(
                 audioStreams_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1562,7 +1578,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
     public Builder clearAudioStreams() {
       if (audioStreamsBuilder_ == null) {
         audioStreams_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         audioStreamsBuilder_.clear();
@@ -1698,7 +1714,7 @@ public final class InputStreamProperty extends com.google.protobuf.GeneratedMess
                 com.google.cloud.video.livestream.v1.AudioStreamProperty,
                 com.google.cloud.video.livestream.v1.AudioStreamProperty.Builder,
                 com.google.cloud.video.livestream.v1.AudioStreamPropertyOrBuilder>(
-                audioStreams_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                audioStreams_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         audioStreams_ = null;
       }
       return audioStreamsBuilder_;

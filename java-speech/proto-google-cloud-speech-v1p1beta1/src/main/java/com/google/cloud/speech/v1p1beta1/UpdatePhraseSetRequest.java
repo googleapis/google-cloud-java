@@ -140,7 +140,9 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder getPhraseSetOrBuilder() {
-    return getPhraseSet();
+    return phraseSet_ == null
+        ? com.google.cloud.speech.v1p1beta1.PhraseSet.getDefaultInstance()
+        : phraseSet_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -186,7 +188,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -406,16 +408,15 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (phraseSetBuilder_ == null) {
-        phraseSet_ = null;
-      } else {
-        phraseSet_ = null;
+      bitField0_ = 0;
+      phraseSet_ = null;
+      if (phraseSetBuilder_ != null) {
+        phraseSetBuilder_.dispose();
         phraseSetBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -445,18 +446,21 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest buildPartial() {
       com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest result =
           new com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest(this);
-      if (phraseSetBuilder_ == null) {
-        result.phraseSet_ = phraseSet_;
-      } else {
-        result.phraseSet_ = phraseSetBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.phraseSet_ = phraseSetBuilder_ == null ? phraseSet_ : phraseSetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,13 +544,13 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getPhraseSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -565,6 +569,8 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.speech.v1p1beta1.PhraseSet phraseSet_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -594,7 +600,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * @return Whether the phraseSet field is set.
      */
     public boolean hasPhraseSet() {
-      return phraseSetBuilder_ != null || phraseSet_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -651,11 +657,11 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         phraseSet_ = value;
-        onChanged();
       } else {
         phraseSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -681,11 +687,11 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.speech.v1p1beta1.PhraseSet.Builder builderForValue) {
       if (phraseSetBuilder_ == null) {
         phraseSet_ = builderForValue.build();
-        onChanged();
       } else {
         phraseSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -709,19 +715,18 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergePhraseSet(com.google.cloud.speech.v1p1beta1.PhraseSet value) {
       if (phraseSetBuilder_ == null) {
-        if (phraseSet_ != null) {
-          phraseSet_ =
-              com.google.cloud.speech.v1p1beta1.PhraseSet.newBuilder(phraseSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && phraseSet_ != null
+            && phraseSet_ != com.google.cloud.speech.v1p1beta1.PhraseSet.getDefaultInstance()) {
+          getPhraseSetBuilder().mergeFrom(value);
         } else {
           phraseSet_ = value;
         }
-        onChanged();
       } else {
         phraseSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,14 +749,13 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearPhraseSet() {
-      if (phraseSetBuilder_ == null) {
-        phraseSet_ = null;
-        onChanged();
-      } else {
-        phraseSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      phraseSet_ = null;
+      if (phraseSetBuilder_ != null) {
+        phraseSetBuilder_.dispose();
         phraseSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -774,7 +778,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet.Builder getPhraseSetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPhraseSetFieldBuilder().getBuilder();
     }
@@ -860,7 +864,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -897,11 +901,11 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -916,11 +920,11 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -934,17 +938,18 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -957,14 +962,13 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -977,7 +981,7 @@ public final class UpdatePhraseSetRequest extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

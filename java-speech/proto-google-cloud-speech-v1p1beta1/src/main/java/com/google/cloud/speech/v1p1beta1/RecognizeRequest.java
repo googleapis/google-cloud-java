@@ -119,7 +119,9 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.RecognitionConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.speech.v1p1beta1.RecognitionConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int AUDIO_FIELD_NUMBER = 2;
@@ -173,7 +175,9 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.RecognitionAudioOrBuilder getAudioOrBuilder() {
-    return getAudio();
+    return audio_ == null
+        ? com.google.cloud.speech.v1p1beta1.RecognitionAudio.getDefaultInstance()
+        : audio_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,16 +396,15 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      bitField0_ = 0;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-      if (audioBuilder_ == null) {
-        audio_ = null;
-      } else {
-        audio_ = null;
+      audio_ = null;
+      if (audioBuilder_ != null) {
+        audioBuilder_.dispose();
         audioBuilder_ = null;
       }
       return this;
@@ -431,18 +434,21 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.speech.v1p1beta1.RecognizeRequest buildPartial() {
       com.google.cloud.speech.v1p1beta1.RecognizeRequest result =
           new com.google.cloud.speech.v1p1beta1.RecognizeRequest(this);
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
-      }
-      if (audioBuilder_ == null) {
-        result.audio_ = audio_;
-      } else {
-        result.audio_ = audioBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.RecognizeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.audio_ = audioBuilder_ == null ? audio_ : audioBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -526,13 +532,13 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAudioFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -551,6 +557,8 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.speech.v1p1beta1.RecognitionConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -573,7 +581,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -616,11 +624,11 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -639,11 +647,11 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -660,19 +668,19 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConfig(com.google.cloud.speech.v1p1beta1.RecognitionConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.speech.v1p1beta1.RecognitionConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && config_ != null
+            && config_
+                != com.google.cloud.speech.v1p1beta1.RecognitionConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -688,14 +696,13 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -711,7 +718,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -785,7 +792,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the audio field is set.
      */
     public boolean hasAudio() {
-      return audioBuilder_ != null || audio_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -826,11 +833,11 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         audio_ = value;
-        onChanged();
       } else {
         audioBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,11 +855,11 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.speech.v1p1beta1.RecognitionAudio.Builder builderForValue) {
       if (audioBuilder_ == null) {
         audio_ = builderForValue.build();
-        onChanged();
       } else {
         audioBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -868,19 +875,18 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAudio(com.google.cloud.speech.v1p1beta1.RecognitionAudio value) {
       if (audioBuilder_ == null) {
-        if (audio_ != null) {
-          audio_ =
-              com.google.cloud.speech.v1p1beta1.RecognitionAudio.newBuilder(audio_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && audio_ != null
+            && audio_ != com.google.cloud.speech.v1p1beta1.RecognitionAudio.getDefaultInstance()) {
+          getAudioBuilder().mergeFrom(value);
         } else {
           audio_ = value;
         }
-        onChanged();
       } else {
         audioBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -895,14 +901,13 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAudio() {
-      if (audioBuilder_ == null) {
-        audio_ = null;
-        onChanged();
-      } else {
-        audio_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      audio_ = null;
+      if (audioBuilder_ != null) {
+        audioBuilder_.dispose();
         audioBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -917,7 +922,7 @@ public final class RecognizeRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.speech.v1p1beta1.RecognitionAudio.Builder getAudioBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAudioFieldBuilder().getBuilder();
     }

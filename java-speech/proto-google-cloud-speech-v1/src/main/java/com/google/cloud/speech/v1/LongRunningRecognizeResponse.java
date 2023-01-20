@@ -72,6 +72,8 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
   }
 
   public static final int RESULTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1.SpeechRecognitionResult> results_;
   /**
    *
@@ -191,7 +193,9 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder() {
-    return getTotalBilledTime();
+    return totalBilledTime_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalBilledTime_;
   }
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 6;
@@ -239,7 +243,9 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.speech.v1.TranscriptOutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.speech.v1.TranscriptOutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   public static final int OUTPUT_ERROR_FIELD_NUMBER = 7;
@@ -285,7 +291,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getOutputErrorOrBuilder() {
-    return getOutputError();
+    return outputError_ == null ? com.google.rpc.Status.getDefaultInstance() : outputError_;
   }
 
   public static final int SPEECH_ADAPTATION_INFO_FIELD_NUMBER = 8;
@@ -334,11 +340,13 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.speech.v1.SpeechAdaptationInfoOrBuilder
       getSpeechAdaptationInfoOrBuilder() {
-    return getSpeechAdaptationInfo();
+    return speechAdaptationInfo_ == null
+        ? com.google.cloud.speech.v1.SpeechAdaptationInfo.getDefaultInstance()
+        : speechAdaptationInfo_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 9;
-  private long requestId_;
+  private long requestId_ = 0L;
   /**
    *
    *
@@ -626,6 +634,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -633,32 +642,27 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         resultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (totalBilledTimeBuilder_ == null) {
-        totalBilledTime_ = null;
-      } else {
-        totalBilledTime_ = null;
+      totalBilledTime_ = null;
+      if (totalBilledTimeBuilder_ != null) {
+        totalBilledTimeBuilder_.dispose();
         totalBilledTimeBuilder_ = null;
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-      if (outputErrorBuilder_ == null) {
-        outputError_ = null;
-      } else {
-        outputError_ = null;
+      outputError_ = null;
+      if (outputErrorBuilder_ != null) {
+        outputErrorBuilder_.dispose();
         outputErrorBuilder_ = null;
       }
-      if (speechAdaptationInfoBuilder_ == null) {
-        speechAdaptationInfo_ = null;
-      } else {
-        speechAdaptationInfo_ = null;
+      speechAdaptationInfo_ = null;
+      if (speechAdaptationInfoBuilder_ != null) {
+        speechAdaptationInfoBuilder_.dispose();
         speechAdaptationInfoBuilder_ = null;
       }
       requestId_ = 0L;
-
       return this;
     }
 
@@ -686,7 +690,16 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     public com.google.cloud.speech.v1.LongRunningRecognizeResponse buildPartial() {
       com.google.cloud.speech.v1.LongRunningRecognizeResponse result =
           new com.google.cloud.speech.v1.LongRunningRecognizeResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v1.LongRunningRecognizeResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -696,29 +709,31 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      if (totalBilledTimeBuilder_ == null) {
-        result.totalBilledTime_ = totalBilledTime_;
-      } else {
-        result.totalBilledTime_ = totalBilledTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1.LongRunningRecognizeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalBilledTime_ =
+            totalBilledTimeBuilder_ == null ? totalBilledTime_ : totalBilledTimeBuilder_.build();
       }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
       }
-      if (outputErrorBuilder_ == null) {
-        result.outputError_ = outputError_;
-      } else {
-        result.outputError_ = outputErrorBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputError_ =
+            outputErrorBuilder_ == null ? outputError_ : outputErrorBuilder_.build();
       }
-      if (speechAdaptationInfoBuilder_ == null) {
-        result.speechAdaptationInfo_ = speechAdaptationInfo_;
-      } else {
-        result.speechAdaptationInfo_ = speechAdaptationInfoBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.speechAdaptationInfo_ =
+            speechAdaptationInfoBuilder_ == null
+                ? speechAdaptationInfo_
+                : speechAdaptationInfoBuilder_.build();
       }
-      result.requestId_ = requestId_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -852,32 +867,32 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
             case 26:
               {
                 input.readMessage(getTotalBilledTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 50:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getOutputErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getSpeechAdaptationInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 72:
               {
                 requestId_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 72
             default:
@@ -1288,7 +1303,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * @return Whether the totalBilledTime field is set.
      */
     public boolean hasTotalBilledTime() {
-      return totalBilledTimeBuilder_ != null || totalBilledTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1325,11 +1340,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         totalBilledTime_ = value;
-        onChanged();
       } else {
         totalBilledTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1344,11 +1359,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     public Builder setTotalBilledTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (totalBilledTimeBuilder_ == null) {
         totalBilledTime_ = builderForValue.build();
-        onChanged();
       } else {
         totalBilledTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1362,19 +1377,18 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      */
     public Builder mergeTotalBilledTime(com.google.protobuf.Duration value) {
       if (totalBilledTimeBuilder_ == null) {
-        if (totalBilledTime_ != null) {
-          totalBilledTime_ =
-              com.google.protobuf.Duration.newBuilder(totalBilledTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && totalBilledTime_ != null
+            && totalBilledTime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTotalBilledTimeBuilder().mergeFrom(value);
         } else {
           totalBilledTime_ = value;
         }
-        onChanged();
       } else {
         totalBilledTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1387,14 +1401,13 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.protobuf.Duration total_billed_time = 3;</code>
      */
     public Builder clearTotalBilledTime() {
-      if (totalBilledTimeBuilder_ == null) {
-        totalBilledTime_ = null;
-        onChanged();
-      } else {
-        totalBilledTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      totalBilledTime_ = null;
+      if (totalBilledTimeBuilder_ != null) {
+        totalBilledTimeBuilder_.dispose();
         totalBilledTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1407,7 +1420,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.protobuf.Duration total_billed_time = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getTotalBilledTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTotalBilledTimeFieldBuilder().getBuilder();
     }
@@ -1473,7 +1486,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1510,11 +1523,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1530,11 +1543,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         com.google.cloud.speech.v1.TranscriptOutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1548,19 +1561,19 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      */
     public Builder mergeOutputConfig(com.google.cloud.speech.v1.TranscriptOutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.speech.v1.TranscriptOutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.speech.v1.TranscriptOutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1573,14 +1586,13 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1593,7 +1605,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
      */
     public com.google.cloud.speech.v1.TranscriptOutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
@@ -1657,7 +1669,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * @return Whether the outputError field is set.
      */
     public boolean hasOutputError() {
-      return outputErrorBuilder_ != null || outputError_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1692,11 +1704,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         outputError_ = value;
-        onChanged();
       } else {
         outputErrorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1711,11 +1723,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     public Builder setOutputError(com.google.rpc.Status.Builder builderForValue) {
       if (outputErrorBuilder_ == null) {
         outputError_ = builderForValue.build();
-        onChanged();
       } else {
         outputErrorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1729,17 +1741,18 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      */
     public Builder mergeOutputError(com.google.rpc.Status value) {
       if (outputErrorBuilder_ == null) {
-        if (outputError_ != null) {
-          outputError_ =
-              com.google.rpc.Status.newBuilder(outputError_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && outputError_ != null
+            && outputError_ != com.google.rpc.Status.getDefaultInstance()) {
+          getOutputErrorBuilder().mergeFrom(value);
         } else {
           outputError_ = value;
         }
-        onChanged();
       } else {
         outputErrorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1752,14 +1765,13 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.rpc.Status output_error = 7;</code>
      */
     public Builder clearOutputError() {
-      if (outputErrorBuilder_ == null) {
-        outputError_ = null;
-        onChanged();
-      } else {
-        outputError_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      outputError_ = null;
+      if (outputErrorBuilder_ != null) {
+        outputErrorBuilder_.dispose();
         outputErrorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1772,7 +1784,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.rpc.Status output_error = 7;</code>
      */
     public com.google.rpc.Status.Builder getOutputErrorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOutputErrorFieldBuilder().getBuilder();
     }
@@ -1834,7 +1846,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * @return Whether the speechAdaptationInfo field is set.
      */
     public boolean hasSpeechAdaptationInfo() {
-      return speechAdaptationInfoBuilder_ != null || speechAdaptationInfo_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1871,11 +1883,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         speechAdaptationInfo_ = value;
-        onChanged();
       } else {
         speechAdaptationInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1891,11 +1903,11 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
         com.google.cloud.speech.v1.SpeechAdaptationInfo.Builder builderForValue) {
       if (speechAdaptationInfoBuilder_ == null) {
         speechAdaptationInfo_ = builderForValue.build();
-        onChanged();
       } else {
         speechAdaptationInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1910,19 +1922,19 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     public Builder mergeSpeechAdaptationInfo(
         com.google.cloud.speech.v1.SpeechAdaptationInfo value) {
       if (speechAdaptationInfoBuilder_ == null) {
-        if (speechAdaptationInfo_ != null) {
-          speechAdaptationInfo_ =
-              com.google.cloud.speech.v1.SpeechAdaptationInfo.newBuilder(speechAdaptationInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && speechAdaptationInfo_ != null
+            && speechAdaptationInfo_
+                != com.google.cloud.speech.v1.SpeechAdaptationInfo.getDefaultInstance()) {
+          getSpeechAdaptationInfoBuilder().mergeFrom(value);
         } else {
           speechAdaptationInfo_ = value;
         }
-        onChanged();
       } else {
         speechAdaptationInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1935,14 +1947,13 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * <code>.google.cloud.speech.v1.SpeechAdaptationInfo speech_adaptation_info = 8;</code>
      */
     public Builder clearSpeechAdaptationInfo() {
-      if (speechAdaptationInfoBuilder_ == null) {
-        speechAdaptationInfo_ = null;
-        onChanged();
-      } else {
-        speechAdaptationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      speechAdaptationInfo_ = null;
+      if (speechAdaptationInfoBuilder_ != null) {
+        speechAdaptationInfoBuilder_.dispose();
         speechAdaptationInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1956,7 +1967,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      */
     public com.google.cloud.speech.v1.SpeechAdaptationInfo.Builder
         getSpeechAdaptationInfoBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSpeechAdaptationInfoFieldBuilder().getBuilder();
     }
@@ -2038,6 +2049,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
     public Builder setRequestId(long value) {
 
       requestId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2054,7 +2066,7 @@ public final class LongRunningRecognizeResponse extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       requestId_ = 0L;
       onChanged();
       return this;

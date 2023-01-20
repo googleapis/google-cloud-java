@@ -73,7 +73,9 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METRIC_FIELD_NUMBER = 4;
-  private volatile java.lang.Object metric_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    *
    *
@@ -183,7 +187,9 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -236,6 +242,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CONSUMER_QUOTA_LIMITS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
       consumerQuotaLimits_;
   /**
@@ -313,6 +321,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DESCENDANT_CONSUMER_QUOTA_LIMITS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
       descendantConsumerQuotaLimits_;
   /**
@@ -426,7 +436,9 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   }
 
   public static final int UNIT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object unit_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object unit_ = "";
   /**
    *
    *
@@ -725,28 +737,25 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       metric_ = "";
-
       displayName_ = "";
-
       if (consumerQuotaLimitsBuilder_ == null) {
         consumerQuotaLimits_ = java.util.Collections.emptyList();
       } else {
         consumerQuotaLimits_ = null;
         consumerQuotaLimitsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (descendantConsumerQuotaLimitsBuilder_ == null) {
         descendantConsumerQuotaLimits_ = java.util.Collections.emptyList();
       } else {
         descendantConsumerQuotaLimits_ = null;
         descendantConsumerQuotaLimitsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       unit_ = "";
-
       return this;
     }
 
@@ -774,32 +783,51 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     public com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric buildPartial() {
       com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric result =
           new com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.metric_ = metric_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric result) {
       if (consumerQuotaLimitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           consumerQuotaLimits_ = java.util.Collections.unmodifiableList(consumerQuotaLimits_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.consumerQuotaLimits_ = consumerQuotaLimits_;
       } else {
         result.consumerQuotaLimits_ = consumerQuotaLimitsBuilder_.build();
       }
       if (descendantConsumerQuotaLimitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           descendantConsumerQuotaLimits_ =
               java.util.Collections.unmodifiableList(descendantConsumerQuotaLimits_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.descendantConsumerQuotaLimits_ = descendantConsumerQuotaLimits_;
       } else {
         result.descendantConsumerQuotaLimits_ = descendantConsumerQuotaLimitsBuilder_.build();
       }
-      result.unit_ = unit_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metric_ = metric_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.unit_ = unit_;
+      }
     }
 
     @java.lang.Override
@@ -850,21 +878,24 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMetric().isEmpty()) {
         metric_ = other.metric_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (consumerQuotaLimitsBuilder_ == null) {
         if (!other.consumerQuotaLimits_.isEmpty()) {
           if (consumerQuotaLimits_.isEmpty()) {
             consumerQuotaLimits_ = other.consumerQuotaLimits_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureConsumerQuotaLimitsIsMutable();
             consumerQuotaLimits_.addAll(other.consumerQuotaLimits_);
@@ -877,7 +908,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
             consumerQuotaLimitsBuilder_.dispose();
             consumerQuotaLimitsBuilder_ = null;
             consumerQuotaLimits_ = other.consumerQuotaLimits_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             consumerQuotaLimitsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConsumerQuotaLimitsFieldBuilder()
@@ -891,7 +922,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         if (!other.descendantConsumerQuotaLimits_.isEmpty()) {
           if (descendantConsumerQuotaLimits_.isEmpty()) {
             descendantConsumerQuotaLimits_ = other.descendantConsumerQuotaLimits_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureDescendantConsumerQuotaLimitsIsMutable();
             descendantConsumerQuotaLimits_.addAll(other.descendantConsumerQuotaLimits_);
@@ -904,7 +935,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
             descendantConsumerQuotaLimitsBuilder_.dispose();
             descendantConsumerQuotaLimitsBuilder_ = null;
             descendantConsumerQuotaLimits_ = other.descendantConsumerQuotaLimits_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             descendantConsumerQuotaLimitsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDescendantConsumerQuotaLimitsFieldBuilder()
@@ -917,6 +948,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       if (!other.getUnit().isEmpty()) {
         unit_ = other.unit_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -948,13 +980,13 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -974,13 +1006,13 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 metric_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 unit_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
@@ -1089,8 +1121,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1110,8 +1142,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1136,8 +1168,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1209,8 +1241,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       metric_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1228,8 +1260,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1252,8 +1284,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metric_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1325,8 +1357,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1344,8 +1376,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1368,8 +1400,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1378,11 +1410,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         consumerQuotaLimits_ = java.util.Collections.emptyList();
 
     private void ensureConsumerQuotaLimitsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         consumerQuotaLimits_ =
             new java.util.ArrayList<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>(
                 consumerQuotaLimits_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1615,7 +1647,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     public Builder clearConsumerQuotaLimits() {
       if (consumerQuotaLimitsBuilder_ == null) {
         consumerQuotaLimits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         consumerQuotaLimitsBuilder_.clear();
@@ -1750,7 +1782,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
                 com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.Builder,
                 com.google.api.serviceusage.v1beta1.ConsumerQuotaLimitOrBuilder>(
                 consumerQuotaLimits_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         consumerQuotaLimits_ = null;
@@ -1762,11 +1794,11 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         descendantConsumerQuotaLimits_ = java.util.Collections.emptyList();
 
     private void ensureDescendantConsumerQuotaLimitsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         descendantConsumerQuotaLimits_ =
             new java.util.ArrayList<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>(
                 descendantConsumerQuotaLimits_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2077,7 +2109,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     public Builder clearDescendantConsumerQuotaLimits() {
       if (descendantConsumerQuotaLimitsBuilder_ == null) {
         descendantConsumerQuotaLimits_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         descendantConsumerQuotaLimitsBuilder_.clear();
@@ -2261,7 +2293,7 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
                 com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.Builder,
                 com.google.api.serviceusage.v1beta1.ConsumerQuotaLimitOrBuilder>(
                 descendantConsumerQuotaLimits_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         descendantConsumerQuotaLimits_ = null;
@@ -2330,8 +2362,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       unit_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2347,8 +2379,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUnit() {
-
       unit_ = getDefaultInstance().getUnit();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2369,8 +2401,8 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       unit_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

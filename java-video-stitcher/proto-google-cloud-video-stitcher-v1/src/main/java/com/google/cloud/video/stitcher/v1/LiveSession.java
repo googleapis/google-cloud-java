@@ -247,7 +247,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -298,7 +300,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PLAY_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object playUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object playUri_ = "";
   /**
    *
    *
@@ -347,7 +351,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceUri_ = "";
   /**
    *
    *
@@ -396,7 +402,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_AD_TAG_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object defaultAdTagId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultAdTagId_ = "";
   /**
    *
    *
@@ -466,6 +474,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
                     com.google.cloud.video.stitcher.v1.AdTag.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag>
       adTagMap_;
 
@@ -529,8 +538,10 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.cloud.video.stitcher.v1.AdTag&gt; ad_tag_map = 5;</code>
    */
   @java.lang.Override
-  public com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
-      java.lang.String key, com.google.cloud.video.stitcher.v1.AdTag defaultValue) {
+  public /* nullable */ com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.video.stitcher.v1.AdTag defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -574,6 +585,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> adTagMacros_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -656,8 +668,10 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; ad_tag_macros = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getAdTagMacrosOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAdTagMacrosOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -694,7 +708,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_AD_TRACKING_FIELD_NUMBER = 7;
-  private boolean clientAdTracking_;
+  private boolean clientAdTracking_ = false;
   /**
    *
    *
@@ -715,7 +729,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_SLATE_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object defaultSlateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultSlateId_ = "";
   /**
    *
    *
@@ -770,7 +786,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STITCHING_POLICY_FIELD_NUMBER = 9;
-  private int stitchingPolicy_;
+  private int stitchingPolicy_ = 0;
   /**
    *
    *
@@ -801,9 +817,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy getStitchingPolicy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy result =
-        com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy.valueOf(stitchingPolicy_);
+        com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy.forNumber(stitchingPolicy_);
     return result == null
         ? com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy.UNRECOGNIZED
         : result;
@@ -854,11 +869,15 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.ManifestOptionsOrBuilder getManifestOptionsOrBuilder() {
-    return getManifestOptions();
+    return manifestOptions_ == null
+        ? com.google.cloud.video.stitcher.v1.ManifestOptions.getDefaultInstance()
+        : manifestOptions_;
   }
 
   public static final int STREAM_ID_FIELD_NUMBER = 11;
-  private volatile java.lang.Object streamId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object streamId_ = "";
   /**
    *
    *
@@ -1245,30 +1264,22 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       playUri_ = "";
-
       sourceUri_ = "";
-
       defaultAdTagId_ = "";
-
       internalGetMutableAdTagMap().clear();
       internalGetMutableAdTagMacros().clear();
       clientAdTracking_ = false;
-
       defaultSlateId_ = "";
-
       stitchingPolicy_ = 0;
-
-      if (manifestOptionsBuilder_ == null) {
-        manifestOptions_ = null;
-      } else {
-        manifestOptions_ = null;
+      manifestOptions_ = null;
+      if (manifestOptionsBuilder_ != null) {
+        manifestOptionsBuilder_.dispose();
         manifestOptionsBuilder_ = null;
       }
       streamId_ = "";
-
       return this;
     }
 
@@ -1296,26 +1307,51 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.LiveSession buildPartial() {
       com.google.cloud.video.stitcher.v1.LiveSession result =
           new com.google.cloud.video.stitcher.v1.LiveSession(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.playUri_ = playUri_;
-      result.sourceUri_ = sourceUri_;
-      result.defaultAdTagId_ = defaultAdTagId_;
-      result.adTagMap_ = internalGetAdTagMap();
-      result.adTagMap_.makeImmutable();
-      result.adTagMacros_ = internalGetAdTagMacros();
-      result.adTagMacros_.makeImmutable();
-      result.clientAdTracking_ = clientAdTracking_;
-      result.defaultSlateId_ = defaultSlateId_;
-      result.stitchingPolicy_ = stitchingPolicy_;
-      if (manifestOptionsBuilder_ == null) {
-        result.manifestOptions_ = manifestOptions_;
-      } else {
-        result.manifestOptions_ = manifestOptionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.streamId_ = streamId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.LiveSession result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.playUri_ = playUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceUri_ = sourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultAdTagId_ = defaultAdTagId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.adTagMap_ = internalGetAdTagMap();
+        result.adTagMap_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.adTagMacros_ = internalGetAdTagMacros();
+        result.adTagMacros_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clientAdTracking_ = clientAdTracking_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.defaultSlateId_ = defaultSlateId_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.stitchingPolicy_ = stitchingPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.manifestOptions_ =
+            manifestOptionsBuilder_ == null ? manifestOptions_ : manifestOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.streamId_ = streamId_;
+      }
     }
 
     @java.lang.Override
@@ -1365,27 +1401,34 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.stitcher.v1.LiveSession.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPlayUri().isEmpty()) {
         playUri_ = other.playUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSourceUri().isEmpty()) {
         sourceUri_ = other.sourceUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDefaultAdTagId().isEmpty()) {
         defaultAdTagId_ = other.defaultAdTagId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableAdTagMap().mergeFrom(other.internalGetAdTagMap());
+      bitField0_ |= 0x00000010;
       internalGetMutableAdTagMacros().mergeFrom(other.internalGetAdTagMacros());
+      bitField0_ |= 0x00000020;
       if (other.getClientAdTracking() != false) {
         setClientAdTracking(other.getClientAdTracking());
       }
       if (!other.getDefaultSlateId().isEmpty()) {
         defaultSlateId_ = other.defaultSlateId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.stitchingPolicy_ != 0) {
@@ -1396,6 +1439,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStreamId().isEmpty()) {
         streamId_ = other.streamId_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1427,25 +1471,25 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 playUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 sourceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 defaultAdTagId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1459,6 +1503,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAdTagMap()
                     .getMutableMap()
                     .put(adTagMap__.getKey(), adTagMap__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1470,36 +1515,37 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAdTagMacros()
                     .getMutableMap()
                     .put(adTagMacros__.getKey(), adTagMacros__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 clientAdTracking_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 defaultSlateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 stitchingPolicy_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getManifestOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 streamId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             default:
@@ -1585,8 +1631,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1603,8 +1649,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1626,8 +1672,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1693,8 +1739,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       playUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1710,8 +1756,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPlayUri() {
-
       playUri_ = getDefaultInstance().getPlayUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1732,8 +1778,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       playUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1799,8 +1845,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1816,8 +1862,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceUri() {
-
       sourceUri_ = getDefaultInstance().getSourceUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1838,8 +1884,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1914,8 +1960,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultAdTagId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1934,8 +1980,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultAdTagId() {
-
       defaultAdTagId_ = getDefaultInstance().getDefaultAdTagId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1959,8 +2005,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultAdTagId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1978,8 +2024,6 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag>
         internalGetMutableAdTagMap() {
-      onChanged();
-      ;
       if (adTagMap_ == null) {
         adTagMap_ =
             com.google.protobuf.MapField.newMapField(AdTagMapDefaultEntryHolder.defaultEntry);
@@ -1987,6 +2031,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (!adTagMap_.isMutable()) {
         adTagMap_ = adTagMap_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return adTagMap_;
     }
 
@@ -2042,8 +2088,10 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.cloud.video.stitcher.v1.AdTag&gt; ad_tag_map = 5;</code>
      */
     @java.lang.Override
-    public com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
-        java.lang.String key, com.google.cloud.video.stitcher.v1.AdTag defaultValue) {
+    public /* nullable */ com.google.cloud.video.stitcher.v1.AdTag getAdTagMapOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.video.stitcher.v1.AdTag defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2075,6 +2123,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAdTagMap() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableAdTagMap().getMutableMap().clear();
       return this;
     }
@@ -2099,6 +2148,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag>
         getMutableAdTagMap() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableAdTagMap().getMutableMap();
     }
     /**
@@ -2119,8 +2169,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAdTagMap().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2136,6 +2186,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllAdTagMap(
         java.util.Map<java.lang.String, com.google.cloud.video.stitcher.v1.AdTag> values) {
       internalGetMutableAdTagMap().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2152,8 +2203,6 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAdTagMacros() {
-      onChanged();
-      ;
       if (adTagMacros_ == null) {
         adTagMacros_ =
             com.google.protobuf.MapField.newMapField(AdTagMacrosDefaultEntryHolder.defaultEntry);
@@ -2161,6 +2210,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (!adTagMacros_.isMutable()) {
         adTagMacros_ = adTagMacros_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return adTagMacros_;
     }
 
@@ -2236,8 +2287,10 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; ad_tag_macros = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getAdTagMacrosOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAdTagMacrosOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2274,6 +2327,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAdTagMacros() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableAdTagMacros().getMutableMap().clear();
       return this;
     }
@@ -2304,6 +2358,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAdTagMacros() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableAdTagMacros().getMutableMap();
     }
     /**
@@ -2330,8 +2385,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAdTagMacros().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2353,6 +2408,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAdTagMacros(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAdTagMacros().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2393,6 +2449,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     public Builder setClientAdTracking(boolean value) {
 
       clientAdTracking_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2411,7 +2468,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientAdTracking() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       clientAdTracking_ = false;
       onChanged();
       return this;
@@ -2487,8 +2544,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       defaultSlateId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2507,8 +2564,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultSlateId() {
-
       defaultSlateId_ = getDefaultInstance().getDefaultSlateId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2532,8 +2589,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       defaultSlateId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2571,8 +2628,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStitchingPolicyValue(int value) {
-
       stitchingPolicy_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2591,9 +2648,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy getStitchingPolicy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy result =
-          com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy.valueOf(stitchingPolicy_);
+          com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy.forNumber(
+              stitchingPolicy_);
       return result == null
           ? com.google.cloud.video.stitcher.v1.LiveSession.StitchingPolicy.UNRECOGNIZED
           : result;
@@ -2617,7 +2674,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       stitchingPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -2636,7 +2693,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStitchingPolicy() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       stitchingPolicy_ = 0;
       onChanged();
       return this;
@@ -2660,7 +2717,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manifestOptions field is set.
      */
     public boolean hasManifestOptions() {
-      return manifestOptionsBuilder_ != null || manifestOptions_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2697,11 +2754,11 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         manifestOptions_ = value;
-        onChanged();
       } else {
         manifestOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2717,11 +2774,11 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.ManifestOptions.Builder builderForValue) {
       if (manifestOptionsBuilder_ == null) {
         manifestOptions_ = builderForValue.build();
-        onChanged();
       } else {
         manifestOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2735,19 +2792,19 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeManifestOptions(com.google.cloud.video.stitcher.v1.ManifestOptions value) {
       if (manifestOptionsBuilder_ == null) {
-        if (manifestOptions_ != null) {
-          manifestOptions_ =
-              com.google.cloud.video.stitcher.v1.ManifestOptions.newBuilder(manifestOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && manifestOptions_ != null
+            && manifestOptions_
+                != com.google.cloud.video.stitcher.v1.ManifestOptions.getDefaultInstance()) {
+          getManifestOptionsBuilder().mergeFrom(value);
         } else {
           manifestOptions_ = value;
         }
-        onChanged();
       } else {
         manifestOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2760,14 +2817,13 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.ManifestOptions manifest_options = 10;</code>
      */
     public Builder clearManifestOptions() {
-      if (manifestOptionsBuilder_ == null) {
-        manifestOptions_ = null;
-        onChanged();
-      } else {
-        manifestOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      manifestOptions_ = null;
+      if (manifestOptionsBuilder_ != null) {
+        manifestOptionsBuilder_.dispose();
         manifestOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2780,7 +2836,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.ManifestOptions manifest_options = 10;</code>
      */
     public com.google.cloud.video.stitcher.v1.ManifestOptions.Builder getManifestOptionsBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getManifestOptionsFieldBuilder().getBuilder();
     }
@@ -2890,8 +2946,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       streamId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2907,8 +2963,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStreamId() {
-
       streamId_ = getDefaultInstance().getStreamId();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2929,8 +2985,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       streamId_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -359,11 +359,11 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int SYMPTOM_TYPE_FIELD_NUMBER = 2;
-  private int symptomType_;
+  private int symptomType_ = 0;
   /**
    *
    *
@@ -392,14 +392,15 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tpu.v2.Symptom.SymptomType getSymptomType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tpu.v2.Symptom.SymptomType result =
-        com.google.cloud.tpu.v2.Symptom.SymptomType.valueOf(symptomType_);
+        com.google.cloud.tpu.v2.Symptom.SymptomType.forNumber(symptomType_);
     return result == null ? com.google.cloud.tpu.v2.Symptom.SymptomType.UNRECOGNIZED : result;
   }
 
   public static final int DETAILS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object details_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object details_ = "";
   /**
    *
    *
@@ -448,7 +449,9 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKER_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object workerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerId_ = "";
   /**
    *
    *
@@ -724,18 +727,15 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       symptomType_ = 0;
-
       details_ = "";
-
       workerId_ = "";
-
       return this;
     }
 
@@ -762,16 +762,27 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.tpu.v2.Symptom buildPartial() {
       com.google.cloud.tpu.v2.Symptom result = new com.google.cloud.tpu.v2.Symptom(this);
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.symptomType_ = symptomType_;
-      result.details_ = details_;
-      result.workerId_ = workerId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.Symptom result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.symptomType_ = symptomType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.details_ = details_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.workerId_ = workerId_;
+      }
     }
 
     @java.lang.Override
@@ -827,10 +838,12 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDetails().isEmpty()) {
         details_ = other.details_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getWorkerId().isEmpty()) {
         workerId_ = other.workerId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -862,25 +875,25 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 symptomType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 details_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 workerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -900,6 +913,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -918,7 +933,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -955,11 +970,11 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -974,11 +989,11 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -992,17 +1007,18 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1015,14 +1031,13 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1035,7 +1050,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1112,8 +1127,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSymptomTypeValue(int value) {
-
       symptomType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1130,9 +1145,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.tpu.v2.Symptom.SymptomType getSymptomType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tpu.v2.Symptom.SymptomType result =
-          com.google.cloud.tpu.v2.Symptom.SymptomType.valueOf(symptomType_);
+          com.google.cloud.tpu.v2.Symptom.SymptomType.forNumber(symptomType_);
       return result == null ? com.google.cloud.tpu.v2.Symptom.SymptomType.UNRECOGNIZED : result;
     }
     /**
@@ -1151,7 +1165,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       symptomType_ = value.getNumber();
       onChanged();
       return this;
@@ -1168,7 +1182,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSymptomType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       symptomType_ = 0;
       onChanged();
       return this;
@@ -1235,8 +1249,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       details_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1252,8 +1266,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetails() {
-
       details_ = getDefaultInstance().getDetails();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1274,8 +1288,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       details_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1341,8 +1355,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workerId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1358,8 +1372,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkerId() {
-
       workerId_ = getDefaultInstance().getWorkerId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1380,8 +1394,8 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workerId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

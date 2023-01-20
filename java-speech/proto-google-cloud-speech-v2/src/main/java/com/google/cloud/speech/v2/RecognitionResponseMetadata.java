@@ -110,7 +110,9 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTotalBilledDurationOrBuilder() {
-    return getTotalBilledDuration();
+    return totalBilledDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalBilledDuration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,10 +318,10 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (totalBilledDurationBuilder_ == null) {
-        totalBilledDuration_ = null;
-      } else {
-        totalBilledDuration_ = null;
+      bitField0_ = 0;
+      totalBilledDuration_ = null;
+      if (totalBilledDurationBuilder_ != null) {
+        totalBilledDurationBuilder_.dispose();
         totalBilledDurationBuilder_ = null;
       }
       return this;
@@ -349,13 +351,21 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     public com.google.cloud.speech.v2.RecognitionResponseMetadata buildPartial() {
       com.google.cloud.speech.v2.RecognitionResponseMetadata result =
           new com.google.cloud.speech.v2.RecognitionResponseMetadata(this);
-      if (totalBilledDurationBuilder_ == null) {
-        result.totalBilledDuration_ = totalBilledDuration_;
-      } else {
-        result.totalBilledDuration_ = totalBilledDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.RecognitionResponseMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.totalBilledDuration_ =
+            totalBilledDurationBuilder_ == null
+                ? totalBilledDuration_
+                : totalBilledDurationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +447,7 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
               {
                 input.readMessage(
                     getTotalBilledDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             default:
@@ -457,6 +467,8 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Duration totalBilledDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -475,7 +487,7 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
      * @return Whether the totalBilledDuration field is set.
      */
     public boolean hasTotalBilledDuration() {
-      return totalBilledDurationBuilder_ != null || totalBilledDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -512,11 +524,11 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         totalBilledDuration_ = value;
-        onChanged();
       } else {
         totalBilledDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -531,11 +543,11 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
     public Builder setTotalBilledDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (totalBilledDurationBuilder_ == null) {
         totalBilledDuration_ = builderForValue.build();
-        onChanged();
       } else {
         totalBilledDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -549,19 +561,18 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
      */
     public Builder mergeTotalBilledDuration(com.google.protobuf.Duration value) {
       if (totalBilledDurationBuilder_ == null) {
-        if (totalBilledDuration_ != null) {
-          totalBilledDuration_ =
-              com.google.protobuf.Duration.newBuilder(totalBilledDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && totalBilledDuration_ != null
+            && totalBilledDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTotalBilledDurationBuilder().mergeFrom(value);
         } else {
           totalBilledDuration_ = value;
         }
-        onChanged();
       } else {
         totalBilledDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,14 +585,13 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
      * <code>.google.protobuf.Duration total_billed_duration = 6;</code>
      */
     public Builder clearTotalBilledDuration() {
-      if (totalBilledDurationBuilder_ == null) {
-        totalBilledDuration_ = null;
-        onChanged();
-      } else {
-        totalBilledDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      totalBilledDuration_ = null;
+      if (totalBilledDurationBuilder_ != null) {
+        totalBilledDurationBuilder_.dispose();
         totalBilledDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -594,7 +604,7 @@ public final class RecognitionResponseMetadata extends com.google.protobuf.Gener
      * <code>.google.protobuf.Duration total_billed_duration = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getTotalBilledDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTotalBilledDurationFieldBuilder().getBuilder();
     }

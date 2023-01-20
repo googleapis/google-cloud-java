@@ -70,7 +70,9 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -324,8 +326,8 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
       return this;
     }
 
@@ -357,9 +359,19 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
         buildPartial() {
       com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig result =
           new com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig(this);
-      result.model_ = model_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1beta2.ExplicitContentDetectionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -414,6 +426,7 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -445,7 +458,7 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +477,8 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -532,8 +547,8 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -551,8 +566,8 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -575,8 +590,8 @@ public final class ExplicitContentDetectionConfig extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

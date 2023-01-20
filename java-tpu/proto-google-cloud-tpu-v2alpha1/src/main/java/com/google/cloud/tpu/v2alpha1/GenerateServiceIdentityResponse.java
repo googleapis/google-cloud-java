@@ -112,7 +112,9 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.cloud.tpu.v2alpha1.ServiceIdentityOrBuilder getIdentityOrBuilder() {
-    return getIdentity();
+    return identity_ == null
+        ? com.google.cloud.tpu.v2alpha1.ServiceIdentity.getDefaultInstance()
+        : identity_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -319,10 +321,10 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (identityBuilder_ == null) {
-        identity_ = null;
-      } else {
-        identity_ = null;
+      bitField0_ = 0;
+      identity_ = null;
+      if (identityBuilder_ != null) {
+        identityBuilder_.dispose();
         identityBuilder_ = null;
       }
       return this;
@@ -353,13 +355,19 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
     public com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityResponse buildPartial() {
       com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityResponse result =
           new com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityResponse(this);
-      if (identityBuilder_ == null) {
-        result.identity_ = identity_;
-      } else {
-        result.identity_ = identityBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.tpu.v2alpha1.GenerateServiceIdentityResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.identity_ = identityBuilder_ == null ? identity_ : identityBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +449,7 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
             case 10:
               {
                 input.readMessage(getIdentityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -461,6 +469,8 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.tpu.v2alpha1.ServiceIdentity identity_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.tpu.v2alpha1.ServiceIdentity,
@@ -479,7 +489,7 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
      * @return Whether the identity field is set.
      */
     public boolean hasIdentity() {
-      return identityBuilder_ != null || identity_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -516,11 +526,11 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
           throw new NullPointerException();
         }
         identity_ = value;
-        onChanged();
       } else {
         identityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -536,11 +546,11 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
         com.google.cloud.tpu.v2alpha1.ServiceIdentity.Builder builderForValue) {
       if (identityBuilder_ == null) {
         identity_ = builderForValue.build();
-        onChanged();
       } else {
         identityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -554,19 +564,18 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
      */
     public Builder mergeIdentity(com.google.cloud.tpu.v2alpha1.ServiceIdentity value) {
       if (identityBuilder_ == null) {
-        if (identity_ != null) {
-          identity_ =
-              com.google.cloud.tpu.v2alpha1.ServiceIdentity.newBuilder(identity_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && identity_ != null
+            && identity_ != com.google.cloud.tpu.v2alpha1.ServiceIdentity.getDefaultInstance()) {
+          getIdentityBuilder().mergeFrom(value);
         } else {
           identity_ = value;
         }
-        onChanged();
       } else {
         identityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -579,14 +588,13 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
      * <code>.google.cloud.tpu.v2alpha1.ServiceIdentity identity = 1;</code>
      */
     public Builder clearIdentity() {
-      if (identityBuilder_ == null) {
-        identity_ = null;
-        onChanged();
-      } else {
-        identity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      identity_ = null;
+      if (identityBuilder_ != null) {
+        identityBuilder_.dispose();
         identityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -599,7 +607,7 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
      * <code>.google.cloud.tpu.v2alpha1.ServiceIdentity identity = 1;</code>
      */
     public com.google.cloud.tpu.v2alpha1.ServiceIdentity.Builder getIdentityBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getIdentityFieldBuilder().getBuilder();
     }

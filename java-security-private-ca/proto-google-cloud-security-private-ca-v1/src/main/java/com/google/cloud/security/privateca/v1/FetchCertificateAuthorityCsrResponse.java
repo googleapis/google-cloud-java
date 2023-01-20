@@ -72,7 +72,9 @@ public final class FetchCertificateAuthorityCsrResponse
   }
 
   public static final int PEM_CSR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pemCsr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pemCsr_ = "";
   /**
    *
    *
@@ -328,8 +330,8 @@ public final class FetchCertificateAuthorityCsrResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pemCsr_ = "";
-
       return this;
     }
 
@@ -361,9 +363,19 @@ public final class FetchCertificateAuthorityCsrResponse
         buildPartial() {
       com.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrResponse result =
           new com.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrResponse(this);
-      result.pemCsr_ = pemCsr_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pemCsr_ = pemCsr_;
+      }
     }
 
     @java.lang.Override
@@ -418,6 +430,7 @@ public final class FetchCertificateAuthorityCsrResponse
               .getDefaultInstance()) return this;
       if (!other.getPemCsr().isEmpty()) {
         pemCsr_ = other.pemCsr_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -449,7 +462,7 @@ public final class FetchCertificateAuthorityCsrResponse
             case 10:
               {
                 pemCsr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -468,6 +481,8 @@ public final class FetchCertificateAuthorityCsrResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object pemCsr_ = "";
     /**
@@ -530,8 +545,8 @@ public final class FetchCertificateAuthorityCsrResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       pemCsr_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -547,8 +562,8 @@ public final class FetchCertificateAuthorityCsrResponse
      * @return This builder for chaining.
      */
     public Builder clearPemCsr() {
-
       pemCsr_ = getDefaultInstance().getPemCsr();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -569,8 +584,8 @@ public final class FetchCertificateAuthorityCsrResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pemCsr_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

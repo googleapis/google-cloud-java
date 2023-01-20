@@ -110,11 +110,13 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder getSegmentOrBuilder() {
-    return getSegment();
+    return segment_ == null
+        ? com.google.cloud.videointelligence.v1beta2.VideoSegment.getDefaultInstance()
+        : segment_;
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -344,14 +346,13 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (segmentBuilder_ == null) {
-        segment_ = null;
-      } else {
-        segment_ = null;
+      bitField0_ = 0;
+      segment_ = null;
+      if (segmentBuilder_ != null) {
+        segmentBuilder_.dispose();
         segmentBuilder_ = null;
       }
       confidence_ = 0F;
-
       return this;
     }
 
@@ -379,14 +380,21 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1beta2.LabelSegment buildPartial() {
       com.google.cloud.videointelligence.v1beta2.LabelSegment result =
           new com.google.cloud.videointelligence.v1beta2.LabelSegment(this);
-      if (segmentBuilder_ == null) {
-        result.segment_ = segment_;
-      } else {
-        result.segment_ = segmentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.confidence_ = confidence_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1beta2.LabelSegment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.segment_ = segmentBuilder_ == null ? segment_ : segmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -470,13 +478,13 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getSegmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -496,6 +504,8 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.videointelligence.v1beta2.VideoSegment segment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.videointelligence.v1beta2.VideoSegment,
@@ -514,7 +524,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the segment field is set.
      */
     public boolean hasSegment() {
-      return segmentBuilder_ != null || segment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -551,11 +561,11 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         segment_ = value;
-        onChanged();
       } else {
         segmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -571,11 +581,11 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.videointelligence.v1beta2.VideoSegment.Builder builderForValue) {
       if (segmentBuilder_ == null) {
         segment_ = builderForValue.build();
-        onChanged();
       } else {
         segmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -589,19 +599,19 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSegment(com.google.cloud.videointelligence.v1beta2.VideoSegment value) {
       if (segmentBuilder_ == null) {
-        if (segment_ != null) {
-          segment_ =
-              com.google.cloud.videointelligence.v1beta2.VideoSegment.newBuilder(segment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && segment_ != null
+            && segment_
+                != com.google.cloud.videointelligence.v1beta2.VideoSegment.getDefaultInstance()) {
+          getSegmentBuilder().mergeFrom(value);
         } else {
           segment_ = value;
         }
-        onChanged();
       } else {
         segmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,14 +624,13 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.videointelligence.v1beta2.VideoSegment segment = 1;</code>
      */
     public Builder clearSegment() {
-      if (segmentBuilder_ == null) {
-        segment_ = null;
-        onChanged();
-      } else {
-        segment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      segment_ = null;
+      if (segmentBuilder_ != null) {
+        segmentBuilder_.dispose();
         segmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -634,7 +643,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.videointelligence.v1beta2.VideoSegment segment = 1;</code>
      */
     public com.google.cloud.videointelligence.v1beta2.VideoSegment.Builder getSegmentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
@@ -713,6 +722,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -728,7 +738,7 @@ public final class LabelSegment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;

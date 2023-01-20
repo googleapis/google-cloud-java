@@ -69,7 +69,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TRACE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object traceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       traceId_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.devtools.cloudtrace.v1.GetTraceRequest buildPartial() {
       com.google.devtools.cloudtrace.v1.GetTraceRequest result =
           new com.google.devtools.cloudtrace.v1.GetTraceRequest(this);
-      result.projectId_ = projectId_;
-      result.traceId_ = traceId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v1.GetTraceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.traceId_ = traceId_;
+      }
     }
 
     @java.lang.Override
@@ -457,10 +471,12 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,13 +508,13 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 traceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -517,6 +533,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -579,8 +597,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -596,8 +614,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       traceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -702,8 +720,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTraceId() {
-
       traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class GetTraceRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       traceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

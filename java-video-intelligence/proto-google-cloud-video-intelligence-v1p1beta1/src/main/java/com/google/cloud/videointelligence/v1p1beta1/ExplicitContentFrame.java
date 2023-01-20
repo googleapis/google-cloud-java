@@ -113,11 +113,11 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-    return getTimeOffset();
+    return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
 
   public static final int PORNOGRAPHY_LIKELIHOOD_FIELD_NUMBER = 2;
-  private int pornographyLikelihood_;
+  private int pornographyLikelihood_ = 0;
   /**
    *
    *
@@ -146,9 +146,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.Likelihood getPornographyLikelihood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.videointelligence.v1p1beta1.Likelihood result =
-        com.google.cloud.videointelligence.v1p1beta1.Likelihood.valueOf(pornographyLikelihood_);
+        com.google.cloud.videointelligence.v1p1beta1.Likelihood.forNumber(pornographyLikelihood_);
     return result == null
         ? com.google.cloud.videointelligence.v1p1beta1.Likelihood.UNRECOGNIZED
         : result;
@@ -372,14 +371,13 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-      } else {
-        timeOffset_ = null;
+      bitField0_ = 0;
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
       pornographyLikelihood_ = 0;
-
       return this;
     }
 
@@ -408,14 +406,22 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentFrame buildPartial() {
       com.google.cloud.videointelligence.v1p1beta1.ExplicitContentFrame result =
           new com.google.cloud.videointelligence.v1p1beta1.ExplicitContentFrame(this);
-      if (timeOffsetBuilder_ == null) {
-        result.timeOffset_ = timeOffset_;
-      } else {
-        result.timeOffset_ = timeOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.pornographyLikelihood_ = pornographyLikelihood_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p1beta1.ExplicitContentFrame result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeOffset_ = timeOffsetBuilder_ == null ? timeOffset_ : timeOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pornographyLikelihood_ = pornographyLikelihood_;
+      }
     }
 
     @java.lang.Override
@@ -501,13 +507,13 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 pornographyLikelihood_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -526,6 +532,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration timeOffset_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -546,7 +554,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
-      return timeOffsetBuilder_ != null || timeOffset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -585,11 +593,11 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         timeOffset_ = value;
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,11 +613,11 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     public Builder setTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -624,17 +632,18 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeTimeOffset(com.google.protobuf.Duration value) {
       if (timeOffsetBuilder_ == null) {
-        if (timeOffset_ != null) {
-          timeOffset_ =
-              com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && timeOffset_ != null
+            && timeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeOffsetBuilder().mergeFrom(value);
         } else {
           timeOffset_ = value;
         }
-        onChanged();
       } else {
         timeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,14 +657,13 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration time_offset = 1;</code>
      */
     public Builder clearTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-        onChanged();
-      } else {
-        timeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -669,7 +677,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Duration time_offset = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
@@ -748,8 +756,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setPornographyLikelihoodValue(int value) {
-
       pornographyLikelihood_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -766,9 +774,8 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.Likelihood getPornographyLikelihood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.videointelligence.v1p1beta1.Likelihood result =
-          com.google.cloud.videointelligence.v1p1beta1.Likelihood.valueOf(pornographyLikelihood_);
+          com.google.cloud.videointelligence.v1p1beta1.Likelihood.forNumber(pornographyLikelihood_);
       return result == null
           ? com.google.cloud.videointelligence.v1p1beta1.Likelihood.UNRECOGNIZED
           : result;
@@ -790,7 +797,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       pornographyLikelihood_ = value.getNumber();
       onChanged();
       return this;
@@ -807,7 +814,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPornographyLikelihood() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pornographyLikelihood_ = 0;
       onChanged();
       return this;

@@ -83,7 +83,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -184,11 +186,15 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.InterstitialsOrBuilder getInterstitialsOrBuilder() {
-    return getInterstitials();
+    return interstitials_ == null
+        ? com.google.cloud.video.stitcher.v1.Interstitials.getDefaultInstance()
+        : interstitials_;
   }
 
   public static final int PLAY_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object playUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object playUri_ = "";
   /**
    *
    *
@@ -237,7 +243,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object sourceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceUri_ = "";
   /**
    *
    *
@@ -286,7 +294,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AD_TAG_URI_FIELD_NUMBER = 6;
-  private volatile java.lang.Object adTagUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adTagUri_ = "";
   /**
    *
    *
@@ -347,6 +357,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> adTagMacroMap_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -430,8 +441,10 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
    */
   @java.lang.Override
-  public java.lang.String getAdTagMacroMapOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAdTagMacroMapOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -468,7 +481,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_AD_TRACKING_FIELD_NUMBER = 8;
-  private boolean clientAdTracking_;
+  private boolean clientAdTracking_ = false;
   /**
    *
    *
@@ -535,11 +548,15 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.ManifestOptionsOrBuilder getManifestOptionsOrBuilder() {
-    return getManifestOptions();
+    return manifestOptions_ == null
+        ? com.google.cloud.video.stitcher.v1.ManifestOptions.getDefaultInstance()
+        : manifestOptions_;
   }
 
   public static final int ASSET_ID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object assetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetId_ = "";
   /**
    *
    *
@@ -894,31 +911,24 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (interstitialsBuilder_ == null) {
-        interstitials_ = null;
-      } else {
-        interstitials_ = null;
+      interstitials_ = null;
+      if (interstitialsBuilder_ != null) {
+        interstitialsBuilder_.dispose();
         interstitialsBuilder_ = null;
       }
       playUri_ = "";
-
       sourceUri_ = "";
-
       adTagUri_ = "";
-
       internalGetMutableAdTagMacroMap().clear();
       clientAdTracking_ = false;
-
-      if (manifestOptionsBuilder_ == null) {
-        manifestOptions_ = null;
-      } else {
-        manifestOptions_ = null;
+      manifestOptions_ = null;
+      if (manifestOptionsBuilder_ != null) {
+        manifestOptionsBuilder_.dispose();
         manifestOptionsBuilder_ = null;
       }
       assetId_ = "";
-
       return this;
     }
 
@@ -946,27 +956,45 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.VodSession buildPartial() {
       com.google.cloud.video.stitcher.v1.VodSession result =
           new com.google.cloud.video.stitcher.v1.VodSession(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (interstitialsBuilder_ == null) {
-        result.interstitials_ = interstitials_;
-      } else {
-        result.interstitials_ = interstitialsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.playUri_ = playUri_;
-      result.sourceUri_ = sourceUri_;
-      result.adTagUri_ = adTagUri_;
-      result.adTagMacroMap_ = internalGetAdTagMacroMap();
-      result.adTagMacroMap_.makeImmutable();
-      result.clientAdTracking_ = clientAdTracking_;
-      if (manifestOptionsBuilder_ == null) {
-        result.manifestOptions_ = manifestOptions_;
-      } else {
-        result.manifestOptions_ = manifestOptionsBuilder_.build();
-      }
-      result.assetId_ = assetId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.VodSession result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.interstitials_ =
+            interstitialsBuilder_ == null ? interstitials_ : interstitialsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.playUri_ = playUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourceUri_ = sourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.adTagUri_ = adTagUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.adTagMacroMap_ = internalGetAdTagMacroMap();
+        result.adTagMacroMap_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clientAdTracking_ = clientAdTracking_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.manifestOptions_ =
+            manifestOptionsBuilder_ == null ? manifestOptions_ : manifestOptionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.assetId_ = assetId_;
+      }
     }
 
     @java.lang.Override
@@ -1016,6 +1044,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.stitcher.v1.VodSession.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInterstitials()) {
@@ -1023,17 +1052,21 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPlayUri().isEmpty()) {
         playUri_ = other.playUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSourceUri().isEmpty()) {
         sourceUri_ = other.sourceUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getAdTagUri().isEmpty()) {
         adTagUri_ = other.adTagUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       internalGetMutableAdTagMacroMap().mergeFrom(other.internalGetAdTagMacroMap());
+      bitField0_ |= 0x00000020;
       if (other.getClientAdTracking() != false) {
         setClientAdTracking(other.getClientAdTracking());
       }
@@ -1042,6 +1075,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAssetId().isEmpty()) {
         assetId_ = other.assetId_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1073,31 +1107,31 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInterstitialsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 playUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 sourceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 adTagUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
@@ -1109,24 +1143,25 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAdTagMacroMap()
                     .getMutableMap()
                     .put(adTagMacroMap__.getKey(), adTagMacroMap__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 64:
               {
                 clientAdTracking_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getManifestOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 assetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             default:
@@ -1212,8 +1247,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1230,8 +1265,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1253,8 +1288,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1279,7 +1314,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interstitials field is set.
      */
     public boolean hasInterstitials() {
-      return interstitialsBuilder_ != null || interstitials_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1320,11 +1355,11 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         interstitials_ = value;
-        onChanged();
       } else {
         interstitialsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1342,11 +1377,11 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.Interstitials.Builder builderForValue) {
       if (interstitialsBuilder_ == null) {
         interstitials_ = builderForValue.build();
-        onChanged();
       } else {
         interstitialsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1362,19 +1397,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInterstitials(com.google.cloud.video.stitcher.v1.Interstitials value) {
       if (interstitialsBuilder_ == null) {
-        if (interstitials_ != null) {
-          interstitials_ =
-              com.google.cloud.video.stitcher.v1.Interstitials.newBuilder(interstitials_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && interstitials_ != null
+            && interstitials_
+                != com.google.cloud.video.stitcher.v1.Interstitials.getDefaultInstance()) {
+          getInterstitialsBuilder().mergeFrom(value);
         } else {
           interstitials_ = value;
         }
-        onChanged();
       } else {
         interstitialsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1389,14 +1424,13 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInterstitials() {
-      if (interstitialsBuilder_ == null) {
-        interstitials_ = null;
-        onChanged();
-      } else {
-        interstitials_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      interstitials_ = null;
+      if (interstitialsBuilder_ != null) {
+        interstitialsBuilder_.dispose();
         interstitialsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1411,7 +1445,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.video.stitcher.v1.Interstitials.Builder getInterstitialsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInterstitialsFieldBuilder().getBuilder();
     }
@@ -1524,8 +1558,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       playUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1541,8 +1575,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPlayUri() {
-
       playUri_ = getDefaultInstance().getPlayUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1563,8 +1597,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       playUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1630,8 +1664,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1647,8 +1681,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceUri() {
-
       sourceUri_ = getDefaultInstance().getSourceUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1669,8 +1703,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1736,8 +1770,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       adTagUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1753,8 +1787,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdTagUri() {
-
       adTagUri_ = getDefaultInstance().getAdTagUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1775,8 +1809,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       adTagUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1794,8 +1828,6 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAdTagMacroMap() {
-      onChanged();
-      ;
       if (adTagMacroMap_ == null) {
         adTagMacroMap_ =
             com.google.protobuf.MapField.newMapField(AdTagMacroMapDefaultEntryHolder.defaultEntry);
@@ -1803,6 +1835,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (!adTagMacroMap_.isMutable()) {
         adTagMacroMap_ = adTagMacroMap_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return adTagMacroMap_;
     }
 
@@ -1878,8 +1912,10 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
      */
     @java.lang.Override
-    public java.lang.String getAdTagMacroMapOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAdTagMacroMapOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1916,6 +1952,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAdTagMacroMap() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableAdTagMacroMap().getMutableMap().clear();
       return this;
     }
@@ -1946,6 +1983,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAdTagMacroMap() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableAdTagMacroMap().getMutableMap();
     }
     /**
@@ -1972,8 +2010,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAdTagMacroMap().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1995,6 +2033,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAdTagMacroMap(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAdTagMacroMap().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2039,6 +2078,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     public Builder setClientAdTracking(boolean value) {
 
       clientAdTracking_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2059,7 +2099,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientAdTracking() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       clientAdTracking_ = false;
       onChanged();
       return this;
@@ -2083,7 +2123,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manifestOptions field is set.
      */
     public boolean hasManifestOptions() {
-      return manifestOptionsBuilder_ != null || manifestOptions_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2120,11 +2160,11 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         manifestOptions_ = value;
-        onChanged();
       } else {
         manifestOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2140,11 +2180,11 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.ManifestOptions.Builder builderForValue) {
       if (manifestOptionsBuilder_ == null) {
         manifestOptions_ = builderForValue.build();
-        onChanged();
       } else {
         manifestOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2158,19 +2198,19 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeManifestOptions(com.google.cloud.video.stitcher.v1.ManifestOptions value) {
       if (manifestOptionsBuilder_ == null) {
-        if (manifestOptions_ != null) {
-          manifestOptions_ =
-              com.google.cloud.video.stitcher.v1.ManifestOptions.newBuilder(manifestOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && manifestOptions_ != null
+            && manifestOptions_
+                != com.google.cloud.video.stitcher.v1.ManifestOptions.getDefaultInstance()) {
+          getManifestOptionsBuilder().mergeFrom(value);
         } else {
           manifestOptions_ = value;
         }
-        onChanged();
       } else {
         manifestOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2183,14 +2223,13 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.ManifestOptions manifest_options = 9;</code>
      */
     public Builder clearManifestOptions() {
-      if (manifestOptionsBuilder_ == null) {
-        manifestOptions_ = null;
-        onChanged();
-      } else {
-        manifestOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      manifestOptions_ = null;
+      if (manifestOptionsBuilder_ != null) {
+        manifestOptionsBuilder_.dispose();
         manifestOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2203,7 +2242,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.ManifestOptions manifest_options = 9;</code>
      */
     public com.google.cloud.video.stitcher.v1.ManifestOptions.Builder getManifestOptionsBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getManifestOptionsFieldBuilder().getBuilder();
     }
@@ -2313,8 +2352,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2330,8 +2369,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetId() {
-
       assetId_ = getDefaultInstance().getAssetId();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2352,8 +2391,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

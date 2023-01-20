@@ -166,6 +166,8 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
     }
 
     public static final int CERTIFICATES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList certificates_;
     /**
      *
@@ -428,6 +430,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         certificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -460,14 +463,26 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
       public com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain buildPartial() {
         com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain result =
             new com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           certificates_ = certificates_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.certificates_ = certificates_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -821,6 +836,8 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CA_CERTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.FetchCaCertsResponse.CertChain>
       caCerts_;
   /**
@@ -1110,6 +1127,7 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (caCertsBuilder_ == null) {
         caCerts_ = java.util.Collections.emptyList();
       } else {
@@ -1144,7 +1162,16 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.security.privateca.v1.FetchCaCertsResponse buildPartial() {
       com.google.cloud.security.privateca.v1.FetchCaCertsResponse result =
           new com.google.cloud.security.privateca.v1.FetchCaCertsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1.FetchCaCertsResponse result) {
       if (caCertsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           caCerts_ = java.util.Collections.unmodifiableList(caCerts_);
@@ -1154,8 +1181,10 @@ public final class FetchCaCertsResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.caCerts_ = caCertsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.FetchCaCertsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

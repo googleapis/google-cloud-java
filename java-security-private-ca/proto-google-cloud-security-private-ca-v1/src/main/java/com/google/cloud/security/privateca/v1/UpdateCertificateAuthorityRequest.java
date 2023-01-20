@@ -121,7 +121,9 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.CertificateAuthorityOrBuilder
       getCertificateAuthorityOrBuilder() {
-    return getCertificateAuthority();
+    return certificateAuthority_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateAuthority.getDefaultInstance()
+        : certificateAuthority_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -170,11 +172,13 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -474,20 +478,18 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (certificateAuthorityBuilder_ == null) {
-        certificateAuthority_ = null;
-      } else {
-        certificateAuthority_ = null;
+      bitField0_ = 0;
+      certificateAuthority_ = null;
+      if (certificateAuthorityBuilder_ != null) {
+        certificateAuthorityBuilder_.dispose();
         certificateAuthorityBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -518,19 +520,28 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
     public com.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest buildPartial() {
       com.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest result =
           new com.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest(this);
-      if (certificateAuthorityBuilder_ == null) {
-        result.certificateAuthority_ = certificateAuthority_;
-      } else {
-        result.certificateAuthority_ = certificateAuthorityBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.certificateAuthority_ =
+            certificateAuthorityBuilder_ == null
+                ? certificateAuthority_
+                : certificateAuthorityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -591,6 +602,7 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -623,19 +635,19 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
               {
                 input.readMessage(
                     getCertificateAuthorityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -654,6 +666,8 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.security.privateca.v1.CertificateAuthority certificateAuthority_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -675,7 +689,7 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      * @return Whether the certificateAuthority field is set.
      */
     public boolean hasCertificateAuthority() {
-      return certificateAuthorityBuilder_ != null || certificateAuthority_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -717,11 +731,11 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         certificateAuthority_ = value;
-        onChanged();
       } else {
         certificateAuthorityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -739,11 +753,11 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
         com.google.cloud.security.privateca.v1.CertificateAuthority.Builder builderForValue) {
       if (certificateAuthorityBuilder_ == null) {
         certificateAuthority_ = builderForValue.build();
-        onChanged();
       } else {
         certificateAuthorityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -760,20 +774,20 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
     public Builder mergeCertificateAuthority(
         com.google.cloud.security.privateca.v1.CertificateAuthority value) {
       if (certificateAuthorityBuilder_ == null) {
-        if (certificateAuthority_ != null) {
-          certificateAuthority_ =
-              com.google.cloud.security.privateca.v1.CertificateAuthority.newBuilder(
-                      certificateAuthority_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && certificateAuthority_ != null
+            && certificateAuthority_
+                != com.google.cloud.security.privateca.v1.CertificateAuthority
+                    .getDefaultInstance()) {
+          getCertificateAuthorityBuilder().mergeFrom(value);
         } else {
           certificateAuthority_ = value;
         }
-        onChanged();
       } else {
         certificateAuthorityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -788,14 +802,13 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearCertificateAuthority() {
-      if (certificateAuthorityBuilder_ == null) {
-        certificateAuthority_ = null;
-        onChanged();
-      } else {
-        certificateAuthority_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      certificateAuthority_ = null;
+      if (certificateAuthorityBuilder_ != null) {
+        certificateAuthorityBuilder_.dispose();
         certificateAuthorityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -811,7 +824,7 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      */
     public com.google.cloud.security.privateca.v1.CertificateAuthority.Builder
         getCertificateAuthorityBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCertificateAuthorityFieldBuilder().getBuilder();
     }
@@ -883,7 +896,7 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -922,11 +935,11 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -942,11 +955,11 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -961,17 +974,18 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -985,14 +999,13 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1006,7 +1019,7 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1147,8 +1160,8 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1174,8 +1187,8 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1206,8 +1219,8 @@ public final class UpdateCertificateAuthorityRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

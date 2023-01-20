@@ -66,7 +66,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTEMPT_DISPATCH_COUNT_FIELD_NUMBER = 1;
-  private int attemptDispatchCount_;
+  private int attemptDispatchCount_ = 0;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ATTEMPT_RESPONSE_COUNT_FIELD_NUMBER = 2;
-  private int attemptResponseCount_;
+  private int attemptResponseCount_ = 0;
   /**
    *
    *
@@ -158,7 +158,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AttemptStatusOrBuilder getFirstAttemptStatusOrBuilder() {
-    return getFirstAttemptStatus();
+    return firstAttemptStatus_ == null
+        ? com.google.cloud.tasks.v2beta2.AttemptStatus.getDefaultInstance()
+        : firstAttemptStatus_;
   }
 
   public static final int LAST_ATTEMPT_STATUS_FIELD_NUMBER = 4;
@@ -209,7 +211,9 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AttemptStatusOrBuilder getLastAttemptStatusOrBuilder() {
-    return getLastAttemptStatus();
+    return lastAttemptStatus_ == null
+        ? com.google.cloud.tasks.v2beta2.AttemptStatus.getDefaultInstance()
+        : lastAttemptStatus_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -446,20 +450,17 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       attemptDispatchCount_ = 0;
-
       attemptResponseCount_ = 0;
-
-      if (firstAttemptStatusBuilder_ == null) {
-        firstAttemptStatus_ = null;
-      } else {
-        firstAttemptStatus_ = null;
+      firstAttemptStatus_ = null;
+      if (firstAttemptStatusBuilder_ != null) {
+        firstAttemptStatusBuilder_.dispose();
         firstAttemptStatusBuilder_ = null;
       }
-      if (lastAttemptStatusBuilder_ == null) {
-        lastAttemptStatus_ = null;
-      } else {
-        lastAttemptStatus_ = null;
+      lastAttemptStatus_ = null;
+      if (lastAttemptStatusBuilder_ != null) {
+        lastAttemptStatusBuilder_.dispose();
         lastAttemptStatusBuilder_ = null;
       }
       return this;
@@ -489,20 +490,33 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta2.TaskStatus buildPartial() {
       com.google.cloud.tasks.v2beta2.TaskStatus result =
           new com.google.cloud.tasks.v2beta2.TaskStatus(this);
-      result.attemptDispatchCount_ = attemptDispatchCount_;
-      result.attemptResponseCount_ = attemptResponseCount_;
-      if (firstAttemptStatusBuilder_ == null) {
-        result.firstAttemptStatus_ = firstAttemptStatus_;
-      } else {
-        result.firstAttemptStatus_ = firstAttemptStatusBuilder_.build();
-      }
-      if (lastAttemptStatusBuilder_ == null) {
-        result.lastAttemptStatus_ = lastAttemptStatus_;
-      } else {
-        result.lastAttemptStatus_ = lastAttemptStatusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.TaskStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attemptDispatchCount_ = attemptDispatchCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attemptResponseCount_ = attemptResponseCount_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.firstAttemptStatus_ =
+            firstAttemptStatusBuilder_ == null
+                ? firstAttemptStatus_
+                : firstAttemptStatusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastAttemptStatus_ =
+            lastAttemptStatusBuilder_ == null
+                ? lastAttemptStatus_
+                : lastAttemptStatusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -591,27 +605,27 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 attemptDispatchCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 attemptResponseCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getFirstAttemptStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getLastAttemptStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -630,6 +644,8 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int attemptDispatchCount_;
     /**
@@ -666,6 +682,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setAttemptDispatchCount(int value) {
 
       attemptDispatchCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,7 +700,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAttemptDispatchCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       attemptDispatchCount_ = 0;
       onChanged();
       return this;
@@ -722,6 +739,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setAttemptResponseCount(int value) {
 
       attemptResponseCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,7 +756,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAttemptResponseCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       attemptResponseCount_ = 0;
       onChanged();
       return this;
@@ -765,7 +783,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the firstAttemptStatus field is set.
      */
     public boolean hasFirstAttemptStatus() {
-      return firstAttemptStatusBuilder_ != null || firstAttemptStatus_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -808,11 +826,11 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         firstAttemptStatus_ = value;
-        onChanged();
       } else {
         firstAttemptStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +849,11 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.tasks.v2beta2.AttemptStatus.Builder builderForValue) {
       if (firstAttemptStatusBuilder_ == null) {
         firstAttemptStatus_ = builderForValue.build();
-        onChanged();
       } else {
         firstAttemptStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -852,19 +870,19 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFirstAttemptStatus(com.google.cloud.tasks.v2beta2.AttemptStatus value) {
       if (firstAttemptStatusBuilder_ == null) {
-        if (firstAttemptStatus_ != null) {
-          firstAttemptStatus_ =
-              com.google.cloud.tasks.v2beta2.AttemptStatus.newBuilder(firstAttemptStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && firstAttemptStatus_ != null
+            && firstAttemptStatus_
+                != com.google.cloud.tasks.v2beta2.AttemptStatus.getDefaultInstance()) {
+          getFirstAttemptStatusBuilder().mergeFrom(value);
         } else {
           firstAttemptStatus_ = value;
         }
-        onChanged();
       } else {
         firstAttemptStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -880,14 +898,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
      */
     public Builder clearFirstAttemptStatus() {
-      if (firstAttemptStatusBuilder_ == null) {
-        firstAttemptStatus_ = null;
-        onChanged();
-      } else {
-        firstAttemptStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      firstAttemptStatus_ = null;
+      if (firstAttemptStatusBuilder_ != null) {
+        firstAttemptStatusBuilder_.dispose();
         firstAttemptStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -903,7 +920,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus first_attempt_status = 3;</code>
      */
     public com.google.cloud.tasks.v2beta2.AttemptStatus.Builder getFirstAttemptStatusBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFirstAttemptStatusFieldBuilder().getBuilder();
     }
@@ -976,7 +993,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastAttemptStatus field is set.
      */
     public boolean hasLastAttemptStatus() {
-      return lastAttemptStatusBuilder_ != null || lastAttemptStatus_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1015,11 +1032,11 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastAttemptStatus_ = value;
-        onChanged();
       } else {
         lastAttemptStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1036,11 +1053,11 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.tasks.v2beta2.AttemptStatus.Builder builderForValue) {
       if (lastAttemptStatusBuilder_ == null) {
         lastAttemptStatus_ = builderForValue.build();
-        onChanged();
       } else {
         lastAttemptStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1055,19 +1072,19 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastAttemptStatus(com.google.cloud.tasks.v2beta2.AttemptStatus value) {
       if (lastAttemptStatusBuilder_ == null) {
-        if (lastAttemptStatus_ != null) {
-          lastAttemptStatus_ =
-              com.google.cloud.tasks.v2beta2.AttemptStatus.newBuilder(lastAttemptStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && lastAttemptStatus_ != null
+            && lastAttemptStatus_
+                != com.google.cloud.tasks.v2beta2.AttemptStatus.getDefaultInstance()) {
+          getLastAttemptStatusBuilder().mergeFrom(value);
         } else {
           lastAttemptStatus_ = value;
         }
-        onChanged();
       } else {
         lastAttemptStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1081,14 +1098,13 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
      */
     public Builder clearLastAttemptStatus() {
-      if (lastAttemptStatusBuilder_ == null) {
-        lastAttemptStatus_ = null;
-        onChanged();
-      } else {
-        lastAttemptStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastAttemptStatus_ = null;
+      if (lastAttemptStatusBuilder_ != null) {
+        lastAttemptStatusBuilder_.dispose();
         lastAttemptStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1102,7 +1118,7 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.tasks.v2beta2.AttemptStatus last_attempt_status = 4;</code>
      */
     public com.google.cloud.tasks.v2beta2.AttemptStatus.Builder getLastAttemptStatusBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLastAttemptStatusFieldBuilder().getBuilder();
     }

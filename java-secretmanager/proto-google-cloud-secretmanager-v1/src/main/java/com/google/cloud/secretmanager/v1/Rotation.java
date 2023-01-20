@@ -141,7 +141,9 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNextRotationTimeOrBuilder() {
-    return getNextRotationTime();
+    return nextRotationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : nextRotationTime_;
   }
 
   public static final int ROTATION_PERIOD_FIELD_NUMBER = 2;
@@ -222,7 +224,9 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder() {
-    return getRotationPeriod();
+    return rotationPeriod_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : rotationPeriod_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -445,16 +449,15 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (nextRotationTimeBuilder_ == null) {
-        nextRotationTime_ = null;
-      } else {
-        nextRotationTime_ = null;
+      bitField0_ = 0;
+      nextRotationTime_ = null;
+      if (nextRotationTimeBuilder_ != null) {
+        nextRotationTimeBuilder_.dispose();
         nextRotationTimeBuilder_ = null;
       }
-      if (rotationPeriodBuilder_ == null) {
-        rotationPeriod_ = null;
-      } else {
-        rotationPeriod_ = null;
+      rotationPeriod_ = null;
+      if (rotationPeriodBuilder_ != null) {
+        rotationPeriodBuilder_.dispose();
         rotationPeriodBuilder_ = null;
       }
       return this;
@@ -484,18 +487,23 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.Rotation buildPartial() {
       com.google.cloud.secretmanager.v1.Rotation result =
           new com.google.cloud.secretmanager.v1.Rotation(this);
-      if (nextRotationTimeBuilder_ == null) {
-        result.nextRotationTime_ = nextRotationTime_;
-      } else {
-        result.nextRotationTime_ = nextRotationTimeBuilder_.build();
-      }
-      if (rotationPeriodBuilder_ == null) {
-        result.rotationPeriod_ = rotationPeriod_;
-      } else {
-        result.rotationPeriod_ = rotationPeriodBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.secretmanager.v1.Rotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nextRotationTime_ =
+            nextRotationTimeBuilder_ == null ? nextRotationTime_ : nextRotationTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rotationPeriod_ =
+            rotationPeriodBuilder_ == null ? rotationPeriod_ : rotationPeriodBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -579,13 +587,13 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getNextRotationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRotationPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -604,6 +612,8 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp nextRotationTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -632,7 +642,7 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextRotationTime field is set.
      */
     public boolean hasNextRotationTime() {
-      return nextRotationTimeBuilder_ != null || nextRotationTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -687,11 +697,11 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nextRotationTime_ = value;
-        onChanged();
       } else {
         nextRotationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -715,11 +725,11 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setNextRotationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (nextRotationTimeBuilder_ == null) {
         nextRotationTime_ = builderForValue.build();
-        onChanged();
       } else {
         nextRotationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -742,19 +752,18 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNextRotationTime(com.google.protobuf.Timestamp value) {
       if (nextRotationTimeBuilder_ == null) {
-        if (nextRotationTime_ != null) {
-          nextRotationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(nextRotationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && nextRotationTime_ != null
+            && nextRotationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getNextRotationTimeBuilder().mergeFrom(value);
         } else {
           nextRotationTime_ = value;
         }
-        onChanged();
       } else {
         nextRotationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -776,14 +785,13 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNextRotationTime() {
-      if (nextRotationTimeBuilder_ == null) {
-        nextRotationTime_ = null;
-        onChanged();
-      } else {
-        nextRotationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nextRotationTime_ = null;
+      if (nextRotationTimeBuilder_ != null) {
+        nextRotationTimeBuilder_.dispose();
         nextRotationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -805,7 +813,7 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getNextRotationTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNextRotationTimeFieldBuilder().getBuilder();
     }
@@ -900,7 +908,7 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rotationPeriod field is set.
      */
     public boolean hasRotationPeriod() {
-      return rotationPeriodBuilder_ != null || rotationPeriod_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -959,11 +967,11 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rotationPeriod_ = value;
-        onChanged();
       } else {
         rotationPeriodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -989,11 +997,11 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
     public Builder setRotationPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (rotationPeriodBuilder_ == null) {
         rotationPeriod_ = builderForValue.build();
-        onChanged();
       } else {
         rotationPeriodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1018,19 +1026,18 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRotationPeriod(com.google.protobuf.Duration value) {
       if (rotationPeriodBuilder_ == null) {
-        if (rotationPeriod_ != null) {
-          rotationPeriod_ =
-              com.google.protobuf.Duration.newBuilder(rotationPeriod_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && rotationPeriod_ != null
+            && rotationPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getRotationPeriodBuilder().mergeFrom(value);
         } else {
           rotationPeriod_ = value;
         }
-        onChanged();
       } else {
         rotationPeriodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1054,14 +1061,13 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRotationPeriod() {
-      if (rotationPeriodBuilder_ == null) {
-        rotationPeriod_ = null;
-        onChanged();
-      } else {
-        rotationPeriod_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rotationPeriod_ = null;
+      if (rotationPeriodBuilder_ != null) {
+        rotationPeriodBuilder_.dispose();
         rotationPeriodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1085,7 +1091,7 @@ public final class Rotation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getRotationPeriodBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRotationPeriodFieldBuilder().getBuilder();
     }

@@ -131,7 +131,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognitionConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null
+        ? com.google.cloud.speech.v2.RecognitionConfig.getDefaultInstance()
+        : config_;
   }
 
   public static final int CONFIG_MASK_FIELD_NUMBER = 3;
@@ -213,7 +215,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getConfigMaskOrBuilder() {
-    return getConfigMask();
+    return configMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : configMask_;
   }
 
   public static final int STREAMING_FEATURES_FIELD_NUMBER = 2;
@@ -265,7 +267,9 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.speech.v2.StreamingRecognitionFeaturesOrBuilder
       getStreamingFeaturesOrBuilder() {
-    return getStreamingFeatures();
+    return streamingFeatures_ == null
+        ? com.google.cloud.speech.v2.StreamingRecognitionFeatures.getDefaultInstance()
+        : streamingFeatures_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -499,22 +503,20 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      bitField0_ = 0;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-      if (configMaskBuilder_ == null) {
-        configMask_ = null;
-      } else {
-        configMask_ = null;
+      configMask_ = null;
+      if (configMaskBuilder_ != null) {
+        configMaskBuilder_.dispose();
         configMaskBuilder_ = null;
       }
-      if (streamingFeaturesBuilder_ == null) {
-        streamingFeatures_ = null;
-      } else {
-        streamingFeatures_ = null;
+      streamingFeatures_ = null;
+      if (streamingFeaturesBuilder_ != null) {
+        streamingFeaturesBuilder_.dispose();
         streamingFeaturesBuilder_ = null;
       }
       return this;
@@ -544,23 +546,27 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public com.google.cloud.speech.v2.StreamingRecognitionConfig buildPartial() {
       com.google.cloud.speech.v2.StreamingRecognitionConfig result =
           new com.google.cloud.speech.v2.StreamingRecognitionConfig(this);
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
-      }
-      if (configMaskBuilder_ == null) {
-        result.configMask_ = configMask_;
-      } else {
-        result.configMask_ = configMaskBuilder_.build();
-      }
-      if (streamingFeaturesBuilder_ == null) {
-        result.streamingFeatures_ = streamingFeatures_;
-      } else {
-        result.streamingFeatures_ = streamingFeaturesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.StreamingRecognitionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configMask_ = configMaskBuilder_ == null ? configMask_ : configMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.streamingFeatures_ =
+            streamingFeaturesBuilder_ == null
+                ? streamingFeatures_
+                : streamingFeaturesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -647,20 +653,20 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getStreamingFeaturesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getConfigMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -679,6 +685,8 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.speech.v2.RecognitionConfig config_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -705,7 +713,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -756,11 +764,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +790,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public Builder setConfig(com.google.cloud.speech.v2.RecognitionConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -807,19 +815,18 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      */
     public Builder mergeConfig(com.google.cloud.speech.v2.RecognitionConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.speech.v2.RecognitionConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && config_ != null
+            && config_ != com.google.cloud.speech.v2.RecognitionConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -839,14 +846,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -866,7 +872,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.speech.v2.RecognitionConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -958,7 +964,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return Whether the configMask field is set.
      */
     public boolean hasConfigMask() {
-      return configMaskBuilder_ != null || configMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1019,11 +1025,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         configMask_ = value;
-        onChanged();
       } else {
         configMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1050,11 +1056,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public Builder setConfigMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (configMaskBuilder_ == null) {
         configMask_ = builderForValue.build();
-        onChanged();
       } else {
         configMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1080,17 +1086,18 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      */
     public Builder mergeConfigMask(com.google.protobuf.FieldMask value) {
       if (configMaskBuilder_ == null) {
-        if (configMask_ != null) {
-          configMask_ =
-              com.google.protobuf.FieldMask.newBuilder(configMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && configMask_ != null
+            && configMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getConfigMaskBuilder().mergeFrom(value);
         } else {
           configMask_ = value;
         }
-        onChanged();
       } else {
         configMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1115,14 +1122,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask config_mask = 3;</code>
      */
     public Builder clearConfigMask() {
-      if (configMaskBuilder_ == null) {
-        configMask_ = null;
-        onChanged();
-      } else {
-        configMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      configMask_ = null;
+      if (configMaskBuilder_ != null) {
+        configMaskBuilder_.dispose();
         configMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1147,7 +1153,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask config_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getConfigMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigMaskFieldBuilder().getBuilder();
     }
@@ -1238,7 +1244,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * @return Whether the streamingFeatures field is set.
      */
     public boolean hasStreamingFeatures() {
-      return streamingFeaturesBuilder_ != null || streamingFeatures_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1278,11 +1284,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         streamingFeatures_ = value;
-        onChanged();
       } else {
         streamingFeaturesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1299,11 +1305,11 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
         com.google.cloud.speech.v2.StreamingRecognitionFeatures.Builder builderForValue) {
       if (streamingFeaturesBuilder_ == null) {
         streamingFeatures_ = builderForValue.build();
-        onChanged();
       } else {
         streamingFeaturesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1319,19 +1325,19 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
     public Builder mergeStreamingFeatures(
         com.google.cloud.speech.v2.StreamingRecognitionFeatures value) {
       if (streamingFeaturesBuilder_ == null) {
-        if (streamingFeatures_ != null) {
-          streamingFeatures_ =
-              com.google.cloud.speech.v2.StreamingRecognitionFeatures.newBuilder(streamingFeatures_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && streamingFeatures_ != null
+            && streamingFeatures_
+                != com.google.cloud.speech.v2.StreamingRecognitionFeatures.getDefaultInstance()) {
+          getStreamingFeaturesBuilder().mergeFrom(value);
         } else {
           streamingFeatures_ = value;
         }
-        onChanged();
       } else {
         streamingFeaturesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1345,14 +1351,13 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      * <code>.google.cloud.speech.v2.StreamingRecognitionFeatures streaming_features = 2;</code>
      */
     public Builder clearStreamingFeatures() {
-      if (streamingFeaturesBuilder_ == null) {
-        streamingFeatures_ = null;
-        onChanged();
-      } else {
-        streamingFeatures_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      streamingFeatures_ = null;
+      if (streamingFeaturesBuilder_ != null) {
+        streamingFeaturesBuilder_.dispose();
         streamingFeaturesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1367,7 +1372,7 @@ public final class StreamingRecognitionConfig extends com.google.protobuf.Genera
      */
     public com.google.cloud.speech.v2.StreamingRecognitionFeatures.Builder
         getStreamingFeaturesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStreamingFeaturesFieldBuilder().getBuilder();
     }

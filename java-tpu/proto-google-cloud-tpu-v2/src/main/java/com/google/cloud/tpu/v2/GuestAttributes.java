@@ -68,7 +68,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int QUERY_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object queryPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object queryPath_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.tpu.v2.GuestAttributesValueOrBuilder getQueryValueOrBuilder() {
-    return getQueryValue();
+    return queryValue_ == null
+        ? com.google.cloud.tpu.v2.GuestAttributesValue.getDefaultInstance()
+        : queryValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,12 +382,11 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       queryPath_ = "";
-
-      if (queryValueBuilder_ == null) {
-        queryValue_ = null;
-      } else {
-        queryValue_ = null;
+      queryValue_ = null;
+      if (queryValueBuilder_ != null) {
+        queryValueBuilder_.dispose();
         queryValueBuilder_ = null;
       }
       return this;
@@ -413,14 +416,21 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.tpu.v2.GuestAttributes buildPartial() {
       com.google.cloud.tpu.v2.GuestAttributes result =
           new com.google.cloud.tpu.v2.GuestAttributes(this);
-      result.queryPath_ = queryPath_;
-      if (queryValueBuilder_ == null) {
-        result.queryValue_ = queryValue_;
-      } else {
-        result.queryValue_ = queryValueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.GuestAttributes result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.queryPath_ = queryPath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.queryValue_ = queryValueBuilder_ == null ? queryValue_ : queryValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -470,6 +480,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.tpu.v2.GuestAttributes.getDefaultInstance()) return this;
       if (!other.getQueryPath().isEmpty()) {
         queryPath_ = other.queryPath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasQueryValue()) {
@@ -504,13 +515,13 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 queryPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getQueryValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +540,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object queryPath_ = "";
     /**
@@ -597,8 +610,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       queryPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,8 +629,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearQueryPath() {
-
       queryPath_ = getDefaultInstance().getQueryPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -640,8 +653,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       queryPath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,7 +677,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * @return Whether the queryValue field is set.
      */
     public boolean hasQueryValue() {
-      return queryValueBuilder_ != null || queryValue_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -701,11 +714,11 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         queryValue_ = value;
-        onChanged();
       } else {
         queryValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -721,11 +734,11 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.tpu.v2.GuestAttributesValue.Builder builderForValue) {
       if (queryValueBuilder_ == null) {
         queryValue_ = builderForValue.build();
-        onChanged();
       } else {
         queryValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -739,19 +752,18 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeQueryValue(com.google.cloud.tpu.v2.GuestAttributesValue value) {
       if (queryValueBuilder_ == null) {
-        if (queryValue_ != null) {
-          queryValue_ =
-              com.google.cloud.tpu.v2.GuestAttributesValue.newBuilder(queryValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && queryValue_ != null
+            && queryValue_ != com.google.cloud.tpu.v2.GuestAttributesValue.getDefaultInstance()) {
+          getQueryValueBuilder().mergeFrom(value);
         } else {
           queryValue_ = value;
         }
-        onChanged();
       } else {
         queryValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -764,14 +776,13 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.tpu.v2.GuestAttributesValue query_value = 2;</code>
      */
     public Builder clearQueryValue() {
-      if (queryValueBuilder_ == null) {
-        queryValue_ = null;
-        onChanged();
-      } else {
-        queryValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      queryValue_ = null;
+      if (queryValueBuilder_ != null) {
+        queryValueBuilder_.dispose();
         queryValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -784,7 +795,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.tpu.v2.GuestAttributesValue query_value = 2;</code>
      */
     public com.google.cloud.tpu.v2.GuestAttributesValue.Builder getQueryValueBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getQueryValueFieldBuilder().getBuilder();
     }

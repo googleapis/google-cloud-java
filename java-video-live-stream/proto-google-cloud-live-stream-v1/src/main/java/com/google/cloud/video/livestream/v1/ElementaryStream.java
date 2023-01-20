@@ -120,7 +120,9 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KEY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -575,8 +577,8 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       if (videoStreamBuilder_ != null) {
         videoStreamBuilder_.clear();
       }
@@ -615,31 +617,33 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.video.livestream.v1.ElementaryStream buildPartial() {
       com.google.cloud.video.livestream.v1.ElementaryStream result =
           new com.google.cloud.video.livestream.v1.ElementaryStream(this);
-      result.key_ = key_;
-      if (elementaryStreamCase_ == 1) {
-        if (videoStreamBuilder_ == null) {
-          result.elementaryStream_ = elementaryStream_;
-        } else {
-          result.elementaryStream_ = videoStreamBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (elementaryStreamCase_ == 2) {
-        if (audioStreamBuilder_ == null) {
-          result.elementaryStream_ = elementaryStream_;
-        } else {
-          result.elementaryStream_ = audioStreamBuilder_.build();
-        }
-      }
-      if (elementaryStreamCase_ == 3) {
-        if (textStreamBuilder_ == null) {
-          result.elementaryStream_ = elementaryStream_;
-        } else {
-          result.elementaryStream_ = textStreamBuilder_.build();
-        }
-      }
-      result.elementaryStreamCase_ = elementaryStreamCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.ElementaryStream result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.video.livestream.v1.ElementaryStream result) {
+      result.elementaryStreamCase_ = elementaryStreamCase_;
+      result.elementaryStream_ = this.elementaryStream_;
+      if (elementaryStreamCase_ == 1 && videoStreamBuilder_ != null) {
+        result.elementaryStream_ = videoStreamBuilder_.build();
+      }
+      if (elementaryStreamCase_ == 2 && audioStreamBuilder_ != null) {
+        result.elementaryStream_ = audioStreamBuilder_.build();
+      }
+      if (elementaryStreamCase_ == 3 && textStreamBuilder_ != null) {
+        result.elementaryStream_ = textStreamBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -690,6 +694,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getElementaryStreamCase()) {
@@ -760,7 +765,7 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
             case 34:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -793,6 +798,8 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -855,8 +862,8 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,8 +879,8 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -894,8 +901,8 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1107,7 +1114,6 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
       elementaryStreamCase_ = 1;
       onChanged();
-      ;
       return videoStreamBuilder_;
     }
 
@@ -1318,7 +1324,6 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
       elementaryStreamCase_ = 2;
       onChanged();
-      ;
       return audioStreamBuilder_;
     }
 
@@ -1529,7 +1534,6 @@ public final class ElementaryStream extends com.google.protobuf.GeneratedMessage
       }
       elementaryStreamCase_ = 3;
       onChanged();
-      ;
       return textStreamBuilder_;
     }
 

@@ -70,6 +70,8 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIG_CHANGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.ConfigChange> configChanges_;
   /**
    *
@@ -359,6 +361,7 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (configChangesBuilder_ == null) {
         configChanges_ = java.util.Collections.emptyList();
       } else {
@@ -393,7 +396,16 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicemanagement.v1.ChangeReport buildPartial() {
       com.google.api.servicemanagement.v1.ChangeReport result =
           new com.google.api.servicemanagement.v1.ChangeReport(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.servicemanagement.v1.ChangeReport result) {
       if (configChangesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           configChanges_ = java.util.Collections.unmodifiableList(configChanges_);
@@ -403,8 +415,10 @@ public final class ChangeReport extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.configChanges_ = configChangesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.servicemanagement.v1.ChangeReport result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

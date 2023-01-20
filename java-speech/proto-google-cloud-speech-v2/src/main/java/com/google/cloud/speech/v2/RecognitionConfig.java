@@ -268,7 +268,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognitionFeaturesOrBuilder getFeaturesOrBuilder() {
-    return getFeatures();
+    return features_ == null
+        ? com.google.cloud.speech.v2.RecognitionFeatures.getDefaultInstance()
+        : features_;
   }
 
   public static final int ADAPTATION_FIELD_NUMBER = 6;
@@ -319,7 +321,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.SpeechAdaptationOrBuilder getAdaptationOrBuilder() {
-    return getAdaptation();
+    return adaptation_ == null
+        ? com.google.cloud.speech.v2.SpeechAdaptation.getDefaultInstance()
+        : adaptation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -578,22 +582,21 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (autoDecodingConfigBuilder_ != null) {
         autoDecodingConfigBuilder_.clear();
       }
       if (explicitDecodingConfigBuilder_ != null) {
         explicitDecodingConfigBuilder_.clear();
       }
-      if (featuresBuilder_ == null) {
-        features_ = null;
-      } else {
-        features_ = null;
+      features_ = null;
+      if (featuresBuilder_ != null) {
+        featuresBuilder_.dispose();
         featuresBuilder_ = null;
       }
-      if (adaptationBuilder_ == null) {
-        adaptation_ = null;
-      } else {
-        adaptation_ = null;
+      adaptation_ = null;
+      if (adaptationBuilder_ != null) {
+        adaptationBuilder_.dispose();
         adaptationBuilder_ = null;
       }
       decodingConfigCase_ = 0;
@@ -625,33 +628,33 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.speech.v2.RecognitionConfig buildPartial() {
       com.google.cloud.speech.v2.RecognitionConfig result =
           new com.google.cloud.speech.v2.RecognitionConfig(this);
-      if (decodingConfigCase_ == 7) {
-        if (autoDecodingConfigBuilder_ == null) {
-          result.decodingConfig_ = decodingConfig_;
-        } else {
-          result.decodingConfig_ = autoDecodingConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (decodingConfigCase_ == 8) {
-        if (explicitDecodingConfigBuilder_ == null) {
-          result.decodingConfig_ = decodingConfig_;
-        } else {
-          result.decodingConfig_ = explicitDecodingConfigBuilder_.build();
-        }
-      }
-      if (featuresBuilder_ == null) {
-        result.features_ = features_;
-      } else {
-        result.features_ = featuresBuilder_.build();
-      }
-      if (adaptationBuilder_ == null) {
-        result.adaptation_ = adaptation_;
-      } else {
-        result.adaptation_ = adaptationBuilder_.build();
-      }
-      result.decodingConfigCase_ = decodingConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.RecognitionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.features_ = featuresBuilder_ == null ? features_ : featuresBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.adaptation_ = adaptationBuilder_ == null ? adaptation_ : adaptationBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.speech.v2.RecognitionConfig result) {
+      result.decodingConfigCase_ = decodingConfigCase_;
+      result.decodingConfig_ = this.decodingConfig_;
+      if (decodingConfigCase_ == 7 && autoDecodingConfigBuilder_ != null) {
+        result.decodingConfig_ = autoDecodingConfigBuilder_.build();
+      }
+      if (decodingConfigCase_ == 8 && explicitDecodingConfigBuilder_ != null) {
+        result.decodingConfig_ = explicitDecodingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -750,13 +753,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             case 18:
               {
                 input.readMessage(getFeaturesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 50:
               {
                 input.readMessage(getAdaptationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
@@ -803,6 +806,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v2.AutoDetectDecodingConfig,
@@ -1025,7 +1030,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       decodingConfigCase_ = 7;
       onChanged();
-      ;
       return autoDecodingConfigBuilder_;
     }
 
@@ -1249,7 +1253,6 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       decodingConfigCase_ = 8;
       onChanged();
-      ;
       return explicitDecodingConfigBuilder_;
     }
 
@@ -1271,7 +1274,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the features field is set.
      */
     public boolean hasFeatures() {
-      return featuresBuilder_ != null || features_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1308,11 +1311,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         features_ = value;
-        onChanged();
       } else {
         featuresBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1328,11 +1331,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.speech.v2.RecognitionFeatures.Builder builderForValue) {
       if (featuresBuilder_ == null) {
         features_ = builderForValue.build();
-        onChanged();
       } else {
         featuresBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1346,19 +1349,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeFeatures(com.google.cloud.speech.v2.RecognitionFeatures value) {
       if (featuresBuilder_ == null) {
-        if (features_ != null) {
-          features_ =
-              com.google.cloud.speech.v2.RecognitionFeatures.newBuilder(features_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && features_ != null
+            && features_ != com.google.cloud.speech.v2.RecognitionFeatures.getDefaultInstance()) {
+          getFeaturesBuilder().mergeFrom(value);
         } else {
           features_ = value;
         }
-        onChanged();
       } else {
         featuresBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1371,14 +1373,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.RecognitionFeatures features = 2;</code>
      */
     public Builder clearFeatures() {
-      if (featuresBuilder_ == null) {
-        features_ = null;
-        onChanged();
-      } else {
-        features_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      features_ = null;
+      if (featuresBuilder_ != null) {
+        featuresBuilder_.dispose();
         featuresBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1391,7 +1392,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.RecognitionFeatures features = 2;</code>
      */
     public com.google.cloud.speech.v2.RecognitionFeatures.Builder getFeaturesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
@@ -1458,7 +1459,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the adaptation field is set.
      */
     public boolean hasAdaptation() {
-      return adaptationBuilder_ != null || adaptation_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1497,11 +1498,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         adaptation_ = value;
-        onChanged();
       } else {
         adaptationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1518,11 +1519,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         com.google.cloud.speech.v2.SpeechAdaptation.Builder builderForValue) {
       if (adaptationBuilder_ == null) {
         adaptation_ = builderForValue.build();
-        onChanged();
       } else {
         adaptationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1537,19 +1538,18 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeAdaptation(com.google.cloud.speech.v2.SpeechAdaptation value) {
       if (adaptationBuilder_ == null) {
-        if (adaptation_ != null) {
-          adaptation_ =
-              com.google.cloud.speech.v2.SpeechAdaptation.newBuilder(adaptation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && adaptation_ != null
+            && adaptation_ != com.google.cloud.speech.v2.SpeechAdaptation.getDefaultInstance()) {
+          getAdaptationBuilder().mergeFrom(value);
         } else {
           adaptation_ = value;
         }
-        onChanged();
       } else {
         adaptationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1563,14 +1563,13 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.SpeechAdaptation adaptation = 6;</code>
      */
     public Builder clearAdaptation() {
-      if (adaptationBuilder_ == null) {
-        adaptation_ = null;
-        onChanged();
-      } else {
-        adaptation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      adaptation_ = null;
+      if (adaptationBuilder_ != null) {
+        adaptationBuilder_.dispose();
         adaptationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1584,7 +1583,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v2.SpeechAdaptation adaptation = 6;</code>
      */
     public com.google.cloud.speech.v2.SpeechAdaptation.Builder getAdaptationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAdaptationFieldBuilder().getBuilder();
     }

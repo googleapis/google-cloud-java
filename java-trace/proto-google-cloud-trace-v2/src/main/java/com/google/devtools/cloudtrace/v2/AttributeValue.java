@@ -478,6 +478,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (stringValueBuilder_ != null) {
         stringValueBuilder_.clear();
       }
@@ -510,22 +511,24 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.AttributeValue buildPartial() {
       com.google.devtools.cloudtrace.v2.AttributeValue result =
           new com.google.devtools.cloudtrace.v2.AttributeValue(this);
-      if (valueCase_ == 1) {
-        if (stringValueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = stringValueBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (valueCase_ == 2) {
-        result.value_ = value_;
-      }
-      if (valueCase_ == 3) {
-        result.value_ = value_;
-      }
-      result.valueCase_ = valueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v2.AttributeValue result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.devtools.cloudtrace.v2.AttributeValue result) {
+      result.valueCase_ = valueCase_;
+      result.value_ = this.value_;
+      if (valueCase_ == 1 && stringValueBuilder_ != null) {
+        result.value_ = stringValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -669,6 +672,8 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.cloudtrace.v2.TruncatableString,
@@ -876,7 +881,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       }
       valueCase_ = 1;
       onChanged();
-      ;
       return stringValueBuilder_;
     }
 
@@ -924,6 +928,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIntValue(long value) {
+
       valueCase_ = 2;
       value_ = value;
       onChanged();
@@ -993,6 +998,7 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoolValue(boolean value) {
+
       valueCase_ = 3;
       value_ = value;
       onChanged();

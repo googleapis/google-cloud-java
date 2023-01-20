@@ -236,7 +236,9 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MODEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -289,7 +291,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REPORTED_USAGE_FIELD_NUMBER = 3;
-  private int reportedUsage_;
+  private int reportedUsage_ = 0;
   /**
    *
    *
@@ -322,9 +324,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage getReportedUsage() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage result =
-        com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage.valueOf(
+        com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage.forNumber(
             reportedUsage_);
     return result == null
         ? com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage.UNRECOGNIZED
@@ -544,10 +545,9 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       model_ = "";
-
       reportedUsage_ = 0;
-
       return this;
     }
 
@@ -575,10 +575,21 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.texttospeech.v1beta1.CustomVoiceParams buildPartial() {
       com.google.cloud.texttospeech.v1beta1.CustomVoiceParams result =
           new com.google.cloud.texttospeech.v1beta1.CustomVoiceParams(this);
-      result.model_ = model_;
-      result.reportedUsage_ = reportedUsage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1beta1.CustomVoiceParams result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.reportedUsage_ = reportedUsage_;
+      }
     }
 
     @java.lang.Override
@@ -629,6 +640,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.reportedUsage_ != 0) {
@@ -663,13 +675,13 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 reportedUsage_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -688,6 +700,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object model_ = "";
     /**
@@ -756,8 +770,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +789,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -799,8 +813,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,8 +852,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setReportedUsageValue(int value) {
-
       reportedUsage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -859,9 +873,8 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage
         getReportedUsage() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage result =
-          com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage.valueOf(
+          com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage.forNumber(
               reportedUsage_);
       return result == null
           ? com.google.cloud.texttospeech.v1beta1.CustomVoiceParams.ReportedUsage.UNRECOGNIZED
@@ -886,7 +899,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       reportedUsage_ = value.getNumber();
       onChanged();
       return this;
@@ -905,7 +918,7 @@ public final class CustomVoiceParams extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReportedUsage() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       reportedUsage_ = 0;
       onChanged();
       return this;

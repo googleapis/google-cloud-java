@@ -69,7 +69,9 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODEC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object codec_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object codec_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHANNEL_COUNT_FIELD_NUMBER = 2;
-  private int channelCount_;
+  private int channelCount_ = 0;
   /**
    *
    *
@@ -136,6 +138,8 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHANNEL_LAYOUT_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList channelLayout_;
   /**
    *
@@ -418,12 +422,11 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       codec_ = "";
-
       channelCount_ = 0;
-
       channelLayout_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -451,16 +454,31 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.AudioFormat buildPartial() {
       com.google.cloud.video.livestream.v1.AudioFormat result =
           new com.google.cloud.video.livestream.v1.AudioFormat(this);
-      int from_bitField0_ = bitField0_;
-      result.codec_ = codec_;
-      result.channelCount_ = channelCount_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        channelLayout_ = channelLayout_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.channelLayout_ = channelLayout_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.livestream.v1.AudioFormat result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        channelLayout_ = channelLayout_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.channelLayout_ = channelLayout_;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.AudioFormat result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.codec_ = codec_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.channelCount_ = channelCount_;
+      }
     }
 
     @java.lang.Override
@@ -511,6 +529,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getCodec().isEmpty()) {
         codec_ = other.codec_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getChannelCount() != 0) {
@@ -519,7 +538,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       if (!other.channelLayout_.isEmpty()) {
         if (channelLayout_.isEmpty()) {
           channelLayout_ = other.channelLayout_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureChannelLayoutIsMutable();
           channelLayout_.addAll(other.channelLayout_);
@@ -555,13 +574,13 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 codec_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 channelCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -651,8 +670,8 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       codec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +687,8 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCodec() {
-
       codec_ = getDefaultInstance().getCodec();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +709,8 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       codec_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -727,6 +746,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
     public Builder setChannelCount(int value) {
 
       channelCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -742,7 +762,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearChannelCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       channelCount_ = 0;
       onChanged();
       return this;
@@ -752,9 +772,9 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureChannelLayoutIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         channelLayout_ = new com.google.protobuf.LazyStringArrayList(channelLayout_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -889,7 +909,7 @@ public final class AudioFormat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearChannelLayout() {
       channelLayout_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

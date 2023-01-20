@@ -66,7 +66,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 1;
-  private boolean enableSecureBoot_;
+  private boolean enableSecureBoot_ = false;
   /**
    *
    *
@@ -280,8 +280,8 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enableSecureBoot_ = false;
-
       return this;
     }
 
@@ -309,9 +309,18 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.tpu.v2.ShieldedInstanceConfig buildPartial() {
       com.google.cloud.tpu.v2.ShieldedInstanceConfig result =
           new com.google.cloud.tpu.v2.ShieldedInstanceConfig(this);
-      result.enableSecureBoot_ = enableSecureBoot_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.ShieldedInstanceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableSecureBoot_ = enableSecureBoot_;
+      }
     }
 
     @java.lang.Override
@@ -391,7 +400,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 enableSecureBoot_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -410,6 +419,8 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enableSecureBoot_;
     /**
@@ -442,6 +453,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     public Builder setEnableSecureBoot(boolean value) {
 
       enableSecureBoot_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -457,7 +469,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnableSecureBoot() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enableSecureBoot_ = false;
       onChanged();
       return this;

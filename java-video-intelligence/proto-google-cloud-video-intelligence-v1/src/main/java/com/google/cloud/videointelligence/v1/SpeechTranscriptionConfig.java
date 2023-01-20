@@ -70,7 +70,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 2;
-  private int maxAlternatives_;
+  private int maxAlternatives_ = 0;
   /**
    *
    *
@@ -149,7 +151,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int FILTER_PROFANITY_FIELD_NUMBER = 3;
-  private boolean filterProfanity_;
+  private boolean filterProfanity_ = false;
   /**
    *
    *
@@ -170,6 +172,8 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.SpeechContext> speechContexts_;
   /**
    *
@@ -251,7 +255,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 5;
-  private boolean enableAutomaticPunctuation_;
+  private boolean enableAutomaticPunctuation_ = false;
   /**
    *
    *
@@ -274,6 +278,8 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int AUDIO_TRACKS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList audioTracks_;
   /**
    *
@@ -326,7 +332,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   private int audioTracksMemoizedSerializedSize = -1;
 
   public static final int ENABLE_SPEAKER_DIARIZATION_FIELD_NUMBER = 7;
-  private boolean enableSpeakerDiarization_;
+  private boolean enableSpeakerDiarization_ = false;
   /**
    *
    *
@@ -350,7 +356,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int DIARIZATION_SPEAKER_COUNT_FIELD_NUMBER = 8;
-  private int diarizationSpeakerCount_;
+  private int diarizationSpeakerCount_ = 0;
   /**
    *
    *
@@ -370,7 +376,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
   }
 
   public static final int ENABLE_WORD_CONFIDENCE_FIELD_NUMBER = 9;
-  private boolean enableWordConfidence_;
+  private boolean enableWordConfidence_ = false;
   /**
    *
    *
@@ -678,29 +684,22 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       languageCode_ = "";
-
       maxAlternatives_ = 0;
-
       filterProfanity_ = false;
-
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
       } else {
         speechContexts_ = null;
         speechContextsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableAutomaticPunctuation_ = false;
-
       audioTracks_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
       enableSpeakerDiarization_ = false;
-
       diarizationSpeakerCount_ = 0;
-
       enableWordConfidence_ = false;
-
       return this;
     }
 
@@ -729,30 +728,56 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig buildPartial() {
       com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig result =
           new com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.languageCode_ = languageCode_;
-      result.maxAlternatives_ = maxAlternatives_;
-      result.filterProfanity_ = filterProfanity_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig result) {
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.speechContexts_ = speechContexts_;
       } else {
         result.speechContexts_ = speechContextsBuilder_.build();
       }
-      result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         audioTracks_.makeImmutable();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.audioTracks_ = audioTracks_;
-      result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
-      result.diarizationSpeakerCount_ = diarizationSpeakerCount_;
-      result.enableWordConfidence_ = enableWordConfidence_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxAlternatives_ = maxAlternatives_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filterProfanity_ = filterProfanity_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.enableSpeakerDiarization_ = enableSpeakerDiarization_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.diarizationSpeakerCount_ = diarizationSpeakerCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.enableWordConfidence_ = enableWordConfidence_;
+      }
     }
 
     @java.lang.Override
@@ -805,6 +830,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMaxAlternatives() != 0) {
@@ -817,7 +843,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -830,7 +856,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -846,7 +872,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       if (!other.audioTracks_.isEmpty()) {
         if (audioTracks_.isEmpty()) {
           audioTracks_ = other.audioTracks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureAudioTracksIsMutable();
           audioTracks_.addAll(other.audioTracks_);
@@ -891,19 +917,19 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             case 10:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 maxAlternatives_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 filterProfanity_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -923,7 +949,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             case 40:
               {
                 enableAutomaticPunctuation_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
@@ -947,19 +973,19 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
             case 56:
               {
                 enableSpeakerDiarization_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 diarizationSpeakerCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 enableWordConfidence_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             default:
@@ -1054,8 +1080,8 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1075,8 +1101,8 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1101,8 +1127,8 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1146,6 +1172,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder setMaxAlternatives(int value) {
 
       maxAlternatives_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1165,7 +1192,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearMaxAlternatives() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxAlternatives_ = 0;
       onChanged();
       return this;
@@ -1208,6 +1235,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder setFilterProfanity(boolean value) {
 
       filterProfanity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1226,7 +1254,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearFilterProfanity() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       filterProfanity_ = false;
       onChanged();
       return this;
@@ -1236,11 +1264,11 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1.SpeechContext>(
                 speechContexts_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1481,7 +1509,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -1622,7 +1650,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
                 com.google.cloud.videointelligence.v1.SpeechContext.Builder,
                 com.google.cloud.videointelligence.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;
@@ -1671,6 +1699,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder setEnableAutomaticPunctuation(boolean value) {
 
       enableAutomaticPunctuation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1691,7 +1720,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnableAutomaticPunctuation() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
@@ -1700,9 +1729,9 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     private com.google.protobuf.Internal.IntList audioTracks_ = emptyIntList();
 
     private void ensureAudioTracksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         audioTracks_ = mutableCopy(audioTracks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1718,7 +1747,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return A list containing the audioTracks.
      */
     public java.util.List<java.lang.Integer> getAudioTracksList() {
-      return ((bitField0_ & 0x00000002) != 0)
+      return ((bitField0_ & 0x00000020) != 0)
           ? java.util.Collections.unmodifiableList(audioTracks_)
           : audioTracks_;
     }
@@ -1768,6 +1797,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setAudioTracks(int index, int value) {
+
       ensureAudioTracksIsMutable();
       audioTracks_.setInt(index, value);
       onChanged();
@@ -1787,6 +1817,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder addAudioTracks(int value) {
+
       ensureAudioTracksIsMutable();
       audioTracks_.addInt(value);
       onChanged();
@@ -1825,7 +1856,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      */
     public Builder clearAudioTracks() {
       audioTracks_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1873,6 +1904,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder setEnableSpeakerDiarization(boolean value) {
 
       enableSpeakerDiarization_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1894,7 +1926,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnableSpeakerDiarization() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       enableSpeakerDiarization_ = false;
       onChanged();
       return this;
@@ -1935,6 +1967,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder setDiarizationSpeakerCount(int value) {
 
       diarizationSpeakerCount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1952,7 +1985,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearDiarizationSpeakerCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       diarizationSpeakerCount_ = 0;
       onChanged();
       return this;
@@ -1993,6 +2026,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
     public Builder setEnableWordConfidence(boolean value) {
 
       enableWordConfidence_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2010,7 +2044,7 @@ public final class SpeechTranscriptionConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnableWordConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       enableWordConfidence_ = false;
       onChanged();
       return this;

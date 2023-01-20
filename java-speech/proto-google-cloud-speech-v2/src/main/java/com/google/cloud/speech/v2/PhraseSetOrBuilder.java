@@ -402,7 +402,6 @@ public interface PhraseSetOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

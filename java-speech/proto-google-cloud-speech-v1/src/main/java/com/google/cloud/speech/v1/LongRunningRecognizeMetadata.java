@@ -70,7 +70,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
   }
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
-  private int progressPercent_;
+  private int progressPercent_ = 0;
   /**
    *
    *
@@ -131,7 +131,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 3;
@@ -179,11 +179,15 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
-    return getLastUpdateTime();
+    return lastUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastUpdateTime_;
   }
 
   public static final int URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -470,22 +474,19 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       progressPercent_ = 0;
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-      } else {
-        lastUpdateTime_ = null;
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
       uri_ = "";
-
       return this;
     }
 
@@ -513,20 +514,28 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public com.google.cloud.speech.v1.LongRunningRecognizeMetadata buildPartial() {
       com.google.cloud.speech.v1.LongRunningRecognizeMetadata result =
           new com.google.cloud.speech.v1.LongRunningRecognizeMetadata(this);
-      result.progressPercent_ = progressPercent_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (lastUpdateTimeBuilder_ == null) {
-        result.lastUpdateTime_ = lastUpdateTime_;
-      } else {
-        result.lastUpdateTime_ = lastUpdateTimeBuilder_.build();
-      }
-      result.uri_ = uri_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1.LongRunningRecognizeMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.progressPercent_ = progressPercent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lastUpdateTime_ =
+            lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.uri_ = uri_;
+      }
     }
 
     @java.lang.Override
@@ -586,6 +595,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -617,25 +627,25 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
             case 8:
               {
                 progressPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -654,6 +664,8 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int progressPercent_;
     /**
@@ -688,6 +700,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public Builder setProgressPercent(int value) {
 
       progressPercent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,7 +717,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearProgressPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -728,7 +741,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -763,11 +776,11 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +795,11 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -800,17 +813,18 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -823,14 +837,13 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -843,7 +856,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp start_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -907,7 +920,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * @return Whether the lastUpdateTime field is set.
      */
     public boolean hasLastUpdateTime() {
-      return lastUpdateTimeBuilder_ != null || lastUpdateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -944,11 +957,11 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         lastUpdateTime_ = value;
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -963,11 +976,11 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
         lastUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -981,19 +994,18 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
-        if (lastUpdateTime_ != null) {
-          lastUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && lastUpdateTime_ != null
+            && lastUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastUpdateTimeBuilder().mergeFrom(value);
         } else {
           lastUpdateTime_ = value;
         }
-        onChanged();
       } else {
         lastUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1006,14 +1018,13 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp last_update_time = 3;</code>
      */
     public Builder clearLastUpdateTime() {
-      if (lastUpdateTimeBuilder_ == null) {
-        lastUpdateTime_ = null;
-        onChanged();
-      } else {
-        lastUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      lastUpdateTime_ = null;
+      if (lastUpdateTimeBuilder_ != null) {
+        lastUpdateTimeBuilder_.dispose();
         lastUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1026,7 +1037,7 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * <code>.google.protobuf.Timestamp last_update_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1138,8 +1149,8 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1156,8 +1167,8 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1179,8 +1190,8 @@ public final class LongRunningRecognizeMetadata extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

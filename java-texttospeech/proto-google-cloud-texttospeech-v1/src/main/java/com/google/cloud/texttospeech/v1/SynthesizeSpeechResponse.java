@@ -68,7 +68,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
   }
 
   public static final int AUDIO_CONTENT_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString audioContent_;
+  private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -287,8 +287,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       audioContent_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -316,9 +316,18 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
     public com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse buildPartial() {
       com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse result =
           new com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse(this);
-      result.audioContent_ = audioContent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.audioContent_ = audioContent_;
+      }
     }
 
     @java.lang.Override
@@ -399,7 +408,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
             case 10:
               {
                 audioContent_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -418,6 +427,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -459,8 +470,8 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       audioContent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -480,7 +491,7 @@ public final class SynthesizeSpeechResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAudioContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       audioContent_ = getDefaultInstance().getAudioContent();
       onChanged();
       return this;

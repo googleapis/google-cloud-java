@@ -66,7 +66,7 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INDEX_FIELD_NUMBER = 1;
-  private int index_;
+  private int index_ = 0;
   /**
    *
    *
@@ -128,7 +128,9 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.VideoFormatOrBuilder getVideoFormatOrBuilder() {
-    return getVideoFormat();
+    return videoFormat_ == null
+        ? com.google.cloud.video.livestream.v1.VideoFormat.getDefaultInstance()
+        : videoFormat_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -343,12 +345,11 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       index_ = 0;
-
-      if (videoFormatBuilder_ == null) {
-        videoFormat_ = null;
-      } else {
-        videoFormat_ = null;
+      videoFormat_ = null;
+      if (videoFormatBuilder_ != null) {
+        videoFormatBuilder_.dispose();
         videoFormatBuilder_ = null;
       }
       return this;
@@ -378,14 +379,22 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
     public com.google.cloud.video.livestream.v1.VideoStreamProperty buildPartial() {
       com.google.cloud.video.livestream.v1.VideoStreamProperty result =
           new com.google.cloud.video.livestream.v1.VideoStreamProperty(this);
-      result.index_ = index_;
-      if (videoFormatBuilder_ == null) {
-        result.videoFormat_ = videoFormat_;
-      } else {
-        result.videoFormat_ = videoFormatBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.VideoStreamProperty result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = index_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.videoFormat_ =
+            videoFormatBuilder_ == null ? videoFormat_ : videoFormatBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -469,13 +478,13 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 index_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getVideoFormatFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -494,6 +503,8 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int index_;
     /**
@@ -526,6 +537,7 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
     public Builder setIndex(int value) {
 
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,7 +553,7 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       index_ = 0;
       onChanged();
       return this;
@@ -565,7 +577,7 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
      * @return Whether the videoFormat field is set.
      */
     public boolean hasVideoFormat() {
-      return videoFormatBuilder_ != null || videoFormat_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -602,11 +614,11 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         videoFormat_ = value;
-        onChanged();
       } else {
         videoFormatBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -622,11 +634,11 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.livestream.v1.VideoFormat.Builder builderForValue) {
       if (videoFormatBuilder_ == null) {
         videoFormat_ = builderForValue.build();
-        onChanged();
       } else {
         videoFormatBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -640,19 +652,19 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeVideoFormat(com.google.cloud.video.livestream.v1.VideoFormat value) {
       if (videoFormatBuilder_ == null) {
-        if (videoFormat_ != null) {
-          videoFormat_ =
-              com.google.cloud.video.livestream.v1.VideoFormat.newBuilder(videoFormat_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && videoFormat_ != null
+            && videoFormat_
+                != com.google.cloud.video.livestream.v1.VideoFormat.getDefaultInstance()) {
+          getVideoFormatBuilder().mergeFrom(value);
         } else {
           videoFormat_ = value;
         }
-        onChanged();
       } else {
         videoFormatBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -665,14 +677,13 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.VideoFormat video_format = 2;</code>
      */
     public Builder clearVideoFormat() {
-      if (videoFormatBuilder_ == null) {
-        videoFormat_ = null;
-        onChanged();
-      } else {
-        videoFormat_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      videoFormat_ = null;
+      if (videoFormatBuilder_ != null) {
+        videoFormatBuilder_.dispose();
         videoFormatBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -685,7 +696,7 @@ public final class VideoStreamProperty extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.VideoFormat video_format = 2;</code>
      */
     public com.google.cloud.video.livestream.v1.VideoFormat.Builder getVideoFormatBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVideoFormatFieldBuilder().getBuilder();
     }

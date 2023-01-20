@@ -70,7 +70,9 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder getInputOrBuilder() {
-    return getInput();
+    return input_ == null
+        ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance()
+        : input_;
   }
 
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 3;
@@ -225,11 +229,15 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.texttospeech.v1.AudioConfigOrBuilder getAudioConfigOrBuilder() {
-    return getAudioConfig();
+    return audioConfig_ == null
+        ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance()
+        : audioConfig_;
   }
 
   public static final int OUTPUT_GCS_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object outputGcsUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputGcsUri_ = "";
   /**
    *
    *
@@ -326,7 +334,9 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder() {
-    return getVoice();
+    return voice_ == null
+        ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
+        : voice_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -579,26 +589,22 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (inputBuilder_ == null) {
-        input_ = null;
-      } else {
-        input_ = null;
+      input_ = null;
+      if (inputBuilder_ != null) {
+        inputBuilder_.dispose();
         inputBuilder_ = null;
       }
-      if (audioConfigBuilder_ == null) {
-        audioConfig_ = null;
-      } else {
-        audioConfig_ = null;
+      audioConfig_ = null;
+      if (audioConfigBuilder_ != null) {
+        audioConfigBuilder_.dispose();
         audioConfigBuilder_ = null;
       }
       outputGcsUri_ = "";
-
-      if (voiceBuilder_ == null) {
-        voice_ = null;
-      } else {
-        voice_ = null;
+      voice_ = null;
+      if (voiceBuilder_ != null) {
+        voiceBuilder_.dispose();
         voiceBuilder_ = null;
       }
       return this;
@@ -628,25 +634,31 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
     public com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest buildPartial() {
       com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest result =
           new com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest(this);
-      result.parent_ = parent_;
-      if (inputBuilder_ == null) {
-        result.input_ = input_;
-      } else {
-        result.input_ = inputBuilder_.build();
-      }
-      if (audioConfigBuilder_ == null) {
-        result.audioConfig_ = audioConfig_;
-      } else {
-        result.audioConfig_ = audioConfigBuilder_.build();
-      }
-      result.outputGcsUri_ = outputGcsUri_;
-      if (voiceBuilder_ == null) {
-        result.voice_ = voice_;
-      } else {
-        result.voice_ = voiceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1.SynthesizeLongAudioRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.input_ = inputBuilder_ == null ? input_ : inputBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.audioConfig_ =
+            audioConfigBuilder_ == null ? audioConfig_ : audioConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputGcsUri_ = outputGcsUri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.voice_ = voiceBuilder_ == null ? voice_ : voiceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -697,6 +709,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInput()) {
@@ -707,6 +720,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       }
       if (!other.getOutputGcsUri().isEmpty()) {
         outputGcsUri_ = other.outputGcsUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasVoice()) {
@@ -741,31 +755,31 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAudioConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 outputGcsUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getVoiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -784,6 +798,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -849,8 +865,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -867,8 +883,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -890,8 +906,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -916,7 +932,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * @return Whether the input field is set.
      */
     public boolean hasInput() {
-      return inputBuilder_ != null || input_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -957,11 +973,11 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         input_ = value;
-        onChanged();
       } else {
         inputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -979,11 +995,11 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         com.google.cloud.texttospeech.v1.SynthesisInput.Builder builderForValue) {
       if (inputBuilder_ == null) {
         input_ = builderForValue.build();
-        onChanged();
       } else {
         inputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -999,19 +1015,18 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      */
     public Builder mergeInput(com.google.cloud.texttospeech.v1.SynthesisInput value) {
       if (inputBuilder_ == null) {
-        if (input_ != null) {
-          input_ =
-              com.google.cloud.texttospeech.v1.SynthesisInput.newBuilder(input_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && input_ != null
+            && input_ != com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance()) {
+          getInputBuilder().mergeFrom(value);
         } else {
           input_ = value;
         }
-        onChanged();
       } else {
         inputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1026,14 +1041,13 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearInput() {
-      if (inputBuilder_ == null) {
-        input_ = null;
-        onChanged();
-      } else {
-        input_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      input_ = null;
+      if (inputBuilder_ != null) {
+        inputBuilder_.dispose();
         inputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1048,7 +1062,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.texttospeech.v1.SynthesisInput.Builder getInputBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInputFieldBuilder().getBuilder();
     }
@@ -1120,7 +1134,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * @return Whether the audioConfig field is set.
      */
     public boolean hasAudioConfig() {
-      return audioConfigBuilder_ != null || audioConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1161,11 +1175,11 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         audioConfig_ = value;
-        onChanged();
       } else {
         audioConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1183,11 +1197,11 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         com.google.cloud.texttospeech.v1.AudioConfig.Builder builderForValue) {
       if (audioConfigBuilder_ == null) {
         audioConfig_ = builderForValue.build();
-        onChanged();
       } else {
         audioConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1203,19 +1217,18 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      */
     public Builder mergeAudioConfig(com.google.cloud.texttospeech.v1.AudioConfig value) {
       if (audioConfigBuilder_ == null) {
-        if (audioConfig_ != null) {
-          audioConfig_ =
-              com.google.cloud.texttospeech.v1.AudioConfig.newBuilder(audioConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && audioConfig_ != null
+            && audioConfig_ != com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance()) {
+          getAudioConfigBuilder().mergeFrom(value);
         } else {
           audioConfig_ = value;
         }
-        onChanged();
       } else {
         audioConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1230,14 +1243,13 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearAudioConfig() {
-      if (audioConfigBuilder_ == null) {
-        audioConfig_ = null;
-        onChanged();
-      } else {
-        audioConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      audioConfig_ = null;
+      if (audioConfigBuilder_ != null) {
+        audioConfigBuilder_.dispose();
         audioConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1252,7 +1264,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.texttospeech.v1.AudioConfig.Builder getAudioConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAudioConfigFieldBuilder().getBuilder();
     }
@@ -1371,8 +1383,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputGcsUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1390,8 +1402,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearOutputGcsUri() {
-
       outputGcsUri_ = getDefaultInstance().getOutputGcsUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1414,8 +1426,8 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputGcsUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1438,7 +1450,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * @return Whether the voice field is set.
      */
     public boolean hasVoice() {
-      return voiceBuilder_ != null || voice_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1475,11 +1487,11 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         voice_ = value;
-        onChanged();
       } else {
         voiceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1495,11 +1507,11 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
         com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder builderForValue) {
       if (voiceBuilder_ == null) {
         voice_ = builderForValue.build();
-        onChanged();
       } else {
         voiceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1513,19 +1525,19 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      */
     public Builder mergeVoice(com.google.cloud.texttospeech.v1.VoiceSelectionParams value) {
       if (voiceBuilder_ == null) {
-        if (voice_ != null) {
-          voice_ =
-              com.google.cloud.texttospeech.v1.VoiceSelectionParams.newBuilder(voice_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && voice_ != null
+            && voice_
+                != com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()) {
+          getVoiceBuilder().mergeFrom(value);
         } else {
           voice_ = value;
         }
-        onChanged();
       } else {
         voiceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1538,14 +1550,13 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 5;</code>
      */
     public Builder clearVoice() {
-      if (voiceBuilder_ == null) {
-        voice_ = null;
-        onChanged();
-      } else {
-        voice_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      voice_ = null;
+      if (voiceBuilder_ != null) {
+        voiceBuilder_.dispose();
         voiceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1558,7 +1569,7 @@ public final class SynthesizeLongAudioRequest extends com.google.protobuf.Genera
      * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 5;</code>
      */
     public com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder getVoiceBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }

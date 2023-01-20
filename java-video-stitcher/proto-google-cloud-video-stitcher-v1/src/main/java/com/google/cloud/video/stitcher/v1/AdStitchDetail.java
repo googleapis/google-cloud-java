@@ -81,7 +81,9 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AD_BREAK_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object adBreakId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adBreakId_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AD_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object adId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adId_ = "";
   /**
    *
    *
@@ -226,11 +230,15 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAdTimeOffsetOrBuilder() {
-    return getAdTimeOffset();
+    return adTimeOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : adTimeOffset_;
   }
 
   public static final int SKIP_REASON_FIELD_NUMBER = 4;
-  private volatile java.lang.Object skipReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object skipReason_ = "";
   /**
    *
    *
@@ -293,6 +301,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
                     com.google.protobuf.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value> media_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
@@ -357,8 +366,10 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.protobuf.Value getMediaOrDefault(
-      java.lang.String key, com.google.protobuf.Value defaultValue) {
+  public /* nullable */ com.google.protobuf.Value getMediaOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.protobuf.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -654,18 +665,15 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       adBreakId_ = "";
-
       adId_ = "";
-
-      if (adTimeOffsetBuilder_ == null) {
-        adTimeOffset_ = null;
-      } else {
-        adTimeOffset_ = null;
+      adTimeOffset_ = null;
+      if (adTimeOffsetBuilder_ != null) {
+        adTimeOffsetBuilder_.dispose();
         adTimeOffsetBuilder_ = null;
       }
       skipReason_ = "";
-
       internalGetMutableMedia().clear();
       return this;
     }
@@ -694,19 +702,32 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.AdStitchDetail buildPartial() {
       com.google.cloud.video.stitcher.v1.AdStitchDetail result =
           new com.google.cloud.video.stitcher.v1.AdStitchDetail(this);
-      int from_bitField0_ = bitField0_;
-      result.adBreakId_ = adBreakId_;
-      result.adId_ = adId_;
-      if (adTimeOffsetBuilder_ == null) {
-        result.adTimeOffset_ = adTimeOffset_;
-      } else {
-        result.adTimeOffset_ = adTimeOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.skipReason_ = skipReason_;
-      result.media_ = internalGetMedia();
-      result.media_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.AdStitchDetail result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.adBreakId_ = adBreakId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.adId_ = adId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.adTimeOffset_ =
+            adTimeOffsetBuilder_ == null ? adTimeOffset_ : adTimeOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.skipReason_ = skipReason_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.media_ = internalGetMedia();
+        result.media_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -757,10 +778,12 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getAdBreakId().isEmpty()) {
         adBreakId_ = other.adBreakId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAdId().isEmpty()) {
         adId_ = other.adId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAdTimeOffset()) {
@@ -768,9 +791,11 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSkipReason().isEmpty()) {
         skipReason_ = other.skipReason_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableMedia().mergeFrom(other.internalGetMedia());
+      bitField0_ |= 0x00000010;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -800,25 +825,25 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 adBreakId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 adId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAdTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 skipReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -827,6 +852,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         MediaDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableMedia().getMutableMap().put(media__.getKey(), media__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -909,8 +935,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       adBreakId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -926,8 +952,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdBreakId() {
-
       adBreakId_ = getDefaultInstance().getAdBreakId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -948,8 +974,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       adBreakId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1015,8 +1041,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       adId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1032,8 +1058,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdId() {
-
       adId_ = getDefaultInstance().getAdId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1054,8 +1080,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       adId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1079,7 +1105,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the adTimeOffset field is set.
      */
     public boolean hasAdTimeOffset() {
-      return adTimeOffsetBuilder_ != null || adTimeOffset_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1118,11 +1144,11 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         adTimeOffset_ = value;
-        onChanged();
       } else {
         adTimeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1138,11 +1164,11 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     public Builder setAdTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (adTimeOffsetBuilder_ == null) {
         adTimeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         adTimeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1157,19 +1183,18 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAdTimeOffset(com.google.protobuf.Duration value) {
       if (adTimeOffsetBuilder_ == null) {
-        if (adTimeOffset_ != null) {
-          adTimeOffset_ =
-              com.google.protobuf.Duration.newBuilder(adTimeOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && adTimeOffset_ != null
+            && adTimeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getAdTimeOffsetBuilder().mergeFrom(value);
         } else {
           adTimeOffset_ = value;
         }
-        onChanged();
       } else {
         adTimeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1183,14 +1208,13 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAdTimeOffset() {
-      if (adTimeOffsetBuilder_ == null) {
-        adTimeOffset_ = null;
-        onChanged();
-      } else {
-        adTimeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      adTimeOffset_ = null;
+      if (adTimeOffsetBuilder_ != null) {
+        adTimeOffsetBuilder_.dispose();
         adTimeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1204,7 +1228,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getAdTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAdTimeOffsetFieldBuilder().getBuilder();
     }
@@ -1315,8 +1339,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       skipReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1332,8 +1356,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSkipReason() {
-
       skipReason_ = getDefaultInstance().getSkipReason();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1354,8 +1378,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       skipReason_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1372,14 +1396,14 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
         internalGetMutableMedia() {
-      onChanged();
-      ;
       if (media_ == null) {
         media_ = com.google.protobuf.MapField.newMapField(MediaDefaultEntryHolder.defaultEntry);
       }
       if (!media_.isMutable()) {
         media_ = media_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return media_;
     }
 
@@ -1437,8 +1461,10 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.protobuf.Value getMediaOrDefault(
-        java.lang.String key, com.google.protobuf.Value defaultValue) {
+    public /* nullable */ com.google.protobuf.Value getMediaOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.protobuf.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1469,6 +1495,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMedia() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableMedia().getMutableMap().clear();
       return this;
     }
@@ -1493,6 +1520,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMedia() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableMedia().getMutableMap();
     }
     /**
@@ -1513,8 +1541,8 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMedia().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -1530,6 +1558,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMedia(java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
       internalGetMutableMedia().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 

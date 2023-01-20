@@ -133,7 +133,9 @@ public final class TransferTypes {
     }
 
     public static final int ACCOUNT_EMAIL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object accountEmail_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountEmail_ = "";
     /**
      *
      *
@@ -182,7 +184,9 @@ public final class TransferTypes {
     }
 
     public static final int SUBJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object subjectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subjectId_ = "";
     /**
      *
      *
@@ -443,10 +447,9 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         accountEmail_ = "";
-
         subjectId_ = "";
-
         return this;
       }
 
@@ -477,10 +480,22 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.GoogleServiceAccount buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.GoogleServiceAccount result =
             new com.google.storagetransfer.v1.proto.TransferTypes.GoogleServiceAccount(this);
-        result.accountEmail_ = accountEmail_;
-        result.subjectId_ = subjectId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.GoogleServiceAccount result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accountEmail_ = accountEmail_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.subjectId_ = subjectId_;
+        }
       }
 
       @java.lang.Override
@@ -537,10 +552,12 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getAccountEmail().isEmpty()) {
           accountEmail_ = other.accountEmail_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getSubjectId().isEmpty()) {
           subjectId_ = other.subjectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -572,13 +589,13 @@ public final class TransferTypes {
               case 10:
                 {
                   accountEmail_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   subjectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -597,6 +614,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object accountEmail_ = "";
       /**
@@ -659,8 +678,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         accountEmail_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -676,8 +695,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearAccountEmail() {
-
         accountEmail_ = getDefaultInstance().getAccountEmail();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -698,8 +717,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         accountEmail_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -765,8 +784,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         subjectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -782,8 +801,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearSubjectId() {
-
         subjectId_ = getDefaultInstance().getSubjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -804,8 +823,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         subjectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -990,7 +1009,9 @@ public final class TransferTypes {
     }
 
     public static final int ACCESS_KEY_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object accessKeyId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accessKeyId_ = "";
     /**
      *
      *
@@ -1039,7 +1060,9 @@ public final class TransferTypes {
     }
 
     public static final int SECRET_ACCESS_KEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object secretAccessKey_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object secretAccessKey_ = "";
     /**
      *
      *
@@ -1302,10 +1325,9 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         accessKeyId_ = "";
-
         secretAccessKey_ = "";
-
         return this;
       }
 
@@ -1334,10 +1356,22 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey result =
             new com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey(this);
-        result.accessKeyId_ = accessKeyId_;
-        result.secretAccessKey_ = secretAccessKey_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accessKeyId_ = accessKeyId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.secretAccessKey_ = secretAccessKey_;
+        }
       }
 
       @java.lang.Override
@@ -1392,10 +1426,12 @@ public final class TransferTypes {
           return this;
         if (!other.getAccessKeyId().isEmpty()) {
           accessKeyId_ = other.accessKeyId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getSecretAccessKey().isEmpty()) {
           secretAccessKey_ = other.secretAccessKey_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1427,13 +1463,13 @@ public final class TransferTypes {
               case 10:
                 {
                   accessKeyId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   secretAccessKey_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1452,6 +1488,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object accessKeyId_ = "";
       /**
@@ -1514,8 +1552,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         accessKeyId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1531,8 +1569,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearAccessKeyId() {
-
         accessKeyId_ = getDefaultInstance().getAccessKeyId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1553,8 +1591,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         accessKeyId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1623,8 +1661,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         secretAccessKey_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1641,8 +1679,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearSecretAccessKey() {
-
         secretAccessKey_ = getDefaultInstance().getSecretAccessKey();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1664,8 +1702,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         secretAccessKey_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1827,7 +1865,9 @@ public final class TransferTypes {
     }
 
     public static final int SAS_TOKEN_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sasToken_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sasToken_ = "";
     /**
      *
      *
@@ -2087,8 +2127,8 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sasToken_ = "";
-
         return this;
       }
 
@@ -2118,9 +2158,19 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials result =
             new com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials(this);
-        result.sasToken_ = sasToken_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sasToken_ = sasToken_;
+        }
       }
 
       @java.lang.Override
@@ -2176,6 +2226,7 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getSasToken().isEmpty()) {
           sasToken_ = other.sasToken_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2207,7 +2258,7 @@ public final class TransferTypes {
               case 18:
                 {
                   sasToken_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               default:
@@ -2226,6 +2277,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object sasToken_ = "";
       /**
@@ -2300,8 +2353,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         sasToken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2321,8 +2374,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearSasToken() {
-
         sasToken_ = getDefaultInstance().getSasToken();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2347,8 +2400,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sasToken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3022,7 +3075,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinTimeElapsedSinceLastModificationOrBuilder() {
-      return getMinTimeElapsedSinceLastModification();
+      return minTimeElapsedSinceLastModification_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minTimeElapsedSinceLastModification_;
     }
 
     public static final int MAX_TIME_ELAPSED_SINCE_LAST_MODIFICATION_FIELD_NUMBER = 2;
@@ -3091,10 +3146,14 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMaxTimeElapsedSinceLastModificationOrBuilder() {
-      return getMaxTimeElapsedSinceLastModification();
+      return maxTimeElapsedSinceLastModification_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : maxTimeElapsedSinceLastModification_;
     }
 
     public static final int INCLUDE_PREFIXES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList includePrefixes_;
     /**
      *
@@ -3236,6 +3295,8 @@ public final class TransferTypes {
     }
 
     public static final int EXCLUDE_PREFIXES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList excludePrefixes_;
     /**
      *
@@ -3445,7 +3506,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastModifiedSinceOrBuilder() {
-      return getLastModifiedSince();
+      return lastModifiedSince_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastModifiedSince_;
     }
 
     public static final int LAST_MODIFIED_BEFORE_FIELD_NUMBER = 6;
@@ -3499,7 +3562,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastModifiedBeforeOrBuilder() {
-      return getLastModifiedBefore();
+      return lastModifiedBefore_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastModifiedBefore_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3799,32 +3864,29 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (minTimeElapsedSinceLastModificationBuilder_ == null) {
-          minTimeElapsedSinceLastModification_ = null;
-        } else {
-          minTimeElapsedSinceLastModification_ = null;
+        bitField0_ = 0;
+        minTimeElapsedSinceLastModification_ = null;
+        if (minTimeElapsedSinceLastModificationBuilder_ != null) {
+          minTimeElapsedSinceLastModificationBuilder_.dispose();
           minTimeElapsedSinceLastModificationBuilder_ = null;
         }
-        if (maxTimeElapsedSinceLastModificationBuilder_ == null) {
-          maxTimeElapsedSinceLastModification_ = null;
-        } else {
-          maxTimeElapsedSinceLastModification_ = null;
+        maxTimeElapsedSinceLastModification_ = null;
+        if (maxTimeElapsedSinceLastModificationBuilder_ != null) {
+          maxTimeElapsedSinceLastModificationBuilder_.dispose();
           maxTimeElapsedSinceLastModificationBuilder_ = null;
         }
         includePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         excludePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (lastModifiedSinceBuilder_ == null) {
-          lastModifiedSince_ = null;
-        } else {
-          lastModifiedSince_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        lastModifiedSince_ = null;
+        if (lastModifiedSinceBuilder_ != null) {
+          lastModifiedSinceBuilder_.dispose();
           lastModifiedSinceBuilder_ = null;
         }
-        if (lastModifiedBeforeBuilder_ == null) {
-          lastModifiedBefore_ = null;
-        } else {
-          lastModifiedBefore_ = null;
+        lastModifiedBefore_ = null;
+        if (lastModifiedBeforeBuilder_ != null) {
+          lastModifiedBeforeBuilder_.dispose();
           lastModifiedBeforeBuilder_ = null;
         }
         return this;
@@ -3856,41 +3918,55 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions result =
             new com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions(this);
-        int from_bitField0_ = bitField0_;
-        if (minTimeElapsedSinceLastModificationBuilder_ == null) {
-          result.minTimeElapsedSinceLastModification_ = minTimeElapsedSinceLastModification_;
-        } else {
-          result.minTimeElapsedSinceLastModification_ =
-              minTimeElapsedSinceLastModificationBuilder_.build();
-        }
-        if (maxTimeElapsedSinceLastModificationBuilder_ == null) {
-          result.maxTimeElapsedSinceLastModification_ = maxTimeElapsedSinceLastModification_;
-        } else {
-          result.maxTimeElapsedSinceLastModification_ =
-              maxTimeElapsedSinceLastModificationBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          includePrefixes_ = includePrefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.includePrefixes_ = includePrefixes_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          excludePrefixes_ = excludePrefixes_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.excludePrefixes_ = excludePrefixes_;
-        if (lastModifiedSinceBuilder_ == null) {
-          result.lastModifiedSince_ = lastModifiedSince_;
-        } else {
-          result.lastModifiedSince_ = lastModifiedSinceBuilder_.build();
-        }
-        if (lastModifiedBeforeBuilder_ == null) {
-          result.lastModifiedBefore_ = lastModifiedBefore_;
-        } else {
-          result.lastModifiedBefore_ = lastModifiedBeforeBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          includePrefixes_ = includePrefixes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.includePrefixes_ = includePrefixes_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          excludePrefixes_ = excludePrefixes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.excludePrefixes_ = excludePrefixes_;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minTimeElapsedSinceLastModification_ =
+              minTimeElapsedSinceLastModificationBuilder_ == null
+                  ? minTimeElapsedSinceLastModification_
+                  : minTimeElapsedSinceLastModificationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxTimeElapsedSinceLastModification_ =
+              maxTimeElapsedSinceLastModificationBuilder_ == null
+                  ? maxTimeElapsedSinceLastModification_
+                  : maxTimeElapsedSinceLastModificationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.lastModifiedSince_ =
+              lastModifiedSinceBuilder_ == null
+                  ? lastModifiedSince_
+                  : lastModifiedSinceBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.lastModifiedBefore_ =
+              lastModifiedBeforeBuilder_ == null
+                  ? lastModifiedBefore_
+                  : lastModifiedBeforeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3953,7 +4029,7 @@ public final class TransferTypes {
         if (!other.includePrefixes_.isEmpty()) {
           if (includePrefixes_.isEmpty()) {
             includePrefixes_ = other.includePrefixes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureIncludePrefixesIsMutable();
             includePrefixes_.addAll(other.includePrefixes_);
@@ -3963,7 +4039,7 @@ public final class TransferTypes {
         if (!other.excludePrefixes_.isEmpty()) {
           if (excludePrefixes_.isEmpty()) {
             excludePrefixes_ = other.excludePrefixes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureExcludePrefixesIsMutable();
             excludePrefixes_.addAll(other.excludePrefixes_);
@@ -4007,7 +4083,7 @@ public final class TransferTypes {
                   input.readMessage(
                       getMinTimeElapsedSinceLastModificationFieldBuilder().getBuilder(),
                       extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -4015,7 +4091,7 @@ public final class TransferTypes {
                   input.readMessage(
                       getMaxTimeElapsedSinceLastModificationFieldBuilder().getBuilder(),
                       extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -4036,14 +4112,14 @@ public final class TransferTypes {
                 {
                   input.readMessage(
                       getLastModifiedSinceFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getLastModifiedBeforeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               default:
@@ -4090,8 +4166,7 @@ public final class TransferTypes {
        * @return Whether the minTimeElapsedSinceLastModification field is set.
        */
       public boolean hasMinTimeElapsedSinceLastModification() {
-        return minTimeElapsedSinceLastModificationBuilder_ != null
-            || minTimeElapsedSinceLastModification_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4142,11 +4217,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           minTimeElapsedSinceLastModification_ = value;
-          onChanged();
         } else {
           minTimeElapsedSinceLastModificationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4169,11 +4244,11 @@ public final class TransferTypes {
           com.google.protobuf.Duration.Builder builderForValue) {
         if (minTimeElapsedSinceLastModificationBuilder_ == null) {
           minTimeElapsedSinceLastModification_ = builderForValue.build();
-          onChanged();
         } else {
           minTimeElapsedSinceLastModificationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4194,19 +4269,19 @@ public final class TransferTypes {
        */
       public Builder mergeMinTimeElapsedSinceLastModification(com.google.protobuf.Duration value) {
         if (minTimeElapsedSinceLastModificationBuilder_ == null) {
-          if (minTimeElapsedSinceLastModification_ != null) {
-            minTimeElapsedSinceLastModification_ =
-                com.google.protobuf.Duration.newBuilder(minTimeElapsedSinceLastModification_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && minTimeElapsedSinceLastModification_ != null
+              && minTimeElapsedSinceLastModification_
+                  != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinTimeElapsedSinceLastModificationBuilder().mergeFrom(value);
           } else {
             minTimeElapsedSinceLastModification_ = value;
           }
-          onChanged();
         } else {
           minTimeElapsedSinceLastModificationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4226,14 +4301,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Duration min_time_elapsed_since_last_modification = 1;</code>
        */
       public Builder clearMinTimeElapsedSinceLastModification() {
-        if (minTimeElapsedSinceLastModificationBuilder_ == null) {
-          minTimeElapsedSinceLastModification_ = null;
-          onChanged();
-        } else {
-          minTimeElapsedSinceLastModification_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        minTimeElapsedSinceLastModification_ = null;
+        if (minTimeElapsedSinceLastModificationBuilder_ != null) {
+          minTimeElapsedSinceLastModificationBuilder_.dispose();
           minTimeElapsedSinceLastModificationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4253,7 +4327,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Duration min_time_elapsed_since_last_modification = 1;</code>
        */
       public com.google.protobuf.Duration.Builder getMinTimeElapsedSinceLastModificationBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMinTimeElapsedSinceLastModificationFieldBuilder().getBuilder();
       }
@@ -4341,8 +4415,7 @@ public final class TransferTypes {
        * @return Whether the maxTimeElapsedSinceLastModification field is set.
        */
       public boolean hasMaxTimeElapsedSinceLastModification() {
-        return maxTimeElapsedSinceLastModificationBuilder_ != null
-            || maxTimeElapsedSinceLastModification_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -4393,11 +4466,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           maxTimeElapsedSinceLastModification_ = value;
-          onChanged();
         } else {
           maxTimeElapsedSinceLastModificationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -4420,11 +4493,11 @@ public final class TransferTypes {
           com.google.protobuf.Duration.Builder builderForValue) {
         if (maxTimeElapsedSinceLastModificationBuilder_ == null) {
           maxTimeElapsedSinceLastModification_ = builderForValue.build();
-          onChanged();
         } else {
           maxTimeElapsedSinceLastModificationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -4445,19 +4518,19 @@ public final class TransferTypes {
        */
       public Builder mergeMaxTimeElapsedSinceLastModification(com.google.protobuf.Duration value) {
         if (maxTimeElapsedSinceLastModificationBuilder_ == null) {
-          if (maxTimeElapsedSinceLastModification_ != null) {
-            maxTimeElapsedSinceLastModification_ =
-                com.google.protobuf.Duration.newBuilder(maxTimeElapsedSinceLastModification_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maxTimeElapsedSinceLastModification_ != null
+              && maxTimeElapsedSinceLastModification_
+                  != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMaxTimeElapsedSinceLastModificationBuilder().mergeFrom(value);
           } else {
             maxTimeElapsedSinceLastModification_ = value;
           }
-          onChanged();
         } else {
           maxTimeElapsedSinceLastModificationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -4477,14 +4550,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Duration max_time_elapsed_since_last_modification = 2;</code>
        */
       public Builder clearMaxTimeElapsedSinceLastModification() {
-        if (maxTimeElapsedSinceLastModificationBuilder_ == null) {
-          maxTimeElapsedSinceLastModification_ = null;
-          onChanged();
-        } else {
-          maxTimeElapsedSinceLastModification_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxTimeElapsedSinceLastModification_ = null;
+        if (maxTimeElapsedSinceLastModificationBuilder_ != null) {
+          maxTimeElapsedSinceLastModificationBuilder_.dispose();
           maxTimeElapsedSinceLastModificationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4504,7 +4576,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Duration max_time_elapsed_since_last_modification = 2;</code>
        */
       public com.google.protobuf.Duration.Builder getMaxTimeElapsedSinceLastModificationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxTimeElapsedSinceLastModificationFieldBuilder().getBuilder();
       }
@@ -4571,9 +4643,9 @@ public final class TransferTypes {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureIncludePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           includePrefixes_ = new com.google.protobuf.LazyStringArrayList(includePrefixes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -4868,7 +4940,7 @@ public final class TransferTypes {
        */
       public Builder clearIncludePrefixes() {
         includePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -4919,9 +4991,9 @@ public final class TransferTypes {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureExcludePrefixesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           excludePrefixes_ = new com.google.protobuf.LazyStringArrayList(excludePrefixes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
       /**
@@ -5216,7 +5288,7 @@ public final class TransferTypes {
        */
       public Builder clearExcludePrefixes() {
         excludePrefixes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -5289,7 +5361,7 @@ public final class TransferTypes {
        * @return Whether the lastModifiedSince field is set.
        */
       public boolean hasLastModifiedSince() {
-        return lastModifiedSinceBuilder_ != null || lastModifiedSince_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -5342,11 +5414,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           lastModifiedSince_ = value;
-          onChanged();
         } else {
           lastModifiedSinceBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -5369,11 +5441,11 @@ public final class TransferTypes {
       public Builder setLastModifiedSince(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (lastModifiedSinceBuilder_ == null) {
           lastModifiedSince_ = builderForValue.build();
-          onChanged();
         } else {
           lastModifiedSinceBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -5395,19 +5467,18 @@ public final class TransferTypes {
        */
       public Builder mergeLastModifiedSince(com.google.protobuf.Timestamp value) {
         if (lastModifiedSinceBuilder_ == null) {
-          if (lastModifiedSince_ != null) {
-            lastModifiedSince_ =
-                com.google.protobuf.Timestamp.newBuilder(lastModifiedSince_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && lastModifiedSince_ != null
+              && lastModifiedSince_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastModifiedSinceBuilder().mergeFrom(value);
           } else {
             lastModifiedSince_ = value;
           }
-          onChanged();
         } else {
           lastModifiedSinceBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -5428,14 +5499,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp last_modified_since = 5;</code>
        */
       public Builder clearLastModifiedSince() {
-        if (lastModifiedSinceBuilder_ == null) {
-          lastModifiedSince_ = null;
-          onChanged();
-        } else {
-          lastModifiedSince_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        lastModifiedSince_ = null;
+        if (lastModifiedSinceBuilder_ != null) {
+          lastModifiedSinceBuilder_.dispose();
           lastModifiedSinceBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5456,7 +5526,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp last_modified_since = 5;</code>
        */
       public com.google.protobuf.Timestamp.Builder getLastModifiedSinceBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getLastModifiedSinceFieldBuilder().getBuilder();
       }
@@ -5540,7 +5610,7 @@ public final class TransferTypes {
        * @return Whether the lastModifiedBefore field is set.
        */
       public boolean hasLastModifiedBefore() {
-        return lastModifiedBeforeBuilder_ != null || lastModifiedBefore_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -5581,11 +5651,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           lastModifiedBefore_ = value;
-          onChanged();
         } else {
           lastModifiedBeforeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -5602,11 +5672,11 @@ public final class TransferTypes {
       public Builder setLastModifiedBefore(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (lastModifiedBeforeBuilder_ == null) {
           lastModifiedBefore_ = builderForValue.build();
-          onChanged();
         } else {
           lastModifiedBeforeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -5622,19 +5692,18 @@ public final class TransferTypes {
        */
       public Builder mergeLastModifiedBefore(com.google.protobuf.Timestamp value) {
         if (lastModifiedBeforeBuilder_ == null) {
-          if (lastModifiedBefore_ != null) {
-            lastModifiedBefore_ =
-                com.google.protobuf.Timestamp.newBuilder(lastModifiedBefore_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && lastModifiedBefore_ != null
+              && lastModifiedBefore_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastModifiedBeforeBuilder().mergeFrom(value);
           } else {
             lastModifiedBefore_ = value;
           }
-          onChanged();
         } else {
           lastModifiedBeforeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -5649,14 +5718,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp last_modified_before = 6;</code>
        */
       public Builder clearLastModifiedBefore() {
-        if (lastModifiedBeforeBuilder_ == null) {
-          lastModifiedBefore_ = null;
-          onChanged();
-        } else {
-          lastModifiedBefore_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        lastModifiedBefore_ = null;
+        if (lastModifiedBeforeBuilder_ != null) {
+          lastModifiedBeforeBuilder_.dispose();
           lastModifiedBeforeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5671,7 +5739,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp last_modified_before = 6;</code>
        */
       public com.google.protobuf.Timestamp.Builder getLastModifiedBeforeBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getLastModifiedBeforeFieldBuilder().getBuilder();
       }
@@ -5911,7 +5979,9 @@ public final class TransferTypes {
     }
 
     public static final int BUCKET_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object bucketName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bucketName_ = "";
     /**
      *
      *
@@ -5962,7 +6032,9 @@ public final class TransferTypes {
     }
 
     public static final int PATH_FIELD_NUMBER = 3;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -6232,10 +6304,9 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bucketName_ = "";
-
         path_ = "";
-
         return this;
       }
 
@@ -6263,10 +6334,21 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.GcsData buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.GcsData result =
             new com.google.storagetransfer.v1.proto.TransferTypes.GcsData(this);
-        result.bucketName_ = bucketName_;
-        result.path_ = path_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.storagetransfer.v1.proto.TransferTypes.GcsData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bucketName_ = bucketName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.path_ = path_;
+        }
       }
 
       @java.lang.Override
@@ -6319,10 +6401,12 @@ public final class TransferTypes {
           return this;
         if (!other.getBucketName().isEmpty()) {
           bucketName_ = other.bucketName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -6354,13 +6438,13 @@ public final class TransferTypes {
               case 10:
                 {
                   bucketName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               default:
@@ -6379,6 +6463,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object bucketName_ = "";
       /**
@@ -6444,8 +6530,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         bucketName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6462,8 +6548,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBucketName() {
-
         bucketName_ = getDefaultInstance().getBucketName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6485,8 +6571,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         bucketName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6567,8 +6653,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6589,8 +6675,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -6616,8 +6702,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6895,7 +6981,9 @@ public final class TransferTypes {
     }
 
     public static final int BUCKET_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object bucketName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bucketName_ = "";
     /**
      *
      *
@@ -7011,11 +7099,15 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKeyOrBuilder
         getAwsAccessKeyOrBuilder() {
-      return getAwsAccessKey();
+      return awsAccessKey_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey.getDefaultInstance()
+          : awsAccessKey_;
     }
 
     public static final int PATH_FIELD_NUMBER = 3;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -7070,7 +7162,9 @@ public final class TransferTypes {
     }
 
     public static final int ROLE_ARN_FIELD_NUMBER = 4;
-    private volatile java.lang.Object roleArn_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object roleArn_ = "";
     /**
      *
      *
@@ -7363,18 +7457,15 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bucketName_ = "";
-
-        if (awsAccessKeyBuilder_ == null) {
-          awsAccessKey_ = null;
-        } else {
-          awsAccessKey_ = null;
+        awsAccessKey_ = null;
+        if (awsAccessKeyBuilder_ != null) {
+          awsAccessKeyBuilder_.dispose();
           awsAccessKeyBuilder_ = null;
         }
         path_ = "";
-
         roleArn_ = "";
-
         return this;
       }
 
@@ -7403,16 +7494,29 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3Data buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.AwsS3Data result =
             new com.google.storagetransfer.v1.proto.TransferTypes.AwsS3Data(this);
-        result.bucketName_ = bucketName_;
-        if (awsAccessKeyBuilder_ == null) {
-          result.awsAccessKey_ = awsAccessKey_;
-        } else {
-          result.awsAccessKey_ = awsAccessKeyBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.path_ = path_;
-        result.roleArn_ = roleArn_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3Data result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bucketName_ = bucketName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.awsAccessKey_ =
+              awsAccessKeyBuilder_ == null ? awsAccessKey_ : awsAccessKeyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.roleArn_ = roleArn_;
+        }
       }
 
       @java.lang.Override
@@ -7466,6 +7570,7 @@ public final class TransferTypes {
           return this;
         if (!other.getBucketName().isEmpty()) {
           bucketName_ = other.bucketName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasAwsAccessKey()) {
@@ -7473,10 +7578,12 @@ public final class TransferTypes {
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getRoleArn().isEmpty()) {
           roleArn_ = other.roleArn_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -7508,25 +7615,25 @@ public final class TransferTypes {
               case 10:
                 {
                   bucketName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getAwsAccessKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   roleArn_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -7545,6 +7652,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object bucketName_ = "";
       /**
@@ -7613,8 +7722,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         bucketName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7632,8 +7741,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBucketName() {
-
         bucketName_ = getDefaultInstance().getBucketName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -7656,8 +7765,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         bucketName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7686,7 +7795,7 @@ public final class TransferTypes {
        * @return Whether the awsAccessKey field is set.
        */
       public boolean hasAwsAccessKey() {
-        return awsAccessKeyBuilder_ != null || awsAccessKey_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -7736,11 +7845,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           awsAccessKey_ = value;
-          onChanged();
         } else {
           awsAccessKeyBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -7762,11 +7871,11 @@ public final class TransferTypes {
           com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey.Builder builderForValue) {
         if (awsAccessKeyBuilder_ == null) {
           awsAccessKey_ = builderForValue.build();
-          onChanged();
         } else {
           awsAccessKeyBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -7787,20 +7896,20 @@ public final class TransferTypes {
       public Builder mergeAwsAccessKey(
           com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey value) {
         if (awsAccessKeyBuilder_ == null) {
-          if (awsAccessKey_ != null) {
-            awsAccessKey_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey.newBuilder(
-                        awsAccessKey_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && awsAccessKey_ != null
+              && awsAccessKey_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey
+                      .getDefaultInstance()) {
+            getAwsAccessKeyBuilder().mergeFrom(value);
           } else {
             awsAccessKey_ = value;
           }
-          onChanged();
         } else {
           awsAccessKeyBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -7819,14 +7928,13 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearAwsAccessKey() {
-        if (awsAccessKeyBuilder_ == null) {
-          awsAccessKey_ = null;
-          onChanged();
-        } else {
-          awsAccessKey_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        awsAccessKey_ = null;
+        if (awsAccessKeyBuilder_ != null) {
+          awsAccessKeyBuilder_.dispose();
           awsAccessKeyBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -7846,7 +7954,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.AwsAccessKey.Builder
           getAwsAccessKeyBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAwsAccessKeyFieldBuilder().getBuilder();
       }
@@ -7977,8 +8085,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7997,8 +8105,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -8022,8 +8130,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8107,8 +8215,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         roleArn_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8130,8 +8238,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearRoleArn() {
-
         roleArn_ = getDefaultInstance().getRoleArn();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -8158,8 +8266,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         roleArn_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8421,7 +8529,9 @@ public final class TransferTypes {
     }
 
     public static final int STORAGE_ACCOUNT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object storageAccount_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object storageAccount_ = "";
     /**
      *
      *
@@ -8528,11 +8638,15 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentialsOrBuilder
         getAzureCredentialsOrBuilder() {
-      return getAzureCredentials();
+      return azureCredentials_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials.getDefaultInstance()
+          : azureCredentials_;
     }
 
     public static final int CONTAINER_FIELD_NUMBER = 4;
-    private volatile java.lang.Object container_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object container_ = "";
     /**
      *
      *
@@ -8581,7 +8695,9 @@ public final class TransferTypes {
     }
 
     public static final int PATH_FIELD_NUMBER = 5;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -8877,18 +8993,15 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         storageAccount_ = "";
-
-        if (azureCredentialsBuilder_ == null) {
-          azureCredentials_ = null;
-        } else {
-          azureCredentials_ = null;
+        azureCredentials_ = null;
+        if (azureCredentialsBuilder_ != null) {
+          azureCredentialsBuilder_.dispose();
           azureCredentialsBuilder_ = null;
         }
         container_ = "";
-
         path_ = "";
-
         return this;
       }
 
@@ -8919,16 +9032,31 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.AzureBlobStorageData buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.AzureBlobStorageData result =
             new com.google.storagetransfer.v1.proto.TransferTypes.AzureBlobStorageData(this);
-        result.storageAccount_ = storageAccount_;
-        if (azureCredentialsBuilder_ == null) {
-          result.azureCredentials_ = azureCredentials_;
-        } else {
-          result.azureCredentials_ = azureCredentialsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.container_ = container_;
-        result.path_ = path_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.AzureBlobStorageData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.storageAccount_ = storageAccount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.azureCredentials_ =
+              azureCredentialsBuilder_ == null
+                  ? azureCredentials_
+                  : azureCredentialsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.container_ = container_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.path_ = path_;
+        }
       }
 
       @java.lang.Override
@@ -8985,6 +9113,7 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getStorageAccount().isEmpty()) {
           storageAccount_ = other.storageAccount_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasAzureCredentials()) {
@@ -8992,10 +9121,12 @@ public final class TransferTypes {
         }
         if (!other.getContainer().isEmpty()) {
           container_ = other.container_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -9027,26 +9158,26 @@ public final class TransferTypes {
               case 10:
                 {
                   storageAccount_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getAzureCredentialsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 34:
                 {
                   container_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 34
               case 42:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 42
               default:
@@ -9065,6 +9196,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object storageAccount_ = "";
       /**
@@ -9127,8 +9260,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         storageAccount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9144,8 +9277,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearStorageAccount() {
-
         storageAccount_ = getDefaultInstance().getStorageAccount();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -9166,8 +9299,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         storageAccount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -9194,7 +9327,7 @@ public final class TransferTypes {
        * @return Whether the azureCredentials field is set.
        */
       public boolean hasAzureCredentials() {
-        return azureCredentialsBuilder_ != null || azureCredentials_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -9242,11 +9375,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           azureCredentials_ = value;
-          onChanged();
         } else {
           azureCredentialsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -9267,11 +9400,11 @@ public final class TransferTypes {
               builderForValue) {
         if (azureCredentialsBuilder_ == null) {
           azureCredentials_ = builderForValue.build();
-          onChanged();
         } else {
           azureCredentialsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -9290,20 +9423,20 @@ public final class TransferTypes {
       public Builder mergeAzureCredentials(
           com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials value) {
         if (azureCredentialsBuilder_ == null) {
-          if (azureCredentials_ != null) {
-            azureCredentials_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials.newBuilder(
-                        azureCredentials_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && azureCredentials_ != null
+              && azureCredentials_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials
+                      .getDefaultInstance()) {
+            getAzureCredentialsBuilder().mergeFrom(value);
           } else {
             azureCredentials_ = value;
           }
-          onChanged();
         } else {
           azureCredentialsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -9320,14 +9453,13 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearAzureCredentials() {
-        if (azureCredentialsBuilder_ == null) {
-          azureCredentials_ = null;
-          onChanged();
-        } else {
-          azureCredentials_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        azureCredentials_ = null;
+        if (azureCredentialsBuilder_ != null) {
+          azureCredentialsBuilder_.dispose();
           azureCredentialsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -9345,7 +9477,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.AzureCredentials.Builder
           getAzureCredentialsBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAzureCredentialsFieldBuilder().getBuilder();
       }
@@ -9464,8 +9596,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         container_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9481,8 +9613,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearContainer() {
-
         container_ = getDefaultInstance().getContainer();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -9503,8 +9635,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         container_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -9579,8 +9711,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9599,8 +9731,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -9624,8 +9756,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -9809,7 +9941,9 @@ public final class TransferTypes {
     }
 
     public static final int LIST_URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object listUrl_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object listUrl_ = "";
     /**
      *
      *
@@ -10088,8 +10222,8 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         listUrl_ = "";
-
         return this;
       }
 
@@ -10118,9 +10252,19 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.HttpData buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.HttpData result =
             new com.google.storagetransfer.v1.proto.TransferTypes.HttpData(this);
-        result.listUrl_ = listUrl_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.HttpData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.listUrl_ = listUrl_;
+        }
       }
 
       @java.lang.Override
@@ -10174,6 +10318,7 @@ public final class TransferTypes {
           return this;
         if (!other.getListUrl().isEmpty()) {
           listUrl_ = other.listUrl_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -10205,7 +10350,7 @@ public final class TransferTypes {
               case 10:
                 {
                   listUrl_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -10224,6 +10369,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object listUrl_ = "";
       /**
@@ -10292,8 +10439,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         listUrl_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10311,8 +10458,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearListUrl() {
-
         listUrl_ = getDefaultInstance().getListUrl();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -10335,8 +10482,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         listUrl_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10486,7 +10633,9 @@ public final class TransferTypes {
     }
 
     public static final int ROOT_DIRECTORY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object rootDirectory_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object rootDirectory_ = "";
     /**
      *
      *
@@ -10736,8 +10885,8 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rootDirectory_ = "";
-
         return this;
       }
 
@@ -10767,9 +10916,19 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.PosixFilesystem buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.PosixFilesystem result =
             new com.google.storagetransfer.v1.proto.TransferTypes.PosixFilesystem(this);
-        result.rootDirectory_ = rootDirectory_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.PosixFilesystem result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rootDirectory_ = rootDirectory_;
+        }
       }
 
       @java.lang.Override
@@ -10825,6 +10984,7 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getRootDirectory().isEmpty()) {
           rootDirectory_ = other.rootDirectory_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -10856,7 +11016,7 @@ public final class TransferTypes {
               case 10:
                 {
                   rootDirectory_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -10875,6 +11035,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object rootDirectory_ = "";
       /**
@@ -10937,8 +11099,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         rootDirectory_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -10954,8 +11116,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearRootDirectory() {
-
         rootDirectory_ = getDefaultInstance().getRootDirectory();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -10976,8 +11138,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         rootDirectory_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -11298,7 +11460,9 @@ public final class TransferTypes {
     }
 
     public static final int BUCKET_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object bucketName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bucketName_ = "";
     /**
      *
      *
@@ -11347,7 +11511,9 @@ public final class TransferTypes {
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -11402,7 +11568,9 @@ public final class TransferTypes {
     }
 
     public static final int ENDPOINT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object endpoint_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpoint_ = "";
     /**
      *
      *
@@ -11451,7 +11619,9 @@ public final class TransferTypes {
     }
 
     public static final int REGION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object region_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object region_ = "";
     /**
      *
      *
@@ -11815,14 +11985,11 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bucketName_ = "";
-
         path_ = "";
-
         endpoint_ = "";
-
         region_ = "";
-
         if (s3MetadataBuilder_ != null) {
           s3MetadataBuilder_.clear();
         }
@@ -11858,20 +12025,38 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData result =
             new com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData(this);
-        result.bucketName_ = bucketName_;
-        result.path_ = path_;
-        result.endpoint_ = endpoint_;
-        result.region_ = region_;
-        if (dataProviderCase_ == 4) {
-          if (s3MetadataBuilder_ == null) {
-            result.dataProvider_ = dataProvider_;
-          } else {
-            result.dataProvider_ = s3MetadataBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.dataProviderCase_ = dataProviderCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bucketName_ = bucketName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.endpoint_ = endpoint_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.region_ = region_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.storagetransfer.v1.proto.TransferTypes.AwsS3CompatibleData result) {
+        result.dataProviderCase_ = dataProviderCase_;
+        result.dataProvider_ = this.dataProvider_;
+        if (dataProviderCase_ == 4 && s3MetadataBuilder_ != null) {
+          result.dataProvider_ = s3MetadataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -11928,18 +12113,22 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getBucketName().isEmpty()) {
           bucketName_ = other.bucketName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getEndpoint().isEmpty()) {
           endpoint_ = other.endpoint_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getRegion().isEmpty()) {
           region_ = other.region_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         switch (other.getDataProviderCase()) {
@@ -11982,19 +12171,19 @@ public final class TransferTypes {
               case 10:
                 {
                   bucketName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   endpoint_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -12006,7 +12195,7 @@ public final class TransferTypes {
               case 42:
                 {
                   region_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 42
               default:
@@ -12039,6 +12228,8 @@ public final class TransferTypes {
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object bucketName_ = "";
       /**
@@ -12101,8 +12292,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         bucketName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12118,8 +12309,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBucketName() {
-
         bucketName_ = getDefaultInstance().getBucketName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -12140,8 +12331,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         bucketName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -12216,8 +12407,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -12236,8 +12427,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -12261,8 +12452,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -12328,8 +12519,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         endpoint_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -12345,8 +12536,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearEndpoint() {
-
         endpoint_ = getDefaultInstance().getEndpoint();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -12367,8 +12558,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         endpoint_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -12437,8 +12628,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         region_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12455,8 +12646,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearRegion() {
-
         region_ = getDefaultInstance().getRegion();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -12478,8 +12669,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         region_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -12707,7 +12898,6 @@ public final class TransferTypes {
         }
         dataProviderCase_ = 4;
         onChanged();
-        ;
         return s3MetadataBuilder_;
       }
 
@@ -13604,7 +13794,7 @@ public final class TransferTypes {
     }
 
     public static final int AUTH_METHOD_FIELD_NUMBER = 1;
-    private int authMethod_;
+    private int authMethod_ = 0;
     /**
      *
      *
@@ -13638,10 +13828,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
         getAuthMethod() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod result =
-          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod.valueOf(
-              authMethod_);
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
+              .forNumber(authMethod_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
               .UNRECOGNIZED
@@ -13649,7 +13838,7 @@ public final class TransferTypes {
     }
 
     public static final int REQUEST_MODEL_FIELD_NUMBER = 2;
-    private int requestModel_;
+    private int requestModel_ = 0;
     /**
      *
      *
@@ -13683,10 +13872,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
         getRequestModel() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel result =
           com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
-              .valueOf(requestModel_);
+              .forNumber(requestModel_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
               .UNRECOGNIZED
@@ -13694,7 +13882,7 @@ public final class TransferTypes {
     }
 
     public static final int PROTOCOL_FIELD_NUMBER = 3;
-    private int protocol_;
+    private int protocol_ = 0;
     /**
      *
      *
@@ -13726,11 +13914,10 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
         getProtocol() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
           result =
               com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
-                  .valueOf(protocol_);
+                  .forNumber(protocol_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
               .UNRECOGNIZED
@@ -13738,7 +13925,7 @@ public final class TransferTypes {
     }
 
     public static final int LIST_API_FIELD_NUMBER = 4;
-    private int listApi_;
+    private int listApi_ = 0;
     /**
      *
      *
@@ -13770,9 +13957,8 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
         getListApi() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi result =
-          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi.forNumber(
               listApi_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
@@ -14036,14 +14222,11 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         authMethod_ = 0;
-
         requestModel_ = 0;
-
         protocol_ = 0;
-
         listApi_ = 0;
-
         return this;
       }
 
@@ -14074,12 +14257,28 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata result =
             new com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata(this);
-        result.authMethod_ = authMethod_;
-        result.requestModel_ = requestModel_;
-        result.protocol_ = protocol_;
-        result.listApi_ = listApi_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.authMethod_ = authMethod_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.requestModel_ = requestModel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.protocol_ = protocol_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.listApi_ = listApi_;
+        }
       }
 
       @java.lang.Override
@@ -14175,25 +14374,25 @@ public final class TransferTypes {
               case 8:
                 {
                   authMethod_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   requestModel_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   protocol_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   listApi_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               default:
@@ -14212,6 +14411,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int authMethod_ = 0;
       /**
@@ -14246,8 +14447,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setAuthMethodValue(int value) {
-
         authMethod_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -14267,10 +14468,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
           getAuthMethod() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod result =
             com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
-                .valueOf(authMethod_);
+                .forNumber(authMethod_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.AuthMethod
                 .UNRECOGNIZED
@@ -14295,7 +14495,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         authMethod_ = value.getNumber();
         onChanged();
         return this;
@@ -14314,7 +14514,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearAuthMethod() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         authMethod_ = 0;
         onChanged();
         return this;
@@ -14355,8 +14555,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setRequestModelValue(int value) {
-
         requestModel_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -14377,10 +14577,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
           getRequestModel() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel result =
             com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
-                .valueOf(requestModel_);
+                .forNumber(requestModel_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.RequestModel
                 .UNRECOGNIZED
@@ -14407,7 +14606,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         requestModel_ = value.getNumber();
         onChanged();
         return this;
@@ -14427,7 +14626,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearRequestModel() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         requestModel_ = 0;
         onChanged();
         return this;
@@ -14464,8 +14663,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setProtocolValue(int value) {
-
         protocol_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -14484,11 +14683,10 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
           getProtocol() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
             result =
                 com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata
-                    .NetworkProtocol.valueOf(protocol_);
+                    .NetworkProtocol.forNumber(protocol_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.NetworkProtocol
                 .UNRECOGNIZED
@@ -14513,7 +14711,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         protocol_ = value.getNumber();
         onChanged();
         return this;
@@ -14531,7 +14729,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearProtocol() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         protocol_ = 0;
         onChanged();
         return this;
@@ -14568,8 +14766,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setListApiValue(int value) {
-
         listApi_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -14588,10 +14786,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
           getListApi() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi result =
-            com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi.valueOf(
-                listApi_);
+            com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
+                .forNumber(listApi_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.S3CompatibleMetadata.ListApi
                 .UNRECOGNIZED
@@ -14615,7 +14812,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         listApi_ = value.getNumber();
         onChanged();
         return this;
@@ -14633,7 +14830,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearListApi() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         listApi_ = 0;
         onChanged();
         return this;
@@ -15138,7 +15335,7 @@ public final class TransferTypes {
       }
 
       public static final int LIMIT_MBPS_FIELD_NUMBER = 1;
-      private long limitMbps_;
+      private long limitMbps_ = 0L;
       /**
        *
        *
@@ -15368,8 +15565,8 @@ public final class TransferTypes {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           limitMbps_ = 0L;
-
           return this;
         }
 
@@ -15401,9 +15598,19 @@ public final class TransferTypes {
             buildPartial() {
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit result =
               new com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit(this);
-          result.limitMbps_ = limitMbps_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.limitMbps_ = limitMbps_;
+          }
         }
 
         @java.lang.Override
@@ -15491,7 +15698,7 @@ public final class TransferTypes {
                 case 8:
                   {
                     limitMbps_ = input.readInt64();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 8
                 default:
@@ -15510,6 +15717,8 @@ public final class TransferTypes {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private long limitMbps_;
         /**
@@ -15544,6 +15753,7 @@ public final class TransferTypes {
         public Builder setLimitMbps(long value) {
 
           limitMbps_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -15560,7 +15770,7 @@ public final class TransferTypes {
          * @return This builder for chaining.
          */
         public Builder clearLimitMbps() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           limitMbps_ = 0L;
           onChanged();
           return this;
@@ -15636,7 +15846,9 @@ public final class TransferTypes {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -15687,7 +15899,9 @@ public final class TransferTypes {
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -15736,7 +15950,7 @@ public final class TransferTypes {
     }
 
     public static final int STATE_FIELD_NUMBER = 4;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -15769,9 +15983,8 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State result =
-          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State.valueOf(state_);
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State.forNumber(state_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State.UNRECOGNIZED
           : result;
@@ -15829,7 +16042,10 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimitOrBuilder
         getBandwidthLimitOrBuilder() {
-      return getBandwidthLimit();
+      return bandwidthLimit_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit
+              .getDefaultInstance()
+          : bandwidthLimit_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16068,16 +16284,13 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         displayName_ = "";
-
         state_ = 0;
-
-        if (bandwidthLimitBuilder_ == null) {
-          bandwidthLimit_ = null;
-        } else {
-          bandwidthLimit_ = null;
+        bandwidthLimit_ = null;
+        if (bandwidthLimitBuilder_ != null) {
+          bandwidthLimitBuilder_.dispose();
           bandwidthLimitBuilder_ = null;
         }
         return this;
@@ -16108,16 +16321,29 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.AgentPool result =
             new com.google.storagetransfer.v1.proto.TransferTypes.AgentPool(this);
-        result.name_ = name_;
-        result.displayName_ = displayName_;
-        result.state_ = state_;
-        if (bandwidthLimitBuilder_ == null) {
-          result.bandwidthLimit_ = bandwidthLimit_;
-        } else {
-          result.bandwidthLimit_ = bandwidthLimitBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.AgentPool result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bandwidthLimit_ =
+              bandwidthLimitBuilder_ == null ? bandwidthLimit_ : bandwidthLimitBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -16171,10 +16397,12 @@ public final class TransferTypes {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.state_ != 0) {
@@ -16212,26 +16440,26 @@ public final class TransferTypes {
               case 18:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               case 26:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 32:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 32
               case 42:
                 {
                   input.readMessage(
                       getBandwidthLimitFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 42
               default:
@@ -16250,6 +16478,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -16315,8 +16545,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -16333,8 +16563,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -16356,8 +16586,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -16423,8 +16653,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -16440,8 +16670,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -16462,8 +16692,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -16501,8 +16731,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -16521,9 +16751,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State getState() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State result =
-            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State.valueOf(state_);
+            com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State.forNumber(state_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.State.UNRECOGNIZED
             : result;
@@ -16547,7 +16776,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -16566,7 +16795,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         state_ = 0;
         onChanged();
         return this;
@@ -16592,7 +16821,7 @@ public final class TransferTypes {
        * @return Whether the bandwidthLimit field is set.
        */
       public boolean hasBandwidthLimit() {
-        return bandwidthLimitBuilder_ != null || bandwidthLimit_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -16634,11 +16863,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           bandwidthLimit_ = value;
-          onChanged();
         } else {
           bandwidthLimitBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -16656,11 +16885,11 @@ public final class TransferTypes {
               builderForValue) {
         if (bandwidthLimitBuilder_ == null) {
           bandwidthLimit_ = builderForValue.build();
-          onChanged();
         } else {
           bandwidthLimitBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -16676,20 +16905,20 @@ public final class TransferTypes {
       public Builder mergeBandwidthLimit(
           com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit value) {
         if (bandwidthLimitBuilder_ == null) {
-          if (bandwidthLimit_ != null) {
-            bandwidthLimit_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit
-                    .newBuilder(bandwidthLimit_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && bandwidthLimit_ != null
+              && bandwidthLimit_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit
+                      .getDefaultInstance()) {
+            getBandwidthLimitBuilder().mergeFrom(value);
           } else {
             bandwidthLimit_ = value;
           }
-          onChanged();
         } else {
           bandwidthLimitBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -16703,14 +16932,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.AgentPool.BandwidthLimit bandwidth_limit = 5;</code>
        */
       public Builder clearBandwidthLimit() {
-        if (bandwidthLimitBuilder_ == null) {
-          bandwidthLimit_ = null;
-          onChanged();
-        } else {
-          bandwidthLimit_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bandwidthLimit_ = null;
+        if (bandwidthLimitBuilder_ != null) {
+          bandwidthLimitBuilder_.dispose();
           bandwidthLimitBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -16725,7 +16953,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool.BandwidthLimit.Builder
           getBandwidthLimitBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getBandwidthLimitFieldBuilder().getBuilder();
       }
@@ -17202,7 +17430,7 @@ public final class TransferTypes {
     }
 
     public static final int OVERWRITE_OBJECTS_ALREADY_EXISTING_IN_SINK_FIELD_NUMBER = 1;
-    private boolean overwriteObjectsAlreadyExistingInSink_;
+    private boolean overwriteObjectsAlreadyExistingInSink_ = false;
     /**
      *
      *
@@ -17223,7 +17451,7 @@ public final class TransferTypes {
     }
 
     public static final int DELETE_OBJECTS_UNIQUE_IN_SINK_FIELD_NUMBER = 2;
-    private boolean deleteObjectsUniqueInSink_;
+    private boolean deleteObjectsUniqueInSink_ = false;
     /**
      *
      *
@@ -17243,7 +17471,7 @@ public final class TransferTypes {
     }
 
     public static final int DELETE_OBJECTS_FROM_SOURCE_AFTER_TRANSFER_FIELD_NUMBER = 3;
-    private boolean deleteObjectsFromSourceAfterTransfer_;
+    private boolean deleteObjectsFromSourceAfterTransfer_ = false;
     /**
      *
      *
@@ -17264,7 +17492,7 @@ public final class TransferTypes {
     }
 
     public static final int OVERWRITE_WHEN_FIELD_NUMBER = 4;
-    private int overwriteWhen_;
+    private int overwriteWhen_ = 0;
     /**
      *
      *
@@ -17298,9 +17526,8 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen
         getOverwriteWhen() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen result =
-          com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen.forNumber(
               overwriteWhen_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen
@@ -17354,7 +17581,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptionsOrBuilder
         getMetadataOptionsOrBuilder() {
-      return getMetadataOptions();
+      return metadataOptions_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.getDefaultInstance()
+          : metadataOptions_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -17618,18 +17847,14 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         overwriteObjectsAlreadyExistingInSink_ = false;
-
         deleteObjectsUniqueInSink_ = false;
-
         deleteObjectsFromSourceAfterTransfer_ = false;
-
         overwriteWhen_ = 0;
-
-        if (metadataOptionsBuilder_ == null) {
-          metadataOptions_ = null;
-        } else {
-          metadataOptions_ = null;
+        metadataOptions_ = null;
+        if (metadataOptionsBuilder_ != null) {
+          metadataOptionsBuilder_.dispose();
           metadataOptionsBuilder_ = null;
         }
         return this;
@@ -17661,17 +17886,32 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions result =
             new com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions(this);
-        result.overwriteObjectsAlreadyExistingInSink_ = overwriteObjectsAlreadyExistingInSink_;
-        result.deleteObjectsUniqueInSink_ = deleteObjectsUniqueInSink_;
-        result.deleteObjectsFromSourceAfterTransfer_ = deleteObjectsFromSourceAfterTransfer_;
-        result.overwriteWhen_ = overwriteWhen_;
-        if (metadataOptionsBuilder_ == null) {
-          result.metadataOptions_ = metadataOptions_;
-        } else {
-          result.metadataOptions_ = metadataOptionsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overwriteObjectsAlreadyExistingInSink_ = overwriteObjectsAlreadyExistingInSink_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.deleteObjectsUniqueInSink_ = deleteObjectsUniqueInSink_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.deleteObjectsFromSourceAfterTransfer_ = deleteObjectsFromSourceAfterTransfer_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.overwriteWhen_ = overwriteWhen_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.metadataOptions_ =
+              metadataOptionsBuilder_ == null ? metadataOptions_ : metadataOptionsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -17770,32 +18010,32 @@ public final class TransferTypes {
               case 8:
                 {
                   overwriteObjectsAlreadyExistingInSink_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   deleteObjectsUniqueInSink_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   deleteObjectsFromSourceAfterTransfer_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   overwriteWhen_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 42:
                 {
                   input.readMessage(
                       getMetadataOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -17814,6 +18054,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean overwriteObjectsAlreadyExistingInSink_;
       /**
@@ -17852,6 +18094,7 @@ public final class TransferTypes {
       public Builder setOverwriteObjectsAlreadyExistingInSink(boolean value) {
 
         overwriteObjectsAlreadyExistingInSink_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -17870,7 +18113,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearOverwriteObjectsAlreadyExistingInSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         overwriteObjectsAlreadyExistingInSink_ = false;
         onChanged();
         return this;
@@ -17911,6 +18154,7 @@ public final class TransferTypes {
       public Builder setDeleteObjectsUniqueInSink(boolean value) {
 
         deleteObjectsUniqueInSink_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -17928,7 +18172,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDeleteObjectsUniqueInSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         deleteObjectsUniqueInSink_ = false;
         onChanged();
         return this;
@@ -17971,6 +18215,7 @@ public final class TransferTypes {
       public Builder setDeleteObjectsFromSourceAfterTransfer(boolean value) {
 
         deleteObjectsFromSourceAfterTransfer_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -17989,7 +18234,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDeleteObjectsFromSourceAfterTransfer() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         deleteObjectsFromSourceAfterTransfer_ = false;
         onChanged();
         return this;
@@ -18028,8 +18273,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setOverwriteWhenValue(int value) {
-
         overwriteWhen_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -18049,10 +18294,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen
           getOverwriteWhen() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen result =
-            com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen.valueOf(
-                overwriteWhen_);
+            com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen
+                .forNumber(overwriteWhen_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.OverwriteWhen
                 .UNRECOGNIZED
@@ -18077,7 +18321,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         overwriteWhen_ = value.getNumber();
         onChanged();
         return this;
@@ -18096,7 +18340,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearOverwriteWhen() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         overwriteWhen_ = 0;
         onChanged();
         return this;
@@ -18120,7 +18364,7 @@ public final class TransferTypes {
        * @return Whether the metadataOptions field is set.
        */
       public boolean hasMetadataOptions() {
-        return metadataOptionsBuilder_ != null || metadataOptions_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -18160,11 +18404,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           metadataOptions_ = value;
-          onChanged();
         } else {
           metadataOptionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -18181,11 +18425,11 @@ public final class TransferTypes {
               builderForValue) {
         if (metadataOptionsBuilder_ == null) {
           metadataOptions_ = builderForValue.build();
-          onChanged();
         } else {
           metadataOptionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -18200,20 +18444,20 @@ public final class TransferTypes {
       public Builder mergeMetadataOptions(
           com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions value) {
         if (metadataOptionsBuilder_ == null) {
-          if (metadataOptions_ != null) {
-            metadataOptions_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.newBuilder(
-                        metadataOptions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && metadataOptions_ != null
+              && metadataOptions_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions
+                      .getDefaultInstance()) {
+            getMetadataOptionsBuilder().mergeFrom(value);
           } else {
             metadataOptions_ = value;
           }
-          onChanged();
         } else {
           metadataOptionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -18226,14 +18470,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.MetadataOptions metadata_options = 5;</code>
        */
       public Builder clearMetadataOptions() {
-        if (metadataOptionsBuilder_ == null) {
-          metadataOptions_ = null;
-          onChanged();
-        } else {
-          metadataOptions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        metadataOptions_ = null;
+        if (metadataOptionsBuilder_ != null) {
+          metadataOptionsBuilder_.dispose();
           metadataOptionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -18247,7 +18490,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Builder
           getMetadataOptionsBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getMetadataOptionsFieldBuilder().getBuilder();
       }
@@ -19631,7 +19874,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditionsOrBuilder
         getObjectConditionsOrBuilder() {
-      return getObjectConditions();
+      return objectConditions_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions.getDefaultInstance()
+          : objectConditions_;
     }
 
     public static final int TRANSFER_OPTIONS_FIELD_NUMBER = 6;
@@ -19692,7 +19937,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferOptionsOrBuilder
         getTransferOptionsOrBuilder() {
-      return getTransferOptions();
+      return transferOptions_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.getDefaultInstance()
+          : transferOptions_;
     }
 
     public static final int TRANSFER_MANIFEST_FIELD_NUMBER = 15;
@@ -19748,11 +19995,15 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferManifestOrBuilder
         getTransferManifestOrBuilder() {
-      return getTransferManifest();
+      return transferManifest_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest.getDefaultInstance()
+          : transferManifest_;
     }
 
     public static final int SOURCE_AGENT_POOL_NAME_FIELD_NUMBER = 17;
-    private volatile java.lang.Object sourceAgentPoolName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceAgentPoolName_ = "";
     /**
      *
      *
@@ -19803,7 +20054,9 @@ public final class TransferTypes {
     }
 
     public static final int SINK_AGENT_POOL_NAME_FIELD_NUMBER = 18;
-    private volatile java.lang.Object sinkAgentPoolName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sinkAgentPoolName_ = "";
     /**
      *
      *
@@ -20289,6 +20542,7 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (gcsDataSinkBuilder_ != null) {
           gcsDataSinkBuilder_.clear();
         }
@@ -20316,28 +20570,23 @@ public final class TransferTypes {
         if (gcsIntermediateDataLocationBuilder_ != null) {
           gcsIntermediateDataLocationBuilder_.clear();
         }
-        if (objectConditionsBuilder_ == null) {
-          objectConditions_ = null;
-        } else {
-          objectConditions_ = null;
+        objectConditions_ = null;
+        if (objectConditionsBuilder_ != null) {
+          objectConditionsBuilder_.dispose();
           objectConditionsBuilder_ = null;
         }
-        if (transferOptionsBuilder_ == null) {
-          transferOptions_ = null;
-        } else {
-          transferOptions_ = null;
+        transferOptions_ = null;
+        if (transferOptionsBuilder_ != null) {
+          transferOptionsBuilder_.dispose();
           transferOptionsBuilder_ = null;
         }
-        if (transferManifestBuilder_ == null) {
-          transferManifest_ = null;
-        } else {
-          transferManifest_ = null;
+        transferManifest_ = null;
+        if (transferManifestBuilder_ != null) {
+          transferManifestBuilder_.dispose();
           transferManifestBuilder_ = null;
         }
         sourceAgentPoolName_ = "";
-
         sinkAgentPoolName_ = "";
-
         dataSinkCase_ = 0;
         dataSink_ = null;
         dataSourceCase_ = 0;
@@ -20372,91 +20621,76 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec result =
             new com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec(this);
-        if (dataSinkCase_ == 4) {
-          if (gcsDataSinkBuilder_ == null) {
-            result.dataSink_ = dataSink_;
-          } else {
-            result.dataSink_ = gcsDataSinkBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (dataSinkCase_ == 13) {
-          if (posixDataSinkBuilder_ == null) {
-            result.dataSink_ = dataSink_;
-          } else {
-            result.dataSink_ = posixDataSinkBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 1) {
-          if (gcsDataSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = gcsDataSourceBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 2) {
-          if (awsS3DataSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = awsS3DataSourceBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 3) {
-          if (httpDataSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = httpDataSourceBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 14) {
-          if (posixDataSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = posixDataSourceBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 8) {
-          if (azureBlobStorageDataSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = azureBlobStorageDataSourceBuilder_.build();
-          }
-        }
-        if (dataSourceCase_ == 19) {
-          if (awsS3CompatibleDataSourceBuilder_ == null) {
-            result.dataSource_ = dataSource_;
-          } else {
-            result.dataSource_ = awsS3CompatibleDataSourceBuilder_.build();
-          }
-        }
-        if (intermediateDataLocationCase_ == 16) {
-          if (gcsIntermediateDataLocationBuilder_ == null) {
-            result.intermediateDataLocation_ = intermediateDataLocation_;
-          } else {
-            result.intermediateDataLocation_ = gcsIntermediateDataLocationBuilder_.build();
-          }
-        }
-        if (objectConditionsBuilder_ == null) {
-          result.objectConditions_ = objectConditions_;
-        } else {
-          result.objectConditions_ = objectConditionsBuilder_.build();
-        }
-        if (transferOptionsBuilder_ == null) {
-          result.transferOptions_ = transferOptions_;
-        } else {
-          result.transferOptions_ = transferOptionsBuilder_.build();
-        }
-        if (transferManifestBuilder_ == null) {
-          result.transferManifest_ = transferManifest_;
-        } else {
-          result.transferManifest_ = transferManifestBuilder_.build();
-        }
-        result.sourceAgentPoolName_ = sourceAgentPoolName_;
-        result.sinkAgentPoolName_ = sinkAgentPoolName_;
-        result.dataSinkCase_ = dataSinkCase_;
-        result.dataSourceCase_ = dataSourceCase_;
-        result.intermediateDataLocationCase_ = intermediateDataLocationCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.objectConditions_ =
+              objectConditionsBuilder_ == null
+                  ? objectConditions_
+                  : objectConditionsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.transferOptions_ =
+              transferOptionsBuilder_ == null ? transferOptions_ : transferOptionsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.transferManifest_ =
+              transferManifestBuilder_ == null
+                  ? transferManifest_
+                  : transferManifestBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.sourceAgentPoolName_ = sourceAgentPoolName_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.sinkAgentPoolName_ = sinkAgentPoolName_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec result) {
+        result.dataSinkCase_ = dataSinkCase_;
+        result.dataSink_ = this.dataSink_;
+        if (dataSinkCase_ == 4 && gcsDataSinkBuilder_ != null) {
+          result.dataSink_ = gcsDataSinkBuilder_.build();
+        }
+        if (dataSinkCase_ == 13 && posixDataSinkBuilder_ != null) {
+          result.dataSink_ = posixDataSinkBuilder_.build();
+        }
+        result.dataSourceCase_ = dataSourceCase_;
+        result.dataSource_ = this.dataSource_;
+        if (dataSourceCase_ == 1 && gcsDataSourceBuilder_ != null) {
+          result.dataSource_ = gcsDataSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 2 && awsS3DataSourceBuilder_ != null) {
+          result.dataSource_ = awsS3DataSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 3 && httpDataSourceBuilder_ != null) {
+          result.dataSource_ = httpDataSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 14 && posixDataSourceBuilder_ != null) {
+          result.dataSource_ = posixDataSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 8 && azureBlobStorageDataSourceBuilder_ != null) {
+          result.dataSource_ = azureBlobStorageDataSourceBuilder_.build();
+        }
+        if (dataSourceCase_ == 19 && awsS3CompatibleDataSourceBuilder_ != null) {
+          result.dataSource_ = awsS3CompatibleDataSourceBuilder_.build();
+        }
+        result.intermediateDataLocationCase_ = intermediateDataLocationCase_;
+        result.intermediateDataLocation_ = this.intermediateDataLocation_;
+        if (intermediateDataLocationCase_ == 16 && gcsIntermediateDataLocationBuilder_ != null) {
+          result.intermediateDataLocation_ = gcsIntermediateDataLocationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -20520,10 +20754,12 @@ public final class TransferTypes {
         }
         if (!other.getSourceAgentPoolName().isEmpty()) {
           sourceAgentPoolName_ = other.sourceAgentPoolName_;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         if (!other.getSinkAgentPoolName().isEmpty()) {
           sinkAgentPoolName_ = other.sinkAgentPoolName_;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
         switch (other.getDataSinkCase()) {
@@ -20645,14 +20881,14 @@ public final class TransferTypes {
                 {
                   input.readMessage(
                       getObjectConditionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getTransferOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 50
               case 66:
@@ -20679,7 +20915,7 @@ public final class TransferTypes {
                 {
                   input.readMessage(
                       getTransferManifestFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 122
               case 130:
@@ -20692,13 +20928,13 @@ public final class TransferTypes {
               case 138:
                 {
                   sourceAgentPoolName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 138
               case 146:
                 {
                   sinkAgentPoolName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 146
               case 154:
@@ -20766,6 +21002,8 @@ public final class TransferTypes {
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.storagetransfer.v1.proto.TransferTypes.GcsData,
@@ -20980,7 +21218,6 @@ public final class TransferTypes {
         }
         dataSinkCase_ = 4;
         onChanged();
-        ;
         return gcsDataSinkBuilder_;
       }
 
@@ -21203,7 +21440,6 @@ public final class TransferTypes {
         }
         dataSinkCase_ = 13;
         onChanged();
-        ;
         return posixDataSinkBuilder_;
       }
 
@@ -21420,7 +21656,6 @@ public final class TransferTypes {
         }
         dataSourceCase_ = 1;
         onChanged();
-        ;
         return gcsDataSourceBuilder_;
       }
 
@@ -21637,7 +21872,6 @@ public final class TransferTypes {
         }
         dataSourceCase_ = 2;
         onChanged();
-        ;
         return awsS3DataSourceBuilder_;
       }
 
@@ -21854,7 +22088,6 @@ public final class TransferTypes {
         }
         dataSourceCase_ = 3;
         onChanged();
-        ;
         return httpDataSourceBuilder_;
       }
 
@@ -22078,7 +22311,6 @@ public final class TransferTypes {
         }
         dataSourceCase_ = 14;
         onChanged();
-        ;
         return posixDataSourceBuilder_;
       }
 
@@ -22314,7 +22546,6 @@ public final class TransferTypes {
         }
         dataSourceCase_ = 8;
         onChanged();
-        ;
         return azureBlobStorageDataSourceBuilder_;
       }
 
@@ -22550,7 +22781,6 @@ public final class TransferTypes {
         }
         dataSourceCase_ = 19;
         onChanged();
-        ;
         return awsS3CompatibleDataSourceBuilder_;
       }
 
@@ -22773,7 +23003,6 @@ public final class TransferTypes {
         }
         intermediateDataLocationCase_ = 16;
         onChanged();
-        ;
         return gcsIntermediateDataLocationBuilder_;
       }
 
@@ -22797,7 +23026,7 @@ public final class TransferTypes {
        * @return Whether the objectConditions field is set.
        */
       public boolean hasObjectConditions() {
-        return objectConditionsBuilder_ != null || objectConditions_ != null;
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        *
@@ -22841,11 +23070,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           objectConditions_ = value;
-          onChanged();
         } else {
           objectConditionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -22864,11 +23093,11 @@ public final class TransferTypes {
               builderForValue) {
         if (objectConditionsBuilder_ == null) {
           objectConditions_ = builderForValue.build();
-          onChanged();
         } else {
           objectConditionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -22885,20 +23114,20 @@ public final class TransferTypes {
       public Builder mergeObjectConditions(
           com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions value) {
         if (objectConditionsBuilder_ == null) {
-          if (objectConditions_ != null) {
-            objectConditions_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions.newBuilder(
-                        objectConditions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000200) != 0)
+              && objectConditions_ != null
+              && objectConditions_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions
+                      .getDefaultInstance()) {
+            getObjectConditionsBuilder().mergeFrom(value);
           } else {
             objectConditions_ = value;
           }
-          onChanged();
         } else {
           objectConditionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -22913,14 +23142,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.ObjectConditions object_conditions = 5;</code>
        */
       public Builder clearObjectConditions() {
-        if (objectConditionsBuilder_ == null) {
-          objectConditions_ = null;
-          onChanged();
-        } else {
-          objectConditions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        objectConditions_ = null;
+        if (objectConditionsBuilder_ != null) {
+          objectConditionsBuilder_.dispose();
           objectConditionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -22936,7 +23164,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.ObjectConditions.Builder
           getObjectConditionsBuilder() {
-
+        bitField0_ |= 0x00000200;
         onChanged();
         return getObjectConditionsFieldBuilder().getBuilder();
       }
@@ -23012,7 +23240,7 @@ public final class TransferTypes {
        * @return Whether the transferOptions field is set.
        */
       public boolean hasTransferOptions() {
-        return transferOptionsBuilder_ != null || transferOptions_ != null;
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -23060,11 +23288,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           transferOptions_ = value;
-          onChanged();
         } else {
           transferOptionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -23085,11 +23313,11 @@ public final class TransferTypes {
               builderForValue) {
         if (transferOptionsBuilder_ == null) {
           transferOptions_ = builderForValue.build();
-          onChanged();
         } else {
           transferOptionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -23108,20 +23336,20 @@ public final class TransferTypes {
       public Builder mergeTransferOptions(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions value) {
         if (transferOptionsBuilder_ == null) {
-          if (transferOptions_ != null) {
-            transferOptions_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.newBuilder(
-                        transferOptions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000400) != 0)
+              && transferOptions_ != null
+              && transferOptions_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions
+                      .getDefaultInstance()) {
+            getTransferOptionsBuilder().mergeFrom(value);
           } else {
             transferOptions_ = value;
           }
-          onChanged();
         } else {
           transferOptionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -23138,14 +23366,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferOptions transfer_options = 6;</code>
        */
       public Builder clearTransferOptions() {
-        if (transferOptionsBuilder_ == null) {
-          transferOptions_ = null;
-          onChanged();
-        } else {
-          transferOptions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        transferOptions_ = null;
+        if (transferOptionsBuilder_ != null) {
+          transferOptionsBuilder_.dispose();
           transferOptionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -23163,7 +23390,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferOptions.Builder
           getTransferOptionsBuilder() {
-
+        bitField0_ |= 0x00000400;
         onChanged();
         return getTransferOptionsFieldBuilder().getBuilder();
       }
@@ -23241,7 +23468,7 @@ public final class TransferTypes {
        * @return Whether the transferManifest field is set.
        */
       public boolean hasTransferManifest() {
-        return transferManifestBuilder_ != null || transferManifest_ != null;
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
        *
@@ -23285,11 +23512,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           transferManifest_ = value;
-          onChanged();
         } else {
           transferManifestBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000800;
+        onChanged();
         return this;
       }
       /**
@@ -23308,11 +23535,11 @@ public final class TransferTypes {
               builderForValue) {
         if (transferManifestBuilder_ == null) {
           transferManifest_ = builderForValue.build();
-          onChanged();
         } else {
           transferManifestBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000800;
+        onChanged();
         return this;
       }
       /**
@@ -23329,20 +23556,20 @@ public final class TransferTypes {
       public Builder mergeTransferManifest(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest value) {
         if (transferManifestBuilder_ == null) {
-          if (transferManifest_ != null) {
-            transferManifest_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest.newBuilder(
-                        transferManifest_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000800) != 0)
+              && transferManifest_ != null
+              && transferManifest_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest
+                      .getDefaultInstance()) {
+            getTransferManifestBuilder().mergeFrom(value);
           } else {
             transferManifest_ = value;
           }
-          onChanged();
         } else {
           transferManifestBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000800;
+        onChanged();
         return this;
       }
       /**
@@ -23357,14 +23584,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferManifest transfer_manifest = 15;</code>
        */
       public Builder clearTransferManifest() {
-        if (transferManifestBuilder_ == null) {
-          transferManifest_ = null;
-          onChanged();
-        } else {
-          transferManifest_ = null;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        transferManifest_ = null;
+        if (transferManifestBuilder_ != null) {
+          transferManifestBuilder_.dispose();
           transferManifestBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -23380,7 +23606,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest.Builder
           getTransferManifestBuilder() {
-
+        bitField0_ |= 0x00000800;
         onChanged();
         return getTransferManifestFieldBuilder().getBuilder();
       }
@@ -23498,8 +23724,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         sourceAgentPoolName_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -23516,8 +23742,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearSourceAgentPoolName() {
-
         sourceAgentPoolName_ = getDefaultInstance().getSourceAgentPoolName();
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -23539,8 +23765,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sourceAgentPoolName_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -23609,8 +23835,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         sinkAgentPoolName_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -23627,8 +23853,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearSinkAgentPoolName() {
-
         sinkAgentPoolName_ = getDefaultInstance().getSinkAgentPoolName();
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
@@ -23650,8 +23876,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sinkAgentPoolName_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -25597,7 +25823,7 @@ public final class TransferTypes {
     }
 
     public static final int SYMLINK_FIELD_NUMBER = 1;
-    private int symlink_;
+    private int symlink_ = 0;
     /**
      *
      *
@@ -25630,9 +25856,8 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink getSymlink() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink.forNumber(
               symlink_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink.UNRECOGNIZED
@@ -25640,7 +25865,7 @@ public final class TransferTypes {
     }
 
     public static final int MODE_FIELD_NUMBER = 2;
-    private int mode_;
+    private int mode_ = 0;
     /**
      *
      *
@@ -25673,16 +25898,15 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode.valueOf(mode_);
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode.forNumber(mode_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode.UNRECOGNIZED
           : result;
     }
 
     public static final int GID_FIELD_NUMBER = 3;
-    private int gid_;
+    private int gid_ = 0;
     /**
      *
      *
@@ -25715,16 +25939,15 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID getGid() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID.valueOf(gid_);
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID.forNumber(gid_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID.UNRECOGNIZED
           : result;
     }
 
     public static final int UID_FIELD_NUMBER = 4;
-    private int uid_;
+    private int uid_ = 0;
     /**
      *
      *
@@ -25757,16 +25980,15 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID getUid() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID.valueOf(uid_);
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID.forNumber(uid_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID.UNRECOGNIZED
           : result;
     }
 
     public static final int ACL_FIELD_NUMBER = 5;
-    private int acl_;
+    private int acl_ = 0;
     /**
      *
      *
@@ -25799,16 +26021,15 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl getAcl() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl.valueOf(acl_);
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl.forNumber(acl_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl.UNRECOGNIZED
           : result;
     }
 
     public static final int STORAGE_CLASS_FIELD_NUMBER = 6;
-    private int storageClass_;
+    private int storageClass_ = 0;
     /**
      *
      *
@@ -25842,9 +26063,8 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass
         getStorageClass() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass.forNumber(
               storageClass_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass
@@ -25853,7 +26073,7 @@ public final class TransferTypes {
     }
 
     public static final int TEMPORARY_HOLD_FIELD_NUMBER = 7;
-    private int temporaryHold_;
+    private int temporaryHold_ = 0;
     /**
      *
      *
@@ -25889,9 +26109,8 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold
         getTemporaryHold() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold.forNumber(
               temporaryHold_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold
@@ -25900,7 +26119,7 @@ public final class TransferTypes {
     }
 
     public static final int KMS_KEY_FIELD_NUMBER = 8;
-    private int kmsKey_;
+    private int kmsKey_ = 0;
     /**
      *
      *
@@ -25935,16 +26154,16 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey getKmsKey() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey.valueOf(kmsKey_);
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey.forNumber(
+              kmsKey_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey.UNRECOGNIZED
           : result;
     }
 
     public static final int TIME_CREATED_FIELD_NUMBER = 9;
-    private int timeCreated_;
+    private int timeCreated_ = 0;
     /**
      *
      *
@@ -25980,9 +26199,8 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated
         getTimeCreated() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated result =
-          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated.forNumber(
               timeCreated_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated
@@ -26310,24 +26528,16 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         symlink_ = 0;
-
         mode_ = 0;
-
         gid_ = 0;
-
         uid_ = 0;
-
         acl_ = 0;
-
         storageClass_ = 0;
-
         temporaryHold_ = 0;
-
         kmsKey_ = 0;
-
         timeCreated_ = 0;
-
         return this;
       }
 
@@ -26357,17 +26567,43 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions result =
             new com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions(this);
-        result.symlink_ = symlink_;
-        result.mode_ = mode_;
-        result.gid_ = gid_;
-        result.uid_ = uid_;
-        result.acl_ = acl_;
-        result.storageClass_ = storageClass_;
-        result.temporaryHold_ = temporaryHold_;
-        result.kmsKey_ = kmsKey_;
-        result.timeCreated_ = timeCreated_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.symlink_ = symlink_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.mode_ = mode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.gid_ = gid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.acl_ = acl_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.storageClass_ = storageClass_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.temporaryHold_ = temporaryHold_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.kmsKey_ = kmsKey_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.timeCreated_ = timeCreated_;
+        }
       }
 
       @java.lang.Override
@@ -26477,55 +26713,55 @@ public final class TransferTypes {
               case 8:
                 {
                   symlink_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   mode_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   gid_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   uid_ = input.readEnum();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   acl_ = input.readEnum();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   storageClass_ = input.readEnum();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 56:
                 {
                   temporaryHold_ = input.readEnum();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 56
               case 64:
                 {
                   kmsKey_ = input.readEnum();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 64
               case 72:
                 {
                   timeCreated_ = input.readEnum();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 72
               default:
@@ -26544,6 +26780,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int symlink_ = 0;
       /**
@@ -26578,8 +26816,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setSymlinkValue(int value) {
-
         symlink_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -26599,9 +26837,8 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink
           getSymlink() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink.valueOf(
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink.forNumber(
                 symlink_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Symlink.UNRECOGNIZED
@@ -26626,7 +26863,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         symlink_ = value.getNumber();
         onChanged();
         return this;
@@ -26645,7 +26882,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearSymlink() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         symlink_ = 0;
         onChanged();
         return this;
@@ -26684,8 +26921,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setModeValue(int value) {
-
         mode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -26704,9 +26941,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode getMode() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode.valueOf(mode_);
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode.forNumber(mode_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Mode.UNRECOGNIZED
             : result;
@@ -26730,7 +26966,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         mode_ = value.getNumber();
         onChanged();
         return this;
@@ -26749,7 +26985,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearMode() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         mode_ = 0;
         onChanged();
         return this;
@@ -26788,8 +27024,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setGidValue(int value) {
-
         gid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -26808,9 +27044,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID getGid() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID.valueOf(gid_);
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID.forNumber(gid_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.GID.UNRECOGNIZED
             : result;
@@ -26834,7 +27069,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         gid_ = value.getNumber();
         onChanged();
         return this;
@@ -26853,7 +27088,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearGid() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         gid_ = 0;
         onChanged();
         return this;
@@ -26892,8 +27127,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setUidValue(int value) {
-
         uid_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -26912,9 +27147,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID getUid() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID.valueOf(uid_);
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID.forNumber(uid_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.UID.UNRECOGNIZED
             : result;
@@ -26938,7 +27172,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000008;
         uid_ = value.getNumber();
         onChanged();
         return this;
@@ -26957,7 +27191,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         uid_ = 0;
         onChanged();
         return this;
@@ -26996,8 +27230,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setAclValue(int value) {
-
         acl_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -27016,9 +27250,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl getAcl() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl.valueOf(acl_);
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl.forNumber(acl_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.Acl.UNRECOGNIZED
             : result;
@@ -27042,7 +27275,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000010;
         acl_ = value.getNumber();
         onChanged();
         return this;
@@ -27061,7 +27294,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearAcl() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         acl_ = 0;
         onChanged();
         return this;
@@ -27100,8 +27333,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setStorageClassValue(int value) {
-
         storageClass_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -27121,10 +27354,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass
           getStorageClass() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass.valueOf(
-                storageClass_);
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass
+                .forNumber(storageClass_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.StorageClass
                 .UNRECOGNIZED
@@ -27149,7 +27381,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000020;
         storageClass_ = value.getNumber();
         onChanged();
         return this;
@@ -27168,7 +27400,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearStorageClass() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         storageClass_ = 0;
         onChanged();
         return this;
@@ -27209,8 +27441,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setTemporaryHoldValue(int value) {
-
         temporaryHold_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -27231,10 +27463,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold
           getTemporaryHold() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold.valueOf(
-                temporaryHold_);
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold
+                .forNumber(temporaryHold_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TemporaryHold
                 .UNRECOGNIZED
@@ -27260,7 +27491,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000040;
         temporaryHold_ = value.getNumber();
         onChanged();
         return this;
@@ -27280,7 +27511,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearTemporaryHold() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         temporaryHold_ = 0;
         onChanged();
         return this;
@@ -27321,8 +27552,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setKmsKeyValue(int value) {
-
         kmsKey_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -27342,9 +27573,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey getKmsKey() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey.valueOf(
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey.forNumber(
                 kmsKey_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.KmsKey.UNRECOGNIZED
@@ -27370,7 +27600,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000080;
         kmsKey_ = value.getNumber();
         onChanged();
         return this;
@@ -27390,7 +27620,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearKmsKey() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         kmsKey_ = 0;
         onChanged();
         return this;
@@ -27431,8 +27661,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setTimeCreatedValue(int value) {
-
         timeCreated_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -27453,9 +27683,8 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated
           getTimeCreated() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated result =
-            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated.valueOf(
+            com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated.forNumber(
                 timeCreated_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.MetadataOptions.TimeCreated
@@ -27482,7 +27711,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000100;
         timeCreated_ = value.getNumber();
         onChanged();
         return this;
@@ -27502,7 +27731,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearTimeCreated() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         timeCreated_ = 0;
         onChanged();
         return this;
@@ -27661,7 +27890,9 @@ public final class TransferTypes {
     }
 
     public static final int LOCATION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object location_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object location_ = "";
     /**
      *
      *
@@ -27917,8 +28148,8 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         location_ = "";
-
         return this;
       }
 
@@ -27948,9 +28179,19 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest result =
             new com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest(this);
-        result.location_ = location_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferManifest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.location_ = location_;
+        }
       }
 
       @java.lang.Override
@@ -28006,6 +28247,7 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getLocation().isEmpty()) {
           location_ = other.location_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -28037,7 +28279,7 @@ public final class TransferTypes {
               case 10:
                 {
                   location_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -28056,6 +28298,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object location_ = "";
       /**
@@ -28127,8 +28371,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         location_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -28147,8 +28391,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearLocation() {
-
         location_ = getDefaultInstance().getLocation();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -28172,8 +28416,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         location_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -28661,7 +28905,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.type.DateOrBuilder getScheduleStartDateOrBuilder() {
-      return getScheduleStartDate();
+      return scheduleStartDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : scheduleStartDate_;
     }
 
     public static final int SCHEDULE_END_DATE_FIELD_NUMBER = 2;
@@ -28727,7 +28973,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.type.DateOrBuilder getScheduleEndDateOrBuilder() {
-      return getScheduleEndDate();
+      return scheduleEndDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : scheduleEndDate_;
     }
 
     public static final int START_TIME_OF_DAY_FIELD_NUMBER = 3;
@@ -28802,7 +29050,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.type.TimeOfDayOrBuilder getStartTimeOfDayOrBuilder() {
-      return getStartTimeOfDay();
+      return startTimeOfDay_ == null
+          ? com.google.type.TimeOfDay.getDefaultInstance()
+          : startTimeOfDay_;
     }
 
     public static final int END_TIME_OF_DAY_FIELD_NUMBER = 4;
@@ -28875,7 +29125,7 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.type.TimeOfDayOrBuilder getEndTimeOfDayOrBuilder() {
-      return getEndTimeOfDay();
+      return endTimeOfDay_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : endTimeOfDay_;
     }
 
     public static final int REPEAT_INTERVAL_FIELD_NUMBER = 5;
@@ -28929,7 +29179,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getRepeatIntervalOrBuilder() {
-      return getRepeatInterval();
+      return repeatInterval_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : repeatInterval_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -29193,34 +29445,30 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (scheduleStartDateBuilder_ == null) {
-          scheduleStartDate_ = null;
-        } else {
-          scheduleStartDate_ = null;
+        bitField0_ = 0;
+        scheduleStartDate_ = null;
+        if (scheduleStartDateBuilder_ != null) {
+          scheduleStartDateBuilder_.dispose();
           scheduleStartDateBuilder_ = null;
         }
-        if (scheduleEndDateBuilder_ == null) {
-          scheduleEndDate_ = null;
-        } else {
-          scheduleEndDate_ = null;
+        scheduleEndDate_ = null;
+        if (scheduleEndDateBuilder_ != null) {
+          scheduleEndDateBuilder_.dispose();
           scheduleEndDateBuilder_ = null;
         }
-        if (startTimeOfDayBuilder_ == null) {
-          startTimeOfDay_ = null;
-        } else {
-          startTimeOfDay_ = null;
+        startTimeOfDay_ = null;
+        if (startTimeOfDayBuilder_ != null) {
+          startTimeOfDayBuilder_.dispose();
           startTimeOfDayBuilder_ = null;
         }
-        if (endTimeOfDayBuilder_ == null) {
-          endTimeOfDay_ = null;
-        } else {
-          endTimeOfDay_ = null;
+        endTimeOfDay_ = null;
+        if (endTimeOfDayBuilder_ != null) {
+          endTimeOfDayBuilder_.dispose();
           endTimeOfDayBuilder_ = null;
         }
-        if (repeatIntervalBuilder_ == null) {
-          repeatInterval_ = null;
-        } else {
-          repeatInterval_ = null;
+        repeatInterval_ = null;
+        if (repeatIntervalBuilder_ != null) {
+          repeatIntervalBuilder_.dispose();
           repeatIntervalBuilder_ = null;
         }
         return this;
@@ -29251,33 +29499,38 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.Schedule buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.Schedule result =
             new com.google.storagetransfer.v1.proto.TransferTypes.Schedule(this);
-        if (scheduleStartDateBuilder_ == null) {
-          result.scheduleStartDate_ = scheduleStartDate_;
-        } else {
-          result.scheduleStartDate_ = scheduleStartDateBuilder_.build();
-        }
-        if (scheduleEndDateBuilder_ == null) {
-          result.scheduleEndDate_ = scheduleEndDate_;
-        } else {
-          result.scheduleEndDate_ = scheduleEndDateBuilder_.build();
-        }
-        if (startTimeOfDayBuilder_ == null) {
-          result.startTimeOfDay_ = startTimeOfDay_;
-        } else {
-          result.startTimeOfDay_ = startTimeOfDayBuilder_.build();
-        }
-        if (endTimeOfDayBuilder_ == null) {
-          result.endTimeOfDay_ = endTimeOfDay_;
-        } else {
-          result.endTimeOfDay_ = endTimeOfDayBuilder_.build();
-        }
-        if (repeatIntervalBuilder_ == null) {
-          result.repeatInterval_ = repeatInterval_;
-        } else {
-          result.repeatInterval_ = repeatIntervalBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.Schedule result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleStartDate_ =
+              scheduleStartDateBuilder_ == null
+                  ? scheduleStartDate_
+                  : scheduleStartDateBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scheduleEndDate_ =
+              scheduleEndDateBuilder_ == null ? scheduleEndDate_ : scheduleEndDateBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.startTimeOfDay_ =
+              startTimeOfDayBuilder_ == null ? startTimeOfDay_ : startTimeOfDayBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endTimeOfDay_ =
+              endTimeOfDayBuilder_ == null ? endTimeOfDay_ : endTimeOfDayBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.repeatInterval_ =
+              repeatIntervalBuilder_ == null ? repeatInterval_ : repeatIntervalBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -29374,34 +29627,34 @@ public final class TransferTypes {
                 {
                   input.readMessage(
                       getScheduleStartDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getScheduleEndDateFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getStartTimeOfDayFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getEndTimeOfDayFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(
                       getRepeatIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -29420,6 +29673,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.type.Date scheduleStartDate_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -29448,7 +29703,7 @@ public final class TransferTypes {
        * @return Whether the scheduleStartDate field is set.
        */
       public boolean hasScheduleStartDate() {
-        return scheduleStartDateBuilder_ != null || scheduleStartDate_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -29507,11 +29762,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           scheduleStartDate_ = value;
-          onChanged();
         } else {
           scheduleStartDateBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -29537,11 +29792,11 @@ public final class TransferTypes {
       public Builder setScheduleStartDate(com.google.type.Date.Builder builderForValue) {
         if (scheduleStartDateBuilder_ == null) {
           scheduleStartDate_ = builderForValue.build();
-          onChanged();
         } else {
           scheduleStartDateBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -29566,17 +29821,18 @@ public final class TransferTypes {
        */
       public Builder mergeScheduleStartDate(com.google.type.Date value) {
         if (scheduleStartDateBuilder_ == null) {
-          if (scheduleStartDate_ != null) {
-            scheduleStartDate_ =
-                com.google.type.Date.newBuilder(scheduleStartDate_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && scheduleStartDate_ != null
+              && scheduleStartDate_ != com.google.type.Date.getDefaultInstance()) {
+            getScheduleStartDateBuilder().mergeFrom(value);
           } else {
             scheduleStartDate_ = value;
           }
-          onChanged();
         } else {
           scheduleStartDateBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -29600,14 +29856,13 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearScheduleStartDate() {
-        if (scheduleStartDateBuilder_ == null) {
-          scheduleStartDate_ = null;
-          onChanged();
-        } else {
-          scheduleStartDate_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scheduleStartDate_ = null;
+        if (scheduleStartDateBuilder_ != null) {
+          scheduleStartDateBuilder_.dispose();
           scheduleStartDateBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -29631,7 +29886,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.type.Date.Builder getScheduleStartDateBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getScheduleStartDateFieldBuilder().getBuilder();
       }
@@ -29721,7 +29976,7 @@ public final class TransferTypes {
        * @return Whether the scheduleEndDate field is set.
        */
       public boolean hasScheduleEndDate() {
-        return scheduleEndDateBuilder_ != null || scheduleEndDate_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -29770,11 +30025,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           scheduleEndDate_ = value;
-          onChanged();
         } else {
           scheduleEndDateBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -29795,11 +30050,11 @@ public final class TransferTypes {
       public Builder setScheduleEndDate(com.google.type.Date.Builder builderForValue) {
         if (scheduleEndDateBuilder_ == null) {
           scheduleEndDate_ = builderForValue.build();
-          onChanged();
         } else {
           scheduleEndDateBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -29819,17 +30074,18 @@ public final class TransferTypes {
        */
       public Builder mergeScheduleEndDate(com.google.type.Date value) {
         if (scheduleEndDateBuilder_ == null) {
-          if (scheduleEndDate_ != null) {
-            scheduleEndDate_ =
-                com.google.type.Date.newBuilder(scheduleEndDate_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && scheduleEndDate_ != null
+              && scheduleEndDate_ != com.google.type.Date.getDefaultInstance()) {
+            getScheduleEndDateBuilder().mergeFrom(value);
           } else {
             scheduleEndDate_ = value;
           }
-          onChanged();
         } else {
           scheduleEndDateBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -29848,14 +30104,13 @@ public final class TransferTypes {
        * <code>.google.type.Date schedule_end_date = 2;</code>
        */
       public Builder clearScheduleEndDate() {
-        if (scheduleEndDateBuilder_ == null) {
-          scheduleEndDate_ = null;
-          onChanged();
-        } else {
-          scheduleEndDate_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        scheduleEndDate_ = null;
+        if (scheduleEndDateBuilder_ != null) {
+          scheduleEndDateBuilder_.dispose();
           scheduleEndDateBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -29874,7 +30129,7 @@ public final class TransferTypes {
        * <code>.google.type.Date schedule_end_date = 2;</code>
        */
       public com.google.type.Date.Builder getScheduleEndDateBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getScheduleEndDateFieldBuilder().getBuilder();
       }
@@ -29959,7 +30214,7 @@ public final class TransferTypes {
        * @return Whether the startTimeOfDay field is set.
        */
       public boolean hasStartTimeOfDay() {
-        return startTimeOfDayBuilder_ != null || startTimeOfDay_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -30014,11 +30269,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           startTimeOfDay_ = value;
-          onChanged();
         } else {
           startTimeOfDayBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -30042,11 +30297,11 @@ public final class TransferTypes {
       public Builder setStartTimeOfDay(com.google.type.TimeOfDay.Builder builderForValue) {
         if (startTimeOfDayBuilder_ == null) {
           startTimeOfDay_ = builderForValue.build();
-          onChanged();
         } else {
           startTimeOfDayBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -30069,19 +30324,18 @@ public final class TransferTypes {
        */
       public Builder mergeStartTimeOfDay(com.google.type.TimeOfDay value) {
         if (startTimeOfDayBuilder_ == null) {
-          if (startTimeOfDay_ != null) {
-            startTimeOfDay_ =
-                com.google.type.TimeOfDay.newBuilder(startTimeOfDay_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && startTimeOfDay_ != null
+              && startTimeOfDay_ != com.google.type.TimeOfDay.getDefaultInstance()) {
+            getStartTimeOfDayBuilder().mergeFrom(value);
           } else {
             startTimeOfDay_ = value;
           }
-          onChanged();
         } else {
           startTimeOfDayBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -30103,14 +30357,13 @@ public final class TransferTypes {
        * <code>.google.type.TimeOfDay start_time_of_day = 3;</code>
        */
       public Builder clearStartTimeOfDay() {
-        if (startTimeOfDayBuilder_ == null) {
-          startTimeOfDay_ = null;
-          onChanged();
-        } else {
-          startTimeOfDay_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        startTimeOfDay_ = null;
+        if (startTimeOfDayBuilder_ != null) {
+          startTimeOfDayBuilder_.dispose();
           startTimeOfDayBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -30132,7 +30385,7 @@ public final class TransferTypes {
        * <code>.google.type.TimeOfDay start_time_of_day = 3;</code>
        */
       public com.google.type.TimeOfDay.Builder getStartTimeOfDayBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getStartTimeOfDayFieldBuilder().getBuilder();
       }
@@ -30225,7 +30478,7 @@ public final class TransferTypes {
        * @return Whether the endTimeOfDay field is set.
        */
       public boolean hasEndTimeOfDay() {
-        return endTimeOfDayBuilder_ != null || endTimeOfDay_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -30280,11 +30533,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           endTimeOfDay_ = value;
-          onChanged();
         } else {
           endTimeOfDayBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -30308,11 +30561,11 @@ public final class TransferTypes {
       public Builder setEndTimeOfDay(com.google.type.TimeOfDay.Builder builderForValue) {
         if (endTimeOfDayBuilder_ == null) {
           endTimeOfDay_ = builderForValue.build();
-          onChanged();
         } else {
           endTimeOfDayBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -30335,17 +30588,18 @@ public final class TransferTypes {
        */
       public Builder mergeEndTimeOfDay(com.google.type.TimeOfDay value) {
         if (endTimeOfDayBuilder_ == null) {
-          if (endTimeOfDay_ != null) {
-            endTimeOfDay_ =
-                com.google.type.TimeOfDay.newBuilder(endTimeOfDay_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && endTimeOfDay_ != null
+              && endTimeOfDay_ != com.google.type.TimeOfDay.getDefaultInstance()) {
+            getEndTimeOfDayBuilder().mergeFrom(value);
           } else {
             endTimeOfDay_ = value;
           }
-          onChanged();
         } else {
           endTimeOfDayBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -30367,14 +30621,13 @@ public final class TransferTypes {
        * <code>.google.type.TimeOfDay end_time_of_day = 4;</code>
        */
       public Builder clearEndTimeOfDay() {
-        if (endTimeOfDayBuilder_ == null) {
-          endTimeOfDay_ = null;
-          onChanged();
-        } else {
-          endTimeOfDay_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        endTimeOfDay_ = null;
+        if (endTimeOfDayBuilder_ != null) {
+          endTimeOfDayBuilder_.dispose();
           endTimeOfDayBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -30396,7 +30649,7 @@ public final class TransferTypes {
        * <code>.google.type.TimeOfDay end_time_of_day = 4;</code>
        */
       public com.google.type.TimeOfDay.Builder getEndTimeOfDayBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getEndTimeOfDayFieldBuilder().getBuilder();
       }
@@ -30482,7 +30735,7 @@ public final class TransferTypes {
        * @return Whether the repeatInterval field is set.
        */
       public boolean hasRepeatInterval() {
-        return repeatIntervalBuilder_ != null || repeatInterval_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -30523,11 +30776,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           repeatInterval_ = value;
-          onChanged();
         } else {
           repeatIntervalBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -30544,11 +30797,11 @@ public final class TransferTypes {
       public Builder setRepeatInterval(com.google.protobuf.Duration.Builder builderForValue) {
         if (repeatIntervalBuilder_ == null) {
           repeatInterval_ = builderForValue.build();
-          onChanged();
         } else {
           repeatIntervalBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -30564,19 +30817,18 @@ public final class TransferTypes {
        */
       public Builder mergeRepeatInterval(com.google.protobuf.Duration value) {
         if (repeatIntervalBuilder_ == null) {
-          if (repeatInterval_ != null) {
-            repeatInterval_ =
-                com.google.protobuf.Duration.newBuilder(repeatInterval_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && repeatInterval_ != null
+              && repeatInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getRepeatIntervalBuilder().mergeFrom(value);
           } else {
             repeatInterval_ = value;
           }
-          onChanged();
         } else {
           repeatIntervalBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -30591,14 +30843,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Duration repeat_interval = 5;</code>
        */
       public Builder clearRepeatInterval() {
-        if (repeatIntervalBuilder_ == null) {
-          repeatInterval_ = null;
-          onChanged();
-        } else {
-          repeatInterval_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        repeatInterval_ = null;
+        if (repeatIntervalBuilder_ != null) {
+          repeatIntervalBuilder_.dispose();
           repeatIntervalBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -30613,7 +30864,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Duration repeat_interval = 5;</code>
        */
       public com.google.protobuf.Duration.Builder getRepeatIntervalBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getRepeatIntervalFieldBuilder().getBuilder();
       }
@@ -31432,7 +31683,9 @@ public final class TransferTypes {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -31517,7 +31770,9 @@ public final class TransferTypes {
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -31568,7 +31823,9 @@ public final class TransferTypes {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -31662,7 +31919,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpecOrBuilder
         getTransferSpecOrBuilder() {
-      return getTransferSpec();
+      return transferSpec_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.getDefaultInstance()
+          : transferSpec_;
     }
 
     public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 11;
@@ -31717,7 +31976,10 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfigOrBuilder
         getNotificationConfigOrBuilder() {
-      return getNotificationConfig();
+      return notificationConfig_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig
+              .getDefaultInstance()
+          : notificationConfig_;
     }
 
     public static final int LOGGING_CONFIG_FIELD_NUMBER = 14;
@@ -31766,7 +32028,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfigOrBuilder
         getLoggingConfigOrBuilder() {
-      return getLoggingConfig();
+      return loggingConfig_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.getDefaultInstance()
+          : loggingConfig_;
     }
 
     public static final int SCHEDULE_FIELD_NUMBER = 5;
@@ -31824,11 +32088,13 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.ScheduleOrBuilder
         getScheduleOrBuilder() {
-      return getSchedule();
+      return schedule_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.Schedule.getDefaultInstance()
+          : schedule_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 6;
-    private int status_;
+    private int status_ = 0;
     /**
      *
      *
@@ -31869,9 +32135,8 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status result =
-          com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status.valueOf(status_);
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status.forNumber(status_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status.UNRECOGNIZED
           : result;
@@ -31928,7 +32193,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
-      return getCreationTime();
+      return creationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : creationTime_;
     }
 
     public static final int LAST_MODIFICATION_TIME_FIELD_NUMBER = 8;
@@ -31982,7 +32249,9 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getLastModificationTimeOrBuilder() {
-      return getLastModificationTime();
+      return lastModificationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : lastModificationTime_;
     }
 
     public static final int DELETION_TIME_FIELD_NUMBER = 9;
@@ -32036,11 +32305,15 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getDeletionTimeOrBuilder() {
-      return getDeletionTime();
+      return deletionTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : deletionTime_;
     }
 
     public static final int LATEST_OPERATION_NAME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object latestOperationName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object latestOperationName_ = "";
     /**
      *
      *
@@ -32431,58 +32704,47 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         description_ = "";
-
         projectId_ = "";
-
-        if (transferSpecBuilder_ == null) {
-          transferSpec_ = null;
-        } else {
-          transferSpec_ = null;
+        transferSpec_ = null;
+        if (transferSpecBuilder_ != null) {
+          transferSpecBuilder_.dispose();
           transferSpecBuilder_ = null;
         }
-        if (notificationConfigBuilder_ == null) {
-          notificationConfig_ = null;
-        } else {
-          notificationConfig_ = null;
+        notificationConfig_ = null;
+        if (notificationConfigBuilder_ != null) {
+          notificationConfigBuilder_.dispose();
           notificationConfigBuilder_ = null;
         }
-        if (loggingConfigBuilder_ == null) {
-          loggingConfig_ = null;
-        } else {
-          loggingConfig_ = null;
+        loggingConfig_ = null;
+        if (loggingConfigBuilder_ != null) {
+          loggingConfigBuilder_.dispose();
           loggingConfigBuilder_ = null;
         }
-        if (scheduleBuilder_ == null) {
-          schedule_ = null;
-        } else {
-          schedule_ = null;
+        schedule_ = null;
+        if (scheduleBuilder_ != null) {
+          scheduleBuilder_.dispose();
           scheduleBuilder_ = null;
         }
         status_ = 0;
-
-        if (creationTimeBuilder_ == null) {
-          creationTime_ = null;
-        } else {
-          creationTime_ = null;
+        creationTime_ = null;
+        if (creationTimeBuilder_ != null) {
+          creationTimeBuilder_.dispose();
           creationTimeBuilder_ = null;
         }
-        if (lastModificationTimeBuilder_ == null) {
-          lastModificationTime_ = null;
-        } else {
-          lastModificationTime_ = null;
+        lastModificationTime_ = null;
+        if (lastModificationTimeBuilder_ != null) {
+          lastModificationTimeBuilder_.dispose();
           lastModificationTimeBuilder_ = null;
         }
-        if (deletionTimeBuilder_ == null) {
-          deletionTime_ = null;
-        } else {
-          deletionTime_ = null;
+        deletionTime_ = null;
+        if (deletionTimeBuilder_ != null) {
+          deletionTimeBuilder_.dispose();
           deletionTimeBuilder_ = null;
         }
         latestOperationName_ = "";
-
         return this;
       }
 
@@ -32511,48 +32773,62 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.TransferJob result =
             new com.google.storagetransfer.v1.proto.TransferTypes.TransferJob(this);
-        result.name_ = name_;
-        result.description_ = description_;
-        result.projectId_ = projectId_;
-        if (transferSpecBuilder_ == null) {
-          result.transferSpec_ = transferSpec_;
-        } else {
-          result.transferSpec_ = transferSpecBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (notificationConfigBuilder_ == null) {
-          result.notificationConfig_ = notificationConfig_;
-        } else {
-          result.notificationConfig_ = notificationConfigBuilder_.build();
-        }
-        if (loggingConfigBuilder_ == null) {
-          result.loggingConfig_ = loggingConfig_;
-        } else {
-          result.loggingConfig_ = loggingConfigBuilder_.build();
-        }
-        if (scheduleBuilder_ == null) {
-          result.schedule_ = schedule_;
-        } else {
-          result.schedule_ = scheduleBuilder_.build();
-        }
-        result.status_ = status_;
-        if (creationTimeBuilder_ == null) {
-          result.creationTime_ = creationTime_;
-        } else {
-          result.creationTime_ = creationTimeBuilder_.build();
-        }
-        if (lastModificationTimeBuilder_ == null) {
-          result.lastModificationTime_ = lastModificationTime_;
-        } else {
-          result.lastModificationTime_ = lastModificationTimeBuilder_.build();
-        }
-        if (deletionTimeBuilder_ == null) {
-          result.deletionTime_ = deletionTime_;
-        } else {
-          result.deletionTime_ = deletionTimeBuilder_.build();
-        }
-        result.latestOperationName_ = latestOperationName_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferJob result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.transferSpec_ =
+              transferSpecBuilder_ == null ? transferSpec_ : transferSpecBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.notificationConfig_ =
+              notificationConfigBuilder_ == null
+                  ? notificationConfig_
+                  : notificationConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.loggingConfig_ =
+              loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.creationTime_ =
+              creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.lastModificationTime_ =
+              lastModificationTimeBuilder_ == null
+                  ? lastModificationTime_
+                  : lastModificationTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.deletionTime_ =
+              deletionTimeBuilder_ == null ? deletionTime_ : deletionTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.latestOperationName_ = latestOperationName_;
+        }
       }
 
       @java.lang.Override
@@ -32607,14 +32883,17 @@ public final class TransferTypes {
           return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasTransferSpec()) {
@@ -32643,6 +32922,7 @@ public final class TransferTypes {
         }
         if (!other.getLatestOperationName().isEmpty()) {
           latestOperationName_ = other.latestOperationName_;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -32674,75 +32954,75 @@ public final class TransferTypes {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getTransferSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(getScheduleFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 42
               case 48:
                 {
                   status_ = input.readEnum();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 48
               case 58:
                 {
                   input.readMessage(getCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getLastModificationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 66
               case 74:
                 {
                   input.readMessage(getDeletionTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 74
               case 90:
                 {
                   input.readMessage(
                       getNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 90
               case 98:
                 {
                   latestOperationName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 98
               case 114:
                 {
                   input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 114
               default:
@@ -32761,6 +33041,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -32877,8 +33159,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -32912,8 +33194,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -32952,8 +33234,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -33022,8 +33304,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -33040,8 +33322,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -33063,8 +33345,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -33130,8 +33412,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -33147,8 +33429,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -33169,8 +33451,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -33193,7 +33475,7 @@ public final class TransferTypes {
        * @return Whether the transferSpec field is set.
        */
       public boolean hasTransferSpec() {
-        return transferSpecBuilder_ != null || transferSpec_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -33231,11 +33513,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           transferSpec_ = value;
-          onChanged();
         } else {
           transferSpecBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -33251,11 +33533,11 @@ public final class TransferTypes {
           com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.Builder builderForValue) {
         if (transferSpecBuilder_ == null) {
           transferSpec_ = builderForValue.build();
-          onChanged();
         } else {
           transferSpecBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -33270,20 +33552,20 @@ public final class TransferTypes {
       public Builder mergeTransferSpec(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec value) {
         if (transferSpecBuilder_ == null) {
-          if (transferSpec_ != null) {
-            transferSpec_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.newBuilder(
-                        transferSpec_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && transferSpec_ != null
+              && transferSpec_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec
+                      .getDefaultInstance()) {
+            getTransferSpecBuilder().mergeFrom(value);
           } else {
             transferSpec_ = value;
           }
-          onChanged();
         } else {
           transferSpecBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -33296,14 +33578,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferSpec transfer_spec = 4;</code>
        */
       public Builder clearTransferSpec() {
-        if (transferSpecBuilder_ == null) {
-          transferSpec_ = null;
-          onChanged();
-        } else {
-          transferSpec_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        transferSpec_ = null;
+        if (transferSpecBuilder_ != null) {
+          transferSpecBuilder_.dispose();
           transferSpecBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -33317,7 +33598,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.Builder
           getTransferSpecBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getTransferSpecFieldBuilder().getBuilder();
       }
@@ -33386,7 +33667,7 @@ public final class TransferTypes {
        * @return Whether the notificationConfig field is set.
        */
       public boolean hasNotificationConfig() {
-        return notificationConfigBuilder_ != null || notificationConfig_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -33428,11 +33709,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           notificationConfig_ = value;
-          onChanged();
         } else {
           notificationConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -33450,11 +33731,11 @@ public final class TransferTypes {
               builderForValue) {
         if (notificationConfigBuilder_ == null) {
           notificationConfig_ = builderForValue.build();
-          onChanged();
         } else {
           notificationConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -33470,20 +33751,20 @@ public final class TransferTypes {
       public Builder mergeNotificationConfig(
           com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig value) {
         if (notificationConfigBuilder_ == null) {
-          if (notificationConfig_ != null) {
-            notificationConfig_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.newBuilder(
-                        notificationConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && notificationConfig_ != null
+              && notificationConfig_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig
+                      .getDefaultInstance()) {
+            getNotificationConfigBuilder().mergeFrom(value);
           } else {
             notificationConfig_ = value;
           }
-          onChanged();
         } else {
           notificationConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -33497,14 +33778,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 11;</code>
        */
       public Builder clearNotificationConfig() {
-        if (notificationConfigBuilder_ == null) {
-          notificationConfig_ = null;
-          onChanged();
-        } else {
-          notificationConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        notificationConfig_ = null;
+        if (notificationConfigBuilder_ != null) {
+          notificationConfigBuilder_.dispose();
           notificationConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -33519,7 +33799,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.Builder
           getNotificationConfigBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getNotificationConfigFieldBuilder().getBuilder();
       }
@@ -33589,7 +33869,7 @@ public final class TransferTypes {
        * @return Whether the loggingConfig field is set.
        */
       public boolean hasLoggingConfig() {
-        return loggingConfigBuilder_ != null || loggingConfig_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -33627,11 +33907,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           loggingConfig_ = value;
-          onChanged();
         } else {
           loggingConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -33647,11 +33927,11 @@ public final class TransferTypes {
           com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder builderForValue) {
         if (loggingConfigBuilder_ == null) {
           loggingConfig_ = builderForValue.build();
-          onChanged();
         } else {
           loggingConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -33666,20 +33946,20 @@ public final class TransferTypes {
       public Builder mergeLoggingConfig(
           com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig value) {
         if (loggingConfigBuilder_ == null) {
-          if (loggingConfig_ != null) {
-            loggingConfig_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.newBuilder(
-                        loggingConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && loggingConfig_ != null
+              && loggingConfig_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig
+                      .getDefaultInstance()) {
+            getLoggingConfigBuilder().mergeFrom(value);
           } else {
             loggingConfig_ = value;
           }
-          onChanged();
         } else {
           loggingConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -33692,14 +33972,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.LoggingConfig logging_config = 14;</code>
        */
       public Builder clearLoggingConfig() {
-        if (loggingConfigBuilder_ == null) {
-          loggingConfig_ = null;
-          onChanged();
-        } else {
-          loggingConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        loggingConfig_ = null;
+        if (loggingConfigBuilder_ != null) {
+          loggingConfigBuilder_.dispose();
           loggingConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -33713,7 +33992,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.Builder
           getLoggingConfigBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getLoggingConfigFieldBuilder().getBuilder();
       }
@@ -33783,7 +34062,7 @@ public final class TransferTypes {
        * @return Whether the schedule field is set.
        */
       public boolean hasSchedule() {
-        return scheduleBuilder_ != null || schedule_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -33826,11 +34105,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           schedule_ = value;
-          onChanged();
         } else {
           scheduleBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -33849,11 +34128,11 @@ public final class TransferTypes {
           com.google.storagetransfer.v1.proto.TransferTypes.Schedule.Builder builderForValue) {
         if (scheduleBuilder_ == null) {
           schedule_ = builderForValue.build();
-          onChanged();
         } else {
           scheduleBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -33871,19 +34150,20 @@ public final class TransferTypes {
       public Builder mergeSchedule(
           com.google.storagetransfer.v1.proto.TransferTypes.Schedule value) {
         if (scheduleBuilder_ == null) {
-          if (schedule_ != null) {
-            schedule_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.Schedule.newBuilder(schedule_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000040) != 0)
+              && schedule_ != null
+              && schedule_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.Schedule
+                      .getDefaultInstance()) {
+            getScheduleBuilder().mergeFrom(value);
           } else {
             schedule_ = value;
           }
-          onChanged();
         } else {
           scheduleBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -33899,14 +34179,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.Schedule schedule = 5;</code>
        */
       public Builder clearSchedule() {
-        if (scheduleBuilder_ == null) {
-          schedule_ = null;
-          onChanged();
-        } else {
-          schedule_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        schedule_ = null;
+        if (scheduleBuilder_ != null) {
+          scheduleBuilder_.dispose();
           scheduleBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -33923,7 +34202,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.Schedule.Builder
           getScheduleBuilder() {
-
+        bitField0_ |= 0x00000040;
         onChanged();
         return getScheduleFieldBuilder().getBuilder();
       }
@@ -34019,8 +34298,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
-
         status_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -34043,9 +34322,8 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status getStatus() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status result =
-            com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status.valueOf(status_);
+            com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status.forNumber(status_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.TransferJob.Status.UNRECOGNIZED
             : result;
@@ -34073,7 +34351,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000080;
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -34096,7 +34374,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         status_ = 0;
         onChanged();
         return this;
@@ -34122,7 +34400,7 @@ public final class TransferTypes {
        * @return Whether the creationTime field is set.
        */
       public boolean hasCreationTime() {
-        return creationTimeBuilder_ != null || creationTime_ != null;
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        *
@@ -34163,11 +34441,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           creationTime_ = value;
-          onChanged();
         } else {
           creationTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -34184,11 +34462,11 @@ public final class TransferTypes {
       public Builder setCreationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (creationTimeBuilder_ == null) {
           creationTime_ = builderForValue.build();
-          onChanged();
         } else {
           creationTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -34204,19 +34482,18 @@ public final class TransferTypes {
        */
       public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
         if (creationTimeBuilder_ == null) {
-          if (creationTime_ != null) {
-            creationTime_ =
-                com.google.protobuf.Timestamp.newBuilder(creationTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000100) != 0)
+              && creationTime_ != null
+              && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreationTimeBuilder().mergeFrom(value);
           } else {
             creationTime_ = value;
           }
-          onChanged();
         } else {
           creationTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -34231,14 +34508,13 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearCreationTime() {
-        if (creationTimeBuilder_ == null) {
-          creationTime_ = null;
-          onChanged();
-        } else {
-          creationTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        creationTime_ = null;
+        if (creationTimeBuilder_ != null) {
+          creationTimeBuilder_.dispose();
           creationTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -34253,7 +34529,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
-
+        bitField0_ |= 0x00000100;
         onChanged();
         return getCreationTimeFieldBuilder().getBuilder();
       }
@@ -34325,7 +34601,7 @@ public final class TransferTypes {
        * @return Whether the lastModificationTime field is set.
        */
       public boolean hasLastModificationTime() {
-        return lastModificationTimeBuilder_ != null || lastModificationTime_ != null;
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        *
@@ -34366,11 +34642,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           lastModificationTime_ = value;
-          onChanged();
         } else {
           lastModificationTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -34388,11 +34664,11 @@ public final class TransferTypes {
           com.google.protobuf.Timestamp.Builder builderForValue) {
         if (lastModificationTimeBuilder_ == null) {
           lastModificationTime_ = builderForValue.build();
-          onChanged();
         } else {
           lastModificationTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -34408,19 +34684,18 @@ public final class TransferTypes {
        */
       public Builder mergeLastModificationTime(com.google.protobuf.Timestamp value) {
         if (lastModificationTimeBuilder_ == null) {
-          if (lastModificationTime_ != null) {
-            lastModificationTime_ =
-                com.google.protobuf.Timestamp.newBuilder(lastModificationTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000200) != 0)
+              && lastModificationTime_ != null
+              && lastModificationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getLastModificationTimeBuilder().mergeFrom(value);
           } else {
             lastModificationTime_ = value;
           }
-          onChanged();
         } else {
           lastModificationTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -34435,14 +34710,13 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearLastModificationTime() {
-        if (lastModificationTimeBuilder_ == null) {
-          lastModificationTime_ = null;
-          onChanged();
-        } else {
-          lastModificationTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        lastModificationTime_ = null;
+        if (lastModificationTimeBuilder_ != null) {
+          lastModificationTimeBuilder_.dispose();
           lastModificationTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -34457,7 +34731,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getLastModificationTimeBuilder() {
-
+        bitField0_ |= 0x00000200;
         onChanged();
         return getLastModificationTimeFieldBuilder().getBuilder();
       }
@@ -34529,7 +34803,7 @@ public final class TransferTypes {
        * @return Whether the deletionTime field is set.
        */
       public boolean hasDeletionTime() {
-        return deletionTimeBuilder_ != null || deletionTime_ != null;
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        *
@@ -34570,11 +34844,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           deletionTime_ = value;
-          onChanged();
         } else {
           deletionTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -34591,11 +34865,11 @@ public final class TransferTypes {
       public Builder setDeletionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (deletionTimeBuilder_ == null) {
           deletionTime_ = builderForValue.build();
-          onChanged();
         } else {
           deletionTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -34611,19 +34885,18 @@ public final class TransferTypes {
        */
       public Builder mergeDeletionTime(com.google.protobuf.Timestamp value) {
         if (deletionTimeBuilder_ == null) {
-          if (deletionTime_ != null) {
-            deletionTime_ =
-                com.google.protobuf.Timestamp.newBuilder(deletionTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000400) != 0)
+              && deletionTime_ != null
+              && deletionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getDeletionTimeBuilder().mergeFrom(value);
           } else {
             deletionTime_ = value;
           }
-          onChanged();
         } else {
           deletionTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -34638,14 +34911,13 @@ public final class TransferTypes {
        * </code>
        */
       public Builder clearDeletionTime() {
-        if (deletionTimeBuilder_ == null) {
-          deletionTime_ = null;
-          onChanged();
-        } else {
-          deletionTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        deletionTime_ = null;
+        if (deletionTimeBuilder_ != null) {
+          deletionTimeBuilder_.dispose();
           deletionTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -34660,7 +34932,7 @@ public final class TransferTypes {
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getDeletionTimeBuilder() {
-
+        bitField0_ |= 0x00000400;
         onChanged();
         return getDeletionTimeFieldBuilder().getBuilder();
       }
@@ -34776,8 +35048,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         latestOperationName_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -34794,8 +35066,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearLatestOperationName() {
-
         latestOperationName_ = getDefaultInstance().getLatestOperationName();
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -34817,8 +35089,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         latestOperationName_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -35024,7 +35296,9 @@ public final class TransferTypes {
     }
 
     public static final int URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object url_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
     /**
      *
      *
@@ -35075,6 +35349,8 @@ public final class TransferTypes {
     }
 
     public static final int ERROR_DETAILS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList errorDetails_;
     /**
      *
@@ -35353,10 +35629,10 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         url_ = "";
-
         errorDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -35385,15 +35661,29 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry result =
             new com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry(this);
-        int from_bitField0_ = bitField0_;
-        result.url_ = url_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          errorDetails_ = errorDetails_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.errorDetails_ = errorDetails_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          errorDetails_ = errorDetails_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.errorDetails_ = errorDetails_;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.url_ = url_;
+        }
       }
 
       @java.lang.Override
@@ -35448,12 +35738,13 @@ public final class TransferTypes {
           return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.errorDetails_.isEmpty()) {
           if (errorDetails_.isEmpty()) {
             errorDetails_ = other.errorDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureErrorDetailsIsMutable();
             errorDetails_.addAll(other.errorDetails_);
@@ -35489,7 +35780,7 @@ public final class TransferTypes {
               case 10:
                 {
                   url_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 26:
@@ -35582,8 +35873,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         url_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -35600,8 +35891,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearUrl() {
-
         url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -35623,8 +35914,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         url_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -35633,9 +35924,9 @@ public final class TransferTypes {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureErrorDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           errorDetails_ = new com.google.protobuf.LazyStringArrayList(errorDetails_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -35770,7 +36061,7 @@ public final class TransferTypes {
        */
       public Builder clearErrorDetails() {
         errorDetails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -36024,7 +36315,7 @@ public final class TransferTypes {
     }
 
     public static final int ERROR_CODE_FIELD_NUMBER = 1;
-    private int errorCode_;
+    private int errorCode_ = 0;
     /**
      *
      *
@@ -36053,13 +36344,12 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.rpc.Code getErrorCode() {
-      @SuppressWarnings("deprecation")
-      com.google.rpc.Code result = com.google.rpc.Code.valueOf(errorCode_);
+      com.google.rpc.Code result = com.google.rpc.Code.forNumber(errorCode_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
 
     public static final int ERROR_COUNT_FIELD_NUMBER = 2;
-    private long errorCount_;
+    private long errorCount_ = 0L;
     /**
      *
      *
@@ -36077,6 +36367,8 @@ public final class TransferTypes {
     }
 
     public static final int ERROR_LOG_ENTRIES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry>
         errorLogEntries_;
     /**
@@ -36382,17 +36674,16 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         errorCode_ = 0;
-
         errorCount_ = 0L;
-
         if (errorLogEntriesBuilder_ == null) {
           errorLogEntries_ = java.util.Collections.emptyList();
         } else {
           errorLogEntries_ = null;
           errorLogEntriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -36421,20 +36712,36 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary result =
             new com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary(this);
-        int from_bitField0_ = bitField0_;
-        result.errorCode_ = errorCode_;
-        result.errorCount_ = errorCount_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary result) {
         if (errorLogEntriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             errorLogEntries_ = java.util.Collections.unmodifiableList(errorLogEntries_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.errorLogEntries_ = errorLogEntries_;
         } else {
           result.errorLogEntries_ = errorLogEntriesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.errorCode_ = errorCode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.errorCount_ = errorCount_;
+        }
       }
 
       @java.lang.Override
@@ -36497,7 +36804,7 @@ public final class TransferTypes {
           if (!other.errorLogEntries_.isEmpty()) {
             if (errorLogEntries_.isEmpty()) {
               errorLogEntries_ = other.errorLogEntries_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureErrorLogEntriesIsMutable();
               errorLogEntries_.addAll(other.errorLogEntries_);
@@ -36510,7 +36817,7 @@ public final class TransferTypes {
               errorLogEntriesBuilder_.dispose();
               errorLogEntriesBuilder_ = null;
               errorLogEntries_ = other.errorLogEntries_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               errorLogEntriesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getErrorLogEntriesFieldBuilder()
@@ -36549,13 +36856,13 @@ public final class TransferTypes {
               case 8:
                 {
                   errorCode_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   errorCount_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -36620,8 +36927,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setErrorCodeValue(int value) {
-
         errorCode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -36638,8 +36945,7 @@ public final class TransferTypes {
        */
       @java.lang.Override
       public com.google.rpc.Code getErrorCode() {
-        @SuppressWarnings("deprecation")
-        com.google.rpc.Code result = com.google.rpc.Code.valueOf(errorCode_);
+        com.google.rpc.Code result = com.google.rpc.Code.forNumber(errorCode_);
         return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
       }
       /**
@@ -36658,7 +36964,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         errorCode_ = value.getNumber();
         onChanged();
         return this;
@@ -36675,7 +36981,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearErrorCode() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         errorCode_ = 0;
         onChanged();
         return this;
@@ -36712,6 +37018,7 @@ public final class TransferTypes {
       public Builder setErrorCount(long value) {
 
         errorCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -36727,7 +37034,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearErrorCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         errorCount_ = 0L;
         onChanged();
         return this;
@@ -36737,12 +37044,12 @@ public final class TransferTypes {
           errorLogEntries_ = java.util.Collections.emptyList();
 
       private void ensureErrorLogEntriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           errorLogEntries_ =
               new java.util.ArrayList<
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry>(
                   errorLogEntries_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -36989,7 +37296,7 @@ public final class TransferTypes {
       public Builder clearErrorLogEntries() {
         if (errorLogEntriesBuilder_ == null) {
           errorLogEntries_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           errorLogEntriesBuilder_.clear();
@@ -37136,7 +37443,7 @@ public final class TransferTypes {
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntry.Builder,
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorLogEntryOrBuilder>(
                   errorLogEntries_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           errorLogEntries_ = null;
@@ -37554,7 +37861,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_FOUND_FROM_SOURCE_FIELD_NUMBER = 1;
-    private long objectsFoundFromSource_;
+    private long objectsFoundFromSource_ = 0L;
     /**
      *
      *
@@ -37574,7 +37881,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_FOUND_FROM_SOURCE_FIELD_NUMBER = 2;
-    private long bytesFoundFromSource_;
+    private long bytesFoundFromSource_ = 0L;
     /**
      *
      *
@@ -37594,7 +37901,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_FOUND_ONLY_FROM_SINK_FIELD_NUMBER = 3;
-    private long objectsFoundOnlyFromSink_;
+    private long objectsFoundOnlyFromSink_ = 0L;
     /**
      *
      *
@@ -37612,7 +37919,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_FOUND_ONLY_FROM_SINK_FIELD_NUMBER = 4;
-    private long bytesFoundOnlyFromSink_;
+    private long bytesFoundOnlyFromSink_ = 0L;
     /**
      *
      *
@@ -37630,7 +37937,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_FROM_SOURCE_SKIPPED_BY_SYNC_FIELD_NUMBER = 5;
-    private long objectsFromSourceSkippedBySync_;
+    private long objectsFromSourceSkippedBySync_ = 0L;
     /**
      *
      *
@@ -37649,7 +37956,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_FROM_SOURCE_SKIPPED_BY_SYNC_FIELD_NUMBER = 6;
-    private long bytesFromSourceSkippedBySync_;
+    private long bytesFromSourceSkippedBySync_ = 0L;
     /**
      *
      *
@@ -37668,7 +37975,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_COPIED_TO_SINK_FIELD_NUMBER = 7;
-    private long objectsCopiedToSink_;
+    private long objectsCopiedToSink_ = 0L;
     /**
      *
      *
@@ -37686,7 +37993,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_COPIED_TO_SINK_FIELD_NUMBER = 8;
-    private long bytesCopiedToSink_;
+    private long bytesCopiedToSink_ = 0L;
     /**
      *
      *
@@ -37704,7 +38011,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_DELETED_FROM_SOURCE_FIELD_NUMBER = 9;
-    private long objectsDeletedFromSource_;
+    private long objectsDeletedFromSource_ = 0L;
     /**
      *
      *
@@ -37722,7 +38029,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_DELETED_FROM_SOURCE_FIELD_NUMBER = 10;
-    private long bytesDeletedFromSource_;
+    private long bytesDeletedFromSource_ = 0L;
     /**
      *
      *
@@ -37740,7 +38047,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_DELETED_FROM_SINK_FIELD_NUMBER = 11;
-    private long objectsDeletedFromSink_;
+    private long objectsDeletedFromSink_ = 0L;
     /**
      *
      *
@@ -37758,7 +38065,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_DELETED_FROM_SINK_FIELD_NUMBER = 12;
-    private long bytesDeletedFromSink_;
+    private long bytesDeletedFromSink_ = 0L;
     /**
      *
      *
@@ -37776,7 +38083,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_FROM_SOURCE_FAILED_FIELD_NUMBER = 13;
-    private long objectsFromSourceFailed_;
+    private long objectsFromSourceFailed_ = 0L;
     /**
      *
      *
@@ -37795,7 +38102,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_FROM_SOURCE_FAILED_FIELD_NUMBER = 14;
-    private long bytesFromSourceFailed_;
+    private long bytesFromSourceFailed_ = 0L;
     /**
      *
      *
@@ -37814,7 +38121,7 @@ public final class TransferTypes {
     }
 
     public static final int OBJECTS_FAILED_TO_DELETE_FROM_SINK_FIELD_NUMBER = 15;
-    private long objectsFailedToDeleteFromSink_;
+    private long objectsFailedToDeleteFromSink_ = 0L;
     /**
      *
      *
@@ -37832,7 +38139,7 @@ public final class TransferTypes {
     }
 
     public static final int BYTES_FAILED_TO_DELETE_FROM_SINK_FIELD_NUMBER = 16;
-    private long bytesFailedToDeleteFromSink_;
+    private long bytesFailedToDeleteFromSink_ = 0L;
     /**
      *
      *
@@ -37850,7 +38157,7 @@ public final class TransferTypes {
     }
 
     public static final int DIRECTORIES_FOUND_FROM_SOURCE_FIELD_NUMBER = 17;
-    private long directoriesFoundFromSource_;
+    private long directoriesFoundFromSource_ = 0L;
     /**
      *
      *
@@ -37872,7 +38179,7 @@ public final class TransferTypes {
     }
 
     public static final int DIRECTORIES_FAILED_TO_LIST_FROM_SOURCE_FIELD_NUMBER = 18;
-    private long directoriesFailedToListFromSource_;
+    private long directoriesFailedToListFromSource_ = 0L;
     /**
      *
      *
@@ -37894,7 +38201,7 @@ public final class TransferTypes {
     }
 
     public static final int DIRECTORIES_SUCCESSFULLY_LISTED_FROM_SOURCE_FIELD_NUMBER = 19;
-    private long directoriesSuccessfullyListedFromSource_;
+    private long directoriesSuccessfullyListedFromSource_ = 0L;
     /**
      *
      *
@@ -37913,7 +38220,7 @@ public final class TransferTypes {
     }
 
     public static final int INTERMEDIATE_OBJECTS_CLEANED_UP_FIELD_NUMBER = 22;
-    private long intermediateObjectsCleanedUp_;
+    private long intermediateObjectsCleanedUp_ = 0L;
     /**
      *
      *
@@ -37931,7 +38238,7 @@ public final class TransferTypes {
     }
 
     public static final int INTERMEDIATE_OBJECTS_FAILED_CLEANED_UP_FIELD_NUMBER = 23;
-    private long intermediateObjectsFailedCleanedUp_;
+    private long intermediateObjectsFailedCleanedUp_ = 0L;
     /**
      *
      *
@@ -38365,48 +38672,28 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         objectsFoundFromSource_ = 0L;
-
         bytesFoundFromSource_ = 0L;
-
         objectsFoundOnlyFromSink_ = 0L;
-
         bytesFoundOnlyFromSink_ = 0L;
-
         objectsFromSourceSkippedBySync_ = 0L;
-
         bytesFromSourceSkippedBySync_ = 0L;
-
         objectsCopiedToSink_ = 0L;
-
         bytesCopiedToSink_ = 0L;
-
         objectsDeletedFromSource_ = 0L;
-
         bytesDeletedFromSource_ = 0L;
-
         objectsDeletedFromSink_ = 0L;
-
         bytesDeletedFromSink_ = 0L;
-
         objectsFromSourceFailed_ = 0L;
-
         bytesFromSourceFailed_ = 0L;
-
         objectsFailedToDeleteFromSink_ = 0L;
-
         bytesFailedToDeleteFromSink_ = 0L;
-
         directoriesFoundFromSource_ = 0L;
-
         directoriesFailedToListFromSource_ = 0L;
-
         directoriesSuccessfullyListedFromSource_ = 0L;
-
         intermediateObjectsCleanedUp_ = 0L;
-
         intermediateObjectsFailedCleanedUp_ = 0L;
-
         return this;
       }
 
@@ -38436,29 +38723,80 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters result =
             new com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters(this);
-        result.objectsFoundFromSource_ = objectsFoundFromSource_;
-        result.bytesFoundFromSource_ = bytesFoundFromSource_;
-        result.objectsFoundOnlyFromSink_ = objectsFoundOnlyFromSink_;
-        result.bytesFoundOnlyFromSink_ = bytesFoundOnlyFromSink_;
-        result.objectsFromSourceSkippedBySync_ = objectsFromSourceSkippedBySync_;
-        result.bytesFromSourceSkippedBySync_ = bytesFromSourceSkippedBySync_;
-        result.objectsCopiedToSink_ = objectsCopiedToSink_;
-        result.bytesCopiedToSink_ = bytesCopiedToSink_;
-        result.objectsDeletedFromSource_ = objectsDeletedFromSource_;
-        result.bytesDeletedFromSource_ = bytesDeletedFromSource_;
-        result.objectsDeletedFromSink_ = objectsDeletedFromSink_;
-        result.bytesDeletedFromSink_ = bytesDeletedFromSink_;
-        result.objectsFromSourceFailed_ = objectsFromSourceFailed_;
-        result.bytesFromSourceFailed_ = bytesFromSourceFailed_;
-        result.objectsFailedToDeleteFromSink_ = objectsFailedToDeleteFromSink_;
-        result.bytesFailedToDeleteFromSink_ = bytesFailedToDeleteFromSink_;
-        result.directoriesFoundFromSource_ = directoriesFoundFromSource_;
-        result.directoriesFailedToListFromSource_ = directoriesFailedToListFromSource_;
-        result.directoriesSuccessfullyListedFromSource_ = directoriesSuccessfullyListedFromSource_;
-        result.intermediateObjectsCleanedUp_ = intermediateObjectsCleanedUp_;
-        result.intermediateObjectsFailedCleanedUp_ = intermediateObjectsFailedCleanedUp_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.objectsFoundFromSource_ = objectsFoundFromSource_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bytesFoundFromSource_ = bytesFoundFromSource_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.objectsFoundOnlyFromSink_ = objectsFoundOnlyFromSink_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bytesFoundOnlyFromSink_ = bytesFoundOnlyFromSink_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.objectsFromSourceSkippedBySync_ = objectsFromSourceSkippedBySync_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.bytesFromSourceSkippedBySync_ = bytesFromSourceSkippedBySync_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.objectsCopiedToSink_ = objectsCopiedToSink_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.bytesCopiedToSink_ = bytesCopiedToSink_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.objectsDeletedFromSource_ = objectsDeletedFromSource_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.bytesDeletedFromSource_ = bytesDeletedFromSource_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.objectsDeletedFromSink_ = objectsDeletedFromSink_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.bytesDeletedFromSink_ = bytesDeletedFromSink_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.objectsFromSourceFailed_ = objectsFromSourceFailed_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.bytesFromSourceFailed_ = bytesFromSourceFailed_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.objectsFailedToDeleteFromSink_ = objectsFailedToDeleteFromSink_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.bytesFailedToDeleteFromSink_ = bytesFailedToDeleteFromSink_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.directoriesFoundFromSource_ = directoriesFoundFromSource_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.directoriesFailedToListFromSource_ = directoriesFailedToListFromSource_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.directoriesSuccessfullyListedFromSource_ =
+              directoriesSuccessfullyListedFromSource_;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.intermediateObjectsCleanedUp_ = intermediateObjectsCleanedUp_;
+        }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.intermediateObjectsFailedCleanedUp_ = intermediateObjectsFailedCleanedUp_;
+        }
       }
 
       @java.lang.Override
@@ -38605,127 +38943,127 @@ public final class TransferTypes {
               case 8:
                 {
                   objectsFoundFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   bytesFoundFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   objectsFoundOnlyFromSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   bytesFoundOnlyFromSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   objectsFromSourceSkippedBySync_ = input.readInt64();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   bytesFromSourceSkippedBySync_ = input.readInt64();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               case 56:
                 {
                   objectsCopiedToSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 56
               case 64:
                 {
                   bytesCopiedToSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 64
               case 72:
                 {
                   objectsDeletedFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 72
               case 80:
                 {
                   bytesDeletedFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 80
               case 88:
                 {
                   objectsDeletedFromSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 88
               case 96:
                 {
                   bytesDeletedFromSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 96
               case 104:
                 {
                   objectsFromSourceFailed_ = input.readInt64();
-
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 104
               case 112:
                 {
                   bytesFromSourceFailed_ = input.readInt64();
-
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 112
               case 120:
                 {
                   objectsFailedToDeleteFromSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00004000;
                   break;
                 } // case 120
               case 128:
                 {
                   bytesFailedToDeleteFromSink_ = input.readInt64();
-
+                  bitField0_ |= 0x00008000;
                   break;
                 } // case 128
               case 136:
                 {
                   directoriesFoundFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00010000;
                   break;
                 } // case 136
               case 144:
                 {
                   directoriesFailedToListFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00020000;
                   break;
                 } // case 144
               case 152:
                 {
                   directoriesSuccessfullyListedFromSource_ = input.readInt64();
-
+                  bitField0_ |= 0x00040000;
                   break;
                 } // case 152
               case 176:
                 {
                   intermediateObjectsCleanedUp_ = input.readInt64();
-
+                  bitField0_ |= 0x00080000;
                   break;
                 } // case 176
               case 184:
                 {
                   intermediateObjectsFailedCleanedUp_ = input.readInt64();
-
+                  bitField0_ |= 0x00100000;
                   break;
                 } // case 184
               default:
@@ -38744,6 +39082,8 @@ public final class TransferTypes {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long objectsFoundFromSource_;
       /**
@@ -38780,6 +39120,7 @@ public final class TransferTypes {
       public Builder setObjectsFoundFromSource(long value) {
 
         objectsFoundFromSource_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -38797,7 +39138,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsFoundFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         objectsFoundFromSource_ = 0L;
         onChanged();
         return this;
@@ -38838,6 +39179,7 @@ public final class TransferTypes {
       public Builder setBytesFoundFromSource(long value) {
 
         bytesFoundFromSource_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -38855,7 +39197,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesFoundFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         bytesFoundFromSource_ = 0L;
         onChanged();
         return this;
@@ -38892,6 +39234,7 @@ public final class TransferTypes {
       public Builder setObjectsFoundOnlyFromSink(long value) {
 
         objectsFoundOnlyFromSink_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -38907,7 +39250,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsFoundOnlyFromSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         objectsFoundOnlyFromSink_ = 0L;
         onChanged();
         return this;
@@ -38944,6 +39287,7 @@ public final class TransferTypes {
       public Builder setBytesFoundOnlyFromSink(long value) {
 
         bytesFoundOnlyFromSink_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -38959,7 +39303,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesFoundOnlyFromSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         bytesFoundOnlyFromSink_ = 0L;
         onChanged();
         return this;
@@ -38998,6 +39342,7 @@ public final class TransferTypes {
       public Builder setObjectsFromSourceSkippedBySync(long value) {
 
         objectsFromSourceSkippedBySync_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -39014,7 +39359,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsFromSourceSkippedBySync() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         objectsFromSourceSkippedBySync_ = 0L;
         onChanged();
         return this;
@@ -39053,6 +39398,7 @@ public final class TransferTypes {
       public Builder setBytesFromSourceSkippedBySync(long value) {
 
         bytesFromSourceSkippedBySync_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -39069,7 +39415,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesFromSourceSkippedBySync() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         bytesFromSourceSkippedBySync_ = 0L;
         onChanged();
         return this;
@@ -39106,6 +39452,7 @@ public final class TransferTypes {
       public Builder setObjectsCopiedToSink(long value) {
 
         objectsCopiedToSink_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -39121,7 +39468,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsCopiedToSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         objectsCopiedToSink_ = 0L;
         onChanged();
         return this;
@@ -39158,6 +39505,7 @@ public final class TransferTypes {
       public Builder setBytesCopiedToSink(long value) {
 
         bytesCopiedToSink_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -39173,7 +39521,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesCopiedToSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         bytesCopiedToSink_ = 0L;
         onChanged();
         return this;
@@ -39210,6 +39558,7 @@ public final class TransferTypes {
       public Builder setObjectsDeletedFromSource(long value) {
 
         objectsDeletedFromSource_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -39225,7 +39574,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsDeletedFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         objectsDeletedFromSource_ = 0L;
         onChanged();
         return this;
@@ -39262,6 +39611,7 @@ public final class TransferTypes {
       public Builder setBytesDeletedFromSource(long value) {
 
         bytesDeletedFromSource_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -39277,7 +39627,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesDeletedFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00000200);
         bytesDeletedFromSource_ = 0L;
         onChanged();
         return this;
@@ -39314,6 +39664,7 @@ public final class TransferTypes {
       public Builder setObjectsDeletedFromSink(long value) {
 
         objectsDeletedFromSink_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -39329,7 +39680,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsDeletedFromSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000400);
         objectsDeletedFromSink_ = 0L;
         onChanged();
         return this;
@@ -39366,6 +39717,7 @@ public final class TransferTypes {
       public Builder setBytesDeletedFromSink(long value) {
 
         bytesDeletedFromSink_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -39381,7 +39733,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesDeletedFromSink() {
-
+        bitField0_ = (bitField0_ & ~0x00000800);
         bytesDeletedFromSink_ = 0L;
         onChanged();
         return this;
@@ -39420,6 +39772,7 @@ public final class TransferTypes {
       public Builder setObjectsFromSourceFailed(long value) {
 
         objectsFromSourceFailed_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -39436,7 +39789,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsFromSourceFailed() {
-
+        bitField0_ = (bitField0_ & ~0x00001000);
         objectsFromSourceFailed_ = 0L;
         onChanged();
         return this;
@@ -39475,6 +39828,7 @@ public final class TransferTypes {
       public Builder setBytesFromSourceFailed(long value) {
 
         bytesFromSourceFailed_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -39491,7 +39845,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesFromSourceFailed() {
-
+        bitField0_ = (bitField0_ & ~0x00002000);
         bytesFromSourceFailed_ = 0L;
         onChanged();
         return this;
@@ -39528,6 +39882,7 @@ public final class TransferTypes {
       public Builder setObjectsFailedToDeleteFromSink(long value) {
 
         objectsFailedToDeleteFromSink_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -39543,7 +39898,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearObjectsFailedToDeleteFromSink() {
-
+        bitField0_ = (bitField0_ & ~0x00004000);
         objectsFailedToDeleteFromSink_ = 0L;
         onChanged();
         return this;
@@ -39580,6 +39935,7 @@ public final class TransferTypes {
       public Builder setBytesFailedToDeleteFromSink(long value) {
 
         bytesFailedToDeleteFromSink_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -39595,7 +39951,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearBytesFailedToDeleteFromSink() {
-
+        bitField0_ = (bitField0_ & ~0x00008000);
         bytesFailedToDeleteFromSink_ = 0L;
         onChanged();
         return this;
@@ -39640,6 +39996,7 @@ public final class TransferTypes {
       public Builder setDirectoriesFoundFromSource(long value) {
 
         directoriesFoundFromSource_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -39659,7 +40016,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDirectoriesFoundFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00010000);
         directoriesFoundFromSource_ = 0L;
         onChanged();
         return this;
@@ -39704,6 +40061,7 @@ public final class TransferTypes {
       public Builder setDirectoriesFailedToListFromSource(long value) {
 
         directoriesFailedToListFromSource_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -39723,7 +40081,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDirectoriesFailedToListFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00020000);
         directoriesFailedToListFromSource_ = 0L;
         onChanged();
         return this;
@@ -39762,6 +40120,7 @@ public final class TransferTypes {
       public Builder setDirectoriesSuccessfullyListedFromSource(long value) {
 
         directoriesSuccessfullyListedFromSource_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -39778,7 +40137,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearDirectoriesSuccessfullyListedFromSource() {
-
+        bitField0_ = (bitField0_ & ~0x00040000);
         directoriesSuccessfullyListedFromSource_ = 0L;
         onChanged();
         return this;
@@ -39815,6 +40174,7 @@ public final class TransferTypes {
       public Builder setIntermediateObjectsCleanedUp(long value) {
 
         intermediateObjectsCleanedUp_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -39830,7 +40190,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearIntermediateObjectsCleanedUp() {
-
+        bitField0_ = (bitField0_ & ~0x00080000);
         intermediateObjectsCleanedUp_ = 0L;
         onChanged();
         return this;
@@ -39867,6 +40227,7 @@ public final class TransferTypes {
       public Builder setIntermediateObjectsFailedCleanedUp(long value) {
 
         intermediateObjectsFailedCleanedUp_ = value;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -39882,7 +40243,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearIntermediateObjectsFailedCleanedUp() {
-
+        bitField0_ = (bitField0_ & ~0x00100000);
         intermediateObjectsFailedCleanedUp_ = 0L;
         onChanged();
         return this;
@@ -40517,7 +40878,9 @@ public final class TransferTypes {
     }
 
     public static final int PUBSUB_TOPIC_FIELD_NUMBER = 1;
-    private volatile java.lang.Object pubsubTopic_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pubsubTopic_ = "";
     /**
      *
      *
@@ -40572,7 +40935,10 @@ public final class TransferTypes {
     }
 
     public static final int EVENT_TYPES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> eventTypes_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer,
             com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.EventType>
@@ -40582,11 +40948,10 @@ public final class TransferTypes {
                 com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.EventType>() {
               public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.EventType
                   convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.EventType
                     result =
                         com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig
-                            .EventType.valueOf(from);
+                            .EventType.forNumber(from);
                 return result == null
                     ? com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.EventType
                         .UNRECOGNIZED
@@ -40690,7 +41055,7 @@ public final class TransferTypes {
     private int eventTypesMemoizedSerializedSize;
 
     public static final int PAYLOAD_FORMAT_FIELD_NUMBER = 3;
-    private int payloadFormat_;
+    private int payloadFormat_ = 0;
     /**
      *
      *
@@ -40724,10 +41089,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat
         getPayloadFormat() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat result =
           com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat
-              .valueOf(payloadFormat_);
+              .forNumber(payloadFormat_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat
               .UNRECOGNIZED
@@ -40990,12 +41354,11 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pubsubTopic_ = "";
-
         eventTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         payloadFormat_ = 0;
-
         return this;
       }
 
@@ -41026,16 +41389,32 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig result =
             new com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig(this);
-        int from_bitField0_ = bitField0_;
-        result.pubsubTopic_ = pubsubTopic_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          eventTypes_ = java.util.Collections.unmodifiableList(eventTypes_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.eventTypes_ = eventTypes_;
-        result.payloadFormat_ = payloadFormat_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          eventTypes_ = java.util.Collections.unmodifiableList(eventTypes_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.eventTypes_ = eventTypes_;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pubsubTopic_ = pubsubTopic_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.payloadFormat_ = payloadFormat_;
+        }
       }
 
       @java.lang.Override
@@ -41091,12 +41470,13 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getPubsubTopic().isEmpty()) {
           pubsubTopic_ = other.pubsubTopic_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.eventTypes_.isEmpty()) {
           if (eventTypes_.isEmpty()) {
             eventTypes_ = other.eventTypes_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEventTypesIsMutable();
             eventTypes_.addAll(other.eventTypes_);
@@ -41135,7 +41515,7 @@ public final class TransferTypes {
               case 10:
                 {
                   pubsubTopic_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
@@ -41160,7 +41540,7 @@ public final class TransferTypes {
               case 24:
                 {
                   payloadFormat_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -41252,8 +41632,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         pubsubTopic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -41272,8 +41652,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearPubsubTopic() {
-
         pubsubTopic_ = getDefaultInstance().getPubsubTopic();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -41297,8 +41677,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pubsubTopic_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -41306,9 +41686,9 @@ public final class TransferTypes {
       private java.util.List<java.lang.Integer> eventTypes_ = java.util.Collections.emptyList();
 
       private void ensureEventTypesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           eventTypes_ = new java.util.ArrayList<java.lang.Integer>(eventTypes_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -41459,7 +41839,7 @@ public final class TransferTypes {
        */
       public Builder clearEventTypes() {
         eventTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -41593,8 +41973,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setPayloadFormatValue(int value) {
-
         payloadFormat_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -41614,10 +41994,9 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat
           getPayloadFormat() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat result =
             com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat
-                .valueOf(payloadFormat_);
+                .forNumber(payloadFormat_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.PayloadFormat
                 .UNRECOGNIZED
@@ -41643,7 +42022,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         payloadFormat_ = value.getNumber();
         onChanged();
         return this;
@@ -41662,7 +42041,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearPayloadFormat() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         payloadFormat_ = 0;
         onChanged();
         return this;
@@ -42329,7 +42708,10 @@ public final class TransferTypes {
     }
 
     public static final int LOG_ACTIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> logActions_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer,
             com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableAction>
@@ -42339,11 +42721,10 @@ public final class TransferTypes {
                 com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableAction>() {
               public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableAction
                   convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableAction
                     result =
                         com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig
-                            .LoggableAction.valueOf(from);
+                            .LoggableAction.forNumber(from);
                 return result == null
                     ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableAction
                         .UNRECOGNIZED
@@ -42452,7 +42833,10 @@ public final class TransferTypes {
     private int logActionsMemoizedSerializedSize;
 
     public static final int LOG_ACTION_STATES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> logActionStates_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer,
             com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableActionState>
@@ -42464,11 +42848,10 @@ public final class TransferTypes {
               public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig
                       .LoggableActionState
                   convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig.LoggableActionState
                     result =
                         com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig
-                            .LoggableActionState.valueOf(from);
+                            .LoggableActionState.forNumber(from);
                 return result == null
                     ? com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig
                         .LoggableActionState.UNRECOGNIZED
@@ -42582,7 +42965,7 @@ public final class TransferTypes {
     private int logActionStatesMemoizedSerializedSize;
 
     public static final int ENABLE_ONPREM_GCS_TRANSFER_LOGS_FIELD_NUMBER = 3;
-    private boolean enableOnpremGcsTransferLogs_;
+    private boolean enableOnpremGcsTransferLogs_ = false;
     /**
      *
      *
@@ -42864,12 +43247,12 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         logActions_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         logActionStates_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
         enableOnpremGcsTransferLogs_ = false;
-
         return this;
       }
 
@@ -42898,7 +43281,16 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig result =
             new com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           logActions_ = java.util.Collections.unmodifiableList(logActions_);
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -42909,9 +43301,14 @@ public final class TransferTypes {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.logActionStates_ = logActionStates_;
-        result.enableOnpremGcsTransferLogs_ = enableOnpremGcsTransferLogs_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.LoggingConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enableOnpremGcsTransferLogs_ = enableOnpremGcsTransferLogs_;
+        }
       }
 
       @java.lang.Override
@@ -43054,7 +43451,7 @@ public final class TransferTypes {
               case 24:
                 {
                   enableOnpremGcsTransferLogs_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -43662,6 +44059,7 @@ public final class TransferTypes {
       public Builder setEnableOnpremGcsTransferLogs(boolean value) {
 
         enableOnpremGcsTransferLogs_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -43678,7 +44076,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearEnableOnpremGcsTransferLogs() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         enableOnpremGcsTransferLogs_ = false;
         onChanged();
         return this;
@@ -44390,7 +44788,9 @@ public final class TransferTypes {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      *
      *
@@ -44439,7 +44839,9 @@ public final class TransferTypes {
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object projectId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object projectId_ = "";
     /**
      *
      *
@@ -44533,7 +44935,9 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpecOrBuilder
         getTransferSpecOrBuilder() {
-      return getTransferSpec();
+      return transferSpec_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.getDefaultInstance()
+          : transferSpec_;
     }
 
     public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 10;
@@ -44585,7 +44989,10 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfigOrBuilder
         getNotificationConfigOrBuilder() {
-      return getNotificationConfig();
+      return notificationConfig_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig
+              .getDefaultInstance()
+          : notificationConfig_;
     }
 
     public static final int START_TIME_FIELD_NUMBER = 4;
@@ -44631,7 +45038,7 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-      return getStartTime();
+      return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 5;
@@ -44677,11 +45084,11 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-      return getEndTime();
+      return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 6;
-    private int status_;
+    private int status_ = 0;
     /**
      *
      *
@@ -44710,9 +45117,8 @@ public final class TransferTypes {
      */
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status result =
-          com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status.valueOf(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status.forNumber(
               status_);
       return result == null
           ? com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status.UNRECOGNIZED
@@ -44765,10 +45171,14 @@ public final class TransferTypes {
     @java.lang.Override
     public com.google.storagetransfer.v1.proto.TransferTypes.TransferCountersOrBuilder
         getCountersOrBuilder() {
-      return getCounters();
+      return counters_ == null
+          ? com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters.getDefaultInstance()
+          : counters_;
     }
 
     public static final int ERROR_BREAKDOWNS_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary>
         errorBreakdowns_;
     /**
@@ -44843,7 +45253,9 @@ public final class TransferTypes {
     }
 
     public static final int TRANSFER_JOB_NAME_FIELD_NUMBER = 9;
-    private volatile java.lang.Object transferJobName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object transferJobName_ = "";
     /**
      *
      *
@@ -45209,40 +45621,33 @@ public final class TransferTypes {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         projectId_ = "";
-
-        if (transferSpecBuilder_ == null) {
-          transferSpec_ = null;
-        } else {
-          transferSpec_ = null;
+        transferSpec_ = null;
+        if (transferSpecBuilder_ != null) {
+          transferSpecBuilder_.dispose();
           transferSpecBuilder_ = null;
         }
-        if (notificationConfigBuilder_ == null) {
-          notificationConfig_ = null;
-        } else {
-          notificationConfig_ = null;
+        notificationConfig_ = null;
+        if (notificationConfigBuilder_ != null) {
+          notificationConfigBuilder_.dispose();
           notificationConfigBuilder_ = null;
         }
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-        } else {
-          startTime_ = null;
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-        } else {
-          endTime_ = null;
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
         status_ = 0;
-
-        if (countersBuilder_ == null) {
-          counters_ = null;
-        } else {
-          counters_ = null;
+        counters_ = null;
+        if (countersBuilder_ != null) {
+          countersBuilder_.dispose();
           countersBuilder_ = null;
         }
         if (errorBreakdownsBuilder_ == null) {
@@ -45251,9 +45656,8 @@ public final class TransferTypes {
           errorBreakdowns_ = null;
           errorBreakdownsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         transferJobName_ = "";
-
         return this;
       }
 
@@ -45283,47 +45687,61 @@ public final class TransferTypes {
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation buildPartial() {
         com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation result =
             new com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation(this);
-        int from_bitField0_ = bitField0_;
-        result.name_ = name_;
-        result.projectId_ = projectId_;
-        if (transferSpecBuilder_ == null) {
-          result.transferSpec_ = transferSpec_;
-        } else {
-          result.transferSpec_ = transferSpecBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (notificationConfigBuilder_ == null) {
-          result.notificationConfig_ = notificationConfig_;
-        } else {
-          result.notificationConfig_ = notificationConfigBuilder_.build();
-        }
-        if (startTimeBuilder_ == null) {
-          result.startTime_ = startTime_;
-        } else {
-          result.startTime_ = startTimeBuilder_.build();
-        }
-        if (endTimeBuilder_ == null) {
-          result.endTime_ = endTime_;
-        } else {
-          result.endTime_ = endTimeBuilder_.build();
-        }
-        result.status_ = status_;
-        if (countersBuilder_ == null) {
-          result.counters_ = counters_;
-        } else {
-          result.counters_ = countersBuilder_.build();
-        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation result) {
         if (errorBreakdownsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             errorBreakdowns_ = java.util.Collections.unmodifiableList(errorBreakdowns_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.errorBreakdowns_ = errorBreakdowns_;
         } else {
           result.errorBreakdowns_ = errorBreakdownsBuilder_.build();
         }
-        result.transferJobName_ = transferJobName_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectId_ = projectId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.transferSpec_ =
+              transferSpecBuilder_ == null ? transferSpec_ : transferSpecBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.notificationConfig_ =
+              notificationConfigBuilder_ == null
+                  ? notificationConfig_
+                  : notificationConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.counters_ = countersBuilder_ == null ? counters_ : countersBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.transferJobName_ = transferJobName_;
+        }
       }
 
       @java.lang.Override
@@ -45379,10 +45797,12 @@ public final class TransferTypes {
                 .getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasTransferSpec()) {
@@ -45407,7 +45827,7 @@ public final class TransferTypes {
           if (!other.errorBreakdowns_.isEmpty()) {
             if (errorBreakdowns_.isEmpty()) {
               errorBreakdowns_ = other.errorBreakdowns_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureErrorBreakdownsIsMutable();
               errorBreakdowns_.addAll(other.errorBreakdowns_);
@@ -45420,7 +45840,7 @@ public final class TransferTypes {
               errorBreakdownsBuilder_.dispose();
               errorBreakdownsBuilder_ = null;
               errorBreakdowns_ = other.errorBreakdowns_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000100);
               errorBreakdownsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getErrorBreakdownsFieldBuilder()
@@ -45432,6 +45852,7 @@ public final class TransferTypes {
         }
         if (!other.getTransferJobName().isEmpty()) {
           transferJobName_ = other.transferJobName_;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -45463,43 +45884,43 @@ public final class TransferTypes {
               case 10:
                 {
                   name_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   projectId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getTransferSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 42
               case 48:
                 {
                   status_ = input.readEnum();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 48
               case 58:
                 {
                   input.readMessage(getCountersFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 58
               case 66:
@@ -45519,14 +45940,14 @@ public final class TransferTypes {
               case 74:
                 {
                   transferJobName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 74
               case 82:
                 {
                   input.readMessage(
                       getNotificationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 82
               default:
@@ -45609,8 +46030,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -45626,8 +46047,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -45648,8 +46069,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -45715,8 +46136,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -45732,8 +46153,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearProjectId() {
-
         projectId_ = getDefaultInstance().getProjectId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -45754,8 +46175,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         projectId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -45778,7 +46199,7 @@ public final class TransferTypes {
        * @return Whether the transferSpec field is set.
        */
       public boolean hasTransferSpec() {
-        return transferSpecBuilder_ != null || transferSpec_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -45816,11 +46237,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           transferSpec_ = value;
-          onChanged();
         } else {
           transferSpecBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -45836,11 +46257,11 @@ public final class TransferTypes {
           com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.Builder builderForValue) {
         if (transferSpecBuilder_ == null) {
           transferSpec_ = builderForValue.build();
-          onChanged();
         } else {
           transferSpecBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -45855,20 +46276,20 @@ public final class TransferTypes {
       public Builder mergeTransferSpec(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec value) {
         if (transferSpecBuilder_ == null) {
-          if (transferSpec_ != null) {
-            transferSpec_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.newBuilder(
-                        transferSpec_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && transferSpec_ != null
+              && transferSpec_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec
+                      .getDefaultInstance()) {
+            getTransferSpecBuilder().mergeFrom(value);
           } else {
             transferSpec_ = value;
           }
-          onChanged();
         } else {
           transferSpecBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -45881,14 +46302,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferSpec transfer_spec = 3;</code>
        */
       public Builder clearTransferSpec() {
-        if (transferSpecBuilder_ == null) {
-          transferSpec_ = null;
-          onChanged();
-        } else {
-          transferSpec_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        transferSpec_ = null;
+        if (transferSpecBuilder_ != null) {
+          transferSpecBuilder_.dispose();
           transferSpecBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -45902,7 +46322,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferSpec.Builder
           getTransferSpecBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTransferSpecFieldBuilder().getBuilder();
       }
@@ -45970,7 +46390,7 @@ public final class TransferTypes {
        * @return Whether the notificationConfig field is set.
        */
       public boolean hasNotificationConfig() {
-        return notificationConfigBuilder_ != null || notificationConfig_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -46010,11 +46430,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           notificationConfig_ = value;
-          onChanged();
         } else {
           notificationConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -46031,11 +46451,11 @@ public final class TransferTypes {
               builderForValue) {
         if (notificationConfigBuilder_ == null) {
           notificationConfig_ = builderForValue.build();
-          onChanged();
         } else {
           notificationConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -46050,20 +46470,20 @@ public final class TransferTypes {
       public Builder mergeNotificationConfig(
           com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig value) {
         if (notificationConfigBuilder_ == null) {
-          if (notificationConfig_ != null) {
-            notificationConfig_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.newBuilder(
-                        notificationConfig_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && notificationConfig_ != null
+              && notificationConfig_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig
+                      .getDefaultInstance()) {
+            getNotificationConfigBuilder().mergeFrom(value);
           } else {
             notificationConfig_ = value;
           }
-          onChanged();
         } else {
           notificationConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -46076,14 +46496,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.NotificationConfig notification_config = 10;</code>
        */
       public Builder clearNotificationConfig() {
-        if (notificationConfigBuilder_ == null) {
-          notificationConfig_ = null;
-          onChanged();
-        } else {
-          notificationConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        notificationConfig_ = null;
+        if (notificationConfigBuilder_ != null) {
+          notificationConfigBuilder_.dispose();
           notificationConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -46097,7 +46516,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.NotificationConfig.Builder
           getNotificationConfigBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getNotificationConfigFieldBuilder().getBuilder();
       }
@@ -46165,7 +46584,7 @@ public final class TransferTypes {
        * @return Whether the startTime field is set.
        */
       public boolean hasStartTime() {
-        return startTimeBuilder_ != null || startTime_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -46202,11 +46621,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           startTime_ = value;
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -46221,11 +46640,11 @@ public final class TransferTypes {
       public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (startTimeBuilder_ == null) {
           startTime_ = builderForValue.build();
-          onChanged();
         } else {
           startTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -46239,19 +46658,18 @@ public final class TransferTypes {
        */
       public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
         if (startTimeBuilder_ == null) {
-          if (startTime_ != null) {
-            startTime_ =
-                com.google.protobuf.Timestamp.newBuilder(startTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && startTime_ != null
+              && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartTimeBuilder().mergeFrom(value);
           } else {
             startTime_ = value;
           }
-          onChanged();
         } else {
           startTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -46264,14 +46682,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp start_time = 4;</code>
        */
       public Builder clearStartTime() {
-        if (startTimeBuilder_ == null) {
-          startTime_ = null;
-          onChanged();
-        } else {
-          startTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        startTime_ = null;
+        if (startTimeBuilder_ != null) {
+          startTimeBuilder_.dispose();
           startTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -46284,7 +46701,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp start_time = 4;</code>
        */
       public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
@@ -46350,7 +46767,7 @@ public final class TransferTypes {
        * @return Whether the endTime field is set.
        */
       public boolean hasEndTime() {
-        return endTimeBuilder_ != null || endTime_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -46385,11 +46802,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           endTime_ = value;
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -46404,11 +46821,11 @@ public final class TransferTypes {
       public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (endTimeBuilder_ == null) {
           endTime_ = builderForValue.build();
-          onChanged();
         } else {
           endTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -46422,17 +46839,18 @@ public final class TransferTypes {
        */
       public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
         if (endTimeBuilder_ == null) {
-          if (endTime_ != null) {
-            endTime_ =
-                com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && endTime_ != null
+              && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getEndTimeBuilder().mergeFrom(value);
           } else {
             endTime_ = value;
           }
-          onChanged();
         } else {
           endTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -46445,14 +46863,13 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp end_time = 5;</code>
        */
       public Builder clearEndTime() {
-        if (endTimeBuilder_ == null) {
-          endTime_ = null;
-          onChanged();
-        } else {
-          endTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        endTime_ = null;
+        if (endTimeBuilder_ != null) {
+          endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -46465,7 +46882,7 @@ public final class TransferTypes {
        * <code>.google.protobuf.Timestamp end_time = 5;</code>
        */
       public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
@@ -46540,8 +46957,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
-
         status_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -46559,9 +46976,8 @@ public final class TransferTypes {
       @java.lang.Override
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status
           getStatus() {
-        @SuppressWarnings("deprecation")
         com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status result =
-            com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status.valueOf(
+            com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status.forNumber(
                 status_);
         return result == null
             ? com.google.storagetransfer.v1.proto.TransferTypes.TransferOperation.Status
@@ -46585,7 +47001,7 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000040;
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -46602,7 +47018,7 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         status_ = 0;
         onChanged();
         return this;
@@ -46626,7 +47042,7 @@ public final class TransferTypes {
        * @return Whether the counters field is set.
        */
       public boolean hasCounters() {
-        return countersBuilder_ != null || counters_ != null;
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        *
@@ -46665,11 +47081,11 @@ public final class TransferTypes {
             throw new NullPointerException();
           }
           counters_ = value;
-          onChanged();
         } else {
           countersBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -46686,11 +47102,11 @@ public final class TransferTypes {
               builderForValue) {
         if (countersBuilder_ == null) {
           counters_ = builderForValue.build();
-          onChanged();
         } else {
           countersBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -46705,20 +47121,20 @@ public final class TransferTypes {
       public Builder mergeCounters(
           com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters value) {
         if (countersBuilder_ == null) {
-          if (counters_ != null) {
-            counters_ =
-                com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters.newBuilder(
-                        counters_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000080) != 0)
+              && counters_ != null
+              && counters_
+                  != com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters
+                      .getDefaultInstance()) {
+            getCountersBuilder().mergeFrom(value);
           } else {
             counters_ = value;
           }
-          onChanged();
         } else {
           countersBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -46731,14 +47147,13 @@ public final class TransferTypes {
        * <code>.google.storagetransfer.v1.TransferCounters counters = 7;</code>
        */
       public Builder clearCounters() {
-        if (countersBuilder_ == null) {
-          counters_ = null;
-          onChanged();
-        } else {
-          counters_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        counters_ = null;
+        if (countersBuilder_ != null) {
+          countersBuilder_.dispose();
           countersBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -46752,7 +47167,7 @@ public final class TransferTypes {
        */
       public com.google.storagetransfer.v1.proto.TransferTypes.TransferCounters.Builder
           getCountersBuilder() {
-
+        bitField0_ |= 0x00000080;
         onChanged();
         return getCountersFieldBuilder().getBuilder();
       }
@@ -46806,11 +47221,11 @@ public final class TransferTypes {
           errorBreakdowns_ = java.util.Collections.emptyList();
 
       private void ensureErrorBreakdownsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           errorBreakdowns_ =
               new java.util.ArrayList<
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary>(errorBreakdowns_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000100;
         }
       }
 
@@ -47035,7 +47450,7 @@ public final class TransferTypes {
       public Builder clearErrorBreakdowns() {
         if (errorBreakdownsBuilder_ == null) {
           errorBreakdowns_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           errorBreakdownsBuilder_.clear();
@@ -47168,7 +47583,7 @@ public final class TransferTypes {
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummary.Builder,
                   com.google.storagetransfer.v1.proto.TransferTypes.ErrorSummaryOrBuilder>(
                   errorBreakdowns_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           errorBreakdowns_ = null;
@@ -47237,8 +47652,8 @@ public final class TransferTypes {
         if (value == null) {
           throw new NullPointerException();
         }
-
         transferJobName_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -47254,8 +47669,8 @@ public final class TransferTypes {
        * @return This builder for chaining.
        */
       public Builder clearTransferJobName() {
-
         transferJobName_ = getDefaultInstance().getTransferJobName();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -47276,8 +47691,8 @@ public final class TransferTypes {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         transferJobName_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }

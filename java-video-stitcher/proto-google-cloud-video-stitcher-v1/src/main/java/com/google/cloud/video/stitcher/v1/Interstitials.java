@@ -68,6 +68,8 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AD_BREAKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.VodSessionAdBreak> adBreaks_;
   /**
    *
@@ -183,7 +185,9 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.VodSessionContentOrBuilder
       getSessionContentOrBuilder() {
-    return getSessionContent();
+    return sessionContent_ == null
+        ? com.google.cloud.video.stitcher.v1.VodSessionContent.getDefaultInstance()
+        : sessionContent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,6 +403,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (adBreaksBuilder_ == null) {
         adBreaks_ = java.util.Collections.emptyList();
       } else {
@@ -406,10 +411,9 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         adBreaksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (sessionContentBuilder_ == null) {
-        sessionContent_ = null;
-      } else {
-        sessionContent_ = null;
+      sessionContent_ = null;
+      if (sessionContentBuilder_ != null) {
+        sessionContentBuilder_.dispose();
         sessionContentBuilder_ = null;
       }
       return this;
@@ -439,7 +443,16 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.Interstitials buildPartial() {
       com.google.cloud.video.stitcher.v1.Interstitials result =
           new com.google.cloud.video.stitcher.v1.Interstitials(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.stitcher.v1.Interstitials result) {
       if (adBreaksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           adBreaks_ = java.util.Collections.unmodifiableList(adBreaks_);
@@ -449,13 +462,14 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.adBreaks_ = adBreaksBuilder_.build();
       }
-      if (sessionContentBuilder_ == null) {
-        result.sessionContent_ = sessionContent_;
-      } else {
-        result.sessionContent_ = sessionContentBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.Interstitials result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sessionContent_ =
+            sessionContentBuilder_ == null ? sessionContent_ : sessionContentBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -577,7 +591,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getSessionContentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -975,7 +989,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sessionContent field is set.
      */
     public boolean hasSessionContent() {
-      return sessionContentBuilder_ != null || sessionContent_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1012,11 +1026,11 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sessionContent_ = value;
-        onChanged();
       } else {
         sessionContentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1032,11 +1046,11 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.VodSessionContent.Builder builderForValue) {
       if (sessionContentBuilder_ == null) {
         sessionContent_ = builderForValue.build();
-        onChanged();
       } else {
         sessionContentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1050,19 +1064,19 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSessionContent(com.google.cloud.video.stitcher.v1.VodSessionContent value) {
       if (sessionContentBuilder_ == null) {
-        if (sessionContent_ != null) {
-          sessionContent_ =
-              com.google.cloud.video.stitcher.v1.VodSessionContent.newBuilder(sessionContent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sessionContent_ != null
+            && sessionContent_
+                != com.google.cloud.video.stitcher.v1.VodSessionContent.getDefaultInstance()) {
+          getSessionContentBuilder().mergeFrom(value);
         } else {
           sessionContent_ = value;
         }
-        onChanged();
       } else {
         sessionContentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1075,14 +1089,13 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.VodSessionContent session_content = 2;</code>
      */
     public Builder clearSessionContent() {
-      if (sessionContentBuilder_ == null) {
-        sessionContent_ = null;
-        onChanged();
-      } else {
-        sessionContent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sessionContent_ = null;
+      if (sessionContentBuilder_ != null) {
+        sessionContentBuilder_.dispose();
         sessionContentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1095,7 +1108,7 @@ public final class Interstitials extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.VodSessionContent session_content = 2;</code>
      */
     public com.google.cloud.video.stitcher.v1.VodSessionContent.Builder getSessionContentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSessionContentFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
   }
 
   public static final int ROLLOUT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object rolloutId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rolloutId_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
       rolloutId_ = "";
-
       return this;
     }
 
@@ -409,10 +412,22 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
     public com.google.api.servicemanagement.v1.GetServiceRolloutRequest buildPartial() {
       com.google.api.servicemanagement.v1.GetServiceRolloutRequest result =
           new com.google.api.servicemanagement.v1.GetServiceRolloutRequest(this);
-      result.serviceName_ = serviceName_;
-      result.rolloutId_ = rolloutId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.api.servicemanagement.v1.GetServiceRolloutRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rolloutId_ = rolloutId_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +479,12 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRolloutId().isEmpty()) {
         rolloutId_ = other.rolloutId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +516,13 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 rolloutId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +541,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
     /**
@@ -592,8 +611,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +630,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,8 +654,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -702,8 +721,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       rolloutId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -719,8 +738,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRolloutId() {
-
       rolloutId_ = getDefaultInstance().getRolloutId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -741,8 +760,8 @@ public final class GetServiceRolloutRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rolloutId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

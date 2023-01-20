@@ -75,7 +75,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COUNTRY_CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object countryCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object countryCode_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORGANIZATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object organization_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organization_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ORGANIZATIONAL_UNIT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object organizationalUnit_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organizationalUnit_ = "";
   /**
    *
    *
@@ -222,7 +228,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCALITY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object locality_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locality_ = "";
   /**
    *
    *
@@ -271,7 +279,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROVINCE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object province_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object province_ = "";
   /**
    *
    *
@@ -320,7 +330,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STREET_ADDRESS_FIELD_NUMBER = 6;
-  private volatile java.lang.Object streetAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object streetAddress_ = "";
   /**
    *
    *
@@ -369,7 +381,9 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POSTAL_CODE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object postalCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object postalCode_ = "";
   /**
    *
    *
@@ -669,20 +683,14 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       countryCode_ = "";
-
       organization_ = "";
-
       organizationalUnit_ = "";
-
       locality_ = "";
-
       province_ = "";
-
       streetAddress_ = "";
-
       postalCode_ = "";
-
       return this;
     }
 
@@ -710,15 +718,36 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1beta1.Subject buildPartial() {
       com.google.cloud.security.privateca.v1beta1.Subject result =
           new com.google.cloud.security.privateca.v1beta1.Subject(this);
-      result.countryCode_ = countryCode_;
-      result.organization_ = organization_;
-      result.organizationalUnit_ = organizationalUnit_;
-      result.locality_ = locality_;
-      result.province_ = province_;
-      result.streetAddress_ = streetAddress_;
-      result.postalCode_ = postalCode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1beta1.Subject result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.countryCode_ = countryCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.organization_ = organization_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.organizationalUnit_ = organizationalUnit_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.locality_ = locality_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.province_ = province_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.streetAddress_ = streetAddress_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.postalCode_ = postalCode_;
+      }
     }
 
     @java.lang.Override
@@ -769,30 +798,37 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getCountryCode().isEmpty()) {
         countryCode_ = other.countryCode_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOrganization().isEmpty()) {
         organization_ = other.organization_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getOrganizationalUnit().isEmpty()) {
         organizationalUnit_ = other.organizationalUnit_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLocality().isEmpty()) {
         locality_ = other.locality_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getProvince().isEmpty()) {
         province_ = other.province_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getStreetAddress().isEmpty()) {
         streetAddress_ = other.streetAddress_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getPostalCode().isEmpty()) {
         postalCode_ = other.postalCode_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -824,43 +860,43 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 countryCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 organization_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 organizationalUnit_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 locality_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 province_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 streetAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 postalCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -879,6 +915,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object countryCode_ = "";
     /**
@@ -941,8 +979,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       countryCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -958,8 +996,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCountryCode() {
-
       countryCode_ = getDefaultInstance().getCountryCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -980,8 +1018,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       countryCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1047,8 +1085,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       organization_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1064,8 +1102,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrganization() {
-
       organization_ = getDefaultInstance().getOrganization();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1086,8 +1124,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       organization_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1153,8 +1191,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       organizationalUnit_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1170,8 +1208,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrganizationalUnit() {
-
       organizationalUnit_ = getDefaultInstance().getOrganizationalUnit();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1192,8 +1230,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       organizationalUnit_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1259,8 +1297,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       locality_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1276,8 +1314,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocality() {
-
       locality_ = getDefaultInstance().getLocality();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1298,8 +1336,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locality_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1365,8 +1403,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       province_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1382,8 +1420,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvince() {
-
       province_ = getDefaultInstance().getProvince();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1404,8 +1442,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       province_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1471,8 +1509,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       streetAddress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1488,8 +1526,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStreetAddress() {
-
       streetAddress_ = getDefaultInstance().getStreetAddress();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1510,8 +1548,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       streetAddress_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1577,8 +1615,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       postalCode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1594,8 +1632,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPostalCode() {
-
       postalCode_ = getDefaultInstance().getPostalCode();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1616,8 +1654,8 @@ public final class Subject extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       postalCode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

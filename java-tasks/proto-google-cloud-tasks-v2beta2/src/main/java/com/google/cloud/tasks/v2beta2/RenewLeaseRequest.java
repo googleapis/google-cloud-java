@@ -70,7 +70,9 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -184,7 +186,9 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder() {
-    return getScheduleTime();
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
 
   public static final int LEASE_DURATION_FIELD_NUMBER = 3;
@@ -241,11 +245,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLeaseDurationOrBuilder() {
-    return getLeaseDuration();
+    return leaseDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : leaseDuration_;
   }
 
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 4;
-  private int responseView_;
+  private int responseView_ = 0;
   /**
    *
    *
@@ -292,9 +298,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta2.Task.View result =
-        com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+        com.google.cloud.tasks.v2beta2.Task.View.forNumber(responseView_);
     return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
   }
 
@@ -533,22 +538,19 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-      } else {
-        scheduleTime_ = null;
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
-      if (leaseDurationBuilder_ == null) {
-        leaseDuration_ = null;
-      } else {
-        leaseDuration_ = null;
+      leaseDuration_ = null;
+      if (leaseDurationBuilder_ != null) {
+        leaseDurationBuilder_.dispose();
         leaseDurationBuilder_ = null;
       }
       responseView_ = 0;
-
       return this;
     }
 
@@ -576,20 +578,29 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.tasks.v2beta2.RenewLeaseRequest buildPartial() {
       com.google.cloud.tasks.v2beta2.RenewLeaseRequest result =
           new com.google.cloud.tasks.v2beta2.RenewLeaseRequest(this);
-      result.name_ = name_;
-      if (scheduleTimeBuilder_ == null) {
-        result.scheduleTime_ = scheduleTime_;
-      } else {
-        result.scheduleTime_ = scheduleTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (leaseDurationBuilder_ == null) {
-        result.leaseDuration_ = leaseDuration_;
-      } else {
-        result.leaseDuration_ = leaseDurationBuilder_.build();
-      }
-      result.responseView_ = responseView_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.RenewLeaseRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scheduleTime_ =
+            scheduleTimeBuilder_ == null ? scheduleTime_ : scheduleTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.leaseDuration_ =
+            leaseDurationBuilder_ == null ? leaseDuration_ : leaseDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.responseView_ = responseView_;
+      }
     }
 
     @java.lang.Override
@@ -640,6 +651,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasScheduleTime()) {
@@ -680,25 +692,25 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getScheduleTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getLeaseDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 responseView_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -717,6 +729,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -788,8 +802,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -808,8 +822,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -833,8 +847,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,7 +876,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the scheduleTime field is set.
      */
     public boolean hasScheduleTime() {
-      return scheduleTimeBuilder_ != null || scheduleTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -909,11 +923,11 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         scheduleTime_ = value;
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -933,11 +947,11 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
-        onChanged();
       } else {
         scheduleTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -956,19 +970,18 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeScheduleTime(com.google.protobuf.Timestamp value) {
       if (scheduleTimeBuilder_ == null) {
-        if (scheduleTime_ != null) {
-          scheduleTime_ =
-              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && scheduleTime_ != null
+            && scheduleTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getScheduleTimeBuilder().mergeFrom(value);
         } else {
           scheduleTime_ = value;
         }
-        onChanged();
       } else {
         scheduleTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -986,14 +999,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearScheduleTime() {
-      if (scheduleTimeBuilder_ == null) {
-        scheduleTime_ = null;
-        onChanged();
-      } else {
-        scheduleTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      scheduleTime_ = null;
+      if (scheduleTimeBuilder_ != null) {
+        scheduleTimeBuilder_.dispose();
         scheduleTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1011,7 +1023,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
@@ -1090,7 +1102,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the leaseDuration field is set.
      */
     public boolean hasLeaseDuration() {
-      return leaseDurationBuilder_ != null || leaseDuration_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1133,11 +1145,11 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         leaseDuration_ = value;
-        onChanged();
       } else {
         leaseDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1155,11 +1167,11 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
     public Builder setLeaseDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (leaseDurationBuilder_ == null) {
         leaseDuration_ = builderForValue.build();
-        onChanged();
       } else {
         leaseDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1176,19 +1188,18 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLeaseDuration(com.google.protobuf.Duration value) {
       if (leaseDurationBuilder_ == null) {
-        if (leaseDuration_ != null) {
-          leaseDuration_ =
-              com.google.protobuf.Duration.newBuilder(leaseDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && leaseDuration_ != null
+            && leaseDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getLeaseDurationBuilder().mergeFrom(value);
         } else {
           leaseDuration_ = value;
         }
-        onChanged();
       } else {
         leaseDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1204,14 +1215,13 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLeaseDuration() {
-      if (leaseDurationBuilder_ == null) {
-        leaseDuration_ = null;
-        onChanged();
-      } else {
-        leaseDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      leaseDuration_ = null;
+      if (leaseDurationBuilder_ != null) {
+        leaseDurationBuilder_.dispose();
         leaseDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1227,7 +1237,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Duration.Builder getLeaseDurationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLeaseDurationFieldBuilder().getBuilder();
     }
@@ -1328,8 +1338,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
-
       responseView_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1355,9 +1365,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta2.Task.View result =
-          com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+          com.google.cloud.tasks.v2beta2.Task.View.forNumber(responseView_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
     /**
@@ -1385,7 +1394,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       responseView_ = value.getNumber();
       onChanged();
       return this;
@@ -1411,7 +1420,7 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearResponseView() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       responseView_ = 0;
       onChanged();
       return this;

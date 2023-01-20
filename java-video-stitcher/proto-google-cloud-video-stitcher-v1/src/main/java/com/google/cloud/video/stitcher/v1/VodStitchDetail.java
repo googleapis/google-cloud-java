@@ -69,7 +69,9 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int AD_STITCH_DETAILS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.AdStitchDetail> adStitchDetails_;
   /**
    *
@@ -398,15 +402,15 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (adStitchDetailsBuilder_ == null) {
         adStitchDetails_ = java.util.Collections.emptyList();
       } else {
         adStitchDetails_ = null;
         adStitchDetailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -434,19 +438,32 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.video.stitcher.v1.VodStitchDetail buildPartial() {
       com.google.cloud.video.stitcher.v1.VodStitchDetail result =
           new com.google.cloud.video.stitcher.v1.VodStitchDetail(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.stitcher.v1.VodStitchDetail result) {
       if (adStitchDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           adStitchDetails_ = java.util.Collections.unmodifiableList(adStitchDetails_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.adStitchDetails_ = adStitchDetails_;
       } else {
         result.adStitchDetails_ = adStitchDetailsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.VodStitchDetail result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -497,13 +514,14 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (adStitchDetailsBuilder_ == null) {
         if (!other.adStitchDetails_.isEmpty()) {
           if (adStitchDetails_.isEmpty()) {
             adStitchDetails_ = other.adStitchDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAdStitchDetailsIsMutable();
             adStitchDetails_.addAll(other.adStitchDetails_);
@@ -516,7 +534,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
             adStitchDetailsBuilder_.dispose();
             adStitchDetailsBuilder_ = null;
             adStitchDetails_ = other.adStitchDetails_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             adStitchDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdStitchDetailsFieldBuilder()
@@ -555,7 +573,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -655,8 +673,8 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -673,8 +691,8 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -696,8 +714,8 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,11 +724,11 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureAdStitchDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         adStitchDetails_ =
             new java.util.ArrayList<com.google.cloud.video.stitcher.v1.AdStitchDetail>(
                 adStitchDetails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -929,7 +947,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
     public Builder clearAdStitchDetails() {
       if (adStitchDetailsBuilder_ == null) {
         adStitchDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         adStitchDetailsBuilder_.clear();
@@ -1056,7 +1074,7 @@ public final class VodStitchDetail extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.video.stitcher.v1.AdStitchDetail.Builder,
                 com.google.cloud.video.stitcher.v1.AdStitchDetailOrBuilder>(
                 adStitchDetails_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         adStitchDetails_ = null;

@@ -305,7 +305,7 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -334,9 +334,8 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode result =
-        com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.valueOf(code_);
+        com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.forNumber(code_);
     return result == null
         ? com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.UNRECOGNIZED
         : result;
@@ -546,8 +545,8 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       return this;
     }
 
@@ -575,9 +574,18 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
     public com.google.cloud.shell.v1.CloudShellErrorDetails buildPartial() {
       com.google.cloud.shell.v1.CloudShellErrorDetails result =
           new com.google.cloud.shell.v1.CloudShellErrorDetails(this);
-      result.code_ = code_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.CloudShellErrorDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -658,7 +666,7 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -677,6 +685,8 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -707,8 +717,8 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,9 +735,8 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode result =
-          com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.valueOf(code_);
+          com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.forNumber(code_);
       return result == null
           ? com.google.cloud.shell.v1.CloudShellErrorDetails.CloudShellErrorCode.UNRECOGNIZED
           : result;
@@ -749,7 +758,7 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -766,7 +775,7 @@ public final class CloudShellErrorDetails extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;

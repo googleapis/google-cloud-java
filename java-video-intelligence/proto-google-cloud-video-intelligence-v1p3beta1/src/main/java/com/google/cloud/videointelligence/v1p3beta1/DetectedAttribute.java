@@ -69,7 +69,9 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object value_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object value_ = "";
   /**
    *
    *
@@ -405,12 +409,10 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       confidence_ = 0F;
-
       value_ = "";
-
       return this;
     }
 
@@ -439,11 +441,25 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute result =
           new com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute(this);
-      result.name_ = name_;
-      result.confidence_ = confidence_;
-      result.value_ = value_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -495,6 +511,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -502,6 +519,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getValue().isEmpty()) {
         value_ = other.value_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -533,19 +551,19 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 26:
               {
                 value_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -564,6 +582,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -629,8 +649,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,8 +667,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -670,8 +690,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -707,6 +727,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,7 +743,7 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -792,8 +813,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -810,8 +831,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
       value_ = getDefaultInstance().getValue();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -833,8 +854,8 @@ public final class DetectedAttribute extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

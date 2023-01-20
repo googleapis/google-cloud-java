@@ -265,7 +265,9 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -372,7 +374,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int DESTROY_TIME_FIELD_NUMBER = 3;
@@ -433,11 +435,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDestroyTimeOrBuilder() {
-    return getDestroyTime();
+    return destroyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : destroyTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 4;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -472,9 +474,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretVersion.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.secretmanager.v1.SecretVersion.State result =
-        com.google.cloud.secretmanager.v1.SecretVersion.State.valueOf(state_);
+        com.google.cloud.secretmanager.v1.SecretVersion.State.forNumber(state_);
     return result == null
         ? com.google.cloud.secretmanager.v1.SecretVersion.State.UNRECOGNIZED
         : result;
@@ -529,11 +530,15 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.secretmanager.v1.ReplicationStatusOrBuilder
       getReplicationStatusOrBuilder() {
-    return getReplicationStatus();
+    return replicationStatus_ == null
+        ? com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance()
+        : replicationStatus_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 6;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -584,7 +589,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLIENT_SPECIFIED_PAYLOAD_CHECKSUM_FIELD_NUMBER = 7;
-  private boolean clientSpecifiedPayloadChecksum_;
+  private boolean clientSpecifiedPayloadChecksum_ = false;
   /**
    *
    *
@@ -878,32 +883,26 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (destroyTimeBuilder_ == null) {
-        destroyTime_ = null;
-      } else {
-        destroyTime_ = null;
+      destroyTime_ = null;
+      if (destroyTimeBuilder_ != null) {
+        destroyTimeBuilder_.dispose();
         destroyTimeBuilder_ = null;
       }
       state_ = 0;
-
-      if (replicationStatusBuilder_ == null) {
-        replicationStatus_ = null;
-      } else {
-        replicationStatus_ = null;
+      replicationStatus_ = null;
+      if (replicationStatusBuilder_ != null) {
+        replicationStatusBuilder_.dispose();
         replicationStatusBuilder_ = null;
       }
       etag_ = "";
-
       clientSpecifiedPayloadChecksum_ = false;
-
       return this;
     }
 
@@ -931,27 +930,40 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.secretmanager.v1.SecretVersion buildPartial() {
       com.google.cloud.secretmanager.v1.SecretVersion result =
           new com.google.cloud.secretmanager.v1.SecretVersion(this);
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destroyTimeBuilder_ == null) {
-        result.destroyTime_ = destroyTime_;
-      } else {
-        result.destroyTime_ = destroyTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      if (replicationStatusBuilder_ == null) {
-        result.replicationStatus_ = replicationStatus_;
-      } else {
-        result.replicationStatus_ = replicationStatusBuilder_.build();
-      }
-      result.etag_ = etag_;
-      result.clientSpecifiedPayloadChecksum_ = clientSpecifiedPayloadChecksum_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.secretmanager.v1.SecretVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.destroyTime_ =
+            destroyTimeBuilder_ == null ? destroyTime_ : destroyTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.replicationStatus_ =
+            replicationStatusBuilder_ == null
+                ? replicationStatus_
+                : replicationStatusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clientSpecifiedPayloadChecksum_ = clientSpecifiedPayloadChecksum_;
+      }
     }
 
     @java.lang.Override
@@ -1002,6 +1014,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1018,6 +1031,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getClientSpecifiedPayloadChecksum() != false) {
@@ -1052,44 +1066,44 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDestroyTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getReplicationStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 clientSpecifiedPayloadChecksum_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1108,6 +1122,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1185,8 +1201,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1207,8 +1223,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1234,8 +1250,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1261,7 +1277,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1304,11 +1320,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1326,11 +1342,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1347,17 +1363,18 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1373,14 +1390,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1396,7 +1412,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1474,7 +1490,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destroyTime field is set.
      */
     public boolean hasDestroyTime() {
-      return destroyTimeBuilder_ != null || destroyTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1523,11 +1539,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destroyTime_ = value;
-        onChanged();
       } else {
         destroyTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1548,11 +1564,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setDestroyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (destroyTimeBuilder_ == null) {
         destroyTime_ = builderForValue.build();
-        onChanged();
       } else {
         destroyTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1572,19 +1588,18 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestroyTime(com.google.protobuf.Timestamp value) {
       if (destroyTimeBuilder_ == null) {
-        if (destroyTime_ != null) {
-          destroyTime_ =
-              com.google.protobuf.Timestamp.newBuilder(destroyTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && destroyTime_ != null
+            && destroyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDestroyTimeBuilder().mergeFrom(value);
         } else {
           destroyTime_ = value;
         }
-        onChanged();
       } else {
         destroyTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1603,14 +1618,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDestroyTime() {
-      if (destroyTimeBuilder_ == null) {
-        destroyTime_ = null;
-        onChanged();
-      } else {
-        destroyTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      destroyTime_ = null;
+      if (destroyTimeBuilder_ != null) {
+        destroyTimeBuilder_.dispose();
         destroyTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1629,7 +1643,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDestroyTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDestroyTimeFieldBuilder().getBuilder();
     }
@@ -1724,8 +1738,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1745,9 +1759,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.secretmanager.v1.SecretVersion.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.secretmanager.v1.SecretVersion.State result =
-          com.google.cloud.secretmanager.v1.SecretVersion.State.valueOf(state_);
+          com.google.cloud.secretmanager.v1.SecretVersion.State.forNumber(state_);
       return result == null
           ? com.google.cloud.secretmanager.v1.SecretVersion.State.UNRECOGNIZED
           : result;
@@ -1771,7 +1784,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1791,7 +1804,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1816,7 +1829,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the replicationStatus field is set.
      */
     public boolean hasReplicationStatus() {
-      return replicationStatusBuilder_ != null || replicationStatus_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1855,11 +1868,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         replicationStatus_ = value;
-        onChanged();
       } else {
         replicationStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1876,11 +1889,11 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.secretmanager.v1.ReplicationStatus.Builder builderForValue) {
       if (replicationStatusBuilder_ == null) {
         replicationStatus_ = builderForValue.build();
-        onChanged();
       } else {
         replicationStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1896,19 +1909,19 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReplicationStatus(
         com.google.cloud.secretmanager.v1.ReplicationStatus value) {
       if (replicationStatusBuilder_ == null) {
-        if (replicationStatus_ != null) {
-          replicationStatus_ =
-              com.google.cloud.secretmanager.v1.ReplicationStatus.newBuilder(replicationStatus_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && replicationStatus_ != null
+            && replicationStatus_
+                != com.google.cloud.secretmanager.v1.ReplicationStatus.getDefaultInstance()) {
+          getReplicationStatusBuilder().mergeFrom(value);
         } else {
           replicationStatus_ = value;
         }
-        onChanged();
       } else {
         replicationStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1922,14 +1935,13 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.secretmanager.v1.ReplicationStatus replication_status = 5;</code>
      */
     public Builder clearReplicationStatus() {
-      if (replicationStatusBuilder_ == null) {
-        replicationStatus_ = null;
-        onChanged();
-      } else {
-        replicationStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      replicationStatus_ = null;
+      if (replicationStatusBuilder_ != null) {
+        replicationStatusBuilder_.dispose();
         replicationStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1944,7 +1956,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.secretmanager.v1.ReplicationStatus.Builder
         getReplicationStatusBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getReplicationStatusFieldBuilder().getBuilder();
     }
@@ -2059,8 +2071,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2077,8 +2089,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2100,8 +2112,8 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2151,6 +2163,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
     public Builder setClientSpecifiedPayloadChecksum(boolean value) {
 
       clientSpecifiedPayloadChecksum_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2173,7 +2186,7 @@ public final class SecretVersion extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClientSpecifiedPayloadChecksum() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       clientSpecifiedPayloadChecksum_ = false;
       onChanged();
       return this;

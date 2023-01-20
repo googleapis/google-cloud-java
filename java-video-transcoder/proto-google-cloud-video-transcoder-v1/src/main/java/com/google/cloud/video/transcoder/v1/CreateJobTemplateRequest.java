@@ -69,7 +69,9 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.video.transcoder.v1.JobTemplateOrBuilder getJobTemplateOrBuilder() {
-    return getJobTemplate();
+    return jobTemplate_ == null
+        ? com.google.cloud.video.transcoder.v1.JobTemplate.getDefaultInstance()
+        : jobTemplate_;
   }
 
   public static final int JOB_TEMPLATE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object jobTemplateId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object jobTemplateId_ = "";
   /**
    *
    *
@@ -453,16 +459,14 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (jobTemplateBuilder_ == null) {
-        jobTemplate_ = null;
-      } else {
-        jobTemplate_ = null;
+      jobTemplate_ = null;
+      if (jobTemplateBuilder_ != null) {
+        jobTemplateBuilder_.dispose();
         jobTemplateBuilder_ = null;
       }
       jobTemplateId_ = "";
-
       return this;
     }
 
@@ -491,15 +495,26 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     public com.google.cloud.video.transcoder.v1.CreateJobTemplateRequest buildPartial() {
       com.google.cloud.video.transcoder.v1.CreateJobTemplateRequest result =
           new com.google.cloud.video.transcoder.v1.CreateJobTemplateRequest(this);
-      result.parent_ = parent_;
-      if (jobTemplateBuilder_ == null) {
-        result.jobTemplate_ = jobTemplate_;
-      } else {
-        result.jobTemplate_ = jobTemplateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.jobTemplateId_ = jobTemplateId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.video.transcoder.v1.CreateJobTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.jobTemplate_ =
+            jobTemplateBuilder_ == null ? jobTemplate_ : jobTemplateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.jobTemplateId_ = jobTemplateId_;
+      }
     }
 
     @java.lang.Override
@@ -551,6 +566,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasJobTemplate()) {
@@ -558,6 +574,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       }
       if (!other.getJobTemplateId().isEmpty()) {
         jobTemplateId_ = other.jobTemplateId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +606,19 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getJobTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 jobTemplateId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +637,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -691,8 +710,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +730,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +755,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,7 +781,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * @return Whether the jobTemplate field is set.
      */
     public boolean hasJobTemplate() {
-      return jobTemplateBuilder_ != null || jobTemplate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -803,11 +822,11 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         jobTemplate_ = value;
-        onChanged();
       } else {
         jobTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -825,11 +844,11 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         com.google.cloud.video.transcoder.v1.JobTemplate.Builder builderForValue) {
       if (jobTemplateBuilder_ == null) {
         jobTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         jobTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,19 +864,19 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      */
     public Builder mergeJobTemplate(com.google.cloud.video.transcoder.v1.JobTemplate value) {
       if (jobTemplateBuilder_ == null) {
-        if (jobTemplate_ != null) {
-          jobTemplate_ =
-              com.google.cloud.video.transcoder.v1.JobTemplate.newBuilder(jobTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && jobTemplate_ != null
+            && jobTemplate_
+                != com.google.cloud.video.transcoder.v1.JobTemplate.getDefaultInstance()) {
+          getJobTemplateBuilder().mergeFrom(value);
         } else {
           jobTemplate_ = value;
         }
-        onChanged();
       } else {
         jobTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +891,13 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearJobTemplate() {
-      if (jobTemplateBuilder_ == null) {
-        jobTemplate_ = null;
-        onChanged();
-      } else {
-        jobTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      jobTemplate_ = null;
+      if (jobTemplateBuilder_ != null) {
+        jobTemplateBuilder_.dispose();
         jobTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -894,7 +912,7 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.video.transcoder.v1.JobTemplate.Builder getJobTemplateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getJobTemplateFieldBuilder().getBuilder();
     }
@@ -1016,8 +1034,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       jobTemplateId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1036,8 +1054,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearJobTemplateId() {
-
       jobTemplateId_ = getDefaultInstance().getJobTemplateId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1061,8 +1079,8 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       jobTemplateId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

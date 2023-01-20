@@ -68,7 +68,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_FIELD_NUMBER = 2;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -179,7 +181,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.tpu.v2alpha1.AccessConfigOrBuilder getAccessConfigOrBuilder() {
-    return getAccessConfig();
+    return accessConfig_ == null
+        ? com.google.cloud.tpu.v2alpha1.AccessConfig.getDefaultInstance()
+        : accessConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -402,14 +406,12 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipAddress_ = "";
-
       port_ = 0;
-
-      if (accessConfigBuilder_ == null) {
-        accessConfig_ = null;
-      } else {
-        accessConfig_ = null;
+      accessConfig_ = null;
+      if (accessConfigBuilder_ != null) {
+        accessConfigBuilder_.dispose();
         accessConfigBuilder_ = null;
       }
       return this;
@@ -439,15 +441,25 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.tpu.v2alpha1.NetworkEndpoint buildPartial() {
       com.google.cloud.tpu.v2alpha1.NetworkEndpoint result =
           new com.google.cloud.tpu.v2alpha1.NetworkEndpoint(this);
-      result.ipAddress_ = ipAddress_;
-      result.port_ = port_;
-      if (accessConfigBuilder_ == null) {
-        result.accessConfig_ = accessConfig_;
-      } else {
-        result.accessConfig_ = accessConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2alpha1.NetworkEndpoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.accessConfig_ =
+            accessConfigBuilder_ == null ? accessConfig_ : accessConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -497,6 +509,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.tpu.v2alpha1.NetworkEndpoint.getDefaultInstance()) return this;
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -534,19 +547,19 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 42:
               {
                 input.readMessage(getAccessConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -565,6 +578,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
     /**
@@ -627,8 +642,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -644,8 +659,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,8 +681,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,6 +718,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -718,7 +734,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;
@@ -742,7 +758,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return Whether the accessConfig field is set.
      */
     public boolean hasAccessConfig() {
-      return accessConfigBuilder_ != null || accessConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -779,11 +795,11 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         accessConfig_ = value;
-        onChanged();
       } else {
         accessConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -799,11 +815,11 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.tpu.v2alpha1.AccessConfig.Builder builderForValue) {
       if (accessConfigBuilder_ == null) {
         accessConfig_ = builderForValue.build();
-        onChanged();
       } else {
         accessConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -817,19 +833,18 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeAccessConfig(com.google.cloud.tpu.v2alpha1.AccessConfig value) {
       if (accessConfigBuilder_ == null) {
-        if (accessConfig_ != null) {
-          accessConfig_ =
-              com.google.cloud.tpu.v2alpha1.AccessConfig.newBuilder(accessConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && accessConfig_ != null
+            && accessConfig_ != com.google.cloud.tpu.v2alpha1.AccessConfig.getDefaultInstance()) {
+          getAccessConfigBuilder().mergeFrom(value);
         } else {
           accessConfig_ = value;
         }
-        onChanged();
       } else {
         accessConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -842,14 +857,13 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.tpu.v2alpha1.AccessConfig access_config = 5;</code>
      */
     public Builder clearAccessConfig() {
-      if (accessConfigBuilder_ == null) {
-        accessConfig_ = null;
-        onChanged();
-      } else {
-        accessConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      accessConfig_ = null;
+      if (accessConfigBuilder_ != null) {
+        accessConfigBuilder_.dispose();
         accessConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -862,7 +876,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.tpu.v2alpha1.AccessConfig access_config = 5;</code>
      */
     public com.google.cloud.tpu.v2alpha1.AccessConfig.Builder getAccessConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAccessConfigFieldBuilder().getBuilder();
     }

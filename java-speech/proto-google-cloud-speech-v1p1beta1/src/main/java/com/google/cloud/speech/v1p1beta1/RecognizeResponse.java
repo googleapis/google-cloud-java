@@ -70,6 +70,8 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RESULTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult> results_;
   /**
    *
@@ -191,7 +193,9 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTotalBilledTimeOrBuilder() {
-    return getTotalBilledTime();
+    return totalBilledTime_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalBilledTime_;
   }
 
   public static final int SPEECH_ADAPTATION_INFO_FIELD_NUMBER = 7;
@@ -240,11 +244,13 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfoOrBuilder
       getSpeechAdaptationInfoOrBuilder() {
-    return getSpeechAdaptationInfo();
+    return speechAdaptationInfo_ == null
+        ? com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.getDefaultInstance()
+        : speechAdaptationInfo_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 8;
-  private long requestId_;
+  private long requestId_ = 0L;
   /**
    *
    *
@@ -501,6 +507,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -508,20 +515,17 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         resultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (totalBilledTimeBuilder_ == null) {
-        totalBilledTime_ = null;
-      } else {
-        totalBilledTime_ = null;
+      totalBilledTime_ = null;
+      if (totalBilledTimeBuilder_ != null) {
+        totalBilledTimeBuilder_.dispose();
         totalBilledTimeBuilder_ = null;
       }
-      if (speechAdaptationInfoBuilder_ == null) {
-        speechAdaptationInfo_ = null;
-      } else {
-        speechAdaptationInfo_ = null;
+      speechAdaptationInfo_ = null;
+      if (speechAdaptationInfoBuilder_ != null) {
+        speechAdaptationInfoBuilder_.dispose();
         speechAdaptationInfoBuilder_ = null;
       }
       requestId_ = 0L;
-
       return this;
     }
 
@@ -549,7 +553,16 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.speech.v1p1beta1.RecognizeResponse buildPartial() {
       com.google.cloud.speech.v1p1beta1.RecognizeResponse result =
           new com.google.cloud.speech.v1p1beta1.RecognizeResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v1p1beta1.RecognizeResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -559,19 +572,23 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      if (totalBilledTimeBuilder_ == null) {
-        result.totalBilledTime_ = totalBilledTime_;
-      } else {
-        result.totalBilledTime_ = totalBilledTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v1p1beta1.RecognizeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalBilledTime_ =
+            totalBilledTimeBuilder_ == null ? totalBilledTime_ : totalBilledTimeBuilder_.build();
       }
-      if (speechAdaptationInfoBuilder_ == null) {
-        result.speechAdaptationInfo_ = speechAdaptationInfo_;
-      } else {
-        result.speechAdaptationInfo_ = speechAdaptationInfoBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.speechAdaptationInfo_ =
+            speechAdaptationInfoBuilder_ == null
+                ? speechAdaptationInfo_
+                : speechAdaptationInfoBuilder_.build();
       }
-      result.requestId_ = requestId_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -699,20 +716,20 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
             case 26:
               {
                 input.readMessage(getTotalBilledTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 58:
               {
                 input.readMessage(
                     getSpeechAdaptationInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             case 64:
               {
                 requestId_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 64
             default:
@@ -1135,7 +1152,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      * @return Whether the totalBilledTime field is set.
      */
     public boolean hasTotalBilledTime() {
-      return totalBilledTimeBuilder_ != null || totalBilledTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1172,11 +1189,11 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         totalBilledTime_ = value;
-        onChanged();
       } else {
         totalBilledTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1191,11 +1208,11 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public Builder setTotalBilledTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (totalBilledTimeBuilder_ == null) {
         totalBilledTime_ = builderForValue.build();
-        onChanged();
       } else {
         totalBilledTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1209,19 +1226,18 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTotalBilledTime(com.google.protobuf.Duration value) {
       if (totalBilledTimeBuilder_ == null) {
-        if (totalBilledTime_ != null) {
-          totalBilledTime_ =
-              com.google.protobuf.Duration.newBuilder(totalBilledTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && totalBilledTime_ != null
+            && totalBilledTime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTotalBilledTimeBuilder().mergeFrom(value);
         } else {
           totalBilledTime_ = value;
         }
-        onChanged();
       } else {
         totalBilledTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1234,14 +1250,13 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration total_billed_time = 3;</code>
      */
     public Builder clearTotalBilledTime() {
-      if (totalBilledTimeBuilder_ == null) {
-        totalBilledTime_ = null;
-        onChanged();
-      } else {
-        totalBilledTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      totalBilledTime_ = null;
+      if (totalBilledTimeBuilder_ != null) {
+        totalBilledTimeBuilder_.dispose();
         totalBilledTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1254,7 +1269,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration total_billed_time = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getTotalBilledTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTotalBilledTimeFieldBuilder().getBuilder();
     }
@@ -1320,7 +1335,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      * @return Whether the speechAdaptationInfo field is set.
      */
     public boolean hasSpeechAdaptationInfo() {
-      return speechAdaptationInfoBuilder_ != null || speechAdaptationInfo_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1358,11 +1373,11 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         speechAdaptationInfo_ = value;
-        onChanged();
       } else {
         speechAdaptationInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1378,11 +1393,11 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
         com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder builderForValue) {
       if (speechAdaptationInfoBuilder_ == null) {
         speechAdaptationInfo_ = builderForValue.build();
-        onChanged();
       } else {
         speechAdaptationInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1397,20 +1412,19 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public Builder mergeSpeechAdaptationInfo(
         com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo value) {
       if (speechAdaptationInfoBuilder_ == null) {
-        if (speechAdaptationInfo_ != null) {
-          speechAdaptationInfo_ =
-              com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.newBuilder(
-                      speechAdaptationInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && speechAdaptationInfo_ != null
+            && speechAdaptationInfo_
+                != com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.getDefaultInstance()) {
+          getSpeechAdaptationInfoBuilder().mergeFrom(value);
         } else {
           speechAdaptationInfo_ = value;
         }
-        onChanged();
       } else {
         speechAdaptationInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1423,14 +1437,13 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo speech_adaptation_info = 7;</code>
      */
     public Builder clearSpeechAdaptationInfo() {
-      if (speechAdaptationInfoBuilder_ == null) {
-        speechAdaptationInfo_ = null;
-        onChanged();
-      } else {
-        speechAdaptationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      speechAdaptationInfo_ = null;
+      if (speechAdaptationInfoBuilder_ != null) {
+        speechAdaptationInfoBuilder_.dispose();
         speechAdaptationInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1444,7 +1457,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo.Builder
         getSpeechAdaptationInfoBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSpeechAdaptationInfoFieldBuilder().getBuilder();
     }
@@ -1526,6 +1539,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
     public Builder setRequestId(long value) {
 
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1542,7 +1556,7 @@ public final class RecognizeResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       requestId_ = 0L;
       onChanged();
       return this;

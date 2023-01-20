@@ -68,7 +68,9 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.devtools.cloudtrace.v1.TracesOrBuilder getTracesOrBuilder() {
-    return getTraces();
+    return traces_ == null
+        ? com.google.devtools.cloudtrace.v1.Traces.getDefaultInstance()
+        : traces_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,12 +385,11 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
-      if (tracesBuilder_ == null) {
-        traces_ = null;
-      } else {
-        traces_ = null;
+      traces_ = null;
+      if (tracesBuilder_ != null) {
+        tracesBuilder_.dispose();
         tracesBuilder_ = null;
       }
       return this;
@@ -416,14 +419,21 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     public com.google.devtools.cloudtrace.v1.PatchTracesRequest buildPartial() {
       com.google.devtools.cloudtrace.v1.PatchTracesRequest result =
           new com.google.devtools.cloudtrace.v1.PatchTracesRequest(this);
-      result.projectId_ = projectId_;
-      if (tracesBuilder_ == null) {
-        result.traces_ = traces_;
-      } else {
-        result.traces_ = tracesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v1.PatchTracesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.traces_ = tracesBuilder_ == null ? traces_ : tracesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -474,6 +484,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTraces()) {
@@ -508,13 +519,13 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTracesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -533,6 +544,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -595,8 +608,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,8 +625,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -634,8 +647,8 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,7 +673,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the traces field is set.
      */
     public boolean hasTraces() {
-      return tracesBuilder_ != null || traces_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -701,11 +714,11 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         traces_ = value;
-        onChanged();
       } else {
         tracesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -722,11 +735,11 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
     public Builder setTraces(com.google.devtools.cloudtrace.v1.Traces.Builder builderForValue) {
       if (tracesBuilder_ == null) {
         traces_ = builderForValue.build();
-        onChanged();
       } else {
         tracesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -742,19 +755,18 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTraces(com.google.devtools.cloudtrace.v1.Traces value) {
       if (tracesBuilder_ == null) {
-        if (traces_ != null) {
-          traces_ =
-              com.google.devtools.cloudtrace.v1.Traces.newBuilder(traces_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && traces_ != null
+            && traces_ != com.google.devtools.cloudtrace.v1.Traces.getDefaultInstance()) {
+          getTracesBuilder().mergeFrom(value);
         } else {
           traces_ = value;
         }
-        onChanged();
       } else {
         tracesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -769,14 +781,13 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearTraces() {
-      if (tracesBuilder_ == null) {
-        traces_ = null;
-        onChanged();
-      } else {
-        traces_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      traces_ = null;
+      if (tracesBuilder_ != null) {
+        tracesBuilder_.dispose();
         tracesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -791,7 +802,7 @@ public final class PatchTracesRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.devtools.cloudtrace.v1.Traces.Builder getTracesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTracesFieldBuilder().getBuilder();
     }

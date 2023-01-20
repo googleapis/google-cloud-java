@@ -229,7 +229,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString key_;
+  private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -248,7 +248,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMAT_FIELD_NUMBER = 2;
-  private int format_;
+  private int format_ = 0;
   /**
    *
    *
@@ -281,9 +281,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.PublicKey.KeyFormat getFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.security.privateca.v1.PublicKey.KeyFormat result =
-        com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.valueOf(format_);
+        com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.forNumber(format_);
     return result == null
         ? com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.UNRECOGNIZED
         : result;
@@ -499,10 +498,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = com.google.protobuf.ByteString.EMPTY;
-
       format_ = 0;
-
       return this;
     }
 
@@ -530,10 +528,21 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.PublicKey buildPartial() {
       com.google.cloud.security.privateca.v1.PublicKey result =
           new com.google.cloud.security.privateca.v1.PublicKey(this);
-      result.key_ = key_;
-      result.format_ = format_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.PublicKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.format_ = format_;
+      }
     }
 
     @java.lang.Override
@@ -617,13 +626,13 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 key_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 format_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -642,6 +651,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -677,8 +688,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,7 +706,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       key_ = getDefaultInstance().getKey();
       onChanged();
       return this;
@@ -734,8 +745,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
-
       format_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -754,9 +765,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.security.privateca.v1.PublicKey.KeyFormat getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.security.privateca.v1.PublicKey.KeyFormat result =
-          com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.valueOf(format_);
+          com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.forNumber(format_);
       return result == null
           ? com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.UNRECOGNIZED
           : result;
@@ -779,7 +789,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -798,7 +808,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       format_ = 0;
       onChanged();
       return this;

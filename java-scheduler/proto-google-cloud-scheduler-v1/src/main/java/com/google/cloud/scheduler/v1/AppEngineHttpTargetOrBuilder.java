@@ -252,7 +252,6 @@ public interface AppEngineHttpTargetOrBuilder
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
   /* nullable */
   java.lang.String getHeadersOrDefault(
       java.lang.String key,

@@ -113,7 +113,9 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartTimeOffsetOrBuilder() {
-    return getStartTimeOffset();
+    return startTimeOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : startTimeOffset_;
   }
 
   public static final int END_TIME_OFFSET_FIELD_NUMBER = 2;
@@ -164,7 +166,9 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getEndTimeOffsetOrBuilder() {
-    return getEndTimeOffset();
+    return endTimeOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : endTimeOffset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,16 +387,15 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startTimeOffsetBuilder_ == null) {
-        startTimeOffset_ = null;
-      } else {
-        startTimeOffset_ = null;
+      bitField0_ = 0;
+      startTimeOffset_ = null;
+      if (startTimeOffsetBuilder_ != null) {
+        startTimeOffsetBuilder_.dispose();
         startTimeOffsetBuilder_ = null;
       }
-      if (endTimeOffsetBuilder_ == null) {
-        endTimeOffset_ = null;
-      } else {
-        endTimeOffset_ = null;
+      endTimeOffset_ = null;
+      if (endTimeOffsetBuilder_ != null) {
+        endTimeOffsetBuilder_.dispose();
         endTimeOffsetBuilder_ = null;
       }
       return this;
@@ -422,18 +425,23 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1.VideoSegment buildPartial() {
       com.google.cloud.videointelligence.v1.VideoSegment result =
           new com.google.cloud.videointelligence.v1.VideoSegment(this);
-      if (startTimeOffsetBuilder_ == null) {
-        result.startTimeOffset_ = startTimeOffset_;
-      } else {
-        result.startTimeOffset_ = startTimeOffsetBuilder_.build();
-      }
-      if (endTimeOffsetBuilder_ == null) {
-        result.endTimeOffset_ = endTimeOffset_;
-      } else {
-        result.endTimeOffset_ = endTimeOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1.VideoSegment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startTimeOffset_ =
+            startTimeOffsetBuilder_ == null ? startTimeOffset_ : startTimeOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endTimeOffset_ =
+            endTimeOffsetBuilder_ == null ? endTimeOffset_ : endTimeOffsetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -517,13 +525,13 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +550,8 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration startTimeOffset_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -562,7 +572,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTimeOffset field is set.
      */
     public boolean hasStartTimeOffset() {
-      return startTimeOffsetBuilder_ != null || startTimeOffset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -601,11 +611,11 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTimeOffset_ = value;
-        onChanged();
       } else {
         startTimeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -621,11 +631,11 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (startTimeOffsetBuilder_ == null) {
         startTimeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -640,19 +650,18 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTimeOffset(com.google.protobuf.Duration value) {
       if (startTimeOffsetBuilder_ == null) {
-        if (startTimeOffset_ != null) {
-          startTimeOffset_ =
-              com.google.protobuf.Duration.newBuilder(startTimeOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startTimeOffset_ != null
+            && startTimeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getStartTimeOffsetBuilder().mergeFrom(value);
         } else {
           startTimeOffset_ = value;
         }
-        onChanged();
       } else {
         startTimeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -666,14 +675,13 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_time_offset = 1;</code>
      */
     public Builder clearStartTimeOffset() {
-      if (startTimeOffsetBuilder_ == null) {
-        startTimeOffset_ = null;
-        onChanged();
-      } else {
-        startTimeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startTimeOffset_ = null;
+      if (startTimeOffsetBuilder_ != null) {
+        startTimeOffsetBuilder_.dispose();
         startTimeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -687,7 +695,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_time_offset = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getStartTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartTimeOffsetFieldBuilder().getBuilder();
     }
@@ -756,7 +764,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTimeOffset field is set.
      */
     public boolean hasEndTimeOffset() {
-      return endTimeOffsetBuilder_ != null || endTimeOffset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -795,11 +803,11 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTimeOffset_ = value;
-        onChanged();
       } else {
         endTimeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,11 +823,11 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (endTimeOffsetBuilder_ == null) {
         endTimeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,19 +842,18 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTimeOffset(com.google.protobuf.Duration value) {
       if (endTimeOffsetBuilder_ == null) {
-        if (endTimeOffset_ != null) {
-          endTimeOffset_ =
-              com.google.protobuf.Duration.newBuilder(endTimeOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endTimeOffset_ != null
+            && endTimeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getEndTimeOffsetBuilder().mergeFrom(value);
         } else {
           endTimeOffset_ = value;
         }
-        onChanged();
       } else {
         endTimeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -860,14 +867,13 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration end_time_offset = 2;</code>
      */
     public Builder clearEndTimeOffset() {
-      if (endTimeOffsetBuilder_ == null) {
-        endTimeOffset_ = null;
-        onChanged();
-      } else {
-        endTimeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endTimeOffset_ = null;
+      if (endTimeOffsetBuilder_ != null) {
+        endTimeOffsetBuilder_.dispose();
         endTimeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -881,7 +887,7 @@ public final class VideoSegment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration end_time_offset = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getEndTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndTimeOffsetFieldBuilder().getBuilder();
     }

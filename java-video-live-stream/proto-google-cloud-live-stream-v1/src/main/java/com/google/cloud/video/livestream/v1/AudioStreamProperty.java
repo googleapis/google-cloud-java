@@ -66,7 +66,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INDEX_FIELD_NUMBER = 1;
-  private int index_;
+  private int index_ = 0;
   /**
    *
    *
@@ -128,7 +128,9 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.AudioFormatOrBuilder getAudioFormatOrBuilder() {
-    return getAudioFormat();
+    return audioFormat_ == null
+        ? com.google.cloud.video.livestream.v1.AudioFormat.getDefaultInstance()
+        : audioFormat_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -343,12 +345,11 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       index_ = 0;
-
-      if (audioFormatBuilder_ == null) {
-        audioFormat_ = null;
-      } else {
-        audioFormat_ = null;
+      audioFormat_ = null;
+      if (audioFormatBuilder_ != null) {
+        audioFormatBuilder_.dispose();
         audioFormatBuilder_ = null;
       }
       return this;
@@ -378,14 +379,22 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     public com.google.cloud.video.livestream.v1.AudioStreamProperty buildPartial() {
       com.google.cloud.video.livestream.v1.AudioStreamProperty result =
           new com.google.cloud.video.livestream.v1.AudioStreamProperty(this);
-      result.index_ = index_;
-      if (audioFormatBuilder_ == null) {
-        result.audioFormat_ = audioFormat_;
-      } else {
-        result.audioFormat_ = audioFormatBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.AudioStreamProperty result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.index_ = index_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.audioFormat_ =
+            audioFormatBuilder_ == null ? audioFormat_ : audioFormatBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -469,13 +478,13 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 index_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getAudioFormatFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -494,6 +503,8 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int index_;
     /**
@@ -526,6 +537,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
     public Builder setIndex(int value) {
 
       index_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -541,7 +553,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIndex() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       index_ = 0;
       onChanged();
       return this;
@@ -565,7 +577,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
      * @return Whether the audioFormat field is set.
      */
     public boolean hasAudioFormat() {
-      return audioFormatBuilder_ != null || audioFormat_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -602,11 +614,11 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         audioFormat_ = value;
-        onChanged();
       } else {
         audioFormatBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -622,11 +634,11 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
         com.google.cloud.video.livestream.v1.AudioFormat.Builder builderForValue) {
       if (audioFormatBuilder_ == null) {
         audioFormat_ = builderForValue.build();
-        onChanged();
       } else {
         audioFormatBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -640,19 +652,19 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeAudioFormat(com.google.cloud.video.livestream.v1.AudioFormat value) {
       if (audioFormatBuilder_ == null) {
-        if (audioFormat_ != null) {
-          audioFormat_ =
-              com.google.cloud.video.livestream.v1.AudioFormat.newBuilder(audioFormat_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && audioFormat_ != null
+            && audioFormat_
+                != com.google.cloud.video.livestream.v1.AudioFormat.getDefaultInstance()) {
+          getAudioFormatBuilder().mergeFrom(value);
         } else {
           audioFormat_ = value;
         }
-        onChanged();
       } else {
         audioFormatBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -665,14 +677,13 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.AudioFormat audio_format = 2;</code>
      */
     public Builder clearAudioFormat() {
-      if (audioFormatBuilder_ == null) {
-        audioFormat_ = null;
-        onChanged();
-      } else {
-        audioFormat_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      audioFormat_ = null;
+      if (audioFormatBuilder_ != null) {
+        audioFormatBuilder_.dispose();
         audioFormatBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -685,7 +696,7 @@ public final class AudioStreamProperty extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.AudioFormat audio_format = 2;</code>
      */
     public com.google.cloud.video.livestream.v1.AudioFormat.Builder getAudioFormatBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAudioFormatFieldBuilder().getBuilder();
     }

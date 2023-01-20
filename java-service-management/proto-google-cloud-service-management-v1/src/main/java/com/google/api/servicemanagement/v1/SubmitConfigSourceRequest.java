@@ -68,7 +68,9 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -171,11 +173,13 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.api.servicemanagement.v1.ConfigSourceOrBuilder getConfigSourceOrBuilder() {
-    return getConfigSource();
+    return configSource_ == null
+        ? com.google.api.servicemanagement.v1.ConfigSource.getDefaultInstance()
+        : configSource_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -415,16 +419,14 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
-      if (configSourceBuilder_ == null) {
-        configSource_ = null;
-      } else {
-        configSource_ = null;
+      configSource_ = null;
+      if (configSourceBuilder_ != null) {
+        configSourceBuilder_.dispose();
         configSourceBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -453,15 +455,26 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     public com.google.api.servicemanagement.v1.SubmitConfigSourceRequest buildPartial() {
       com.google.api.servicemanagement.v1.SubmitConfigSourceRequest result =
           new com.google.api.servicemanagement.v1.SubmitConfigSourceRequest(this);
-      result.serviceName_ = serviceName_;
-      if (configSourceBuilder_ == null) {
-        result.configSource_ = configSource_;
-      } else {
-        result.configSource_ = configSourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.api.servicemanagement.v1.SubmitConfigSourceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configSource_ =
+            configSourceBuilder_ == null ? configSource_ : configSourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -513,6 +526,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasConfigSource()) {
@@ -550,19 +564,19 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getConfigSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -581,6 +595,8 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
     /**
@@ -649,8 +665,8 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +684,8 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -692,8 +708,8 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,7 +734,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
      * @return Whether the configSource field is set.
      */
     public boolean hasConfigSource() {
-      return configSourceBuilder_ != null || configSource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -759,11 +775,11 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         configSource_ = value;
-        onChanged();
       } else {
         configSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -781,11 +797,11 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
         com.google.api.servicemanagement.v1.ConfigSource.Builder builderForValue) {
       if (configSourceBuilder_ == null) {
         configSource_ = builderForValue.build();
-        onChanged();
       } else {
         configSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,19 +817,19 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
      */
     public Builder mergeConfigSource(com.google.api.servicemanagement.v1.ConfigSource value) {
       if (configSourceBuilder_ == null) {
-        if (configSource_ != null) {
-          configSource_ =
-              com.google.api.servicemanagement.v1.ConfigSource.newBuilder(configSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && configSource_ != null
+            && configSource_
+                != com.google.api.servicemanagement.v1.ConfigSource.getDefaultInstance()) {
+          getConfigSourceBuilder().mergeFrom(value);
         } else {
           configSource_ = value;
         }
-        onChanged();
       } else {
         configSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,14 +844,13 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearConfigSource() {
-      if (configSourceBuilder_ == null) {
-        configSource_ = null;
-        onChanged();
-      } else {
-        configSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      configSource_ = null;
+      if (configSourceBuilder_ != null) {
+        configSourceBuilder_.dispose();
         configSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -850,7 +865,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.api.servicemanagement.v1.ConfigSource.Builder getConfigSourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getConfigSourceFieldBuilder().getBuilder();
     }
@@ -937,6 +952,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -954,7 +970,7 @@ public final class SubmitConfigSourceRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

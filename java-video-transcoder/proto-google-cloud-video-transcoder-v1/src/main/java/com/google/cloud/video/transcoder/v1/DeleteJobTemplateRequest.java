@@ -68,7 +68,9 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -348,10 +350,9 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       allowMissing_ = false;
-
       return this;
     }
 
@@ -380,10 +381,22 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     public com.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest buildPartial() {
       com.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest result =
           new com.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest(this);
-      result.name_ = name_;
-      result.allowMissing_ = allowMissing_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -435,6 +448,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getAllowMissing() != false) {
@@ -469,13 +483,13 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -494,6 +508,8 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -565,8 +581,8 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -585,8 +601,8 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -610,8 +626,8 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -649,6 +665,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -665,7 +682,7 @@ public final class DeleteJobTemplateRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowMissing_ = false;
       onChanged();
       return this;

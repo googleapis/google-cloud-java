@@ -69,7 +69,9 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -169,11 +171,13 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder getOverrideOrBuilder() {
-    return getOverride();
+    return override_ == null
+        ? com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()
+        : override_;
   }
 
   public static final int FORCE_FIELD_NUMBER = 3;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -238,11 +242,14 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int FORCE_ONLY_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> forceOnly_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>
       forceOnly_converter_ =
@@ -250,9 +257,8 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
               java.lang.Integer, com.google.api.serviceusage.v1beta1.QuotaSafetyCheck>() {
             public com.google.api.serviceusage.v1beta1.QuotaSafetyCheck convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.api.serviceusage.v1beta1.QuotaSafetyCheck result =
-                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.valueOf(from);
+                  com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.forNumber(from);
               return result == null
                   ? com.google.api.serviceusage.v1beta1.QuotaSafetyCheck.UNRECOGNIZED
                   : result;
@@ -615,24 +621,21 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (overrideBuilder_ == null) {
-        override_ = null;
-      } else {
-        override_ = null;
+      override_ = null;
+      if (overrideBuilder_ != null) {
+        overrideBuilder_.dispose();
         overrideBuilder_ = null;
       }
       force_ = false;
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -661,26 +664,38 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
     public com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest buildPartial() {
       com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest result =
           new com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (overrideBuilder_ == null) {
-        result.override_ = override_;
-      } else {
-        result.override_ = overrideBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.force_ = force_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.forceOnly_ = forceOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        forceOnly_ = java.util.Collections.unmodifiableList(forceOnly_);
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.forceOnly_ = forceOnly_;
+    }
+
+    private void buildPartial0(
+        com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.override_ = overrideBuilder_ == null ? override_ : overrideBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -732,6 +747,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOverride()) {
@@ -746,7 +762,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
       if (!other.forceOnly_.isEmpty()) {
         if (forceOnly_.isEmpty()) {
           forceOnly_ = other.forceOnly_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureForceOnlyIsMutable();
           forceOnly_.addAll(other.forceOnly_);
@@ -782,25 +798,25 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOverrideFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
@@ -908,8 +924,8 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -927,8 +943,8 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -951,8 +967,8 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -976,7 +992,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * @return Whether the override field is set.
      */
     public boolean hasOverride() {
-      return overrideBuilder_ != null || override_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1015,11 +1031,11 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         override_ = value;
-        onChanged();
       } else {
         overrideBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1036,11 +1052,11 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
         com.google.api.serviceusage.v1beta1.QuotaOverride.Builder builderForValue) {
       if (overrideBuilder_ == null) {
         override_ = builderForValue.build();
-        onChanged();
       } else {
         overrideBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1055,19 +1071,19 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      */
     public Builder mergeOverride(com.google.api.serviceusage.v1beta1.QuotaOverride value) {
       if (overrideBuilder_ == null) {
-        if (override_ != null) {
-          override_ =
-              com.google.api.serviceusage.v1beta1.QuotaOverride.newBuilder(override_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && override_ != null
+            && override_
+                != com.google.api.serviceusage.v1beta1.QuotaOverride.getDefaultInstance()) {
+          getOverrideBuilder().mergeFrom(value);
         } else {
           override_ = value;
         }
-        onChanged();
       } else {
         overrideBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1081,14 +1097,13 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * <code>.google.api.serviceusage.v1beta1.QuotaOverride override = 2;</code>
      */
     public Builder clearOverride() {
-      if (overrideBuilder_ == null) {
-        override_ = null;
-        onChanged();
-      } else {
-        override_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      override_ = null;
+      if (overrideBuilder_ != null) {
+        overrideBuilder_.dispose();
         overrideBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1102,7 +1117,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * <code>.google.api.serviceusage.v1beta1.QuotaOverride override = 2;</code>
      */
     public com.google.api.serviceusage.v1beta1.QuotaOverride.Builder getOverrideBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOverrideFieldBuilder().getBuilder();
     }
@@ -1187,6 +1202,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1204,7 +1220,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       force_ = false;
       onChanged();
       return this;
@@ -1229,7 +1245,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1268,11 +1284,11 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1288,11 +1304,11 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1307,17 +1323,18 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1331,14 +1348,13 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1352,7 +1368,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1405,9 +1421,9 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
     private java.util.List<java.lang.Integer> forceOnly_ = java.util.Collections.emptyList();
 
     private void ensureForceOnlyIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         forceOnly_ = new java.util.ArrayList<java.lang.Integer>(forceOnly_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1554,7 +1570,7 @@ public final class UpdateAdminOverrideRequest extends com.google.protobuf.Genera
      */
     public Builder clearForceOnly() {
       forceOnly_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

@@ -244,7 +244,6 @@ public interface SettingsOrBuilder
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings&gt; component_settings = 7;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings getComponentSettingsOrDefault(
       java.lang.String key,
@@ -328,7 +327,6 @@ public interface SettingsOrBuilder
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings&gt; detector_group_settings = 8;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.securitycenter.settings.v1beta1.Settings.DetectorGroupSettings
       getDetectorGroupSettingsOrDefault(

@@ -132,7 +132,9 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder
       getAppEngineRoutingOverrideOrBuilder() {
-    return getAppEngineRoutingOverride();
+    return appEngineRoutingOverride_ == null
+        ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
+        : appEngineRoutingOverride_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -348,10 +350,10 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (appEngineRoutingOverrideBuilder_ == null) {
-        appEngineRoutingOverride_ = null;
-      } else {
-        appEngineRoutingOverride_ = null;
+      bitField0_ = 0;
+      appEngineRoutingOverride_ = null;
+      if (appEngineRoutingOverrideBuilder_ != null) {
+        appEngineRoutingOverrideBuilder_.dispose();
         appEngineRoutingOverrideBuilder_ = null;
       }
       return this;
@@ -381,13 +383,21 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.tasks.v2beta3.AppEngineHttpQueue buildPartial() {
       com.google.cloud.tasks.v2beta3.AppEngineHttpQueue result =
           new com.google.cloud.tasks.v2beta3.AppEngineHttpQueue(this);
-      if (appEngineRoutingOverrideBuilder_ == null) {
-        result.appEngineRoutingOverride_ = appEngineRoutingOverride_;
-      } else {
-        result.appEngineRoutingOverride_ = appEngineRoutingOverrideBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta3.AppEngineHttpQueue result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.appEngineRoutingOverride_ =
+            appEngineRoutingOverrideBuilder_ == null
+                ? appEngineRoutingOverride_
+                : appEngineRoutingOverrideBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -469,7 +479,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getAppEngineRoutingOverrideFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -488,6 +498,8 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRoutingOverride_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -511,7 +523,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
      * @return Whether the appEngineRoutingOverride field is set.
      */
     public boolean hasAppEngineRoutingOverride() {
-      return appEngineRoutingOverrideBuilder_ != null || appEngineRoutingOverride_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -557,11 +569,11 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         appEngineRoutingOverride_ = value;
-        onChanged();
       } else {
         appEngineRoutingOverrideBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -581,11 +593,11 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
         com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder builderForValue) {
       if (appEngineRoutingOverrideBuilder_ == null) {
         appEngineRoutingOverride_ = builderForValue.build();
-        onChanged();
       } else {
         appEngineRoutingOverrideBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -604,19 +616,19 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     public Builder mergeAppEngineRoutingOverride(
         com.google.cloud.tasks.v2beta3.AppEngineRouting value) {
       if (appEngineRoutingOverrideBuilder_ == null) {
-        if (appEngineRoutingOverride_ != null) {
-          appEngineRoutingOverride_ =
-              com.google.cloud.tasks.v2beta3.AppEngineRouting.newBuilder(appEngineRoutingOverride_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && appEngineRoutingOverride_ != null
+            && appEngineRoutingOverride_
+                != com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()) {
+          getAppEngineRoutingOverrideBuilder().mergeFrom(value);
         } else {
           appEngineRoutingOverride_ = value;
         }
-        onChanged();
       } else {
         appEngineRoutingOverrideBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,14 +645,13 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.tasks.v2beta3.AppEngineRouting app_engine_routing_override = 1;</code>
      */
     public Builder clearAppEngineRoutingOverride() {
-      if (appEngineRoutingOverrideBuilder_ == null) {
-        appEngineRoutingOverride_ = null;
-        onChanged();
-      } else {
-        appEngineRoutingOverride_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      appEngineRoutingOverride_ = null;
+      if (appEngineRoutingOverrideBuilder_ != null) {
+        appEngineRoutingOverrideBuilder_.dispose();
         appEngineRoutingOverrideBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -658,7 +669,7 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder
         getAppEngineRoutingOverrideBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAppEngineRoutingOverrideFieldBuilder().getBuilder();
     }

@@ -486,6 +486,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
               0D);
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.Double> percentages_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
@@ -836,6 +837,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutablePercentages().clear();
         return this;
       }
@@ -866,11 +868,20 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       public com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy buildPartial() {
         com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy result =
             new com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy(this);
-        int from_bitField0_ = bitField0_;
-        result.percentages_ = internalGetPercentages();
-        result.percentages_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.percentages_ = internalGetPercentages();
+          result.percentages_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -925,6 +936,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             == com.google.api.servicemanagement.v1.Rollout.TrafficPercentStrategy
                 .getDefaultInstance()) return this;
         internalGetMutablePercentages().mergeFrom(other.internalGetPercentages());
+        bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -960,6 +972,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutablePercentages()
                       .getMutableMap()
                       .put(percentages__.getKey(), percentages__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -994,8 +1007,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.Double>
           internalGetMutablePercentages() {
-        onChanged();
-        ;
         if (percentages_ == null) {
           percentages_ =
               com.google.protobuf.MapField.newMapField(PercentagesDefaultEntryHolder.defaultEntry);
@@ -1003,6 +1014,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         if (!percentages_.isMutable()) {
           percentages_ = percentages_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return percentages_;
       }
 
@@ -1091,6 +1104,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearPercentages() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutablePercentages().getMutableMap().clear();
         return this;
       }
@@ -1115,6 +1129,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Double> getMutablePercentages() {
+        bitField0_ |= 0x00000001;
         return internalGetMutablePercentages().getMutableMap();
       }
       /**
@@ -1134,6 +1149,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         }
 
         internalGetMutablePercentages().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1149,6 +1165,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder putAllPercentages(java.util.Map<java.lang.String, java.lang.Double> values) {
         internalGetMutablePercentages().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1707,7 +1724,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLLOUT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object rolloutId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rolloutId_ = "";
   /**
    *
    *
@@ -1812,11 +1831,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int CREATED_BY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object createdBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object createdBy_ = "";
   /**
    *
    *
@@ -1865,7 +1886,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATUS_FIELD_NUMBER = 4;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -1898,9 +1919,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicemanagement.v1.Rollout.RolloutStatus getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicemanagement.v1.Rollout.RolloutStatus result =
-        com.google.api.servicemanagement.v1.Rollout.RolloutStatus.valueOf(status_);
+        com.google.api.servicemanagement.v1.Rollout.RolloutStatus.forNumber(status_);
     return result == null
         ? com.google.api.servicemanagement.v1.Rollout.RolloutStatus.UNRECOGNIZED
         : result;
@@ -2031,7 +2051,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -2364,18 +2386,15 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rolloutId_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       createdBy_ = "";
-
       status_ = 0;
-
       if (trafficPercentStrategyBuilder_ != null) {
         trafficPercentStrategyBuilder_.clear();
       }
@@ -2383,7 +2402,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         deleteServiceStrategyBuilder_.clear();
       }
       serviceName_ = "";
-
       strategyCase_ = 0;
       strategy_ = null;
       return this;
@@ -2413,32 +2431,42 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicemanagement.v1.Rollout buildPartial() {
       com.google.api.servicemanagement.v1.Rollout result =
           new com.google.api.servicemanagement.v1.Rollout(this);
-      result.rolloutId_ = rolloutId_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.createdBy_ = createdBy_;
-      result.status_ = status_;
-      if (strategyCase_ == 5) {
-        if (trafficPercentStrategyBuilder_ == null) {
-          result.strategy_ = strategy_;
-        } else {
-          result.strategy_ = trafficPercentStrategyBuilder_.build();
-        }
-      }
-      if (strategyCase_ == 200) {
-        if (deleteServiceStrategyBuilder_ == null) {
-          result.strategy_ = strategy_;
-        } else {
-          result.strategy_ = deleteServiceStrategyBuilder_.build();
-        }
-      }
-      result.serviceName_ = serviceName_;
-      result.strategyCase_ = strategyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicemanagement.v1.Rollout result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rolloutId_ = rolloutId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createdBy_ = createdBy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.api.servicemanagement.v1.Rollout result) {
+      result.strategyCase_ = strategyCase_;
+      result.strategy_ = this.strategy_;
+      if (strategyCase_ == 5 && trafficPercentStrategyBuilder_ != null) {
+        result.strategy_ = trafficPercentStrategyBuilder_.build();
+      }
+      if (strategyCase_ == 200 && deleteServiceStrategyBuilder_ != null) {
+        result.strategy_ = deleteServiceStrategyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2488,6 +2516,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.servicemanagement.v1.Rollout.getDefaultInstance()) return this;
       if (!other.getRolloutId().isEmpty()) {
         rolloutId_ = other.rolloutId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2495,6 +2524,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCreatedBy().isEmpty()) {
         createdBy_ = other.createdBy_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.status_ != 0) {
@@ -2502,6 +2532,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getStrategyCase()) {
@@ -2549,25 +2580,25 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 rolloutId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 createdBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -2580,7 +2611,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 1602:
@@ -2620,6 +2651,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object rolloutId_ = "";
     /**
@@ -2703,8 +2736,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rolloutId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2727,8 +2760,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRolloutId() {
-
       rolloutId_ = getDefaultInstance().getRolloutId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2756,8 +2789,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rolloutId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2780,7 +2813,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2817,11 +2850,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2836,11 +2869,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2854,17 +2887,18 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2877,14 +2911,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2897,7 +2930,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3006,8 +3039,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       createdBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3023,8 +3056,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreatedBy() {
-
       createdBy_ = getDefaultInstance().getCreatedBy();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3045,8 +3078,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       createdBy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3084,8 +3117,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3104,9 +3137,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicemanagement.v1.Rollout.RolloutStatus getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicemanagement.v1.Rollout.RolloutStatus result =
-          com.google.api.servicemanagement.v1.Rollout.RolloutStatus.valueOf(status_);
+          com.google.api.servicemanagement.v1.Rollout.RolloutStatus.forNumber(status_);
       return result == null
           ? com.google.api.servicemanagement.v1.Rollout.RolloutStatus.UNRECOGNIZED
           : result;
@@ -3129,7 +3161,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -3148,7 +3180,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       status_ = 0;
       onChanged();
       return this;
@@ -3401,7 +3433,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       strategyCase_ = 5;
       onChanged();
-      ;
       return trafficPercentStrategyBuilder_;
     }
 
@@ -3650,7 +3681,6 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       strategyCase_ = 200;
       onChanged();
-      ;
       return deleteServiceStrategyBuilder_;
     }
 
@@ -3715,8 +3745,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3732,8 +3762,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3754,8 +3784,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

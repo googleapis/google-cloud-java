@@ -511,7 +511,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
-    private int widthPixels_;
+    private int widthPixels_ = 0;
     /**
      *
      *
@@ -530,7 +530,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HEIGHT_PIXELS_FIELD_NUMBER = 2;
-    private int heightPixels_;
+    private int heightPixels_ = 0;
     /**
      *
      *
@@ -549,7 +549,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FRAME_RATE_FIELD_NUMBER = 3;
-    private double frameRate_;
+    private double frameRate_ = 0D;
     /**
      *
      *
@@ -573,7 +573,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
-    private int bitrateBps_;
+    private int bitrateBps_ = 0;
     /**
      *
      *
@@ -593,7 +593,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ALLOW_OPEN_GOP_FIELD_NUMBER = 6;
-    private boolean allowOpenGop_;
+    private boolean allowOpenGop_ = false;
     /**
      *
      *
@@ -721,7 +721,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VBV_SIZE_BITS_FIELD_NUMBER = 9;
-    private int vbvSizeBits_;
+    private int vbvSizeBits_ = 0;
     /**
      *
      *
@@ -740,7 +740,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VBV_FULLNESS_BITS_FIELD_NUMBER = 10;
-    private int vbvFullnessBits_;
+    private int vbvFullnessBits_ = 0;
     /**
      *
      *
@@ -760,7 +760,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENTROPY_CODER_FIELD_NUMBER = 11;
-    private volatile java.lang.Object entropyCoder_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entropyCoder_ = "";
     /**
      *
      *
@@ -815,7 +817,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int B_PYRAMID_FIELD_NUMBER = 12;
-    private boolean bPyramid_;
+    private boolean bPyramid_ = false;
     /**
      *
      *
@@ -834,7 +836,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int B_FRAME_COUNT_FIELD_NUMBER = 13;
-    private int bFrameCount_;
+    private int bFrameCount_ = 0;
     /**
      *
      *
@@ -854,7 +856,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int AQ_STRENGTH_FIELD_NUMBER = 14;
-    private double aqStrength_;
+    private double aqStrength_ = 0D;
     /**
      *
      *
@@ -874,7 +876,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PROFILE_FIELD_NUMBER = 15;
-    private volatile java.lang.Object profile_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object profile_ = "";
     /**
      *
      *
@@ -941,7 +945,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TUNE_FIELD_NUMBER = 16;
-    private volatile java.lang.Object tune_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tune_ = "";
     /**
      *
      *
@@ -1354,35 +1360,23 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         widthPixels_ = 0;
-
         heightPixels_ = 0;
-
         frameRate_ = 0D;
-
         bitrateBps_ = 0;
-
         allowOpenGop_ = false;
-
         if (gopDurationBuilder_ != null) {
           gopDurationBuilder_.clear();
         }
         vbvSizeBits_ = 0;
-
         vbvFullnessBits_ = 0;
-
         entropyCoder_ = "";
-
         bPyramid_ = false;
-
         bFrameCount_ = 0;
-
         aqStrength_ = 0D;
-
         profile_ = "";
-
         tune_ = "";
-
         gopModeCase_ = 0;
         gopMode_ = null;
         return this;
@@ -1414,32 +1408,65 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings buildPartial() {
         com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings result =
             new com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings(this);
-        result.widthPixels_ = widthPixels_;
-        result.heightPixels_ = heightPixels_;
-        result.frameRate_ = frameRate_;
-        result.bitrateBps_ = bitrateBps_;
-        result.allowOpenGop_ = allowOpenGop_;
-        if (gopModeCase_ == 7) {
-          result.gopMode_ = gopMode_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (gopModeCase_ == 8) {
-          if (gopDurationBuilder_ == null) {
-            result.gopMode_ = gopMode_;
-          } else {
-            result.gopMode_ = gopDurationBuilder_.build();
-          }
-        }
-        result.vbvSizeBits_ = vbvSizeBits_;
-        result.vbvFullnessBits_ = vbvFullnessBits_;
-        result.entropyCoder_ = entropyCoder_;
-        result.bPyramid_ = bPyramid_;
-        result.bFrameCount_ = bFrameCount_;
-        result.aqStrength_ = aqStrength_;
-        result.profile_ = profile_;
-        result.tune_ = tune_;
-        result.gopModeCase_ = gopModeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.widthPixels_ = widthPixels_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.heightPixels_ = heightPixels_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.frameRate_ = frameRate_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bitrateBps_ = bitrateBps_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.allowOpenGop_ = allowOpenGop_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.vbvSizeBits_ = vbvSizeBits_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.vbvFullnessBits_ = vbvFullnessBits_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.entropyCoder_ = entropyCoder_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.bPyramid_ = bPyramid_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.bFrameCount_ = bFrameCount_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.aqStrength_ = aqStrength_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.profile_ = profile_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.tune_ = tune_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings result) {
+        result.gopModeCase_ = gopModeCase_;
+        result.gopMode_ = this.gopMode_;
+        if (gopModeCase_ == 8 && gopDurationBuilder_ != null) {
+          result.gopMode_ = gopDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1516,6 +1543,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getEntropyCoder().isEmpty()) {
           entropyCoder_ = other.entropyCoder_;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (other.getBPyramid() != false) {
@@ -1529,10 +1557,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getProfile().isEmpty()) {
           profile_ = other.profile_;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
         if (!other.getTune().isEmpty()) {
           tune_ = other.tune_;
+          bitField0_ |= 0x00004000;
           onChanged();
         }
         switch (other.getGopModeCase()) {
@@ -1580,31 +1610,31 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   widthPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   heightPixels_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 25:
                 {
                   frameRate_ = input.readDouble();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 25
               case 32:
                 {
                   bitrateBps_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 48:
                 {
                   allowOpenGop_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 48
               case 56:
@@ -1622,49 +1652,49 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               case 72:
                 {
                   vbvSizeBits_ = input.readInt32();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 72
               case 80:
                 {
                   vbvFullnessBits_ = input.readInt32();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 80
               case 90:
                 {
                   entropyCoder_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 90
               case 96:
                 {
                   bPyramid_ = input.readBool();
-
+                  bitField0_ |= 0x00000400;
                   break;
                 } // case 96
               case 104:
                 {
                   bFrameCount_ = input.readInt32();
-
+                  bitField0_ |= 0x00000800;
                   break;
                 } // case 104
               case 113:
                 {
                   aqStrength_ = input.readDouble();
-
+                  bitField0_ |= 0x00001000;
                   break;
                 } // case 113
               case 122:
                 {
                   profile_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00002000;
                   break;
                 } // case 122
               case 130:
                 {
                   tune_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00004000;
                   break;
                 } // case 130
               default:
@@ -1697,6 +1727,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private int widthPixels_;
       /**
@@ -1731,6 +1763,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setWidthPixels(int value) {
 
         widthPixels_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1747,7 +1780,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWidthPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         widthPixels_ = 0;
         onChanged();
         return this;
@@ -1786,6 +1819,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setHeightPixels(int value) {
 
         heightPixels_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1802,7 +1836,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHeightPixels() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         heightPixels_ = 0;
         onChanged();
         return this;
@@ -1851,6 +1885,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setFrameRate(double value) {
 
         frameRate_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1872,7 +1907,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFrameRate() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         frameRate_ = 0D;
         onChanged();
         return this;
@@ -1913,6 +1948,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBitrateBps(int value) {
 
         bitrateBps_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1930,7 +1966,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBitrateBps() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         bitrateBps_ = 0;
         onChanged();
         return this;
@@ -1969,6 +2005,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setAllowOpenGop(boolean value) {
 
         allowOpenGop_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1985,7 +2022,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAllowOpenGop() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         allowOpenGop_ = false;
         onChanged();
         return this;
@@ -2047,6 +2084,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setGopFrameCount(int value) {
+
         gopModeCase_ = 7;
         gopMode_ = value;
         onChanged();
@@ -2322,7 +2360,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         gopModeCase_ = 8;
         onChanged();
-        ;
         return gopDurationBuilder_;
       }
 
@@ -2359,6 +2396,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setVbvSizeBits(int value) {
 
         vbvSizeBits_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2375,7 +2413,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVbvSizeBits() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         vbvSizeBits_ = 0;
         onChanged();
         return this;
@@ -2416,6 +2454,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setVbvFullnessBits(int value) {
 
         vbvFullnessBits_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2433,7 +2472,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearVbvFullnessBits() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         vbvFullnessBits_ = 0;
         onChanged();
         return this;
@@ -2509,8 +2548,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         entropyCoder_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2529,8 +2568,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEntropyCoder() {
-
         entropyCoder_ = getDefaultInstance().getEntropyCoder();
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -2554,8 +2593,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         entropyCoder_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2593,6 +2632,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBPyramid(boolean value) {
 
         bPyramid_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2609,7 +2649,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBPyramid() {
-
+        bitField0_ = (bitField0_ & ~0x00000400);
         bPyramid_ = false;
         onChanged();
         return this;
@@ -2650,6 +2690,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setBFrameCount(int value) {
 
         bFrameCount_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2667,7 +2708,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBFrameCount() {
-
+        bitField0_ = (bitField0_ & ~0x00000800);
         bFrameCount_ = 0;
         onChanged();
         return this;
@@ -2708,6 +2749,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public Builder setAqStrength(double value) {
 
         aqStrength_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2725,7 +2767,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAqStrength() {
-
+        bitField0_ = (bitField0_ & ~0x00001000);
         aqStrength_ = 0D;
         onChanged();
         return this;
@@ -2819,8 +2861,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         profile_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2845,8 +2887,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearProfile() {
-
         profile_ = getDefaultInstance().getProfile();
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
@@ -2876,8 +2918,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         profile_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2955,8 +2997,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         tune_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2976,8 +3018,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTune() {
-
         tune_ = getDefaultInstance().getTune();
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -3002,8 +3044,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         tune_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -3385,6 +3427,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (h264Builder_ != null) {
         h264Builder_.clear();
       }
@@ -3417,16 +3460,24 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.VideoStream buildPartial() {
       com.google.cloud.video.livestream.v1.VideoStream result =
           new com.google.cloud.video.livestream.v1.VideoStream(this);
-      if (codecSettingsCase_ == 20) {
-        if (h264Builder_ == null) {
-          result.codecSettings_ = codecSettings_;
-        } else {
-          result.codecSettings_ = h264Builder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.codecSettingsCase_ = codecSettingsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.VideoStream result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.video.livestream.v1.VideoStream result) {
+      result.codecSettingsCase_ = codecSettingsCase_;
+      result.codecSettings_ = this.codecSettings_;
+      if (codecSettingsCase_ == 20 && h264Builder_ != null) {
+        result.codecSettings_ = h264Builder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3548,6 +3599,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings,
@@ -3770,7 +3823,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       codecSettingsCase_ = 20;
       onChanged();
-      ;
       return h264Builder_;
     }
 

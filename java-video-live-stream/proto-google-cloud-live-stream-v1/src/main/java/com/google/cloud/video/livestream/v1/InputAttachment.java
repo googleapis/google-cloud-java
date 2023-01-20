@@ -178,6 +178,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int INPUT_KEYS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList inputKeys_;
     /**
      *
@@ -453,6 +455,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         inputKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -485,14 +488,26 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       public com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover buildPartial() {
         com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover result =
             new com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           inputKeys_ = inputKeys_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.inputKeys_ = inputKeys_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -855,7 +870,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -904,7 +921,9 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INPUT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object input_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object input_ = "";
   /**
    *
    *
@@ -1008,7 +1027,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailoverOrBuilder
       getAutomaticFailoverOrBuilder() {
-    return getAutomaticFailover();
+    return automaticFailover_ == null
+        ? com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover
+            .getDefaultInstance()
+        : automaticFailover_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1231,14 +1253,12 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       input_ = "";
-
-      if (automaticFailoverBuilder_ == null) {
-        automaticFailover_ = null;
-      } else {
-        automaticFailover_ = null;
+      automaticFailover_ = null;
+      if (automaticFailoverBuilder_ != null) {
+        automaticFailoverBuilder_.dispose();
         automaticFailoverBuilder_ = null;
       }
       return this;
@@ -1268,15 +1288,27 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.video.livestream.v1.InputAttachment buildPartial() {
       com.google.cloud.video.livestream.v1.InputAttachment result =
           new com.google.cloud.video.livestream.v1.InputAttachment(this);
-      result.key_ = key_;
-      result.input_ = input_;
-      if (automaticFailoverBuilder_ == null) {
-        result.automaticFailover_ = automaticFailover_;
-      } else {
-        result.automaticFailover_ = automaticFailoverBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.InputAttachment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.input_ = input_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.automaticFailover_ =
+            automaticFailoverBuilder_ == null
+                ? automaticFailover_
+                : automaticFailoverBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1327,10 +1359,12 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInput().isEmpty()) {
         input_ = other.input_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAutomaticFailover()) {
@@ -1365,20 +1399,20 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getAutomaticFailoverFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1397,6 +1431,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object key_ = "";
     /**
@@ -1459,8 +1495,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1476,8 +1512,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1498,8 +1534,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1568,8 +1604,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       input_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1586,8 +1622,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearInput() {
-
       input_ = getDefaultInstance().getInput();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1609,8 +1645,8 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       input_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1636,7 +1672,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      * @return Whether the automaticFailover field is set.
      */
     public boolean hasAutomaticFailover() {
-      return automaticFailoverBuilder_ != null || automaticFailover_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1680,11 +1716,11 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         automaticFailover_ = value;
-        onChanged();
       } else {
         automaticFailoverBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1703,11 +1739,11 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
             builderForValue) {
       if (automaticFailoverBuilder_ == null) {
         automaticFailover_ = builderForValue.build();
-        onChanged();
       } else {
         automaticFailoverBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1724,20 +1760,20 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
     public Builder mergeAutomaticFailover(
         com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover value) {
       if (automaticFailoverBuilder_ == null) {
-        if (automaticFailover_ != null) {
-          automaticFailover_ =
-              com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover.newBuilder(
-                      automaticFailover_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && automaticFailover_ != null
+            && automaticFailover_
+                != com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover
+                    .getDefaultInstance()) {
+          getAutomaticFailoverBuilder().mergeFrom(value);
         } else {
           automaticFailover_ = value;
         }
-        onChanged();
       } else {
         automaticFailoverBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1752,14 +1788,13 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearAutomaticFailover() {
-      if (automaticFailoverBuilder_ == null) {
-        automaticFailover_ = null;
-        onChanged();
-      } else {
-        automaticFailover_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      automaticFailover_ = null;
+      if (automaticFailoverBuilder_ != null) {
+        automaticFailoverBuilder_.dispose();
         automaticFailoverBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1775,7 +1810,7 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover.Builder
         getAutomaticFailoverBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAutomaticFailoverFieldBuilder().getBuilder();
     }

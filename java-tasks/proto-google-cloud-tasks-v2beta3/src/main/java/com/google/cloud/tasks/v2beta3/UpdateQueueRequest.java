@@ -123,7 +123,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta3.QueueOrBuilder getQueueOrBuilder() {
-    return getQueue();
+    return queue_ == null ? com.google.cloud.tasks.v2beta3.Queue.getDefaultInstance() : queue_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -172,7 +172,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,16 +391,15 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (queueBuilder_ == null) {
-        queue_ = null;
-      } else {
-        queue_ = null;
+      bitField0_ = 0;
+      queue_ = null;
+      if (queueBuilder_ != null) {
+        queueBuilder_.dispose();
         queueBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -430,18 +429,21 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.tasks.v2beta3.UpdateQueueRequest buildPartial() {
       com.google.cloud.tasks.v2beta3.UpdateQueueRequest result =
           new com.google.cloud.tasks.v2beta3.UpdateQueueRequest(this);
-      if (queueBuilder_ == null) {
-        result.queue_ = queue_;
-      } else {
-        result.queue_ = queueBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta3.UpdateQueueRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.queue_ = queueBuilder_ == null ? queue_ : queueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +527,13 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getQueueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +552,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.tasks.v2beta3.Queue queue_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -574,7 +578,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the queue field is set.
      */
     public boolean hasQueue() {
-      return queueBuilder_ != null || queue_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -619,11 +623,11 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         queue_ = value;
-        onChanged();
       } else {
         queueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -643,11 +647,11 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
     public Builder setQueue(com.google.cloud.tasks.v2beta3.Queue.Builder builderForValue) {
       if (queueBuilder_ == null) {
         queue_ = builderForValue.build();
-        onChanged();
       } else {
         queueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -666,19 +670,18 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeQueue(com.google.cloud.tasks.v2beta3.Queue value) {
       if (queueBuilder_ == null) {
-        if (queue_ != null) {
-          queue_ =
-              com.google.cloud.tasks.v2beta3.Queue.newBuilder(queue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && queue_ != null
+            && queue_ != com.google.cloud.tasks.v2beta3.Queue.getDefaultInstance()) {
+          getQueueBuilder().mergeFrom(value);
         } else {
           queue_ = value;
         }
-        onChanged();
       } else {
         queueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -696,14 +699,13 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearQueue() {
-      if (queueBuilder_ == null) {
-        queue_ = null;
-        onChanged();
-      } else {
-        queue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      queue_ = null;
+      if (queueBuilder_ != null) {
+        queueBuilder_.dispose();
         queueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -721,7 +723,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.tasks.v2beta3.Queue.Builder getQueueBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getQueueFieldBuilder().getBuilder();
     }
@@ -796,7 +798,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -835,11 +837,11 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -855,11 +857,11 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -874,17 +876,18 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -898,14 +901,13 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -919,7 +921,7 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

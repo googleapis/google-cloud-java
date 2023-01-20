@@ -68,7 +68,9 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
       return this;
     }
 
@@ -347,9 +349,18 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
     public com.google.api.servicemanagement.v1.DeleteServiceRequest buildPartial() {
       com.google.api.servicemanagement.v1.DeleteServiceRequest result =
           new com.google.api.servicemanagement.v1.DeleteServiceRequest(this);
-      result.serviceName_ = serviceName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicemanagement.v1.DeleteServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
     /**
@@ -518,8 +532,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,8 +551,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -561,8 +575,8 @@ public final class DeleteServiceRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

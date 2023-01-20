@@ -68,7 +68,9 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -161,7 +163,9 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.RequestMetadataOrBuilder getRequestMetadataOrBuilder() {
-    return getRequestMetadata();
+    return requestMetadata_ == null
+        ? com.google.cloud.video.stitcher.v1.RequestMetadata.getDefaultInstance()
+        : requestMetadata_;
   }
 
   public static final int RESPONSE_METADATA_FIELD_NUMBER = 3;
@@ -210,7 +214,9 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.ResponseMetadataOrBuilder
       getResponseMetadataOrBuilder() {
-    return getResponseMetadata();
+    return responseMetadata_ == null
+        ? com.google.cloud.video.stitcher.v1.ResponseMetadata.getDefaultInstance()
+        : responseMetadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -438,18 +444,16 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uri_ = "";
-
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-      } else {
-        requestMetadata_ = null;
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
-      if (responseMetadataBuilder_ == null) {
-        responseMetadata_ = null;
-      } else {
-        responseMetadata_ = null;
+      responseMetadata_ = null;
+      if (responseMetadataBuilder_ != null) {
+        responseMetadataBuilder_.dispose();
         responseMetadataBuilder_ = null;
       }
       return this;
@@ -479,19 +483,26 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.AdRequest buildPartial() {
       com.google.cloud.video.stitcher.v1.AdRequest result =
           new com.google.cloud.video.stitcher.v1.AdRequest(this);
-      result.uri_ = uri_;
-      if (requestMetadataBuilder_ == null) {
-        result.requestMetadata_ = requestMetadata_;
-      } else {
-        result.requestMetadata_ = requestMetadataBuilder_.build();
-      }
-      if (responseMetadataBuilder_ == null) {
-        result.responseMetadata_ = responseMetadata_;
-      } else {
-        result.responseMetadata_ = responseMetadataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.AdRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestMetadata_ =
+            requestMetadataBuilder_ == null ? requestMetadata_ : requestMetadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.responseMetadata_ =
+            responseMetadataBuilder_ == null ? responseMetadata_ : responseMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -541,6 +552,7 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.stitcher.v1.AdRequest.getDefaultInstance()) return this;
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRequestMetadata()) {
@@ -578,20 +590,20 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRequestMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getResponseMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -610,6 +622,8 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object uri_ = "";
     /**
@@ -672,8 +686,8 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,8 +703,8 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +725,8 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,7 +749,7 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the requestMetadata field is set.
      */
     public boolean hasRequestMetadata() {
-      return requestMetadataBuilder_ != null || requestMetadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -772,11 +786,11 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         requestMetadata_ = value;
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,11 +806,11 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.RequestMetadata.Builder builderForValue) {
       if (requestMetadataBuilder_ == null) {
         requestMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         requestMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -810,19 +824,19 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRequestMetadata(com.google.cloud.video.stitcher.v1.RequestMetadata value) {
       if (requestMetadataBuilder_ == null) {
-        if (requestMetadata_ != null) {
-          requestMetadata_ =
-              com.google.cloud.video.stitcher.v1.RequestMetadata.newBuilder(requestMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && requestMetadata_ != null
+            && requestMetadata_
+                != com.google.cloud.video.stitcher.v1.RequestMetadata.getDefaultInstance()) {
+          getRequestMetadataBuilder().mergeFrom(value);
         } else {
           requestMetadata_ = value;
         }
-        onChanged();
       } else {
         requestMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -835,14 +849,13 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.RequestMetadata request_metadata = 2;</code>
      */
     public Builder clearRequestMetadata() {
-      if (requestMetadataBuilder_ == null) {
-        requestMetadata_ = null;
-        onChanged();
-      } else {
-        requestMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      requestMetadata_ = null;
+      if (requestMetadataBuilder_ != null) {
+        requestMetadataBuilder_.dispose();
         requestMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -855,7 +868,7 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.RequestMetadata request_metadata = 2;</code>
      */
     public com.google.cloud.video.stitcher.v1.RequestMetadata.Builder getRequestMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
@@ -922,7 +935,7 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the responseMetadata field is set.
      */
     public boolean hasResponseMetadata() {
-      return responseMetadataBuilder_ != null || responseMetadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -959,11 +972,11 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         responseMetadata_ = value;
-        onChanged();
       } else {
         responseMetadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -979,11 +992,11 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.stitcher.v1.ResponseMetadata.Builder builderForValue) {
       if (responseMetadataBuilder_ == null) {
         responseMetadata_ = builderForValue.build();
-        onChanged();
       } else {
         responseMetadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -998,19 +1011,19 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeResponseMetadata(
         com.google.cloud.video.stitcher.v1.ResponseMetadata value) {
       if (responseMetadataBuilder_ == null) {
-        if (responseMetadata_ != null) {
-          responseMetadata_ =
-              com.google.cloud.video.stitcher.v1.ResponseMetadata.newBuilder(responseMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && responseMetadata_ != null
+            && responseMetadata_
+                != com.google.cloud.video.stitcher.v1.ResponseMetadata.getDefaultInstance()) {
+          getResponseMetadataBuilder().mergeFrom(value);
         } else {
           responseMetadata_ = value;
         }
-        onChanged();
       } else {
         responseMetadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1023,14 +1036,13 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.stitcher.v1.ResponseMetadata response_metadata = 3;</code>
      */
     public Builder clearResponseMetadata() {
-      if (responseMetadataBuilder_ == null) {
-        responseMetadata_ = null;
-        onChanged();
-      } else {
-        responseMetadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      responseMetadata_ = null;
+      if (responseMetadataBuilder_ != null) {
+        responseMetadataBuilder_.dispose();
         responseMetadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1044,7 +1056,7 @@ public final class AdRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.video.stitcher.v1.ResponseMetadata.Builder
         getResponseMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResponseMetadataFieldBuilder().getBuilder();
     }

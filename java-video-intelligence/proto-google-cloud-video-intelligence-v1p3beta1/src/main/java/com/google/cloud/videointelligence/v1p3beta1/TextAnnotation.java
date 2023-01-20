@@ -71,7 +71,9 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object text_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object text_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SEGMENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.TextSegment> segments_;
   /**
    *
@@ -401,15 +405,15 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       text_ = "";
-
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
       } else {
         segments_ = null;
         segmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -437,19 +441,32 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1p3beta1.TextAnnotation buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.TextAnnotation result =
           new com.google.cloud.videointelligence.v1p3beta1.TextAnnotation(this);
-      int from_bitField0_ = bitField0_;
-      result.text_ = text_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p3beta1.TextAnnotation result) {
       if (segmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.segments_ = segments_;
       } else {
         result.segments_ = segmentsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1p3beta1.TextAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.text_ = text_;
+      }
     }
 
     @java.lang.Override
@@ -500,13 +517,14 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (segmentsBuilder_ == null) {
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSegmentsIsMutable();
             segments_.addAll(other.segments_);
@@ -519,7 +537,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             segmentsBuilder_.dispose();
             segmentsBuilder_ = null;
             segments_ = other.segments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             segmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSegmentsFieldBuilder()
@@ -558,7 +576,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 text_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -655,8 +673,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -672,8 +690,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearText() {
-
       text_ = getDefaultInstance().getText();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -694,8 +712,8 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,11 +722,11 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSegmentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         segments_ =
             new java.util.ArrayList<com.google.cloud.videointelligence.v1p3beta1.TextSegment>(
                 segments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -930,7 +948,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSegments() {
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         segmentsBuilder_.clear();
@@ -1058,7 +1076,7 @@ public final class TextAnnotation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.videointelligence.v1p3beta1.TextSegment,
                 com.google.cloud.videointelligence.v1p3beta1.TextSegment.Builder,
                 com.google.cloud.videointelligence.v1p3beta1.TextSegmentOrBuilder>(
-                segments_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                segments_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         segments_ = null;
       }
       return segmentsBuilder_;

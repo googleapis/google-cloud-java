@@ -68,7 +68,9 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,9 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.VodSessionOrBuilder getVodSessionOrBuilder() {
-    return getVodSession();
+    return vodSession_ == null
+        ? com.google.cloud.video.stitcher.v1.VodSession.getDefaultInstance()
+        : vodSession_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +392,11 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (vodSessionBuilder_ == null) {
-        vodSession_ = null;
-      } else {
-        vodSession_ = null;
+      vodSession_ = null;
+      if (vodSessionBuilder_ != null) {
+        vodSessionBuilder_.dispose();
         vodSessionBuilder_ = null;
       }
       return this;
@@ -423,14 +426,21 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
     public com.google.cloud.video.stitcher.v1.CreateVodSessionRequest buildPartial() {
       com.google.cloud.video.stitcher.v1.CreateVodSessionRequest result =
           new com.google.cloud.video.stitcher.v1.CreateVodSessionRequest(this);
-      result.parent_ = parent_;
-      if (vodSessionBuilder_ == null) {
-        result.vodSession_ = vodSession_;
-      } else {
-        result.vodSession_ = vodSessionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.CreateVodSessionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vodSession_ = vodSessionBuilder_ == null ? vodSession_ : vodSessionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +491,7 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasVodSession()) {
@@ -515,13 +526,13 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getVodSessionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +551,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -611,8 +624,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +644,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +669,8 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,7 +695,7 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      * @return Whether the vodSession field is set.
      */
     public boolean hasVodSession() {
-      return vodSessionBuilder_ != null || vodSession_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -723,11 +736,11 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         vodSession_ = value;
-        onChanged();
       } else {
         vodSessionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,11 +758,11 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
         com.google.cloud.video.stitcher.v1.VodSession.Builder builderForValue) {
       if (vodSessionBuilder_ == null) {
         vodSession_ = builderForValue.build();
-        onChanged();
       } else {
         vodSessionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +778,18 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeVodSession(com.google.cloud.video.stitcher.v1.VodSession value) {
       if (vodSessionBuilder_ == null) {
-        if (vodSession_ != null) {
-          vodSession_ =
-              com.google.cloud.video.stitcher.v1.VodSession.newBuilder(vodSession_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && vodSession_ != null
+            && vodSession_ != com.google.cloud.video.stitcher.v1.VodSession.getDefaultInstance()) {
+          getVodSessionBuilder().mergeFrom(value);
         } else {
           vodSession_ = value;
         }
-        onChanged();
       } else {
         vodSessionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +804,13 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearVodSession() {
-      if (vodSessionBuilder_ == null) {
-        vodSession_ = null;
-        onChanged();
-      } else {
-        vodSession_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      vodSession_ = null;
+      if (vodSessionBuilder_ != null) {
+        vodSessionBuilder_.dispose();
         vodSessionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +825,7 @@ public final class CreateVodSessionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.video.stitcher.v1.VodSession.Builder getVodSessionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVodSessionFieldBuilder().getBuilder();
     }

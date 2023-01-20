@@ -68,7 +68,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PORT_FIELD_NUMBER = 2;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -339,10 +341,9 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipAddress_ = "";
-
       port_ = 0;
-
       return this;
     }
 
@@ -370,10 +371,21 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.tpu.v1.NetworkEndpoint buildPartial() {
       com.google.cloud.tpu.v1.NetworkEndpoint result =
           new com.google.cloud.tpu.v1.NetworkEndpoint(this);
-      result.ipAddress_ = ipAddress_;
-      result.port_ = port_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v1.NetworkEndpoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+      }
     }
 
     @java.lang.Override
@@ -423,6 +435,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.tpu.v1.NetworkEndpoint.getDefaultInstance()) return this;
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -457,13 +470,13 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -482,6 +495,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
     /**
@@ -544,8 +559,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -561,8 +576,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -583,8 +598,8 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,6 +635,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -635,7 +651,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;

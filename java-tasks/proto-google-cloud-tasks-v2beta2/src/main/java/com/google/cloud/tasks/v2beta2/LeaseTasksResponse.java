@@ -68,6 +68,8 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TASKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tasks.v2beta2.Task> tasks_;
   /**
    *
@@ -335,6 +337,7 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tasksBuilder_ == null) {
         tasks_ = java.util.Collections.emptyList();
       } else {
@@ -369,7 +372,16 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.tasks.v2beta2.LeaseTasksResponse buildPartial() {
       com.google.cloud.tasks.v2beta2.LeaseTasksResponse result =
           new com.google.cloud.tasks.v2beta2.LeaseTasksResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.tasks.v2beta2.LeaseTasksResponse result) {
       if (tasksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tasks_ = java.util.Collections.unmodifiableList(tasks_);
@@ -379,8 +391,10 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.tasks_ = tasksBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.LeaseTasksResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

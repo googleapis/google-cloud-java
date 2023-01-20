@@ -69,7 +69,9 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -166,11 +168,15 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.api.servicecontrol.v1.QuotaOperationOrBuilder getAllocateOperationOrBuilder() {
-    return getAllocateOperation();
+    return allocateOperation_ == null
+        ? com.google.api.servicecontrol.v1.QuotaOperation.getDefaultInstance()
+        : allocateOperation_;
   }
 
   public static final int SERVICE_CONFIG_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object serviceConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceConfigId_ = "";
   /**
    *
    *
@@ -443,16 +449,14 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
-      if (allocateOperationBuilder_ == null) {
-        allocateOperation_ = null;
-      } else {
-        allocateOperation_ = null;
+      allocateOperation_ = null;
+      if (allocateOperationBuilder_ != null) {
+        allocateOperationBuilder_.dispose();
         allocateOperationBuilder_ = null;
       }
       serviceConfigId_ = "";
-
       return this;
     }
 
@@ -480,15 +484,27 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
     public com.google.api.servicecontrol.v1.AllocateQuotaRequest buildPartial() {
       com.google.api.servicecontrol.v1.AllocateQuotaRequest result =
           new com.google.api.servicecontrol.v1.AllocateQuotaRequest(this);
-      result.serviceName_ = serviceName_;
-      if (allocateOperationBuilder_ == null) {
-        result.allocateOperation_ = allocateOperation_;
-      } else {
-        result.allocateOperation_ = allocateOperationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.serviceConfigId_ = serviceConfigId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.AllocateQuotaRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.allocateOperation_ =
+            allocateOperationBuilder_ == null
+                ? allocateOperation_
+                : allocateOperationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceConfigId_ = serviceConfigId_;
+      }
     }
 
     @java.lang.Override
@@ -539,6 +555,7 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAllocateOperation()) {
@@ -546,6 +563,7 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getServiceConfigId().isEmpty()) {
         serviceConfigId_ = other.serviceConfigId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -577,20 +595,20 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getAllocateOperationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 serviceConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -609,6 +627,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
     /**
@@ -677,8 +697,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +716,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -720,8 +740,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -744,7 +764,7 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the allocateOperation field is set.
      */
     public boolean hasAllocateOperation() {
-      return allocateOperationBuilder_ != null || allocateOperation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -781,11 +801,11 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         allocateOperation_ = value;
-        onChanged();
       } else {
         allocateOperationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,11 +821,11 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         com.google.api.servicecontrol.v1.QuotaOperation.Builder builderForValue) {
       if (allocateOperationBuilder_ == null) {
         allocateOperation_ = builderForValue.build();
-        onChanged();
       } else {
         allocateOperationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,19 +839,19 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeAllocateOperation(com.google.api.servicecontrol.v1.QuotaOperation value) {
       if (allocateOperationBuilder_ == null) {
-        if (allocateOperation_ != null) {
-          allocateOperation_ =
-              com.google.api.servicecontrol.v1.QuotaOperation.newBuilder(allocateOperation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && allocateOperation_ != null
+            && allocateOperation_
+                != com.google.api.servicecontrol.v1.QuotaOperation.getDefaultInstance()) {
+          getAllocateOperationBuilder().mergeFrom(value);
         } else {
           allocateOperation_ = value;
         }
-        onChanged();
       } else {
         allocateOperationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,14 +864,13 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.api.servicecontrol.v1.QuotaOperation allocate_operation = 2;</code>
      */
     public Builder clearAllocateOperation() {
-      if (allocateOperationBuilder_ == null) {
-        allocateOperation_ = null;
-        onChanged();
-      } else {
-        allocateOperation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      allocateOperation_ = null;
+      if (allocateOperationBuilder_ != null) {
+        allocateOperationBuilder_.dispose();
         allocateOperationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -864,7 +883,7 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.api.servicecontrol.v1.QuotaOperation allocate_operation = 2;</code>
      */
     public com.google.api.servicecontrol.v1.QuotaOperation.Builder getAllocateOperationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAllocateOperationFieldBuilder().getBuilder();
     }
@@ -980,8 +999,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -999,8 +1018,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearServiceConfigId() {
-
       serviceConfigId_ = getDefaultInstance().getServiceConfigId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1023,8 +1042,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

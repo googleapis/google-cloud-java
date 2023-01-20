@@ -82,7 +82,9 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -137,7 +139,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int POLICY_VALUE_FIELD_NUMBER = 2;
-  private long policyValue_;
+  private long policyValue_ = 0L;
   /**
    *
    *
@@ -168,6 +170,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> dimensions_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetDimensions() {
@@ -249,8 +252,10 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getDimensionsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getDimensionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -287,7 +292,9 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int METRIC_FIELD_NUMBER = 4;
-  private volatile java.lang.Object metric_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    *
    *
@@ -340,7 +347,9 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int UNIT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object unit_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object unit_ = "";
   /**
    *
    *
@@ -397,7 +406,9 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONTAINER_FIELD_NUMBER = 6;
-  private volatile java.lang.Object container_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object container_ = "";
   /**
    *
    *
@@ -717,17 +728,13 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       policyValue_ = 0L;
-
       internalGetMutableDimensions().clear();
       metric_ = "";
-
       unit_ = "";
-
       container_ = "";
-
       return this;
     }
 
@@ -755,16 +762,34 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
     public com.google.api.serviceusage.v1beta1.AdminQuotaPolicy buildPartial() {
       com.google.api.serviceusage.v1beta1.AdminQuotaPolicy result =
           new com.google.api.serviceusage.v1beta1.AdminQuotaPolicy(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.policyValue_ = policyValue_;
-      result.dimensions_ = internalGetDimensions();
-      result.dimensions_.makeImmutable();
-      result.metric_ = metric_;
-      result.unit_ = unit_;
-      result.container_ = container_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.serviceusage.v1beta1.AdminQuotaPolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.policyValue_ = policyValue_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dimensions_ = internalGetDimensions();
+        result.dimensions_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metric_ = metric_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.unit_ = unit_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.container_ = container_;
+      }
     }
 
     @java.lang.Override
@@ -815,22 +840,27 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPolicyValue() != 0L) {
         setPolicyValue(other.getPolicyValue());
       }
       internalGetMutableDimensions().mergeFrom(other.internalGetDimensions());
+      bitField0_ |= 0x00000004;
       if (!other.getMetric().isEmpty()) {
         metric_ = other.metric_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getUnit().isEmpty()) {
         unit_ = other.unit_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getContainer().isEmpty()) {
         container_ = other.container_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -862,13 +892,13 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 policyValue_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -880,24 +910,25 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
                 internalGetMutableDimensions()
                     .getMutableMap()
                     .put(dimensions__.getKey(), dimensions__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 metric_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 unit_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 container_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -989,8 +1020,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,8 +1040,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1034,8 +1065,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1073,6 +1104,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
     public Builder setPolicyValue(long value) {
 
       policyValue_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1089,7 +1121,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPolicyValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       policyValue_ = 0L;
       onChanged();
       return this;
@@ -1108,8 +1140,6 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableDimensions() {
-      onChanged();
-      ;
       if (dimensions_ == null) {
         dimensions_ =
             com.google.protobuf.MapField.newMapField(DimensionsDefaultEntryHolder.defaultEntry);
@@ -1117,6 +1147,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
       if (!dimensions_.isMutable()) {
         dimensions_ = dimensions_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return dimensions_;
     }
 
@@ -1192,8 +1224,10 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; dimensions = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getDimensionsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getDimensionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1230,6 +1264,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearDimensions() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableDimensions().getMutableMap().clear();
       return this;
     }
@@ -1260,6 +1295,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDimensions() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableDimensions().getMutableMap();
     }
     /**
@@ -1286,8 +1322,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableDimensions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1309,6 +1345,7 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllDimensions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDimensions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1379,8 +1416,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       metric_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1398,8 +1435,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1422,8 +1459,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       metric_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1501,8 +1538,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       unit_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1522,8 +1559,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUnit() {
-
       unit_ = getDefaultInstance().getUnit();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1548,8 +1585,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       unit_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1618,8 +1655,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       container_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1636,8 +1673,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearContainer() {
-
       container_ = getDefaultInstance().getContainer();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1659,8 +1696,8 @@ public final class AdminQuotaPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       container_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

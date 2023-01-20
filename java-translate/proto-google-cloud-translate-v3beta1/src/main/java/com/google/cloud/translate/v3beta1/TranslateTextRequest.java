@@ -84,6 +84,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CONTENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList contents_;
   /**
    *
@@ -157,7 +159,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -208,7 +212,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object sourceLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceLanguageCode_ = "";
   /**
    *
    *
@@ -265,7 +271,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object targetLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetLanguageCode_ = "";
   /**
    *
    *
@@ -316,7 +324,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -387,7 +397,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MODEL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -511,7 +523,9 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfigOrBuilder
       getGlossaryConfigOrBuilder() {
-    return getGlossaryConfig();
+    return glossaryConfig_ == null
+        ? com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig.getDefaultInstance()
+        : glossaryConfig_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 10;
@@ -527,6 +541,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -599,7 +614,10 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -933,22 +951,17 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       contents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       mimeType_ = "";
-
       sourceLanguageCode_ = "";
-
       targetLanguageCode_ = "";
-
       parent_ = "";
-
       model_ = "";
-
-      if (glossaryConfigBuilder_ == null) {
-        glossaryConfig_ = null;
-      } else {
-        glossaryConfig_ = null;
+      glossaryConfig_ = null;
+      if (glossaryConfigBuilder_ != null) {
+        glossaryConfigBuilder_.dispose();
         glossaryConfigBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -979,26 +992,48 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.translate.v3beta1.TranslateTextRequest buildPartial() {
       com.google.cloud.translate.v3beta1.TranslateTextRequest result =
           new com.google.cloud.translate.v3beta1.TranslateTextRequest(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.translate.v3beta1.TranslateTextRequest result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         contents_ = contents_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.contents_ = contents_;
-      result.mimeType_ = mimeType_;
-      result.sourceLanguageCode_ = sourceLanguageCode_;
-      result.targetLanguageCode_ = targetLanguageCode_;
-      result.parent_ = parent_;
-      result.model_ = model_;
-      if (glossaryConfigBuilder_ == null) {
-        result.glossaryConfig_ = glossaryConfig_;
-      } else {
-        result.glossaryConfig_ = glossaryConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3beta1.TranslateTextRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mimeType_ = mimeType_;
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceLanguageCode_ = sourceLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetLanguageCode_ = targetLanguageCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.glossaryConfig_ =
+            glossaryConfigBuilder_ == null ? glossaryConfig_ : glossaryConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1059,28 +1094,34 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSourceLanguageCode().isEmpty()) {
         sourceLanguageCode_ = other.sourceLanguageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTargetLanguageCode().isEmpty()) {
         targetLanguageCode_ = other.targetLanguageCode_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasGlossaryConfig()) {
         mergeGlossaryConfig(other.getGlossaryConfig());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1117,37 +1158,37 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 sourceLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 targetLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getGlossaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 82:
@@ -1159,6 +1200,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             default:
@@ -1439,8 +1481,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1457,8 +1499,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1480,8 +1522,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1559,8 +1601,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1580,8 +1622,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSourceLanguageCode() {
-
       sourceLanguageCode_ = getDefaultInstance().getSourceLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1606,8 +1648,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1676,8 +1718,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1694,8 +1736,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTargetLanguageCode() {
-
       targetLanguageCode_ = getDefaultInstance().getTargetLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1717,8 +1759,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetLanguageCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1817,8 +1859,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1845,8 +1887,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1878,8 +1920,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1972,8 +2014,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1998,8 +2040,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2029,8 +2071,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2057,7 +2099,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the glossaryConfig field is set.
      */
     public boolean hasGlossaryConfig() {
-      return glossaryConfigBuilder_ != null || glossaryConfig_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2103,11 +2145,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         glossaryConfig_ = value;
-        onChanged();
       } else {
         glossaryConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2127,11 +2169,11 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig.Builder builderForValue) {
       if (glossaryConfigBuilder_ == null) {
         glossaryConfig_ = builderForValue.build();
-        onChanged();
       } else {
         glossaryConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2150,20 +2192,20 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeGlossaryConfig(
         com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig value) {
       if (glossaryConfigBuilder_ == null) {
-        if (glossaryConfig_ != null) {
-          glossaryConfig_ =
-              com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig.newBuilder(
-                      glossaryConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && glossaryConfig_ != null
+            && glossaryConfig_
+                != com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig
+                    .getDefaultInstance()) {
+          getGlossaryConfigBuilder().mergeFrom(value);
         } else {
           glossaryConfig_ = value;
         }
-        onChanged();
       } else {
         glossaryConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2180,14 +2222,13 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearGlossaryConfig() {
-      if (glossaryConfigBuilder_ == null) {
-        glossaryConfig_ = null;
-        onChanged();
-      } else {
-        glossaryConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      glossaryConfig_ = null;
+      if (glossaryConfigBuilder_ != null) {
+        glossaryConfigBuilder_.dispose();
         glossaryConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2205,7 +2246,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig.Builder
         getGlossaryConfigBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getGlossaryConfigFieldBuilder().getBuilder();
     }
@@ -2273,14 +2314,14 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -2347,8 +2388,10 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2382,6 +2425,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2409,6 +2453,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2432,8 +2477,8 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2452,6 +2497,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

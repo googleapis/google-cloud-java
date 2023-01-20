@@ -205,7 +205,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -258,7 +260,9 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
   }
 
   public static final int CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object configId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configId_ = "";
   /**
    *
    *
@@ -311,7 +315,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
   }
 
   public static final int VIEW_FIELD_NUMBER = 3;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -342,9 +346,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView getView() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView result =
-        com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.valueOf(view_);
+        com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.forNumber(view_);
     return result == null
         ? com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.UNRECOGNIZED
         : result;
@@ -570,12 +573,10 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
       configId_ = "";
-
       view_ = 0;
-
       return this;
     }
 
@@ -603,11 +604,24 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
     public com.google.api.servicemanagement.v1.GetServiceConfigRequest buildPartial() {
       com.google.api.servicemanagement.v1.GetServiceConfigRequest result =
           new com.google.api.servicemanagement.v1.GetServiceConfigRequest(this);
-      result.serviceName_ = serviceName_;
-      result.configId_ = configId_;
-      result.view_ = view_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.servicemanagement.v1.GetServiceConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.configId_ = configId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -658,10 +672,12 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getConfigId().isEmpty()) {
         configId_ = other.configId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -696,19 +712,19 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 configId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -727,6 +743,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceName_ = "";
     /**
@@ -795,8 +813,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -814,8 +832,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -838,8 +856,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,8 +929,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -930,8 +948,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
-
       configId_ = getDefaultInstance().getConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -954,8 +972,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       configId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -991,8 +1009,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1010,9 +1028,8 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView getView() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView result =
-          com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.valueOf(view_);
+          com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.forNumber(view_);
       return result == null
           ? com.google.api.servicemanagement.v1.GetServiceConfigRequest.ConfigView.UNRECOGNIZED
           : result;
@@ -1035,7 +1052,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -1053,7 +1070,7 @@ public final class GetServiceConfigRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       view_ = 0;
       onChanged();
       return this;

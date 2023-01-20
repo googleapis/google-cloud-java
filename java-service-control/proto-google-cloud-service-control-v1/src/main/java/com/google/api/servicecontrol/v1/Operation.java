@@ -226,7 +226,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object operationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationId_ = "";
   /**
    *
    *
@@ -289,7 +291,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATION_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object operationName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationName_ = "";
   /**
    *
    *
@@ -338,7 +342,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONSUMER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object consumerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumerId_ = "";
   /**
    *
    *
@@ -449,7 +455,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 5;
@@ -507,7 +513,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 6;
@@ -523,6 +529,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -622,7 +629,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -665,6 +675,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METRIC_VALUE_SETS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> metricValueSets_;
   /**
    *
@@ -775,6 +787,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOG_ENTRIES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.LogEntry> logEntries_;
   /**
    *
@@ -844,7 +858,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORTANCE_FIELD_NUMBER = 11;
-  private int importance_;
+  private int importance_ = 0;
   /**
    *
    *
@@ -873,15 +887,16 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicecontrol.v1.Operation.Importance getImportance() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicecontrol.v1.Operation.Importance result =
-        com.google.api.servicecontrol.v1.Operation.Importance.valueOf(importance_);
+        com.google.api.servicecontrol.v1.Operation.Importance.forNumber(importance_);
     return result == null
         ? com.google.api.servicecontrol.v1.Operation.Importance.UNRECOGNIZED
         : result;
   }
 
   public static final int EXTENSIONS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Any> extensions_;
   /**
    *
@@ -1271,22 +1286,18 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationId_ = "";
-
       operationName_ = "";
-
       consumerId_ = "";
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -1296,23 +1307,22 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         metricValueSets_ = null;
         metricValueSetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (logEntriesBuilder_ == null) {
         logEntries_ = java.util.Collections.emptyList();
       } else {
         logEntries_ = null;
         logEntriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       importance_ = 0;
-
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
       } else {
         extensions_ = null;
         extensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1340,52 +1350,68 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.Operation buildPartial() {
       com.google.api.servicecontrol.v1.Operation result =
           new com.google.api.servicecontrol.v1.Operation(this);
-      int from_bitField0_ = bitField0_;
-      result.operationId_ = operationId_;
-      result.operationName_ = operationName_;
-      result.consumerId_ = consumerId_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.api.servicecontrol.v1.Operation result) {
       if (metricValueSetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           metricValueSets_ = java.util.Collections.unmodifiableList(metricValueSets_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.metricValueSets_ = metricValueSets_;
       } else {
         result.metricValueSets_ = metricValueSetsBuilder_.build();
       }
       if (logEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           logEntries_ = java.util.Collections.unmodifiableList(logEntries_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.logEntries_ = logEntries_;
       } else {
         result.logEntries_ = logEntriesBuilder_.build();
       }
-      result.importance_ = importance_;
       if (extensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           extensions_ = java.util.Collections.unmodifiableList(extensions_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.extensions_ = extensions_;
       } else {
         result.extensions_ = extensionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.Operation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationId_ = operationId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.operationName_ = operationName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consumerId_ = consumerId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.importance_ = importance_;
+      }
     }
 
     @java.lang.Override
@@ -1435,14 +1461,17 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.servicecontrol.v1.Operation.getDefaultInstance()) return this;
       if (!other.getOperationId().isEmpty()) {
         operationId_ = other.operationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOperationName().isEmpty()) {
         operationName_ = other.operationName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getConsumerId().isEmpty()) {
         consumerId_ = other.consumerId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -1452,11 +1481,12 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         mergeEndTime(other.getEndTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000020;
       if (metricValueSetsBuilder_ == null) {
         if (!other.metricValueSets_.isEmpty()) {
           if (metricValueSets_.isEmpty()) {
             metricValueSets_ = other.metricValueSets_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureMetricValueSetsIsMutable();
             metricValueSets_.addAll(other.metricValueSets_);
@@ -1469,7 +1499,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             metricValueSetsBuilder_.dispose();
             metricValueSetsBuilder_ = null;
             metricValueSets_ = other.metricValueSets_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
             metricValueSetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricValueSetsFieldBuilder()
@@ -1483,7 +1513,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         if (!other.logEntries_.isEmpty()) {
           if (logEntries_.isEmpty()) {
             logEntries_ = other.logEntries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureLogEntriesIsMutable();
             logEntries_.addAll(other.logEntries_);
@@ -1496,7 +1526,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             logEntriesBuilder_.dispose();
             logEntriesBuilder_ = null;
             logEntries_ = other.logEntries_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000080);
             logEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLogEntriesFieldBuilder()
@@ -1513,7 +1543,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         if (!other.extensions_.isEmpty()) {
           if (extensions_.isEmpty()) {
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureExtensionsIsMutable();
             extensions_.addAll(other.extensions_);
@@ -1526,7 +1556,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             extensionsBuilder_.dispose();
             extensionsBuilder_ = null;
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000200);
             extensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExtensionsFieldBuilder()
@@ -1565,31 +1595,31 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 operationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 operationName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 consumerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1601,6 +1631,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1633,7 +1664,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
             case 88:
               {
                 importance_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 88
             case 130:
@@ -1749,8 +1780,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1773,8 +1804,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperationId() {
-
       operationId_ = getDefaultInstance().getOperationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1802,8 +1833,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1869,8 +1900,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1886,8 +1917,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperationName() {
-
       operationName_ = getDefaultInstance().getOperationName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1908,8 +1939,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2005,8 +2036,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       consumerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2032,8 +2063,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConsumerId() {
-
       consumerId_ = getDefaultInstance().getConsumerId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2064,8 +2095,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       consumerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2088,7 +2119,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2123,11 +2154,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2142,11 +2173,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2160,17 +2191,18 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2183,14 +2215,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2203,7 +2234,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -2271,7 +2302,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2314,11 +2345,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2337,11 +2368,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2359,17 +2390,18 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2386,14 +2418,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2410,7 +2441,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -2475,14 +2506,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return labels_;
     }
 
@@ -2576,8 +2607,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2620,6 +2653,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2656,6 +2690,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2688,8 +2723,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2717,6 +2752,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2724,11 +2760,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMetricValueSetsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         metricValueSets_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v1.MetricValueSet>(
                 metricValueSets_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -3035,7 +3071,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMetricValueSets() {
       if (metricValueSetsBuilder_ == null) {
         metricValueSets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         metricValueSetsBuilder_.clear();
@@ -3217,7 +3253,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.servicecontrol.v1.MetricValueSet.Builder,
                 com.google.api.servicecontrol.v1.MetricValueSetOrBuilder>(
                 metricValueSets_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         metricValueSets_ = null;
@@ -3229,10 +3265,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLogEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         logEntries_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v1.LogEntry>(logEntries_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3448,7 +3484,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLogEntries() {
       if (logEntriesBuilder_ == null) {
         logEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         logEntriesBuilder_.clear();
@@ -3570,7 +3606,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.servicecontrol.v1.LogEntry,
                 com.google.api.servicecontrol.v1.LogEntry.Builder,
                 com.google.api.servicecontrol.v1.LogEntryOrBuilder>(
-                logEntries_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                logEntries_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         logEntries_ = null;
       }
       return logEntriesBuilder_;
@@ -3605,8 +3641,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setImportanceValue(int value) {
-
       importance_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3623,9 +3659,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicecontrol.v1.Operation.Importance getImportance() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicecontrol.v1.Operation.Importance result =
-          com.google.api.servicecontrol.v1.Operation.Importance.valueOf(importance_);
+          com.google.api.servicecontrol.v1.Operation.Importance.forNumber(importance_);
       return result == null
           ? com.google.api.servicecontrol.v1.Operation.Importance.UNRECOGNIZED
           : result;
@@ -3646,7 +3681,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       importance_ = value.getNumber();
       onChanged();
       return this;
@@ -3663,7 +3698,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportance() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       importance_ = 0;
       onChanged();
       return this;
@@ -3672,9 +3707,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.protobuf.Any> extensions_ = java.util.Collections.emptyList();
 
     private void ensureExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         extensions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensions_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3886,7 +3921,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExtensions() {
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         extensionsBuilder_.clear();
@@ -4005,7 +4040,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Any,
                 com.google.protobuf.Any.Builder,
                 com.google.protobuf.AnyOrBuilder>(
-                extensions_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                extensions_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         extensions_ = null;
       }
       return extensionsBuilder_;

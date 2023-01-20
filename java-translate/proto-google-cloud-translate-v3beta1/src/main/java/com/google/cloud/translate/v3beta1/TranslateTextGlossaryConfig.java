@@ -69,7 +69,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
   }
 
   public static final int GLOSSARY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object glossary_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object glossary_ = "";
   /**
    *
    *
@@ -120,7 +122,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
   }
 
   public static final int IGNORE_CASE_FIELD_NUMBER = 2;
-  private boolean ignoreCase_;
+  private boolean ignoreCase_ = false;
   /**
    *
    *
@@ -346,10 +348,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       glossary_ = "";
-
       ignoreCase_ = false;
-
       return this;
     }
 
@@ -378,10 +379,22 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     public com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig buildPartial() {
       com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig result =
           new com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig(this);
-      result.glossary_ = glossary_;
-      result.ignoreCase_ = ignoreCase_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.translate.v3beta1.TranslateTextGlossaryConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.glossary_ = glossary_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ignoreCase_ = ignoreCase_;
+      }
     }
 
     @java.lang.Override
@@ -433,6 +446,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
         return this;
       if (!other.getGlossary().isEmpty()) {
         glossary_ = other.glossary_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIgnoreCase() != false) {
@@ -467,13 +481,13 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
             case 10:
               {
                 glossary_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 ignoreCase_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -492,6 +506,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object glossary_ = "";
     /**
@@ -557,8 +573,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       glossary_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -575,8 +591,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearGlossary() {
-
       glossary_ = getDefaultInstance().getGlossary();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -598,8 +614,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       glossary_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -637,6 +653,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     public Builder setIgnoreCase(boolean value) {
 
       ignoreCase_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -653,7 +670,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearIgnoreCase() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ignoreCase_ = false;
       onChanged();
       return this;

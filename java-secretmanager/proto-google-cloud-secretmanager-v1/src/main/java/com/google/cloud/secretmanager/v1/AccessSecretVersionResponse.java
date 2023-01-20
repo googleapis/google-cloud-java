@@ -68,7 +68,9 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.secretmanager.v1.SecretPayloadOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null
+        ? com.google.cloud.secretmanager.v1.SecretPayload.getDefaultInstance()
+        : payload_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,12 +382,11 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
       return this;
@@ -414,14 +417,22 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
     public com.google.cloud.secretmanager.v1.AccessSecretVersionResponse buildPartial() {
       com.google.cloud.secretmanager.v1.AccessSecretVersionResponse result =
           new com.google.cloud.secretmanager.v1.AccessSecretVersionResponse(this);
-      result.name_ = name_;
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.secretmanager.v1.AccessSecretVersionResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -473,6 +484,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPayload()) {
@@ -507,13 +519,13 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -532,6 +544,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -597,8 +611,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -615,8 +629,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -638,8 +652,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -662,7 +676,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -699,11 +713,11 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -719,11 +733,11 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         com.google.cloud.secretmanager.v1.SecretPayload.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -737,19 +751,18 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      */
     public Builder mergePayload(com.google.cloud.secretmanager.v1.SecretPayload value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ =
-              com.google.cloud.secretmanager.v1.SecretPayload.newBuilder(payload_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && payload_ != null
+            && payload_ != com.google.cloud.secretmanager.v1.SecretPayload.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -762,14 +775,13 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.secretmanager.v1.SecretPayload payload = 2;</code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -782,7 +794,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      * <code>.google.cloud.secretmanager.v1.SecretPayload payload = 2;</code>
      */
     public com.google.cloud.secretmanager.v1.SecretPayload.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }

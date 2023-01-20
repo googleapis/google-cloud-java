@@ -95,6 +95,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata>
       transcriptionMetadata_;
@@ -167,9 +168,10 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata
+  public /* nullable */ com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata
       getTranscriptionMetadataOrDefault(
           java.lang.String key,
+          /* nullable */
           com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
@@ -436,6 +438,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableTranscriptionMetadata().clear();
       return this;
     }
@@ -464,11 +467,19 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     public com.google.cloud.speech.v2.BatchRecognizeMetadata buildPartial() {
       com.google.cloud.speech.v2.BatchRecognizeMetadata result =
           new com.google.cloud.speech.v2.BatchRecognizeMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.transcriptionMetadata_ = internalGetTranscriptionMetadata();
-      result.transcriptionMetadata_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.BatchRecognizeMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.transcriptionMetadata_ = internalGetTranscriptionMetadata();
+        result.transcriptionMetadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -518,6 +529,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.speech.v2.BatchRecognizeMetadata.getDefaultInstance())
         return this;
       internalGetMutableTranscriptionMetadata().mergeFrom(other.internalGetTranscriptionMetadata());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -556,6 +568,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
                 internalGetMutableTranscriptionMetadata()
                     .getMutableMap()
                     .put(transcriptionMetadata__.getKey(), transcriptionMetadata__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -594,8 +607,6 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata>
         internalGetMutableTranscriptionMetadata() {
-      onChanged();
-      ;
       if (transcriptionMetadata_ == null) {
         transcriptionMetadata_ =
             com.google.protobuf.MapField.newMapField(
@@ -604,6 +615,8 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       if (!transcriptionMetadata_.isMutable()) {
         transcriptionMetadata_ = transcriptionMetadata_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return transcriptionMetadata_;
     }
 
@@ -665,9 +678,10 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata
+    public /* nullable */ com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata
         getTranscriptionMetadataOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -704,6 +718,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     }
 
     public Builder clearTranscriptionMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableTranscriptionMetadata().getMutableMap().clear();
       return this;
     }
@@ -730,6 +745,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
     public java.util.Map<
             java.lang.String, com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata>
         getMutableTranscriptionMetadata() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableTranscriptionMetadata().getMutableMap();
     }
     /**
@@ -752,8 +768,8 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableTranscriptionMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -772,6 +788,7 @@ public final class BatchRecognizeMetadata extends com.google.protobuf.GeneratedM
                 java.lang.String, com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata>
             values) {
       internalGetMutableTranscriptionMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

@@ -116,7 +116,9 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.servicedirectory.v1beta1.NamespaceOrBuilder getNamespaceOrBuilder() {
-    return getNamespace();
+    return namespace_ == null
+        ? com.google.cloud.servicedirectory.v1beta1.Namespace.getDefaultInstance()
+        : namespace_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (namespaceBuilder_ == null) {
-        namespace_ = null;
-      } else {
-        namespace_ = null;
+      bitField0_ = 0;
+      namespace_ = null;
+      if (namespaceBuilder_ != null) {
+        namespaceBuilder_.dispose();
         namespaceBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -425,18 +426,22 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest buildPartial() {
       com.google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest result =
           new com.google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest(this);
-      if (namespaceBuilder_ == null) {
-        result.namespace_ = namespace_;
-      } else {
-        result.namespace_ = namespaceBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.servicedirectory.v1beta1.UpdateNamespaceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.namespace_ = namespaceBuilder_ == null ? namespace_ : namespaceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -522,13 +527,13 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getNamespaceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +552,8 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.servicedirectory.v1beta1.Namespace namespace_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -568,7 +575,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the namespace field is set.
      */
     public boolean hasNamespace() {
-      return namespaceBuilder_ != null || namespace_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -609,11 +616,11 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         namespace_ = value;
-        onChanged();
       } else {
         namespaceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -631,11 +638,11 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
         com.google.cloud.servicedirectory.v1beta1.Namespace.Builder builderForValue) {
       if (namespaceBuilder_ == null) {
         namespace_ = builderForValue.build();
-        onChanged();
       } else {
         namespaceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,19 +658,19 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeNamespace(com.google.cloud.servicedirectory.v1beta1.Namespace value) {
       if (namespaceBuilder_ == null) {
-        if (namespace_ != null) {
-          namespace_ =
-              com.google.cloud.servicedirectory.v1beta1.Namespace.newBuilder(namespace_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && namespace_ != null
+            && namespace_
+                != com.google.cloud.servicedirectory.v1beta1.Namespace.getDefaultInstance()) {
+          getNamespaceBuilder().mergeFrom(value);
         } else {
           namespace_ = value;
         }
-        onChanged();
       } else {
         namespaceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,14 +685,13 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearNamespace() {
-      if (namespaceBuilder_ == null) {
-        namespace_ = null;
-        onChanged();
-      } else {
-        namespace_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      namespace_ = null;
+      if (namespaceBuilder_ != null) {
+        namespaceBuilder_.dispose();
         namespaceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -700,7 +706,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.servicedirectory.v1beta1.Namespace.Builder getNamespaceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNamespaceFieldBuilder().getBuilder();
     }
@@ -771,7 +777,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -810,11 +816,11 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -830,11 +836,11 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,17 +855,18 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -873,14 +880,13 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -894,7 +900,7 @@ public final class UpdateNamespaceRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

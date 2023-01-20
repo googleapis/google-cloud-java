@@ -236,7 +236,9 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -293,7 +295,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DISABLE_DEPENDENT_SERVICES_FIELD_NUMBER = 2;
-  private boolean disableDependentServices_;
+  private boolean disableDependentServices_ = false;
   /**
    *
    *
@@ -315,7 +317,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CHECK_IF_SERVICE_HAS_USAGE_FIELD_NUMBER = 3;
-  private int checkIfServiceHasUsage_;
+  private int checkIfServiceHasUsage_ = 0;
   /**
    *
    *
@@ -349,9 +351,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage
       getCheckIfServiceHasUsage() {
-    @SuppressWarnings("deprecation")
     com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage result =
-        com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.valueOf(
+        com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.forNumber(
             checkIfServiceHasUsage_);
     return result == null
         ? com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.UNRECOGNIZED
@@ -579,12 +580,10 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       disableDependentServices_ = false;
-
       checkIfServiceHasUsage_ = 0;
-
       return this;
     }
 
@@ -612,11 +611,24 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     public com.google.api.serviceusage.v1.DisableServiceRequest buildPartial() {
       com.google.api.serviceusage.v1.DisableServiceRequest result =
           new com.google.api.serviceusage.v1.DisableServiceRequest(this);
-      result.name_ = name_;
-      result.disableDependentServices_ = disableDependentServices_;
-      result.checkIfServiceHasUsage_ = checkIfServiceHasUsage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.serviceusage.v1.DisableServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.disableDependentServices_ = disableDependentServices_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.checkIfServiceHasUsage_ = checkIfServiceHasUsage_;
+      }
     }
 
     @java.lang.Override
@@ -667,6 +679,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getDisableDependentServices() != false) {
@@ -704,19 +717,19 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 disableDependentServices_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 checkIfServiceHasUsage_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -735,6 +748,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -809,8 +824,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +845,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -856,8 +871,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,6 +916,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     public Builder setDisableDependentServices(boolean value) {
 
       disableDependentServices_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -920,7 +936,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDisableDependentServices() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       disableDependentServices_ = false;
       onChanged();
       return this;
@@ -959,8 +975,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setCheckIfServiceHasUsageValue(int value) {
-
       checkIfServiceHasUsage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -980,9 +996,8 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage
         getCheckIfServiceHasUsage() {
-      @SuppressWarnings("deprecation")
       com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage result =
-          com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.valueOf(
+          com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.forNumber(
               checkIfServiceHasUsage_);
       return result == null
           ? com.google.api.serviceusage.v1.DisableServiceRequest.CheckIfServiceHasUsage.UNRECOGNIZED
@@ -1007,7 +1022,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       checkIfServiceHasUsage_ = value.getNumber();
       onChanged();
       return this;
@@ -1026,7 +1041,7 @@ public final class DisableServiceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCheckIfServiceHasUsage() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       checkIfServiceHasUsage_ = 0;
       onChanged();
       return this;

@@ -264,7 +264,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.protobuf.BoolValueOrBuilder getIsCaOrBuilder() {
-      return getIsCa();
+      return isCa_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : isCa_;
     }
 
     public static final int MAX_ISSUER_PATH_LENGTH_FIELD_NUMBER = 2;
@@ -333,7 +333,9 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.protobuf.Int32ValueOrBuilder getMaxIssuerPathLengthOrBuilder() {
-      return getMaxIssuerPathLength();
+      return maxIssuerPathLength_ == null
+          ? com.google.protobuf.Int32Value.getDefaultInstance()
+          : maxIssuerPathLength_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -565,16 +567,15 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (isCaBuilder_ == null) {
-          isCa_ = null;
-        } else {
-          isCa_ = null;
+        bitField0_ = 0;
+        isCa_ = null;
+        if (isCaBuilder_ != null) {
+          isCaBuilder_.dispose();
           isCaBuilder_ = null;
         }
-        if (maxIssuerPathLengthBuilder_ == null) {
-          maxIssuerPathLength_ = null;
-        } else {
-          maxIssuerPathLength_ = null;
+        maxIssuerPathLength_ = null;
+        if (maxIssuerPathLengthBuilder_ != null) {
+          maxIssuerPathLengthBuilder_.dispose();
           maxIssuerPathLengthBuilder_ = null;
         }
         return this;
@@ -608,18 +609,25 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
           buildPartial() {
         com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions result =
             new com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions(this);
-        if (isCaBuilder_ == null) {
-          result.isCa_ = isCa_;
-        } else {
-          result.isCa_ = isCaBuilder_.build();
-        }
-        if (maxIssuerPathLengthBuilder_ == null) {
-          result.maxIssuerPathLength_ = maxIssuerPathLength_;
-        } else {
-          result.maxIssuerPathLength_ = maxIssuerPathLengthBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isCa_ = isCaBuilder_ == null ? isCa_ : isCaBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxIssuerPathLength_ =
+              maxIssuerPathLengthBuilder_ == null
+                  ? maxIssuerPathLength_
+                  : maxIssuerPathLengthBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -709,14 +717,14 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   input.readMessage(getIsCaFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getMaxIssuerPathLengthFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -735,6 +743,8 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.BoolValue isCa_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -756,7 +766,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        * @return Whether the isCa field is set.
        */
       public boolean hasIsCa() {
-        return isCaBuilder_ != null || isCa_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -795,11 +805,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           isCa_ = value;
-          onChanged();
         } else {
           isCaBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -816,11 +826,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       public Builder setIsCa(com.google.protobuf.BoolValue.Builder builderForValue) {
         if (isCaBuilder_ == null) {
           isCa_ = builderForValue.build();
-          onChanged();
         } else {
           isCaBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -836,16 +846,18 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeIsCa(com.google.protobuf.BoolValue value) {
         if (isCaBuilder_ == null) {
-          if (isCa_ != null) {
-            isCa_ = com.google.protobuf.BoolValue.newBuilder(isCa_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && isCa_ != null
+              && isCa_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+            getIsCaBuilder().mergeFrom(value);
           } else {
             isCa_ = value;
           }
-          onChanged();
         } else {
           isCaBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -860,14 +872,13 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public Builder clearIsCa() {
-        if (isCaBuilder_ == null) {
-          isCa_ = null;
-          onChanged();
-        } else {
-          isCa_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        isCa_ = null;
+        if (isCaBuilder_ != null) {
+          isCaBuilder_.dispose();
           isCaBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -882,7 +893,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public com.google.protobuf.BoolValue.Builder getIsCaBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getIsCaFieldBuilder().getBuilder();
       }
@@ -957,7 +968,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        * @return Whether the maxIssuerPathLength field is set.
        */
       public boolean hasMaxIssuerPathLength() {
-        return maxIssuerPathLengthBuilder_ != null || maxIssuerPathLength_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1008,11 +1019,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
             throw new NullPointerException();
           }
           maxIssuerPathLength_ = value;
-          onChanged();
         } else {
           maxIssuerPathLengthBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1035,11 +1046,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Int32Value.Builder builderForValue) {
         if (maxIssuerPathLengthBuilder_ == null) {
           maxIssuerPathLength_ = builderForValue.build();
-          onChanged();
         } else {
           maxIssuerPathLengthBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1060,19 +1071,18 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        */
       public Builder mergeMaxIssuerPathLength(com.google.protobuf.Int32Value value) {
         if (maxIssuerPathLengthBuilder_ == null) {
-          if (maxIssuerPathLength_ != null) {
-            maxIssuerPathLength_ =
-                com.google.protobuf.Int32Value.newBuilder(maxIssuerPathLength_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && maxIssuerPathLength_ != null
+              && maxIssuerPathLength_ != com.google.protobuf.Int32Value.getDefaultInstance()) {
+            getMaxIssuerPathLengthBuilder().mergeFrom(value);
           } else {
             maxIssuerPathLength_ = value;
           }
-          onChanged();
         } else {
           maxIssuerPathLengthBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1092,14 +1102,13 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public Builder clearMaxIssuerPathLength() {
-        if (maxIssuerPathLengthBuilder_ == null) {
-          maxIssuerPathLength_ = null;
-          onChanged();
-        } else {
-          maxIssuerPathLength_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxIssuerPathLength_ = null;
+        if (maxIssuerPathLengthBuilder_ != null) {
+          maxIssuerPathLengthBuilder_.dispose();
           maxIssuerPathLengthBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1119,7 +1128,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
        * </code>
        */
       public com.google.protobuf.Int32Value.Builder getMaxIssuerPathLengthBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMaxIssuerPathLengthFieldBuilder().getBuilder();
       }
@@ -1300,7 +1309,9 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1beta1.KeyUsageOrBuilder getKeyUsageOrBuilder() {
-    return getKeyUsage();
+    return keyUsage_ == null
+        ? com.google.cloud.security.privateca.v1beta1.KeyUsage.getDefaultInstance()
+        : keyUsage_;
   }
 
   public static final int CA_OPTIONS_FIELD_NUMBER = 2;
@@ -1359,10 +1370,15 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptionsOrBuilder
       getCaOptionsOrBuilder() {
-    return getCaOptions();
+    return caOptions_ == null
+        ? com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions
+            .getDefaultInstance()
+        : caOptions_;
   }
 
   public static final int POLICY_IDS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1beta1.ObjectId> policyIds_;
   /**
    *
@@ -1448,6 +1464,8 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
   }
 
   public static final int AIA_OCSP_SERVERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList aiaOcspServers_;
   /**
    *
@@ -1517,6 +1535,8 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ADDITIONAL_EXTENSIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1beta1.X509Extension>
       additionalExtensions_;
   /**
@@ -1858,16 +1878,15 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (keyUsageBuilder_ == null) {
-        keyUsage_ = null;
-      } else {
-        keyUsage_ = null;
+      bitField0_ = 0;
+      keyUsage_ = null;
+      if (keyUsageBuilder_ != null) {
+        keyUsageBuilder_.dispose();
         keyUsageBuilder_ = null;
       }
-      if (caOptionsBuilder_ == null) {
-        caOptions_ = null;
-      } else {
-        caOptions_ = null;
+      caOptions_ = null;
+      if (caOptionsBuilder_ != null) {
+        caOptionsBuilder_.dispose();
         caOptionsBuilder_ = null;
       }
       if (policyIdsBuilder_ == null) {
@@ -1876,16 +1895,16 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         policyIds_ = null;
         policyIdsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
       } else {
         additionalExtensions_ = null;
         additionalExtensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1914,42 +1933,50 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     public com.google.cloud.security.privateca.v1beta1.ReusableConfigValues buildPartial() {
       com.google.cloud.security.privateca.v1beta1.ReusableConfigValues result =
           new com.google.cloud.security.privateca.v1beta1.ReusableConfigValues(this);
-      int from_bitField0_ = bitField0_;
-      if (keyUsageBuilder_ == null) {
-        result.keyUsage_ = keyUsage_;
-      } else {
-        result.keyUsage_ = keyUsageBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (caOptionsBuilder_ == null) {
-        result.caOptions_ = caOptions_;
-      } else {
-        result.caOptions_ = caOptionsBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1beta1.ReusableConfigValues result) {
       if (policyIdsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           policyIds_ = java.util.Collections.unmodifiableList(policyIds_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.policyIds_ = policyIds_;
       } else {
         result.policyIds_ = policyIdsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         aiaOcspServers_ = aiaOcspServers_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.aiaOcspServers_ = aiaOcspServers_;
       if (additionalExtensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           additionalExtensions_ = java.util.Collections.unmodifiableList(additionalExtensions_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.additionalExtensions_ = additionalExtensions_;
       } else {
         result.additionalExtensions_ = additionalExtensionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1beta1.ReusableConfigValues result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyUsage_ = keyUsageBuilder_ == null ? keyUsage_ : keyUsageBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.caOptions_ = caOptionsBuilder_ == null ? caOptions_ : caOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2010,7 +2037,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         if (!other.policyIds_.isEmpty()) {
           if (policyIds_.isEmpty()) {
             policyIds_ = other.policyIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensurePolicyIdsIsMutable();
             policyIds_.addAll(other.policyIds_);
@@ -2023,7 +2050,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
             policyIdsBuilder_.dispose();
             policyIdsBuilder_ = null;
             policyIds_ = other.policyIds_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             policyIdsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPolicyIdsFieldBuilder()
@@ -2036,7 +2063,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
       if (!other.aiaOcspServers_.isEmpty()) {
         if (aiaOcspServers_.isEmpty()) {
           aiaOcspServers_ = other.aiaOcspServers_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureAiaOcspServersIsMutable();
           aiaOcspServers_.addAll(other.aiaOcspServers_);
@@ -2047,7 +2074,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         if (!other.additionalExtensions_.isEmpty()) {
           if (additionalExtensions_.isEmpty()) {
             additionalExtensions_ = other.additionalExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAdditionalExtensionsIsMutable();
             additionalExtensions_.addAll(other.additionalExtensions_);
@@ -2060,7 +2087,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
             additionalExtensionsBuilder_.dispose();
             additionalExtensionsBuilder_ = null;
             additionalExtensions_ = other.additionalExtensions_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
             additionalExtensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAdditionalExtensionsFieldBuilder()
@@ -2099,13 +2126,13 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getKeyUsageFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCaOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2182,7 +2209,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * @return Whether the keyUsage field is set.
      */
     public boolean hasKeyUsage() {
-      return keyUsageBuilder_ != null || keyUsage_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2223,11 +2250,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         keyUsage_ = value;
-        onChanged();
       } else {
         keyUsageBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2245,11 +2272,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         com.google.cloud.security.privateca.v1beta1.KeyUsage.Builder builderForValue) {
       if (keyUsageBuilder_ == null) {
         keyUsage_ = builderForValue.build();
-        onChanged();
       } else {
         keyUsageBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2265,19 +2292,19 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeKeyUsage(com.google.cloud.security.privateca.v1beta1.KeyUsage value) {
       if (keyUsageBuilder_ == null) {
-        if (keyUsage_ != null) {
-          keyUsage_ =
-              com.google.cloud.security.privateca.v1beta1.KeyUsage.newBuilder(keyUsage_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && keyUsage_ != null
+            && keyUsage_
+                != com.google.cloud.security.privateca.v1beta1.KeyUsage.getDefaultInstance()) {
+          getKeyUsageBuilder().mergeFrom(value);
         } else {
           keyUsage_ = value;
         }
-        onChanged();
       } else {
         keyUsageBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2292,14 +2319,13 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearKeyUsage() {
-      if (keyUsageBuilder_ == null) {
-        keyUsage_ = null;
-        onChanged();
-      } else {
-        keyUsage_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      keyUsage_ = null;
+      if (keyUsageBuilder_ != null) {
+        keyUsageBuilder_.dispose();
         keyUsageBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2314,7 +2340,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.security.privateca.v1beta1.KeyUsage.Builder getKeyUsageBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getKeyUsageFieldBuilder().getBuilder();
     }
@@ -2387,7 +2413,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * @return Whether the caOptions field is set.
      */
     public boolean hasCaOptions() {
-      return caOptionsBuilder_ != null || caOptions_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2433,11 +2459,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         caOptions_ = value;
-        onChanged();
       } else {
         caOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2457,11 +2483,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
             builderForValue) {
       if (caOptionsBuilder_ == null) {
         caOptions_ = builderForValue.build();
-        onChanged();
       } else {
         caOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2479,20 +2505,20 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     public Builder mergeCaOptions(
         com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions value) {
       if (caOptionsBuilder_ == null) {
-        if (caOptions_ != null) {
-          caOptions_ =
-              com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions.newBuilder(
-                      caOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && caOptions_ != null
+            && caOptions_
+                != com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions
+                    .getDefaultInstance()) {
+          getCaOptionsBuilder().mergeFrom(value);
         } else {
           caOptions_ = value;
         }
-        onChanged();
       } else {
         caOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2508,14 +2534,13 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCaOptions() {
-      if (caOptionsBuilder_ == null) {
-        caOptions_ = null;
-        onChanged();
-      } else {
-        caOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      caOptions_ = null;
+      if (caOptionsBuilder_ != null) {
+        caOptionsBuilder_.dispose();
         caOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2532,7 +2557,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions.Builder
         getCaOptionsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCaOptionsFieldBuilder().getBuilder();
     }
@@ -2592,11 +2617,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensurePolicyIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         policyIds_ =
             new java.util.ArrayList<com.google.cloud.security.privateca.v1beta1.ObjectId>(
                 policyIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2847,7 +2872,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     public Builder clearPolicyIds() {
       if (policyIdsBuilder_ == null) {
         policyIds_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         policyIdsBuilder_.clear();
@@ -2994,7 +3019,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
                 com.google.cloud.security.privateca.v1beta1.ObjectId,
                 com.google.cloud.security.privateca.v1beta1.ObjectId.Builder,
                 com.google.cloud.security.privateca.v1beta1.ObjectIdOrBuilder>(
-                policyIds_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                policyIds_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         policyIds_ = null;
       }
       return policyIdsBuilder_;
@@ -3004,9 +3029,9 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAiaOcspServersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         aiaOcspServers_ = new com.google.protobuf.LazyStringArrayList(aiaOcspServers_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3157,7 +3182,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
      */
     public Builder clearAiaOcspServers() {
       aiaOcspServers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3190,11 +3215,11 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
         additionalExtensions_ = java.util.Collections.emptyList();
 
     private void ensureAdditionalExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         additionalExtensions_ =
             new java.util.ArrayList<com.google.cloud.security.privateca.v1beta1.X509Extension>(
                 additionalExtensions_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -3440,7 +3465,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
     public Builder clearAdditionalExtensions() {
       if (additionalExtensionsBuilder_ == null) {
         additionalExtensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         additionalExtensionsBuilder_.clear();
@@ -3585,7 +3610,7 @@ public final class ReusableConfigValues extends com.google.protobuf.GeneratedMes
                 com.google.cloud.security.privateca.v1beta1.X509Extension.Builder,
                 com.google.cloud.security.privateca.v1beta1.X509ExtensionOrBuilder>(
                 additionalExtensions_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         additionalExtensions_ = null;

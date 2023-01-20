@@ -71,7 +71,7 @@ public final class BatchRecognizeTranscriptionMetadata
   }
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
-  private int progressPercent_;
+  private int progressPercent_ = 0;
   /**
    *
    *
@@ -131,11 +131,13 @@ public final class BatchRecognizeTranscriptionMetadata
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -405,16 +407,14 @@ public final class BatchRecognizeTranscriptionMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       progressPercent_ = 0;
-
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       uri_ = "";
-
       return this;
     }
 
@@ -443,15 +443,25 @@ public final class BatchRecognizeTranscriptionMetadata
     public com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata buildPartial() {
       com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata result =
           new com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata(this);
-      result.progressPercent_ = progressPercent_;
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.uri_ = uri_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.progressPercent_ = progressPercent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uri_ = uri_;
+      }
     }
 
     @java.lang.Override
@@ -509,6 +519,7 @@ public final class BatchRecognizeTranscriptionMetadata
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -540,19 +551,19 @@ public final class BatchRecognizeTranscriptionMetadata
             case 8:
               {
                 progressPercent_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -571,6 +582,8 @@ public final class BatchRecognizeTranscriptionMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int progressPercent_;
     /**
@@ -603,6 +616,7 @@ public final class BatchRecognizeTranscriptionMetadata
     public Builder setProgressPercent(int value) {
 
       progressPercent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,7 +632,7 @@ public final class BatchRecognizeTranscriptionMetadata
      * @return This builder for chaining.
      */
     public Builder clearProgressPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -640,7 +654,7 @@ public final class BatchRecognizeTranscriptionMetadata
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -675,11 +689,11 @@ public final class BatchRecognizeTranscriptionMetadata
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -694,11 +708,11 @@ public final class BatchRecognizeTranscriptionMetadata
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -712,16 +726,18 @@ public final class BatchRecognizeTranscriptionMetadata
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -734,14 +750,13 @@ public final class BatchRecognizeTranscriptionMetadata
      * <code>.google.rpc.Status error = 2;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -754,7 +769,7 @@ public final class BatchRecognizeTranscriptionMetadata
      * <code>.google.rpc.Status error = 2;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -858,8 +873,8 @@ public final class BatchRecognizeTranscriptionMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -875,8 +890,8 @@ public final class BatchRecognizeTranscriptionMetadata
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -897,8 +912,8 @@ public final class BatchRecognizeTranscriptionMetadata
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -71,7 +71,9 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceName_ = "";
   /**
    *
    *
@@ -128,7 +130,9 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_CONFIG_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serviceConfigId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceConfigId_ = "";
   /**
    *
    *
@@ -225,10 +229,14 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.context.AttributeContextOrBuilder getAttributesOrBuilder() {
-    return getAttributes();
+    return attributes_ == null
+        ? com.google.rpc.context.AttributeContext.getDefaultInstance()
+        : attributes_;
   }
 
   public static final int RESOURCES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v2.ResourceInfo> resources_;
   /**
    *
@@ -298,7 +306,9 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLAGS_FIELD_NUMBER = 5;
-  private volatile java.lang.Object flags_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object flags_ = "";
   /**
    *
    *
@@ -586,14 +596,12 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceName_ = "";
-
       serviceConfigId_ = "";
-
-      if (attributesBuilder_ == null) {
-        attributes_ = null;
-      } else {
-        attributes_ = null;
+      attributes_ = null;
+      if (attributesBuilder_ != null) {
+        attributesBuilder_.dispose();
         attributesBuilder_ = null;
       }
       if (resourcesBuilder_ == null) {
@@ -602,9 +610,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
         resources_ = null;
         resourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       flags_ = "";
-
       return this;
     }
 
@@ -632,26 +639,40 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v2.CheckRequest buildPartial() {
       com.google.api.servicecontrol.v2.CheckRequest result =
           new com.google.api.servicecontrol.v2.CheckRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.serviceName_ = serviceName_;
-      result.serviceConfigId_ = serviceConfigId_;
-      if (attributesBuilder_ == null) {
-        result.attributes_ = attributes_;
-      } else {
-        result.attributes_ = attributesBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.api.servicecontrol.v2.CheckRequest result) {
       if (resourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           resources_ = java.util.Collections.unmodifiableList(resources_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.resources_ = resources_;
       } else {
         result.resources_ = resourcesBuilder_.build();
       }
-      result.flags_ = flags_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v2.CheckRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceName_ = serviceName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceConfigId_ = serviceConfigId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.attributes_ = attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.flags_ = flags_;
+      }
     }
 
     @java.lang.Override
@@ -701,10 +722,12 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.api.servicecontrol.v2.CheckRequest.getDefaultInstance()) return this;
       if (!other.getServiceName().isEmpty()) {
         serviceName_ = other.serviceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getServiceConfigId().isEmpty()) {
         serviceConfigId_ = other.serviceConfigId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAttributes()) {
@@ -714,7 +737,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.resources_.isEmpty()) {
           if (resources_.isEmpty()) {
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureResourcesIsMutable();
             resources_.addAll(other.resources_);
@@ -727,7 +750,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
             resourcesBuilder_.dispose();
             resourcesBuilder_ = null;
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             resourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourcesFieldBuilder()
@@ -739,6 +762,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFlags().isEmpty()) {
         flags_ = other.flags_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -770,19 +794,19 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 serviceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 serviceConfigId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -801,7 +825,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 flags_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -896,8 +920,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -917,8 +941,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-
       serviceName_ = getDefaultInstance().getServiceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -943,8 +967,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1016,8 +1040,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1035,8 +1059,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceConfigId() {
-
       serviceConfigId_ = getDefaultInstance().getServiceConfigId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1059,8 +1083,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceConfigId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1083,7 +1107,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the attributes field is set.
      */
     public boolean hasAttributes() {
-      return attributesBuilder_ != null || attributes_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1120,11 +1144,11 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         attributes_ = value;
-        onChanged();
       } else {
         attributesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1139,11 +1163,11 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setAttributes(com.google.rpc.context.AttributeContext.Builder builderForValue) {
       if (attributesBuilder_ == null) {
         attributes_ = builderForValue.build();
-        onChanged();
       } else {
         attributesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1157,19 +1181,18 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAttributes(com.google.rpc.context.AttributeContext value) {
       if (attributesBuilder_ == null) {
-        if (attributes_ != null) {
-          attributes_ =
-              com.google.rpc.context.AttributeContext.newBuilder(attributes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && attributes_ != null
+            && attributes_ != com.google.rpc.context.AttributeContext.getDefaultInstance()) {
+          getAttributesBuilder().mergeFrom(value);
         } else {
           attributes_ = value;
         }
-        onChanged();
       } else {
         attributesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1182,14 +1205,13 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.context.AttributeContext attributes = 3;</code>
      */
     public Builder clearAttributes() {
-      if (attributesBuilder_ == null) {
-        attributes_ = null;
-        onChanged();
-      } else {
-        attributes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      attributes_ = null;
+      if (attributesBuilder_ != null) {
+        attributesBuilder_.dispose();
         attributesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1202,7 +1224,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.context.AttributeContext attributes = 3;</code>
      */
     public com.google.rpc.context.AttributeContext.Builder getAttributesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAttributesFieldBuilder().getBuilder();
     }
@@ -1254,10 +1276,10 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         resources_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v2.ResourceInfo>(resources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1473,7 +1495,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResources() {
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         resourcesBuilder_.clear();
@@ -1595,7 +1617,7 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.servicecontrol.v2.ResourceInfo,
                 com.google.api.servicecontrol.v2.ResourceInfo.Builder,
                 com.google.api.servicecontrol.v2.ResourceInfoOrBuilder>(
-                resources_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                resources_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         resources_ = null;
       }
       return resourcesBuilder_;
@@ -1662,8 +1684,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       flags_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1679,8 +1701,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFlags() {
-
       flags_ = getDefaultInstance().getFlags();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1701,8 +1723,8 @@ public final class CheckRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       flags_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

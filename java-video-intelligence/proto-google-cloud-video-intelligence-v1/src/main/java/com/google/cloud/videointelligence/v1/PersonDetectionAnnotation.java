@@ -69,6 +69,8 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int TRACKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_;
   /**
    *
@@ -138,7 +140,9 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
   }
 
   public static final int VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -395,6 +399,7 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (tracksBuilder_ == null) {
         tracks_ = java.util.Collections.emptyList();
       } else {
@@ -403,7 +408,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       version_ = "";
-
       return this;
     }
 
@@ -432,7 +436,16 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
     public com.google.cloud.videointelligence.v1.PersonDetectionAnnotation buildPartial() {
       com.google.cloud.videointelligence.v1.PersonDetectionAnnotation result =
           new com.google.cloud.videointelligence.v1.PersonDetectionAnnotation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1.PersonDetectionAnnotation result) {
       if (tracksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tracks_ = java.util.Collections.unmodifiableList(tracks_);
@@ -442,9 +455,14 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       } else {
         result.tracks_ = tracksBuilder_.build();
       }
-      result.version_ = version_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1.PersonDetectionAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -524,6 +542,7 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -568,7 +587,7 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
             case 18:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1000,8 +1019,8 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1017,8 +1036,8 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1039,8 +1058,8 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

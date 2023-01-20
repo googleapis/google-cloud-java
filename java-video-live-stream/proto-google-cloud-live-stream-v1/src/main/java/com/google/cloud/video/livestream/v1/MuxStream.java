@@ -70,7 +70,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object container_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object container_ = "";
   /**
    *
    *
@@ -174,6 +178,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ELEMENTARY_STREAMS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList elementaryStreams_;
   /**
    *
@@ -296,7 +302,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.SegmentSettingsOrBuilder
       getSegmentSettingsOrBuilder() {
-    return getSegmentSettings();
+    return segmentSettings_ == null
+        ? com.google.cloud.video.livestream.v1.SegmentSettings.getDefaultInstance()
+        : segmentSettings_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -535,16 +543,14 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       container_ = "";
-
       elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (segmentSettingsBuilder_ == null) {
-        segmentSettings_ = null;
-      } else {
-        segmentSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      segmentSettings_ = null;
+      if (segmentSettingsBuilder_ != null) {
+        segmentSettingsBuilder_.dispose();
         segmentSettingsBuilder_ = null;
       }
       return this;
@@ -574,21 +580,34 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.MuxStream buildPartial() {
       com.google.cloud.video.livestream.v1.MuxStream result =
           new com.google.cloud.video.livestream.v1.MuxStream(this);
-      int from_bitField0_ = bitField0_;
-      result.key_ = key_;
-      result.container_ = container_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        elementaryStreams_ = elementaryStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.elementaryStreams_ = elementaryStreams_;
-      if (segmentSettingsBuilder_ == null) {
-        result.segmentSettings_ = segmentSettings_;
-      } else {
-        result.segmentSettings_ = segmentSettingsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.video.livestream.v1.MuxStream result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        elementaryStreams_ = elementaryStreams_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.elementaryStreams_ = elementaryStreams_;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.MuxStream result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.container_ = container_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.segmentSettings_ =
+            segmentSettingsBuilder_ == null ? segmentSettings_ : segmentSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -638,16 +657,18 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.video.livestream.v1.MuxStream.getDefaultInstance()) return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getContainer().isEmpty()) {
         container_ = other.container_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.elementaryStreams_.isEmpty()) {
         if (elementaryStreams_.isEmpty()) {
           elementaryStreams_ = other.elementaryStreams_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureElementaryStreamsIsMutable();
           elementaryStreams_.addAll(other.elementaryStreams_);
@@ -686,13 +707,13 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 container_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -705,7 +726,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getSegmentSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -788,8 +809,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -805,8 +826,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -827,8 +848,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -903,8 +924,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       container_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -923,8 +944,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContainer() {
-
       container_ = getDefaultInstance().getContainer();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -948,8 +969,8 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       container_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -958,9 +979,9 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureElementaryStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         elementaryStreams_ = new com.google.protobuf.LazyStringArrayList(elementaryStreams_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1127,7 +1148,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearElementaryStreams() {
       elementaryStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1176,7 +1197,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the segmentSettings field is set.
      */
     public boolean hasSegmentSettings() {
-      return segmentSettingsBuilder_ != null || segmentSettings_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1213,11 +1234,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         segmentSettings_ = value;
-        onChanged();
       } else {
         segmentSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1233,11 +1254,11 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.video.livestream.v1.SegmentSettings.Builder builderForValue) {
       if (segmentSettingsBuilder_ == null) {
         segmentSettings_ = builderForValue.build();
-        onChanged();
       } else {
         segmentSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1252,19 +1273,19 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSegmentSettings(
         com.google.cloud.video.livestream.v1.SegmentSettings value) {
       if (segmentSettingsBuilder_ == null) {
-        if (segmentSettings_ != null) {
-          segmentSettings_ =
-              com.google.cloud.video.livestream.v1.SegmentSettings.newBuilder(segmentSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && segmentSettings_ != null
+            && segmentSettings_
+                != com.google.cloud.video.livestream.v1.SegmentSettings.getDefaultInstance()) {
+          getSegmentSettingsBuilder().mergeFrom(value);
         } else {
           segmentSettings_ = value;
         }
-        onChanged();
       } else {
         segmentSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1277,14 +1298,13 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.SegmentSettings segment_settings = 5;</code>
      */
     public Builder clearSegmentSettings() {
-      if (segmentSettingsBuilder_ == null) {
-        segmentSettings_ = null;
-        onChanged();
-      } else {
-        segmentSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      segmentSettings_ = null;
+      if (segmentSettingsBuilder_ != null) {
+        segmentSettingsBuilder_.dispose();
         segmentSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1298,7 +1318,7 @@ public final class MuxStream extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.video.livestream.v1.SegmentSettings.Builder
         getSegmentSettingsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSegmentSettingsFieldBuilder().getBuilder();
     }

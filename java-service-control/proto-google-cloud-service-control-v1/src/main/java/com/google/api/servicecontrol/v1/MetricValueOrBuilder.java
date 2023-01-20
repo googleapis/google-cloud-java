@@ -77,7 +77,6 @@ public interface MetricValueOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 1;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

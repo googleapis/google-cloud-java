@@ -560,7 +560,6 @@ public interface NodeOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

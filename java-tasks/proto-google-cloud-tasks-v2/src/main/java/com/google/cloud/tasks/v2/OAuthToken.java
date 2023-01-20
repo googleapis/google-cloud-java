@@ -72,7 +72,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccountEmail_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCOPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object scope_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scope_ = "";
   /**
    *
    *
@@ -388,10 +392,9 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceAccountEmail_ = "";
-
       scope_ = "";
-
       return this;
     }
 
@@ -418,10 +421,21 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.tasks.v2.OAuthToken buildPartial() {
       com.google.cloud.tasks.v2.OAuthToken result = new com.google.cloud.tasks.v2.OAuthToken(this);
-      result.serviceAccountEmail_ = serviceAccountEmail_;
-      result.scope_ = scope_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2.OAuthToken result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.scope_ = scope_;
+      }
     }
 
     @java.lang.Override
@@ -471,10 +485,12 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.tasks.v2.OAuthToken.getDefaultInstance()) return this;
       if (!other.getServiceAccountEmail().isEmpty()) {
         serviceAccountEmail_ = other.serviceAccountEmail_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getScope().isEmpty()) {
         scope_ = other.scope_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,13 +522,13 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 serviceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 scope_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +547,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceAccountEmail_ = "";
     /**
@@ -605,8 +623,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,8 +644,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceAccountEmail() {
-
       serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +670,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceAccountEmail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -725,8 +743,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       scope_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -744,8 +762,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
       scope_ = getDefaultInstance().getScope();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -768,8 +786,8 @@ public final class OAuthToken extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       scope_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

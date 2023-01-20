@@ -120,11 +120,11 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.type.ExprOrBuilder getCelExpressionOrBuilder() {
-    return getCelExpression();
+    return celExpression_ == null ? com.google.type.Expr.getDefaultInstance() : celExpression_;
   }
 
   public static final int ALLOW_SUBJECT_PASSTHROUGH_FIELD_NUMBER = 2;
-  private boolean allowSubjectPassthrough_;
+  private boolean allowSubjectPassthrough_ = false;
   /**
    *
    *
@@ -163,7 +163,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
   }
 
   public static final int ALLOW_SUBJECT_ALT_NAMES_PASSTHROUGH_FIELD_NUMBER = 3;
-  private boolean allowSubjectAltNamesPassthrough_;
+  private boolean allowSubjectAltNamesPassthrough_ = false;
   /**
    *
    *
@@ -443,16 +443,14 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (celExpressionBuilder_ == null) {
-        celExpression_ = null;
-      } else {
-        celExpression_ = null;
+      bitField0_ = 0;
+      celExpression_ = null;
+      if (celExpressionBuilder_ != null) {
+        celExpressionBuilder_.dispose();
         celExpressionBuilder_ = null;
       }
       allowSubjectPassthrough_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       allowSubjectAltNamesPassthrough_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -482,24 +480,30 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     public com.google.cloud.security.privateca.v1.CertificateIdentityConstraints buildPartial() {
       com.google.cloud.security.privateca.v1.CertificateIdentityConstraints result =
           new com.google.cloud.security.privateca.v1.CertificateIdentityConstraints(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (celExpressionBuilder_ == null) {
-        result.celExpression_ = celExpression_;
-      } else {
-        result.celExpression_ = celExpressionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1.CertificateIdentityConstraints result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.celExpression_ =
+            celExpressionBuilder_ == null ? celExpression_ : celExpressionBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.allowSubjectPassthrough_ = allowSubjectPassthrough_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.allowSubjectAltNamesPassthrough_ = allowSubjectAltNamesPassthrough_;
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -589,19 +593,19 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getCelExpressionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 allowSubjectPassthrough_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 allowSubjectAltNamesPassthrough_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -642,7 +646,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * @return Whether the celExpression field is set.
      */
     public boolean hasCelExpression() {
-      return celExpressionBuilder_ != null || celExpression_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -683,11 +687,11 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         celExpression_ = value;
-        onChanged();
       } else {
         celExpressionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -705,11 +709,11 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
     public Builder setCelExpression(com.google.type.Expr.Builder builderForValue) {
       if (celExpressionBuilder_ == null) {
         celExpression_ = builderForValue.build();
-        onChanged();
       } else {
         celExpressionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -726,17 +730,18 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      */
     public Builder mergeCelExpression(com.google.type.Expr value) {
       if (celExpressionBuilder_ == null) {
-        if (celExpression_ != null) {
-          celExpression_ =
-              com.google.type.Expr.newBuilder(celExpression_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && celExpression_ != null
+            && celExpression_ != com.google.type.Expr.getDefaultInstance()) {
+          getCelExpressionBuilder().mergeFrom(value);
         } else {
           celExpression_ = value;
         }
-        onChanged();
       } else {
         celExpressionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -752,14 +757,13 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearCelExpression() {
-      if (celExpressionBuilder_ == null) {
-        celExpression_ = null;
-        onChanged();
-      } else {
-        celExpression_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      celExpression_ = null;
+      if (celExpressionBuilder_ != null) {
+        celExpressionBuilder_.dispose();
         celExpressionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -775,7 +779,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * <code>.google.type.Expr cel_expression = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.type.Expr.Builder getCelExpressionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCelExpressionFieldBuilder().getBuilder();
     }
@@ -840,7 +844,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public boolean hasAllowSubjectPassthrough() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -876,8 +880,9 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setAllowSubjectPassthrough(boolean value) {
-      bitField0_ |= 0x00000001;
+
       allowSubjectPassthrough_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,7 +901,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAllowSubjectPassthrough() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       allowSubjectPassthrough_ = false;
       onChanged();
       return this;
@@ -920,7 +925,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public boolean hasAllowSubjectAltNamesPassthrough() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -958,8 +963,9 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setAllowSubjectAltNamesPassthrough(boolean value) {
-      bitField0_ |= 0x00000002;
+
       allowSubjectAltNamesPassthrough_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -979,7 +985,7 @@ public final class CertificateIdentityConstraints extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAllowSubjectAltNamesPassthrough() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowSubjectAltNamesPassthrough_ = false;
       onChanged();
       return this;

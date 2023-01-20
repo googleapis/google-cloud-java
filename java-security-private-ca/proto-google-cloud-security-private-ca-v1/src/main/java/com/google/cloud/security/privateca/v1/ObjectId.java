@@ -69,6 +69,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OBJECT_ID_PATH_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList objectIdPath_;
   /**
    *
@@ -335,8 +337,8 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       objectIdPath_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -364,14 +366,25 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.ObjectId buildPartial() {
       com.google.cloud.security.privateca.v1.ObjectId result =
           new com.google.cloud.security.privateca.v1.ObjectId(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1.ObjectId result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         objectIdPath_.makeImmutable();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.objectIdPath_ = objectIdPath_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.ObjectId result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -564,6 +577,7 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setObjectIdPath(int index, int value) {
+
       ensureObjectIdPathIsMutable();
       objectIdPath_.setInt(index, value);
       onChanged();
@@ -583,6 +597,7 @@ public final class ObjectId extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder addObjectIdPath(int value) {
+
       ensureObjectIdPathIsMutable();
       objectIdPath_.addInt(value);
       onChanged();

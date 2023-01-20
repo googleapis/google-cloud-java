@@ -69,7 +69,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMAT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object format_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object format_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_PREFIX_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filePrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filePrefix_ = "";
   /**
    *
    *
@@ -179,7 +183,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPRITE_WIDTH_PIXELS_FIELD_NUMBER = 3;
-  private int spriteWidthPixels_;
+  private int spriteWidthPixels_ = 0;
   /**
    *
    *
@@ -197,7 +201,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPRITE_HEIGHT_PIXELS_FIELD_NUMBER = 4;
-  private int spriteHeightPixels_;
+  private int spriteHeightPixels_ = 0;
   /**
    *
    *
@@ -215,7 +219,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMN_COUNT_FIELD_NUMBER = 5;
-  private int columnCount_;
+  private int columnCount_ = 0;
   /**
    *
    *
@@ -234,7 +238,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 6;
-  private int rowCount_;
+  private int rowCount_ = 0;
   /**
    *
    *
@@ -299,11 +303,11 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getIntervalOrBuilder() {
-    return getInterval();
+    return interval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : interval_;
   }
 
   public static final int QUALITY_FIELD_NUMBER = 8;
-  private int quality_;
+  private int quality_ = 0;
   /**
    *
    *
@@ -588,26 +592,19 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       format_ = "";
-
       filePrefix_ = "";
-
       spriteWidthPixels_ = 0;
-
       spriteHeightPixels_ = 0;
-
       columnCount_ = 0;
-
       rowCount_ = 0;
-
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-      } else {
-        interval_ = null;
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
       quality_ = 0;
-
       return this;
     }
 
@@ -635,20 +632,39 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.SpriteSheet buildPartial() {
       com.google.cloud.video.livestream.v1.SpriteSheet result =
           new com.google.cloud.video.livestream.v1.SpriteSheet(this);
-      result.format_ = format_;
-      result.filePrefix_ = filePrefix_;
-      result.spriteWidthPixels_ = spriteWidthPixels_;
-      result.spriteHeightPixels_ = spriteHeightPixels_;
-      result.columnCount_ = columnCount_;
-      result.rowCount_ = rowCount_;
-      if (intervalBuilder_ == null) {
-        result.interval_ = interval_;
-      } else {
-        result.interval_ = intervalBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.quality_ = quality_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.livestream.v1.SpriteSheet result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.format_ = format_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filePrefix_ = filePrefix_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.spriteWidthPixels_ = spriteWidthPixels_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.spriteHeightPixels_ = spriteHeightPixels_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.columnCount_ = columnCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.rowCount_ = rowCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.quality_ = quality_;
+      }
     }
 
     @java.lang.Override
@@ -699,10 +715,12 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFormat().isEmpty()) {
         format_ = other.format_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilePrefix().isEmpty()) {
         filePrefix_ = other.filePrefix_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getSpriteWidthPixels() != 0) {
@@ -752,49 +770,49 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 format_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filePrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 spriteWidthPixels_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 spriteHeightPixels_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 columnCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 rowCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 quality_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             default:
@@ -813,6 +831,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object format_ = "";
     /**
@@ -881,8 +901,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -900,8 +920,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
       format_ = getDefaultInstance().getFormat();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -924,8 +944,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1003,8 +1023,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       filePrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,8 +1044,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilePrefix() {
-
       filePrefix_ = getDefaultInstance().getFilePrefix();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1050,8 +1070,8 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filePrefix_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1087,6 +1107,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpriteWidthPixels(int value) {
 
       spriteWidthPixels_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1102,7 +1123,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpriteWidthPixels() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       spriteWidthPixels_ = 0;
       onChanged();
       return this;
@@ -1139,6 +1160,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public Builder setSpriteHeightPixels(int value) {
 
       spriteHeightPixels_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1154,7 +1176,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpriteHeightPixels() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       spriteHeightPixels_ = 0;
       onChanged();
       return this;
@@ -1193,6 +1215,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public Builder setColumnCount(int value) {
 
       columnCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1209,7 +1232,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumnCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       columnCount_ = 0;
       onChanged();
       return this;
@@ -1250,6 +1273,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public Builder setRowCount(int value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1267,7 +1291,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       rowCount_ = 0;
       onChanged();
       return this;
@@ -1292,7 +1316,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
-      return intervalBuilder_ != null || interval_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1329,11 +1353,11 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         interval_ = value;
-        onChanged();
       } else {
         intervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1349,11 +1373,11 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public Builder setInterval(com.google.protobuf.Duration.Builder builderForValue) {
       if (intervalBuilder_ == null) {
         interval_ = builderForValue.build();
-        onChanged();
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1368,17 +1392,18 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInterval(com.google.protobuf.Duration value) {
       if (intervalBuilder_ == null) {
-        if (interval_ != null) {
-          interval_ =
-              com.google.protobuf.Duration.newBuilder(interval_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && interval_ != null
+            && interval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getIntervalBuilder().mergeFrom(value);
         } else {
           interval_ = value;
         }
-        onChanged();
       } else {
         intervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1392,14 +1417,13 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration interval = 7;</code>
      */
     public Builder clearInterval() {
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-        onChanged();
-      } else {
-        interval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1413,7 +1437,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration interval = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getIntervalBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
@@ -1498,6 +1522,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public Builder setQuality(int value) {
 
       quality_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1516,7 +1541,7 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuality() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       quality_ = 0;
       onChanged();
       return this;

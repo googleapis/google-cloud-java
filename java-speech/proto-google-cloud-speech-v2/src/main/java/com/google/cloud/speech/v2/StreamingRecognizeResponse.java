@@ -308,6 +308,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   }
 
   public static final int RESULTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.StreamingRecognitionResult> results_;
   /**
    *
@@ -408,7 +410,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   }
 
   public static final int SPEECH_EVENT_TYPE_FIELD_NUMBER = 3;
-  private int speechEventType_;
+  private int speechEventType_ = 0;
   /**
    *
    *
@@ -440,9 +442,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType
       getSpeechEventType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType result =
-        com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.valueOf(
+        com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.forNumber(
             speechEventType_);
     return result == null
         ? com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.UNRECOGNIZED
@@ -494,7 +495,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getSpeechEventOffsetOrBuilder() {
-    return getSpeechEventOffset();
+    return speechEventOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : speechEventOffset_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 5;
@@ -542,7 +545,9 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.speech.v2.RecognitionResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -822,6 +827,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
       } else {
@@ -830,17 +836,14 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       speechEventType_ = 0;
-
-      if (speechEventOffsetBuilder_ == null) {
-        speechEventOffset_ = null;
-      } else {
-        speechEventOffset_ = null;
+      speechEventOffset_ = null;
+      if (speechEventOffsetBuilder_ != null) {
+        speechEventOffsetBuilder_.dispose();
         speechEventOffsetBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -870,7 +873,16 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     public com.google.cloud.speech.v2.StreamingRecognizeResponse buildPartial() {
       com.google.cloud.speech.v2.StreamingRecognizeResponse result =
           new com.google.cloud.speech.v2.StreamingRecognizeResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v2.StreamingRecognizeResponse result) {
       if (resultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
@@ -880,19 +892,22 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       } else {
         result.results_ = resultsBuilder_.build();
       }
-      result.speechEventType_ = speechEventType_;
-      if (speechEventOffsetBuilder_ == null) {
-        result.speechEventOffset_ = speechEventOffset_;
-      } else {
-        result.speechEventOffset_ = speechEventOffsetBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.StreamingRecognizeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.speechEventType_ = speechEventType_;
       }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.speechEventOffset_ =
+            speechEventOffsetBuilder_ == null
+                ? speechEventOffset_
+                : speechEventOffsetBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1006,13 +1021,13 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
             case 24:
               {
                 speechEventType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 42:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
@@ -1033,7 +1048,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     getSpeechEventOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             default:
@@ -1555,8 +1570,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setSpeechEventTypeValue(int value) {
-
       speechEventType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1576,9 +1591,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType
         getSpeechEventType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType result =
-          com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.valueOf(
+          com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.forNumber(
               speechEventType_);
       return result == null
           ? com.google.cloud.speech.v2.StreamingRecognizeResponse.SpeechEventType.UNRECOGNIZED
@@ -1603,7 +1617,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       speechEventType_ = value.getNumber();
       onChanged();
       return this;
@@ -1622,7 +1636,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearSpeechEventType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       speechEventType_ = 0;
       onChanged();
       return this;
@@ -1646,7 +1660,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * @return Whether the speechEventOffset field is set.
      */
     public boolean hasSpeechEventOffset() {
-      return speechEventOffsetBuilder_ != null || speechEventOffset_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1683,11 +1697,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         speechEventOffset_ = value;
-        onChanged();
       } else {
         speechEventOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1702,11 +1716,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     public Builder setSpeechEventOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (speechEventOffsetBuilder_ == null) {
         speechEventOffset_ = builderForValue.build();
-        onChanged();
       } else {
         speechEventOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1720,19 +1734,18 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      */
     public Builder mergeSpeechEventOffset(com.google.protobuf.Duration value) {
       if (speechEventOffsetBuilder_ == null) {
-        if (speechEventOffset_ != null) {
-          speechEventOffset_ =
-              com.google.protobuf.Duration.newBuilder(speechEventOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && speechEventOffset_ != null
+            && speechEventOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getSpeechEventOffsetBuilder().mergeFrom(value);
         } else {
           speechEventOffset_ = value;
         }
-        onChanged();
       } else {
         speechEventOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1745,14 +1758,13 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration speech_event_offset = 7;</code>
      */
     public Builder clearSpeechEventOffset() {
-      if (speechEventOffsetBuilder_ == null) {
-        speechEventOffset_ = null;
-        onChanged();
-      } else {
-        speechEventOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      speechEventOffset_ = null;
+      if (speechEventOffsetBuilder_ != null) {
+        speechEventOffsetBuilder_.dispose();
         speechEventOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1765,7 +1777,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration speech_event_offset = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getSpeechEventOffsetBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSpeechEventOffsetFieldBuilder().getBuilder();
     }
@@ -1831,7 +1843,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1868,11 +1880,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1888,11 +1900,11 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
         com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1906,19 +1918,19 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      */
     public Builder mergeMetadata(com.google.cloud.speech.v2.RecognitionResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.speech.v2.RecognitionResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.speech.v2.RecognitionResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1931,14 +1943,13 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 5;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1951,7 +1962,7 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
      * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 5;</code>
      */
     public com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

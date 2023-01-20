@@ -143,7 +143,9 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
   @java.lang.Override
   public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettingsOrBuilder
       getComponentSettingsOrBuilder() {
-    return getComponentSettings();
+    return componentSettings_ == null
+        ? com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.getDefaultInstance()
+        : componentSettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -189,7 +191,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -420,16 +422,15 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (componentSettingsBuilder_ == null) {
-        componentSettings_ = null;
-      } else {
-        componentSettings_ = null;
+      bitField0_ = 0;
+      componentSettings_ = null;
+      if (componentSettingsBuilder_ != null) {
+        componentSettingsBuilder_.dispose();
         componentSettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -463,18 +464,25 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
         buildPartial() {
       com.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest result =
           new com.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest(this);
-      if (componentSettingsBuilder_ == null) {
-        result.componentSettings_ = componentSettings_;
-      } else {
-        result.componentSettings_ = componentSettingsBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.componentSettings_ =
+            componentSettingsBuilder_ == null
+                ? componentSettings_
+                : componentSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -565,13 +573,13 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
               {
                 input.readMessage(
                     getComponentSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -590,6 +598,8 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings componentSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,7 +629,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      * @return Whether the componentSettings field is set.
      */
     public boolean hasComponentSettings() {
-      return componentSettingsBuilder_ != null || componentSettings_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -679,11 +689,11 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         componentSettings_ = value;
-        onChanged();
       } else {
         componentSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -710,11 +720,11 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
             builderForValue) {
       if (componentSettingsBuilder_ == null) {
         componentSettings_ = builderForValue.build();
-        onChanged();
       } else {
         componentSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -739,20 +749,20 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
     public Builder mergeComponentSettings(
         com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings value) {
       if (componentSettingsBuilder_ == null) {
-        if (componentSettings_ != null) {
-          componentSettings_ =
-              com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.newBuilder(
-                      componentSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && componentSettings_ != null
+            && componentSettings_
+                != com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings
+                    .getDefaultInstance()) {
+          getComponentSettingsBuilder().mergeFrom(value);
         } else {
           componentSettings_ = value;
         }
-        onChanged();
       } else {
         componentSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -775,14 +785,13 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearComponentSettings() {
-      if (componentSettingsBuilder_ == null) {
-        componentSettings_ = null;
-        onChanged();
-      } else {
-        componentSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      componentSettings_ = null;
+      if (componentSettingsBuilder_ != null) {
+        componentSettingsBuilder_.dispose();
         componentSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -806,7 +815,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.Builder
         getComponentSettingsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getComponentSettingsFieldBuilder().getBuilder();
     }
@@ -894,7 +903,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -931,11 +940,11 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -950,11 +959,11 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -968,17 +977,18 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -991,14 +1001,13 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1011,7 +1020,7 @@ public final class UpdateComponentSettingsRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

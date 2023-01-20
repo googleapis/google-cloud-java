@@ -127,7 +127,9 @@ public final class UpdateCertificateRevocationListRequest
   @java.lang.Override
   public com.google.cloud.security.privateca.v1beta1.CertificateRevocationListOrBuilder
       getCertificateRevocationListOrBuilder() {
-    return getCertificateRevocationList();
+    return certificateRevocationList_ == null
+        ? com.google.cloud.security.privateca.v1beta1.CertificateRevocationList.getDefaultInstance()
+        : certificateRevocationList_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -176,11 +178,13 @@ public final class UpdateCertificateRevocationListRequest
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -491,20 +495,18 @@ public final class UpdateCertificateRevocationListRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (certificateRevocationListBuilder_ == null) {
-        certificateRevocationList_ = null;
-      } else {
-        certificateRevocationList_ = null;
+      bitField0_ = 0;
+      certificateRevocationList_ = null;
+      if (certificateRevocationListBuilder_ != null) {
+        certificateRevocationListBuilder_.dispose();
         certificateRevocationListBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -538,19 +540,28 @@ public final class UpdateCertificateRevocationListRequest
       com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest result =
           new com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest(
               this);
-      if (certificateRevocationListBuilder_ == null) {
-        result.certificateRevocationList_ = certificateRevocationList_;
-      } else {
-        result.certificateRevocationList_ = certificateRevocationListBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1beta1.UpdateCertificateRevocationListRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.certificateRevocationList_ =
+            certificateRevocationListBuilder_ == null
+                ? certificateRevocationList_
+                : certificateRevocationListBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -613,6 +624,7 @@ public final class UpdateCertificateRevocationListRequest
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -645,19 +657,19 @@ public final class UpdateCertificateRevocationListRequest
               {
                 input.readMessage(
                     getCertificateRevocationListFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -676,6 +688,8 @@ public final class UpdateCertificateRevocationListRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.security.privateca.v1beta1.CertificateRevocationList
         certificateRevocationList_;
@@ -698,7 +712,7 @@ public final class UpdateCertificateRevocationListRequest
      * @return Whether the certificateRevocationList field is set.
      */
     public boolean hasCertificateRevocationList() {
-      return certificateRevocationListBuilder_ != null || certificateRevocationList_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -742,11 +756,11 @@ public final class UpdateCertificateRevocationListRequest
           throw new NullPointerException();
         }
         certificateRevocationList_ = value;
-        onChanged();
       } else {
         certificateRevocationListBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -765,11 +779,11 @@ public final class UpdateCertificateRevocationListRequest
             builderForValue) {
       if (certificateRevocationListBuilder_ == null) {
         certificateRevocationList_ = builderForValue.build();
-        onChanged();
       } else {
         certificateRevocationListBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -786,20 +800,20 @@ public final class UpdateCertificateRevocationListRequest
     public Builder mergeCertificateRevocationList(
         com.google.cloud.security.privateca.v1beta1.CertificateRevocationList value) {
       if (certificateRevocationListBuilder_ == null) {
-        if (certificateRevocationList_ != null) {
-          certificateRevocationList_ =
-              com.google.cloud.security.privateca.v1beta1.CertificateRevocationList.newBuilder(
-                      certificateRevocationList_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && certificateRevocationList_ != null
+            && certificateRevocationList_
+                != com.google.cloud.security.privateca.v1beta1.CertificateRevocationList
+                    .getDefaultInstance()) {
+          getCertificateRevocationListBuilder().mergeFrom(value);
         } else {
           certificateRevocationList_ = value;
         }
-        onChanged();
       } else {
         certificateRevocationListBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -814,14 +828,13 @@ public final class UpdateCertificateRevocationListRequest
      * </code>
      */
     public Builder clearCertificateRevocationList() {
-      if (certificateRevocationListBuilder_ == null) {
-        certificateRevocationList_ = null;
-        onChanged();
-      } else {
-        certificateRevocationList_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      certificateRevocationList_ = null;
+      if (certificateRevocationListBuilder_ != null) {
+        certificateRevocationListBuilder_.dispose();
         certificateRevocationListBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -837,7 +850,7 @@ public final class UpdateCertificateRevocationListRequest
      */
     public com.google.cloud.security.privateca.v1beta1.CertificateRevocationList.Builder
         getCertificateRevocationListBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCertificateRevocationListFieldBuilder().getBuilder();
     }
@@ -910,7 +923,7 @@ public final class UpdateCertificateRevocationListRequest
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -949,11 +962,11 @@ public final class UpdateCertificateRevocationListRequest
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -969,11 +982,11 @@ public final class UpdateCertificateRevocationListRequest
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -988,17 +1001,18 @@ public final class UpdateCertificateRevocationListRequest
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1012,14 +1026,13 @@ public final class UpdateCertificateRevocationListRequest
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1033,7 +1046,7 @@ public final class UpdateCertificateRevocationListRequest
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1174,8 +1187,8 @@ public final class UpdateCertificateRevocationListRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1201,8 +1214,8 @@ public final class UpdateCertificateRevocationListRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1233,8 +1246,8 @@ public final class UpdateCertificateRevocationListRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

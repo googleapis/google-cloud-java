@@ -72,7 +72,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INPUT_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object inputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inputUri_ = "";
   /**
    *
    *
@@ -141,7 +143,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INPUT_CONTENT_FIELD_NUMBER = 6;
-  private com.google.protobuf.ByteString inputContent_;
+  private com.google.protobuf.ByteString inputContent_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -161,7 +163,10 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FEATURES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> features_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>
       features_converter_ =
@@ -169,9 +174,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
               java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>() {
             public com.google.cloud.videointelligence.v1beta2.Feature convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.videointelligence.v1beta2.Feature result =
-                  com.google.cloud.videointelligence.v1beta2.Feature.valueOf(from);
+                  com.google.cloud.videointelligence.v1beta2.Feature.forNumber(from);
               return result == null
                   ? com.google.cloud.videointelligence.v1beta2.Feature.UNRECOGNIZED
                   : result;
@@ -315,11 +319,15 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder
       getVideoContextOrBuilder() {
-    return getVideoContext();
+    return videoContext_ == null
+        ? com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance()
+        : videoContext_;
   }
 
   public static final int OUTPUT_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object outputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUri_ = "";
   /**
    *
    *
@@ -380,7 +388,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object locationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object locationId_ = "";
   /**
    *
    *
@@ -696,22 +706,18 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputUri_ = "";
-
       inputContent_ = com.google.protobuf.ByteString.EMPTY;
-
       features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (videoContextBuilder_ == null) {
-        videoContext_ = null;
-      } else {
-        videoContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      videoContext_ = null;
+      if (videoContextBuilder_ != null) {
+        videoContextBuilder_.dispose();
         videoContextBuilder_ = null;
       }
       outputUri_ = "";
-
       locationId_ = "";
-
       return this;
     }
 
@@ -740,23 +746,42 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest buildPartial() {
       com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest result =
           new com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.inputUri_ = inputUri_;
-      result.inputContent_ = inputContent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        features_ = java.util.Collections.unmodifiableList(features_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.features_ = features_;
-      if (videoContextBuilder_ == null) {
-        result.videoContext_ = videoContext_;
-      } else {
-        result.videoContext_ = videoContextBuilder_.build();
-      }
-      result.outputUri_ = outputUri_;
-      result.locationId_ = locationId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        features_ = java.util.Collections.unmodifiableList(features_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.features_ = features_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputUri_ = inputUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.inputContent_ = inputContent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.videoContext_ =
+            videoContextBuilder_ == null ? videoContext_ : videoContextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.outputUri_ = outputUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.locationId_ = locationId_;
+      }
     }
 
     @java.lang.Override
@@ -809,6 +834,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getInputUri().isEmpty()) {
         inputUri_ = other.inputUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getInputContent() != com.google.protobuf.ByteString.EMPTY) {
@@ -817,7 +843,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (!other.features_.isEmpty()) {
         if (features_.isEmpty()) {
           features_ = other.features_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureFeaturesIsMutable();
           features_.addAll(other.features_);
@@ -829,10 +855,12 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getOutputUri().isEmpty()) {
         outputUri_ = other.outputUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -864,7 +892,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 inputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
@@ -889,25 +917,25 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 input.readMessage(getVideoContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 outputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 locationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 inputContent_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -1020,8 +1048,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       inputUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1047,8 +1075,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearInputUri() {
-
       inputUri_ = getDefaultInstance().getInputUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1079,8 +1107,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inputUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1121,8 +1149,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       inputContent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1140,7 +1168,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearInputContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       inputContent_ = getDefaultInstance().getInputContent();
       onChanged();
       return this;
@@ -1149,9 +1177,9 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     private java.util.List<java.lang.Integer> features_ = java.util.Collections.emptyList();
 
     private void ensureFeaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         features_ = new java.util.ArrayList<java.lang.Integer>(features_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1291,7 +1319,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearFeatures() {
       features_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1410,7 +1438,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the videoContext field is set.
      */
     public boolean hasVideoContext() {
-      return videoContextBuilder_ != null || videoContext_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1447,11 +1475,11 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         videoContext_ = value;
-        onChanged();
       } else {
         videoContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1467,11 +1495,11 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.videointelligence.v1beta2.VideoContext.Builder builderForValue) {
       if (videoContextBuilder_ == null) {
         videoContext_ = builderForValue.build();
-        onChanged();
       } else {
         videoContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1486,19 +1514,19 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public Builder mergeVideoContext(
         com.google.cloud.videointelligence.v1beta2.VideoContext value) {
       if (videoContextBuilder_ == null) {
-        if (videoContext_ != null) {
-          videoContext_ =
-              com.google.cloud.videointelligence.v1beta2.VideoContext.newBuilder(videoContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && videoContext_ != null
+            && videoContext_
+                != com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance()) {
+          getVideoContextBuilder().mergeFrom(value);
         } else {
           videoContext_ = value;
         }
-        onChanged();
       } else {
         videoContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1511,14 +1539,13 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
      */
     public Builder clearVideoContext() {
-      if (videoContextBuilder_ == null) {
-        videoContext_ = null;
-        onChanged();
-      } else {
-        videoContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      videoContext_ = null;
+      if (videoContextBuilder_ != null) {
+        videoContextBuilder_.dispose();
         videoContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1532,7 +1559,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.videointelligence.v1beta2.VideoContext.Builder
         getVideoContextBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getVideoContextFieldBuilder().getBuilder();
     }
@@ -1660,8 +1687,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1683,8 +1710,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOutputUri() {
-
       outputUri_ = getDefaultInstance().getOutputUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1711,8 +1738,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1784,8 +1811,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       locationId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1803,8 +1830,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLocationId() {
-
       locationId_ = getDefaultInstance().getLocationId();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1827,8 +1854,8 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       locationId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

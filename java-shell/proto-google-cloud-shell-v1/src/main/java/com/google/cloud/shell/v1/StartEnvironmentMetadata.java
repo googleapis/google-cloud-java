@@ -292,7 +292,7 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -321,9 +321,8 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.shell.v1.StartEnvironmentMetadata.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.shell.v1.StartEnvironmentMetadata.State result =
-        com.google.cloud.shell.v1.StartEnvironmentMetadata.State.valueOf(state_);
+        com.google.cloud.shell.v1.StartEnvironmentMetadata.State.forNumber(state_);
     return result == null
         ? com.google.cloud.shell.v1.StartEnvironmentMetadata.State.UNRECOGNIZED
         : result;
@@ -529,8 +528,8 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       return this;
     }
 
@@ -558,9 +557,18 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
     public com.google.cloud.shell.v1.StartEnvironmentMetadata buildPartial() {
       com.google.cloud.shell.v1.StartEnvironmentMetadata result =
           new com.google.cloud.shell.v1.StartEnvironmentMetadata(this);
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.shell.v1.StartEnvironmentMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -641,7 +649,7 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -660,6 +668,8 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -690,8 +700,8 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,9 +718,8 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.shell.v1.StartEnvironmentMetadata.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.shell.v1.StartEnvironmentMetadata.State result =
-          com.google.cloud.shell.v1.StartEnvironmentMetadata.State.valueOf(state_);
+          com.google.cloud.shell.v1.StartEnvironmentMetadata.State.forNumber(state_);
       return result == null
           ? com.google.cloud.shell.v1.StartEnvironmentMetadata.State.UNRECOGNIZED
           : result;
@@ -731,7 +740,7 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -748,7 +757,7 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;

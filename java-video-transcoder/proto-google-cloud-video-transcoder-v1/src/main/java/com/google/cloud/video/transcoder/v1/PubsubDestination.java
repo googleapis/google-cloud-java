@@ -68,7 +68,9 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TOPIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object topic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object topic_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       topic_ = "";
-
       return this;
     }
 
@@ -345,9 +347,18 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.video.transcoder.v1.PubsubDestination buildPartial() {
       com.google.cloud.video.transcoder.v1.PubsubDestination result =
           new com.google.cloud.video.transcoder.v1.PubsubDestination(this);
-      result.topic_ = topic_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.PubsubDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.topic_ = topic_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +409,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getTopic().isEmpty()) {
         topic_ = other.topic_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +441,7 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 topic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +460,8 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object topic_ = "";
     /**
@@ -513,8 +527,8 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -531,8 +545,8 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearTopic() {
-
       topic_ = getDefaultInstance().getTopic();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -554,8 +568,8 @@ public final class PubsubDestination extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       topic_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

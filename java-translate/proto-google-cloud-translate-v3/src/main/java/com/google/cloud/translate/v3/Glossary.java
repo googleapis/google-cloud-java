@@ -177,7 +177,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sourceLanguageCode_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sourceLanguageCode_ = "";
     /**
      *
      *
@@ -228,7 +230,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object targetLanguageCode_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object targetLanguageCode_ = "";
     /**
      *
      *
@@ -487,10 +491,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sourceLanguageCode_ = "";
-
         targetLanguageCode_ = "";
-
         return this;
       }
 
@@ -518,10 +521,21 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.translate.v3.Glossary.LanguageCodePair buildPartial() {
         com.google.cloud.translate.v3.Glossary.LanguageCodePair result =
             new com.google.cloud.translate.v3.Glossary.LanguageCodePair(this);
-        result.sourceLanguageCode_ = sourceLanguageCode_;
-        result.targetLanguageCode_ = targetLanguageCode_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.translate.v3.Glossary.LanguageCodePair result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceLanguageCode_ = sourceLanguageCode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetLanguageCode_ = targetLanguageCode_;
+        }
       }
 
       @java.lang.Override
@@ -574,10 +588,12 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getSourceLanguageCode().isEmpty()) {
           sourceLanguageCode_ = other.sourceLanguageCode_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTargetLanguageCode().isEmpty()) {
           targetLanguageCode_ = other.targetLanguageCode_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -609,13 +625,13 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   sourceLanguageCode_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   targetLanguageCode_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -634,6 +650,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object sourceLanguageCode_ = "";
       /**
@@ -699,8 +717,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         sourceLanguageCode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -717,8 +735,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearSourceLanguageCode() {
-
         sourceLanguageCode_ = getDefaultInstance().getSourceLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -740,8 +758,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         sourceLanguageCode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -810,8 +828,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         targetLanguageCode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -828,8 +846,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearTargetLanguageCode() {
-
         targetLanguageCode_ = getDefaultInstance().getTargetLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -851,8 +869,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         targetLanguageCode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1035,6 +1053,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LANGUAGE_CODES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList languageCodes_;
     /**
      *
@@ -1310,6 +1330,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -1339,14 +1360,25 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.translate.v3.Glossary.LanguageCodesSet buildPartial() {
         com.google.cloud.translate.v3.Glossary.LanguageCodesSet result =
             new com.google.cloud.translate.v3.Glossary.LanguageCodesSet(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.translate.v3.Glossary.LanguageCodesSet result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           languageCodes_ = languageCodes_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.languageCodes_ = languageCodes_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.translate.v3.Glossary.LanguageCodesSet result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1757,7 +1789,9 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1959,11 +1993,13 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.translate.v3.GlossaryInputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.translate.v3.GlossaryInputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int ENTRY_COUNT_FIELD_NUMBER = 6;
-  private int entryCount_;
+  private int entryCount_ = 0;
   /**
    *
    *
@@ -2026,7 +2062,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder() {
-    return getSubmitTime();
+    return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 8;
@@ -2075,7 +2111,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2364,32 +2400,28 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (languagePairBuilder_ != null) {
         languagePairBuilder_.clear();
       }
       if (languageCodesSetBuilder_ != null) {
         languageCodesSetBuilder_.clear();
       }
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
       entryCount_ = 0;
-
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-      } else {
-        submitTime_ = null;
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       languagesCase_ = 0;
@@ -2421,40 +2453,43 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.translate.v3.Glossary buildPartial() {
       com.google.cloud.translate.v3.Glossary result =
           new com.google.cloud.translate.v3.Glossary(this);
-      result.name_ = name_;
-      if (languagesCase_ == 3) {
-        if (languagePairBuilder_ == null) {
-          result.languages_ = languages_;
-        } else {
-          result.languages_ = languagePairBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (languagesCase_ == 4) {
-        if (languageCodesSetBuilder_ == null) {
-          result.languages_ = languages_;
-        } else {
-          result.languages_ = languageCodesSetBuilder_.build();
-        }
-      }
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
-      }
-      result.entryCount_ = entryCount_;
-      if (submitTimeBuilder_ == null) {
-        result.submitTime_ = submitTime_;
-      } else {
-        result.submitTime_ = submitTimeBuilder_.build();
-      }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.languagesCase_ = languagesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.Glossary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.entryCount_ = entryCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.submitTime_ = submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.translate.v3.Glossary result) {
+      result.languagesCase_ = languagesCase_;
+      result.languages_ = this.languages_;
+      if (languagesCase_ == 3 && languagePairBuilder_ != null) {
+        result.languages_ = languagePairBuilder_.build();
+      }
+      if (languagesCase_ == 4 && languageCodesSetBuilder_ != null) {
+        result.languages_ = languageCodesSetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2504,6 +2539,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.translate.v3.Glossary.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInputConfig()) {
@@ -2563,7 +2599,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -2582,25 +2618,25 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 48:
               {
                 entryCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getSubmitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -2633,6 +2669,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2698,8 +2736,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2716,8 +2754,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2739,8 +2777,8 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2955,7 +2993,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       languagesCase_ = 3;
       onChanged();
-      ;
       return languagePairBuilder_;
     }
 
@@ -3170,7 +3207,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       languagesCase_ = 4;
       onChanged();
-      ;
       return languageCodesSetBuilder_;
     }
 
@@ -3193,7 +3229,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3232,11 +3268,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3253,11 +3289,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.translate.v3.GlossaryInputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3272,19 +3308,19 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInputConfig(com.google.cloud.translate.v3.GlossaryInputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.translate.v3.GlossaryInputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.translate.v3.GlossaryInputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -3298,14 +3334,13 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.translation.v3.GlossaryInputConfig input_config = 5;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3319,7 +3354,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.translation.v3.GlossaryInputConfig input_config = 5;</code>
      */
     public com.google.cloud.translate.v3.GlossaryInputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -3400,6 +3435,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public Builder setEntryCount(int value) {
 
       entryCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3415,7 +3451,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEntryCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       entryCount_ = 0;
       onChanged();
       return this;
@@ -3441,7 +3477,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
-      return submitTimeBuilder_ != null || submitTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3482,11 +3518,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         submitTime_ = value;
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3503,11 +3539,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
         submitTime_ = builderForValue.build();
-        onChanged();
       } else {
         submitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3523,17 +3559,18 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
-        if (submitTime_ != null) {
-          submitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && submitTime_ != null
+            && submitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSubmitTimeBuilder().mergeFrom(value);
         } else {
           submitTime_ = value;
         }
-        onChanged();
       } else {
         submitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3548,14 +3585,13 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSubmitTime() {
-      if (submitTimeBuilder_ == null) {
-        submitTime_ = null;
-        onChanged();
-      } else {
-        submitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      submitTime_ = null;
+      if (submitTimeBuilder_ != null) {
+        submitTimeBuilder_.dispose();
         submitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3570,7 +3606,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
@@ -3641,7 +3677,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3678,11 +3714,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3698,11 +3734,11 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3717,17 +3753,18 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3741,14 +3778,13 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3762,7 +3798,7 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }

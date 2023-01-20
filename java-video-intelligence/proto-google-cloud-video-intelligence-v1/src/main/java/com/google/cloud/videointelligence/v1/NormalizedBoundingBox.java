@@ -68,7 +68,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LEFT_FIELD_NUMBER = 1;
-  private float left_;
+  private float left_ = 0F;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TOP_FIELD_NUMBER = 2;
-  private float top_;
+  private float top_ = 0F;
   /**
    *
    *
@@ -104,7 +104,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RIGHT_FIELD_NUMBER = 3;
-  private float right_;
+  private float right_ = 0F;
   /**
    *
    *
@@ -122,7 +122,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
   }
 
   public static final int BOTTOM_FIELD_NUMBER = 4;
-  private float bottom_;
+  private float bottom_ = 0F;
   /**
    *
    *
@@ -370,14 +370,11 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       left_ = 0F;
-
       top_ = 0F;
-
       right_ = 0F;
-
       bottom_ = 0F;
-
       return this;
     }
 
@@ -405,12 +402,27 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public com.google.cloud.videointelligence.v1.NormalizedBoundingBox buildPartial() {
       com.google.cloud.videointelligence.v1.NormalizedBoundingBox result =
           new com.google.cloud.videointelligence.v1.NormalizedBoundingBox(this);
-      result.left_ = left_;
-      result.top_ = top_;
-      result.right_ = right_;
-      result.bottom_ = bottom_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1.NormalizedBoundingBox result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.left_ = left_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.top_ = top_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.right_ = right_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.bottom_ = bottom_;
+      }
     }
 
     @java.lang.Override
@@ -500,25 +512,25 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
             case 13:
               {
                 left_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 top_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 29:
               {
                 right_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 37:
               {
                 bottom_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             default:
@@ -537,6 +549,8 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private float left_;
     /**
@@ -569,6 +583,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public Builder setLeft(float value) {
 
       left_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -584,7 +599,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLeft() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       left_ = 0F;
       onChanged();
       return this;
@@ -621,6 +636,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public Builder setTop(float value) {
 
       top_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -636,7 +652,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearTop() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       top_ = 0F;
       onChanged();
       return this;
@@ -673,6 +689,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public Builder setRight(float value) {
 
       right_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -688,7 +705,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRight() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       right_ = 0F;
       onChanged();
       return this;
@@ -725,6 +742,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
     public Builder setBottom(float value) {
 
       bottom_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -740,7 +758,7 @@ public final class NormalizedBoundingBox extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearBottom() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       bottom_ = 0F;
       onChanged();
       return this;

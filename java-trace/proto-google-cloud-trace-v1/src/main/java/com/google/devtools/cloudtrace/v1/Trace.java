@@ -72,7 +72,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRACE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object traceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object traceId_ = "";
   /**
    *
    *
@@ -174,6 +178,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPANS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> spans_;
   /**
    *
@@ -460,17 +466,16 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       traceId_ = "";
-
       if (spansBuilder_ == null) {
         spans_ = java.util.Collections.emptyList();
       } else {
         spans_ = null;
         spansBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -498,20 +503,34 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v1.Trace buildPartial() {
       com.google.devtools.cloudtrace.v1.Trace result =
           new com.google.devtools.cloudtrace.v1.Trace(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.traceId_ = traceId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.devtools.cloudtrace.v1.Trace result) {
       if (spansBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           spans_ = java.util.Collections.unmodifiableList(spans_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.spans_ = spans_;
       } else {
         result.spans_ = spansBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.devtools.cloudtrace.v1.Trace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.traceId_ = traceId_;
+      }
     }
 
     @java.lang.Override
@@ -561,17 +580,19 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.devtools.cloudtrace.v1.Trace.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTraceId().isEmpty()) {
         traceId_ = other.traceId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (spansBuilder_ == null) {
         if (!other.spans_.isEmpty()) {
           if (spans_.isEmpty()) {
             spans_ = other.spans_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSpansIsMutable();
             spans_.addAll(other.spans_);
@@ -584,7 +605,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
             spansBuilder_.dispose();
             spansBuilder_ = null;
             spans_ = other.spans_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             spansBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpansFieldBuilder()
@@ -623,13 +644,13 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 traceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -725,8 +746,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,8 +763,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -764,8 +785,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,8 +858,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       traceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -856,8 +877,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTraceId() {
-
       traceId_ = getDefaultInstance().getTraceId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -880,8 +901,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       traceId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -890,9 +911,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSpansIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         spans_ = new java.util.ArrayList<com.google.devtools.cloudtrace.v1.TraceSpan>(spans_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1107,7 +1128,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSpans() {
       if (spansBuilder_ == null) {
         spans_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         spansBuilder_.clear();
@@ -1229,7 +1250,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
                 com.google.devtools.cloudtrace.v1.TraceSpan,
                 com.google.devtools.cloudtrace.v1.TraceSpan.Builder,
                 com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder>(
-                spans_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                spans_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         spans_ = null;
       }
       return spansBuilder_;

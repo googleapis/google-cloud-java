@@ -75,7 +75,6 @@ public interface BatchRecognizeMetadataOrBuilder
    * map&lt;string, .google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata&gt; transcription_metadata = 1;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.speech.v2.BatchRecognizeTranscriptionMetadata getTranscriptionMetadataOrDefault(
       java.lang.String key,

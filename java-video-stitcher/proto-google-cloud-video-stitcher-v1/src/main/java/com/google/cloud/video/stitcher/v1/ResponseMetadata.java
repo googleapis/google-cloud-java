@@ -70,7 +70,9 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ERROR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object error_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    *
    *
@@ -161,11 +163,13 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getHeadersOrBuilder() {
-    return getHeaders();
+    return headers_ == null ? com.google.protobuf.Struct.getDefaultInstance() : headers_;
   }
 
   public static final int STATUS_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object statusCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusCode_ = "";
   /**
    *
    *
@@ -214,7 +218,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 4;
-  private int sizeBytes_;
+  private int sizeBytes_ = 0;
   /**
    *
    *
@@ -274,11 +278,13 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
-    return getDuration();
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
 
   public static final int BODY_FIELD_NUMBER = 6;
-  private volatile java.lang.Object body_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object body_ = "";
   /**
    *
    *
@@ -578,26 +584,21 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       error_ = "";
-
-      if (headersBuilder_ == null) {
-        headers_ = null;
-      } else {
-        headers_ = null;
+      headers_ = null;
+      if (headersBuilder_ != null) {
+        headersBuilder_.dispose();
         headersBuilder_ = null;
       }
       statusCode_ = "";
-
       sizeBytes_ = 0;
-
-      if (durationBuilder_ == null) {
-        duration_ = null;
-      } else {
-        duration_ = null;
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
       body_ = "";
-
       return this;
     }
 
@@ -625,22 +626,33 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.video.stitcher.v1.ResponseMetadata buildPartial() {
       com.google.cloud.video.stitcher.v1.ResponseMetadata result =
           new com.google.cloud.video.stitcher.v1.ResponseMetadata(this);
-      result.error_ = error_;
-      if (headersBuilder_ == null) {
-        result.headers_ = headers_;
-      } else {
-        result.headers_ = headersBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.statusCode_ = statusCode_;
-      result.sizeBytes_ = sizeBytes_;
-      if (durationBuilder_ == null) {
-        result.duration_ = duration_;
-      } else {
-        result.duration_ = durationBuilder_.build();
-      }
-      result.body_ = body_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.ResponseMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.error_ = error_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.headers_ = headersBuilder_ == null ? headers_ : headersBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.statusCode_ = statusCode_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sizeBytes_ = sizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.body_ = body_;
+      }
     }
 
     @java.lang.Override
@@ -691,6 +703,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasHeaders()) {
@@ -698,6 +711,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getStatusCode().isEmpty()) {
         statusCode_ = other.statusCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getSizeBytes() != 0) {
@@ -708,6 +722,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getBody().isEmpty()) {
         body_ = other.body_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -739,37 +754,37 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 error_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getHeadersFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 statusCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 sizeBytes_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 body_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -788,6 +803,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object error_ = "";
     /**
@@ -850,8 +867,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       error_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -867,8 +884,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -889,8 +906,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       error_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -913,7 +930,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the headers field is set.
      */
     public boolean hasHeaders() {
-      return headersBuilder_ != null || headers_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -948,11 +965,11 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         headers_ = value;
-        onChanged();
       } else {
         headersBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -967,11 +984,11 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setHeaders(com.google.protobuf.Struct.Builder builderForValue) {
       if (headersBuilder_ == null) {
         headers_ = builderForValue.build();
-        onChanged();
       } else {
         headersBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -985,17 +1002,18 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeHeaders(com.google.protobuf.Struct value) {
       if (headersBuilder_ == null) {
-        if (headers_ != null) {
-          headers_ =
-              com.google.protobuf.Struct.newBuilder(headers_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && headers_ != null
+            && headers_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getHeadersBuilder().mergeFrom(value);
         } else {
           headers_ = value;
         }
-        onChanged();
       } else {
         headersBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1008,14 +1026,13 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Struct headers = 2;</code>
      */
     public Builder clearHeaders() {
-      if (headersBuilder_ == null) {
-        headers_ = null;
-        onChanged();
-      } else {
-        headers_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      headers_ = null;
+      if (headersBuilder_ != null) {
+        headersBuilder_.dispose();
         headersBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1028,7 +1045,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Struct headers = 2;</code>
      */
     public com.google.protobuf.Struct.Builder getHeadersBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getHeadersFieldBuilder().getBuilder();
     }
@@ -1135,8 +1152,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       statusCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1152,8 +1169,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStatusCode() {
-
       statusCode_ = getDefaultInstance().getStatusCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1174,8 +1191,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       statusCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1211,6 +1228,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setSizeBytes(int value) {
 
       sizeBytes_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1226,7 +1244,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSizeBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sizeBytes_ = 0;
       onChanged();
       return this;
@@ -1250,7 +1268,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return Whether the duration field is set.
      */
     public boolean hasDuration() {
-      return durationBuilder_ != null || duration_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1285,11 +1303,11 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         duration_ = value;
-        onChanged();
       } else {
         durationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1304,11 +1322,11 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (durationBuilder_ == null) {
         duration_ = builderForValue.build();
-        onChanged();
       } else {
         durationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1322,17 +1340,18 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDuration(com.google.protobuf.Duration value) {
       if (durationBuilder_ == null) {
-        if (duration_ != null) {
-          duration_ =
-              com.google.protobuf.Duration.newBuilder(duration_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
         } else {
           duration_ = value;
         }
-        onChanged();
       } else {
         durationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1345,14 +1364,13 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration duration = 5;</code>
      */
     public Builder clearDuration() {
-      if (durationBuilder_ == null) {
-        duration_ = null;
-        onChanged();
-      } else {
-        duration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
         durationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1365,7 +1383,7 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration duration = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getDurationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
@@ -1472,8 +1490,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       body_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1489,8 +1507,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearBody() {
-
       body_ = getDefaultInstance().getBody();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1511,8 +1529,8 @@ public final class ResponseMetadata extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       body_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

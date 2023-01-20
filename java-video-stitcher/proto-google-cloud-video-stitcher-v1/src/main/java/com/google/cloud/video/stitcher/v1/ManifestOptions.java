@@ -228,6 +228,8 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INCLUDE_RENDITIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.RenditionFilter> includeRenditions_;
   /**
    *
@@ -304,7 +306,7 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BITRATE_ORDER_FIELD_NUMBER = 2;
-  private int bitrateOrder_;
+  private int bitrateOrder_ = 0;
   /**
    *
    *
@@ -335,9 +337,8 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy getBitrateOrder() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy result =
-        com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.valueOf(bitrateOrder_);
+        com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.forNumber(bitrateOrder_);
     return result == null
         ? com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.UNRECOGNIZED
         : result;
@@ -556,6 +557,7 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (includeRenditionsBuilder_ == null) {
         includeRenditions_ = java.util.Collections.emptyList();
       } else {
@@ -564,7 +566,6 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       bitrateOrder_ = 0;
-
       return this;
     }
 
@@ -592,7 +593,16 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.video.stitcher.v1.ManifestOptions buildPartial() {
       com.google.cloud.video.stitcher.v1.ManifestOptions result =
           new com.google.cloud.video.stitcher.v1.ManifestOptions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.stitcher.v1.ManifestOptions result) {
       if (includeRenditionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           includeRenditions_ = java.util.Collections.unmodifiableList(includeRenditions_);
@@ -602,9 +612,13 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       } else {
         result.includeRenditions_ = includeRenditionsBuilder_.build();
       }
-      result.bitrateOrder_ = bitrateOrder_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.ManifestOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.bitrateOrder_ = bitrateOrder_;
+      }
     }
 
     @java.lang.Override
@@ -726,7 +740,7 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
             case 16:
               {
                 bitrateOrder_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -1160,8 +1174,8 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setBitrateOrderValue(int value) {
-
       bitrateOrder_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1179,9 +1193,8 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy getBitrateOrder() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy result =
-          com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.valueOf(bitrateOrder_);
+          com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.forNumber(bitrateOrder_);
       return result == null
           ? com.google.cloud.video.stitcher.v1.ManifestOptions.OrderPolicy.UNRECOGNIZED
           : result;
@@ -1204,7 +1217,7 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       bitrateOrder_ = value.getNumber();
       onChanged();
       return this;
@@ -1222,7 +1235,7 @@ public final class ManifestOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBitrateOrder() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       bitrateOrder_ = 0;
       onChanged();
       return this;

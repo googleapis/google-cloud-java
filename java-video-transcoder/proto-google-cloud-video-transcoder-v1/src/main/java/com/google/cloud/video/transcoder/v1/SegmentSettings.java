@@ -119,11 +119,13 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getSegmentDurationOrBuilder() {
-    return getSegmentDuration();
+    return segmentDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : segmentDuration_;
   }
 
   public static final int INDIVIDUAL_SEGMENTS_FIELD_NUMBER = 3;
-  private boolean individualSegments_;
+  private boolean individualSegments_ = false;
   /**
    *
    *
@@ -351,14 +353,13 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (segmentDurationBuilder_ == null) {
-        segmentDuration_ = null;
-      } else {
-        segmentDuration_ = null;
+      bitField0_ = 0;
+      segmentDuration_ = null;
+      if (segmentDurationBuilder_ != null) {
+        segmentDurationBuilder_.dispose();
         segmentDurationBuilder_ = null;
       }
       individualSegments_ = false;
-
       return this;
     }
 
@@ -386,14 +387,22 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.video.transcoder.v1.SegmentSettings buildPartial() {
       com.google.cloud.video.transcoder.v1.SegmentSettings result =
           new com.google.cloud.video.transcoder.v1.SegmentSettings(this);
-      if (segmentDurationBuilder_ == null) {
-        result.segmentDuration_ = segmentDuration_;
-      } else {
-        result.segmentDuration_ = segmentDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.individualSegments_ = individualSegments_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.transcoder.v1.SegmentSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.segmentDuration_ =
+            segmentDurationBuilder_ == null ? segmentDuration_ : segmentDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.individualSegments_ = individualSegments_;
+      }
     }
 
     @java.lang.Override
@@ -477,13 +486,13 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getSegmentDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 individualSegments_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -502,6 +511,8 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration segmentDuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -524,7 +535,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the segmentDuration field is set.
      */
     public boolean hasSegmentDuration() {
-      return segmentDurationBuilder_ != null || segmentDuration_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -567,11 +578,11 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         segmentDuration_ = value;
-        onChanged();
       } else {
         segmentDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -589,11 +600,11 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setSegmentDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (segmentDurationBuilder_ == null) {
         segmentDuration_ = builderForValue.build();
-        onChanged();
       } else {
         segmentDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -610,19 +621,18 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSegmentDuration(com.google.protobuf.Duration value) {
       if (segmentDurationBuilder_ == null) {
-        if (segmentDuration_ != null) {
-          segmentDuration_ =
-              com.google.protobuf.Duration.newBuilder(segmentDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && segmentDuration_ != null
+            && segmentDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getSegmentDurationBuilder().mergeFrom(value);
         } else {
           segmentDuration_ = value;
         }
-        onChanged();
       } else {
         segmentDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,14 +648,13 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Duration segment_duration = 1;</code>
      */
     public Builder clearSegmentDuration() {
-      if (segmentDurationBuilder_ == null) {
-        segmentDuration_ = null;
-        onChanged();
-      } else {
-        segmentDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      segmentDuration_ = null;
+      if (segmentDurationBuilder_ != null) {
+        segmentDurationBuilder_.dispose();
         segmentDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -661,7 +670,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Duration segment_duration = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getSegmentDurationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSegmentDurationFieldBuilder().getBuilder();
     }
@@ -746,6 +755,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     public Builder setIndividualSegments(boolean value) {
 
       individualSegments_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -761,7 +771,7 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIndividualSegments() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       individualSegments_ = false;
       onChanged();
       return this;

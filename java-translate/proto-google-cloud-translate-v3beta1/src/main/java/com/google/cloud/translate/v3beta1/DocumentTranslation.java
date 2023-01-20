@@ -70,6 +70,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BYTE_STREAM_OUTPUTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ByteString> byteStreamOutputs_;
   /**
    *
@@ -123,7 +125,9 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DETECTED_LANGUAGE_CODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object detectedLanguageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detectedLanguageCode_ = "";
   /**
    *
    *
@@ -452,12 +458,10 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       byteStreamOutputs_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
       mimeType_ = "";
-
       detectedLanguageCode_ = "";
-
       return this;
     }
 
@@ -485,16 +489,31 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.translate.v3beta1.DocumentTranslation buildPartial() {
       com.google.cloud.translate.v3beta1.DocumentTranslation result =
           new com.google.cloud.translate.v3beta1.DocumentTranslation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.translate.v3beta1.DocumentTranslation result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         byteStreamOutputs_ = java.util.Collections.unmodifiableList(byteStreamOutputs_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.byteStreamOutputs_ = byteStreamOutputs_;
-      result.mimeType_ = mimeType_;
-      result.detectedLanguageCode_ = detectedLanguageCode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3beta1.DocumentTranslation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.detectedLanguageCode_ = detectedLanguageCode_;
+      }
     }
 
     @java.lang.Override
@@ -555,10 +574,12 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDetectedLanguageCode().isEmpty()) {
         detectedLanguageCode_ = other.detectedLanguageCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -597,13 +618,13 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
             case 18:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 detectedLanguageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -835,8 +856,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -852,8 +873,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -874,8 +895,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -953,8 +974,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       detectedLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -974,8 +995,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDetectedLanguageCode() {
-
       detectedLanguageCode_ = getDefaultInstance().getDetectedLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1000,8 +1021,8 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detectedLanguageCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -68,6 +68,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SEGMENTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p1beta1.VideoSegment> segments_;
   /**
    *
@@ -202,7 +204,9 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfigOrBuilder
       getLabelDetectionConfigOrBuilder() {
-    return getLabelDetectionConfig();
+    return labelDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig.getDefaultInstance()
+        : labelDetectionConfig_;
   }
 
   public static final int SHOT_CHANGE_DETECTION_CONFIG_FIELD_NUMBER = 3;
@@ -260,7 +264,10 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfigOrBuilder
       getShotChangeDetectionConfigOrBuilder() {
-    return getShotChangeDetectionConfig();
+    return shotChangeDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig
+            .getDefaultInstance()
+        : shotChangeDetectionConfig_;
   }
 
   public static final int EXPLICIT_CONTENT_DETECTION_CONFIG_FIELD_NUMBER = 4;
@@ -318,7 +325,10 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfigOrBuilder
       getExplicitContentDetectionConfigOrBuilder() {
-    return getExplicitContentDetectionConfig();
+    return explicitContentDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig
+            .getDefaultInstance()
+        : explicitContentDetectionConfig_;
   }
 
   public static final int SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 6;
@@ -376,7 +386,10 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfigOrBuilder
       getSpeechTranscriptionConfigOrBuilder() {
-    return getSpeechTranscriptionConfig();
+    return speechTranscriptionConfig_ == null
+        ? com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+            .getDefaultInstance()
+        : speechTranscriptionConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -646,6 +659,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (segmentsBuilder_ == null) {
         segments_ = java.util.Collections.emptyList();
       } else {
@@ -653,28 +667,24 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         segmentsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (labelDetectionConfigBuilder_ == null) {
-        labelDetectionConfig_ = null;
-      } else {
-        labelDetectionConfig_ = null;
+      labelDetectionConfig_ = null;
+      if (labelDetectionConfigBuilder_ != null) {
+        labelDetectionConfigBuilder_.dispose();
         labelDetectionConfigBuilder_ = null;
       }
-      if (shotChangeDetectionConfigBuilder_ == null) {
-        shotChangeDetectionConfig_ = null;
-      } else {
-        shotChangeDetectionConfig_ = null;
+      shotChangeDetectionConfig_ = null;
+      if (shotChangeDetectionConfigBuilder_ != null) {
+        shotChangeDetectionConfigBuilder_.dispose();
         shotChangeDetectionConfigBuilder_ = null;
       }
-      if (explicitContentDetectionConfigBuilder_ == null) {
-        explicitContentDetectionConfig_ = null;
-      } else {
-        explicitContentDetectionConfig_ = null;
+      explicitContentDetectionConfig_ = null;
+      if (explicitContentDetectionConfigBuilder_ != null) {
+        explicitContentDetectionConfigBuilder_.dispose();
         explicitContentDetectionConfigBuilder_ = null;
       }
-      if (speechTranscriptionConfigBuilder_ == null) {
-        speechTranscriptionConfig_ = null;
-      } else {
-        speechTranscriptionConfig_ = null;
+      speechTranscriptionConfig_ = null;
+      if (speechTranscriptionConfigBuilder_ != null) {
+        speechTranscriptionConfigBuilder_.dispose();
         speechTranscriptionConfigBuilder_ = null;
       }
       return this;
@@ -704,7 +714,16 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.videointelligence.v1p1beta1.VideoContext buildPartial() {
       com.google.cloud.videointelligence.v1p1beta1.VideoContext result =
           new com.google.cloud.videointelligence.v1p1beta1.VideoContext(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p1beta1.VideoContext result) {
       if (segmentsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           segments_ = java.util.Collections.unmodifiableList(segments_);
@@ -714,28 +733,34 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.segments_ = segmentsBuilder_.build();
       }
-      if (labelDetectionConfigBuilder_ == null) {
-        result.labelDetectionConfig_ = labelDetectionConfig_;
-      } else {
-        result.labelDetectionConfig_ = labelDetectionConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.videointelligence.v1p1beta1.VideoContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labelDetectionConfig_ =
+            labelDetectionConfigBuilder_ == null
+                ? labelDetectionConfig_
+                : labelDetectionConfigBuilder_.build();
       }
-      if (shotChangeDetectionConfigBuilder_ == null) {
-        result.shotChangeDetectionConfig_ = shotChangeDetectionConfig_;
-      } else {
-        result.shotChangeDetectionConfig_ = shotChangeDetectionConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.shotChangeDetectionConfig_ =
+            shotChangeDetectionConfigBuilder_ == null
+                ? shotChangeDetectionConfig_
+                : shotChangeDetectionConfigBuilder_.build();
       }
-      if (explicitContentDetectionConfigBuilder_ == null) {
-        result.explicitContentDetectionConfig_ = explicitContentDetectionConfig_;
-      } else {
-        result.explicitContentDetectionConfig_ = explicitContentDetectionConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.explicitContentDetectionConfig_ =
+            explicitContentDetectionConfigBuilder_ == null
+                ? explicitContentDetectionConfig_
+                : explicitContentDetectionConfigBuilder_.build();
       }
-      if (speechTranscriptionConfigBuilder_ == null) {
-        result.speechTranscriptionConfig_ = speechTranscriptionConfig_;
-      } else {
-        result.speechTranscriptionConfig_ = speechTranscriptionConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.speechTranscriptionConfig_ =
+            speechTranscriptionConfigBuilder_ == null
+                ? speechTranscriptionConfig_
+                : speechTranscriptionConfigBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -867,14 +892,14 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getLabelDetectionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getShotChangeDetectionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -882,14 +907,14 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getExplicitContentDetectionConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 input.readMessage(
                     getSpeechTranscriptionConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -1332,7 +1357,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the labelDetectionConfig field is set.
      */
     public boolean hasLabelDetectionConfig() {
-      return labelDetectionConfigBuilder_ != null || labelDetectionConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1375,11 +1400,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         labelDetectionConfig_ = value;
-        onChanged();
       } else {
         labelDetectionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1397,11 +1422,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig.Builder builderForValue) {
       if (labelDetectionConfigBuilder_ == null) {
         labelDetectionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         labelDetectionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1418,20 +1443,20 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeLabelDetectionConfig(
         com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig value) {
       if (labelDetectionConfigBuilder_ == null) {
-        if (labelDetectionConfig_ != null) {
-          labelDetectionConfig_ =
-              com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig.newBuilder(
-                      labelDetectionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && labelDetectionConfig_ != null
+            && labelDetectionConfig_
+                != com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig
+                    .getDefaultInstance()) {
+          getLabelDetectionConfigBuilder().mergeFrom(value);
         } else {
           labelDetectionConfig_ = value;
         }
-        onChanged();
       } else {
         labelDetectionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1446,14 +1471,13 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLabelDetectionConfig() {
-      if (labelDetectionConfigBuilder_ == null) {
-        labelDetectionConfig_ = null;
-        onChanged();
-      } else {
-        labelDetectionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      labelDetectionConfig_ = null;
+      if (labelDetectionConfigBuilder_ != null) {
+        labelDetectionConfigBuilder_.dispose();
         labelDetectionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1469,7 +1493,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.videointelligence.v1p1beta1.LabelDetectionConfig.Builder
         getLabelDetectionConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getLabelDetectionConfigFieldBuilder().getBuilder();
     }
@@ -1543,7 +1567,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shotChangeDetectionConfig field is set.
      */
     public boolean hasShotChangeDetectionConfig() {
-      return shotChangeDetectionConfigBuilder_ != null || shotChangeDetectionConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1587,11 +1611,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         shotChangeDetectionConfig_ = value;
-        onChanged();
       } else {
         shotChangeDetectionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1610,11 +1634,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (shotChangeDetectionConfigBuilder_ == null) {
         shotChangeDetectionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         shotChangeDetectionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1631,20 +1655,20 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShotChangeDetectionConfig(
         com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig value) {
       if (shotChangeDetectionConfigBuilder_ == null) {
-        if (shotChangeDetectionConfig_ != null) {
-          shotChangeDetectionConfig_ =
-              com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig.newBuilder(
-                      shotChangeDetectionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && shotChangeDetectionConfig_ != null
+            && shotChangeDetectionConfig_
+                != com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig
+                    .getDefaultInstance()) {
+          getShotChangeDetectionConfigBuilder().mergeFrom(value);
         } else {
           shotChangeDetectionConfig_ = value;
         }
-        onChanged();
       } else {
         shotChangeDetectionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1659,14 +1683,13 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearShotChangeDetectionConfig() {
-      if (shotChangeDetectionConfigBuilder_ == null) {
-        shotChangeDetectionConfig_ = null;
-        onChanged();
-      } else {
-        shotChangeDetectionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      shotChangeDetectionConfig_ = null;
+      if (shotChangeDetectionConfigBuilder_ != null) {
+        shotChangeDetectionConfigBuilder_.dispose();
         shotChangeDetectionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1682,7 +1705,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.videointelligence.v1p1beta1.ShotChangeDetectionConfig.Builder
         getShotChangeDetectionConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getShotChangeDetectionConfigFieldBuilder().getBuilder();
     }
@@ -1757,8 +1780,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the explicitContentDetectionConfig field is set.
      */
     public boolean hasExplicitContentDetectionConfig() {
-      return explicitContentDetectionConfigBuilder_ != null
-          || explicitContentDetectionConfig_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1802,11 +1824,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         explicitContentDetectionConfig_ = value;
-        onChanged();
       } else {
         explicitContentDetectionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1825,11 +1847,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (explicitContentDetectionConfigBuilder_ == null) {
         explicitContentDetectionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         explicitContentDetectionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1846,20 +1868,20 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeExplicitContentDetectionConfig(
         com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig value) {
       if (explicitContentDetectionConfigBuilder_ == null) {
-        if (explicitContentDetectionConfig_ != null) {
-          explicitContentDetectionConfig_ =
-              com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig
-                  .newBuilder(explicitContentDetectionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && explicitContentDetectionConfig_ != null
+            && explicitContentDetectionConfig_
+                != com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig
+                    .getDefaultInstance()) {
+          getExplicitContentDetectionConfigBuilder().mergeFrom(value);
         } else {
           explicitContentDetectionConfig_ = value;
         }
-        onChanged();
       } else {
         explicitContentDetectionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1874,14 +1896,13 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExplicitContentDetectionConfig() {
-      if (explicitContentDetectionConfigBuilder_ == null) {
-        explicitContentDetectionConfig_ = null;
-        onChanged();
-      } else {
-        explicitContentDetectionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      explicitContentDetectionConfig_ = null;
+      if (explicitContentDetectionConfigBuilder_ != null) {
+        explicitContentDetectionConfigBuilder_.dispose();
         explicitContentDetectionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1897,7 +1918,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.videointelligence.v1p1beta1.ExplicitContentDetectionConfig.Builder
         getExplicitContentDetectionConfigBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExplicitContentDetectionConfigFieldBuilder().getBuilder();
     }
@@ -1973,7 +1994,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the speechTranscriptionConfig field is set.
      */
     public boolean hasSpeechTranscriptionConfig() {
-      return speechTranscriptionConfigBuilder_ != null || speechTranscriptionConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2017,11 +2038,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         speechTranscriptionConfig_ = value;
-        onChanged();
       } else {
         speechTranscriptionConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2040,11 +2061,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (speechTranscriptionConfigBuilder_ == null) {
         speechTranscriptionConfig_ = builderForValue.build();
-        onChanged();
       } else {
         speechTranscriptionConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2061,20 +2082,20 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpeechTranscriptionConfig(
         com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig value) {
       if (speechTranscriptionConfigBuilder_ == null) {
-        if (speechTranscriptionConfig_ != null) {
-          speechTranscriptionConfig_ =
-              com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.newBuilder(
-                      speechTranscriptionConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && speechTranscriptionConfig_ != null
+            && speechTranscriptionConfig_
+                != com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+                    .getDefaultInstance()) {
+          getSpeechTranscriptionConfigBuilder().mergeFrom(value);
         } else {
           speechTranscriptionConfig_ = value;
         }
-        onChanged();
       } else {
         speechTranscriptionConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2089,14 +2110,13 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpeechTranscriptionConfig() {
-      if (speechTranscriptionConfigBuilder_ == null) {
-        speechTranscriptionConfig_ = null;
-        onChanged();
-      } else {
-        speechTranscriptionConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      speechTranscriptionConfig_ = null;
+      if (speechTranscriptionConfigBuilder_ != null) {
+        speechTranscriptionConfigBuilder_.dispose();
         speechTranscriptionConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2112,7 +2132,7 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.Builder
         getSpeechTranscriptionConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSpeechTranscriptionConfigFieldBuilder().getBuilder();
     }

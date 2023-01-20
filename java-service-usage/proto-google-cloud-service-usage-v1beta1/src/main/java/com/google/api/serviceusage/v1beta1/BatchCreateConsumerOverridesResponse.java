@@ -70,6 +70,8 @@ public final class BatchCreateConsumerOverridesResponse
   }
 
   public static final int OVERRIDES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> overrides_;
   /**
    *
@@ -343,6 +345,7 @@ public final class BatchCreateConsumerOverridesResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (overridesBuilder_ == null) {
         overrides_ = java.util.Collections.emptyList();
       } else {
@@ -380,7 +383,16 @@ public final class BatchCreateConsumerOverridesResponse
     public com.google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse buildPartial() {
       com.google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse result =
           new com.google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse result) {
       if (overridesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           overrides_ = java.util.Collections.unmodifiableList(overrides_);
@@ -390,8 +402,11 @@ public final class BatchCreateConsumerOverridesResponse
       } else {
         result.overrides_ = overridesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.api.serviceusage.v1beta1.BatchCreateConsumerOverridesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

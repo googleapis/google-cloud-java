@@ -114,10 +114,12 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-    return getTimeOffset();
+    return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
 
   public static final int EVENTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.Event> events_;
   /**
    *
@@ -415,10 +417,10 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-      } else {
-        timeOffset_ = null;
+      bitField0_ = 0;
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
       if (eventsBuilder_ == null) {
@@ -427,7 +429,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         events_ = null;
         eventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -455,23 +457,32 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.ProgressEvent buildPartial() {
       com.google.cloud.video.stitcher.v1.ProgressEvent result =
           new com.google.cloud.video.stitcher.v1.ProgressEvent(this);
-      int from_bitField0_ = bitField0_;
-      if (timeOffsetBuilder_ == null) {
-        result.timeOffset_ = timeOffset_;
-      } else {
-        result.timeOffset_ = timeOffsetBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.stitcher.v1.ProgressEvent result) {
       if (eventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.events_ = events_;
       } else {
         result.events_ = eventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.ProgressEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timeOffset_ = timeOffsetBuilder_ == null ? timeOffset_ : timeOffsetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -527,7 +538,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         if (!other.events_.isEmpty()) {
           if (events_.isEmpty()) {
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureEventsIsMutable();
             events_.addAll(other.events_);
@@ -540,7 +551,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
             eventsBuilder_.dispose();
             eventsBuilder_ = null;
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             eventsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEventsFieldBuilder()
@@ -579,7 +590,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -633,7 +644,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
-      return timeOffsetBuilder_ != null || timeOffset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -672,11 +683,11 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeOffset_ = value;
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -692,11 +703,11 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -711,17 +722,18 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeOffset(com.google.protobuf.Duration value) {
       if (timeOffsetBuilder_ == null) {
-        if (timeOffset_ != null) {
-          timeOffset_ =
-              com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && timeOffset_ != null
+            && timeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeOffsetBuilder().mergeFrom(value);
         } else {
           timeOffset_ = value;
         }
-        onChanged();
       } else {
         timeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -735,14 +747,13 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration time_offset = 1;</code>
      */
     public Builder clearTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-        onChanged();
-      } else {
-        timeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -756,7 +767,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration time_offset = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
@@ -810,9 +821,9 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         events_ = new java.util.ArrayList<com.google.cloud.video.stitcher.v1.Event>(events_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1060,7 +1071,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEvents() {
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         eventsBuilder_.clear();
@@ -1202,7 +1213,7 @@ public final class ProgressEvent extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.stitcher.v1.Event,
                 com.google.cloud.video.stitcher.v1.Event.Builder,
                 com.google.cloud.video.stitcher.v1.EventOrBuilder>(
-                events_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                events_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         events_ = null;
       }
       return eventsBuilder_;

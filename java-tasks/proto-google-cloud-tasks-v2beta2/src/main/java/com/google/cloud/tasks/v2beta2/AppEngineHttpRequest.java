@@ -132,7 +132,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
-  private int httpMethod_;
+  private int httpMethod_ = 0;
   /**
    *
    *
@@ -173,9 +173,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.HttpMethod getHttpMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta2.HttpMethod result =
-        com.google.cloud.tasks.v2beta2.HttpMethod.valueOf(httpMethod_);
+        com.google.cloud.tasks.v2beta2.HttpMethod.forNumber(httpMethod_);
     return result == null ? com.google.cloud.tasks.v2beta2.HttpMethod.UNRECOGNIZED : result;
   }
 
@@ -236,11 +235,15 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.AppEngineRoutingOrBuilder getAppEngineRoutingOrBuilder() {
-    return getAppEngineRouting();
+    return appEngineRouting_ == null
+        ? com.google.cloud.tasks.v2beta2.AppEngineRouting.getDefaultInstance()
+        : appEngineRouting_;
   }
 
   public static final int RELATIVE_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object relativeUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relativeUrl_ = "";
   /**
    *
    *
@@ -309,6 +312,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
@@ -462,7 +466,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getHeadersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -523,7 +530,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PAYLOAD_FIELD_NUMBER = 5;
-  private com.google.protobuf.ByteString payload_;
+  private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -863,19 +870,16 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       httpMethod_ = 0;
-
-      if (appEngineRoutingBuilder_ == null) {
-        appEngineRouting_ = null;
-      } else {
-        appEngineRouting_ = null;
+      appEngineRouting_ = null;
+      if (appEngineRoutingBuilder_ != null) {
+        appEngineRoutingBuilder_.dispose();
         appEngineRoutingBuilder_ = null;
       }
       relativeUrl_ = "";
-
       internalGetMutableHeaders().clear();
       payload_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -903,19 +907,32 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.tasks.v2beta2.AppEngineHttpRequest buildPartial() {
       com.google.cloud.tasks.v2beta2.AppEngineHttpRequest result =
           new com.google.cloud.tasks.v2beta2.AppEngineHttpRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.httpMethod_ = httpMethod_;
-      if (appEngineRoutingBuilder_ == null) {
-        result.appEngineRouting_ = appEngineRouting_;
-      } else {
-        result.appEngineRouting_ = appEngineRoutingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.relativeUrl_ = relativeUrl_;
-      result.headers_ = internalGetHeaders();
-      result.headers_.makeImmutable();
-      result.payload_ = payload_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.AppEngineHttpRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.httpMethod_ = httpMethod_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appEngineRouting_ =
+            appEngineRoutingBuilder_ == null ? appEngineRouting_ : appEngineRoutingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.relativeUrl_ = relativeUrl_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.headers_ = internalGetHeaders();
+        result.headers_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.payload_ = payload_;
+      }
     }
 
     @java.lang.Override
@@ -972,9 +989,11 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRelativeUrl().isEmpty()) {
         relativeUrl_ = other.relativeUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
+      bitField0_ |= 0x00000008;
       if (other.getPayload() != com.google.protobuf.ByteString.EMPTY) {
         setPayload(other.getPayload());
       }
@@ -1007,20 +1026,20 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 httpMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getAppEngineRoutingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 relativeUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1032,12 +1051,13 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
                 internalGetMutableHeaders()
                     .getMutableMap()
                     .put(headers__.getKey(), headers__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 payload_ = input.readBytes();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1100,8 +1120,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setHttpMethodValue(int value) {
-
       httpMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1124,9 +1144,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.HttpMethod getHttpMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta2.HttpMethod result =
-          com.google.cloud.tasks.v2beta2.HttpMethod.valueOf(httpMethod_);
+          com.google.cloud.tasks.v2beta2.HttpMethod.forNumber(httpMethod_);
       return result == null ? com.google.cloud.tasks.v2beta2.HttpMethod.UNRECOGNIZED : result;
     }
     /**
@@ -1151,7 +1170,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       httpMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -1174,7 +1193,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearHttpMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       httpMethod_ = 0;
       onChanged();
       return this;
@@ -1202,7 +1221,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the appEngineRouting field is set.
      */
     public boolean hasAppEngineRouting() {
-      return appEngineRoutingBuilder_ != null || appEngineRouting_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1247,11 +1266,11 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         appEngineRouting_ = value;
-        onChanged();
       } else {
         appEngineRoutingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1271,11 +1290,11 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
         com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder builderForValue) {
       if (appEngineRoutingBuilder_ == null) {
         appEngineRouting_ = builderForValue.build();
-        onChanged();
       } else {
         appEngineRoutingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1293,19 +1312,19 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeAppEngineRouting(com.google.cloud.tasks.v2beta2.AppEngineRouting value) {
       if (appEngineRoutingBuilder_ == null) {
-        if (appEngineRouting_ != null) {
-          appEngineRouting_ =
-              com.google.cloud.tasks.v2beta2.AppEngineRouting.newBuilder(appEngineRouting_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && appEngineRouting_ != null
+            && appEngineRouting_
+                != com.google.cloud.tasks.v2beta2.AppEngineRouting.getDefaultInstance()) {
+          getAppEngineRoutingBuilder().mergeFrom(value);
         } else {
           appEngineRouting_ = value;
         }
-        onChanged();
       } else {
         appEngineRoutingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1322,14 +1341,13 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
      */
     public Builder clearAppEngineRouting() {
-      if (appEngineRoutingBuilder_ == null) {
-        appEngineRouting_ = null;
-        onChanged();
-      } else {
-        appEngineRouting_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      appEngineRouting_ = null;
+      if (appEngineRoutingBuilder_ != null) {
+        appEngineRoutingBuilder_.dispose();
         appEngineRoutingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1346,7 +1364,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.tasks.v2beta2.AppEngineRouting app_engine_routing = 2;</code>
      */
     public com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder getAppEngineRoutingBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAppEngineRoutingFieldBuilder().getBuilder();
     }
@@ -1475,8 +1493,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       relativeUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1496,8 +1514,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRelativeUrl() {
-
       relativeUrl_ = getDefaultInstance().getRelativeUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1522,8 +1540,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relativeUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1539,14 +1557,14 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableHeaders() {
-      onChanged();
-      ;
       if (headers_ == null) {
         headers_ = com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       if (!headers_.isMutable()) {
         headers_ = headers_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return headers_;
     }
 
@@ -1694,8 +1712,10 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1756,6 +1776,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearHeaders() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
@@ -1810,6 +1831,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableHeaders().getMutableMap();
     }
     /**
@@ -1860,8 +1882,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableHeaders().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1907,6 +1929,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableHeaders().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1950,8 +1973,8 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       payload_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1971,7 +1994,7 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPayload() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       payload_ = getDefaultInstance().getPayload();
       onChanged();
       return this;

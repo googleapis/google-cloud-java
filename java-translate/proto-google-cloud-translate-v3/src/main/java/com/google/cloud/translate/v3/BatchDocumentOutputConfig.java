@@ -484,6 +484,7 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
@@ -516,16 +517,25 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
     public com.google.cloud.translate.v3.BatchDocumentOutputConfig buildPartial() {
       com.google.cloud.translate.v3.BatchDocumentOutputConfig result =
           new com.google.cloud.translate.v3.BatchDocumentOutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3.BatchDocumentOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.translate.v3.BatchDocumentOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -647,6 +657,8 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.translate.v3.GcsDestination,
@@ -1187,7 +1199,6 @@ public final class BatchDocumentOutputConfig extends com.google.protobuf.Generat
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 

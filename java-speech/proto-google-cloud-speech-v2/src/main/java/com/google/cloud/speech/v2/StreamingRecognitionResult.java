@@ -70,6 +70,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.SpeechRecognitionAlternative> alternatives_;
   /**
    *
@@ -151,7 +153,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int IS_FINAL_FIELD_NUMBER = 2;
-  private boolean isFinal_;
+  private boolean isFinal_ = false;
   /**
    *
    *
@@ -175,7 +177,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int STABILITY_FIELD_NUMBER = 3;
-  private float stability_;
+  private float stability_ = 0F;
   /**
    *
    *
@@ -244,11 +246,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getResultEndOffsetOrBuilder() {
-    return getResultEndOffset();
+    return resultEndOffset_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : resultEndOffset_;
   }
 
   public static final int CHANNEL_TAG_FIELD_NUMBER = 5;
-  private int channelTag_;
+  private int channelTag_ = 0;
   /**
    *
    *
@@ -269,7 +273,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -573,6 +579,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         alternatives_ = java.util.Collections.emptyList();
       } else {
@@ -581,19 +588,14 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       isFinal_ = false;
-
       stability_ = 0F;
-
-      if (resultEndOffsetBuilder_ == null) {
-        resultEndOffset_ = null;
-      } else {
-        resultEndOffset_ = null;
+      resultEndOffset_ = null;
+      if (resultEndOffsetBuilder_ != null) {
+        resultEndOffsetBuilder_.dispose();
         resultEndOffsetBuilder_ = null;
       }
       channelTag_ = 0;
-
       languageCode_ = "";
-
       return this;
     }
 
@@ -621,7 +623,16 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public com.google.cloud.speech.v2.StreamingRecognitionResult buildPartial() {
       com.google.cloud.speech.v2.StreamingRecognitionResult result =
           new com.google.cloud.speech.v2.StreamingRecognitionResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.speech.v2.StreamingRecognitionResult result) {
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -631,17 +642,26 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       } else {
         result.alternatives_ = alternativesBuilder_.build();
       }
-      result.isFinal_ = isFinal_;
-      result.stability_ = stability_;
-      if (resultEndOffsetBuilder_ == null) {
-        result.resultEndOffset_ = resultEndOffset_;
-      } else {
-        result.resultEndOffset_ = resultEndOffsetBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.StreamingRecognitionResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isFinal_ = isFinal_;
       }
-      result.channelTag_ = channelTag_;
-      result.languageCode_ = languageCode_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.stability_ = stability_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resultEndOffset_ =
+            resultEndOffsetBuilder_ == null ? resultEndOffset_ : resultEndOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.channelTag_ = channelTag_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
     }
 
     @java.lang.Override
@@ -731,6 +751,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -776,31 +797,31 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
             case 16:
               {
                 isFinal_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 29:
               {
                 stability_ = input.readFloat();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 29
             case 34:
               {
                 input.readMessage(getResultEndOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 channelTag_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1265,6 +1286,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setIsFinal(boolean value) {
 
       isFinal_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1286,7 +1308,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIsFinal() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isFinal_ = false;
       onChanged();
       return this;
@@ -1331,6 +1353,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setStability(float value) {
 
       stability_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1350,7 +1373,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearStability() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       stability_ = 0F;
       onChanged();
       return this;
@@ -1375,7 +1398,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return Whether the resultEndOffset field is set.
      */
     public boolean hasResultEndOffset() {
-      return resultEndOffsetBuilder_ != null || resultEndOffset_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1414,11 +1437,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         resultEndOffset_ = value;
-        onChanged();
       } else {
         resultEndOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1434,11 +1457,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setResultEndOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (resultEndOffsetBuilder_ == null) {
         resultEndOffset_ = builderForValue.build();
-        onChanged();
       } else {
         resultEndOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1453,19 +1476,18 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      */
     public Builder mergeResultEndOffset(com.google.protobuf.Duration value) {
       if (resultEndOffsetBuilder_ == null) {
-        if (resultEndOffset_ != null) {
-          resultEndOffset_ =
-              com.google.protobuf.Duration.newBuilder(resultEndOffset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && resultEndOffset_ != null
+            && resultEndOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getResultEndOffsetBuilder().mergeFrom(value);
         } else {
           resultEndOffset_ = value;
         }
-        onChanged();
       } else {
         resultEndOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1479,14 +1501,13 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration result_end_offset = 4;</code>
      */
     public Builder clearResultEndOffset() {
-      if (resultEndOffsetBuilder_ == null) {
-        resultEndOffset_ = null;
-        onChanged();
-      } else {
-        resultEndOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      resultEndOffset_ = null;
+      if (resultEndOffsetBuilder_ != null) {
+        resultEndOffsetBuilder_.dispose();
         resultEndOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1500,7 +1521,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration result_end_offset = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getResultEndOffsetBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResultEndOffsetFieldBuilder().getBuilder();
     }
@@ -1587,6 +1608,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder setChannelTag(int value) {
 
       channelTag_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1605,7 +1627,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearChannelTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       channelTag_ = 0;
       onChanged();
       return this;
@@ -1678,8 +1700,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1697,8 +1719,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1721,8 +1743,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

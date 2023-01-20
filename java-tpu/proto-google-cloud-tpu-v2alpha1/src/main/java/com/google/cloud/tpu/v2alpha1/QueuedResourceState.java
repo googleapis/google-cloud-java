@@ -1816,7 +1816,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-      return getError();
+      return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2024,10 +2024,10 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (errorBuilder_ == null) {
-          error_ = null;
-        } else {
-          error_ = null;
+        bitField0_ = 0;
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
           errorBuilder_ = null;
         }
         return this;
@@ -2058,13 +2058,19 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       public com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData buildPartial() {
         com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData result =
             new com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData(this);
-        if (errorBuilder_ == null) {
-          result.error_ = error_;
-        } else {
-          result.error_ = errorBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.tpu.v2alpha1.QueuedResourceState.FailedData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2148,7 +2154,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
               case 10:
                 {
                   input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -2168,6 +2174,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.rpc.Status error_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -2184,7 +2192,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
        * @return Whether the error field is set.
        */
       public boolean hasError() {
-        return errorBuilder_ != null || error_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -2219,11 +2227,11 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           error_ = value;
-          onChanged();
         } else {
           errorBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2238,11 +2246,11 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       public Builder setError(com.google.rpc.Status.Builder builderForValue) {
         if (errorBuilder_ == null) {
           error_ = builderForValue.build();
-          onChanged();
         } else {
           errorBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2256,16 +2264,18 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
        */
       public Builder mergeError(com.google.rpc.Status value) {
         if (errorBuilder_ == null) {
-          if (error_ != null) {
-            error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && error_ != null
+              && error_ != com.google.rpc.Status.getDefaultInstance()) {
+            getErrorBuilder().mergeFrom(value);
           } else {
             error_ = value;
           }
-          onChanged();
         } else {
           errorBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2278,14 +2288,13 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
        * <code>.google.rpc.Status error = 1;</code>
        */
       public Builder clearError() {
-        if (errorBuilder_ == null) {
-          error_ = null;
-          onChanged();
-        } else {
-          error_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
           errorBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2298,7 +2307,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
        * <code>.google.rpc.Status error = 1;</code>
        */
       public com.google.rpc.Status.Builder getErrorBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getErrorFieldBuilder().getBuilder();
       }
@@ -4215,7 +4224,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -4244,9 +4253,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.tpu.v2alpha1.QueuedResourceState.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tpu.v2alpha1.QueuedResourceState.State result =
-        com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.valueOf(state_);
+        com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.forNumber(state_);
     return result == null
         ? com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.UNRECOGNIZED
         : result;
@@ -5007,8 +5015,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       if (creatingDataBuilder_ != null) {
         creatingDataBuilder_.clear();
       }
@@ -5062,66 +5070,48 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
     public com.google.cloud.tpu.v2alpha1.QueuedResourceState buildPartial() {
       com.google.cloud.tpu.v2alpha1.QueuedResourceState result =
           new com.google.cloud.tpu.v2alpha1.QueuedResourceState(this);
-      result.state_ = state_;
-      if (stateDataCase_ == 2) {
-        if (creatingDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = creatingDataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (stateDataCase_ == 3) {
-        if (acceptedDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = acceptedDataBuilder_.build();
-        }
-      }
-      if (stateDataCase_ == 4) {
-        if (provisioningDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = provisioningDataBuilder_.build();
-        }
-      }
-      if (stateDataCase_ == 5) {
-        if (failedDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = failedDataBuilder_.build();
-        }
-      }
-      if (stateDataCase_ == 6) {
-        if (deletingDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = deletingDataBuilder_.build();
-        }
-      }
-      if (stateDataCase_ == 7) {
-        if (activeDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = activeDataBuilder_.build();
-        }
-      }
-      if (stateDataCase_ == 8) {
-        if (suspendingDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = suspendingDataBuilder_.build();
-        }
-      }
-      if (stateDataCase_ == 9) {
-        if (suspendedDataBuilder_ == null) {
-          result.stateData_ = stateData_;
-        } else {
-          result.stateData_ = suspendedDataBuilder_.build();
-        }
-      }
-      result.stateDataCase_ = stateDataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2alpha1.QueuedResourceState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.tpu.v2alpha1.QueuedResourceState result) {
+      result.stateDataCase_ = stateDataCase_;
+      result.stateData_ = this.stateData_;
+      if (stateDataCase_ == 2 && creatingDataBuilder_ != null) {
+        result.stateData_ = creatingDataBuilder_.build();
+      }
+      if (stateDataCase_ == 3 && acceptedDataBuilder_ != null) {
+        result.stateData_ = acceptedDataBuilder_.build();
+      }
+      if (stateDataCase_ == 4 && provisioningDataBuilder_ != null) {
+        result.stateData_ = provisioningDataBuilder_.build();
+      }
+      if (stateDataCase_ == 5 && failedDataBuilder_ != null) {
+        result.stateData_ = failedDataBuilder_.build();
+      }
+      if (stateDataCase_ == 6 && deletingDataBuilder_ != null) {
+        result.stateData_ = deletingDataBuilder_.build();
+      }
+      if (stateDataCase_ == 7 && activeDataBuilder_ != null) {
+        result.stateData_ = activeDataBuilder_.build();
+      }
+      if (stateDataCase_ == 8 && suspendingDataBuilder_ != null) {
+        result.stateData_ = suspendingDataBuilder_.build();
+      }
+      if (stateDataCase_ == 9 && suspendedDataBuilder_ != null) {
+        result.stateData_ = suspendedDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5248,7 +5238,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -5331,6 +5321,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private int state_ = 0;
     /**
      *
@@ -5360,8 +5352,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5378,9 +5370,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.tpu.v2alpha1.QueuedResourceState.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tpu.v2alpha1.QueuedResourceState.State result =
-          com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.valueOf(state_);
+          com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.forNumber(state_);
       return result == null
           ? com.google.cloud.tpu.v2alpha1.QueuedResourceState.State.UNRECOGNIZED
           : result;
@@ -5401,7 +5392,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5418,7 +5409,7 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;
@@ -5637,7 +5628,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 2;
       onChanged();
-      ;
       return creatingDataBuilder_;
     }
 
@@ -5854,7 +5844,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 3;
       onChanged();
-      ;
       return acceptedDataBuilder_;
     }
 
@@ -6087,7 +6076,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 4;
       onChanged();
-      ;
       return provisioningDataBuilder_;
     }
 
@@ -6304,7 +6292,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 5;
       onChanged();
-      ;
       return failedDataBuilder_;
     }
 
@@ -6521,7 +6508,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 6;
       onChanged();
-      ;
       return deletingDataBuilder_;
     }
 
@@ -6738,7 +6724,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 7;
       onChanged();
-      ;
       return activeDataBuilder_;
     }
 
@@ -6967,7 +6952,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 8;
       onChanged();
-      ;
       return suspendingDataBuilder_;
     }
 
@@ -7184,7 +7168,6 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
       }
       stateDataCase_ = 9;
       onChanged();
-      ;
       return suspendedDataBuilder_;
     }
 

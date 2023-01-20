@@ -69,7 +69,9 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NODE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nodeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeId_ = "";
   /**
    *
    *
@@ -213,7 +217,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.tpu.v1.NodeOrBuilder getNodeOrBuilder() {
-    return getNode();
+    return node_ == null ? com.google.cloud.tpu.v1.Node.getDefaultInstance() : node_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -436,14 +440,12 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       nodeId_ = "";
-
-      if (nodeBuilder_ == null) {
-        node_ = null;
-      } else {
-        node_ = null;
+      node_ = null;
+      if (nodeBuilder_ != null) {
+        nodeBuilder_.dispose();
         nodeBuilder_ = null;
       }
       return this;
@@ -473,15 +475,24 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.tpu.v1.CreateNodeRequest buildPartial() {
       com.google.cloud.tpu.v1.CreateNodeRequest result =
           new com.google.cloud.tpu.v1.CreateNodeRequest(this);
-      result.parent_ = parent_;
-      result.nodeId_ = nodeId_;
-      if (nodeBuilder_ == null) {
-        result.node_ = node_;
-      } else {
-        result.node_ = nodeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v1.CreateNodeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodeId_ = nodeId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.node_ = nodeBuilder_ == null ? node_ : nodeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -531,10 +542,12 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.tpu.v1.CreateNodeRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNodeId().isEmpty()) {
         nodeId_ = other.nodeId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNode()) {
@@ -569,19 +582,19 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 nodeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getNodeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -600,6 +613,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -668,8 +683,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -687,8 +702,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +726,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,8 +793,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -795,8 +810,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearNodeId() {
-
       nodeId_ = getDefaultInstance().getNodeId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -817,8 +832,8 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -841,7 +856,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the node field is set.
      */
     public boolean hasNode() {
-      return nodeBuilder_ != null || node_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -876,11 +891,11 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         node_ = value;
-        onChanged();
       } else {
         nodeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -895,11 +910,11 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
     public Builder setNode(com.google.cloud.tpu.v1.Node.Builder builderForValue) {
       if (nodeBuilder_ == null) {
         node_ = builderForValue.build();
-        onChanged();
       } else {
         nodeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -913,16 +928,18 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeNode(com.google.cloud.tpu.v1.Node value) {
       if (nodeBuilder_ == null) {
-        if (node_ != null) {
-          node_ = com.google.cloud.tpu.v1.Node.newBuilder(node_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && node_ != null
+            && node_ != com.google.cloud.tpu.v1.Node.getDefaultInstance()) {
+          getNodeBuilder().mergeFrom(value);
         } else {
           node_ = value;
         }
-        onChanged();
       } else {
         nodeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -935,14 +952,13 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.tpu.v1.Node node = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNode() {
-      if (nodeBuilder_ == null) {
-        node_ = null;
-        onChanged();
-      } else {
-        node_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      node_ = null;
+      if (nodeBuilder_ != null) {
+        nodeBuilder_.dispose();
         nodeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +971,7 @@ public final class CreateNodeRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.cloud.tpu.v1.Node node = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.tpu.v1.Node.Builder getNodeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNodeFieldBuilder().getBuilder();
     }

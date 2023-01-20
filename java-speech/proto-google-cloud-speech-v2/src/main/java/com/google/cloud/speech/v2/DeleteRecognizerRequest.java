@@ -70,7 +70,9 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -144,7 +146,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
   }
 
   public static final int ETAG_FIELD_NUMBER = 3;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -440,14 +444,11 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       validateOnly_ = false;
-
       allowMissing_ = false;
-
       etag_ = "";
-
       return this;
     }
 
@@ -475,12 +476,27 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
     public com.google.cloud.speech.v2.DeleteRecognizerRequest buildPartial() {
       com.google.cloud.speech.v2.DeleteRecognizerRequest result =
           new com.google.cloud.speech.v2.DeleteRecognizerRequest(this);
-      result.name_ = name_;
-      result.validateOnly_ = validateOnly_;
-      result.allowMissing_ = allowMissing_;
-      result.etag_ = etag_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.DeleteRecognizerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -531,6 +547,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -541,6 +558,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -572,25 +590,25 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -609,6 +627,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -680,8 +700,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,8 +720,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -725,8 +745,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -764,6 +784,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -780,7 +801,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -819,6 +840,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -835,7 +857,7 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;
@@ -908,8 +930,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -927,8 +949,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -951,8 +973,8 @@ public final class DeleteRecognizerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

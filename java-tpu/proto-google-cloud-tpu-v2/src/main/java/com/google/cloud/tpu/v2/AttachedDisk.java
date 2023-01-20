@@ -231,7 +231,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_DISK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceDisk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceDisk_ = "";
   /**
    *
    *
@@ -282,7 +284,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODE_FIELD_NUMBER = 4;
-  private int mode_;
+  private int mode_ = 0;
   /**
    *
    *
@@ -315,9 +317,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.tpu.v2.AttachedDisk.DiskMode getMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tpu.v2.AttachedDisk.DiskMode result =
-        com.google.cloud.tpu.v2.AttachedDisk.DiskMode.valueOf(mode_);
+        com.google.cloud.tpu.v2.AttachedDisk.DiskMode.forNumber(mode_);
     return result == null ? com.google.cloud.tpu.v2.AttachedDisk.DiskMode.UNRECOGNIZED : result;
   }
 
@@ -526,10 +527,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceDisk_ = "";
-
       mode_ = 0;
-
       return this;
     }
 
@@ -556,10 +556,21 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.tpu.v2.AttachedDisk buildPartial() {
       com.google.cloud.tpu.v2.AttachedDisk result = new com.google.cloud.tpu.v2.AttachedDisk(this);
-      result.sourceDisk_ = sourceDisk_;
-      result.mode_ = mode_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tpu.v2.AttachedDisk result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceDisk_ = sourceDisk_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -609,6 +620,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.tpu.v2.AttachedDisk.getDefaultInstance()) return this;
       if (!other.getSourceDisk().isEmpty()) {
         sourceDisk_ = other.sourceDisk_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.mode_ != 0) {
@@ -643,13 +655,13 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 sourceDisk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 32:
               {
                 mode_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             default:
@@ -668,6 +680,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourceDisk_ = "";
     /**
@@ -733,8 +747,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceDisk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -751,8 +765,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceDisk() {
-
       sourceDisk_ = getDefaultInstance().getSourceDisk();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -774,8 +788,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceDisk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +827,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
       mode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,9 +847,8 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.tpu.v2.AttachedDisk.DiskMode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tpu.v2.AttachedDisk.DiskMode result =
-          com.google.cloud.tpu.v2.AttachedDisk.DiskMode.valueOf(mode_);
+          com.google.cloud.tpu.v2.AttachedDisk.DiskMode.forNumber(mode_);
       return result == null ? com.google.cloud.tpu.v2.AttachedDisk.DiskMode.UNRECOGNIZED : result;
     }
     /**
@@ -856,7 +869,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -875,7 +888,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       mode_ = 0;
       onChanged();
       return this;

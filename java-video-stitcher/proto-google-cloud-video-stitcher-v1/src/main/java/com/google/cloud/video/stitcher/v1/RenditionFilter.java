@@ -68,7 +68,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BITRATE_BPS_FIELD_NUMBER = 1;
-  private int bitrateBps_;
+  private int bitrateBps_ = 0;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CODECS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object codecs_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object codecs_ = "";
   /**
    *
    *
@@ -343,10 +345,9 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       bitrateBps_ = 0;
-
       codecs_ = "";
-
       return this;
     }
 
@@ -374,10 +375,21 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.video.stitcher.v1.RenditionFilter buildPartial() {
       com.google.cloud.video.stitcher.v1.RenditionFilter result =
           new com.google.cloud.video.stitcher.v1.RenditionFilter(this);
-      result.bitrateBps_ = bitrateBps_;
-      result.codecs_ = codecs_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.RenditionFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bitrateBps_ = bitrateBps_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.codecs_ = codecs_;
+      }
     }
 
     @java.lang.Override
@@ -431,6 +443,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getCodecs().isEmpty()) {
         codecs_ = other.codecs_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -462,13 +475,13 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 bitrateBps_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 codecs_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -487,6 +500,8 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int bitrateBps_;
     /**
@@ -521,6 +536,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
     public Builder setBitrateBps(int value) {
 
       bitrateBps_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -537,7 +553,7 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBitrateBps() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       bitrateBps_ = 0;
       onChanged();
       return this;
@@ -607,8 +623,8 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       codecs_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -625,8 +641,8 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCodecs() {
-
       codecs_ = getDefaultInstance().getCodecs();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -648,8 +664,8 @@ public final class RenditionFilter extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       codecs_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

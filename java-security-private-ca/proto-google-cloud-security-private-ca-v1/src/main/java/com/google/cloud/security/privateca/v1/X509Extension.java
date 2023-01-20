@@ -119,11 +119,13 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.security.privateca.v1.ObjectIdOrBuilder getObjectIdOrBuilder() {
-    return getObjectId();
+    return objectId_ == null
+        ? com.google.cloud.security.privateca.v1.ObjectId.getDefaultInstance()
+        : objectId_;
   }
 
   public static final int CRITICAL_FIELD_NUMBER = 2;
-  private boolean critical_;
+  private boolean critical_ = false;
   /**
    *
    *
@@ -143,7 +145,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString value_;
+  private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -381,16 +383,14 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (objectIdBuilder_ == null) {
-        objectId_ = null;
-      } else {
-        objectId_ = null;
+      bitField0_ = 0;
+      objectId_ = null;
+      if (objectIdBuilder_ != null) {
+        objectIdBuilder_.dispose();
         objectIdBuilder_ = null;
       }
       critical_ = false;
-
       value_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -418,15 +418,24 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.security.privateca.v1.X509Extension buildPartial() {
       com.google.cloud.security.privateca.v1.X509Extension result =
           new com.google.cloud.security.privateca.v1.X509Extension(this);
-      if (objectIdBuilder_ == null) {
-        result.objectId_ = objectId_;
-      } else {
-        result.objectId_ = objectIdBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.critical_ = critical_;
-      result.value_ = value_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.X509Extension result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.objectId_ = objectIdBuilder_ == null ? objectId_ : objectIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.critical_ = critical_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.value_ = value_;
+      }
     }
 
     @java.lang.Override
@@ -513,19 +522,19 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getObjectIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 critical_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 value_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -544,6 +553,8 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.security.privateca.v1.ObjectId objectId_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +576,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the objectId field is set.
      */
     public boolean hasObjectId() {
-      return objectIdBuilder_ != null || objectId_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -606,11 +617,11 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         objectId_ = value;
-        onChanged();
       } else {
         objectIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -628,11 +639,11 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.security.privateca.v1.ObjectId.Builder builderForValue) {
       if (objectIdBuilder_ == null) {
         objectId_ = builderForValue.build();
-        onChanged();
       } else {
         objectIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,19 +659,18 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeObjectId(com.google.cloud.security.privateca.v1.ObjectId value) {
       if (objectIdBuilder_ == null) {
-        if (objectId_ != null) {
-          objectId_ =
-              com.google.cloud.security.privateca.v1.ObjectId.newBuilder(objectId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && objectId_ != null
+            && objectId_ != com.google.cloud.security.privateca.v1.ObjectId.getDefaultInstance()) {
+          getObjectIdBuilder().mergeFrom(value);
         } else {
           objectId_ = value;
         }
-        onChanged();
       } else {
         objectIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +685,13 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearObjectId() {
-      if (objectIdBuilder_ == null) {
-        objectId_ = null;
-        onChanged();
-      } else {
-        objectId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      objectId_ = null;
+      if (objectIdBuilder_ != null) {
+        objectIdBuilder_.dispose();
         objectIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -697,7 +706,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.security.privateca.v1.ObjectId.Builder getObjectIdBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getObjectIdFieldBuilder().getBuilder();
     }
@@ -784,6 +793,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
     public Builder setCritical(boolean value) {
 
       critical_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,7 +811,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCritical() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       critical_ = false;
       onChanged();
       return this;
@@ -839,8 +849,8 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -856,7 +866,7 @@ public final class X509Extension extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       value_ = getDefaultInstance().getValue();
       onChanged();
       return this;

@@ -95,6 +95,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
                         com.google.cloud.speech.v2.BatchRecognizeFileResult.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult>
       results_;
@@ -158,8 +159,10 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
    * <code>map&lt;string, .google.cloud.speech.v2.BatchRecognizeFileResult&gt; results = 1;</code>
    */
   @java.lang.Override
-  public com.google.cloud.speech.v2.BatchRecognizeFileResult getResultsOrDefault(
-      java.lang.String key, com.google.cloud.speech.v2.BatchRecognizeFileResult defaultValue) {
+  public /* nullable */ com.google.cloud.speech.v2.BatchRecognizeFileResult getResultsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.speech.v2.BatchRecognizeFileResult defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -419,6 +422,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableResults().clear();
       return this;
     }
@@ -447,11 +451,19 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.speech.v2.BatchRecognizeResponse buildPartial() {
       com.google.cloud.speech.v2.BatchRecognizeResponse result =
           new com.google.cloud.speech.v2.BatchRecognizeResponse(this);
-      int from_bitField0_ = bitField0_;
-      result.results_ = internalGetResults();
-      result.results_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.BatchRecognizeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.results_ = internalGetResults();
+        result.results_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -501,6 +513,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.speech.v2.BatchRecognizeResponse.getDefaultInstance())
         return this;
       internalGetMutableResults().mergeFrom(other.internalGetResults());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -538,6 +551,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
                 internalGetMutableResults()
                     .getMutableMap()
                     .put(results__.getKey(), results__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -575,14 +589,14 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult>
         internalGetMutableResults() {
-      onChanged();
-      ;
       if (results_ == null) {
         results_ = com.google.protobuf.MapField.newMapField(ResultsDefaultEntryHolder.defaultEntry);
       }
       if (!results_.isMutable()) {
         results_ = results_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return results_;
     }
 
@@ -636,8 +650,10 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
      * <code>map&lt;string, .google.cloud.speech.v2.BatchRecognizeFileResult&gt; results = 1;</code>
      */
     @java.lang.Override
-    public com.google.cloud.speech.v2.BatchRecognizeFileResult getResultsOrDefault(
-        java.lang.String key, com.google.cloud.speech.v2.BatchRecognizeFileResult defaultValue) {
+    public /* nullable */ com.google.cloud.speech.v2.BatchRecognizeFileResult getResultsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.speech.v2.BatchRecognizeFileResult defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -669,6 +685,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     }
 
     public Builder clearResults() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableResults().getMutableMap().clear();
       return this;
     }
@@ -692,6 +709,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult>
         getMutableResults() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableResults().getMutableMap();
     }
     /**
@@ -711,8 +729,8 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableResults().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -728,6 +746,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult>
             values) {
       internalGetMutableResults().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

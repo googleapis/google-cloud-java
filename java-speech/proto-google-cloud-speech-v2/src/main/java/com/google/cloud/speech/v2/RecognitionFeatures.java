@@ -213,7 +213,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROFANITY_FILTER_FIELD_NUMBER = 1;
-  private boolean profanityFilter_;
+  private boolean profanityFilter_ = false;
   /**
    *
    *
@@ -234,7 +234,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_WORD_TIME_OFFSETS_FIELD_NUMBER = 2;
-  private boolean enableWordTimeOffsets_;
+  private boolean enableWordTimeOffsets_ = false;
   /**
    *
    *
@@ -254,7 +254,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_WORD_CONFIDENCE_FIELD_NUMBER = 3;
-  private boolean enableWordConfidence_;
+  private boolean enableWordConfidence_ = false;
   /**
    *
    *
@@ -274,7 +274,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 4;
-  private boolean enableAutomaticPunctuation_;
+  private boolean enableAutomaticPunctuation_ = false;
   /**
    *
    *
@@ -294,7 +294,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_SPOKEN_PUNCTUATION_FIELD_NUMBER = 14;
-  private boolean enableSpokenPunctuation_;
+  private boolean enableSpokenPunctuation_ = false;
   /**
    *
    *
@@ -316,7 +316,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ENABLE_SPOKEN_EMOJIS_FIELD_NUMBER = 15;
-  private boolean enableSpokenEmojis_;
+  private boolean enableSpokenEmojis_ = false;
   /**
    *
    *
@@ -337,7 +337,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MULTI_CHANNEL_MODE_FIELD_NUMBER = 17;
-  private int multiChannelMode_;
+  private int multiChannelMode_ = 0;
   /**
    *
    *
@@ -368,9 +368,9 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode getMultiChannelMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode result =
-        com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.valueOf(multiChannelMode_);
+        com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.forNumber(
+            multiChannelMode_);
     return result == null
         ? com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.UNRECOGNIZED
         : result;
@@ -443,11 +443,13 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.speech.v2.SpeakerDiarizationConfigOrBuilder
       getDiarizationConfigOrBuilder() {
-    return getDiarizationConfig();
+    return diarizationConfig_ == null
+        ? com.google.cloud.speech.v2.SpeakerDiarizationConfig.getDefaultInstance()
+        : diarizationConfig_;
   }
 
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 16;
-  private int maxAlternatives_;
+  private int maxAlternatives_ = 0;
   /**
    *
    *
@@ -747,28 +749,20 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       profanityFilter_ = false;
-
       enableWordTimeOffsets_ = false;
-
       enableWordConfidence_ = false;
-
       enableAutomaticPunctuation_ = false;
-
       enableSpokenPunctuation_ = false;
-
       enableSpokenEmojis_ = false;
-
       multiChannelMode_ = 0;
-
-      if (diarizationConfigBuilder_ == null) {
-        diarizationConfig_ = null;
-      } else {
-        diarizationConfig_ = null;
+      diarizationConfig_ = null;
+      if (diarizationConfigBuilder_ != null) {
+        diarizationConfigBuilder_.dispose();
         diarizationConfigBuilder_ = null;
       }
       maxAlternatives_ = 0;
-
       return this;
     }
 
@@ -796,21 +790,45 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public com.google.cloud.speech.v2.RecognitionFeatures buildPartial() {
       com.google.cloud.speech.v2.RecognitionFeatures result =
           new com.google.cloud.speech.v2.RecognitionFeatures(this);
-      result.profanityFilter_ = profanityFilter_;
-      result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
-      result.enableWordConfidence_ = enableWordConfidence_;
-      result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
-      result.enableSpokenPunctuation_ = enableSpokenPunctuation_;
-      result.enableSpokenEmojis_ = enableSpokenEmojis_;
-      result.multiChannelMode_ = multiChannelMode_;
-      if (diarizationConfigBuilder_ == null) {
-        result.diarizationConfig_ = diarizationConfig_;
-      } else {
-        result.diarizationConfig_ = diarizationConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.maxAlternatives_ = maxAlternatives_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.RecognitionFeatures result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.profanityFilter_ = profanityFilter_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableWordTimeOffsets_ = enableWordTimeOffsets_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableWordConfidence_ = enableWordConfidence_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableSpokenPunctuation_ = enableSpokenPunctuation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.enableSpokenEmojis_ = enableSpokenEmojis_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.multiChannelMode_ = multiChannelMode_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.diarizationConfig_ =
+            diarizationConfigBuilder_ == null
+                ? diarizationConfig_
+                : diarizationConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.maxAlternatives_ = maxAlternatives_;
+      }
     }
 
     @java.lang.Override
@@ -914,56 +932,56 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 profanityFilter_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 enableWordTimeOffsets_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 enableWordConfidence_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 enableAutomaticPunctuation_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 74:
               {
                 input.readMessage(
                     getDiarizationConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 112:
               {
                 enableSpokenPunctuation_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 112
             case 120:
               {
                 enableSpokenEmojis_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 120
             case 128:
               {
                 maxAlternatives_ = input.readInt32();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 128
             case 136:
               {
                 multiChannelMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 136
             default:
@@ -982,6 +1000,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean profanityFilter_;
     /**
@@ -1020,6 +1040,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setProfanityFilter(boolean value) {
 
       profanityFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1038,7 +1059,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearProfanityFilter() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       profanityFilter_ = false;
       onChanged();
       return this;
@@ -1079,6 +1100,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setEnableWordTimeOffsets(boolean value) {
 
       enableWordTimeOffsets_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1096,7 +1118,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnableWordTimeOffsets() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableWordTimeOffsets_ = false;
       onChanged();
       return this;
@@ -1137,6 +1159,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setEnableWordConfidence(boolean value) {
 
       enableWordConfidence_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1154,7 +1177,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnableWordConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableWordConfidence_ = false;
       onChanged();
       return this;
@@ -1195,6 +1218,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setEnableAutomaticPunctuation(boolean value) {
 
       enableAutomaticPunctuation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1212,7 +1236,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnableAutomaticPunctuation() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
@@ -1257,6 +1281,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setEnableSpokenPunctuation(boolean value) {
 
       enableSpokenPunctuation_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1276,7 +1301,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnableSpokenPunctuation() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       enableSpokenPunctuation_ = false;
       onChanged();
       return this;
@@ -1319,6 +1344,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setEnableSpokenEmojis(boolean value) {
 
       enableSpokenEmojis_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1337,7 +1363,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEnableSpokenEmojis() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       enableSpokenEmojis_ = false;
       onChanged();
       return this;
@@ -1374,8 +1400,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setMultiChannelModeValue(int value) {
-
       multiChannelMode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1393,9 +1419,8 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode getMultiChannelMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode result =
-          com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.valueOf(
+          com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.forNumber(
               multiChannelMode_);
       return result == null
           ? com.google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.UNRECOGNIZED
@@ -1419,7 +1444,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       multiChannelMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1437,7 +1462,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMultiChannelMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       multiChannelMode_ = 0;
       onChanged();
       return this;
@@ -1468,7 +1493,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return Whether the diarizationConfig field is set.
      */
     public boolean hasDiarizationConfig() {
-      return diarizationConfigBuilder_ != null || diarizationConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1519,11 +1544,11 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         diarizationConfig_ = value;
-        onChanged();
       } else {
         diarizationConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1546,11 +1571,11 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
         com.google.cloud.speech.v2.SpeakerDiarizationConfig.Builder builderForValue) {
       if (diarizationConfigBuilder_ == null) {
         diarizationConfig_ = builderForValue.build();
-        onChanged();
       } else {
         diarizationConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1572,19 +1597,19 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder mergeDiarizationConfig(
         com.google.cloud.speech.v2.SpeakerDiarizationConfig value) {
       if (diarizationConfigBuilder_ == null) {
-        if (diarizationConfig_ != null) {
-          diarizationConfig_ =
-              com.google.cloud.speech.v2.SpeakerDiarizationConfig.newBuilder(diarizationConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && diarizationConfig_ != null
+            && diarizationConfig_
+                != com.google.cloud.speech.v2.SpeakerDiarizationConfig.getDefaultInstance()) {
+          getDiarizationConfigBuilder().mergeFrom(value);
         } else {
           diarizationConfig_ = value;
         }
-        onChanged();
       } else {
         diarizationConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1604,14 +1629,13 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.speech.v2.SpeakerDiarizationConfig diarization_config = 9;</code>
      */
     public Builder clearDiarizationConfig() {
-      if (diarizationConfigBuilder_ == null) {
-        diarizationConfig_ = null;
-        onChanged();
-      } else {
-        diarizationConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      diarizationConfig_ = null;
+      if (diarizationConfigBuilder_ != null) {
+        diarizationConfigBuilder_.dispose();
         diarizationConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1632,7 +1656,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.speech.v2.SpeakerDiarizationConfig.Builder
         getDiarizationConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getDiarizationConfigFieldBuilder().getBuilder();
     }
@@ -1732,6 +1756,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
     public Builder setMaxAlternatives(int value) {
 
       maxAlternatives_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1750,7 +1775,7 @@ public final class RecognitionFeatures extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMaxAlternatives() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       maxAlternatives_ = 0;
       onChanged();
       return this;

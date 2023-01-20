@@ -129,7 +129,9 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
   }
 
   public static final int RECOGNIZER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object recognizer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recognizer_ = "";
   /**
    *
    *
@@ -533,8 +535,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       recognizer_ = "";
-
       if (streamingConfigBuilder_ != null) {
         streamingConfigBuilder_.clear();
       }
@@ -567,20 +569,27 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
     public com.google.cloud.speech.v2.StreamingRecognizeRequest buildPartial() {
       com.google.cloud.speech.v2.StreamingRecognizeRequest result =
           new com.google.cloud.speech.v2.StreamingRecognizeRequest(this);
-      result.recognizer_ = recognizer_;
-      if (streamingRequestCase_ == 6) {
-        if (streamingConfigBuilder_ == null) {
-          result.streamingRequest_ = streamingRequest_;
-        } else {
-          result.streamingRequest_ = streamingConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (streamingRequestCase_ == 5) {
-        result.streamingRequest_ = streamingRequest_;
-      }
-      result.streamingRequestCase_ = streamingRequestCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.StreamingRecognizeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.recognizer_ = recognizer_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.speech.v2.StreamingRecognizeRequest result) {
+      result.streamingRequestCase_ = streamingRequestCase_;
+      result.streamingRequest_ = this.streamingRequest_;
+      if (streamingRequestCase_ == 6 && streamingConfigBuilder_ != null) {
+        result.streamingRequest_ = streamingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -631,6 +640,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getRecognizer().isEmpty()) {
         recognizer_ = other.recognizer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getStreamingRequestCase()) {
@@ -678,7 +688,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
             case 26:
               {
                 recognizer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 42:
@@ -723,6 +733,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object recognizer_ = "";
     /**
@@ -803,8 +815,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       recognizer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -826,8 +838,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRecognizer() {
-
       recognizer_ = getDefaultInstance().getRecognizer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -854,8 +866,8 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       recognizer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1089,7 +1101,6 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
       }
       streamingRequestCase_ = 6;
       onChanged();
-      ;
       return streamingConfigBuilder_;
     }
 

@@ -70,6 +70,8 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ANNOTATION_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.VideoAnnotationResults>
       annotationResults_;
   /**
@@ -358,6 +360,7 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (annotationResultsBuilder_ == null) {
         annotationResults_ = java.util.Collections.emptyList();
       } else {
@@ -394,7 +397,16 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse buildPartial() {
       com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse result =
           new com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse result) {
       if (annotationResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           annotationResults_ = java.util.Collections.unmodifiableList(annotationResults_);
@@ -404,8 +416,11 @@ public final class AnnotateVideoResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.annotationResults_ = annotationResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

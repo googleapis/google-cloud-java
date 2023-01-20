@@ -120,11 +120,13 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.RecognizerOrBuilder getRecognizerOrBuilder() {
-    return getRecognizer();
+    return recognizer_ == null
+        ? com.google.cloud.speech.v2.Recognizer.getDefaultInstance()
+        : recognizer_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
   }
 
   public static final int RECOGNIZER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object recognizerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object recognizerId_ = "";
   /**
    *
    *
@@ -198,7 +202,9 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -482,18 +488,15 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (recognizerBuilder_ == null) {
-        recognizer_ = null;
-      } else {
-        recognizer_ = null;
+      bitField0_ = 0;
+      recognizer_ = null;
+      if (recognizerBuilder_ != null) {
+        recognizerBuilder_.dispose();
         recognizerBuilder_ = null;
       }
       validateOnly_ = false;
-
       recognizerId_ = "";
-
       parent_ = "";
-
       return this;
     }
 
@@ -521,16 +524,27 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
     public com.google.cloud.speech.v2.CreateRecognizerRequest buildPartial() {
       com.google.cloud.speech.v2.CreateRecognizerRequest result =
           new com.google.cloud.speech.v2.CreateRecognizerRequest(this);
-      if (recognizerBuilder_ == null) {
-        result.recognizer_ = recognizer_;
-      } else {
-        result.recognizer_ = recognizerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
-      result.recognizerId_ = recognizerId_;
-      result.parent_ = parent_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.CreateRecognizerRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.recognizer_ = recognizerBuilder_ == null ? recognizer_ : recognizerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.recognizerId_ = recognizerId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -587,10 +601,12 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
       }
       if (!other.getRecognizerId().isEmpty()) {
         recognizerId_ = other.recognizerId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -622,25 +638,25 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getRecognizerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 recognizerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -659,6 +675,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.speech.v2.Recognizer recognizer_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -680,7 +698,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * @return Whether the recognizer field is set.
      */
     public boolean hasRecognizer() {
-      return recognizerBuilder_ != null || recognizer_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -721,11 +739,11 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         recognizer_ = value;
-        onChanged();
       } else {
         recognizerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -742,11 +760,11 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
     public Builder setRecognizer(com.google.cloud.speech.v2.Recognizer.Builder builderForValue) {
       if (recognizerBuilder_ == null) {
         recognizer_ = builderForValue.build();
-        onChanged();
       } else {
         recognizerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -762,19 +780,18 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      */
     public Builder mergeRecognizer(com.google.cloud.speech.v2.Recognizer value) {
       if (recognizerBuilder_ == null) {
-        if (recognizer_ != null) {
-          recognizer_ =
-              com.google.cloud.speech.v2.Recognizer.newBuilder(recognizer_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && recognizer_ != null
+            && recognizer_ != com.google.cloud.speech.v2.Recognizer.getDefaultInstance()) {
+          getRecognizerBuilder().mergeFrom(value);
         } else {
           recognizer_ = value;
         }
-        onChanged();
       } else {
         recognizerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -789,14 +806,13 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearRecognizer() {
-      if (recognizerBuilder_ == null) {
-        recognizer_ = null;
-        onChanged();
-      } else {
-        recognizer_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      recognizer_ = null;
+      if (recognizerBuilder_ != null) {
+        recognizerBuilder_.dispose();
         recognizerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -811,7 +827,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.speech.v2.Recognizer.Builder getRecognizerBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRecognizerFieldBuilder().getBuilder();
     }
@@ -896,6 +912,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -912,7 +929,7 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -988,8 +1005,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       recognizerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1008,8 +1025,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRecognizerId() {
-
       recognizerId_ = getDefaultInstance().getRecognizerId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1033,8 +1050,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       recognizerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1109,8 +1126,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1129,8 +1146,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1154,8 +1171,8 @@ public final class CreateRecognizerRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

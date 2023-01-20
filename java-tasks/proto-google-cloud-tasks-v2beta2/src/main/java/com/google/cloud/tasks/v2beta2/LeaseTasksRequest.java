@@ -70,7 +70,9 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MAX_TASKS_FIELD_NUMBER = 2;
-  private int maxTasks_;
+  private int maxTasks_ = 0;
   /**
    *
    *
@@ -238,11 +240,13 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLeaseDurationOrBuilder() {
-    return getLeaseDuration();
+    return leaseDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : leaseDuration_;
   }
 
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 4;
-  private int responseView_;
+  private int responseView_ = 0;
   /**
    *
    *
@@ -289,14 +293,15 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.tasks.v2beta2.Task.View result =
-        com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+        com.google.cloud.tasks.v2beta2.Task.View.forNumber(responseView_);
     return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
   }
 
   public static final int FILTER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -622,20 +627,16 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       maxTasks_ = 0;
-
-      if (leaseDurationBuilder_ == null) {
-        leaseDuration_ = null;
-      } else {
-        leaseDuration_ = null;
+      leaseDuration_ = null;
+      if (leaseDurationBuilder_ != null) {
+        leaseDurationBuilder_.dispose();
         leaseDurationBuilder_ = null;
       }
       responseView_ = 0;
-
       filter_ = "";
-
       return this;
     }
 
@@ -663,17 +664,31 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.tasks.v2beta2.LeaseTasksRequest buildPartial() {
       com.google.cloud.tasks.v2beta2.LeaseTasksRequest result =
           new com.google.cloud.tasks.v2beta2.LeaseTasksRequest(this);
-      result.parent_ = parent_;
-      result.maxTasks_ = maxTasks_;
-      if (leaseDurationBuilder_ == null) {
-        result.leaseDuration_ = leaseDuration_;
-      } else {
-        result.leaseDuration_ = leaseDurationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.responseView_ = responseView_;
-      result.filter_ = filter_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta2.LeaseTasksRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxTasks_ = maxTasks_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.leaseDuration_ =
+            leaseDurationBuilder_ == null ? leaseDuration_ : leaseDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.responseView_ = responseView_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filter_ = filter_;
+      }
     }
 
     @java.lang.Override
@@ -724,6 +739,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMaxTasks() != 0) {
@@ -737,6 +753,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -768,31 +785,31 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 maxTasks_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getLeaseDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 responseView_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -811,6 +828,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -882,8 +901,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -902,8 +921,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -927,8 +946,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -976,6 +995,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     public Builder setMaxTasks(int value) {
 
       maxTasks_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -997,7 +1017,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMaxTasks() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxTasks_ = 0;
       onChanged();
       return this;
@@ -1036,7 +1056,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the leaseDuration field is set.
      */
     public boolean hasLeaseDuration() {
-      return leaseDurationBuilder_ != null || leaseDuration_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1103,11 +1123,11 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         leaseDuration_ = value;
-        onChanged();
       } else {
         leaseDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1137,11 +1157,11 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     public Builder setLeaseDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (leaseDurationBuilder_ == null) {
         leaseDuration_ = builderForValue.build();
-        onChanged();
       } else {
         leaseDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1170,19 +1190,18 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeLeaseDuration(com.google.protobuf.Duration value) {
       if (leaseDurationBuilder_ == null) {
-        if (leaseDuration_ != null) {
-          leaseDuration_ =
-              com.google.protobuf.Duration.newBuilder(leaseDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && leaseDuration_ != null
+            && leaseDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getLeaseDurationBuilder().mergeFrom(value);
         } else {
           leaseDuration_ = value;
         }
-        onChanged();
       } else {
         leaseDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1210,14 +1229,13 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearLeaseDuration() {
-      if (leaseDurationBuilder_ == null) {
-        leaseDuration_ = null;
-        onChanged();
-      } else {
-        leaseDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      leaseDuration_ = null;
+      if (leaseDurationBuilder_ != null) {
+        leaseDurationBuilder_.dispose();
         leaseDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1245,7 +1263,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Duration.Builder getLeaseDurationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLeaseDurationFieldBuilder().getBuilder();
     }
@@ -1370,8 +1388,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setResponseViewValue(int value) {
-
       responseView_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1397,9 +1415,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.tasks.v2beta2.Task.View result =
-          com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+          com.google.cloud.tasks.v2beta2.Task.View.forNumber(responseView_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
     /**
@@ -1427,7 +1444,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       responseView_ = value.getNumber();
       onChanged();
       return this;
@@ -1453,7 +1470,7 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearResponseView() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       responseView_ = 0;
       onChanged();
       return this;
@@ -1580,8 +1597,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1617,8 +1634,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1659,8 +1676,8 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -69,7 +69,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LABEL_DETECTION_MODE_FIELD_NUMBER = 1;
-  private int labelDetectionMode_;
+  private int labelDetectionMode_ = 0;
   /**
    *
    *
@@ -104,9 +104,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode getLabelDetectionMode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode result =
-        com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode.valueOf(
+        com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode.forNumber(
             labelDetectionMode_);
     return result == null
         ? com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode.UNRECOGNIZED
@@ -114,7 +113,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STATIONARY_CAMERA_FIELD_NUMBER = 2;
-  private boolean stationaryCamera_;
+  private boolean stationaryCamera_ = false;
   /**
    *
    *
@@ -134,7 +133,9 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MODEL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object model_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
   /**
    *
    *
@@ -410,12 +411,10 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       labelDetectionMode_ = 0;
-
       stationaryCamera_ = false;
-
       model_ = "";
-
       return this;
     }
 
@@ -444,11 +443,25 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig buildPartial() {
       com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig result =
           new com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig(this);
-      result.labelDetectionMode_ = labelDetectionMode_;
-      result.stationaryCamera_ = stationaryCamera_;
-      result.model_ = model_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.labelDetectionMode_ = labelDetectionMode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.stationaryCamera_ = stationaryCamera_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.model_ = model_;
+      }
     }
 
     @java.lang.Override
@@ -507,6 +520,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       }
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -538,19 +552,19 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 labelDetectionMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 stationaryCamera_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 model_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -569,6 +583,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int labelDetectionMode_ = 0;
     /**
@@ -605,8 +621,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setLabelDetectionModeValue(int value) {
-
       labelDetectionMode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -626,9 +642,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode getLabelDetectionMode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode result =
-          com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode.valueOf(
+          com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode.forNumber(
               labelDetectionMode_);
       return result == null
           ? com.google.cloud.videointelligence.v1p2beta1.LabelDetectionMode.UNRECOGNIZED
@@ -654,7 +669,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       labelDetectionMode_ = value.getNumber();
       onChanged();
       return this;
@@ -674,7 +689,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLabelDetectionMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       labelDetectionMode_ = 0;
       onChanged();
       return this;
@@ -715,6 +730,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     public Builder setStationaryCamera(boolean value) {
 
       stationaryCamera_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -732,7 +748,7 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStationaryCamera() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       stationaryCamera_ = false;
       onChanged();
       return this;
@@ -805,8 +821,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       model_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -824,8 +840,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearModel() {
-
       model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -848,8 +864,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       model_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

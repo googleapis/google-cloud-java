@@ -176,6 +176,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int PEM_CERTIFICATES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList pemCertificates_;
     /**
      *
@@ -471,6 +473,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pemCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -507,14 +510,28 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
             result =
                 new com.google.cloud.security.privateca.v1beta1.SubordinateConfig
                     .SubordinateConfigChain(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.security.privateca.v1beta1.SubordinateConfig.SubordinateConfigChain
+              result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pemCertificates_ = pemCertificates_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.pemCertificates_ = pemCertificates_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1beta1.SubordinateConfig.SubordinateConfigChain
+              result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1307,6 +1324,7 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pemIssuerChainBuilder_ != null) {
         pemIssuerChainBuilder_.clear();
       }
@@ -1340,19 +1358,26 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.security.privateca.v1beta1.SubordinateConfig buildPartial() {
       com.google.cloud.security.privateca.v1beta1.SubordinateConfig result =
           new com.google.cloud.security.privateca.v1beta1.SubordinateConfig(this);
-      if (subordinateConfigCase_ == 1) {
-        result.subordinateConfig_ = subordinateConfig_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (subordinateConfigCase_ == 2) {
-        if (pemIssuerChainBuilder_ == null) {
-          result.subordinateConfig_ = subordinateConfig_;
-        } else {
-          result.subordinateConfig_ = pemIssuerChainBuilder_.build();
-        }
-      }
-      result.subordinateConfigCase_ = subordinateConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.security.privateca.v1beta1.SubordinateConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.security.privateca.v1beta1.SubordinateConfig result) {
+      result.subordinateConfigCase_ = subordinateConfigCase_;
+      result.subordinateConfig_ = this.subordinateConfig_;
+      if (subordinateConfigCase_ == 2 && pemIssuerChainBuilder_ != null) {
+        result.subordinateConfig_ = pemIssuerChainBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1489,6 +1514,8 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1908,7 +1935,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       }
       subordinateConfigCase_ = 2;
       onChanged();
-      ;
       return pemIssuerChainBuilder_;
     }
 

@@ -249,7 +249,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENCODING_FIELD_NUMBER = 1;
-  private int encoding_;
+  private int encoding_ = 0;
   /**
    *
    *
@@ -282,16 +282,15 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding getEncoding() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding result =
-        com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.valueOf(encoding_);
+        com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.forNumber(encoding_);
     return result == null
         ? com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.UNRECOGNIZED
         : result;
   }
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
-  private int sampleRateHertz_;
+  private int sampleRateHertz_ = 0;
   /**
    *
    *
@@ -316,7 +315,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int AUDIO_CHANNEL_COUNT_FIELD_NUMBER = 3;
-  private int audioChannelCount_;
+  private int audioChannelCount_ = 0;
   /**
    *
    *
@@ -558,12 +557,10 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       encoding_ = 0;
-
       sampleRateHertz_ = 0;
-
       audioChannelCount_ = 0;
-
       return this;
     }
 
@@ -591,11 +588,24 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.speech.v2.ExplicitDecodingConfig buildPartial() {
       com.google.cloud.speech.v2.ExplicitDecodingConfig result =
           new com.google.cloud.speech.v2.ExplicitDecodingConfig(this);
-      result.encoding_ = encoding_;
-      result.sampleRateHertz_ = sampleRateHertz_;
-      result.audioChannelCount_ = audioChannelCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.ExplicitDecodingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.encoding_ = encoding_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sampleRateHertz_ = sampleRateHertz_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.audioChannelCount_ = audioChannelCount_;
+      }
     }
 
     @java.lang.Override
@@ -682,19 +692,19 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 encoding_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 sampleRateHertz_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 audioChannelCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -713,6 +723,8 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int encoding_ = 0;
     /**
@@ -747,8 +759,8 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setEncodingValue(int value) {
-
       encoding_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,9 +779,8 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding getEncoding() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding result =
-          com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.valueOf(encoding_);
+          com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.forNumber(encoding_);
       return result == null
           ? com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.UNRECOGNIZED
           : result;
@@ -793,7 +804,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       encoding_ = value.getNumber();
       onChanged();
       return this;
@@ -812,7 +823,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEncoding() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       encoding_ = 0;
       onChanged();
       return this;
@@ -863,6 +874,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     public Builder setSampleRateHertz(int value) {
 
       sampleRateHertz_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -885,7 +897,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSampleRateHertz() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sampleRateHertz_ = 0;
       onChanged();
       return this;
@@ -930,6 +942,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     public Builder setAudioChannelCount(int value) {
 
       audioChannelCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -949,7 +962,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAudioChannelCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       audioChannelCount_ = 0;
       onChanged();
       return this;

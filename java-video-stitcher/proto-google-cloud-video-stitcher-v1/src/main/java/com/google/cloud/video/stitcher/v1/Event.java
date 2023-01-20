@@ -711,7 +711,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -740,16 +740,17 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.video.stitcher.v1.Event.EventType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.video.stitcher.v1.Event.EventType result =
-        com.google.cloud.video.stitcher.v1.Event.EventType.valueOf(type_);
+        com.google.cloud.video.stitcher.v1.Event.EventType.forNumber(type_);
     return result == null
         ? com.google.cloud.video.stitcher.v1.Event.EventType.UNRECOGNIZED
         : result;
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -798,7 +799,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -889,7 +892,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getOffsetOrBuilder() {
-    return getOffset();
+    return offset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : offset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1122,16 +1125,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       uri_ = "";
-
       id_ = "";
-
-      if (offsetBuilder_ == null) {
-        offset_ = null;
-      } else {
-        offset_ = null;
+      offset_ = null;
+      if (offsetBuilder_ != null) {
+        offsetBuilder_.dispose();
         offsetBuilder_ = null;
       }
       return this;
@@ -1161,16 +1161,27 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.Event buildPartial() {
       com.google.cloud.video.stitcher.v1.Event result =
           new com.google.cloud.video.stitcher.v1.Event(this);
-      result.type_ = type_;
-      result.uri_ = uri_;
-      result.id_ = id_;
-      if (offsetBuilder_ == null) {
-        result.offset_ = offset_;
-      } else {
-        result.offset_ = offsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.video.stitcher.v1.Event result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.offset_ = offsetBuilder_ == null ? offset_ : offsetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1223,10 +1234,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasOffset()) {
@@ -1261,25 +1274,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -1298,6 +1311,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int type_ = 0;
     /**
@@ -1328,8 +1343,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1346,9 +1361,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.video.stitcher.v1.Event.EventType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.video.stitcher.v1.Event.EventType result =
-          com.google.cloud.video.stitcher.v1.Event.EventType.valueOf(type_);
+          com.google.cloud.video.stitcher.v1.Event.EventType.forNumber(type_);
       return result == null
           ? com.google.cloud.video.stitcher.v1.Event.EventType.UNRECOGNIZED
           : result;
@@ -1369,7 +1383,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1386,7 +1400,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1453,8 +1467,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1470,8 +1484,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1492,8 +1506,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1559,8 +1573,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1576,8 +1590,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1598,8 +1612,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1622,7 +1636,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the offset field is set.
      */
     public boolean hasOffset() {
-      return offsetBuilder_ != null || offset_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1657,11 +1671,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         offset_ = value;
-        onChanged();
       } else {
         offsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1676,11 +1690,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (offsetBuilder_ == null) {
         offset_ = builderForValue.build();
-        onChanged();
       } else {
         offsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1694,17 +1708,18 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOffset(com.google.protobuf.Duration value) {
       if (offsetBuilder_ == null) {
-        if (offset_ != null) {
-          offset_ =
-              com.google.protobuf.Duration.newBuilder(offset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && offset_ != null
+            && offset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getOffsetBuilder().mergeFrom(value);
         } else {
           offset_ = value;
         }
-        onChanged();
       } else {
         offsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1717,14 +1732,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration offset = 4;</code>
      */
     public Builder clearOffset() {
-      if (offsetBuilder_ == null) {
-        offset_ = null;
-        onChanged();
-      } else {
-        offset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      offset_ = null;
+      if (offsetBuilder_ != null) {
+        offsetBuilder_.dispose();
         offsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1737,7 +1751,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration offset = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getOffsetBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getOffsetFieldBuilder().getBuilder();
     }

@@ -350,7 +350,9 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object operationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationId_ = "";
   /**
    *
    *
@@ -413,7 +415,9 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METHOD_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object methodName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object methodName_ = "";
   /**
    *
    *
@@ -476,7 +480,9 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONSUMER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object consumerId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumerId_ = "";
   /**
    *
    *
@@ -545,6 +551,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -602,7 +609,10 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -631,6 +641,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUOTA_METRICS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> quotaMetrics_;
   /**
    *
@@ -746,7 +758,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUOTA_MODE_FIELD_NUMBER = 6;
-  private int quotaMode_;
+  private int quotaMode_ = 0;
   /**
    *
    *
@@ -775,9 +787,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode getQuotaMode() {
-    @SuppressWarnings("deprecation")
     com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode result =
-        com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode.valueOf(quotaMode_);
+        com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode.forNumber(quotaMode_);
     return result == null
         ? com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode.UNRECOGNIZED
         : result;
@@ -1057,12 +1068,10 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationId_ = "";
-
       methodName_ = "";
-
       consumerId_ = "";
-
       internalGetMutableLabels().clear();
       if (quotaMetricsBuilder_ == null) {
         quotaMetrics_ = java.util.Collections.emptyList();
@@ -1070,9 +1079,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
         quotaMetrics_ = null;
         quotaMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       quotaMode_ = 0;
-
       return this;
     }
 
@@ -1100,24 +1108,45 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.servicecontrol.v1.QuotaOperation buildPartial() {
       com.google.api.servicecontrol.v1.QuotaOperation result =
           new com.google.api.servicecontrol.v1.QuotaOperation(this);
-      int from_bitField0_ = bitField0_;
-      result.operationId_ = operationId_;
-      result.methodName_ = methodName_;
-      result.consumerId_ = consumerId_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.servicecontrol.v1.QuotaOperation result) {
       if (quotaMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           quotaMetrics_ = java.util.Collections.unmodifiableList(quotaMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.quotaMetrics_ = quotaMetrics_;
       } else {
         result.quotaMetrics_ = quotaMetricsBuilder_.build();
       }
-      result.quotaMode_ = quotaMode_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.servicecontrol.v1.QuotaOperation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationId_ = operationId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.methodName_ = methodName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consumerId_ = consumerId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.quotaMode_ = quotaMode_;
+      }
     }
 
     @java.lang.Override
@@ -1168,22 +1197,26 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getOperationId().isEmpty()) {
         operationId_ = other.operationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMethodName().isEmpty()) {
         methodName_ = other.methodName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getConsumerId().isEmpty()) {
         consumerId_ = other.consumerId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (quotaMetricsBuilder_ == null) {
         if (!other.quotaMetrics_.isEmpty()) {
           if (quotaMetrics_.isEmpty()) {
             quotaMetrics_ = other.quotaMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureQuotaMetricsIsMutable();
             quotaMetrics_.addAll(other.quotaMetrics_);
@@ -1196,7 +1229,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
             quotaMetricsBuilder_.dispose();
             quotaMetricsBuilder_ = null;
             quotaMetrics_ = other.quotaMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             quotaMetricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getQuotaMetricsFieldBuilder()
@@ -1238,19 +1271,19 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 operationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 methodName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 consumerId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1262,6 +1295,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1281,7 +1315,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 quotaMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -1385,8 +1419,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1409,8 +1443,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperationId() {
-
       operationId_ = getDefaultInstance().getOperationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1438,8 +1472,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1526,8 +1560,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       methodName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1550,8 +1584,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMethodName() {
-
       methodName_ = getDefaultInstance().getMethodName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1579,8 +1613,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       methodName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1658,8 +1692,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       consumerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1679,8 +1713,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConsumerId() {
-
       consumerId_ = getDefaultInstance().getConsumerId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1705,8 +1739,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       consumerId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1722,14 +1756,14 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -1781,8 +1815,10 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1811,6 +1847,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1833,6 +1870,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1851,8 +1889,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1866,6 +1904,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1873,10 +1912,10 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureQuotaMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         quotaMetrics_ =
             new java.util.ArrayList<com.google.api.servicecontrol.v1.MetricValueSet>(quotaMetrics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2193,7 +2232,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearQuotaMetrics() {
       if (quotaMetricsBuilder_ == null) {
         quotaMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         quotaMetricsBuilder_.clear();
@@ -2381,7 +2420,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
                 com.google.api.servicecontrol.v1.MetricValueSet,
                 com.google.api.servicecontrol.v1.MetricValueSet.Builder,
                 com.google.api.servicecontrol.v1.MetricValueSetOrBuilder>(
-                quotaMetrics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                quotaMetrics_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         quotaMetrics_ = null;
       }
       return quotaMetricsBuilder_;
@@ -2416,8 +2455,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setQuotaModeValue(int value) {
-
       quotaMode_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2434,9 +2473,8 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode getQuotaMode() {
-      @SuppressWarnings("deprecation")
       com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode result =
-          com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode.valueOf(quotaMode_);
+          com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode.forNumber(quotaMode_);
       return result == null
           ? com.google.api.servicecontrol.v1.QuotaOperation.QuotaMode.UNRECOGNIZED
           : result;
@@ -2457,7 +2495,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       quotaMode_ = value.getNumber();
       onChanged();
       return this;
@@ -2474,7 +2512,7 @@ public final class QuotaOperation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuotaMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       quotaMode_ = 0;
       onChanged();
       return this;

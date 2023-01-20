@@ -61,6 +61,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TRANSLATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3beta1.Translation> translations_;
   /**
    *
@@ -141,6 +143,8 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int GLOSSARY_TRANSLATIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3beta1.Translation> glossaryTranslations_;
   /**
    *
@@ -435,6 +439,7 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (translationsBuilder_ == null) {
         translations_ = java.util.Collections.emptyList();
       } else {
@@ -476,7 +481,16 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.translate.v3beta1.TranslateTextResponse buildPartial() {
       com.google.cloud.translate.v3beta1.TranslateTextResponse result =
           new com.google.cloud.translate.v3beta1.TranslateTextResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.translate.v3beta1.TranslateTextResponse result) {
       if (translationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           translations_ = java.util.Collections.unmodifiableList(translations_);
@@ -495,8 +509,10 @@ public final class TranslateTextResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.glossaryTranslations_ = glossaryTranslationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.translate.v3beta1.TranslateTextResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

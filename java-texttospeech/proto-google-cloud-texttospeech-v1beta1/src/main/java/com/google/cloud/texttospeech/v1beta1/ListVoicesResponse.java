@@ -68,6 +68,8 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VOICES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.texttospeech.v1beta1.Voice> voices_;
   /**
    *
@@ -336,6 +338,7 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (voicesBuilder_ == null) {
         voices_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.texttospeech.v1beta1.ListVoicesResponse buildPartial() {
       com.google.cloud.texttospeech.v1beta1.ListVoicesResponse result =
           new com.google.cloud.texttospeech.v1beta1.ListVoicesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.texttospeech.v1beta1.ListVoicesResponse result) {
       if (voicesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           voices_ = java.util.Collections.unmodifiableList(voices_);
@@ -380,8 +392,10 @@ public final class ListVoicesResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.voices_ = voicesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.texttospeech.v1beta1.ListVoicesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -220,7 +220,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; models = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getModelsOrDefault(
       java.lang.String key,
@@ -426,7 +425,6 @@ public interface BatchTranslateTextRequestOrBuilder
    * map&lt;string, .google.cloud.translation.v3.TranslateTextGlossaryConfig&gt; glossaries = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossariesOrDefault(
       java.lang.String key,
@@ -513,7 +511,6 @@ public interface BatchTranslateTextRequestOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

@@ -126,7 +126,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getStartOffsetOrBuilder() {
-    return getStartOffset();
+    return startOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startOffset_;
   }
 
   public static final int END_OFFSET_FIELD_NUMBER = 2;
@@ -187,11 +187,13 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getEndOffsetOrBuilder() {
-    return getEndOffset();
+    return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
   }
 
   public static final int WORD_FIELD_NUMBER = 3;
-  private volatile java.lang.Object word_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object word_ = "";
   /**
    *
    *
@@ -240,7 +242,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -265,7 +267,9 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPEAKER_LABEL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object speakerLabel_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object speakerLabel_ = "";
   /**
    *
    *
@@ -563,24 +567,20 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (startOffsetBuilder_ == null) {
-        startOffset_ = null;
-      } else {
-        startOffset_ = null;
+      bitField0_ = 0;
+      startOffset_ = null;
+      if (startOffsetBuilder_ != null) {
+        startOffsetBuilder_.dispose();
         startOffsetBuilder_ = null;
       }
-      if (endOffsetBuilder_ == null) {
-        endOffset_ = null;
-      } else {
-        endOffset_ = null;
+      endOffset_ = null;
+      if (endOffsetBuilder_ != null) {
+        endOffsetBuilder_.dispose();
         endOffsetBuilder_ = null;
       }
       word_ = "";
-
       confidence_ = 0F;
-
       speakerLabel_ = "";
-
       return this;
     }
 
@@ -607,21 +607,31 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.speech.v2.WordInfo buildPartial() {
       com.google.cloud.speech.v2.WordInfo result = new com.google.cloud.speech.v2.WordInfo(this);
-      if (startOffsetBuilder_ == null) {
-        result.startOffset_ = startOffset_;
-      } else {
-        result.startOffset_ = startOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endOffsetBuilder_ == null) {
-        result.endOffset_ = endOffset_;
-      } else {
-        result.endOffset_ = endOffsetBuilder_.build();
-      }
-      result.word_ = word_;
-      result.confidence_ = confidence_;
-      result.speakerLabel_ = speakerLabel_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.WordInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startOffset_ =
+            startOffsetBuilder_ == null ? startOffset_ : startOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endOffset_ = endOffsetBuilder_ == null ? endOffset_ : endOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.word_ = word_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.confidence_ = confidence_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.speakerLabel_ = speakerLabel_;
+      }
     }
 
     @java.lang.Override
@@ -677,6 +687,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getWord().isEmpty()) {
         word_ = other.word_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -684,6 +695,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSpeakerLabel().isEmpty()) {
         speakerLabel_ = other.speakerLabel_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -715,31 +727,31 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getStartOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEndOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 word_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 50:
               {
                 speakerLabel_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -758,6 +770,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Duration startOffset_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -782,7 +796,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startOffset field is set.
      */
     public boolean hasStartOffset() {
-      return startOffsetBuilder_ != null || startOffset_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -829,11 +843,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startOffset_ = value;
-        onChanged();
       } else {
         startOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -853,11 +867,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (startOffsetBuilder_ == null) {
         startOffset_ = builderForValue.build();
-        onChanged();
       } else {
         startOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -876,17 +890,18 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartOffset(com.google.protobuf.Duration value) {
       if (startOffsetBuilder_ == null) {
-        if (startOffset_ != null) {
-          startOffset_ =
-              com.google.protobuf.Duration.newBuilder(startOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && startOffset_ != null
+            && startOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getStartOffsetBuilder().mergeFrom(value);
         } else {
           startOffset_ = value;
         }
-        onChanged();
       } else {
         startOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -904,14 +919,13 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_offset = 1;</code>
      */
     public Builder clearStartOffset() {
-      if (startOffsetBuilder_ == null) {
-        startOffset_ = null;
-        onChanged();
-      } else {
-        startOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      startOffset_ = null;
+      if (startOffsetBuilder_ != null) {
+        startOffsetBuilder_.dispose();
         startOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -929,7 +943,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration start_offset = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getStartOffsetBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStartOffsetFieldBuilder().getBuilder();
     }
@@ -1010,7 +1024,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endOffset field is set.
      */
     public boolean hasEndOffset() {
-      return endOffsetBuilder_ != null || endOffset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1055,11 +1069,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endOffset_ = value;
-        onChanged();
       } else {
         endOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1079,11 +1093,11 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (endOffsetBuilder_ == null) {
         endOffset_ = builderForValue.build();
-        onChanged();
       } else {
         endOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1102,17 +1116,18 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndOffset(com.google.protobuf.Duration value) {
       if (endOffsetBuilder_ == null) {
-        if (endOffset_ != null) {
-          endOffset_ =
-              com.google.protobuf.Duration.newBuilder(endOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && endOffset_ != null
+            && endOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getEndOffsetBuilder().mergeFrom(value);
         } else {
           endOffset_ = value;
         }
-        onChanged();
       } else {
         endOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1130,14 +1145,13 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration end_offset = 2;</code>
      */
     public Builder clearEndOffset() {
-      if (endOffsetBuilder_ == null) {
-        endOffset_ = null;
-        onChanged();
-      } else {
-        endOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      endOffset_ = null;
+      if (endOffsetBuilder_ != null) {
+        endOffsetBuilder_.dispose();
         endOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1155,7 +1169,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration end_offset = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getEndOffsetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEndOffsetFieldBuilder().getBuilder();
     }
@@ -1272,8 +1286,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       word_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1289,8 +1303,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWord() {
-
       word_ = getDefaultInstance().getWord();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1311,8 +1325,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       word_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1362,6 +1376,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1384,7 +1399,7 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       confidence_ = 0F;
       onChanged();
       return this;
@@ -1463,8 +1478,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       speakerLabel_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1484,8 +1499,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpeakerLabel() {
-
       speakerLabel_ = getDefaultInstance().getSpeakerLabel();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1510,8 +1525,8 @@ public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       speakerLabel_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

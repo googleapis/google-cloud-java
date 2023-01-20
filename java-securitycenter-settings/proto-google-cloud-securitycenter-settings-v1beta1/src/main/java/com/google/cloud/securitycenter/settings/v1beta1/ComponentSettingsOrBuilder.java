@@ -184,7 +184,6 @@ public interface ComponentSettingsOrBuilder
    * map&lt;string, .google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings&gt; detector_settings = 4;
    * </code>
    */
-
   /* nullable */
   com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings.DetectorSettings
       getDetectorSettingsOrDefault(

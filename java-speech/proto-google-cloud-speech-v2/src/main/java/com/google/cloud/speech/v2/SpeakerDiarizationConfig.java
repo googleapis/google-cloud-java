@@ -66,7 +66,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   }
 
   public static final int MIN_SPEAKER_COUNT_FIELD_NUMBER = 2;
-  private int minSpeakerCount_;
+  private int minSpeakerCount_ = 0;
   /**
    *
    *
@@ -88,7 +88,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
   }
 
   public static final int MAX_SPEAKER_COUNT_FIELD_NUMBER = 3;
-  private int maxSpeakerCount_;
+  private int maxSpeakerCount_ = 0;
   /**
    *
    *
@@ -314,10 +314,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minSpeakerCount_ = 0;
-
       maxSpeakerCount_ = 0;
-
       return this;
     }
 
@@ -345,10 +344,21 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public com.google.cloud.speech.v2.SpeakerDiarizationConfig buildPartial() {
       com.google.cloud.speech.v2.SpeakerDiarizationConfig result =
           new com.google.cloud.speech.v2.SpeakerDiarizationConfig(this);
-      result.minSpeakerCount_ = minSpeakerCount_;
-      result.maxSpeakerCount_ = maxSpeakerCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.SpeakerDiarizationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minSpeakerCount_ = minSpeakerCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxSpeakerCount_ = maxSpeakerCount_;
+      }
     }
 
     @java.lang.Override
@@ -432,13 +442,13 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
             case 16:
               {
                 minSpeakerCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             case 24:
               {
                 maxSpeakerCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -457,6 +467,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int minSpeakerCount_;
     /**
@@ -497,6 +509,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder setMinSpeakerCount(int value) {
 
       minSpeakerCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -516,7 +529,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMinSpeakerCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minSpeakerCount_ = 0;
       onChanged();
       return this;
@@ -559,6 +572,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder setMaxSpeakerCount(int value) {
 
       maxSpeakerCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -577,7 +591,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMaxSpeakerCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxSpeakerCount_ = 0;
       onChanged();
       return this;

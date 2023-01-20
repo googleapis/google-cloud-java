@@ -74,6 +74,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DNS_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList dnsNames_;
   /**
    *
@@ -135,6 +137,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int URIS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
@@ -196,6 +200,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int EMAIL_ADDRESSES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList emailAddresses_;
   /**
    *
@@ -257,6 +263,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IP_ADDRESSES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ipAddresses_;
   /**
    *
@@ -318,6 +326,8 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CUSTOM_SANS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.X509Extension> customSans_;
   /**
    *
@@ -663,6 +673,7 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -705,7 +716,16 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.security.privateca.v1.SubjectAltNames buildPartial() {
       com.google.cloud.security.privateca.v1.SubjectAltNames result =
           new com.google.cloud.security.privateca.v1.SubjectAltNames(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.security.privateca.v1.SubjectAltNames result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         dnsNames_ = dnsNames_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -735,8 +755,10 @@ public final class SubjectAltNames extends com.google.protobuf.GeneratedMessageV
       } else {
         result.customSans_ = customSansBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.security.privateca.v1.SubjectAltNames result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

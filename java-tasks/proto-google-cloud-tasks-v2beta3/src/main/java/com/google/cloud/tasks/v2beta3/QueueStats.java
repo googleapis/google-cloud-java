@@ -66,7 +66,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TASKS_COUNT_FIELD_NUMBER = 1;
-  private long tasksCount_;
+  private long tasksCount_ = 0L;
   /**
    *
    *
@@ -140,11 +140,13 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getOldestEstimatedArrivalTimeOrBuilder() {
-    return getOldestEstimatedArrivalTime();
+    return oldestEstimatedArrivalTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : oldestEstimatedArrivalTime_;
   }
 
   public static final int EXECUTED_LAST_MINUTE_COUNT_FIELD_NUMBER = 3;
-  private long executedLastMinuteCount_;
+  private long executedLastMinuteCount_ = 0L;
   /**
    *
    *
@@ -164,7 +166,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONCURRENT_DISPATCHES_COUNT_FIELD_NUMBER = 4;
-  private long concurrentDispatchesCount_;
+  private long concurrentDispatchesCount_ = 0L;
   /**
    *
    *
@@ -184,7 +186,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EFFECTIVE_EXECUTION_RATE_FIELD_NUMBER = 5;
-  private double effectiveExecutionRate_;
+  private double effectiveExecutionRate_ = 0D;
   /**
    *
    *
@@ -449,20 +451,16 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tasksCount_ = 0L;
-
-      if (oldestEstimatedArrivalTimeBuilder_ == null) {
-        oldestEstimatedArrivalTime_ = null;
-      } else {
-        oldestEstimatedArrivalTime_ = null;
+      oldestEstimatedArrivalTime_ = null;
+      if (oldestEstimatedArrivalTimeBuilder_ != null) {
+        oldestEstimatedArrivalTimeBuilder_.dispose();
         oldestEstimatedArrivalTimeBuilder_ = null;
       }
       executedLastMinuteCount_ = 0L;
-
       concurrentDispatchesCount_ = 0L;
-
       effectiveExecutionRate_ = 0D;
-
       return this;
     }
 
@@ -490,17 +488,33 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tasks.v2beta3.QueueStats buildPartial() {
       com.google.cloud.tasks.v2beta3.QueueStats result =
           new com.google.cloud.tasks.v2beta3.QueueStats(this);
-      result.tasksCount_ = tasksCount_;
-      if (oldestEstimatedArrivalTimeBuilder_ == null) {
-        result.oldestEstimatedArrivalTime_ = oldestEstimatedArrivalTime_;
-      } else {
-        result.oldestEstimatedArrivalTime_ = oldestEstimatedArrivalTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.executedLastMinuteCount_ = executedLastMinuteCount_;
-      result.concurrentDispatchesCount_ = concurrentDispatchesCount_;
-      result.effectiveExecutionRate_ = effectiveExecutionRate_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.tasks.v2beta3.QueueStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tasksCount_ = tasksCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.oldestEstimatedArrivalTime_ =
+            oldestEstimatedArrivalTimeBuilder_ == null
+                ? oldestEstimatedArrivalTime_
+                : oldestEstimatedArrivalTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.executedLastMinuteCount_ = executedLastMinuteCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.concurrentDispatchesCount_ = concurrentDispatchesCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.effectiveExecutionRate_ = effectiveExecutionRate_;
+      }
     }
 
     @java.lang.Override
@@ -592,32 +606,32 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 tasksCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getOldestEstimatedArrivalTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 executedLastMinuteCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 concurrentDispatchesCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 41:
               {
                 effectiveExecutionRate_ = input.readDouble();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 41
             default:
@@ -636,6 +650,8 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long tasksCount_;
     /**
@@ -674,6 +690,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setTasksCount(long value) {
 
       tasksCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,7 +709,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTasksCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       tasksCount_ = 0L;
       onChanged();
       return this;
@@ -719,7 +736,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the oldestEstimatedArrivalTime field is set.
      */
     public boolean hasOldestEstimatedArrivalTime() {
-      return oldestEstimatedArrivalTimeBuilder_ != null || oldestEstimatedArrivalTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -762,11 +779,11 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         oldestEstimatedArrivalTime_ = value;
-        onChanged();
       } else {
         oldestEstimatedArrivalTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -785,11 +802,11 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (oldestEstimatedArrivalTimeBuilder_ == null) {
         oldestEstimatedArrivalTime_ = builderForValue.build();
-        onChanged();
       } else {
         oldestEstimatedArrivalTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -806,19 +823,18 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOldestEstimatedArrivalTime(com.google.protobuf.Timestamp value) {
       if (oldestEstimatedArrivalTimeBuilder_ == null) {
-        if (oldestEstimatedArrivalTime_ != null) {
-          oldestEstimatedArrivalTime_ =
-              com.google.protobuf.Timestamp.newBuilder(oldestEstimatedArrivalTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && oldestEstimatedArrivalTime_ != null
+            && oldestEstimatedArrivalTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getOldestEstimatedArrivalTimeBuilder().mergeFrom(value);
         } else {
           oldestEstimatedArrivalTime_ = value;
         }
-        onChanged();
       } else {
         oldestEstimatedArrivalTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,14 +850,13 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOldestEstimatedArrivalTime() {
-      if (oldestEstimatedArrivalTimeBuilder_ == null) {
-        oldestEstimatedArrivalTime_ = null;
-        onChanged();
-      } else {
-        oldestEstimatedArrivalTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      oldestEstimatedArrivalTime_ = null;
+      if (oldestEstimatedArrivalTimeBuilder_ != null) {
+        oldestEstimatedArrivalTimeBuilder_.dispose();
         oldestEstimatedArrivalTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -857,7 +872,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getOldestEstimatedArrivalTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOldestEstimatedArrivalTimeFieldBuilder().getBuilder();
     }
@@ -948,6 +963,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setExecutedLastMinuteCount(long value) {
 
       executedLastMinuteCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -966,7 +982,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecutedLastMinuteCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       executedLastMinuteCount_ = 0L;
       onChanged();
       return this;
@@ -1007,6 +1023,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setConcurrentDispatchesCount(long value) {
 
       concurrentDispatchesCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1024,7 +1041,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConcurrentDispatchesCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       concurrentDispatchesCount_ = 0L;
       onChanged();
       return this;
@@ -1069,6 +1086,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setEffectiveExecutionRate(double value) {
 
       effectiveExecutionRate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1088,7 +1106,7 @@ public final class QueueStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEffectiveExecutionRate() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       effectiveExecutionRate_ = 0D;
       onChanged();
       return this;
