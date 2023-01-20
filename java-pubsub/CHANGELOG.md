@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.123.1](https://github.com/googleapis/java-pubsub/compare/v1.123.0...v1.123.1) (2023-01-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.20.2 ([#1441](https://github.com/googleapis/java-pubsub/issues/1441)) ([a675556](https://github.com/googleapis/java-pubsub/commit/a67555664a070eb03b6f8bb7115e32e2b9d9a11a))
+* Update dependency com.google.cloud:google-cloud-core to v2.9.2 ([#1449](https://github.com/googleapis/java-pubsub/issues/1449)) ([e68c9e0](https://github.com/googleapis/java-pubsub/commit/e68c9e0e0808c441e04049154fb0c44f42fed562))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#1463](https://github.com/googleapis/java-pubsub/issues/1463)) ([e9e6649](https://github.com/googleapis/java-pubsub/commit/e9e664951b027979969e983c7e525aff6e4ddc68))
+* Update dependency com.google.protobuf:protobuf-java-util to v3.21.12 ([#1437](https://github.com/googleapis/java-pubsub/issues/1437)) ([88f7a99](https://github.com/googleapis/java-pubsub/commit/88f7a991c43e6358ccc3ad248473400a2a0e50e8))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.2 ([#1451](https://github.com/googleapis/java-pubsub/issues/1451)) ([054572a](https://github.com/googleapis/java-pubsub/commit/054572a86ecc2cedcdbcf3eae8c9fb07caed504a))
+
 ## [1.123.0](https://github.com/googleapis/java-pubsub/compare/v1.122.2...v1.123.0) (2023-01-10)
 
 
