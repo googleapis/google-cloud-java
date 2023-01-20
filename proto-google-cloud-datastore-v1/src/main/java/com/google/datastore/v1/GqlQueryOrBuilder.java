@@ -120,7 +120,6 @@ public interface GqlQueryOrBuilder
    *
    * <code>map&lt;string, .google.datastore.v1.GqlQueryParameter&gt; named_bindings = 5;</code>
    */
-
   /* nullable */
   com.google.datastore.v1.GqlQueryParameter getNamedBindingsOrDefault(
       java.lang.String key,

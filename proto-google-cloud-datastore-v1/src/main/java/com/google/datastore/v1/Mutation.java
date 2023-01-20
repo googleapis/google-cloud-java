@@ -771,6 +771,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (insertBuilder_ != null) {
         insertBuilder_.clear();
       }
@@ -816,48 +817,38 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.Mutation buildPartial() {
       com.google.datastore.v1.Mutation result = new com.google.datastore.v1.Mutation(this);
-      if (operationCase_ == 4) {
-        if (insertBuilder_ == null) {
-          result.operation_ = operation_;
-        } else {
-          result.operation_ = insertBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (operationCase_ == 5) {
-        if (updateBuilder_ == null) {
-          result.operation_ = operation_;
-        } else {
-          result.operation_ = updateBuilder_.build();
-        }
-      }
-      if (operationCase_ == 6) {
-        if (upsertBuilder_ == null) {
-          result.operation_ = operation_;
-        } else {
-          result.operation_ = upsertBuilder_.build();
-        }
-      }
-      if (operationCase_ == 7) {
-        if (deleteBuilder_ == null) {
-          result.operation_ = operation_;
-        } else {
-          result.operation_ = deleteBuilder_.build();
-        }
-      }
-      if (conflictDetectionStrategyCase_ == 8) {
-        result.conflictDetectionStrategy_ = conflictDetectionStrategy_;
-      }
-      if (conflictDetectionStrategyCase_ == 11) {
-        if (updateTimeBuilder_ == null) {
-          result.conflictDetectionStrategy_ = conflictDetectionStrategy_;
-        } else {
-          result.conflictDetectionStrategy_ = updateTimeBuilder_.build();
-        }
-      }
-      result.operationCase_ = operationCase_;
-      result.conflictDetectionStrategyCase_ = conflictDetectionStrategyCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.Mutation result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.Mutation result) {
+      result.operationCase_ = operationCase_;
+      result.operation_ = this.operation_;
+      if (operationCase_ == 4 && insertBuilder_ != null) {
+        result.operation_ = insertBuilder_.build();
+      }
+      if (operationCase_ == 5 && updateBuilder_ != null) {
+        result.operation_ = updateBuilder_.build();
+      }
+      if (operationCase_ == 6 && upsertBuilder_ != null) {
+        result.operation_ = upsertBuilder_.build();
+      }
+      if (operationCase_ == 7 && deleteBuilder_ != null) {
+        result.operation_ = deleteBuilder_.build();
+      }
+      result.conflictDetectionStrategyCase_ = conflictDetectionStrategyCase_;
+      result.conflictDetectionStrategy_ = this.conflictDetectionStrategy_;
+      if (conflictDetectionStrategyCase_ == 11 && updateTimeBuilder_ != null) {
+        result.conflictDetectionStrategy_ = updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1053,6 +1044,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.Entity,
@@ -1265,7 +1258,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       operationCase_ = 4;
       onChanged();
-      ;
       return insertBuilder_;
     }
 
@@ -1480,7 +1472,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       operationCase_ = 5;
       onChanged();
-      ;
       return updateBuilder_;
     }
 
@@ -1695,7 +1686,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       operationCase_ = 6;
       onChanged();
-      ;
       return upsertBuilder_;
     }
 
@@ -1909,7 +1899,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       operationCase_ = 7;
       onChanged();
-      ;
       return deleteBuilder_;
     }
 
@@ -1963,6 +1952,7 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBaseVersion(long value) {
+
       conflictDetectionStrategyCase_ = 8;
       conflictDetectionStrategy_ = value;
       onChanged();
@@ -2213,7 +2203,6 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
       }
       conflictDetectionStrategyCase_ = 11;
       onChanged();
-      ;
       return updateTimeBuilder_;
     }
 

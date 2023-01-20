@@ -92,4 +92,20 @@ public interface RunQueryResponseOrBuilder
    * <code>.google.datastore.v1.Query query = 2;</code>
    */
   com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The identifier of the transaction that was started as part of this
+   * RunQuery request.
+   * Set only when [ReadOptions.begin_transaction][] was set in
+   * [RunQueryRequest.read_options][google.datastore.v1.RunQueryRequest.read_options].
+   * </pre>
+   *
+   * <code>bytes transaction = 5;</code>
+   *
+   * @return The transaction.
+   */
+  com.google.protobuf.ByteString getTransaction();
 }

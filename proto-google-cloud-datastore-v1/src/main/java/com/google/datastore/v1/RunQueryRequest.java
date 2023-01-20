@@ -116,7 +116,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -165,7 +167,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATABASE_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object databaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseId_ = "";
   /**
    *
    *
@@ -271,7 +275,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.datastore.v1.PartitionIdOrBuilder getPartitionIdOrBuilder() {
-    return getPartitionId();
+    return partitionId_ == null
+        ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+        : partitionId_;
   }
 
   public static final int READ_OPTIONS_FIELD_NUMBER = 1;
@@ -319,7 +325,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.datastore.v1.ReadOptionsOrBuilder getReadOptionsOrBuilder() {
-    return getReadOptions();
+    return readOptions_ == null
+        ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
+        : readOptions_;
   }
 
   public static final int QUERY_FIELD_NUMBER = 3;
@@ -696,20 +704,17 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       databaseId_ = "";
-
-      if (partitionIdBuilder_ == null) {
-        partitionId_ = null;
-      } else {
-        partitionId_ = null;
+      partitionId_ = null;
+      if (partitionIdBuilder_ != null) {
+        partitionIdBuilder_.dispose();
         partitionIdBuilder_ = null;
       }
-      if (readOptionsBuilder_ == null) {
-        readOptions_ = null;
-      } else {
-        readOptions_ = null;
+      readOptions_ = null;
+      if (readOptionsBuilder_ != null) {
+        readOptionsBuilder_.dispose();
         readOptionsBuilder_ = null;
       }
       if (queryBuilder_ != null) {
@@ -747,35 +752,41 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.datastore.v1.RunQueryRequest buildPartial() {
       com.google.datastore.v1.RunQueryRequest result =
           new com.google.datastore.v1.RunQueryRequest(this);
-      result.projectId_ = projectId_;
-      result.databaseId_ = databaseId_;
-      if (partitionIdBuilder_ == null) {
-        result.partitionId_ = partitionId_;
-      } else {
-        result.partitionId_ = partitionIdBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (readOptionsBuilder_ == null) {
-        result.readOptions_ = readOptions_;
-      } else {
-        result.readOptions_ = readOptionsBuilder_.build();
-      }
-      if (queryTypeCase_ == 3) {
-        if (queryBuilder_ == null) {
-          result.queryType_ = queryType_;
-        } else {
-          result.queryType_ = queryBuilder_.build();
-        }
-      }
-      if (queryTypeCase_ == 7) {
-        if (gqlQueryBuilder_ == null) {
-          result.queryType_ = queryType_;
-        } else {
-          result.queryType_ = gqlQueryBuilder_.build();
-        }
-      }
-      result.queryTypeCase_ = queryTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.RunQueryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.databaseId_ = databaseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.partitionId_ =
+            partitionIdBuilder_ == null ? partitionId_ : partitionIdBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.readOptions_ =
+            readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.RunQueryRequest result) {
+      result.queryTypeCase_ = queryTypeCase_;
+      result.queryType_ = this.queryType_;
+      if (queryTypeCase_ == 3 && queryBuilder_ != null) {
+        result.queryType_ = queryBuilder_.build();
+      }
+      if (queryTypeCase_ == 7 && gqlQueryBuilder_ != null) {
+        result.queryType_ = gqlQueryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -825,10 +836,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.datastore.v1.RunQueryRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPartitionId()) {
@@ -882,13 +895,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getReadOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPartitionIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
@@ -906,13 +919,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
             case 66:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 66
             case 74:
               {
                 databaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 74
             default:
@@ -945,6 +958,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -1007,8 +1022,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1024,8 +1039,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1046,8 +1061,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1119,8 +1134,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1138,8 +1153,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDatabaseId() {
-
       databaseId_ = getDefaultInstance().getDatabaseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1162,8 +1177,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1189,7 +1204,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the partitionId field is set.
      */
     public boolean hasPartitionId() {
-      return partitionIdBuilder_ != null || partitionId_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1232,11 +1247,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         partitionId_ = value;
-        onChanged();
       } else {
         partitionIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1254,11 +1269,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setPartitionId(com.google.datastore.v1.PartitionId.Builder builderForValue) {
       if (partitionIdBuilder_ == null) {
         partitionId_ = builderForValue.build();
-        onChanged();
       } else {
         partitionIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1275,19 +1290,18 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePartitionId(com.google.datastore.v1.PartitionId value) {
       if (partitionIdBuilder_ == null) {
-        if (partitionId_ != null) {
-          partitionId_ =
-              com.google.datastore.v1.PartitionId.newBuilder(partitionId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && partitionId_ != null
+            && partitionId_ != com.google.datastore.v1.PartitionId.getDefaultInstance()) {
+          getPartitionIdBuilder().mergeFrom(value);
         } else {
           partitionId_ = value;
         }
-        onChanged();
       } else {
         partitionIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1303,14 +1317,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
      */
     public Builder clearPartitionId() {
-      if (partitionIdBuilder_ == null) {
-        partitionId_ = null;
-        onChanged();
-      } else {
-        partitionId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      partitionId_ = null;
+      if (partitionIdBuilder_ != null) {
+        partitionIdBuilder_.dispose();
         partitionIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1326,7 +1339,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.datastore.v1.PartitionId partition_id = 2;</code>
      */
     public com.google.datastore.v1.PartitionId.Builder getPartitionIdBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
@@ -1398,7 +1411,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the readOptions field is set.
      */
     public boolean hasReadOptions() {
-      return readOptionsBuilder_ != null || readOptions_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1435,11 +1448,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         readOptions_ = value;
-        onChanged();
       } else {
         readOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1454,11 +1467,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setReadOptions(com.google.datastore.v1.ReadOptions.Builder builderForValue) {
       if (readOptionsBuilder_ == null) {
         readOptions_ = builderForValue.build();
-        onChanged();
       } else {
         readOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1472,19 +1485,18 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeReadOptions(com.google.datastore.v1.ReadOptions value) {
       if (readOptionsBuilder_ == null) {
-        if (readOptions_ != null) {
-          readOptions_ =
-              com.google.datastore.v1.ReadOptions.newBuilder(readOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && readOptions_ != null
+            && readOptions_ != com.google.datastore.v1.ReadOptions.getDefaultInstance()) {
+          getReadOptionsBuilder().mergeFrom(value);
         } else {
           readOptions_ = value;
         }
-        onChanged();
       } else {
         readOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1497,14 +1509,13 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
     public Builder clearReadOptions() {
-      if (readOptionsBuilder_ == null) {
-        readOptions_ = null;
-        onChanged();
-      } else {
-        readOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      readOptions_ = null;
+      if (readOptionsBuilder_ != null) {
+        readOptionsBuilder_.dispose();
         readOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1517,7 +1528,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
     public com.google.datastore.v1.ReadOptions.Builder getReadOptionsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
@@ -1767,7 +1778,6 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
       queryTypeCase_ = 3;
       onChanged();
-      ;
       return queryBuilder_;
     }
 
@@ -1974,7 +1984,6 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
       queryTypeCase_ = 7;
       onChanged();
-      ;
       return gqlQueryBuilder_;
     }
 

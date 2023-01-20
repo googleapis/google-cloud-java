@@ -269,11 +269,13 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
-    return getProperty();
+    return property_ == null
+        ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+        : property_;
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 2;
-  private int direction_;
+  private int direction_ = 0;
   /**
    *
    *
@@ -302,9 +304,8 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.PropertyOrder.Direction getDirection() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.v1.PropertyOrder.Direction result =
-        com.google.datastore.v1.PropertyOrder.Direction.valueOf(direction_);
+        com.google.datastore.v1.PropertyOrder.Direction.forNumber(direction_);
     return result == null ? com.google.datastore.v1.PropertyOrder.Direction.UNRECOGNIZED : result;
   }
 
@@ -519,14 +520,13 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (propertyBuilder_ == null) {
-        property_ = null;
-      } else {
-        property_ = null;
+      bitField0_ = 0;
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
       direction_ = 0;
-
       return this;
     }
 
@@ -554,14 +554,21 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.PropertyOrder buildPartial() {
       com.google.datastore.v1.PropertyOrder result =
           new com.google.datastore.v1.PropertyOrder(this);
-      if (propertyBuilder_ == null) {
-        result.property_ = property_;
-      } else {
-        result.property_ = propertyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.direction_ = direction_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.PropertyOrder result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = propertyBuilder_ == null ? property_ : propertyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.direction_ = direction_;
+      }
     }
 
     @java.lang.Override
@@ -644,13 +651,13 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 direction_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -670,6 +677,8 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.datastore.v1.PropertyReference property_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.PropertyReference,
@@ -688,7 +697,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the property field is set.
      */
     public boolean hasProperty() {
-      return propertyBuilder_ != null || property_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -725,11 +734,11 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         property_ = value;
-        onChanged();
       } else {
         propertyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,11 +753,11 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     public Builder setProperty(com.google.datastore.v1.PropertyReference.Builder builderForValue) {
       if (propertyBuilder_ == null) {
         property_ = builderForValue.build();
-        onChanged();
       } else {
         propertyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -762,19 +771,18 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProperty(com.google.datastore.v1.PropertyReference value) {
       if (propertyBuilder_ == null) {
-        if (property_ != null) {
-          property_ =
-              com.google.datastore.v1.PropertyReference.newBuilder(property_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && property_ != null
+            && property_ != com.google.datastore.v1.PropertyReference.getDefaultInstance()) {
+          getPropertyBuilder().mergeFrom(value);
         } else {
           property_ = value;
         }
-        onChanged();
       } else {
         propertyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -787,14 +795,13 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
     public Builder clearProperty() {
-      if (propertyBuilder_ == null) {
-        property_ = null;
-        onChanged();
-      } else {
-        property_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +814,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
     public com.google.datastore.v1.PropertyReference.Builder getPropertyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
@@ -884,8 +891,8 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDirectionValue(int value) {
-
       direction_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -902,9 +909,8 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.datastore.v1.PropertyOrder.Direction getDirection() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.PropertyOrder.Direction result =
-          com.google.datastore.v1.PropertyOrder.Direction.valueOf(direction_);
+          com.google.datastore.v1.PropertyOrder.Direction.forNumber(direction_);
       return result == null ? com.google.datastore.v1.PropertyOrder.Direction.UNRECOGNIZED : result;
     }
     /**
@@ -923,7 +929,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       direction_ = value.getNumber();
       onChanged();
       return this;
@@ -940,7 +946,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       direction_ = 0;
       onChanged();
       return this;

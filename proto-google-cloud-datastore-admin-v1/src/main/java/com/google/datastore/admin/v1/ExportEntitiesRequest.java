@@ -81,7 +81,9 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -142,6 +144,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -199,7 +202,10 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -272,11 +278,15 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.EntityFilterOrBuilder getEntityFilterOrBuilder() {
-    return getEntityFilter();
+    return entityFilter_ == null
+        ? com.google.datastore.admin.v1.EntityFilter.getDefaultInstance()
+        : entityFilter_;
   }
 
   public static final int OUTPUT_URL_PREFIX_FIELD_NUMBER = 4;
-  private volatile java.lang.Object outputUrlPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUrlPrefix_ = "";
   /**
    *
    *
@@ -610,17 +620,15 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       internalGetMutableLabels().clear();
-      if (entityFilterBuilder_ == null) {
-        entityFilter_ = null;
-      } else {
-        entityFilter_ = null;
+      entityFilter_ = null;
+      if (entityFilterBuilder_ != null) {
+        entityFilterBuilder_.dispose();
         entityFilterBuilder_ = null;
       }
       outputUrlPrefix_ = "";
-
       return this;
     }
 
@@ -648,18 +656,29 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
     public com.google.datastore.admin.v1.ExportEntitiesRequest buildPartial() {
       com.google.datastore.admin.v1.ExportEntitiesRequest result =
           new com.google.datastore.admin.v1.ExportEntitiesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (entityFilterBuilder_ == null) {
-        result.entityFilter_ = entityFilter_;
-      } else {
-        result.entityFilter_ = entityFilterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.outputUrlPrefix_ = outputUrlPrefix_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.ExportEntitiesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entityFilter_ =
+            entityFilterBuilder_ == null ? entityFilter_ : entityFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputUrlPrefix_ = outputUrlPrefix_;
+      }
     }
 
     @java.lang.Override
@@ -710,14 +729,17 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       if (other.hasEntityFilter()) {
         mergeEntityFilter(other.getEntityFilter());
       }
       if (!other.getOutputUrlPrefix().isEmpty()) {
         outputUrlPrefix_ = other.outputUrlPrefix_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -749,7 +771,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -761,18 +783,19 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getEntityFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 outputUrlPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -855,8 +878,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,8 +895,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -894,8 +917,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -911,14 +934,14 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -970,8 +993,10 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1000,6 +1025,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1022,6 +1048,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1040,8 +1067,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1055,6 +1082,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1076,7 +1104,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the entityFilter field is set.
      */
     public boolean hasEntityFilter() {
-      return entityFilterBuilder_ != null || entityFilter_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1113,11 +1141,11 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         entityFilter_ = value;
-        onChanged();
       } else {
         entityFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1133,11 +1161,11 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
         com.google.datastore.admin.v1.EntityFilter.Builder builderForValue) {
       if (entityFilterBuilder_ == null) {
         entityFilter_ = builderForValue.build();
-        onChanged();
       } else {
         entityFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1151,19 +1179,18 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeEntityFilter(com.google.datastore.admin.v1.EntityFilter value) {
       if (entityFilterBuilder_ == null) {
-        if (entityFilter_ != null) {
-          entityFilter_ =
-              com.google.datastore.admin.v1.EntityFilter.newBuilder(entityFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && entityFilter_ != null
+            && entityFilter_ != com.google.datastore.admin.v1.EntityFilter.getDefaultInstance()) {
+          getEntityFilterBuilder().mergeFrom(value);
         } else {
           entityFilter_ = value;
         }
-        onChanged();
       } else {
         entityFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1176,14 +1203,13 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.datastore.admin.v1.EntityFilter entity_filter = 3;</code>
      */
     public Builder clearEntityFilter() {
-      if (entityFilterBuilder_ == null) {
-        entityFilter_ = null;
-        onChanged();
-      } else {
-        entityFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      entityFilter_ = null;
+      if (entityFilterBuilder_ != null) {
+        entityFilterBuilder_.dispose();
         entityFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1196,7 +1222,7 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.datastore.admin.v1.EntityFilter entity_filter = 3;</code>
      */
     public com.google.datastore.admin.v1.EntityFilter.Builder getEntityFilterBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEntityFilterFieldBuilder().getBuilder();
     }
@@ -1347,8 +1373,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUrlPrefix_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1378,8 +1404,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOutputUrlPrefix() {
-
       outputUrlPrefix_ = getDefaultInstance().getOutputUrlPrefix();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1414,8 +1440,8 @@ public final class ExportEntitiesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUrlPrefix_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -76,7 +76,7 @@ public final class DatastoreFirestoreMigrationMetadata
   }
 
   public static final int MIGRATION_STATE_FIELD_NUMBER = 1;
-  private int migrationState_;
+  private int migrationState_ = 0;
   /**
    *
    *
@@ -107,14 +107,13 @@ public final class DatastoreFirestoreMigrationMetadata
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.MigrationState getMigrationState() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.admin.v1.MigrationState result =
-        com.google.datastore.admin.v1.MigrationState.valueOf(migrationState_);
+        com.google.datastore.admin.v1.MigrationState.forNumber(migrationState_);
     return result == null ? com.google.datastore.admin.v1.MigrationState.UNRECOGNIZED : result;
   }
 
   public static final int MIGRATION_STEP_FIELD_NUMBER = 2;
-  private int migrationStep_;
+  private int migrationStep_ = 0;
   /**
    *
    *
@@ -145,9 +144,8 @@ public final class DatastoreFirestoreMigrationMetadata
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.MigrationStep getMigrationStep() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.admin.v1.MigrationStep result =
-        com.google.datastore.admin.v1.MigrationStep.valueOf(migrationStep_);
+        com.google.datastore.admin.v1.MigrationStep.forNumber(migrationStep_);
     return result == null ? com.google.datastore.admin.v1.MigrationStep.UNRECOGNIZED : result;
   }
 
@@ -369,10 +367,9 @@ public final class DatastoreFirestoreMigrationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       migrationState_ = 0;
-
       migrationStep_ = 0;
-
       return this;
     }
 
@@ -401,10 +398,22 @@ public final class DatastoreFirestoreMigrationMetadata
     public com.google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata buildPartial() {
       com.google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata result =
           new com.google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata(this);
-      result.migrationState_ = migrationState_;
-      result.migrationStep_ = migrationStep_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.migrationState_ = migrationState_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.migrationStep_ = migrationStep_;
+      }
     }
 
     @java.lang.Override
@@ -490,13 +499,13 @@ public final class DatastoreFirestoreMigrationMetadata
             case 8:
               {
                 migrationState_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 migrationStep_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -515,6 +524,8 @@ public final class DatastoreFirestoreMigrationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int migrationState_ = 0;
     /**
@@ -547,8 +558,8 @@ public final class DatastoreFirestoreMigrationMetadata
      * @return This builder for chaining.
      */
     public Builder setMigrationStateValue(int value) {
-
       migrationState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -566,9 +577,8 @@ public final class DatastoreFirestoreMigrationMetadata
      */
     @java.lang.Override
     public com.google.datastore.admin.v1.MigrationState getMigrationState() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.admin.v1.MigrationState result =
-          com.google.datastore.admin.v1.MigrationState.valueOf(migrationState_);
+          com.google.datastore.admin.v1.MigrationState.forNumber(migrationState_);
       return result == null ? com.google.datastore.admin.v1.MigrationState.UNRECOGNIZED : result;
     }
     /**
@@ -588,7 +598,7 @@ public final class DatastoreFirestoreMigrationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       migrationState_ = value.getNumber();
       onChanged();
       return this;
@@ -606,7 +616,7 @@ public final class DatastoreFirestoreMigrationMetadata
      * @return This builder for chaining.
      */
     public Builder clearMigrationState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       migrationState_ = 0;
       onChanged();
       return this;
@@ -643,8 +653,8 @@ public final class DatastoreFirestoreMigrationMetadata
      * @return This builder for chaining.
      */
     public Builder setMigrationStepValue(int value) {
-
       migrationStep_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -662,9 +672,8 @@ public final class DatastoreFirestoreMigrationMetadata
      */
     @java.lang.Override
     public com.google.datastore.admin.v1.MigrationStep getMigrationStep() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.admin.v1.MigrationStep result =
-          com.google.datastore.admin.v1.MigrationStep.valueOf(migrationStep_);
+          com.google.datastore.admin.v1.MigrationStep.forNumber(migrationStep_);
       return result == null ? com.google.datastore.admin.v1.MigrationStep.UNRECOGNIZED : result;
     }
     /**
@@ -684,7 +693,7 @@ public final class DatastoreFirestoreMigrationMetadata
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       migrationStep_ = value.getNumber();
       onChanged();
       return this;
@@ -702,7 +711,7 @@ public final class DatastoreFirestoreMigrationMetadata
      * @return This builder for chaining.
      */
     public Builder clearMigrationStep() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       migrationStep_ = 0;
       onChanged();
       return this;

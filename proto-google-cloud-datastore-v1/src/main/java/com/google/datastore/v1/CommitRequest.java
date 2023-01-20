@@ -239,6 +239,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TRANSACTION(1),
+    SINGLE_USE_TRANSACTION(10),
     TRANSACTIONSELECTOR_NOT_SET(0);
     private final int value;
 
@@ -259,6 +260,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return TRANSACTION;
+        case 10:
+          return SINGLE_USE_TRANSACTION;
         case 0:
           return TRANSACTIONSELECTOR_NOT_SET;
         default:
@@ -276,7 +279,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -325,7 +330,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATABASE_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object databaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseId_ = "";
   /**
    *
    *
@@ -378,7 +385,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MODE_FIELD_NUMBER = 5;
-  private int mode_;
+  private int mode_ = 0;
   /**
    *
    *
@@ -407,9 +414,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.CommitRequest.Mode getMode() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.v1.CommitRequest.Mode result =
-        com.google.datastore.v1.CommitRequest.Mode.valueOf(mode_);
+        com.google.datastore.v1.CommitRequest.Mode.forNumber(mode_);
     return result == null ? com.google.datastore.v1.CommitRequest.Mode.UNRECOGNIZED : result;
   }
 
@@ -452,7 +458,72 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     return com.google.protobuf.ByteString.EMPTY;
   }
 
+  public static final int SINGLE_USE_TRANSACTION_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The transaction is committed when the request completes. If specified,
+   * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+   * must be
+   * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+   *
+   * @return Whether the singleUseTransaction field is set.
+   */
+  @java.lang.Override
+  public boolean hasSingleUseTransaction() {
+    return transactionSelectorCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The transaction is committed when the request completes. If specified,
+   * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+   * must be
+   * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+   *
+   * @return The singleUseTransaction.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.TransactionOptions getSingleUseTransaction() {
+    if (transactionSelectorCase_ == 10) {
+      return (com.google.datastore.v1.TransactionOptions) transactionSelector_;
+    }
+    return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The transaction is committed when the request completes. If specified,
+   * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+   * must be
+   * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.TransactionOptionsOrBuilder getSingleUseTransactionOrBuilder() {
+    if (transactionSelectorCase_ == 10) {
+      return (com.google.datastore.v1.TransactionOptions) transactionSelector_;
+    }
+    return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+  }
+
   public static final int MUTATIONS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Mutation> mutations_;
   /**
    *
@@ -595,6 +666,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, databaseId_);
     }
+    if (transactionSelectorCase_ == 10) {
+      output.writeMessage(10, (com.google.datastore.v1.TransactionOptions) transactionSelector_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -621,6 +695,11 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, databaseId_);
     }
+    if (transactionSelectorCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.datastore.v1.TransactionOptions) transactionSelector_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -644,6 +723,9 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     switch (transactionSelectorCase_) {
       case 1:
         if (!getTransaction().equals(other.getTransaction())) return false;
+        break;
+      case 10:
+        if (!getSingleUseTransaction().equals(other.getSingleUseTransaction())) return false;
         break;
       case 0:
       default:
@@ -673,6 +755,10 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
         hash = (53 * hash) + getTransaction().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + SINGLE_USE_TRANSACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getSingleUseTransaction().hashCode();
         break;
       case 0:
       default:
@@ -814,19 +900,20 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       databaseId_ = "";
-
       mode_ = 0;
-
+      if (singleUseTransactionBuilder_ != null) {
+        singleUseTransactionBuilder_.clear();
+      }
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
       } else {
         mutations_ = null;
         mutationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       transactionSelectorCase_ = 0;
       transactionSelector_ = null;
       return this;
@@ -856,25 +943,46 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.CommitRequest buildPartial() {
       com.google.datastore.v1.CommitRequest result =
           new com.google.datastore.v1.CommitRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.databaseId_ = databaseId_;
-      result.mode_ = mode_;
-      if (transactionSelectorCase_ == 1) {
-        result.transactionSelector_ = transactionSelector_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.CommitRequest result) {
       if (mutationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           mutations_ = java.util.Collections.unmodifiableList(mutations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.mutations_ = mutations_;
       } else {
         result.mutations_ = mutationsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.datastore.v1.CommitRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.databaseId_ = databaseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mode_ = mode_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.CommitRequest result) {
       result.transactionSelectorCase_ = transactionSelectorCase_;
-      onBuilt();
-      return result;
+      result.transactionSelector_ = this.transactionSelector_;
+      if (transactionSelectorCase_ == 10 && singleUseTransactionBuilder_ != null) {
+        result.transactionSelector_ = singleUseTransactionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -924,10 +1032,12 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.datastore.v1.CommitRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.mode_ != 0) {
@@ -937,7 +1047,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.mutations_.isEmpty()) {
           if (mutations_.isEmpty()) {
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureMutationsIsMutable();
             mutations_.addAll(other.mutations_);
@@ -950,7 +1060,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             mutationsBuilder_.dispose();
             mutationsBuilder_ = null;
             mutations_ = other.mutations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             mutationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMutationsFieldBuilder()
@@ -964,6 +1074,11 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         case TRANSACTION:
           {
             setTransaction(other.getTransaction());
+            break;
+          }
+        case SINGLE_USE_TRANSACTION:
+          {
+            mergeSingleUseTransaction(other.getSingleUseTransaction());
             break;
           }
         case TRANSACTIONSELECTOR_NOT_SET:
@@ -1006,7 +1121,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 mode_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 40
             case 50:
@@ -1024,15 +1139,22 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 66
             case 74:
               {
                 databaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getSingleUseTransactionFieldBuilder().getBuilder(), extensionRegistry);
+                transactionSelectorCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1127,8 +1249,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1144,8 +1266,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1166,8 +1288,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1239,8 +1361,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1258,8 +1380,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseId() {
-
       databaseId_ = getDefaultInstance().getDatabaseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1282,8 +1404,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1317,8 +1439,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setModeValue(int value) {
-
       mode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1335,9 +1457,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.datastore.v1.CommitRequest.Mode getMode() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.CommitRequest.Mode result =
-          com.google.datastore.v1.CommitRequest.Mode.valueOf(mode_);
+          com.google.datastore.v1.CommitRequest.Mode.forNumber(mode_);
       return result == null ? com.google.datastore.v1.CommitRequest.Mode.UNRECOGNIZED : result;
     }
     /**
@@ -1356,7 +1477,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -1373,7 +1494,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       mode_ = 0;
       onChanged();
       return this;
@@ -1459,13 +1580,259 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.TransactionOptions,
+            com.google.datastore.v1.TransactionOptions.Builder,
+            com.google.datastore.v1.TransactionOptionsOrBuilder>
+        singleUseTransactionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     *
+     * @return Whether the singleUseTransaction field is set.
+     */
+    @java.lang.Override
+    public boolean hasSingleUseTransaction() {
+      return transactionSelectorCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     *
+     * @return The singleUseTransaction.
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.TransactionOptions getSingleUseTransaction() {
+      if (singleUseTransactionBuilder_ == null) {
+        if (transactionSelectorCase_ == 10) {
+          return (com.google.datastore.v1.TransactionOptions) transactionSelector_;
+        }
+        return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+      } else {
+        if (transactionSelectorCase_ == 10) {
+          return singleUseTransactionBuilder_.getMessage();
+        }
+        return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    public Builder setSingleUseTransaction(com.google.datastore.v1.TransactionOptions value) {
+      if (singleUseTransactionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transactionSelector_ = value;
+        onChanged();
+      } else {
+        singleUseTransactionBuilder_.setMessage(value);
+      }
+      transactionSelectorCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    public Builder setSingleUseTransaction(
+        com.google.datastore.v1.TransactionOptions.Builder builderForValue) {
+      if (singleUseTransactionBuilder_ == null) {
+        transactionSelector_ = builderForValue.build();
+        onChanged();
+      } else {
+        singleUseTransactionBuilder_.setMessage(builderForValue.build());
+      }
+      transactionSelectorCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    public Builder mergeSingleUseTransaction(com.google.datastore.v1.TransactionOptions value) {
+      if (singleUseTransactionBuilder_ == null) {
+        if (transactionSelectorCase_ == 10
+            && transactionSelector_
+                != com.google.datastore.v1.TransactionOptions.getDefaultInstance()) {
+          transactionSelector_ =
+              com.google.datastore.v1.TransactionOptions.newBuilder(
+                      (com.google.datastore.v1.TransactionOptions) transactionSelector_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transactionSelector_ = value;
+        }
+        onChanged();
+      } else {
+        if (transactionSelectorCase_ == 10) {
+          singleUseTransactionBuilder_.mergeFrom(value);
+        } else {
+          singleUseTransactionBuilder_.setMessage(value);
+        }
+      }
+      transactionSelectorCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    public Builder clearSingleUseTransaction() {
+      if (singleUseTransactionBuilder_ == null) {
+        if (transactionSelectorCase_ == 10) {
+          transactionSelectorCase_ = 0;
+          transactionSelector_ = null;
+          onChanged();
+        }
+      } else {
+        if (transactionSelectorCase_ == 10) {
+          transactionSelectorCase_ = 0;
+          transactionSelector_ = null;
+        }
+        singleUseTransactionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    public com.google.datastore.v1.TransactionOptions.Builder getSingleUseTransactionBuilder() {
+      return getSingleUseTransactionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.TransactionOptionsOrBuilder getSingleUseTransactionOrBuilder() {
+      if ((transactionSelectorCase_ == 10) && (singleUseTransactionBuilder_ != null)) {
+        return singleUseTransactionBuilder_.getMessageOrBuilder();
+      } else {
+        if (transactionSelectorCase_ == 10) {
+          return (com.google.datastore.v1.TransactionOptions) transactionSelector_;
+        }
+        return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The transaction is committed when the request completes. If specified,
+     * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+     * must be
+     * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.TransactionOptions,
+            com.google.datastore.v1.TransactionOptions.Builder,
+            com.google.datastore.v1.TransactionOptionsOrBuilder>
+        getSingleUseTransactionFieldBuilder() {
+      if (singleUseTransactionBuilder_ == null) {
+        if (!(transactionSelectorCase_ == 10)) {
+          transactionSelector_ = com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+        }
+        singleUseTransactionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.TransactionOptions,
+                com.google.datastore.v1.TransactionOptions.Builder,
+                com.google.datastore.v1.TransactionOptionsOrBuilder>(
+                (com.google.datastore.v1.TransactionOptions) transactionSelector_,
+                getParentForChildren(),
+                isClean());
+        transactionSelector_ = null;
+      }
+      transactionSelectorCase_ = 10;
+      onChanged();
+      return singleUseTransactionBuilder_;
+    }
+
     private java.util.List<com.google.datastore.v1.Mutation> mutations_ =
         java.util.Collections.emptyList();
 
     private void ensureMutationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         mutations_ = new java.util.ArrayList<com.google.datastore.v1.Mutation>(mutations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -1779,7 +2146,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMutations() {
       if (mutationsBuilder_ == null) {
         mutations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         mutationsBuilder_.clear();
@@ -1963,7 +2330,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Mutation,
                 com.google.datastore.v1.Mutation.Builder,
                 com.google.datastore.v1.MutationOrBuilder>(
-                mutations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                mutations_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         mutations_ = null;
       }
       return mutationsBuilder_;

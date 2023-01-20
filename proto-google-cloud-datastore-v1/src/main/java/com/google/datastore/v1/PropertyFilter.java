@@ -463,11 +463,13 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder() {
-    return getProperty();
+    return property_ == null
+        ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+        : property_;
   }
 
   public static final int OP_FIELD_NUMBER = 2;
-  private int op_;
+  private int op_ = 0;
   /**
    *
    *
@@ -496,9 +498,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.PropertyFilter.Operator getOp() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.v1.PropertyFilter.Operator result =
-        com.google.datastore.v1.PropertyFilter.Operator.valueOf(op_);
+        com.google.datastore.v1.PropertyFilter.Operator.forNumber(op_);
     return result == null ? com.google.datastore.v1.PropertyFilter.Operator.UNRECOGNIZED : result;
   }
 
@@ -545,7 +546,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.ValueOrBuilder getValueOrBuilder() {
-    return getValue();
+    return value_ == null ? com.google.datastore.v1.Value.getDefaultInstance() : value_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -772,18 +773,16 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (propertyBuilder_ == null) {
-        property_ = null;
-      } else {
-        property_ = null;
+      bitField0_ = 0;
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
       op_ = 0;
-
-      if (valueBuilder_ == null) {
-        value_ = null;
-      } else {
-        value_ = null;
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
       return this;
@@ -813,19 +812,24 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.PropertyFilter buildPartial() {
       com.google.datastore.v1.PropertyFilter result =
           new com.google.datastore.v1.PropertyFilter(this);
-      if (propertyBuilder_ == null) {
-        result.property_ = property_;
-      } else {
-        result.property_ = propertyBuilder_.build();
-      }
-      result.op_ = op_;
-      if (valueBuilder_ == null) {
-        result.value_ = value_;
-      } else {
-        result.value_ = valueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.PropertyFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = propertyBuilder_ == null ? property_ : propertyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.op_ = op_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -911,19 +915,19 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 op_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -943,6 +947,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.datastore.v1.PropertyReference property_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.PropertyReference,
@@ -961,7 +967,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the property field is set.
      */
     public boolean hasProperty() {
-      return propertyBuilder_ != null || property_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -998,11 +1004,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         property_ = value;
-        onChanged();
       } else {
         propertyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1017,11 +1023,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setProperty(com.google.datastore.v1.PropertyReference.Builder builderForValue) {
       if (propertyBuilder_ == null) {
         property_ = builderForValue.build();
-        onChanged();
       } else {
         propertyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1035,19 +1041,18 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProperty(com.google.datastore.v1.PropertyReference value) {
       if (propertyBuilder_ == null) {
-        if (property_ != null) {
-          property_ =
-              com.google.datastore.v1.PropertyReference.newBuilder(property_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && property_ != null
+            && property_ != com.google.datastore.v1.PropertyReference.getDefaultInstance()) {
+          getPropertyBuilder().mergeFrom(value);
         } else {
           property_ = value;
         }
-        onChanged();
       } else {
         propertyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1060,14 +1065,13 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
     public Builder clearProperty() {
-      if (propertyBuilder_ == null) {
-        property_ = null;
-        onChanged();
-      } else {
-        property_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1080,7 +1084,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
     public com.google.datastore.v1.PropertyReference.Builder getPropertyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
@@ -1157,8 +1161,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOpValue(int value) {
-
       op_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1175,9 +1179,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.datastore.v1.PropertyFilter.Operator getOp() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.PropertyFilter.Operator result =
-          com.google.datastore.v1.PropertyFilter.Operator.valueOf(op_);
+          com.google.datastore.v1.PropertyFilter.Operator.forNumber(op_);
       return result == null ? com.google.datastore.v1.PropertyFilter.Operator.UNRECOGNIZED : result;
     }
     /**
@@ -1196,7 +1199,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       op_ = value.getNumber();
       onChanged();
       return this;
@@ -1213,7 +1216,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOp() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       op_ = 0;
       onChanged();
       return this;
@@ -1237,7 +1240,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the value field is set.
      */
     public boolean hasValue() {
-      return valueBuilder_ != null || value_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1272,11 +1275,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         value_ = value;
-        onChanged();
       } else {
         valueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1291,11 +1294,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setValue(com.google.datastore.v1.Value.Builder builderForValue) {
       if (valueBuilder_ == null) {
         value_ = builderForValue.build();
-        onChanged();
       } else {
         valueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1309,16 +1312,18 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeValue(com.google.datastore.v1.Value value) {
       if (valueBuilder_ == null) {
-        if (value_ != null) {
-          value_ = com.google.datastore.v1.Value.newBuilder(value_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && value_ != null
+            && value_ != com.google.datastore.v1.Value.getDefaultInstance()) {
+          getValueBuilder().mergeFrom(value);
         } else {
           value_ = value;
         }
-        onChanged();
       } else {
         valueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1331,14 +1336,13 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.Value value = 3;</code>
      */
     public Builder clearValue() {
-      if (valueBuilder_ == null) {
-        value_ = null;
-        onChanged();
-      } else {
-        value_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      value_ = null;
+      if (valueBuilder_ != null) {
+        valueBuilder_.dispose();
         valueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1351,7 +1355,7 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.Value value = 3;</code>
      */
     public com.google.datastore.v1.Value.Builder getValueBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }

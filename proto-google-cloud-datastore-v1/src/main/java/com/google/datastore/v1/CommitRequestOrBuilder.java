@@ -135,6 +135,53 @@ public interface CommitRequestOrBuilder
    *
    *
    * <pre>
+   * Options for beginning a new transaction for this request.
+   * The transaction is committed when the request completes. If specified,
+   * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+   * must be
+   * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+   *
+   * @return Whether the singleUseTransaction field is set.
+   */
+  boolean hasSingleUseTransaction();
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The transaction is committed when the request completes. If specified,
+   * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+   * must be
+   * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+   *
+   * @return The singleUseTransaction.
+   */
+  com.google.datastore.v1.TransactionOptions getSingleUseTransaction();
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The transaction is committed when the request completes. If specified,
+   * [TransactionOptions.mode][google.datastore.v1.TransactionOptions.mode]
+   * must be
+   * [TransactionOptions.ReadWrite][google.datastore.v1.TransactionOptions.ReadWrite].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions single_use_transaction = 10;</code>
+   */
+  com.google.datastore.v1.TransactionOptionsOrBuilder getSingleUseTransactionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The mutations to perform.
    * When mode is `TRANSACTIONAL`, mutations affecting a single entity are
    * applied in order. The following sequences of mutations affecting a single

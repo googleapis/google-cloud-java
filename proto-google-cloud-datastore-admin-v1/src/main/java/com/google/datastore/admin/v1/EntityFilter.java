@@ -82,6 +82,8 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KINDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList kinds_;
   /**
    *
@@ -143,6 +145,8 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAMESPACE_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList namespaceIds_;
   /**
    *
@@ -456,6 +460,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kinds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       namespaceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -487,7 +492,15 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.admin.v1.EntityFilter buildPartial() {
       com.google.datastore.admin.v1.EntityFilter result =
           new com.google.datastore.admin.v1.EntityFilter(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.admin.v1.EntityFilter result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         kinds_ = kinds_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -498,8 +511,10 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.namespaceIds_ = namespaceIds_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.EntityFilter result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

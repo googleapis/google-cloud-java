@@ -204,7 +204,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int OP_FIELD_NUMBER = 1;
-  private int op_;
+  private int op_ = 0;
   /**
    *
    *
@@ -233,13 +233,14 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.datastore.v1.CompositeFilter.Operator getOp() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.v1.CompositeFilter.Operator result =
-        com.google.datastore.v1.CompositeFilter.Operator.valueOf(op_);
+        com.google.datastore.v1.CompositeFilter.Operator.forNumber(op_);
     return result == null ? com.google.datastore.v1.CompositeFilter.Operator.UNRECOGNIZED : result;
   }
 
   public static final int FILTERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Filter> filters_;
   /**
    *
@@ -525,15 +526,15 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       op_ = 0;
-
       if (filtersBuilder_ == null) {
         filters_ = java.util.Collections.emptyList();
       } else {
         filters_ = null;
         filtersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -561,19 +562,31 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     public com.google.datastore.v1.CompositeFilter buildPartial() {
       com.google.datastore.v1.CompositeFilter result =
           new com.google.datastore.v1.CompositeFilter(this);
-      int from_bitField0_ = bitField0_;
-      result.op_ = op_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.CompositeFilter result) {
       if (filtersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           filters_ = java.util.Collections.unmodifiableList(filters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.filters_ = filters_;
       } else {
         result.filters_ = filtersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.CompositeFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.op_ = op_;
+      }
     }
 
     @java.lang.Override
@@ -628,7 +641,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         if (!other.filters_.isEmpty()) {
           if (filters_.isEmpty()) {
             filters_ = other.filters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFiltersIsMutable();
             filters_.addAll(other.filters_);
@@ -641,7 +654,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
             filtersBuilder_.dispose();
             filtersBuilder_ = null;
             filters_ = other.filters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             filtersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFiltersFieldBuilder()
@@ -680,7 +693,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 op_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -743,8 +756,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setOpValue(int value) {
-
       op_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,9 +774,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.datastore.v1.CompositeFilter.Operator getOp() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.CompositeFilter.Operator result =
-          com.google.datastore.v1.CompositeFilter.Operator.valueOf(op_);
+          com.google.datastore.v1.CompositeFilter.Operator.forNumber(op_);
       return result == null
           ? com.google.datastore.v1.CompositeFilter.Operator.UNRECOGNIZED
           : result;
@@ -784,7 +796,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       op_ = value.getNumber();
       onChanged();
       return this;
@@ -801,7 +813,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearOp() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       op_ = 0;
       onChanged();
       return this;
@@ -811,9 +823,9 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         filters_ = new java.util.ArrayList<com.google.datastore.v1.Filter>(filters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1048,7 +1060,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     public Builder clearFilters() {
       if (filtersBuilder_ == null) {
         filters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         filtersBuilder_.clear();
@@ -1183,7 +1195,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
                 com.google.datastore.v1.Filter,
                 com.google.datastore.v1.Filter.Builder,
                 com.google.datastore.v1.FilterOrBuilder>(
-                filters_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                filters_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         filters_ = null;
       }
       return filtersBuilder_;

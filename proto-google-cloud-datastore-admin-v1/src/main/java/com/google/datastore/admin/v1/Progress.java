@@ -66,7 +66,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORK_COMPLETED_FIELD_NUMBER = 1;
-  private long workCompleted_;
+  private long workCompleted_ = 0L;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORK_ESTIMATED_FIELD_NUMBER = 2;
-  private long workEstimated_;
+  private long workEstimated_ = 0L;
   /**
    *
    *
@@ -308,10 +308,9 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       workCompleted_ = 0L;
-
       workEstimated_ = 0L;
-
       return this;
     }
 
@@ -339,10 +338,21 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.admin.v1.Progress buildPartial() {
       com.google.datastore.admin.v1.Progress result =
           new com.google.datastore.admin.v1.Progress(this);
-      result.workCompleted_ = workCompleted_;
-      result.workEstimated_ = workEstimated_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.Progress result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.workCompleted_ = workCompleted_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workEstimated_ = workEstimated_;
+      }
     }
 
     @java.lang.Override
@@ -425,13 +435,13 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 workCompleted_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 workEstimated_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -450,6 +460,8 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long workCompleted_;
     /**
@@ -484,6 +496,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     public Builder setWorkCompleted(long value) {
 
       workCompleted_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -500,7 +513,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkCompleted() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       workCompleted_ = 0L;
       onChanged();
       return this;
@@ -539,6 +552,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     public Builder setWorkEstimated(long value) {
 
       workEstimated_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -555,7 +569,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkEstimated() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       workEstimated_ = 0L;
       onChanged();
       return this;

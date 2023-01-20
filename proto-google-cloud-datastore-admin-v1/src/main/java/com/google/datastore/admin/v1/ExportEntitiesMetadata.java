@@ -112,7 +112,9 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.CommonMetadataOrBuilder getCommonOrBuilder() {
-    return getCommon();
+    return common_ == null
+        ? com.google.datastore.admin.v1.CommonMetadata.getDefaultInstance()
+        : common_;
   }
 
   public static final int PROGRESS_ENTITIES_FIELD_NUMBER = 2;
@@ -160,7 +162,9 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.ProgressOrBuilder getProgressEntitiesOrBuilder() {
-    return getProgressEntities();
+    return progressEntities_ == null
+        ? com.google.datastore.admin.v1.Progress.getDefaultInstance()
+        : progressEntities_;
   }
 
   public static final int PROGRESS_BYTES_FIELD_NUMBER = 3;
@@ -208,7 +212,9 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.ProgressOrBuilder getProgressBytesOrBuilder() {
-    return getProgressBytes();
+    return progressBytes_ == null
+        ? com.google.datastore.admin.v1.Progress.getDefaultInstance()
+        : progressBytes_;
   }
 
   public static final int ENTITY_FILTER_FIELD_NUMBER = 4;
@@ -256,11 +262,15 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.EntityFilterOrBuilder getEntityFilterOrBuilder() {
-    return getEntityFilter();
+    return entityFilter_ == null
+        ? com.google.datastore.admin.v1.EntityFilter.getDefaultInstance()
+        : entityFilter_;
   }
 
   public static final int OUTPUT_URL_PREFIX_FIELD_NUMBER = 5;
-  private volatile java.lang.Object outputUrlPrefix_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUrlPrefix_ = "";
   /**
    *
    *
@@ -569,32 +579,28 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commonBuilder_ == null) {
-        common_ = null;
-      } else {
-        common_ = null;
+      bitField0_ = 0;
+      common_ = null;
+      if (commonBuilder_ != null) {
+        commonBuilder_.dispose();
         commonBuilder_ = null;
       }
-      if (progressEntitiesBuilder_ == null) {
-        progressEntities_ = null;
-      } else {
-        progressEntities_ = null;
+      progressEntities_ = null;
+      if (progressEntitiesBuilder_ != null) {
+        progressEntitiesBuilder_.dispose();
         progressEntitiesBuilder_ = null;
       }
-      if (progressBytesBuilder_ == null) {
-        progressBytes_ = null;
-      } else {
-        progressBytes_ = null;
+      progressBytes_ = null;
+      if (progressBytesBuilder_ != null) {
+        progressBytesBuilder_.dispose();
         progressBytesBuilder_ = null;
       }
-      if (entityFilterBuilder_ == null) {
-        entityFilter_ = null;
-      } else {
-        entityFilter_ = null;
+      entityFilter_ = null;
+      if (entityFilterBuilder_ != null) {
+        entityFilterBuilder_.dispose();
         entityFilterBuilder_ = null;
       }
       outputUrlPrefix_ = "";
-
       return this;
     }
 
@@ -622,29 +628,33 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     public com.google.datastore.admin.v1.ExportEntitiesMetadata buildPartial() {
       com.google.datastore.admin.v1.ExportEntitiesMetadata result =
           new com.google.datastore.admin.v1.ExportEntitiesMetadata(this);
-      if (commonBuilder_ == null) {
-        result.common_ = common_;
-      } else {
-        result.common_ = commonBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (progressEntitiesBuilder_ == null) {
-        result.progressEntities_ = progressEntities_;
-      } else {
-        result.progressEntities_ = progressEntitiesBuilder_.build();
-      }
-      if (progressBytesBuilder_ == null) {
-        result.progressBytes_ = progressBytes_;
-      } else {
-        result.progressBytes_ = progressBytesBuilder_.build();
-      }
-      if (entityFilterBuilder_ == null) {
-        result.entityFilter_ = entityFilter_;
-      } else {
-        result.entityFilter_ = entityFilterBuilder_.build();
-      }
-      result.outputUrlPrefix_ = outputUrlPrefix_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.ExportEntitiesMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.common_ = commonBuilder_ == null ? common_ : commonBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.progressEntities_ =
+            progressEntitiesBuilder_ == null ? progressEntities_ : progressEntitiesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.progressBytes_ =
+            progressBytesBuilder_ == null ? progressBytes_ : progressBytesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.entityFilter_ =
+            entityFilterBuilder_ == null ? entityFilter_ : entityFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.outputUrlPrefix_ = outputUrlPrefix_;
+      }
     }
 
     @java.lang.Override
@@ -707,6 +717,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
       }
       if (!other.getOutputUrlPrefix().isEmpty()) {
         outputUrlPrefix_ = other.outputUrlPrefix_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -738,32 +749,32 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getCommonFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getProgressEntitiesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getProgressBytesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getEntityFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 outputUrlPrefix_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -783,6 +794,8 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.datastore.admin.v1.CommonMetadata common_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.admin.v1.CommonMetadata,
@@ -801,7 +814,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the common field is set.
      */
     public boolean hasCommon() {
-      return commonBuilder_ != null || common_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -838,11 +851,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         common_ = value;
-        onChanged();
       } else {
         commonBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -857,11 +870,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
     public Builder setCommon(com.google.datastore.admin.v1.CommonMetadata.Builder builderForValue) {
       if (commonBuilder_ == null) {
         common_ = builderForValue.build();
-        onChanged();
       } else {
         commonBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -875,19 +888,18 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCommon(com.google.datastore.admin.v1.CommonMetadata value) {
       if (commonBuilder_ == null) {
-        if (common_ != null) {
-          common_ =
-              com.google.datastore.admin.v1.CommonMetadata.newBuilder(common_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && common_ != null
+            && common_ != com.google.datastore.admin.v1.CommonMetadata.getDefaultInstance()) {
+          getCommonBuilder().mergeFrom(value);
         } else {
           common_ = value;
         }
-        onChanged();
       } else {
         commonBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -900,14 +912,13 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.CommonMetadata common = 1;</code>
      */
     public Builder clearCommon() {
-      if (commonBuilder_ == null) {
-        common_ = null;
-        onChanged();
-      } else {
-        common_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      common_ = null;
+      if (commonBuilder_ != null) {
+        commonBuilder_.dispose();
         commonBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -920,7 +931,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.CommonMetadata common = 1;</code>
      */
     public com.google.datastore.admin.v1.CommonMetadata.Builder getCommonBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommonFieldBuilder().getBuilder();
     }
@@ -986,7 +997,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the progressEntities field is set.
      */
     public boolean hasProgressEntities() {
-      return progressEntitiesBuilder_ != null || progressEntities_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1023,11 +1034,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         progressEntities_ = value;
-        onChanged();
       } else {
         progressEntitiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1043,11 +1054,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
         com.google.datastore.admin.v1.Progress.Builder builderForValue) {
       if (progressEntitiesBuilder_ == null) {
         progressEntities_ = builderForValue.build();
-        onChanged();
       } else {
         progressEntitiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1061,19 +1072,18 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeProgressEntities(com.google.datastore.admin.v1.Progress value) {
       if (progressEntitiesBuilder_ == null) {
-        if (progressEntities_ != null) {
-          progressEntities_ =
-              com.google.datastore.admin.v1.Progress.newBuilder(progressEntities_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && progressEntities_ != null
+            && progressEntities_ != com.google.datastore.admin.v1.Progress.getDefaultInstance()) {
+          getProgressEntitiesBuilder().mergeFrom(value);
         } else {
           progressEntities_ = value;
         }
-        onChanged();
       } else {
         progressEntitiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1086,14 +1096,13 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.Progress progress_entities = 2;</code>
      */
     public Builder clearProgressEntities() {
-      if (progressEntitiesBuilder_ == null) {
-        progressEntities_ = null;
-        onChanged();
-      } else {
-        progressEntities_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      progressEntities_ = null;
+      if (progressEntitiesBuilder_ != null) {
+        progressEntitiesBuilder_.dispose();
         progressEntitiesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1106,7 +1115,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.Progress progress_entities = 2;</code>
      */
     public com.google.datastore.admin.v1.Progress.Builder getProgressEntitiesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProgressEntitiesFieldBuilder().getBuilder();
     }
@@ -1172,7 +1181,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the progressBytes field is set.
      */
     public boolean hasProgressBytes() {
-      return progressBytesBuilder_ != null || progressBytes_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1209,11 +1218,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         progressBytes_ = value;
-        onChanged();
       } else {
         progressBytesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1229,11 +1238,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
         com.google.datastore.admin.v1.Progress.Builder builderForValue) {
       if (progressBytesBuilder_ == null) {
         progressBytes_ = builderForValue.build();
-        onChanged();
       } else {
         progressBytesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1247,19 +1256,18 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeProgressBytes(com.google.datastore.admin.v1.Progress value) {
       if (progressBytesBuilder_ == null) {
-        if (progressBytes_ != null) {
-          progressBytes_ =
-              com.google.datastore.admin.v1.Progress.newBuilder(progressBytes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && progressBytes_ != null
+            && progressBytes_ != com.google.datastore.admin.v1.Progress.getDefaultInstance()) {
+          getProgressBytesBuilder().mergeFrom(value);
         } else {
           progressBytes_ = value;
         }
-        onChanged();
       } else {
         progressBytesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1272,14 +1280,13 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.Progress progress_bytes = 3;</code>
      */
     public Builder clearProgressBytes() {
-      if (progressBytesBuilder_ == null) {
-        progressBytes_ = null;
-        onChanged();
-      } else {
-        progressBytes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      progressBytes_ = null;
+      if (progressBytesBuilder_ != null) {
+        progressBytesBuilder_.dispose();
         progressBytesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1292,7 +1299,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.Progress progress_bytes = 3;</code>
      */
     public com.google.datastore.admin.v1.Progress.Builder getProgressBytesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getProgressBytesFieldBuilder().getBuilder();
     }
@@ -1358,7 +1365,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the entityFilter field is set.
      */
     public boolean hasEntityFilter() {
-      return entityFilterBuilder_ != null || entityFilter_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1395,11 +1402,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         entityFilter_ = value;
-        onChanged();
       } else {
         entityFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1415,11 +1422,11 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
         com.google.datastore.admin.v1.EntityFilter.Builder builderForValue) {
       if (entityFilterBuilder_ == null) {
         entityFilter_ = builderForValue.build();
-        onChanged();
       } else {
         entityFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1433,19 +1440,18 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeEntityFilter(com.google.datastore.admin.v1.EntityFilter value) {
       if (entityFilterBuilder_ == null) {
-        if (entityFilter_ != null) {
-          entityFilter_ =
-              com.google.datastore.admin.v1.EntityFilter.newBuilder(entityFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && entityFilter_ != null
+            && entityFilter_ != com.google.datastore.admin.v1.EntityFilter.getDefaultInstance()) {
+          getEntityFilterBuilder().mergeFrom(value);
         } else {
           entityFilter_ = value;
         }
-        onChanged();
       } else {
         entityFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1458,14 +1464,13 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.EntityFilter entity_filter = 4;</code>
      */
     public Builder clearEntityFilter() {
-      if (entityFilterBuilder_ == null) {
-        entityFilter_ = null;
-        onChanged();
-      } else {
-        entityFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      entityFilter_ = null;
+      if (entityFilterBuilder_ != null) {
+        entityFilterBuilder_.dispose();
         entityFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1478,7 +1483,7 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.EntityFilter entity_filter = 4;</code>
      */
     public com.google.datastore.admin.v1.EntityFilter.Builder getEntityFilterBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEntityFilterFieldBuilder().getBuilder();
     }
@@ -1599,8 +1604,8 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUrlPrefix_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1620,8 +1625,8 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOutputUrlPrefix() {
-
       outputUrlPrefix_ = getDefaultInstance().getOutputUrlPrefix();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1646,8 +1651,8 @@ public final class ExportEntitiesMetadata extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUrlPrefix_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -38,7 +38,9 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     super(builder);
   }
 
-  private RunAggregationQueryResponse() {}
+  private RunAggregationQueryResponse() {
+    transaction_ = com.google.protobuf.ByteString.EMPTY;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -111,7 +113,9 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.datastore.v1.AggregationResultBatchOrBuilder getBatchOrBuilder() {
-    return getBatch();
+    return batch_ == null
+        ? com.google.datastore.v1.AggregationResultBatch.getDefaultInstance()
+        : batch_;
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
@@ -157,7 +161,28 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.datastore.v1.AggregationQueryOrBuilder getQueryOrBuilder() {
-    return getQuery();
+    return query_ == null ? com.google.datastore.v1.AggregationQuery.getDefaultInstance() : query_;
+  }
+
+  public static final int TRANSACTION_FIELD_NUMBER = 5;
+  private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+  /**
+   *
+   *
+   * <pre>
+   * The identifier of the transaction that was started as part of this
+   * RunAggregationQuery request.
+   * Set only when [ReadOptions.begin_transaction][] was set in
+   * [RunAggregationQueryRequest.read_options][google.datastore.v1.RunAggregationQueryRequest.read_options].
+   * </pre>
+   *
+   * <code>bytes transaction = 5;</code>
+   *
+   * @return The transaction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTransaction() {
+    return transaction_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -180,6 +205,9 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     if (query_ != null) {
       output.writeMessage(2, getQuery());
     }
+    if (!transaction_.isEmpty()) {
+      output.writeBytes(5, transaction_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -194,6 +222,9 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     }
     if (query_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getQuery());
+    }
+    if (!transaction_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, transaction_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -219,6 +250,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     if (hasQuery()) {
       if (!getQuery().equals(other.getQuery())) return false;
     }
+    if (!getTransaction().equals(other.getTransaction())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -238,6 +270,8 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       hash = (37 * hash) + QUERY_FIELD_NUMBER;
       hash = (53 * hash) + getQuery().hashCode();
     }
+    hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
+    hash = (53 * hash) + getTransaction().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -377,18 +411,18 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (batchBuilder_ == null) {
-        batch_ = null;
-      } else {
-        batch_ = null;
+      bitField0_ = 0;
+      batch_ = null;
+      if (batchBuilder_ != null) {
+        batchBuilder_.dispose();
         batchBuilder_ = null;
       }
-      if (queryBuilder_ == null) {
-        query_ = null;
-      } else {
-        query_ = null;
+      query_ = null;
+      if (queryBuilder_ != null) {
+        queryBuilder_.dispose();
         queryBuilder_ = null;
       }
+      transaction_ = com.google.protobuf.ByteString.EMPTY;
       return this;
     }
 
@@ -416,18 +450,24 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     public com.google.datastore.v1.RunAggregationQueryResponse buildPartial() {
       com.google.datastore.v1.RunAggregationQueryResponse result =
           new com.google.datastore.v1.RunAggregationQueryResponse(this);
-      if (batchBuilder_ == null) {
-        result.batch_ = batch_;
-      } else {
-        result.batch_ = batchBuilder_.build();
-      }
-      if (queryBuilder_ == null) {
-        result.query_ = query_;
-      } else {
-        result.query_ = queryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.RunAggregationQueryResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.batch_ = batchBuilder_ == null ? batch_ : batchBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = queryBuilder_ == null ? query_ : queryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.transaction_ = transaction_;
+      }
     }
 
     @java.lang.Override
@@ -482,6 +522,9 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       if (other.hasQuery()) {
         mergeQuery(other.getQuery());
       }
+      if (other.getTransaction() != com.google.protobuf.ByteString.EMPTY) {
+        setTransaction(other.getTransaction());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -511,15 +554,21 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getBatchFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 42:
+              {
+                transaction_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -536,6 +585,8 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.datastore.v1.AggregationResultBatch batch_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -555,7 +606,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      * @return Whether the batch field is set.
      */
     public boolean hasBatch() {
-      return batchBuilder_ != null || batch_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -592,11 +643,11 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         batch_ = value;
-        onChanged();
       } else {
         batchBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -612,11 +663,11 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         com.google.datastore.v1.AggregationResultBatch.Builder builderForValue) {
       if (batchBuilder_ == null) {
         batch_ = builderForValue.build();
-        onChanged();
       } else {
         batchBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,19 +681,18 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      */
     public Builder mergeBatch(com.google.datastore.v1.AggregationResultBatch value) {
       if (batchBuilder_ == null) {
-        if (batch_ != null) {
-          batch_ =
-              com.google.datastore.v1.AggregationResultBatch.newBuilder(batch_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && batch_ != null
+            && batch_ != com.google.datastore.v1.AggregationResultBatch.getDefaultInstance()) {
+          getBatchBuilder().mergeFrom(value);
         } else {
           batch_ = value;
         }
-        onChanged();
       } else {
         batchBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -655,14 +705,13 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
     public Builder clearBatch() {
-      if (batchBuilder_ == null) {
-        batch_ = null;
-        onChanged();
-      } else {
-        batch_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      batch_ = null;
+      if (batchBuilder_ != null) {
+        batchBuilder_.dispose();
         batchBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -675,7 +724,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      * <code>.google.datastore.v1.AggregationResultBatch batch = 1;</code>
      */
     public com.google.datastore.v1.AggregationResultBatch.Builder getBatchBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBatchFieldBuilder().getBuilder();
     }
@@ -741,7 +790,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      * @return Whether the query field is set.
      */
     public boolean hasQuery() {
-      return queryBuilder_ != null || query_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -778,11 +827,11 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         query_ = value;
-        onChanged();
       } else {
         queryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -797,11 +846,11 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     public Builder setQuery(com.google.datastore.v1.AggregationQuery.Builder builderForValue) {
       if (queryBuilder_ == null) {
         query_ = builderForValue.build();
-        onChanged();
       } else {
         queryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,19 +864,18 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      */
     public Builder mergeQuery(com.google.datastore.v1.AggregationQuery value) {
       if (queryBuilder_ == null) {
-        if (query_ != null) {
-          query_ =
-              com.google.datastore.v1.AggregationQuery.newBuilder(query_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && query_ != null
+            && query_ != com.google.datastore.v1.AggregationQuery.getDefaultInstance()) {
+          getQueryBuilder().mergeFrom(value);
         } else {
           query_ = value;
         }
-        onChanged();
       } else {
         queryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,14 +888,13 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
     public Builder clearQuery() {
-      if (queryBuilder_ == null) {
-        query_ = null;
-        onChanged();
-      } else {
-        query_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      query_ = null;
+      if (queryBuilder_ != null) {
+        queryBuilder_.dispose();
         queryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -860,7 +907,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
      * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
      */
     public com.google.datastore.v1.AggregationQuery.Builder getQueryBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getQueryFieldBuilder().getBuilder();
     }
@@ -906,6 +953,70 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         query_ = null;
       }
       return queryBuilder_;
+    }
+
+    private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The identifier of the transaction that was started as part of this
+     * RunAggregationQuery request.
+     * Set only when [ReadOptions.begin_transaction][] was set in
+     * [RunAggregationQueryRequest.read_options][google.datastore.v1.RunAggregationQueryRequest.read_options].
+     * </pre>
+     *
+     * <code>bytes transaction = 5;</code>
+     *
+     * @return The transaction.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTransaction() {
+      return transaction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The identifier of the transaction that was started as part of this
+     * RunAggregationQuery request.
+     * Set only when [ReadOptions.begin_transaction][] was set in
+     * [RunAggregationQueryRequest.read_options][google.datastore.v1.RunAggregationQueryRequest.read_options].
+     * </pre>
+     *
+     * <code>bytes transaction = 5;</code>
+     *
+     * @param value The transaction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransaction(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      transaction_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The identifier of the transaction that was started as part of this
+     * RunAggregationQuery request.
+     * Set only when [ReadOptions.begin_transaction][] was set in
+     * [RunAggregationQueryRequest.read_options][google.datastore.v1.RunAggregationQueryRequest.read_options].
+     * </pre>
+     *
+     * <code>bytes transaction = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransaction() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      transaction_ = getDefaultInstance().getTransaction();
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

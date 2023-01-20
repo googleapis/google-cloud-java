@@ -293,11 +293,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.EntityOrBuilder getEntityOrBuilder() {
-    return getEntity();
+    return entity_ == null ? com.google.datastore.v1.Entity.getDefaultInstance() : entity_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 4;
-  private long version_;
+  private long version_ = 0L;
   /**
    *
    *
@@ -372,11 +372,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int CURSOR_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString cursor_;
+  private com.google.protobuf.ByteString cursor_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -626,22 +626,19 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (entityBuilder_ == null) {
-        entity_ = null;
-      } else {
-        entity_ = null;
+      bitField0_ = 0;
+      entity_ = null;
+      if (entityBuilder_ != null) {
+        entityBuilder_.dispose();
         entityBuilder_ = null;
       }
       version_ = 0L;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       cursor_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -668,20 +665,27 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.EntityResult buildPartial() {
       com.google.datastore.v1.EntityResult result = new com.google.datastore.v1.EntityResult(this);
-      if (entityBuilder_ == null) {
-        result.entity_ = entity_;
-      } else {
-        result.entity_ = entityBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.version_ = version_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.cursor_ = cursor_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.EntityResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.entity_ = entityBuilder_ == null ? entity_ : entityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cursor_ = cursor_;
+      }
     }
 
     @java.lang.Override
@@ -770,25 +774,25 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getEntityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 cursor_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 32:
               {
                 version_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -808,6 +812,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.datastore.v1.Entity entity_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.Entity,
@@ -826,7 +832,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the entity field is set.
      */
     public boolean hasEntity() {
-      return entityBuilder_ != null || entity_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -861,11 +867,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         entity_ = value;
-        onChanged();
       } else {
         entityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -880,11 +886,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setEntity(com.google.datastore.v1.Entity.Builder builderForValue) {
       if (entityBuilder_ == null) {
         entity_ = builderForValue.build();
-        onChanged();
       } else {
         entityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -898,17 +904,18 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEntity(com.google.datastore.v1.Entity value) {
       if (entityBuilder_ == null) {
-        if (entity_ != null) {
-          entity_ =
-              com.google.datastore.v1.Entity.newBuilder(entity_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && entity_ != null
+            && entity_ != com.google.datastore.v1.Entity.getDefaultInstance()) {
+          getEntityBuilder().mergeFrom(value);
         } else {
           entity_ = value;
         }
-        onChanged();
       } else {
         entityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -921,14 +928,13 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.Entity entity = 1;</code>
      */
     public Builder clearEntity() {
-      if (entityBuilder_ == null) {
-        entity_ = null;
-        onChanged();
-      } else {
-        entity_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      entity_ = null;
+      if (entityBuilder_ != null) {
+        entityBuilder_.dispose();
         entityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -941,7 +947,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.Entity entity = 1;</code>
      */
     public com.google.datastore.v1.Entity.Builder getEntityBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEntityFieldBuilder().getBuilder();
     }
@@ -1030,6 +1036,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(long value) {
 
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1051,7 +1058,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       version_ = 0L;
       onChanged();
       return this;
@@ -1078,7 +1085,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1121,11 +1128,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1143,11 +1150,11 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1164,17 +1171,18 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1190,14 +1198,13 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1213,7 +1220,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1301,8 +1308,8 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cursor_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1319,7 +1326,7 @@ public final class EntityResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCursor() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       cursor_ = getDefaultInstance().getCursor();
       onChanged();
       return this;

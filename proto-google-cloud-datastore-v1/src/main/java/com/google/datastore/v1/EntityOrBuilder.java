@@ -132,7 +132,6 @@ public interface EntityOrBuilder
    *
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
-
   /* nullable */
   com.google.datastore.v1.Value getPropertiesOrDefault(
       java.lang.String key,

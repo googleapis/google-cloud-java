@@ -69,7 +69,9 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int INDEX_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object indexId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object indexId_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       indexId_ = "";
-
       return this;
     }
 
@@ -403,10 +406,21 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.datastore.admin.v1.GetIndexRequest buildPartial() {
       com.google.datastore.admin.v1.GetIndexRequest result =
           new com.google.datastore.admin.v1.GetIndexRequest(this);
-      result.projectId_ = projectId_;
-      result.indexId_ = indexId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.GetIndexRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.indexId_ = indexId_;
+      }
     }
 
     @java.lang.Override
@@ -456,10 +470,12 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.datastore.admin.v1.GetIndexRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getIndexId().isEmpty()) {
         indexId_ = other.indexId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -491,13 +507,13 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 indexId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -516,6 +532,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -578,8 +596,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -595,8 +613,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -617,8 +635,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +702,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       indexId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -701,8 +719,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearIndexId() {
-
       indexId_ = getDefaultInstance().getIndexId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class GetIndexRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       indexId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

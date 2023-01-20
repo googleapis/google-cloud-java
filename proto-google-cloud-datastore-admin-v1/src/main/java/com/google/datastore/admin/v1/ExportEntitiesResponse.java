@@ -69,7 +69,9 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int OUTPUT_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object outputUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputUrl_ = "";
   /**
    *
    *
@@ -321,8 +323,8 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       outputUrl_ = "";
-
       return this;
     }
 
@@ -350,9 +352,18 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
     public com.google.datastore.admin.v1.ExportEntitiesResponse buildPartial() {
       com.google.datastore.admin.v1.ExportEntitiesResponse result =
           new com.google.datastore.admin.v1.ExportEntitiesResponse(this);
-      result.outputUrl_ = outputUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.ExportEntitiesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputUrl_ = outputUrl_;
+      }
     }
 
     @java.lang.Override
@@ -403,6 +414,7 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getOutputUrl().isEmpty()) {
         outputUrl_ = other.outputUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -434,7 +446,7 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 outputUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -453,6 +465,8 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object outputUrl_ = "";
     /**
@@ -524,8 +538,8 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       outputUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -544,8 +558,8 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearOutputUrl() {
-
       outputUrl_ = getDefaultInstance().getOutputUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -569,8 +583,8 @@ public final class ExportEntitiesResponse extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       outputUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

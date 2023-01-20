@@ -439,7 +439,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public com.google.protobuf.Int64ValueOrBuilder getUpToOrBuilder() {
-        return getUpTo();
+        return upTo_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : upTo_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -649,10 +649,10 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (upToBuilder_ == null) {
-            upTo_ = null;
-          } else {
-            upTo_ = null;
+          bitField0_ = 0;
+          upTo_ = null;
+          if (upToBuilder_ != null) {
+            upToBuilder_.dispose();
             upToBuilder_ = null;
           }
           return this;
@@ -683,13 +683,19 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         public com.google.datastore.v1.AggregationQuery.Aggregation.Count buildPartial() {
           com.google.datastore.v1.AggregationQuery.Aggregation.Count result =
               new com.google.datastore.v1.AggregationQuery.Aggregation.Count(this);
-          if (upToBuilder_ == null) {
-            result.upTo_ = upTo_;
-          } else {
-            result.upTo_ = upToBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.datastore.v1.AggregationQuery.Aggregation.Count result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.upTo_ = upToBuilder_ == null ? upTo_ : upToBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -773,7 +779,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
                 case 10:
                   {
                     input.readMessage(getUpToFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 default:
@@ -792,6 +798,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.protobuf.Int64Value upTo_;
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -823,7 +831,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * @return Whether the upTo field is set.
          */
         public boolean hasUpTo() {
-          return upToBuilder_ != null || upTo_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -882,11 +890,11 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
               throw new NullPointerException();
             }
             upTo_ = value;
-            onChanged();
           } else {
             upToBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -913,11 +921,11 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         public Builder setUpTo(com.google.protobuf.Int64Value.Builder builderForValue) {
           if (upToBuilder_ == null) {
             upTo_ = builderForValue.build();
-            onChanged();
           } else {
             upToBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -943,17 +951,18 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          */
         public Builder mergeUpTo(com.google.protobuf.Int64Value value) {
           if (upToBuilder_ == null) {
-            if (upTo_ != null) {
-              upTo_ =
-                  com.google.protobuf.Int64Value.newBuilder(upTo_).mergeFrom(value).buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && upTo_ != null
+                && upTo_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+              getUpToBuilder().mergeFrom(value);
             } else {
               upTo_ = value;
             }
-            onChanged();
           } else {
             upToBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -978,14 +987,13 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * </code>
          */
         public Builder clearUpTo() {
-          if (upToBuilder_ == null) {
-            upTo_ = null;
-            onChanged();
-          } else {
-            upTo_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          upTo_ = null;
+          if (upToBuilder_ != null) {
+            upToBuilder_.dispose();
             upToBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -1010,7 +1018,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * </code>
          */
         public com.google.protobuf.Int64Value.Builder getUpToBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getUpToFieldBuilder().getBuilder();
         }
@@ -1243,7 +1251,9 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ALIAS_FIELD_NUMBER = 7;
-    private volatile java.lang.Object alias_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object alias_ = "";
     /**
      *
      *
@@ -1568,11 +1578,11 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (countBuilder_ != null) {
           countBuilder_.clear();
         }
         alias_ = "";
-
         operatorCase_ = 0;
         operator_ = null;
         return this;
@@ -1602,17 +1612,27 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
       public com.google.datastore.v1.AggregationQuery.Aggregation buildPartial() {
         com.google.datastore.v1.AggregationQuery.Aggregation result =
             new com.google.datastore.v1.AggregationQuery.Aggregation(this);
-        if (operatorCase_ == 1) {
-          if (countBuilder_ == null) {
-            result.operator_ = operator_;
-          } else {
-            result.operator_ = countBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.alias_ = alias_;
-        result.operatorCase_ = operatorCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.datastore.v1.AggregationQuery.Aggregation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.alias_ = alias_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.datastore.v1.AggregationQuery.Aggregation result) {
+        result.operatorCase_ = operatorCase_;
+        result.operator_ = this.operator_;
+        if (operatorCase_ == 1 && countBuilder_ != null) {
+          result.operator_ = countBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1665,6 +1685,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getAlias().isEmpty()) {
           alias_ = other.alias_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         switch (other.getOperatorCase()) {
@@ -1713,7 +1734,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
               case 58:
                 {
                   alias_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 58
               default:
@@ -1746,6 +1767,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.datastore.v1.AggregationQuery.Aggregation.Count,
@@ -1957,7 +1980,6 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         }
         operatorCase_ = 1;
         onChanged();
-        ;
         return countBuilder_;
       }
 
@@ -2100,8 +2122,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         alias_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2143,8 +2165,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearAlias() {
-
         alias_ = getDefaultInstance().getAlias();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2191,8 +2213,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         alias_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2357,6 +2379,8 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AGGREGATIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.AggregationQuery.Aggregation> aggregations_;
   /**
    *
@@ -2669,6 +2693,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (nestedQueryBuilder_ != null) {
         nestedQueryBuilder_.clear();
       }
@@ -2678,7 +2703,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         aggregations_ = null;
         aggregationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       queryTypeCase_ = 0;
       queryType_ = null;
       return this;
@@ -2708,26 +2733,37 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
     public com.google.datastore.v1.AggregationQuery buildPartial() {
       com.google.datastore.v1.AggregationQuery result =
           new com.google.datastore.v1.AggregationQuery(this);
-      int from_bitField0_ = bitField0_;
-      if (queryTypeCase_ == 1) {
-        if (nestedQueryBuilder_ == null) {
-          result.queryType_ = queryType_;
-        } else {
-          result.queryType_ = nestedQueryBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.AggregationQuery result) {
       if (aggregationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           aggregations_ = java.util.Collections.unmodifiableList(aggregations_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.aggregations_ = aggregations_;
       } else {
         result.aggregations_ = aggregationsBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.datastore.v1.AggregationQuery result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.AggregationQuery result) {
       result.queryTypeCase_ = queryTypeCase_;
-      onBuilt();
-      return result;
+      result.queryType_ = this.queryType_;
+      if (queryTypeCase_ == 1 && nestedQueryBuilder_ != null) {
+        result.queryType_ = nestedQueryBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2779,7 +2815,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         if (!other.aggregations_.isEmpty()) {
           if (aggregations_.isEmpty()) {
             aggregations_ = other.aggregations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAggregationsIsMutable();
             aggregations_.addAll(other.aggregations_);
@@ -2792,7 +2828,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
             aggregationsBuilder_.dispose();
             aggregationsBuilder_ = null;
             aggregations_ = other.aggregations_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             aggregationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAggregationsFieldBuilder()
@@ -3094,7 +3130,6 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
       }
       queryTypeCase_ = 1;
       onChanged();
-      ;
       return nestedQueryBuilder_;
     }
 
@@ -3102,11 +3137,11 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureAggregationsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         aggregations_ =
             new java.util.ArrayList<com.google.datastore.v1.AggregationQuery.Aggregation>(
                 aggregations_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3369,7 +3404,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
     public Builder clearAggregations() {
       if (aggregationsBuilder_ == null) {
         aggregations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         aggregationsBuilder_.clear();
@@ -3523,7 +3558,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
                 com.google.datastore.v1.AggregationQuery.Aggregation,
                 com.google.datastore.v1.AggregationQuery.Aggregation.Builder,
                 com.google.datastore.v1.AggregationQuery.AggregationOrBuilder>(
-                aggregations_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                aggregations_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         aggregations_ = null;
       }
       return aggregationsBuilder_;

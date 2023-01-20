@@ -70,7 +70,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATABASE_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object databaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseId_ = "";
   /**
    *
    *
@@ -216,10 +220,14 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.ReadOptionsOrBuilder getReadOptionsOrBuilder() {
-    return getReadOptions();
+    return readOptions_ == null
+        ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
+        : readOptions_;
   }
 
   public static final int KEYS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> keys_;
   /**
    *
@@ -521,14 +529,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       databaseId_ = "";
-
-      if (readOptionsBuilder_ == null) {
-        readOptions_ = null;
-      } else {
-        readOptions_ = null;
+      readOptions_ = null;
+      if (readOptionsBuilder_ != null) {
+        readOptionsBuilder_.dispose();
         readOptionsBuilder_ = null;
       }
       if (keysBuilder_ == null) {
@@ -537,7 +543,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         keys_ = null;
         keysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -565,25 +571,38 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.LookupRequest buildPartial() {
       com.google.datastore.v1.LookupRequest result =
           new com.google.datastore.v1.LookupRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.databaseId_ = databaseId_;
-      if (readOptionsBuilder_ == null) {
-        result.readOptions_ = readOptions_;
-      } else {
-        result.readOptions_ = readOptionsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.LookupRequest result) {
       if (keysBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.keys_ = keys_;
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.LookupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.databaseId_ = databaseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.readOptions_ =
+            readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -633,10 +652,12 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.datastore.v1.LookupRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasReadOptions()) {
@@ -646,7 +667,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         if (!other.keys_.isEmpty()) {
           if (keys_.isEmpty()) {
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureKeysIsMutable();
             keys_.addAll(other.keys_);
@@ -659,7 +680,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             keysBuilder_.dispose();
             keysBuilder_ = null;
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             keysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKeysFieldBuilder()
@@ -698,7 +719,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getReadOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 26:
@@ -716,13 +737,13 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 66
             case 74:
               {
                 databaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 74
             default:
@@ -805,8 +826,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -822,8 +843,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -844,8 +865,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -917,8 +938,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -936,8 +957,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDatabaseId() {
-
       databaseId_ = getDefaultInstance().getDatabaseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -960,8 +981,8 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -984,7 +1005,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the readOptions field is set.
      */
     public boolean hasReadOptions() {
-      return readOptionsBuilder_ != null || readOptions_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1021,11 +1042,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         readOptions_ = value;
-        onChanged();
       } else {
         readOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1040,11 +1061,11 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setReadOptions(com.google.datastore.v1.ReadOptions.Builder builderForValue) {
       if (readOptionsBuilder_ == null) {
         readOptions_ = builderForValue.build();
-        onChanged();
       } else {
         readOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1058,19 +1079,18 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeReadOptions(com.google.datastore.v1.ReadOptions value) {
       if (readOptionsBuilder_ == null) {
-        if (readOptions_ != null) {
-          readOptions_ =
-              com.google.datastore.v1.ReadOptions.newBuilder(readOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && readOptions_ != null
+            && readOptions_ != com.google.datastore.v1.ReadOptions.getDefaultInstance()) {
+          getReadOptionsBuilder().mergeFrom(value);
         } else {
           readOptions_ = value;
         }
-        onChanged();
       } else {
         readOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1083,14 +1103,13 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
     public Builder clearReadOptions() {
-      if (readOptionsBuilder_ == null) {
-        readOptions_ = null;
-        onChanged();
-      } else {
-        readOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      readOptions_ = null;
+      if (readOptionsBuilder_ != null) {
+        readOptionsBuilder_.dispose();
         readOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1103,7 +1122,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.ReadOptions read_options = 1;</code>
      */
     public com.google.datastore.v1.ReadOptions.Builder getReadOptionsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
@@ -1154,9 +1173,9 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<com.google.datastore.v1.Key> keys_ = java.util.Collections.emptyList();
 
     private void ensureKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>(keys_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1379,7 +1398,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clearKeys() {
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         keysBuilder_.clear();
@@ -1505,7 +1524,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Key,
                 com.google.datastore.v1.Key.Builder,
                 com.google.datastore.v1.KeyOrBuilder>(
-                keys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                keys_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         keys_ = null;
       }
       return keysBuilder_;

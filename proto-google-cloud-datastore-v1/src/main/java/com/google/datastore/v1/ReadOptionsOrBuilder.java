@@ -93,6 +93,56 @@ public interface ReadOptionsOrBuilder
    *
    *
    * <pre>
+   * Options for beginning a new transaction for this request.
+   * The new transaction identifier will be returned in the corresponding
+   * response as either
+   * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+   * or
+   * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+   *
+   * @return Whether the newTransaction field is set.
+   */
+  boolean hasNewTransaction();
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The new transaction identifier will be returned in the corresponding
+   * response as either
+   * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+   * or
+   * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+   *
+   * @return The newTransaction.
+   */
+  com.google.datastore.v1.TransactionOptions getNewTransaction();
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The new transaction identifier will be returned in the corresponding
+   * response as either
+   * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+   * or
+   * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+   */
+  com.google.datastore.v1.TransactionOptionsOrBuilder getNewTransactionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Reads entities as they were at the given time. This may not be older
    * than 270 seconds.  This value is only supported for Cloud Firestore in
    * Datastore mode.

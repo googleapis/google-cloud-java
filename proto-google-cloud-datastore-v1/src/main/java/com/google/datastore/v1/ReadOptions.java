@@ -233,6 +233,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     READ_CONSISTENCY(1),
     TRANSACTION(2),
+    NEW_TRANSACTION(3),
     READ_TIME(4),
     CONSISTENCYTYPE_NOT_SET(0);
     private final int value;
@@ -256,6 +257,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
           return READ_CONSISTENCY;
         case 2:
           return TRANSACTION;
+        case 3:
+          return NEW_TRANSACTION;
         case 4:
           return READ_TIME;
         case 0:
@@ -319,9 +322,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency() {
     if (consistencyTypeCase_ == 1) {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.ReadOptions.ReadConsistency result =
-          com.google.datastore.v1.ReadOptions.ReadConsistency.valueOf(
+          com.google.datastore.v1.ReadOptions.ReadConsistency.forNumber(
               (java.lang.Integer) consistencyType_);
       return result == null
           ? com.google.datastore.v1.ReadOptions.ReadConsistency.UNRECOGNIZED
@@ -367,6 +369,72 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       return (com.google.protobuf.ByteString) consistencyType_;
     }
     return com.google.protobuf.ByteString.EMPTY;
+  }
+
+  public static final int NEW_TRANSACTION_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The new transaction identifier will be returned in the corresponding
+   * response as either
+   * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+   * or
+   * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+   *
+   * @return Whether the newTransaction field is set.
+   */
+  @java.lang.Override
+  public boolean hasNewTransaction() {
+    return consistencyTypeCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The new transaction identifier will be returned in the corresponding
+   * response as either
+   * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+   * or
+   * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+   *
+   * @return The newTransaction.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.TransactionOptions getNewTransaction() {
+    if (consistencyTypeCase_ == 3) {
+      return (com.google.datastore.v1.TransactionOptions) consistencyType_;
+    }
+    return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Options for beginning a new transaction for this request.
+   * The new transaction identifier will be returned in the corresponding
+   * response as either
+   * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+   * or
+   * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+   * </pre>
+   *
+   * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.TransactionOptionsOrBuilder getNewTransactionOrBuilder() {
+    if (consistencyTypeCase_ == 3) {
+      return (com.google.datastore.v1.TransactionOptions) consistencyType_;
+    }
+    return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
@@ -446,6 +514,9 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     if (consistencyTypeCase_ == 2) {
       output.writeBytes(2, (com.google.protobuf.ByteString) consistencyType_);
     }
+    if (consistencyTypeCase_ == 3) {
+      output.writeMessage(3, (com.google.datastore.v1.TransactionOptions) consistencyType_);
+    }
     if (consistencyTypeCase_ == 4) {
       output.writeMessage(4, (com.google.protobuf.Timestamp) consistencyType_);
     }
@@ -467,6 +538,11 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeBytesSize(
               2, (com.google.protobuf.ByteString) consistencyType_);
+    }
+    if (consistencyTypeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.datastore.v1.TransactionOptions) consistencyType_);
     }
     if (consistencyTypeCase_ == 4) {
       size +=
@@ -496,6 +572,9 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getTransaction().equals(other.getTransaction())) return false;
         break;
+      case 3:
+        if (!getNewTransaction().equals(other.getNewTransaction())) return false;
+        break;
       case 4:
         if (!getReadTime().equals(other.getReadTime())) return false;
         break;
@@ -521,6 +600,10 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
         hash = (53 * hash) + getTransaction().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + NEW_TRANSACTION_FIELD_NUMBER;
+        hash = (53 * hash) + getNewTransaction().hashCode();
         break;
       case 4:
         hash = (37 * hash) + READ_TIME_FIELD_NUMBER;
@@ -666,6 +749,10 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (newTransactionBuilder_ != null) {
+        newTransactionBuilder_.clear();
+      }
       if (readTimeBuilder_ != null) {
         readTimeBuilder_.clear();
       }
@@ -697,22 +784,27 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.ReadOptions buildPartial() {
       com.google.datastore.v1.ReadOptions result = new com.google.datastore.v1.ReadOptions(this);
-      if (consistencyTypeCase_ == 1) {
-        result.consistencyType_ = consistencyType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (consistencyTypeCase_ == 2) {
-        result.consistencyType_ = consistencyType_;
-      }
-      if (consistencyTypeCase_ == 4) {
-        if (readTimeBuilder_ == null) {
-          result.consistencyType_ = consistencyType_;
-        } else {
-          result.consistencyType_ = readTimeBuilder_.build();
-        }
-      }
-      result.consistencyTypeCase_ = consistencyTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.ReadOptions result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.ReadOptions result) {
+      result.consistencyTypeCase_ = consistencyTypeCase_;
+      result.consistencyType_ = this.consistencyType_;
+      if (consistencyTypeCase_ == 3 && newTransactionBuilder_ != null) {
+        result.consistencyType_ = newTransactionBuilder_.build();
+      }
+      if (consistencyTypeCase_ == 4 && readTimeBuilder_ != null) {
+        result.consistencyType_ = readTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -771,6 +863,11 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
             setTransaction(other.getTransaction());
             break;
           }
+        case NEW_TRANSACTION:
+          {
+            mergeNewTransaction(other.getNewTransaction());
+            break;
+          }
         case READ_TIME:
           {
             mergeReadTime(other.getReadTime());
@@ -820,6 +917,12 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
                 consistencyTypeCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getNewTransactionFieldBuilder().getBuilder(), extensionRegistry);
+                consistencyTypeCase_ = 3;
+                break;
+              } // case 26
             case 34:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
@@ -856,6 +959,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -922,9 +1027,8 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.ReadOptions.ReadConsistency getReadConsistency() {
       if (consistencyTypeCase_ == 1) {
-        @SuppressWarnings("deprecation")
         com.google.datastore.v1.ReadOptions.ReadConsistency result =
-            com.google.datastore.v1.ReadOptions.ReadConsistency.valueOf(
+            com.google.datastore.v1.ReadOptions.ReadConsistency.forNumber(
                 (java.lang.Integer) consistencyType_);
         return result == null
             ? com.google.datastore.v1.ReadOptions.ReadConsistency.UNRECOGNIZED
@@ -1051,6 +1155,261 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.TransactionOptions,
+            com.google.datastore.v1.TransactionOptions.Builder,
+            com.google.datastore.v1.TransactionOptionsOrBuilder>
+        newTransactionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     *
+     * @return Whether the newTransaction field is set.
+     */
+    @java.lang.Override
+    public boolean hasNewTransaction() {
+      return consistencyTypeCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     *
+     * @return The newTransaction.
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.TransactionOptions getNewTransaction() {
+      if (newTransactionBuilder_ == null) {
+        if (consistencyTypeCase_ == 3) {
+          return (com.google.datastore.v1.TransactionOptions) consistencyType_;
+        }
+        return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+      } else {
+        if (consistencyTypeCase_ == 3) {
+          return newTransactionBuilder_.getMessage();
+        }
+        return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    public Builder setNewTransaction(com.google.datastore.v1.TransactionOptions value) {
+      if (newTransactionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        consistencyType_ = value;
+        onChanged();
+      } else {
+        newTransactionBuilder_.setMessage(value);
+      }
+      consistencyTypeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    public Builder setNewTransaction(
+        com.google.datastore.v1.TransactionOptions.Builder builderForValue) {
+      if (newTransactionBuilder_ == null) {
+        consistencyType_ = builderForValue.build();
+        onChanged();
+      } else {
+        newTransactionBuilder_.setMessage(builderForValue.build());
+      }
+      consistencyTypeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    public Builder mergeNewTransaction(com.google.datastore.v1.TransactionOptions value) {
+      if (newTransactionBuilder_ == null) {
+        if (consistencyTypeCase_ == 3
+            && consistencyType_
+                != com.google.datastore.v1.TransactionOptions.getDefaultInstance()) {
+          consistencyType_ =
+              com.google.datastore.v1.TransactionOptions.newBuilder(
+                      (com.google.datastore.v1.TransactionOptions) consistencyType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          consistencyType_ = value;
+        }
+        onChanged();
+      } else {
+        if (consistencyTypeCase_ == 3) {
+          newTransactionBuilder_.mergeFrom(value);
+        } else {
+          newTransactionBuilder_.setMessage(value);
+        }
+      }
+      consistencyTypeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    public Builder clearNewTransaction() {
+      if (newTransactionBuilder_ == null) {
+        if (consistencyTypeCase_ == 3) {
+          consistencyTypeCase_ = 0;
+          consistencyType_ = null;
+          onChanged();
+        }
+      } else {
+        if (consistencyTypeCase_ == 3) {
+          consistencyTypeCase_ = 0;
+          consistencyType_ = null;
+        }
+        newTransactionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    public com.google.datastore.v1.TransactionOptions.Builder getNewTransactionBuilder() {
+      return getNewTransactionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.datastore.v1.TransactionOptionsOrBuilder getNewTransactionOrBuilder() {
+      if ((consistencyTypeCase_ == 3) && (newTransactionBuilder_ != null)) {
+        return newTransactionBuilder_.getMessageOrBuilder();
+      } else {
+        if (consistencyTypeCase_ == 3) {
+          return (com.google.datastore.v1.TransactionOptions) consistencyType_;
+        }
+        return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Options for beginning a new transaction for this request.
+     * The new transaction identifier will be returned in the corresponding
+     * response as either
+     * [LookupResponse.transaction][google.datastore.v1.LookupResponse.transaction]
+     * or
+     * [RunQueryResponse.transaction][google.datastore.v1.RunQueryResponse.transaction].
+     * </pre>
+     *
+     * <code>.google.datastore.v1.TransactionOptions new_transaction = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.TransactionOptions,
+            com.google.datastore.v1.TransactionOptions.Builder,
+            com.google.datastore.v1.TransactionOptionsOrBuilder>
+        getNewTransactionFieldBuilder() {
+      if (newTransactionBuilder_ == null) {
+        if (!(consistencyTypeCase_ == 3)) {
+          consistencyType_ = com.google.datastore.v1.TransactionOptions.getDefaultInstance();
+        }
+        newTransactionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.TransactionOptions,
+                com.google.datastore.v1.TransactionOptions.Builder,
+                com.google.datastore.v1.TransactionOptionsOrBuilder>(
+                (com.google.datastore.v1.TransactionOptions) consistencyType_,
+                getParentForChildren(),
+                isClean());
+        consistencyType_ = null;
+      }
+      consistencyTypeCase_ = 3;
+      onChanged();
+      return newTransactionBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1276,7 +1635,6 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       consistencyTypeCase_ = 4;
       onChanged();
-      ;
       return readTimeBuilder_;
     }
 

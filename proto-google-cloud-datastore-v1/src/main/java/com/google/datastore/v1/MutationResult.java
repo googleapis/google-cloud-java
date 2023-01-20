@@ -111,11 +111,11 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.KeyOrBuilder getKeyOrBuilder() {
-    return getKey();
+    return key_ == null ? com.google.datastore.v1.Key.getDefaultInstance() : key_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 4;
-  private long version_;
+  private long version_ = 0L;
   /**
    *
    *
@@ -188,11 +188,11 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int CONFLICT_DETECTED_FIELD_NUMBER = 5;
-  private boolean conflictDetected_;
+  private boolean conflictDetected_ = false;
   /**
    *
    *
@@ -443,22 +443,19 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (keyBuilder_ == null) {
-        key_ = null;
-      } else {
-        key_ = null;
+      bitField0_ = 0;
+      key_ = null;
+      if (keyBuilder_ != null) {
+        keyBuilder_.dispose();
         keyBuilder_ = null;
       }
       version_ = 0L;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       conflictDetected_ = false;
-
       return this;
     }
 
@@ -486,20 +483,27 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.MutationResult buildPartial() {
       com.google.datastore.v1.MutationResult result =
           new com.google.datastore.v1.MutationResult(this);
-      if (keyBuilder_ == null) {
-        result.key_ = key_;
-      } else {
-        result.key_ = keyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.version_ = version_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.conflictDetected_ = conflictDetected_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.MutationResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = keyBuilder_ == null ? key_ : keyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.conflictDetected_ = conflictDetected_;
+      }
     }
 
     @java.lang.Override
@@ -588,25 +592,25 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             case 32:
               {
                 version_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 40:
               {
                 conflictDetected_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             default:
@@ -625,6 +629,8 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.datastore.v1.Key key_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -645,7 +651,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the key field is set.
      */
     public boolean hasKey() {
-      return keyBuilder_ != null || key_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -682,11 +688,11 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         key_ = value;
-        onChanged();
       } else {
         keyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -702,11 +708,11 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setKey(com.google.datastore.v1.Key.Builder builderForValue) {
       if (keyBuilder_ == null) {
         key_ = builderForValue.build();
-        onChanged();
       } else {
         keyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -721,16 +727,18 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeKey(com.google.datastore.v1.Key value) {
       if (keyBuilder_ == null) {
-        if (key_ != null) {
-          key_ = com.google.datastore.v1.Key.newBuilder(key_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && key_ != null
+            && key_ != com.google.datastore.v1.Key.getDefaultInstance()) {
+          getKeyBuilder().mergeFrom(value);
         } else {
           key_ = value;
         }
-        onChanged();
       } else {
         keyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -744,14 +752,13 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.Key key = 3;</code>
      */
     public Builder clearKey() {
-      if (keyBuilder_ == null) {
-        key_ = null;
-        onChanged();
-      } else {
-        key_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      key_ = null;
+      if (keyBuilder_ != null) {
+        keyBuilder_.dispose();
         keyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -765,7 +772,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.Key key = 3;</code>
      */
     public com.google.datastore.v1.Key.Builder getKeyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getKeyFieldBuilder().getBuilder();
     }
@@ -851,6 +858,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(long value) {
 
       version_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -870,7 +878,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       version_ = 0L;
       onChanged();
       return this;
@@ -897,7 +905,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -940,11 +948,11 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -962,11 +970,11 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -983,17 +991,18 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1009,14 +1018,13 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1032,7 +1040,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1119,6 +1127,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setConflictDetected(boolean value) {
 
       conflictDetected_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1135,7 +1144,7 @@ public final class MutationResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConflictDetected() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       conflictDetected_ = false;
       onChanged();
       return this;

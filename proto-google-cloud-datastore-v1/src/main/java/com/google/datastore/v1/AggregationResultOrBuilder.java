@@ -77,7 +77,6 @@ public interface AggregationResultOrBuilder
    *
    * <code>map&lt;string, .google.datastore.v1.Value&gt; aggregate_properties = 2;</code>
    */
-
   /* nullable */
   com.google.datastore.v1.Value getAggregatePropertiesOrDefault(
       java.lang.String key,

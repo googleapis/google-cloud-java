@@ -112,7 +112,9 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.CommonMetadataOrBuilder getCommonOrBuilder() {
-    return getCommon();
+    return common_ == null
+        ? com.google.datastore.admin.v1.CommonMetadata.getDefaultInstance()
+        : common_;
   }
 
   public static final int PROGRESS_ENTITIES_FIELD_NUMBER = 2;
@@ -160,11 +162,15 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.ProgressOrBuilder getProgressEntitiesOrBuilder() {
-    return getProgressEntities();
+    return progressEntities_ == null
+        ? com.google.datastore.admin.v1.Progress.getDefaultInstance()
+        : progressEntities_;
   }
 
   public static final int INDEX_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object indexId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object indexId_ = "";
   /**
    *
    *
@@ -437,20 +443,18 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (commonBuilder_ == null) {
-        common_ = null;
-      } else {
-        common_ = null;
+      bitField0_ = 0;
+      common_ = null;
+      if (commonBuilder_ != null) {
+        commonBuilder_.dispose();
         commonBuilder_ = null;
       }
-      if (progressEntitiesBuilder_ == null) {
-        progressEntities_ = null;
-      } else {
-        progressEntities_ = null;
+      progressEntities_ = null;
+      if (progressEntitiesBuilder_ != null) {
+        progressEntitiesBuilder_.dispose();
         progressEntitiesBuilder_ = null;
       }
       indexId_ = "";
-
       return this;
     }
 
@@ -478,19 +482,25 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.datastore.admin.v1.IndexOperationMetadata buildPartial() {
       com.google.datastore.admin.v1.IndexOperationMetadata result =
           new com.google.datastore.admin.v1.IndexOperationMetadata(this);
-      if (commonBuilder_ == null) {
-        result.common_ = common_;
-      } else {
-        result.common_ = commonBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (progressEntitiesBuilder_ == null) {
-        result.progressEntities_ = progressEntities_;
-      } else {
-        result.progressEntities_ = progressEntitiesBuilder_.build();
-      }
-      result.indexId_ = indexId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.IndexOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.common_ = commonBuilder_ == null ? common_ : commonBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.progressEntities_ =
+            progressEntitiesBuilder_ == null ? progressEntities_ : progressEntitiesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.indexId_ = indexId_;
+      }
     }
 
     @java.lang.Override
@@ -547,6 +557,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       }
       if (!other.getIndexId().isEmpty()) {
         indexId_ = other.indexId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -578,20 +589,20 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getCommonFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getProgressEntitiesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 indexId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -611,6 +622,8 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.datastore.admin.v1.CommonMetadata common_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.admin.v1.CommonMetadata,
@@ -629,7 +642,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the common field is set.
      */
     public boolean hasCommon() {
-      return commonBuilder_ != null || common_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -666,11 +679,11 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         common_ = value;
-        onChanged();
       } else {
         commonBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -685,11 +698,11 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public Builder setCommon(com.google.datastore.admin.v1.CommonMetadata.Builder builderForValue) {
       if (commonBuilder_ == null) {
         common_ = builderForValue.build();
-        onChanged();
       } else {
         commonBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -703,19 +716,18 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCommon(com.google.datastore.admin.v1.CommonMetadata value) {
       if (commonBuilder_ == null) {
-        if (common_ != null) {
-          common_ =
-              com.google.datastore.admin.v1.CommonMetadata.newBuilder(common_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && common_ != null
+            && common_ != com.google.datastore.admin.v1.CommonMetadata.getDefaultInstance()) {
+          getCommonBuilder().mergeFrom(value);
         } else {
           common_ = value;
         }
-        onChanged();
       } else {
         commonBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -728,14 +740,13 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.CommonMetadata common = 1;</code>
      */
     public Builder clearCommon() {
-      if (commonBuilder_ == null) {
-        common_ = null;
-        onChanged();
-      } else {
-        common_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      common_ = null;
+      if (commonBuilder_ != null) {
+        commonBuilder_.dispose();
         commonBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -748,7 +759,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.CommonMetadata common = 1;</code>
      */
     public com.google.datastore.admin.v1.CommonMetadata.Builder getCommonBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCommonFieldBuilder().getBuilder();
     }
@@ -814,7 +825,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the progressEntities field is set.
      */
     public boolean hasProgressEntities() {
-      return progressEntitiesBuilder_ != null || progressEntities_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -851,11 +862,11 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         progressEntities_ = value;
-        onChanged();
       } else {
         progressEntitiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -871,11 +882,11 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         com.google.datastore.admin.v1.Progress.Builder builderForValue) {
       if (progressEntitiesBuilder_ == null) {
         progressEntities_ = builderForValue.build();
-        onChanged();
       } else {
         progressEntitiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -889,19 +900,18 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      */
     public Builder mergeProgressEntities(com.google.datastore.admin.v1.Progress value) {
       if (progressEntitiesBuilder_ == null) {
-        if (progressEntities_ != null) {
-          progressEntities_ =
-              com.google.datastore.admin.v1.Progress.newBuilder(progressEntities_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && progressEntities_ != null
+            && progressEntities_ != com.google.datastore.admin.v1.Progress.getDefaultInstance()) {
+          getProgressEntitiesBuilder().mergeFrom(value);
         } else {
           progressEntities_ = value;
         }
-        onChanged();
       } else {
         progressEntitiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -914,14 +924,13 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.Progress progress_entities = 2;</code>
      */
     public Builder clearProgressEntities() {
-      if (progressEntitiesBuilder_ == null) {
-        progressEntities_ = null;
-        onChanged();
-      } else {
-        progressEntities_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      progressEntities_ = null;
+      if (progressEntitiesBuilder_ != null) {
+        progressEntitiesBuilder_.dispose();
         progressEntitiesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -934,7 +943,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * <code>.google.datastore.admin.v1.Progress progress_entities = 2;</code>
      */
     public com.google.datastore.admin.v1.Progress.Builder getProgressEntitiesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getProgressEntitiesFieldBuilder().getBuilder();
     }
@@ -1043,8 +1052,8 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       indexId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1060,8 +1069,8 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIndexId() {
-
       indexId_ = getDefaultInstance().getIndexId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1082,8 +1091,8 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       indexId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

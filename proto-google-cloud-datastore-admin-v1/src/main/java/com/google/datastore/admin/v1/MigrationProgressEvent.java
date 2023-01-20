@@ -337,7 +337,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     }
 
     public static final int CONCURRENCY_MODE_FIELD_NUMBER = 1;
-    private int concurrencyMode_;
+    private int concurrencyMode_ = 0;
     /**
      *
      *
@@ -371,9 +371,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode
         getConcurrencyMode() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode result =
-          com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.valueOf(
+          com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.forNumber(
               concurrencyMode_);
       return result == null
           ? com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.UNRECOGNIZED
@@ -590,8 +589,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         concurrencyMode_ = 0;
-
         return this;
       }
 
@@ -623,9 +622,19 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
           buildPartial() {
         com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails result =
             new com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails(this);
-        result.concurrencyMode_ = concurrencyMode_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.concurrencyMode_ = concurrencyMode_;
+        }
       }
 
       @java.lang.Override
@@ -712,7 +721,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               case 8:
                 {
                   concurrencyMode_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -731,6 +740,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int concurrencyMode_ = 0;
       /**
@@ -767,8 +778,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder setConcurrencyModeValue(int value) {
-
         concurrencyMode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -789,9 +800,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode
           getConcurrencyMode() {
-        @SuppressWarnings("deprecation")
         com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode result =
-            com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.valueOf(
+            com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.forNumber(
                 concurrencyMode_);
         return result == null
             ? com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.UNRECOGNIZED
@@ -817,7 +827,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         concurrencyMode_ = value.getNumber();
         onChanged();
         return this;
@@ -837,7 +847,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearConcurrencyMode() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         concurrencyMode_ = 0;
         onChanged();
         return this;
@@ -995,7 +1005,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     }
 
     public static final int CONCURRENCY_MODE_FIELD_NUMBER = 1;
-    private int concurrencyMode_;
+    private int concurrencyMode_ = 0;
     /**
      *
      *
@@ -1027,9 +1037,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode
         getConcurrencyMode() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode result =
-          com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.valueOf(
+          com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.forNumber(
               concurrencyMode_);
       return result == null
           ? com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.UNRECOGNIZED
@@ -1254,8 +1263,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         concurrencyMode_ = 0;
-
         return this;
       }
 
@@ -1289,9 +1298,19 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails result =
             new com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails(
                 this);
-        result.concurrencyMode_ = concurrencyMode_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.concurrencyMode_ = concurrencyMode_;
+        }
       }
 
       @java.lang.Override
@@ -1380,7 +1399,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
               case 8:
                 {
                   concurrencyMode_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -1399,6 +1418,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int concurrencyMode_ = 0;
       /**
@@ -1433,8 +1454,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder setConcurrencyModeValue(int value) {
-
         concurrencyMode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1454,9 +1475,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode
           getConcurrencyMode() {
-        @SuppressWarnings("deprecation")
         com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode result =
-            com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.valueOf(
+            com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.forNumber(
                 concurrencyMode_);
         return result == null
             ? com.google.datastore.admin.v1.MigrationProgressEvent.ConcurrencyMode.UNRECOGNIZED
@@ -1481,7 +1501,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         concurrencyMode_ = value.getNumber();
         onChanged();
         return this;
@@ -1500,7 +1520,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearConcurrencyMode() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         concurrencyMode_ = 0;
         onChanged();
         return this;
@@ -1623,7 +1643,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
   }
 
   public static final int STEP_FIELD_NUMBER = 1;
-  private int step_;
+  private int step_ = 0;
   /**
    *
    *
@@ -1656,9 +1676,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.datastore.admin.v1.MigrationStep getStep() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.admin.v1.MigrationStep result =
-        com.google.datastore.admin.v1.MigrationStep.valueOf(step_);
+        com.google.datastore.admin.v1.MigrationStep.forNumber(step_);
     return result == null ? com.google.datastore.admin.v1.MigrationStep.UNRECOGNIZED : result;
   }
 
@@ -2036,8 +2055,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       step_ = 0;
-
       if (prepareStepDetailsBuilder_ != null) {
         prepareStepDetailsBuilder_.clear();
       }
@@ -2073,24 +2092,30 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
     public com.google.datastore.admin.v1.MigrationProgressEvent buildPartial() {
       com.google.datastore.admin.v1.MigrationProgressEvent result =
           new com.google.datastore.admin.v1.MigrationProgressEvent(this);
-      result.step_ = step_;
-      if (stepDetailsCase_ == 2) {
-        if (prepareStepDetailsBuilder_ == null) {
-          result.stepDetails_ = stepDetails_;
-        } else {
-          result.stepDetails_ = prepareStepDetailsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (stepDetailsCase_ == 3) {
-        if (redirectWritesStepDetailsBuilder_ == null) {
-          result.stepDetails_ = stepDetails_;
-        } else {
-          result.stepDetails_ = redirectWritesStepDetailsBuilder_.build();
-        }
-      }
-      result.stepDetailsCase_ = stepDetailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.admin.v1.MigrationProgressEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.step_ = step_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.datastore.admin.v1.MigrationProgressEvent result) {
+      result.stepDetailsCase_ = stepDetailsCase_;
+      result.stepDetails_ = this.stepDetails_;
+      if (stepDetailsCase_ == 2 && prepareStepDetailsBuilder_ != null) {
+        result.stepDetails_ = prepareStepDetailsBuilder_.build();
+      }
+      if (stepDetailsCase_ == 3 && redirectWritesStepDetailsBuilder_ != null) {
+        result.stepDetails_ = redirectWritesStepDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2187,7 +2212,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
             case 8:
               {
                 step_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -2235,6 +2260,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private int step_ = 0;
     /**
      *
@@ -2268,8 +2295,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStepValue(int value) {
-
       step_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2288,9 +2315,8 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.datastore.admin.v1.MigrationStep getStep() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.admin.v1.MigrationStep result =
-          com.google.datastore.admin.v1.MigrationStep.valueOf(step_);
+          com.google.datastore.admin.v1.MigrationStep.forNumber(step_);
       return result == null ? com.google.datastore.admin.v1.MigrationStep.UNRECOGNIZED : result;
     }
     /**
@@ -2311,7 +2337,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       step_ = value.getNumber();
       onChanged();
       return this;
@@ -2330,7 +2356,7 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearStep() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       step_ = 0;
       onChanged();
       return this;
@@ -2577,7 +2603,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       }
       stepDetailsCase_ = 2;
       onChanged();
-      ;
       return prepareStepDetailsBuilder_;
     }
 
@@ -2826,7 +2851,6 @@ public final class MigrationProgressEvent extends com.google.protobuf.GeneratedM
       }
       stepDetailsCase_ = 3;
       onChanged();
-      ;
       return redirectWritesStepDetailsBuilder_;
     }
 

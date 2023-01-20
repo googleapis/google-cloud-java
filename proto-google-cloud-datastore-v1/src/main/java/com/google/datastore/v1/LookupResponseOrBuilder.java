@@ -210,6 +210,22 @@ public interface LookupResponseOrBuilder
    *
    *
    * <pre>
+   * The identifier of the transaction that was started as part of this Lookup
+   * request.
+   * Set only when [ReadOptions.begin_transaction][] was set in
+   * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
+   * </pre>
+   *
+   * <code>bytes transaction = 5;</code>
+   *
+   * @return The transaction.
+   */
+  com.google.protobuf.ByteString getTransaction();
+
+  /**
+   *
+   *
+   * <pre>
    * The time at which these entities were read or found missing.
    * </pre>
    *

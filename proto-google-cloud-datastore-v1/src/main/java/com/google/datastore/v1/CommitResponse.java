@@ -68,6 +68,8 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MUTATION_RESULTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.MutationResult> mutationResults_;
   /**
    *
@@ -142,7 +144,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INDEX_UPDATES_FIELD_NUMBER = 4;
-  private int indexUpdates_;
+  private int indexUpdates_ = 0;
   /**
    *
    *
@@ -203,7 +205,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCommitTimeOrBuilder() {
-    return getCommitTime();
+    return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -427,6 +429,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (mutationResultsBuilder_ == null) {
         mutationResults_ = java.util.Collections.emptyList();
       } else {
@@ -435,11 +438,9 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       indexUpdates_ = 0;
-
-      if (commitTimeBuilder_ == null) {
-        commitTime_ = null;
-      } else {
-        commitTime_ = null;
+      commitTime_ = null;
+      if (commitTimeBuilder_ != null) {
+        commitTimeBuilder_.dispose();
         commitTimeBuilder_ = null;
       }
       return this;
@@ -469,7 +470,15 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.CommitResponse buildPartial() {
       com.google.datastore.v1.CommitResponse result =
           new com.google.datastore.v1.CommitResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.CommitResponse result) {
       if (mutationResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           mutationResults_ = java.util.Collections.unmodifiableList(mutationResults_);
@@ -479,14 +488,16 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mutationResults_ = mutationResultsBuilder_.build();
       }
-      result.indexUpdates_ = indexUpdates_;
-      if (commitTimeBuilder_ == null) {
-        result.commitTime_ = commitTime_;
-      } else {
-        result.commitTime_ = commitTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.datastore.v1.CommitResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.indexUpdates_ = indexUpdates_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.commitTime_ = commitTimeBuilder_ == null ? commitTime_ : commitTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -609,13 +620,13 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 indexUpdates_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 66:
               {
                 input.readMessage(getCommitTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 66
             default:
@@ -1042,6 +1053,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setIndexUpdates(int value) {
 
       indexUpdates_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1058,7 +1070,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIndexUpdates() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       indexUpdates_ = 0;
       onChanged();
       return this;
@@ -1082,7 +1094,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the commitTime field is set.
      */
     public boolean hasCommitTime() {
-      return commitTimeBuilder_ != null || commitTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1119,11 +1131,11 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         commitTime_ = value;
-        onChanged();
       } else {
         commitTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1138,11 +1150,11 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setCommitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (commitTimeBuilder_ == null) {
         commitTime_ = builderForValue.build();
-        onChanged();
       } else {
         commitTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1156,17 +1168,18 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCommitTime(com.google.protobuf.Timestamp value) {
       if (commitTimeBuilder_ == null) {
-        if (commitTime_ != null) {
-          commitTime_ =
-              com.google.protobuf.Timestamp.newBuilder(commitTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && commitTime_ != null
+            && commitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCommitTimeBuilder().mergeFrom(value);
         } else {
           commitTime_ = value;
         }
-        onChanged();
       } else {
         commitTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1179,14 +1192,13 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp commit_time = 8;</code>
      */
     public Builder clearCommitTime() {
-      if (commitTimeBuilder_ == null) {
-        commitTime_ = null;
-        onChanged();
-      } else {
-        commitTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      commitTime_ = null;
+      if (commitTimeBuilder_ != null) {
+        commitTimeBuilder_.dispose();
         commitTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1199,7 +1211,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp commit_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCommitTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCommitTimeFieldBuilder().getBuilder();
     }

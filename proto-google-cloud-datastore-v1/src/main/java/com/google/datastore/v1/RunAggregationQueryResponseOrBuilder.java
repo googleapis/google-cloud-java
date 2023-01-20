@@ -92,4 +92,20 @@ public interface RunAggregationQueryResponseOrBuilder
    * <code>.google.datastore.v1.AggregationQuery query = 2;</code>
    */
   com.google.datastore.v1.AggregationQueryOrBuilder getQueryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The identifier of the transaction that was started as part of this
+   * RunAggregationQuery request.
+   * Set only when [ReadOptions.begin_transaction][] was set in
+   * [RunAggregationQueryRequest.read_options][google.datastore.v1.RunAggregationQueryRequest.read_options].
+   * </pre>
+   *
+   * <code>bytes transaction = 5;</code>
+   *
+   * @return The transaction.
+   */
+  com.google.protobuf.ByteString getTransaction();
 }

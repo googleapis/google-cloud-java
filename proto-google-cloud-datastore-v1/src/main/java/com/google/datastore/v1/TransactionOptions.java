@@ -138,7 +138,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int PREVIOUS_TRANSACTION_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString previousTransaction_;
+    private com.google.protobuf.ByteString previousTransaction_ =
+        com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -355,8 +356,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         previousTransaction_ = com.google.protobuf.ByteString.EMPTY;
-
         return this;
       }
 
@@ -384,9 +385,18 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       public com.google.datastore.v1.TransactionOptions.ReadWrite buildPartial() {
         com.google.datastore.v1.TransactionOptions.ReadWrite result =
             new com.google.datastore.v1.TransactionOptions.ReadWrite(this);
-        result.previousTransaction_ = previousTransaction_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.datastore.v1.TransactionOptions.ReadWrite result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.previousTransaction_ = previousTransaction_;
+        }
       }
 
       @java.lang.Override
@@ -469,7 +479,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   previousTransaction_ = input.readBytes();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -488,6 +498,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.ByteString previousTransaction_ =
           com.google.protobuf.ByteString.EMPTY;
@@ -522,8 +534,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         previousTransaction_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -539,7 +551,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearPreviousTransaction() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         previousTransaction_ = getDefaultInstance().getPreviousTransaction();
         onChanged();
         return this;
@@ -745,7 +757,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-      return getReadTime();
+      return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -953,10 +965,10 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (readTimeBuilder_ == null) {
-          readTime_ = null;
-        } else {
-          readTime_ = null;
+        bitField0_ = 0;
+        readTime_ = null;
+        if (readTimeBuilder_ != null) {
+          readTimeBuilder_.dispose();
           readTimeBuilder_ = null;
         }
         return this;
@@ -986,13 +998,18 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       public com.google.datastore.v1.TransactionOptions.ReadOnly buildPartial() {
         com.google.datastore.v1.TransactionOptions.ReadOnly result =
             new com.google.datastore.v1.TransactionOptions.ReadOnly(this);
-        if (readTimeBuilder_ == null) {
-          result.readTime_ = readTime_;
-        } else {
-          result.readTime_ = readTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.datastore.v1.TransactionOptions.ReadOnly result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1075,7 +1092,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1094,6 +1111,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp readTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1114,7 +1133,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * @return Whether the readTime field is set.
        */
       public boolean hasReadTime() {
-        return readTimeBuilder_ != null || readTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1151,11 +1170,11 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           readTime_ = value;
-          onChanged();
         } else {
           readTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1171,11 +1190,11 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (readTimeBuilder_ == null) {
           readTime_ = builderForValue.build();
-          onChanged();
         } else {
           readTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1190,17 +1209,18 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
         if (readTimeBuilder_ == null) {
-          if (readTime_ != null) {
-            readTime_ =
-                com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && readTime_ != null
+              && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getReadTimeBuilder().mergeFrom(value);
           } else {
             readTime_ = value;
           }
-          onChanged();
         } else {
           readTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1214,14 +1234,13 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp read_time = 1;</code>
        */
       public Builder clearReadTime() {
-        if (readTimeBuilder_ == null) {
-          readTime_ = null;
-          onChanged();
-        } else {
-          readTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        readTime_ = null;
+        if (readTimeBuilder_ != null) {
+          readTimeBuilder_.dispose();
           readTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1235,7 +1254,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Timestamp read_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getReadTimeFieldBuilder().getBuilder();
       }
@@ -1728,6 +1747,7 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (readWriteBuilder_ != null) {
         readWriteBuilder_.clear();
       }
@@ -1763,23 +1783,27 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
     public com.google.datastore.v1.TransactionOptions buildPartial() {
       com.google.datastore.v1.TransactionOptions result =
           new com.google.datastore.v1.TransactionOptions(this);
-      if (modeCase_ == 1) {
-        if (readWriteBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = readWriteBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modeCase_ == 2) {
-        if (readOnlyBuilder_ == null) {
-          result.mode_ = mode_;
-        } else {
-          result.mode_ = readOnlyBuilder_.build();
-        }
-      }
-      result.modeCase_ = modeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.TransactionOptions result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.TransactionOptions result) {
+      result.modeCase_ = modeCase_;
+      result.mode_ = this.mode_;
+      if (modeCase_ == 1 && readWriteBuilder_ != null) {
+        result.mode_ = readWriteBuilder_.build();
+      }
+      if (modeCase_ == 2 && readOnlyBuilder_ != null) {
+        result.mode_ = readOnlyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1911,6 +1935,8 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.TransactionOptions.ReadWrite,
@@ -2118,7 +2144,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       }
       modeCase_ = 1;
       onChanged();
-      ;
       return readWriteBuilder_;
     }
 
@@ -2328,7 +2353,6 @@ public final class TransactionOptions extends com.google.protobuf.GeneratedMessa
       }
       modeCase_ = 2;
       onChanged();
-      ;
       return readOnlyBuilder_;
     }
 

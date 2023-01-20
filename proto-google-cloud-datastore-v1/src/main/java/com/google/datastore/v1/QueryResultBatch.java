@@ -277,7 +277,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SKIPPED_RESULTS_FIELD_NUMBER = 6;
-  private int skippedResults_;
+  private int skippedResults_ = 0;
   /**
    *
    *
@@ -295,7 +295,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SKIPPED_CURSOR_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString skippedCursor_;
+  private com.google.protobuf.ByteString skippedCursor_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -314,7 +314,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENTITY_RESULT_TYPE_FIELD_NUMBER = 1;
-  private int entityResultType_;
+  private int entityResultType_ = 0;
   /**
    *
    *
@@ -343,13 +343,14 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.datastore.v1.EntityResult.ResultType getEntityResultType() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.v1.EntityResult.ResultType result =
-        com.google.datastore.v1.EntityResult.ResultType.valueOf(entityResultType_);
+        com.google.datastore.v1.EntityResult.ResultType.forNumber(entityResultType_);
     return result == null ? com.google.datastore.v1.EntityResult.ResultType.UNRECOGNIZED : result;
   }
 
   public static final int ENTITY_RESULTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.EntityResult> entityResults_;
   /**
    *
@@ -419,7 +420,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int END_CURSOR_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString endCursor_;
+  private com.google.protobuf.ByteString endCursor_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -437,7 +438,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MORE_RESULTS_FIELD_NUMBER = 5;
-  private int moreResults_;
+  private int moreResults_ = 0;
   /**
    *
    *
@@ -466,16 +467,15 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.datastore.v1.QueryResultBatch.MoreResultsType getMoreResults() {
-    @SuppressWarnings("deprecation")
     com.google.datastore.v1.QueryResultBatch.MoreResultsType result =
-        com.google.datastore.v1.QueryResultBatch.MoreResultsType.valueOf(moreResults_);
+        com.google.datastore.v1.QueryResultBatch.MoreResultsType.forNumber(moreResults_);
     return result == null
         ? com.google.datastore.v1.QueryResultBatch.MoreResultsType.UNRECOGNIZED
         : result;
   }
 
   public static final int SNAPSHOT_VERSION_FIELD_NUMBER = 7;
-  private long snapshotVersion_;
+  private long snapshotVersion_ = 0L;
   /**
    *
    *
@@ -566,7 +566,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -841,29 +841,23 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       skippedResults_ = 0;
-
       skippedCursor_ = com.google.protobuf.ByteString.EMPTY;
-
       entityResultType_ = 0;
-
       if (entityResultsBuilder_ == null) {
         entityResults_ = java.util.Collections.emptyList();
       } else {
         entityResults_ = null;
         entityResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       endCursor_ = com.google.protobuf.ByteString.EMPTY;
-
       moreResults_ = 0;
-
       snapshotVersion_ = 0L;
-
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       return this;
@@ -893,29 +887,49 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     public com.google.datastore.v1.QueryResultBatch buildPartial() {
       com.google.datastore.v1.QueryResultBatch result =
           new com.google.datastore.v1.QueryResultBatch(this);
-      int from_bitField0_ = bitField0_;
-      result.skippedResults_ = skippedResults_;
-      result.skippedCursor_ = skippedCursor_;
-      result.entityResultType_ = entityResultType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.QueryResultBatch result) {
       if (entityResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           entityResults_ = java.util.Collections.unmodifiableList(entityResults_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.entityResults_ = entityResults_;
       } else {
         result.entityResults_ = entityResultsBuilder_.build();
       }
-      result.endCursor_ = endCursor_;
-      result.moreResults_ = moreResults_;
-      result.snapshotVersion_ = snapshotVersion_;
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.datastore.v1.QueryResultBatch result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.skippedResults_ = skippedResults_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skippedCursor_ = skippedCursor_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.entityResultType_ = entityResultType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.endCursor_ = endCursor_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.moreResults_ = moreResults_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.snapshotVersion_ = snapshotVersion_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -976,7 +990,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
         if (!other.entityResults_.isEmpty()) {
           if (entityResults_.isEmpty()) {
             entityResults_ = other.entityResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureEntityResultsIsMutable();
             entityResults_.addAll(other.entityResults_);
@@ -989,7 +1003,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
             entityResultsBuilder_.dispose();
             entityResultsBuilder_ = null;
             entityResults_ = other.entityResults_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             entityResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntityResultsFieldBuilder()
@@ -1040,7 +1054,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 entityResultType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 8
             case 18:
@@ -1059,37 +1073,37 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 skippedCursor_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 endCursor_ = input.readBytes();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 moreResults_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 48:
               {
                 skippedResults_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 48
             case 56:
               {
                 snapshotVersion_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1142,6 +1156,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     public Builder setSkippedResults(int value) {
 
       skippedResults_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1157,7 +1172,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSkippedResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       skippedResults_ = 0;
       onChanged();
       return this;
@@ -1197,8 +1212,8 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       skippedCursor_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1215,7 +1230,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSkippedCursor() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       skippedCursor_ = getDefaultInstance().getSkippedCursor();
       onChanged();
       return this;
@@ -1250,8 +1265,8 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setEntityResultTypeValue(int value) {
-
       entityResultType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1268,9 +1283,8 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.datastore.v1.EntityResult.ResultType getEntityResultType() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.EntityResult.ResultType result =
-          com.google.datastore.v1.EntityResult.ResultType.valueOf(entityResultType_);
+          com.google.datastore.v1.EntityResult.ResultType.forNumber(entityResultType_);
       return result == null ? com.google.datastore.v1.EntityResult.ResultType.UNRECOGNIZED : result;
     }
     /**
@@ -1289,7 +1303,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       entityResultType_ = value.getNumber();
       onChanged();
       return this;
@@ -1306,7 +1320,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEntityResultType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       entityResultType_ = 0;
       onChanged();
       return this;
@@ -1316,10 +1330,10 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureEntityResultsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         entityResults_ =
             new java.util.ArrayList<com.google.datastore.v1.EntityResult>(entityResults_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1534,7 +1548,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     public Builder clearEntityResults() {
       if (entityResultsBuilder_ == null) {
         entityResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         entityResultsBuilder_.clear();
@@ -1657,7 +1671,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
                 com.google.datastore.v1.EntityResult.Builder,
                 com.google.datastore.v1.EntityResultOrBuilder>(
                 entityResults_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         entityResults_ = null;
@@ -1697,8 +1711,8 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       endCursor_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1714,7 +1728,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEndCursor() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       endCursor_ = getDefaultInstance().getEndCursor();
       onChanged();
       return this;
@@ -1749,8 +1763,8 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setMoreResultsValue(int value) {
-
       moreResults_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1767,9 +1781,8 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.datastore.v1.QueryResultBatch.MoreResultsType getMoreResults() {
-      @SuppressWarnings("deprecation")
       com.google.datastore.v1.QueryResultBatch.MoreResultsType result =
-          com.google.datastore.v1.QueryResultBatch.MoreResultsType.valueOf(moreResults_);
+          com.google.datastore.v1.QueryResultBatch.MoreResultsType.forNumber(moreResults_);
       return result == null
           ? com.google.datastore.v1.QueryResultBatch.MoreResultsType.UNRECOGNIZED
           : result;
@@ -1790,7 +1803,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       moreResults_ = value.getNumber();
       onChanged();
       return this;
@@ -1807,7 +1820,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMoreResults() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       moreResults_ = 0;
       onChanged();
       return this;
@@ -1858,6 +1871,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     public Builder setSnapshotVersion(long value) {
 
       snapshotVersion_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1880,7 +1894,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSnapshotVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       snapshotVersion_ = 0L;
       onChanged();
       return this;
@@ -1912,7 +1926,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -1963,11 +1977,11 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -1990,11 +2004,11 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2016,17 +2030,18 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2047,14 +2062,13 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp read_time = 8;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2075,7 +2089,7 @@ public final class QueryResultBatch extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp read_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }

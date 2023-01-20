@@ -436,6 +436,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (compositeFilterBuilder_ != null) {
         compositeFilterBuilder_.clear();
       }
@@ -470,23 +471,27 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.Filter buildPartial() {
       com.google.datastore.v1.Filter result = new com.google.datastore.v1.Filter(this);
-      if (filterTypeCase_ == 1) {
-        if (compositeFilterBuilder_ == null) {
-          result.filterType_ = filterType_;
-        } else {
-          result.filterType_ = compositeFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (filterTypeCase_ == 2) {
-        if (propertyFilterBuilder_ == null) {
-          result.filterType_ = filterType_;
-        } else {
-          result.filterType_ = propertyFilterBuilder_.build();
-        }
-      }
-      result.filterTypeCase_ = filterTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.Filter result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.Filter result) {
+      result.filterTypeCase_ = filterTypeCase_;
+      result.filterType_ = this.filterType_;
+      if (filterTypeCase_ == 1 && compositeFilterBuilder_ != null) {
+        result.filterType_ = compositeFilterBuilder_.build();
+      }
+      if (filterTypeCase_ == 2 && propertyFilterBuilder_ != null) {
+        result.filterType_ = propertyFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -618,6 +623,8 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.CompositeFilter,
@@ -825,7 +832,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       filterTypeCase_ = 1;
       onChanged();
-      ;
       return compositeFilterBuilder_;
     }
 
@@ -1035,7 +1041,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       filterTypeCase_ = 2;
       onChanged();
-      ;
       return propertyFilterBuilder_;
     }
 

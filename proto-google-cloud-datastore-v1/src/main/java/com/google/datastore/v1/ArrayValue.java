@@ -68,6 +68,8 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Value> values_;
   /**
    *
@@ -342,6 +344,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (valuesBuilder_ == null) {
         values_ = java.util.Collections.emptyList();
       } else {
@@ -375,7 +378,15 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.ArrayValue buildPartial() {
       com.google.datastore.v1.ArrayValue result = new com.google.datastore.v1.ArrayValue(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.ArrayValue result) {
       if (valuesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = java.util.Collections.unmodifiableList(values_);
@@ -385,8 +396,10 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.values_ = valuesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.ArrayValue result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -41,6 +41,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     found_ = java.util.Collections.emptyList();
     missing_ = java.util.Collections.emptyList();
     deferred_ = java.util.Collections.emptyList();
+    transaction_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -70,6 +71,8 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FOUND_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.EntityResult> found_;
   /**
    *
@@ -149,6 +152,8 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MISSING_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.EntityResult> missing_;
   /**
    *
@@ -228,6 +233,8 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFERRED_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> deferred_;
   /**
    *
@@ -305,6 +312,27 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     return deferred_.get(index);
   }
 
+  public static final int TRANSACTION_FIELD_NUMBER = 5;
+  private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+  /**
+   *
+   *
+   * <pre>
+   * The identifier of the transaction that was started as part of this Lookup
+   * request.
+   * Set only when [ReadOptions.begin_transaction][] was set in
+   * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
+   * </pre>
+   *
+   * <code>bytes transaction = 5;</code>
+   *
+   * @return The transaction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTransaction() {
+    return transaction_;
+  }
+
   public static final int READ_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp readTime_;
   /**
@@ -348,7 +376,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -374,6 +402,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < deferred_.size(); i++) {
       output.writeMessage(3, deferred_.get(i));
     }
+    if (!transaction_.isEmpty()) {
+      output.writeBytes(5, transaction_);
+    }
     if (readTime_ != null) {
       output.writeMessage(7, getReadTime());
     }
@@ -394,6 +425,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < deferred_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, deferred_.get(i));
+    }
+    if (!transaction_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, transaction_);
     }
     if (readTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getReadTime());
@@ -416,6 +450,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     if (!getFoundList().equals(other.getFoundList())) return false;
     if (!getMissingList().equals(other.getMissingList())) return false;
     if (!getDeferredList().equals(other.getDeferredList())) return false;
+    if (!getTransaction().equals(other.getTransaction())) return false;
     if (hasReadTime() != other.hasReadTime()) return false;
     if (hasReadTime()) {
       if (!getReadTime().equals(other.getReadTime())) return false;
@@ -443,6 +478,8 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DEFERRED_FIELD_NUMBER;
       hash = (53 * hash) + getDeferredList().hashCode();
     }
+    hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
+    hash = (53 * hash) + getTransaction().hashCode();
     if (hasReadTime()) {
       hash = (37 * hash) + READ_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getReadTime().hashCode();
@@ -585,6 +622,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (foundBuilder_ == null) {
         found_ = java.util.Collections.emptyList();
       } else {
@@ -606,10 +644,10 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
         deferredBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      transaction_ = com.google.protobuf.ByteString.EMPTY;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       return this;
@@ -639,7 +677,15 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.LookupResponse buildPartial() {
       com.google.datastore.v1.LookupResponse result =
           new com.google.datastore.v1.LookupResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.LookupResponse result) {
       if (foundBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           found_ = java.util.Collections.unmodifiableList(found_);
@@ -667,13 +713,16 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.deferred_ = deferredBuilder_.build();
       }
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.datastore.v1.LookupResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.transaction_ = transaction_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -802,6 +851,9 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.getTransaction() != com.google.protobuf.ByteString.EMPTY) {
+        setTransaction(other.getTransaction());
+      }
       if (other.hasReadTime()) {
         mergeReadTime(other.getReadTime());
       }
@@ -869,10 +921,16 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 26
+            case 42:
+              {
+                transaction_ = input.readBytes();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             case 58:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             default:
@@ -2043,6 +2101,70 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
       return deferredBuilder_;
     }
 
+    private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     *
+     *
+     * <pre>
+     * The identifier of the transaction that was started as part of this Lookup
+     * request.
+     * Set only when [ReadOptions.begin_transaction][] was set in
+     * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
+     * </pre>
+     *
+     * <code>bytes transaction = 5;</code>
+     *
+     * @return The transaction.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTransaction() {
+      return transaction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The identifier of the transaction that was started as part of this Lookup
+     * request.
+     * Set only when [ReadOptions.begin_transaction][] was set in
+     * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
+     * </pre>
+     *
+     * <code>bytes transaction = 5;</code>
+     *
+     * @param value The transaction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransaction(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      transaction_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The identifier of the transaction that was started as part of this Lookup
+     * request.
+     * Set only when [ReadOptions.begin_transaction][] was set in
+     * [LookupRequest.read_options][google.datastore.v1.LookupRequest.read_options].
+     * </pre>
+     *
+     * <code>bytes transaction = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransaction() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      transaction_ = getDefaultInstance().getTransaction();
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp readTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2061,7 +2183,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2096,11 +2218,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2115,11 +2237,11 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2133,17 +2255,18 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2156,14 +2279,13 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp read_time = 7;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2176,7 +2298,7 @@ public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp read_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }

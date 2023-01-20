@@ -94,6 +94,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
                     com.google.datastore.v1.Value.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.datastore.v1.Value>
       aggregateProperties_;
 
@@ -164,8 +165,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
    * <code>map&lt;string, .google.datastore.v1.Value&gt; aggregate_properties = 2;</code>
    */
   @java.lang.Override
-  public com.google.datastore.v1.Value getAggregatePropertiesOrDefault(
-      java.lang.String key, com.google.datastore.v1.Value defaultValue) {
+  public /* nullable */ com.google.datastore.v1.Value getAggregatePropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.datastore.v1.Value defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -431,6 +434,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableAggregateProperties().clear();
       return this;
     }
@@ -459,11 +463,19 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.AggregationResult buildPartial() {
       com.google.datastore.v1.AggregationResult result =
           new com.google.datastore.v1.AggregationResult(this);
-      int from_bitField0_ = bitField0_;
-      result.aggregateProperties_ = internalGetAggregateProperties();
-      result.aggregateProperties_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.AggregationResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.aggregateProperties_ = internalGetAggregateProperties();
+        result.aggregateProperties_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -512,6 +524,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.datastore.v1.AggregationResult other) {
       if (other == com.google.datastore.v1.AggregationResult.getDefaultInstance()) return this;
       internalGetMutableAggregateProperties().mergeFrom(other.internalGetAggregateProperties());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -548,6 +561,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
                 internalGetMutableAggregateProperties()
                     .getMutableMap()
                     .put(aggregateProperties__.getKey(), aggregateProperties__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -583,8 +597,6 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
     private com.google.protobuf.MapField<java.lang.String, com.google.datastore.v1.Value>
         internalGetMutableAggregateProperties() {
-      onChanged();
-      ;
       if (aggregateProperties_ == null) {
         aggregateProperties_ =
             com.google.protobuf.MapField.newMapField(
@@ -593,6 +605,8 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       if (!aggregateProperties_.isMutable()) {
         aggregateProperties_ = aggregateProperties_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return aggregateProperties_;
     }
 
@@ -654,8 +668,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, .google.datastore.v1.Value&gt; aggregate_properties = 2;</code>
      */
     @java.lang.Override
-    public com.google.datastore.v1.Value getAggregatePropertiesOrDefault(
-        java.lang.String key, com.google.datastore.v1.Value defaultValue) {
+    public /* nullable */ com.google.datastore.v1.Value getAggregatePropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.datastore.v1.Value defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -689,6 +705,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearAggregateProperties() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableAggregateProperties().getMutableMap().clear();
       return this;
     }
@@ -715,6 +732,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.datastore.v1.Value>
         getMutableAggregateProperties() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableAggregateProperties().getMutableMap();
     }
     /**
@@ -737,8 +755,8 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAggregateProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -756,6 +774,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public Builder putAllAggregateProperties(
         java.util.Map<java.lang.String, com.google.datastore.v1.Value> values) {
       internalGetMutableAggregateProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

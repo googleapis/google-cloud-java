@@ -71,7 +71,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DATABASE_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object databaseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseId_ = "";
   /**
    *
    *
@@ -173,6 +177,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KEYS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> keys_;
   /**
    *
@@ -468,17 +474,16 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       databaseId_ = "";
-
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
       } else {
         keys_ = null;
         keysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -506,20 +511,34 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.datastore.v1.AllocateIdsRequest buildPartial() {
       com.google.datastore.v1.AllocateIdsRequest result =
           new com.google.datastore.v1.AllocateIdsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.projectId_ = projectId_;
-      result.databaseId_ = databaseId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.AllocateIdsRequest result) {
       if (keysBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.keys_ = keys_;
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.AllocateIdsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.databaseId_ = databaseId_;
+      }
     }
 
     @java.lang.Override
@@ -569,17 +588,19 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.datastore.v1.AllocateIdsRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDatabaseId().isEmpty()) {
         databaseId_ = other.databaseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (keysBuilder_ == null) {
         if (!other.keys_.isEmpty()) {
           if (keys_.isEmpty()) {
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureKeysIsMutable();
             keys_.addAll(other.keys_);
@@ -592,7 +613,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
             keysBuilder_.dispose();
             keysBuilder_ = null;
             keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             keysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getKeysFieldBuilder()
@@ -643,13 +664,13 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
             case 66:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 66
             case 74:
               {
                 databaseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 74
             default:
@@ -732,8 +753,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +770,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -771,8 +792,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +865,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +884,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDatabaseId() {
-
       databaseId_ = getDefaultInstance().getDatabaseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -887,8 +908,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       databaseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -896,9 +917,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     private java.util.List<com.google.datastore.v1.Key> keys_ = java.util.Collections.emptyList();
 
     private void ensureKeysIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>(keys_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1132,7 +1153,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     public Builder clearKeys() {
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         keysBuilder_.clear();
@@ -1265,7 +1286,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
                 com.google.datastore.v1.Key,
                 com.google.datastore.v1.Key.Builder,
                 com.google.datastore.v1.KeyOrBuilder>(
-                keys_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                keys_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         keys_ = null;
       }
       return keysBuilder_;

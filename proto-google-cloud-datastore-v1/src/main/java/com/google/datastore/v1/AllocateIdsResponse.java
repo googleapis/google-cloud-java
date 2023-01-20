@@ -69,6 +69,8 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
   }
 
   public static final int KEYS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> keys_;
   /**
    *
@@ -341,6 +343,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
       } else {
@@ -375,7 +378,15 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
     public com.google.datastore.v1.AllocateIdsResponse buildPartial() {
       com.google.datastore.v1.AllocateIdsResponse result =
           new com.google.datastore.v1.AllocateIdsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.AllocateIdsResponse result) {
       if (keysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -385,8 +396,10 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.AllocateIdsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

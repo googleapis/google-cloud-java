@@ -295,7 +295,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int KIND_FIELD_NUMBER = 1;
-    private volatile java.lang.Object kind_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kind_ = "";
     /**
      *
      *
@@ -719,8 +721,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         kind_ = "";
-
         idTypeCase_ = 0;
         idType_ = null;
         return this;
@@ -750,16 +752,24 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       public com.google.datastore.v1.Key.PathElement buildPartial() {
         com.google.datastore.v1.Key.PathElement result =
             new com.google.datastore.v1.Key.PathElement(this);
-        result.kind_ = kind_;
-        if (idTypeCase_ == 2) {
-          result.idType_ = idType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (idTypeCase_ == 3) {
-          result.idType_ = idType_;
-        }
-        result.idTypeCase_ = idTypeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.datastore.v1.Key.PathElement result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kind_ = kind_;
+        }
+      }
+
+      private void buildPartialOneofs(com.google.datastore.v1.Key.PathElement result) {
+        result.idTypeCase_ = idTypeCase_;
+        result.idType_ = this.idType_;
       }
 
       @java.lang.Override
@@ -811,6 +821,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         if (other == com.google.datastore.v1.Key.PathElement.getDefaultInstance()) return this;
         if (!other.getKind().isEmpty()) {
           kind_ = other.kind_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         switch (other.getIdTypeCase()) {
@@ -860,7 +871,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   kind_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
@@ -906,6 +917,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object kind_ = "";
       /**
@@ -986,8 +999,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         kind_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1009,8 +1022,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearKind() {
-
         kind_ = getDefaultInstance().getKind();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1037,8 +1050,8 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         kind_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1093,6 +1106,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setId(long value) {
+
         idTypeCase_ = 2;
         idType_ = value;
         onChanged();
@@ -1405,10 +1419,14 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.datastore.v1.PartitionIdOrBuilder getPartitionIdOrBuilder() {
-    return getPartitionId();
+    return partitionId_ == null
+        ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+        : partitionId_;
   }
 
   public static final int PATH_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key.PathElement> path_;
   /**
    *
@@ -1754,10 +1772,10 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (partitionIdBuilder_ == null) {
-        partitionId_ = null;
-      } else {
-        partitionId_ = null;
+      bitField0_ = 0;
+      partitionId_ = null;
+      if (partitionIdBuilder_ != null) {
+        partitionIdBuilder_.dispose();
         partitionIdBuilder_ = null;
       }
       if (pathBuilder_ == null) {
@@ -1766,7 +1784,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         path_ = null;
         pathBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1792,23 +1810,32 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.datastore.v1.Key buildPartial() {
       com.google.datastore.v1.Key result = new com.google.datastore.v1.Key(this);
-      int from_bitField0_ = bitField0_;
-      if (partitionIdBuilder_ == null) {
-        result.partitionId_ = partitionId_;
-      } else {
-        result.partitionId_ = partitionIdBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.datastore.v1.Key result) {
       if (pathBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           path_ = java.util.Collections.unmodifiableList(path_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.path_ = path_;
       } else {
         result.path_ = pathBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.Key result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.partitionId_ =
+            partitionIdBuilder_ == null ? partitionId_ : partitionIdBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1863,7 +1890,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         if (!other.path_.isEmpty()) {
           if (path_.isEmpty()) {
             path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePathIsMutable();
             path_.addAll(other.path_);
@@ -1876,7 +1903,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             pathBuilder_.dispose();
             pathBuilder_ = null;
             path_ = other.path_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             pathBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPathFieldBuilder()
@@ -1915,7 +1942,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getPartitionIdFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1970,7 +1997,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the partitionId field is set.
      */
     public boolean hasPartitionId() {
-      return partitionIdBuilder_ != null || partitionId_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2011,11 +2038,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         partitionId_ = value;
-        onChanged();
       } else {
         partitionIdBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2032,11 +2059,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public Builder setPartitionId(com.google.datastore.v1.PartitionId.Builder builderForValue) {
       if (partitionIdBuilder_ == null) {
         partitionId_ = builderForValue.build();
-        onChanged();
       } else {
         partitionIdBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2052,19 +2079,18 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePartitionId(com.google.datastore.v1.PartitionId value) {
       if (partitionIdBuilder_ == null) {
-        if (partitionId_ != null) {
-          partitionId_ =
-              com.google.datastore.v1.PartitionId.newBuilder(partitionId_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && partitionId_ != null
+            && partitionId_ != com.google.datastore.v1.PartitionId.getDefaultInstance()) {
+          getPartitionIdBuilder().mergeFrom(value);
         } else {
           partitionId_ = value;
         }
-        onChanged();
       } else {
         partitionIdBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2079,14 +2105,13 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
      */
     public Builder clearPartitionId() {
-      if (partitionIdBuilder_ == null) {
-        partitionId_ = null;
-        onChanged();
-      } else {
-        partitionId_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      partitionId_ = null;
+      if (partitionIdBuilder_ != null) {
+        partitionIdBuilder_.dispose();
         partitionIdBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2101,7 +2126,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
      */
     public com.google.datastore.v1.PartitionId.Builder getPartitionIdBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
@@ -2157,9 +2182,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePathIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         path_ = new java.util.ArrayList<com.google.datastore.v1.Key.PathElement>(path_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2517,7 +2542,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPath() {
       if (pathBuilder_ == null) {
         path_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         pathBuilder_.clear();
@@ -2729,7 +2754,7 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
                 com.google.datastore.v1.Key.PathElement,
                 com.google.datastore.v1.Key.PathElement.Builder,
                 com.google.datastore.v1.Key.PathElementOrBuilder>(
-                path_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                path_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         path_ = null;
       }
       return pathBuilder_;

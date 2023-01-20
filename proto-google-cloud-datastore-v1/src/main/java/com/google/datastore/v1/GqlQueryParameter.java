@@ -427,6 +427,7 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (valueBuilder_ != null) {
         valueBuilder_.clear();
       }
@@ -459,19 +460,24 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.GqlQueryParameter buildPartial() {
       com.google.datastore.v1.GqlQueryParameter result =
           new com.google.datastore.v1.GqlQueryParameter(this);
-      if (parameterTypeCase_ == 2) {
-        if (valueBuilder_ == null) {
-          result.parameterType_ = parameterType_;
-        } else {
-          result.parameterType_ = valueBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (parameterTypeCase_ == 3) {
-        result.parameterType_ = parameterType_;
-      }
-      result.parameterTypeCase_ = parameterTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.datastore.v1.GqlQueryParameter result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.datastore.v1.GqlQueryParameter result) {
+      result.parameterTypeCase_ = parameterTypeCase_;
+      result.parameterType_ = this.parameterType_;
+      if (parameterTypeCase_ == 2 && valueBuilder_ != null) {
+        result.parameterType_ = valueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -603,6 +609,8 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.datastore.v1.Value,
@@ -807,7 +815,6 @@ public final class GqlQueryParameter extends com.google.protobuf.GeneratedMessag
       }
       parameterTypeCase_ = 2;
       onChanged();
-      ;
       return valueBuilder_;
     }
 
